@@ -52,9 +52,14 @@
   },
   "operatorSeparatedMeshControls": [
     {
-      "id": "wet-floor-vertical500-inplane250",
+      "id": "wet-floor-mixed-m250-v500",
       "verticalPitchMm": 500,
       "inPlanePitchMm": 250
+    },
+    {
+      "id": "wet-floor-mixed-m500-v250",
+      "verticalPitchMm": 250,
+      "inPlanePitchMm": 500
     }
   ]
 }

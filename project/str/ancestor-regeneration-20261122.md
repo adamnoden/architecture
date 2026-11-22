@@ -28,3 +28,22 @@ Distributed maximum equilibrium residual is1.0714093150454574e−9kN/kNm; north 
 ## Remaining continuation
 
 Vertical, court/foundation/lower-body, reinforcement, masonry, upper-bearing and roof-pressure descendants are not claimed complete by this checkpoint. They require their own actual producer executions. Floor11/cuts/cage/profile receipts must subsequently be regenerated on the same final source. Execution logs and frozen input inventory are retained in the workspace at `/workspace/scratch/c8557608a58b/proof-regeneration-resume/`; these are execution checkpoints, not a second authority.
+
+## Continued descendant regeneration
+
+The continuation uses the same frozen native58 identity147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b. Each producer is bracketed by an exact58-source byte comparison. BLAS/OpenMP remains one thread. Local run metrics are under `/tmp/ovid-str-proof-logs-20261122/`; these paths are execution aids, not accepted design evidence.
+
+| Existing producer | Measured seconds | Exit | Native58 unchanged | Physical head parity against recovered79882ce5 |
+|---|---:|---:|---|---|
+| `vertical_rc_floor_proof.py --write` |87.650 |0 |true |3432 components; maximum5.418e-10kN/kNm |
+
+The vertical family executes ten actual coupled cases, including mesh/contact/material/aperture changes, freshGMAX/Q2, two signed wind changes and zero physicalG. The3432 parity values include the retained baseline duplicate as well as all ten case rows. Existing acceptance flags remain false; unchanged numerical physics and current provenance do not select a structure. Remaining descendant families below this checkpoint still require their own actual executions.
+
+| Subsequent producer | Measured seconds | Exit | Native58 unchanged | Physical head parity against recovered79882ce5 |
+|---|---:|---:|---|---|
+| `court_corner_closure_proof.py --write` |11.252 |0 |true |624 components; maximum3.411e-10kN/kNm |
+| `foundation_solid_weight_proof.py --write` |24.163 |0 |true |2496 components; maximum6.252e-10kN/kNm |
+| `lower_core_bodies_proof.py --write` |52.536 |0 |true |1248 components; maximum6.279e-10kN/kNm |
+| `floor_reinforcement_proof.py --write` |0.159 |0 |true |Actual postprocess of regenerated vertical baseline; no new solve |
+
+Court closure executes two states; foundation weight eight; lower-body four. The explicit zero-mass, changed density/aperture and changed contact-route controls remain the producers’ existing tests. These results preserve the negative-head findings, unqualified local joints and resistance limits. They do not close structural or house acceptance.

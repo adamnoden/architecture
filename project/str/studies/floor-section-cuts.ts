@@ -53,7 +53,7 @@ function check(proof: any) {
       || row.heads.length!==52 || new Set(row.heads.map((h: any)=>h.id)).size!==52) throw new Error('Floor cut evidence lost actual request, material sections,52heads or proof limits')
   })
   if (!equal(proof.historicalExecutionFailures,historicalExecutionFailures)) throw new Error('Historical failures became current numerical evidence')
-  for (const [key,from,to] of [['mesh700To500','wet-floor-mesh-700','wet-floor-mesh-500'],['mesh500To250','wet-floor-mesh-500','wet-floor-mesh-250'],['inPlane500To250','wet-floor-mesh-500','wet-floor-vertical500-inplane250'],['vertical500To250AtInPlane250','wet-floor-vertical500-inplane250','wet-floor-mesh-250']]) {
+  for (const [key,from,to] of [['mesh700To500','wet-floor-mesh-700','wet-floor-mesh-500'],['mesh500To250','wet-floor-mesh-500','wet-floor-mesh-250'],['inPlane500To250','wet-floor-mesh-500','wet-floor-mixed-m250-v500'],['vertical500To250AtInPlane250','wet-floor-mixed-m250-v500','wet-floor-mesh-250'],['vertical500To250','wet-floor-mesh-500','wet-floor-mixed-m500-v250'],['inPlane500To250AtVertical250','wet-floor-mixed-m500-v250','wet-floor-mesh-250']]) {
     const a=proof.controls.find((r:any)=>r.caseId===from),b=proof.controls.find((r:any)=>r.caseId===to)
     if (!a||!b||!equal(proof[key!],compareFloorSectionCuts(a,b,authored.stabilityComparison))) throw new Error('Stale or mispaired mesh comparison')
   }
@@ -95,8 +95,10 @@ else if(process.argv[2]==='--write') {
   const compare=(from:string,to:string)=>compareFloorSectionCuts(controls.find(c=>c.caseId===from)!,controls.find(c=>c.caseId===to)!,authored.stabilityComparison)
   const proof={schema:'str-fixed-floor-cut-comparison/2',sourceSHA256:identities,authored,controls,
     mesh700To500:compare('wet-floor-mesh-700','wet-floor-mesh-500'),mesh500To250:compare('wet-floor-mesh-500','wet-floor-mesh-250'),
-    inPlane500To250:compare('wet-floor-mesh-500','wet-floor-vertical500-inplane250'),
-    vertical500To250AtInPlane250:compare('wet-floor-vertical500-inplane250','wet-floor-mesh-250'),historicalExecutionFailures,
+    inPlane500To250:compare('wet-floor-mesh-500','wet-floor-mixed-m250-v500'),
+    vertical500To250AtInPlane250:compare('wet-floor-mixed-m250-v500','wet-floor-mesh-250'),
+    vertical500To250:compare('wet-floor-mesh-500','wet-floor-mixed-m500-v250'),
+    inPlane500To250AtVertical250:compare('wet-floor-mixed-m500-v250','wet-floor-mesh-250'),historicalExecutionFailures,
     candidateAccepted:false,completeHouseProof:false,localCornerJointAccepted:false,
     scope:'Actual source-bound physical fixed cuts and independently identified52 heads. Plate and in-plane mesh controls separate numerical changes; no resistance, local joint, continuum convergence or house selection follows from a stability screen.'}
   check(proof);writeFileSync(proofPath,JSON.stringify(proof,null,2)+'\n');process.stdout.write(JSON.stringify({mesh700To500:proof.mesh700To500,mesh500To250:proof.mesh500To250,inPlane500To250:proof.inPlane500To250,vertical500To250AtInPlane250:proof.vertical500To250AtInPlane250})+'\n')

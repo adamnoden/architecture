@@ -31,9 +31,10 @@ test('mesh screen follows physical identities, preserves failed limits and rejec
   const coarse={heads:[{id:'P1',reactionKN_KNm:[1,2,3,4,5,6]},{id:'P2',reactionKN_KNm:[7,8,9,10,11,12]}],sectionCuts}
   const fine=structuredClone(coarse);fine.heads.reverse()
   const limits={maximumHeadComponentDifferenceKN_KNm:0.1,maximumRelativeCutIntegralDifference:0.05,absoluteCutIntegralFloorKNm:0.1}
-  assert.equal(compareFloorSectionCuts(coarse,fine,limits).declaredScreenPasses,true)
+  assert.equal(compareFloorSectionCuts(coarse,fine,{...limits,...{scope:'A declared comparison scope'}}).declaredScreenPasses,true)
   fine.heads[0]!.reactionKN_KNm[0]!+=0.2
   close(compareFloorSectionCuts(coarse,fine,limits).maximumHeadComponentDifferenceKN_KNm,0.2)
+  assert.equal(compareFloorSectionCuts(coarse,fine,limits).governingHeadChange!.id,'P2')
   assert.equal(compareFloorSectionCuts(coarse,fine,limits).declaredScreenPasses,false)
   const changed=structuredClone(coarse);changed.sectionCuts.cuts[0]!.signedNormalMomentKNm=12
   const screen=compareFloorSectionCuts(coarse,changed,limits)
