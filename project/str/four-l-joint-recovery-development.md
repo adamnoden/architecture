@@ -1,7 +1,8 @@
 # Four-L joint demand recovery — development checkpoint
 
-Owning packet: STR-FLOOR-PORTAL. Native reference: source58 at
-`7a5e9635cff5a368e7d087afa7d030591cfce71a`. This isolated continuation does
+Owning packet: STR-FLOOR-PORTAL. Native reference: source58 tuple
+`f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88`
+on the `e0e70c8f` integration baseline. This isolated continuation does
 not change a native source, select a house or accept a finite joint.
 
 ## Exact missing interface
@@ -32,51 +33,89 @@ to make a free body close.
 
 ## Required verification before relying on the observer
 
-Seven cheap pure tests pass: body-load subtraction/action signs, physical-cut
+Thirteen cheap pure tests pass: body-load subtraction/action signs, physical-cut
 offsets, unit conversion and virtual-work conjugacy, all six components,
 input change/reversal, unsupported topology/nonfinite rejection, and a strict
-ordinary/observed full-result join. Actual observed and ordinary house runs
-are deferred while the commander completes a memory-sensitive contact replay.
-No actual joint equilibrium or observer passivity is claimed at this checkpoint.
+ordinary/observed full-result join, required numerical thread settings, full-byte
+checkpoint preservation, and physical plate material attribution/edit/reversal.
 
-Run the observer in a dedicated process, using the exact request and stable
+One actual f25 wet-aligned-quadrature8 observed run completed190.03871618s.
+It omitted the project's single-thread BLAS/OMP convention and is explicitly
+rejected in `studies/four-l-joint-default-thread-attempt.json`. Its source and
+request match the retained genuinely executed ordinary capture, but the actual
+heads differ by up to1.48043e-9kN/kNm and full-result/physical-cut checksums
+differ. Strict passivity FAILED; the tolerance is not weakened. Its four rigid
+joint free bodies close within5.79919e-9kN/kNm and its condensed plate reactions
+match actual physical recovery within2.26644e-10, but these numerical outputs
+are retained experiment evidence, not admitted current joint demands. The
+attempt retained the cropped observation and full-result checksum, not its
+full result bytes. The observer now retains full bytes before comparison and
+rejects missing/nonunit thread settings before importing the native builder.
+
+Run the observer in a dedicated process with `OPENBLAS_NUM_THREADS=1` and
+`OMP_NUM_THREADS=1`, using the exact request and stable
 case ID from the existing floor-section case producer. Execute the ordinary
-control with `--ordinary`, then the observed run with identical input. The
+control with `--ordinary`, then the observed run with identical input, or use
+an exact genuinely executed ordinary capture from the same source/request and
+documented runtime. Supply `--capture-full NEW_PATH` to preserve both complete
+results. The
 pure `verify_passivity` join requires identical source/request/case identity,
 full native result checksum, all52 heads and all existing physical cuts,
 and recovered joint closure within1e-5kN/kNm. A stored sidecar also binds the
 two new method files. The actual physical plate recovery independently checks
 the observed net condensed reactions.
 
-## Rigid joint material question
+## Rigid joint material is already included — initial gap hypothesis rejected
 
-Metadata observed before any solve identifies the following full L footprints
+The source-bound actual geometry identifies the following full L footprints
 between the actual lower body end3170 and upper body start3370mm:
 
-| Corner | Union area mm² | Slab-depth volume m³ | Reference G at25kN/m³ |
-| --- | ---: | ---: | ---: |
-| SW |260400|0.05208|1.302kN|
-| SE |260400|0.05208|1.302kN|
-| NW |360000|0.072|1.8kN|
-| NE |360000|0.072|1.8kN|
-| Total |1240800|0.24816|6.204kN|
+| Corner | Union area mm² | Slab-depth volume m³ | G at25kN/m³ | Actual quad8 plate G at27kN/m³ |
+| --- | ---: | ---: | ---: | ---: |
+| SW |260400|0.05208|1.302kN|1.40616kN|
+| SE |260400|0.05208|1.302kN|1.40616kN|
+| NW |360000|0.072|1.8kN|1.944kN|
+| NE |360000|0.072|1.8kN|1.944kN|
+| Total |1240800|0.24816|6.204kN|6.70032kN|
 
-This is a potential material-inventory gap, not yet a completed whole-model
-double-count audit. The floor cell builder excludes the L rectangles;
-`_add_lower_l_weight` ends at3170; `_replace_upper_L_start` starts at3370.
-Upper clear masonry excludes the same L rectangles and begins at the slabtop.
-The formed court corner is a ground-level body at another location, and old
-floor/finish GMAX/Q cards are removed; those are not replacement L joint bodies.
-Complete the actual physical-body overlap and applied-card audits before
-calling this uncharged G. No joint body G is inserted by this continuation.
+`studies/four_l_joint_material_audit.py` postprocesses the genuinely executed
+ordinary full result and the source/request-identical observed footprint
+geometry. `studies/four-l-joint-material-audit.json` preserves every attributed
+actual plate-cell intersection (18/22/37/43 pieces for SW/SE/NW/NE), its area,
+volume, G and physical centroid. All four footprints are covered exactly once
+by actual uniform plate cells and match the upper L physical body areas and
+centroids. The ordinary full-capture file SHA256 is
+`e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff`.
 
-The current admitted floor-section/masonry/roof cases have exact key sets and
-no explicit joint-body gravity control. `FrameModel.load` and the physical-G
-family can represent its six-component equivalent load, but the current
-authored request cannot name it. Increasing an L member density would charge
-other bodies. A future explicit source-bound authored control or versioned
-adapter must name the body, density, physical origin and load combination,
-then propagate it into the compiler and rerun dependent native evidence.
+The initial hypothesis misread the `rc_rectangles` contact-domain exclusion as
+plate material removal. `build_vertical_rc_floor` excludes these rectangles
+when creating ordinary ground-to-floor contact domains, while its plate cells
+remain and carry their material G. Their boundary kinematics are rigid L port
+maps; zero relative plate strain does not imply zero mass. The existing plate
+self-G condensation and physical recovery already include this slab-depth G.
+
+`_add_lower_l_weight` ends at3170; `_replace_upper_L_start` starts at3370, so
+neither duplicates that slab-depth material. Upper clear masonry excludes
+the L footprints (actual projected overlap0). The formed court corner is a
+separate ground body. Old floor/finish GMAX/Q cards are removed. Actual
+collector physical-G cards, after removing independently known lower/upper
+member cards and actual condensed plate/self-G/free-upper-G cards, leave
+numerical zero (largest residual vertical component1.42e-14kN).
+
+No new joint body gravity control or load is needed. Adding6.204kN to a25kN/m³
+control, or6.70032kN to this27kN/m³ plate control, would double-count existing
+material. The recovered joint free body must leave own-patch G inside its
+plate contribution. Any future explicit separation must subtract the exact
+patch part from that plate contribution and add it once at its real centroid.
+
+The existing wet25/wet27 quadrature refinements change only
+`wetSupport.concreteUnitWeightKNPerM3`: at each16/32/64 order, every other
+authored request field is exactly equal between that pair. All nine retained
+requests keep the surrounding plate at27kN/m³ and upper/lower L members at25.
+This is a wet-support comparison, not a whole-house density comparison.
+The existing floor-section result describes the27 plate density as an
+authored adverse trial, not an approved complete reinforcement takeoff. This
+audit does not alter that density or resolve the actual concrete/steel account.
 
 ## Limits retained
 

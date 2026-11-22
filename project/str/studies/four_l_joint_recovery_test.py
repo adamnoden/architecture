@@ -1,8 +1,14 @@
 import copy
 import math
+import json
+import os
+from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
 from four_l_joint_recovery import add, recover, recover_joint, scale, transport, verify_passivity
+from four_l_joint_observer import require_runtime_threads, _capture_full
 
 
 def specimen():
@@ -77,13 +83,14 @@ class JointRecovery(unittest.TestCase):
             row=specimen();row['id']=identity;joints.append(row)
         observation={'schema':'str-four-L-joint-observation/1','joints':joints,
             'sourceSHA256':{'native.py':'source'},'requestSHA256':'request','caseId':'bounded-case',
+            'runtimeThreads':{'OPENBLAS_NUM_THREADS':'1','OMP_NUM_THREADS':'1'},
             'fullNativeResultSHA256':'entire-result','physicalCutSHA256':'all-physical-cuts',
             'physicalHeadCount':52,'heads':[{'id':'P'+str(i),'reactionKN_KNm':[0]*6} for i in range(52)]}
         observed={'observation':observation,'freeBodies':recover(observation)}
         ordinary={**{k:v for k,v in observation.items() if k not in ('schema','joints')},
             'schema':'str-four-L-joint-ordinary-control/1'}
         self.assertTrue(verify_passivity(ordinary,observed)['exactFullResultEqualityVerified'])
-        for key in ('sourceSHA256','requestSHA256','caseId','fullNativeResultSHA256','physicalCutSHA256'):
+        for key in ('sourceSHA256','requestSHA256','caseId','runtimeThreads','fullNativeResultSHA256','physicalCutSHA256'):
             changed=copy.deepcopy(ordinary);changed[key]='changed'
             with self.subTest(key=key),self.assertRaises(ValueError):verify_passivity(changed,observed)
         changed=copy.deepcopy(observed);changed['freeBodies']['joints'][0]['freeBodyResidualKN_KNm'][0]=1
@@ -92,6 +99,21 @@ class JointRecovery(unittest.TestCase):
         changed['observation']['joints'][0]['directAppliedLoads'][0]['wrenchKN_KNm'][0]+=1
         changed['freeBodies']=recover(changed['observation'])
         with self.assertRaises(ValueError):verify_passivity(ordinary,changed)
+
+    def test_runtime_convention_required_before_native_import_or_solve(self):
+        with patch.dict(os.environ,{'OPENBLAS_NUM_THREADS':'1','OMP_NUM_THREADS':'1'}):
+            self.assertEqual(require_runtime_threads(),{'OPENBLAS_NUM_THREADS':'1','OMP_NUM_THREADS':'1'})
+        for settings in ({'OPENBLAS_NUM_THREADS':'2','OMP_NUM_THREADS':'1'},{}):
+            with patch.dict(os.environ,settings,clear=True),self.assertRaises(ValueError):require_runtime_threads()
+
+    def test_actual_full_result_checkpoint_is_atomic_and_not_overwritten(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'actual.full.json';value={'actual':[1,2,3]}
+            _capture_full(value,path)
+            self.assertEqual(json.loads(path.read_text()),value)
+            self.assertFalse(path.with_suffix('.writing.json').exists())
+            with self.assertRaises(ValueError):_capture_full({'replacement':True},path)
+            self.assertEqual(json.loads(path.read_text()),value)
 
 
 if __name__=='__main__':unittest.main()

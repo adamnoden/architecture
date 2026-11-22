@@ -7,6 +7,7 @@ are deliberately not a concurrent service API. JSON {case,caseId} on stdin;
 """
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import sys
@@ -43,7 +44,25 @@ def _controls(result):
         'physicalHeadCount':len(native['heads'])}
 
 
-def observe(case, case_id, root, ordinary=False):
+def require_runtime_threads():
+    settings={name:os.environ.get(name) for name in ('OPENBLAS_NUM_THREADS','OMP_NUM_THREADS')}
+    if any(value!='1' for value in settings.values()):
+        raise ValueError('Native floor runtime requires explicit OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 before Python starts')
+    return settings
+
+
+def _capture_full(result,path):
+    if path is None:return
+    path=Path(path)
+    if path.exists():raise ValueError('Refusing to overwrite an existing full native capture')
+    path.parent.mkdir(parents=True,exist_ok=True)
+    temporary=path.with_suffix('.writing.json')
+    with temporary.open('w') as stream:json.dump(result,stream,allow_nan=False)
+    os.replace(temporary,path)
+
+
+def observe(case, case_id, root, ordinary=False, full_capture_path=None):
+    runtime_threads=require_runtime_threads()
     import floor_section_model as builder
     from joined_successor_kernel import FrameModel
     root = Path(root)
@@ -54,10 +73,11 @@ def observe(case, case_id, root, ordinary=False):
         raise ValueError('Exact explicit current native source, request and stable case ID required')
     if ordinary:
         result = builder.run(case,source,case_id)
+        _capture_full(result,full_capture_path)
         if source['identities'] != builder.load_source(root)['identities']:
             raise ValueError('Native source changed during ordinary control')
         return {'schema':'str-four-L-joint-ordinary-control/1','sourceSHA256':source['identities'],
-            'requestSHA256':digest(case),'caseId':case_id,**_controls(result)}
+            'requestSHA256':digest(case),'caseId':case_id,'runtimeThreads':runtime_threads,**_controls(result)}
     captured = {}; models = {}; current = {}
     previous_member = FrameModel.member
     previous_base = builder._build_base
@@ -194,6 +214,9 @@ def observe(case, case_id, root, ordinary=False):
     finally:
         FrameModel.member = previous_member; builder._build_base = previous_base; builder._free_top_load = previous_free
         builder.fresh_net_floor_live_load = previous_live; builder.solve_vertical_frame = previous_solve
+    # Retain the actual completed full bytes before assessing passivity. Failed
+    # comparison/identity checks must not leave the only useful fields in RAM.
+    _capture_full(result,full_capture_path)
     if source['identities'] != builder.load_source(root)['identities']:
         raise ValueError('Native source changed during passive joint observation')
     if methods != {p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in (METHOD,RECOVERY)}:
@@ -203,7 +226,7 @@ def observe(case, case_id, root, ordinary=False):
     if error>1e-5:
         raise ValueError('Observed condensed plate net reactions differ from actual physical recovery')
     captured.update(sourceSHA256=source['identities'],request=case,requestSHA256=digest(case),caseId=case_id,
-        methodSourceSHA256=methods,
+        methodSourceSHA256=methods,runtimeThreads=runtime_threads,
         **_controls(result), maximumPlateReactionDifferenceFromNativePhysicalRecovery=error,
         finiteJointCapacityAvailable=False, completeHouseProof=False, candidateAccepted=False)
     return {'observation':captured,'freeBodies':recover(captured)}
@@ -212,5 +235,10 @@ def observe(case, case_id, root, ordinary=False):
 if __name__=='__main__':
     payload=json.load(sys.stdin)
     if set(payload)!={'case','caseId'}:raise ValueError('Exact {case,caseId} request required')
-    json.dump(observe(payload['case'],payload['caseId'],Path(__file__).resolve().parents[3],sys.argv[1:]==['--ordinary']),
+    arguments=sys.argv[1:];ordinary='--ordinary' in arguments
+    if ordinary:arguments.remove('--ordinary')
+    if arguments and (len(arguments)!=2 or arguments[0]!='--capture-full'):
+        raise ValueError('Use [--ordinary] [--capture-full NEW_PATH]')
+    full=arguments[1] if arguments else None
+    json.dump(observe(payload['case'],payload['caseId'],Path(__file__).resolve().parents[3],ordinary,full),
         sys.stdout,allow_nan=False)
