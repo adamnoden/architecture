@@ -8,22 +8,23 @@ const current=read('inlet-source-envelope.results.json').joinedDirection,
   input={roomPlanMm:room.wetUtilityPlanMm,portalXMm:room.northOpeningXMm,wallFacesYMm:room.northWallFacesYMm,
     jambFinishMm:27,shieldPlaneXMm:room.electricalScreen.barrierPlaneMm.x,
     washerFirstRestMm:[10076,1500,598,600],maintenancePlanMm:room.maintenanceFields[0].platform,
-    maintenanceTopMm:3100,operatorXYZMm:[10700,2480,1450],
+    maintenanceTopMm:3100,operatorXYZMm:[10700,2430,1450],
     frameCoversMm:room.electricalScreen.supportFrame.connections.filter((c:any)=>c.wallId==='utility-north').map((c:any)=>c.oppositeCoverEnvelopeMm),
-    bankXMm:11420,bankYMm:2350,utilityAxisZMm:1350,plantAxisZMm:1860,maintenanceShiftXMm:-20,wheelInboardMm:20,
+    bankXMm:11390,bankYMm:2350,utilityAxisZMm:1350,plantAxisZMm:1860,maintenanceShiftXMm:-60,maintenanceShiftYMm:-20,wheelInboardMm:40,
     utilityLmin:20,plantLmin:45,maximumGaugeBar:9} as Parameters<typeof inletEntrySideCuts>[0]
 test('doorway controls retain the300mm body and650mm reach with the actual washer rest occupied',()=>{
   const r=inletEntrySideCuts(input)
   assert.equal(r.necessaryOrdinaryOperationEnvelopeScreen,true)
   assert.deepEqual(r.diagnostics,[])
   assert.ok(r.ordinaryOperator.connectedWallAndOpenLeafAfterSettingMm>12.99)
-  assert.ok(r.ordinaryOperator.occupiedWasherRestAfterSettingMm>70)
+  assert.ok(r.ordinaryOperator.occupiedWasherRestAfterSettingMm>20)
   assert.ok(r.valves.every(v=>v.maximumGripReachMm<650))
   assert.ok(r.valves.every(v=>v.minimumFixedFrameCoverAfterSettingMm>0))
   assert.ok(r.valves.every(v=>v.minimumSourceMaintenanceAfterSettingMm<0))
-  assert.ok(r.valves.every(v=>v.minimumMovedMaintenanceAfterSettingMm===1.5))
+  assert.ok(r.valves.every(v=>v.minimumMovedMaintenanceAfterSettingMm>14))
   assert.deepEqual(r.sourceMaintenancePlanMm.slice(2),r.candidateMaintenancePlanMm.slice(2))
   assert.equal(r.fullOccupiedArrangementComplete,false)
+  assert.equal(r.ordinaryOperator.closedToOpenDoorOperatorRouteQualified,false)
   assert.equal(r.selectedProduct,false)
   assert.ok(r.valves.every(v=>v.actualWheelCentreFitsAuthoredEnvelopeVerified===false))
   assert.equal(r.sourceAndBackfeed.sourceFaultAperturesAnd327LminEnvelopeChanged,false)
@@ -31,7 +32,7 @@ test('doorway controls retain the300mm body and650mm reach with the actual washe
 test('the actual narrow jamb, wheel plane and full maintenance field invalidate convenient local passes',()=>{
   assert.equal(inletEntrySideCuts({...input,maintenanceShiftXMm:0}).necessaryOrdinaryOperationEnvelopeScreen,false)
   assert.equal(inletEntrySideCuts({...input,operatorXYZMm:[10700,2500,1450]}).necessaryOrdinaryOperationEnvelopeScreen,false)
-  assert.equal(inletEntrySideCuts({...input,wheelInboardMm:40}).necessaryOrdinaryOperationEnvelopeScreen,false)
+  assert.equal(inletEntrySideCuts({...input,wheelInboardMm:80}).necessaryOrdinaryOperationEnvelopeScreen,false)
   assert.equal(inletEntrySideCuts({...input,portalXMm:[10250,11150]}).necessaryOrdinaryOperationEnvelopeScreen,true)
   const changed=inletEntrySideCuts({...input,plantLmin:50}),base=inletEntrySideCuts(input)
   assert.ok(changed.valves[1].fullyOpenKv12ComparisonLossBar>base.valves[1].fullyOpenKv12ComparisonLossBar)

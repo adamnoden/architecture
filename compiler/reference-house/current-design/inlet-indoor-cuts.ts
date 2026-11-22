@@ -154,7 +154,7 @@ export function inletIndoorCuts(i:IndoorCutInputs) {
 type EntryInputs={roomPlanMm:Plan;portalXMm:readonly[number,number];wallFacesYMm:readonly[number,number];
   jambFinishMm:number;shieldPlaneXMm:number;washerFirstRestMm:Plan;maintenancePlanMm:Plan;
   maintenanceTopMm:number;operatorXYZMm:Point;frameCoversMm:readonly Box[];bankXMm:number;bankYMm:number;
-  utilityAxisZMm:number;plantAxisZMm:number;maintenanceShiftXMm:number;wheelInboardMm:number;
+  utilityAxisZMm:number;plantAxisZMm:number;maintenanceShiftXMm:number;maintenanceShiftYMm:number;wheelInboardMm:number;
   utilityLmin:number;plantLmin:number;maximumGaugeBar:number}
 const signedBoxGap=(a:Box,b:Box)=>{
   const gaps=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));
@@ -164,7 +164,7 @@ const signedBoxGap=(a:Box,b:Box)=>{
  * Its serialisable choices and source geometry are explicit; no incumbent fixture is silently moved. */
 export function inletEntrySideCuts(i:EntryInputs){
   if(![i.roomPlanMm,i.portalXMm,i.wallFacesYMm,i.washerFirstRestMm,i.maintenancePlanMm,i.operatorXYZMm,...i.frameCoversMm].every(finite)
-    ||!finite([i.bankXMm,i.bankYMm,i.utilityAxisZMm,i.plantAxisZMm,i.maintenanceShiftXMm,i.wheelInboardMm,i.maximumGaugeBar])
+    ||!finite([i.bankXMm,i.bankYMm,i.utilityAxisZMm,i.plantAxisZMm,i.maintenanceShiftXMm,i.maintenanceShiftYMm,i.wheelInboardMm,i.maximumGaugeBar])
     ||i.portalXMm[1]<=i.portalXMm[0]||i.wallFacesYMm[1]<=i.wallFacesYMm[0]||i.wheelInboardMm<0||i.wheelInboardMm>80
     ||i.utilityAxisZMm<700||i.plantAxisZMm<=i.utilityAxisZMm||i.plantAxisZMm>2300||i.maximumGaugeBar<=0||i.maximumGaugeBar>10)
     throw Error('Unsupported entry-side indoor-cut envelope')
@@ -172,16 +172,16 @@ export function inletEntrySideCuts(i:EntryInputs){
     jamb=[i.portalXMm[0]+i.jambFinishMm,i.portalXMm[1]-i.jambFinishMm],
     // The same300mm body/650mm reach control is retained. This point is IN the open doorway,
     // reachable from the lobby without passing the washer first rest.
-    body=i.operatorXYZMm,approach:Point[]=[[body[0],i.wallFacesYMm[1]+243,body[2]],body],bodyR=300,armR=30,
+    body=i.operatorXYZMm,approach:Point[]=[[body[0],i.wallFacesYMm[1]+243,body[2]],body],bodyR=300,armR=40,
     leftWall:Box=[west,i.wallFacesYMm[0],0,jamb[0]-west,i.wallFacesYMm[1]-north,3100],
     rightWall:Box=[jamb[1],north,0,east-jamb[1],i.wallFacesYMm[1]-north,3100],
-    sourceMaintenance=i.maintenancePlanMm,candidateMaintenance:Plan=[sourceMaintenance[0]+i.maintenanceShiftXMm,sourceMaintenance[1],sourceMaintenance[2],sourceMaintenance[3]],
+    sourceMaintenance=i.maintenancePlanMm,candidateMaintenance:Plan=[sourceMaintenance[0]+i.maintenanceShiftXMm,sourceMaintenance[1]+i.maintenanceShiftYMm,sourceMaintenance[2],sourceMaintenance[3]],
     maintenanceBox=planBox(candidateMaintenance,0,i.maintenanceTopMm),sourceMaintenanceBox=planBox(sourceMaintenance,0,i.maintenanceTopMm),
     restBox=planBox(i.washerFirstRestMm,0,848),
     door={hingeMm:[jamb[0],i.wallFacesYMm[1]],leafWidthMm:jamb[1]-jamb[0],leafThicknessComparisonMm:60,
       openNorthBoxMm:[jamb[0]-30,i.wallFacesYMm[1],0,60,jamb[1]-jamb[0],2300] as Box,
       closedBoxMm:[jamb[0],i.wallFacesYMm[1]-30,0,jamb[1]-jamb[0],60,2300] as Box,
-      actualWetDoorLeafFrameIronmongeryAndRatingsQualified:false},
+      actualWetDoorLeafFrameIronmongeryAndRatingsQualified:false,openingClosingAndOperatorEscapeQualified:false},
     approachWalls=Math.min(...approach.slice(1).flatMap((p,k)=>[leftWall,rightWall,door.openNorthBoxMm].map(b=>segmentBoxDistance(approach[k],p,b))))-bodyR-setting,
     approachRest=Math.min(...approach.slice(1).map((p,k)=>segmentBoxDistance(approach[k],p,planBox(i.washerFirstRestMm,0,2000))))-bodyR-setting,
     // All-overlapping-height body/rest test deliberately retains a full-body proxy for path connectivity.
@@ -229,11 +229,11 @@ export function inletEntrySideCuts(i:EntryInputs){
     failures=[...bodyFailures,...reachFailures,...(approachWalls<0?['doorway-connected-body-route']:[]),...(approachRest<0?['occupied-washer-rest-approach']:[]),...(approachShield<0?['dry-shield-approach']:[])]
   return{schema:'had-entry-side-indoor-cuts/1',state:'unadopted-project-envelope',
     coordinateDatum:'Actual occupied house nominal groundFFL0; no530 translation or native structural input adoption.',
-    authoredChoices:{bankXMm:i.bankXMm,bankYMm:i.bankYMm,utilityAxisZMm:i.utilityAxisZMm,plantAxisZMm:i.plantAxisZMm,maintenanceShiftXMm:i.maintenanceShiftXMm,wheelInboardMm:i.wheelInboardMm},
+    authoredChoices:{bankXMm:i.bankXMm,bankYMm:i.bankYMm,utilityAxisZMm:i.utilityAxisZMm,plantAxisZMm:i.plantAxisZMm,maintenanceShiftXMm:i.maintenanceShiftXMm,maintenanceShiftYMm:i.maintenanceShiftYMm,wheelInboardMm:i.wheelInboardMm},
     exactRoomPlanMm:i.roomPlanMm,rawPortalXMm:i.portalXMm,finishedJambXMm:jamb,door,
     ordinaryOperator:{bodyRadiusMm:bodyR,armRadiusMm:armR,reachLimitMm:650,shoulderMm:body,approachMm:approach,
       connectedWallAndOpenLeafAfterSettingMm:approachWalls,occupiedWasherRestAfterSettingMm:approachRest,dryShieldAfterSettingMm:approachShield,
-      passDoesNotProvideSourceFaultContainmentOrManualResponseTime:true,closedDoorControlClaimed:false,
+      passDoesNotProvideSourceFaultContainmentOrManualResponseTime:true,closedDoorControlClaimed:false,approachAssumesAlreadyOpenDoor:true,closedToOpenDoorOperatorRouteQualified:false,
       regrip:'Repeated30degree grip sector; physical grip/torque and wheel engagement remain unqualified.'},
     sourceMaintenancePlanMm:sourceMaintenance,candidateMaintenancePlanMm:candidateMaintenance,
     sameCompleteMaintenanceFieldSizePreserved:true,actualRelocatedRatedEquipmentAndHeadHandlingQualified:false,
