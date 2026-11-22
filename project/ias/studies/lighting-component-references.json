@@ -1,0 +1,94 @@
+{
+  "schema": "ias-lighting-component-references/1",
+  "checkedDate": "2026-11-22",
+  "authority": "Manufacturer geometry references and explicitly authored trial envelopes; no procurement, electrical design, material or photometric acceptance.",
+  "socket": {
+    "manufacturer": "Forbes & Lomax",
+    "reference": "Single 13 amp switched socket, technical sheet April 2026",
+    "url": "https://forbesandlomax.com/uk/wp-content/uploads/sites/2/2020/02/13amp-Sockets-1.pdf",
+    "plateWidthMm": 86,
+    "plateHeightMm": 86,
+    "bodyDepthMm": 23,
+    "minimumBoxDepthMm": 35,
+    "recommendedBoxDepthMm": 47,
+    "materialAdmission": "NOT_ADMITTED: insulating inserts, rocker insulation and complete constituent/finish inventory unresolved; metal visible plate is insufficient."
+  },
+  "backBox": {
+    "manufacturer": "BG Electrical",
+    "reference": "HGS06 single steel knockout box",
+    "url": "https://www.bgelectrical.uk/uk/wiring-devices/contractor/steel-mounting-box/HGS06-01",
+    "datasheet": "https://res.cloudinary.com/lu1/fl_attachment:BG_SPCDOC_EN_20230124AQ_Steel-Knockout-Boxes/665146/Original.pdf",
+    "widthMm": 72,
+    "heightMm": 72,
+    "depthMm": 47,
+    "entryNominalMm": 20,
+    "materialAdmission": "NOT_ADMITTED: steel and earth terminal described; coating, fittings, bushes and assembly constituents require admission."
+  },
+  "plug": {
+    "manufacturer": "ML Accessories",
+    "reference": "SN1382 manufacturer datasheet created 23 August 2023, hosted by distributor",
+    "url": "https://www.electricalcounter.co.uk/amfile/file/download/file/43517/product/245335/",
+    "widthMm": 50,
+    "heightMm": 52,
+    "depthMm": 42,
+    "insertedProjectionMm": 20,
+    "materialAdmission": "NOT_ADMITTED: manufacturer declares polypropylene; the reference is a space witness, not an approved exception or instruction to replace a supplied plug."
+  },
+  "deskLamp": {
+    "manufacturer": "Anglepoise",
+    "reference": "Type 75 desk lamp",
+    "url": "https://www.anglepoise.com/product/type-75-desk-lamp-jet-black/",
+    "baseDiameterMm": 195,
+    "shadeDiameterMm": 145,
+    "shadeHeightMm": 192,
+    "maximumReachMm": 900,
+    "leadLengthMm": 2700,
+    "materialAdmission": "NOT_ADMITTED: painted metal, insulation, wiring, switch, supplied lamp and full constituents remain unresolved."
+  },
+  "floorLamp": {
+    "manufacturer": "Anglepoise",
+    "reference": "Type 75 floor lamp, Edition 4 dimensional witness only; colour not selected",
+    "url": "https://www.anglepoise.com/product/type-75-floor-lamp-paul-smith-edition-4/",
+    "baseDiameterMm": 250,
+    "poleHeightMm": 910,
+    "maximumReachMm": 1750,
+    "leadLengthMm": 2500,
+    "materialAdmission": "NOT_ADMITTED: painted metal, insulation, wiring, foot switch, supplied lamp and full constituents remain unresolved."
+  },
+  "wallLamp": {
+    "manufacturer": "Astro",
+    "reference": "Backplate 3 1367003 with Ios 250 shade 5028001",
+    "url": "https://www.astrolighting.com/products/1367003-backplate-3",
+    "shadeUrl": "https://www.astrolighting.com/products/5028001-ios-250-shade",
+    "instructions": "https://assets.astrolighting.com/pdfs/original/82244-instructions-backplate3-issue2.pdf",
+    "shadeWidthMm": 144,
+    "shadeHeightMm": 250,
+    "reservedCompleteProjectionMm": 180,
+    "projectionAuthority": "Project requirement envelope, not a measured manufacturer assembled dimension; confirm complete shade/bracket/clearance before fabrication.",
+    "sourceType": "Replaceable E27, Class I earthed, wired-in, IP20; no separate driver required; dimming depends on lamp.",
+    "materialAdmission": "NOT_ADMITTED: fabric shade, backing/binders, coating, socket, cable insulation, terminals and supplied lamp need complete constituent admission."
+  },
+  "projectRequirements": {
+    "fixedBoundaryDepthMm": 7.5,
+    "removableFaceDepthMm": 10.5,
+    "localCarrierDepthReserveMm": 2,
+    "bayWidthMm": 300,
+    "doorStopMm": 50,
+    "containmentEnvelopeMm": 20,
+    "cornerBendOuterReserveMm": 80,
+    "socketGripNormalMm": 100,
+    "panelRoomwardDrawMm": 50,
+    "parkingSquareMm": 300,
+    "wallModuleWidthMm": 260,
+    "wallModuleHeightMm": 450,
+    "wallModuleMaximumInstalledMassKg": 3,
+    "wallModuleCentreOfGravityNormalMm": 180,
+    "ceilingSurfaceBaseDiameterMm": 150,
+    "ceilingCompleteFittingEnvelopeMm": [
+      320,
+      320,
+      350
+    ],
+    "authority": "Authored space/load requirements for detail development, not product ratings, cable sizing/bend certification, anchor capacity or thermal/photometric proof. Keep Class I earthing, enclosure, strain relief and all safety functions."
+  }
+}
