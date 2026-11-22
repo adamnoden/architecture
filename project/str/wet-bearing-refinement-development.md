@@ -1,0 +1,11 @@
+# Coupled wet-pad quadrature — development checkpoint
+
+This continuation admits16/32/64-point rules through the existing finite wet-support builder. The slab mesh, geometry, normal compliance, unilateral law, loads, solver ordering and acceptance boundaries are unchanged. It has not yet executed a new whole-house response or replaced current source-bound evidence.
+
+The versioned comparison inputs freeze a0.1% plus1e-5kN force criterion and0.1mm centre-of-pressure criterion, alongside the existing0.1kN/kNm head comparison. Each re-equilibrated state must also meet its own exact clipped-affine integration comparison. If16→32 fails, execute64 and retain the same32→64 criteria. These are numerical development screens, not material tolerances or physical contact/concrete resistance.
+
+The reusable method reconstructs the actual affine normal gap from named physical sample coordinates, checks the actual Gauss coordinates/weights and every traction against the unchanged compression-only law within the existing1e-7kN native tensile-residual bound (raw residuals are retained, never clamped), then independently integrates the clipped field. Pad-relative and actual post-axis first moments remain distinct, including the160mm eccentric comparison. Near-zero force produces a null centroid and bounded post-relative first moments; it supplies no physical open-contact verdict. Paired states must preserve actual source/request/geometry and all52 head identities.
+
+Nine analytical/local-coupled controls pass. A real small nonlinear partial-pad fixture deliberately fails both16→32 and32→64 screens despite matching applied force/centre: the coarse exact-integration error remains visible. Uniform and zero-gap controls pass. This fixture is not a52-head house solve.
+
+Changing the seated helper changes one entry of the58-source floor tuple. All affected full native captures, floor/cut/interface/cage/profile receipts and shared current-source consumers require genuine regeneration before integration. Ancestors that do not consume that helper retain their valid identities. No source hash is rebound to an old physical response, and no current house, pad material, cage, joint or resistance is selected.
