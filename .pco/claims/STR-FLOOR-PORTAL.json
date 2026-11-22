@@ -9,8 +9,8 @@
     "label": "convergence-20261122-primary"
   },
   "claimedAt": "2026-11-22T14:35:17.012Z",
-  "heartbeatAt": "2026-11-22T14:59:37.501Z",
-  "expiresAt": "2026-11-22T15:44:37.501Z",
+  "heartbeatAt": "2026-11-22T15:24:43.854Z",
+  "expiresAt": "2026-11-22T16:09:43.854Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
@@ -36,8 +36,8 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "PR1618 remote84af659c plus HAD24451385 and IAS7468f3f4 preserve coordinated work. Eleven native source58states plus700/500 controls recaptured; available fullchecksums exactly match retainedevidence. Pure browser startup regression fixed and tested.",
-    "next": "Finish250/mixed captures and create named-interface proof; resolve actual door/pipe conflict; refresh finalsource outputs and exacthead CI.",
-    "blocker": "Actual joined wetdoor/transfer collision being resolved. Convergence and physical resistance remain unearned; local browser cannot open Unixsocket."
+    "evidence": "PR1618 remote84af659c; durable HADfc54a405 and IAS7468f3f4 correct joined room paths and browser admission. All16 source58 nativecontrols recaptured; physical cuts/reactions reproduced. Named-interface replay12of16 reconstructed sofar. Follow-on numerical method checkpointdc48c109 has9 analytical/localcontrols; no house acceptance.",
+    "next": "Finish named-interface receipt, audit/regenerate current consumers, publish final integrated head and complete exacthead CI/publication preflight; continue actual pad refinement after currentintegration.",
+    "blocker": "Remaining named-interface metadata/replay and exacthead CI; no owner aesthetic, physical joint/contact, reinforcement, foundation or wholehouse selection."
   }
 }
