@@ -9,9 +9,9 @@
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T14:35:58.888Z",
-  "heartbeatAt": "2026-11-22T14:44:34.110Z",
-  "expiresAt": "2026-11-22T15:29:34.110Z",
-  "branch": "work/lighting-review-20261122",
+  "heartbeatAt": "2026-11-22T14:52:18.108Z",
+  "expiresAt": "2026-11-22T15:37:18.108Z",
+  "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
     "generation": 3,
@@ -35,7 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote8509a376 tree3175dc94:11 lighting CLI/save/edit/local-entry tests plus9 source-account controls and typecheck pass;4 changedSVGs raster-inspected.",
-    "next": "Root cherry-pick into recovered structural/HAD integration; final exact-head health and publication preflight; common riser/feeder remain unresolved."
-  }
+    "evidence": "PR1618 remote84af659c includes310bay+XYZ; remote own7468f3f4 tree859abb20 adds reviewed pure browser admission and genuine final lighting receipt;22 focused tests and typecheck pass.",
+    "next": "Root integrates pure admission checkpoint, validates exact final shared head and requests each worker publication preflight before coordinated merge."
+  },
+  "pr": 1618
 }
