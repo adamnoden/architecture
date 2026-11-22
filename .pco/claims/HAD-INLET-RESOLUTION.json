@@ -9,8 +9,8 @@
     "label": "convergence-water-primary-20261122"
   },
   "claimedAt": "2026-11-22T14:35:48.378Z",
-  "heartbeatAt": "2026-11-22T15:31:21.052Z",
-  "expiresAt": "2026-11-22T16:16:21.052Z",
+  "heartbeatAt": "2026-11-22T16:16:54.497Z",
+  "expiresAt": "2026-11-22T17:01:54.497Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
@@ -32,7 +32,7 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "Verified durable fc54a405/treeac4777fc;25 focused tests, source audit, producer and rendered views pass. Coordinator retains joint PR1618 while native structural evidence and final shared source account are validated; no new HAD source edits.",
-    "next": "Coordinator publishes validated joint head with final HAD supplemental, runs exact-head full health and all lease preflights, merges then instructs explicit HAD release."
+    "evidence": "Durable fc54a405/treeac4777fc with25 focused tests, source audit, producer and inspected views; coordinator final joint PR1618 exact-head CI repair underway. No new HAD source mutations.",
+    "next": "Observe coordinator submitted validated head, run canonical HAD publication preflight on joint branch, merge then explicitly release HAD lease."
   }
 }
