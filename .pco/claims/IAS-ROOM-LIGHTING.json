@@ -9,8 +9,8 @@
     "label": "convergence-lighting-20261122"
   },
   "claimedAt": "2026-11-22T10:04:36.075Z",
-  "heartbeatAt": "2026-11-22T10:04:36.075Z",
-  "expiresAt": "2026-11-22T10:49:36.075Z",
+  "heartbeatAt": "2026-11-22T10:14:54.000Z",
+  "expiresAt": "2026-11-22T10:59:54.000Z",
   "branch": "work/convergence-lighting-20261122",
   "predecessor": {
     "leaseId": "3525cb90-39f7-46b3-b4dc-d297a862ccb2",
@@ -31,5 +31,10 @@
       "next": "Finish review outputs, owning result and fresh source account; exact-head CI/preflight",
       "blocker": "No physical/photometric/material/owner acceptance claimed"
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote b1bd68db exact tree dea77677:8 focused shared/CLI/edit/producer tests,typecheck and four raster-inspected matched views; result retains open design duties.",
+    "next": "Complete actual enclosure/containment, independent carrier and first-release geometry; coordinate source family with root before exact-head integration.",
+    "blocker": "No installed product/material/photometric acceptance; internal detail continues."
   }
 }
