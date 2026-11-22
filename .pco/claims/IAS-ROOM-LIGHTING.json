@@ -9,8 +9,8 @@
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T14:35:58.888Z",
-  "heartbeatAt": "2026-11-22T14:35:58.888Z",
-  "expiresAt": "2026-11-22T15:20:58.888Z",
+  "heartbeatAt": "2026-11-22T14:44:34.110Z",
+  "expiresAt": "2026-11-22T15:29:34.110Z",
   "branch": "work/lighting-review-20261122",
   "predecessor": {
     "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
@@ -33,5 +33,9 @@
       "next": "Validate shared head, reconcile source family/evidence, inspect exact-head CI and canonical publication preflight; retain open feeder/material/physical and full conduit-tangent obligations.",
       "blocker": "Current Study feeder/protection/cable absent. Full bend+collar/setting not yet coordinated; installed and owner acceptance remain false."
     }
+  },
+  "checkpoint": {
+    "evidence": "Remote8509a376 tree3175dc94:11 lighting CLI/save/edit/local-entry tests plus9 source-account controls and typecheck pass;4 changedSVGs raster-inspected.",
+    "next": "Root cherry-pick into recovered structural/HAD integration; final exact-head health and publication preflight; common riser/feeder remain unresolved."
   }
 }
