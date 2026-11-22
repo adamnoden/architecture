@@ -9,12 +9,17 @@
     "label": "ias-room-lighting-resume-20261122"
   },
   "claimedAt": "2026-11-22T07:45:28.845Z",
-  "heartbeatAt": "2026-11-22T07:45:28.845Z",
-  "expiresAt": "2026-11-22T08:30:28.845Z",
+  "heartbeatAt": "2026-11-22T07:58:49.208Z",
+  "expiresAt": "2026-11-22T08:43:49.208Z",
   "branch": "work/ias-room-lighting-resume-20261122",
   "predecessor": {
     "leaseId": "c3d35a47-cb1b-40b3-92c2-a18b35228633",
     "generation": 1,
     "branch": "work/ias-room-lighting-20261122"
+  },
+  "checkpoint": {
+    "evidence": "remote57cd81f06848a4fdd304b47dc6be6613a5496712;6focusedtests+typecheck",
+    "next": "Finish review outputs, owning result and fresh source account; exact-head CI/preflight",
+    "blocker": "No physical/photometric/material/owner acceptance claimed"
   }
 }
