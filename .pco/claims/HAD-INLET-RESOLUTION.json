@@ -9,12 +9,12 @@
     "label": "convergence-water-carrier-20261122"
   },
   "claimedAt": "2026-11-22T17:43:56.358Z",
-  "heartbeatAt": "2026-11-22T19:00:37.704Z",
-  "expiresAt": "2026-11-22T19:45:37.704Z",
+  "heartbeatAt": "2026-11-22T19:01:20.930Z",
+  "expiresAt": "2026-11-22T19:46:20.930Z",
   "checkpoint": {
     "evidence": "Verified PR1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f. Shared source8 code8cf468b8ef47fcfc5006bdc72d25c7c267d3b868, owning resultc78bb8d603873361a60031aa86fdad8dfd86496a and browser proofae142435dbc391daed9f35ea87a0c7926af1e06b are pushed. Genuine ee7+HAD regeneration/23focused tests passed. Coordinated recovery618481bf8ac92101881fee82b1b3220fd88eac69 retains project/ccr/convergence-20261122-recovery.md. No successor merge/whole-water acceptance claimed.",
-    "next": "Resume from fresh main/ACO and the coordinated recovery branch, reacquire HAD canonically, reconcile all shared sources and rerun actual matched browser/full-health/native-fingerprint proof and publication preflight before merge. The unpushed isolated carrier CAD refactor has no observed final validation; regenerate it from admitted source8 inputs instead of treating it as earned evidence.",
-    "blocker": "Execution environment explicitly unavailable. Stopped implementation; no final successor CI/preflight or physical carrier/thermal/renewal acceptance. Connector-only CAS checkpoint/release, not a canonical CLI run."
+    "next": "Resume from fresh main/ACO and the coordinated recovery branch, reacquire HAD canonically, reconcile all shared sources and rerun actual matched browser/full-health/native-fingerprint proof and publication preflight before merge. The unpushed isolated carrier CAD refactor has no observed final validation; regenerate it from admitted source8 inputs instead of treating it as earned evidence. CAD reconstruction pointers only, not acceptance: compare source8 control; tail255/U1260; custom clampWidth250/tail275/U1220; then also returnX11140/lower frame row1000. Trial side endlands10x40mm, fixed50mm/slider70mm, offsetX±120mm; trial floor posts30mm atX11275,Y2050/2220, feet70x120x10 atX11290. Confirm all against fresh complete geometry, actual force/thermal law, working/renewal fields and both alternatives' unchanged187kg shield duty.",
+    "blocker": "Execution environment explicitly unavailable. Stopped implementation; no final successor CI/preflight or physical carrier/thermal/renewal acceptance. Connector-only CAS checkpoint/release, not a canonical CLI run. Unpushed local-only branch recovery/had-side-carrier-cad-20261122, last known HEAD9dfe3864d8e9e7504afc884940601bb82ad5bf79, worktree /workspace/scratch/ae142320334c/water-carrier-cad: untracked project/had/studies/inlet-side-carrier-cad-case.json, inlet-side-carrier-cad.ts and inlet-side-carrier-cad.results.json. Pre-refactor pure CAD controls completed; last per-variant consistency/support-identity refactor plus TypeScript/producer/--check was in flight when execution disappeared. Final files/output identity and validation are UNKNOWN; no CAD commit or remote push. Temporary node_modules link also remains there."
   },
   "branch": "work/convergence-integrated-house-20261122",
   "predecessor": {
