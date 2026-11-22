@@ -4,6 +4,7 @@ import math
 VERTICAL_ENERGY_PREFIX='VERTICAL-FLOOR/energy/'
 DIRECT_PLATE_POLICY='direct-sparse-plate-block-v1'
 LEGACY_PLATE_POLICY='materialised-frame-energy-springs-v1'
+COUPLED_FACTOR_ORDERING='MMD_AT_PLUS_A'
 
 
 def install_vertical_plate_energy(frame,operator,port_terms,policy=DIRECT_PLATE_POLICY):
@@ -109,7 +110,7 @@ def solve_vertical_frame(frame,vertical):
     for iteration in range(40):
         state=tuple(np.flatnonzero(active))
         if state in seen:raise ValueError('Unilateral verticalfloor contact active set cycles; no compatible result')
-        seen.add(state);matrix=base+c.T@sparse.diags(stiffness*active)@c;scaled=(sparse.diags(scale)@matrix@sparse.diags(scale)).tocsc();factor=splu(scaled,permc_spec='COLAMD')
+        seen.add(state);matrix=base+c.T@sparse.diags(stiffness*active)@c;scaled=(sparse.diags(scale)@matrix@sparse.diags(scale)).tocsc();factor=splu(scaled,permc_spec=COUPLED_FACTOR_ORDERING)
         if min(abs(value) for value in factor.U.diagonal())<1e-8:raise ValueError('Singular/unrestrained coupled verticalfloor; no added spring/restraint')
         solved=factor.solve(external[free]*scale)*scale;u=np.zeros(count);u[free]=solved;relative=np.asarray(c@solved).ravel();next_active=[]
         for spring,value in zip(physical_springs,relative):
@@ -139,7 +140,8 @@ def solve_vertical_frame(frame,vertical):
             'springs':springs,'iterations':iteration+1,'maximumFreeResidualKNOrKNmm':maximum,
             'plateEnergyRepresentationPolicy':DIRECT_PLATE_POLICY if binding is not None else LEGACY_PLATE_POLICY,
             'physicalSpringMatrixRows':len(physical_springs),'verticalEnergyRowsInPhysicalSpringMatrix':0,
-            'numericalBackend':'scipy-sparse-block-assembly/splu; unchanged physicalframe matrices and zero-gap unilateral laws'}
+            'globalFactorOrdering':COUPLED_FACTOR_ORDERING,
+            'numericalBackend':'scipy-sparse-block-assembly/splu MMD_AT_PLUS_A; default pivot/equilibration; unchanged physicalframe matrices and zero-gap unilateral laws'}
     raise ValueError('Verticalfloor sourceunilateral law failed to converge in40iterations')
 
 

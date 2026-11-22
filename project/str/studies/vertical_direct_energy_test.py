@@ -3,6 +3,7 @@ import gc
 import math
 import weakref
 import unittest
+from unittest.mock import patch
 
 from joined_successor_kernel import FrameModel,rectangle_section
 from vertical_floor_numerics import (DIRECT_PLATE_POLICY,LEGACY_PLATE_POLICY,
@@ -93,6 +94,22 @@ class DirectVerticalEnergyTest(unittest.TestCase):
                 result=frame.solve() if policy==LEGACY_PLATE_POLICY else solve_vertical_frame(frame,data)
                 energy_check(self,frame,result);results.append(result)
             self.assert_same_physics(results[0],results[1],heads)
+
+    def test_mmd_changes_only_ordering_against_colamd_on_both_contact_states(self):
+        import scipy.sparse.linalg as algebra
+        original=algebra.splu;calls=[]
+        def colamd_control(matrix,*args,**kwargs):
+            calls.append(dict(kwargs));kwargs['permc_spec']='COLAMD'
+            return original(matrix,*args,**kwargs)
+        for load in (-10,10):
+            frame,data,heads=specimen(DIRECT_PLATE_POLICY,load,52)
+            mmd=solve_vertical_frame(frame,data)
+            with patch.object(algebra,'splu',side_effect=colamd_control):colamd=solve_vertical_frame(frame,data)
+            self.assert_same_physics(colamd,mmd,heads)
+            energy_check(self,frame,mmd);energy_check(self,frame,colamd)
+            self.assertEqual(mmd['globalFactorOrdering'],'MMD_AT_PLUS_A')
+        self.assertTrue(calls)
+        self.assertTrue(all(c=={'permc_spec':'MMD_AT_PLUS_A'} for c in calls))
 
     def test_section_operator_replacement_retains_both_explicit_policies(self):
         for policy in (DIRECT_PLATE_POLICY,LEGACY_PLATE_POLICY):
