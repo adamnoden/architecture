@@ -9,8 +9,8 @@
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T14:35:58.888Z",
-  "heartbeatAt": "2026-11-22T16:32:30.809Z",
-  "expiresAt": "2026-11-22T17:17:30.809Z",
+  "heartbeatAt": "2026-11-22T17:04:10.027Z",
+  "expiresAt": "2026-11-22T17:49:10.027Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "IAS preflight passed on exact head 7a5e9635 at 16:27 UTC; CI remains separately owned. Lighting checkpoint 7468f3f4 is integrated. Coordinated next-STR adapter checkpoint 57f4ca02 preserves two files on matched contact methods; nine tests and genuine full16/32 witness pass.",
-    "next": "Recheck IAS publication preflight immediately before the coordinated first-PR merge after exact-head CI passes, then release or explicitly hand off this IAS generation."
+    "evidence": "First-PR IAS source remains on coordinated PR #1618; exact final target is 890379a2 and final preflight will be repeated after CI. Independent common-depth candidate has source-derived pure geometry and preserves explicit product/terminal/renewal obligations; current primary is untouched.",
+    "next": "After exact-head health passes, repeat own IAS merge preflight, merge through the coordinator, release this generation promptly, then claim the next candidate from fresh main."
   },
   "pr": 1618
 }
