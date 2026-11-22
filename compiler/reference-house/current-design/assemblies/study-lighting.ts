@@ -113,7 +113,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
   const deskLead: readonly Point[] = [deskBase, [deskBase[0], deskBase[1], 600], [desk[0] - 30, deskBase[1], 600], westSocket]
   const floorBase: Point = [west + components.floorLamp.baseDiameterMm / 2 + 40, north - 350, 0]
   const floorLead: readonly Point[] = [floorBase, [floorBase[0], north - 70, 0], [centre, north - 70, 0], socket]
-  const sideStand: Box = [room.bands[1][2] - 450, 1750, room.bands[1][2] - 150, 2050]
+  const sideStand: Box = [room.bands[1][2] - 500, 1750, room.bands[1][2] - 200, 2050]
   const sideSocket: Point = [room.bands[1][2] - intrusion, 1900, request.socketCentreZMm]
   const sideLead: readonly Point[] = [[sideStand[2] - 140, 1900, 750], [sideStand[2] - 30, 1900, 600], sideSocket]
   const light = (id: string, kind: string, positionMm: Point) => ({ id, kind, positionMm, available: request.failedSourceId !== id })
@@ -123,6 +123,27 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
   const [s0, z0, s1, z1] = room.southModuleXZMm
   const WF = light('wall-fill', 'wall', [(s0 + s1) / 2, south + intrusion, (z0 + z1) / 2])
   const C = light('ceiling-general', 'ceiling', [(desk[0] + room.bands[1][2]) / 2, (south + north) / 2, room.ceilingZMm - 175])
+  const westStation: Box = [west, westSocket[1] - p.bayWidthMm / 2, west + intrusion, westSocket[1] + p.bayWidthMm / 2]
+  const westUse: Box = [west + intrusion, westStation[1], west + intrusion + components.plug.insertedProjectionMm + p.socketGripNormalMm, westStation[3]]
+  const sideStation: Box = [sideSocket[0], sideSocket[1] - p.bayWidthMm / 2, room.bands[1][2], sideSocket[1] + p.bayWidthMm / 2]
+  const sideUse: Box = [sideSocket[0] - components.plug.insertedProjectionMm - p.socketGripNormalMm, sideStation[1], sideSocket[0], sideStation[3]]
+  const serviceStations = [
+    { id: 'IAS/STUDY/desk-socket', wallId: 'west', bayPlanMm: westStation, usePlanMm: westUse, centreMm: westSocket,
+      localDepthMm: request.serviceTotalDepthMm, usableDepthMm: usable, intendedArrangements: ['portable', 'lamps-with-wall', 'ceiling-with-lamps'] },
+    { id: 'IAS/STUDY/side-socket', wallId: 'cloak-west', bayPlanMm: sideStation, usePlanMm: sideUse, centreMm: sideSocket,
+      localDepthMm: request.serviceTotalDepthMm, usableDepthMm: usable, intendedArrangements: ['portable'] },
+  ]
+  const taskProjectionMm = components.wallTaskLamp.maximumReachMm + components.wallTaskLamp.shadeDiameterMm / 2
+  const fixedInterfaces = [
+    { sourceId: W.id, supportId: 'IAS/STUDY/service-corner/carrier', projectionEnvelopeMm: components.wallLamp.reservedCompleteProjectionMm,
+      approach: 'Normal draw to the north service-corner first rest after circuit isolation and temporary support.', qualification: 'UNQUALIFIED_LOAD_AND_PRODUCT' },
+    { sourceId: WT.id, supportId: 'IAS/STUDY/south-task/carrier', projectionEnvelopeMm: taskProjectionMm,
+      approach: 'Independent south-wall removable carrier; task lamp aiming sweep and cable exit require the actual product trial. No background-lamp mass or 180 mm envelope is reused.', qualification: 'UNQUALIFIED_TASK_CARRIER_AND_LEAD' },
+    { sourceId: WF.id, supportId: 'IAS/STUDY/south-module/carrier', projectionEnvelopeMm: components.wallLamp.reservedCompleteProjectionMm,
+      approach: 'Existing independent south module; retain actual grille and window release reserves. Added fitting load and electrical enclosure require detail.', qualification: 'UNQUALIFIED_LOAD_AND_PRODUCT' },
+    { sourceId: C.id, supportId: 'IAS/STUDY/ceiling-surface-base', projectionEnvelopeMm: p.ceilingCompleteFittingEnvelopeMm[2],
+      approach: 'Surface conduit and independently fixed accessible base; isolated source replacement from stable access equipment. No whole-ceiling panel system.', qualification: 'UNQUALIFIED_CEILING_SUPPORT_AND_ACCESS' },
+  ]
   const commonGeometryDigest = sha256SemanticFingerprint(room)
   const roleIds = ['arrival', 'desk-reading', 'surrounding-light', 'cleaning-small-objects'] as const
   const arrangements = [
@@ -138,6 +159,11 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
   if (usable < components.backBox.depthMm || usable < p.containmentEnvelopeMm) fail('IAS_LIGHTING_DEPTH_REJECTED', 'Actual independently enclosed box/route does not fit the usable local depth; the crafted lining is not spare cavity.')
   if (p.bayWidthMm - components.backBox.widthMm < 2 * p.cornerBendOuterReserveMm) fail('IAS_LIGHTING_BEND_REJECTED', 'The box leaves insufficient side territory for the authored bend envelope.')
   if (left < west || right > room.bands.at(-1)![2] || room.occupied.some(([, box]) => [bay, use, moduleDraw, parking, sideStand].some(test => intersects(test, box)))) fail('IAS_LIGHTING_ACCESS_REJECTED', 'A local service/use/draw/rest or portable-comparator stand conflicts with actual furniture or room boundaries.')
+  for (const station of serviceStations) {
+    const obstructions = room.occupied.filter(([, box]) => intersects(station.usePlanMm, box) || intersects(station.bayPlanMm, box)).map(([id]) => id)
+    if (station.id.endsWith('side-socket') && intersects(station.usePlanMm, sideStand)) obstructions.push('portable-comparator-side-stand')
+    if (obstructions.length) fail('IAS_LIGHTING_STATION_ACCESS_REJECTED', `Local station ${station.id} conflicts with ${obstructions.join(', ')}.`, [station.id, ...obstructions])
+  }
   if (request.socketCentreZMm < 450 || request.socketCentreZMm > 1200) fail('IAS_LIGHTING_REACH_ADVERSE', 'Outside the completed research reach comparator; no accessibility acceptance is implied.')
   if (length(deskLead) + 200 > components.deskLamp.leadLengthMm || length(floorLead) + 200 > components.floorLamp.leadLengthMm || length(sideLead) + 200 > components.deskLamp.leadLengthMm) fail('IAS_LIGHTING_LEAD_REJECTED', 'Declared route plus authored slack exceeds reference flex; no circulation extension is credited.')
   if (!request.localWallModule && ['lamps-with-wall', 'wall-led'].includes(request.arrangement)) fail('IAS_LIGHTING_CARRIER_MISSING', 'A fixed wall choice requires its independent carrier; decoration may not carry it.')
@@ -173,7 +199,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
   }
   return {
     schema: studyLightingMethod, status: diagnostics.some(d => /REJECTED|MISSING/.test(d.code)) ? 'GEOMETRY_REJECTED' : 'DEVELOPMENT_COMPARISON', request, source: basis.source,
-    caseDigest: sha256SemanticFingerprint({ request, basis, components }), commonRoom: room, arrangements, selectedArrangement: selected.id, corner,
+    caseDigest: sha256SemanticFingerprint({ request, basis, components }), commonRoom: room, arrangements, selectedArrangement: selected.id, corner, serviceStations, fixedInterfaces,
     leads: { desk: { pathMm: deskLead, routedMm: length(deskLead), suppliedMm: components.deskLamp.leadLengthMm }, floor: { pathMm: floorLead, routedMm: length(floorLead), suppliedMm: components.floorLamp.leadLengthMm },
       side: { pathMm: sideLead, routedMm: length(sideLead), suppliedMm: components.deskLamp.leadLengthMm }, authoredSlackMm: 200 },
     controls: { automationConnected: request.automationConnected, automationRequired: false, ordinaryArrivalWorking: !!selected.roles[0].liveSourceIds.length,

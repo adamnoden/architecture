@@ -64,16 +64,16 @@ export function drawStudyLightingComparison(result: StudyLightingResult) {
   const body = text(35, 46, 'The Study · four ways to relight one furnished room', 'title')
     + text(35, 77, 'Matched source geometry and finish · fixture placement and use, not photometric rendering')
     + result.arrangements.map((arrangement, index) => {
-      const x = 20 + index % 2 * 850, y = 105 + Math.floor(index / 2) * 590
-      return `<g transform="translate(${x},${y})">` + rect(0, 0, 825, 565, '#eee7d9', '#c8bdab')
-        + text(20, 35, arrangement.title, 'heading') + `<g transform="translate(5,55)">${furnishedView(result, arrangement)}</g>`
-        + text(20, 507, `${arrangement.fixedLightPoints} fixed light point(s) · ${arrangement.roles[0].liveSourceIds.length ? 'arrival source available' : 'arrival source removed'}`)
-        + text(20, 535, 'Desk/screen and seated figure are task witnesses; no measured lighting pass.', 'small') + '</g>'
+      const x = 20 + index % 2 * 850, y = 105 + Math.floor(index / 2) * 790
+      return `<g transform="translate(${x},${y})">` + rect(0, 0, 825, 750, '#eee7d9', '#c8bdab')
+        + text(20, 35, arrangement.title, 'heading') + `<g transform="translate(45,115)">${furnishedView(result, arrangement)}</g>`
+        + text(20, 690, `${arrangement.fixedLightPoints} fixed light point(s) · ${arrangement.roles[0].liveSourceIds.length ? 'arrival source available' : 'arrival source removed'}`)
+        + text(20, 720, 'Desk/screen and seated figure are task witnesses; no measured lighting pass.', 'small') + '</g>'
     }).join('')
-    + text(35, 1325, `Finish: ${result.request.finishTrial} · selected development comparison: ${result.selectedArrangement}`)
-    + text(35, 1354, 'Ordinary manual controls remain operable without automation. Fixed-source geometry does not prove task adequacy.')
-    + text(35, 1383, `Source: ${result.source.room.currentPlanBasis} / ${result.source.room.occupiedHouse} · case ${result.caseDigest.slice(0, 16)}`, 'small')
-  return page(1740, 1420, 'Four furnished Study lighting arrangements', body)
+    + text(35, 1700, `Finish: ${result.request.finishTrial} · selected development comparison: ${result.selectedArrangement}`)
+    + text(35, 1730, 'Ordinary manual controls remain operable without automation. Fixed-source geometry does not prove task adequacy.')
+    + text(35, 1760, `Source: ${result.source.room.currentPlanBasis} / ${result.source.room.occupiedHouse} · case ${result.caseDigest.slice(0, 16)}`, 'small')
+  return page(1740, 1800, 'Four furnished Study lighting arrangements', body)
 }
 
 export function drawStudyLightingServiceCorner(result: StudyLightingResult) {
@@ -85,7 +85,7 @@ export function drawStudyLightingServiceCorner(result: StudyLightingResult) {
     + text(55, 125, 'Door-side elevation', 'heading')
     + ebox(left, c.bayBottomZMm, right, 2100, '#c9b18e')
     + ebox(c.retainedSkirtingEndXMm[0], 0, c.retainedSkirtingEndXMm[1], result.commonRoom.skirtingTopMm, '#7f6247')
-    + ebox(c.doorRoughXMm[0], 0, c.doorRoughXMm[0] + 25, result.commonRoom.ceilingZMm, '#9d8e77')
+    + ebox(c.doorRoughXMm[0], 0, c.doorRoughXMm[0] + 25, 2200, '#9d8e77')
     + text(245, 182, 'Actual door rough X ' + c.doorRoughXMm.join('..') + ' mm')
     + text(245, 211, `${c.jambStopMm} mm stop to bay; reveal stays fixed`)
   for (const [name, point] of [['Socket', c.socketCentreMm], ['Ordinary switch', c.switchCentreMm]] as const) {
@@ -143,4 +143,43 @@ export function drawKitchenLightingCheck(result: StudyLightingResult) {
     + text(55, 774, 'Use ordinary switching and a cleanable, replaceable source on an independent surface support; no whole ceiling lining.')
     + text(55, 808, '750 mm table task plane is authored, not measured. Confirm actual ceiling/table height, shadows, glare and cleaning.')
     + text(55, 842, 'Retain separate sink/hob/hood task duties. This is a transferability screen, not a lighting performance pass.'))
+}
+
+export function drawStudyLightingRoutes(result: StudyLightingResult) {
+  const room = result.commonRoom, origin = room.bands[0], scale = .205
+  const p = (x: number, y: number) => [100 + (x - origin[0]) * scale, 790 - (y - origin[1]) * scale]
+  const box = (r: readonly number[], fill: string) => polygon([p(r[0], r[1]), p(r[2], r[1]), p(r[2], r[3]), p(r[0], r[3])], fill)
+  let body = text(35, 48, 'Sockets, flex and useful access territory', 'title')
+    + text(35, 80, 'Same furnished Study · local deep stations are explicit · flex support and electrical design require trial')
+    + room.bands.map(band => box(band, '#e5d4b5')).join('')
+    + room.occupied.map(([id, r]) => box(r, '#a7ad98') + text(p(r[0], r[3])[0] + 3, p(r[0], r[3])[1] + 15, id.replace('study-', ''), 'small')).join('')
+    + box(result.corner.completeModuleDrawPlanMm, '#e1bd7e') + box(result.corner.firstRestPlanMm, '#b8c9b6')
+    + box(result.corner.bayPlanMm, '#8d7052')
+  const portable = result.arrangements.find(row => row.id === 'portable')!
+  if (portable.addedOccupiedStandMm) body += box(portable.addedOccupiedStandMm, '#c49a6b')
+  for (const station of result.serviceStations) body += box(station.usePlanMm, '#c6b399') + box(station.bayPlanMm, '#8d7052')
+  for (const [name, lead] of Object.entries(result.leads)) {
+    if (typeof lead !== 'object') continue
+    body += `<polyline points="${lead.pathMm.map(point => p(point[0], point[1]).map(n).join(',')).join(' ')}" fill="none" stroke="#316b74" stroke-width="3" stroke-dasharray="5,3"/>`
+    const q = p(lead.pathMm[0][0], lead.pathMm[0][1])
+    body += text(q[0] + 15, q[1] - 10, `${name}: ${Math.round(lead.routedMm)} mm + ${result.leads.authoredSlackMm} mm slack`, 'small')
+  }
+  body += text(1020, 170, 'Local depths', 'heading')
+    + text(1020, 210, `Core → face ${result.corner.totalLiningDepthMm} mm`)
+    + text(1020, 245, `Usable ${result.corner.connectedUsableRoutingDepthMm} mm`)
+    + text(1020, 280, `Box ${result.corner.backBoxSizeMm[2]} mm`)
+    + text(1020, 330, 'North: arrival + floor socket')
+    + text(1020, 365, 'West: desk socket')
+    + text(1020, 400, 'East: portable-only side socket')
+    + text(1020, 460, 'Brown: use space')
+    + text(1020, 495, 'Gold: complete fitting draw')
+    + text(1020, 530, 'Green: first rest')
+    + text(1020, 585, 'All stations independently')
+    + text(1020, 615, 'enclosed and supported;')
+    + text(1020, 645, 'no spare 27 mm cavity credit.')
+    + text(55, 880, 'The side stand is shifted 50 mm away from its socket. The former stand overlapped the plug/hand-use territory.')
+    + text(55, 915, 'Drawn flex lengths and room clearance do not qualify cable supports, minimum bend radii, thermal design or trip safety.')
+    + text(55, 950, 'West emitter and retained door skirting remain fixed. Final containment crossings and panel first release need the service-corner trial.')
+    + text(55, 985, `Source case ${result.caseDigest.slice(0, 16)} · no furniture position changed except the explicit added portable side stand.`, 'small')
+  return page(1470, 1030, 'Study lighting socket and lead routes', body)
 }

@@ -111,3 +111,33 @@ test('saved engineering stage uses the same sole room kit, rejects stale binding
   const noStage = beginEngineeringEdit({ ...document, stages: { roofPitch: document.stages.roofPitch } }, 'absent')
   assert.equal(applyEngineeringEdit(noStage, { schema: 'current-engineering-edit/1', units: 'mm', base: engineeringBase(noStage), operation: { kind: 'set-lighting-service-depth', assemblyId: editableStudyLightingId, totalDepthMm: 75 } }).status, 'rejected')
 })
+
+test('every additional socket owns its real deep station and hand use; task lamp does not borrow background fitting envelope', () => {
+  const result = run()
+  assert.equal(result.serviceStations.length, 2)
+  assert.ok(result.serviceStations.every(station => station.localDepthMm === 75 && station.usableDepthMm === 55))
+  const station = result.serviceStations.find(value => value.id.endsWith('side-socket'))!
+  const stand = result.arrangements.find(value => value.id === 'portable')!.addedOccupiedStandMm!
+  assert.ok(stand[2] < station.usePlanMm[0])
+  const oldStand = structuredClone(basis)
+  oldStand.room.occupied = [...oldStand.room.occupied, ['old-side-stand', [stand[0] + 50, stand[1], stand[2] + 50, stand[3]]]]
+  assert.ok(deriveStudyLighting(choices, oldStand, components).diagnostics.some(d => d.code === 'IAS_LIGHTING_STATION_ACCESS_REJECTED'))
+  const task = result.fixedInterfaces.find(row => row.sourceId === 'wall-task')!
+  assert.equal(task.projectionEnvelopeMm, 392.5)
+  assert.equal(task.qualification, 'UNQUALIFIED_TASK_CARRIER_AND_LEAD')
+  assert.notEqual(task.projectionEnvelopeMm, result.corner.module.completeProjectionMm)
+})
+
+test('public CLI reads and compiles the same explicit lighting document and producer rejects stale views', async () => {
+  const { execFileSync } = await import('node:child_process')
+  const cwd = new URL('../../', import.meta.url)
+  const document = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--read-study-lighting', '-'], {
+    cwd, input: JSON.stringify(design), encoding: 'utf8', maxBuffer: 16 * 1024 * 1024,
+  }))
+  const actual = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--bundle', '-'], {
+    cwd, input: JSON.stringify(document), encoding: 'utf8', maxBuffer: 16 * 1024 * 1024,
+  }))
+  const expected = await compileEngineeringDocument(document)
+  assert.deepEqual(actual.engineering.studyLighting, expected.engineering.studyLighting)
+  execFileSync(process.execPath, ['--import', 'tsx', 'project/ias/studies/adaptable-study-lighting.mjs', '--check'], { cwd, stdio: 'pipe' })
+})
