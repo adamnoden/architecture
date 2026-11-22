@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 59,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-water-carrier-20261122"
   },
   "claimedAt": "2026-11-22T17:43:56.358Z",
-  "heartbeatAt": "2026-11-22T19:01:20.930Z",
-  "expiresAt": "2026-11-22T19:46:20.930Z",
+  "heartbeatAt": "2026-11-22T19:01:37.200Z",
+  "expiresAt": "2026-11-22T19:01:37.200Z",
   "checkpoint": {
     "evidence": "Verified PR1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f. Shared source8 code8cf468b8ef47fcfc5006bdc72d25c7c267d3b868, owning resultc78bb8d603873361a60031aa86fdad8dfd86496a and browser proofae142435dbc391daed9f35ea87a0c7926af1e06b are pushed. Genuine ee7+HAD regeneration/23focused tests passed. Coordinated recovery618481bf8ac92101881fee82b1b3220fd88eac69 retains project/ccr/convergence-20261122-recovery.md. No successor merge/whole-water acceptance claimed.",
     "next": "Resume from fresh main/ACO and the coordinated recovery branch, reacquire HAD canonically, reconcile all shared sources and rerun actual matched browser/full-health/native-fingerprint proof and publication preflight before merge. The unpushed isolated carrier CAD refactor has no observed final validation; regenerate it from admitted source8 inputs instead of treating it as earned evidence. CAD reconstruction pointers only, not acceptance: compare source8 control; tail255/U1260; custom clampWidth250/tail275/U1220; then also returnX11140/lower frame row1000. Trial side endlands10x40mm, fixed50mm/slider70mm, offsetX±120mm; trial floor posts30mm atX11275,Y2050/2220, feet70x120x10 atX11290. Confirm all against fresh complete geometry, actual force/thermal law, working/renewal fields and both alternatives' unchanged187kg shield duty.",
@@ -36,5 +36,7 @@
       "evidence": "VERIFIED PR1618 merged as main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f with exact890 ancestor and all20 workflows green. Water routes/operator/movingdoor and actions integrated; complete physical system still open. Recovery9eb9ac3d and reviewed publication1619 retained.",
       "next": "Release gen58 handoff now. Fresh-main doctor/dispatch and explicit HAD claim59 for combined work/convergence-integrated-house-20261122; integrate jacket and finite receiver candidate methods without native acceptance or pressure/thermal/renewal claims."
     }
-  }
+  },
+  "releasedAt": "2026-11-22T19:01:37.200Z",
+  "releaseReason": "handoff"
 }
