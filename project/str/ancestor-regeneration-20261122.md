@@ -27,7 +27,7 @@ Distributed maximum equilibrium residual is1.0714093150454574e−9kN/kNm; north 
 
 ## Remaining continuation
 
-Vertical, court/foundation/lower-body, reinforcement, masonry, upper-bearing and roof-pressure descendants are not claimed complete by this checkpoint. They require their own actual producer executions. Floor11/cuts/cage/profile receipts must subsequently be regenerated on the same final source. Execution logs and frozen input inventory are retained in the workspace at `/workspace/scratch/c8557608a58b/proof-regeneration-resume/`; these are execution checkpoints, not a second authority.
+Those descendants were not complete at the initial lower-ancestor checkpoint. The continuation below records their subsequent actual execution or verified full-capture recovery. Floor11/cuts/cage/profile receipts still require same-source regeneration and are not supplied by an ancestor refresh. Execution logs and frozen input inventory are retained in the workspace at `/workspace/scratch/c8557608a58b/proof-regeneration-resume/`; these are execution checkpoints, not a second authority.
 
 ## Continued descendant regeneration
 
@@ -47,3 +47,57 @@ The vertical family executes ten actual coupled cases, including mesh/contact/ma
 | `floor_reinforcement_proof.py --write` |0.159 |0 |true |Actual postprocess of regenerated vertical baseline; no new solve |
 
 Court closure executes two states; foundation weight eight; lower-body four. The explicit zero-mass, changed density/aperture and changed contact-route controls remain the producers’ existing tests. These results preserve the negative-head findings, unqualified local joints and resistance limits. They do not close structural or house acceptance.
+
+### Masonry capture recovery
+
+`masonry_frame_a_proof.py --write` completed in2.110seconds with native58 unchanged. It found and verified **all eight** existing complete controls under `/tmp/ovid-masonry-frame-controls`, each against exact current source/request/name/checksum and physical receiving-trace checks. The canonical proof is regenerated from those actual captures; this replay executes zero new native solves. All2808 retained head components, including the baseline duplicate, agree with recovered79882ce5 within6.261e-9kN/kNm against the1e-6 comparator. The actual source/request/full-response checksums remain in the regenerated proof. No missing physical state is inferred from a hash.
+
+### Upper-bearing, straight cage and roof-pressure recovery
+
+`straight_frame_cage_proof.py --write` reprocessed the regenerated masonry parent in8.563seconds. `upper_roof_bearing_proof.py --write` executed six actual states in160.022seconds, with native58 unchanged, then its independent `--check` passed. All1872 upper-bearing head components match recovered79882ce5 within7.472e-9kN/kNm.
+
+A clean surviving predecessor worktree was then located at local commit `e7d009956ab8f6e1e6a2b5f291776ba0fed7617c`, after the remote recovery pointer. Its upper53-source and roof49-source receipts match every actual current source byte. Earlier completed quantity/vertical and masonry descendants are also retained there; the continuation above distinguishes its own re-executions from reused full responses. No unexamined source-code changes are imported from the predecessor.
+
+The three additional roof-pressure responses were recovered from that predecessor, checked against exact current sources and authored requests, and independently replayed through the existing summary/equilibrium method. Each reconstructed summary exactly equals its recorded row:
+
+| Actual retained control | Complete response SHA256 | Bytes |
+|---|---|---:|
+| `half-roof-suction-court-W79` | `360ef4edac4866dcdf07c2fa03f1066cfa35db123a6fc0132e710fc1cf6bed15` |17023827 |
+| `positive-PLAN-pressure` | `01761e48db7d57c8666ac236d2f644f4729fa5bff564c0c0fa4a343fa4050abb` |17075814 |
+| `suction-zero-physical-G` | `25bcb5e8dc322979ada08c7a68c3eecee4d61d7ab72eccff771e1857f9c4c1c4` |16738979 |
+
+The recovered extra-proof SHA256 is `01728df026dc5be3d325227dfb249787c4577e80ba0012cb5ff971754ae65a47`. Its original producer executed three actual controls in70.672seconds according to the retained execution ledger. This continuation executes zero replacement roof solves. The canonical five-case join was genuinely rerun against the newly regenerated masonry parent, followed by the source-bound roof view. All1560 final roof head components match recovered79882ce5 within5.627e-9kN/kNm. Negative head demands and the unqualified resistance boundary remain visible.
+
+The predecessor's local-only continuation chain is identified below so useful work is preserved without treating an older current/history producer as the current authority. The new shared cut comparator supersedes its cut-producer implementation. Source-bound results and exact capture bytes are recovered selectively.
+
+| Local predecessor commit | Retained purpose |
+|---|---|
+| `e79cf3ffe1afd41dfa8c36811ce2192a5eef4d19` | Use global MMD ordering with unchanged pivoting and physical checks |
+| `386d6efb57653fcd5ecdbc5c984b14a2d9ad8e49` | Checkpoint actual MMD 500 nonlinear control and unchanged reactions |
+| `25e47cf3dc3340938965c197dfd1600364026974` | Expose actual wet post-head duties and editable graded upper cage levels |
+| `cee5522c896f157691becf1928fb9f7f5944aaaa` | Check the committed wet-head receipt in canonical cage geometry replay |
+| `dbd7bea9f490f7ca4085ac5a86b0ee5972dd013f` | Regenerate distributed, receiver and portal ancestor evidence on frozen sparse source |
+| `a611d41f6e8ab0030ce1ff6e0dbd69ae639ce15e` | Checkpoint actual 250 nonlinear solve and failed fixed-cut refinement screens |
+| `d1c52f861e42e842ab696c2cc9be5d607c431dad` | Regenerate joined house and monolithic ancestors and record actual unchanged controls |
+| `7678a41a860348e8a10baf90495c243b923cd2a9` | Require actual current mesh controls and retain failed executions as history |
+| `b23b24597e151f8f78fab4c5c2e51988b896dfed` | Expose graded wet-cage levels in the shared browser engineering editor |
+| `3399ca9e9f1183bc8b081f75065fa2ead71a8af8` | Regenerate vertical masonry and load-inventory descendants on unchanged physical controls |
+| `c2a8daf84ac0cdb4b752a57c8d5065786acfab41` | Register current head-duty and browser paths; distinguish fine-mesh results from execution history |
+| `e7d009956ab8f6e1e6a2b5f291776ba0fed7617c` | Complete fresh upper-bearing and joined roof-pressure ancestor evidence |
+
+The frozen `global-mmd-native-controls.json` and `global-mmd-mesh-cut-controls.json` retain their original actual source/producer identities as dated numerical evidence. The changing shared cut method does not silently rebind those historical postprocessing hashes. Current cut consumers must use the regenerated canonical floor-cut receipt; historical killed workers remain separate from complete current native responses. The remaining same-source floor11/cuts/cage/profile work is not closed by this ancestor recovery.
+
+### Floor native-capture continuation checkpoint
+
+The canonical11-case floor receipt is still pending at this checkpoint. The following complete, exact-source/request/checksum captures exist under `/tmp/ovid-seated-wet-controls/147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/`. These rows record successful controls only; they do not establish a complete envelope, numerical stability or house acceptance. Full native bytes remain in the named execution store, not this note. The existing producer must verify or regenerate each capture before using it.
+
+| Completed native control | Full response SHA256 |
+|---|---|
+| `current200` | `8b234b83183d28c5db2bb1f1eefb6779254dddc8c786d6d5c73774aae18e6995` |
+| `matched200-G135-Q2-rho27` | `ea83b05f528b6c2616ee177fa44e6a35f5c038380f7762ca4c9195de4f49838f` |
+| `matched250-G135-Q2-rho27` | `524e168b04a47d1ab615220f3ba8914b302d90ef6cc4d558bb62431885a1c5b3` |
+| `wet-aligned-G135-Q2-rho27` | `25eb3e45c0cbdd8afbbed90d37bd7c2b9f6b6483e66469f714876903e0855af4` |
+| `wet-shifted-quadrature8` | `35ec6ce62cf309ca5731a3e1663ad039a849eb5e2571c6aa41ed756ad3aedd06` |
+| `wet-south-pad-north160` | `fd8802751287734fa0d3745fa9600e30bce2f862f7e34401034b4390677a9985` |
+
+Continue the same frozen-source floor producer through all11 controls, then regenerate the canonical cut/cage/profile joins. Interrupted, absent or unmatched controls cannot be inferred from this checkpoint.

@@ -5,11 +5,13 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { recoverFloorSectionCuts, compareFloorSectionCuts, type FloorBendingField } from '../../../compiler/reference-house/current-design/structural-floor-cuts.js'
+import { recoverFloorTransverseShear, recoverFloorTransverseCuts } from '../../../compiler/reference-house/current-design/structural-floor-transverse.js'
 
 const root = new URL('../../../',import.meta.url)
 const directory = new URL('./',import.meta.url)
 const proofPath = new URL('floor-section-cuts-proof.json',directory)
 const sourcePaths = ['compiler/reference-house/current-design/structural-floor-cuts.ts',
+  'compiler/reference-house/current-design/structural-floor-transverse.ts',
   'project/str/studies/floor-section-cuts-inputs.json','project/str/studies/floor-section-cuts.ts',
   'project/str/studies/floor-refinement-execution-limit.json']
 const sha = (value: string | Buffer) => createHash('sha256').update(value).digest('hex')
@@ -47,6 +49,9 @@ function check(proof: any) {
     if(row.caseId!==expected[0] || !equal(row.executedRequest,expected[1]) || !/^[a-f0-9]{64}$/.test(row.fullResultSHA256)
       || !equal(row.sectionCuts.cuts.map((c: any)=>({id:c.id,normal:c.normal,positionMm:c.positionMm,intervalMm:c.intervalMm})),authored.cuts)
       || row.sectionCuts.stripResistanceAccepted!==false || row.sectionCuts.localStressConvergenceProven!==false
+      || row.transverseSectionCuts.completeJointWrenchAvailable!==false || row.transverseSectionCuts.resistanceAccepted!==false
+      || !equal(row.transverseSectionCuts.cuts.map((c:any)=>({id:c.id,normal:c.normal,positionMm:c.positionMm,intervalMm:c.intervalMm})),authored.cuts)
+      || row.transverseEnergy.relativeResidual>row.transverseEnergy.maximumRelativeResidual
       || row.physicalWetBeamElementCutsAvailable !== (expected[1].wetSupport != null)
       || row.completeWetBeamDemandEnvelopeAvailable !== false
       || (row.wetReceivingGrid !== null && (row.wetReceivingGrid.completePhysicalGridDemandEnvelopeAvailable !== false || row.wetReceivingGrid.gridResistanceAccepted !== false))
@@ -82,9 +87,11 @@ else if(process.argv[2]==='--write') {
     const result=JSON.parse(readFileSync(full,'utf8')),receipt=JSON.parse(readFileSync(manifest,'utf8'))
     if(sha(readFileSync(full))!==receipt.fullResultSHA256) throw new Error('Full native response checksum changed')
     const support=result.seatedWetSupport
+    const transverse=recoverFloorTransverseShear(result.nativeVertical)
     return {caseId:name,executedRequest:request,fullResultSHA256:receipt.fullResultSHA256,
       heads:result.nativeVertical.native.heads,
       sectionCuts:recoverFloorSectionCuts(result.plateBending as FloorBendingField,authored.cuts),
+      transverseSectionCuts:recoverFloorTransverseCuts(transverse,authored.cuts),transverseEnergy:transverse.energy,
       wetBearingExactDeclaredFields:support?.posts.map((post:any)=>({id:post.id,...post.exactDeclaredNormalField}))??[],
       physicalWetBeamElementCutsAvailable:support?.plateAttachmentAudit.physicalBeamElementCutsAvailable??false,
       completeWetBeamDemandEnvelopeAvailable:false,

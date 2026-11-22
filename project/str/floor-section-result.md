@@ -18,7 +18,7 @@ The adapter also intersects declared, source-bound PV route segments with the ac
 
 ## Section judgement
 
-Do not select a global slab thickness to repair one unqualified point peak. The governing south-corner sample lies beside the rigid L boundary in a narrow15mm source partition, with substantial twisting. Physical joint/strip demand and local convergence remain unproved. The actual west wet-wall beam is a separate missing load-path duty; its north-west position is not an evidenced cure for this south-corner peak.
+Do not select a global slab thickness to repair one unqualified point peak. The governing south-corner sample lies beside the rigid L boundary in a narrow15mm source partition, with substantial twisting. Physical joint/strip demand and local convergence remain unproved. The actual west wet-wall beam is now represented by the separate [seated-support continuation](seated-wet-support-result.md), with resistance and local-joint duties still open; its north-west position is not an evidenced cure for this south-corner peak.
 
 The new necessary section result uses the same rectangular concrete block, ultimate concrete strain and steel law as the retained frame comparison. It solves zero-axial-force equilibrium with a single tension direction at the adverse actual depth, without compression-mat benefit. It retains neutral-axis depth, steel strain/stress, force residual and moment capacity. The earlier authored-lever-arm comparison remains visible but is not a crushing/strain-compatible capacity.
 
@@ -38,7 +38,7 @@ Review also restored strict native upper-L material-law admission: finite positi
 
 ## Remaining structural work
 
-Resolve the finite corner joint and supported design-strip/local-convergence basis before selecting global thickness. Complete the source west wet-wall beam and its real receivers without double-counting slab/column stiffness or importing its obsolete no-tolerance cage. Close the wet-floor/arch/spandrel/finish/weather inventory, full pressure families, post/cap/floor reinforcement and development, grid/foundation resistance and water/thermal interfaces. Then adopt one coordinated floor/FFL/stair/service/roof arrangement. STR-FLOOR-PORTAL stays open.
+Resolve the finite corner joint and supported design-strip/local-convergence basis before selecting global thickness. Qualify the actual seated west wet-wall beam, its end regions and real receivers without double-counting slab/column stiffness or importing its obsolete no-tolerance cage. Close the wet-floor/arch/spandrel/finish/weather inventory, full pressure families, post/cap/floor reinforcement and development, grid/foundation resistance and water/thermal interfaces. Then adopt one coordinated floor/FFL/stair/service/roof arrangement. STR-FLOOR-PORTAL stays open.
 
 ## Nodal wet-support and fixed-cut continuation
 
@@ -47,8 +47,8 @@ attachment correction and its nine-state controls. The shared fixed-cut method
 consumes the same native bending field in CLI, saved-document and batch paths.
 It integrates signed normal bending, signed twisting and absolute component
 values through actual material intervals; it does not invent a strip width or
-reinforcement distribution. The [11-control cut receipt](studies/floor-section-cuts-proof.json)
-contains two additional700/500mm mesh trials. Its declared convergence screen
+reinforcement distribution. The [current16-control cut receipt](studies/floor-section-cuts-proof.json)
+contains actual700/500/250mm mesh trials and both operator-separated controls, with native assumed-shear cut integrals and plate-energy closure. Its declared convergence screen
 fails; neither RC200 nor RC250 is an adopted engineering development baseline.
-The ground datum0 and service-floor comparison715 remain distinct, uncoordinated
+The ground datum0 and530/715 service-floor comparisons remain distinct, unadopted
 arrangements. Current room/roof/book outputs are withheld from either adoption.

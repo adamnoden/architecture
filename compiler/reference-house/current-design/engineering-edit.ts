@@ -1,6 +1,7 @@
 import { admitDesignSnapshot, type DesignSnapshot } from './snapshot.js'
 import { sameEditBase, type EditBase } from './edit.js'
 import { readFloorSectionCuts } from './structural-floor-cuts.js'
+import { admitStudyLightingCase } from './assemblies/study-lighting.js'
 
 /** Transport envelope only. The engineering compiler owns stage/source admission. */
 export interface EngineeringDocument {
@@ -24,6 +25,7 @@ export const editableRoofId = 'MAT/ring-roof-field'
 export const editableFloorSectionId = 'STR/current-floor-section'
 export const editableWetSupportId = 'STR/wet-wall-support'
 export const editableWetCageId = 'STR/wet-wall-support/reinforcement'
+export const editableStudyLightingId = 'IAS/STUDY/service-corner'
 function record(input: unknown): input is Record<string, unknown> {
   return input !== null && typeof input === 'object' && Object.getPrototypeOf(input) === Object.prototype
 }
@@ -70,6 +72,15 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       }
       if (operation.pitchDeg === state.document.stages.roofPitch.pitchDeg) return { status: 'applied', state }
       stages = { ...state.document.stages, roofPitch: { pitchDeg: operation.pitchDeg } }
+    } else if (record(operation) && operation.kind === 'set-lighting-service-depth') {
+      const current = state.document.stages.studyLighting
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'totalDepthMm'])
+        || operation.assemblyId !== editableStudyLightingId || !record(current) || !record(state.document.stages.studyRoomKit)) {
+        throw new TypeError('An existing explicit Study lighting and room-kit stage is required')
+      }
+      const choice = admitStudyLightingCase({ schema: 'ias-study-lighting-case/1', units: 'mm', ...current, serviceTotalDepthMm: operation.totalDepthMm })
+      if (choice.serviceTotalDepthMm === current.serviceTotalDepthMm) return { status: 'applied', state }
+      stages = { ...state.document.stages, studyLighting: { ...current, serviceTotalDepthMm: choice.serviceTotalDepthMm } }
     } else if (record(operation) && operation.kind === 'set-floor-section-thickness') {
       const current = state.document.stages.floorSection
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'thicknessMm'])

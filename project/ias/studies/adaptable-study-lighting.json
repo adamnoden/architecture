@@ -1,0 +1,12 @@
+{
+  "schema": "ias-study-lighting-case/1",
+  "units": "mm",
+  "arrangement": "lamps-with-wall",
+  "socketCentreZMm": 600,
+  "serviceTotalDepthMm": 75,
+  "lampHand": "left",
+  "failedSourceId": null,
+  "finishTrial": "crafted-oak",
+  "automationConnected": false,
+  "localWallModule": true
+}

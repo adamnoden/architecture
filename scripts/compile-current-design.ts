@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { compileCurrentDesignBundle, prepareCurrentDesignCompile } from '../compiler/reference-house/current-design/compile.js'
 import { readGeorgianDesignSnapshot } from '../compiler/reference-house/current-design/georgian-source.js'
-import { compileEngineeringDocument, readEngineeringDocument, readRetainedInletComparisonDocument } from '../compiler/reference-house/current-design/engineering-document.js'
+import { compileEngineeringDocument, readEngineeringDocument, readRetainedInletComparisonDocument, readStudyLightingDocument } from '../compiler/reference-house/current-design/engineering-document.js'
 
 type Compile = ReturnType<typeof prepareCurrentDesignCompile>
 type TrialMode = {
@@ -156,7 +156,7 @@ async function runGroundedServiceFloor(input: unknown, readCase: boolean) {
 const args = process.argv.slice(2)
 const modes = [
   '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
-  '--bundle', '--read-engineering', '--read-retained-inlet-comparison', '--study-assembly', '--study-linings', '--renewable-openings',
+  '--bundle', '--read-engineering', '--read-study-lighting', '--read-retained-inlet-comparison', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-service-floor', '--service-floor', '--read-vertical-rc-floor', '--read-masonry-frame', '--read-house-vertical-profile',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-ground-section', '--read-distributed-floor', '--read-joined-rc-floor', '--read-structural-case', '--read-structural-interfaces',
@@ -186,6 +186,8 @@ try {
       process.stdout.write(JSON.stringify(await compile.renewableOpenings('study' in input ? input.study : undefined)) + '\n')
     } else if (mode === '--read-retained-inlet-comparison') {
       process.stdout.write(JSON.stringify(await readRetainedInletComparisonDocument(input), null, 2) + '\n')
+    } else if (mode === '--read-study-lighting') {
+      process.stdout.write(JSON.stringify(await readStudyLightingDocument(input), null, 2) + '\n')
     } else if (mode === '--read-engineering') {
       process.stdout.write(JSON.stringify(await readEngineeringDocument(input), null, 2) + '\n')
     } else if (mode === '--bundle') {
