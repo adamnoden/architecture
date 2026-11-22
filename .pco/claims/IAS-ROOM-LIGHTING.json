@@ -9,11 +9,12 @@
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T17:46:22.080Z",
-  "heartbeatAt": "2026-11-22T17:46:22.080Z",
-  "expiresAt": "2026-11-22T18:31:22.080Z",
+  "heartbeatAt": "2026-11-22T18:05:34.475Z",
+  "expiresAt": "2026-11-22T18:50:34.475Z",
   "checkpoint": {
-    "evidence": "Fresh main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f doctor verified; safe canonical dispatcher exposes IAS as the sole eligible candidate after generation4 merged handoff. Prior-cycle unselected common-depth geometry is preserved at recovery/lighting-common-depth-20261122 cd3d23c3294e0958068ad939d8533f17c9779ff3 and is recovery evidence, not a newly validated result",
-    "next": "Reconcile the recovered common-depth comparison with shared STR/HAD integrated source, regenerate affected current evidence, preserve actual terminal/product/renewal/load obligations and validate exact combined head before publication"
+    "evidence": "Browser successor recovered on matched HAD parent at recovery/lighting-browser-pane-20261122 c3f96603ad7f2307afc4bc66e5f441ab431d4603 tree a71243c5993a9bb4d5b593ae2dc2134a35588c57. Logical UI-only delta4d276b3c exposes explicit saved-stage SVG and existing depth edit; TypeScript, Vite production build and pure browser boundary pass. Prior common-depth comparison remains unselected with device/product/renewal/load holds",
+    "next": "Root integrates matched source account; run actual HTTP/browser change/CLI-parity/undo/adverse/stale-reply proof and strict IAS producer at the combined current head, then exact-head publication preflight",
+    "blocker": "Combined source-account reconciliation and real browser execution pending; recovery checkpoint is not validated release"
   },
   "branch": "work/convergence-integrated-house-20261122",
   "predecessor": {
