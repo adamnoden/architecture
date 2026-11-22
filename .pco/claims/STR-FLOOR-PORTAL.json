@@ -9,8 +9,8 @@
     "label": "convergence-20261122-primary"
   },
   "claimedAt": "2026-11-22T14:35:17.012Z",
-  "heartbeatAt": "2026-11-22T16:58:56.793Z",
-  "expiresAt": "2026-11-22T17:43:56.793Z",
+  "heartbeatAt": "2026-11-22T17:39:08.452Z",
+  "expiresAt": "2026-11-22T18:24:08.452Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
@@ -36,8 +36,8 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "PR1618 head890379a: browser and production PDF proven on predecessor unchanged engineering tree;12updated source-binding regressions pass. Recoveryfe542c23 and57f4ca02 retain9actual contact refinements/shared adapter; 4074b808 retains rejected passive joint trial and closed material audit.",
-    "next": "Finish exact890 full health and canonical publication preflight; merge1618, reconcile1619; serially finish fresh floor descendants before contact integration",
-    "blocker": "Exact submitted-head CI pending. No structural selection, complete water arrangement, physical joint or installed acceptance"
+    "evidence": "MERGED PR1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact890workflows pass and3freshleasepreflights. Next recoveries dceb3985 contact/source-complete; e6c33d20 joint-admission repair; book1619; HAD9eb9ac3d; IAScd3d23c3.",
+    "next": "Release gen54 merged increment, freshclaim STR continuation on currentmain, coordinate next integrated house/book review batch",
+    "blocker": "STR packet still planned: complete signed envelope, finitejoint capacity, physical bearing and house selection remain unresolved"
   }
 }
