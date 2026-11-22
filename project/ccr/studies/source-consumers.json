@@ -73,6 +73,15 @@
       "boundary": "Compile the whole timber/tiled Study, local wall releases, shaped floor handling and furniture staging from the same current-design case and editable authored operation plan. Current views and schedules consume those results. The owner verdict, qualified floor course, loaded release and retained protective boundaries remain open."
     },
     {
+      "id": "ias-adaptable-room-lighting",
+      "state": "current-conditional-consumer",
+      "decision": "project/ias/adaptable-room-lighting-result.md",
+      "entries": [
+        "project/ias/studies/adaptable-study-lighting.mjs"
+      ],
+      "boundary": "Compile the unselected furnished Study/kitchen arrangements and local enclosure, carrier, entry branches and first rest through the shared saved current-design stage. Local geometric fit supplies neither connected common riser/feeder, material admission, measured lighting performance, installed resistance, physical trial nor owner acceptance."
+    },
+    {
       "id": "ias-comparison-and-proof-support",
       "state": "bounded-study-or-rendering",
       "decision": "project/ias/interior-architecture-system-programme.md",

@@ -98,11 +98,11 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
     if (collarEnvelope.depthMm[0] < boxFrontDepth - input.boxSizeMm[2] || collarEnvelope.depthMm[1] > boxFrontDepth || collarRadius > input.boxSizeMm[1] / 2) branchIssues.push('entry-collar-outside-actual-box-side')
     for (const issue of branchIssues) if (!issues.includes(issue)) issues.push(issue)
     return { id: `IAS/STUDY/service-corner/entry-branch/${i}`, boxId: `IAS/STUDY/service-corner/fixed-island/${i}`,
-      bend: { plane: 'XZ at constant core depth', centreMm: [collarTangentX, axisDepth, bendStartZ],
+      bend: { plane: 'XZ at constant core depth', axisCoreDepthMm: axisDepth, centreMm: [collarTangentX, coreY - axisDepth, bendStartZ],
         centrelineRadiusMm: c.bendCentrelineRadiusMm, angleDegrees: 90,
-        startMm: [riserX, axisDepth, bendStartZ], endMm: [collarTangentX, axisDepth, z],
+        startMm: [riserX, coreY - axisDepth, bendStartZ], endMm: [collarTangentX, coreY - axisDepth, z],
         startUnitTangent: [0, 0, 1], endUnitTangent: [1, 0, 0], sweptEnvelope: bendEnvelope },
-      collar: { startMm: [collarTangentX, axisDepth, z], boxEntryMm: [boxLeft, axisDepth, z],
+      collar: { startMm: [collarTangentX, coreY - axisDepth, z], boxEntryMm: [boxLeft, coreY - axisDepth, z],
         axialLengthMm: c.entryCollarAxialLengthMm, outsideDiameterMm: c.entryCollarOutsideDiameterMm, envelope: collarEnvelope },
       settingClearanceMm, requiredSettingMm: input.jointMm, issues: branchIssues,
       currentHouseSupplyConnected: false, commonRiserDepthTransitionResolved: false }

@@ -205,8 +205,10 @@ test('side-entry bends meet a real straight collar tangent and retain setting te
     assert.equal(branch.commonRiserDepthTransitionResolved, false)
     assert.equal(branch.currentHouseSupplyConnected, false)
   }
-  assert.equal(branches[0].bend.startMm[1], 51.5)
-  assert.equal(branches[2].bend.startMm[1], 37)
+  assert.equal(branches[0].bend.axisCoreDepthMm, 51.5)
+  assert.equal(branches[0].bend.startMm[1], baseline.construction.coreFaceYMm - 51.5)
+  assert.equal(branches[2].bend.axisCoreDepthMm, 37)
+  assert.equal(branches[2].bend.startMm[1], baseline.construction.coreFaceYMm - 37)
   assert.equal(branches[0].settingClearanceMm.left, 9)
   const oldBay = structuredClone(components); oldBay.projectRequirements.bayWidthMm = 300
   const rejected = deriveStudyLighting(choices, basis, oldBay)
@@ -218,7 +220,9 @@ test('side-entry bends meet a real straight collar tangent and retain setting te
   const largeCollar = structuredClone(components); largeCollar.cornerConstruction = { ...largeCollar.cornerConstruction, entryCollarAxialLengthMm: 60 }
   assert.ok(deriveStudyLighting(choices, basis, largeCollar).construction.issues.includes('entry-branch-setting-envelope-outside-local-field'))
   const deeper = run({ serviceTotalDepthMm: 85 }).construction.containment.localEntryBranches
-  assert.equal(deeper[0].bend.startMm[1], branches[0].bend.startMm[1] + 10)
-  assert.equal(deeper[2].bend.startMm[1], branches[2].bend.startMm[1] + 10)
+  assert.equal(deeper[0].bend.axisCoreDepthMm, branches[0].bend.axisCoreDepthMm + 10)
+  assert.equal(deeper[0].bend.startMm[1], branches[0].bend.startMm[1] - 10)
+  assert.equal(deeper[2].bend.axisCoreDepthMm, branches[2].bend.axisCoreDepthMm + 10)
+  assert.equal(deeper[2].bend.startMm[1], branches[2].bend.startMm[1] - 10)
   assert.deepEqual(deeper[0].bend.startMm.filter((_, i) => i !== 1), branches[0].bend.startMm.filter((_, i) => i !== 1))
 })

@@ -1,7 +1,7 @@
 {
   "schema": "ias-study-lighting-review/1",
   "methodSHA256": {
-    "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "618d025d614de3645c89452fdbeb352d71495b9a9fd53df3306e7d16737a863c",
+    "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "45c03ba8f231b950563cda2b7c39f403978fb6c03593c5e62df4ace09c8faff9",
     "compiler/reference-house/current-design/assemblies/study-lighting.ts": "e9a053b7bcfae2b1d99905511d1a421d973f2baa532555e079d3619b6425981f",
     "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "385214e553cbd77f6436d8c04bde329c3aecc1b25c24c6d999a8fda20217f9ec",
     "project/ias/studies/adaptable-study-lighting.mjs": "d5302ab7207d234e0814539508471f546073353aedb8ab8c062186ffefbbdb79"
@@ -2873,21 +2873,22 @@
             "boxId": "IAS/STUDY/service-corner/fixed-island/0",
             "bend": {
               "plane": "XZ at constant core depth",
+              "axisCoreDepthMm": 51.5,
               "centreMm": [
                 1079,
-                51.5,
+                3126,
                 530
               ],
               "centrelineRadiusMm": 70,
               "angleDegrees": 90,
               "startMm": [
                 1009,
-                51.5,
+                3126,
                 530
               ],
               "endMm": [
                 1079,
-                51.5,
+                3126,
                 600
               ],
               "startUnitTangent": [
@@ -2918,12 +2919,12 @@
             "collar": {
               "startMm": [
                 1079,
-                51.5,
+                3126,
                 600
               ],
               "boxEntryMm": [
                 1109,
-                51.5,
+                3126,
                 600
               ],
               "axialLengthMm": 30,
@@ -2960,21 +2961,22 @@
             "boxId": "IAS/STUDY/service-corner/fixed-island/1",
             "bend": {
               "plane": "XZ at constant core depth",
+              "axisCoreDepthMm": 51.5,
               "centreMm": [
                 1079,
-                51.5,
+                3126,
                 1030
               ],
               "centrelineRadiusMm": 70,
               "angleDegrees": 90,
               "startMm": [
                 1009,
-                51.5,
+                3126,
                 1030
               ],
               "endMm": [
                 1079,
-                51.5,
+                3126,
                 1100
               ],
               "startUnitTangent": [
@@ -3005,12 +3007,12 @@
             "collar": {
               "startMm": [
                 1079,
-                51.5,
+                3126,
                 1100
               ],
               "boxEntryMm": [
                 1109,
-                51.5,
+                3126,
                 1100
               ],
               "axialLengthMm": 30,
@@ -3047,21 +3049,22 @@
             "boxId": "IAS/STUDY/service-corner/fixed-island/2",
             "bend": {
               "plane": "XZ at constant core depth",
+              "axisCoreDepthMm": 37,
               "centreMm": [
                 1079,
-                37,
+                3140.5,
                 1730
               ],
               "centrelineRadiusMm": 70,
               "angleDegrees": 90,
               "startMm": [
                 1009,
-                37,
+                3140.5,
                 1730
               ],
               "endMm": [
                 1079,
-                37,
+                3140.5,
                 1800
               ],
               "startUnitTangent": [
@@ -3092,12 +3095,12 @@
             "collar": {
               "startMm": [
                 1079,
-                37,
+                3140.5,
                 1800
               ],
               "boxEntryMm": [
                 1109,
-                37,
+                3140.5,
                 1800
               ],
               "axialLengthMm": 30,
@@ -3892,21 +3895,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/0",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 3.5,
                 "centreMm": [
                   1079,
-                  3.5,
+                  3174,
                   530
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  3.5,
+                  3174,
                   530
                 ],
                 "endMm": [
                   1079,
-                  3.5,
+                  3174,
                   600
                 ],
                 "startUnitTangent": [
@@ -3937,12 +3941,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  3.5,
+                  3174,
                   600
                 ],
                 "boxEntryMm": [
                   1109,
-                  3.5,
+                  3174,
                   600
                 ],
                 "axialLengthMm": 30,
@@ -3981,21 +3985,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/1",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 3.5,
                 "centreMm": [
                   1079,
-                  3.5,
+                  3174,
                   1030
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  3.5,
+                  3174,
                   1030
                 ],
                 "endMm": [
                   1079,
-                  3.5,
+                  3174,
                   1100
                 ],
                 "startUnitTangent": [
@@ -4026,12 +4031,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  3.5,
+                  3174,
                   1100
                 ],
                 "boxEntryMm": [
                   1109,
-                  3.5,
+                  3174,
                   1100
                 ],
                 "axialLengthMm": 30,
@@ -4070,21 +4075,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/2",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": -11,
                 "centreMm": [
                   1079,
-                  -11,
+                  3188.5,
                   1730
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  -11,
+                  3188.5,
                   1730
                 ],
                 "endMm": [
                   1079,
-                  -11,
+                  3188.5,
                   1800
                 ],
                 "startUnitTangent": [
@@ -4115,12 +4121,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  -11,
+                  3188.5,
                   1800
                 ],
                 "boxEntryMm": [
                   1109,
-                  -11,
+                  3188.5,
                   1800
                 ],
                 "axialLengthMm": 30,
@@ -4884,21 +4890,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/0",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 61.5,
                 "centreMm": [
                   1079,
-                  61.5,
+                  3116,
                   530
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  61.5,
+                  3116,
                   530
                 ],
                 "endMm": [
                   1079,
-                  61.5,
+                  3116,
                   600
                 ],
                 "startUnitTangent": [
@@ -4929,12 +4936,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  61.5,
+                  3116,
                   600
                 ],
                 "boxEntryMm": [
                   1109,
-                  61.5,
+                  3116,
                   600
                 ],
                 "axialLengthMm": 30,
@@ -4971,21 +4978,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/1",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 61.5,
                 "centreMm": [
                   1079,
-                  61.5,
+                  3116,
                   1030
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  61.5,
+                  3116,
                   1030
                 ],
                 "endMm": [
                   1079,
-                  61.5,
+                  3116,
                   1100
                 ],
                 "startUnitTangent": [
@@ -5016,12 +5024,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  61.5,
+                  3116,
                   1100
                 ],
                 "boxEntryMm": [
                   1109,
-                  61.5,
+                  3116,
                   1100
                 ],
                 "axialLengthMm": 30,
@@ -5058,21 +5066,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/2",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 47,
                 "centreMm": [
                   1079,
-                  47,
+                  3130.5,
                   1730
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  47,
+                  3130.5,
                   1730
                 ],
                 "endMm": [
                   1079,
-                  47,
+                  3130.5,
                   1800
                 ],
                 "startUnitTangent": [
@@ -5103,12 +5112,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  47,
+                  3130.5,
                   1800
                 ],
                 "boxEntryMm": [
                   1109,
-                  47,
+                  3130.5,
                   1800
                 ],
                 "axialLengthMm": 30,
@@ -5854,21 +5863,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/0",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   530
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   530
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "startUnitTangent": [
@@ -5899,12 +5909,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   600
                 ],
                 "axialLengthMm": 30,
@@ -5941,21 +5951,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/1",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "startUnitTangent": [
@@ -5986,12 +5997,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "axialLengthMm": 30,
@@ -6028,21 +6039,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/2",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 37,
                 "centreMm": [
                   1079,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "endMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "startUnitTangent": [
@@ -6073,12 +6085,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "boxEntryMm": [
                   1109,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "axialLengthMm": 30,
@@ -6824,21 +6836,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/0",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   530
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   530
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "startUnitTangent": [
@@ -6869,12 +6882,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   600
                 ],
                 "axialLengthMm": 30,
@@ -6911,21 +6924,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/1",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "startUnitTangent": [
@@ -6956,12 +6970,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "axialLengthMm": 30,
@@ -6998,21 +7012,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/2",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 37,
                 "centreMm": [
                   1079,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "endMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "startUnitTangent": [
@@ -7043,12 +7058,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "boxEntryMm": [
                   1109,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "axialLengthMm": 30,
@@ -7801,21 +7816,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/0",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   530
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   530
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "startUnitTangent": [
@@ -7846,12 +7862,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   600
                 ],
                 "axialLengthMm": 30,
@@ -7888,21 +7904,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/1",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "startUnitTangent": [
@@ -7933,12 +7950,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "axialLengthMm": 30,
@@ -7975,21 +7992,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/2",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 37,
                 "centreMm": [
                   1079,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "endMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "startUnitTangent": [
@@ -8020,12 +8038,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "boxEntryMm": [
                   1109,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "axialLengthMm": 30,
@@ -8785,21 +8803,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/0",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   530
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   530
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "startUnitTangent": [
@@ -8830,12 +8849,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   600
                 ],
                 "axialLengthMm": 30,
@@ -8872,21 +8891,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/1",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "startUnitTangent": [
@@ -8917,12 +8937,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "axialLengthMm": 30,
@@ -8959,21 +8979,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/2",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 37,
                 "centreMm": [
                   1079,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "endMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "startUnitTangent": [
@@ -9004,12 +9025,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "boxEntryMm": [
                   1109,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "axialLengthMm": 30,
@@ -9755,21 +9776,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/0",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   530
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   530
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "startUnitTangent": [
@@ -9800,12 +9822,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   600
                 ],
                 "axialLengthMm": 30,
@@ -9842,21 +9864,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/1",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "startUnitTangent": [
@@ -9887,12 +9910,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "axialLengthMm": 30,
@@ -9929,21 +9952,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/2",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 37,
                 "centreMm": [
                   1079,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "endMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "startUnitTangent": [
@@ -9974,12 +9998,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "boxEntryMm": [
                   1109,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "axialLengthMm": 30,
@@ -10732,21 +10756,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/0",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   530
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   530
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "startUnitTangent": [
@@ -10777,12 +10802,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   600
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   600
                 ],
                 "axialLengthMm": 30,
@@ -10819,21 +10844,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/1",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 51.5,
                 "centreMm": [
                   1079,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  51.5,
+                  3126,
                   1030
                 ],
                 "endMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "startUnitTangent": [
@@ -10864,12 +10890,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "boxEntryMm": [
                   1109,
-                  51.5,
+                  3126,
                   1100
                 ],
                 "axialLengthMm": 30,
@@ -10906,21 +10932,22 @@
               "boxId": "IAS/STUDY/service-corner/fixed-island/2",
               "bend": {
                 "plane": "XZ at constant core depth",
+                "axisCoreDepthMm": 37,
                 "centreMm": [
                   1079,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "centrelineRadiusMm": 70,
                 "angleDegrees": 90,
                 "startMm": [
                   1009,
-                  37,
+                  3140.5,
                   1730
                 ],
                 "endMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "startUnitTangent": [
@@ -10951,12 +10978,12 @@
               "collar": {
                 "startMm": [
                   1079,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "boxEntryMm": [
                   1109,
-                  37,
+                  3140.5,
                   1800
                 ],
                 "axialLengthMm": 30,

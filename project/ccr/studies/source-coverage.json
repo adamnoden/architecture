@@ -2012,20 +2012,20 @@
     "project/ias/studies/adaptable-study-lighting.json": "63b335e82c72518bb1346c3d70e9ce3bfa02bd9d",
     "project/ias/studies/lighting-component-references.json": "3f73c6a701ec074c0783004476625ea999cbbe76",
     "project/ias/studies/study-door-reveal.json": "58afaada3083a21bf103fe3a658db31807a75e26",
-    "project/ias/studies/adaptable-study-lighting.results.json": "1cd8509b359a651abd182372f1cce5be252d700d",
+    "project/ias/studies/adaptable-study-lighting.results.json": "f6c472d9f4dbeed2409c1755a733a384a0fa5a80",
     "project/ias/studies/adaptable-study-lighting-comparison.svg": "9f21b510af955976621ab271931115cd80a41807",
     "project/ias/studies/adaptable-study-lighting-corner.svg": "ca2a59a458a2cc858ebc23acf6eb6c779912f828",
     "project/ias/studies/adaptable-study-lighting-routes.svg": "8c31e7e140849e3c24e3f7b016ef8757251589ef",
     "project/ias/studies/adaptable-kitchen-lighting.svg": "1861c38180fc9bcfec15c2e68e9c1a5f16a884c7",
     "compiler/reference-house/current-design/assemblies/study-room-kit-projection.ts": "3f1d9df2c5b279081a189b7a3e43c3c7fe6fb5a4",
-    "compiler/reference-house/current-design-study-lighting.test.ts": "f0ef79c820c7f1a1e5a3d947b8d1f4ad18772c70",
+    "compiler/reference-house/current-design-study-lighting.test.ts": "f7e20018aae329f4e3de4973401e3782a4d56893",
     "project/had/owner-design-pack-preparation.md": "8bc611b30eb9271b099ec65d7ba577f9b17e80b1",
     "project/str/floor-interface-result.md": "3de22ca2fc9fd0524b0f3072a408bc08baceb65e",
     "compiler/reference-house/current-design/structural-floor-interfaces.ts": "c88bcd852b2994ab25dbf06669be6858d422a910",
     "compiler/reference-house/current-design/structural-floor-interface-adapter.ts": "1dcedb315d084683ce9f423029cc1e260e7ff34f",
     "project/str/studies/floor_interface_manifest.py": "6dfb20b7e001fe9565655ac15f59db812878ad26",
     "project/str/studies/floor-interface-proof.ts": "7fc632d6570eb8800a142825a8f55deb44a0de6a",
-    "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "14e3c50a32176fe42b8366d92a7d6e7d51d5aa3c",
+    "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "7aec3642a0bd2e696c2d605a06c407ba0ef3c5fd",
     "project/ias/studies/adaptable-study-lighting-construction.svg": "77735cfc13319b6bbab3e9510f63167510509a17"
   }
 }
