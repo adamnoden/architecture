@@ -42,7 +42,6 @@
   "meshPitchesMm": [
     700,
     500,
-    274,
     250
   ],
   "stabilityComparison": {
@@ -50,5 +49,12 @@
     "maximumRelativeCutIntegralDifference": 0.05,
     "absoluteCutIntegralFloorKNm": 0.1,
     "scope": "Predeclared numerical stability screens for700to500 and500to250 global response and fixed physical cut integrals. Earlier failed comparisons remain visible. This does not qualify the rigid corner, element peak, local pad, design width or reinforcement."
-  }
+  },
+  "operatorSeparatedMeshControls": [
+    {
+      "id": "wet-floor-vertical500-inplane250",
+      "verticalPitchMm": 500,
+      "inPlanePitchMm": 250
+    }
+  ]
 }
