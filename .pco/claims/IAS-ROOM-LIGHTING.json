@@ -9,8 +9,8 @@
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T14:35:58.888Z",
-  "heartbeatAt": "2026-11-22T15:46:45.127Z",
-  "expiresAt": "2026-11-22T16:31:45.127Z",
+  "heartbeatAt": "2026-11-22T16:08:26.427Z",
+  "expiresAt": "2026-11-22T16:53:26.427Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Lighting checkpoint 7468f3f4 / tree 859abb20 remains durable; 22 focused tests and typecheck passed. PR #1618 is still open at remote 84af659c; coordinator is completing native receipt and publication integration.",
-    "next": "Publish final integrated source and genuine receipts, validate exact remote head, then perform own IAS publication preflight before the coordinated expected-head merge."
+    "evidence": "PR #1618 remote head 87711a310aa388fcb5ade8c9c816498854cb5fbe fetched into isolated worker checkout. Ordinary strict lighting producer --check passed against this integrated source; original 22 focused controls and typecheck passed.",
+    "next": "Wait for exact-head integration validation, then run canonical IAS publication preflight on that same remote head before the coordinated merge."
   },
   "pr": 1618
 }
