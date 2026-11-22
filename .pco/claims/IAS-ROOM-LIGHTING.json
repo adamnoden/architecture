@@ -9,8 +9,8 @@
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T14:35:58.888Z",
-  "heartbeatAt": "2026-11-22T17:19:05.558Z",
-  "expiresAt": "2026-11-22T18:04:05.558Z",
+  "heartbeatAt": "2026-11-22T17:33:57.654Z",
+  "expiresAt": "2026-11-22T18:18:57.654Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1618 actual browser green at890379a22e3515aca747dfaddab08755be0c4414; successor recovery/lighting-common-depth-20261122 at61a981596b2883b8937feea4f7ccc04f5df83864 treecbbd6317d6e0b689d3d4d51927daf46a6df5c39b:28 focused tests, strict producer and tsc passed; unselected with unknown terminals/unions",
-    "next": "Preflight exact green PR1618 head; release after merged checkpoint; fresh claim/current-main reconciliation before successor integration"
+    "evidence": "Primary PR1618 head 890379a22e3515aca747dfaddab08755be0c4414 awaits full health; independent successor recovery/lighting-common-depth-20261122 head cd3d23c3294e0958068ad939d8533f17c9779ff3 preserves unselected finite geometry and explicit device/product limits, with producer/typecheck/28 focused checks",
+    "next": "Run final IAS publication preflight when exact primary head is green, release after verified merge, then fresh claim and current-main reconciliation before successor integration"
   },
   "pr": 1618
 }
