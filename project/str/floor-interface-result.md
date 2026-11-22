@@ -43,3 +43,10 @@ signed loading. The transverse-shear cuts are complementary evidence, not a
 replacement for that missing free body. Existing mesh failures and the rigid
 patch idealisation remain visible. Passing virtual work does not qualify the
 local concrete, pad/contact law, foundation resistance or construction.
+
+
+## Completed current-source replay — 22 November 2026
+
+The current [receipt](studies/floor-interface-proof.json) now retains all16 actual controls and64 named corner interfaces. Each of the384 simultaneous six-vector components is derived from its actual source/request/checksum-bound native response and the same-builder port map. Maximum physical port/collector work relative residual is 2.160e-13 against the existing1e-8 limit; current200/restored200 gives exactly zero six-component difference. These are interface actions, not a complete joint free body.
+
+The actual700/500/250 and both mixed-operator controls preserve each physical collector origin. Their six comparisons retain signed force/moment changes without inventing a new acceptance threshold. All source-bound fixed-cut/head stability screens still fail. No whole-floor thickness, finite corner, cage, pad material or foundation is selected.

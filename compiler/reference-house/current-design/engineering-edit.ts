@@ -1,7 +1,7 @@
 import { admitDesignSnapshot, type DesignSnapshot } from './snapshot.js'
 import { sameEditBase, type EditBase } from './edit.js'
 import { readFloorSectionCuts } from './structural-floor-cuts.js'
-import { admitStudyLightingCase } from './assemblies/study-lighting.js'
+import { admitStudyLightingCase } from './assemblies/study-lighting-case.js'
 
 /** Transport envelope only. The engineering compiler owns stage/source admission. */
 export interface EngineeringDocument {

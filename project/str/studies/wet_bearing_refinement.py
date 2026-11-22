@@ -27,8 +27,8 @@ def assess_contact(result, criteria):
     if result.get('sourceSHA256') != result['request'].get('sourceSHA256') or result['request'].get('wetSupport') != settings:
         raise ValueError('Matching source/request/settings identities required')
     order = settings['bearingQuadratureOrder']
-    if type(order) is not int or order not in (8, 16, 32, 64):
-        raise ValueError('Explicit coupled refinement order8/16/32/64 required')
+    if type(order) is not int or order not in (2, 4, 8, 16, 32, 64):
+        raise ValueError('Explicit native normal-pad order2/4/8/16/32/64 required')
     posts = support['posts']
     if len(posts) != 2 or len({p['id'] for p in posts}) != 2:
         raise ValueError('Both actual unique wet posts required')
@@ -136,6 +136,8 @@ def assess_contact(result, criteria):
                      'firstMomentOrCentroidComparisonPassing': moment_pass,
                      'numericalSamePlaneIntegrationPassing': abs(f - ef) <= force_limit and moment_pass})
     return {'schema': 'str-wet-bearing-contact-integration/1', 'order': order, 'criteria': copy.deepcopy(criteria),
+            'sourceSHA256': copy.deepcopy(result['sourceSHA256']), 'executedRequest': copy.deepcopy(result['request']),
+            'nativeCaseId': result['nativeVertical']['native']['caseId'],
             'posts': rows, 'numericalSamePlaneIntegrationPassing': all(r['numericalSamePlaneIntegrationPassing'] for r in rows),
             'physicalContactAccepted': False, 'postHeadResistanceAccepted': False}
 
@@ -188,3 +190,18 @@ def compare_contacts(coarse, fine, criteria):
                 and maximum_head <= criteria['maximum52HeadComponentDifferenceKN_KNm'],
             'scope': 'Tested coupled quadrature refinement at fixed physical laws and floor discretisation; no asymptotic error bound, local concrete/material, corner-stress, resistance or whole-house acceptance.',
             'physicalContactAccepted': False, 'postHeadResistanceAccepted': False}
+
+
+if __name__ == '__main__':
+    import json
+    import sys
+    payload = json.load(sys.stdin)
+    if not isinstance(payload, dict) or payload.get('schema') != 'str-wet-bearing-analysis-request/1':
+        raise ValueError('Versioned explicit wet-bearing analysis request required')
+    if payload.get('operation') == 'assess' and set(payload) == {'schema', 'operation', 'native', 'criteria'}:
+        response = assess_contact(payload['native'], payload['criteria'])
+    elif payload.get('operation') == 'compare' and set(payload) == {'schema', 'operation', 'coarse', 'fine', 'criteria'}:
+        response = compare_contacts(payload['coarse'], payload['fine'], payload['criteria'])
+    else:
+        raise ValueError('Explicit assess/compare request without unsupported fields required')
+    json.dump(response, sys.stdout, allow_nan=False)

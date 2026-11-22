@@ -23,7 +23,8 @@ def fixture(order, coupled=False, plane=(-.1, 0, 0), rectangle=(-110, -50, 110, 
     r = {'schema': 'str-coupled-floor-section-result/1', 'sourceSHA256': sources,
          'request': {'sourceSHA256': sources, 'wetSupport': settings},
          'seatedWetSupport': {'settings': settings, 'physicalAcceptance': False, 'posts': [], 'contactFibres': []},
-         'nativeVertical': {'native': {'heads': [{'id': f'H{i}', 'reactionKN_KNm': [0.] * 6} for i in range(52)]}}}
+         'nativeVertical': {'native': {'caseId': f'ANALYTICAL-ORDER-{order}',
+             'heads': [{'id': f'H{i}', 'reactionKN_KNm': [0.] * 6} for i in range(52)]}}}
     solved = None
     if coupled:
         if rectangle != (-110, -50, 110, 50):
@@ -53,6 +54,8 @@ class WetBearingRefinementTest(unittest.TestCase):
             for row in result['posts']:
                 self.assertAlmostEqual(row['normalCompressionKN'], force, 10)
                 self.assertLess(max(map(abs, row['centreOfPressureFromPadCentreMm'])), 1e-10)
+        for order in (2, 4):
+            self.assertTrue(assess_contact(fixture(order), CRITERIA)['numericalSamePlaneIntegrationPassing'])
 
     def test_actual_local_nonlinear_orders_re_equilibrate_before_comparison(self):
         a, b = fixture(16, coupled=True), fixture(32, coupled=True)

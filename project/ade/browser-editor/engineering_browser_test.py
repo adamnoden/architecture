@@ -3,10 +3,10 @@ import argparse
 import json
 import subprocess
 from pathlib import Path
-from playwright.sync_api import expect, sync_playwright
 
 
 def ready(page, revision, timeout=120000):
+    from playwright.sync_api import expect
     expect(page.locator('#analysis')).to_have_text(f'Engineering ready for revision {revision}.', timeout=timeout)
 
 
@@ -30,7 +30,11 @@ def current_wet_stages():
             'caseId':'BROWSER-WET-CAGE','coreAxialWidthMm':house['coreAxialWidthMm'],'northUpstandWidthMm':house['northUpstandWidthMm'],
             'physicalGFactor':house['boundary']['physicalGFactor'],'includeExternalGMAXQ':house['boundary']['includeExternalGMAXQ'],
             **pick(vertical,'plateLaw bearingLaw maxPitchMm bearingQuadratureOrder freshUniformLiveKPa'),
-            **pick(masonry,'masonrySeatProjectionMm masonryUnitWeightKNM3 abutmentSlices foundationWeight courtCornerClosure floorReinforcement lowerCoreBodies lowerLWeight roofCoupling straightFrameCage')},
+            **pick(masonry,'masonrySeatProjectionMm masonryUnitWeightKNM3 abutmentSlices foundationWeight courtCornerClosure floorReinforcement lowerCoreBodies lowerLWeight straightFrameCage'),
+            # Upper bearing has already removed the obsolete bilateral roof
+            # laws. The saved-stage compiler needs the retained explicit roof
+            # controls here before it performs that same transition again.
+            'roofCoupling':bearing['roofControls']},
         'upperRoofBearing':pick(bearing,'seats masonryUnitWeightKNPerM3 masonryModulusMPa jointNormalComplianceMmPerMPa padThicknessMm padUnitWeightKNPerM3'),
         'roofPitch':{'pitchDeg':25},
         'floorSection':{'thicknessMm':request['thicknessMm'],'wetSupport':request['wetSupport'],
@@ -38,6 +42,7 @@ def current_wet_stages():
 
 
 def main():
+    from playwright.sync_api import expect, sync_playwright
     parser = argparse.ArgumentParser()
     parser.add_argument('url', nargs='?', default='http://127.0.0.1:4187/engineering.html')
     parser.add_argument('--chromium')

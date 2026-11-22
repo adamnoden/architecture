@@ -1,10 +1,11 @@
 {
   "schema": "ias-study-lighting-review/1",
   "methodSHA256": {
+    "compiler/reference-house/current-design/assemblies/study-lighting-case.ts": "105716ebc3bf7677357459197c727650c74ffaa698fbdd6bcfb1612c68fab2b8",
     "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "45c03ba8f231b950563cda2b7c39f403978fb6c03593c5e62df4ace09c8faff9",
-    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "e9a053b7bcfae2b1d99905511d1a421d973f2baa532555e079d3619b6425981f",
+    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "513c4cf20d3e1c854eb3a646c3e1ddfebed67d04ea2b0c838dd3ba319aadcef9",
     "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "385214e553cbd77f6436d8c04bde329c3aecc1b25c24c6d999a8fda20217f9ec",
-    "project/ias/studies/adaptable-study-lighting.mjs": "d5302ab7207d234e0814539508471f546073353aedb8ab8c062186ffefbbdb79"
+    "project/ias/studies/adaptable-study-lighting.mjs": "bff9e87bbd4a75df59d13e5933aadd8bd6575311bfefede741e5ee2c33b26696"
   },
   "reference": {
     "schema": "ias-study-lighting/1",
