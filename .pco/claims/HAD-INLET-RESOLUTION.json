@@ -1,44 +1,40 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 55,
-  "state": "released",
-  "leaseId": "82642b9f-5da1-40c3-878c-5f5bc871f7fb",
+  "generation": 56,
+  "state": "claimed",
+  "leaseId": "a87e3b70-c77e-4906-9bca-443f25ceb597",
   "holder": {
     "kind": "chatgpt",
-    "label": "had-indoor-cuts-20261122"
+    "label": "had-indoor-cuts-resume-20261122"
   },
-  "claimedAt": "2026-11-22T00:26:51.658Z",
-  "heartbeatAt": "2026-11-22T00:43:27.617Z",
-  "expiresAt": "2026-11-22T00:43:27.617Z",
+  "claimedAt": "2026-11-22T07:45:46.646Z",
+  "heartbeatAt": "2026-11-22T07:45:46.646Z",
+  "expiresAt": "2026-11-22T08:30:46.646Z",
   "checkpoint": {
-    "evidence": "Main769b60bc verified merged1613 actual7cf; bounded HAD54 released after source/frame/pan integration. Isolated successor holds actual occupied-bank/product geometry exploration; west local standing point rejected for disconnected washer-rest access. Entry-side doorway-operated bank under calculation.",
-    "next": "Checkpoint actual ordinary-cut code and geometry on durable recovery branch; develop entry-side valve/tail/support/withdrawal and door-state comparison without native structural inputs.",
-    "blocker": "No product/material/installed admission; full pipe reroute and load receiver remain unqualified. Root retains shared FEM compute slot."
+    "evidence": "Fresh main769b60bc; occupancy available; recovered aba784e5/treeb6f9219f into new workspace worktree after old cuts/tmp loss. Replayed3 saved controls:2pass, old operatorY2500 adverse assertion no longer fails wider envelope and requires correction from actual geometry. Case6 current source outputs unchanged.",
+    "next": "Complete connected wet-door event, independent routes, full tails/withdrawal/support and product/material comparison; integrate into existing saved inlet stage with explicit ground-relative datum and regenerate affected evidence.",
+    "blocker": "No product/material/installed admission; complete route/thermal/receiving/renewal proofs remain unqualified. NativeSTR58 inputs remain frozen; FEM heavy compute slot reserved root."
   },
-  "branch": "work/had-west-indoor-cuts-20261121",
+  "branch": "work/had-indoor-cuts-resume-20261122",
   "predecessor": {
-    "leaseId": "896c7680-0671-4628-b7b0-64cba63f3127",
-    "generation": 54,
-    "branch": "work/convergence-structure-20261121",
-    "pr": 1613,
+    "leaseId": "82642b9f-5da1-40c3-878c-5f5bc871f7fb",
+    "generation": 55,
+    "branch": "work/had-west-indoor-cuts-20261121",
     "checkpoint": {
-      "evidence": "Coordinated submitted head7cf3083a tree3ffc22cc is frozen with320Python+77STR+43HAD/profile controls passed; exact-head CI pending. Independent west indoor cuts successor started from7cf; actual fitted washer/rest/operator geometry and manufacturer BSA6T envelope under review, no structural input edits.",
-      "next": "Maintain bound1613 exact-head validation while developing isolated two-branch ordinary indoor cuts with actual product envelope, independent topology and withdrawal/support interfaces.",
-      "blocker": "No physical material/installation or source-pressure qualification claimed; complete physical receiver/support path remains unqualified."
+      "evidence": "Main769b60bc verified merged1613 actual7cf; bounded HAD54 released after source/frame/pan integration. Isolated successor holds actual occupied-bank/product geometry exploration; west local standing point rejected for disconnected washer-rest access. Entry-side doorway-operated bank under calculation.",
+      "next": "Checkpoint actual ordinary-cut code and geometry on durable recovery branch; develop entry-side valve/tail/support/withdrawal and door-state comparison without native structural inputs.",
+      "blocker": "No product/material/installed admission; full pipe reroute and load receiver remain unqualified. Root retains shared FEM compute slot."
     }
   },
   "recoverySource": {
-    "leaseId": "896c7680-0671-4628-b7b0-64cba63f3127",
-    "generation": 54,
-    "branch": "work/convergence-structure-20261121",
-    "pr": 1613,
+    "leaseId": "82642b9f-5da1-40c3-878c-5f5bc871f7fb",
+    "generation": 55,
+    "branch": "work/had-west-indoor-cuts-20261121",
     "checkpoint": {
-      "evidence": "Coordinated submitted head7cf3083a tree3ffc22cc is frozen with320Python+77STR+43HAD/profile controls passed; exact-head CI pending. Independent west indoor cuts successor started from7cf; actual fitted washer/rest/operator geometry and manufacturer BSA6T envelope under review, no structural input edits.",
-      "next": "Maintain bound1613 exact-head validation while developing isolated two-branch ordinary indoor cuts with actual product envelope, independent topology and withdrawal/support interfaces.",
-      "blocker": "No physical material/installation or source-pressure qualification claimed; complete physical receiver/support path remains unqualified."
+      "evidence": "Main769b60bc verified merged1613 actual7cf; bounded HAD54 released after source/frame/pan integration. Isolated successor holds actual occupied-bank/product geometry exploration; west local standing point rejected for disconnected washer-rest access. Entry-side doorway-operated bank under calculation.",
+      "next": "Checkpoint actual ordinary-cut code and geometry on durable recovery branch; develop entry-side valve/tail/support/withdrawal and door-state comparison without native structural inputs.",
+      "blocker": "No product/material/installed admission; full pipe reroute and load receiver remain unqualified. Root retains shared FEM compute slot."
     }
-  },
-  "releasedAt": "2026-11-22T00:43:27.617Z",
-  "releaseReason": "handoff"
+  }
 }
