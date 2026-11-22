@@ -73,6 +73,40 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
   if (infill.zMm[1] <= infill.zMm[0]) issues.push('no-positive-infill-between-switch-and-module')
   const fixedIslandJoints = [input.socketCentreZMm, 1100, input.moduleCentreZMm].map(z => [cx - c.fixedIslandWidthMm / 2 - input.jointMm, z - c.fixedIslandHeightMm / 2 - input.jointMm, cx + c.fixedIslandWidthMm / 2 + input.jointMm, z + c.fixedIslandHeightMm / 2 + input.jointMm])
   if (fixedIslandJoints.slice(0, 2).some(box => overlap([infill.xMm[0], infill.zMm[0], infill.xMm[1], infill.zMm[1]], box))) issues.push('fixed-electrical-island-intersects-removable-infill')
+  // A quarter-circle ends at a straight collar tangent, never at the box wall.
+  // Collars occupy axial length outside that wall; the tube occupies its full OD.
+  // These are three local entry branches, not an invented connected feeder/riser.
+  const boxLeft = cx - input.boxSizeMm[0] / 2
+  const collarTangentX = boxLeft - c.entryCollarAxialLengthMm
+  const riserX = collarTangentX - c.bendCentrelineRadiusMm
+  const tubeRadius = c.containmentOutsideDiameterMm / 2
+  const collarRadius = c.entryCollarOutsideDiameterMm / 2
+  const localEntryBranches = [input.socketCentreZMm, 1100, input.moduleCentreZMm].map((z, i) => {
+    const boxFrontDepth = i === 2 ? carrierDepth[0] - steelThickness : input.totalDepthMm
+    const axisDepth = boxFrontDepth - input.boxSizeMm[2] / 2
+    const bendStartZ = z - c.bendCentrelineRadiusMm
+    const bendEnvelope = { xMm: [riserX - tubeRadius, collarTangentX + tubeRadius],
+      zMm: [bendStartZ - tubeRadius, z + tubeRadius], depthMm: [axisDepth - tubeRadius, axisDepth + tubeRadius] }
+    const collarEnvelope = { xMm: [collarTangentX, boxLeft], zMm: [z - collarRadius, z + collarRadius],
+      depthMm: [axisDepth - collarRadius, axisDepth + collarRadius] }
+    const settingClearanceMm = { left: bendEnvelope.xMm[0] - bay[0],
+      bottom: bendEnvelope.zMm[0] - input.bottomZMm, top: input.topZMm - collarEnvelope.zMm[1],
+      rear: Math.min(bendEnvelope.depthMm[0], collarEnvelope.depthMm[0]) - fixedRailDepth[1],
+      front: (i === 2 ? carrierDepth[0] : input.totalDepthMm) - Math.max(bendEnvelope.depthMm[1], collarEnvelope.depthMm[1]) }
+    const branchIssues: string[] = []
+    if (Object.values(settingClearanceMm).some(gap => gap < input.jointMm - 1e-9)) branchIssues.push('entry-branch-setting-envelope-outside-local-field')
+    if (collarEnvelope.depthMm[0] < boxFrontDepth - input.boxSizeMm[2] || collarEnvelope.depthMm[1] > boxFrontDepth || collarRadius > input.boxSizeMm[1] / 2) branchIssues.push('entry-collar-outside-actual-box-side')
+    for (const issue of branchIssues) if (!issues.includes(issue)) issues.push(issue)
+    return { id: `IAS/STUDY/service-corner/entry-branch/${i}`, boxId: `IAS/STUDY/service-corner/fixed-island/${i}`,
+      bend: { plane: 'XZ at constant core depth', centreMm: [collarTangentX, axisDepth, bendStartZ],
+        centrelineRadiusMm: c.bendCentrelineRadiusMm, angleDegrees: 90,
+        startMm: [riserX, axisDepth, bendStartZ], endMm: [collarTangentX, axisDepth, z],
+        startUnitTangent: [0, 0, 1], endUnitTangent: [1, 0, 0], sweptEnvelope: bendEnvelope },
+      collar: { startMm: [collarTangentX, axisDepth, z], boxEntryMm: [boxLeft, axisDepth, z],
+        axialLengthMm: c.entryCollarAxialLengthMm, outsideDiameterMm: c.entryCollarOutsideDiameterMm, envelope: collarEnvelope },
+      settingClearanceMm, requiredSettingMm: input.jointMm, issues: branchIssues,
+      currentHouseSupplyConnected: false, commonRiserDepthTransitionResolved: false }
+  })
   return {
     schema: 'ias-study-lighting-corner-detail/1', status: issues.length ? 'GEOMETRY_REJECTED' : 'DEAD_MOCKUP_GEOMETRY_COMPARISON',
     coordinateConvention: 'XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.', coreFaceYMm: coreY,
@@ -96,13 +130,13 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
       clearanceToCarrierDepthMm: i === 2 ? carrierDepth[0] - boxFrontDepth : null,
       independentOfDecoration: true, bodyDepthAuthority: 'Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required.' } }),
     containment: { outsideDiameterRequirementMm: c.containmentOutsideDiameterMm, localUsableDepthMm: input.totalDepthMm - input.fixedBoundaryMm - input.decorativeFaceMm - steelThickness,
-      riserAxisXMm: cx - input.boxSizeMm[0] / 2 - c.bendCentrelineRadiusMm, branchSideEntryPointsXMmZMm: [input.socketCentreZMm, 1100, input.moduleCentreZMm].map(z => [cx - input.boxSizeMm[0] / 2, z]),
+      riserAxisXMm: riserX, localEntryBranches, branchSideEntryPointsXMmZMm: [input.socketCentreZMm, 1100, input.moduleCentreZMm].map(z => [cx - input.boxSizeMm[0] / 2, z]),
       sideEntryBendCentrelineRadiusRequirementMm: c.bendCentrelineRadiusMm, outerBendTerritoryMm: c.bendCentrelineRadiusMm + c.containmentOutsideDiameterMm / 2,
       entryCollarEnvelopeMm: [c.entryCollarOutsideDiameterMm, c.entryCollarAxialLengthMm],
       sourceInterfaceId: 'IAS/STUDY/room-supply-interface', sourceConnectedToCurrentHouseCircuit: false,
-      topology: ['Room supply interface (unconnected)', 'Independent enclosed riser', 'Fixed socket island and ordinary switch island', 'Factory-enclosed fixed luminaire terminals'],
+      topology: ['Room supply interface (unconnected)', 'Three local side-entry branches; common riser/depth transitions unresolved', 'Fixed socket island and ordinary switch island', 'Factory-enclosed fixed luminaire terminals'],
       switching: 'Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.',
-      limitation: 'Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred.' },
+      limitation: 'Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred.' },
     infill, firstRelease: { withdrawn, parked, sweepPlanMm: sweepPlan, conflictingOccupiedIds: conflicts,
       cradle: { planMm: rest, supportedModuleBottomZMm: c.cradleBottomZMm, jawClearWidthRequirementMm: width, positivelyRetainedUpright: true,
         demandKg: input.moduleMassLimitKg, capacityAndFloorSupportAccepted: false },

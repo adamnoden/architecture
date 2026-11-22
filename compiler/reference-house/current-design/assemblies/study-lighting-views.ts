@@ -194,6 +194,10 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
   for (const strip of carrier.stripsXZMm) {
     const q = p(strip[0], strip[3]); body += rect(q[0], q[1], strip[2] - strip[0], strip[3] - strip[1], '#8f9b9b')
   }
+  const branch = d.containment.localEntryBranches[2], start = p(branch.bend.startMm[0], branch.bend.startMm[2]), end = p(branch.bend.endMm[0], branch.bend.endMm[2])
+  const entry = p(branch.collar.boxEntryMm[0], branch.collar.boxEntryMm[2])
+  body += `<path d="M ${n(start[0])} ${n(start[1])} A ${branch.bend.centrelineRadiusMm} ${branch.bend.centrelineRadiusMm} 0 0 1 ${n(end[0])} ${n(end[1])}" fill="none" stroke="#567a86" stroke-width="${d.containment.outsideDiameterRequirementMm}"/>`
+    + `<path d="M ${n(end[0])} ${n(end[1])} L ${n(entry[0])} ${n(entry[1])}" fill="none" stroke="#a47c50" stroke-width="${branch.collar.outsideDiameterMm}"/>`
   for (const point of d.attachmentPoints) {
     const q = p(point.xMm, point.zMm)
     body += `<circle cx="${n(q[0])}" cy="${n(q[1])}" r="${n(point.holeDiameterMm / 2)}" fill="#f2eee3" stroke="#315d64"/>`
@@ -212,10 +216,10 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
     + text(550, 325, `Equal upper fixing ${d.loadDemand.equalTwoUpperFixingTensionN.toFixed(4)} N; no anchor rating inferred`)
     + text(550, 360, `Carrier stock upper comparison ${carrier.carrierStockMassKgUpperComparison.toFixed(5)} kg`)
     + text(550, 395, `Remaining ${carrier.remainingAuthoredMassBudgetKg.toFixed(5)} kg is a budget, not actual installed mass`)
-    + text(550, 445, `Riser centre X ${d.containment.riserAxisXMm}; side-entry radius ${d.containment.sideEntryBendCentrelineRadiusRequirementMm} mm`)
+    + text(550, 445, `Local entry starts X ${d.containment.riserAxisXMm}; side-entry radius ${d.containment.sideEntryBendCentrelineRadiusRequirementMm} mm`)
     + text(550, 480, `Outer bend requirement ${d.containment.outerBendTerritoryMm} mm; three independent fixed boxes`)
-    + text(550, 515, 'Factory bracket pattern, cable/tail and protective closures need actual component detail')
-    + text(550, 550, 'Study source interface is unconnected: no current feeder/protection/cable is invented')
+    + text(550, 515, `Straight collar ${d.containment.entryCollarEnvelopeMm[1]} mm; left setting gap ${d.containment.localEntryBranches[0].settingClearanceMm.left} mm (needs ${d.containment.localEntryBranches[0].requiredSettingMm})`)
+    + text(550, 550, 'Local depth axes differ; common riser, feeder/protection and transitions remain unresolved')
     + text(550, 605, 'Removal follows factory body/bracket access after isolation and support')
     + text(550, 640, 'Full module is released only after the electrical disconnection is safe')
   const depthX = (depth: number) => 550 + depth * 4

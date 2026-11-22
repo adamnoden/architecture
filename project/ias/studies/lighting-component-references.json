@@ -76,7 +76,7 @@
     "fixedBoundaryDepthMm": 7.5,
     "removableFaceDepthMm": 10.5,
     "localCarrierDepthReserveMm": 2,
-    "bayWidthMm": 300,
+    "bayWidthMm": 310,
     "doorStopMm": 50,
     "socketGripNormalMm": 100,
     "panelRoomwardDrawMm": 50,

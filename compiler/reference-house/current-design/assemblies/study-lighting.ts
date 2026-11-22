@@ -207,6 +207,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     normalDrawMm: p.panelRoomwardDrawMm, occupied: room.occupied, ceilingZMm: room.ceilingZMm,
     construction: components.cornerConstruction, boxSizeMm: corner.backBoxSizeMm, plateSizeMm: corner.plateSizeMm })
   fail('IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.', ['IAS/STUDY/room-supply-interface'])
+  fail('IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED', 'The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.', construction.containment.localEntryBranches.map(branch => branch.id))
   for (const issue of construction.issues) fail('IAS_LIGHTING_CONSTRUCTION_REJECTED', issue)
   return {
     schema: studyLightingMethod, status: diagnostics.some(d => /REJECTED|MISSING/.test(d.code)) ? 'GEOMETRY_REJECTED' : 'DEVELOPMENT_COMPARISON', request, source: basis.source,

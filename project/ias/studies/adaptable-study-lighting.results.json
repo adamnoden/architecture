@@ -1,9 +1,9 @@
 {
   "schema": "ias-study-lighting-review/1",
   "methodSHA256": {
-    "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "f9c9e5136ec8548a7f6626901c4a72f2181d07a4497e78b66f7e9aa9f6dcbac1",
-    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "debf6200f856cd3c1bbc46c86d9f00673d0e80512779d58b05ec2d2b24d4f2d5",
-    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "05bdc22ad9fdcd051c1425eb5654087a0ceb176e9078efc041d2c71a6933f6e7",
+    "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "618d025d614de3645c89452fdbeb352d71495b9a9fd53df3306e7d16737a863c",
+    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "e9a053b7bcfae2b1d99905511d1a421d973f2baa532555e079d3619b6425981f",
+    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "385214e553cbd77f6436d8c04bde329c3aecc1b25c24c6d999a8fda20217f9ec",
     "project/ias/studies/adaptable-study-lighting.mjs": "d5302ab7207d234e0814539508471f546073353aedb8ab8c062186ffefbbdb79"
   },
   "reference": {
@@ -42,10 +42,10 @@
       "occupiedBindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
       "inputsSHA256": {
         "project/ias/studies/adaptable-study-lighting.json": "02fb40391ab20ff76f90aef1074b82fca711f6b46bb8d6dd66a36fb5778f2302",
-        "project/ias/studies/lighting-component-references.json": "7eba359950c5c2ed07786aa2d638aba656e4bd4b1871bf8468494921b402fc60"
+        "project/ias/studies/lighting-component-references.json": "5d0547791aaa3f1c677ac74624cda9668fb7351dbf2c2b87fa9e7432823d4d9c"
       }
     },
-    "caseDigest": "cd4162b2aa209986420b15570bc42888260f28b4e9a654340679bc466d1e1d8f",
+    "caseDigest": "ab8f821d194ca7b4c433d87f544eb226dfdb1b99f5fbdd355973bd9c35ddca5e",
     "commonRoom": {
       "bands": [
         [
@@ -2126,7 +2126,7 @@
             "id": "wall-arrival",
             "kind": "wall",
             "positionMm": [
-              1150,
+              1145,
               3102.5,
               1800
             ],
@@ -2198,7 +2198,7 @@
             "id": "wall-arrival",
             "kind": "wall",
             "positionMm": [
-              1150,
+              1145,
               3102.5,
               1800
             ],
@@ -2379,7 +2379,7 @@
     "corner": {
       "id": "IAS/STUDY/service-corner",
       "bayPlanMm": [
-        1000,
+        990,
         3102.5,
         1300,
         3150.5
@@ -2393,14 +2393,14 @@
       "connectedUsableRoutingDepthMm": 55,
       "remainingBoxDepthMm": 8,
       "roomIntrusionMm": 48,
-      "conservativeFloorTerritoryM2": 0.0144,
+      "conservativeFloorTerritoryM2": 0.01488,
       "socketCentreMm": [
-        1150,
+        1145,
         3102.5,
         600
       ],
       "switchCentreMm": [
-        1150,
+        1145,
         3102.5,
         1100
       ],
@@ -2436,25 +2436,25 @@
       "retainedSkirtingDrawMm": 22,
       "lowRouteStopXMm": 1220,
       "handUsePlanMm": [
-        1000,
+        990,
         2982.5,
         1300,
         3102.5
       ],
       "panelDrawPlanMm": [
-        1000,
+        990,
         3052.5,
         1300,
         3102.5
       ],
       "completeModuleDrawPlanMm": [
-        1000,
+        990,
         2872.5,
         1300,
         3102.5
       ],
       "firstRestPlanMm": [
-        1000,
+        990,
         2700.5,
         1300,
         3000.5
@@ -2469,7 +2469,7 @@
       "module": {
         "present": true,
         "centreMm": [
-          1150,
+          1145,
           3102.5,
           1800
         ],
@@ -2501,15 +2501,15 @@
         "wallId": "west",
         "bayPlanMm": [
           429.5,
-          650,
+          645,
           477.5,
-          950
+          955
         ],
         "usePlanMm": [
           477.5,
-          650,
+          645,
           597.5,
-          950
+          955
         ],
         "centreMm": [
           477.5,
@@ -2529,15 +2529,15 @@
         "wallId": "cloak-west",
         "bayPlanMm": [
           3255,
-          1750,
+          1745,
           3303,
-          2050
+          2055
         ],
         "usePlanMm": [
           3135,
-          1750,
+          1745,
           3255,
-          2050
+          2055
         ],
         "centreMm": [
           3255,
@@ -2590,8 +2590,8 @@
         {
           "id": "IAS/STUDY/service-corner/rail/0",
           "xMm": [
-            1020,
-            1040
+            1015,
+            1035
           ],
           "zMm": [
             155,
@@ -2605,8 +2605,8 @@
         {
           "id": "IAS/STUDY/service-corner/rail/1",
           "xMm": [
-            1260,
-            1280
+            1255,
+            1275
           ],
           "zMm": [
             155,
@@ -2622,8 +2622,8 @@
       "carrier": {
         "id": "IAS/STUDY/service-corner/carrier",
         "xMm": [
-          1020,
-          1280
+          1015,
+          1275
         ],
         "zMm": [
           1575,
@@ -2635,50 +2635,50 @@
         ],
         "stripsXZMm": [
           [
-            1020,
+            1015,
             1575,
-            1040,
+            1035,
             2025
           ],
           [
-            1260,
+            1255,
             1575,
-            1280,
+            1275,
             2025
           ],
           [
-            1040,
+            1035,
             1575,
-            1260,
+            1255,
             1595
           ],
           [
-            1040,
+            1035,
             2005,
-            1260,
+            1255,
             2025
           ],
           [
-            1100,
+            1095,
             1710,
-            1200,
+            1195,
             1890
           ],
           [
-            1040,
+            1035,
             1730,
-            1260,
+            1255,
             1750
           ],
           [
-            1040,
+            1035,
             1850,
-            1260,
+            1255,
             1870
           ]
         ],
         "centralCableOpening": {
-          "centreXMm": 1150,
+          "centreXMm": 1145,
           "centreZMm": 1800,
           "diameterMm": 20,
           "holeStockCreditTaken": false
@@ -2693,25 +2693,25 @@
       "attachmentPoints": [
         {
           "id": "IAS/STUDY/carrier/bolt/0/0",
-          "xMm": 1030,
+          "xMm": 1025,
           "zMm": 1590,
           "holeDiameterMm": 5
         },
         {
           "id": "IAS/STUDY/carrier/bolt/0/1",
-          "xMm": 1030,
+          "xMm": 1025,
           "zMm": 2010,
           "holeDiameterMm": 5
         },
         {
           "id": "IAS/STUDY/carrier/bolt/1/0",
-          "xMm": 1270,
+          "xMm": 1265,
           "zMm": 1590,
           "holeDiameterMm": 5
         },
         {
           "id": "IAS/STUDY/carrier/bolt/1/1",
-          "xMm": 1270,
+          "xMm": 1265,
           "zMm": 2010,
           "holeDiameterMm": 5
         }
@@ -2719,7 +2719,7 @@
       "hardLands": [
         {
           "id": "IAS/STUDY/carrier/bolt/0/0",
-          "xMm": 1030,
+          "xMm": 1025,
           "zMm": 1590,
           "holeDiameterMm": 5,
           "coreDepthStartMm": 0,
@@ -2728,7 +2728,7 @@
         },
         {
           "id": "IAS/STUDY/carrier/bolt/0/1",
-          "xMm": 1030,
+          "xMm": 1025,
           "zMm": 2010,
           "holeDiameterMm": 5,
           "coreDepthStartMm": 0,
@@ -2737,7 +2737,7 @@
         },
         {
           "id": "IAS/STUDY/carrier/bolt/1/0",
-          "xMm": 1270,
+          "xMm": 1265,
           "zMm": 1590,
           "holeDiameterMm": 5,
           "coreDepthStartMm": 0,
@@ -2746,7 +2746,7 @@
         },
         {
           "id": "IAS/STUDY/carrier/bolt/1/1",
-          "xMm": 1270,
+          "xMm": 1265,
           "zMm": 2010,
           "holeDiameterMm": 5,
           "coreDepthStartMm": 0,
@@ -2769,15 +2769,15 @@
         {
           "id": "IAS/STUDY/service-corner/fixed-island/0",
           "bodyXZMm": [
-            1114,
+            1109,
             564,
-            1186,
+            1181,
             636
           ],
           "faceXZMm": [
-            1107,
+            1102,
             557,
-            1193,
+            1188,
             643
           ],
           "bodyDepthMm": [
@@ -2786,9 +2786,9 @@
           ],
           "requiredDecorativeJointMm": 5,
           "independentIslandXZMm": [
-            1075,
+            1070,
             550,
-            1225,
+            1220,
             650
           ],
           "sideEntryAxisDepthMm": 51.5,
@@ -2800,15 +2800,15 @@
         {
           "id": "IAS/STUDY/service-corner/fixed-island/1",
           "bodyXZMm": [
-            1114,
+            1109,
             1064,
-            1186,
+            1181,
             1136
           ],
           "faceXZMm": [
-            1107,
+            1102,
             1057,
-            1193,
+            1188,
             1143
           ],
           "bodyDepthMm": [
@@ -2817,9 +2817,9 @@
           ],
           "requiredDecorativeJointMm": 5,
           "independentIslandXZMm": [
-            1075,
+            1070,
             1050,
-            1225,
+            1220,
             1150
           ],
           "sideEntryAxisDepthMm": 51.5,
@@ -2831,15 +2831,15 @@
         {
           "id": "IAS/STUDY/service-corner/fixed-island/2",
           "bodyXZMm": [
-            1114,
+            1109,
             1764,
-            1186,
+            1181,
             1836
           ],
           "faceXZMm": [
-            1107,
+            1102,
             1757,
-            1193,
+            1188,
             1843
           ],
           "bodyDepthMm": [
@@ -2848,9 +2848,9 @@
           ],
           "requiredDecorativeJointMm": 5,
           "independentIslandXZMm": [
-            1075,
+            1070,
             1750,
-            1225,
+            1220,
             1850
           ],
           "sideEntryAxisDepthMm": 37,
@@ -2866,18 +2866,281 @@
       "containment": {
         "outsideDiameterRequirementMm": 20,
         "localUsableDepthMm": 55,
-        "riserAxisXMm": 1044,
+        "riserAxisXMm": 1009,
+        "localEntryBranches": [
+          {
+            "id": "IAS/STUDY/service-corner/entry-branch/0",
+            "boxId": "IAS/STUDY/service-corner/fixed-island/0",
+            "bend": {
+              "plane": "XZ at constant core depth",
+              "centreMm": [
+                1079,
+                51.5,
+                530
+              ],
+              "centrelineRadiusMm": 70,
+              "angleDegrees": 90,
+              "startMm": [
+                1009,
+                51.5,
+                530
+              ],
+              "endMm": [
+                1079,
+                51.5,
+                600
+              ],
+              "startUnitTangent": [
+                0,
+                0,
+                1
+              ],
+              "endUnitTangent": [
+                1,
+                0,
+                0
+              ],
+              "sweptEnvelope": {
+                "xMm": [
+                  999,
+                  1089
+                ],
+                "zMm": [
+                  520,
+                  610
+                ],
+                "depthMm": [
+                  41.5,
+                  61.5
+                ]
+              }
+            },
+            "collar": {
+              "startMm": [
+                1079,
+                51.5,
+                600
+              ],
+              "boxEntryMm": [
+                1109,
+                51.5,
+                600
+              ],
+              "axialLengthMm": 30,
+              "outsideDiameterMm": 30,
+              "envelope": {
+                "xMm": [
+                  1079,
+                  1109
+                ],
+                "zMm": [
+                  585,
+                  615
+                ],
+                "depthMm": [
+                  36.5,
+                  66.5
+                ]
+              }
+            },
+            "settingClearanceMm": {
+              "left": 9,
+              "bottom": 365,
+              "top": 1485,
+              "rear": 27,
+              "front": 8.5
+            },
+            "requiredSettingMm": 5,
+            "issues": [],
+            "currentHouseSupplyConnected": false,
+            "commonRiserDepthTransitionResolved": false
+          },
+          {
+            "id": "IAS/STUDY/service-corner/entry-branch/1",
+            "boxId": "IAS/STUDY/service-corner/fixed-island/1",
+            "bend": {
+              "plane": "XZ at constant core depth",
+              "centreMm": [
+                1079,
+                51.5,
+                1030
+              ],
+              "centrelineRadiusMm": 70,
+              "angleDegrees": 90,
+              "startMm": [
+                1009,
+                51.5,
+                1030
+              ],
+              "endMm": [
+                1079,
+                51.5,
+                1100
+              ],
+              "startUnitTangent": [
+                0,
+                0,
+                1
+              ],
+              "endUnitTangent": [
+                1,
+                0,
+                0
+              ],
+              "sweptEnvelope": {
+                "xMm": [
+                  999,
+                  1089
+                ],
+                "zMm": [
+                  1020,
+                  1110
+                ],
+                "depthMm": [
+                  41.5,
+                  61.5
+                ]
+              }
+            },
+            "collar": {
+              "startMm": [
+                1079,
+                51.5,
+                1100
+              ],
+              "boxEntryMm": [
+                1109,
+                51.5,
+                1100
+              ],
+              "axialLengthMm": 30,
+              "outsideDiameterMm": 30,
+              "envelope": {
+                "xMm": [
+                  1079,
+                  1109
+                ],
+                "zMm": [
+                  1085,
+                  1115
+                ],
+                "depthMm": [
+                  36.5,
+                  66.5
+                ]
+              }
+            },
+            "settingClearanceMm": {
+              "left": 9,
+              "bottom": 865,
+              "top": 985,
+              "rear": 27,
+              "front": 8.5
+            },
+            "requiredSettingMm": 5,
+            "issues": [],
+            "currentHouseSupplyConnected": false,
+            "commonRiserDepthTransitionResolved": false
+          },
+          {
+            "id": "IAS/STUDY/service-corner/entry-branch/2",
+            "boxId": "IAS/STUDY/service-corner/fixed-island/2",
+            "bend": {
+              "plane": "XZ at constant core depth",
+              "centreMm": [
+                1079,
+                37,
+                1730
+              ],
+              "centrelineRadiusMm": 70,
+              "angleDegrees": 90,
+              "startMm": [
+                1009,
+                37,
+                1730
+              ],
+              "endMm": [
+                1079,
+                37,
+                1800
+              ],
+              "startUnitTangent": [
+                0,
+                0,
+                1
+              ],
+              "endUnitTangent": [
+                1,
+                0,
+                0
+              ],
+              "sweptEnvelope": {
+                "xMm": [
+                  999,
+                  1089
+                ],
+                "zMm": [
+                  1720,
+                  1810
+                ],
+                "depthMm": [
+                  27,
+                  47
+                ]
+              }
+            },
+            "collar": {
+              "startMm": [
+                1079,
+                37,
+                1800
+              ],
+              "boxEntryMm": [
+                1109,
+                37,
+                1800
+              ],
+              "axialLengthMm": 30,
+              "outsideDiameterMm": 30,
+              "envelope": {
+                "xMm": [
+                  1079,
+                  1109
+                ],
+                "zMm": [
+                  1785,
+                  1815
+                ],
+                "depthMm": [
+                  22,
+                  52
+                ]
+              }
+            },
+            "settingClearanceMm": {
+              "left": 9,
+              "bottom": 1565,
+              "top": 285,
+              "rear": 12.5,
+              "front": 10.5
+            },
+            "requiredSettingMm": 5,
+            "issues": [],
+            "currentHouseSupplyConnected": false,
+            "commonRiserDepthTransitionResolved": false
+          }
+        ],
         "branchSideEntryPointsXMmZMm": [
           [
-            1114,
+            1109,
             600
           ],
           [
-            1114,
+            1109,
             1100
           ],
           [
-            1114,
+            1109,
             1800
           ]
         ],
@@ -2891,18 +3154,18 @@
         "sourceConnectedToCurrentHouseCircuit": false,
         "topology": [
           "Room supply interface (unconnected)",
-          "Independent enclosed riser",
+          "Three local side-entry branches; common riser/depth transitions unresolved",
           "Fixed socket island and ordinary switch island",
           "Factory-enclosed fixed luminaire terminals"
         ],
         "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
-        "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+        "limitation": "Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
       },
       "infill": {
         "id": "IAS/STUDY/service-corner/infill/central",
         "xMm": [
-          1020,
-          1280
+          1015,
+          1275
         ],
         "zMm": [
           1200,
@@ -2915,8 +3178,8 @@
       "firstRelease": {
         "withdrawn": {
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "yMm": [
             2872.5,
@@ -2929,8 +3192,8 @@
         },
         "parked": {
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "yMm": [
             2770.5,
@@ -2942,15 +3205,15 @@
           ]
         },
         "sweepPlanMm": [
-          1020,
+          1015,
           2770.5,
-          1280,
+          1275,
           3102.5
         ],
         "conflictingOccupiedIds": [],
         "cradle": {
           "planMm": [
-            1000,
+            990,
             2700.5,
             1300,
             3000.5
@@ -3023,17 +3286,17 @@
             0
           ],
           [
-            1150,
+            1145,
             3080.5,
             0
           ],
           [
-            1150,
+            1145,
             3102.5,
             600
           ]
         ],
-        "routedMm": 1435.9031978595717,
+        "routedMm": 1430.9031978595717,
         "suppliedMm": 2500
       },
       "side": {
@@ -3134,6 +3397,15 @@
         "objectIds": [
           "IAS/STUDY/room-supply-interface"
         ]
+      },
+      {
+        "code": "IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED",
+        "message": "The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.",
+        "objectIds": [
+          "IAS/STUDY/service-corner/entry-branch/0",
+          "IAS/STUDY/service-corner/entry-branch/1",
+          "IAS/STUDY/service-corner/entry-branch/2"
+        ]
       }
     ]
   },
@@ -3151,12 +3423,12 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "071d0b5369441cabdeff1944ca370fbc4cf665058e98ca80c0887935bd3beed0",
+      "caseDigest": "b90cb8127100dfac3d56d7b4839c50132af246f59677027451a43c5f9b0e41e5",
       "status": "GEOMETRY_REJECTED",
       "corner": {
         "id": "IAS/STUDY/service-corner",
         "bayPlanMm": [
-          1000,
+          990,
           3150.5,
           1300,
           3150.5
@@ -3172,12 +3444,12 @@
         "roomIntrusionMm": 0,
         "conservativeFloorTerritoryM2": 0,
         "socketCentreMm": [
-          1150,
+          1145,
           3150.5,
           600
         ],
         "switchCentreMm": [
-          1150,
+          1145,
           3150.5,
           1100
         ],
@@ -3213,25 +3485,25 @@
         "retainedSkirtingDrawMm": 22,
         "lowRouteStopXMm": 1220,
         "handUsePlanMm": [
-          1000,
+          990,
           3030.5,
           1300,
           3150.5
         ],
         "panelDrawPlanMm": [
-          1000,
+          990,
           3100.5,
           1300,
           3150.5
         ],
         "completeModuleDrawPlanMm": [
-          1000,
+          990,
           2920.5,
           1300,
           3150.5
         ],
         "firstRestPlanMm": [
-          1000,
+          990,
           2700.5,
           1300,
           3000.5
@@ -3246,7 +3518,7 @@
         "module": {
           "present": true,
           "centreMm": [
-            1150,
+            1145,
             3150.5,
             1800
           ],
@@ -3278,15 +3550,15 @@
           "wallId": "west",
           "bayPlanMm": [
             429.5,
-            650,
+            645,
             429.5,
-            950
+            955
           ],
           "usePlanMm": [
             429.5,
-            650,
+            645,
             549.5,
-            950
+            955
           ],
           "centreMm": [
             429.5,
@@ -3306,15 +3578,15 @@
           "wallId": "cloak-west",
           "bayPlanMm": [
             3303,
-            1750,
+            1745,
             3303,
-            2050
+            2055
           ],
           "usePlanMm": [
             3183,
-            1750,
+            1745,
             3303,
-            2050
+            2055
           ],
           "centreMm": [
             3303,
@@ -3330,15 +3602,15 @@
       ],
       "construction": {
         "schema": "ias-study-lighting-corner-detail/1",
-        "status": "DEAD_MOCKUP_GEOMETRY_COMPARISON",
+        "status": "GEOMETRY_REJECTED",
         "coordinateConvention": "XYZ house mm; depth d is roomward from actual masonry core face. No invented anchor embedment.",
         "coreFaceYMm": 3177.5,
         "fixedRails": [
           {
             "id": "IAS/STUDY/service-corner/rail/0",
             "xMm": [
-              1020,
-              1040
+              1015,
+              1035
             ],
             "zMm": [
               155,
@@ -3352,8 +3624,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/1",
             "xMm": [
-              1260,
-              1280
+              1255,
+              1275
             ],
             "zMm": [
               155,
@@ -3369,8 +3641,8 @@
         "carrier": {
           "id": "IAS/STUDY/service-corner/carrier",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1575,
@@ -3382,50 +3654,50 @@
           ],
           "stripsXZMm": [
             [
-              1020,
+              1015,
               1575,
-              1040,
+              1035,
               2025
             ],
             [
-              1260,
+              1255,
               1575,
-              1280,
+              1275,
               2025
             ],
             [
-              1040,
+              1035,
               1575,
-              1260,
+              1255,
               1595
             ],
             [
-              1040,
+              1035,
               2005,
-              1260,
+              1255,
               2025
             ],
             [
-              1100,
+              1095,
               1710,
-              1200,
+              1195,
               1890
             ],
             [
-              1040,
+              1035,
               1730,
-              1260,
+              1255,
               1750
             ],
             [
-              1040,
+              1035,
               1850,
-              1260,
+              1255,
               1870
             ]
           ],
           "centralCableOpening": {
-            "centreXMm": 1150,
+            "centreXMm": 1145,
             "centreZMm": 1800,
             "diameterMm": 20,
             "holeStockCreditTaken": false
@@ -3440,25 +3712,25 @@
         "attachmentPoints": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5
           }
@@ -3466,7 +3738,7 @@
         "hardLands": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -3475,7 +3747,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -3484,7 +3756,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -3493,7 +3765,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -3516,15 +3788,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/0",
             "bodyXZMm": [
-              1114,
+              1109,
               564,
-              1186,
+              1181,
               636
             ],
             "faceXZMm": [
-              1107,
+              1102,
               557,
-              1193,
+              1188,
               643
             ],
             "bodyDepthMm": [
@@ -3533,9 +3805,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               550,
-              1225,
+              1220,
               650
             ],
             "sideEntryAxisDepthMm": 3.5,
@@ -3547,15 +3819,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/1",
             "bodyXZMm": [
-              1114,
+              1109,
               1064,
-              1186,
+              1181,
               1136
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1057,
-              1193,
+              1188,
               1143
             ],
             "bodyDepthMm": [
@@ -3564,9 +3836,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1050,
-              1225,
+              1220,
               1150
             ],
             "sideEntryAxisDepthMm": 3.5,
@@ -3578,15 +3850,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/2",
             "bodyXZMm": [
-              1114,
+              1109,
               1764,
-              1186,
+              1181,
               1836
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1757,
-              1193,
+              1188,
               1843
             ],
             "bodyDepthMm": [
@@ -3595,9 +3867,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1750,
-              1225,
+              1220,
               1850
             ],
             "sideEntryAxisDepthMm": -11,
@@ -3613,18 +3885,287 @@
         "containment": {
           "outsideDiameterRequirementMm": 20,
           "localUsableDepthMm": 7,
-          "riserAxisXMm": 1044,
+          "riserAxisXMm": 1009,
+          "localEntryBranches": [
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/0",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/0",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  3.5,
+                  530
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  3.5,
+                  530
+                ],
+                "endMm": [
+                  1079,
+                  3.5,
+                  600
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    520,
+                    610
+                  ],
+                  "depthMm": [
+                    -6.5,
+                    13.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  3.5,
+                  600
+                ],
+                "boxEntryMm": [
+                  1109,
+                  3.5,
+                  600
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    585,
+                    615
+                  ],
+                  "depthMm": [
+                    -11.5,
+                    18.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 365,
+                "top": 1485,
+                "rear": -21,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [
+                "entry-branch-setting-envelope-outside-local-field"
+              ],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/1",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/1",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  3.5,
+                  1030
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  3.5,
+                  1030
+                ],
+                "endMm": [
+                  1079,
+                  3.5,
+                  1100
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1020,
+                    1110
+                  ],
+                  "depthMm": [
+                    -6.5,
+                    13.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  3.5,
+                  1100
+                ],
+                "boxEntryMm": [
+                  1109,
+                  3.5,
+                  1100
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1085,
+                    1115
+                  ],
+                  "depthMm": [
+                    -11.5,
+                    18.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 865,
+                "top": 985,
+                "rear": -21,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [
+                "entry-branch-setting-envelope-outside-local-field"
+              ],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/2",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/2",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  -11,
+                  1730
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  -11,
+                  1730
+                ],
+                "endMm": [
+                  1079,
+                  -11,
+                  1800
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1720,
+                    1810
+                  ],
+                  "depthMm": [
+                    -21,
+                    -1
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  -11,
+                  1800
+                ],
+                "boxEntryMm": [
+                  1109,
+                  -11,
+                  1800
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1785,
+                    1815
+                  ],
+                  "depthMm": [
+                    -26,
+                    4
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 1565,
+                "top": 285,
+                "rear": -35.5,
+                "front": 10.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [
+                "entry-branch-setting-envelope-outside-local-field"
+              ],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            }
+          ],
           "branchSideEntryPointsXMmZMm": [
             [
-              1114,
+              1109,
               600
             ],
             [
-              1114,
+              1109,
               1100
             ],
             [
-              1114,
+              1109,
               1800
             ]
           ],
@@ -3638,18 +4179,18 @@
           "sourceConnectedToCurrentHouseCircuit": false,
           "topology": [
             "Room supply interface (unconnected)",
-            "Independent enclosed riser",
+            "Three local side-entry branches; common riser/depth transitions unresolved",
             "Fixed socket island and ordinary switch island",
             "Factory-enclosed fixed luminaire terminals"
           ],
           "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
-          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+          "limitation": "Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
         },
         "infill": {
           "id": "IAS/STUDY/service-corner/infill/central",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1200,
@@ -3662,8 +4203,8 @@
         "firstRelease": {
           "withdrawn": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2920.5,
@@ -3676,8 +4217,8 @@
           },
           "parked": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2770.5,
@@ -3689,15 +4230,15 @@
             ]
           },
           "sweepPlanMm": [
-            1020,
+            1015,
             2770.5,
-            1280,
+            1275,
             3150.5
           ],
           "conflictingOccupiedIds": [],
           "cradle": {
             "planMm": [
-              1000,
+              990,
               2700.5,
               1300,
               3000.5
@@ -3728,7 +4269,9 @@
           "materialAdmission": false,
           "completeModuleMassQualified": false
         },
-        "issues": []
+        "issues": [
+          "entry-branch-setting-envelope-outside-local-field"
+        ]
       },
       "leads": {
         "desk": {
@@ -3770,17 +4313,17 @@
               0
             ],
             [
-              1150,
+              1145,
               3080.5,
               0
             ],
             [
-              1150,
+              1145,
               3150.5,
               600
             ]
           ],
-          "routedMm": 1439.569532421558,
+          "routedMm": 1434.569532421558,
           "suppliedMm": 2500
         },
         "side": {
@@ -3826,6 +4369,22 @@
           "objectIds": [
             "IAS/STUDY/room-supply-interface"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED",
+          "message": "The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.",
+          "objectIds": [
+            "IAS/STUDY/service-corner/entry-branch/0",
+            "IAS/STUDY/service-corner/entry-branch/1",
+            "IAS/STUDY/service-corner/entry-branch/2"
+          ]
+        },
+        {
+          "code": "IAS_LIGHTING_CONSTRUCTION_REJECTED",
+          "message": "entry-branch-setting-envelope-outside-local-field",
+          "objectIds": [
+            "IAS/STUDY/service-corner"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -3856,12 +4415,12 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "046f6a9dfcef84a48c20a3124a610075ce0ddb696307582f39722bd275ad1a3c",
+      "caseDigest": "a4a5c4bac6e4e12f806c2d3e099140a3eb0ea1cc3629224a118b200a685a49ed",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
         "bayPlanMm": [
-          1000,
+          990,
           3092.5,
           1300,
           3150.5
@@ -3875,14 +4434,14 @@
         "connectedUsableRoutingDepthMm": 65,
         "remainingBoxDepthMm": 18,
         "roomIntrusionMm": 58,
-        "conservativeFloorTerritoryM2": 0.0174,
+        "conservativeFloorTerritoryM2": 0.01798,
         "socketCentreMm": [
-          1150,
+          1145,
           3092.5,
           600
         ],
         "switchCentreMm": [
-          1150,
+          1145,
           3092.5,
           1100
         ],
@@ -3918,25 +4477,25 @@
         "retainedSkirtingDrawMm": 22,
         "lowRouteStopXMm": 1220,
         "handUsePlanMm": [
-          1000,
+          990,
           2972.5,
           1300,
           3092.5
         ],
         "panelDrawPlanMm": [
-          1000,
+          990,
           3042.5,
           1300,
           3092.5
         ],
         "completeModuleDrawPlanMm": [
-          1000,
+          990,
           2862.5,
           1300,
           3092.5
         ],
         "firstRestPlanMm": [
-          1000,
+          990,
           2700.5,
           1300,
           3000.5
@@ -3951,7 +4510,7 @@
         "module": {
           "present": true,
           "centreMm": [
-            1150,
+            1145,
             3092.5,
             1800
           ],
@@ -3983,15 +4542,15 @@
           "wallId": "west",
           "bayPlanMm": [
             429.5,
-            650,
+            645,
             487.5,
-            950
+            955
           ],
           "usePlanMm": [
             487.5,
-            650,
+            645,
             607.5,
-            950
+            955
           ],
           "centreMm": [
             487.5,
@@ -4011,15 +4570,15 @@
           "wallId": "cloak-west",
           "bayPlanMm": [
             3245,
-            1750,
+            1745,
             3303,
-            2050
+            2055
           ],
           "usePlanMm": [
             3125,
-            1750,
+            1745,
             3245,
-            2050
+            2055
           ],
           "centreMm": [
             3245,
@@ -4042,8 +4601,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/0",
             "xMm": [
-              1020,
-              1040
+              1015,
+              1035
             ],
             "zMm": [
               155,
@@ -4057,8 +4616,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/1",
             "xMm": [
-              1260,
-              1280
+              1255,
+              1275
             ],
             "zMm": [
               155,
@@ -4074,8 +4633,8 @@
         "carrier": {
           "id": "IAS/STUDY/service-corner/carrier",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1575,
@@ -4087,50 +4646,50 @@
           ],
           "stripsXZMm": [
             [
-              1020,
+              1015,
               1575,
-              1040,
+              1035,
               2025
             ],
             [
-              1260,
+              1255,
               1575,
-              1280,
+              1275,
               2025
             ],
             [
-              1040,
+              1035,
               1575,
-              1260,
+              1255,
               1595
             ],
             [
-              1040,
+              1035,
               2005,
-              1260,
+              1255,
               2025
             ],
             [
-              1100,
+              1095,
               1710,
-              1200,
+              1195,
               1890
             ],
             [
-              1040,
+              1035,
               1730,
-              1260,
+              1255,
               1750
             ],
             [
-              1040,
+              1035,
               1850,
-              1260,
+              1255,
               1870
             ]
           ],
           "centralCableOpening": {
-            "centreXMm": 1150,
+            "centreXMm": 1145,
             "centreZMm": 1800,
             "diameterMm": 20,
             "holeStockCreditTaken": false
@@ -4145,25 +4704,25 @@
         "attachmentPoints": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5
           }
@@ -4171,7 +4730,7 @@
         "hardLands": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -4180,7 +4739,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -4189,7 +4748,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -4198,7 +4757,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -4221,15 +4780,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/0",
             "bodyXZMm": [
-              1114,
+              1109,
               564,
-              1186,
+              1181,
               636
             ],
             "faceXZMm": [
-              1107,
+              1102,
               557,
-              1193,
+              1188,
               643
             ],
             "bodyDepthMm": [
@@ -4238,9 +4797,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               550,
-              1225,
+              1220,
               650
             ],
             "sideEntryAxisDepthMm": 61.5,
@@ -4252,15 +4811,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/1",
             "bodyXZMm": [
-              1114,
+              1109,
               1064,
-              1186,
+              1181,
               1136
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1057,
-              1193,
+              1188,
               1143
             ],
             "bodyDepthMm": [
@@ -4269,9 +4828,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1050,
-              1225,
+              1220,
               1150
             ],
             "sideEntryAxisDepthMm": 61.5,
@@ -4283,15 +4842,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/2",
             "bodyXZMm": [
-              1114,
+              1109,
               1764,
-              1186,
+              1181,
               1836
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1757,
-              1193,
+              1188,
               1843
             ],
             "bodyDepthMm": [
@@ -4300,9 +4859,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1750,
-              1225,
+              1220,
               1850
             ],
             "sideEntryAxisDepthMm": 47,
@@ -4318,18 +4877,281 @@
         "containment": {
           "outsideDiameterRequirementMm": 20,
           "localUsableDepthMm": 65,
-          "riserAxisXMm": 1044,
+          "riserAxisXMm": 1009,
+          "localEntryBranches": [
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/0",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/0",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  61.5,
+                  530
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  61.5,
+                  530
+                ],
+                "endMm": [
+                  1079,
+                  61.5,
+                  600
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    520,
+                    610
+                  ],
+                  "depthMm": [
+                    51.5,
+                    71.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  61.5,
+                  600
+                ],
+                "boxEntryMm": [
+                  1109,
+                  61.5,
+                  600
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    585,
+                    615
+                  ],
+                  "depthMm": [
+                    46.5,
+                    76.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 365,
+                "top": 1485,
+                "rear": 37,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/1",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/1",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  61.5,
+                  1030
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  61.5,
+                  1030
+                ],
+                "endMm": [
+                  1079,
+                  61.5,
+                  1100
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1020,
+                    1110
+                  ],
+                  "depthMm": [
+                    51.5,
+                    71.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  61.5,
+                  1100
+                ],
+                "boxEntryMm": [
+                  1109,
+                  61.5,
+                  1100
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1085,
+                    1115
+                  ],
+                  "depthMm": [
+                    46.5,
+                    76.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 865,
+                "top": 985,
+                "rear": 37,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/2",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/2",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  47,
+                  1730
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  47,
+                  1730
+                ],
+                "endMm": [
+                  1079,
+                  47,
+                  1800
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1720,
+                    1810
+                  ],
+                  "depthMm": [
+                    37,
+                    57
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  47,
+                  1800
+                ],
+                "boxEntryMm": [
+                  1109,
+                  47,
+                  1800
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1785,
+                    1815
+                  ],
+                  "depthMm": [
+                    32,
+                    62
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 1565,
+                "top": 285,
+                "rear": 22.5,
+                "front": 10.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            }
+          ],
           "branchSideEntryPointsXMmZMm": [
             [
-              1114,
+              1109,
               600
             ],
             [
-              1114,
+              1109,
               1100
             ],
             [
-              1114,
+              1109,
               1800
             ]
           ],
@@ -4343,18 +5165,18 @@
           "sourceConnectedToCurrentHouseCircuit": false,
           "topology": [
             "Room supply interface (unconnected)",
-            "Independent enclosed riser",
+            "Three local side-entry branches; common riser/depth transitions unresolved",
             "Fixed socket island and ordinary switch island",
             "Factory-enclosed fixed luminaire terminals"
           ],
           "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
-          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+          "limitation": "Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
         },
         "infill": {
           "id": "IAS/STUDY/service-corner/infill/central",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1200,
@@ -4367,8 +5189,8 @@
         "firstRelease": {
           "withdrawn": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2862.5,
@@ -4381,8 +5203,8 @@
           },
           "parked": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2770.5,
@@ -4394,15 +5216,15 @@
             ]
           },
           "sweepPlanMm": [
-            1020,
+            1015,
             2770.5,
-            1280,
+            1275,
             3092.5
           ],
           "conflictingOccupiedIds": [],
           "cradle": {
             "planMm": [
-              1000,
+              990,
               2700.5,
               1300,
               3000.5
@@ -4475,17 +5297,17 @@
               0
             ],
             [
-              1150,
+              1145,
               3080.5,
               0
             ],
             [
-              1150,
+              1145,
               3092.5,
               600
             ]
           ],
-          "routedMm": 1435.6199880023994,
+          "routedMm": 1430.6199880023994,
           "suppliedMm": 2500
         },
         "side": {
@@ -4524,6 +5346,15 @@
           "objectIds": [
             "IAS/STUDY/room-supply-interface"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED",
+          "message": "The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.",
+          "objectIds": [
+            "IAS/STUDY/service-corner/entry-branch/0",
+            "IAS/STUDY/service-corner/entry-branch/1",
+            "IAS/STUDY/service-corner/entry-branch/2"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -4554,12 +5385,12 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "519c4027e83e8ebf08ed3a89fb8a6537e95af11a2d38b28ba023664a95f72e77",
+      "caseDigest": "71f62673ef48a084b91bace454d76c7585351f2cacb5788fb29c4d1bab28a874",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
         "bayPlanMm": [
-          1000,
+          990,
           3102.5,
           1300,
           3150.5
@@ -4573,14 +5404,14 @@
         "connectedUsableRoutingDepthMm": 55,
         "remainingBoxDepthMm": 8,
         "roomIntrusionMm": 48,
-        "conservativeFloorTerritoryM2": 0.0144,
+        "conservativeFloorTerritoryM2": 0.01488,
         "socketCentreMm": [
-          1150,
+          1145,
           3102.5,
           600
         ],
         "switchCentreMm": [
-          1150,
+          1145,
           3102.5,
           1100
         ],
@@ -4616,25 +5447,25 @@
         "retainedSkirtingDrawMm": 22,
         "lowRouteStopXMm": 1220,
         "handUsePlanMm": [
-          1000,
+          990,
           2982.5,
           1300,
           3102.5
         ],
         "panelDrawPlanMm": [
-          1000,
+          990,
           3052.5,
           1300,
           3102.5
         ],
         "completeModuleDrawPlanMm": [
-          1000,
+          990,
           2872.5,
           1300,
           3102.5
         ],
         "firstRestPlanMm": [
-          1000,
+          990,
           2700.5,
           1300,
           3000.5
@@ -4649,7 +5480,7 @@
         "module": {
           "present": true,
           "centreMm": [
-            1150,
+            1145,
             3102.5,
             1800
           ],
@@ -4681,15 +5512,15 @@
           "wallId": "west",
           "bayPlanMm": [
             429.5,
-            650,
+            645,
             477.5,
-            950
+            955
           ],
           "usePlanMm": [
             477.5,
-            650,
+            645,
             597.5,
-            950
+            955
           ],
           "centreMm": [
             477.5,
@@ -4709,15 +5540,15 @@
           "wallId": "cloak-west",
           "bayPlanMm": [
             3255,
-            1750,
+            1745,
             3303,
-            2050
+            2055
           ],
           "usePlanMm": [
             3135,
-            1750,
+            1745,
             3255,
-            2050
+            2055
           ],
           "centreMm": [
             3255,
@@ -4740,8 +5571,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/0",
             "xMm": [
-              1020,
-              1040
+              1015,
+              1035
             ],
             "zMm": [
               155,
@@ -4755,8 +5586,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/1",
             "xMm": [
-              1260,
-              1280
+              1255,
+              1275
             ],
             "zMm": [
               155,
@@ -4772,8 +5603,8 @@
         "carrier": {
           "id": "IAS/STUDY/service-corner/carrier",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1575,
@@ -4785,50 +5616,50 @@
           ],
           "stripsXZMm": [
             [
-              1020,
+              1015,
               1575,
-              1040,
+              1035,
               2025
             ],
             [
-              1260,
+              1255,
               1575,
-              1280,
+              1275,
               2025
             ],
             [
-              1040,
+              1035,
               1575,
-              1260,
+              1255,
               1595
             ],
             [
-              1040,
+              1035,
               2005,
-              1260,
+              1255,
               2025
             ],
             [
-              1100,
+              1095,
               1710,
-              1200,
+              1195,
               1890
             ],
             [
-              1040,
+              1035,
               1730,
-              1260,
+              1255,
               1750
             ],
             [
-              1040,
+              1035,
               1850,
-              1260,
+              1255,
               1870
             ]
           ],
           "centralCableOpening": {
-            "centreXMm": 1150,
+            "centreXMm": 1145,
             "centreZMm": 1800,
             "diameterMm": 20,
             "holeStockCreditTaken": false
@@ -4843,25 +5674,25 @@
         "attachmentPoints": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5
           }
@@ -4869,7 +5700,7 @@
         "hardLands": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -4878,7 +5709,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -4887,7 +5718,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -4896,7 +5727,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -4919,15 +5750,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/0",
             "bodyXZMm": [
-              1114,
+              1109,
               564,
-              1186,
+              1181,
               636
             ],
             "faceXZMm": [
-              1107,
+              1102,
               557,
-              1193,
+              1188,
               643
             ],
             "bodyDepthMm": [
@@ -4936,9 +5767,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               550,
-              1225,
+              1220,
               650
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -4950,15 +5781,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/1",
             "bodyXZMm": [
-              1114,
+              1109,
               1064,
-              1186,
+              1181,
               1136
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1057,
-              1193,
+              1188,
               1143
             ],
             "bodyDepthMm": [
@@ -4967,9 +5798,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1050,
-              1225,
+              1220,
               1150
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -4981,15 +5812,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/2",
             "bodyXZMm": [
-              1114,
+              1109,
               1764,
-              1186,
+              1181,
               1836
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1757,
-              1193,
+              1188,
               1843
             ],
             "bodyDepthMm": [
@@ -4998,9 +5829,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1750,
-              1225,
+              1220,
               1850
             ],
             "sideEntryAxisDepthMm": 37,
@@ -5016,18 +5847,281 @@
         "containment": {
           "outsideDiameterRequirementMm": 20,
           "localUsableDepthMm": 55,
-          "riserAxisXMm": 1044,
+          "riserAxisXMm": 1009,
+          "localEntryBranches": [
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/0",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/0",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  530
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  530
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    520,
+                    610
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  600
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    585,
+                    615
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 365,
+                "top": 1485,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/1",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/1",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  1030
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  1030
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1020,
+                    1110
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  1100
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1085,
+                    1115
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 865,
+                "top": 985,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/2",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/2",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  37,
+                  1730
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  37,
+                  1730
+                ],
+                "endMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1720,
+                    1810
+                  ],
+                  "depthMm": [
+                    27,
+                    47
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "boxEntryMm": [
+                  1109,
+                  37,
+                  1800
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1785,
+                    1815
+                  ],
+                  "depthMm": [
+                    22,
+                    52
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 1565,
+                "top": 285,
+                "rear": 12.5,
+                "front": 10.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            }
+          ],
           "branchSideEntryPointsXMmZMm": [
             [
-              1114,
+              1109,
               600
             ],
             [
-              1114,
+              1109,
               1100
             ],
             [
-              1114,
+              1109,
               1800
             ]
           ],
@@ -5041,18 +6135,18 @@
           "sourceConnectedToCurrentHouseCircuit": false,
           "topology": [
             "Room supply interface (unconnected)",
-            "Independent enclosed riser",
+            "Three local side-entry branches; common riser/depth transitions unresolved",
             "Fixed socket island and ordinary switch island",
             "Factory-enclosed fixed luminaire terminals"
           ],
           "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
-          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+          "limitation": "Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
         },
         "infill": {
           "id": "IAS/STUDY/service-corner/infill/central",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1200,
@@ -5065,8 +6159,8 @@
         "firstRelease": {
           "withdrawn": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2872.5,
@@ -5079,8 +6173,8 @@
           },
           "parked": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2770.5,
@@ -5092,15 +6186,15 @@
             ]
           },
           "sweepPlanMm": [
-            1020,
+            1015,
             2770.5,
-            1280,
+            1275,
             3102.5
           ],
           "conflictingOccupiedIds": [],
           "cradle": {
             "planMm": [
-              1000,
+              990,
               2700.5,
               1300,
               3000.5
@@ -5173,17 +6267,17 @@
               0
             ],
             [
-              1150,
+              1145,
               3080.5,
               0
             ],
             [
-              1150,
+              1145,
               3102.5,
               600
             ]
           ],
-          "routedMm": 1435.9031978595717,
+          "routedMm": 1430.9031978595717,
           "suppliedMm": 2500
         },
         "side": {
@@ -5222,6 +6316,15 @@
           "objectIds": [
             "IAS/STUDY/room-supply-interface"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED",
+          "message": "The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.",
+          "objectIds": [
+            "IAS/STUDY/service-corner/entry-branch/0",
+            "IAS/STUDY/service-corner/entry-branch/1",
+            "IAS/STUDY/service-corner/entry-branch/2"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -5252,12 +6355,12 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "edf2b7d6f10fb0873dd11fa737cf92321cf761c303a905d8419aa7bb62d86fb8",
+      "caseDigest": "239e783881906aa172a5e45aa2cce0e2dfec170bfc7640b95d2343d2120d1c42",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
         "bayPlanMm": [
-          1000,
+          990,
           3102.5,
           1300,
           3150.5
@@ -5271,14 +6374,14 @@
         "connectedUsableRoutingDepthMm": 55,
         "remainingBoxDepthMm": 8,
         "roomIntrusionMm": 48,
-        "conservativeFloorTerritoryM2": 0.0144,
+        "conservativeFloorTerritoryM2": 0.01488,
         "socketCentreMm": [
-          1150,
+          1145,
           3102.5,
           600
         ],
         "switchCentreMm": [
-          1150,
+          1145,
           3102.5,
           1100
         ],
@@ -5314,25 +6417,25 @@
         "retainedSkirtingDrawMm": 22,
         "lowRouteStopXMm": 1220,
         "handUsePlanMm": [
-          1000,
+          990,
           2982.5,
           1300,
           3102.5
         ],
         "panelDrawPlanMm": [
-          1000,
+          990,
           3052.5,
           1300,
           3102.5
         ],
         "completeModuleDrawPlanMm": [
-          1000,
+          990,
           2872.5,
           1300,
           3102.5
         ],
         "firstRestPlanMm": [
-          1000,
+          990,
           2700.5,
           1300,
           3000.5
@@ -5347,7 +6450,7 @@
         "module": {
           "present": true,
           "centreMm": [
-            1150,
+            1145,
             3102.5,
             1800
           ],
@@ -5379,15 +6482,15 @@
           "wallId": "west",
           "bayPlanMm": [
             429.5,
-            650,
+            645,
             477.5,
-            950
+            955
           ],
           "usePlanMm": [
             477.5,
-            650,
+            645,
             597.5,
-            950
+            955
           ],
           "centreMm": [
             477.5,
@@ -5407,15 +6510,15 @@
           "wallId": "cloak-west",
           "bayPlanMm": [
             3255,
-            1750,
+            1745,
             3303,
-            2050
+            2055
           ],
           "usePlanMm": [
             3135,
-            1750,
+            1745,
             3255,
-            2050
+            2055
           ],
           "centreMm": [
             3255,
@@ -5438,8 +6541,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/0",
             "xMm": [
-              1020,
-              1040
+              1015,
+              1035
             ],
             "zMm": [
               155,
@@ -5453,8 +6556,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/1",
             "xMm": [
-              1260,
-              1280
+              1255,
+              1275
             ],
             "zMm": [
               155,
@@ -5470,8 +6573,8 @@
         "carrier": {
           "id": "IAS/STUDY/service-corner/carrier",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1575,
@@ -5483,50 +6586,50 @@
           ],
           "stripsXZMm": [
             [
-              1020,
+              1015,
               1575,
-              1040,
+              1035,
               2025
             ],
             [
-              1260,
+              1255,
               1575,
-              1280,
+              1275,
               2025
             ],
             [
-              1040,
+              1035,
               1575,
-              1260,
+              1255,
               1595
             ],
             [
-              1040,
+              1035,
               2005,
-              1260,
+              1255,
               2025
             ],
             [
-              1100,
+              1095,
               1710,
-              1200,
+              1195,
               1890
             ],
             [
-              1040,
+              1035,
               1730,
-              1260,
+              1255,
               1750
             ],
             [
-              1040,
+              1035,
               1850,
-              1260,
+              1255,
               1870
             ]
           ],
           "centralCableOpening": {
-            "centreXMm": 1150,
+            "centreXMm": 1145,
             "centreZMm": 1800,
             "diameterMm": 20,
             "holeStockCreditTaken": false
@@ -5541,25 +6644,25 @@
         "attachmentPoints": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5
           }
@@ -5567,7 +6670,7 @@
         "hardLands": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -5576,7 +6679,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -5585,7 +6688,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -5594,7 +6697,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -5617,15 +6720,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/0",
             "bodyXZMm": [
-              1114,
+              1109,
               564,
-              1186,
+              1181,
               636
             ],
             "faceXZMm": [
-              1107,
+              1102,
               557,
-              1193,
+              1188,
               643
             ],
             "bodyDepthMm": [
@@ -5634,9 +6737,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               550,
-              1225,
+              1220,
               650
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -5648,15 +6751,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/1",
             "bodyXZMm": [
-              1114,
+              1109,
               1064,
-              1186,
+              1181,
               1136
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1057,
-              1193,
+              1188,
               1143
             ],
             "bodyDepthMm": [
@@ -5665,9 +6768,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1050,
-              1225,
+              1220,
               1150
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -5679,15 +6782,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/2",
             "bodyXZMm": [
-              1114,
+              1109,
               1764,
-              1186,
+              1181,
               1836
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1757,
-              1193,
+              1188,
               1843
             ],
             "bodyDepthMm": [
@@ -5696,9 +6799,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1750,
-              1225,
+              1220,
               1850
             ],
             "sideEntryAxisDepthMm": 37,
@@ -5714,18 +6817,281 @@
         "containment": {
           "outsideDiameterRequirementMm": 20,
           "localUsableDepthMm": 55,
-          "riserAxisXMm": 1044,
+          "riserAxisXMm": 1009,
+          "localEntryBranches": [
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/0",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/0",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  530
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  530
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    520,
+                    610
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  600
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    585,
+                    615
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 365,
+                "top": 1485,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/1",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/1",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  1030
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  1030
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1020,
+                    1110
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  1100
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1085,
+                    1115
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 865,
+                "top": 985,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/2",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/2",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  37,
+                  1730
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  37,
+                  1730
+                ],
+                "endMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1720,
+                    1810
+                  ],
+                  "depthMm": [
+                    27,
+                    47
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "boxEntryMm": [
+                  1109,
+                  37,
+                  1800
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1785,
+                    1815
+                  ],
+                  "depthMm": [
+                    22,
+                    52
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 1565,
+                "top": 285,
+                "rear": 12.5,
+                "front": 10.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            }
+          ],
           "branchSideEntryPointsXMmZMm": [
             [
-              1114,
+              1109,
               600
             ],
             [
-              1114,
+              1109,
               1100
             ],
             [
-              1114,
+              1109,
               1800
             ]
           ],
@@ -5739,18 +7105,18 @@
           "sourceConnectedToCurrentHouseCircuit": false,
           "topology": [
             "Room supply interface (unconnected)",
-            "Independent enclosed riser",
+            "Three local side-entry branches; common riser/depth transitions unresolved",
             "Fixed socket island and ordinary switch island",
             "Factory-enclosed fixed luminaire terminals"
           ],
           "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
-          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+          "limitation": "Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
         },
         "infill": {
           "id": "IAS/STUDY/service-corner/infill/central",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1200,
@@ -5763,8 +7129,8 @@
         "firstRelease": {
           "withdrawn": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2872.5,
@@ -5777,8 +7143,8 @@
           },
           "parked": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2770.5,
@@ -5790,15 +7156,15 @@
             ]
           },
           "sweepPlanMm": [
-            1020,
+            1015,
             2770.5,
-            1280,
+            1275,
             3102.5
           ],
           "conflictingOccupiedIds": [],
           "cradle": {
             "planMm": [
-              1000,
+              990,
               2700.5,
               1300,
               3000.5
@@ -5871,17 +7237,17 @@
               0
             ],
             [
-              1150,
+              1145,
               3080.5,
               0
             ],
             [
-              1150,
+              1145,
               3102.5,
               600
             ]
           ],
-          "routedMm": 1435.9031978595717,
+          "routedMm": 1430.9031978595717,
           "suppliedMm": 2500
         },
         "side": {
@@ -5927,6 +7293,15 @@
           "objectIds": [
             "IAS/STUDY/room-supply-interface"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED",
+          "message": "The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.",
+          "objectIds": [
+            "IAS/STUDY/service-corner/entry-branch/0",
+            "IAS/STUDY/service-corner/entry-branch/1",
+            "IAS/STUDY/service-corner/entry-branch/2"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -5957,12 +7332,12 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "9547e6c104a0fc137f294a949bf6e7a57af830146161519770cc37104bb8dbf9",
+      "caseDigest": "0d1b8ded5a2c9a952f61dad877afb7698704a3e3fb0e07592ba50e13d917c74d",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
         "bayPlanMm": [
-          1000,
+          990,
           3102.5,
           1300,
           3150.5
@@ -5976,14 +7351,14 @@
         "connectedUsableRoutingDepthMm": 55,
         "remainingBoxDepthMm": 8,
         "roomIntrusionMm": 48,
-        "conservativeFloorTerritoryM2": 0.0144,
+        "conservativeFloorTerritoryM2": 0.01488,
         "socketCentreMm": [
-          1150,
+          1145,
           3102.5,
           600
         ],
         "switchCentreMm": [
-          1150,
+          1145,
           3102.5,
           1100
         ],
@@ -6019,25 +7394,25 @@
         "retainedSkirtingDrawMm": 22,
         "lowRouteStopXMm": 1220,
         "handUsePlanMm": [
-          1000,
+          990,
           2982.5,
           1300,
           3102.5
         ],
         "panelDrawPlanMm": [
-          1000,
+          990,
           3052.5,
           1300,
           3102.5
         ],
         "completeModuleDrawPlanMm": [
-          1000,
+          990,
           2872.5,
           1300,
           3102.5
         ],
         "firstRestPlanMm": [
-          1000,
+          990,
           2700.5,
           1300,
           3000.5
@@ -6052,7 +7427,7 @@
         "module": {
           "present": true,
           "centreMm": [
-            1150,
+            1145,
             3102.5,
             1800
           ],
@@ -6084,15 +7459,15 @@
           "wallId": "west",
           "bayPlanMm": [
             429.5,
-            650,
+            645,
             477.5,
-            950
+            955
           ],
           "usePlanMm": [
             477.5,
-            650,
+            645,
             597.5,
-            950
+            955
           ],
           "centreMm": [
             477.5,
@@ -6112,15 +7487,15 @@
           "wallId": "cloak-west",
           "bayPlanMm": [
             3255,
-            1750,
+            1745,
             3303,
-            2050
+            2055
           ],
           "usePlanMm": [
             3135,
-            1750,
+            1745,
             3255,
-            2050
+            2055
           ],
           "centreMm": [
             3255,
@@ -6143,8 +7518,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/0",
             "xMm": [
-              1020,
-              1040
+              1015,
+              1035
             ],
             "zMm": [
               155,
@@ -6158,8 +7533,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/1",
             "xMm": [
-              1260,
-              1280
+              1255,
+              1275
             ],
             "zMm": [
               155,
@@ -6175,8 +7550,8 @@
         "carrier": {
           "id": "IAS/STUDY/service-corner/carrier",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1575,
@@ -6188,50 +7563,50 @@
           ],
           "stripsXZMm": [
             [
-              1020,
+              1015,
               1575,
-              1040,
+              1035,
               2025
             ],
             [
-              1260,
+              1255,
               1575,
-              1280,
+              1275,
               2025
             ],
             [
-              1040,
+              1035,
               1575,
-              1260,
+              1255,
               1595
             ],
             [
-              1040,
+              1035,
               2005,
-              1260,
+              1255,
               2025
             ],
             [
-              1100,
+              1095,
               1710,
-              1200,
+              1195,
               1890
             ],
             [
-              1040,
+              1035,
               1730,
-              1260,
+              1255,
               1750
             ],
             [
-              1040,
+              1035,
               1850,
-              1260,
+              1255,
               1870
             ]
           ],
           "centralCableOpening": {
-            "centreXMm": 1150,
+            "centreXMm": 1145,
             "centreZMm": 1800,
             "diameterMm": 20,
             "holeStockCreditTaken": false
@@ -6246,25 +7621,25 @@
         "attachmentPoints": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5
           }
@@ -6272,7 +7647,7 @@
         "hardLands": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -6281,7 +7656,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -6290,7 +7665,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -6299,7 +7674,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -6322,15 +7697,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/0",
             "bodyXZMm": [
-              1114,
+              1109,
               564,
-              1186,
+              1181,
               636
             ],
             "faceXZMm": [
-              1107,
+              1102,
               557,
-              1193,
+              1188,
               643
             ],
             "bodyDepthMm": [
@@ -6339,9 +7714,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               550,
-              1225,
+              1220,
               650
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -6353,15 +7728,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/1",
             "bodyXZMm": [
-              1114,
+              1109,
               1064,
-              1186,
+              1181,
               1136
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1057,
-              1193,
+              1188,
               1143
             ],
             "bodyDepthMm": [
@@ -6370,9 +7745,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1050,
-              1225,
+              1220,
               1150
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -6384,15 +7759,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/2",
             "bodyXZMm": [
-              1114,
+              1109,
               1764,
-              1186,
+              1181,
               1836
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1757,
-              1193,
+              1188,
               1843
             ],
             "bodyDepthMm": [
@@ -6401,9 +7776,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1750,
-              1225,
+              1220,
               1850
             ],
             "sideEntryAxisDepthMm": 37,
@@ -6419,18 +7794,281 @@
         "containment": {
           "outsideDiameterRequirementMm": 20,
           "localUsableDepthMm": 55,
-          "riserAxisXMm": 1044,
+          "riserAxisXMm": 1009,
+          "localEntryBranches": [
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/0",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/0",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  530
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  530
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    520,
+                    610
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  600
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    585,
+                    615
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 365,
+                "top": 1485,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/1",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/1",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  1030
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  1030
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1020,
+                    1110
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  1100
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1085,
+                    1115
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 865,
+                "top": 985,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/2",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/2",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  37,
+                  1730
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  37,
+                  1730
+                ],
+                "endMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1720,
+                    1810
+                  ],
+                  "depthMm": [
+                    27,
+                    47
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "boxEntryMm": [
+                  1109,
+                  37,
+                  1800
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1785,
+                    1815
+                  ],
+                  "depthMm": [
+                    22,
+                    52
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 1565,
+                "top": 285,
+                "rear": 12.5,
+                "front": 10.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            }
+          ],
           "branchSideEntryPointsXMmZMm": [
             [
-              1114,
+              1109,
               600
             ],
             [
-              1114,
+              1109,
               1100
             ],
             [
-              1114,
+              1109,
               1800
             ]
           ],
@@ -6444,18 +8082,18 @@
           "sourceConnectedToCurrentHouseCircuit": false,
           "topology": [
             "Room supply interface (unconnected)",
-            "Independent enclosed riser",
+            "Three local side-entry branches; common riser/depth transitions unresolved",
             "Fixed socket island and ordinary switch island",
             "Factory-enclosed fixed luminaire terminals"
           ],
           "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
-          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+          "limitation": "Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
         },
         "infill": {
           "id": "IAS/STUDY/service-corner/infill/central",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1200,
@@ -6468,8 +8106,8 @@
         "firstRelease": {
           "withdrawn": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2872.5,
@@ -6482,8 +8120,8 @@
           },
           "parked": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2770.5,
@@ -6495,15 +8133,15 @@
             ]
           },
           "sweepPlanMm": [
-            1020,
+            1015,
             2770.5,
-            1280,
+            1275,
             3102.5
           ],
           "conflictingOccupiedIds": [],
           "cradle": {
             "planMm": [
-              1000,
+              990,
               2700.5,
               1300,
               3000.5
@@ -6576,17 +8214,17 @@
               0
             ],
             [
-              1150,
+              1145,
               3080.5,
               0
             ],
             [
-              1150,
+              1145,
               3102.5,
               600
             ]
           ],
-          "routedMm": 1435.9031978595717,
+          "routedMm": 1430.9031978595717,
           "suppliedMm": 2500
         },
         "side": {
@@ -6639,6 +8277,15 @@
           "objectIds": [
             "IAS/STUDY/room-supply-interface"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED",
+          "message": "The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.",
+          "objectIds": [
+            "IAS/STUDY/service-corner/entry-branch/0",
+            "IAS/STUDY/service-corner/entry-branch/1",
+            "IAS/STUDY/service-corner/entry-branch/2"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -6669,12 +8316,12 @@
         "automationConnected": true,
         "localWallModule": true
       },
-      "caseDigest": "2f81f6c3507eeafab84a61e23bfd0ab92cad63e6d5b627575a386c2c7fa1cc25",
+      "caseDigest": "d946cb8ba58941d03c3bbc66a2703f35f58f0d3ee5f82ffbbbfc91c71277515e",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
         "bayPlanMm": [
-          1000,
+          990,
           3102.5,
           1300,
           3150.5
@@ -6688,14 +8335,14 @@
         "connectedUsableRoutingDepthMm": 55,
         "remainingBoxDepthMm": 8,
         "roomIntrusionMm": 48,
-        "conservativeFloorTerritoryM2": 0.0144,
+        "conservativeFloorTerritoryM2": 0.01488,
         "socketCentreMm": [
-          1150,
+          1145,
           3102.5,
           600
         ],
         "switchCentreMm": [
-          1150,
+          1145,
           3102.5,
           1100
         ],
@@ -6731,25 +8378,25 @@
         "retainedSkirtingDrawMm": 22,
         "lowRouteStopXMm": 1220,
         "handUsePlanMm": [
-          1000,
+          990,
           2982.5,
           1300,
           3102.5
         ],
         "panelDrawPlanMm": [
-          1000,
+          990,
           3052.5,
           1300,
           3102.5
         ],
         "completeModuleDrawPlanMm": [
-          1000,
+          990,
           2872.5,
           1300,
           3102.5
         ],
         "firstRestPlanMm": [
-          1000,
+          990,
           2700.5,
           1300,
           3000.5
@@ -6764,7 +8411,7 @@
         "module": {
           "present": true,
           "centreMm": [
-            1150,
+            1145,
             3102.5,
             1800
           ],
@@ -6796,15 +8443,15 @@
           "wallId": "west",
           "bayPlanMm": [
             429.5,
-            650,
+            645,
             477.5,
-            950
+            955
           ],
           "usePlanMm": [
             477.5,
-            650,
+            645,
             597.5,
-            950
+            955
           ],
           "centreMm": [
             477.5,
@@ -6824,15 +8471,15 @@
           "wallId": "cloak-west",
           "bayPlanMm": [
             3255,
-            1750,
+            1745,
             3303,
-            2050
+            2055
           ],
           "usePlanMm": [
             3135,
-            1750,
+            1745,
             3255,
-            2050
+            2055
           ],
           "centreMm": [
             3255,
@@ -6855,8 +8502,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/0",
             "xMm": [
-              1020,
-              1040
+              1015,
+              1035
             ],
             "zMm": [
               155,
@@ -6870,8 +8517,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/1",
             "xMm": [
-              1260,
-              1280
+              1255,
+              1275
             ],
             "zMm": [
               155,
@@ -6887,8 +8534,8 @@
         "carrier": {
           "id": "IAS/STUDY/service-corner/carrier",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1575,
@@ -6900,50 +8547,50 @@
           ],
           "stripsXZMm": [
             [
-              1020,
+              1015,
               1575,
-              1040,
+              1035,
               2025
             ],
             [
-              1260,
+              1255,
               1575,
-              1280,
+              1275,
               2025
             ],
             [
-              1040,
+              1035,
               1575,
-              1260,
+              1255,
               1595
             ],
             [
-              1040,
+              1035,
               2005,
-              1260,
+              1255,
               2025
             ],
             [
-              1100,
+              1095,
               1710,
-              1200,
+              1195,
               1890
             ],
             [
-              1040,
+              1035,
               1730,
-              1260,
+              1255,
               1750
             ],
             [
-              1040,
+              1035,
               1850,
-              1260,
+              1255,
               1870
             ]
           ],
           "centralCableOpening": {
-            "centreXMm": 1150,
+            "centreXMm": 1145,
             "centreZMm": 1800,
             "diameterMm": 20,
             "holeStockCreditTaken": false
@@ -6958,25 +8605,25 @@
         "attachmentPoints": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5
           }
@@ -6984,7 +8631,7 @@
         "hardLands": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -6993,7 +8640,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -7002,7 +8649,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -7011,7 +8658,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -7034,15 +8681,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/0",
             "bodyXZMm": [
-              1114,
+              1109,
               564,
-              1186,
+              1181,
               636
             ],
             "faceXZMm": [
-              1107,
+              1102,
               557,
-              1193,
+              1188,
               643
             ],
             "bodyDepthMm": [
@@ -7051,9 +8698,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               550,
-              1225,
+              1220,
               650
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -7065,15 +8712,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/1",
             "bodyXZMm": [
-              1114,
+              1109,
               1064,
-              1186,
+              1181,
               1136
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1057,
-              1193,
+              1188,
               1143
             ],
             "bodyDepthMm": [
@@ -7082,9 +8729,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1050,
-              1225,
+              1220,
               1150
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -7096,15 +8743,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/2",
             "bodyXZMm": [
-              1114,
+              1109,
               1764,
-              1186,
+              1181,
               1836
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1757,
-              1193,
+              1188,
               1843
             ],
             "bodyDepthMm": [
@@ -7113,9 +8760,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1750,
-              1225,
+              1220,
               1850
             ],
             "sideEntryAxisDepthMm": 37,
@@ -7131,18 +8778,281 @@
         "containment": {
           "outsideDiameterRequirementMm": 20,
           "localUsableDepthMm": 55,
-          "riserAxisXMm": 1044,
+          "riserAxisXMm": 1009,
+          "localEntryBranches": [
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/0",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/0",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  530
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  530
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    520,
+                    610
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  600
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    585,
+                    615
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 365,
+                "top": 1485,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/1",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/1",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  1030
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  1030
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1020,
+                    1110
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  1100
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1085,
+                    1115
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 865,
+                "top": 985,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/2",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/2",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  37,
+                  1730
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  37,
+                  1730
+                ],
+                "endMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1720,
+                    1810
+                  ],
+                  "depthMm": [
+                    27,
+                    47
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "boxEntryMm": [
+                  1109,
+                  37,
+                  1800
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1785,
+                    1815
+                  ],
+                  "depthMm": [
+                    22,
+                    52
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 1565,
+                "top": 285,
+                "rear": 12.5,
+                "front": 10.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            }
+          ],
           "branchSideEntryPointsXMmZMm": [
             [
-              1114,
+              1109,
               600
             ],
             [
-              1114,
+              1109,
               1100
             ],
             [
-              1114,
+              1109,
               1800
             ]
           ],
@@ -7156,18 +9066,18 @@
           "sourceConnectedToCurrentHouseCircuit": false,
           "topology": [
             "Room supply interface (unconnected)",
-            "Independent enclosed riser",
+            "Three local side-entry branches; common riser/depth transitions unresolved",
             "Fixed socket island and ordinary switch island",
             "Factory-enclosed fixed luminaire terminals"
           ],
           "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
-          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+          "limitation": "Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
         },
         "infill": {
           "id": "IAS/STUDY/service-corner/infill/central",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1200,
@@ -7180,8 +9090,8 @@
         "firstRelease": {
           "withdrawn": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2872.5,
@@ -7194,8 +9104,8 @@
           },
           "parked": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2770.5,
@@ -7207,15 +9117,15 @@
             ]
           },
           "sweepPlanMm": [
-            1020,
+            1015,
             2770.5,
-            1280,
+            1275,
             3102.5
           ],
           "conflictingOccupiedIds": [],
           "cradle": {
             "planMm": [
-              1000,
+              990,
               2700.5,
               1300,
               3000.5
@@ -7288,17 +9198,17 @@
               0
             ],
             [
-              1150,
+              1145,
               3080.5,
               0
             ],
             [
-              1150,
+              1145,
               3102.5,
               600
             ]
           ],
-          "routedMm": 1435.9031978595717,
+          "routedMm": 1430.9031978595717,
           "suppliedMm": 2500
         },
         "side": {
@@ -7337,6 +9247,15 @@
           "objectIds": [
             "IAS/STUDY/room-supply-interface"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED",
+          "message": "The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.",
+          "objectIds": [
+            "IAS/STUDY/service-corner/entry-branch/0",
+            "IAS/STUDY/service-corner/entry-branch/1",
+            "IAS/STUDY/service-corner/entry-branch/2"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -7367,12 +9286,12 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "29a26782b5362c431a3146d573ffa4e3fd55ee1276ed51de0658647c042686ce",
+      "caseDigest": "4562b4b6692bc1e1fe23d1eb4eebb526916810cf4685fcdfbf6c955f77063c15",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
         "bayPlanMm": [
-          1000,
+          990,
           3102.5,
           1300,
           3150.5
@@ -7386,14 +9305,14 @@
         "connectedUsableRoutingDepthMm": 55,
         "remainingBoxDepthMm": 8,
         "roomIntrusionMm": 48,
-        "conservativeFloorTerritoryM2": 0.0144,
+        "conservativeFloorTerritoryM2": 0.01488,
         "socketCentreMm": [
-          1150,
+          1145,
           3102.5,
           600
         ],
         "switchCentreMm": [
-          1150,
+          1145,
           3102.5,
           1100
         ],
@@ -7429,25 +9348,25 @@
         "retainedSkirtingDrawMm": 22,
         "lowRouteStopXMm": 1220,
         "handUsePlanMm": [
-          1000,
+          990,
           2982.5,
           1300,
           3102.5
         ],
         "panelDrawPlanMm": [
-          1000,
+          990,
           3052.5,
           1300,
           3102.5
         ],
         "completeModuleDrawPlanMm": [
-          1000,
+          990,
           2872.5,
           1300,
           3102.5
         ],
         "firstRestPlanMm": [
-          1000,
+          990,
           2700.5,
           1300,
           3000.5
@@ -7462,7 +9381,7 @@
         "module": {
           "present": true,
           "centreMm": [
-            1150,
+            1145,
             3102.5,
             1800
           ],
@@ -7494,15 +9413,15 @@
           "wallId": "west",
           "bayPlanMm": [
             429.5,
-            650,
+            645,
             477.5,
-            950
+            955
           ],
           "usePlanMm": [
             477.5,
-            650,
+            645,
             597.5,
-            950
+            955
           ],
           "centreMm": [
             477.5,
@@ -7522,15 +9441,15 @@
           "wallId": "cloak-west",
           "bayPlanMm": [
             3255,
-            1750,
+            1745,
             3303,
-            2050
+            2055
           ],
           "usePlanMm": [
             3135,
-            1750,
+            1745,
             3255,
-            2050
+            2055
           ],
           "centreMm": [
             3255,
@@ -7553,8 +9472,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/0",
             "xMm": [
-              1020,
-              1040
+              1015,
+              1035
             ],
             "zMm": [
               155,
@@ -7568,8 +9487,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/1",
             "xMm": [
-              1260,
-              1280
+              1255,
+              1275
             ],
             "zMm": [
               155,
@@ -7585,8 +9504,8 @@
         "carrier": {
           "id": "IAS/STUDY/service-corner/carrier",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1575,
@@ -7598,50 +9517,50 @@
           ],
           "stripsXZMm": [
             [
-              1020,
+              1015,
               1575,
-              1040,
+              1035,
               2025
             ],
             [
-              1260,
+              1255,
               1575,
-              1280,
+              1275,
               2025
             ],
             [
-              1040,
+              1035,
               1575,
-              1260,
+              1255,
               1595
             ],
             [
-              1040,
+              1035,
               2005,
-              1260,
+              1255,
               2025
             ],
             [
-              1100,
+              1095,
               1710,
-              1200,
+              1195,
               1890
             ],
             [
-              1040,
+              1035,
               1730,
-              1260,
+              1255,
               1750
             ],
             [
-              1040,
+              1035,
               1850,
-              1260,
+              1255,
               1870
             ]
           ],
           "centralCableOpening": {
-            "centreXMm": 1150,
+            "centreXMm": 1145,
             "centreZMm": 1800,
             "diameterMm": 20,
             "holeStockCreditTaken": false
@@ -7656,25 +9575,25 @@
         "attachmentPoints": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5
           }
@@ -7682,7 +9601,7 @@
         "hardLands": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -7691,7 +9610,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -7700,7 +9619,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -7709,7 +9628,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -7732,15 +9651,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/0",
             "bodyXZMm": [
-              1114,
+              1109,
               564,
-              1186,
+              1181,
               636
             ],
             "faceXZMm": [
-              1107,
+              1102,
               557,
-              1193,
+              1188,
               643
             ],
             "bodyDepthMm": [
@@ -7749,9 +9668,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               550,
-              1225,
+              1220,
               650
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -7763,15 +9682,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/1",
             "bodyXZMm": [
-              1114,
+              1109,
               1064,
-              1186,
+              1181,
               1136
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1057,
-              1193,
+              1188,
               1143
             ],
             "bodyDepthMm": [
@@ -7780,9 +9699,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1050,
-              1225,
+              1220,
               1150
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -7794,15 +9713,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/2",
             "bodyXZMm": [
-              1114,
+              1109,
               1764,
-              1186,
+              1181,
               1836
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1757,
-              1193,
+              1188,
               1843
             ],
             "bodyDepthMm": [
@@ -7811,9 +9730,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1750,
-              1225,
+              1220,
               1850
             ],
             "sideEntryAxisDepthMm": 37,
@@ -7829,18 +9748,281 @@
         "containment": {
           "outsideDiameterRequirementMm": 20,
           "localUsableDepthMm": 55,
-          "riserAxisXMm": 1044,
+          "riserAxisXMm": 1009,
+          "localEntryBranches": [
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/0",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/0",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  530
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  530
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    520,
+                    610
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  600
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    585,
+                    615
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 365,
+                "top": 1485,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/1",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/1",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  1030
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  1030
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1020,
+                    1110
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  1100
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1085,
+                    1115
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 865,
+                "top": 985,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/2",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/2",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  37,
+                  1730
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  37,
+                  1730
+                ],
+                "endMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1720,
+                    1810
+                  ],
+                  "depthMm": [
+                    27,
+                    47
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "boxEntryMm": [
+                  1109,
+                  37,
+                  1800
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1785,
+                    1815
+                  ],
+                  "depthMm": [
+                    22,
+                    52
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 1565,
+                "top": 285,
+                "rear": 12.5,
+                "front": 10.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            }
+          ],
           "branchSideEntryPointsXMmZMm": [
             [
-              1114,
+              1109,
               600
             ],
             [
-              1114,
+              1109,
               1100
             ],
             [
-              1114,
+              1109,
               1800
             ]
           ],
@@ -7854,18 +10036,18 @@
           "sourceConnectedToCurrentHouseCircuit": false,
           "topology": [
             "Room supply interface (unconnected)",
-            "Independent enclosed riser",
+            "Three local side-entry branches; common riser/depth transitions unresolved",
             "Fixed socket island and ordinary switch island",
             "Factory-enclosed fixed luminaire terminals"
           ],
           "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
-          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+          "limitation": "Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
         },
         "infill": {
           "id": "IAS/STUDY/service-corner/infill/central",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1200,
@@ -7878,8 +10060,8 @@
         "firstRelease": {
           "withdrawn": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2872.5,
@@ -7892,8 +10074,8 @@
           },
           "parked": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2770.5,
@@ -7905,15 +10087,15 @@
             ]
           },
           "sweepPlanMm": [
-            1020,
+            1015,
             2770.5,
-            1280,
+            1275,
             3102.5
           ],
           "conflictingOccupiedIds": [],
           "cradle": {
             "planMm": [
-              1000,
+              990,
               2700.5,
               1300,
               3000.5
@@ -7986,17 +10168,17 @@
               0
             ],
             [
-              1150,
+              1145,
               3080.5,
               0
             ],
             [
-              1150,
+              1145,
               3102.5,
               600
             ]
           ],
-          "routedMm": 1435.9031978595717,
+          "routedMm": 1430.9031978595717,
           "suppliedMm": 2500
         },
         "side": {
@@ -8042,6 +10224,15 @@
           "objectIds": [
             "IAS/STUDY/room-supply-interface"
           ]
+        },
+        {
+          "code": "IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED",
+          "message": "The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.",
+          "objectIds": [
+            "IAS/STUDY/service-corner/entry-branch/0",
+            "IAS/STUDY/service-corner/entry-branch/1",
+            "IAS/STUDY/service-corner/entry-branch/2"
+          ]
         }
       ],
       "unchangedRoomGeometry": true,
@@ -8072,12 +10263,12 @@
         "automationConnected": false,
         "localWallModule": false
       },
-      "caseDigest": "7123595af4397f731d30fdd2eb6bed5213b1d8611fc3e3a198ca87338b9da43c",
+      "caseDigest": "f67f9d1780cf9029d7b3c316f2ee5413746ee2867027b3862d46341d875f5393",
       "status": "GEOMETRY_REJECTED",
       "corner": {
         "id": "IAS/STUDY/service-corner",
         "bayPlanMm": [
-          1000,
+          990,
           3102.5,
           1300,
           3150.5
@@ -8091,14 +10282,14 @@
         "connectedUsableRoutingDepthMm": 55,
         "remainingBoxDepthMm": 8,
         "roomIntrusionMm": 48,
-        "conservativeFloorTerritoryM2": 0.0144,
+        "conservativeFloorTerritoryM2": 0.01488,
         "socketCentreMm": [
-          1150,
+          1145,
           3102.5,
           600
         ],
         "switchCentreMm": [
-          1150,
+          1145,
           3102.5,
           1100
         ],
@@ -8134,25 +10325,25 @@
         "retainedSkirtingDrawMm": 22,
         "lowRouteStopXMm": 1220,
         "handUsePlanMm": [
-          1000,
+          990,
           2982.5,
           1300,
           3102.5
         ],
         "panelDrawPlanMm": [
-          1000,
+          990,
           3052.5,
           1300,
           3102.5
         ],
         "completeModuleDrawPlanMm": [
-          1000,
+          990,
           2872.5,
           1300,
           3102.5
         ],
         "firstRestPlanMm": [
-          1000,
+          990,
           2700.5,
           1300,
           3000.5
@@ -8167,7 +10358,7 @@
         "module": {
           "present": false,
           "centreMm": [
-            1150,
+            1145,
             3102.5,
             1800
           ],
@@ -8199,15 +10390,15 @@
           "wallId": "west",
           "bayPlanMm": [
             429.5,
-            650,
+            645,
             477.5,
-            950
+            955
           ],
           "usePlanMm": [
             477.5,
-            650,
+            645,
             597.5,
-            950
+            955
           ],
           "centreMm": [
             477.5,
@@ -8227,15 +10418,15 @@
           "wallId": "cloak-west",
           "bayPlanMm": [
             3255,
-            1750,
+            1745,
             3303,
-            2050
+            2055
           ],
           "usePlanMm": [
             3135,
-            1750,
+            1745,
             3255,
-            2050
+            2055
           ],
           "centreMm": [
             3255,
@@ -8258,8 +10449,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/0",
             "xMm": [
-              1020,
-              1040
+              1015,
+              1035
             ],
             "zMm": [
               155,
@@ -8273,8 +10464,8 @@
           {
             "id": "IAS/STUDY/service-corner/rail/1",
             "xMm": [
-              1260,
-              1280
+              1255,
+              1275
             ],
             "zMm": [
               155,
@@ -8290,8 +10481,8 @@
         "carrier": {
           "id": "IAS/STUDY/service-corner/carrier",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1575,
@@ -8303,50 +10494,50 @@
           ],
           "stripsXZMm": [
             [
-              1020,
+              1015,
               1575,
-              1040,
+              1035,
               2025
             ],
             [
-              1260,
+              1255,
               1575,
-              1280,
+              1275,
               2025
             ],
             [
-              1040,
+              1035,
               1575,
-              1260,
+              1255,
               1595
             ],
             [
-              1040,
+              1035,
               2005,
-              1260,
+              1255,
               2025
             ],
             [
-              1100,
+              1095,
               1710,
-              1200,
+              1195,
               1890
             ],
             [
-              1040,
+              1035,
               1730,
-              1260,
+              1255,
               1750
             ],
             [
-              1040,
+              1035,
               1850,
-              1260,
+              1255,
               1870
             ]
           ],
           "centralCableOpening": {
-            "centreXMm": 1150,
+            "centreXMm": 1145,
             "centreZMm": 1800,
             "diameterMm": 20,
             "holeStockCreditTaken": false
@@ -8361,25 +10552,25 @@
         "attachmentPoints": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5
           }
@@ -8387,7 +10578,7 @@
         "hardLands": [
           {
             "id": "IAS/STUDY/carrier/bolt/0/0",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -8396,7 +10587,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/0/1",
-            "xMm": 1030,
+            "xMm": 1025,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -8405,7 +10596,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/0",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 1590,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -8414,7 +10605,7 @@
           },
           {
             "id": "IAS/STUDY/carrier/bolt/1/1",
-            "xMm": 1270,
+            "xMm": 1265,
             "zMm": 2010,
             "holeDiameterMm": 5,
             "coreDepthStartMm": 0,
@@ -8437,15 +10628,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/0",
             "bodyXZMm": [
-              1114,
+              1109,
               564,
-              1186,
+              1181,
               636
             ],
             "faceXZMm": [
-              1107,
+              1102,
               557,
-              1193,
+              1188,
               643
             ],
             "bodyDepthMm": [
@@ -8454,9 +10645,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               550,
-              1225,
+              1220,
               650
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -8468,15 +10659,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/1",
             "bodyXZMm": [
-              1114,
+              1109,
               1064,
-              1186,
+              1181,
               1136
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1057,
-              1193,
+              1188,
               1143
             ],
             "bodyDepthMm": [
@@ -8485,9 +10676,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1050,
-              1225,
+              1220,
               1150
             ],
             "sideEntryAxisDepthMm": 51.5,
@@ -8499,15 +10690,15 @@
           {
             "id": "IAS/STUDY/service-corner/fixed-island/2",
             "bodyXZMm": [
-              1114,
+              1109,
               1764,
-              1186,
+              1181,
               1836
             ],
             "faceXZMm": [
-              1107,
+              1102,
               1757,
-              1193,
+              1188,
               1843
             ],
             "bodyDepthMm": [
@@ -8516,9 +10707,9 @@
             ],
             "requiredDecorativeJointMm": 5,
             "independentIslandXZMm": [
-              1075,
+              1070,
               1750,
-              1225,
+              1220,
               1850
             ],
             "sideEntryAxisDepthMm": 37,
@@ -8534,18 +10725,281 @@
         "containment": {
           "outsideDiameterRequirementMm": 20,
           "localUsableDepthMm": 55,
-          "riserAxisXMm": 1044,
+          "riserAxisXMm": 1009,
+          "localEntryBranches": [
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/0",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/0",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  530
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  530
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    520,
+                    610
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  600
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  600
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    585,
+                    615
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 365,
+                "top": 1485,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/1",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/1",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  51.5,
+                  1030
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  51.5,
+                  1030
+                ],
+                "endMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1020,
+                    1110
+                  ],
+                  "depthMm": [
+                    41.5,
+                    61.5
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  51.5,
+                  1100
+                ],
+                "boxEntryMm": [
+                  1109,
+                  51.5,
+                  1100
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1085,
+                    1115
+                  ],
+                  "depthMm": [
+                    36.5,
+                    66.5
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 865,
+                "top": 985,
+                "rear": 27,
+                "front": 8.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            },
+            {
+              "id": "IAS/STUDY/service-corner/entry-branch/2",
+              "boxId": "IAS/STUDY/service-corner/fixed-island/2",
+              "bend": {
+                "plane": "XZ at constant core depth",
+                "centreMm": [
+                  1079,
+                  37,
+                  1730
+                ],
+                "centrelineRadiusMm": 70,
+                "angleDegrees": 90,
+                "startMm": [
+                  1009,
+                  37,
+                  1730
+                ],
+                "endMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "startUnitTangent": [
+                  0,
+                  0,
+                  1
+                ],
+                "endUnitTangent": [
+                  1,
+                  0,
+                  0
+                ],
+                "sweptEnvelope": {
+                  "xMm": [
+                    999,
+                    1089
+                  ],
+                  "zMm": [
+                    1720,
+                    1810
+                  ],
+                  "depthMm": [
+                    27,
+                    47
+                  ]
+                }
+              },
+              "collar": {
+                "startMm": [
+                  1079,
+                  37,
+                  1800
+                ],
+                "boxEntryMm": [
+                  1109,
+                  37,
+                  1800
+                ],
+                "axialLengthMm": 30,
+                "outsideDiameterMm": 30,
+                "envelope": {
+                  "xMm": [
+                    1079,
+                    1109
+                  ],
+                  "zMm": [
+                    1785,
+                    1815
+                  ],
+                  "depthMm": [
+                    22,
+                    52
+                  ]
+                }
+              },
+              "settingClearanceMm": {
+                "left": 9,
+                "bottom": 1565,
+                "top": 285,
+                "rear": 12.5,
+                "front": 10.5
+              },
+              "requiredSettingMm": 5,
+              "issues": [],
+              "currentHouseSupplyConnected": false,
+              "commonRiserDepthTransitionResolved": false
+            }
+          ],
           "branchSideEntryPointsXMmZMm": [
             [
-              1114,
+              1109,
               600
             ],
             [
-              1114,
+              1109,
               1100
             ],
             [
-              1114,
+              1109,
               1800
             ]
           ],
@@ -8559,18 +11013,18 @@
           "sourceConnectedToCurrentHouseCircuit": false,
           "topology": [
             "Room supply interface (unconnected)",
-            "Independent enclosed riser",
+            "Three local side-entry branches; common riser/depth transitions unresolved",
             "Fixed socket island and ordinary switch island",
             "Factory-enclosed fixed luminaire terminals"
           ],
           "switching": "Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.",
-          "limitation": "Geometric routing requirements only. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
+          "limitation": "Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred."
         },
         "infill": {
           "id": "IAS/STUDY/service-corner/infill/central",
           "xMm": [
-            1020,
-            1280
+            1015,
+            1275
           ],
           "zMm": [
             1200,
@@ -8583,8 +11037,8 @@
         "firstRelease": {
           "withdrawn": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2872.5,
@@ -8597,8 +11051,8 @@
           },
           "parked": {
             "xMm": [
-              1020,
-              1280
+              1015,
+              1275
             ],
             "yMm": [
               2770.5,
@@ -8610,15 +11064,15 @@
             ]
           },
           "sweepPlanMm": [
-            1020,
+            1015,
             2770.5,
-            1280,
+            1275,
             3102.5
           ],
           "conflictingOccupiedIds": [],
           "cradle": {
             "planMm": [
-              1000,
+              990,
               2700.5,
               1300,
               3000.5
@@ -8691,17 +11145,17 @@
               0
             ],
             [
-              1150,
+              1145,
               3080.5,
               0
             ],
             [
-              1150,
+              1145,
               3102.5,
               600
             ]
           ],
-          "routedMm": 1435.9031978595717,
+          "routedMm": 1430.9031978595717,
           "suppliedMm": 2500
         },
         "side": {
@@ -8746,6 +11200,15 @@
           "message": "Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.",
           "objectIds": [
             "IAS/STUDY/room-supply-interface"
+          ]
+        },
+        {
+          "code": "IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED",
+          "message": "The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.",
+          "objectIds": [
+            "IAS/STUDY/service-corner/entry-branch/0",
+            "IAS/STUDY/service-corner/entry-branch/1",
+            "IAS/STUDY/service-corner/entry-branch/2"
           ]
         }
       ],

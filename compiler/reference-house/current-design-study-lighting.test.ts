@@ -17,7 +17,7 @@ const run = (change = {}) => deriveStudyLighting({ ...choices, ...change }, basi
 test('four actual furnished-room comparisons and central kitchen share source geometry without invented performance', () => {
   const result = run()
   assert.equal(result.status, 'DEVELOPMENT_COMPARISON')
-  assert.deepEqual(result.diagnostics.map(row => row.code), ['IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND'])
+  assert.deepEqual(result.diagnostics.map(row => row.code), ['IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED'])
   assert.deepEqual(result.arrangements.map(row => row.id), ['portable', 'lamps-with-wall', 'wall-led', 'ceiling-with-lamps'])
   assert.equal(new Set(result.arrangements.map(row => row.commonGeometryDigest)).size, 1)
   assert.deepEqual(result.commonRoom.occupied, kit.kit.occupied)
@@ -186,4 +186,39 @@ test('longer assembled projection rejects the actual first rest and a changed ma
   assert.deepEqual(changed.construction.firstRelease.sweepPlanMm, baseline.construction.firstRelease.sweepPlanMm)
   assert.deepEqual(changed.commonRoom, baseline.commonRoom)
   assert.deepEqual(changed.kitchen, baseline.kitchen)
+})
+
+
+test('side-entry bends meet a real straight collar tangent and retain setting territory', () => {
+  const baseline = run(), branches = baseline.construction.containment.localEntryBranches
+  assert.equal(branches.length, 3)
+  for (const branch of branches) {
+    const { bend, collar } = branch
+    assert.deepEqual(bend.endMm, collar.startMm)
+    assert.equal(collar.boxEntryMm[0] - collar.startMm[0], 30)
+    assert.equal(bend.endMm[0] - bend.startMm[0], 70)
+    assert.equal(bend.endMm[2] - bend.startMm[2], 70)
+    assert.deepEqual(bend.startUnitTangent, [0, 0, 1])
+    assert.deepEqual(bend.endUnitTangent, [1, 0, 0])
+    assert.ok(Object.values(branch.settingClearanceMm).every(gap => gap >= branch.requiredSettingMm))
+    assert.deepEqual(branch.issues, [])
+    assert.equal(branch.commonRiserDepthTransitionResolved, false)
+    assert.equal(branch.currentHouseSupplyConnected, false)
+  }
+  assert.equal(branches[0].bend.startMm[1], 51.5)
+  assert.equal(branches[2].bend.startMm[1], 37)
+  assert.equal(branches[0].settingClearanceMm.left, 9)
+  const oldBay = structuredClone(components); oldBay.projectRequirements.bayWidthMm = 300
+  const rejected = deriveStudyLighting(choices, basis, oldBay)
+  assert.equal(rejected.status, 'GEOMETRY_REJECTED')
+  assert.ok(rejected.construction.issues.includes('entry-branch-setting-envelope-outside-local-field'))
+  assert.equal(rejected.construction.containment.localEntryBranches[0].settingClearanceMm.left, 4)
+  assert.deepEqual(rejected.commonRoom, baseline.commonRoom)
+  assert.deepEqual(rejected.kitchen, baseline.kitchen)
+  const largeCollar = structuredClone(components); largeCollar.cornerConstruction = { ...largeCollar.cornerConstruction, entryCollarAxialLengthMm: 60 }
+  assert.ok(deriveStudyLighting(choices, basis, largeCollar).construction.issues.includes('entry-branch-setting-envelope-outside-local-field'))
+  const deeper = run({ serviceTotalDepthMm: 85 }).construction.containment.localEntryBranches
+  assert.equal(deeper[0].bend.startMm[1], branches[0].bend.startMm[1] + 10)
+  assert.equal(deeper[2].bend.startMm[1], branches[2].bend.startMm[1] + 10)
+  assert.deepEqual(deeper[0].bend.startMm.filter((_, i) => i !== 1), branches[0].bend.startMm.filter((_, i) => i !== 1))
 })
