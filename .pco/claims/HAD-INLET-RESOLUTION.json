@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 58,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "95a6f95d-33db-45e4-8550-8a723558f996",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-water-primary-20261122"
   },
   "claimedAt": "2026-11-22T14:35:48.378Z",
-  "heartbeatAt": "2026-11-22T17:41:51.432Z",
-  "expiresAt": "2026-11-22T18:26:51.432Z",
+  "heartbeatAt": "2026-11-22T17:42:33.739Z",
+  "expiresAt": "2026-11-22T17:42:33.739Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
@@ -34,5 +34,7 @@
   "checkpoint": {
     "evidence": "VERIFIED PR1618 merged as main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f with exact890 ancestor and all20 workflows green. Water routes/operator/movingdoor and actions integrated; complete physical system still open. Recovery9eb9ac3d and reviewed publication1619 retained.",
     "next": "Release gen58 handoff now. Fresh-main doctor/dispatch and explicit HAD claim59 for combined work/convergence-integrated-house-20261122; integrate jacket and finite receiver candidate methods without native acceptance or pressure/thermal/renewal claims."
-  }
+  },
+  "releasedAt": "2026-11-22T17:42:33.739Z",
+  "releaseReason": "handoff"
 }
