@@ -1,40 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 56,
+  "generation": 57,
   "state": "claimed",
-  "leaseId": "a87e3b70-c77e-4906-9bca-443f25ceb597",
+  "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
   "holder": {
     "kind": "chatgpt",
-    "label": "had-indoor-cuts-resume-20261122"
+    "label": "convergence-water-20261122"
   },
-  "claimedAt": "2026-11-22T07:45:46.646Z",
-  "heartbeatAt": "2026-11-22T08:04:03.854Z",
-  "expiresAt": "2026-11-22T08:49:03.854Z",
-  "checkpoint": {
-    "evidence": "Durable8b844bfa/tree0a3ab14f from recoveryaba/main769:4focused controls PASS. Conventional single outward leaf now has connected opening/closing/operator/hand path through actual Plant arch, occupied washer rest and protected parked leaf;901states+Lipschitz bound. Exact groundFFL translation exported; source6 receipts and nativeSTR inputs unchanged.",
-    "next": "Complete independent inlet pipe routes and valve/door physical interfaces, then integrate settings and actual methods into shared saved inlet stage and regenerate affected evidence/views. Keep product/material and receiver limits explicit.",
-    "blocker": "Bank remains dimensional comparator, no potable/material or physical installation admission. Complete pipe/pressure/thermal/dead receiver and loaded renewal remain unfinished. Structural force/FFL adoption still unearned."
-  },
-  "branch": "work/had-indoor-cuts-resume-20261122",
+  "claimedAt": "2026-11-22T10:03:08.557Z",
+  "heartbeatAt": "2026-11-22T10:03:08.557Z",
+  "expiresAt": "2026-11-22T10:48:08.557Z",
+  "branch": "work/convergence-water-20261122",
   "predecessor": {
-    "leaseId": "82642b9f-5da1-40c3-878c-5f5bc871f7fb",
-    "generation": 55,
-    "branch": "work/had-west-indoor-cuts-20261121",
+    "leaseId": "a87e3b70-c77e-4906-9bca-443f25ceb597",
+    "generation": 56,
+    "branch": "work/had-indoor-cuts-resume-20261122",
     "checkpoint": {
-      "evidence": "Main769b60bc verified merged1613 actual7cf; bounded HAD54 released after source/frame/pan integration. Isolated successor holds actual occupied-bank/product geometry exploration; west local standing point rejected for disconnected washer-rest access. Entry-side doorway-operated bank under calculation.",
-      "next": "Checkpoint actual ordinary-cut code and geometry on durable recovery branch; develop entry-side valve/tail/support/withdrawal and door-state comparison without native structural inputs.",
-      "blocker": "No product/material/installed admission; full pipe reroute and load receiver remain unqualified. Root retains shared FEM compute slot."
+      "evidence": "Durable8b844bfa/tree0a3ab14f from recoveryaba/main769:4focused controls PASS. Conventional single outward leaf now has connected opening/closing/operator/hand path through actual Plant arch, occupied washer rest and protected parked leaf;901states+Lipschitz bound. Exact groundFFL translation exported; source6 receipts and nativeSTR inputs unchanged.",
+      "next": "Complete independent inlet pipe routes and valve/door physical interfaces, then integrate settings and actual methods into shared saved inlet stage and regenerate affected evidence/views. Keep product/material and receiver limits explicit.",
+      "blocker": "Bank remains dimensional comparator, no potable/material or physical installation admission. Complete pipe/pressure/thermal/dead receiver and loaded renewal remain unfinished. Structural force/FFL adoption still unearned."
     }
   },
   "recoverySource": {
-    "leaseId": "82642b9f-5da1-40c3-878c-5f5bc871f7fb",
-    "generation": 55,
-    "branch": "work/had-west-indoor-cuts-20261121",
+    "leaseId": "a87e3b70-c77e-4906-9bca-443f25ceb597",
+    "generation": 56,
+    "branch": "work/had-indoor-cuts-resume-20261122",
     "checkpoint": {
-      "evidence": "Main769b60bc verified merged1613 actual7cf; bounded HAD54 released after source/frame/pan integration. Isolated successor holds actual occupied-bank/product geometry exploration; west local standing point rejected for disconnected washer-rest access. Entry-side doorway-operated bank under calculation.",
-      "next": "Checkpoint actual ordinary-cut code and geometry on durable recovery branch; develop entry-side valve/tail/support/withdrawal and door-state comparison without native structural inputs.",
-      "blocker": "No product/material/installed admission; full pipe reroute and load receiver remain unqualified. Root retains shared FEM compute slot."
+      "evidence": "Durable8b844bfa/tree0a3ab14f from recoveryaba/main769:4focused controls PASS. Conventional single outward leaf now has connected opening/closing/operator/hand path through actual Plant arch, occupied washer rest and protected parked leaf;901states+Lipschitz bound. Exact groundFFL translation exported; source6 receipts and nativeSTR inputs unchanged.",
+      "next": "Complete independent inlet pipe routes and valve/door physical interfaces, then integrate settings and actual methods into shared saved inlet stage and regenerate affected evidence/views. Keep product/material and receiver limits explicit.",
+      "blocker": "Bank remains dimensional comparator, no potable/material or physical installation admission. Complete pipe/pressure/thermal/dead receiver and loaded renewal remain unfinished. Structural force/FFL adoption still unearned."
     }
   }
 }
