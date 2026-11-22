@@ -1,0 +1,4956 @@
+{
+  "schema": "had-bank-placement-recovery/1",
+  "state": "recovery-only-not-current-design",
+  "source": {
+    "path": "project/had/studies/inlet-source-envelope.results.json",
+    "sha256": "9250fd7325b4299730a84c5c4eb01cab08242ceb688c07512122e93b3e4f2c44",
+    "basisCommit": "b31277ccb60d8689546083a14855e2b1989aa961"
+  },
+  "request": {
+    "schema": "had-bank-placement-reference/1",
+    "source": {
+      "path": "project/had/studies/inlet-source-envelope.results.json",
+      "sha256": "9250fd7325b4299730a84c5c4eb01cab08242ceb688c07512122e93b3e4f2c44",
+      "basisCommit": "b31277ccb60d8689546083a14855e2b1989aa961"
+    },
+    "clamp": {
+      "model": "Walraven DMC113028, geometric comparison only",
+      "stripAxialHeightMm": 25,
+      "stripRadialThicknessMm": 5,
+      "overallWidthMm": 210,
+      "thread": "M10",
+      "document": "Two Bolt Riser Clamp B15 310, EN-DUB03/2025, one-page primary drawing visually inspected",
+      "url": "https://files.walraven.com/repository/rnd/documents/EN-DUB/Two%20Bolt%20Riser%20Clamp%20-%20B%2015%20310%20(EN-DUB).pdf",
+      "actualBoltLengthHoleCentresAndCompleteEnvelopeKnown": false,
+      "actual28point1ThinCopperTorqueAndSignedResistanceQualified": false
+    },
+    "tool": {
+      "authoredAxialEnvelopeMm": 30,
+      "authoredSouthApproachMm": 100,
+      "actualM10ToolAndTorqueSelected": false
+    },
+    "settingEachInterfaceMm": 10,
+    "cases": [
+      {
+        "id": "unchanged-control",
+        "tailOffsetMm": 200,
+        "utilityAxisShiftMm": 0
+      },
+      {
+        "id": "longer-tails-only-rejected",
+        "tailOffsetMm": 250,
+        "utilityAxisShiftMm": 0
+      },
+      {
+        "id": "longer-tails-shift70-rejected",
+        "tailOffsetMm": 250,
+        "utilityAxisShiftMm": -70
+      },
+      {
+        "id": "longer-tails-shift80-wide-clamp-rejected",
+        "tailOffsetMm": 250,
+        "utilityAxisShiftMm": -80
+      },
+      {
+        "id": "longer-tails-shift80-return40-cover-rejected",
+        "tailOffsetMm": 250,
+        "utilityAxisShiftMm": -80,
+        "utilityReturnShiftXMm": -40
+      },
+      {
+        "id": "longer-tails-shift80-return40-bank10-west-rejected",
+        "tailOffsetMm": 250,
+        "utilityAxisShiftMm": -80,
+        "utilityReturnShiftXMm": -40,
+        "bankShiftXMm": 10
+      },
+      {
+        "id": "longer-tails-shift80-return40-bank10-fixedwest-candidate",
+        "tailOffsetMm": 250,
+        "utilityAxisShiftMm": -80,
+        "utilityReturnShiftXMm": -40,
+        "bankShiftXMm": 10,
+        "preserveWestReturnXMm": true
+      }
+    ],
+    "authority": "Recovery-only finite territories. No current design/source mutation, catalogue anchor selection, masonry resistance, coupled thermal result, or physical acceptance."
+  },
+  "method": {
+    "path": "project/had/studies/inlet-bank-placement-probe.mjs",
+    "sha256": "3a4856193946dcde37a4eaa3fbd7a18df3f13aff41e29c1fbcfb0f7ad15cad9d"
+  },
+  "existingShortTail": {
+    "barePipeFlangeToTangentMm": 78,
+    "unchangedAdjacentJacketGapMm": 3.483339501604604,
+    "strippedBareEnvelopeGapMm": 55.483339501604604,
+    "stripAfterTwoSettingsMm": 10.483339501604604,
+    "declaredToolAfterTwoSettingsMm": 5.483339501604604,
+    "oldWrenchPointMinus115IsNotClampAdmission": true,
+    "shortTailReboxedReceiverOrThermalBridgeAccepted": false
+  },
+  "cases": [
+    {
+      "id": "unchanged-control",
+      "tailOffsetMm": 200,
+      "utilityAxisShiftMm": 0,
+      "paths": [
+        {
+          "id": "utility/upstream",
+          "pointsMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11490,
+              600,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              1150
+            ],
+            [
+              11490,
+              2350,
+              1150
+            ],
+            [
+              11350,
+              2350,
+              1150
+            ],
+            [
+              11350,
+              2350,
+              1270
+            ]
+          ],
+          "centrelineLengthMm": 7271.610000000001
+        },
+        {
+          "id": "utility/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1430
+            ],
+            [
+              11350,
+              2350,
+              1550
+            ],
+            [
+              11180,
+              2350,
+              1550
+            ],
+            [
+              11180,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "centrelineLengthMm": 5200
+        },
+        {
+          "id": "plant/upstream",
+          "pointsMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11350,
+              545,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              1690
+            ],
+            [
+              11350,
+              2350,
+              1690
+            ],
+            [
+              11350,
+              2350,
+              1810
+            ]
+          ],
+          "centrelineLengthMm": 5921.610000000001
+        },
+        {
+          "id": "plant/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1970
+            ],
+            [
+              11350,
+              2350,
+              2090
+            ],
+            [
+              11490,
+              2350,
+              2090
+            ],
+            [
+              11490,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "centrelineLengthMm": 3909.033432273692
+        }
+      ],
+      "routeMinima": {
+        "pipeToPipe": {
+          "a": "plant/upstream",
+          "b": "plant/downstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCorner": {
+          "a": "utility/downstream/corner/1",
+          "b": "plant/upstream/corner/3",
+          "reserveMm": 10.981763616409498
+        },
+        "cornerToOtherPipe": {
+          "corner": "plant/downstream/corner/0",
+          "path": "plant/upstream",
+          "reserveMm": 11.433339501387465
+        },
+        "cornerToObstacle": {
+          "corner": "utility/downstream/corner/3",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 5.161380418860087
+        },
+        "pipeToObstacle": {
+          "path": "utility/downstream",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 44.949999999731176
+        },
+        "pipeToOwnNonadjacent": {
+          "path": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCeiling": {
+          "reserveMm": 51.483339501604405
+        }
+      },
+      "valves": [
+        {
+          "branch": "utility",
+          "axisMm": [
+            11350,
+            2350,
+            1350
+          ],
+          "maximumGripReachMm": 513.6432299002995,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 14.382370680473215
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1244,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        },
+        {
+          "branch": "plant",
+          "axisMm": [
+            11350,
+            2350,
+            1890
+          ],
+          "maximumGripReachMm": 637.4774662724374,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 14.382370680473215
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1784,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        }
+      ],
+      "receivers": [
+        {
+          "branch": "utility",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1242.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 3.483339501604604,
+          "installedStripReserveMm": -41.516660498395396,
+          "declaredToolReserveMm": -46.516660498395396,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1229.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1203.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1227.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 18.20686858254852
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 43.7254032739212
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 349.1916697507739
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 87.53283000822796,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "utility",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            1457.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 3.483339501604604,
+          "installedStripReserveMm": -41.516660498395396,
+          "declaredToolReserveMm": -46.516660498395396,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1445.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1419.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1442.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 133.70833024916948
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": -3.508601752392046,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1782.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 3.483339501604604,
+          "installedStripReserveMm": -41.516660498395396,
+          "declaredToolReserveMm": -46.516660498395396,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1769.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1743.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1767.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": -21.050000000165085
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": -3.5086017524211144,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            1997.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 3.483339501604604,
+          "installedStripReserveMm": -41.516660498395396,
+          "declaredToolReserveMm": -46.516660498395396,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1985.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1959.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1982.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": -21.050000000165063
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 87.53283000819877,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        }
+      ],
+      "branches": [
+        {
+          "id": "utility",
+          "centrelineLengthMm": 12471.61,
+          "deltaLengthMm": 0,
+          "comparisonLossBar": 0.06790625106478454,
+          "netRiseBar": 0.051169941000000004,
+          "deltaStraightCopperReferenceKg": 0,
+          "deltaMaximumWaterReferenceKg": 0,
+          "deltaJacketVolumeM3": 0,
+          "deltaInsulationVolumeM3": 0,
+          "deltaJacketAtSteel8000ReferenceKg": 0,
+          "deltaInsulationAt200ReferenceKg": 0,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.38092380793521546,
+          "freeRunExpansion40KMm": 8.4806948,
+          "coupledThermalReactionSolved": false
+        },
+        {
+          "id": "plant",
+          "centrelineLengthMm": 9830.643432273693,
+          "deltaLengthMm": 0,
+          "comparisonLossBar": 0.28725704793635065,
+          "netRiseBar": 0.176737941,
+          "deltaStraightCopperReferenceKg": 0,
+          "deltaMaximumWaterReferenceKg": 0,
+          "deltaJacketVolumeM3": 0,
+          "deltaInsulationVolumeM3": 0,
+          "deltaJacketAtSteel8000ReferenceKg": 0,
+          "deltaInsulationAt200ReferenceKg": 0,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.5360050110636494,
+          "freeRunExpansion40KMm": 6.68483753394611,
+          "coupledThermalReactionSolved": false
+        }
+      ],
+      "necessaryRouteAndClampEnvelopeTerritory": false,
+      "currentSharedInputsChanged": false,
+      "actualProductAndResistanceSelected": false
+    },
+    {
+      "id": "longer-tails-only-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": 0,
+      "paths": [
+        {
+          "id": "utility/upstream",
+          "pointsMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11490,
+              600,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              1100
+            ],
+            [
+              11490,
+              2350,
+              1100
+            ],
+            [
+              11350,
+              2350,
+              1100
+            ],
+            [
+              11350,
+              2350,
+              1270
+            ]
+          ],
+          "centrelineLengthMm": 7371.610000000001
+        },
+        {
+          "id": "utility/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1430
+            ],
+            [
+              11350,
+              2350,
+              1600
+            ],
+            [
+              11180,
+              2350,
+              1600
+            ],
+            [
+              11180,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "centrelineLengthMm": 5200
+        },
+        {
+          "id": "plant/upstream",
+          "pointsMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11350,
+              545,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              1640
+            ],
+            [
+              11350,
+              2350,
+              1640
+            ],
+            [
+              11350,
+              2350,
+              1810
+            ]
+          ],
+          "centrelineLengthMm": 6021.610000000001
+        },
+        {
+          "id": "plant/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1970
+            ],
+            [
+              11350,
+              2350,
+              2140
+            ],
+            [
+              11490,
+              2350,
+              2140
+            ],
+            [
+              11490,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "centrelineLengthMm": 3909.033432273692
+        }
+      ],
+      "routeMinima": {
+        "pipeToPipe": {
+          "a": "utility/downstream",
+          "b": "plant/upstream",
+          "reserveMm": -60.099999999999994
+        },
+        "cornerToCorner": {
+          "a": "utility/downstream/corner/0",
+          "b": "plant/upstream/corner/4",
+          "reserveMm": -77.03332099679074
+        },
+        "cornerToOtherPipe": {
+          "corner": "plant/upstream/corner/4",
+          "path": "utility/downstream",
+          "reserveMm": -60.05000000004009
+        },
+        "cornerToObstacle": {
+          "corner": "utility/downstream/corner/3",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 5.161380418860087
+        },
+        "pipeToObstacle": {
+          "path": "utility/downstream",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 44.949999999731176
+        },
+        "pipeToOwnNonadjacent": {
+          "path": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCeiling": {
+          "reserveMm": 51.483339501604405
+        }
+      },
+      "valves": [
+        {
+          "branch": "utility",
+          "axisMm": [
+            11350,
+            2350,
+            1350
+          ],
+          "maximumGripReachMm": 513.6432299002995,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 14.382370680473215
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1244,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        },
+        {
+          "branch": "plant",
+          "axisMm": [
+            11350,
+            2350,
+            1890
+          ],
+          "maximumGripReachMm": 637.4774662724374,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 14.382370680473215
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1784,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        }
+      ],
+      "receivers": [
+        {
+          "branch": "utility",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1217.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1204.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1178.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1202.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 7.950000000000188
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 25.334154079099918
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 324.1916697507621
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127998265,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "utility",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            1482.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1470.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1444.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1467.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 58.70833024915771
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005231896,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1757.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1744.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1718.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1742.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": -21.050000000153275
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005202828,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            2022.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            2010.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1984.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            2007.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250.11523110062296
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": -21.05000000015331
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127995346,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        }
+      ],
+      "branches": [
+        {
+          "id": "utility",
+          "centrelineLengthMm": 12571.61,
+          "deltaLengthMm": 100,
+          "comparisonLossBar": 0.06817530702686608,
+          "netRiseBar": 0.051169941000000004,
+          "deltaStraightCopperReferenceKg": 0.10379428046078204,
+          "deltaMaximumWaterReferenceKg": 0.05333824281598633,
+          "deltaJacketVolumeM3": 0.000024849997889895307,
+          "deltaInsulationVolumeM3": 0.00041704642476404486,
+          "deltaJacketAtSteel8000ReferenceKg": 0.19879998311916247,
+          "deltaInsulationAt200ReferenceKg": 0.08340928495280897,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.3806547519731339,
+          "freeRunExpansion40KMm": 8.5486948,
+          "coupledThermalReactionSolved": false
+        },
+        {
+          "id": "plant",
+          "centrelineLengthMm": 9930.643432273693,
+          "deltaLengthMm": 100,
+          "comparisonLossBar": 0.2886191437443884,
+          "netRiseBar": 0.176737941,
+          "deltaStraightCopperReferenceKg": 0.10379428046078204,
+          "deltaMaximumWaterReferenceKg": 0.05333824281598633,
+          "deltaJacketVolumeM3": 0.000024849997889895307,
+          "deltaInsulationVolumeM3": 0.00041704642476404486,
+          "deltaJacketAtSteel8000ReferenceKg": 0.19879998311916247,
+          "deltaInsulationAt200ReferenceKg": 0.08340928495280897,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.5346429152556116,
+          "freeRunExpansion40KMm": 6.752837533946111,
+          "coupledThermalReactionSolved": false
+        }
+      ],
+      "necessaryRouteAndClampEnvelopeTerritory": false,
+      "currentSharedInputsChanged": false,
+      "actualProductAndResistanceSelected": false
+    },
+    {
+      "id": "longer-tails-shift70-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -70,
+      "paths": [
+        {
+          "id": "utility/upstream",
+          "pointsMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11490,
+              600,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              1030
+            ],
+            [
+              11490,
+              2350,
+              1030
+            ],
+            [
+              11350,
+              2350,
+              1030
+            ],
+            [
+              11350,
+              2350,
+              1200
+            ]
+          ],
+          "centrelineLengthMm": 7441.610000000001
+        },
+        {
+          "id": "utility/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1360
+            ],
+            [
+              11350,
+              2350,
+              1530
+            ],
+            [
+              11180,
+              2350,
+              1530
+            ],
+            [
+              11180,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "centrelineLengthMm": 5270
+        },
+        {
+          "id": "plant/upstream",
+          "pointsMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11350,
+              545,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              1640
+            ],
+            [
+              11350,
+              2350,
+              1640
+            ],
+            [
+              11350,
+              2350,
+              1810
+            ]
+          ],
+          "centrelineLengthMm": 6021.610000000001
+        },
+        {
+          "id": "plant/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1970
+            ],
+            [
+              11350,
+              2350,
+              2140
+            ],
+            [
+              11490,
+              2350,
+              2140
+            ],
+            [
+              11490,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "centrelineLengthMm": 3909.033432273692
+        }
+      ],
+      "routeMinima": {
+        "pipeToPipe": {
+          "a": "utility/downstream",
+          "b": "plant/upstream",
+          "reserveMm": 9.900000000000006
+        },
+        "cornerToCorner": {
+          "a": "utility/downstream/corner/0",
+          "b": "plant/upstream/corner/3",
+          "reserveMm": -7.033320996790735
+        },
+        "cornerToOtherPipe": {
+          "corner": "plant/upstream/corner/4",
+          "path": "utility/downstream",
+          "reserveMm": 1.4333395015645394
+        },
+        "cornerToObstacle": {
+          "corner": "utility/downstream/corner/3",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 5.161380418860087
+        },
+        "pipeToObstacle": {
+          "path": "utility/downstream",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 44.949999999731176
+        },
+        "pipeToOwnNonadjacent": {
+          "path": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCeiling": {
+          "reserveMm": 51.483339501604405
+        }
+      },
+      "valves": [
+        {
+          "branch": "utility",
+          "axisMm": [
+            11350,
+            2350,
+            1280
+          ],
+          "maximumGripReachMm": 523.7151101910107,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": -5.5
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1174,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        },
+        {
+          "branch": "plant",
+          "axisMm": [
+            11350,
+            2350,
+            1890
+          ],
+          "maximumGripReachMm": 637.4774662724374,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 14.382370680473215
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1784,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        }
+      ],
+      "receivers": [
+        {
+          "branch": "utility",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1147.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1134.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1108.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1132.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 7.950000000000188
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 18.950000000000188
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 394.1916697507621
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127998029,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "utility",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            1412.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1400.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1374.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1397.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 207.6753788715302
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 128.7083302491577
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005229573,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1757.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1744.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1718.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1742.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": -21.05000000016978
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005202828,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            2022.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            2010.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1984.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            2007.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250.11523110062296
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": -21.05000000016978
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127995346,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        }
+      ],
+      "branches": [
+        {
+          "id": "utility",
+          "centrelineLengthMm": 12711.61,
+          "deltaLengthMm": 240,
+          "comparisonLossBar": 0.06855198537378022,
+          "netRiseBar": 0.051169941000000004,
+          "deltaStraightCopperReferenceKg": 0.24910627310587688,
+          "deltaMaximumWaterReferenceKg": 0.12801178275836717,
+          "deltaJacketVolumeM3": 0.000059639994935748734,
+          "deltaInsulationVolumeM3": 0.0010009114194337075,
+          "deltaJacketAtSteel8000ReferenceKg": 0.4771199594859899,
+          "deltaInsulationAt200ReferenceKg": 0.2001822838867415,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.3802780736262198,
+          "freeRunExpansion40KMm": 8.6438948,
+          "coupledThermalReactionSolved": false
+        },
+        {
+          "id": "plant",
+          "centrelineLengthMm": 9930.643432273693,
+          "deltaLengthMm": 100,
+          "comparisonLossBar": 0.2886191437443884,
+          "netRiseBar": 0.176737941,
+          "deltaStraightCopperReferenceKg": 0.10379428046078204,
+          "deltaMaximumWaterReferenceKg": 0.05333824281598633,
+          "deltaJacketVolumeM3": 0.000024849997889895307,
+          "deltaInsulationVolumeM3": 0.00041704642476404486,
+          "deltaJacketAtSteel8000ReferenceKg": 0.19879998311916247,
+          "deltaInsulationAt200ReferenceKg": 0.08340928495280897,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.5346429152556116,
+          "freeRunExpansion40KMm": 6.752837533946111,
+          "coupledThermalReactionSolved": false
+        }
+      ],
+      "necessaryRouteAndClampEnvelopeTerritory": false,
+      "currentSharedInputsChanged": false,
+      "actualProductAndResistanceSelected": false
+    },
+    {
+      "id": "longer-tails-shift80-wide-clamp-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -80,
+      "paths": [
+        {
+          "id": "utility/upstream",
+          "pointsMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11490,
+              600,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              1020
+            ],
+            [
+              11490,
+              2350,
+              1020
+            ],
+            [
+              11350,
+              2350,
+              1020
+            ],
+            [
+              11350,
+              2350,
+              1190
+            ]
+          ],
+          "centrelineLengthMm": 7451.610000000001
+        },
+        {
+          "id": "utility/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1350
+            ],
+            [
+              11350,
+              2350,
+              1520
+            ],
+            [
+              11180,
+              2350,
+              1520
+            ],
+            [
+              11180,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "centrelineLengthMm": 5280
+        },
+        {
+          "id": "plant/upstream",
+          "pointsMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11350,
+              545,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              1640
+            ],
+            [
+              11350,
+              2350,
+              1640
+            ],
+            [
+              11350,
+              2350,
+              1810
+            ]
+          ],
+          "centrelineLengthMm": 6021.610000000001
+        },
+        {
+          "id": "plant/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1970
+            ],
+            [
+              11350,
+              2350,
+              2140
+            ],
+            [
+              11490,
+              2350,
+              2140
+            ],
+            [
+              11490,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "centrelineLengthMm": 3909.033432273692
+        }
+      ],
+      "routeMinima": {
+        "pipeToPipe": {
+          "a": "utility/downstream",
+          "b": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCorner": {
+          "a": "utility/downstream/corner/0",
+          "b": "plant/upstream/corner/3",
+          "reserveMm": 2.966679003209265
+        },
+        "cornerToOtherPipe": {
+          "corner": "plant/downstream/corner/0",
+          "path": "plant/upstream",
+          "reserveMm": 11.43333950137567
+        },
+        "cornerToObstacle": {
+          "corner": "utility/downstream/corner/3",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 5.161380418860087
+        },
+        "pipeToObstacle": {
+          "path": "utility/downstream",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 44.949999999731176
+        },
+        "pipeToOwnNonadjacent": {
+          "path": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCeiling": {
+          "reserveMm": 51.483339501604405
+        }
+      },
+      "valves": [
+        {
+          "branch": "utility",
+          "axisMm": [
+            11350,
+            2350,
+            1270
+          ],
+          "maximumGripReachMm": 525.8993338648768,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": -5.5
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1164,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        },
+        {
+          "branch": "plant",
+          "axisMm": [
+            11350,
+            2350,
+            1890
+          ],
+          "maximumGripReachMm": 637.4774662724374,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 14.382370680473215
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1784,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        }
+      ],
+      "receivers": [
+        {
+          "branch": "utility",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1137.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1124.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1098.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1122.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 7.950000000000188
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 18.950000000000188
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 404.1916697507621
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127997978,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "utility",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            1402.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1390.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1364.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1387.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 197.7684701099957
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 138.7083302491577
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005229068,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1757.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1744.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1718.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1742.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": -21.05000000017214
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005202828,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            2022.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            2010.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1984.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            2007.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250.11523110062296
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": -21.05000000017214
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127995346,
+          "necessaryFiniteClampTerritory": false,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        }
+      ],
+      "branches": [
+        {
+          "id": "utility",
+          "centrelineLengthMm": 12731.61,
+          "deltaLengthMm": 260,
+          "comparisonLossBar": 0.06860579656619653,
+          "netRiseBar": 0.051169941000000004,
+          "deltaStraightCopperReferenceKg": 0.2698651291980333,
+          "deltaMaximumWaterReferenceKg": 0.13867943132156446,
+          "deltaJacketVolumeM3": 0.0000646099945137278,
+          "deltaInsulationVolumeM3": 0.0010843207043865167,
+          "deltaJacketAtSteel8000ReferenceKg": 0.5168799561098224,
+          "deltaInsulationAt200ReferenceKg": 0.21686414087730335,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.3802242624338035,
+          "freeRunExpansion40KMm": 8.6574948,
+          "coupledThermalReactionSolved": false
+        },
+        {
+          "id": "plant",
+          "centrelineLengthMm": 9930.643432273693,
+          "deltaLengthMm": 100,
+          "comparisonLossBar": 0.2886191437443884,
+          "netRiseBar": 0.176737941,
+          "deltaStraightCopperReferenceKg": 0.10379428046078204,
+          "deltaMaximumWaterReferenceKg": 0.05333824281598633,
+          "deltaJacketVolumeM3": 0.000024849997889895307,
+          "deltaInsulationVolumeM3": 0.00041704642476404486,
+          "deltaJacketAtSteel8000ReferenceKg": 0.19879998311916247,
+          "deltaInsulationAt200ReferenceKg": 0.08340928495280897,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.5346429152556116,
+          "freeRunExpansion40KMm": 6.752837533946111,
+          "coupledThermalReactionSolved": false
+        }
+      ],
+      "necessaryRouteAndClampEnvelopeTerritory": false,
+      "currentSharedInputsChanged": false,
+      "actualProductAndResistanceSelected": false
+    },
+    {
+      "id": "longer-tails-shift80-return40-cover-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -80,
+      "utilityReturnShiftXMm": -40,
+      "paths": [
+        {
+          "id": "utility/upstream",
+          "pointsMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11490,
+              600,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              2740
+            ],
+            [
+              11490,
+              2110,
+              1020
+            ],
+            [
+              11490,
+              2350,
+              1020
+            ],
+            [
+              11350,
+              2350,
+              1020
+            ],
+            [
+              11350,
+              2350,
+              1190
+            ]
+          ],
+          "centrelineLengthMm": 7451.610000000001
+        },
+        {
+          "id": "utility/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1350
+            ],
+            [
+              11350,
+              2350,
+              1520
+            ],
+            [
+              11140,
+              2350,
+              1520
+            ],
+            [
+              11140,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "centrelineLengthMm": 5280
+        },
+        {
+          "id": "plant/upstream",
+          "pointsMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11350,
+              545,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              2610
+            ],
+            [
+              11350,
+              2230,
+              1640
+            ],
+            [
+              11350,
+              2350,
+              1640
+            ],
+            [
+              11350,
+              2350,
+              1810
+            ]
+          ],
+          "centrelineLengthMm": 6021.610000000001
+        },
+        {
+          "id": "plant/downstream",
+          "pointsMm": [
+            [
+              11350,
+              2350,
+              1970
+            ],
+            [
+              11350,
+              2350,
+              2140
+            ],
+            [
+              11490,
+              2350,
+              2140
+            ],
+            [
+              11490,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "centrelineLengthMm": 3909.033432273692
+        }
+      ],
+      "routeMinima": {
+        "pipeToPipe": {
+          "a": "utility/downstream",
+          "b": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCorner": {
+          "a": "utility/downstream/corner/0",
+          "b": "plant/upstream/corner/3",
+          "reserveMm": 2.966679003209265
+        },
+        "cornerToOtherPipe": {
+          "corner": "plant/downstream/corner/0",
+          "path": "plant/upstream",
+          "reserveMm": 11.43333950137567
+        },
+        "cornerToObstacle": {
+          "corner": "utility/downstream/corner/3",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 5.161380418860087
+        },
+        "pipeToObstacle": {
+          "path": "utility/downstream",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 44.94999999974061
+        },
+        "pipeToOwnNonadjacent": {
+          "path": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCeiling": {
+          "reserveMm": 51.483339501604405
+        }
+      },
+      "valves": [
+        {
+          "branch": "utility",
+          "axisMm": [
+            11350,
+            2350,
+            1270
+          ],
+          "maximumGripReachMm": 525.8993338648768,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": -5.5
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1164,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        },
+        {
+          "branch": "plant",
+          "axisMm": [
+            11350,
+            2350,
+            1890
+          ],
+          "maximumGripReachMm": 637.4774662724374,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 14.382370680473215
+          },
+          "wholeValveWestSweepMm": [
+            10858,
+            2266.5,
+            1784,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        }
+      ],
+      "receivers": [
+        {
+          "branch": "utility",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1137.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1124.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1098.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1122.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 7.950000000000188
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 18.950000000000188
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 404.1916697507621
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127997978,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "utility",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            1402.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1390.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1364.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1387.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 197.7684701099957
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 138.7083302491577
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005229068,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "below",
+          "centreMm": [
+            11350,
+            2350,
+            1757.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            1744.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1718.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            1742.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": 18.949999999827867
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005202828,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "above",
+          "centreMm": [
+            11350,
+            2350,
+            2022.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11245,
+            2330.95,
+            2010.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11219,
+            2304.95,
+            1984.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11230,
+            2230.95,
+            2007.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 250.11523110062296
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -25
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": 18.949999999827867
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127995346,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        }
+      ],
+      "branches": [
+        {
+          "id": "utility",
+          "centrelineLengthMm": 12731.61,
+          "deltaLengthMm": 260,
+          "comparisonLossBar": 0.06860579656619653,
+          "netRiseBar": 0.051169941000000004,
+          "deltaStraightCopperReferenceKg": 0.2698651291980333,
+          "deltaMaximumWaterReferenceKg": 0.13867943132156446,
+          "deltaJacketVolumeM3": 0.0000646099945137278,
+          "deltaInsulationVolumeM3": 0.0010843207043865167,
+          "deltaJacketAtSteel8000ReferenceKg": 0.5168799561098224,
+          "deltaInsulationAt200ReferenceKg": 0.21686414087730335,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.3802242624338035,
+          "freeRunExpansion40KMm": 8.6574948,
+          "coupledThermalReactionSolved": false
+        },
+        {
+          "id": "plant",
+          "centrelineLengthMm": 9930.643432273693,
+          "deltaLengthMm": 100,
+          "comparisonLossBar": 0.2886191437443884,
+          "netRiseBar": 0.176737941,
+          "deltaStraightCopperReferenceKg": 0.10379428046078204,
+          "deltaMaximumWaterReferenceKg": 0.05333824281598633,
+          "deltaJacketVolumeM3": 0.000024849997889895307,
+          "deltaInsulationVolumeM3": 0.00041704642476404486,
+          "deltaJacketAtSteel8000ReferenceKg": 0.19879998311916247,
+          "deltaInsulationAt200ReferenceKg": 0.08340928495280897,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.5346429152556116,
+          "freeRunExpansion40KMm": 6.752837533946111,
+          "coupledThermalReactionSolved": false
+        }
+      ],
+      "necessaryRouteAndClampEnvelopeTerritory": false,
+      "currentSharedInputsChanged": false,
+      "actualProductAndResistanceSelected": false
+    },
+    {
+      "id": "longer-tails-shift80-return40-bank10-west-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -80,
+      "utilityReturnShiftXMm": -40,
+      "bankShiftXMm": 10,
+      "paths": [
+        {
+          "id": "utility/upstream",
+          "pointsMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11500,
+              600,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              1020
+            ],
+            [
+              11500,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1190
+            ]
+          ],
+          "centrelineLengthMm": 7461.610000000001
+        },
+        {
+          "id": "utility/downstream",
+          "pointsMm": [
+            [
+              11360,
+              2350,
+              1350
+            ],
+            [
+              11360,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              2250
+            ],
+            [
+              10050,
+              2350,
+              2250
+            ],
+            [
+              10050,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "centrelineLengthMm": 5270
+        },
+        {
+          "id": "plant/upstream",
+          "pointsMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11360,
+              545,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1810
+            ]
+          ],
+          "centrelineLengthMm": 6031.610000000001
+        },
+        {
+          "id": "plant/downstream",
+          "pointsMm": [
+            [
+              11360,
+              2350,
+              1970
+            ],
+            [
+              11360,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "centrelineLengthMm": 3919.032020143515
+        }
+      ],
+      "routeMinima": {
+        "pipeToPipe": {
+          "a": "utility/downstream",
+          "b": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCorner": {
+          "a": "utility/downstream/corner/0",
+          "b": "plant/upstream/corner/3",
+          "reserveMm": 2.966679003209265
+        },
+        "cornerToOtherPipe": {
+          "corner": "plant/downstream/corner/0",
+          "path": "plant/upstream",
+          "reserveMm": 11.43333950137567
+        },
+        "cornerToObstacle": {
+          "corner": "utility/downstream/corner/3",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": -3.659600472107697
+        },
+        "pipeToObstacle": {
+          "path": "utility/downstream",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 44.94999999974061
+        },
+        "pipeToOwnNonadjacent": {
+          "path": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCeiling": {
+          "reserveMm": 51.483339501604405
+        }
+      },
+      "valves": [
+        {
+          "branch": "utility",
+          "axisMm": [
+            11360,
+            2350,
+            1270
+          ],
+          "maximumGripReachMm": 535.4718567390084,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 4.5
+          },
+          "wholeValveWestSweepMm": [
+            10868,
+            2266.5,
+            1164,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        },
+        {
+          "branch": "plant",
+          "axisMm": [
+            11360,
+            2350,
+            1890
+          ],
+          "maximumGripReachMm": 645.3971800411948,
+          "minimumOccupiedObstacle": {
+            "part": "stem",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 22.5
+          },
+          "wholeValveWestSweepMm": [
+            10868,
+            2266.5,
+            1784,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        }
+      ],
+      "receivers": [
+        {
+          "branch": "utility",
+          "side": "below",
+          "centreMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11255,
+            2330.95,
+            1124.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11229,
+            2304.95,
+            1098.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11240,
+            2230.95,
+            1122.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 7.950000000000188
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 18.950000000000188
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -15
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 404.1916697507621
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.3098912799775,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "utility",
+          "side": "above",
+          "centreMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11255,
+            2330.95,
+            1390.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11229,
+            2304.95,
+            1364.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11240,
+            2230.95,
+            1387.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 197.7684701099957
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -15
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 138.7083302491577
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.8885820052267945,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "below",
+          "centreMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11255,
+            2330.95,
+            1744.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11229,
+            2304.95,
+            1718.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11240,
+            2230.95,
+            1742.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 260
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -15
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": 18.949999999827867
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005200952,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "above",
+          "centreMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11255,
+            2330.95,
+            2010.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11229,
+            2304.95,
+            1984.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11240,
+            2230.95,
+            2007.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 260.1109650690443
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -15
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": 18.949999999827867
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127995159,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        }
+      ],
+      "branches": [
+        {
+          "id": "utility",
+          "centrelineLengthMm": 12731.61,
+          "deltaLengthMm": 260,
+          "comparisonLossBar": 0.06860579656619653,
+          "netRiseBar": 0.051169941000000004,
+          "deltaStraightCopperReferenceKg": 0.2698651291980333,
+          "deltaMaximumWaterReferenceKg": 0.13867943132156446,
+          "deltaJacketVolumeM3": 0.0000646099945137278,
+          "deltaInsulationVolumeM3": 0.0010843207043865167,
+          "deltaJacketAtSteel8000ReferenceKg": 0.5168799561098224,
+          "deltaInsulationAt200ReferenceKg": 0.21686414087730335,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.3802242624338035,
+          "freeRunExpansion40KMm": 8.6574948,
+          "coupledThermalReactionSolved": false
+        },
+        {
+          "id": "plant",
+          "centrelineLengthMm": 9950.642020143516,
+          "deltaLengthMm": 119.99858786982259,
+          "comparisonLossBar": 0.28889154367143005,
+          "netRiseBar": 0.176737941,
+          "deltaStraightCopperReferenceKg": 0.12455167084258163,
+          "deltaMaximumWaterReferenceKg": 0.06400513817376069,
+          "deltaJacketVolumeM3": 0.00002981964655355508,
+          "deltaInsulationVolumeM3": 0.000500449820478436,
+          "deltaJacketAtSteel8000ReferenceKg": 0.23855717242844063,
+          "deltaInsulationAt200ReferenceKg": 0.1000899640956872,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.5343705153285698,
+          "freeRunExpansion40KMm": 6.76643657369759,
+          "coupledThermalReactionSolved": false
+        }
+      ],
+      "necessaryRouteAndClampEnvelopeTerritory": false,
+      "currentSharedInputsChanged": false,
+      "actualProductAndResistanceSelected": false
+    },
+    {
+      "id": "longer-tails-shift80-return40-bank10-fixedwest-candidate",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -80,
+      "utilityReturnShiftXMm": -40,
+      "bankShiftXMm": 10,
+      "preserveWestReturnXMm": true,
+      "paths": [
+        {
+          "id": "utility/upstream",
+          "pointsMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11500,
+              600,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              1020
+            ],
+            [
+              11500,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1190
+            ]
+          ],
+          "centrelineLengthMm": 7461.610000000001
+        },
+        {
+          "id": "utility/downstream",
+          "pointsMm": [
+            [
+              11360,
+              2350,
+              1350
+            ],
+            [
+              11360,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "centrelineLengthMm": 5290
+        },
+        {
+          "id": "plant/upstream",
+          "pointsMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11360,
+              545,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1810
+            ]
+          ],
+          "centrelineLengthMm": 6031.610000000001
+        },
+        {
+          "id": "plant/downstream",
+          "pointsMm": [
+            [
+              11360,
+              2350,
+              1970
+            ],
+            [
+              11360,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "centrelineLengthMm": 3919.032020143515
+        }
+      ],
+      "routeMinima": {
+        "pipeToPipe": {
+          "a": "utility/downstream",
+          "b": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCorner": {
+          "a": "utility/downstream/corner/0",
+          "b": "plant/upstream/corner/3",
+          "reserveMm": 2.966679003209265
+        },
+        "cornerToOtherPipe": {
+          "corner": "plant/downstream/corner/0",
+          "path": "plant/upstream",
+          "reserveMm": 11.43333950137567
+        },
+        "cornerToObstacle": {
+          "corner": "utility/downstream/corner/3",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 5.161380418860087
+        },
+        "pipeToObstacle": {
+          "path": "utility/downstream",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 44.94999999973825
+        },
+        "pipeToOwnNonadjacent": {
+          "path": "plant/upstream",
+          "reserveMm": 19.900000000000006
+        },
+        "cornerToCeiling": {
+          "reserveMm": 51.483339501604405
+        }
+      },
+      "valves": [
+        {
+          "branch": "utility",
+          "axisMm": [
+            11360,
+            2350,
+            1270
+          ],
+          "maximumGripReachMm": 535.4718567390084,
+          "minimumOccupiedObstacle": {
+            "part": "body",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 4.5
+          },
+          "wholeValveWestSweepMm": [
+            10868,
+            2266.5,
+            1164,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        },
+        {
+          "branch": "plant",
+          "axisMm": [
+            11360,
+            2350,
+            1890
+          ],
+          "maximumGripReachMm": 645.3971800411948,
+          "minimumOccupiedObstacle": {
+            "part": "stem",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 22.5
+          },
+          "wholeValveWestSweepMm": [
+            10868,
+            2266.5,
+            1784,
+            575.5,
+            167,
+            212
+          ],
+          "continuousLoadedCaptureAndFirstRestQualified": false
+        }
+      ],
+      "receivers": [
+        {
+          "branch": "utility",
+          "side": "below",
+          "centreMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11255,
+            2330.95,
+            1124.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11229,
+            2304.95,
+            1098.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11240,
+            2230.95,
+            1122.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 7.950000000000188
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 18.950000000000188
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -15
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 404.1916697507621
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.3098912799775,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "utility",
+          "side": "above",
+          "centreMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11255,
+            2330.95,
+            1390.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11229,
+            2304.95,
+            1364.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11240,
+            2230.95,
+            1387.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "HAD/utility-north/shield-connection-1",
+            "reserveMm": 197.7684701099957
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -15
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "plant/upstream",
+            "reserveMm": 138.7083302491577
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.8885820052267945,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "below",
+          "centreMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11255,
+            2330.95,
+            1744.7583302491978,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11229,
+            2304.95,
+            1718.7583302491978,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11240,
+            2230.95,
+            1742.2583302491978,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 260
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -15
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": 18.949999999827867
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 5.888582005200952,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        },
+        {
+          "branch": "plant",
+          "side": "above",
+          "centreMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "adjacentJacketAxialGapMm": 53.483339501604604,
+          "installedStripReserveMm": 8.483339501604604,
+          "declaredToolReserveMm": 3.483339501604604,
+          "metalBoxMm": [
+            11255,
+            2330.95,
+            2010.2416697508022,
+            210,
+            38.1,
+            25
+          ],
+          "newDemountableCoverBoxMm": [
+            11229,
+            2304.95,
+            1984.2416697508022,
+            262,
+            90.1,
+            77
+          ],
+          "declaredToolSweepBoxMm": [
+            11240,
+            2230.95,
+            2007.7416697508022,
+            240,
+            153.1,
+            30
+          ],
+          "minimumOrdinaryCoverObstacle": {
+            "part": "receiver-cover",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": 39.94999999999982
+          },
+          "minimumPlannedToolObstacle": {
+            "part": "declared-tool-sweep",
+            "obstacle": "ordinary-operator-body-and-approach",
+            "reserveMm": 260.1109650690443
+          },
+          "occupiedMaintenanceToolConflict": {
+            "part": "declared-tool-sweep",
+            "obstacle": "complete-shifted-utility-maintenance",
+            "reserveMm": -15
+          },
+          "minimumOtherBranchPipe": {
+            "part": "cover",
+            "path": "utility/downstream",
+            "reserveMm": 18.949999999827867
+          },
+          "roomBoundsMm": 47.95000000000019,
+          "ordinaryFullArmClearanceMm": 111.30989127995159,
+          "necessaryFiniteClampTerritory": true,
+          "coverInterpretation": "New combined removable25mm insulation/1mm jacket envelope around clamp. Its intersection with the same branch existing insulation requires actual joined detailing, never a deducted insulation allowance.",
+          "installationState": "Maintenance equipment not withdrawn into its full retained working field; fixed washer, sink, radiator, complete doors and operator corridor remain obstacles. This state supplies no ordinary fault-response credit.",
+          "actualBoltFullEnvelopeToolTorqueAndThermalBridgeQualified": false,
+          "installedReceiverOrAnchorQualified": false
+        }
+      ],
+      "branches": [
+        {
+          "id": "utility",
+          "centrelineLengthMm": 12751.61,
+          "deltaLengthMm": 280,
+          "comparisonLossBar": 0.06865960775861284,
+          "netRiseBar": 0.051169941000000004,
+          "deltaStraightCopperReferenceKg": 0.2906239852901897,
+          "deltaMaximumWaterReferenceKg": 0.14934707988476173,
+          "deltaJacketVolumeM3": 0.00006957999409170687,
+          "deltaInsulationVolumeM3": 0.0011677299893393257,
+          "deltaJacketAtSteel8000ReferenceKg": 0.556639952733655,
+          "deltaInsulationAt200ReferenceKg": 0.23354599786786515,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.38017045124138715,
+          "freeRunExpansion40KMm": 8.6710948,
+          "coupledThermalReactionSolved": false
+        },
+        {
+          "id": "plant",
+          "centrelineLengthMm": 9950.642020143516,
+          "deltaLengthMm": 119.99858786982259,
+          "comparisonLossBar": 0.28889154367143005,
+          "netRiseBar": 0.176737941,
+          "deltaStraightCopperReferenceKg": 0.12455167084258163,
+          "deltaMaximumWaterReferenceKg": 0.06400513817376069,
+          "deltaJacketVolumeM3": 0.00002981964655355508,
+          "deltaInsulationVolumeM3": 0.000500449820478436,
+          "deltaJacketAtSteel8000ReferenceKg": 0.23855717242844063,
+          "deltaInsulationAt200ReferenceKg": 0.1000899640956872,
+          "materialAndDensitySelection": false,
+          "allocationAfterLossAndRiseBar": 0.5343705153285698,
+          "freeRunExpansion40KMm": 6.76643657369759,
+          "coupledThermalReactionSolved": false
+        }
+      ],
+      "necessaryRouteAndClampEnvelopeTerritory": true,
+      "currentSharedInputsChanged": false,
+      "actualProductAndResistanceSelected": false
+    }
+  ],
+  "candidateActions": [
+    {
+      "id": "utility/upstream",
+      "materialReference": "Steel jacket8000/insulation200 sensitivities; no material/density or installed mass selection",
+      "segmentGravity": [
+        {
+          "id": "utility/upstream/0",
+          "originMm": [
+            10080,
+            600,
+            1609.195
+          ],
+          "massKg": 9.936197887322235,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -97.47410127463114,
+            -58.48446076477868,
+            982.5389408482819,
+            0
+          ]
+        },
+        {
+          "id": "utility/upstream/1",
+          "originMm": [
+            10790,
+            600,
+            2740
+          ],
+          "massKg": 6.238653437152105,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -61.20119021846215,
+            -36.72071413107729,
+            660.3608424572066,
+            0
+          ]
+        },
+        {
+          "id": "utility/upstream/2",
+          "originMm": [
+            11500,
+            1355,
+            2740
+          ],
+          "massKg": 6.634061049365971,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -65.08013889428018,
+            -88.18358820174964,
+            748.4215972842221,
+            0
+          ]
+        },
+        {
+          "id": "utility/upstream/3",
+          "originMm": [
+            11500,
+            2110,
+            1880
+          ],
+          "massKg": 7.556678811198324,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -74.13101913785556,
+            -156.41645038087523,
+            852.5067200853389,
+            0
+          ]
+        },
+        {
+          "id": "utility/upstream/4",
+          "originMm": [
+            11500,
+            2230,
+            1020
+          ],
+          "massKg": 1.0544202992369756,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -10.34386313551473,
+            -23.06681479219785,
+            118.9544260584194,
+            0
+          ]
+        },
+        {
+          "id": "utility/upstream/5",
+          "originMm": [
+            11430,
+            2350,
+            1020
+          ],
+          "massKg": 0.6150785078882358,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -6.033920162383594,
+            -14.179712381601446,
+            68.96770745604448,
+            0
+          ]
+        },
+        {
+          "id": "utility/upstream/6",
+          "originMm": [
+            11360,
+            2350,
+            1105
+          ],
+          "massKg": 0.7468810452928577,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -7.326903054322934,
+            -17.218222177658895,
+            83.23361869710853,
+            0
+          ]
+        }
+      ],
+      "cornerPressure": [
+        {
+          "id": "utility/upstream/corner/0",
+          "originMm": [
+            10080,
+            600,
+            2740
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            -490.7118339070742,
+            0,
+            490.7118339070742,
+            294.42710034424454,
+            -6290.925710688691,
+            294.42710034424454
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/upstream/corner/1",
+          "originMm": [
+            11500,
+            600,
+            2740
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            490.7118339070742,
+            -490.7118339070742,
+            0,
+            1344.5504249053834,
+            1344.5504249053834,
+            -5937.613190275598
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/upstream/corner/2",
+          "originMm": [
+            11500,
+            2110,
+            2740
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            0,
+            490.7118339070742,
+            490.7118339070742,
+            -309.14845536145685,
+            -5643.186089931353,
+            5643.186089931353
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/upstream/corner/3",
+          "originMm": [
+            11500,
+            2110,
+            1020
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            0,
+            -490.7118339070742,
+            -490.7118339070742,
+            -534.8758989587109,
+            5643.186089931353,
+            -5643.186089931353
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/upstream/corner/4",
+          "originMm": [
+            11500,
+            2350,
+            1020
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            490.7118339070742,
+            490.7118339070742,
+            0,
+            -500.5260705852157,
+            500.5260705852157,
+            4490.013280249729
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/upstream/corner/5",
+          "originMm": [
+            11360,
+            2350,
+            1020
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            -490.7118339070742,
+            0,
+            -490.7118339070742,
+            -1153.1728096816244,
+            5073.960362599147,
+            1153.1728096816244
+          ],
+          "actualStructuralReaction": false
+        }
+      ]
+    },
+    {
+      "id": "utility/downstream",
+      "materialReference": "Steel jacket8000/insulation200 sensitivities; no material/density or installed mass selection",
+      "segmentGravity": [
+        {
+          "id": "utility/downstream/0",
+          "originMm": [
+            11360,
+            2350,
+            1435
+          ],
+          "massKg": 0.7468810452928577,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -7.326903054322934,
+            -17.218222177658895,
+            83.23361869710853,
+            0
+          ]
+        },
+        {
+          "id": "utility/downstream/1",
+          "originMm": [
+            11255,
+            2350,
+            1520
+          ],
+          "massKg": 0.9226177618323536,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -9.050880243575389,
+            -21.269568572402164,
+            101.867657141441,
+            0
+          ]
+        },
+        {
+          "id": "utility/downstream/2",
+          "originMm": [
+            11150,
+            2350,
+            1885
+          ],
+          "massKg": 3.2071950768458004,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -31.462583703857305,
+            -73.93707170406466,
+            350.807808298009,
+            0
+          ]
+        },
+        {
+          "id": "utility/downstream/3",
+          "originMm": [
+            10595,
+            2350,
+            2250
+          ],
+          "massKg": 4.876693883971012,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -47.84036700175563,
+            -112.42486245412573,
+            506.86868838360095,
+            0
+          ]
+        },
+        {
+          "id": "utility/downstream/4",
+          "originMm": [
+            10040,
+            1800,
+            2250
+          ],
+          "massKg": 4.832759704836138,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -47.40937270444252,
+            -85.33687086799654,
+            475.99010195260286,
+            0
+          ]
+        },
+        {
+          "id": "utility/downstream/5",
+          "originMm": [
+            10400,
+            1250,
+            2250
+          ],
+          "massKg": 3.1632608977109267,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -31.031589406544192,
+            -38.78948675818024,
+            322.7285298280596,
+            0
+          ]
+        },
+        {
+          "id": "utility/downstream/6",
+          "originMm": [
+            10760,
+            1250,
+            1625
+          ],
+          "massKg": 5.491772391859247,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -53.87428716413922,
+            -67.34285895517402,
+            579.687329886138,
+            0
+          ]
+        }
+      ],
+      "cornerPressure": [
+        {
+          "id": "utility/downstream/corner/0",
+          "originMm": [
+            11360,
+            2350,
+            1520
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            490.7118339070742,
+            0,
+            490.7118339070742,
+            1153.1728096816244,
+            -4828.60444564561,
+            -1153.1728096816244
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/downstream/corner/1",
+          "originMm": [
+            11150,
+            2350,
+            1520
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            -490.7118339070742,
+            0,
+            -490.7118339070742,
+            -1153.1728096816244,
+            4725.554960525125,
+            1153.1728096816244
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/downstream/corner/2",
+          "originMm": [
+            11150,
+            2350,
+            2250
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            490.7118339070742,
+            0,
+            490.7118339070742,
+            1153.1728096816244,
+            -4367.335321772961,
+            -1153.1728096816244
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/downstream/corner/3",
+          "originMm": [
+            10040,
+            2350,
+            2250
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            -490.7118339070742,
+            490.7118339070742,
+            0,
+            -1104.101626290917,
+            -1104.101626290917,
+            6079.919622108649
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/downstream/corner/4",
+          "originMm": [
+            10040,
+            1250,
+            2250
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            -490.7118339070742,
+            -490.7118339070742,
+            0,
+            1104.101626290917,
+            -1104.101626290917,
+            -4313.357020043181
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "utility/downstream/corner/5",
+          "originMm": [
+            10760,
+            1250,
+            2250
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            490.7118339070742,
+            0,
+            490.7118339070742,
+            613.3897923838427,
+            -4175.957706549201,
+            -613.3897923838427
+          ],
+          "actualStructuralReaction": false
+        }
+      ]
+    },
+    {
+      "id": "plant/upstream",
+      "materialReference": "Steel jacket8000/insulation200 sensitivities; no material/density or installed mass selection",
+      "segmentGravity": [
+        {
+          "id": "plant/upstream/0",
+          "originMm": [
+            10285,
+            545,
+            1604.195
+          ],
+          "massKg": 8.837843408950386,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -86.6992438418033,
+            -47.2510878937828,
+            891.7017229129469,
+            0
+          ]
+        },
+        {
+          "id": "plant/upstream/1",
+          "originMm": [
+            10822.5,
+            545,
+            2610
+          ],
+          "massKg": 4.722924256998953,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -46.331886961159725,
+            -25.250878393832053,
+            501.42684663715113,
+            0
+          ]
+        },
+        {
+          "id": "plant/upstream/2",
+          "originMm": [
+            11360,
+            1387.5,
+            2610
+          ],
+          "massKg": 7.402909184226266,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -72.62253909725968,
+            -100.7637729974478,
+            824.9920441448699,
+            0
+          ]
+        },
+        {
+          "id": "plant/upstream/3",
+          "originMm": [
+            11360,
+            2230,
+            2125
+          ],
+          "massKg": 4.261615376082776,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -41.806446839372036,
+            -93.22837645179963,
+            474.9212360952663,
+            0
+          ]
+        },
+        {
+          "id": "plant/upstream/4",
+          "originMm": [
+            11360,
+            2290,
+            1640
+          ],
+          "massKg": 0.5272101496184878,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -5.171931567757365,
+            -11.843723290164366,
+            58.75314260972367,
+            0
+          ]
+        },
+        {
+          "id": "plant/upstream/5",
+          "originMm": [
+            11360,
+            2350,
+            1725
+          ],
+          "massKg": 0.7468810452928577,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -7.326903054322934,
+            -17.218222177658895,
+            83.23361869710853,
+            0
+          ]
+        }
+      ],
+      "cornerPressure": [
+        {
+          "id": "plant/upstream/corner/0",
+          "originMm": [
+            10285,
+            545,
+            2610
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            -490.7118339070742,
+            0,
+            490.7118339070742,
+            267.43794947935544,
+            -6327.729098231722,
+            267.43794947935544
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "plant/upstream/corner/1",
+          "originMm": [
+            11360,
+            545,
+            2610
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            490.7118339070742,
+            -490.7118339070742,
+            0,
+            1280.7578864974637,
+            1280.7578864974637,
+            -5841.9243826637185
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "plant/upstream/corner/2",
+          "originMm": [
+            11360,
+            2230,
+            2610
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            0,
+            490.7118339070742,
+            490.7118339070742,
+            -186.47049688468815,
+            -5574.486433184363,
+            5574.486433184363
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "plant/upstream/corner/3",
+          "originMm": [
+            11360,
+            2230,
+            1640
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            0,
+            -490.7118339070742,
+            -490.7118339070742,
+            -289.5199820051739,
+            5574.486433184363,
+            -5574.486433184363
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "plant/upstream/corner/4",
+          "originMm": [
+            11360,
+            2350,
+            1640
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            0,
+            490.7118339070742,
+            -490.7118339070742,
+            -1957.940217289226,
+            5574.486433184363,
+            5574.486433184363
+          ],
+          "actualStructuralReaction": false
+        }
+      ]
+    },
+    {
+      "id": "plant/downstream",
+      "materialReference": "Steel jacket8000/insulation200 sensitivities; no material/density or installed mass selection",
+      "segmentGravity": [
+        {
+          "id": "plant/downstream/0",
+          "originMm": [
+            11360,
+            2350,
+            2055
+          ],
+          "massKg": 0.7468810452928577,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -7.326903054322934,
+            -17.218222177658895,
+            83.23361869710853,
+            0
+          ]
+        },
+        {
+          "id": "plant/downstream/1",
+          "originMm": [
+            11430,
+            2350,
+            2140
+          ],
+          "massKg": 0.6150785078882358,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -6.033920162383594,
+            -14.179712381601446,
+            68.96770745604448,
+            0
+          ]
+        },
+        {
+          "id": "plant/downstream/2",
+          "originMm": [
+            11500,
+            2350,
+            2565
+          ],
+          "massKg": 3.7344052264642884,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -36.634515271614674,
+            -86.0911108882945,
+            421.29692562356877,
+            0
+          ]
+        },
+        {
+          "id": "plant/downstream/3",
+          "originMm": [
+            11200,
+            2355,
+            2990
+          ],
+          "massKg": 2.636416840830555,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -25.863249208547746,
+            -60.90795188612994,
+            289.66839113573474,
+            0
+          ]
+        },
+        {
+          "id": "plant/downstream/4",
+          "originMm": [
+            10900,
+            2360,
+            2695
+          ],
+          "massKg": 2.592116568957565,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -25.428663541473714,
+            -60.01164595787796,
+            277.1724326020635,
+            0
+          ]
+        },
+        {
+          "id": "plant/downstream/5",
+          "originMm": [
+            10750,
+            3130,
+            2400
+          ],
+          "massKg": 6.893047291395723,
+          "gravityWrenchN_Nm": [
+            0,
+            0,
+            -67.62079392859205,
+            -211.6530849964931,
+            726.9235347323645,
+            0
+          ]
+        }
+      ],
+      "cornerPressure": [
+        {
+          "id": "plant/downstream/corner/0",
+          "originMm": [
+            11360,
+            2350,
+            2140
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            -490.7118339070742,
+            0,
+            490.7118339070742,
+            1153.1728096816244,
+            -6624.609757745502,
+            1153.1728096816244
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "plant/downstream/corner/1",
+          "originMm": [
+            11500,
+            2350,
+            2140
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            490.7118339070742,
+            0,
+            -490.7118339070742,
+            -1153.1728096816244,
+            6693.309414492493,
+            -1153.1728096816244
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "plant/downstream/corner/2",
+          "originMm": [
+            11500,
+            2350,
+            2990
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            490.64369368124994,
+            -8.177394894687499,
+            490.7118339070742,
+            1177.62322041674,
+            -4176.161445824416,
+            -1247.0527214398437
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "plant/downstream/corner/3",
+          "originMm": [
+            10900,
+            2360,
+            2990
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            -490.64369368124994,
+            8.177394894687499,
+            490.7118339070742,
+            1133.6295172855794,
+            -6815.783633694046,
+            1247.0527214398435
+          ],
+          "actualStructuralReaction": false
+        },
+        {
+          "id": "plant/downstream/corner/4",
+          "originMm": [
+            10900,
+            2360,
+            2400
+          ],
+          "fluidOnCornerComparisonWrenchN_Nm": [
+            93.82942276366101,
+            -481.6577035201266,
+            -490.7118339070742,
+            -2.1014395723912003,
+            5573.949604219895,
+            -5471.50640609162
+          ],
+          "actualStructuralReaction": false
+        }
+      ]
+    }
+  ],
+  "candidateOrigins": {
+    "groundFflMm": 0,
+    "groundDatum": {
+      "fflMm": 0,
+      "nominalSourceFflMm": 0,
+      "absoluteValveAxesMm": [
+        [
+          11350,
+          2350,
+          1350
+        ],
+        [
+          11350,
+          2350,
+          1890
+        ]
+      ],
+      "absoluteDoorHingeMm": [
+        10177,
+        2697,
+        0
+      ],
+      "adoptedInNativeStructure": false
+    },
+    "namedValveAxesAbsoluteMm": [
+      {
+        "branch": "utility",
+        "originMm": [
+          11360,
+          2350,
+          1270
+        ]
+      },
+      {
+        "branch": "plant",
+        "originMm": [
+          11360,
+          2350,
+          1890
+        ]
+      }
+    ],
+    "namedReceiverAbsoluteMm": [
+      {
+        "id": "utility/below",
+        "originMm": [
+          11360,
+          2350,
+          1137.2583302491978
+        ]
+      },
+      {
+        "id": "utility/above",
+        "originMm": [
+          11360,
+          2350,
+          1402.7416697508022
+        ]
+      },
+      {
+        "id": "plant/below",
+        "originMm": [
+          11360,
+          2350,
+          1757.2583302491978
+        ]
+      },
+      {
+        "id": "plant/above",
+        "originMm": [
+          11360,
+          2350,
+          2022.7416697508022
+        ]
+      }
+    ],
+    "sourceColdCutPressureComparisonN": 490.7118339070742,
+    "lockedStraightThermalReferenceN": 9232.130553127774,
+    "actualValveCentroidAndStructuralReactionKnown": false
+  },
+  "obligations": {
+    "sourceCutPressureAndLocked9232NComparatorUnchanged": true,
+    "clampNotAcceptedAsThermalAnchor": true,
+    "continuousRequiredInsulationAndCondensationDetailQualified": false,
+    "actualValveTailReleaseAndTemporaryCaptureQualified": false,
+    "removalSequence": "Independently capture valve and both tail/flange halves before releasing clamps or moving10mm flange halves. Remove new split cover first. No frictionless sliding or temporary support capacity is assumed.",
+    "actualBoltAssemblyToolAndJacketWithdrawalPathsQualified": false,
+    "opposedPierSpreaderInstallationAndCapacityQualified": false,
+    "addedClampCarrierFittingMassKnown": false,
+    "wholePipeBeamAndCoupledThermalAnalysisComplete": false,
+    "groundDatum": {
+      "fflMm": 0,
+      "nominalSourceFflMm": 0,
+      "absoluteValveAxesMm": [
+        [
+          11350,
+          2350,
+          1350
+        ],
+        [
+          11350,
+          2350,
+          1890
+        ]
+      ],
+      "absoluteDoorHingeMm": [
+        10177,
+        2697,
+        0
+      ],
+      "adoptedInNativeStructure": false
+    },
+    "sourceNativeStructuralActionsAdopted": false,
+    "wholeRoomAccepted": false
+  }
+}

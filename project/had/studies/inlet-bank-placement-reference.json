@@ -1,0 +1,69 @@
+{
+  "schema": "had-bank-placement-reference/1",
+  "source": {
+    "path": "project/had/studies/inlet-source-envelope.results.json",
+    "sha256": "9250fd7325b4299730a84c5c4eb01cab08242ceb688c07512122e93b3e4f2c44",
+    "basisCommit": "b31277ccb60d8689546083a14855e2b1989aa961"
+  },
+  "clamp": {
+    "model": "Walraven DMC113028, geometric comparison only",
+    "stripAxialHeightMm": 25,
+    "stripRadialThicknessMm": 5,
+    "overallWidthMm": 210,
+    "thread": "M10",
+    "document": "Two Bolt Riser Clamp B15 310, EN-DUB03/2025, one-page primary drawing visually inspected",
+    "url": "https://files.walraven.com/repository/rnd/documents/EN-DUB/Two%20Bolt%20Riser%20Clamp%20-%20B%2015%20310%20(EN-DUB).pdf",
+    "actualBoltLengthHoleCentresAndCompleteEnvelopeKnown": false,
+    "actual28point1ThinCopperTorqueAndSignedResistanceQualified": false
+  },
+  "tool": {
+    "authoredAxialEnvelopeMm": 30,
+    "authoredSouthApproachMm": 100,
+    "actualM10ToolAndTorqueSelected": false
+  },
+  "settingEachInterfaceMm": 10,
+  "cases": [
+    {
+      "id": "unchanged-control",
+      "tailOffsetMm": 200,
+      "utilityAxisShiftMm": 0
+    },
+    {
+      "id": "longer-tails-only-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": 0
+    },
+    {
+      "id": "longer-tails-shift70-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -70
+    },
+    {
+      "id": "longer-tails-shift80-wide-clamp-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -80
+    },
+    {
+      "id": "longer-tails-shift80-return40-cover-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -80,
+      "utilityReturnShiftXMm": -40
+    },
+    {
+      "id": "longer-tails-shift80-return40-bank10-west-rejected",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -80,
+      "utilityReturnShiftXMm": -40,
+      "bankShiftXMm": 10
+    },
+    {
+      "id": "longer-tails-shift80-return40-bank10-fixedwest-candidate",
+      "tailOffsetMm": 250,
+      "utilityAxisShiftMm": -80,
+      "utilityReturnShiftXMm": -40,
+      "bankShiftXMm": 10,
+      "preserveWestReturnXMm": true
+    }
+  ],
+  "authority": "Recovery-only finite territories. No current design/source mutation, catalogue anchor selection, masonry resistance, coupled thermal result, or physical acceptance."
+}
