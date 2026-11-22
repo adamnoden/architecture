@@ -9,12 +9,12 @@
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T17:46:22.080Z",
-  "heartbeatAt": "2026-11-22T18:05:34.475Z",
-  "expiresAt": "2026-11-22T18:50:34.475Z",
+  "heartbeatAt": "2026-11-22T18:30:17.679Z",
+  "expiresAt": "2026-11-22T19:15:17.679Z",
   "checkpoint": {
-    "evidence": "Browser successor recovered on matched HAD parent at recovery/lighting-browser-pane-20261122 c3f96603ad7f2307afc4bc66e5f441ab431d4603 tree a71243c5993a9bb4d5b593ae2dc2134a35588c57. Logical UI-only delta4d276b3c exposes explicit saved-stage SVG and existing depth edit; TypeScript, Vite production build and pure browser boundary pass. Prior common-depth comparison remains unselected with device/product/renewal/load holds",
-    "next": "Root integrates matched source account; run actual HTTP/browser change/CLI-parity/undo/adverse/stale-reply proof and strict IAS producer at the combined current head, then exact-head publication preflight",
-    "blocker": "Combined source-account reconciliation and real browser execution pending; recovery checkpoint is not validated release"
+    "evidence": "Recovery/lighting-browser-pane-20261122 head64c5c2ae1d94f2e27a20d09f374b7a679feceabb tree995d103284f3f9d237e87764f5889d51298ec490 preserves complete source, UI delta4d276b3c and recessed-grip diagnostic279b3533. Prior TypeScript/Vite/pure-browser checks pass; actual shared HTTP/browser proof and genuine receipt regeneration remain pending. Main0bdbfaa cycle is merged; no new candidate or physical acceptance",
+    "next": "Use root matched shared source for IAS strict producer and real depth/SVG/CLI/undo/adverse/stale-reply proof without structural native builds while reviewer diagnoses actual fresh-runtime joint fingerprint failure; then exact-head integration/preflight",
+    "blocker": "Await matched combined source account/checkpoint; structural native execution reserved to reviewer"
   },
   "branch": "work/convergence-integrated-house-20261122",
   "predecessor": {
