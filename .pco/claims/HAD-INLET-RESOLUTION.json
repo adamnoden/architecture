@@ -9,8 +9,8 @@
     "label": "convergence-water-primary-20261122"
   },
   "claimedAt": "2026-11-22T14:35:48.378Z",
-  "heartbeatAt": "2026-11-22T16:50:28.175Z",
-  "expiresAt": "2026-11-22T17:35:28.175Z",
+  "heartbeatAt": "2026-11-22T17:06:36.719Z",
+  "expiresAt": "2026-11-22T17:51:36.719Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
@@ -32,7 +32,7 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "FinalHAD fc54a405 remainsdurable/integratedcandidate; carrier-onlyrecovery a24bf9cf/treeb0ee1242 nowpreserves jacketvolume, density sensitivities and signed ideal-guide/lockedthermal reaction scenarios. IndependentpublicationPR1619 ed903114 exact-head typographyproofGREEN. Coordinator890379a2 CIpending; no currentHAD source mutation.",
-    "next": "Keep jointPR1618 lease live through exact890CI; canonical publicationpreflight and merge, then release promptly and freshlydispatch/claim HAD newgeneration before carrier-source integration."
+    "evidence": "Submitted joint PR1618 awaiting exact-head890 CI; water final fc54a405 integrated. Carrier recovery a24bf9cf pushed separately. PR1619 ed903 actual typography CI and artifact inspection PASS263/313. Exact890 cheap ADE06/07 and6terminal tests pass without tracked diff.",
+    "next": "Preserve primary freeze until exact-head CI/preflight/merge; promptly release merged gen58 then fresh-main claim for independent HAD carrier continuation. Retarget publication1619 only in coordinator sequence."
   }
 }
