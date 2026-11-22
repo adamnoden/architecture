@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import type { runGroundSectionCase } from './structural-ground.js'
+import { inletEntrySideCuts, drawInletIndoorCuts } from './inlet-indoor-cuts.js'
 import { inletStaticGravityMps2 } from './inlet-room-pan.js'
 import { inletScreenFrame } from './inlet-screen-frame.js'
 import { inletElectricalScreen } from './inlet-electrical-screen.js'
@@ -15,12 +16,14 @@ import { criticalHalfRoundFlow, receiverWeirHeadMm, reliefEntranceHeadMm, solveH
 export const inletSourceEnvelopeFields = ['utilityApertureNominalMm', 'plantApertureNominalMm', 'apertureToleranceMm', 'sourceMaximumTotalBar',
   'sourceMinimumDynamicBar', 'requiredUtilityLmin', 'requiredPlantLmin', 'requiredResidualBar', 'utilityNetworkLossBar', 'plantNetworkLossBar',
   'dischargeCoefficientComparison', 'pressureRecoveryFractionComparison', 'atmosphericMinimumBar', 'atmosphericMaximumBar', 'mainboardNorthOffsetMm', 'mainboardBaseZMm', 'utilityPortalShiftXMm', 'shieldStandOffMm', 'shieldVerticalInsetMm', 'frameLowerConnectionZMm', 'frameAnchorOffsetMm', 'plantTransferZMm', 'catchmentClearWidthMm', 'catchmentClearHeightMm',
+  'indoorBankXMm', 'indoorBankYMm', 'indoorUtilityAxisZMm', 'indoorPlantAxisZMm', 'indoorOperatorXMm', 'indoorOperatorYMm', 'indoorOperatorZMm', 'indoorMaintenanceShiftXMm', 'indoorMaintenanceShiftYMm', 'indoorWheelInboardMm', 'indoorDoorHingeNorthOfWallMm',
   'catchmentPocketDepthMm', 'catchmentIsolationGapMm', 'catchmentPanSlopeRatio', 'catchmentInvertAboveDistributionMm', 'catchmentReceiverWidthMm', 'catchmentReceiverCrestAboveGradeMm'] as const
 export type InletSourceEnvelopeSettings = Readonly<Record<typeof inletSourceEnvelopeFields[number], number>>
 export const readInletSourceEnvelopeSettings = (): InletSourceEnvelopeSettings => ({ utilityApertureNominalMm: 6.5, plantApertureNominalMm: 10.2,
   apertureToleranceMm: .1, sourceMaximumTotalBar: 9, sourceMinimumDynamicBar: 3.5, requiredUtilityLmin: 20, requiredPlantLmin: 45,
   requiredResidualBar: 1, utilityNetworkLossBar: .5, plantNetworkLossBar: 1, dischargeCoefficientComparison: .55,
   pressureRecoveryFractionComparison: 0, atmosphericMinimumBar: .9, atmosphericMaximumBar: 1.1, mainboardNorthOffsetMm: 250, mainboardBaseZMm: 900, utilityPortalShiftXMm: -100, shieldStandOffMm: 100, shieldVerticalInsetMm: 50, frameLowerConnectionZMm: 1100, frameAnchorOffsetMm: 89.5, plantTransferZMm: 2235, catchmentClearWidthMm: 400, catchmentClearHeightMm: 150,
+  indoorBankXMm: 11350, indoorBankYMm: 2350, indoorUtilityAxisZMm: 1350, indoorPlantAxisZMm: 1860, indoorOperatorXMm: 10650, indoorOperatorYMm: 2430, indoorOperatorZMm: 1450, indoorMaintenanceShiftXMm: -100, indoorMaintenanceShiftYMm: -20, indoorWheelInboardMm: 40, indoorDoorHingeNorthOfWallMm: 50,
   catchmentPocketDepthMm: 0, catchmentPanSlopeRatio: 100, catchmentIsolationGapMm: 50, catchmentInvertAboveDistributionMm: 60, catchmentReceiverWidthMm: 400, catchmentReceiverCrestAboveGradeMm: 0 })
 /** Authored coordinated comparison; no house/source adoption. Ground remains530/65. */
 export const readLocalUtilityPocketSettings = (): InletSourceEnvelopeSettings => ({ ...readInletSourceEnvelopeSettings(),
@@ -29,7 +32,7 @@ const paths = ['project/had/studies/south-inlet-under-sill.json', 'project/had/s
   'project/had/studies/south-inlet-relief.json', 'project/had/studies/south-utility-inlet.json',
   'project/had/studies/current-house-services.json', 'project/mat/studies/whole-house-service-baseline.json',
   'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json', 'project/str/studies/current-house-grid.json'] as const
-const methodPaths = ['compiler/reference-house/current-design/inlet-source-envelope.ts',
+const methodPaths = ['compiler/reference-house/current-design/inlet-indoor-cuts.ts', 'compiler/reference-house/current-design/inlet-source-envelope.ts',
   'compiler/reference-house/current-design/inlet-room-catchment.ts',
   'compiler/reference-house/current-design/inlet-room-pocket.ts',
   'compiler/reference-house/current-design/inlet-room-pan.ts',
@@ -65,7 +68,7 @@ function binding(resolved: CurrentDesignResolution) {
 export function readInletSourceEnvelopeCase(resolved: CurrentDesignResolution) {
   const b = binding(resolved)
   return { schema: 'had-inlet-source-envelope-request/1' as const, design: resolved.design,
-    sourceEnvelope: { schema: 'had-inlet-source-envelope-case/6' as const, planDigest: b.planDigest,
+    sourceEnvelope: { schema: 'had-inlet-source-envelope-case/7' as const, planDigest: b.planDigest,
       bindingDigest: b.bindingDigest, settings: readInletSourceEnvelopeSettings() } }
 }
 function settings(value: unknown): InletSourceEnvelopeSettings {
@@ -77,6 +80,11 @@ function settings(value: unknown): InletSourceEnvelopeSettings {
     || s.apertureToleranceMm < 0 || s.apertureToleranceMm > .5 || s.sourceMaximumTotalBar <= 0 || s.sourceMaximumTotalBar > 10
     || s.sourceMinimumDynamicBar <= 0 || s.sourceMinimumDynamicBar > s.sourceMaximumTotalBar || [s.requiredUtilityLmin, s.requiredPlantLmin].some(q => q <= 0 || q > 90) || s.requiredResidualBar < 0 || s.utilityNetworkLossBar < 0 || s.plantNetworkLossBar < 0
     || s.dischargeCoefficientComparison <= 0 || s.dischargeCoefficientComparison > 1 || s.pressureRecoveryFractionComparison < 0 || s.pressureRecoveryFractionComparison > 1
+    ||s.indoorBankXMm<9000||s.indoorBankXMm>12000||s.indoorBankYMm<500||s.indoorBankYMm>2600
+    ||s.indoorUtilityAxisZMm<700||s.indoorPlantAxisZMm<=s.indoorUtilityAxisZMm||s.indoorPlantAxisZMm>2300
+    ||s.indoorOperatorXMm<9000||s.indoorOperatorXMm>12000||s.indoorOperatorYMm<1000||s.indoorOperatorYMm>3500||s.indoorOperatorZMm<1000||s.indoorOperatorZMm>1800
+    ||Math.abs(s.indoorMaintenanceShiftXMm)>300||Math.abs(s.indoorMaintenanceShiftYMm)>300||s.indoorDoorHingeNorthOfWallMm< -30||s.indoorDoorHingeNorthOfWallMm>150
+    ||s.indoorWheelInboardMm<0||s.indoorWheelInboardMm>80
     ||s.frameAnchorOffsetMm<60||s.frameAnchorOffsetMm>250
     ||s.frameLowerConnectionZMm<500||s.frameLowerConnectionZMm>1500
     ||s.utilityPortalShiftXMm < -200 ||s.utilityPortalShiftXMm>0||s.shieldStandOffMm<25||s.shieldStandOffMm>150||s.shieldVerticalInsetMm<0||s.shieldVerticalInsetMm>100
@@ -96,7 +104,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
   if (!input || typeof input !== 'object' || Array.isArray(input)
     || Object.keys(input).length !== 4 || !['schema', 'planDigest', 'bindingDigest', 'settings'].every(key => Object.hasOwn(input, key))) throw new Error('Versioned source-bound inlet source-envelope case required')
   const v = input as Record<string, unknown>
-  if (v.schema !== 'had-inlet-source-envelope-case/6' || v.planDigest !== b.planDigest || v.bindingDigest !== b.bindingDigest) throw new Error('Stale inlet source-envelope source, design or method')
+  if (v.schema !== 'had-inlet-source-envelope-case/7' || v.planDigest !== b.planDigest || v.bindingDigest !== b.bindingDigest) throw new Error('Stale inlet source-envelope source, design or method')
   const s = settings(v.settings), native = b.data[paths[0]], wet = b.data[paths[1]], relief = b.data[paths[2]], inlet = b.data[paths[3]], services = b.data[paths[4]]
   const groundDatumLiftMm = ground?.native.levelsMm.ffl ?? 0, groundDatumLiftBar = groundDatumLiftMm * 9.80665e-5,
     deliveryAtRoomDatumBar = s.sourceMinimumDynamicBar - groundDatumLiftBar,
@@ -170,7 +178,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
         .5 * 1000 * (requiredLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * ((maximumContainmentDiameterMm - 2 * s.apertureToleranceMm) / 1000) ** 2 / 4)) ** 2 / 1e5 - s.atmosphericMinimumBar)) }
   })
   const maximumCombinedLmin = round(branches.reduce((total, branch) => total + branch.maximumLimitedEachLmin, 0))
-    const joinedDirection = joinedServiceDirection(resolved, b, s, branches, absoluteMaximumBar),
+    const joinedDirection = joinedServiceDirection(resolved, b, s, branches, absoluteMaximumBar, groundDatumLiftMm),
     rawCatchment = runInletRoomCatchment(resolved, ground, maximumCombinedLmin, { planMm: joinedDirection.room.wetUtilityPlanMm,
       rawWindowXMm: joinedDirection.room.southWindowOpeningXMm, retainedFurniture: joinedDirection.room.retainedFurniture,
       northOpeningXMm: joinedDirection.room.northOpeningXMm, purgeBodyMm: joinedDirection.room.purge.body, wallFacesYMm: [native.branches[0].bores[0].outer[1], native.branches[0].bores[0].inner[1]] }, s, b.data['project/str/studies/current-house-grid.json'])
@@ -195,7 +203,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
     { id: 'wall-spool-renewal-inward-and-outward', sourceFed: false, eachLmin: 0, result: 'retained-pan-inward-conflict-not-discharged', obligation: 'The prior permanent-pan and ordinary operator/tool/rest conflicts remain. New room geometry must prove both actual extraction directions or explicitly reject one with a complete ordinary alternative.' },
     { id: 'frost-or-loss-of-warmth', sourceFed: false, eachLmin: null, result: 'whole-route-thermal-proof-required', obligation: 'Restriction, Lodge, spool and room drains must stay serviceable through the declared cold event. Permanent open spill slots do not establish a warm enclosure; no trace heating, antifreeze or moving flap is invented.' },
   ]
-  const result = { schema: 'had-inlet-source-envelope-result/6' as const, state: 'existing-whole-arrangement-rejected' as const,
+  const result = { schema: 'had-inlet-source-envelope-result/7' as const, state: 'existing-whole-arrangement-rejected' as const,
     source: { planDigest: b.planDigest, bindingDigest: b.bindingDigest, inputs: b.inputs, methods: b.methods }, settings: s,
     bound: { method: 'Incompressible energy comparison Q<=A sqrt(2 p_total_absolute/rho), Cd<=1, local pressure>=0absolute; recovery/cavitation qualification remains required.',
       maximumAbsoluteTotalBar: absoluteMaximumBar, minimumThroatAbsoluteBarForUpperBound: 0,
@@ -289,7 +297,7 @@ function inletVerticalInventory(c:Extract<ReturnType<typeof runInletRoomCatchmen
       'INLET_VERTICAL_INVENTORY_NOT_ADOPTED_IN_SOURCE_STR_GROUND0','INLET_LOCAL_RC_MINERAL_RETENTION_GRID_AND_SOIL_PATH_UNQUALIFIED']}
 }
 
-function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType<typeof binding>, s: InletSourceEnvelopeSettings, branches: readonly any[], maximumAbsoluteBar: number) {
+function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType<typeof binding>, s: InletSourceEnvelopeSettings, branches: readonly any[], maximumAbsoluteBar: number, groundFflMm: number) {
   const model = b.occupied.house.model as unknown as { architecturalServices: any; groundWalls: any[]; shell: number; envelope: number; groundFurniture: Record<string, readonly number[]>; plantReferenceDoor: any; archOpeningRegister: any; serviceMaintenanceFields: any[]; internalArchControls: any }, services = model.architecturalServices, utilityWall = model.groundWalls.find((w: any) => w.id === 'utility-north'),
     spine = model.groundWalls.find((w: any) => w.id === 'service-spine'), plantWall = model.groundWalls.find((w: any) => w.id === 'plant-intermediate-arch')
   if (!utilityWall || !spine || !plantWall || utilityWall.holes.length !== 1 || plantWall.holes.length !== 1) throw new Error('Unsupported joined Utility/Plant room topology')
@@ -353,6 +361,22 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
   const baseGap = Math.hypot(rejectedBase.rectangleMm[0] - rejectedBase.body[0], rejectedBase.rectangleMm[1] + rejectedBase.rectangleMm[3] - rejectedBase.body[1]) - 300
   const airSlotAreaEachM2 = .75 * .05, airLps = .6 * airSlotAreaEachM2 / Math.sqrt(2) * Math.sqrt(2 * 2 / 1.2) * 1000,
     addedHeatW = airLps / 1000 * 1.2 * 1005 * 15, roomHeat = b.data[paths[4]].wholeHeat
+  const wetUtilityPlanMm = [west, model.envelope, east-west, north-model.envelope] as const,
+    retainedFurniture=Object.fromEntries(Object.entries(model.groundFurniture).filter(([id])=>/service-utility-|service-emitter-utility-/.test(id)&&!/electricalStation|PVinverter/.test(id))),
+    indoorCuts=inletEntrySideCuts({roomPlanMm:wetUtilityPlanMm,portalXMm:candidateUtilityOpening as [number,number],wallFacesYMm:utilityWall.finishedFaces,
+      jambFinishMm:model.internalArchControls.actualRadialFinish,shieldPlaneXMm:dryScreen.barrierPlaneMm.x,
+      washerFirstRestMm:b.data[paths[6]].geometry.rest,maintenancePlanMm:utilityPlatform,maintenanceTopMm:clearHeight,
+      operatorXYZMm:[s.indoorOperatorXMm,s.indoorOperatorYMm,s.indoorOperatorZMm],
+      frameCoversMm:frame.connections.filter(c=>c.wallId===utilityWall.id).map(c=>c.oppositeCoverEnvelopeMm as [number,number,number,number,number,number]),
+      bankXMm:s.indoorBankXMm,bankYMm:s.indoorBankYMm,utilityAxisZMm:s.indoorUtilityAxisZMm,plantAxisZMm:s.indoorPlantAxisZMm,
+      maintenanceShiftXMm:s.indoorMaintenanceShiftXMm,maintenanceShiftYMm:s.indoorMaintenanceShiftYMm,wheelInboardMm:s.indoorWheelInboardMm,
+      utilityLmin:s.requiredUtilityLmin,plantLmin:s.requiredPlantLmin,maximumGaugeBar:maximumAbsoluteBar-s.atmosphericMinimumBar,
+      groundFflMm,doorHingeNorthOfWallMm:s.indoorDoorHingeNorthOfWallMm,plantWall:{facesYMm:plantWall.finishedFaces,openingXMm:plantWall.holes[0]},
+      retainedFurniture:Object.fromEntries(Object.entries({...retainedFurniture,...Object.fromEntries(Object.entries(model.groundFurniture).filter(([id])=>/plant-water|plant-riser|plant-controls|plant-primary-buffer|service-emitter-plant/.test(id)))}).map(([id,p])=>{
+        if(p.length!==4)throw new Error("Changed indoor-cut fixed furniture rectangle: "+id)
+        return [id,p as [number,number,number,number]]
+      })),
+      protectedDoorOpenLeafMm:model.plantReferenceDoor.fullyOpenEastLeaf})
   return { state: 'one-recommended-replacement-not-an-adopted-room' as const,
     sourceOccupiedBindingDigest: b.occupied.binding.digest,
     designDuties: { status: 'authored-reference-design-requirements', utilityLmin: s.requiredUtilityLmin, plantLmin: s.requiredPlantLmin,
@@ -369,10 +393,10 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
       requiredSink: { kind: 'two-independent-pillar-taps', holesMm: [28, 28], centresMm: 180, mixingOnlyInOpenBowl: true,
         actualAirGapAboveFloodRimRequired: true, tapProductsAndConstituentsSelected: false },
       oldColdConnectionRetiredInOccupiedSource: false, crossfeedIndependenceQualified: false },
-    room: { wetUtilityPlanMm: [west, model.envelope, east - west, north - model.envelope],
+    room: { wetUtilityPlanMm, indoorCuts: {...indoorCuts,reviewSvg:drawInletIndoorCuts(indoorCuts)},
       southWindowOpeningXMm: (() => { const opening = model.archOpeningRegister.GROUND.find((o: any) => o.id === 'south-window-4'); return [opening.centre - opening.width / 2, opening.centre + opening.width / 2] })(), northWallFacesYMm: utilityWall.finishedFaces, northOpeningXMm: candidateUtilityOpening,
       portalReplacement:{sourceOpeningXMm:sourceUtilityOpening,candidateOpeningXMm:candidateUtilityOpening,shiftXMm:s.utilityPortalShiftXMm,widthPreservedMm:candidateUtilityOpening[1]-candidateUtilityOpening[0],normalBodyAfter10Mm:Math.min(normalPathX-normalBodyR-candidateUtilityOpening[0],candidateUtilityOpening[1]-normalPathX-normalBodyR)-model.internalArchControls.actualRadialFinish-10,adoptedInOccupiedSource:false},
-      retainedFurniture: Object.fromEntries(Object.entries(model.groundFurniture).filter(([id]) => /service-utility-|service-emitter-utility-/.test(id) && !/electricalStation|PVinverter/.test(id))),
+      retainedFurniture,
       retiredFurniture: ['service-utility-electricalStation', 'service-utility-PVinverter'],
       newMainboard: { ...board, proposedGrossBoxMm: boardBox, normalRouteAfter10Mm: round(boardBox[0] - normalPathX - normalBodyR - 10),
         northWallAfter10Mm: round(plantWall.finishedFaces[0] - boardBox[1] - boardBox[4] - 10),
@@ -441,5 +465,5 @@ function draw(result: {branches: readonly any[]; joinedDirection: ReturnType<typ
     t = (x: number, y: number, text: string, size=15) => `<text x="${x}" y="${y}" font-size="${size}">${text}</text>`
   const board=j.room.newMainboard.proposedGrossBoxMm, wall=j.room.northWallFacesYMm, wet=j.room.wetUtilityPlanMm, opening=j.room.northOpeningXMm, rows = result.branches.map((b,i)=>t(40,130+i*77,`${b.id.toUpperCase()} ${b.requiredDeliveryEachLmin} L/min · bore ${b.apertureNominalMm}±${b.apertureToleranceMm}mm · upper fault ${b.maximumLimitedEachLmin.toFixed(1)} L/min`,18)
     +t(40,155+i*77,`Residual ${b.residualPressureComparisonBar.toFixed(2)} bar · old channel ${b.existingReceiver.maximumScreenedLmin.toFixed(2)} L/min · ${b.existingReceiver.limitedFault.necessaryChannelAndReceiverScreen?'necessary screen only':'REJECT OLD RECEIVER'}`)).join('')
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1050" viewBox="0 0 1200 1050"><rect width="1200" height="1050" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#25221c">${t(35,44,'One inlet direction · distinct duties, one whole-room decision',26)}${t(35,76,'Authored reference proposal. Existing Plant receiver rejected; room, source and material acceptance remain open.',16)}${rows}${t(40,300,`Common source must deliver ${j.designDuties.commonSourceSimultaneousLmin} L/min; simultaneous source faults ${result.bound.maximumCombinedLmin.toFixed(1)} L/min + actual stored release.`)}${rect(j.room.wetUtilityPlanMm,'#dae8e5')}${rect([wet[0],wall[0],wet[2],wall[1]-wall[0]],'#c6c2b5')}${rect([opening[0],wall[0],opening[1]-opening[0],wall[1]-wall[0]],'#f5f1e6')}${t(42,653,`Utility · ${wet[2]} × ${wet[3]} mm`,14)}${t(42,364,'Plant entry · retained arch',14)}${t(42,465,'Dry service lobby',14)}${Object.values(j.room.retainedFurniture).map((p:any)=>rect(p,'#ccc7b8')).join('')}${rect([board[0],board[1],board[3],board[4]],'#d6b987')}<line x1="${X(j.room.electricalScreen.barrierPlaneMm.x)}" y1="${Y(j.room.electricalScreen.barrierPlaneMm.y[0])}" x2="${X(j.room.electricalScreen.barrierPlaneMm.x)}" y2="${Y(j.room.electricalScreen.barrierPlaneMm.y[1])}" stroke="#8e403a" stroke-width="4"/>${t(420,380,'WET UTILITY / DRY MAINBOARD',19)}${t(420,415,'Keep washer, sink, south purge and both east-head tasks.')}${t(420,445,`Board base${j.room.newMainboard.proposedGrossBoxMm[2]}mm; shield flat metal${j.room.electricalScreen.actions.totalFlatSheetOnlyKg.toFixed(1)}kg.`)}${t(420,475,'Ordinary indoor cuts and supported cold renewal still required.')}${t(420,515,'Mainboard only: actual sealed case, no inverter heat.')}${t(420,545,`Shield ray interception:${j.room.electricalScreen.visibility.allDirectPortalRaysIntercepted ? 'PASS' : 'FAIL'}; impact, seams and heat unqualified.`)}${t(420,585,'STREETHEAD PV · separate dry, shaded, ventilated bay',19)}${t(420,618,'900 × 1400 mm clear + service face; never borrow DNO cell.')}${t(420,648,'Actual module strings, DC/AC isolation and rated cable routes.')}${t(420,688,'PLANT: new receiver + factory stored-water release model',18)}${t(420,720,'The Lodge aperture does not bound cylinder/upper-pipe backflow.')}${t(420,758,'SUPPORT / FLOOR / DRAINS / FROST',18)}${t(420,790,'No new mass or pressure anchors enter the 52-head solve yet.')}${t(420,820,'No assumed recess, DPC cut, open spill slot or manual response.')}${t(420,860,'Transfer is a necessary envelope, not a whole handling pass.')}${t(420,890,`Buffer/door reserve after settings: ${j.transfer.bufferAfter10Mm.toFixed(1)} / ${j.transfer.doorAfter10Mm.toFixed(1)} mm.`)}<polyline points="${j.transfer.pathMm.map(p=>`${X(p[0])},${Y(p[1])}`).join(' ')}" stroke="#247b91" stroke-width="4" fill="none"/>${t(40,995,'HAD OPEN · counterfactual room geometry only · no owner, physical, source, product or material approval',17)}</g></svg>`
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1050" viewBox="0 0 1200 1050"><rect width="1200" height="1050" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#25221c">${t(35,44,'One inlet direction · distinct duties, one whole-room decision',26)}${t(35,76,'Authored reference proposal. Existing Plant receiver rejected; room, source and material acceptance remain open.',16)}${rows}${t(40,300,`Common source must deliver ${j.designDuties.commonSourceSimultaneousLmin} L/min; simultaneous source faults ${result.bound.maximumCombinedLmin.toFixed(1)} L/min + actual stored release.`)}${rect(j.room.wetUtilityPlanMm,'#dae8e5')}${rect([wet[0],wall[0],wet[2],wall[1]-wall[0]],'#c6c2b5')}${rect([opening[0],wall[0],opening[1]-opening[0],wall[1]-wall[0]],'#f5f1e6')}${t(42,653,`Utility · ${wet[2]} × ${wet[3]} mm`,14)}${t(42,364,'Plant entry · retained arch',14)}${t(42,465,'Dry service lobby',14)}${Object.values(j.room.retainedFurniture).map((p:any)=>rect(p,'#ccc7b8')).join('')}${rect([board[0],board[1],board[3],board[4]],'#d6b987')}<line x1="${X(j.room.electricalScreen.barrierPlaneMm.x)}" y1="${Y(j.room.electricalScreen.barrierPlaneMm.y[0])}" x2="${X(j.room.electricalScreen.barrierPlaneMm.x)}" y2="${Y(j.room.electricalScreen.barrierPlaneMm.y[1])}" stroke="#8e403a" stroke-width="4"/>${t(420,380,'WET UTILITY / DRY MAINBOARD',19)}${t(420,415,'Keep washer, sink, south purge and both east-head tasks.')}${t(420,445,`Board base${j.room.newMainboard.proposedGrossBoxMm[2]}mm; shield flat metal${j.room.electricalScreen.actions.totalFlatSheetOnlyKg.toFixed(1)}kg.`)}${t(420,475,'Indoor-cut envelope recorded; routing and cold renewal open.')}${t(420,515,'Mainboard only: actual sealed case, no inverter heat.')}${t(420,545,`Shield ray interception:${j.room.electricalScreen.visibility.allDirectPortalRaysIntercepted ? 'PASS' : 'FAIL'}; impact, seams and heat unqualified.`)}${t(420,585,'STREETHEAD PV · separate dry, shaded, ventilated bay',19)}${t(420,618,'900 × 1400 mm clear + service face; never borrow DNO cell.')}${t(420,648,'Actual module strings, DC/AC isolation and rated cable routes.')}${t(420,688,'PLANT: new receiver + factory stored-water release model',18)}${t(420,720,'The Lodge aperture does not bound cylinder/upper-pipe backflow.')}${t(420,758,'SUPPORT / FLOOR / DRAINS / FROST',18)}${t(420,790,'No new mass or pressure anchors enter the 52-head solve yet.')}${t(420,820,'No assumed recess, DPC cut, open spill slot or manual response.')}${t(420,860,'Transfer is a necessary envelope, not a whole handling pass.')}${t(420,890,`Buffer/door reserve after settings: ${j.transfer.bufferAfter10Mm.toFixed(1)} / ${j.transfer.doorAfter10Mm.toFixed(1)} mm.`)}<polyline points="${j.transfer.pathMm.map(p=>`${X(p[0])},${Y(p[1])}`).join(' ')}" stroke="#247b91" stroke-width="4" fill="none"/>${t(40,995,'HAD OPEN · counterfactual room geometry only · no owner, physical, source, product or material approval',17)}</g></svg>`
 }
