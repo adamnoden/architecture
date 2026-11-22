@@ -61,6 +61,8 @@ def main():
         ready(page, 0)
         expect(page.locator('#lighting-controls')).to_be_hidden()
         expect(page.locator('#lighting-views')).to_be_hidden()
+        expect(page.locator('#inlet-bank-controls')).to_be_hidden()
+        expect(page.locator('#inlet-bank-views')).to_be_hidden()
         original = roof_svg(page)
         expect(page.locator('#schedule')).to_contain_text('8409.33')
         pitch = page.get_by_label('Roof pitch (degrees)')
@@ -203,6 +205,49 @@ def main():
         page.get_by_role('button', name='Undo', exact=True).click()
         ready(page, 7)
         assert lighting_svg(page) == latest_lighting
+        # Explicit current inlet stage: real HTTP edits and CLI consume the same source8.
+        inlet_request=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--read-inlet-source-envelope'],text=True,capture_output=True,check=True).stdout)
+        inlet_document={**saved,'stages':{'roofPitch':saved['stages']['roofPitch'],'inletSourceEnvelope':inlet_request['sourceEnvelope']['settings']}}
+        with page.expect_file_chooser() as chooser:
+            page.get_by_role('button',name='Import JSON').click()
+        chooser.value.set_files({'name':'inlet-bank.json','mimeType':'application/json','buffer':json.dumps(inlet_document).encode()})
+        expect(page.locator('#inlet-bank-controls')).to_be_visible(timeout=120000)
+        ready(page,0)
+        expect(page.locator('#inlet-result')).to_contain_text('within declared bounds')
+        initial_bank=page.locator('#current-inlet-bank').get_attribute('src')
+        expect(page.locator('#inlet-result')).to_contain_text('remain unqualified')
+        page.locator('#inlet-field').select_option('indoorTailOffsetMm')
+        expect(page.locator('#inlet-value')).to_have_value('250')
+        page.locator('#inlet-value').fill('200');page.locator('#inlet-value').press('Enter')
+        ready(page,1)
+        expect(page.locator('#inlet-result')).to_contain_text('REJECTED')
+        assert page.locator('#current-inlet-bank').get_attribute('src')!=initial_bank
+        with page.expect_download() as download:
+            page.get_by_role('button',name='Export JSON').click()
+        changed_bank=json.loads(Path(download.value.path()).read_text())
+        assert changed_bank['stages']['inletSourceEnvelope']=={**inlet_document['stages']['inletSourceEnvelope'],'indoorTailOffsetMm':200}
+        cli_bank=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(changed_bank),text=True,capture_output=True,check=True).stdout)['engineering']['inletSourceEnvelope']
+        assert not cli_bank['joinedDirection']['room']['bankReceiver']['necessaryRouteOperationAndClampEnvelopeScreen']
+        assert not cli_bank['joinedDirection']['room']['bankReceiver']['nativeStructuralActionsAdopted']
+        assert not cli_bank['joinedDirection']['room']['bankReceiver']['wholeOccupiedArrangementComplete']
+        page.get_by_role('button',name='Undo',exact=True).click();ready(page,2)
+        expect(page.locator('#inlet-value')).to_have_value('250')
+        assert page.locator('#current-inlet-bank').get_attribute('src')==initial_bank
+        page.locator('#inlet-field').select_option('pipeJacketDensityComparisonKgM3')
+        page.locator('#inlet-value').fill('4000');page.locator('#inlet-value').press('Enter')
+        ready(page,3)
+        expect(page.locator('#inlet-result')).to_contain_text('Jacket reference 22.566 kg')
+        assert page.locator('#current-inlet-bank').get_attribute('src')==initial_bank
+        with page.expect_download() as download:
+            page.get_by_role('button',name='Export JSON').click()
+        density_bank=json.loads(Path(download.value.path()).read_text())
+        cli_density=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(density_bank),text=True,capture_output=True,check=True).stdout)['engineering']['inletSourceEnvelope']
+        assert cli_density['joinedDirection']['room']['indoorRoutes']['insulationAndJacketInventory']['jacketDensityReferenceKg']<23
+        assert cli_density['bound']==cli_bank['bound']
+        assert not cli_density['joinedDirection']['room']['bankReceiver']['actualMaterialProductToolAndCarrierSelected']
+        page.get_by_role('button',name='Undo',exact=True).click();ready(page,4)
+        expect(page.locator('#inlet-value')).to_have_value('8000')
+        expect(page.locator('#inlet-result')).to_contain_text('Jacket reference 45.132 kg')
         # Import the actual current wet request. No default structural stage is
         # silently created, and edits use the same HTTP compiler as the CLI.
         cage_document={**saved,'stages':current_wet_stages()}
@@ -213,6 +258,8 @@ def main():
         ready(page,0,240000)
         expect(page.locator('#lighting-controls')).to_be_hidden()
         expect(page.locator('#lighting-views')).to_be_hidden()
+        expect(page.locator('#inlet-bank-controls')).to_be_hidden()
+        expect(page.locator('#inlet-bank-views')).to_be_hidden()
         raise_control=page.get_by_label('Graded post-link raise (mm)')
         expect(raise_control).to_have_value('0')
         initial_cage=page.locator('#cage-result').inner_text()
@@ -235,7 +282,7 @@ def main():
             page.screenshot(path=args.screenshot, full_page=True)
         assert not errors, errors
         browser.close()
-        print('PASS engineering document authoring, CLI export, explicit Study comparison/change/undo/adverse/stale reply and actual wet-cage level change/undo')
+        print('PASS engineering document authoring, CLI export, explicit Study and inlet bank changes/undo/adverse/stale reply and actual wet-cage level change/undo')
 
 
 if __name__ == '__main__':
