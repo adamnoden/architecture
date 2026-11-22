@@ -1,45 +1,42 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 50,
-  "state": "released",
-  "leaseId": "9e437f78-ddc0-47bb-ad78-f6e2a5644fc9",
+  "generation": 51,
+  "state": "claimed",
+  "leaseId": "4c335045-933e-4aad-afbc-ff6e25cbc6ad",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-20261121"
   },
-  "claimedAt": "2026-11-21T19:47:07.671Z",
-  "heartbeatAt": "2026-11-22T00:18:04.164Z",
-  "expiresAt": "2026-11-22T00:18:04.164Z",
-  "branch": "work/convergence-structure-20261121",
+  "claimedAt": "2026-11-22T00:18:18.241Z",
+  "heartbeatAt": "2026-11-22T00:18:18.241Z",
+  "expiresAt": "2026-11-22T01:03:18.241Z",
+  "checkpoint": {
+    "evidence": "Merged1613 main769b60bc exact7cf passed689 compiler tests and all publication gates; packetremainsopen. Remote sparse8cd3438c preserves numerical methods,23+9 component checks and exact unsuccessful725 native/initialgeometry evidence.",
+    "next": "Locate actual finalassembly/factor memory through boundedphase diagnostic; execute250 and unchangedcontrol on proven numerical method, regenerate all dependent current proofs and integrate ordinaryindoorcuts continuation.",
+    "blocker": "250 fullnative remains unavailable; no force/convergence/capacity result is inferred from failed executions. Newsource receipts intentionally stale until genuine regeneration."
+  },
+  "branch": "work/convergence-sparse-20261121",
   "predecessor": {
-    "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
-    "generation": 49,
-    "branch": "work/rush-floor-inlet-convergence-20261121",
-    "pr": 1610,
+    "leaseId": "9e437f78-ddc0-47bb-ad78-f6e2a5644fc9",
+    "generation": 50,
+    "branch": "work/convergence-structure-20261121",
+    "pr": 1613,
     "checkpoint": {
-      "evidence": "Durable WIP d9d04b8dbaef7b6f4543194a93a30c68a9a32d31 tree c40e5119 on work/rush-seated-wet-beam-20261121. PR1610 merged main131471. Serial8 wet controls succeeded locally; final receipts/helpers unpublished after executor became unavailable. STR remains open.",
-      "next": "Handoff: recover d9d04b8 from fresh main; verify local FULL source/request/checksums if available. Finish700/500/roof3, actual floor/cage closures, source account, saved API and exact CI.",
-      "blocker": "Execution environment unavailable; no filesystem, native solver or test access."
+      "evidence": "Submitted7cf3083a frozen; six workflow families green and fullhealth running. Recovery sparse8bbf8b5f preserves23kernel/dependency controls and exact unsuccessful f2de full250 experiment with measured4,427,904KiB peak child RSS; no result promoted.",
+      "next": "Merge7cf afterexactheadCI andfreshboth-nodepreflight; continue exactcompactmodal representation and independent indoorcuts successor inisolatedworktrees.",
+      "blocker": "Fullhealthpending;250 numericalconvergence unavailable, modalduplication fix undergoing independent physical/energy controls."
     }
   },
   "recoverySource": {
-    "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
-    "generation": 49,
-    "branch": "work/rush-floor-inlet-convergence-20261121",
-    "pr": 1610,
+    "leaseId": "9e437f78-ddc0-47bb-ad78-f6e2a5644fc9",
+    "generation": 50,
+    "branch": "work/convergence-structure-20261121",
+    "pr": 1613,
     "checkpoint": {
-      "evidence": "Durable WIP d9d04b8dbaef7b6f4543194a93a30c68a9a32d31 tree c40e5119 on work/rush-seated-wet-beam-20261121. PR1610 merged main131471. Serial8 wet controls succeeded locally; final receipts/helpers unpublished after executor became unavailable. STR remains open.",
-      "next": "Handoff: recover d9d04b8 from fresh main; verify local FULL source/request/checksums if available. Finish700/500/roof3, actual floor/cage closures, source account, saved API and exact CI.",
-      "blocker": "Execution environment unavailable; no filesystem, native solver or test access."
+      "evidence": "Submitted7cf3083a frozen; six workflow families green and fullhealth running. Recovery sparse8bbf8b5f preserves23kernel/dependency controls and exact unsuccessful f2de full250 experiment with measured4,427,904KiB peak child RSS; no result promoted.",
+      "next": "Merge7cf afterexactheadCI andfreshboth-nodepreflight; continue exactcompactmodal representation and independent indoorcuts successor inisolatedworktrees.",
+      "blocker": "Fullhealthpending;250 numericalconvergence unavailable, modalduplication fix undergoing independent physical/energy controls."
     }
-  },
-  "checkpoint": {
-    "evidence": "Submitted7cf3083a frozen; six workflow families green and fullhealth running. Recovery sparse8bbf8b5f preserves23kernel/dependency controls and exact unsuccessful f2de full250 experiment with measured4,427,904KiB peak child RSS; no result promoted.",
-    "next": "Merge7cf afterexactheadCI andfreshboth-nodepreflight; continue exactcompactmodal representation and independent indoorcuts successor inisolatedworktrees.",
-    "blocker": "Fullhealthpending;250 numericalconvergence unavailable, modalduplication fix undergoing independent physical/energy controls."
-  },
-  "pr": 1613,
-  "releasedAt": "2026-11-22T00:18:04.164Z",
-  "releaseReason": "completed"
+  }
 }
