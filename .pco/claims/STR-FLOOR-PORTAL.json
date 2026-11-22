@@ -9,8 +9,8 @@
     "label": "convergence-20261122"
   },
   "claimedAt": "2026-11-22T10:03:07.790Z",
-  "heartbeatAt": "2026-11-22T10:08:46.520Z",
-  "expiresAt": "2026-11-22T10:53:46.520Z",
+  "heartbeatAt": "2026-11-22T10:22:47.263Z",
+  "expiresAt": "2026-11-22T11:07:47.263Z",
   "branch": "work/convergence-integrate-20261122",
   "predecessor": {
     "leaseId": "8ede94e9-ec3a-4f5f-8c74-95f2372cf61b",
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote00189ead preserves recovered MMD/sparse controls, shared wet-cage editor and canonical current fine/separated-mesh cut producer; component tests pass.",
-    "next": "Regenerate all native descendants and actual fine/separated mesh responses, reconcile source account, exact-head CI then publication preflight.",
-    "blocker": "Actual500/250 stability fails0.1kN and5percent screens; resistance and house selection unresolved."
-  }
+    "evidence": "Remote3ffd16ef PR1617 preserves recovered numerical ancestors, shared transverse recovery and lighting stage; actual16field energy checks pass. Eleven fresh floorstates22ad35f5 now retained locally.",
+    "next": "Publish completed16case cuts/cage and named joint-demand capability; integrate HAD door/pipe correction and finish exact-head health/publication preflight.",
+    "blocker": "Five mesh stability screens fail unchangedlimits. Local joint resistance, full house/ground coordination and water completion remain unresolved."
+  },
+  "pr": 1617
 }
