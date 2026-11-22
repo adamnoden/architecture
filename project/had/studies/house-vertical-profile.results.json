@@ -24,7 +24,7 @@
         "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
         "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
-        "project/str/studies/floor-section-proof.json": "6a7702fa77a52a2c883f966e55106de7dc705af2f6f912bc6a585cd8d622bdda",
+        "project/str/studies/floor-section-proof.json": "8b2b789df42882c4ee7ad0459532010d65f0f4566cdb7cd8b206ca07ce671184",
         "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
         "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
         "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
@@ -74,7 +74,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -151,8 +151,8 @@
         "status": "unselected-common-geometry-translation-only",
         "geometrySource": {
           "receiptPath": "project/str/studies/floor-section-proof.json",
-          "receiptSHA256": "6a7702fa77a52a2c883f966e55106de7dc705af2f6f912bc6a585cd8d622bdda",
-          "nativeSourceIdentityDigest": "40330a104e7a8dbe17f9094c020d7fa0ce65da6fb3f8bf1f4bafc930f4df9eeb",
+          "receiptSHA256": "8b2b789df42882c4ee7ad0459532010d65f0f4566cdb7cd8b206ca07ce671184",
+          "nativeSourceIdentityDigest": "336e8ddf324fff50cb907e77a0b00a8cac2233268cf6bcd35978dd418c0b9454",
           "consistentControlIds": [
             "wet-aligned-G135-Q2-rho27",
             "wet-south-pad-north160",
@@ -1061,7 +1061,7 @@
         "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
         "project/mat/studies/ring-roof-family.json": "b8aa44fab2b13d329f4ccb6cda0210c1fe3aab1b13e8ec96a47e9e0271c07a81",
-        "project/str/studies/floor-section-proof.json": "6a7702fa77a52a2c883f966e55106de7dc705af2f6f912bc6a585cd8d622bdda",
+        "project/str/studies/floor-section-proof.json": "8b2b789df42882c4ee7ad0459532010d65f0f4566cdb7cd8b206ca07ce671184",
         "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
         "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
         "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
@@ -1111,7 +1111,7 @@
         "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
         "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
         "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
         "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
         "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
       },
@@ -1188,8 +1188,8 @@
         "status": "unselected-common-geometry-translation-only",
         "geometrySource": {
           "receiptPath": "project/str/studies/floor-section-proof.json",
-          "receiptSHA256": "6a7702fa77a52a2c883f966e55106de7dc705af2f6f912bc6a585cd8d622bdda",
-          "nativeSourceIdentityDigest": "40330a104e7a8dbe17f9094c020d7fa0ce65da6fb3f8bf1f4bafc930f4df9eeb",
+          "receiptSHA256": "8b2b789df42882c4ee7ad0459532010d65f0f4566cdb7cd8b206ca07ce671184",
+          "nativeSourceIdentityDigest": "336e8ddf324fff50cb907e77a0b00a8cac2233268cf6bcd35978dd418c0b9454",
           "consistentControlIds": [
             "wet-aligned-G135-Q2-rho27",
             "wet-south-pad-north160",
