@@ -33,7 +33,7 @@ to make a free body close.
 
 ## Required verification before relying on the observer
 
-Thirteen cheap pure tests pass: body-load subtraction/action signs, physical-cut
+Eighteen cheap Python tests and three focused Node tests pass: body-load subtraction/action signs, physical-cut
 offsets, unit conversion and virtual-work conjugacy, all six components,
 input change/reversal, unsupported topology/nonfinite rejection, and a strict
 ordinary/observed full-result join, required numerical thread settings, full-byte
@@ -51,6 +51,40 @@ are retained experiment evidence, not admitted current joint demands. The
 attempt retained the cropped observation and full-result checksum, not its
 full result bytes. The observer now retains full bytes before comparison and
 rejects missing/nonunit thread settings before importing the native builder.
+
+The fresh matched1-thread observed run completed68.227935s. **Strict passivity
+passes:** its complete15,331,498-byte native result is byte-for-byte identical
+to the genuinely executed ordinary f25 capture. Both raw-file SHA256 values are
+`e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff`;
+both canonical full-result checksums are
+`16f14bea7b3c08c10af3b60b21e14c8c2ef60a2687950afd0595ec775df66b4d`.
+All52 heads and every preexisting physical cut match exactly. Source, request
+and case ID remain identical; no hash-seed-controlled extra pair was needed.
+
+`studies/four_l_joint_proof.py --write` verifies the actual complete ordinary
+capture/manifest, observed complete bytes/envelope and actual Node admission
+before writing `studies/four-l-joint-proof.json`. Its `--check` replays retained
+observed inputs, pure recovery and source/method/witness joins without a house
+builder. The crop does not reconstruct omitted full native bytes; missing full
+captures require genuine reruns. The default-thread rejection remains separate.
+
+The actual Node validator admits that same envelope: four rigid-joint free
+bodies close within5.798782e-9kN/kNm and eight previously omitted physical L
+end tractions are available. At the physical cuts, positive axial compression
+and signed global moments are:
+
+| Corner | Lower cut3170: N/Mx/My/Mz kN/kNm | Upper cut3370: N/Mx/My/Mz kN/kNm |
+| --- | --- | --- |
+| SW |155.596/−33.025/+23.332/−0.025|68.588/−40.026/+44.500/+0.148|
+| SE |83.536/+23.211/−30.703/+0.200|56.579/−91.286/+68.647/+0.815|
+| NW |109.172/+45.075/−27.168/−0.080|63.332/−69.351/+96.901/−1.533|
+| NE |60.088/−0.002/−7.090/−0.182|50.905/−18.522/+20.579/+0.451|
+
+These are member tractions with actual consistent body G removed once. The
+proof retains both horizontal force components, exact physical cut origins,
+member-on-joint actions, plate/membrane actions and direct collector couples.
+They are one simultaneous1.35G/Q2/floor-density27/wet-density25 source-pressure
+case, not a signed envelope or a finite joint resistance result.
 
 Run the observer in a dedicated process with `OPENBLAS_NUM_THREADS=1` and
 `OMP_NUM_THREADS=1`, using the exact request and stable

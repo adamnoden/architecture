@@ -6,11 +6,14 @@ import { fileURLToPath } from 'node:url'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 
 const root=new URL('../../../',import.meta.url)
-export const fourLJointConsumerPaths=[
+export const fourLJointMethodPaths=[
   'compiler/reference-house/current-design/structural-four-l-joint-adapter.ts',
   'project/str/studies/four_l_joint_observer.py',
   'project/str/studies/four_l_joint_recovery.py',
 ] as const
+const proofProducer='project/str/studies/four_l_joint_proof.py'
+const proofPath='project/str/studies/four-l-joint-proof.json'
+export const fourLJointConsumerPaths=[...fourLJointMethodPaths,proofProducer,proofPath] as const
 const record=(v:unknown):v is Record<string,any>=>v!==null&&typeof v==='object'&&!Array.isArray(v)
 const same=(a:unknown,b:unknown)=>sha256SemanticFingerprint(a)===sha256SemanticFingerprint(b)
 const hash=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex')
@@ -25,7 +28,7 @@ export function inspectFourLJointCapability(comparison:unknown,witness:unknown,m
   const unavailable=(reason:string)=>({status:'unsupported' as const,diagnostic:reason,
     finiteJointCapacityAvailable:false as const})
   if(!record(comparison)||!record(witness))return unavailable('FOUR_L_JOINT/strict-passivity-not-demonstrated')
-  if(fourLJointConsumerPaths.some(path=>!digest(methods[path])))return unavailable('FOUR_L_JOINT/missing-current-method-identity')
+  if(fourLJointMethodPaths.some(path=>!digest(methods[path])))return unavailable('FOUR_L_JOINT/missing-current-method-identity')
   if(witness.schema!=='str-four-L-joint-passivity-witness/1'
     ||witness.exactFullResultEqualityVerified!==true||witness.exactPhysicalHeadAndCutEqualityVerified!==true
     ||witness.physicalHeadCount!==52||witness.finiteJointCapacityAvailable!==false
@@ -42,7 +45,7 @@ export function inspectFourLJointCapability(comparison:unknown,witness:unknown,m
 /** Validate exact native JSON bytes before parsing them; JS reserialization
  * would change Python numeric spelling and cannot supply this checksum join. */
 export function admitFourLJointEnvelope(envelope:unknown,comparison:unknown,caseId:string,methods:Methods) {
-  if(!/^[A-Za-z][A-Za-z0-9._:-]*$/.test(caseId)||fourLJointConsumerPaths.some(path=>!digest(methods[path])))
+  if(!/^[A-Za-z][A-Za-z0-9._:-]*$/.test(caseId)||fourLJointMethodPaths.some(path=>!digest(methods[path])))
     throw new Error('Explicit stable case ID and complete current joint method identities required')
   if(!record(envelope)||typeof envelope.nativeResultJSON!=='string'||!record(envelope.observation)||!record(envelope.freeBodies))
     throw new Error('Complete observed native envelope required')
@@ -58,7 +61,7 @@ export function admitFourLJointEnvelope(envelope:unknown,comparison:unknown,case
     ||observation.schema!=='str-four-L-joint-observation/1'||observation.caseId!==caseId
     ||!same(observation.sourceSHA256,native.sourceSHA256)||!same(observation.request,comparison)
     ||!same(observation.runtimeThreads,{OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'})
-    ||!same(observation.methodSourceSHA256,Object.fromEntries(fourLJointConsumerPaths.slice(1).map(p=>[p,methods[p]])))
+    ||!same(observation.methodSourceSHA256,Object.fromEntries(fourLJointMethodPaths.slice(1).map(p=>[p,methods[p]])))
     ||observation.nonlinearSolvesExecuted!==1||observation.finiteJointCapacityAvailable!==false
     ||observation.candidateAccepted!==false||observation.completeHouseProof!==false
     ||!Array.isArray(observation.heads)||observation.heads.length!==52||new Set(observation.heads.map((h:any)=>h.id)).size!==52
@@ -117,15 +120,24 @@ export function admitFourLJointEnvelope(envelope:unknown,comparison:unknown,case
 /** No second native solve. The caller keeps its normal input/result schema and
  * must use the ordinary route when inspectFourLJointCapability is unsupported.
  * This function is deliberately not wired into structural-floor-section yet. */
+export function readFourLJointExecution(comparison:unknown) {
+  const methods=Object.fromEntries(fourLJointMethodPaths.map(path=>[path,hash(readFileSync(new URL(path,root)))]))
+  const proof=JSON.parse(readFileSync(new URL(proofPath,root),'utf8')) as unknown
+  if(!record(proof)||proof.schema!=='str-four-L-actual-joint-demand-proof/1'
+    ||!same(proof.processingSourceSHA256,{...methods,[proofProducer]:hash(readFileSync(new URL(proofProducer,root)))}))
+    return {status:'unsupported' as const,diagnostic:'FOUR_L_JOINT/missing-or-stale-strict-method-witness',witness:undefined}
+  return {...inspectFourLJointCapability(comparison,proof.witness,methods),witness:proof.witness}
+}
+
 export function runObservedFourLJointCase(comparison:unknown,caseId:string,witness:unknown) {
-  const methods=Object.fromEntries(fourLJointConsumerPaths.map(path=>[path,hash(readFileSync(new URL(path,root)))]))
+  const methods=Object.fromEntries(fourLJointMethodPaths.map(path=>[path,hash(readFileSync(new URL(path,root)))]))
   const capability=inspectFourLJointCapability(comparison,witness,methods)
   if(capability.status!=='available')throw new Error(capability.diagnostic)
-  const envelope=JSON.parse(execFileSync('python3',['-B',fileURLToPath(new URL(fourLJointConsumerPaths[1],root)),'--return-native'],{
+  const envelope=JSON.parse(execFileSync('python3',['-B',fileURLToPath(new URL(fourLJointMethodPaths[1],root)),'--return-native'],{
     input:JSON.stringify({case:comparison,caseId}),encoding:'utf8',maxBuffer:128*1024*1024,
     env:{...process.env,OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'},
   })) as unknown
-  if(fourLJointConsumerPaths.some(path=>hash(readFileSync(new URL(path,root)))!==methods[path]))
+  if(fourLJointMethodPaths.some(path=>hash(readFileSync(new URL(path,root)))!==methods[path]))
     throw new Error('Joint observer/consumer source changed during native execution')
   return admitFourLJointEnvelope(envelope,comparison,caseId,methods)
 }
