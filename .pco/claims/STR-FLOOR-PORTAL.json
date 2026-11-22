@@ -1,44 +1,40 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 51,
-  "state": "released",
-  "leaseId": "4c335045-933e-4aad-afbc-ff6e25cbc6ad",
+  "generation": 52,
+  "state": "claimed",
+  "leaseId": "8ede94e9-ec3a-4f5f-8c74-95f2372cf61b",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-20261121"
+    "label": "convergence-resume-20261122"
   },
-  "claimedAt": "2026-11-22T00:18:18.241Z",
-  "heartbeatAt": "2026-11-22T00:42:50.802Z",
-  "expiresAt": "2026-11-22T00:42:50.802Z",
+  "claimedAt": "2026-11-22T07:45:22.878Z",
+  "heartbeatAt": "2026-11-22T07:45:22.878Z",
+  "expiresAt": "2026-11-22T08:30:22.878Z",
   "checkpoint": {
-    "evidence": "Merged1613 main769b60bc exact7cf passed689 compiler tests and all publication gates; packetremainsopen. Remote sparse8cd3438c preserves numerical methods,23+9 component checks and exact unsuccessful725 native/initialgeometry evidence.",
-    "next": "Locate actual finalassembly/factor memory through boundedphase diagnostic; execute250 and unchangedcontrol on proven numerical method, regenerate all dependent current proofs and integrate ordinaryindoorcuts continuation.",
-    "blocker": "250 fullnative remains unavailable; no force/convergence/capacity result is inferred from failed executions. Newsource receipts intentionally stale until genuine regeneration."
+    "evidence": "Main769b60bc unchanged; recovery2797e058 preserves experimental methods and exact failed native histories; temporary matrices lost.",
+    "next": "Recover exact experimental source; regenerate matrix experiment and execute unchanged500 and fine250 with earned ordering candidate.",
+    "blocker": "No fine-mesh convergence or whole structural baseline selected."
   },
-  "branch": "work/convergence-sparse-20261121",
+  "branch": "work/convergence-resume-20261122",
   "predecessor": {
-    "leaseId": "9e437f78-ddc0-47bb-ad78-f6e2a5644fc9",
-    "generation": 50,
-    "branch": "work/convergence-structure-20261121",
-    "pr": 1613,
+    "leaseId": "4c335045-933e-4aad-afbc-ff6e25cbc6ad",
+    "generation": 51,
+    "branch": "work/convergence-sparse-20261121",
     "checkpoint": {
-      "evidence": "Submitted7cf3083a frozen; six workflow families green and fullhealth running. Recovery sparse8bbf8b5f preserves23kernel/dependency controls and exact unsuccessful f2de full250 experiment with measured4,427,904KiB peak child RSS; no result promoted.",
-      "next": "Merge7cf afterexactheadCI andfreshboth-nodepreflight; continue exactcompactmodal representation and independent indoorcuts successor inisolatedworktrees.",
-      "blocker": "Fullhealthpending;250 numericalconvergence unavailable, modalduplication fix undergoing independent physical/energy controls."
+      "evidence": "Merged1613 main769b60bc exact7cf passed689 compiler tests and all publication gates; packetremainsopen. Remote sparse8cd3438c preserves numerical methods,23+9 component checks and exact unsuccessful725 native/initialgeometry evidence.",
+      "next": "Locate actual finalassembly/factor memory through boundedphase diagnostic; execute250 and unchangedcontrol on proven numerical method, regenerate all dependent current proofs and integrate ordinaryindoorcuts continuation.",
+      "blocker": "250 fullnative remains unavailable; no force/convergence/capacity result is inferred from failed executions. Newsource receipts intentionally stale until genuine regeneration."
     }
   },
   "recoverySource": {
-    "leaseId": "9e437f78-ddc0-47bb-ad78-f6e2a5644fc9",
-    "generation": 50,
-    "branch": "work/convergence-structure-20261121",
-    "pr": 1613,
+    "leaseId": "4c335045-933e-4aad-afbc-ff6e25cbc6ad",
+    "generation": 51,
+    "branch": "work/convergence-sparse-20261121",
     "checkpoint": {
-      "evidence": "Submitted7cf3083a frozen; six workflow families green and fullhealth running. Recovery sparse8bbf8b5f preserves23kernel/dependency controls and exact unsuccessful f2de full250 experiment with measured4,427,904KiB peak child RSS; no result promoted.",
-      "next": "Merge7cf afterexactheadCI andfreshboth-nodepreflight; continue exactcompactmodal representation and independent indoorcuts successor inisolatedworktrees.",
-      "blocker": "Fullhealthpending;250 numericalconvergence unavailable, modalduplication fix undergoing independent physical/energy controls."
+      "evidence": "Merged1613 main769b60bc exact7cf passed689 compiler tests and all publication gates; packetremainsopen. Remote sparse8cd3438c preserves numerical methods,23+9 component checks and exact unsuccessful725 native/initialgeometry evidence.",
+      "next": "Locate actual finalassembly/factor memory through boundedphase diagnostic; execute250 and unchangedcontrol on proven numerical method, regenerate all dependent current proofs and integrate ordinaryindoorcuts continuation.",
+      "blocker": "250 fullnative remains unavailable; no force/convergence/capacity result is inferred from failed executions. Newsource receipts intentionally stale until genuine regeneration."
     }
-  },
-  "releasedAt": "2026-11-22T00:42:50.802Z",
-  "releaseReason": "handoff"
+  }
 }
