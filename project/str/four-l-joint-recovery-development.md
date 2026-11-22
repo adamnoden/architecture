@@ -263,3 +263,71 @@ observation semantic fingerprint was
 `27fa2953caa0e1211b13927e767d3891a608a67053d91f7a620e7cc495cd7873`.
 This validates only the bounded exact-request capability and browser numeric
 transport. Signed demand-envelope and finite-joint capacity flags remain false.
+
+
+## Interrupted prepared-load continuation — recovery checkpoint
+
+The separate follow-on worktree `/workspace/scratch/ae142320334c/floor-prepared-load-solve`
+on `work/floor-prepared-load-solve-20261122` began from checkpoint
+`ee7a52d16426bc3af33d1dab72c0ce2d75944535`. Execution stopped when the
+workspace became unavailable and the exec-server disconnected. This section
+records unfinished implementation, not validated house behaviour.
+
+The prepared extraction was **not committed or published**. Its known local
+source deltas were:
+
+- `project/str/studies/perforated_floor_condensation.py`: existing compile
+  delegates to prepare/load functions. Preparation preserves the original
+  geometry/pressure coordinate-allocation order; subsequent cards assemble a
+  fresh combined RHS in the original loop/card order and use the existing
+  reduction. No separately summed response or load-only energy is used.
+  Retained source, work maps, physical matrix and numerical factor are sealed;
+  unsupported new work coordinates reject. Results are detached from held data.
+- `project/str/studies/perforated_floor_sparse_test.py`: three new cheap tests
+  cover both existing Python/SciPy backends, exact fresh/reused reversal,
+  combined cards, zero and restoration, forbidden assembly/factor calls on
+  reuse, source/matrix/unmeshed-boundary rejection, and input/result isolation.
+  Fifteen cheap receiving/condensation tests passed before the final factor-seal
+  addition; all three new tests passed again after that addition. No full
+  physical house test was run.
+- `project/str/studies/rc_floor_house_loads.py`: intermediate extraction of
+  fresh source P1/open-portal cards and a lightweight pre-A receiver metadata
+  snapshot, containing no stiffness or solved state. Syntax compilation passed.
+  **Known semantic defect awaiting correction:** the moved
+  `native_house_pressure_cards` water lookup still uses
+  `source['joined']['floor']['retained']`; its actual parameter is
+  `floor_source`. Fix this before any builder execution.
+- `project/str/studies/floor_section_successor.py`: intermediate switch to
+  prepared membrane/load APIs and retention of the prepared operator on the
+  internal model.
+- `project/str/studies/floor_section_model.py`: intermediate split into
+  `prepare_floor_section` and `solve_prepared_floor_section`, with ordinary
+  `run` delegating through them and deep-detaching each result. The last command
+  to install the required `_PreparedFloorSection` and
+  `_apply_prepared_loads` helpers failed to create its process when transport
+  disconnected. Treat these helper definitions as **absent/unverified** and the
+  intermediate file as not runnable until actual files are inspected.
+
+No full builder, house solve, reused native batch, new-source tuple receipt or
+capacity/envelope claim was produced. Existing f25 receipts must not be rehashed
+to this changed method. The native closure count can remain58 because only
+existing native modules were edited, but its tuple and the earlier floor-only
+ancestor tuple necessarily change. All actual affected evidence must be
+regenerated after the refactor earns validation.
+
+The continuation must recreate all variable nodal/member registries from fresh
+cards, retain only geometry/material/operators and immutable physical G, rebuild
+both actual P1 and P2 from each of all96 programme identities, and use the existing
+roof surface API. The actual pre-A load receiver must preserve the existing
+unqualified nodal-envelope route, rather than applying legacy pressure functions
+to deleted nodes or claiming new finite A-post pressure recovery. Each contact
+solve must start and re-equilibrate normally; no active set or solved response is
+reused. Runtime source and matrix/work-map checks must precede/follow each case.
+
+Before any384-case matched programme, demonstrate full ordinary/reused result
+parity on **the same genuinely new source** for W31 → W7 → W79 → aligned
+G0/Q0/roof-suction → W31 restoration, preserving complete outputs and source,
+request, runtime, all52 heads, all physical cuts, source wrench and passive joint
+recovery. The programme remains a bounded declared comparison: +6.3kPa is not a
+physical wind bound, unmodeled roof background G/patterning remain explicit, and
+no local joint capacity or whole-house acceptance follows.
