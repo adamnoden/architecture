@@ -17,9 +17,12 @@ export async function runEditorEngineeringRequest(input: unknown) {
   const bundle = await compileEngineeringDocument(document)
   const roof = bundle.engineering.roofPitch
   if (!roof) throw new TypeError('The saved document has no compiled roof-pitch stage')
+  const cage = bundle.engineering.floorSection?.cageComparison
   return { ticket, documentIdentity: bundle.documentIdentity, manifest: bundle.manifest,
     coordinationDiagnostics: bundle.coordinationDiagnostics, evidence: bundle.evidence,
-    roof: { ...roof, svg: renderDrawingSceneV2Svg(roof.drawing) } }
+    roof: { ...roof, svg: renderDrawingSceneV2Svg(roof.drawing) },
+    wetCage: cage ? { settings: cage.settings, geometry: cage.geometry, quantities: cage.quantities,
+      nativeCaseId: cage.nativeCaseId, nativeSourceSHA256: cage.nativeSourceSHA256, method: cage.method, evidence: cage.evidence } : null }
 }
 function send(response: ServerResponse, status: number, body: unknown) {
   response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' })

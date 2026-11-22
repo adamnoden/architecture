@@ -5,6 +5,30 @@ point demand or a reinforcement selection. The source-bound700/500 comparison
 remains a failed result. Its thresholds are not relaxed by admitting a finer
 numerical trial.
 
+## Current numerical result — 22 November 2026
+
+The finer250mm mesh has now completed on the recovered sparse/MMD method. Its
+actual500→250 comparison fails the unchanged0.1kN/kNm head and5% fixed-cut
+screens: maximum head change2.773789kN, with up to32.72% signed twisting change.
+The [current canonical cut producer](studies/floor-section-cuts.ts) requires
+complete current700,500,250 and both operator-separated controls. Old killed
+workers remain source-specific history; they cannot suppress a current result.
+
+The separated controls identify vertical-plate discretisation as the controlling
+fixed-cut uncertainty. This route changes the plate mesh, normal-bearing fibres and finite receiver subdivisions together; it does not isolate a faulty plate kernel. In-plane-only refinement changes the head response by
+0.140420kN and cut integrals by at most0.01046% with vertical500 held; vertical-only
+refinement changes the head response by2.795102kN and reproduces the large cut
+changes. Neither meets the complete declared screen. Those are mesh-pitch edits,
+not slab-thickness selections.
+
+The shared compiler now recovers MITC4 transverse shear from the exact native
+assumed-shear field and integrates it on the same physical cuts. Bending plus
+shear energy is checked against the actual native plate energy. This supplies
+an additional joint-demand component, without differentiating or smoothing the
+moment field. It does not supply membrane traction or a closed six-wrench L
+free body. A complete finite joint demand and physical transfer model remain
+necessary before local reinforcement or global thickness can be selected.
+
 ## Existing evidence, before extending the mesh scope
 
 The complete native responses joined at structural checkpoint
@@ -31,7 +55,7 @@ cut integrals by up to15.406607%. The predeclared0.1kN/kNm and5% screens fail.
 Fixed-cut convergence is still necessary; apparent point divergence does not
 license ignoring the integrated response.
 
-## Narrow numerical extension
+## Historical numerical admission and execution limits
 
 Both the vertical plate case and its sole nested in-plane floor case previously
 restricted maximum pitch to500..1800mm. Those were authored numerical comparison
@@ -63,21 +87,22 @@ The second declared trial was274mm: the largest whole-millimetre pitch below
 550/2=275mm. It introduces the same third subdivision of the controlling550mm
 interval while refining the rest of the house less than250mm. This isolated
 worker was also killed with exit137 before producing a complete response.
-Both declared trials remain visible as unavailable in the fixed-cut receipt;
-neither contributes invented fields or a numerical pass. The0.1kN/kNm and5%
+Both declared failures remain visible as historical source-specific unavailable
+evidence; neither contributes invented fields or a numerical pass. The0.1kN/kNm and5%
 screens are unchanged. An actual274mm response could not be relabelled250mm.
 
-A separate numerical continuation now tests a sparse implementation of the
-existing in-plane condensation against the retained Python oracle. The old
+The subsequent sparse continuation compared the existing in-plane condensation
+against the retained Python oracle and completed the current250mm response. The old
 minimum-fill graph and scalar Schur elimination are a plausible scaling
 obstacle, not an established cause of either kill. A successful smaller-memory
 condensation alone would not be a whole-house solve or a convergence result.
 
-Execute and source-bind the finer control; retain the700/500 failure. Compare the same
-physical cut coordinates, complete52-head response, actual material/G/Q wrenches,
-contact resultants and unchanged controls before making a numerical stability
-claim. This source change invalidates dependent receipts until their producers
-are genuinely rerun. The eleven-case current-source floor receipt is regenerated; the700/500 fixed-cut replay is regenerated separately, while finer convergence remains unavailable.
+The [MMD result](global-mmd-ordering-result.md),
+[ancestor regeneration record](ancestor-regeneration-20261122.md) and current
+canonical cut receipt distinguish actual complete fields, verified retained
+captures, new producer executions and historical execution failures. The
+700/500 failure remains; the finer current comparison is also a failure, not an
+execution limit. No historical receipt is rebound to changed native inputs.
 
 ## What a numerical pass would still leave open
 

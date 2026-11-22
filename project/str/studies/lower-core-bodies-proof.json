@@ -18,12 +18,13 @@
     "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
     "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
     "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-    "project/str/studies/distributed_floor_compatibility.py": "1842e399ccc95f0d422736d2b494664f40fff979d6b62488bf55e1a02c50a912",
-    "project/str/studies/perforated_floor_condensation.py": "334f6ccdcbcee3edf9d9a6252fe3e2e0e77a9b900b040bdfc6aac518c2164076",
+    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
     "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
     "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
     "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
     "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
     "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
@@ -31,11 +32,10 @@
     "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
     "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
     "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-    "project/str/studies/vertical_rc_floor.py": "8f5ec833b99e18d6c336227d52c3df1b28fb5fc427eec6d49570cc8a14e61260",
+    "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
     "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
     "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
-    "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
-    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+    "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
     "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
     "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
     "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
@@ -62,12 +62,13 @@
       "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
       "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
       "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-      "project/str/studies/distributed_floor_compatibility.py": "1842e399ccc95f0d422736d2b494664f40fff979d6b62488bf55e1a02c50a912",
-      "project/str/studies/perforated_floor_condensation.py": "334f6ccdcbcee3edf9d9a6252fe3e2e0e77a9b900b040bdfc6aac518c2164076",
+      "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+      "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
       "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
       "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
       "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
       "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+      "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
       "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
       "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
       "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
@@ -75,11 +76,10 @@
       "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
       "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
       "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-      "project/str/studies/vertical_rc_floor.py": "8f5ec833b99e18d6c336227d52c3df1b28fb5fc427eec6d49570cc8a14e61260",
+      "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
       "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
       "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
-      "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
-      "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+      "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
       "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521"
     },
     "monolithicCase": {
@@ -102,12 +102,13 @@
         "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
         "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-        "project/str/studies/distributed_floor_compatibility.py": "1842e399ccc95f0d422736d2b494664f40fff979d6b62488bf55e1a02c50a912",
-        "project/str/studies/perforated_floor_condensation.py": "334f6ccdcbcee3edf9d9a6252fe3e2e0e77a9b900b040bdfc6aac518c2164076",
+        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
         "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
         "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
         "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
         "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
         "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
         "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
         "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
@@ -136,12 +137,13 @@
           "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
           "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
           "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-          "project/str/studies/distributed_floor_compatibility.py": "1842e399ccc95f0d422736d2b494664f40fff979d6b62488bf55e1a02c50a912",
-          "project/str/studies/perforated_floor_condensation.py": "334f6ccdcbcee3edf9d9a6252fe3e2e0e77a9b900b040bdfc6aac518c2164076",
+          "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
           "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+          "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
           "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
           "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
           "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
@@ -169,12 +171,13 @@
             "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
             "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
             "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-            "project/str/studies/distributed_floor_compatibility.py": "1842e399ccc95f0d422736d2b494664f40fff979d6b62488bf55e1a02c50a912",
-            "project/str/studies/perforated_floor_condensation.py": "334f6ccdcbcee3edf9d9a6252fe3e2e0e77a9b900b040bdfc6aac518c2164076",
+            "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+            "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
             "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
             "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
             "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
             "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+            "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
             "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
             "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
             "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
@@ -201,12 +204,13 @@
               "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
               "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
               "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-              "project/str/studies/distributed_floor_compatibility.py": "1842e399ccc95f0d422736d2b494664f40fff979d6b62488bf55e1a02c50a912",
-              "project/str/studies/perforated_floor_condensation.py": "334f6ccdcbcee3edf9d9a6252fe3e2e0e77a9b900b040bdfc6aac518c2164076",
+              "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+              "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
               "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
               "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
               "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
               "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+              "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
               "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
               "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
               "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7"
@@ -264,12 +268,13 @@
               "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
               "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
               "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-              "project/str/studies/distributed_floor_compatibility.py": "1842e399ccc95f0d422736d2b494664f40fff979d6b62488bf55e1a02c50a912",
-              "project/str/studies/perforated_floor_condensation.py": "334f6ccdcbcee3edf9d9a6252fe3e2e0e77a9b900b040bdfc6aac518c2164076",
+              "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+              "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
               "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
               "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
               "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
-              "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41"
+              "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+              "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3"
             },
             "cornerWidthsMm": {
               "NW": 200,
@@ -432,9 +437,9 @@
         {
           "id": "P01",
           "reactionKN_KNm": [
-            -65.7634666023711,
-            -51.2075833603449,
-            90.68663094758729,
+            -65.76346660252568,
+            -51.207583360355414,
+            90.68663094767973,
             0.0,
             0.0,
             0.0
@@ -443,9 +448,9 @@
         {
           "id": "P02",
           "reactionKN_KNm": [
-            53.40878205780312,
-            1.0840554022521447,
-            -13.904452556758898,
+            53.408782057905874,
+            1.084055402251159,
+            -13.90445255681652,
             0.0,
             0.0,
             0.0
@@ -454,9 +459,9 @@
         {
           "id": "P03",
           "reactionKN_KNm": [
-            0.5039863160516178,
-            42.14375538107552,
-            -8.204077165031709,
+            0.5039863160548386,
+            42.14375538109183,
+            -8.204077165039571,
             0.0,
             0.0,
             0.0
@@ -465,9 +470,9 @@
         {
           "id": "P04",
           "reactionKN_KNm": [
-            -165.442080706868,
-            -136.60347924724883,
-            13.761170563253717,
+            -165.4420807070398,
+            -136.60347924730897,
+            13.761170563179117,
             0.0,
             0.0,
             0.0
@@ -476,9 +481,9 @@
         {
           "id": "P05",
           "reactionKN_KNm": [
-            101.39068332340446,
-            2.0823810724964185,
-            53.70826382610046,
+            101.39068332351732,
+            2.0823810724973564,
+            53.70826382614884,
             0.0,
             0.0,
             0.0
@@ -487,9 +492,9 @@
         {
           "id": "P06",
           "reactionKN_KNm": [
-            1.242328649969533,
-            98.10321707338325,
-            -32.18880586621739,
+            1.2423286499718156,
+            98.10321707339762,
+            -32.18880586622991,
             0.0,
             0.0,
             0.0
@@ -498,9 +503,9 @@
         {
           "id": "P07",
           "reactionKN_KNm": [
-            -127.4947629552749,
-            -151.5352778773614,
-            14.919679088428742,
+            -127.494762955635,
+            -151.5352778775961,
+            14.91967908850796,
             0.0,
             0.0,
             0.0
@@ -509,9 +514,9 @@
         {
           "id": "P08",
           "reactionKN_KNm": [
-            93.69331424537917,
-            4.274833457299223,
-            -31.343851828477852,
+            93.69331424563123,
+            4.274833457306849,
+            -31.343851828594666,
             0.0,
             0.0,
             0.0
@@ -520,9 +525,9 @@
         {
           "id": "P09",
           "reactionKN_KNm": [
-            4.490363908047089,
-            91.94752818052028,
-            63.107328606372306,
+            4.490363908056519,
+            91.94752818066053,
+            63.10732860644923,
             0.0,
             0.0,
             0.0
@@ -531,9 +536,9 @@
         {
           "id": "P10",
           "reactionKN_KNm": [
-            -69.077629562759,
-            -55.230691049637244,
-            -53.352029453292474,
+            -69.07762956338685,
+            -55.23069104926981,
+            -53.352029453406544,
             0.0,
             0.0,
             0.0
@@ -542,9 +547,9 @@
         {
           "id": "P11",
           "reactionKN_KNm": [
-            47.726501603471974,
-            0.8094906720169774,
-            29.704880318823008,
+            47.72650160391079,
+            0.8094906720077413,
+            29.704880319004207,
             0.0,
             0.0,
             0.0
@@ -553,9 +558,9 @@
         {
           "id": "P12",
           "reactionKN_KNm": [
-            -1.037713829144805,
-            23.175755495009113,
-            57.88411563673461,
+            -1.0377138291249663,
+            23.175755494777263,
+            57.884115636578656,
             0.0,
             0.0,
             0.0
@@ -564,9 +569,9 @@
         {
           "id": "P13",
           "reactionKN_KNm": [
-            11.516612133959665,
-            16.431288469098252,
-            28.2302870996405,
+            11.516612133956778,
+            16.43128846911513,
+            28.230287099651306,
             0.0,
             0.0,
             0.0
@@ -575,9 +580,9 @@
         {
           "id": "P14",
           "reactionKN_KNm": [
-            9.17122947047665,
-            24.97960280556972,
-            15.893905975316432,
+            9.171229470475776,
+            24.97960280558695,
+            15.893905975317148,
             0.0,
             0.0,
             0.0
@@ -586,9 +591,9 @@
         {
           "id": "P15",
           "reactionKN_KNm": [
-            -0.5070085289396105,
-            18.302724181207914,
-            20.054756125022926,
+            -0.5070085289412967,
+            18.30272418123142,
+            20.054756125026106,
             0.0,
             0.0,
             0.0
@@ -597,9 +602,9 @@
         {
           "id": "P16",
           "reactionKN_KNm": [
-            10.354942914344102,
-            40.91887858966598,
-            41.65017581169984,
+            10.35494291433945,
+            40.91887858972773,
+            41.65017581173731,
             0.0,
             0.0,
             0.0
@@ -608,9 +613,9 @@
         {
           "id": "P17",
           "reactionKN_KNm": [
-            -12.305103770775725,
-            38.205030355816874,
-            29.59835336554254,
+            -12.305103770781269,
+            38.205030355811324,
+            29.598353365544153,
             0.0,
             0.0,
             0.0
@@ -619,9 +624,9 @@
         {
           "id": "P18",
           "reactionKN_KNm": [
-            -14.486360534320372,
-            10.374463123875287,
-            37.617173658908584,
+            -14.486360534323442,
+            10.374463123834616,
+            37.617173658898736,
             0.0,
             0.0,
             0.0
@@ -630,9 +635,9 @@
         {
           "id": "P19",
           "reactionKN_KNm": [
-            -16.681677020768,
-            53.46331719574459,
-            40.906694358913974,
+            -16.68167702077301,
+            53.46331719565859,
+            40.906694358905106,
             0.0,
             0.0,
             0.0
@@ -641,9 +646,9 @@
         {
           "id": "P20",
           "reactionKN_KNm": [
-            17.64621179570417,
-            -0.5221724718870827,
-            15.785779994761269,
+            17.646211795748876,
+            -0.5221724718878682,
+            15.785779994764026,
             0.0,
             0.0,
             0.0
@@ -652,9 +657,9 @@
         {
           "id": "P21",
           "reactionKN_KNm": [
-            26.44442301226975,
-            0.24651670822212418,
-            14.310831592334731,
+            26.444423012304892,
+            0.24651670822251415,
+            14.310831592326375,
             0.0,
             0.0,
             0.0
@@ -663,9 +668,9 @@
         {
           "id": "P22",
           "reactionKN_KNm": [
-            21.74681478614957,
-            11.643228689097354,
-            30.120947470301704,
+            21.746814786179396,
+            11.643228689097832,
+            30.12094747030584,
             0.0,
             0.0,
             0.0
@@ -674,9 +679,9 @@
         {
           "id": "P23",
           "reactionKN_KNm": [
-            45.11194142739516,
-            15.727272981714439,
-            52.97345565119142,
+            45.111941427447604,
+            15.727272981724857,
+            52.973455651226175,
             0.0,
             0.0,
             0.0
@@ -685,9 +690,9 @@
         {
           "id": "P24",
           "reactionKN_KNm": [
-            50.170862227611025,
-            -13.782897296330605,
-            17.12815588124355,
+            50.17086222774902,
+            -13.782897296335438,
+            17.128155881237962,
             0.0,
             0.0,
             0.0
@@ -696,9 +701,9 @@
         {
           "id": "P25",
           "reactionKN_KNm": [
-            3.8395237611384396,
-            -18.329505093619552,
-            26.16200029985454,
+            3.839523761184248,
+            -18.329505093622014,
+            26.162000299819752,
             0.0,
             0.0,
             0.0
@@ -707,9 +712,9 @@
         {
           "id": "P26",
           "reactionKN_KNm": [
-            14.152565991485433,
-            -20.573697659797308,
-            41.36361756064435,
+            14.152565991525679,
+            -20.57369765978818,
+            41.36361756063773,
             0.0,
             0.0,
             0.0
@@ -718,9 +723,9 @@
         {
           "id": "P27",
           "reactionKN_KNm": [
-            22.880922854024924,
-            -0.6508234047054451,
-            27.519315525555946,
+            22.880922854256895,
+            -0.6508234047061636,
+            27.519315525612296,
             0.0,
             0.0,
             0.0
@@ -729,9 +734,9 @@
         {
           "id": "P28",
           "reactionKN_KNm": [
-            -8.212386919214499,
-            2.134022208710596,
-            37.98825230730502,
+            -8.2123869192223,
+            2.1340222087082568,
+            37.98825230728572,
             0.0,
             0.0,
             0.0
@@ -740,9 +745,9 @@
         {
           "id": "P29",
           "reactionKN_KNm": [
-            -2.38156034583647,
-            18.684492104304105,
-            27.498597094217175,
+            -2.3815603458357764,
+            18.68449210430763,
+            27.498597094211306,
             0.0,
             0.0,
             0.0
@@ -751,9 +756,9 @@
         {
           "id": "P30",
           "reactionKN_KNm": [
-            1.7908266011359202,
-            6.372112817819114,
-            51.80558054164843,
+            1.7908266011191112,
+            6.3721128178154025,
+            51.805580541668384,
             0.0,
             0.0,
             0.0
@@ -762,9 +767,9 @@
         {
           "id": "P31",
           "reactionKN_KNm": [
-            3.5975520947572845,
-            17.465586795532566,
-            35.407379026428956,
+            3.5975520947559825,
+            17.465586795533994,
+            35.40737902642833,
             0.0,
             0.0,
             0.0
@@ -773,9 +778,9 @@
         {
           "id": "P32",
           "reactionKN_KNm": [
-            -0.10450567425954693,
-            0.2388387897343205,
-            19.13575351851522,
+            -0.10450567425907553,
+            0.23883878973319106,
+            19.13575351852016,
             0.0,
             0.0,
             0.0
@@ -784,9 +789,9 @@
         {
           "id": "P33",
           "reactionKN_KNm": [
-            0.08412420969487988,
-            3.947359747245695,
-            15.89120458329817,
+            0.08412420969487036,
+            3.94735974724758,
+            15.891204583300459,
             0.0,
             0.0,
             0.0
@@ -795,9 +800,9 @@
         {
           "id": "P34",
           "reactionKN_KNm": [
-            9.06584996738556,
-            -3.27466329042719,
-            20.20269596840363,
+            9.06584996740595,
+            -3.274663290427135,
+            20.202695968431115,
             0.0,
             0.0,
             0.0
@@ -806,9 +811,9 @@
         {
           "id": "P35",
           "reactionKN_KNm": [
-            1.0182645283226477,
-            8.224128164236523,
-            20.848513669473245,
+            1.0182645283227156,
+            8.22412816423956,
+            20.848513669474208,
             0.0,
             0.0,
             0.0
@@ -817,9 +822,9 @@
         {
           "id": "P36",
           "reactionKN_KNm": [
-            0.1994933067168188,
-            -3.2011496317951327,
-            16.294641726603924,
+            0.19949330671637344,
+            -3.201149631787888,
+            16.294641726606137,
             0.0,
             0.0,
             0.0
@@ -828,9 +833,9 @@
         {
           "id": "P37",
           "reactionKN_KNm": [
-            -0.02694066556474639,
-            -1.3776468632498267,
-            9.960489900920546,
+            -0.026940665553990717,
+            -1.3776468632673966,
+            9.960489900888495,
             0.0,
             0.0,
             0.0
@@ -839,9 +844,9 @@
         {
           "id": "P38",
           "reactionKN_KNm": [
-            -3.031682761179038,
-            -0.24176335971090546,
-            17.364289876606822,
+            -3.0316827611807136,
+            -0.24176335971131502,
+            17.364289876611366,
             0.0,
             0.0,
             0.0
@@ -850,9 +855,9 @@
         {
           "id": "P39",
           "reactionKN_KNm": [
-            1.4640650524441798,
-            0.10052442094020043,
-            8.09254592994404,
+            1.464065052445135,
+            0.10052442094034185,
+            8.092545929943729,
             0.0,
             0.0,
             0.0
@@ -861,9 +866,9 @@
         {
           "id": "P40",
           "reactionKN_KNm": [
-            0.7189150280091618,
-            0.07457386928151787,
-            13.034024010952251,
+            0.718915028009874,
+            0.07457386928178868,
+            13.0340240109525,
             0.0,
             0.0,
             0.0
@@ -872,9 +877,9 @@
         {
           "id": "P41",
           "reactionKN_KNm": [
-            7.329045188439753,
-            -20.341294109609013,
-            48.57497945697879,
+            7.329045188448404,
+            -20.34129410962121,
+            48.57497945698962,
             0.0,
             0.0,
             0.0
@@ -883,9 +888,9 @@
         {
           "id": "P42",
           "reactionKN_KNm": [
-            3.504188490721173,
-            3.642734892447864,
-            37.41007285219732,
+            3.5041884907226653,
+            3.6427348924457252,
+            37.41007285219824,
             0.0,
             0.0,
             0.0
@@ -894,9 +899,9 @@
         {
           "id": "P43",
           "reactionKN_KNm": [
-            14.282388053759885,
-            -19.799076745512526,
-            37.761200980648866,
+            14.282388053757723,
+            -19.799076745515393,
+            37.76120098065015,
             0.0,
             0.0,
             0.0
@@ -905,9 +910,9 @@
         {
           "id": "P44",
           "reactionKN_KNm": [
-            16.583940447583547,
-            28.237572795525264,
-            49.42674215573385,
+            16.583940447611724,
+            28.237572795533758,
+            49.426742155745615,
             0.0,
             0.0,
             0.0
@@ -916,9 +921,9 @@
         {
           "id": "P45",
           "reactionKN_KNm": [
-            -12.98953628323368,
-            7.595607831511032,
-            40.612452325131144,
+            -12.989536283231423,
+            7.595607831517504,
+            40.61245232513764,
             0.0,
             0.0,
             0.0
@@ -927,9 +932,9 @@
         {
           "id": "P46",
           "reactionKN_KNm": [
-            0.034664868350132584,
-            -9.847809794533388,
-            23.333068317979635,
+            0.03466486835001778,
+            -9.847809794528798,
+            23.333068317983972,
             0.0,
             0.0,
             0.0
@@ -938,9 +943,9 @@
         {
           "id": "P47",
           "reactionKN_KNm": [
-            -5.554853169704266,
-            19.98122123962989,
-            40.49559259996532,
+            -5.554853169691025,
+            19.981221239630266,
+            40.49559259995144,
             0.0,
             0.0,
             0.0
@@ -949,9 +954,9 @@
         {
           "id": "P48",
           "reactionKN_KNm": [
-            -2.96777824156475,
-            2.724658535131091,
-            15.429846995526184,
+            -2.9677782415619394,
+            2.7246585351322037,
+            15.429846995525162,
             0.0,
             0.0,
             0.0
@@ -960,9 +965,9 @@
         {
           "id": "P49",
           "reactionKN_KNm": [
-            -0.19174330924369765,
-            -2.6053446477319975,
-            13.978437875935562,
+            -0.19174330924585659,
+            -2.605344647732224,
+            13.978437875939653,
             0.0,
             0.0,
             0.0
@@ -971,9 +976,9 @@
         {
           "id": "P50",
           "reactionKN_KNm": [
-            6.083007126197536,
-            3.953883484431055,
-            14.959789629949992,
+            6.083007126198379,
+            3.953883484426387,
+            14.959789629936738,
             0.0,
             0.0,
             0.0
@@ -982,9 +987,9 @@
         {
           "id": "P51",
           "reactionKN_KNm": [
-            -7.222581180009682,
-            -1.0801234117900533,
-            32.41792687696702,
+            -7.222581180004743,
+            -1.0801234117865892,
+            32.4179268769619,
             0.0,
             0.0,
             0.0
@@ -993,28 +998,28 @@
         {
           "id": "P52",
           "reactionKN_KNm": [
-            8.812036618720914,
-            -13.141327206581717,
-            26.124025640864378,
+            8.812036618723358,
+            -13.141327206582945,
+            26.1240256408668,
             0.0,
             0.0,
             0.0
           ]
         }
       ],
-      "minimumHeadVerticalReactionKN": -53.352029453292474,
+      "minimumHeadVerticalReactionKN": -53.352029453406544,
       "negativeHeadCount": 5,
       "equilibriumResidualKN_KNm": [
-        -1.6794388102425728e-10,
-        1.0957990070892265e-10,
-        -1.5234036254696548e-10,
-        -1.1669471859931945e-09,
-        5.373731255531311e-10,
-        1.8283990357303992e-09
+        1.199111920868745e-10,
+        1.014512918118271e-10,
+        -1.2232703738845885e-10,
+        -1.276843249797821e-09,
+        1.541338860988617e-09,
+        -1.1957654351135716e-09
       ],
-      "maximumFrameTranslationMm": 3.4410783577278954,
-      "maximumPlateDeflectionMm": 1.1403075063963497,
-      "physicalPlateWorkRelativeResidual": 4.4920199156344785e-13,
+      "maximumFrameTranslationMm": 3.4410783577289488,
+      "maximumPlateDeflectionMm": 1.1403075063974515,
+      "physicalPlateWorkRelativeResidual": 3.685498158046337e-13,
       "missingGroundContactAreaMm2": 0,
       "candidateAccepted": false,
       "capGridResistanceAccepted": false,
@@ -1027,9 +1032,9 @@
         {
           "id": "P01",
           "reactionKN_KNm": [
-            -65.76346660253819,
-            -51.20758336035328,
-            90.68663094769391,
+            -65.76346660251734,
+            -51.20758336033089,
+            90.68663094766188,
             0.0,
             0.0,
             0.0
@@ -1038,9 +1043,9 @@
         {
           "id": "P02",
           "reactionKN_KNm": [
-            53.408782057913854,
-            1.0840554022511948,
-            -13.904452556823106,
+            53.40878205789988,
+            1.084055402250378,
+            -13.904452556813187,
             0.0,
             0.0,
             0.0
@@ -1049,9 +1054,9 @@
         {
           "id": "P03",
           "reactionKN_KNm": [
-            0.5039863160550602,
-            42.143755381091154,
-            -8.204077165038974,
+            0.5039863160551568,
+            42.143755381075316,
+            -8.204077165030593,
             0.0,
             0.0,
             0.0
@@ -1060,9 +1065,9 @@
         {
           "id": "P04",
           "reactionKN_KNm": [
-            -165.44208070708484,
-            -136.60347924733884,
-            13.761170563208498,
+            -165.44208070703843,
+            -136.60347924732935,
+            13.761170563192639,
             0.0,
             0.0,
             0.0
@@ -1071,9 +1076,9 @@
         {
           "id": "P05",
           "reactionKN_KNm": [
-            101.39068332354296,
-            2.0823810724976517,
-            53.70826382616002,
+            101.39068332351601,
+            2.0823810724976415,
+            53.70826382614854,
             0.0,
             0.0,
             0.0
@@ -1082,9 +1087,9 @@
         {
           "id": "P06",
           "reactionKN_KNm": [
-            1.2423286499722774,
-            98.10321707342955,
-            -32.188805866245204,
+            1.2423286499728157,
+            98.10321707341942,
+            -32.18880586624134,
             0.0,
             0.0,
             0.0
@@ -1093,9 +1098,9 @@
         {
           "id": "P07",
           "reactionKN_KNm": [
-            -127.49476295561269,
-            -151.5352778775833,
-            14.91967908851081,
+            -127.49476295553194,
+            -151.53527787750494,
+            14.919679088493117,
             0.0,
             0.0,
             0.0
@@ -1104,9 +1109,9 @@
         {
           "id": "P08",
           "reactionKN_KNm": [
-            93.69331424562822,
-            4.274833457306604,
-            -31.34385182859115,
+            93.69331424555553,
+            4.274833457304813,
+            -31.343851828560553,
             0.0,
             0.0,
             0.0
@@ -1115,9 +1120,9 @@
         {
           "id": "P09",
           "reactionKN_KNm": [
-            4.490363908056361,
-            91.94752818065562,
-            63.10732860644726,
+            4.490363908054081,
+            91.94752818060454,
+            63.10732860641725,
             0.0,
             0.0,
             0.0
@@ -1126,9 +1131,9 @@
         {
           "id": "P10",
           "reactionKN_KNm": [
-            -69.07762956331761,
-            -55.230691049338716,
-            -53.3520294534122,
+            -69.07762956319306,
+            -55.23069104940684,
+            -53.35202945338659,
             0.0,
             0.0,
             0.0
@@ -1137,9 +1142,9 @@
         {
           "id": "P11",
           "reactionKN_KNm": [
-            47.72650160386303,
-            0.8094906720096429,
-            29.704880318984635,
+            47.72650160378173,
+            0.8094906720108712,
+            29.704880318950146,
             0.0,
             0.0,
             0.0
@@ -1148,9 +1153,9 @@
         {
           "id": "P12",
           "reactionKN_KNm": [
-            -1.0377138291272419,
-            23.17575549483454,
-            57.884115636609415,
+            -1.0377138291319485,
+            23.175755494860176,
+            57.88411563664222,
             0.0,
             0.0,
             0.0
@@ -1159,9 +1164,9 @@
         {
           "id": "P13",
           "reactionKN_KNm": [
-            11.516612133960022,
-            16.431288469114175,
-            28.230287099665663,
+            11.516612133948374,
+            16.431288469101883,
+            28.23028709963062,
             0.0,
             0.0,
             0.0
@@ -1170,9 +1175,9 @@
         {
           "id": "P14",
           "reactionKN_KNm": [
-            9.171229470476021,
-            24.979602805607325,
-            15.893905975334935,
+            9.1712294704745,
+            24.97960280556494,
+            15.893905975305957,
             0.0,
             0.0,
             0.0
@@ -1181,9 +1186,9 @@
         {
           "id": "P15",
           "reactionKN_KNm": [
-            -0.507008528941146,
-            18.302724181199917,
-            20.05475612505453,
+            -0.5070085289409724,
+            18.30272418123982,
+            20.054756125008282,
             0.0,
             0.0,
             0.0
@@ -1192,9 +1197,9 @@
         {
           "id": "P16",
           "reactionKN_KNm": [
-            10.354942914355808,
-            40.918878589730774,
-            41.65017581175958,
+            10.354942914330774,
+            40.91887858969686,
+            41.65017581169884,
             0.0,
             0.0,
             0.0
@@ -1203,9 +1208,9 @@
         {
           "id": "P17",
           "reactionKN_KNm": [
-            -12.305103770778695,
-            38.205030355817875,
-            29.598353365528947,
+            -12.305103770778587,
+            38.20503035582078,
+            29.59835336553684,
             0.0,
             0.0,
             0.0
@@ -1214,9 +1219,9 @@
         {
           "id": "P18",
           "reactionKN_KNm": [
-            -14.486360534338315,
-            10.37446312384844,
-            37.61717365891967,
+            -14.486360534319463,
+            10.374463123854394,
+            37.61717365889585,
             0.0,
             0.0,
             0.0
@@ -1225,9 +1230,9 @@
         {
           "id": "P19",
           "reactionKN_KNm": [
-            -16.681677020765942,
-            53.46331719566956,
-            40.90669435889343,
+            -16.68167702077782,
+            53.46331719570366,
+            40.906694358917626,
             0.0,
             0.0,
             0.0
@@ -1236,9 +1241,9 @@
         {
           "id": "P20",
           "reactionKN_KNm": [
-            17.646211795757274,
-            -0.5221724718878069,
-            15.785779994760915,
+            17.64621179574675,
+            -0.5221724718878511,
+            15.785779994763871,
             0.0,
             0.0,
             0.0
@@ -1247,9 +1252,9 @@
         {
           "id": "P21",
           "reactionKN_KNm": [
-            26.44442301230924,
-            0.24651670822136296,
-            14.310831592323682,
+            26.44442301230378,
+            0.24651670822245608,
+            14.310831592326686,
             0.0,
             0.0,
             0.0
@@ -1258,9 +1263,9 @@
         {
           "id": "P22",
           "reactionKN_KNm": [
-            21.746814786186278,
-            11.643228689094915,
-            30.120947470290314,
+            21.746814786177254,
+            11.643228689086428,
+            30.12094747028368,
             0.0,
             0.0,
             0.0
@@ -1269,9 +1274,9 @@
         {
           "id": "P23",
           "reactionKN_KNm": [
-            45.11194142745447,
-            15.727272981756357,
-            52.973455651286066,
+            45.11194142744892,
+            15.727272981691987,
+            52.97345565119544,
             0.0,
             0.0,
             0.0
@@ -1280,9 +1285,9 @@
         {
           "id": "P24",
           "reactionKN_KNm": [
-            50.170862227755336,
-            -13.782897296334978,
-            17.128155881240424,
+            50.170862227705804,
+            -13.782897296332415,
+            17.128155881238662,
             0.0,
             0.0,
             0.0
@@ -1291,9 +1296,9 @@
         {
           "id": "P25",
           "reactionKN_KNm": [
-            3.839523761159475,
-            -18.329505093623446,
-            26.162000299794364,
+            3.839523761178185,
+            -18.329505093618497,
+            26.162000299813045,
             0.0,
             0.0,
             0.0
@@ -1302,9 +1307,9 @@
         {
           "id": "P26",
           "reactionKN_KNm": [
-            14.15256599153047,
-            -20.573697659791623,
-            41.363617560687615,
+            14.152565991507986,
+            -20.573697659794338,
+            41.363617560657666,
             0.0,
             0.0,
             0.0
@@ -1313,9 +1318,9 @@
         {
           "id": "P27",
           "reactionKN_KNm": [
-            22.88092285422885,
-            -0.6508234047055144,
-            27.519315525617145,
+            22.88092285418915,
+            -0.6508234047060997,
+            27.519315525602984,
             0.0,
             0.0,
             0.0
@@ -1324,9 +1329,9 @@
         {
           "id": "P28",
           "reactionKN_KNm": [
-            -8.21238691923142,
-            2.134022208708,
-            37.9882523072845,
+            -8.212386919227256,
+            2.134022208709093,
+            37.988252307273655,
             0.0,
             0.0,
             0.0
@@ -1335,9 +1340,9 @@
         {
           "id": "P29",
           "reactionKN_KNm": [
-            -2.3815603458368138,
-            18.684492104309847,
-            27.498597094214944,
+            -2.3815603458349583,
+            18.684492104304848,
+            27.498597094205806,
             0.0,
             0.0,
             0.0
@@ -1346,9 +1351,9 @@
         {
           "id": "P30",
           "reactionKN_KNm": [
-            1.7908266011234975,
-            6.372112817810462,
-            51.80558054167512,
+            1.7908266011271579,
+            6.372112817819228,
+            51.80558054167614,
             0.0,
             0.0,
             0.0
@@ -1357,9 +1362,9 @@
         {
           "id": "P31",
           "reactionKN_KNm": [
-            3.59755209475421,
-            17.465586795542574,
-            35.407379026412,
+            3.597552094757233,
+            17.46558679553501,
+            35.40737902643324,
             0.0,
             0.0,
             0.0
@@ -1368,9 +1373,9 @@
         {
           "id": "P32",
           "reactionKN_KNm": [
-            -0.10450567426037605,
-            0.23883878973426964,
-            19.13575351851491,
+            -0.10450567425820023,
+            0.23883878973244588,
+            19.135753518524623,
             0.0,
             0.0,
             0.0
@@ -1379,9 +1384,9 @@
         {
           "id": "P33",
           "reactionKN_KNm": [
-            0.08412420969513684,
-            3.9473597472483952,
-            15.89120458329931,
+            0.08412420969463197,
+            3.9473597472458213,
+            15.8912045833031,
             0.0,
             0.0,
             0.0
@@ -1390,9 +1395,9 @@
         {
           "id": "P34",
           "reactionKN_KNm": [
-            9.065849967413666,
-            -3.274663290427444,
-            20.202695968440544,
+            9.065849967408111,
+            -3.274663290426668,
+            20.202695968431474,
             0.0,
             0.0,
             0.0
@@ -1401,9 +1406,9 @@
         {
           "id": "P35",
           "reactionKN_KNm": [
-            1.0182645283225138,
-            8.224128164239811,
-            20.848513669476276,
+            1.0182645283234772,
+            8.224128164239126,
+            20.848513669472233,
             0.0,
             0.0,
             0.0
@@ -1412,9 +1417,9 @@
         {
           "id": "P36",
           "reactionKN_KNm": [
-            0.19949330671669113,
-            -3.2011496317885264,
-            16.29464172660969,
+            0.19949330671736676,
+            -3.2011496317926857,
+            16.294641726612213,
             0.0,
             0.0,
             0.0
@@ -1423,9 +1428,9 @@
         {
           "id": "P37",
           "reactionKN_KNm": [
-            -0.026940665556629495,
-            -1.3776468632639052,
-            9.960489900895013,
+            -0.026940665556909882,
+            -1.3776468632608214,
+            9.960489900903045,
             0.0,
             0.0,
             0.0
@@ -1434,9 +1439,9 @@
         {
           "id": "P38",
           "reactionKN_KNm": [
-            -3.0316827611807917,
-            -0.24176335971118476,
-            17.364289876609686,
+            -3.0316827611810377,
+            -0.24176335971105856,
+            17.364289876615796,
             0.0,
             0.0,
             0.0
@@ -1445,9 +1450,9 @@
         {
           "id": "P39",
           "reactionKN_KNm": [
-            1.4640650524441734,
-            0.10052442094024727,
-            8.092545929943926,
+            1.4640650524457925,
+            0.1005244209403058,
+            8.092545929943645,
             0.0,
             0.0,
             0.0
@@ -1456,9 +1461,9 @@
         {
           "id": "P40",
           "reactionKN_KNm": [
-            0.718915028009566,
-            0.07457386928169246,
-            13.034024010953864,
+            0.7189150280099157,
+            0.07457386928161884,
+            13.034024010952312,
             0.0,
             0.0,
             0.0
@@ -1467,9 +1472,9 @@
         {
           "id": "P41",
           "reactionKN_KNm": [
-            7.32904518844707,
-            -20.341294109644178,
-            48.574979457011956,
+            7.329045188450269,
+            -20.341294109589015,
+            48.5749794569413,
             0.0,
             0.0,
             0.0
@@ -1478,9 +1483,9 @@
         {
           "id": "P42",
           "reactionKN_KNm": [
-            3.504188490719584,
-            3.642734892456242,
-            37.410072852199725,
+            3.50418849072073,
+            3.6427348924456693,
+            37.410072852204046,
             0.0,
             0.0,
             0.0
@@ -1489,9 +1494,9 @@
         {
           "id": "P43",
           "reactionKN_KNm": [
-            14.282388053773994,
-            -19.79907674551106,
-            37.7612009806695,
+            14.282388053755948,
+            -19.799076745524374,
+            37.76120098066319,
             0.0,
             0.0,
             0.0
@@ -1500,9 +1505,9 @@
         {
           "id": "P44",
           "reactionKN_KNm": [
-            16.583940447601236,
-            28.237572795511408,
-            49.42674215571442,
+            16.58394044760814,
+            28.237572795546185,
+            49.42674215577459,
             0.0,
             0.0,
             0.0
@@ -1511,9 +1516,9 @@
         {
           "id": "P45",
           "reactionKN_KNm": [
-            -12.989536283229482,
-            7.595607831493838,
-            40.6124523251086,
+            -12.989536283229093,
+            7.59560783153672,
+            40.61245232515118,
             0.0,
             0.0,
             0.0
@@ -1522,9 +1527,9 @@
         {
           "id": "P46",
           "reactionKN_KNm": [
-            0.03466486835052242,
-            -9.84780979450805,
-            23.33306831797465,
+            0.03466486835050141,
+            -9.847809794547889,
+            23.33306831801222,
             0.0,
             0.0,
             0.0
@@ -1533,9 +1538,9 @@
         {
           "id": "P47",
           "reactionKN_KNm": [
-            -5.5548531697054635,
-            19.98122123962671,
-            40.49559259995809,
+            -5.554853169684932,
+            19.98122123962991,
+            40.49559259994651,
             0.0,
             0.0,
             0.0
@@ -1544,9 +1549,9 @@
         {
           "id": "P48",
           "reactionKN_KNm": [
-            -2.967778241563649,
-            2.724658535134063,
-            15.429846995528901,
+            -2.967778241563277,
+            2.7246585351322987,
+            15.429846995526631,
             0.0,
             0.0,
             0.0
@@ -1555,9 +1560,9 @@
         {
           "id": "P49",
           "reactionKN_KNm": [
-            -0.19174330924794636,
-            -2.6053446477327893,
-            13.97843787594571,
+            -0.19174330924710214,
+            -2.6053446477321,
+            13.978437875940926,
             0.0,
             0.0,
             0.0
@@ -1566,9 +1571,9 @@
         {
           "id": "P50",
           "reactionKN_KNm": [
-            6.0830071262003145,
-            3.9538834844306256,
-            14.959789629944314,
+            6.083007126199381,
+            3.953883484425552,
+            14.959789629939301,
             0.0,
             0.0,
             0.0
@@ -1577,9 +1582,9 @@
         {
           "id": "P51",
           "reactionKN_KNm": [
-            -7.222581180004683,
-            -1.080123411787377,
-            32.417926876976814,
+            -7.222581179998797,
+            -1.080123411789652,
+            32.41792687695684,
             0.0,
             0.0,
             0.0
@@ -1588,33 +1593,33 @@
         {
           "id": "P52",
           "reactionKN_KNm": [
-            8.812036618726056,
-            -13.141327206581664,
-            26.12402564087686,
+            8.81203661872027,
+            -13.141327206572154,
+            26.1240256408604,
             0.0,
             0.0,
             0.0
           ]
         }
       ],
-      "minimumHeadVerticalReactionKN": -53.3520294534122,
+      "minimumHeadVerticalReactionKN": -53.35202945338659,
       "negativeHeadCount": 5,
       "equilibriumResidualKN_KNm": [
-        1.2003908977931133e-10,
-        1.2857981346314773e-10,
-        9.890754881780595e-11,
-        -3.4552067518234253e-10,
-        2.123415470123291e-10,
-        -8.38064806885086e-10
+        6.323830348264892e-11,
+        1.099351720768027e-10,
+        -1.8735590856522322e-10,
+        -1.0337680578231812e-09,
+        1.280568540096283e-09,
+        -2.7068563213106246e-10
       ],
-      "maximumFrameTranslationMm": 3.4410783577292428,
-      "maximumPlateDeflectionMm": 1.14030750639727,
-      "physicalPlateWorkRelativeResidual": 5.208701274891188e-13,
+      "maximumFrameTranslationMm": 3.4410783577290216,
+      "maximumPlateDeflectionMm": 1.1403075063973915,
+      "physicalPlateWorkRelativeResidual": 4.622696858627173e-13,
       "missingGroundContactAreaMm2": 0,
       "candidateAccepted": false,
       "capGridResistanceAccepted": false,
       "completeHouseProof": false,
-      "maximumHeadComponentDeltaFromInheritedKN_KNm": 5.586144879998756e-10,
+      "maximumHeadComponentDeltaFromInheritedKN_KNm": 1.9379342575120972e-10,
       "lowerCoreBodies": {
         "schema": "str-lower-clearcore-body-comparison/1",
         "request": {
@@ -1622,8 +1627,8 @@
         },
         "sourceSHA256": {
           "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
-          "project/str/studies/vertical_rc_floor.py": "8f5ec833b99e18d6c336227d52c3df1b28fb5fc427eec6d49570cc8a14e61260",
-          "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
+          "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+          "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
           "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
           "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294"
         },
@@ -3097,9 +3102,9 @@
       },
       "bodyResponse": {
         "schema": "str-lower-clearcore-response/1",
-        "topCompressionKN": 324.78472475847093,
-        "baseCompressionKN": 324.78472475847093,
-        "maximumBodyShorteningMm": 0.5713184944851428,
+        "topCompressionKN": 324.78472475840664,
+        "baseCompressionKN": 324.78472475840664,
+        "maximumBodyShorteningMm": 0.571318494498681,
         "activeTopContactCount": 14660,
         "openTopContactCount": 2668,
         "minimumBodyEndCompressionKN": -0.0,
@@ -3113,9 +3118,9 @@
         {
           "id": "P01",
           "reactionKN_KNm": [
-            -65.87087159908044,
-            -51.385420439705854,
-            91.8570457220436,
+            -65.87087159919241,
+            -51.385420439668394,
+            91.85704572207948,
             0.0,
             0.0,
             0.0
@@ -3124,9 +3129,9 @@
         {
           "id": "P02",
           "reactionKN_KNm": [
-            55.78160453711672,
-            1.2262215847139715,
-            -13.06737308998516,
+            55.78160453718952,
+            1.226221584711687,
+            -13.067373090026738,
             0.0,
             0.0,
             0.0
@@ -3135,9 +3140,9 @@
         {
           "id": "P03",
           "reactionKN_KNm": [
-            0.35380133878409814,
-            43.668111126207314,
-            -7.598894762256256,
+            0.3538013387874026,
+            43.668111126189416,
+            -7.598894762244518,
             0.0,
             0.0,
             0.0
@@ -3146,9 +3151,9 @@
         {
           "id": "P04",
           "reactionKN_KNm": [
-            -166.10857140550564,
-            -138.20729550024578,
-            13.591980295565282,
+            -166.108571405624,
+            -138.20729550027139,
+            13.591980295535837,
             0.0,
             0.0,
             0.0
@@ -3157,9 +3162,9 @@
         {
           "id": "P05",
           "reactionKN_KNm": [
-            102.10898615992306,
-            2.111623136098719,
-            53.99157875540216,
+            102.108986160001,
+            2.111623136098803,
+            53.991578755435164,
             0.0,
             0.0,
             0.0
@@ -3168,9 +3173,9 @@
         {
           "id": "P06",
           "reactionKN_KNm": [
-            0.5228727505363118,
-            102.22915525161667,
-            -28.106203407132647,
+            0.5228727505367754,
+            102.2291552516196,
+            -28.10620340713657,
             0.0,
             0.0,
             0.0
@@ -3179,9 +3184,9 @@
         {
           "id": "P07",
           "reactionKN_KNm": [
-            -129.64505222564108,
-            -151.41267446161396,
-            13.617314926607618,
+            -129.64505222580078,
+            -151.41267446168234,
+            13.61731492666267,
             0.0,
             0.0,
             0.0
@@ -3190,9 +3195,9 @@
         {
           "id": "P08",
           "reactionKN_KNm": [
-            91.40181074634752,
-            4.2739466164923305,
-            -30.688352915567414,
+            91.40181074644684,
+            4.273946616494554,
+            -30.688352915615788,
             0.0,
             0.0,
             0.0
@@ -3201,9 +3206,9 @@
         {
           "id": "P09",
           "reactionKN_KNm": [
-            4.502730722203005,
-            92.79477155377289,
-            64.1082240067967,
+            4.502730722206438,
+            92.79477155380457,
+            64.10822400681795,
             0.0,
             0.0,
             0.0
@@ -3212,9 +3217,9 @@
         {
           "id": "P10",
           "reactionKN_KNm": [
-            -68.09532847240658,
-            -56.00584728271333,
-            -53.31960372833855,
+            -68.09532847272939,
+            -56.005847282513514,
+            -53.31960372839346,
             0.0,
             0.0,
             0.0
@@ -3223,9 +3228,9 @@
         {
           "id": "P11",
           "reactionKN_KNm": [
-            51.47157346001025,
-            0.8092890058162192,
-            30.47944477830665,
+            51.47157346024301,
+            0.8092890058109345,
+            30.47944477840138,
             0.0,
             0.0,
             0.0
@@ -3234,9 +3239,9 @@
         {
           "id": "P12",
           "reactionKN_KNm": [
-            -1.4428850492410055,
-            12.969038211098102,
-            61.65112065719006,
+            -1.4428850492302066,
+            12.96903821097127,
+            61.651120657104165,
             0.0,
             0.0,
             0.0
@@ -3245,9 +3250,9 @@
         {
           "id": "P13",
           "reactionKN_KNm": [
-            17.619862096986804,
-            14.91986491908895,
-            47.762366500897386,
+            17.61986209697759,
+            14.919864919076915,
+            47.762366500883346,
             0.0,
             0.0,
             0.0
@@ -3256,9 +3261,9 @@
         {
           "id": "P14",
           "reactionKN_KNm": [
-            10.171293854145521,
-            28.516842857442448,
-            19.427063272543652,
+            10.171293854144125,
+            28.516842857433122,
+            19.427063272535385,
             0.0,
             0.0,
             0.0
@@ -3267,9 +3272,9 @@
         {
           "id": "P15",
           "reactionKN_KNm": [
-            -0.40218281531010175,
-            14.11699459506178,
-            30.04815873759261,
+            -0.4021828153110696,
+            14.116994595079476,
+            30.048158737578937,
             0.0,
             0.0,
             0.0
@@ -3278,9 +3283,9 @@
         {
           "id": "P16",
           "reactionKN_KNm": [
-            20.50024396536078,
-            40.72992382526791,
-            63.820930554945136,
+            20.500243965367982,
+            40.7299238252849,
+            63.82093055499797,
             0.0,
             0.0,
             0.0
@@ -3289,9 +3294,9 @@
         {
           "id": "P17",
           "reactionKN_KNm": [
-            -15.100756979318708,
-            32.47172631124974,
-            50.60576730113433,
+            -15.100756979321487,
+            32.47172631124921,
+            50.60576730114056,
             0.0,
             0.0,
             0.0
@@ -3300,9 +3305,9 @@
         {
           "id": "P18",
           "reactionKN_KNm": [
-            -24.548541331747415,
-            1.3393993650262956,
-            53.35900486596414,
+            -24.548541331763605,
+            1.339399364999494,
+            53.35900486597204,
             0.0,
             0.0,
             0.0
@@ -3311,9 +3316,9 @@
         {
           "id": "P19",
           "reactionKN_KNm": [
-            -29.958685197405316,
-            75.9112744500564,
-            73.40371545855564,
+            -29.95868519741232,
+            75.91127445000754,
+            73.40371545854931,
             0.0,
             0.0,
             0.0
@@ -3322,9 +3327,9 @@
         {
           "id": "P20",
           "reactionKN_KNm": [
-            14.164989637900042,
-            -0.48739042057222837,
-            20.736787409315205,
+            14.164989637933132,
+            -0.4873904205725219,
+            20.736787409316225,
             0.0,
             0.0,
             0.0
@@ -3333,9 +3338,9 @@
         {
           "id": "P21",
           "reactionKN_KNm": [
-            26.96239610021468,
-            0.41211319686468895,
-            21.493600378792685,
+            26.96239610023918,
+            0.41211319686782066,
+            21.49360037879716,
             0.0,
             0.0,
             0.0
@@ -3344,9 +3349,9 @@
         {
           "id": "P22",
           "reactionKN_KNm": [
-            23.001714012021758,
-            21.396368682884397,
-            44.26179892188456,
+            23.001714012047593,
+            21.396368682921615,
+            44.26179892193065,
             0.0,
             0.0,
             0.0
@@ -3355,9 +3360,9 @@
         {
           "id": "P23",
           "reactionKN_KNm": [
-            44.46705060689441,
-            23.111544028136162,
-            68.75843023365829,
+            44.46705060691835,
+            23.111544028186895,
+            68.75843023377348,
             0.0,
             0.0,
             0.0
@@ -3366,9 +3371,9 @@
         {
           "id": "P24",
           "reactionKN_KNm": [
-            45.20527641646095,
-            -13.133432774900538,
-            21.416040236487525,
+            45.20527641650772,
+            -13.133432774900925,
+            21.416040236482587,
             0.0,
             0.0,
             0.0
@@ -3377,9 +3382,9 @@
         {
           "id": "P25",
           "reactionKN_KNm": [
-            16.426306180440974,
-            -21.380584597408188,
-            48.58854591971206,
+            16.4263061804852,
+            -21.380584597407516,
+            48.58854591972636,
             0.0,
             0.0,
             0.0
@@ -3388,9 +3393,9 @@
         {
           "id": "P26",
           "reactionKN_KNm": [
-            2.52588852723066,
-            -23.96391870443728,
-            64.972362017611,
+            2.5258885272306317,
+            -23.96391870442601,
+            64.97236201757875,
             0.0,
             0.0,
             0.0
@@ -3399,9 +3404,9 @@
         {
           "id": "P27",
           "reactionKN_KNm": [
-            26.47487933349757,
-            -1.008915262019439,
-            31.182640706853263,
+            26.47487933362639,
+            -1.0089152620199044,
+            31.182640706876843,
             0.0,
             0.0,
             0.0
@@ -3410,9 +3415,9 @@
         {
           "id": "P28",
           "reactionKN_KNm": [
-            1.3883529859353634,
-            6.217122925584308,
-            68.6606214280101,
+            1.3883529859302315,
+            6.217122925586994,
+            68.66062142800433,
             0.0,
             0.0,
             0.0
@@ -3421,9 +3426,9 @@
         {
           "id": "P29",
           "reactionKN_KNm": [
-            -3.593872000428446,
-            17.993913285695754,
-            40.38073116890859,
+            -3.593872000428396,
+            17.99391328569354,
+            40.380731168904994,
             0.0,
             0.0,
             0.0
@@ -3432,9 +3437,9 @@
         {
           "id": "P30",
           "reactionKN_KNm": [
-            -5.072043017596866,
-            13.199965185870125,
-            85.94737403424305,
+            -5.0720430176074816,
+            13.199965185871127,
+            85.94737403425198,
             0.0,
             0.0,
             0.0
@@ -3443,9 +3448,9 @@
         {
           "id": "P31",
           "reactionKN_KNm": [
-            5.405941253708902,
-            15.013992700301538,
-            49.65477936563377,
+            5.405941253707384,
+            15.01399270029334,
+            49.65477936562898,
             0.0,
             0.0,
             0.0
@@ -3454,9 +3459,9 @@
         {
           "id": "P32",
           "reactionKN_KNm": [
-            0.16188196338135308,
-            -2.2166304157547323,
-            25.7710128612068,
+            0.1618819633822015,
+            -2.2166304157554793,
+            25.77101286121095,
             0.0,
             0.0,
             0.0
@@ -3465,9 +3470,9 @@
         {
           "id": "P33",
           "reactionKN_KNm": [
-            -0.21280629136085,
-            5.106413015688261,
-            17.841459478338148,
+            -0.2128062913612643,
+            5.106413015685906,
+            17.841459478344763,
             0.0,
             0.0,
             0.0
@@ -3476,9 +3481,9 @@
         {
           "id": "P34",
           "reactionKN_KNm": [
-            2.882120384960052,
-            -2.837652860317906,
-            17.300489193130083,
+            2.8821203849712074,
+            -2.8376528603167444,
+            17.300489193144543,
             0.0,
             0.0,
             0.0
@@ -3487,9 +3492,9 @@
         {
           "id": "P35",
           "reactionKN_KNm": [
-            1.0711373510342388,
-            9.42443345953841,
-            29.28300674561975,
+            1.0711373510327724,
+            9.424433459534548,
+            29.28300674559274,
             0.0,
             0.0,
             0.0
@@ -3498,9 +3503,9 @@
         {
           "id": "P36",
           "reactionKN_KNm": [
-            0.4221107021883014,
-            -4.85739045792565,
-            18.38575271442412,
+            0.42211070218809466,
+            -4.857390457918731,
+            18.38575271442484,
             0.0,
             0.0,
             0.0
@@ -3509,9 +3514,9 @@
         {
           "id": "P37",
           "reactionKN_KNm": [
-            2.1109585875306403,
-            -2.1281620151522946,
-            10.962701139428196,
+            2.110958587537467,
+            -2.128162015162248,
+            10.962701139408036,
             0.0,
             0.0,
             0.0
@@ -3520,9 +3525,9 @@
         {
           "id": "P38",
           "reactionKN_KNm": [
-            -5.469833113588682,
-            -0.41189950289067323,
-            23.574996015400387,
+            -5.469833113589374,
+            -0.41189950289089816,
+            23.57499601540561,
             0.0,
             0.0,
             0.0
@@ -3531,9 +3536,9 @@
         {
           "id": "P39",
           "reactionKN_KNm": [
-            2.18125651223142,
-            0.2158774475915473,
-            7.8335172509684465,
+            2.1812565122327823,
+            0.21587744759160848,
+            7.833517250968288,
             0.0,
             0.0,
             0.0
@@ -3542,9 +3547,9 @@
         {
           "id": "P40",
           "reactionKN_KNm": [
-            1.641754514814162,
-            -0.07062545724359354,
-            16.750296350769517,
+            1.6417545148140964,
+            -0.07062545724339381,
+            16.750296350764177,
             0.0,
             0.0,
             0.0
@@ -3553,9 +3558,9 @@
         {
           "id": "P41",
           "reactionKN_KNm": [
-            8.232935221567239,
-            -33.49380800459604,
-            71.75717287407844,
+            8.23293522157253,
+            -33.49380800464465,
+            71.75717287408827,
             0.0,
             0.0,
             0.0
@@ -3564,9 +3569,9 @@
         {
           "id": "P42",
           "reactionKN_KNm": [
-            4.973438224981022,
-            5.740827824958005,
-            52.9139330235636,
+            4.973438224981997,
+            5.740827824949802,
+            52.91393302350389,
             0.0,
             0.0,
             0.0
@@ -3575,9 +3580,9 @@
         {
           "id": "P43",
           "reactionKN_KNm": [
-            24.27628656584977,
-            -34.8036474620636,
-            60.92674324668735,
+            24.27628656586475,
+            -34.803647462066344,
+            60.926743246700596,
             0.0,
             0.0,
             0.0
@@ -3586,9 +3591,9 @@
         {
           "id": "P44",
           "reactionKN_KNm": [
-            31.706088095503322,
-            48.55846377858093,
-            86.1506181660005,
+            31.70608809552315,
+            48.55846377859183,
+            86.15061816600613,
             0.0,
             0.0,
             0.0
@@ -3597,9 +3602,9 @@
         {
           "id": "P45",
           "reactionKN_KNm": [
-            -16.615929915027916,
-            12.301895434407921,
-            55.043081383667904,
+            -16.61592991502339,
+            12.301895434415725,
+            55.04308138366857,
             0.0,
             0.0,
             0.0
@@ -3608,9 +3613,9 @@
         {
           "id": "P46",
           "reactionKN_KNm": [
-            -0.4069632618159572,
-            -15.507709853386553,
-            38.0378972783396,
+            -0.4069632618158601,
+            -15.507709853390315,
+            38.037897278349256,
             0.0,
             0.0,
             0.0
@@ -3619,9 +3624,9 @@
         {
           "id": "P47",
           "reactionKN_KNm": [
-            -15.804822982918513,
-            19.91637734693312,
-            60.67229615319991,
+            -15.80482298291971,
+            19.91637734693146,
+            60.67229615319147,
             0.0,
             0.0,
             0.0
@@ -3630,9 +3635,9 @@
         {
           "id": "P48",
           "reactionKN_KNm": [
-            -6.363582949923253,
-            2.9792198309229794,
-            28.03488201400458,
+            -6.363582949918092,
+            2.9792198309194875,
+            28.03488201399906,
             0.0,
             0.0,
             0.0
@@ -3641,9 +3646,9 @@
         {
           "id": "P49",
           "reactionKN_KNm": [
-            -0.66330320865018,
-            -3.4256612282036802,
-            19.839341665306733,
+            -0.663303208647265,
+            -3.4256612282030297,
+            19.839341665298797,
             0.0,
             0.0,
             0.0
@@ -3652,9 +3657,9 @@
         {
           "id": "P50",
           "reactionKN_KNm": [
-            9.974797998678827,
-            8.084018589373088,
-            26.625200139615217,
+            9.974797998675804,
+            8.08401858936242,
+            26.625200139591502,
             0.0,
             0.0,
             0.0
@@ -3663,9 +3668,9 @@
         {
           "id": "P51",
           "reactionKN_KNm": [
-            -10.769031686704542,
-            -3.9384959412873433,
-            55.51292584854308,
+            -10.769031686700849,
+            -3.938495941279424,
+            55.512925848508736,
             0.0,
             0.0,
             0.0
@@ -3674,33 +3679,33 @@
         {
           "id": "P52",
           "reactionKN_KNm": [
-            10.633722695226547,
-            -23.139235891198155,
-            39.6218298069754,
+            10.63372269522836,
+            -23.13923589123561,
+            39.621829807007465,
             0.0,
             0.0,
             0.0
           ]
         }
       ],
-      "minimumHeadVerticalReactionKN": -53.31960372833855,
+      "minimumHeadVerticalReactionKN": -53.31960372839346,
       "negativeHeadCount": 5,
       "equilibriumResidualKN_KNm": [
-        -6.652101092186058e-11,
-        1.4159695638227277e-10,
-        -1.8417267710901797e-10,
-        -1.171603798866272e-09,
-        9.257346391677856e-10,
-        1.1204483598703518e-09
+        7.345590802287916e-11,
+        1.0362555258325301e-10,
+        -9.981704351957887e-11,
+        -1.26473605632782e-09,
+        5.979090929031372e-10,
+        -3.862860467052087e-10
       ],
-      "maximumFrameTranslationMm": 3.4125751426215243,
-      "maximumPlateDeflectionMm": 1.2150884727413191,
-      "physicalPlateWorkRelativeResidual": 2.832579420394305e-13,
+      "maximumFrameTranslationMm": 3.412575142621127,
+      "maximumPlateDeflectionMm": 1.2150884727418916,
+      "physicalPlateWorkRelativeResidual": 3.825277908325595e-13,
       "missingGroundContactAreaMm2": 0,
       "candidateAccepted": false,
       "capGridResistanceAccepted": false,
       "completeHouseProof": false,
-      "maximumHeadComponentDeltaFromInheritedKN_KNm": 36.72387601026665,
+      "maximumHeadComponentDeltaFromInheritedKN_KNm": 36.72387601026051,
       "lowerCoreBodies": {
         "schema": "str-lower-clearcore-body-comparison/1",
         "request": {
@@ -3708,8 +3713,8 @@
         },
         "sourceSHA256": {
           "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
-          "project/str/studies/vertical_rc_floor.py": "8f5ec833b99e18d6c336227d52c3df1b28fb5fc427eec6d49570cc8a14e61260",
-          "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
+          "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+          "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
           "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
           "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294"
         },
@@ -5183,9 +5188,9 @@
       },
       "bodyResponse": {
         "schema": "str-lower-clearcore-response/1",
-        "topCompressionKN": 298.9314240276131,
-        "baseCompressionKN": 769.837339527613,
-        "maximumBodyShorteningMm": 0.6259772327169084,
+        "topCompressionKN": 298.93142402758855,
+        "baseCompressionKN": 769.8373395275885,
+        "maximumBodyShorteningMm": 0.6259772327335336,
         "activeTopContactCount": 12343,
         "openTopContactCount": 4985,
         "minimumBodyEndCompressionKN": -0.0,
@@ -5199,9 +5204,9 @@
         {
           "id": "P01",
           "reactionKN_KNm": [
-            -65.8850452570434,
-            -51.38887573166318,
-            91.86700045961504,
+            -65.88504525704316,
+            -51.388875731667,
+            91.86700045961616,
             0.0,
             0.0,
             0.0
@@ -5210,9 +5215,9 @@
         {
           "id": "P02",
           "reactionKN_KNm": [
-            55.79042986093271,
-            1.2261765320653202,
-            -13.072478448009846,
+            55.79042986093312,
+            1.2261765320651423,
+            -13.072478448009626,
             0.0,
             0.0,
             0.0
@@ -5221,9 +5226,9 @@
         {
           "id": "P03",
           "reactionKN_KNm": [
-            0.3540450381071838,
-            43.6706976320186,
-            -7.600306351834556,
+            0.35404503810726595,
+            43.67069763202075,
+            -7.600306351835284,
             0.0,
             0.0,
             0.0
@@ -5232,9 +5237,9 @@
         {
           "id": "P04",
           "reactionKN_KNm": [
-            -166.11904584029062,
-            -138.21127106491704,
-            13.569785456350996,
+            -166.1190458403131,
+            -138.21127106494563,
+            13.569785456377478,
             0.0,
             0.0,
             0.0
@@ -5243,9 +5248,9 @@
         {
           "id": "P05",
           "reactionKN_KNm": [
-            102.10662251148884,
-            2.111250749330824,
-            53.99227778714286,
+            102.10662251150151,
+            2.11125074933065,
+            53.99227778714781,
             0.0,
             0.0,
             0.0
@@ -5254,9 +5259,9 @@
         {
           "id": "P06",
           "reactionKN_KNm": [
-            0.5191699303154955,
-            102.2205995163315,
-            -28.099850758459873,
+            0.5191699303126214,
+            102.2205995163554,
+            -28.09985075847012,
             0.0,
             0.0,
             0.0
@@ -5265,9 +5270,9 @@
         {
           "id": "P07",
           "reactionKN_KNm": [
-            -129.6427713201966,
-            -151.41681749437333,
-            13.613434422711483,
+            -129.64277132016989,
+            -151.41681749436103,
+            13.61343442269728,
             0.0,
             0.0,
             0.0
@@ -5276,9 +5281,9 @@
         {
           "id": "P08",
           "reactionKN_KNm": [
-            91.39967873208477,
-            4.274104897124268,
-            -30.68740847728234,
+            91.3996787320529,
+            4.274104897124935,
+            -30.687408477270274,
             0.0,
             0.0,
             0.0
@@ -5287,9 +5292,9 @@
         {
           "id": "P09",
           "reactionKN_KNm": [
-            4.502851931151087,
-            92.79755126550354,
-            64.1097433929857,
+            4.502851931150991,
+            92.79755126550245,
+            64.10974339298188,
             0.0,
             0.0,
             0.0
@@ -5298,9 +5303,9 @@
         {
           "id": "P10",
           "reactionKN_KNm": [
-            -68.0652512999388,
-            -56.047839389222275,
-            -53.33184092305925,
+            -68.06525129984541,
+            -56.04783938930392,
+            -53.33184092306688,
             0.0,
             0.0,
             0.0
@@ -5309,9 +5314,9 @@
         {
           "id": "P11",
           "reactionKN_KNm": [
-            51.45517675193972,
-            0.810397487509225,
-            30.471636844919942,
+            51.45517675188259,
+            0.8103974875110049,
+            30.47163684489508,
             0.0,
             0.0,
             0.0
@@ -5320,9 +5325,9 @@
         {
           "id": "P12",
           "reactionKN_KNm": [
-            -1.4432229526673226,
-            13.00732605471687,
-            61.6712896487375,
+            -1.4432229526712252,
+            13.007326054779526,
+            61.671289648768244,
             0.0,
             0.0,
             0.0
@@ -5331,9 +5336,9 @@
         {
           "id": "P13",
           "reactionKN_KNm": [
-            17.619797925991506,
-            14.92107277802736,
-            47.76235977828264,
+            17.619797925987857,
+            14.921072778020747,
+            47.76235977824419,
             0.0,
             0.0,
             0.0
@@ -5342,9 +5347,9 @@
         {
           "id": "P14",
           "reactionKN_KNm": [
-            10.171270857017488,
-            28.517865698313845,
-            19.426826636634516,
+            10.171270857017236,
+            28.5178656983129,
+            19.426826636620508,
             0.0,
             0.0,
             0.0
@@ -5353,9 +5358,9 @@
         {
           "id": "P15",
           "reactionKN_KNm": [
-            -0.4021907711710027,
-            14.11760153117434,
-            30.048187580515027,
+            -0.40219077117122787,
+            14.117601531194946,
+            30.04818758050309,
             0.0,
             0.0,
             0.0
@@ -5364,9 +5369,9 @@
         {
           "id": "P16",
           "reactionKN_KNm": [
-            20.500465557449534,
-            40.73132914024285,
-            63.82146628097267,
+            20.500465557414362,
+            40.73132914021954,
+            63.82146628091908,
             0.0,
             0.0,
             0.0
@@ -5375,9 +5380,9 @@
         {
           "id": "P17",
           "reactionKN_KNm": [
-            -15.159844341979106,
-            32.54534484045823,
-            50.72515107594737,
+            -15.159844341985218,
+            32.54534484047518,
+            50.725151075959154,
             0.0,
             0.0,
             0.0
@@ -5386,9 +5391,9 @@
         {
           "id": "P18",
           "reactionKN_KNm": [
-            -24.895464161734292,
-            1.2814364934094797,
-            53.531441020076855,
+            -24.895464161719122,
+            1.2814364934198998,
+            53.53144102008861,
             0.0,
             0.0,
             0.0
@@ -5397,9 +5402,9 @@
         {
           "id": "P19",
           "reactionKN_KNm": [
-            -29.99266073913251,
-            75.91203222966121,
-            73.36356182965736,
+            -29.992660739134642,
+            75.91203222967127,
+            73.36356182964755,
             0.0,
             0.0,
             0.0
@@ -5408,9 +5413,9 @@
         {
           "id": "P20",
           "reactionKN_KNm": [
-            14.16808064372701,
-            -0.48737941944387053,
-            20.736757529938764,
+            14.168080643726938,
+            -0.4873794194437159,
+            20.7367575299396,
             0.0,
             0.0,
             0.0
@@ -5419,9 +5424,9 @@
         {
           "id": "P21",
           "reactionKN_KNm": [
-            26.963711789118353,
-            0.4106529546048677,
-            21.493243547660878,
+            26.963711789119326,
+            0.41065295460652645,
+            21.493243547664378,
             0.0,
             0.0,
             0.0
@@ -5430,9 +5435,9 @@
         {
           "id": "P22",
           "reactionKN_KNm": [
-            23.001202968314267,
-            21.38525072029062,
-            44.276933216473545,
+            23.001202968322303,
+            21.385250720309696,
+            44.27693321651542,
             0.0,
             0.0,
             0.0
@@ -5441,9 +5446,9 @@
         {
           "id": "P23",
           "reactionKN_KNm": [
-            44.48374543644943,
-            23.196689150677223,
-            68.7131450917129,
+            44.48374543644302,
+            23.196689150745573,
+            68.71314509182443,
             0.0,
             0.0,
             0.0
@@ -5452,9 +5457,9 @@
         {
           "id": "P24",
           "reactionKN_KNm": [
-            45.20394092157165,
-            -13.133690518118282,
-            21.41599241499611,
+            45.203940921544394,
+            -13.133690518117929,
+            21.415992414994754,
             0.0,
             0.0,
             0.0
@@ -5463,9 +5468,9 @@
         {
           "id": "P25",
           "reactionKN_KNm": [
-            16.42578447188805,
-            -21.382390775521074,
-            48.58859127137147,
+            16.425784471909445,
+            -21.382390775526346,
+            48.58859127139179,
             0.0,
             0.0,
             0.0
@@ -5474,9 +5479,9 @@
         {
           "id": "P26",
           "reactionKN_KNm": [
-            2.523265626537893,
-            -23.967970320774956,
-            64.97056908501168,
+            2.5232656265142923,
+            -23.967970320777177,
+            64.97056908495077,
             0.0,
             0.0,
             0.0
@@ -5485,9 +5490,9 @@
         {
           "id": "P27",
           "reactionKN_KNm": [
-            26.463356226286407,
-            -1.0086112624453762,
-            31.175542112589316,
+            26.46335622626063,
+            -1.0086112624454961,
+            31.175542112580466,
             0.0,
             0.0,
             0.0
@@ -5496,9 +5501,9 @@
         {
           "id": "P28",
           "reactionKN_KNm": [
-            1.38377857506073,
-            6.216688267754741,
-            68.66503256429145,
+            1.383778575064197,
+            6.216688267752174,
+            68.66503256429462,
             0.0,
             0.0,
             0.0
@@ -5507,9 +5512,9 @@
         {
           "id": "P29",
           "reactionKN_KNm": [
-            -3.593962337671588,
-            17.996692982583127,
-            40.38102188415096,
+            -3.593962337671662,
+            17.996692982591156,
+            40.38102188415584,
             0.0,
             0.0,
             0.0
@@ -5518,9 +5523,9 @@
         {
           "id": "P30",
           "reactionKN_KNm": [
-            -5.0851357414534375,
-            13.20780936246771,
-            85.90378060464059,
+            -5.085135741455922,
+            13.207809362467316,
+            85.90378060463426,
             0.0,
             0.0,
             0.0
@@ -5529,9 +5534,9 @@
         {
           "id": "P31",
           "reactionKN_KNm": [
-            5.406246907406304,
-            15.025801975633367,
-            49.646362737149,
+            5.406246907407056,
+            15.02580197563323,
+            49.64636273715945,
             0.0,
             0.0,
             0.0
@@ -5540,9 +5545,9 @@
         {
           "id": "P32",
           "reactionKN_KNm": [
-            0.1620817180543952,
-            -2.2153375732211646,
-            25.76943349066262,
+            0.16208171805607652,
+            -2.2153375732213,
+            25.769433490667808,
             0.0,
             0.0,
             0.0
@@ -5551,9 +5556,9 @@
         {
           "id": "P33",
           "reactionKN_KNm": [
-            -0.21262396379236195,
-            5.105640525162077,
-            17.84173470880741,
+            -0.2126239637927019,
+            5.105640525160606,
+            17.84173470881422,
             0.0,
             0.0,
             0.0
@@ -5562,9 +5567,9 @@
         {
           "id": "P34",
           "reactionKN_KNm": [
-            2.882518840379337,
-            -2.838474429780609,
-            17.301196250975046,
+            2.882518840377862,
+            -2.8384744297796463,
+            17.30119625097331,
             0.0,
             0.0,
             0.0
@@ -5573,9 +5578,9 @@
         {
           "id": "P35",
           "reactionKN_KNm": [
-            1.0917547524836313,
-            9.462238909515925,
-            29.621406517095053,
+            1.0917547524841529,
+            9.46223890951398,
+            29.621406517084914,
             0.0,
             0.0,
             0.0
@@ -5584,9 +5589,9 @@
         {
           "id": "P36",
           "reactionKN_KNm": [
-            0.44067927764853876,
-            -4.900951816918896,
-            18.55195021200693,
+            0.4406792776474586,
+            -4.900951816914215,
+            18.551950211997326,
             0.0,
             0.0,
             0.0
@@ -5595,9 +5600,9 @@
         {
           "id": "P37",
           "reactionKN_KNm": [
-            2.116203292202084,
-            -2.1216137122898426,
-            10.985754166233102,
+            2.1162032922016394,
+            -2.121613712289663,
+            10.985754166230446,
             0.0,
             0.0,
             0.0
@@ -5606,9 +5611,9 @@
         {
           "id": "P38",
           "reactionKN_KNm": [
-            -5.469670874505596,
-            -0.41137165757347516,
-            23.5678224960094,
+            -5.469670874505459,
+            -0.41137165757366756,
+            23.567822496011292,
             0.0,
             0.0,
             0.0
@@ -5617,9 +5622,9 @@
         {
           "id": "P39",
           "reactionKN_KNm": [
-            2.1792273580400106,
-            0.21526119148187464,
-            7.833943694558887,
+            2.179227358041576,
+            0.21526119148199185,
+            7.833943694558679,
             0.0,
             0.0,
             0.0
@@ -5628,9 +5633,9 @@
         {
           "id": "P40",
           "reactionKN_KNm": [
-            1.6544146926477046,
-            -0.07467650405514428,
-            16.7922249356151,
+            1.6544146926485692,
+            -0.0746765040547871,
+            16.792224935612435,
             0.0,
             0.0,
             0.0
@@ -5639,9 +5644,9 @@
         {
           "id": "P41",
           "reactionKN_KNm": [
-            8.274850930784291,
-            -33.07654399147439,
-            71.89348020401594,
+            8.274850930787112,
+            -33.076543991547354,
+            71.893480204097,
             0.0,
             0.0,
             0.0
@@ -5650,9 +5655,9 @@
         {
           "id": "P42",
           "reactionKN_KNm": [
-            4.934361347762715,
-            3.848226441298376,
-            51.95598380494573,
+            4.934361347766046,
+            3.8482264412861777,
+            51.9559838049383,
             0.0,
             0.0,
             0.0
@@ -5661,9 +5666,9 @@
         {
           "id": "P43",
           "reactionKN_KNm": [
-            24.685403624390798,
-            -33.359432785814775,
-            60.62924753180465,
+            24.68540362437241,
+            -33.35943278581135,
+            60.629247531736965,
             0.0,
             0.0,
             0.0
@@ -5672,9 +5677,9 @@
         {
           "id": "P44",
           "reactionKN_KNm": [
-            31.69520672640837,
-            48.4760485085018,
-            86.12617118229318,
+            31.695206726414327,
+            48.47604850851852,
+            86.12617118228579,
             0.0,
             0.0,
             0.0
@@ -5683,9 +5688,9 @@
         {
           "id": "P45",
           "reactionKN_KNm": [
-            -16.61624268401142,
-            12.302814228786694,
-            55.04513605272404,
+            -16.616242684012562,
+            12.302814228808806,
+            55.04513605275282,
             0.0,
             0.0,
             0.0
@@ -5694,9 +5699,9 @@
         {
           "id": "P46",
           "reactionKN_KNm": [
-            -0.4069665182932609,
-            -15.508176890815525,
-            38.03805573396762,
+            -0.4069665182933356,
+            -15.50817689083723,
+            38.03805573398678,
             0.0,
             0.0,
             0.0
@@ -5705,9 +5710,9 @@
         {
           "id": "P47",
           "reactionKN_KNm": [
-            -15.80540882733078,
-            19.916847979883528,
-            60.672077658331474,
+            -15.805408827298919,
+            19.916847979887493,
+            60.672077658316944,
             0.0,
             0.0,
             0.0
@@ -5716,9 +5721,9 @@
         {
           "id": "P48",
           "reactionKN_KNm": [
-            -6.363245431072025,
-            2.978803508161587,
-            28.03066602434565,
+            -6.363245431068043,
+            2.978803508159599,
+            28.030666024345642,
             0.0,
             0.0,
             0.0
@@ -5727,9 +5732,9 @@
         {
           "id": "P49",
           "reactionKN_KNm": [
-            -0.6599088814803222,
-            -3.4246238522058583,
-            19.829159514439205,
+            -0.6599088814768634,
+            -3.424623852205932,
+            19.82915951443435,
             0.0,
             0.0,
             0.0
@@ -5738,9 +5743,9 @@
         {
           "id": "P50",
           "reactionKN_KNm": [
-            9.974784400173295,
-            8.083826377198113,
-            26.625173716790638,
+            9.974784400170075,
+            8.083826377193395,
+            26.625173716777176,
             0.0,
             0.0,
             0.0
@@ -5749,9 +5754,9 @@
         {
           "id": "P51",
           "reactionKN_KNm": [
-            -10.772410839975048,
-            -3.9383051618570484,
-            55.511690792276966,
+            -10.772410839976882,
+            -3.9383051618548786,
+            55.511690792274216,
             0.0,
             0.0,
             0.0
@@ -5760,33 +5765,33 @@
         {
           "id": "P52",
           "reactionKN_KNm": [
-            10.63796316007795,
-            -23.115394568722117,
-            39.57409509688368,
+            10.637963160079781,
+            -23.11539456874091,
+            39.57409509689077,
             0.0,
             0.0,
             0.0
           ]
         }
       ],
-      "minimumHeadVerticalReactionKN": -53.33184092305925,
+      "minimumHeadVerticalReactionKN": -53.33184092306688,
       "negativeHeadCount": 5,
       "equilibriumResidualKN_KNm": [
-        9.549694368615746e-11,
-        1.1714007541741012e-10,
-        -1.348325895378366e-10,
-        -8.083879947662353e-10,
-        1.650303602218628e-09,
-        -6.888640200486407e-10
+        5.7269744502264075e-11,
+        1.37674760480877e-10,
+        -1.0027179087046534e-10,
+        -2.2649765014648437e-09,
+        4.2282044887542726e-10,
+        -1.1980409908574074e-10
       ],
-      "maximumFrameTranslationMm": 3.413420886008262,
-      "maximumPlateDeflectionMm": 1.214817121779513,
-      "physicalPlateWorkRelativeResidual": 2.555580573370508e-13,
+      "maximumFrameTranslationMm": 3.4134208860093507,
+      "maximumPlateDeflectionMm": 1.2148171217797357,
+      "physicalPlateWorkRelativeResidual": 1.5855355700717258e-13,
       "missingGroundContactAreaMm2": 0,
       "candidateAccepted": false,
       "capGridResistanceAccepted": false,
       "completeHouseProof": false,
-      "maximumHeadComponentDeltaFromInheritedKN_KNm": 36.69942902655933,
+      "maximumHeadComponentDeltaFromInheritedKN_KNm": 36.69942902654017,
       "lowerCoreBodies": {
         "schema": "str-lower-clearcore-body-comparison/1",
         "request": {
@@ -5794,8 +5799,8 @@
         },
         "sourceSHA256": {
           "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
-          "project/str/studies/vertical_rc_floor.py": "8f5ec833b99e18d6c336227d52c3df1b28fb5fc427eec6d49570cc8a14e61260",
-          "project/str/studies/vertical_floor_numerics.py": "f39eeb89fda1974c63db5fd44c08b7b7d807d46f5df964f71bb354673cabbf3c",
+          "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+          "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
           "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
           "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294"
         },
@@ -7294,9 +7299,9 @@
       },
       "bodyResponse": {
         "schema": "str-lower-clearcore-response/1",
-        "topCompressionKN": 298.4705533135393,
-        "baseCompressionKN": 765.1042138135392,
-        "maximumBodyShorteningMm": 0.6213281136401624,
+        "topCompressionKN": 298.4705533134305,
+        "baseCompressionKN": 765.1042138134304,
+        "maximumBodyShorteningMm": 0.6213281136460388,
         "activeTopContactCount": 12993,
         "openTopContactCount": 5007,
         "minimumBodyEndCompressionKN": -0.0,
@@ -7305,8 +7310,8 @@
       }
     }
   ],
-  "zeroDensityMaximumHeadDifferenceKN_KNm": 5.586144879998756e-10,
-  "apertureMaximumHeadComponentDeltaKN_KNm": 1.8926013836596294,
+  "zeroDensityMaximumHeadDifferenceKN_KNm": 1.9379342575120972e-10,
+  "apertureMaximumHeadComponentDeltaKN_KNm": 1.8926013836636244,
   "scope": "Actual native35 curved-frame diagnostic with explicitcourtclosure and ownfoundationG. Regular lowerclearcore bodyG only; independentA successor requires ownsource-bound joint replay.",
   "candidateAccepted": false,
   "bodyAxialComparisonLawAccepted": false,

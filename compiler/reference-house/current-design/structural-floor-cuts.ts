@@ -89,3 +89,43 @@ export function recoverFloorSectionCuts(field: FloorBendingField, input: unknown
     }),
     scope: 'Exact integrals of the declared element recovery along authored axis-aligned cuts. Tangent is positiveY for normalX and positiveX for normalY; twisting retains the source Mxy sign. Actual gaps remain absent material. No design width, redistribution, joint resistance, anchorage or mesh convergence is inferred.' }
 }
+
+/** Compare the same physical heads and cuts; never pair records by array order. */
+export function compareFloorSectionCuts(
+  coarse: { heads: { id: string; reactionKN_KNm: number[] }[]; sectionCuts: ReturnType<typeof recoverFloorSectionCuts> },
+  fine: { heads: { id: string; reactionKN_KNm: number[] }[]; sectionCuts: ReturnType<typeof recoverFloorSectionCuts> },
+  limits: { maximumHeadComponentDifferenceKN_KNm: number; maximumRelativeCutIntegralDifference: number; absoluteCutIntegralFloorKNm: number },
+) {
+  if (![limits.maximumHeadComponentDifferenceKN_KNm,limits.maximumRelativeCutIntegralDifference,limits.absoluteCutIntegralFloorKNm].every(v => finite(v) && v > 0)) throw new Error('Positive finite stability limits required')
+  const heads = (rows: typeof coarse.heads) => {
+    if (!rows.length || new Set(rows.map(r => r.id)).size !== rows.length
+      || rows.some(r => !r.id || r.reactionKN_KNm.length !== 6 || !r.reactionKN_KNm.every(finite))) throw new Error('Unique finite six-component physical heads required')
+    return new Map(rows.map(r => [r.id, r.reactionKN_KNm]))
+  }
+  const a = heads(coarse.heads), b = heads(fine.heads)
+  if (a.size !== b.size || [...a.keys()].some(id => !b.has(id))) throw new Error('Physical head identities differ')
+  let maximumHeadComponentDifferenceKN_KNm = 0
+  let governingHeadChange: { id:string; component:number; coarse:number; fine:number; difference:number } | null = null
+  for (const [id, values] of a) for (let i=0;i<6;i++) {
+    const difference=Math.abs(values[i]! - b.get(id)![i]!)
+    if (governingHeadChange===null || difference>maximumHeadComponentDifferenceKN_KNm) governingHeadChange={id,component:i,coarse:values[i]!,fine:b.get(id)![i]!,difference}
+    maximumHeadComponentDifferenceKN_KNm=Math.max(maximumHeadComponentDifferenceKN_KNm,difference)
+  }
+  const metrics = ['signedNormalMomentKNm', 'signedTwistingMomentKNm', 'absoluteBendingPlusTwistingKNm'] as const
+  const cuts = new Map(coarse.sectionCuts.cuts.map(c => [c.id,c]))
+  if (!cuts.size || cuts.size !== coarse.sectionCuts.cuts.length || cuts.size !== fine.sectionCuts.cuts.length
+    || new Set(fine.sectionCuts.cuts.map(c => c.id)).size !== cuts.size) throw new Error('Unique matching physical cut identities required')
+  const relativeCutIntegralChanges = fine.sectionCuts.cuts.map(c => {
+    const old = cuts.get(c.id)
+    if (!old || old.normal !== c.normal || old.positionMm !== c.positionMm || JSON.stringify(old.intervalMm) !== JSON.stringify(c.intervalMm)
+      || old.materialWidthMm !== c.materialWidthMm || JSON.stringify(old.gapsMm) !== JSON.stringify(c.gapsMm)) throw new Error('Physical cut geometry or material differs')
+    return { id:c.id, ...Object.fromEntries(metrics.map(key => {
+      if (!finite(old[key]) || !finite(c[key])) throw new Error('Finite physical cut integrals required')
+      return [key,Math.abs(c[key]-old[key])/Math.max(limits.absoluteCutIntegralFloorKNm,Math.abs(c[key]),Math.abs(old[key]))]
+    })) } as { id:string } & Record<typeof metrics[number],number>
+  })
+  return { maximumHeadComponentDifferenceKN_KNm, governingHeadChange, relativeCutIntegralChanges,
+    declaredScreenPasses: maximumHeadComponentDifferenceKN_KNm <= limits.maximumHeadComponentDifferenceKN_KNm
+      && relativeCutIntegralChanges.every(c => metrics.every(key => c[key] <= limits.maximumRelativeCutIntegralDifference)),
+    localCornerJointAccepted:false as const, stripResistanceAccepted:false as const }
+}

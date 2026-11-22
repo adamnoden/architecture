@@ -111,6 +111,48 @@ test('a changed active RWT receiving input contradicts the existing HAD producer
   ])
 })
 
+test('the earlier monolithic floor sweep watches its real primitive, producer and drawings without house acceptance', () => {
+  const receipt = 'project/str/studies/monolithic-rc-native96-proof.json'
+  const producer = 'project/str/studies/monolithic_rc_sweep.py'
+  const drawings = ['project/str/studies/monolithic-rc-native96-floor.svg', 'project/str/studies/monolithic-rc-native96-barrier.svg']
+  const baseline = auditSourceCoverage()
+  const family = baseline.families.find(row => row.id === 'str-conditional-interface')
+  assert.equal(family.state, 'candidate-interface')
+  assert.match(family.authority, /earlier floor-only numerical regression/)
+  assert.match(family.authority, /no vertical-plate, roof or whole-house acceptance/)
+  assert.ok(family.authorRoots.includes(producer))
+  for (const path of [receipt, ...drawings]) assert.ok(family.receipts.includes(path))
+  const primitive = 'project/str/studies/joined_successor_kernel.py'
+  for (const source of [primitive, producer, ...drawings]) {
+    assert.ok(!baseline.findings.some(row => row.kind === 'source-contradiction' && row.receipt === receipt && row.source === source))
+    const changed = auditSourceCoverage(path => path === source ? Buffer.concat([read(path), Buffer.from('\n')]) : read(path))
+    assert.ok(changed.findings.some(row => row.kind === 'changed-file' && row.path === source))
+    assert.ok(changed.findings.some(row => row.kind === 'source-contradiction' && row.receipt === receipt && row.source === source))
+    const digest = (audit, id) => audit.bindings.find(row => row.id === id).digest
+    assert.notEqual(digest(changed, family.id), digest(baseline, family.id))
+    assert.equal(digest(changed, 'had-inlet-indoor-reference'), digest(baseline, 'had-inlet-indoor-reference'))
+  }
+})
+
+test('actual governing replays become stale when their native primitive, producer or executed sweep changes', () => {
+  const baseline = auditSourceCoverage()
+  const sweep = 'project/str/studies/monolithic-rc-native96-proof.json'
+  const producer = 'project/str/studies/monolithic_rc_governing_replay.py'
+  const replays = ['governing', 'translation'].map(kind => `project/str/studies/monolithic-rc-${kind}-replay.json`)
+  const family = baseline.families.find(row => row.id === 'str-conditional-interface')
+  assert.ok(family.authorRoots.includes(producer))
+  for (const receipt of replays) assert.ok(family.receipts.includes(receipt))
+  for (const source of ['project/str/studies/joined_successor_kernel.py', producer, sweep]) {
+    const changed = auditSourceCoverage(path => path === source ? Buffer.concat([read(path), Buffer.from('\n')]) : read(path))
+    for (const receipt of replays) {
+      assert.ok(!baseline.findings.some(row => row.kind === 'source-contradiction' && row.receipt === receipt))
+      assert.ok(changed.findings.some(row => row.kind === 'source-contradiction' && row.receipt === receipt && row.source === source))
+    }
+    assert.equal(changed.bindings.find(row => row.id === 'had-inlet-indoor-reference').digest,
+      baseline.bindings.find(row => row.id === 'had-inlet-indoor-reference').digest)
+  }
+})
+
 test('the live MAT dock requirement remains unknown if the legacy helper could use its historical default', () => {
   const audit = auditSourceCoverage(path => path === currentMatDock ? undefined : read(path))
   assert.deepEqual(audit.findings, [{ kind: 'unknown-file', path: currentMatDock }])
@@ -166,6 +208,8 @@ test('a changed north-transfer receipt invalidates the actual twin-tie and roof-
 test('actual native stage inventories are completely bound in their consuming source families', () => {
   const audit=auditSourceCoverage()
   for(const [id,method] of [
+    ['str-conditional-interface','distributed_floor_compatibility.py'],
+    ['str-conditional-interface','rc_portal_monolithic.py'],
     ['str-vertical-floor-comparison','vertical_rc_floor.py'],
     ['str-masonry-frame-comparison','upper_roof_bearing.py'],
     ['str-masonry-frame-comparison','floor_section_model.py'],

@@ -12,6 +12,7 @@ from perforated_floor_condensation import compile_perforated_floor
 from rc_floor_house_loads import _add, _family_wrench
 from retained_components import evaluate_retained_components
 from vertical_floor_plate import assemble_vertical_plate, condense_vertical_plate
+from vertical_floor_numerics import install_vertical_plate_energy,DIRECT_PLATE_POLICY
 from vertical_rc_floor import retained_receiver_operator_participation
 
 
@@ -57,6 +58,12 @@ def _energy_springs(frame,prefix,modes,port_terms):
                 for axis,value in enumerate(row):target[axis]+=coefficient*value
         frame.springs.append({'id':prefix+str(index),'terms':list(terms.items()),
             'stiffness':1.,'mode':'bilateral','gap':0.})
+
+
+def _replace_vertical_plate_energy(frame,data,operator):
+    policy=install_vertical_plate_energy(frame,operator,data['portTerms'],data.get('plateEnergyRepresentationPolicy',DIRECT_PLATE_POLICY))
+    data['plateEnergyRepresentationPolicy']=policy;data['operator']=operator
+    return policy
 
 
 def _membrane_maps(model,midplane):
@@ -126,8 +133,8 @@ def replace_floor_section(model,source,thickness_mm):
     for vector,factor in ((old['condensedSelfG'],-1.),(operator['condensedSelfG'],1.)):
         for value,terms in zip(vector,data['portTerms']):
             for node,row in terms:_add(model['families']['physical-G'],node,[factor*value*v for v in row])
-    _energy_springs(frame,'VERTICAL-FLOOR/energy/',operator['energyModes'],data['portTerms'])
-    data['operator']=operator;data['request']={**data['request'],'plateLaw':law}
+    energy_policy=_replace_vertical_plate_energy(frame,data,operator)
+    data['request']={**data['request'],'plateLaw':law}
     for trace in data['retainedPointReceivers'].values():
         old_audit=trace['physicalPlateParticipation'];indices=old_audit['portIndices']
         physical=fresh['pointTerms'].get((tuple(trace['xyMm']),0))
@@ -178,6 +185,7 @@ def replace_floor_section(model,source,thickness_mm):
         'sourceGravityResidualKN_KNm':residual,'sourcePressureResidualKN_KNm':pressure_residual,
         'steelChordAxialRigidityKN':membrane_law['edgeAxialRigidityKN'],
         'northernUpstandGeometryChanged':False,'sourceFFLMm':3450.,'remainingSourceFinishDepthMm':3450.-top,
+        'verticalPlateEnergyRepresentationPolicy':energy_policy,
         'finishStairServiceEvidenceApplicable':thickness_mm==200.,'candidateAccepted':False}
     model['floorSectionSuccessor']=result
     return result

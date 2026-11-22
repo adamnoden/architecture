@@ -6,12 +6,15 @@ import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import type { savedUpperRoofBearingCase } from './structural-upper-bearing.js'
 import { readFloorSectionCuts, recoverFloorSectionCuts, type FloorBendingField } from './structural-floor-cuts.js'
+import { recoverFloorTransverseShear, recoverFloorTransverseCuts } from './structural-floor-transverse.js'
+import { floorInterfaceConsumerPaths, runFloorCornerInterfaceRecovery } from './structural-floor-interface-adapter.js'
 import { readWetSupportCageDefaults, runWetSupportCageComparison, validateWetSupportCageChoices, wetSupportCageConsumerPaths, type WetSupportCageChoices } from './structural-wet-support-cage.js'
 
 const root = new URL('../../../', import.meta.url)
 const methodPath = 'project/str/studies/floor_section_model.py'
 const adapterPath = 'compiler/reference-house/current-design/structural-floor-section.ts'
 const cutsPath = 'compiler/reference-house/current-design/structural-floor-cuts.ts'
+const transversePath = 'compiler/reference-house/current-design/structural-floor-transverse.ts'
 const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
 const same = (a: unknown, b: unknown) => sha256SemanticFingerprint(a) === sha256SemanticFingerprint(b)
 const finite = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v)
@@ -92,7 +95,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-coupled-floor-section-case/1' || !record(comparison.sourceSHA256)
     || Object.keys(comparison.sourceSHA256).length !== 58) throw new Error('Floor-section source contract changed; integrate explicitly')
-  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, ...wetSupportCageConsumerPaths].map(path => {
+  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, transversePath, ...floorInterfaceConsumerPaths, ...wetSupportCageConsumerPaths].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
     if (owner.identities[path] !== blob || (Object.hasOwn(comparison.sourceSHA256, path)
@@ -203,6 +206,8 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     }
   }
   const cageComparison = cageChoices ? runWetSupportCageComparison(output, cageChoices) : null
+  const plateTransverseShear = recoverFloorTransverseShear(vertical)
+  const cornerInterfaces = runFloorCornerInterfaceRecovery(output)
   const servicePenetrations = { ...inspectFloorServiceRoutes(services.PV.DCRequiredRoutes,
     vertical.plate.cellsXYMm as number[][], 3170, section.topZMm, additionalSolids),
     sourcePath: 'project/mat/studies/whole-house-service-baseline.json', sourceObject: 'PV.DCRequiredRoutes' }
@@ -210,7 +215,8 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     source: { planDigest: current.planDigest, bindingDigest: current.bindingDigest, caseDigest: sha256SemanticFingerprint(input) },
     method: { id: 'str-current-floor-section/1', path: methodPath, inputs: current.inputs },
     native: vertical.native, vertical, floorSection: section, cageComparison, upperMasonry: output.upperMasonry,
-    mass: output.mass, plateBending: output.plateBending, sectionCuts: recoverFloorSectionCuts(output.plateBending as FloorBendingField, sectionCuts), floorReinforcement: output.floorReinforcement,
+    mass: output.mass, plateBending: output.plateBending, sectionCuts: recoverFloorSectionCuts(output.plateBending as FloorBendingField, sectionCuts),
+    plateTransverseShear, transverseSectionCuts:recoverFloorTransverseCuts(plateTransverseShear,sectionCuts), cornerInterfaces, floorReinforcement: output.floorReinforcement,
     roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport,
       wetBeamCutRecovery: { status: 'computed-discrete-element-cuts' as const,
         physicalBeamCutsAvailable: true as const, completeBeamDemandEnvelopeAvailable: false as const,

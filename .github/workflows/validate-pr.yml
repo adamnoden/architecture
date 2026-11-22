@@ -153,6 +153,17 @@ jobs:
           npm run publication:build
           npm run publication:build:primer
 
+      # Candidate bytes remain inspectable even when a later metadata or
+      # rendered-content check rejects them. This is not an acceptance receipt.
+      - name: Retain candidate publication PDFs for visual review
+        if: always() && hashFiles('publication/dist/*.pdf') != ''
+        uses: actions/upload-artifact@v6
+        with:
+          name: publication-candidate-pdfs
+          path: publication/dist/*.pdf
+          if-no-files-found: error
+          retention-days: 7
+
       - name: Check publication PDF metadata
         run: npm run publication:metadata:check
 

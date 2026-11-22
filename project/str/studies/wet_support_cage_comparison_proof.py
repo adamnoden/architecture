@@ -19,6 +19,7 @@ PROOF=D/'wet-support-cage-comparison-proof.json'
 SCHEMA='str-wet-support-cage-comparison-proof/1'
 PROCESSING_FILES=('project/str/studies/wet_support_cage_comparison_proof.py',
     'project/str/studies/wet_support_cage_comparison.py',
+    'project/str/studies/wet_post_head_duties.py',
     'project/str/studies/wet-support-cage-comparison-settings.json',
     'project/str/studies/floor_section_proof.py')
 

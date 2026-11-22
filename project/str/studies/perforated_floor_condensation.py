@@ -5,6 +5,63 @@ from itertools import pairwise
 
 
 _OPERATOR_CACHE = {}
+_BACKEND_POLICIES = ('auto-fine-sparse-v1','python','scipy-sparse')
+
+
+def _sparse_operator(matrix,retained,scale):
+    """Congruence-normalised physical Schur block, without graph fill in Python."""
+    import numpy as np
+    from scipy import sparse
+    from scipy.sparse.linalg import splu
+    interior=sorted(set(matrix)-set(retained));order=retained+interior;lookup={index:i for i,index in enumerate(order)}
+    rows=[];columns=[];values=[]
+    for i,row in matrix.items():
+        for j,value in row.items():
+            if value:rows.append(lookup[i]);columns.append(lookup[j]);values.append(value)
+    physical=sparse.csc_matrix((values,(rows,columns)),shape=(len(order),len(order)))
+    magnitude=max(1.,float(np.max(np.abs(physical.data))) if physical.nnz else 0.)
+    asymmetry=physical-physical.T
+    if asymmetry.nnz and float(np.max(np.abs(asymmetry.data)))>magnitude*1e-12:
+        raise ValueError('Physical perforated-floor matrix is not symmetric; no operator repair')
+    r=len(retained);si=np.array([scale[i] for i in interior]);sr=np.array([scale[i] for i in retained])
+    kir=(sparse.diags(si)@physical[r:,:r]).tocsc();kri=(physical[:r,r:]@sparse.diags(si)).tocsr()
+    kii=(sparse.diags(si)@physical[r:,r:]@sparse.diags(si)).tocsc()
+    factor=None;response=np.zeros((len(interior),r));minimum_pivot=None
+    if interior:
+        try:
+            factor=splu(kii,permc_spec='MMD_AT_PLUS_A',diag_pivot_thresh=0.,options={'SymmetricMode':True,'Equil':False})
+        except RuntimeError as error:
+            raise ValueError('Unconnected or singular perforated-floor interior; no artificial restraint is added') from error
+        # Symmetric permutations make positive LU diagonals an LDL energy
+        # certificate. A row pivot is NOT silently admitted as another backend.
+        physical_pivots=factor.U.diagonal()/si[np.argsort(factor.perm_c)]**2
+        if not np.array_equal(factor.perm_r,factor.perm_c) or not np.all(np.isfinite(physical_pivots)) or np.min(physical_pivots)<=1e-9:
+            raise ValueError('Nonpositive or singular perforated-floor interior; no pivot/support regularisation')
+        minimum_pivot=float(np.min(physical_pivots));response=factor.solve(kir.toarray())
+        residual=kii@response-kir.toarray()
+        if float(np.max(np.abs(residual)))/max(1.,float(np.max(np.abs(kir.data))) if kir.nnz else 0.)>1e-8:
+            raise ValueError('Sparse perforated-floor interior response fails physical solve residual')
+    condensed=physical[:r,:r].toarray()-kri@response
+    condensed=sr[:,None]*condensed*sr[None,:]
+    return condensed.tolist(),{'factor':factor,'interior':interior,'interiorScale':si,'retainedScale':sr,
+        'interiorMatrix':kii,'interiorToRetained':kri,'minimumPhysicalInteriorPivot':minimum_pivot}
+
+
+def _reduced_force(cached,retained,force):
+    if cached['backend']=='python':
+        reduced=dict(force);energy=0.
+        for index,pivot,neighbours in cached['steps']:
+            applied=reduced.pop(index,0.);energy+=applied*applied/(2*pivot)
+            for a,x in neighbours:reduced[a]=reduced.get(a,0.)-x*applied/pivot
+        return [reduced.get(i,0.)*cached['scale'][i] for i in retained],energy
+    import numpy as np
+    data=cached['sparse'];fi=np.array([force.get(i,0.) for i in data['interior']])*data['interiorScale']
+    particular=data['factor'].solve(fi) if data['factor'] is not None else fi
+    residual=data['interiorMatrix']@particular-fi
+    if len(fi) and float(np.max(np.abs(residual)))/max(1.,float(np.max(np.abs(fi))))>1e-8:
+        raise ValueError('Sparse perforated-floor load reduction fails physical solve residual')
+    load=np.array([force.get(i,0.) for i in retained])-data['interiorToRetained']@particular
+    return (load*data['retainedScale']).tolist(),float(fi@particular/2)
 
 
 def _add(matrix, terms, local):
@@ -68,7 +125,9 @@ def positive_energy_modes(matrix):
     return modes, error
 
 
-def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_pitch_mm, pressure_rows=(), boundary_receivers=()):
+def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_pitch_mm, pressure_rows=(), boundary_receivers=(), numerical_backend='auto-fine-sparse-v1'):
+    if numerical_backend not in _BACKEND_POLICIES:raise ValueError('Explicit supported perforated-floor numerical backend policy required; no fallback')
+    backend=('scipy-sparse' if max_pitch_mm<500 else 'python') if numerical_backend=='auto-fine-sparse-v1' else numerical_backend
     if not law or not all(math.isfinite(value) and value > 0 for key, value in law.items() if key != 'poissonRatio') or not 0 <= law['poissonRatio'] < .5:
         raise ValueError('An explicit positive finite membrane and edge law is required')
     port_ids={row['id'] for row in corner_patches}
@@ -259,48 +318,62 @@ def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_
         edge_records.append({**loop,'segmentCount':len(stations)-1})
     retained = list(range(len(corner_patches)*3))
     inverse = {value:key for key,value in dofs.items()}
-    cache_key = hashlib.sha256(json.dumps([bodies,omissions,loops,corner_patches,law,max_pitch_mm]+([boundary_receivers] if boundary_receivers else []),sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
+    cache_key = hashlib.sha256(json.dumps([bodies,omissions,loops,corner_patches,law,max_pitch_mm,numerical_backend,backend]+([boundary_receivers] if boundary_receivers else []),sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
     cached = _OPERATOR_CACHE.get(cache_key)
     if cached is None:
-        interiors = set(matrix)-set(retained)
-        order = []
-        graph = {i:set(row)-{i} for i,row in matrix.items()}
-        while interiors:
-            index = min(interiors,key=lambda i:(len(graph[i]),i))
-            neighbours = graph[index]
-            for a in neighbours:
-                graph[a].discard(index)
-                graph[a].update(neighbours-{a})
-            del graph[index]
-            interiors.remove(index)
-            order.append(index)
         scale = [.001 if inverse[index][-1] == 2 else 1. for index in range(len(dofs))]
-        condensed, condensed_force, steps = _schur(matrix,retained,scale,order,force)
+        cached={'backend':backend,'scale':scale,'interiorCount':len(set(matrix)-set(retained))}
+        if backend=='python':
+            interiors = set(matrix)-set(retained);order = [];graph = {i:set(row)-{i} for i,row in matrix.items()}
+            while interiors:
+                index = min(interiors,key=lambda i:(len(graph[i]),i));neighbours = graph[index]
+                for a in neighbours:
+                    graph[a].discard(index);graph[a].update(neighbours-{a})
+                del graph[index];interiors.remove(index);order.append(index)
+            condensed, _, steps = _schur(matrix,retained,scale,order)
+            cached['steps']=steps
+        else:
+            condensed,data=_sparse_operator(matrix,retained,scale);cached['sparse']=data
         modes,error = positive_energy_modes(condensed)
+        cached.update(condensed=condensed,modes=modes,error=error)
         if len(_OPERATOR_CACHE)>=4:
             _OPERATOR_CACHE.pop(next(iter(_OPERATOR_CACHE)))
-        _OPERATOR_CACHE[cache_key] = (condensed,steps,modes,error,scale)
-    else:
-        condensed,steps,modes,error,scale = cached
-        reduced_force = dict(force)
-        for index,pivot,neighbours in steps:
-            applied = reduced_force.pop(index,0.)
-            for a,x in neighbours:
-                reduced_force[a] = reduced_force.get(a,0.)-x*applied/pivot
-        condensed_force = [reduced_force.get(i,0.)*scale[i] for i in retained]
-    rigid = []
+        _OPERATOR_CACHE[cache_key] = cached
+    condensed,modes,error=[cached[k] for k in ('condensed','modes','error')]
+    if any(value and index not in matrix for index,value in force.items()):raise ValueError('Physical perforated-floor load has no assembled work coordinate')
+    condensed_force,load_only_energy=_reduced_force(cached,retained,force)
+    rigid = [];source_work=[];origins={p['id']:p['originXYMm'] for p in corner_patches}
     for translation,rotation in [((1.,0.),0.),((0.,1.),0.),((0.,0.),.001)]:
         vector = []
         for corner in corner_patches:
             x,y = corner['originXYMm']
             vector.extend([translation[0]-rotation*y,translation[1]+rotation*x,rotation*1000])
         rigid.append(max(abs(math.fsum(k*v for k,v in zip(row,vector))) for row in condensed))
+        def physical_value(index):
+            kind,point,axis=inverse[index];x,y=origins[point] if kind=='corner' else point
+            return rotation if axis==2 else translation[axis]+rotation*(-y if axis==0 else x)
+        source_work.append(math.fsum(f*v for f,v in zip(condensed_force,vector))-math.fsum(value*physical_value(index) for index,value in force.items()))
     if max(rigid)>1e-3:
         raise ValueError('Condensation restrained a physical rigid mode')
+    if max(abs(v) for v in source_work)>1e-6:raise ValueError('Condensation loses physical source work under rigid translation/rotation')
+    numerical={'policy':numerical_backend,'selectedBackend':backend,'operatorCacheIdentity':cache_key,
+        'factorReuse':'Same geometry/material/ports/backend; new physical loads are always reduced again',
+        'interiorRotationCoordinateScale':.001 if backend=='scipy-sparse' else 1.,
+        'physicalInteriorPivotMinimumCriterion':1e-9,'loadOnlyParticularEnergyKNmm':load_only_energy,
+        'sourceRigidWorkResidualKNmm':source_work,'noFallbackOrRegularisation':True}
+    if backend=='scipy-sparse':
+        import platform
+        import numpy
+        import scipy
+        numerical.update(ordering='MMD_AT_PLUS_A; symmetric/no row pivot/no equilibration',
+            runtime={'python':platform.python_version(),'numpy':numpy.__version__,'scipy':scipy.__version__,
+                'dependencyLock':'project/str/studies/vertical-floor-requirements.txt'},
+            minimumPhysicalInteriorPivot=cached['sparse']['minimumPhysicalInteriorPivot'])
     return {'schema':'str-perforated-floor-condensation/1',
             'condensedStiffnessKNPerMm':[row[:] for row in condensed],'condensedForceKN':condensed_force,
             'energyModes':[row[:] for row in modes],'modeReconstructionRelativeError':error,'rigidModeResidualKN':rigid,
-            'triangleCount':len(triangles),'pointCount':len(mesh_points),'assembledDofCount':len(dofs),'interiorDofCount':len(steps),
+            'triangleCount':len(triangles),'pointCount':len(mesh_points),'assembledDofCount':len(dofs),'interiorDofCount':cached['interiorCount'],
+            'numericalCondensation':numerical,
             'membraneAreaM2':area_total/1e6,'meshTrianglesXYMm':triangles,'bands':edge_records,'ports':corner_patches,
             'omissionsXYMm':omissions,'coordinateColumns':coordinates,'unqualifiedLaw':law,
             'portCoordinates':['ux_mm','uy_mm','1000*rz_rad'],**({'finiteBeamBoundaryReceivers':boundary_receivers} if boundary_receivers else {})}

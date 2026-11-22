@@ -7,11 +7,11 @@
     "note": "Typography authority is frozen by the v1 release; pagination below tracks the current reader-facing production content. Exact RC2 release pagination remains preserved in publication/release-candidates/typ09d1.json."
   },
   "a4": {
-    "pages": 263,
-    "duplexLeaves": 132,
+    "pages": 265,
+    "duplexLeaves": 133,
     "sixteenPageSections": 17,
     "pagesAtSixteenPageBoundary": 272,
-    "paddingToSixteenPageBoundary": 9,
+    "paddingToSixteenPageBoundary": 7,
     "widthMm": 210,
     "heightMm": 297
   },
@@ -25,9 +25,9 @@
     "heightMm": 250
   },
   "comparison": {
-    "b5MinusA4Pages": 52,
-    "b5PageChangePercent": 19.77,
-    "b5MinusA4Leaves": 26,
+    "b5MinusA4Pages": 50,
+    "b5PageChangePercent": 18.87,
+    "b5MinusA4Leaves": 25,
     "spineWidthClaim": "not admissible without final paper caliper / manufacturing specification"
   }
 }

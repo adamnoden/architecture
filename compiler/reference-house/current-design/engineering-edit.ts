@@ -1,6 +1,7 @@
 import { admitDesignSnapshot, type DesignSnapshot } from './snapshot.js'
 import { sameEditBase, type EditBase } from './edit.js'
 import { readFloorSectionCuts } from './structural-floor-cuts.js'
+import { admitStudyLightingCase } from './assemblies/study-lighting-case.js'
 
 /** Transport envelope only. The engineering compiler owns stage/source admission. */
 export interface EngineeringDocument {
@@ -24,6 +25,7 @@ export const editableRoofId = 'MAT/ring-roof-field'
 export const editableFloorSectionId = 'STR/current-floor-section'
 export const editableWetSupportId = 'STR/wet-wall-support'
 export const editableWetCageId = 'STR/wet-wall-support/reinforcement'
+export const editableStudyLightingId = 'IAS/STUDY/service-corner'
 function record(input: unknown): input is Record<string, unknown> {
   return input !== null && typeof input === 'object' && Object.getPrototypeOf(input) === Object.prototype
 }
@@ -70,6 +72,15 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       }
       if (operation.pitchDeg === state.document.stages.roofPitch.pitchDeg) return { status: 'applied', state }
       stages = { ...state.document.stages, roofPitch: { pitchDeg: operation.pitchDeg } }
+    } else if (record(operation) && operation.kind === 'set-lighting-service-depth') {
+      const current = state.document.stages.studyLighting
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'totalDepthMm'])
+        || operation.assemblyId !== editableStudyLightingId || !record(current) || !record(state.document.stages.studyRoomKit)) {
+        throw new TypeError('An existing explicit Study lighting and room-kit stage is required')
+      }
+      const choice = admitStudyLightingCase({ schema: 'ias-study-lighting-case/1', units: 'mm', ...current, serviceTotalDepthMm: operation.totalDepthMm })
+      if (choice.serviceTotalDepthMm === current.serviceTotalDepthMm) return { status: 'applied', state }
+      stages = { ...state.document.stages, studyLighting: { ...current, serviceTotalDepthMm: choice.serviceTotalDepthMm } }
     } else if (record(operation) && operation.kind === 'set-floor-section-thickness') {
       const current = state.document.stages.floorSection
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'thicknessMm'])
@@ -92,6 +103,19 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       const changed = readFloorSectionCuts(cuts.map((cut,i) => i === index ? { ...cut, positionMm: operation.positionMm, intervalMm: operation.intervalMm } : cut))
       if (JSON.stringify(changed) === JSON.stringify(cuts)) return { status: 'applied', state }
       stages = { ...state.document.stages, floorSection: { ...current, sectionCuts: changed } }
+    } else if (record(operation) && operation.kind === 'set-wet-cage-top-level') {
+      const current = state.document.stages.floorSection
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'postTopLevelRaiseMm'])
+        || operation.assemblyId !== editableWetCageId || typeof operation.postTopLevelRaiseMm !== 'number'
+        || !Number.isFinite(operation.postTopLevelRaiseMm) || operation.postTopLevelRaiseMm < 0 || operation.postTopLevelRaiseMm > 20
+        || !record(current) || current.thicknessMm !== 200 || !record(current.wetSupport) || !record(current.cageComparison)
+        || current.cageComparison.schema !== 'str-wet-support-cage-comparison/1'
+        || typeof current.cageComparison.postTopLevelRaiseMm !== 'number' || !Number.isFinite(current.cageComparison.postTopLevelRaiseMm)) {
+        throw new TypeError('An existing explicit wet cage and top-level comparison0..20mm are required')
+      }
+      if (operation.postTopLevelRaiseMm === current.cageComparison.postTopLevelRaiseMm) return { status: 'applied', state }
+      stages = { ...state.document.stages, floorSection: { ...current,
+        cageComparison: { ...current.cageComparison, postTopLevelRaiseMm: operation.postTopLevelRaiseMm } } }
     } else if (record(operation) && operation.kind === 'set-wet-cage-hook-tail') {
       const current = state.document.stages.floorSection
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'linkHookTailMm'])

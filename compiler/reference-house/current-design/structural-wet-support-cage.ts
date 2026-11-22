@@ -9,7 +9,7 @@ export const wetSupportCageObjectId = 'STR/wet-wall-support/reinforcement'
 export const wetSupportCageMethodPath = 'project/str/studies/wet_support_cage_comparison.py'
 export const wetSupportCageChoicesPath = 'project/str/studies/wet-support-cage-comparison-settings.json'
 export const wetSupportCageAdapterPath = 'compiler/reference-house/current-design/structural-wet-support-cage.ts'
-export const wetSupportCageConsumerPaths = [wetSupportCageMethodPath, wetSupportCageChoicesPath, wetSupportCageAdapterPath] as const
+export const wetSupportCageConsumerPaths = ['project/str/studies/wet_post_head_duties.py', wetSupportCageMethodPath, wetSupportCageChoicesPath, wetSupportCageAdapterPath] as const
 const gridPath = 'project/str/studies/current-house-grid.json'
 const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
 const same = (a: unknown, b: unknown) => sha256SemanticFingerprint(a) === sha256SemanticFingerprint(b)
@@ -17,6 +17,7 @@ const finite = (v: unknown): v is number => typeof v === 'number' && Number.isFi
 export interface WetSupportCageChoices extends Readonly<Record<string, unknown>> {
   readonly schema: 'str-wet-support-cage-comparison/1'
   readonly linkHookTailMm: number
+  readonly postTopLevelRaiseMm: number
 }
 function method(args: string[], input?: unknown): unknown {
   try {
@@ -33,7 +34,7 @@ function method(args: string[], input?: unknown): unknown {
 export function validateWetSupportCageChoices(input: unknown): WetSupportCageChoices {
   const admitted = method(['--validate-settings'], input)
   if (!record(admitted) || admitted.schema !== 'str-wet-support-cage-comparison/1'
-    || !finite(admitted.linkHookTailMm) || !same(admitted, input)) throw new Error('Unsupported serialized wet-support cage choices')
+    || !finite(admitted.postTopLevelRaiseMm) || !finite(admitted.linkHookTailMm) || !same(admitted, input)) throw new Error('Unsupported serialized wet-support cage choices')
   return admitted as WetSupportCageChoices
 }
 export function readWetSupportCageDefaults(): WetSupportCageChoices {
@@ -67,6 +68,7 @@ export function runWetSupportCageComparison(native: unknown, choices: WetSupport
   if (!record(output) || output.schema !== 'str-wet-support-cage-path-result/1'
     || !same(output.settings, settings) || !same(output.nativeSourceSHA256, native.sourceSHA256)
     || output.nativeCaseId !== native.nativeVertical.native.caseId
+    || !Array.isArray(output.postHeadDuties) || output.postHeadDuties.length !== 2
     || !record(output.collisions) || !Array.isArray(output.collisions.failures) || !finite(output.collisions.failedPairCount)
     || !record(output.internalClosures) || !Array.isArray(output.internalClosures.failures)
     || !record(output.cover) || !Array.isArray(output.cover.failedPaths) || !record(output.quantities)

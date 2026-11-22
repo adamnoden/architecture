@@ -195,6 +195,8 @@ Three layers keep distinct responsibilities.
 
 The Study is the first furnished comparison. Appearance, sound, solidity, ordinary handling and faithful reinstatement all matter. The current proposal carries explicit unresolved details and proceeds to the owner’s coordinated design review without claiming fabricated performance or aesthetic acceptance.
 
+The Study lighting comparison combines a desk task lamp, movable floor fill and a switched door-side wall source. An ordinary ceiling fitting remains a serious alternative. Fixed electrical enclosures and fitting supports remain independent of decorative faces, with explicit local space for deeper service stations. Task visibility, glare, arrival in darkness and replacement still require a matched physical trial.
+
 ## Openings as life-separated assemblies
 
 The representative window relationship is:

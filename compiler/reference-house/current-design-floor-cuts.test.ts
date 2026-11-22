@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { readFloorSectionCuts, recoverFloorSectionCuts } from './current-design/structural-floor-cuts.js'
+import { compareFloorSectionCuts, readFloorSectionCuts, recoverFloorSectionCuts } from './current-design/structural-floor-cuts.js'
 
 function field(rectangles: number[][], moment: (x: number,y: number) => number[]) {
   const g = 1/Math.sqrt(3)
@@ -24,6 +24,27 @@ test('fixed physical cuts integrate signed moments and absolute zero-crossings w
   const continuous=recoverFloorSectionCuts(field([[0,0,1000,1000]],(_x,y)=>[y/10-50,2,10]),
     [{id:'STR/zero-crossing',normal:'x',positionMm:250,intervalMm:[0,1000]}]).cuts[0]!
   close(continuous.absoluteBendingPlusTwistingKNm,35)
+})
+
+test('mesh screen follows physical identities, preserves failed limits and rejects changed geometry or missing heads', () => {
+  const sectionCuts=recoverFloorSectionCuts(field([[0,0,1000,1000]],()=>[10,2,3]),[{id:'STR/x',normal:'x',positionMm:100,intervalMm:[0,1000]}])
+  const coarse={heads:[{id:'P1',reactionKN_KNm:[1,2,3,4,5,6]},{id:'P2',reactionKN_KNm:[7,8,9,10,11,12]}],sectionCuts}
+  const fine=structuredClone(coarse);fine.heads.reverse()
+  const limits={maximumHeadComponentDifferenceKN_KNm:0.1,maximumRelativeCutIntegralDifference:0.05,absoluteCutIntegralFloorKNm:0.1}
+  assert.equal(compareFloorSectionCuts(coarse,fine,{...limits,...{scope:'A declared comparison scope'}}).declaredScreenPasses,true)
+  fine.heads[0]!.reactionKN_KNm[0]!+=0.2
+  close(compareFloorSectionCuts(coarse,fine,limits).maximumHeadComponentDifferenceKN_KNm,0.2)
+  assert.equal(compareFloorSectionCuts(coarse,fine,limits).governingHeadChange!.id,'P2')
+  assert.equal(compareFloorSectionCuts(coarse,fine,limits).declaredScreenPasses,false)
+  const changed=structuredClone(coarse);changed.sectionCuts.cuts[0]!.signedNormalMomentKNm=12
+  const screen=compareFloorSectionCuts(coarse,changed,limits)
+  close(screen.relativeCutIntegralChanges[0]!.signedNormalMomentKNm,1/6)
+  assert.equal(screen.declaredScreenPasses,false);assert.equal(screen.localCornerJointAccepted,false)
+  assert.throws(()=>compareFloorSectionCuts(coarse,{...fine,heads:fine.heads.slice(1)},limits),/identities differ/)
+  assert.throws(()=>compareFloorSectionCuts(coarse,{...fine,heads:[fine.heads[0]!,fine.heads[0]!] },limits),/Unique/)
+  changed.sectionCuts.cuts[0]!.positionMm=101
+  assert.throws(()=>compareFloorSectionCuts(coarse,changed,limits),/geometry or material differs/)
+  assert.throws(()=>compareFloorSectionCuts(coarse,fine,{...limits,absoluteCutIntegralFloorKNm:0}),/Positive/)
 })
 
 test('second geometry, changed cut and mesh subdivision preserve exact physical integration and unrelated raw control', () => {
