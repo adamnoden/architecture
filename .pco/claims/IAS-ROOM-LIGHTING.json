@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "node": "IAS-ROOM-LIGHTING",
+  "generation": 1,
+  "state": "claimed",
+  "leaseId": "c3d35a47-cb1b-40b3-92c2-a18b35228633",
+  "holder": {
+    "kind": "chatgpt",
+    "label": "ias-room-lighting-20261122"
+  },
+  "claimedAt": "2026-11-22T00:25:18.324Z",
+  "heartbeatAt": "2026-11-22T00:25:18.324Z",
+  "expiresAt": "2026-11-22T01:10:18.324Z",
+  "branch": "work/ias-room-lighting-20261122"
+}
