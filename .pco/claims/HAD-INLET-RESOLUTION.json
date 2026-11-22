@@ -9,11 +9,12 @@
     "label": "convergence-water-carrier-20261122"
   },
   "claimedAt": "2026-11-22T17:43:56.358Z",
-  "heartbeatAt": "2026-11-22T18:40:58.619Z",
-  "expiresAt": "2026-11-22T19:25:58.619Z",
+  "heartbeatAt": "2026-11-22T19:00:37.704Z",
+  "expiresAt": "2026-11-22T19:45:37.704Z",
   "checkpoint": {
-    "evidence": "Shared source8 code8cf468b8 and owning resultc78bb8d6 pushed; genuine ee7 combined regeneration and23focused tests pass. Real inlet browser coverage checkpointae142435 follows exact lightingc3f96603 and is ready for matched shared CI. Root retains exclusive native fingerprint diagnostic; no current-source mutation after handoff.",
-    "next": "Integrate/verify shared batch and real browser proof; next isolated CAD comparison examines finite side ears/posts, actual187kg frame vs floor-standing carrier, with actual working/removal fields and explicit pressure/thermal/uplift path. Use existing3D thermal kernels only after exact support-point admission; no physical capacity or native load credit."
+    "evidence": "Verified PR1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f. Shared source8 code8cf468b8ef47fcfc5006bdc72d25c7c267d3b868, owning resultc78bb8d603873361a60031aa86fdad8dfd86496a and browser proofae142435dbc391daed9f35ea87a0c7926af1e06b are pushed. Genuine ee7+HAD regeneration/23focused tests passed. Coordinated recovery618481bf8ac92101881fee82b1b3220fd88eac69 retains project/ccr/convergence-20261122-recovery.md. No successor merge/whole-water acceptance claimed.",
+    "next": "Resume from fresh main/ACO and the coordinated recovery branch, reacquire HAD canonically, reconcile all shared sources and rerun actual matched browser/full-health/native-fingerprint proof and publication preflight before merge. The unpushed isolated carrier CAD refactor has no observed final validation; regenerate it from admitted source8 inputs instead of treating it as earned evidence.",
+    "blocker": "Execution environment explicitly unavailable. Stopped implementation; no final successor CI/preflight or physical carrier/thermal/renewal acceptance. Connector-only CAS checkpoint/release, not a canonical CLI run."
   },
   "branch": "work/convergence-integrated-house-20261122",
   "predecessor": {
