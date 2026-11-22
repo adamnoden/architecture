@@ -87,9 +87,11 @@ The predecessor's local-only continuation chain is identified below so useful wo
 
 The frozen `global-mmd-native-controls.json` and `global-mmd-mesh-cut-controls.json` retain their original actual source/producer identities as dated numerical evidence. The changing shared cut method does not silently rebind those historical postprocessing hashes. Current cut consumers must use the regenerated canonical floor-cut receipt; historical killed workers remain separate from complete current native responses. The remaining same-source floor11/cuts/cage/profile work is not closed by this ancestor recovery.
 
-### Floor native-capture continuation checkpoint
+### Complete current floor native controls
 
-The canonical11-case floor receipt is still pending at this checkpoint. The following complete, exact-source/request/checksum captures exist under `/tmp/ovid-seated-wet-controls/147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/`. These rows record successful controls only; they do not establish a complete envelope, numerical stability or house acceptance. Full native bytes remain in the named execution store, not this note. The existing producer must verify or regenerate each capture before using it.
+The canonical11-case floor receipt has now been genuinely regenerated. All11 controls executed as new complete source/request/checksum-bound native responses; none was inferred from an earlier source. The producer completed in430.869seconds, observed child peak1127588KiB, with native58 unchanged. Its internal mass, six-wrench balance, contact, actual wet25/27, matched200/250 and restoration checks passed; the independent current-parent `--check` also passed. All3432 retained head components match recovered79882ce5 within7.115e-9kN/kNm against the1e-6 comparator. This supersedes the earlier six-control mid-run checkpoint.
+
+Full captures remain under `/tmp/ovid-seated-wet-controls/147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/`; the canonical receipt retains their actual authored requests, native source bindings and checksums. The execution store is not an alternative current authority or a guarantee of indefinite binary retention.
 
 | Completed native control | Full response SHA256 |
 |---|---|
@@ -97,7 +99,37 @@ The canonical11-case floor receipt is still pending at this checkpoint. The foll
 | `matched200-G135-Q2-rho27` | `ea83b05f528b6c2616ee177fa44e6a35f5c038380f7762ca4c9195de4f49838f` |
 | `matched250-G135-Q2-rho27` | `524e168b04a47d1ab615220f3ba8914b302d90ef6cc4d558bb62431885a1c5b3` |
 | `wet-aligned-G135-Q2-rho27` | `25eb3e45c0cbdd8afbbed90d37bd7c2b9f6b6483e66469f714876903e0855af4` |
-| `wet-shifted-quadrature8` | `35ec6ce62cf309ca5731a3e1663ad039a849eb5e2571c6aa41ed756ad3aedd06` |
 | `wet-south-pad-north160` | `fd8802751287734fa0d3745fa9600e30bce2f862f7e34401034b4390677a9985` |
+| `wet-shifted-quadrature8` | `35ec6ce62cf309ca5731a3e1663ad039a849eb5e2571c6aa41ed756ad3aedd06` |
+| `wet-zeroG-roof-suction` | `480c50b0cf958534252ecf46f03c8c3e221caba0da5c622206faba0182476819` |
+| `wet-heavy-roof3` | `d52e18050eccdf9a7b79967709f71cf84a2fb748e443445eba6fff1bcc7b3f70` |
+| `wet-aligned-quadrature8` | `5f12af2343027548c4a0916d5c087a1234f4a2a1c24017cc5bd5400740d8dbba` |
+| `wet-aligned-concrete27` | `a3fa67978070ee76021d15683a1f3964d8a25f7510ae6a23cf1cbd2797494a50` |
+| `restored200` | `3ded67e279869260c49bb0fcda146f16ccf9c88b66e17a9e4e491bf0cf383da1` |
 
-Continue the same frozen-source floor producer through all11 controls, then regenerate the canonical cut/cage/profile joins. Interrupted, absent or unmatched controls cannot be inferred from this checkpoint.
+The floor receipt does not close design-strip convergence, local pad material/contact, reinforcement/anchorage, a complete signed action envelope, foundation resistance or house selection. The same-source cut and cage joins are completed below. Architectural/profile consumers still require their own current-parent regeneration.
+
+### Current cuts, transverse shear and cage joins
+
+The canonical16-control cut producer completed in59.282seconds with native58 unchanged:11 freshly executed floor controls were verified/reused, four complete fine/mixed controls were recovered with exact source/request/full-response checksums, and the absent700mm control was genuinely solved. The current receipt uses schema `str-fixed-floor-cut-comparison/2`; earlier killed250/274 workers are explicitly historical and no longer suppress complete current responses. Its independent `--check` passed.
+
+The shared native MITC4 transverse postprocessor reconstructs actual bending plus assumed-shear energy for all16 physical fields, with maximum relative discrepancy2.848e-12 against the unchanged1e-7 limit. All four authored physical cuts now retain signed transverse shear as well as bending and twisting. This is executed constitutive recovery, not moment differentiation, smoothing or a complete joint free body.
+
+All six declared comparisons fail the unchanged0.1kN/kNm head and5% cut screens:
+
+| Comparison | Maximum head-component change kN/kNm | Maximum relative moment/twist/absolute cut change |
+|---|---:|---:|
+| `mesh700To500` |1.686608620 |15.406607% |
+| `mesh500To250` |2.773789385 |32.717459% |
+| `inPlane500To250` |0.140420321 |0.010460% |
+| `vertical500To250AtInPlane250` |2.795182788 |32.723884% |
+| `vertical500To250` |2.795101793 |32.724632% |
+| `inPlane500To250AtVertical250` |0.148202391 |0.011724% |
+
+The separated controls locate the large cut sensitivity in the **coupled vertical discretisation route**. That route also changes ordinary contact-fibre and finite-receiver subdivisions; this comparison does not uniquely identify a faulty MITC4 kernel. In-plane refinement alone leaves these cuts almost unchanged but still fails the absolute head criterion. The500→250 signed transverse force on the Y650 cut changes−22.154949→−13.544441kN. Neither a raw peak nor the available fixed cuts provide an accepted strip or corner-joint demand. No slab thickening is selected.
+
+`wet_support_cage_comparison_proof.py --write` completed in23.099seconds, reusing all11 exact full captures and assessing all seven actual wet cases through the shared method. It executes zero native solves, retains one independently checked identical-geometry group, and passes the exact canonical floor/source/request/full-result parent join. Full and minimal retained inputs reproduce the same result.
+
+The post-head producer completed its four actual graded-link geometry replays in38.649seconds, with native58 unchanged. Nominal raises0/10/15mm retain zero modeled cover failures;20mm still has two cover failures. Existing actual head duties, geometry checks and unqualified bond/splitting/material/anchorage/installed-mass limits remain. Changing link levels has not supplied a developed bar end or accepted head region.
+
+A final byte audit verified749 declared current input bindings across20 native/action/postprocessing receipts. All ancestry, floor, cuts and cage outputs now share their actual controlling source bytes at this checkpoint. The frozen global-MMD observer receipts remain dated evidence under their original producer bindings. Architectural/profile consumers, any newly added whole-joint wrench metadata, exact-head repository health and publication preflight remain separate integration steps. The structural packet stays open.

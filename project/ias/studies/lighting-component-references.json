@@ -66,7 +66,11 @@
     "reservedCompleteProjectionMm": 180,
     "projectionAuthority": "Project requirement envelope, not a measured manufacturer assembled dimension; confirm complete shade/bracket/clearance before fabrication.",
     "sourceType": "Replaceable E27, Class I earthed, wired-in, IP20; no separate driver required; dimming depends on lamp.",
-    "materialAdmission": "NOT_ADMITTED: fabric shade, backing/binders, coating, socket, cable insulation, terminals and supplied lamp need complete constituent admission."
+    "materialAdmission": "NOT_ADMITTED: fabric shade, backing/binders, coating, socket, cable insulation, terminals and supplied lamp need complete constituent admission.",
+    "instructionsCheckedDate": "2026-11-22",
+    "mountingSequenceAuthority": "Astro82244Issue2: fixture body releases from retained bracket at two side screws; terminal access and earth require isolation. No bracket hole pitch or complete installed mass is supplied by this witness.",
+    "datasheet": "https://assets.astrolighting.com/pdfs/original/5346-7170-backplate3-datasheet-issue1.pdf",
+    "datasheetAuthority": "Manufacturer current product link serves legacy7170sheet22May2013: geometry witness only, not current complete assembly identity or installed mass."
   },
   "projectRequirements": {
     "fixedBoundaryDepthMm": 7.5,
@@ -74,8 +78,6 @@
     "localCarrierDepthReserveMm": 2,
     "bayWidthMm": 300,
     "doorStopMm": 50,
-    "containmentEnvelopeMm": 20,
-    "cornerBendOuterReserveMm": 80,
     "socketGripNormalMm": 100,
     "panelRoomwardDrawMm": 50,
     "parkingSquareMm": 300,
@@ -100,5 +102,26 @@
     "shadeDiameterMm": 145,
     "shadeHeightMm": 192,
     "materialAdmission": "NOT_ADMITTED: painted aluminium, insulation, cable, plug, switch and complete constituents need admission. Supplied lead length and exit, full aiming sweep and installed mass remain product confirmation duties; do not inherit the background fitting load envelope."
+  },
+  "cornerConstruction": {
+    "railWidthMm": 20,
+    "steelThicknessMm": 2,
+    "boltEdgeMm": 10,
+    "holeDiameterMm": 5,
+    "boltEndInsetMm": 15,
+    "centrePlateWidthMm": 100,
+    "centrePlateHeightMm": 180,
+    "crossbarCentreOffsetMm": 60,
+    "steelDensityKgM3Comparison": 7850,
+    "infillBottomZMm": 1200,
+    "infillModuleGapMm": 25,
+    "containmentOutsideDiameterMm": 20,
+    "bendCentrelineRadiusMm": 70,
+    "cradleBackMarginMm": 50,
+    "cradleBottomZMm": 100,
+    "fixedIslandWidthMm": 150,
+    "fixedIslandHeightMm": 100,
+    "entryCollarOutsideDiameterMm": 30,
+    "entryCollarAxialLengthMm": 30
   }
 }

@@ -15,7 +15,7 @@ complete current700,500,250 and both operator-separated controls. Old killed
 workers remain source-specific history; they cannot suppress a current result.
 
 The separated controls identify vertical-plate discretisation as the controlling
-fixed-cut uncertainty. In-plane-only refinement changes the head response by
+fixed-cut uncertainty. This route changes the plate mesh, normal-bearing fibres and finite receiver subdivisions together; it does not isolate a faulty plate kernel. In-plane-only refinement changes the head response by
 0.140420kN and cut integrals by at most0.01046% with vertical500 held; vertical-only
 refinement changes the head response by2.795102kN and reproduces the large cut
 changes. Neither meets the complete declared screen. Those are mesh-pitch edits,

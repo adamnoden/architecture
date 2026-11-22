@@ -1,6 +1,6 @@
 {
   "schema": "str-wet-post-head-duties/1",
-  "parentSettingsCanonicalSHA256": "bcdc3cb380af2e45eca2da799ed53e281aa8f46907d27ca68a18657e39c99028",
+  "parentSettingsCanonicalSHA256": "78af9fecb2476041dc114944804c89e8c65b0c150a59f96bfcd05cf034aaccca",
   "authoredComparisonSettings": {
     "schema": "str-wet-support-cage-comparison/1",
     "mainDiameterMm": 12.0,
@@ -55,45 +55,45 @@
   "controls": [
     {
       "nativeCaseId": "wet-aligned-G135-Q2-rho27",
-      "fullResultSHA256": "42438532ef0fcfb384e8a6548b018369191ffb37a36d1183d83498b5acca1b36",
-      "assessmentInputSHA256": "62ea7abc0a72e9586f853af365bc4933df8c052207f51d3fce67c78b8b97657e",
+      "fullResultSHA256": "25eb3e45c0cbdd8afbbed90d37bd7c2b9f6b6483e66469f714876903e0855af4",
+      "assessmentInputSHA256": "fd0fb5ffb2d3501555e4e700ef56d35ac7ad4af2fef176a36b65e17813c164c5",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
           "id": "WET-SUPPORT/post/0",
           "headWrenchKN_KNmm": [
-            -7.551077818579444e-14,
-            -1.1657341758564144e-14,
-            -52.70144721390396,
-            -119.53014928393151,
-            53.750624483251016,
-            6.0458305028987525e-12
+            1.5772496156363225e-13,
+            3.6887159993170826e-14,
+            -52.70144721403797,
+            -119.53014928407282,
+            53.75062448626032,
+            6.844924627102955e-11
           ],
           "baseWrenchKN_KNmm": [
-            7.551077818579444e-14,
-            1.1657341758564144e-14,
-            65.29795971390396,
-            119.53014928389481,
-            -53.75062448301022,
-            -6.0458305028987525e-12
+            -1.5772496156363225e-13,
+            -3.6887159993170826e-14,
+            65.29795971403797,
+            119.53014928419057,
+            -53.750624486763435,
+            -6.844924627102955e-11
           ],
-          "compressionKN": 52.70144721390396,
+          "compressionKN": 52.70144721403797,
           "bodyGravityKN": 12.596512500000003,
           "bodyGravityKNPerMm": 0.003948750000000001,
           "transportedBaseWrenchKN_KNmm": [
-            -7.551077818579444e-14,
-            -1.1657341758564144e-14,
-            -65.29795971390396,
-            -119.53014928389432,
-            53.750624483010135,
-            6.0458305028987525e-12
+            1.5772496156363225e-13,
+            3.6887159993170826e-14,
+            -65.29795971403797,
+            -119.53014928419049,
+            53.75062448676346,
+            6.844924627102955e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 2.8341343503223158,
+          "fullCompressionRequiredAxialAtHeadKN": 2.8341343503936454,
           "headResultantFromAxisMm": [
-            1.019907940385179,
-            2.2680619907605966
+            1.0199079404396865,
+            2.2680619907575106
           ],
-          "headGrossFullCompressionRatio": 0.05377716362928645,
+          "headGrossFullCompressionRatio": 0.05377716363050317,
           "fullCompressionFirstPossibleDepthMm": 0.0,
           "withinPostHeight": true,
           "status": "loaded-compression",
@@ -103,39 +103,39 @@
         {
           "id": "WET-SUPPORT/post/1",
           "headWrenchKN_KNmm": [
-            -1.0996897836790254e-12,
-            -2.248201624865942e-15,
-            -0.4721639347215847,
-            14.218804367616883,
-            42.51726013449937,
-            -1.5639045614079805e-11
+            4.27920199275178e-12,
+            -4.0245584642661925e-15,
+            -0.4721639346175275,
+            14.218804364931941,
+            42.51726012464243,
+            -1.5759837879159022e-11
           ],
           "baseWrenchKN_KNmm": [
-            1.0996897836790254e-12,
-            2.248201624865942e-15,
-            13.068676434721585,
-            -14.218804367624045,
-            -42.51726013099105,
-            1.5639045614079805e-11
+            -4.27920199275178e-12,
+            4.0245584642661925e-15,
+            13.06867643461753,
+            -14.218804364943992,
+            -42.517260138292755,
+            1.5759837879159022e-11
           ],
-          "compressionKN": 0.4721639347215847,
-          "bodyGravityKN": 12.5965125,
-          "bodyGravityKNPerMm": 0.00394875,
+          "compressionKN": 0.4721639346175275,
+          "bodyGravityKN": 12.596512500000003,
+          "bodyGravityKNPerMm": 0.003948750000000001,
           "transportedBaseWrenchKN_KNmm": [
-            -1.0996897836790254e-12,
-            -2.248201624865942e-15,
-            -13.068676434721585,
-            14.218804367624054,
-            42.51726013099135,
-            -1.5639045614079805e-11
+            4.27920199275178e-12,
+            -4.0245584642661925e-15,
+            -13.06867643461753,
+            14.218804364944779,
+            42.51726013829309,
+            -1.5759837879159022e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 1.1707515998002618,
+          "fullCompressionRequiredAxialAtHeadKN": 1.170751599536995,
           "headResultantFromAxisMm": [
-            90.04766566842937,
-            -30.11412630657849
+            90.04766566739832,
+            -30.11412630752869
           ],
-          "headGrossFullCompressionRatio": 2.4795447379745448,
-          "fullCompressionFirstPossibleDepthMm": 176.91362205107762,
+          "headGrossFullCompressionRatio": 2.4795447379634212,
+          "fullCompressionFirstPossibleDepthMm": 176.9136220163209,
           "withinPostHeight": true,
           "status": "loaded-compression",
           "headDRegionAccepted": false,
@@ -145,45 +145,45 @@
     },
     {
       "nativeCaseId": "wet-south-pad-north160",
-      "fullResultSHA256": "ea09506940b0dd573414889780880215386fed55c4c2f64fafd5db6fb02608fc",
-      "assessmentInputSHA256": "751449f08825e10d76296c9641465e4ccd88db3afb86e424b8b201532278d9b5",
+      "fullResultSHA256": "fd8802751287734fa0d3745fa9600e30bce2f862f7e34401034b4390677a9985",
+      "assessmentInputSHA256": "ec5f8b26ee7dc32ff1ee412bfc077c84dfc31a9da930e34d4fe7381404e699df",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
           "id": "WET-SUPPORT/post/0",
           "headWrenchKN_KNmm": [
-            -2.0500268149703516e-13,
-            -1.4013790128331038e-13,
-            -45.06607117324668,
-            -7049.094254587359,
-            27.40898156600224,
-            -7.288303294217258e-11
+            1.6291828996983782e-13,
+            -2.483291350330319e-13,
+            -45.0660711732936,
+            -7049.094254594078,
+            27.408981569986743,
+            1.6208101527581675e-10
           ],
           "baseWrenchKN_KNmm": [
-            2.0500268149703516e-13,
-            1.4013790128331038e-13,
-            57.66258367324668,
-            7049.094254586902,
-            -27.408981565348242,
-            7.288303294217258e-11
+            -1.6291828996983782e-13,
+            2.483291350330319e-13,
+            57.662583673293604,
+            7049.0942545932785,
+            -27.408981570506526,
+            -1.6208101527581675e-10
           ],
-          "compressionKN": 45.06607117324668,
+          "compressionKN": 45.0660711732936,
           "bodyGravityKN": 12.596512500000003,
           "bodyGravityKNPerMm": 0.003948750000000001,
           "transportedBaseWrenchKN_KNmm": [
-            -2.0500268149703516e-13,
-            -1.4013790128331038e-13,
-            -57.66258367324668,
-            -7049.094254586911,
-            27.40898156534828,
-            -7.288303294217258e-11
+            1.6291828996983782e-13,
+            -2.483291350330319e-13,
+            -57.662583673293604,
+            -7049.094254593286,
+            27.40898157050645,
+            1.6208101527581675e-10
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 94.62043835371355,
+          "fullCompressionRequiredAxialAtHeadKN": 94.62043835389508,
           "headResultantFromAxisMm": [
-            0.6081954972430232,
-            156.41688017330497
+            0.6081954973308047,
+            156.4168801732912
           ],
-          "headGrossFullCompressionRatio": 2.0995936830163413,
+          "headGrossFullCompressionRatio": 2.099593683018183,
           "fullCompressionFirstPossibleDepthMm": null,
           "withinPostHeight": false,
           "status": "loaded-compression",
@@ -193,39 +193,39 @@
         {
           "id": "WET-SUPPORT/post/1",
           "headWrenchKN_KNmm": [
-            3.041095153477613e-12,
-            -2.6367796834847468e-15,
-            -0.24249298900708194,
-            8.223046375045783,
-            20.761681116477007,
-            -1.7045920230884803e-11
+            -2.2905149998919683e-12,
+            5.828670879282072e-15,
+            -0.24249298880112402,
+            8.223046369732401,
+            20.76168109696826,
+            -1.7145396213891217e-11
           ],
           "baseWrenchKN_KNmm": [
-            -3.041095153477613e-12,
-            2.6367796834847468e-15,
-            12.839005489007082,
-            -8.223046375053798,
-            -20.761681126178075,
-            1.7045920230884803e-11
+            2.2905149998919683e-12,
+            -5.828670879282072e-15,
+            12.839005488801124,
+            -8.223046369713131,
+            -20.76168108966138,
+            1.7145396213891217e-11
           ],
-          "compressionKN": 0.24249298900708194,
+          "compressionKN": 0.24249298880112402,
           "bodyGravityKN": 12.5965125,
           "bodyGravityKNPerMm": 0.00394875,
           "transportedBaseWrenchKN_KNmm": [
-            3.041095153477613e-12,
-            -2.6367796834847468e-15,
-            -12.839005489007082,
-            8.223046375054194,
-            20.7616811261781,
-            -1.7045920230884803e-11
+            -2.2905149998919683e-12,
+            5.828670879282072e-15,
+            -12.839005488801124,
+            8.223046369713808,
+            20.76168108966152,
+            -1.7145396213891217e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 0.58875633640649,
+          "fullCompressionRequiredAxialAtHeadKN": 0.5887563358854431,
           "headResultantFromAxisMm": [
-            85.61765518041706,
-            -33.91044998338336
+            85.61765517268442,
+            -33.91044999027322
           ],
-          "headGrossFullCompressionRatio": 2.427931375736787,
-          "fullCompressionFirstPossibleDepthMm": 87.68935673455275,
+          "headGrossFullCompressionRatio": 2.427931375650206,
+          "fullCompressionFirstPossibleDepthMm": 87.68935665202339,
           "withinPostHeight": true,
           "status": "loaded-compression",
           "headDRegionAccepted": false,
@@ -235,45 +235,45 @@
     },
     {
       "nativeCaseId": "wet-shifted-quadrature8",
-      "fullResultSHA256": "d240d4b38f62a4865c828ebd560ad82846b75b225f4839768da8c7831ed50a4e",
-      "assessmentInputSHA256": "014c68f25ae505a9583079118c36c1b163e5cf1b98b51ffad9c977c697ec6eef",
+      "fullResultSHA256": "35ec6ce62cf309ca5731a3e1663ad039a849eb5e2571c6aa41ed756ad3aedd06",
+      "assessmentInputSHA256": "d886ecff78e97372d914e7daae2dec611cbb29fa58f0b0c5767b412fdc3d7b07",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
           "id": "WET-SUPPORT/post/0",
           "headWrenchKN_KNmm": [
-            -2.104288965298906e-13,
-            1.029856755430103e-12,
-            -45.06668203775875,
-            -7049.193763480267,
-            27.407405883992986,
-            -4.729461267061197e-11
+            -4.912042994575927e-14,
+            -3.3431590829025026e-13,
+            -45.066682037800206,
+            -7049.193763486187,
+            27.40740588795859,
+            -1.0741540990011345e-10
           ],
           "baseWrenchKN_KNmm": [
-            2.104288965298906e-13,
-            -1.029856755430103e-12,
-            57.663194537758756,
-            7049.193763483547,
-            -27.407405883321786,
-            4.729461267061197e-11
+            4.912042994575927e-14,
+            3.3431590829025026e-13,
+            57.66319453780021,
+            7049.193763485118,
+            -27.407405887801858,
+            1.0741540990011345e-10
           ],
-          "compressionKN": 45.06668203775875,
+          "compressionKN": 45.066682037800206,
           "bodyGravityKN": 12.596512500000003,
           "bodyGravityKNPerMm": 0.003948750000000001,
           "transportedBaseWrenchKN_KNmm": [
-            -2.104288965298906e-13,
-            1.029856755430103e-12,
-            -57.663194537758756,
-            -7049.193763483552,
-            27.40740588332172,
-            -4.729461267061197e-11
+            -4.912042994575927e-14,
+            -3.3431590829025026e-13,
+            -57.66319453780021,
+            -7049.19376348512,
+            27.407405887801897,
+            -1.0741540990011345e-10
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 94.62172877705981,
+          "fullCompressionRequiredAxialAtHeadKN": 94.62172877723026,
           "headResultantFromAxisMm": [
-            0.6081522900006243,
-            156.41696802915638
+            0.608152290088059,
+            156.41696802914387
           ],
-          "headGrossFullCompressionRatio": 2.099593857337484,
+          "headGrossFullCompressionRatio": 2.099593857339335,
           "fullCompressionFirstPossibleDepthMm": null,
           "withinPostHeight": false,
           "status": "loaded-compression",
@@ -283,39 +283,39 @@
         {
           "id": "WET-SUPPORT/post/1",
           "headWrenchKN_KNmm": [
-            -2.95501123570574e-12,
-            -6.300515664747763e-15,
-            -0.23580787761243283,
-            7.630816891406937,
-            20.761918089640147,
-            -1.717381792332162e-11
+            -5.39905620211556e-12,
+            -3.0253577421035516e-15,
+            -0.23580787745096732,
+            7.630816886480261,
+            20.761918074317833,
+            -1.7138290786533616e-11
           ],
           "baseWrenchKN_KNmm": [
-            2.95501123570574e-12,
-            6.300515664747763e-15,
-            12.832320377612433,
-            -7.630816891426093,
-            -20.761918080213803,
-            1.717381792332162e-11
+            5.39905620211556e-12,
+            3.0253577421035516e-15,
+            12.83232037745097,
+            -7.630816886489811,
+            -20.761918057095016,
+            1.7138290786533616e-11
           ],
-          "compressionKN": 0.23580787761243283,
-          "bodyGravityKN": 12.5965125,
-          "bodyGravityKNPerMm": 0.00394875,
+          "compressionKN": 0.23580787745096732,
+          "bodyGravityKN": 12.596512500000003,
+          "bodyGravityKNPerMm": 0.003948750000000001,
           "transportedBaseWrenchKN_KNmm": [
-            -2.95501123570574e-12,
-            -6.300515664747763e-15,
-            -12.832320377612433,
-            7.630816891427036,
-            20.76191808021366,
-            -1.717381792332162e-11
+            -5.39905620211556e-12,
+            -3.0253577421035516e-15,
+            -12.83232037745097,
+            7.630816886489912,
+            20.761918057094842,
+            -1.7138290786533616e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 0.5808654119027625,
+          "fullCompressionRequiredAxialAtHeadKN": 0.5808654114834817,
           "headResultantFromAxisMm": [
-            88.04590542036026,
-            -32.36031369549381
+            88.04590541567026,
+            -32.360313696759235
           ],
-          "headGrossFullCompressionRatio": 2.463299435896949,
-          "fullCompressionFirstPossibleDepthMm": 87.38399095520813,
+          "headGrossFullCompressionRatio": 2.463299435805591,
+          "fullCompressionFirstPossibleDepthMm": 87.38399088866865,
           "withinPostHeight": true,
           "status": "loaded-compression",
           "headDRegionAccepted": false,
@@ -325,40 +325,40 @@
     },
     {
       "nativeCaseId": "wet-zeroG-roof-suction",
-      "fullResultSHA256": "ce2834a98ce4473115a42959dcf637ae01da2baa47471725bf8ff927e79a1608",
-      "assessmentInputSHA256": "85b1f60d02261032bd0ae03284b2f4b6179e171857f7cb6b0da763156004bb5b",
+      "fullResultSHA256": "480c50b0cf958534252ecf46f03c8c3e221caba0da5c622206faba0182476819",
+      "assessmentInputSHA256": "c63a0e017cade4a20873dada6ff5d07e9c67347e69849ef4529af0998a026519",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
           "id": "WET-SUPPORT/post/0",
           "headWrenchKN_KNmm": [
-            -3.816391647148976e-15,
-            4.121702978920894e-15,
-            2.5091040356528538e-14,
-            4.666134145736578e-10,
-            -7.553069281129865e-12,
-            6.530775920055021e-12
+            -5.551115123125783e-17,
+            -3.969047313034935e-15,
+            2.4868995751603507e-14,
+            -1.6058265828178264e-12,
+            -1.9326762412674725e-12,
+            -3.7121417051366734e-12
           ],
           "baseWrenchKN_KNmm": [
-            3.816391647148976e-15,
-            -4.121702978920894e-15,
-            -2.5091040356528538e-14,
-            -4.531699460130767e-10,
-            1.9760193481488386e-11,
-            -6.530775920055021e-12
+            5.551115123125783e-17,
+            3.969047313034935e-15,
+            -2.4868995751603507e-14,
+            -1.0871303857129533e-11,
+            2.1316282072803006e-12,
+            3.7121417051366734e-12
           ],
-          "compressionKN": -2.5091040356528538e-14,
+          "compressionKN": -2.4868995751603507e-14,
           "bodyGravityKN": 0.0,
           "bodyGravityKNPerMm": 0.0,
           "transportedBaseWrenchKN_KNmm": [
-            -3.816391647148976e-15,
-            4.121702978920894e-15,
-            2.5091040356528538e-14,
-            4.5346518207090014e-10,
-            -1.9727358635535097e-11,
-            6.530775920055021e-12
+            -5.551115123125783e-17,
+            -3.969047313034935e-15,
+            2.4868995751603507e-14,
+            1.1055434345763615e-11,
+            -2.109756813695185e-12,
+            -3.7121417051366734e-12
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 6.395813793110741e-12,
+          "fullCompressionRequiredAxialAtHeadKN": 6.601124205656398e-14,
           "headResultantFromAxisMm": null,
           "headGrossFullCompressionRatio": null,
           "fullCompressionFirstPossibleDepthMm": 0.0,
@@ -370,33 +370,33 @@
         {
           "id": "WET-SUPPORT/post/1",
           "headWrenchKN_KNmm": [
-            -1.582067810090848e-15,
-            -5.093148125467906e-15,
-            9.414691248821327e-14,
-            -9.265477274311706e-12,
-            -9.265477274311706e-12,
-            -2.9974245308039826e-11
+            -1.8318679906315083e-15,
+            -1.5557000132560006e-14,
+            1.1901590823981678e-13,
+            -1.3812950783176348e-11,
+            -9.890754881780595e-12,
+            -3.0023983299543033e-11
           ],
           "baseWrenchKN_KNmm": [
-            1.582067810090848e-15,
-            5.093148125467906e-15,
-            -9.414691248821327e-14,
-            -6.87805368215777e-12,
-            1.4381384971784428e-11,
-            2.9974245308039826e-11
+            1.8318679906315083e-15,
+            1.5557000132560006e-14,
+            -1.1901590823981678e-13,
+            -3.5413449950283393e-11,
+            1.5575096767861396e-11,
+            3.0023983299543033e-11
           ],
-          "compressionKN": -9.414691248821327e-14,
+          "compressionKN": -1.1901590823981678e-13,
           "bodyGravityKN": 0.0,
           "bodyGravityKNPerMm": 0.0,
           "transportedBaseWrenchKN_KNmm": [
-            -1.582067810090848e-15,
-            -5.093148125467906e-15,
-            9.414691248821327e-14,
-            6.9816652459309125e-12,
-            -1.4312273588501512e-11,
-            -2.9974245308039826e-11
+            -1.8318679906315083e-15,
+            -1.5557000132560006e-14,
+            1.1901590823981678e-13,
+            3.581387963969007e-11,
+            -1.5734413771895106e-11,
+            -3.0023983299543033e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 3.3735840332109287e-13,
+          "fullCompressionRequiredAxialAtHeadKN": 4.124208666885701e-13,
           "headResultantFromAxisMm": null,
           "headGrossFullCompressionRatio": null,
           "fullCompressionFirstPossibleDepthMm": 0.0,
@@ -409,45 +409,45 @@
     },
     {
       "nativeCaseId": "wet-heavy-roof3",
-      "fullResultSHA256": "1e6d0db881bc0a2916be6016359f2d882f3723b16642cc8565c849d497fe6295",
-      "assessmentInputSHA256": "b973d4291b525d98114ff282f31f166469135b7e432d3420ae937ec208c62c1e",
+      "fullResultSHA256": "d52e18050eccdf9a7b79967709f71cf84a2fb748e443445eba6fff1bcc7b3f70",
+      "assessmentInputSHA256": "8606db5927a8b0efbe4f6bd27edd2b5b29dabbb1d47cea555e99b39352edc95a",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
           "id": "WET-SUPPORT/post/0",
           "headWrenchKN_KNmm": [
-            -1.998297360916723e-12,
-            -2.4842350399012503e-12,
-            -44.36393325523074,
-            -6942.602626274321,
-            27.17228951663619,
-            -8.099281245677048e-10
+            -3.2959746043559335e-14,
+            6.808720254269929e-13,
+            -44.36393325532555,
+            -6942.602626288325,
+            27.172289518776452,
+            -8.44169179003984e-11
           ],
           "baseWrenchKN_KNmm": [
-            1.998297360916723e-12,
-            2.4842350399012503e-12,
-            56.960445755230744,
-            6942.602626266386,
-            -27.172289510261585,
-            8.099281245677048e-10
+            3.2959746043559335e-14,
+            -6.808720254269929e-13,
+            56.96044575532555,
+            6942.6026262904925,
+            -27.172289518671278,
+            8.44169179003984e-11
           ],
-          "compressionKN": 44.36393325523074,
+          "compressionKN": 44.36393325532555,
           "bodyGravityKN": 12.596512500000003,
           "bodyGravityKNPerMm": 0.003948750000000001,
           "transportedBaseWrenchKN_KNmm": [
-            -1.998297360916723e-12,
-            -2.4842350399012503e-12,
-            -56.960445755230744,
-            -6942.602626266396,
-            27.17228951026162,
-            -8.099281245677048e-10
+            -3.2959746043559335e-14,
+            6.808720254269929e-13,
+            -56.96044575532555,
+            -6942.602626290497,
+            27.17228951867131,
+            -8.44169179003984e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 93.19508785199022,
+          "fullCompressionRequiredAxialAtHeadKN": 93.19508785222635,
           "headResultantFromAxisMm": [
-            0.6124860336505992,
-            156.4920447051604
+            0.6124860336975335,
+            156.49204470514164
           ],
-          "headGrossFullCompressionRatio": 2.1006948891530492,
+          "headGrossFullCompressionRatio": 2.100694889153883,
           "fullCompressionFirstPossibleDepthMm": null,
           "withinPostHeight": false,
           "status": "loaded-compression",
@@ -457,39 +457,39 @@
         {
           "id": "WET-SUPPORT/post/1",
           "headWrenchKN_KNmm": [
-            1.0366291158803165e-12,
-            -6.38378239159465e-15,
-            -0.5876334179712286,
-            17.4512755655756,
-            52.04691884853952,
-            -1.4132695014268393e-11
+            -4.301697886788247e-13,
+            3.164135620181696e-15,
+            -0.5876334178024623,
+            17.451275561074397,
+            52.04691883414989,
+            -1.411137873219559e-11
           ],
           "baseWrenchKN_KNmm": [
-            -1.0366291158803165e-12,
-            6.38378239159465e-15,
-            13.184145917971229,
-            -17.45127556559504,
-            -52.04691885184644,
-            1.4132695014268393e-11
+            4.301697886788247e-13,
+            -3.164135620181696e-15,
+            13.184145917802464,
+            -17.45127556106371,
+            -52.04691883277792,
+            1.411137873219559e-11
           ],
-          "compressionKN": 0.5876334179712286,
-          "bodyGravityKN": 12.5965125,
-          "bodyGravityKNPerMm": 0.00394875,
+          "compressionKN": 0.5876334178024623,
+          "bodyGravityKN": 12.596512500000003,
+          "bodyGravityKNPerMm": 0.003948750000000001,
           "transportedBaseWrenchKN_KNmm": [
-            1.0366291158803165e-12,
-            -6.38378239159465e-15,
-            -13.184145917971229,
-            17.451275565595964,
-            52.046918851846364,
-            -1.4132695014268393e-11
+            -4.301697886788247e-13,
+            3.164135620181696e-15,
+            -13.184145917802464,
+            17.451275561064303,
+            52.04691883277765,
+            -1.411137873219559e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 1.433766416866279,
+          "fullCompressionRequiredAxialAtHeadKN": 1.4337664164741946,
           "headResultantFromAxisMm": [
-            88.57038632729328,
-            -29.6975546860918
+            88.57038632824298,
+            -29.697554686960952
           ],
-          "headGrossFullCompressionRatio": 2.4398993879828637,
-          "fullCompressionFirstPossibleDepthMm": 214.27869551128705,
+          "headGrossFullCompressionRatio": 2.4398993880163684,
+          "fullCompressionFirstPossibleDepthMm": 214.2786954528891,
           "withinPostHeight": true,
           "status": "loaded-compression",
           "headDRegionAccepted": false,
@@ -499,45 +499,45 @@
     },
     {
       "nativeCaseId": "wet-aligned-quadrature8",
-      "fullResultSHA256": "d777a90115d02a8d6d40aa14405a346c2a14df2631ae33d299159c30eec56257",
-      "assessmentInputSHA256": "12b4905aa142f182879987210ae8b7c21520494d1dfbf4d7b31a66f99f89c14b",
+      "fullResultSHA256": "5f12af2343027548c4a0916d5c087a1234f4a2a1c24017cc5bd5400740d8dbba",
+      "assessmentInputSHA256": "9a4af90e2a3b7edba000a69ebd3cf335bb05ae1ad50e7125fc3874d4babb22e2",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
           "id": "WET-SUPPORT/post/0",
           "headWrenchKN_KNmm": [
-            1.50937855963873e-13,
-            1.3825052214144762e-13,
-            -52.70297343253357,
-            -119.54717758781365,
-            53.75008407934378,
-            1.907807245515869e-12
+            1.0120073182240397e-13,
+            9.12880881998035e-14,
+            -52.702973432656734,
+            -119.54717758760117,
+            53.75008408277922,
+            -2.40485853453265e-10
           ],
           "baseWrenchKN_KNmm": [
-            -1.50937855963873e-13,
-            -1.3825052214144762e-13,
-            65.29948593253357,
-            119.54717758825487,
-            -53.750084079825264,
-            -1.907807245515869e-12
+            -1.0120073182240397e-13,
+            -9.12880881998035e-14,
+            65.29948593265674,
+            119.54717758789275,
+            -53.750084083102045,
+            2.40485853453265e-10
           ],
-          "compressionKN": 52.70297343253357,
+          "compressionKN": 52.702973432656734,
           "bodyGravityKN": 12.596512500000003,
           "bodyGravityKNPerMm": 0.003948750000000001,
           "transportedBaseWrenchKN_KNmm": [
-            1.50937855963873e-13,
-            1.3825052214144762e-13,
-            -65.29948593253357,
-            -119.54717758825467,
-            53.75008407982527,
-            1.907807245515869e-12
+            1.0120073182240397e-13,
+            9.12880881998035e-14,
+            -65.29948593265674,
+            -119.54717758789238,
+            53.750084083102045,
+            -2.40485853453265e-10
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 2.8343489235146797,
+          "fullCompressionRequiredAxialAtHeadKN": 2.8343489235911257,
           "headResultantFromAxisMm": [
-            1.0198681512372474,
-            2.2683194097359434
+            1.019868151300049,
+            2.268319409726611
           ],
-          "headGrossFullCompressionRatio": 0.05377967767118496,
+          "headGrossFullCompressionRatio": 0.05377967767250978,
           "fullCompressionFirstPossibleDepthMm": 0.0,
           "withinPostHeight": true,
           "status": "loaded-compression",
@@ -547,39 +547,39 @@
         {
           "id": "WET-SUPPORT/post/1",
           "headWrenchKN_KNmm": [
-            -8.857220512581421e-13,
-            -2.9976021664879227e-15,
-            -0.4466716096472316,
-            13.761985736665338,
-            40.05271240078142,
+            4.2288395007972213e-13,
+            -8.465450562766819e-15,
+            -0.4466716094633876,
+            13.761985731789935,
+            40.052712385084305,
             -1.589484099895344e-11
           ],
           "baseWrenchKN_KNmm": [
-            8.857220512581421e-13,
-            2.9976021664879227e-15,
-            13.043184109647232,
-            -13.761985736674774,
-            -40.052712397956014,
+            -4.2288395007972213e-13,
+            8.465450562766819e-15,
+            13.04318410946339,
+            -13.761985731816651,
+            -40.052712386432916,
             1.589484099895344e-11
           ],
-          "compressionKN": 0.4466716096472316,
-          "bodyGravityKN": 12.5965125,
-          "bodyGravityKNPerMm": 0.00394875,
+          "compressionKN": 0.4466716094633876,
+          "bodyGravityKN": 12.596512500000003,
+          "bodyGravityKNPerMm": 0.003948750000000001,
           "transportedBaseWrenchKN_KNmm": [
-            -8.857220512581421e-13,
-            -2.9976021664879227e-15,
-            -13.043184109647232,
-            13.7619857366749,
-            40.052712397955965,
+            4.2288395007972213e-13,
+            -8.465450562766819e-15,
+            -13.04318410946339,
+            13.761985731816939,
+            40.052712386433306,
             -1.589484099895344e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 1.1077865062504937,
+          "fullCompressionRequiredAxialAtHeadKN": 1.1077865058232472,
           "headResultantFromAxisMm": [
-            89.66925932994464,
-            -30.810074872531427
+            89.66925933170891,
+            -30.81007487429748
           ],
-          "headGrossFullCompressionRatio": 2.4800915982222187,
-          "fullCompressionFirstPossibleDepthMm": 167.4238421272166,
+          "headGrossFullCompressionRatio": 2.4800915982864797,
+          "fullCompressionFirstPossibleDepthMm": 167.4238420668597,
           "withinPostHeight": true,
           "status": "loaded-compression",
           "headDRegionAccepted": false,
@@ -589,45 +589,45 @@
     },
     {
       "nativeCaseId": "wet-aligned-concrete27",
-      "fullResultSHA256": "6b1e8976953099e8cea55e3c1c317c696ea58176c110ac582a842fb9a289f910",
-      "assessmentInputSHA256": "281577a8ab109b5dfef8e5dfd9efa9af6f0678ffe1ca14210f01993207cf98ee",
+      "fullResultSHA256": "a3fa67978070ee76021d15683a1f3964d8a25f7510ae6a23cf1cbd2797494a50",
+      "assessmentInputSHA256": "89d320cf2f2fffbdbe9fce98ee105e3779a4b136e2785b8cccb9195ef39980ef",
       "actualWetConcreteWeightKNPerM3": 27.0,
       "posts": [
         {
           "id": "WET-SUPPORT/post/0",
           "headWrenchKN_KNmm": [
-            8.229267961512576e-14,
-            1.262323578998803e-13,
-            -52.92059655933902,
-            -120.36795387552641,
-            53.83705745434506,
-            -1.6431300764452317e-12
+            3.30521200686551e-14,
+            -2.0788926136106056e-14,
+            -52.92059655948859,
+            -120.36795387539414,
+            53.837057457528246,
+            2.0444979043077183e-11
           ],
           "baseWrenchKN_KNmm": [
-            -8.229267961512576e-14,
-            -1.262323578998803e-13,
-            66.52483005933902,
-            120.36795387592943,
-            -53.837057454607596,
-            1.6431300764452317e-12
+            -3.30521200686551e-14,
+            2.0788926136106056e-14,
+            66.52483005948858,
+            120.36795387532814,
+            -53.837057457633684,
+            -2.0444979043077183e-11
           ],
-          "compressionKN": 52.92059655933902,
-          "bodyGravityKN": 13.604233500000007,
-          "bodyGravityKNPerMm": 0.004264650000000002,
+          "compressionKN": 52.92059655948859,
+          "bodyGravityKN": 13.604233499999992,
+          "bodyGravityKNPerMm": 0.0042646499999999974,
           "transportedBaseWrenchKN_KNmm": [
-            8.229267961512576e-14,
-            1.262323578998803e-13,
-            -66.52483005933902,
-            -120.36795387592909,
-            53.837057454607574,
-            -1.6431300764452317e-12
+            3.30521200686551e-14,
+            -2.0788926136106056e-14,
+            -66.52483005948858,
+            -120.36795387532781,
+            53.837057457633684,
+            2.0444979043077183e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 2.8472996852354946,
+          "fullCompressionRequiredAxialAtHeadKN": 2.8472996853071892,
           "headResultantFromAxisMm": [
-            1.0173176599394231,
-            2.2745010771101146
+            1.0173176599966982,
+            2.2745010771011867
           ],
-          "headGrossFullCompressionRatio": 0.05380324241135232,
+          "headGrossFullCompressionRatio": 0.05380324241255501,
           "fullCompressionFirstPossibleDepthMm": 0.0,
           "withinPostHeight": true,
           "status": "loaded-compression",
@@ -637,39 +637,39 @@
         {
           "id": "WET-SUPPORT/post/1",
           "headWrenchKN_KNmm": [
-            2.002273347123662e-12,
-            -1.7486012637846216e-15,
-            -0.5494060181078932,
-            16.500851715006547,
-            48.880346088375035,
-            -1.5411671938636573e-11
+            5.115213808082331e-12,
+            -8.354428260304303e-15,
+            -0.549406017944257,
+            16.500851710670133,
+            48.88034607437464,
+            -1.5404566511278972e-11
           ],
           "baseWrenchKN_KNmm": [
-            -2.002273347123662e-12,
-            1.7486012637846216e-15,
-            14.153639518107893,
-            -16.500851715011777,
-            -48.88034609476247,
-            1.5411671938636573e-11
+            -5.115213808082331e-12,
+            8.354428260304303e-15,
+            14.153639517944256,
+            -16.500851710696963,
+            -48.880346090691944,
+            1.5404566511278972e-11
           ],
-          "compressionKN": 0.5494060181078932,
+          "compressionKN": 0.549406017944257,
           "bodyGravityKN": 13.6042335,
           "bodyGravityKNPerMm": 0.00426465,
           "transportedBaseWrenchKN_KNmm": [
-            2.002273347123662e-12,
-            -1.7486012637846216e-15,
-            -14.153639518107893,
-            16.500851715012125,
-            48.88034609476229,
-            -1.5411671938636573e-11
+            5.115213808082331e-12,
+            -8.354428260304303e-15,
+            -14.153639517944256,
+            16.500851710696782,
+            48.88034609069217,
+            -1.5404566511278972e-11
           ],
-          "fullCompressionRequiredAxialAtHeadKN": 1.3480193428548959,
+          "fullCompressionRequiredAxialAtHeadKN": 1.3480193424739908,
           "headResultantFromAxisMm": [
-            88.96944059097626,
-            -30.033984286946932
+            88.96944059199232,
+            -30.033984287999402
           ],
-          "headGrossFullCompressionRatio": 2.453594060540796,
-          "fullCompressionFirstPossibleDepthMm": 187.26350925765536,
+          "headGrossFullCompressionRatio": 2.453594060578276,
+          "fullCompressionFirstPossibleDepthMm": 187.26350920986712,
           "withinPostHeight": true,
           "status": "loaded-compression",
           "headDRegionAccepted": false,
@@ -13588,6 +13588,6 @@
     "project/str/studies/wet_post_head_duties.py": "cc46128890cf6c970c274fcdfda69341cf9cc23f7e8bf0d26d2ab168f539b10a",
     "project/str/studies/wet_support_cage_comparison.py": "6638d031196a7b329b8d543969d964929e660553a13e102b8631ff8cd0a307a1",
     "project/str/studies/wet-support-cage-comparison-settings.json": "d5c5ca39227e4219032b51954e8ca974251fb6e5754afd0101c0b67440bc7d84",
-    "project/str/studies/wet-support-cage-comparison-proof.json": "965f1dbdf7520be39d01725f460ce949518f3b6cdf7d8b451b426877ba0e42ab"
+    "project/str/studies/wet-support-cage-comparison-proof.json": "61ec34475acb6e9a92609bb54d0370b08576057db7245e9ac0c8d8922d659f3d"
   }
 }

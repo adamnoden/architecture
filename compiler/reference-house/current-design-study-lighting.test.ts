@@ -17,7 +17,7 @@ const run = (change = {}) => deriveStudyLighting({ ...choices, ...change }, basi
 test('four actual furnished-room comparisons and central kitchen share source geometry without invented performance', () => {
   const result = run()
   assert.equal(result.status, 'DEVELOPMENT_COMPARISON')
-  assert.deepEqual(result.diagnostics, [])
+  assert.deepEqual(result.diagnostics.map(row => row.code), ['IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND'])
   assert.deepEqual(result.arrangements.map(row => row.id), ['portable', 'lamps-with-wall', 'wall-led', 'ceiling-with-lamps'])
   assert.equal(new Set(result.arrangements.map(row => row.commonGeometryDigest)).size, 1)
   assert.deepEqual(result.commonRoom.occupied, kit.kit.occupied)
@@ -140,4 +140,50 @@ test('public CLI reads and compiles the same explicit lighting document and prod
   const expected = await compileEngineeringDocument(document)
   assert.deepEqual(actual.engineering.studyLighting, expected.engineering.studyLighting)
   execFileSync(process.execPath, ['--import', 'tsx', 'project/ias/studies/adaptable-study-lighting.mjs', '--check'], { cwd, stdio: 'pipe' })
+})
+
+test('actual carrier geometry, core lever arm and complete first rest use the same saved room inputs', () => {
+  const result = run(), d = result.construction
+  assert.equal(d.status, 'DEAD_MOCKUP_GEOMETRY_COMPARISON')
+  assert.deepEqual(d.issues, [])
+  assert.equal(d.attachmentPoints.length, 4)
+  assert.equal(d.fixedEnclosures.length, 3)
+  const junction = d.fixedEnclosures[2]
+  assert.ok(junction.bodyDepthMm[1] < d.carrier.depthMm[0])
+  assert.equal(junction.independentFixedCoverDepthMm![1], d.carrier.depthMm[0])
+  assert.equal(junction.requiredDecorativeJointMm, basis.room.settingMm)
+  assert.equal(d.coreFaceYMm, result.corner.bayPlanMm[1] + 75)
+  assert.equal(d.loadDemand.weightN, 29.43)
+  assert.ok(Math.abs(d.loadDemand.coreMomentNm - 7.50465) < 1e-10)
+  assert.ok(d.loadDemand.coreMomentNm > d.loadDemand.faceMomentNm)
+  assert.ok(d.carrier.carrierStockMassKgUpperComparison > 0)
+  assert.ok(d.carrier.remainingAuthoredMassBudgetKg > 0)
+  assert.equal(d.containment.sourceConnectedToCurrentHouseCircuit, false)
+  assert.ok(d.attachmentPoints.every(point => point.id.startsWith('IAS/STUDY/carrier/bolt/')))
+  assert.deepEqual(d.firstRelease.conflictingOccupiedIds, [])
+  assert.equal(d.firstRelease.cradle.capacityAndFloorSupportAccepted, false)
+  const deeper = run({ serviceTotalDepthMm: 85 }).construction
+  assert.deepEqual(deeper.attachmentPoints, d.attachmentPoints)
+  assert.ok(deeper.loadDemand.coreMomentNm > d.loadDemand.coreMomentNm)
+  assert.deepEqual(deeper.carrier.xMm, d.carrier.xMm)
+  assert.ok(run({ socketCentreZMm: 1100 }).construction.issues.includes('fixed-electrical-boxes-overlap'))
+  const heavierSteel = structuredClone(components); heavierSteel.cornerConstruction = { ...heavierSteel.cornerConstruction, steelThicknessMm: 3 }
+  assert.ok(deriveStudyLighting(choices, basis, heavierSteel).diagnostics.some(row => row.code === 'IAS_LIGHTING_CARRIER_RESERVE_REJECTED'))
+})
+
+test('longer assembled projection rejects the actual first rest and a changed mass recomputes every attachment demand', () => {
+  const baseline = run(), larger = structuredClone(components)
+  larger.wallLamp.reservedCompleteProjectionMm = 400
+  const adverse = deriveStudyLighting(choices, basis, larger)
+  assert.equal(adverse.status, 'GEOMETRY_REJECTED')
+  assert.ok(adverse.construction.issues.includes('complete-module-outside-first-rest'))
+  const heavier = structuredClone(components); heavier.projectRequirements.wallModuleMaximumInstalledMassKg *= 2
+  const changed = deriveStudyLighting(choices, basis, heavier)
+  assert.equal(changed.construction.loadDemand.coreMomentNm, baseline.construction.loadDemand.coreMomentNm * 2)
+  assert.equal(changed.construction.loadDemand.normalCoupleN, baseline.construction.loadDemand.normalCoupleN * 2)
+  assert.equal(changed.construction.loadDemand.equalFourFixingShearN, baseline.construction.loadDemand.equalFourFixingShearN * 2)
+  assert.equal(changed.construction.firstRelease.cradle.demandKg, baseline.construction.firstRelease.cradle.demandKg * 2)
+  assert.deepEqual(changed.construction.firstRelease.sweepPlanMm, baseline.construction.firstRelease.sweepPlanMm)
+  assert.deepEqual(changed.commonRoom, baseline.commonRoom)
+  assert.deepEqual(changed.kitchen, baseline.kitchen)
 })
