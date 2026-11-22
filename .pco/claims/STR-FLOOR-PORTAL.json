@@ -1,41 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 53,
+  "generation": 54,
   "state": "claimed",
-  "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
+  "leaseId": "3955f4dd-a954-4def-8ecc-34da7b0b6003",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-20261122"
+    "label": "convergence-20261122-primary"
   },
-  "claimedAt": "2026-11-22T10:03:07.790Z",
-  "heartbeatAt": "2026-11-22T10:22:47.263Z",
-  "expiresAt": "2026-11-22T11:07:47.263Z",
-  "branch": "work/convergence-integrate-20261122",
+  "claimedAt": "2026-11-22T14:35:17.012Z",
+  "heartbeatAt": "2026-11-22T14:35:17.012Z",
+  "expiresAt": "2026-11-22T15:20:17.012Z",
+  "branch": "work/convergence-primary-20261122",
   "predecessor": {
-    "leaseId": "8ede94e9-ec3a-4f5f-8c74-95f2372cf61b",
-    "generation": 52,
-    "branch": "work/convergence-resume-20261122",
+    "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
+    "generation": 53,
+    "branch": "work/convergence-integrate-20261122",
+    "pr": 1617,
     "checkpoint": {
-      "evidence": "Remote06d1bed9 exacttree72d38f9b preserves MMD-only global ordering;10 focused physical/contact/energy controls pass. Native58 canonical147fdd25 frozen;500 fullcontrol running with exactsource captures inworkspace.",
-      "next": "Validate actual500 versus all312 historicalheadcomponents, then serial250; complete head/cage localcomparison and fresh sourceproofs before merge.",
-      "blocker": "No complete new native500/250 result yet; all prior numerical/physical acceptance limits retained."
+      "evidence": "Remote3ffd16ef PR1617 preserves recovered numerical ancestors, shared transverse recovery and lighting stage; actual16field energy checks pass. Eleven fresh floorstates22ad35f5 now retained locally.",
+      "next": "Publish completed16case cuts/cage and named joint-demand capability; integrate HAD door/pipe correction and finish exact-head health/publication preflight.",
+      "blocker": "Five mesh stability screens fail unchangedlimits. Local joint resistance, full house/ground coordination and water completion remain unresolved."
     }
   },
   "recoverySource": {
-    "leaseId": "8ede94e9-ec3a-4f5f-8c74-95f2372cf61b",
-    "generation": 52,
-    "branch": "work/convergence-resume-20261122",
+    "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
+    "generation": 53,
+    "branch": "work/convergence-integrate-20261122",
+    "pr": 1617,
     "checkpoint": {
-      "evidence": "Remote06d1bed9 exacttree72d38f9b preserves MMD-only global ordering;10 focused physical/contact/energy controls pass. Native58 canonical147fdd25 frozen;500 fullcontrol running with exactsource captures inworkspace.",
-      "next": "Validate actual500 versus all312 historicalheadcomponents, then serial250; complete head/cage localcomparison and fresh sourceproofs before merge.",
-      "blocker": "No complete new native500/250 result yet; all prior numerical/physical acceptance limits retained."
+      "evidence": "Remote3ffd16ef PR1617 preserves recovered numerical ancestors, shared transverse recovery and lighting stage; actual16field energy checks pass. Eleven fresh floorstates22ad35f5 now retained locally.",
+      "next": "Publish completed16case cuts/cage and named joint-demand capability; integrate HAD door/pipe correction and finish exact-head health/publication preflight.",
+      "blocker": "Five mesh stability screens fail unchangedlimits. Local joint resistance, full house/ground coordination and water completion remain unresolved."
     }
-  },
-  "checkpoint": {
-    "evidence": "Remote3ffd16ef PR1617 preserves recovered numerical ancestors, shared transverse recovery and lighting stage; actual16field energy checks pass. Eleven fresh floorstates22ad35f5 now retained locally.",
-    "next": "Publish completed16case cuts/cage and named joint-demand capability; integrate HAD door/pipe correction and finish exact-head health/publication preflight.",
-    "blocker": "Five mesh stability screens fail unchangedlimits. Local joint resistance, full house/ground coordination and water completion remain unresolved."
-  },
-  "pr": 1617
+  }
 }
