@@ -2,7 +2,7 @@
   "schema": "had-local-room-pocket-receipt/1",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "d96c710322312a0a4e52cb8fb5dabaf6f079b79d5a5cc511fe82b7694a38259f",
+    "bindingDigest": "cc43417778c032d9efc9b7cdba4ea3e771383018715a55ced6db3d8bd70a1614",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -16,9 +16,9 @@
     },
     "methods": {
       "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
-      "compiler/reference-house/current-design/inlet-indoor-routes.ts": "079ea8e83387075d211ba30379f82c3dbaf9c763",
-      "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "90dd36833721c5ebc81ed0c4bbddec6e926272b9",
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "c331679ab1c6099632b809e311a8462a5982849e",
+      "compiler/reference-house/current-design/inlet-indoor-routes.ts": "1ee500a54338ea8b45de5b791f8de6f125dbca8c",
+      "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "ccb60bb90d928501dcd1b69cbdf6565a7caa4f41",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "848fc8655430e4f24326985644cc5cc8d1c18423",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
       "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
       "compiler/reference-house/current-design/inlet-room-pan.ts": "81c7736c2b91de574c582dd902ff903953dc9b46",
@@ -51,14 +51,15 @@
     "shieldVerticalInsetMm": 50,
     "frameLowerConnectionZMm": 1100,
     "frameAnchorOffsetMm": 89.5,
-    "plantTransferZMm": 2235,
+    "plantTransferZMm": 2400,
+    "plantWithdrawalLoweringZMm": 2235,
     "catchmentClearWidthMm": 400,
     "catchmentClearHeightMm": 150,
     "indoorBankXMm": 11350,
     "indoorBankYMm": 2350,
     "indoorUtilityAxisZMm": 1350,
-    "indoorPlantAxisZMm": 1860,
-    "indoorOperatorXMm": 10650,
+    "indoorPlantAxisZMm": 1890,
+    "indoorOperatorXMm": 10670,
     "indoorOperatorYMm": 2430,
     "indoorOperatorZMm": 1450,
     "indoorMaintenanceShiftXMm": -100,
@@ -1853,14 +1854,15 @@
       "shieldVerticalInsetMm": 50,
       "frameLowerConnectionZMm": 1100,
       "frameAnchorOffsetMm": 89.5,
-      "plantTransferZMm": 2235,
+      "plantTransferZMm": 2400,
+      "plantWithdrawalLoweringZMm": 2235,
       "catchmentClearWidthMm": 400,
       "catchmentClearHeightMm": 150,
       "indoorBankXMm": 11350,
       "indoorBankYMm": 2350,
       "indoorUtilityAxisZMm": 1350,
-      "indoorPlantAxisZMm": 1860,
-      "indoorOperatorXMm": 10650,
+      "indoorPlantAxisZMm": 1890,
+      "indoorOperatorXMm": 10670,
       "indoorOperatorYMm": 2430,
       "indoorOperatorZMm": 1450,
       "indoorMaintenanceShiftXMm": -100,
@@ -14449,7 +14451,7 @@
         [
           11350,
           2350,
-          2390
+          2420
         ]
       ],
       "absoluteDoorHingeMm": [
@@ -14463,7 +14465,7 @@
       "bankXMm": 11350,
       "bankYMm": 2350,
       "utilityAxisZMm": 1350,
-      "plantAxisZMm": 1860,
+      "plantAxisZMm": 1890,
       "maintenanceShiftXMm": -100,
       "maintenanceShiftYMm": -20,
       "wheelInboardMm": 40,
@@ -14499,6 +14501,24 @@
         60
       ],
       "leafCount": 2,
+      "leafSweptOuterBoxesMm": [
+        [
+          10147,
+          2667,
+          0,
+          468,
+          468,
+          2300
+        ],
+        [
+          10585,
+          2667,
+          0,
+          468,
+          468,
+          2300
+        ]
+      ],
       "meetingGapComparisonMm": 30,
       "meetingEdgesAstragalSealsAndHardwareQualified": false,
       "hardwareProjectionComparisonMm": 80,
@@ -15934,7 +15954,7 @@
         "relativeDistanceAllowanceMm": 0.7497074494059205
       },
       "connectedBeforeMm": 23.999999999805084,
-      "connectedAfterMm": 19.999999999818442,
+      "connectedAfterMm": 12.999999999818442,
       "connectedPhaseChangeMm": 52.999999999940314,
       "approachMm": [
         [
@@ -15960,12 +15980,12 @@
           1450
         ],
         [
-          10650,
+          10670,
           3200,
           1450
         ],
         [
-          10650,
+          10670,
           2430,
           1450
         ]
@@ -16036,25 +16056,25 @@
       "armRadiusMm": 40,
       "reachLimitMm": 650,
       "shoulderMm": [
-        10650,
+        10670,
         2430,
         1450
       ],
       "approachMm": [
         [
-          10650,
+          10670,
           2890,
           1450
         ],
         [
-          10650,
+          10670,
           2430,
           1450
         ]
       ],
-      "connectedWallAndOpenLeafAfterSettingMm": 32.99999999989154,
+      "connectedWallAndOpenLeafAfterSettingMm": 12.999999999891543,
       "occupiedWasherRestAfterSettingMm": 19.999999999891543,
-      "dryShieldAfterSettingMm": 130.5,
+      "dryShieldAfterSettingMm": 110.5,
       "passDoesNotProvideSourceFaultContainmentOrManualResponseTime": true,
       "closedDoorControlClaimed": false,
       "approachAssumesAlreadyOpenDoor": true,
@@ -16127,9 +16147,9 @@
             ],
             "inboardMm": 0,
             "regripAngleDeg": -15,
-            "reachMm": 494.07425314664175,
-            "wallAfterArmSettingMm": 45.39980370748604,
-            "washerRestAfterArmSettingMm": 623.3407804309196
+            "reachMm": 474.5412180437142,
+            "wallAfterArmSettingMm": 44.31327102054445,
+            "washerRestAfterArmSettingMm": 625.769836899033
           },
           {
             "pointMm": [
@@ -16139,9 +16159,9 @@
             ],
             "inboardMm": 0,
             "regripAngleDeg": 0,
-            "reachMm": 491.0145109872009,
-            "wallAfterArmSettingMm": 33.64100620030595,
-            "washerRestAfterArmSettingMm": 625.7696327816014
+            "reachMm": 471.35469659270393,
+            "wallAfterArmSettingMm": 32.76709845586676,
+            "washerRestAfterArmSettingMm": 628.0061316222227
           },
           {
             "pointMm": [
@@ -16151,9 +16171,9 @@
             ],
             "inboardMm": 0,
             "regripAngleDeg": 15,
-            "reachMm": 488.8077195793469,
-            "wallAfterArmSettingMm": 21.66539641553871,
-            "washerRestAfterArmSettingMm": 627.1369172902765
+            "reachMm": 469.05541966846675,
+            "wallAfterArmSettingMm": 20.98918490940305,
+            "washerRestAfterArmSettingMm": 629.2476192776197
           },
           {
             "pointMm": [
@@ -16163,9 +16183,9 @@
             ],
             "inboardMm": 40,
             "regripAngleDeg": -15,
-            "reachMm": 533.2441913630302,
-            "wallAfterArmSettingMm": 40.08172532992728,
-            "washerRestAfterArmSettingMm": 624.9428439430845
+            "reachMm": 513.6432299002995,
+            "wallAfterArmSettingMm": 38.885207494702996,
+            "washerRestAfterArmSettingMm": 627.3045566604989
           },
           {
             "pointMm": [
@@ -16175,9 +16195,9 @@
             ],
             "inboardMm": 40,
             "regripAngleDeg": 0,
-            "reachMm": 530.4104542710296,
-            "wallAfterArmSettingMm": 29.135006426419537,
-            "washerRestAfterArmSettingMm": 627.0703567501026
+            "reachMm": 510.7007440762153,
+            "wallAfterArmSettingMm": 28.160755480173307,
+            "washerRestAfterArmSettingMm": 629.2293478913482
           },
           {
             "pointMm": [
@@ -16187,12 +16207,12 @@
             ],
             "inboardMm": 40,
             "regripAngleDeg": 15,
-            "reachMm": 528.3682302337654,
-            "wallAfterArmSettingMm": 18.014129606825193,
-            "washerRestAfterArmSettingMm": 628.2690981617804
+            "reachMm": 508.57938094299635,
+            "wallAfterArmSettingMm": 17.251645915042786,
+            "washerRestAfterArmSettingMm": 630.2975044481501
           }
         ],
-        "maximumGripReachMm": 533.2441913630302,
+        "maximumGripReachMm": 513.6432299002995,
         "wallNorthAfterSettingMm": 9.5,
         "wallEastAfterSettingMm": 127,
         "actualWheelCentreFitsAuthoredEnvelopeVerified": false,
@@ -16238,14 +16258,14 @@
         "axisMm": [
           11350,
           2350,
-          1860
+          1890
         ],
         "flowAxis": "vertical",
         "stem": "horizontal-west",
         "insulatedValveBodyEnvelopeMm": [
           11266.5,
           2266.5,
-          1754,
+          1784,
           167,
           167,
           212
@@ -16253,7 +16273,7 @@
         "stemWheelEnvelopeMm": [
           11133,
           2287.5,
-          1797.5,
+          1827.5,
           217,
           125,
           125
@@ -16262,92 +16282,92 @@
           [
             11350,
             2350,
-            1660
+            1690
           ],
           [
             11350,
             2350,
-            2060
+            2090
           ]
         ],
         "minimumSourceMaintenanceAfterSettingMm": -18.5,
         "minimumMovedMaintenanceAfterSettingMm": 14.382370680473215,
-        "minimumFixedFrameCoverAfterSettingMm": 562.0177007750722,
+        "minimumFixedFrameCoverAfterSettingMm": 592.0168187019362,
         "grips": [
           {
             "pointMm": [
               11133,
               2333.8238096810924,
-              1799.6296358569332
+              1829.6296358569332
             ],
             "inboardMm": 0,
             "regripAngleDeg": -15,
-            "reachMm": 603.9699842324208,
-            "wallAfterArmSettingMm": 45.39980370746014,
-            "washerRestAfterArmSettingMm": 636.5158410406889
+            "reachMm": 606.4136542040643,
+            "wallAfterArmSettingMm": 44.31327102051334,
+            "washerRestAfterArmSettingMm": 636.5158410406883
           },
           {
             "pointMm": [
               11133,
               2350,
-              1797.5
+              1827.5
             ],
             "inboardMm": 0,
             "regripAngleDeg": 0,
-            "reachMm": 600.3709270109605,
-            "wallAfterArmSettingMm": 33.641006200280174,
-            "washerRestAfterArmSettingMm": 636.5158410406898
+            "reachMm": 602.7231951733731,
+            "wallAfterArmSettingMm": 32.76709845583579,
+            "washerRestAfterArmSettingMm": 636.5158410406892
           },
           {
             "pointMm": [
               11133,
               2366.1761903189076,
-              1799.6296358569332
+              1829.6296358569332
             ],
             "inboardMm": 0,
             "regripAngleDeg": 15,
-            "reachMm": 599.6693763663941,
-            "wallAfterArmSettingMm": 21.66539641551256,
-            "washerRestAfterArmSettingMm": 636.5158410406899
+            "reachMm": 602.1305000604735,
+            "wallAfterArmSettingMm": 20.98918490937166,
+            "washerRestAfterArmSettingMm": 636.5158410406893
           },
           {
             "pointMm": [
               11173,
               2333.8238096810924,
-              1799.6296358569332
+              1829.6296358569332
             ],
             "inboardMm": 40,
             "regripAngleDeg": -15,
-            "reachMm": 636.4116135440258,
-            "wallAfterArmSettingMm": 40.081725329902966,
-            "washerRestAfterArmSettingMm": 636.5158410406813
+            "reachMm": 637.4774662724374,
+            "wallAfterArmSettingMm": 38.88520749467379,
+            "washerRestAfterArmSettingMm": 636.515841040681
           },
           {
             "pointMm": [
               11173,
               2350,
-              1797.5
+              1827.5
             ],
             "inboardMm": 40,
             "regripAngleDeg": 0,
-            "reachMm": 632.9970379077614,
-            "wallAfterArmSettingMm": 29.135006426395336,
-            "washerRestAfterArmSettingMm": 636.5158410406821
+            "reachMm": 633.967861961472,
+            "wallAfterArmSettingMm": 28.160755480144232,
+            "washerRestAfterArmSettingMm": 636.5158410406818
           },
           {
             "pointMm": [
               11173,
               2366.1761903189076,
-              1799.6296358569332
+              1829.6296358569332
             ],
             "inboardMm": 40,
             "regripAngleDeg": 15,
-            "reachMm": 632.3316858672038,
-            "wallAfterArmSettingMm": 18.01412960680068,
-            "washerRestAfterArmSettingMm": 636.5158410406822
+            "reachMm": 633.4044040761605,
+            "wallAfterArmSettingMm": 17.25164591501334,
+            "washerRestAfterArmSettingMm": 636.515841040682
           }
         ],
-        "maximumGripReachMm": 636.4116135440258,
+        "maximumGripReachMm": 637.4774662724374,
         "wallNorthAfterSettingMm": 9.5,
         "wallEastAfterSettingMm": 127,
         "actualWheelCentreFitsAuthoredEnvelopeVerified": false,
@@ -16364,7 +16384,7 @@
           "wholeValveSweepMm": [
             10858,
             2266.5,
-            1754,
+            1784,
             575.5,
             167,
             212
@@ -16372,7 +16392,7 @@
           "firstRestAxisMm": [
             11075,
             2350,
-            1860
+            1890
           ],
           "actualCaptureAndRestCapacityQualified": false,
           "actualTailReleaseToolsAndReinstatementQualified": false,
@@ -16470,7 +16490,7 @@
     "selectedProduct": false,
     "fullOccupiedArrangementComplete": false,
     "installedAcceptance": false,
-    "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1020\" viewBox=\"0 0 1200 1020\"><rect width=\"1200\" height=\"1020\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\">\n<text x=\"35\" y=\"38\" font-size=\"25\">Utility indoor isolation · one saved source-bound comparison</text>\n<text x=\"35\" y=\"72\" font-size=\"16\">Unselected geometry. Real door hardware, full fitted routes, pressure/thermal supports and loaded renewal remain open.</text>\n<rect x=\"45\" y=\"355.77000000000004\" width=\"391.22999999999996\" height=\"364.22999999999996\" fill=\"#e2eae1\" stroke=\"#625c50\"/><rect x=\"197.64\" y=\"387.81\" width=\"198\" height=\"135\" fill=\"none\" stroke=\"#b78e67\"/><rect x=\"179.64\" y=\"391.41\" width=\"198\" height=\"135\" fill=\"#ded3b5\" stroke=\"#625c50\"/>\n<rect x=\"180\" y=\"238.41000000000003\" width=\"10.799999999999999\" height=\"73.44\" fill=\"#9b7c54\" stroke=\"#625c50\"/><rect x=\"332.28\" y=\"238.41000000000003\" width=\"10.799999999999999\" height=\"73.44\" fill=\"#9b7c54\" stroke=\"#625c50\"/>\n<polyline points=\"185.4,311.85 258.84000000000003,311.85\" fill=\"none\" stroke=\"#a9865c\" stroke-width=\"3\"/><polyline points=\"256.14,194.31000000000006 256.14,212.31 270.53999999999996,221.31 270.53999999999996,359.91\" fill=\"none\" stroke=\"#2e7c83\" stroke-width=\"3\"/><polyline points=\"108.53999999999999,221.31 256.14,239.85000000000002\" fill=\"none\" stroke=\"#496983\" stroke-width=\"3\"/>\n<circle cx=\"256.14\" cy=\"239.85000000000002\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"218.88565734669584\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"199.35000000000002\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"225.92374287736783\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"205.74609911723326\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/>\n<circle cx=\"270.53999999999996\" cy=\"359.91\" r=\"54\" fill=\"none\" stroke=\"#25747c\" stroke-width=\"3\"/>\n<circle cx=\"396.53999999999996\" cy=\"374.31\" r=\"15.03\" fill=\"#bc9759\" stroke=\"#755e38\"/><polyline points=\"270.53999999999996,359.91 357.47999999999996,377.2217142574034\" fill=\"none\" stroke=\"#755e38\" stroke-width=\"3\"/><circle cx=\"396.53999999999996\" cy=\"374.31\" r=\"15.03\" fill=\"#bc9759\" stroke=\"#755e38\"/><polyline points=\"270.53999999999996,359.91 357.47999999999996,377.2217142574034\" fill=\"none\" stroke=\"#755e38\" stroke-width=\"3\"/>\n<text x=\"505\" y=\"150\" font-size=\"20\">Geometry screen: within declared envelopes</text>\n<text x=\"505\" y=\"190\" font-size=\"16\">Local bank XY 11350/2350mm.</text>\n<text x=\"505\" y=\"230\" font-size=\"16\">Valve local axes 1350 / 1860mm above FFL.</text>\n<text x=\"505\" y=\"270\" font-size=\"16\">Saved ground FFL 530mm; absolute axes 1880 / 2390mm.</text>\n<text x=\"505\" y=\"310\" font-size=\"16\">Maximum reaches 533.24 / 636.41mm; limit650.</text>\n<text x=\"505\" y=\"350\" font-size=\"16\">Complete field shift -100/-20mm; size preserved.</text>\n<text x=\"505\" y=\"390\" font-size=\"16\">Finished opening 846mm; projected open-clear 766mm.</text>\n<text x=\"505\" y=\"430\" font-size=\"16\">Connected parked-leaf route reserve 20.000mm.</text>\n<text x=\"505\" y=\"470\" font-size=\"16\">Conventional paired leaves; continuous sampled bound shown.</text>\n<text x=\"505\" y=\"510\" font-size=\"16\">Actual frame/hinge/seals and support resistance unqualified.</text>\n<text x=\"505\" y=\"550\" font-size=\"16\">Brown fields: original outline and moved full equipment field.</text>\n<text x=\"505\" y=\"590\" font-size=\"16\">Blue paths/body circles: actual opening and cut approach.</text>\n<text x=\"505\" y=\"630\" font-size=\"16\">Valve product/potable/whole-constituent admission unresolved.</text>\n<text x=\"35\" y=\"800\" font-size=\"17\">Independent Utility20 / Plant45 L/min duties and Lodge restrictions remain. No source-fault response-time credit.</text>\n<text x=\"35\" y=\"840\" font-size=\"16\">Two6kg valve references only:117.72N. Bank, pipe, pressure, thermal, capture and grid receivers remain unqualified.</text>\n<text x=\"35\" y=\"880\" font-size=\"16\">Existing shield and shifted equipment field are retained candidates. No pan, shield or decorative cover supports the bank.</text>\n<text x=\"35\" y=\"920\" font-size=\"16\">Ground translation is explicit geometry only; native structural forces and whole-house floor levels are not adopted.</text>\n<text x=\"35\" y=\"970\" font-size=\"17\">HAD OPEN · common support, backfeed/store release, blocked/submerged drainage and occupied renewal remain unresolved.</text>\n</g></svg>"
+    "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1020\" viewBox=\"0 0 1200 1020\"><rect width=\"1200\" height=\"1020\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\">\n<text x=\"35\" y=\"38\" font-size=\"25\">Utility indoor isolation · one saved source-bound comparison</text>\n<text x=\"35\" y=\"72\" font-size=\"16\">Unselected geometry. Real door hardware, full fitted routes, pressure/thermal supports and loaded renewal remain open.</text>\n<rect x=\"45\" y=\"355.77000000000004\" width=\"391.22999999999996\" height=\"364.22999999999996\" fill=\"#e2eae1\" stroke=\"#625c50\"/><rect x=\"197.64\" y=\"387.81\" width=\"198\" height=\"135\" fill=\"none\" stroke=\"#b78e67\"/><rect x=\"179.64\" y=\"391.41\" width=\"198\" height=\"135\" fill=\"#ded3b5\" stroke=\"#625c50\"/>\n<rect x=\"180\" y=\"238.41000000000003\" width=\"10.799999999999999\" height=\"73.44\" fill=\"#9b7c54\" stroke=\"#625c50\"/><rect x=\"332.28\" y=\"238.41000000000003\" width=\"10.799999999999999\" height=\"73.44\" fill=\"#9b7c54\" stroke=\"#625c50\"/>\n<polyline points=\"185.4,311.85 258.84000000000003,311.85\" fill=\"none\" stroke=\"#a9865c\" stroke-width=\"3\"/><polyline points=\"256.14,194.31000000000006 256.14,212.31 274.14,221.31 274.14,359.91\" fill=\"none\" stroke=\"#2e7c83\" stroke-width=\"3\"/><polyline points=\"108.53999999999999,221.31 256.14,239.85000000000002\" fill=\"none\" stroke=\"#496983\" stroke-width=\"3\"/>\n<circle cx=\"256.14\" cy=\"239.85000000000002\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"218.88565734669584\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"199.35000000000002\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"225.92374287736783\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"205.74609911723326\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/><circle cx=\"256.14\" cy=\"194.31000000000006\" r=\"54\" fill=\"none\" stroke=\"#9baeb0\" stroke-width=\"1\"/>\n<circle cx=\"274.14\" cy=\"359.91\" r=\"54\" fill=\"none\" stroke=\"#25747c\" stroke-width=\"3\"/>\n<circle cx=\"396.53999999999996\" cy=\"374.31\" r=\"15.03\" fill=\"#bc9759\" stroke=\"#755e38\"/><polyline points=\"274.14,359.91 357.47999999999996,377.2217142574034\" fill=\"none\" stroke=\"#755e38\" stroke-width=\"3\"/><circle cx=\"396.53999999999996\" cy=\"374.31\" r=\"15.03\" fill=\"#bc9759\" stroke=\"#755e38\"/><polyline points=\"274.14,359.91 357.47999999999996,377.2217142574034\" fill=\"none\" stroke=\"#755e38\" stroke-width=\"3\"/>\n<text x=\"505\" y=\"150\" font-size=\"20\">Geometry screen: within declared envelopes</text>\n<text x=\"505\" y=\"190\" font-size=\"16\">Local bank XY 11350/2350mm.</text>\n<text x=\"505\" y=\"230\" font-size=\"16\">Valve local axes 1350 / 1890mm above FFL.</text>\n<text x=\"505\" y=\"270\" font-size=\"16\">Saved ground FFL 530mm; absolute axes 1880 / 2420mm.</text>\n<text x=\"505\" y=\"310\" font-size=\"16\">Maximum reaches 513.64 / 637.48mm; limit650.</text>\n<text x=\"505\" y=\"350\" font-size=\"16\">Complete field shift -100/-20mm; size preserved.</text>\n<text x=\"505\" y=\"390\" font-size=\"16\">Finished opening 846mm; projected open-clear 766mm.</text>\n<text x=\"505\" y=\"430\" font-size=\"16\">Connected parked-leaf route reserve 13.000mm.</text>\n<text x=\"505\" y=\"470\" font-size=\"16\">Conventional paired leaves; continuous sampled bound shown.</text>\n<text x=\"505\" y=\"510\" font-size=\"16\">Actual frame/hinge/seals and support resistance unqualified.</text>\n<text x=\"505\" y=\"550\" font-size=\"16\">Brown fields: original outline and moved full equipment field.</text>\n<text x=\"505\" y=\"590\" font-size=\"16\">Blue paths/body circles: actual opening and cut approach.</text>\n<text x=\"505\" y=\"630\" font-size=\"16\">Valve product/potable/whole-constituent admission unresolved.</text>\n<text x=\"35\" y=\"800\" font-size=\"17\">Independent Utility20 / Plant45 L/min duties and Lodge restrictions remain. No source-fault response-time credit.</text>\n<text x=\"35\" y=\"840\" font-size=\"16\">Two6kg valve references only:117.72N. Bank, pipe, pressure, thermal, capture and grid receivers remain unqualified.</text>\n<text x=\"35\" y=\"880\" font-size=\"16\">Existing shield and shifted equipment field are retained candidates. No pan, shield or decorative cover supports the bank.</text>\n<text x=\"35\" y=\"920\" font-size=\"16\">Ground translation is explicit geometry only; native structural forces and whole-house floor levels are not adopted.</text>\n<text x=\"35\" y=\"970\" font-size=\"17\">HAD OPEN · common support, backfeed/store release, blocked/submerged drainage and occupied renewal remain unresolved.</text>\n</g></svg>"
   },
   "indoorRoutes": {
     "schema": "had-indoor-pipe-routes/1",
@@ -16490,6 +16510,26 @@
       "copperDensityComparisonKgM3": 8960,
       "waterDensityComparisonKgM3": 1000
     },
+    "cornerTerritory": {
+      "basis": "Authored full boxed territory containing both42mm virtual-port legs and39mm AF circumscribed hex plus25mm insulation/1mm jacket; actual commercial body, tails and tools remain unqualified.",
+      "portTakeoffMm": 42,
+      "insulatedBodyRadiusComparisonMm": 48.5166604983954,
+      "minimumCeilingReserveMm": 51.483339501604405,
+      "minimumOtherCornerReserveMm": 10.981763616409498,
+      "minimumOtherPipeReserveMm": 11.433339501387465,
+      "minimumObstacleReserveMm": 5.161380418860087,
+      "perOtherCorner": [],
+      "perOtherPipe": [],
+      "perObstacle": [
+        {
+          "corner": "HAD/indoor-pipe/utility/downstream/corner/3",
+          "obstacle": "complete-shifted-utility-maintenance",
+          "reserveMm": 5.161380418860087
+        }
+      ],
+      "necessaryBoxedCornerTerritoryComparison": true,
+      "actualFittingBodyAndToolsQualified": false
+    },
     "roomPlanMm": [
       9397,
       429.5,
@@ -16497,6 +16537,50 @@
       2023.5
     ],
     "checkedObstacles": [
+      {
+        "id": "ordinary-operator-body-and-approach",
+        "boxMm": [
+          10370,
+          2130,
+          0,
+          600,
+          1060,
+          2000
+        ]
+      },
+      {
+        "id": "wet-door-complete-moving-leaf-0",
+        "boxMm": [
+          10147,
+          2667,
+          0,
+          468,
+          468,
+          2300
+        ]
+      },
+      {
+        "id": "wet-door-complete-moving-leaf-1",
+        "boxMm": [
+          10585,
+          2667,
+          0,
+          468,
+          468,
+          2300
+        ]
+      },
+      {
+        "id": "protected-parked-leaf-full2300-comparison",
+        "boxMm": [
+          9397,
+          3534,
+          0,
+          762,
+          44,
+          2300
+        ]
+      },
       {
         "id": "complete-shifted-utility-maintenance",
         "boxMm": [
@@ -16592,17 +16676,17 @@
           [
             10080,
             600,
-            2725
+            2740
           ],
           [
             11490,
             600,
-            2725
+            2740
           ],
           [
             11490,
             2110,
-            2725
+            2740
           ],
           [
             11490,
@@ -16625,23 +16709,23 @@
             1270
           ]
         ],
-        "centrelineLengthMm": 7241.610000000001,
+        "centrelineLengthMm": 7271.610000000001,
         "stock": [
           {
             "id": "HAD/indoor-pipe/utility/upstream/0",
             "originMm": [
               10080,
               600,
-              2131.6949999999997
+              2139.1949999999997
             ],
-            "copperKg": 2.331852684259976,
-            "fullWaterKg": 1.1983022969282304,
+            "copperKg": 2.347421826329093,
+            "fullWaterKg": 1.2063030333506286,
             "fullWaterGravityWrenchKNKNm": [
               0,
               0,
-              -0.034630820365456304,
-              -0.020778492219273782,
-              0.34907866928379955,
+              -0.034862040873458074,
+              -0.020917224524074844,
+              0.3514093720044574,
               0
             ]
           },
@@ -16650,7 +16734,7 @@
             "originMm": [
               10785,
               600,
-              3255
+              3270
             ],
             "copperKg": 1.4634993544970267,
             "fullWaterKg": 0.7520692237054072,
@@ -16668,7 +16752,7 @@
             "originMm": [
               11490,
               1355,
-              3255
+              3270
             ],
             "copperKg": 1.5672936349578088,
             "fullWaterKg": 0.8054074665213936,
@@ -16686,16 +16770,16 @@
             "originMm": [
               11490,
               2110,
-              2467.5
+              2475
             ],
-            "copperKg": 1.634759917257317,
-            "fullWaterKg": 0.8400773243517847,
+            "copperKg": 1.6503290593264346,
+            "fullWaterKg": 0.8480780607741828,
             "fullWaterGravityWrenchKNKNm": [
               0,
               0,
-              -0.024278153340185286,
-              -0.05122690354779095,
-              0.27895598187872894,
+              -0.024509373848187056,
+              -0.051714778819674685,
+              0.2816127055156693,
               0
             ]
           },
@@ -16760,7 +16844,7 @@
             "pointMm": [
               10080,
               600,
-              2725
+              2740
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -16768,8 +16852,16 @@
               0,
               490.7118339070742
             ],
-            "previousLegMm": 2246.61,
+            "previousLegMm": 2261.61,
             "nextLegMm": 1410,
+            "territoryBoxMm": [
+              10031.483339501605,
+              551.4833395016046,
+              2649.4833395016044,
+              139.03332099679028,
+              97.03332099679074,
+              139.0333209967912
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -16778,7 +16870,7 @@
             "pointMm": [
               11490,
               600,
-              2725
+              2740
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -16788,6 +16880,14 @@
             ],
             "previousLegMm": 1410,
             "nextLegMm": 1510,
+            "territoryBoxMm": [
+              11399.483339501605,
+              551.4833395016046,
+              2691.4833395016044,
+              139.03332099679028,
+              139.03332099679074,
+              97.03332099679119
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -16796,7 +16896,7 @@
             "pointMm": [
               11490,
               2110,
-              2725
+              2740
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -16805,7 +16905,15 @@
               490.7118339070742
             ],
             "previousLegMm": 1510,
-            "nextLegMm": 1575,
+            "nextLegMm": 1590,
+            "territoryBoxMm": [
+              11441.483339501605,
+              2019.4833395016046,
+              2649.4833395016044,
+              97.03332099679028,
+              139.03332099679096,
+              139.0333209967912
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -16822,8 +16930,16 @@
               -490.7118339070742,
               -490.7118339070742
             ],
-            "previousLegMm": 1575,
+            "previousLegMm": 1590,
             "nextLegMm": 240,
+            "territoryBoxMm": [
+              11441.483339501605,
+              2061.4833395016044,
+              1101.4833395016046,
+              97.03332099679028,
+              139.0333209967912,
+              139.03332099679074
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -16842,6 +16958,14 @@
             ],
             "previousLegMm": 240,
             "nextLegMm": 140,
+            "territoryBoxMm": [
+              11399.483339501605,
+              2259.4833395016044,
+              1101.4833395016046,
+              139.03332099679028,
+              139.0333209967912,
+              97.03332099679074
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -16860,11 +16984,35 @@
             ],
             "previousLegMm": 140,
             "nextLegMm": 120,
+            "territoryBoxMm": [
+              11301.483339501605,
+              2301.4833395016044,
+              1101.4833395016046,
+              139.03332099679028,
+              97.03332099679119,
+              139.03332099679074
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           }
         ],
         "obstacles": [
+          {
+            "id": "ordinary-operator-body-and-approach",
+            "afterJacketAndSettingMm": 329.94999999996696
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-0",
+            "afterJacketAndSettingMm": 750.396125607431
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-1",
+            "afterJacketAndSettingMm": 384.343830527059
+          },
+          {
+            "id": "protected-parked-leaf-full2300-comparison",
+            "afterJacketAndSettingMm": 1629.3358996668662
+          },
           {
             "id": "complete-shifted-utility-maintenance",
             "afterJacketAndSettingMm": 91.54802258502993
@@ -16875,15 +17023,15 @@
           },
           {
             "id": "retained-washer",
-            "afterJacketAndSettingMm": 149.9499999994702
+            "afterJacketAndSettingMm": 149.94999999946668
           },
           {
             "id": "retained-sink-conservative2000-high-envelope",
-            "afterJacketAndSettingMm": 674.949999999644
+            "afterJacketAndSettingMm": 689.949999999644
           },
           {
             "id": "utility-radiator",
-            "afterJacketAndSettingMm": 399.9499999996286
+            "afterJacketAndSettingMm": 399.94999999962505
           },
           {
             "id": "HAD/utility-north/shield-connection-1",
@@ -16891,11 +17039,11 @@
           },
           {
             "id": "HAD/utility-north/shield-connection-2",
-            "afterJacketAndSettingMm": 329.15047468287577
+            "afterJacketAndSettingMm": 329.15047468287224
           }
         ],
         "roomReserveAfterSettingMm": 30.450000000000003,
-        "ceilingReserveAfterSettingMm": 324.95,
+        "ceilingReserveAfterSettingMm": 309.95,
         "minimumLegMm": 120,
         "straightLeg84MmTakeoffScreen": true,
         "actualFittingTakeoffAndInsulatedCornerEnvelopeQualified": false
@@ -16914,29 +17062,29 @@
             1550
           ],
           [
-            10210,
+            11180,
             2350,
             1550
           ],
           [
-            10210,
+            11180,
             2350,
-            2850
+            2250
           ],
           [
-            10080,
+            10040,
             2350,
-            2850
+            2250
           ],
           [
-            10080,
+            10040,
             1250,
-            2850
+            2250
           ],
           [
             10760,
             1250,
-            2850
+            2250
           ],
           [
             10760,
@@ -16944,7 +17092,7 @@
             1000
           ]
         ],
-        "centrelineLengthMm": 6320,
+        "centrelineLengthMm": 5200,
         "stock": [
           {
             "id": "HAD/indoor-pipe/utility/downstream/0",
@@ -16967,9 +17115,45 @@
           {
             "id": "HAD/indoor-pipe/utility/downstream/1",
             "originMm": [
-              10780,
+              11265,
               2350,
               2080
+            ],
+            "copperKg": 0.17645027678332947,
+            "fullWaterKg": 0.09067501278717678,
+            "fullWaterGravityWrenchKNKNm": [
+              0,
+              0,
+              -0.002620499090686666,
+              -0.0061581728631136656,
+              0.029519922256585295,
+              0
+            ]
+          },
+          {
+            "id": "HAD/indoor-pipe/utility/downstream/2",
+            "originMm": [
+              11180,
+              2350,
+              2430
+            ],
+            "copperKg": 0.7265599632254742,
+            "fullWaterKg": 0.37336769971190437,
+            "fullWaterGravityWrenchKNKNm": [
+              0,
+              0,
+              -0.010790290373415685,
+              -0.02535718237752686,
+              0.12063544637478735,
+              0
+            ]
+          },
+          {
+            "id": "HAD/indoor-pipe/utility/downstream/3",
+            "originMm": [
+              10610,
+              2350,
+              2780
             ],
             "copperKg": 1.1832547972529153,
             "fullWaterKg": 0.6080559681022442,
@@ -16978,52 +17162,16 @@
               0,
               -0.017572758608134117,
               -0.04129598272911517,
-              0.18943433779568578,
-              0
-            ]
-          },
-          {
-            "id": "HAD/indoor-pipe/utility/downstream/2",
-            "originMm": [
-              10210,
-              2350,
-              2730
-            ],
-            "copperKg": 1.3493256459901666,
-            "fullWaterKg": 0.6933971566078224,
-            "fullWaterGravityWrenchKNKNm": [
-              0,
-              0,
-              -0.02003911069348627,
-              -0.047091910129692736,
-              0.20459932018049484,
-              0
-            ]
-          },
-          {
-            "id": "HAD/indoor-pipe/utility/downstream/3",
-            "originMm": [
-              10145,
-              2350,
-              3380
-            ],
-            "copperKg": 0.13493256459901665,
-            "fullWaterKg": 0.06933971566078224,
-            "fullWaterGravityWrenchKNKNm": [
-              0,
-              0,
-              -0.0020039110693486272,
-              -0.004709191012969274,
-              0.020329677798541824,
+              0.18644696883230297,
               0
             ]
           },
           {
             "id": "HAD/indoor-pipe/utility/downstream/4",
             "originMm": [
-              10080,
+              10040,
               1800,
-              3380
+              2780
             ],
             "copperKg": 1.1417370850686026,
             "fullWaterKg": 0.5867206709758498,
@@ -17032,25 +17180,25 @@
               0,
               -0.01695617058679608,
               -0.030521107056232944,
-              0.1709181995149045,
+              0.17023995269143263,
               0
             ]
           },
           {
             "id": "HAD/indoor-pipe/utility/downstream/5",
             "originMm": [
-              10420,
+              10400,
               1250,
-              3380
+              2780
             ],
-            "copperKg": 0.7058011071333179,
-            "fullWaterKg": 0.3627000511487071,
+            "copperKg": 0.7473188193176307,
+            "fullWaterKg": 0.3840353482751016,
             "fullWaterGravityWrenchKNKNm": [
               0,
               0,
-              -0.010481996362746665,
-              -0.013102495453433331,
-              0.10922240209982025,
+              -0.011098584384084705,
+              -0.01387323048010588,
+              0.11542527759448093,
               0
             ]
           },
@@ -17059,16 +17207,16 @@
             "originMm": [
               10760,
               1250,
-              2455
+              2155
             ],
-            "copperKg": 1.920194188524468,
-            "fullWaterKg": 0.9867574920957471,
+            "copperKg": 1.2974285057597756,
+            "fullWaterKg": 0.6667280351998291,
             "fullWaterGravityWrenchKNKNm": [
               0,
               0,
-              -0.02851719598688431,
-              -0.035646494983605385,
-              0.30684502881887515,
+              -0.019268375666813723,
+              -0.024085469583517153,
+              0.20732772217491566,
               0
             ]
           }
@@ -17088,14 +17236,22 @@
               490.7118339070742
             ],
             "previousLegMm": 120,
-            "nextLegMm": 1140,
+            "nextLegMm": 170,
+            "territoryBoxMm": [
+              11259.483339501605,
+              2301.4833395016044,
+              1459.4833395016046,
+              139.03332099679028,
+              97.03332099679119,
+              139.03332099679074
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
           {
             "id": "HAD/indoor-pipe/utility/downstream/corner/1",
             "pointMm": [
-              10210,
+              11180,
               2350,
               1550
             ],
@@ -17105,17 +17261,25 @@
               0,
               -490.7118339070742
             ],
-            "previousLegMm": 1140,
-            "nextLegMm": 1300,
+            "previousLegMm": 170,
+            "nextLegMm": 700,
+            "territoryBoxMm": [
+              11131.483339501605,
+              2301.4833395016044,
+              1501.4833395016046,
+              139.03332099679028,
+              97.03332099679119,
+              139.03332099679074
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
           {
             "id": "HAD/indoor-pipe/utility/downstream/corner/2",
             "pointMm": [
-              10210,
+              11180,
               2350,
-              2850
+              2250
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17123,17 +17287,25 @@
               0,
               490.7118339070742
             ],
-            "previousLegMm": 1300,
-            "nextLegMm": 130,
+            "previousLegMm": 700,
+            "nextLegMm": 1140,
+            "territoryBoxMm": [
+              11089.483339501605,
+              2301.4833395016044,
+              2159.4833395016044,
+              139.03332099679028,
+              97.03332099679119,
+              139.0333209967912
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
           {
             "id": "HAD/indoor-pipe/utility/downstream/corner/3",
             "pointMm": [
-              10080,
+              10040,
               2350,
-              2850
+              2250
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17141,17 +17313,25 @@
               490.7118339070742,
               0
             ],
-            "previousLegMm": 130,
+            "previousLegMm": 1140,
             "nextLegMm": 1100,
+            "territoryBoxMm": [
+              9991.483339501605,
+              2259.4833395016044,
+              2201.4833395016044,
+              139.03332099679028,
+              139.0333209967912,
+              97.03332099679119
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
           {
             "id": "HAD/indoor-pipe/utility/downstream/corner/4",
             "pointMm": [
-              10080,
+              10040,
               1250,
-              2850
+              2250
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17160,7 +17340,15 @@
               0
             ],
             "previousLegMm": 1100,
-            "nextLegMm": 680,
+            "nextLegMm": 720,
+            "territoryBoxMm": [
+              9991.483339501605,
+              1201.4833395016046,
+              2201.4833395016044,
+              139.03332099679028,
+              139.03332099679074,
+              97.03332099679119
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -17169,7 +17357,7 @@
             "pointMm": [
               10760,
               1250,
-              2850
+              2250
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17177,28 +17365,52 @@
               0,
               490.7118339070742
             ],
-            "previousLegMm": 680,
-            "nextLegMm": 1850,
+            "previousLegMm": 720,
+            "nextLegMm": 1250,
+            "territoryBoxMm": [
+              10669.483339501605,
+              1201.4833395016046,
+              2159.4833395016044,
+              139.03332099679028,
+              97.03332099679074,
+              139.0333209967912
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           }
         ],
         "obstacles": [
           {
+            "id": "ordinary-operator-body-and-approach",
+            "afterJacketAndSettingMm": 159.94999999983492
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-0",
+            "afterJacketAndSettingMm": 266.9499999997312
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-1",
+            "afterJacketAndSettingMm": 266.9499999997312
+          },
+          {
+            "id": "protected-parked-leaf-full2300-comparison",
+            "afterJacketAndSettingMm": 1133.9499999997313
+          },
+          {
             "id": "complete-shifted-utility-maintenance",
-            "afterJacketAndSettingMm": 14.949999999740612
+            "afterJacketAndSettingMm": 44.949999999731176
           },
           {
             "id": "occupied-washer-rest",
-            "afterJacketAndSettingMm": 254.9090136391019
+            "afterJacketAndSettingMm": 254.90901363924337
           },
           {
             "id": "retained-washer",
-            "afterJacketAndSettingMm": 124.59249196529356
+            "afterJacketAndSettingMm": 124.59249196543504
           },
           {
             "id": "retained-sink-conservative2000-high-envelope",
-            "afterJacketAndSettingMm": 124.94999999956377
+            "afterJacketAndSettingMm": 124.94999999970526
           },
           {
             "id": "utility-radiator",
@@ -17210,11 +17422,11 @@
           },
           {
             "id": "HAD/utility-north/shield-connection-2",
-            "afterJacketAndSettingMm": 840.1819922354254
+            "afterJacketAndSettingMm": 323.30371968121506
           }
         ],
         "roomReserveAfterSettingMm": 52.95,
-        "ceilingReserveAfterSettingMm": 199.95,
+        "ceilingReserveAfterSettingMm": 799.95,
         "minimumLegMm": 120,
         "straightLeg84MmTakeoffScreen": true,
         "actualFittingTakeoffAndInsulatedCornerEnvelopeQualified": false
@@ -17245,20 +17457,20 @@
           [
             11350,
             2230,
-            1660
+            1690
           ],
           [
             11350,
             2350,
-            1660
+            1690
           ],
           [
             11350,
             2350,
-            1780
+            1810
           ]
         ],
-        "centrelineLengthMm": 5951.610000000001,
+        "centrelineLengthMm": 5921.610000000001,
         "stock": [
           {
             "id": "HAD/indoor-pipe/plant/upstream/0",
@@ -17319,16 +17531,16 @@
             "originMm": [
               11350,
               2230,
-              2665
+              2680
             ],
-            "copperKg": 0.9860456643774294,
-            "fullWaterKg": 0.5067133067518702,
+            "copperKg": 0.9549073802391949,
+            "fullWaterKg": 0.4907118339070743,
             "fullWaterGravityWrenchKNKNm": [
               0,
               0,
-              -0.014643965506778428,
-              -0.032656043080115896,
-              0.16620900850193515,
+              -0.0141815244907749,
+              -0.03162479961442803,
+              0.16096030297029512,
               0
             ]
           },
@@ -17337,7 +17549,7 @@
             "originMm": [
               11350,
               2290,
-              2190
+              2220
             ],
             "copperKg": 0.12455313655293845,
             "fullWaterKg": 0.0640058913791836,
@@ -17355,7 +17567,7 @@
             "originMm": [
               11350,
               2350,
-              2250
+              2280
             ],
             "copperKg": 0.12455313655293845,
             "fullWaterKg": 0.0640058913791836,
@@ -17385,6 +17597,14 @@
             ],
             "previousLegMm": 2011.6100000000001,
             "nextLegMm": 1065,
+            "territoryBoxMm": [
+              10236.483339501605,
+              496.4833395016046,
+              2519.4833395016044,
+              139.03332099679028,
+              97.03332099679079,
+              139.0333209967912
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -17403,6 +17623,14 @@
             ],
             "previousLegMm": 1065,
             "nextLegMm": 1685,
+            "territoryBoxMm": [
+              11259.483339501605,
+              496.4833395016046,
+              2561.4833395016044,
+              139.03332099679028,
+              139.0333209967908,
+              97.03332099679119
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -17420,7 +17648,15 @@
               490.7118339070742
             ],
             "previousLegMm": 1685,
-            "nextLegMm": 950,
+            "nextLegMm": 920,
+            "territoryBoxMm": [
+              11301.483339501605,
+              2139.4833395016044,
+              2519.4833395016044,
+              97.03332099679028,
+              139.0333209967912,
+              139.0333209967912
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -17429,7 +17665,7 @@
             "pointMm": [
               11350,
               2230,
-              1660
+              1690
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17437,8 +17673,16 @@
               -490.7118339070742,
               -490.7118339070742
             ],
-            "previousLegMm": 950,
+            "previousLegMm": 920,
             "nextLegMm": 120,
+            "territoryBoxMm": [
+              11301.483339501605,
+              2181.4833395016044,
+              1641.4833395016046,
+              97.03332099679028,
+              139.0333209967912,
+              139.03332099679074
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -17447,7 +17691,7 @@
             "pointMm": [
               11350,
               2350,
-              1660
+              1690
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17457,11 +17701,35 @@
             ],
             "previousLegMm": 120,
             "nextLegMm": 120,
+            "territoryBoxMm": [
+              11301.483339501605,
+              2259.4833395016044,
+              1641.4833395016046,
+              97.03332099679028,
+              139.0333209967912,
+              139.03332099679074
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           }
         ],
         "obstacles": [
+          {
+            "id": "ordinary-operator-body-and-approach",
+            "afterJacketAndSettingMm": 329.949999999783
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-0",
+            "afterJacketAndSettingMm": 750.3961256074357
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-1",
+            "afterJacketAndSettingMm": 384.34383052706374
+          },
+          {
+            "id": "protected-parked-leaf-full2300-comparison",
+            "afterJacketAndSettingMm": 1629.335899666871
+          },
           {
             "id": "complete-shifted-utility-maintenance",
             "afterJacketAndSettingMm": 54.94999999960267
@@ -17480,11 +17748,11 @@
           },
           {
             "id": "utility-radiator",
-            "afterJacketAndSettingMm": 910.1688552614293
+            "afterJacketAndSettingMm": 940.1622247273916
           },
           {
             "id": "HAD/utility-north/shield-connection-1",
-            "afterJacketAndSettingMm": 440.04896959692974
+            "afterJacketAndSettingMm": 469.3506160951011
           },
           {
             "id": "HAD/utility-north/shield-connection-2",
@@ -17503,47 +17771,47 @@
           [
             11350,
             2350,
-            1940
+            1970
           ],
           [
             11350,
             2350,
-            2060
+            2090
           ],
           [
             11490,
             2350,
-            2060
+            2090
           ],
           [
             11490,
             2350,
-            3000
+            2990
           ],
           [
             10900,
             2360,
-            3000
+            2990
           ],
           [
             10900,
             2360,
-            2235
+            2400
           ],
           [
             10600,
             3900,
-            2235
+            2400
           ]
         ],
-        "centrelineLengthMm": 4124.033432273693,
+        "centrelineLengthMm": 3909.033432273692,
         "stock": [
           {
             "id": "HAD/indoor-pipe/plant/downstream/0",
             "originMm": [
               11350,
               2350,
-              2530
+              2560
             ],
             "copperKg": 0.12455313655293845,
             "fullWaterKg": 0.0640058913791836,
@@ -17561,7 +17829,7 @@
             "originMm": [
               11420,
               2350,
-              2590
+              2620
             ],
             "copperKg": 0.14531199264509487,
             "fullWaterKg": 0.07467353994238088,
@@ -17579,16 +17847,16 @@
             "originMm": [
               11490,
               2350,
-              3060
+              3070
             ],
-            "copperKg": 0.9756662363313512,
-            "fullWaterKg": 0.5013794824702715,
+            "copperKg": 0.9341485241470384,
+            "fullWaterKg": 0.480044185343877,
             "fullWaterGravityWrenchKNKNm": [
               0,
               0,
-              -0.01448981850144392,
-              -0.03405107347839321,
-              0.16648801458159063,
+              -0.013873230480105882,
+              -0.03260209162824883,
+              0.1594034182164166,
               0
             ]
           },
@@ -17597,7 +17865,7 @@
             "originMm": [
               11195,
               2355,
-              3530
+              3520
             ],
             "copperKg": 0.6124742096569087,
             "fullWaterKg": 0.3147408312691469,
@@ -17615,16 +17883,16 @@
             "originMm": [
               10900,
               2360,
-              3147.5
+              3225
             ],
-            "copperKg": 0.7940262455249827,
-            "fullWaterKg": 0.4080375575422955,
+            "copperKg": 0.6123862547186141,
+            "fullWaterKg": 0.3146956326143194,
             "fullWaterGravityWrenchKNKNm": [
               0,
               0,
-              -0.011792245908089999,
-              -0.027829700343092397,
-              0.128535480398181,
+              -0.009094673314736077,
+              -0.02146342902277714,
+              0.09913193913062324,
               0
             ]
           },
@@ -17633,7 +17901,7 @@
             "originMm": [
               10750,
               3130,
-              2765
+              2930
             ],
             "copperKg": 1.6284790062792962,
             "fullWaterKg": 0.8368496633153188,
@@ -17653,7 +17921,7 @@
             "pointMm": [
               11350,
               2350,
-              2060
+              2090
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17663,6 +17931,14 @@
             ],
             "previousLegMm": 120,
             "nextLegMm": 140,
+            "territoryBoxMm": [
+              11301.483339501605,
+              2301.4833395016044,
+              1999.4833395016046,
+              139.03332099679028,
+              97.03332099679119,
+              139.03332099679096
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -17671,7 +17947,7 @@
             "pointMm": [
               11490,
               2350,
-              2060
+              2090
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17680,7 +17956,15 @@
               -490.7118339070742
             ],
             "previousLegMm": 140,
-            "nextLegMm": 940,
+            "nextLegMm": 900,
+            "territoryBoxMm": [
+              11399.483339501605,
+              2301.4833395016044,
+              2041.4833395016046,
+              139.03332099679028,
+              97.03332099679119,
+              139.03332099679096
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -17689,7 +17973,7 @@
             "pointMm": [
               11490,
               2350,
-              3000
+              2990
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17697,8 +17981,16 @@
               -8.315955335083721,
               490.7118339070742
             ],
-            "previousLegMm": 940,
+            "previousLegMm": 900,
             "nextLegMm": 590.0847396772772,
+            "territoryBoxMm": [
+              11399.489370951338,
+              2301.4833395016044,
+              2899.4833395016044,
+              139.02728954705708,
+              97.74508317560912,
+              139.0333209967912
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -17707,7 +17999,7 @@
             "pointMm": [
               10900,
               2360,
-              3000
+              2990
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17716,7 +18008,15 @@
               490.7118339070742
             ],
             "previousLegMm": 590.0847396772772,
-            "nextLegMm": 765,
+            "nextLegMm": 590,
+            "territoryBoxMm": [
+              10851.483339501605,
+              2310.7715773227865,
+              2899.4833395016044,
+              139.02728954705708,
+              97.74508317560912,
+              139.0333209967912
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           },
@@ -17725,7 +18025,7 @@
             "pointMm": [
               10900,
               2360,
-              2235
+              2400
             ],
             "turnAngleDeg": 90,
             "fullPressureComparisonForceN": [
@@ -17733,24 +18033,48 @@
               -481.6577035201266,
               -490.7118339070742
             ],
-            "previousLegMm": 765,
+            "previousLegMm": 590,
             "nextLegMm": 1568.9486925964152,
+            "territoryBoxMm": [
+              10843.45248415276,
+              2311.4833395016044,
+              2351.4833395016044,
+              105.06417634563513,
+              138.2583784541912,
+              139.0333209967912
+            ],
             "factoryBendTangentAndFittingSelected": false,
             "pressureInterpretation": "Uniform full-gauge static fluid-on-bend reference pA(t_in-t_out); momentum, local pressure loss and restraint redistribution are not included."
           }
         ],
         "obstacles": [
           {
+            "id": "ordinary-operator-body-and-approach",
+            "afterJacketAndSettingMm": 329.9499999999717
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-0",
+            "afterJacketAndSettingMm": 115.19589963050286
+          },
+          {
+            "id": "wet-door-complete-moving-leaf-1",
+            "afterJacketAndSettingMm": 49.94999999962994
+          },
+          {
+            "id": "protected-parked-leaf-full2300-comparison",
+            "afterJacketAndSettingMm": 454.39423464093665
+          },
+          {
             "id": "complete-shifted-utility-maintenance",
             "afterJacketAndSettingMm": 49.08830347809382
           },
           {
             "id": "occupied-washer-rest",
-            "afterJacketAndSettingMm": 1258.3612503337497
+            "afterJacketAndSettingMm": 1283.5016487935236
           },
           {
             "id": "retained-washer",
-            "afterJacketAndSettingMm": 1547.4292643411402
+            "afterJacketAndSettingMm": 1568.0847286304404
           },
           {
             "id": "retained-sink-conservative2000-high-envelope",
@@ -17758,76 +18082,77 @@
           },
           {
             "id": "utility-radiator",
-            "afterJacketAndSettingMm": 1190.1194440679992
+            "afterJacketAndSettingMm": 1220.1154419798738
           },
           {
             "id": "HAD/utility-north/shield-connection-1",
-            "afterJacketAndSettingMm": 715.6372729776542
+            "afterJacketAndSettingMm": 745.3473849592134
           },
           {
             "id": "HAD/utility-north/shield-connection-2",
-            "afterJacketAndSettingMm": 154.92072961748966
+            "afterJacketAndSettingMm": 154.92072961753092
           }
         ],
         "roomReserveAfterSettingMm": 30.450000000000003,
-        "ceilingReserveAfterSettingMm": 49.95,
+        "ceilingReserveAfterSettingMm": 59.95,
         "minimumLegMm": 120,
         "straightLeg84MmTakeoffScreen": true,
         "actualFittingTakeoffAndInsulatedCornerEnvelopeQualified": false
       }
     ],
     "nearestPair": {
-      "a": "utility/downstream",
-      "aSegment": 0,
-      "b": "plant/upstream",
-      "bSegment": 4,
-      "afterTwoJacketsAndSettingsMm": 9.900000000000006
+      "a": "plant/upstream",
+      "aSegment": 3,
+      "b": "plant/downstream",
+      "bSegment": 0,
+      "afterTwoJacketsAndSettingsMm": 19.900000000000006
     },
     "minimumSelfClearanceMm": 19.900000000000006,
     "branches": [
       {
         "id": "utility",
-        "centrelineLengthMm": 13561.61,
+        "centrelineLengthMm": 12471.61,
         "velocityMps": 0.6715190186797806,
         "comparisonCornerCount": 12,
-        "straightLossBar": 0.036488320259245886,
+        "straightLossBar": 0.03355561027255714,
         "cornerLossBar": 0.024350640792227395,
         "valveLossBar": 0.009999999999999998,
-        "comparisonLossBar": 0.07083896105147328,
+        "comparisonLossBar": 0.06790625106478454,
         "allocatedNetworkLossBar": 0.5,
-        "unallocatedNetworkAllowanceBeforeRiseBar": 0.42916103894852675,
-        "unallocatedNetworkAllowanceAfterRiseBar": 0.37799109794852676,
+        "unallocatedNetworkAllowanceBeforeRiseBar": 0.43209374893521546,
+        "unallocatedNetworkAllowanceAfterRiseBar": 0.38092380793521546,
         "netLocalRiseMm": 521.61,
         "netRiseBar": 0.051169941000000004,
         "lossAndRiseWithinExistingAllowanceComparison": true,
         "pipeFrictionBendCoefficientsAndInstalledKvQualified": false,
         "remainingActualNetworkLossQualified": false,
-        "freeAxialThermalExpansionMm": 9.2218948
+        "freeAxialThermalExpansionMm": 8.4806948
       },
       {
         "id": "plant",
-        "centrelineLengthMm": 10075.643432273693,
+        "centrelineLengthMm": 9830.643432273693,
         "velocityMps": 1.5109177920295065,
         "comparisonCornerCount": 10,
-        "straightLossBar": 0.13723991682383388,
+        "straightLossBar": 0.1339027820941413,
         "cornerLossBar": 0.10272926584220937,
         "valveLossBar": 0.05062499999999999,
-        "comparisonLossBar": 0.29059418266604325,
+        "comparisonLossBar": 0.28725704793635065,
         "allocatedNetworkLossBar": 1,
-        "unallocatedNetworkAllowanceBeforeRiseBar": 0.7094058173339568,
-        "unallocatedNetworkAllowanceAfterRiseBar": 0.5488543763339568,
-        "netLocalRiseMm": 1636.6100000000001,
-        "netRiseBar": 0.16055144100000002,
+        "unallocatedNetworkAllowanceBeforeRiseBar": 0.7127429520636493,
+        "unallocatedNetworkAllowanceAfterRiseBar": 0.5360050110636494,
+        "netLocalRiseMm": 1801.6100000000001,
+        "netRiseBar": 0.176737941,
         "lossAndRiseWithinExistingAllowanceComparison": true,
         "pipeFrictionBendCoefficientsAndInstalledKvQualified": false,
         "remainingActualNetworkLossQualified": false,
-        "freeAxialThermalExpansionMm": 6.851437533946111
+        "freeAxialThermalExpansionMm": 6.68483753394611
       }
     ],
-    "straightCopperStockComparisonKg": 24.534117120719984,
-    "maximumStraightPipeWaterComparisonKg": 12.607695630736206,
+    "straightCopperStockComparisonKg": 23.148463476568544,
+    "maximumStraightPipeWaterComparisonKg": 11.895630089142788,
     "twoValveReferenceKg": 12,
     "otherInstalledStockMassKg": null,
+    "straightLengthInterpretation": "Full virtual-corner polyline stock comparison, not actual tube cut lengths; fittings and exact installed contents remain unqualified.",
     "completelyLockedStraightTubeAxialComparisonN": 9232.130553127774,
     "reservedConnections": {
       "sourceChaseAndTerminalBayAreInterfacesNotSolidObstacleBoxes": true,
@@ -17956,7 +18281,7 @@
     "fullRouteRenewalQualified": false,
     "wholeOccupiedArrangementComplete": false,
     "selected": false,
-    "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1250\" viewBox=\"0 0 1200 1250\"><rect width=\"1200\" height=\"1250\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\"><text x=\"35\" y=\"40\" font-size=\"25\">Independent indoor cold paths · actual saved-bank comparison</text><text x=\"35\" y=\"75\" font-size=\"16\">Straight centreline envelopes only. Fitted corners, independent supports and loaded renewal remain unqualified.</text><text x=\"35\" y=\"120\" font-size=\"18\">PLAN · source entry to separate indoor valves and the retained terminal/Plant transfer</text><rect x=\"50\" y=\"376.945\" width=\"282.555\" height=\"263.055\" fill=\"none\" stroke=\"#6f766e\"/><rect x=\"147.24\" y=\"402.685\" width=\"143\" height=\"97.5\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"422.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"513.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><polyline points=\"138.79000000000002,617.835 138.79000000000002,617.835 322.09000000000003,617.835 322.09000000000003,421.53499999999997 322.09000000000003,421.53499999999997 322.09000000000003,390.335 303.89,390.335 303.89,390.335\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"303.89,390.335 303.89,390.335 155.69,390.335 155.69,390.335 138.79000000000002,390.335 138.79000000000002,533.335 227.19,533.335 227.19,533.335\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,624.985 165.44,624.985 303.89,624.985 303.89,405.935 303.89,405.935 303.89,390.335 303.89,390.335\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"303.89,390.335 303.89,390.335 322.09000000000003,390.335 322.09000000000003,390.335 245.39000000000001,389.03499999999997 245.39000000000001,389.03499999999997 206.39000000000001,188.83499999999998\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><text x=\"35\" y=\"720\" font-size=\"18\">X/Z PROJECTION · local floor datum; no vertical exaggeration used as clearance proof</text><polyline points=\"138.79000000000002,1097.8093 138.79000000000002,805.75 322.09000000000003,805.75 322.09000000000003,805.75 322.09000000000003,1010.5 322.09000000000003,1010.5 303.89,1010.5 303.89,994.9\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"303.89,974.1 303.89,958.5 155.69,958.5 155.69,789.5 138.79000000000002,789.5 138.79000000000002,789.5 227.19,789.5 227.19,1030\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,1082.2093 165.44,820.7 303.89,820.7 303.89,820.7 303.89,944.2 303.89,944.2 303.89,928.6\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"303.89,907.8 303.89,892.2 322.09000000000003,892.2 322.09000000000003,770 245.39000000000001,770 245.39000000000001,869.45 206.39000000000001,869.45\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><line x1=\"600\" x2=\"615\" y1=\"145\" y2=\"145\" stroke=\"#267a87\" stroke-width=\"4\"/><text x=\"620\" y=\"150\" font-size=\"16\">utility/upstream: 7.242m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"185\" y2=\"185\" stroke=\"#64a2a4\" stroke-width=\"4\"/><text x=\"620\" y=\"190\" font-size=\"16\">utility/downstream: 6.320m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"225\" y2=\"225\" stroke=\"#93513d\" stroke-width=\"4\"/><text x=\"620\" y=\"230\" font-size=\"16\">plant/upstream: 5.952m; corner interfaces: 5.</text><line x1=\"600\" x2=\"615\" y1=\"265\" y2=\"265\" stroke=\"#c58c55\" stroke-width=\"4\"/><text x=\"620\" y=\"270\" font-size=\"16\">plant/downstream: 4.124m; corner interfaces: 5.</text><text x=\"620\" y=\"345\" font-size=\"16\">Closest pipes after jackets/settings: 9.90mm.</text><text x=\"620\" y=\"385\" font-size=\"16\">Upper copper stock: 24.534 kg; water: 12.608 kg.</text><text x=\"620\" y=\"425\" font-size=\"16\">Valve references: 12 kg; fittings, jackets and supports unweighed.</text><text x=\"620\" y=\"485\" font-size=\"16\">utility: loss: 0.0708 bar; rise: 0.0512 bar.</text><text x=\"620\" y=\"525\" font-size=\"16\">plant: loss: 0.2906 bar; rise: 0.1606 bar.</text><text x=\"620\" y=\"610\" font-size=\"16\">Geometry/budget comparison: within declared comparisons.</text><text x=\"620\" y=\"650\" font-size=\"16\">Loss coefficients are authored comparisons, not proved limits.</text><text x=\"620\" y=\"850\" font-size=\"16\">Four paths; no cross-connection, header or bypass.</text><text x=\"620\" y=\"890\" font-size=\"16\">Upstream/downstream tails end at actual 160 mm valve faces.</text><text x=\"620\" y=\"930\" font-size=\"16\">Named copper/water gravity and pressure-corner vectors exported.</text><text x=\"620\" y=\"970\" font-size=\"16\">Actual fixed/sliding clips and masonry receivers still required.</text><text x=\"620\" y=\"1010\" font-size=\"16\">Lodge cuts and actual hot/store/upper draining remain required.</text><text x=\"620\" y=\"1050\" font-size=\"16\">No route or added mass is admitted into native ground-zero STR.</text><text x=\"35\" y=\"1210\" font-size=\"18\">HAD OPEN · no product/material selection, full occupied arrangement or construction acceptance</text></g></svg>"
+    "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1250\" viewBox=\"0 0 1200 1250\"><rect width=\"1200\" height=\"1250\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\"><text x=\"35\" y=\"40\" font-size=\"25\">Independent indoor cold paths · actual saved-bank comparison</text><text x=\"35\" y=\"75\" font-size=\"16\">Declared pipe and boxed fitting territories. Factory fit, independent supports and loaded renewal remain unqualified.</text><text x=\"35\" y=\"120\" font-size=\"18\">PLAN · source entry to separate indoor valves and the retained terminal/Plant transfer</text><rect x=\"50\" y=\"376.945\" width=\"282.555\" height=\"263.055\" fill=\"none\" stroke=\"#6f766e\"/><rect x=\"147.24\" y=\"402.685\" width=\"143\" height=\"97.5\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"422.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"513.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><polyline points=\"138.79000000000002,617.835 138.79000000000002,617.835 322.09000000000003,617.835 322.09000000000003,421.53499999999997 322.09000000000003,421.53499999999997 322.09000000000003,390.335 303.89,390.335 303.89,390.335\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"303.89,390.335 303.89,390.335 281.79,390.335 281.79,390.335 133.59,390.335 133.59,533.335 227.19,533.335 227.19,533.335\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,624.985 165.44,624.985 303.89,624.985 303.89,405.935 303.89,405.935 303.89,390.335 303.89,390.335\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"303.89,390.335 303.89,390.335 322.09000000000003,390.335 322.09000000000003,390.335 245.39000000000001,389.03499999999997 245.39000000000001,389.03499999999997 206.39000000000001,188.83499999999998\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><text x=\"35\" y=\"720\" font-size=\"18\">X/Z PROJECTION · local floor datum; no vertical exaggeration used as clearance proof</text><polyline points=\"138.79000000000002,1097.8093 138.79000000000002,803.8 322.09000000000003,803.8 322.09000000000003,803.8 322.09000000000003,1010.5 322.09000000000003,1010.5 303.89,1010.5 303.89,994.9\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"303.89,974.1 303.89,958.5 281.79,958.5 281.79,867.5 133.59,867.5 133.59,867.5 227.19,867.5 227.19,1030\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,1082.2093 165.44,820.7 303.89,820.7 303.89,820.7 303.89,940.3 303.89,940.3 303.89,924.7\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"303.89,903.9 303.89,888.3 322.09000000000003,888.3 322.09000000000003,771.3 245.39000000000001,771.3 245.39000000000001,848 206.39000000000001,848\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><line x1=\"600\" x2=\"615\" y1=\"145\" y2=\"145\" stroke=\"#267a87\" stroke-width=\"4\"/><text x=\"620\" y=\"150\" font-size=\"16\">utility/upstream: 7.272m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"185\" y2=\"185\" stroke=\"#64a2a4\" stroke-width=\"4\"/><text x=\"620\" y=\"190\" font-size=\"16\">utility/downstream: 5.200m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"225\" y2=\"225\" stroke=\"#93513d\" stroke-width=\"4\"/><text x=\"620\" y=\"230\" font-size=\"16\">plant/upstream: 5.922m; corner interfaces: 5.</text><line x1=\"600\" x2=\"615\" y1=\"265\" y2=\"265\" stroke=\"#c58c55\" stroke-width=\"4\"/><text x=\"620\" y=\"270\" font-size=\"16\">plant/downstream: 3.909m; corner interfaces: 5.</text><text x=\"620\" y=\"345\" font-size=\"16\">Closest pipes after jackets/settings: 19.90mm.</text><text x=\"620\" y=\"385\" font-size=\"16\">Upper copper stock: 23.148 kg; water: 11.896 kg.</text><text x=\"620\" y=\"425\" font-size=\"16\">Valve references: 12 kg; fittings, jackets and supports unweighed.</text><text x=\"620\" y=\"485\" font-size=\"16\">utility: loss: 0.0679 bar; rise: 0.0512 bar.</text><text x=\"620\" y=\"525\" font-size=\"16\">plant: loss: 0.2873 bar; rise: 0.1767 bar.</text><text x=\"620\" y=\"570\" font-size=\"16\">Boxed fitting territories: within declared bounds.</text><text x=\"620\" y=\"610\" font-size=\"16\">Geometry/budget comparison: within declared comparisons.</text><text x=\"620\" y=\"650\" font-size=\"16\">Loss coefficients are authored comparisons, not proved limits.</text><text x=\"620\" y=\"850\" font-size=\"16\">Four paths; no cross-connection, header or bypass.</text><text x=\"620\" y=\"890\" font-size=\"16\">Upstream/downstream tails end at actual 160 mm valve faces.</text><text x=\"620\" y=\"930\" font-size=\"16\">Named copper/water gravity and pressure-corner vectors exported.</text><text x=\"620\" y=\"970\" font-size=\"16\">Actual fixed/sliding clips and masonry receivers still required.</text><text x=\"620\" y=\"1010\" font-size=\"16\">Lodge cuts and actual hot/store/upper draining remain required.</text><text x=\"620\" y=\"1050\" font-size=\"16\">No route or added mass is admitted into native ground-zero STR.</text><text x=\"35\" y=\"1210\" font-size=\"18\">HAD OPEN · no product/material selection, full occupied arrangement or construction acceptance</text></g></svg>"
   },
   "houseAdopted": false,
   "physicalInstallationAdmitted": false

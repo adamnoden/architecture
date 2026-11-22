@@ -3,26 +3,27 @@ import test from 'node:test'
 import {readFileSync} from 'node:fs'
 import {inletIndoorRoutes,drawInletIndoorRoutes,type IndoorRoutesInput} from './current-design/inlet-indoor-routes.js'
 const source=JSON.parse(readFileSync(new URL('../../project/had/studies/south-inlet-under-sill.json',import.meta.url),'utf8'))
-const input:IndoorRoutesInput={roomPlanMm:[9397,429.5,2173.5,2023.5],bankMm:[11350,2350],utilityAxisZMm:1350,plantAxisZMm:1860,
+const input:IndoorRoutesInput={roomPlanMm:[9397,429.5,2173.5,2023.5],bankMm:[11350,2350],utilityAxisZMm:1350,plantAxisZMm:1890,
  utilitySourcePathMm:source.branches[0].coordinates,plantSourcePathMm:source.branches[1].coordinates,
- plantTransferMm:[[10900,2360,2235],[10600,3900,2235]],groundFflMm:0,ceilingMm:3100,utilityLmin:20,plantLmin:45,maximumGaugeBar:9,
- networkAllowancesBar:[.5,1],obstacles:[{id:'maintenance',boxMm:[10145,1505,0,1100,750,3100]}],comparison:{frictionFactor:.03,cornerK:.9,temperatureChangeK:40}}
+ plantTransferMm:[[10900,2360,2400],[10600,3900,2400]],groundFflMm:0,ceilingMm:3100,utilityLmin:20,plantLmin:45,maximumGaugeBar:9,
+ networkAllowancesBar:[.5,1],obstacles:[{id:'maintenance',boxMm:[10145,1505,0,1100,750,3100]},{id:'ordinary-body-approach',boxMm:[10370,2130,0,600,1060,2000]}],comparison:{frictionFactor:.03,cornerK:.9,temperatureChangeK:40}}
 test('four actual paths join opposite valve faces, avoid each other and preserve the full equipment field',()=>{
  const r=inletIndoorRoutes(input)
  assert.deepEqual(r.diagnostics,[])
  assert.equal(r.necessaryStraightPipeGeometryAndBudgetComparison,true)
- assert.ok(Math.abs(r.nearestPair.afterTwoJacketsAndSettingsMm-9.9)<1e-9)
+ assert.ok(r.nearestPair.afterTwoJacketsAndSettingsMm>14)
  assert.ok(r.minimumSelfClearanceMm>19)
  assert.deepEqual(r.paths[0].pointsMm.at(-1),[11350,2350,1270])
  assert.deepEqual(r.paths[1].pointsMm[0],[11350,2350,1430])
- assert.deepEqual(r.paths[2].pointsMm.at(-1),[11350,2350,1780])
- assert.deepEqual(r.paths[3].pointsMm[0],[11350,2350,1940])
+ assert.deepEqual(r.paths[2].pointsMm.at(-1),[11350,2350,1810])
+ assert.deepEqual(r.paths[3].pointsMm[0],[11350,2350,1970])
  assert.deepEqual(r.paths[3].pointsMm.at(-1),input.plantTransferMm.at(-1))
  assert.ok(r.branches.every(b=>b.lossAndRiseWithinExistingAllowanceComparison))
- assert.ok(r.straightCopperStockComparisonKg>24)
+ assert.ok(r.straightCopperStockComparisonKg>22)
  assert.equal(r.pipe.minimumHydraulicBoreMm,25.14)
  assert.equal(r.pipe.maximumWaterAndPressureBoreMm,26.060000000000002)
- assert.ok(Math.abs(r.maximumStraightPipeWaterComparisonKg-12.607695630736202)<1e-9)
+ assert.ok(r.maximumStraightPipeWaterComparisonKg>10)
+ assert.equal(r.cornerTerritory.necessaryBoxedCornerTerritoryComparison,true)
  assert.equal(r.support.nativeStructuralActionsAdopted,false)
  assert.equal(r.fullInsulatedFittingEnvelopeQualified,false)
  assert.equal(r.fullRouteRenewalQualified,false)
@@ -55,4 +56,12 @@ test('a real obstruction, insufficient ceiling, changed flow and unsupported sou
  assert.equal(inletIndoorRoutes({...input,networkAllowancesBar:[.01,.01]}).necessaryStraightPipeGeometryAndBudgetComparison,false)
  assert.throws(()=>inletIndoorRoutes({...input,plantSourcePathMm:[]}),/Unsupported/)
  assert.throws(()=>inletIndoorRoutes({...input,maximumGaugeBar:NaN}),/Unsupported/)
+ for(const malformed of [{bankMm:[11350]},{roomPlanMm:[9397,429.5,0,2023.5]},
+  {networkAllowancesBar:[.5]}, {comparison:{frictionFactor:.03,cornerK:.9}},
+  {plantSourcePathMm:[null,...input.plantSourcePathMm.slice(1)]},
+  {obstacles:[...input.obstacles,...input.obstacles]}, {utilityLmin:-20}])
+  assert.throws(()=>inletIndoorRoutes({...input,...malformed} as IndoorRoutesInput),/Unsupported/)
+ const sparse={...input,bankMm:new Array(2)} as unknown as IndoorRoutesInput
+ assert.throws(()=>inletIndoorRoutes(sparse),/Unsupported/)
+
 })

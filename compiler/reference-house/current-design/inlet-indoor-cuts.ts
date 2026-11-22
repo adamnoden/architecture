@@ -229,7 +229,9 @@ function wetDoorEvent(i:EntryInputs,jamb:readonly number[],paired:boolean){
       ...(phaseChangeMm!==null&&phaseChangeMm<0?['wet-door/connected-phase-change']:[])]
   return{id:'HAD/utility/wet-door',kind:paired?'paired-outward-north-west-then-east':'single-west-hinge-outward-north',hingeMm:hinge,
     rawOpeningMm:i.portalXMm[1]-i.portalXMm[0],finishedOpeningMm:fullSpan,projectLeafMm:[span,2300,60],
-    leafCount:phases.length,meetingGapComparisonMm:meetingGap,meetingEdgesAstragalSealsAndHardwareQualified:false,
+    leafCount:phases.length,
+    leafSweptOuterBoxesMm:phases.map(p=>[p.x-(p.direction<0?span:0)-leafHalf,y-leafHalf,0,span+2*leafHalf,span+2*leafHalf,2300] as Box),
+    meetingGapComparisonMm:meetingGap,meetingEdgesAstragalSealsAndHardwareQualified:false,
     hardwareProjectionComparisonMm:80,openingStopDeg:90,effectiveOpenClearComparisonMm:fullSpan-handleHalf*phases.length,
     no900FinishedClearClaim:true,openingClosingSamePathReversed:true,
     openingBodyAndHandleStates:states.filter((_s,k)=>k%50===0||k%901===900||k%901===0),continuousBoundsMm:bounds,
