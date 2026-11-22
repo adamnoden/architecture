@@ -65,6 +65,32 @@ and recovered joint closure within1e-5kN/kNm. A stored sidecar also binds the
 two new method files. The actual physical plate recovery independently checks
 the observed net condensed reactions.
 
+## Prepared shared compiler admission — unwired
+
+`compiler/reference-house/current-design/structural-four-l-joint-adapter.ts`
+is prepared but not imported by the normal floor stage. Three focused Node
+tests pass without invoking a builder. The optional capability requires a
+strict source/method/runtime-bound witness for the exact executed request;
+untested nonwet/default200/250 and changed load/topology requests explicitly
+remain unsupported. No authored stage field or saved-case shape changes.
+
+The observer's `--return-native` mode returns the complete native result as a
+canonical JSON string beside the observation and pure recovery. The adapter
+hashes those exact Python bytes before parsing: JavaScript reserialization of
+`1.0` or `-0.0` cannot establish their checksum. One existing native invocation
+supplies both result and observed demand; no duplicate solve is introduced.
+It validates current58-source/request/case identity, all52 heads, the method
+and runtime identities, each derived component's original observed inputs,
+six-component closure, no extra patch G and all unsupported capacity flags.
+
+After a genuine matched strict pass, root may add the three consumer paths to
+the existing current binding/source family, choose this adapter only when its
+capability is admitted, and expose `fourLJointDemands` plus diagnostics on the
+existing shared floor-stage result. Other requests retain the ordinary native
+path with an explicit unavailable diagnostic. CLI, browser and batch already
+consume that stage. This checkpoint does not make that switch or create a
+passivity witness from the rejected default-thread attempt.
+
 ## Rigid joint material is already included — initial gap hypothesis rejected
 
 The source-bound actual geometry identifies the following full L footprints

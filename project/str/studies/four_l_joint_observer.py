@@ -61,7 +61,7 @@ def _capture_full(result,path):
     os.replace(temporary,path)
 
 
-def observe(case, case_id, root, ordinary=False, full_capture_path=None):
+def observe(case, case_id, root, ordinary=False, full_capture_path=None, include_native=False):
     runtime_threads=require_runtime_threads()
     import floor_section_model as builder
     from joined_successor_kernel import FrameModel
@@ -229,16 +229,22 @@ def observe(case, case_id, root, ordinary=False, full_capture_path=None):
         methodSourceSHA256=methods,runtimeThreads=runtime_threads,
         **_controls(result), maximumPlateReactionDifferenceFromNativePhysicalRecovery=error,
         finiteJointCapacityAvailable=False, completeHouseProof=False, candidateAccepted=False)
-    return {'observation':captured,'freeBodies':recover(captured)}
+    envelope={'observation':captured,'freeBodies':recover(captured)}
+    if include_native:
+        # Retain the Python numeric JSON representation as exact bytes for the
+        # Node checksum join (JSON.parse/stringify would change1.0/-0.0).
+        envelope['nativeResultJSON']=json.dumps(result,sort_keys=True,separators=(',',':'),allow_nan=False)
+    return envelope
 
 
 if __name__=='__main__':
     payload=json.load(sys.stdin)
     if set(payload)!={'case','caseId'}:raise ValueError('Exact {case,caseId} request required')
-    arguments=sys.argv[1:];ordinary='--ordinary' in arguments
+    arguments=sys.argv[1:];ordinary='--ordinary' in arguments;include_native='--return-native' in arguments
     if ordinary:arguments.remove('--ordinary')
+    if include_native:arguments.remove('--return-native')
     if arguments and (len(arguments)!=2 or arguments[0]!='--capture-full'):
-        raise ValueError('Use [--ordinary] [--capture-full NEW_PATH]')
+        raise ValueError('Use [--ordinary] [--return-native] [--capture-full NEW_PATH]')
     full=arguments[1] if arguments else None
-    json.dump(observe(payload['case'],payload['caseId'],Path(__file__).resolve().parents[3],ordinary,full),
+    json.dump(observe(payload['case'],payload['caseId'],Path(__file__).resolve().parents[3],ordinary,full,include_native),
         sys.stdout,allow_nan=False)
