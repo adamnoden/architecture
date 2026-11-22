@@ -1,6 +1,6 @@
 {
   "schema": "str-global-mmd-native-controls/1",
-  "recordedUTC": "2026-11-22T07:54:52.482679+00:00",
+  "recordedUTC": "2026-11-22T08:02:04.591354+00:00",
   "sourceRecoveryCommit": "06d1bed95eac7ddc9424b4173c9bac36a99bc2a1",
   "sourceTree": "72d38f9b575cb143edcae46461838f00cb7126e5",
   "nativeSourceSHA256": {
@@ -1593,7 +1593,8 @@
         "maximum312ComponentDifferenceKN_KNm": 4.043954504595604e-09,
         "maximumPermittedDifferenceKN_KNm": 1e-06,
         "passes": true,
-        "scope": "Fresh request generated from current source. Authored physical choices match the historical500 control; only source-identity fields are omitted in that comparison, never overwritten in either request/result."
+        "scope": "Fresh request generated from current source. Authored physical choices match the historical500 control; only source-identity fields are omitted in that comparison, never overwritten in either request/result.",
+        "previousArtifactRevision": "769b60bc360a9a1cb36e9cfe0add9908d6db4b8e"
       },
       "completeNativeResultAvailable": true,
       "candidateAccepted": false,
@@ -1602,7 +1603,7 @@
     },
     {
       "caseId": "wet-floor-mesh-250",
-      "state": "execution-started-no-result-at-checkpoint",
+      "state": "completed-actual-nonlinear-capture",
       "executedRequest": {
         "schema": "str-coupled-floor-section-case/1",
         "sourceSHA256": {
@@ -2460,13 +2461,1399 @@
         "use": "unselected-source0-section-replacement-with-fixed-origin-load-controls"
       },
       "requestSHA256": "260ca588e0c570d9746399122cd71715d34b8c8c046d2331fc8259b6eec720e3",
-      "completeNativeResultAvailable": false,
-      "convergenceResultAvailable": false,
-      "candidateAccepted": false
+      "fullResultSHA256": "fe0ce372b8ba99cb8d077c1b8542a26b5150f1e4836bed76dc88045ee06b2029",
+      "captureManifestSHA256": "8dfb48869f0e0d6ab3fc6073529275ab299cdcbe1c0924b44d68426026d66863",
+      "elapsedSeconds": 296.207801462,
+      "observedChildPeakRSSKiB": 4062864,
+      "returnCode": 0,
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -106.8344526895778,
+            -78.51411180227419,
+            284.24592551980436,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            96.66295213902934,
+            2.6311604148575167,
+            -25.90411557928097,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.14528889899217257,
+            74.84772470882623,
+            -15.466100017316059,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -473.6141761536903,
+            -307.8235513244634,
+            84.328434607448,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            278.7077266613938,
+            2.4080909000663384,
+            136.09908931832737,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            -0.7025168196031757,
+            214.81579767581067,
+            -76.16377385586178,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -246.1398962814951,
+            -435.5608738672403,
+            93.1151174986006,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            184.15364132628895,
+            6.271208698920127,
+            -65.0103060192923,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.678236597481122,
+            260.377857114831,
+            161.88004022840104,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -155.61276781781572,
+            -205.050398101551,
+            -67.3986379851859,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            132.99275827553944,
+            2.3536414566738557,
+            64.48971151119063,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -2.308196857577947,
+            74.05090561492418,
+            153.9394153735877,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            41.244407160915664,
+            36.319904582911235,
+            104.94004146246124,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            17.492781451501628,
+            64.14728717109136,
+            37.63019978096795,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -0.6150748421317354,
+            30.18537800209674,
+            74.5774648685843,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            53.093324011663874,
+            107.39448962582597,
+            152.12030191359779,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -34.79859289068595,
+            84.53791220407649,
+            95.61222191784974,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -62.607722200805696,
+            4.77702098541436,
+            124.19224604628721,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -45.05268643393345,
+            188.65016078803154,
+            151.24670742938568,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            31.82669336110331,
+            -0.8617228498455309,
+            33.293922919153445,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            54.16574525412769,
+            4.0899472215611725,
+            48.488960509343805,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            60.698316676911624,
+            56.42727227031842,
+            108.27201587791572,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            121.62090247615433,
+            43.96063354110266,
+            140.37832199278506,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            104.86266888159658,
+            -30.32596717146528,
+            44.18634202138966,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            0.4999565938218975,
+            -53.23351395725808,
+            92.4417617474456,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -37.79529456585661,
+            -53.741833405257886,
+            158.58171318075725,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            82.40260222035639,
+            -2.149214052632731,
+            56.868365081031286,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -5.847938949504394,
+            0.5638080850424334,
+            120.641184933871,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -9.758683861325768,
+            56.74622735991843,
+            85.18850047684892,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -50.779007748135754,
+            9.166442893630613,
+            257.35337064341735,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            11.866478689880005,
+            52.83886545905192,
+            103.59572845042092,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -1.6092751433713106,
+            -6.068222847033578,
+            54.11534821451156,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            -0.03157798522622324,
+            14.602793583182361,
+            33.5334748671449,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            24.731285362976628,
+            -5.591783865037421,
+            57.12856763807526,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            2.1865057628881113,
+            23.41425358383171,
+            70.0790077952767,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            0.5665681654139991,
+            3.5206088998585017,
+            36.92743236682277,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            13.744925007124618,
+            -18.672159960566283,
+            -17.107695032696917,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -14.903851857731716,
+            -1.0290148041305245,
+            52.36372511113885,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            4.987363166330995,
+            0.649972696789975,
+            10.974906232174273,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            5.786516547194095,
+            0.10779044071396715,
+            37.864022478450316,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            18.78159579479777,
+            -62.21805603311835,
+            141.66988686928724,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            11.874218936948994,
+            13.88287761431973,
+            115.45230326996862,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            59.955385704623595,
+            -73.10292267802642,
+            138.13504135544423,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            80.49573759689275,
+            100.45663663299722,
+            175.41323094187442,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -30.44630734420838,
+            17.824308662598074,
+            103.40831844674261,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            -0.04417383756461837,
+            -24.750572754789943,
+            71.3173913098808,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -41.03926471033453,
+            46.652748222642586,
+            141.45038934795534,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -13.117587230780044,
+            2.889547615282332,
+            65.9167836013848,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -2.295719974474195,
+            -7.331453438855107,
+            42.7322348650565,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            20.732113380221048,
+            15.198354299204347,
+            49.0961290005597,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -23.657204661948573,
+            -4.984324864927828,
+            113.30023375034934,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            24.401817182991177,
+            -59.64205780522663,
+            92.71830423790176,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "independent52HeadBalanceResidualKN_KNm": [
+        -6.603158908546902e-09,
+        1.1741008165699895e-10,
+        -4.6293280320242047e-10,
+        -1.5221303328871727e-08,
+        -7.930793799459934e-09,
+        6.468606450482639e-08
+      ],
+      "globalEnergyRelativeResidual": 2.848180272449871e-12,
+      "maximumFreeResidualKNOrKNmm": 8.381903171539307e-07,
+      "physicalPlateWorkRelativeResidual": 3.953001657703056e-13,
+      "mass": {
+        "sourceRCAndInfillBeforeSlabKN": 99.6866032729886,
+        "newPlatePhysicalSelfGKN": 526.8437437500006,
+        "joinedPhysicalGKN": 2969.8859183494556,
+        "newPlateAreaM2": 97.56365625000012,
+        "newPlateCentroidXYMm": [
+          6332.5336108284355,
+          6023.325780652182
+        ],
+        "floorSlabThicknessMm": 200.0,
+        "northUpstandOwnsRemovedStripMaterial": true,
+        "authoredSlabLevelBandsUnionIncluded": true,
+        "sourceSelfGCondensationResidualKN_KNm": [
+          0.0,
+          0.0,
+          -4.547473508864641e-13,
+          -8.640199666842818e-12,
+          6.184563972055912e-11,
+          0.0
+        ],
+        "appliedPhysicalGKN": 4009.3459897717653,
+        "upperClearMasonryPhysicalGKN": 438.47708500000005,
+        "upperBearingPadsPhysicalGKN": 0.1413
+      },
+      "floorSection": {
+        "schema": "str-floor-section-successor/1",
+        "soffitZMm": 3170.0,
+        "topZMm": 3370.0,
+        "midplaneZMm": 3270.0,
+        "thicknessMm": 200.0,
+        "plateSelfGKN": 526.8437437500006,
+        "addedPlateGKN": 0.0,
+        "sourceGravityResidualKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sourcePressureResidualKN_KNm": [
+          1.4367174117069226e-11,
+          -5.5422333389287814e-12,
+          0.0,
+          1.7905676941154525e-11,
+          4.6838977141305804e-11,
+          -2.0037305148434825e-12
+        ],
+        "steelChordAxialRigidityKN": 180955.73684677208,
+        "northernUpstandGeometryChanged": false,
+        "sourceFFLMm": 3450.0,
+        "remainingSourceFinishDepthMm": 80.0,
+        "verticalPlateEnergyRepresentationPolicy": "direct-sparse-plate-block-v1",
+        "finishStairServiceEvidenceApplicable": false,
+        "candidateAccepted": false,
+        "sourceUpperMaterialResidualKN_KNm": [
+          4.773959005888173e-15,
+          -7.88865500700453e-16,
+          4.5702108764089644e-11,
+          1.000444171950221e-10,
+          4.274625098332763e-11,
+          0.0
+        ]
+      },
+      "rawPointBendingPlusTwistingKNmPerM": 119.25175155931372,
+      "completeNativeResultAvailable": true,
+      "candidateAccepted": false,
+      "completeHouseProof": false,
+      "localStressConvergenceProven": false
     }
   ],
   "rawCaptureLocation": "/workspace/scratch/c8557608a58b/native-captures/meshes/307156a9a354d52542495cfa3cf99594dc5deaca03ef5a28690a64762316a33d",
-  "scope": "Actual source-bound numerical execution checkpoint.500 completes the nonlinear native path and unchanged physical control.250 has no result at this checkpoint. All ancestor/current proof chains still require genuine regeneration; no house, resistance or finer-mesh convergence adoption.",
+  "scope": "Fresh exact-source500 and250 complete nonlinear native captures.500 passes unchanged physical control;500to250 fails declared global/cut stability. Ancestor/current proof chains require genuine regeneration. No house, resistance, local-joint or convergence adoption.",
   "candidateAccepted": false,
-  "completeHouseProof": false
+  "completeHouseProof": false,
+  "mesh500To250": {
+    "coarsePitchMm": 500,
+    "finePitchMm": 250,
+    "maximumHeadComponentDifferenceKN_KNm": 2.773789385139821,
+    "governingHeadChange": {
+      "id": "P04",
+      "component": 0,
+      "coarse": -470.8403867685505,
+      "fine": -473.6141761536903,
+      "difference": 2.773789385139821
+    },
+    "relativeCutIntegralChanges": [
+      {
+        "id": "STR/SW/normal-y-450",
+        "signedNormalMomentKNm": 0.09226773851605703,
+        "signedTwistingMomentKNm": 0.031364257301413644,
+        "absoluteBendingPlusTwistingKNm": 0.06059870082894384
+      },
+      {
+        "id": "STR/SW/normal-y-650",
+        "signedNormalMomentKNm": 0.07992556526831124,
+        "signedTwistingMomentKNm": 0.02933215315950087,
+        "absoluteBendingPlusTwistingKNm": 0.06362654982743048
+      },
+      {
+        "id": "STR/SW/normal-y-1300",
+        "signedNormalMomentKNm": 0.10766543607185451,
+        "signedTwistingMomentKNm": 0.1865588257903503,
+        "absoluteBendingPlusTwistingKNm": 0.10377604766080178
+      },
+      {
+        "id": "STR/SW/normal-x-1450",
+        "signedNormalMomentKNm": 0.20610133878720943,
+        "signedTwistingMomentKNm": 0.327174593831805,
+        "absoluteBendingPlusTwistingKNm": 0.22629819610566224
+      }
+    ],
+    "declaredScreenPasses": false,
+    "largestActualHeadWrenchChanges": [
+      {
+        "headId": "P04",
+        "position": {
+          "id": "P04",
+          "xyMm": [
+            11667.5,
+            332.5
+          ],
+          "xyzMm": [
+            11667.5,
+            332.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          -470.8403867685505,
+          -305.98953758849456,
+          84.06959827336013,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          -473.6141761536903,
+          -307.8235513244634,
+          84.328434607448,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          -2.773789385139821,
+          -1.8340137359688242,
+          0.2588363340878743,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 2.773789385139821
+      },
+      {
+        "headId": "P07",
+        "position": {
+          "id": "P07",
+          "xyMm": [
+            332.5,
+            11667.5
+          ],
+          "xyzMm": [
+            332.5,
+            11667.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          -244.4779495411724,
+          -433.7408361730252,
+          93.39356995994667,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          -246.1398962814951,
+          -435.5608738672403,
+          93.1151174986006,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          -1.661946740322719,
+          -1.8200376942151024,
+          -0.2784524613460775,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 1.8200376942151024
+      },
+      {
+        "headId": "P05",
+        "position": {
+          "id": "P05",
+          "xyMm": [
+            10807.5,
+            332.5
+          ],
+          "xyzMm": [
+            10807.5,
+            332.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          277.26475983759383,
+          2.4314299392574803,
+          135.46456718453686,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          278.7077266613938,
+          2.4080909000663384,
+          136.09908931832737,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          1.4429668237999635,
+          -0.023339039191141886,
+          0.6345221337905116,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 1.4429668237999635
+      },
+      {
+        "headId": "P01",
+        "position": {
+          "id": "P01",
+          "xyMm": [
+            332.5,
+            332.5
+          ],
+          "xyzMm": [
+            332.5,
+            332.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          -105.54311417033193,
+          -78.17208666574999,
+          284.4293610133593,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          -106.8344526895778,
+          -78.51411180227419,
+          284.24592551980436,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          -1.291338519245869,
+          -0.3420251365241995,
+          -0.1834354935549527,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 1.291338519245869
+      },
+      {
+        "headId": "P10",
+        "position": {
+          "id": "P10",
+          "xyMm": [
+            11667.5,
+            11667.5
+          ],
+          "xyzMm": [
+            11667.5,
+            11667.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          -155.0614166328476,
+          -203.91783258632506,
+          -66.99388300729376,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          -155.61276781781572,
+          -205.050398101551,
+          -67.3986379851859,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          -0.5513511849681265,
+          -1.1325655152259344,
+          -0.4047549778921393,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 1.1325655152259344
+      },
+      {
+        "headId": "P09",
+        "position": {
+          "id": "P09",
+          "xyMm": [
+            332.5,
+            10807.5
+          ],
+          "xyzMm": [
+            332.5,
+            10807.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          5.689570600757108,
+          259.26871988717835,
+          161.3282819104987,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          5.678236597481122,
+          260.377857114831,
+          161.88004022840104,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          -0.011334003275985438,
+          1.1091372276526386,
+          0.5517583179023404,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 1.1091372276526386
+      },
+      {
+        "headId": "P06",
+        "position": {
+          "id": "P06",
+          "xyMm": [
+            11667.5,
+            1192.5
+          ],
+          "xyzMm": [
+            11667.5,
+            1192.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          -0.5965143288530257,
+          213.71238312250884,
+          -75.62653318283763,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          -0.7025168196031757,
+          214.81579767581067,
+          -76.16377385586178,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          -0.10600249075015,
+          1.1034145533018318,
+          -0.5372406730241437,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 1.1034145533018318
+      },
+      {
+        "headId": "P08",
+        "position": {
+          "id": "P08",
+          "xyMm": [
+            1192.5,
+            11667.5
+          ],
+          "xyzMm": [
+            1192.5,
+            11667.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          183.11428927192495,
+          6.283863195248305,
+          -64.54262819228438,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          184.15364132628895,
+          6.271208698920127,
+          -65.0103060192923,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          1.0393520543640022,
+          -0.012654496328178055,
+          -0.46767782700791827,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 1.0393520543640022
+      },
+      {
+        "headId": "P23",
+        "position": {
+          "id": "P23",
+          "xyMm": [
+            9300,
+            332.5
+          ],
+          "xyzMm": [
+            9300,
+            332.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          120.82909996295925,
+          44.63789889289919,
+          141.3873445002559,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          121.62090247615433,
+          43.96063354110266,
+          140.37832199278506,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          0.7918025131950799,
+          -0.6772653517965281,
+          -1.0090225074708314,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 1.0090225074708314
+      },
+      {
+        "headId": "P12",
+        "position": {
+          "id": "P12",
+          "xyMm": [
+            11667.5,
+            10807.5
+          ],
+          "xyzMm": [
+            11667.5,
+            10807.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          -2.3181304758301904,
+          73.20657323921915,
+          153.5279102212074,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          -2.308196857577947,
+          74.05090561492418,
+          153.9394153735877,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          0.00993361825224337,
+          0.8443323757050223,
+          0.4115051523803004,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 0.8443323757050223
+      },
+      {
+        "headId": "P41",
+        "position": {
+          "id": "P41",
+          "xyMm": [
+            9300,
+            2650
+          ],
+          "xyzMm": [
+            9300,
+            2650,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          18.40979410509292,
+          -63.00293442755464,
+          141.63296219721653,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          18.78159579479777,
+          -62.21805603311835,
+          141.66988686928724,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          0.3718016897048493,
+          0.7848783944362907,
+          0.03692467207071104,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 0.7848783944362907
+      },
+      {
+        "headId": "P24",
+        "position": {
+          "id": "P24",
+          "xyMm": [
+            2902.5,
+            11667.5
+          ],
+          "xyzMm": [
+            2902.5,
+            11667.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          104.13820032880702,
+          -30.100442265803046,
+          43.708485694815096,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          104.86266888159658,
+          -30.32596717146528,
+          44.18634202138966,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          0.7244685527895598,
+          -0.22552490566223327,
+          0.47785632657456745,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 0.7244685527895598
+      }
+    ],
+    "wetGridHeadWrenchChanges": [
+      {
+        "headId": "P24",
+        "position": {
+          "id": "P24",
+          "xyMm": [
+            2902.5,
+            11667.5
+          ],
+          "xyzMm": [
+            2902.5,
+            11667.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          104.13820032880702,
+          -30.100442265803046,
+          43.708485694815096,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          104.86266888159658,
+          -30.32596717146528,
+          44.18634202138966,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          0.7244685527895598,
+          -0.22552490566223327,
+          0.47785632657456745,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 0.7244685527895598
+      },
+      {
+        "headId": "P47",
+        "position": {
+          "id": "P47",
+          "xyMm": [
+            2942.5,
+            8852.5
+          ],
+          "xyzMm": [
+            2942.5,
+            8852.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          -41.17626341175807,
+          46.32692167265785,
+          141.0607406738086,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          -41.03926471033453,
+          46.652748222642586,
+          141.45038934795534,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          0.13699870142354342,
+          0.3258265499847326,
+          0.3896486741467413,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 0.3896486741467413
+      },
+      {
+        "headId": "P16",
+        "position": {
+          "id": "P16",
+          "xyMm": [
+            332.5,
+            8852.5
+          ],
+          "xyzMm": [
+            332.5,
+            8852.5,
+            -750
+          ]
+        },
+        "coarseWrenchKN_KNm": [
+          53.19623565322659,
+          107.21505691660327,
+          152.47396322249466,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fineWrenchKN_KNm": [
+          53.093324011663874,
+          107.39448962582597,
+          152.12030191359779,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "differenceWrenchKN_KNm": [
+          -0.10291164156271293,
+          0.17943270922269505,
+          -0.35366130889687497,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "maximumAbsoluteComponentDifferenceKN_KNm": 0.35366130889687497
+      }
+    ]
+  },
+  "physicalDiscretisationAudit": {
+    "requestDifferences": [
+      {
+        "path": "request.bearingCase.masonryCase.verticalCase.maxPitchMm",
+        "coarse": 500,
+        "fine": 250
+      },
+      {
+        "path": "request.bearingCase.masonryCase.verticalCase.monolithicCase.houseCase.joinedCase.floor.maxPitchMm",
+        "coarse": 500,
+        "fine": 250
+      }
+    ],
+    "externalWrenchDifferenceKN_KNm": [
+      3.2940761229838245e-11,
+      -1.1141310096718371e-11,
+      -2.8194335754960775e-11,
+      -4.729372449219227e-11,
+      8.003553375601768e-11,
+      -1.2747491950904077e-10
+    ],
+    "massCoarse": {
+      "sourceRCAndInfillBeforeSlabKN": 99.6866032729886,
+      "newPlatePhysicalSelfGKN": 526.84374375,
+      "joinedPhysicalGKN": 2969.885918349448,
+      "newPlateAreaM2": 97.56365625,
+      "newPlateCentroidXYMm": [
+        6332.533610828443,
+        6023.325780652178
+      ],
+      "floorSlabThicknessMm": 200.0,
+      "northUpstandOwnsRemovedStripMaterial": true,
+      "authoredSlabLevelBandsUnionIncluded": true,
+      "sourceSelfGCondensationResidualKN_KNm": [
+        0.0,
+        0.0,
+        4.661160346586257e-12,
+        3.728928277269006e-11,
+        -2.5920599000528455e-11,
+        0.0
+      ],
+      "appliedPhysicalGKN": 4009.345989771755,
+      "upperClearMasonryPhysicalGKN": 438.47708500000005,
+      "upperBearingPadsPhysicalGKN": 0.1413
+    },
+    "massFine": {
+      "sourceRCAndInfillBeforeSlabKN": 99.6866032729886,
+      "newPlatePhysicalSelfGKN": 526.8437437500006,
+      "joinedPhysicalGKN": 2969.8859183494556,
+      "newPlateAreaM2": 97.56365625000012,
+      "newPlateCentroidXYMm": [
+        6332.5336108284355,
+        6023.325780652182
+      ],
+      "floorSlabThicknessMm": 200.0,
+      "northUpstandOwnsRemovedStripMaterial": true,
+      "authoredSlabLevelBandsUnionIncluded": true,
+      "sourceSelfGCondensationResidualKN_KNm": [
+        0.0,
+        0.0,
+        -4.547473508864641e-13,
+        -8.640199666842818e-12,
+        6.184563972055912e-11,
+        0.0
+      ],
+      "appliedPhysicalGKN": 4009.3459897717653,
+      "upperClearMasonryPhysicalGKN": 438.47708500000005,
+      "upperBearingPadsPhysicalGKN": 0.1413
+    },
+    "sourceFloorUniformLiveKPa": [
+      2.0,
+      2.0
+    ],
+    "sourcePhysicalGFactor": [
+      1.35,
+      1.35
+    ],
+    "plateCellCounts": [
+      3010,
+      4999
+    ],
+    "bearingFibreCounts": [
+      19216,
+      22032
+    ],
+    "actualSourceBindingsEqual": true
+  }
 }

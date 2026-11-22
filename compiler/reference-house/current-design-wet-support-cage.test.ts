@@ -100,3 +100,27 @@ test('hook-tail edits cannot create a cage/support stage, escape units/domain or
   assert.equal(applyEngineeringEdit(slab, { ...transaction, base: engineeringBase(slab), operation: {
     kind: 'set-floor-section-thickness', assemblyId: editableFloorSectionId, thicknessMm: 250 } }).status, 'applied')
 })
+
+test('post top-level edit preserves the full authored cage, reverses and invalidates stale replies', () => {
+  const state = beginEngineeringEdit(document(), 'wet-cage-top')
+  const operation = { kind: 'set-wet-cage-top-level', assemblyId: editableWetCageId, postTopLevelRaiseMm: 15 }
+  const transaction = { schema: 'current-engineering-edit/1', units: 'mm', base: engineeringBase(state), operation }
+  const edit = applyEngineeringEdit(state, transaction)
+  assert.equal(edit.status, 'applied')
+  const saved = JSON.parse(saveEngineeringEdit(edit.state))
+  assert.deepEqual(saved.stages.floorSection.cageComparison, { ...defaults, postTopLevelRaiseMm: 15 })
+  assert.deepEqual(saved.stages.floorSection.wetSupport, support)
+  assert.deepEqual(beginEngineeringEdit(saved, 'top-reload').document, saved)
+  const oldTicket = engineeringTicket(state, 'old-top')
+  assert.equal(currentEngineeringReply(edit.state, oldTicket, { ticket: oldTicket }), undefined)
+  assert.equal(applyEngineeringEdit(edit.state, transaction).status, 'rejected')
+  const undo = replayEngineeringEdit(edit.state, engineeringBase(edit.state), 'undo')
+  assert.equal(saveEngineeringEdit(undo.state), saveEngineeringEdit(state))
+  for (const changed of [{ ...operation, postTopLevelRaiseMm: -1 }, { ...operation, postTopLevelRaiseMm: 21 },
+    { ...operation, postTopLevelRaiseMm: NaN }, { ...operation, accepted: true }, { ...operation, assemblyId: 'missing' }]) {
+    assert.equal(applyEngineeringEdit(state, { ...transaction, operation: changed }).status, 'rejected')
+  }
+  assert.equal(applyEngineeringEdit(state, { ...transaction, units: 'm' }).status, 'rejected')
+  assert.equal(validateWetSupportCageChoices({ ...defaults, postTopLevelRaiseMm: 20 }).postTopLevelRaiseMm, 20)
+  // Admission is a comparison domain: actual cover independently rejects20mm.
+})

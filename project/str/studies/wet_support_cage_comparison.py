@@ -21,7 +21,7 @@ SETTINGS_FIELDS=frozenset('''schema mainDiameterMm beamMainFaceMm beamNormalMain
     linkPitchMm linkHookTailMm beamLinkReturnOffsetFromTangentMm linkHookPlaneOffsetMm
     linkPlaneJogRunMm linkClosureMandrelMm postCrossTiePlaneOffsetMm
     cageInstallationToleranceMm mainRelativePositionToleranceMm linkFabricationToleranceMm
-    minimumConcreteCoverMm minimumIndependentMainClearMm postTopEndInsetMm
+    minimumConcreteCoverMm minimumIndependentMainClearMm postTopEndInsetMm postTopLevelRaiseMm
     postStraightGridEndZMm northShortGridBendStartZMm northShortGridTailMm
     northShortGridOutwardAngleDeg plainConcreteWeightKNPerM3 steelWeightKNPerM3
     comparisonSteelMassDensityKgPerM3 sourceSteelYieldMPa comparisonSteelFraction
@@ -46,7 +46,8 @@ def validate_settings(s):
     for key,value in s.items():
         if key in ('schema','topLapIntervalsYMm'):continue
         if type(value) not in (float,int) or not math.isfinite(value):raise ValueError('Finite cage choice required: '+key)
-        if key not in ('postStraightGridEndZMm','northShortGridBendStartZMm') and value<=0:raise ValueError('Positive cage choice required: '+key)
+        if key not in ('postStraightGridEndZMm','northShortGridBendStartZMm','postTopLevelRaiseMm') and value<=0:raise ValueError('Positive cage choice required: '+key)
+    if not 0<=s['postTopLevelRaiseMm']<=20:raise ValueError('Unsupported post top-level raise0..20mm')
     intervals=s['topLapIntervalsYMm']
     if not isinstance(intervals,list) or len(intervals)!=2 or any(not isinstance(v,list) or len(v)!=2 or any(type(x) not in (float,int) or not math.isfinite(x) for x in v) for v in intervals):
         raise ValueError('Two finite explicit lap intervals required')
@@ -224,7 +225,7 @@ def build_paths(wet,s):
         links.append(closed_link('STR/WET-CAGE/beam/link/'+str(i),g['beamWidthMm']-2*inset,g['beamDepthMm']-2*inset,[g['beamAxisXMm'],y,g['beamTopZMm']-g['beamDepthMm']/2],'y',s,True))
     for p,post in enumerate(wet['posts']):
         a,b,c,d=post['rectangleXYMm'];cx,cy=(a+c)/2,(b+d)/2;hx=(c-a)/2-s['postMainFaceMm'];hy=((d-b)/2-s['postMainFaceMm'])/3
-        lo=post['physicalBottomZMm']+inset+s['postCrossTiePlaneOffsetMm'];hi=post['physicalTopZMm']-s['postTopEndInsetMm']-s['postCrossTiePlaneOffsetMm']-10
+        lo=post['physicalBottomZMm']+inset+s['postCrossTiePlaneOffsetMm'];hi=post['physicalTopZMm']-s['postTopEndInsetMm']-s['postCrossTiePlaneOffsetMm']-10+s['postTopLevelRaiseMm']
         count=math.ceil((hi-lo)/s['linkPitchMm'])
         for i in range(count+1):
             z=lo+(hi-lo)*i/count;prefix='STR/WET-CAGE/post/'+str(p)+'/link/'+str(i)
@@ -530,6 +531,8 @@ def assess(native,grid,s=None,with_collisions=True):
         'actualPad220mmBearingMaterial':False,'beamEndDRegionAccepted':False,'postHeadDRegionAccepted':False,
         'postBaseGridJointAccepted':False,'completeSignedLoadEnvelope':False,'cageAccepted':False,
         'scope':'Exploratory source-independent geometry and quantities on the exact supplied native case. No accepted design, full anchorage, bond/splitting/bursting, torsion strut, concrete pressure, joint or physical fabrication evidence is supplied.'}
+    from wet_post_head_duties import post_duty
+    result['postHeadDuties']=[post_duty(p) for p in wet['posts']]
     result['simultaneousSectionScreens']=simultaneous_section_screens(native,main,s)
     if with_collisions:
         result['collisions']=collision_report(main,links,s)

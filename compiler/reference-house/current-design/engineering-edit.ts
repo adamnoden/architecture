@@ -92,6 +92,19 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       const changed = readFloorSectionCuts(cuts.map((cut,i) => i === index ? { ...cut, positionMm: operation.positionMm, intervalMm: operation.intervalMm } : cut))
       if (JSON.stringify(changed) === JSON.stringify(cuts)) return { status: 'applied', state }
       stages = { ...state.document.stages, floorSection: { ...current, sectionCuts: changed } }
+    } else if (record(operation) && operation.kind === 'set-wet-cage-top-level') {
+      const current = state.document.stages.floorSection
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'postTopLevelRaiseMm'])
+        || operation.assemblyId !== editableWetCageId || typeof operation.postTopLevelRaiseMm !== 'number'
+        || !Number.isFinite(operation.postTopLevelRaiseMm) || operation.postTopLevelRaiseMm < 0 || operation.postTopLevelRaiseMm > 20
+        || !record(current) || current.thicknessMm !== 200 || !record(current.wetSupport) || !record(current.cageComparison)
+        || current.cageComparison.schema !== 'str-wet-support-cage-comparison/1'
+        || typeof current.cageComparison.postTopLevelRaiseMm !== 'number' || !Number.isFinite(current.cageComparison.postTopLevelRaiseMm)) {
+        throw new TypeError('An existing explicit wet cage and top-level comparison0..20mm are required')
+      }
+      if (operation.postTopLevelRaiseMm === current.cageComparison.postTopLevelRaiseMm) return { status: 'applied', state }
+      stages = { ...state.document.stages, floorSection: { ...current,
+        cageComparison: { ...current.cageComparison, postTopLevelRaiseMm: operation.postTopLevelRaiseMm } } }
     } else if (record(operation) && operation.kind === 'set-wet-cage-hook-tail') {
       const current = state.document.stages.floorSection
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'linkHookTailMm'])
