@@ -9,8 +9,8 @@
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T14:35:58.888Z",
-  "heartbeatAt": "2026-11-22T15:22:35.874Z",
-  "expiresAt": "2026-11-22T16:07:35.874Z",
+  "heartbeatAt": "2026-11-22T15:46:45.127Z",
+  "expiresAt": "2026-11-22T16:31:45.127Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Fresh PR1618 read22Nov15:22Z head84af659c remainsopen; own complete lighting checkpoint7468f3f4 tree859abb20 remainsdurable. Read-only nextSTR review reproduced3 local quadrature/origin/deadband defects for coordinator.",
-    "next": "Root finishes genuine native recapture, publishes integrated pure-browser/lighting evidence and validates exact head; then own IAS final preflight before coordinated merge."
+    "evidence": "Lighting checkpoint 7468f3f4 / tree 859abb20 remains durable; 22 focused tests and typecheck passed. PR #1618 is still open at remote 84af659c; coordinator is completing native receipt and publication integration.",
+    "next": "Publish final integrated source and genuine receipts, validate exact remote head, then perform own IAS publication preflight before the coordinated expected-head merge."
   },
   "pr": 1618
 }
