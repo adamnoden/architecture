@@ -9,8 +9,8 @@
     "label": "convergence-water-primary-20261122"
   },
   "claimedAt": "2026-11-22T14:35:48.378Z",
-  "heartbeatAt": "2026-11-22T14:50:48.435Z",
-  "expiresAt": "2026-11-22T15:35:48.435Z",
+  "heartbeatAt": "2026-11-22T15:11:20.537Z",
+  "expiresAt": "2026-11-22T15:56:20.537Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "6674cab5-5562-4cd0-bab3-37b04006cbd7",
@@ -32,7 +32,7 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "Published work/convergence-water-primary-20261122 exact tree5c083b3a; recovered indoor cuts plus four cold paths, 24 focused checks, typecheck, source audit, producer and rendered SVG inspection pass.",
-    "next": "Integrate published HAD checkpoint into joint PR1618, reconcile shared source account and exact-head full health, then run fresh joint publication preflights."
+    "evidence": "Published fc54a405/treeac4777fc on work/convergence-water-primary-20261122: joined operator/moving-door/pipe conflicts resolved with actual2400 transfer and2235 lowered cargo obligation;25 focused tests, typecheck, source audit, ordinary producer and rendered views pass.",
+    "next": "Cherry-pick fc54a405 into joint PR1618; preserve STR/IAS source-account work, exact-head full health and all declared lease preflights, then merge and release."
   }
 }
