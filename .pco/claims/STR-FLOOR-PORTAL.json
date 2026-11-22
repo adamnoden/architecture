@@ -9,8 +9,8 @@
     "label": "convergence-20261122-primary"
   },
   "claimedAt": "2026-11-22T14:35:17.012Z",
-  "heartbeatAt": "2026-11-22T16:35:52.224Z",
-  "expiresAt": "2026-11-22T17:20:52.224Z",
+  "heartbeatAt": "2026-11-22T16:58:56.793Z",
+  "expiresAt": "2026-11-22T17:43:56.793Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
@@ -36,8 +36,8 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "PR1618 headb31277cc: actual16floor-interface controls; actual48-state sweep and5governing replays; PDF ledgers265/315. Separate numerical contact recovery fe542c23.",
-    "next": "Verify exact-head browser/health CI, canonical publication preflight, merge and reconcile; finish fresh contact descendants and actual joint actions",
-    "blocker": "Exact-head CI pending; physical contact, complete joint demand/resistance and whole-house choice remain unearned"
+    "evidence": "PR1618 head890379a: browser and production PDF proven on predecessor unchanged engineering tree;12updated source-binding regressions pass. Recoveryfe542c23 and57f4ca02 retain9actual contact refinements/shared adapter; 4074b808 retains rejected passive joint trial and closed material audit.",
+    "next": "Finish exact890 full health and canonical publication preflight; merge1618, reconcile1619; serially finish fresh floor descendants before contact integration",
+    "blocker": "Exact submitted-head CI pending. No structural selection, complete water arrangement, physical joint or installed acceptance"
   }
 }
