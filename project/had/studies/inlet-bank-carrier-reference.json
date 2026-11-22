@@ -1,0 +1,48 @@
+{
+  "schema": "had-bank-carrier-reference/1",
+  "source": {
+    "path": "project/had/studies/inlet-source-envelope.results.json",
+    "sha256": "9250fd7325b4299730a84c5c4eb01cab08242ceb688c07512122e93b3e4f2c44",
+    "basisCommit": "b31277ccb60d8689546083a14855e2b1989aa961"
+  },
+  "scope": "Explicit read-only recovery exploration; not current compiler input, support selection or field installation.",
+  "jacketDensitiesKgM3": [
+    {
+      "materialReference": "316 steel density comparison, not selected jacket",
+      "density": 8000
+    },
+    {
+      "materialReference": "copper density comparison, not selected jacket",
+      "density": 8960
+    }
+  ],
+  "insulationDensitiesKgM3": [
+    null,
+    120,
+    200
+  ],
+  "carrier": {
+    "wallId": "utility-north",
+    "pipeAnchorBelowValveAxisMm": 115,
+    "ownMassKg": null,
+    "unprovidedMassIsNotZero": true,
+    "installationAndLoadedWithdrawalQualified": false
+  },
+  "clamp": {
+    "manufacturer": "HiraWalraven",
+    "model": "DMC113028 two-bolt riser clamp",
+    "nominalTubeODMm": 28,
+    "publishedFaZN": 1700,
+    "publishedOverallBmm": 210,
+    "publishedBolt": "M10",
+    "actual28point1PipeToleranceQualified": false,
+    "actualThinCopperAndTorqueQualified": false,
+    "actualFullEnvelopeAndCoatingConstituentsQualified": false,
+    "url": "https://hirawalraven.com/catalog/two-bolt-riser-clamp/"
+  },
+  "valveManufacturerScope": {
+    "manual": "Spirax IM-P137-02 CMGT Issue18 section1.1(v)",
+    "application": "Do not impose unqualified system external stresses on the valve. No numeric allowable pipe end load is invented.",
+    "url": "https://content.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/im/bsa-im-p137-02-en.ashx?rev=e2301d3b866a411f90814a67b1ad645a"
+  }
+}

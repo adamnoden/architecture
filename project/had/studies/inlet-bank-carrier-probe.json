@@ -1,0 +1,3663 @@
+{
+  "schema": "had-bank-carrier-recovery-exploration/1",
+  "state": "recovery-only-not-current-design-or-resistance",
+  "source": {
+    "path": "project/had/studies/inlet-source-envelope.results.json",
+    "sha256": "9250fd7325b4299730a84c5c4eb01cab08242ceb688c07512122e93b3e4f2c44",
+    "basisCommit": "b31277ccb60d8689546083a14855e2b1989aa961"
+  },
+  "method": {
+    "path": "project/had/studies/inlet-bank-carrier-probe.mjs",
+    "sha256": "f7a9705298e306f0485b20cd8927a497c1c0b420cd717e6fb6afad88bacf001b"
+  },
+  "authoringCase": {
+    "schema": "had-bank-carrier-reference/1",
+    "source": {
+      "path": "project/had/studies/inlet-source-envelope.results.json",
+      "sha256": "9250fd7325b4299730a84c5c4eb01cab08242ceb688c07512122e93b3e4f2c44",
+      "basisCommit": "b31277ccb60d8689546083a14855e2b1989aa961"
+    },
+    "scope": "Explicit read-only recovery exploration; not current compiler input, support selection or field installation.",
+    "jacketDensitiesKgM3": [
+      {
+        "materialReference": "316 steel density comparison, not selected jacket",
+        "density": 8000
+      },
+      {
+        "materialReference": "copper density comparison, not selected jacket",
+        "density": 8960
+      }
+    ],
+    "insulationDensitiesKgM3": [
+      null,
+      120,
+      200
+    ],
+    "carrier": {
+      "wallId": "utility-north",
+      "pipeAnchorBelowValveAxisMm": 115,
+      "ownMassKg": null,
+      "unprovidedMassIsNotZero": true,
+      "installationAndLoadedWithdrawalQualified": false
+    },
+    "clamp": {
+      "manufacturer": "HiraWalraven",
+      "model": "DMC113028 two-bolt riser clamp",
+      "nominalTubeODMm": 28,
+      "publishedFaZN": 1700,
+      "publishedOverallBmm": 210,
+      "publishedBolt": "M10",
+      "actual28point1PipeToleranceQualified": false,
+      "actualThinCopperAndTorqueQualified": false,
+      "actualFullEnvelopeAndCoatingConstituentsQualified": false,
+      "url": "https://hirawalraven.com/catalog/two-bolt-riser-clamp/"
+    },
+    "valveManufacturerScope": {
+      "manual": "Spirax IM-P137-02 CMGT Issue18 section1.1(v)",
+      "application": "Do not impose unqualified system external stresses on the valve. No numeric allowable pipe end load is invented.",
+      "url": "https://content.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/im/bsa-im-p137-02-en.ashx?rev=e2301d3b866a411f90814a67b1ad645a"
+    }
+  },
+  "datum": {
+    "groundFflMm": 0,
+    "wallCoreYMm": [
+      2480,
+      2620
+    ],
+    "wallFinishedFacesYMm": [
+      2453,
+      2647
+    ],
+    "geometricReferenceToShieldIsNotLoadSharing": true
+  },
+  "volume": {
+    "totalVirtualCentrelineLengthM": 22.302253432273695,
+    "pipeODMm": 28.1,
+    "insulatedODMm": 78.1,
+    "jacketODMm": 80.1,
+    "jacketM3": 0.005542109507319116,
+    "insulationM3": 0.09301075058111392,
+    "cutLengthsFittingsAndEndsQualified": false
+  },
+  "pressure": {
+    "sourceGaugeComparisonBar": 9.2,
+    "maximumBoreMm": 26.060000000000002,
+    "oneSignedColdSourceCutN": 490.7118339070744,
+    "storedBackfeedPressureBoundQualified": false,
+    "flowMomentumOrTransientQualified": false
+  },
+  "thermal": {
+    "lockedReferenceN": 9232.130553127774,
+    "referenceDeltaK": 40,
+    "lockedToPublished1700NClampRatio": 5.430665031251632,
+    "lockedClampArrangementRejected": true,
+    "moreClampsNotUsedToConcealMissingFlexibility": true,
+    "actualCoupledReactionSolved": false
+  },
+  "scenarios": [
+    {
+      "jacket": {
+        "materialReference": "316 steel density comparison, not selected jacket",
+        "density": 8000
+      },
+      "insulationDensityKgM3": null,
+      "insulationProductSelected": false,
+      "jacketMassKg": 44.33687605855293,
+      "insulationMassKg": null,
+      "representedRouteAndNominalValveMassKg": 91.38096962426427,
+      "completeInstalledMass": false,
+      "branches": [
+        {
+          "id": "utility",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1350
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1235
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -435.4709429376797,
+            -635.4232319812178,
+            4697.092363066422,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -435.47094293767964,
+            -635.4232319812178,
+            4697.092363066422,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            -5.684341886080802e-14,
+            0,
+            0,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 16,
+          "bankGuideGravityN": 4.190037465292898,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 63.050037465292895,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": true,
+          "cases": [
+            {
+              "id": "utility/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -553.7618713723673
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -553.7618713723673,
+                110.75237427447347,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 553.7618713723673,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.3257422772778631,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9785.892424500142
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9785.892424500142,
+                1957.1784849000285,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9785.892424500142,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.756407308529496,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8678.368681755406
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8678.368681755406,
+                -1735.6737363510813,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8678.368681755406,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104922753973768,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                427.66179644178146
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                427.66179644178146,
+                -85.5323592883563,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 427.66179644178146,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.2515657626128126,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8804.468756685992
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8804.468756685992,
+                1760.8937513371984,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8804.468756685992,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179099268638819,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9659.792349569556
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9659.792349569556,
+                -1931.9584699139114,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9659.792349569556,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.682230793864445,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        },
+        {
+          "id": "plant",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1890
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1775
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -343.2563690763528,
+            -595.0533704619215,
+            3760.7609150845965,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -343.2563690763528,
+            -595.0533704619215,
+            3760.7609150845974,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            0,
+            0,
+            -9.094947017729282e-13,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 14,
+          "bankGuideGravityN": 4.190037465292898,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 63.050037465292895,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": true,
+          "cases": [
+            {
+              "id": "plant/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -553.7618713723673
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -553.7618713723673,
+                110.75237427447347,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 553.7618713723673,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.3257422772778631,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9785.892424500142
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9785.892424500142,
+                1957.1784849000285,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9785.892424500142,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.756407308529496,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8678.368681755406
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8678.368681755406,
+                -1735.6737363510813,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8678.368681755406,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104922753973768,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                427.66179644178146
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                427.66179644178146,
+                -85.5323592883563,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 427.66179644178146,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.2515657626128126,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8804.468756685992
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8804.468756685992,
+                1760.8937513371984,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8804.468756685992,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179099268638819,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9659.792349569556
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9659.792349569556,
+                -1931.9584699139114,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9659.792349569556,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.682230793864445,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        }
+      ]
+    },
+    {
+      "jacket": {
+        "materialReference": "316 steel density comparison, not selected jacket",
+        "density": 8000
+      },
+      "insulationDensityKgM3": 120,
+      "insulationProductSelected": false,
+      "jacketMassKg": 44.33687605855293,
+      "insulationMassKg": 11.16129006973367,
+      "representedRouteAndNominalValveMassKg": 102.54225969399793,
+      "completeInstalledMass": false,
+      "branches": [
+        {
+          "id": "utility",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1350
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1235
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -496.6999444738641,
+            -724.766345863039,
+            5357.522823876644,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -496.69994447386415,
+            -724.7663458630391,
+            5357.522823876645,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            5.684341886080802e-14,
+            1.1368683772161603e-13,
+            -9.094947017729282e-13,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 16,
+          "bankGuideGravityN": 4.779173926771579,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 63.639173926771576,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": false,
+          "cases": [
+            {
+              "id": "utility/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -554.351007833846
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -554.351007833846,
+                110.8702015667692,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 554.351007833846,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.32608882813755646,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9786.48156096162
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9786.48156096162,
+                1957.296312192324,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9786.48156096162,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.756753859389188,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8677.779545293928
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8677.779545293928,
+                -1735.5559090587858,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8677.779545293928,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104576203114076,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                427.0726599803028
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                427.0726599803028,
+                -85.41453199606056,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 427.0726599803028,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.2512192117531193,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8805.05789314747
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8805.05789314747,
+                1761.0115786294941,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8805.05789314747,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179445819498512,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9659.203213108078
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9659.203213108078,
+                -1931.8406426216156,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9659.203213108078,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.681884243004752,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        },
+        {
+          "id": "plant",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1890
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1775
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -391.5196231242559,
+            -678.72031615602,
+            4289.539332063594,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -391.51962312425576,
+            -678.72031615602,
+            4289.539332063594,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            -1.1368683772161603e-13,
+            0,
+            0,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 14,
+          "bankGuideGravityN": 4.779173926771579,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 63.639173926771576,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": false,
+          "cases": [
+            {
+              "id": "plant/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -554.351007833846
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -554.351007833846,
+                110.8702015667692,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 554.351007833846,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.32608882813755646,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9786.48156096162
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9786.48156096162,
+                1957.296312192324,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9786.48156096162,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.756753859389188,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8677.779545293928
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8677.779545293928,
+                -1735.5559090587858,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8677.779545293928,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104576203114076,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                427.0726599803028
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                427.0726599803028,
+                -85.41453199606056,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 427.0726599803028,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.2512192117531193,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8805.05789314747
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8805.05789314747,
+                1761.0115786294941,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8805.05789314747,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179445819498512,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9659.203213108078
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9659.203213108078,
+                -1931.8406426216156,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9659.203213108078,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.681884243004752,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        }
+      ]
+    },
+    {
+      "jacket": {
+        "materialReference": "316 steel density comparison, not selected jacket",
+        "density": 8000
+      },
+      "insulationDensityKgM3": 200,
+      "insulationProductSelected": false,
+      "jacketMassKg": 44.33687605855293,
+      "insulationMassKg": 18.602150116222784,
+      "representedRouteAndNominalValveMassKg": 109.98311974048706,
+      "completeInstalledMass": false,
+      "branches": [
+        {
+          "id": "utility",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1350
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1235
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -537.5192788313204,
+            -784.3284217842535,
+            5797.809797750127,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -537.5192788313203,
+            -784.3284217842534,
+            5797.809797750127,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            -1.1368683772161603e-13,
+            -1.1368683772161603e-13,
+            0,
+            0
+          ],
+          "segmentSources": [
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/0",
+              "originMm": [
+                10080,
+                600,
+                1609.195
+              ],
+              "lengthM": 2.26161,
+              "copperKg": 2.347421826329093,
+              "waterKg": 1.2063030333506286,
+              "jacketKg": 4.49608029822129,
+              "insulationKg": 1.886392729421223,
+              "representedKg": 9.936197887322235,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -97.47410127463114,
+                -58.48446076477868,
+                982.5389408482819,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/1",
+              "originMm": [
+                10785,
+                600,
+                2740
+              ],
+              "lengthM": 1.41,
+              "copperKg": 1.4634993544970267,
+              "waterKg": 0.7520692237054072,
+              "jacketKg": 2.8030797619801904,
+              "insulationKg": 1.1760709178346065,
+              "representedKg": 6.194719258017231,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -60.77019592114904,
+                -36.46211755268942,
+                655.4065630095924,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/2",
+              "originMm": [
+                11490,
+                1355,
+                2740
+              ],
+              "lengthM": 1.51,
+              "copperKg": 1.5672936349578088,
+              "waterKg": 0.8054074665213936,
+              "jacketKg": 3.001879745099353,
+              "insulationKg": 1.2594802027874155,
+              "representedKg": 6.634061049365971,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -65.08013889428018,
+                -88.18358820174964,
+                747.7707958952793,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/3",
+              "originMm": [
+                11490,
+                2110,
+                1945
+              ],
+              "lengthM": 1.59,
+              "copperKg": 1.6503290593264346,
+              "waterKg": 0.8480780607741828,
+              "jacketKg": 3.1609197315946833,
+              "insulationKg": 1.3262076307496626,
+              "representedKg": 6.9855344824449634,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -68.5280932727851,
+                -144.59427680557656,
+                787.3877917043008,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/4",
+              "originMm": [
+                11490,
+                2230,
+                1150
+              ],
+              "lengthM": 0.24,
+              "copperKg": 0.2491062731058769,
+              "waterKg": 0.1280117827583672,
+              "jacketKg": 0.4771199594859899,
+              "insulationKg": 0.2001822838867415,
+              "representedKg": 1.0544202992369756,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -10.34386313551473,
+                -23.06681479219785,
+                118.85098742706425,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/5",
+              "originMm": [
+                11420,
+                2350,
+                1150
+              ],
+              "lengthM": 0.14,
+              "copperKg": 0.14531199264509487,
+              "waterKg": 0.07467353994238088,
+              "jacketKg": 0.2783199763668275,
+              "insulationKg": 0.11677299893393257,
+              "representedKg": 0.6150785078882358,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -6.033920162383594,
+                -14.179712381601446,
+                68.90736825442065,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/6",
+              "originMm": [
+                11350,
+                2350,
+                1210
+              ],
+              "lengthM": 0.12,
+              "copperKg": 0.12455313655293845,
+              "waterKg": 0.0640058913791836,
+              "jacketKg": 0.23855997974299495,
+              "insulationKg": 0.10009114194337075,
+              "representedKg": 0.5272101496184878,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -5.171931567757365,
+                -12.15403918422981,
+                58.701423294046094,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/0",
+              "originMm": [
+                11350,
+                2350,
+                1490
+              ],
+              "lengthM": 0.12,
+              "copperKg": 0.12455313655293845,
+              "waterKg": 0.0640058913791836,
+              "jacketKg": 0.23855997974299495,
+              "insulationKg": 0.10009114194337075,
+              "representedKg": 0.5272101496184878,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -5.171931567757365,
+                -12.15403918422981,
+                58.701423294046094,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/1",
+              "originMm": [
+                11265,
+                2350,
+                1550
+              ],
+              "lengthM": 0.17,
+              "copperKg": 0.17645027678332947,
+              "waterKg": 0.09067501278717678,
+              "jacketKg": 0.33795997130257616,
+              "insulationKg": 0.14179578441977525,
+              "representedKg": 0.7468810452928576,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -7.326903054322933,
+                -17.218222177658895,
+                82.53756290694785,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/2",
+              "originMm": [
+                11180,
+                2350,
+                1900
+              ],
+              "lengthM": 0.7,
+              "copperKg": 0.7265599632254742,
+              "waterKg": 0.37336769971190437,
+              "jacketKg": 1.391599881834137,
+              "insulationKg": 0.5838649946696628,
+              "representedKg": 3.0753925394411783,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -30.16960081191796,
+                -70.89856190800721,
+                337.2961370772428,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/3",
+              "originMm": [
+                10610,
+                2350,
+                2250
+              ],
+              "lengthM": 1.14,
+              "copperKg": 1.1832547972529153,
+              "waterKg": 0.6080559681022442,
+              "jacketKg": 2.266319807558452,
+              "insulationKg": 0.9508658484620223,
+              "representedKg": 5.008496421375634,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -49.13334989369497,
+                -115.46337225018318,
+                521.3048423721036,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/4",
+              "originMm": [
+                10040,
+                1800,
+                2250
+              ],
+              "lengthM": 1.1,
+              "copperKg": 1.1417370850686026,
+              "waterKg": 0.5867206709758498,
+              "jacketKg": 2.1867998143107874,
+              "insulationKg": 0.9175021344808987,
+              "representedKg": 4.832759704836139,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -47.409372704442525,
+                -85.33687086799655,
+                475.9901019526029,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/5",
+              "originMm": [
+                10400,
+                1250,
+                2250
+              ],
+              "lengthM": 0.72,
+              "copperKg": 0.7473188193176307,
+              "waterKg": 0.3840353482751016,
+              "jacketKg": 1.4313598784579697,
+              "insulationKg": 0.6005468516602245,
+              "representedKg": 3.1632608977109267,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -31.031589406544192,
+                -38.78948675818024,
+                322.7285298280596,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/6",
+              "originMm": [
+                10760,
+                1250,
+                1625
+              ],
+              "lengthM": 1.25,
+              "copperKg": 1.2974285057597756,
+              "waterKg": 0.6667280351998291,
+              "jacketKg": 2.4849997889895308,
+              "insulationKg": 1.0426160619101121,
+              "representedKg": 5.491772391859247,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -53.87428716413922,
+                -67.34285895517402,
+                579.687329886138,
+                0
+              ]
+            }
+          ],
+          "guidePoints": [
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/0/guide-a",
+              "originMm": [
+                10080,
+                600,
+                478.39
+              ],
+              "forceN": [
+                0,
+                0,
+                -48.73705063731557
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -48.73705063731557,
+                -29.24223038238934,
+                491.26947042414093,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/0/guide-b",
+              "originMm": [
+                10080,
+                600,
+                2740
+              ],
+              "forceN": [
+                0,
+                0,
+                -79.12214859789009
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -79.12214859789009,
+                -47.47328915873405,
+                797.5512578667322,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/1/guide-b",
+              "originMm": [
+                11490,
+                600,
+                2740
+              ],
+              "forceN": [
+                0,
+                0,
+                -62.92516740771461
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -62.92516740771461,
+                -37.755100444628766,
+                723.0101735146409,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/2/guide-b",
+              "originMm": [
+                11490,
+                2110,
+                2740
+              ],
+              "forceN": [
+                0,
+                0,
+                -66.80411608353265
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -66.80411608353265,
+                -140.95668493625385,
+                767.5792937997901,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/3/guide-b",
+              "originMm": [
+                11490,
+                2110,
+                1150
+              ],
+              "forceN": [
+                0,
+                0,
+                -39.43597820414992
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -39.43597820414992,
+                -83.20991401075632,
+                453.1193895656825,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/4/guide-b",
+              "originMm": [
+                11490,
+                2350,
+                1150
+              ],
+              "forceN": [
+                0,
+                0,
+                -8.188891648949163
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -8.188891648949163,
+                -19.243895375030533,
+                94.09036504642587,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/5/guide-b",
+              "originMm": [
+                11350,
+                2350,
+                1150
+              ],
+              "forceN": [
+                0,
+                0,
+                -5.60292586507048
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -5.60292586507048,
+                -13.166875782915628,
+                63.59320856854994,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/upstream/6/guide-b",
+              "originMm": [
+                11350,
+                2350,
+                1270
+              ],
+              "forceN": [
+                0,
+                0,
+                -2.5859657838786827
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.5859657838786827,
+                -6.077019592114905,
+                29.350711647023047,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/0/guide-a",
+              "originMm": [
+                11350,
+                2350,
+                1430
+              ],
+              "forceN": [
+                0,
+                0,
+                -2.5859657838786827
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.5859657838786827,
+                -6.077019592114905,
+                29.350711647023047,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/0/guide-b",
+              "originMm": [
+                11350,
+                2350,
+                1550
+              ],
+              "forceN": [
+                0,
+                0,
+                -6.249417311040149
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -6.249417311040149,
+                -14.686130680944352,
+                70.9308864803057,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/1/guide-b",
+              "originMm": [
+                11180,
+                2350,
+                1550
+              ],
+              "forceN": [
+                0,
+                0,
+                -18.748251933120446
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -18.748251933120446,
+                -44.05839204283305,
+                209.60545661228662,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/2/guide-b",
+              "originMm": [
+                11180,
+                2350,
+                2250
+              ],
+              "forceN": [
+                0,
+                0,
+                -39.651475352806465
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -39.651475352806465,
+                -93.1809670790952,
+                443.30349444437627,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/3/guide-b",
+              "originMm": [
+                10040,
+                2350,
+                2250
+              ],
+              "forceN": [
+                0,
+                0,
+                -48.271361299068744
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -48.271361299068744,
+                -113.43769905281155,
+                484.6444674426502,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/4/guide-b",
+              "originMm": [
+                10040,
+                1250,
+                2250
+              ],
+              "forceN": [
+                0,
+                0,
+                -39.22048105549336
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -39.22048105549336,
+                -49.0256013193667,
+                393.77362979715326,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/5/guide-b",
+              "originMm": [
+                10760,
+                1250,
+                2250
+              ],
+              "forceN": [
+                0,
+                0,
+                -42.4529382853417
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -42.4529382853417,
+                -53.06617285667713,
+                456.7936159502767,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/utility/downstream/6/guide-b",
+              "originMm": [
+                10760,
+                1250,
+                1000
+              ],
+              "forceN": [
+                0,
+                0,
+                -26.93714358206961
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -26.93714358206961,
+                -33.67142947758701,
+                289.843664943069,
+                0
+              ],
+              "physicalReceiverQualified": false
+            }
+          ],
+          "unqualifiedGuidePointCount": 16,
+          "bankGuideGravityN": 5.171931567757365,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 64.03193156775737,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": false,
+          "cases": [
+            {
+              "id": "utility/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -554.7437654748318
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -554.7437654748318,
+                110.94875309496636,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 554.7437654748318,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.3263198620440187,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9786.874318602606
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9786.874318602606,
+                1957.3748637205213,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9786.874318602606,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.756984893295651,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8677.386787652942
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8677.386787652942,
+                -1735.4773575305885,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8677.386787652942,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104345169207613,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                426.679902339317
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                426.679902339317,
+                -85.33598046786341,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 426.679902339317,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.25098817784665706,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8805.450650788456
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8805.450650788456,
+                1761.0901301576914,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8805.450650788456,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179676853404974,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9658.810455467092
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9658.810455467092,
+                -1931.7620910934183,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9658.810455467092,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.68165320909829,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        },
+        {
+          "id": "plant",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1890
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1775
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -423.69512582285773,
+            -734.4982799520857,
+            4642.058276716258,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -423.6951258228577,
+            -734.4982799520856,
+            4642.058276716258,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            -5.684341886080802e-14,
+            -1.1368683772161603e-13,
+            0,
+            0
+          ],
+          "segmentSources": [
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/0",
+              "originMm": [
+                10285,
+                545,
+                1604.195
+              ],
+              "lengthM": 2.01161,
+              "copperKg": 2.087936125177138,
+              "waterKg": 1.0729574263106627,
+              "jacketKg": 3.9990803404233843,
+              "insulationKg": 1.6778695170392006,
+              "representedKg": 8.837843408950386,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -86.6992438418033,
+                -47.2510878937828,
+                891.7017229129469,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/1",
+              "originMm": [
+                10817.5,
+                545,
+                2610
+              ],
+              "lengthM": 1.065,
+              "copperKg": 1.1054090869073285,
+              "waterKg": 0.5680522859902545,
+              "jacketKg": 2.1172198202190797,
+              "insulationKg": 0.8883088847474154,
+              "representedKg": 4.6789900778640785,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -45.90089266384661,
+                -25.015986501796405,
+                496.53290639116074,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/2",
+              "originMm": [
+                11350,
+                1387.5,
+                2610
+              ],
+              "lengthM": 1.685,
+              "copperKg": 1.7489336257641774,
+              "waterKg": 0.8987493914493698,
+              "jacketKg": 3.3497797155578874,
+              "insulationKg": 1.4054464514548313,
+              "representedKg": 7.402909184226266,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -72.62253909725968,
+                -100.7637729974478,
+                824.2658187538973,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/3",
+              "originMm": [
+                11350,
+                2230,
+                2150
+              ],
+              "lengthM": 0.92,
+              "copperKg": 0.9549073802391949,
+              "waterKg": 0.4907118339070743,
+              "jacketKg": 1.8289598446962947,
+              "insulationKg": 0.7673654215658425,
+              "representedKg": 4.041944480408406,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -39.65147535280647,
+                -88.42279003675843,
+                450.0442452543534,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/4",
+              "originMm": [
+                11350,
+                2290,
+                1690
+              ],
+              "lengthM": 0.12,
+              "copperKg": 0.12455313655293845,
+              "waterKg": 0.0640058913791836,
+              "jacketKg": 0.23855997974299495,
+              "insulationKg": 0.10009114194337075,
+              "representedKg": 0.5272101496184878,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -5.171931567757365,
+                -11.843723290164366,
+                58.701423294046094,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/5",
+              "originMm": [
+                11350,
+                2350,
+                1750
+              ],
+              "lengthM": 0.12,
+              "copperKg": 0.12455313655293845,
+              "waterKg": 0.0640058913791836,
+              "jacketKg": 0.23855997974299495,
+              "insulationKg": 0.10009114194337075,
+              "representedKg": 0.5272101496184878,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -5.171931567757365,
+                -12.15403918422981,
+                58.701423294046094,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/0",
+              "originMm": [
+                11350,
+                2350,
+                2030
+              ],
+              "lengthM": 0.12,
+              "copperKg": 0.12455313655293845,
+              "waterKg": 0.0640058913791836,
+              "jacketKg": 0.23855997974299495,
+              "insulationKg": 0.10009114194337075,
+              "representedKg": 0.5272101496184878,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -5.171931567757365,
+                -12.15403918422981,
+                58.701423294046094,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/1",
+              "originMm": [
+                11420,
+                2350,
+                2090
+              ],
+              "lengthM": 0.14,
+              "copperKg": 0.14531199264509487,
+              "waterKg": 0.07467353994238088,
+              "jacketKg": 0.2783199763668275,
+              "insulationKg": 0.11677299893393257,
+              "representedKg": 0.6150785078882358,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -6.033920162383594,
+                -14.179712381601446,
+                68.90736825442065,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/2",
+              "originMm": [
+                11490,
+                2350,
+                2540
+              ],
+              "lengthM": 0.9,
+              "copperKg": 0.9341485241470384,
+              "waterKg": 0.480044185343877,
+              "jacketKg": 1.789199848072462,
+              "insulationKg": 0.7506835645752807,
+              "representedKg": 3.9540761221386584,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -38.78948675818024,
+                -91.15529388172357,
+                445.69120285149097,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/3",
+              "originMm": [
+                11195,
+                2355,
+                2990
+              ],
+              "lengthM": 0.5900847396772771,
+              "copperKg": 0.6124742096569087,
+              "waterKg": 0.3147408312691469,
+              "jacketKg": 1.1730883628671807,
+              "insulationKg": 0.4921854619804611,
+              "representedKg": 2.5924888657736975,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -25.432315773239974,
+                -59.89310364598014,
+                284.7147750814215,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/4",
+              "originMm": [
+                10900,
+                2360,
+                2695
+              ],
+              "lengthM": 0.59,
+              "copperKg": 0.6123862547186141,
+              "waterKg": 0.3146956326143194,
+              "jacketKg": 1.1729199004030584,
+              "insulationKg": 0.49211478122157293,
+              "representedKg": 2.5921165689575645,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -25.42866354147371,
+                -60.01164595787795,
+                277.17243260206345,
+                0
+              ]
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/5",
+              "originMm": [
+                10750,
+                3130,
+                2400
+              ],
+              "lengthM": 1.5689486925964151,
+              "copperKg": 1.6284790062792962,
+              "waterKg": 0.8368496633153188,
+              "jacketKg": 3.1190697360299935,
+              "insulationKg": 1.3086488857711147,
+              "representedKg": 6.893047291395723,
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -67.62079392859205,
+                -211.6530849964931,
+                726.9235347323645,
+                0
+              ]
+            }
+          ],
+          "guidePoints": [
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/0/guide-a",
+              "originMm": [
+                10285,
+                545,
+                598.39
+              ],
+              "forceN": [
+                0,
+                0,
+                -43.34962192090165
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -43.34962192090165,
+                -23.6255439468914,
+                445.85086145647347,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/0/guide-b",
+              "originMm": [
+                10285,
+                545,
+                2610
+              ],
+              "forceN": [
+                0,
+                0,
+                -66.30006825282496
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -66.30006825282496,
+                -36.13353719778961,
+                681.8962019803047,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/1/guide-b",
+              "originMm": [
+                11350,
+                545,
+                2610
+              ],
+              "forceN": [
+                0,
+                0,
+                -59.26171588055314
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -59.26171588055314,
+                -32.29763515490147,
+                672.6204752442782,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/2/guide-b",
+              "originMm": [
+                11350,
+                2230,
+                2610
+              ],
+              "forceN": [
+                0,
+                0,
+                -56.137007225033074
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -56.137007225033074,
+                -125.18552611182375,
+                637.1550320041254,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/3/guide-b",
+              "originMm": [
+                11350,
+                2230,
+                1690
+              ],
+              "forceN": [
+                0,
+                0,
+                -22.41170346028192
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -22.41170346028192,
+                -49.978098716428676,
+                254.37283427419976,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/4/guide-b",
+              "originMm": [
+                11350,
+                2350,
+                1690
+              ],
+              "forceN": [
+                0,
+                0,
+                -5.171931567757365
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -5.171931567757365,
+                -12.15403918422981,
+                58.701423294046094,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/upstream/5/guide-b",
+              "originMm": [
+                11350,
+                2350,
+                1810
+              ],
+              "forceN": [
+                0,
+                0,
+                -2.5859657838786827
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.5859657838786827,
+                -6.077019592114905,
+                29.350711647023047,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/0/guide-a",
+              "originMm": [
+                11350,
+                2350,
+                1970
+              ],
+              "forceN": [
+                0,
+                0,
+                -2.5859657838786827
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.5859657838786827,
+                -6.077019592114905,
+                29.350711647023047,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/0/guide-b",
+              "originMm": [
+                11350,
+                2350,
+                2090
+              ],
+              "forceN": [
+                0,
+                0,
+                -5.60292586507048
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -5.60292586507048,
+                -13.166875782915628,
+                63.59320856854994,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/1/guide-b",
+              "originMm": [
+                11490,
+                2350,
+                2090
+              ],
+              "forceN": [
+                0,
+                0,
+                -22.411703460281917
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -22.411703460281917,
+                -52.66750313166251,
+                257.51047275863925,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/2/guide-b",
+              "originMm": [
+                11490,
+                2350,
+                2990
+              ],
+              "forceN": [
+                0,
+                0,
+                -32.110901265710105
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -32.110901265710105,
+                -75.46061797441875,
+                368.95425554300914,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/3/guide-b",
+              "originMm": [
+                10900,
+                2360,
+                2990
+              ],
+              "forceN": [
+                0,
+                0,
+                -25.430489657356844
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -25.430489657356844,
+                -60.01595559136214,
+                277.1923372651896,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/4/guide-b",
+              "originMm": [
+                10900,
+                2360,
+                2400
+              ],
+              "forceN": [
+                0,
+                0,
+                -46.52472873503288
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -46.52472873503288,
+                -109.7983598146776,
+                507.1195432118584,
+                0
+              ],
+              "physicalReceiverQualified": false
+            },
+            {
+              "id": "HAD/indoor-pipe/plant/downstream/5/guide-b",
+              "originMm": [
+                10600,
+                3900,
+                2400
+              ],
+              "forceN": [
+                0,
+                0,
+                -33.810396964296025
+              ],
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -33.810396964296025,
+                -131.8605481607545,
+                358.39020782153784,
+                0
+              ],
+              "physicalReceiverQualified": false
+            }
+          ],
+          "unqualifiedGuidePointCount": 14,
+          "bankGuideGravityN": 5.171931567757365,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 64.03193156775737,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": false,
+          "cases": [
+            {
+              "id": "plant/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -554.7437654748318
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -554.7437654748318,
+                110.94875309496636,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 554.7437654748318,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.3263198620440187,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9786.874318602606
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9786.874318602606,
+                1957.3748637205213,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9786.874318602606,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.756984893295651,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8677.386787652942
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8677.386787652942,
+                -1735.4773575305885,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8677.386787652942,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104345169207613,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                426.679902339317
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                426.679902339317,
+                -85.33598046786341,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 426.679902339317,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.25098817784665706,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8805.450650788456
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8805.450650788456,
+                1761.0901301576914,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8805.450650788456,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179676853404974,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9658.810455467092
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9658.810455467092,
+                -1931.7620910934183,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9658.810455467092,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.68165320909829,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        }
+      ]
+    },
+    {
+      "jacket": {
+        "materialReference": "copper density comparison, not selected jacket",
+        "density": 8960
+      },
+      "insulationDensityKgM3": null,
+      "insulationProductSelected": false,
+      "jacketMassKg": 49.657301185579286,
+      "insulationMassKg": null,
+      "representedRouteAndNominalValveMassKg": 96.70139475129062,
+      "completeInstalledMass": false,
+      "branches": [
+        {
+          "id": "utility",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1350
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1235
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -464.65792009180205,
+            -678.0117988094036,
+            5011.9099868711,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -464.65792009180217,
+            -678.0117988094034,
+            5011.9099868711,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            1.1368683772161603e-13,
+            -1.1368683772161603e-13,
+            0,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 16,
+          "bankGuideGravityN": 4.4708702734463515,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 63.33087027344635,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": true,
+          "cases": [
+            {
+              "id": "utility/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -554.0427041805208
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -554.0427041805208,
+                110.80854083610416,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 554.0427041805208,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.32590747304736517,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9786.173257308295
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9786.173257308295,
+                1957.2346514616593,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9786.173257308295,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.7565725042989975,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8678.087848947252
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8678.087848947252,
+                -1735.6175697894505,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8678.087848947252,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104757558204266,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                427.380963633628
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                427.380963633628,
+                -85.47619272672561,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 427.380963633628,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.2514005668433106,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8804.749589494146
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8804.749589494146,
+                1760.9499178988292,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8804.749589494146,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.1792644644083214,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9659.511516761402
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9659.511516761402,
+                -1931.9023033522806,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9659.511516761402,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.682065598094942,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        },
+        {
+          "id": "plant",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1890
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1775
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -366.2627624183589,
+            -634.9361902248035,
+            4012.821918673532,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -366.2627624183588,
+            -634.9361902248035,
+            4012.821918673531,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            -5.684341886080802e-14,
+            0,
+            9.094947017729282e-13,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 14,
+          "bankGuideGravityN": 4.4708702734463515,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 63.33087027344635,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": true,
+          "cases": [
+            {
+              "id": "plant/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -554.0427041805208
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -554.0427041805208,
+                110.80854083610416,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 554.0427041805208,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.32590747304736517,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9786.173257308295
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9786.173257308295,
+                1957.2346514616593,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9786.173257308295,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.7565725042989975,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8678.087848947252
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8678.087848947252,
+                -1735.6175697894505,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8678.087848947252,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104757558204266,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                427.380963633628
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                427.380963633628,
+                -85.47619272672561,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 427.380963633628,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.2514005668433106,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8804.749589494146
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8804.749589494146,
+                1760.9499178988292,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8804.749589494146,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.1792644644083214,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9659.511516761402
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9659.511516761402,
+                -1931.9023033522806,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9659.511516761402,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.682065598094942,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        }
+      ]
+    },
+    {
+      "jacket": {
+        "materialReference": "copper density comparison, not selected jacket",
+        "density": 8960
+      },
+      "insulationDensityKgM3": 120,
+      "insulationProductSelected": false,
+      "jacketMassKg": 49.657301185579286,
+      "insulationMassKg": 11.16129006973367,
+      "representedRouteAndNominalValveMassKg": 107.86268482102429,
+      "completeInstalledMass": false,
+      "branches": [
+        {
+          "id": "utility",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1350
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1235
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -525.8869216279865,
+            -767.3549126912249,
+            5672.340447681322,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -525.8869216279865,
+            -767.3549126912249,
+            5672.340447681323,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            0,
+            0,
+            -9.094947017729282e-13,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 16,
+          "bankGuideGravityN": 5.060006734925031,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 63.92000673492503,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": false,
+          "cases": [
+            {
+              "id": "utility/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -554.6318406419994
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -554.6318406419994,
+                110.92636812839987,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 554.6318406419994,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.32625402390705843,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9786.762393769774
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9786.762393769774,
+                1957.3524787539548,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9786.762393769774,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.75691905515869,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8677.498712485774
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8677.498712485774,
+                -1735.499742497155,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8677.498712485774,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104411007344573,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                426.79182717214934
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                426.79182717214934,
+                -85.35836543442987,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 426.79182717214934,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.25105401598361726,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8805.338725955624
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8805.338725955624,
+                1761.067745191125,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8805.338725955624,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179611015268014,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9658.922380299924
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9658.922380299924,
+                -1931.7844760599849,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9658.922380299924,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.68171904723525,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        },
+        {
+          "id": "plant",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1890
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1775
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -414.52601646626175,
+            -718.6031359189018,
+            4541.600335652527,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -414.5260164662617,
+            -718.6031359189018,
+            4541.600335652528,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            -5.684341886080802e-14,
+            0,
+            -9.094947017729282e-13,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 14,
+          "bankGuideGravityN": 5.060006734925031,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 63.92000673492503,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": false,
+          "cases": [
+            {
+              "id": "plant/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -554.6318406419994
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -554.6318406419994,
+                110.92636812839987,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 554.6318406419994,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.32625402390705843,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9786.762393769774
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9786.762393769774,
+                1957.3524787539548,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9786.762393769774,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.75691905515869,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8677.498712485774
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8677.498712485774,
+                -1735.499742497155,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8677.498712485774,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104411007344573,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                426.79182717214934
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                426.79182717214934,
+                -85.35836543442987,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 426.79182717214934,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.25105401598361726,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8805.338725955624
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8805.338725955624,
+                1761.067745191125,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8805.338725955624,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179611015268014,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9658.922380299924
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9658.922380299924,
+                -1931.7844760599849,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9658.922380299924,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.68171904723525,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        }
+      ]
+    },
+    {
+      "jacket": {
+        "materialReference": "copper density comparison, not selected jacket",
+        "density": 8960
+      },
+      "insulationDensityKgM3": 200,
+      "insulationProductSelected": false,
+      "jacketMassKg": 49.657301185579286,
+      "insulationMassKg": 18.602150116222784,
+      "representedRouteAndNominalValveMassKg": 115.30354486751341,
+      "completeInstalledMass": false,
+      "branches": [
+        {
+          "id": "utility",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1350
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1235
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -566.7062559854428,
+            -826.9169886124391,
+            6112.627421554803,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -566.7062559854428,
+            -826.9169886124391,
+            6112.627421554803,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 16,
+          "bankGuideGravityN": 5.452764375910818,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 64.31276437591082,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": false,
+          "cases": [
+            {
+              "id": "utility/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -555.0245982829852
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -555.0245982829852,
+                111.00491965659704,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 555.0245982829852,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.32648505781352066,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9787.15515141076
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9787.15515141076,
+                1957.431030282152,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9787.15515141076,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.757150089065153,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8677.105954844788
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8677.105954844788,
+                -1735.4211909689577,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8677.105954844788,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104179973438111,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                426.39906953116355
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                426.39906953116355,
+                -85.27981390623272,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 426.39906953116355,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.25082298207715503,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8805.73148359661
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8805.73148359661,
+                1761.146296719322,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8805.73148359661,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179842049174477,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "utility/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9658.529622658938
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9658.529622658938,
+                -1931.7059245317878,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9658.529622658938,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.681488013328787,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        },
+        {
+          "id": "plant",
+          "wallOriginMm": [
+            11350,
+            2550,
+            1890
+          ],
+          "pipeAnchorOriginMm": [
+            11350,
+            2350,
+            1775
+          ],
+          "sourceGravityWrenchN_Nm": [
+            0,
+            0,
+            -446.7015191648638,
+            -774.3810997149676,
+            4894.119280305192,
+            0
+          ],
+          "guideGravityWrenchN_Nm": [
+            0,
+            0,
+            -446.70151916486384,
+            -774.3810997149674,
+            4894.119280305191,
+            0
+          ],
+          "gravityClosureN_Nm": [
+            0,
+            0,
+            5.684341886080802e-14,
+            -2.2737367544323206e-13,
+            9.094947017729282e-13,
+            0
+          ],
+          "fullSpatialRowsRetainedInSteel8000Insulation200Reference": true,
+          "unqualifiedGuidePointCount": 14,
+          "bankGuideGravityN": 5.452764375910818,
+          "nominalValveGravityN": 58.86,
+          "localRepresentedGravityN": 64.31276437591082,
+          "nominalValveXYCentroidQualified": false,
+          "carrierClampsJacketsFittingsAndToolsMassComplete": false,
+          "unknownInsulationMass": false,
+          "cases": [
+            {
+              "id": "plant/pressure--1/thermal-0",
+              "pressureSign": -1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -555.0245982829852
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -555.0245982829852,
+                111.00491965659704,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 555.0245982829852,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.32648505781352066,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal--1",
+              "pressureSign": -1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -9787.15515141076
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -9787.15515141076,
+                1957.431030282152,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9787.15515141076,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.757150089065153,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure--1/thermal-1",
+              "pressureSign": -1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                8677.105954844788
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                8677.105954844788,
+                -1735.4211909689577,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8677.105954844788,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.104179973438111,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-0",
+              "pressureSign": 1,
+              "thermalSign": 0,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                426.39906953116355
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                426.39906953116355,
+                -85.27981390623272,
+                0,
+                0
+              ],
+              "interpretation": "Ideal frictionless sliding-guide/one-anchor reference; actual tube flexibility, endpoint constraints and clamp friction NOT solved.",
+              "requiredAbsoluteAxialN": 426.39906953116355,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 0.25082298207715503,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal--1",
+              "pressureSign": 1,
+              "thermalSign": -1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                -8805.73148359661
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                -8805.73148359661,
+                1761.146296719322,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 8805.73148359661,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.179842049174477,
+              "installedResistanceOrCapacityClaim": false
+            },
+            {
+              "id": "plant/pressure-1/thermal-1",
+              "pressureSign": 1,
+              "thermalSign": 1,
+              "pipeAnchorForceN": [
+                0,
+                0,
+                9658.529622658938
+              ],
+              "receivingCoreWrenchN_Nm": [
+                0,
+                0,
+                9658.529622658938,
+                -1931.7059245317878,
+                0,
+                0
+              ],
+              "interpretation": "Fully locked straight-tube comparator applied at the independent pipe-anchor, not accepted valve-body loading.",
+              "requiredAbsoluteAxialN": 9658.529622658938,
+              "publishedClampAxialReferenceN": 1700,
+              "forceToCatalogueReferenceRatio": 5.681488013328787,
+              "installedResistanceOrCapacityClaim": false
+            }
+          ],
+          "localGravityScope": "Two actual adjacent120mm tail half-spans plus6kg valve reference. Remaining route gravity is explicitly assigned to unqualified independent guide receivers, never silently onto bank/pan/shield."
+        }
+      ]
+    }
+  ],
+  "physicalBoundaries": {
+    "valveExternalPipingStressAcceptance": false,
+    "actualClampOn28point1ThinCopperAndSignedLoadQualified": false,
+    "actualClampFullEnvelopeTorqueAndMaterialQualified": false,
+    "bearingShelfOrValveMetalLandInvented": false,
+    "opposedCoreSpreaderPlateGroupAndWallTransferQualified": false,
+    "finishPanShieldOrWalkingCoverSupportCredited": false,
+    "sourceGroundOr52HeadActionsUpdated": false,
+    "installedOrWholeRoomAccepted": false
+  }
+}
