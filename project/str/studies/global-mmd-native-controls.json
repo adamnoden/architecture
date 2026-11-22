@@ -1,0 +1,2472 @@
+{
+  "schema": "str-global-mmd-native-controls/1",
+  "recordedUTC": "2026-11-22T07:54:52.482679+00:00",
+  "sourceRecoveryCommit": "06d1bed95eac7ddc9424b4173c9bac36a99bc2a1",
+  "sourceTree": "72d38f9b575cb143edcae46461838f00cb7126e5",
+  "nativeSourceSHA256": {
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+    "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+    "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+    "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+    "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+    "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+    "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+    "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+    "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+    "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+    "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+    "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+    "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+    "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+    "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+    "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+    "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+    "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+    "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+    "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+    "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+    "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+    "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+    "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+    "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+    "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+    "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+  },
+  "nativeSortedMapIdentity": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b",
+  "meshCaptureDirectoryIdentity": "307156a9a354d52542495cfa3cf99594dc5deaca03ef5a28690a64762316a33d",
+  "numericalPolicy": {
+    "globalOrdering": "MMD_AT_PLUS_A",
+    "pivotAndEquilibration": "unchanged defaults",
+    "noFallbackOrRegularisation": true
+  },
+  "controls": [
+    {
+      "caseId": "wet-floor-mesh-500",
+      "state": "completed-actual-nonlinear-capture",
+      "executedRequest": {
+        "schema": "str-coupled-floor-section-case/1",
+        "sourceSHA256": {
+          "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+          "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+          "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+          "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+          "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+          "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+          "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+          "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+          "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+          "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+          "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+          "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+          "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+          "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+          "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+          "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+          "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+          "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+          "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+          "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+          "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+          "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+          "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+          "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+          "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+          "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+          "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+          "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+          "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+          "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+          "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+          "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+          "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+          "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+          "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+          "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+          "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+          "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+          "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+          "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+          "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+          "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+          "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+          "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+          "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+          "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+          "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+          "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+          "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+          "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+          "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+          "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+          "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+        },
+        "bearingCase": {
+          "schema": "str-upper-masonry-roof-bearing-case/1",
+          "sourceSHA256": {
+            "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+            "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+            "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+            "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+            "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+            "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+            "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+            "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+            "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+            "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+            "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+            "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+            "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+            "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+            "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+            "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+            "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+            "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+            "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+            "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+            "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+            "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+            "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+            "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+            "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+            "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+            "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+            "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+            "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+            "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+            "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+            "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+            "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+            "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+            "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+            "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+            "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+            "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+            "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+            "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+            "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+            "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+            "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+            "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+            "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+            "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+            "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+            "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+            "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+            "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+            "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+            "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+            "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e"
+          },
+          "masonryCase": {
+            "schema": "str-masonry-frame-a-case/1",
+            "sourceSHA256": {
+              "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+              "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+              "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+              "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+              "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+              "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+              "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+              "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+              "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+              "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+              "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+              "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+              "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+              "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+              "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+              "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+              "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+              "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+              "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+              "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+              "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+              "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+              "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+              "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+              "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+              "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+              "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+              "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+              "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+              "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+              "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+              "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+              "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+              "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+              "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+              "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+              "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+              "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+              "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+              "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+              "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+              "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+              "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+              "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+              "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+              "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+              "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+              "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+              "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e"
+            },
+            "verticalCase": {
+              "schema": "str-vertical-rc-floor-case/1",
+              "sourceSHA256": {
+                "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+                "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+                "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+                "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+                "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+                "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+                "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521"
+              },
+              "monolithicCase": {
+                "schema": "str-monolithic-rc-portal-case/1",
+                "sourceSHA256": {
+                  "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                  "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                  "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                  "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                  "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                  "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                  "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                  "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                  "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                  "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                  "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                  "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                  "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                  "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                  "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                  "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                  "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                  "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                  "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                  "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                  "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                  "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                  "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                  "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                  "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                  "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                  "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                  "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                  "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                  "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+                  "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137"
+                },
+                "houseCase": {
+                  "schema": "str-rc-floor-house-load-case/1",
+                  "sourceSHA256": {
+                    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                    "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6"
+                  },
+                  "joinedCase": {
+                    "schema": "str-joined-rc-floor-case/1",
+                    "sourceSHA256": {
+                      "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                      "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                      "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                      "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                      "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                      "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                      "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                      "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                      "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                      "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                      "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                      "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                      "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                      "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                      "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                      "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                      "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                      "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                      "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                      "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                      "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                      "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                      "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                      "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                      "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                      "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                      "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                      "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4"
+                    },
+                    "portal": {
+                      "schema": "str-continuous-rc-portal-case/1",
+                      "sourceSHA256": {
+                        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                        "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                        "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                        "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7"
+                      },
+                      "scheme": "fullheight-piers-integral-curved-ring-no-tie-no-bore",
+                      "gridLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 33000,
+                        "poissonRatio": 0.2,
+                        "flexuralFactor": 0.25,
+                        "torsionFactor": 0.25,
+                        "shearAreaFactor": 0.5
+                      },
+                      "frameLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 33000,
+                        "poissonRatio": 0.2,
+                        "flexuralFactor": 0.25,
+                        "torsionFactor": 0.25,
+                        "shearAreaFactor": 0.5
+                      },
+                      "dpcLaw": {
+                        "mode": "authored-bilateral-elastic-comparison",
+                        "normalStiffnessKNPerMm3": 0.5,
+                        "shearStiffnessKNPerMm3": 0.05
+                      },
+                      "dpcIntervalZMm": [
+                        -50,
+                        -30
+                      ],
+                      "coverMm": 40,
+                      "archSegments": 24,
+                      "infillHeadGapMm": 30,
+                      "jointZone": "authored-monolithic-rigid-end-offset-comparison",
+                      "headBoundary": "source52-ideal-pinned-translations-free-rotations",
+                      "use": "unqualified-continuous-rc-challenger"
+                    },
+                    "floor": {
+                      "schema": "str-distributed-floor-case/1",
+                      "sourceSHA256": {
+                        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3"
+                      },
+                      "cornerWidthsMm": {
+                        "NW": 200,
+                        "NE": 200,
+                        "SW": 140,
+                        "SE": 140
+                      },
+                      "memberLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 33000,
+                        "poissonRatio": 0.2,
+                        "flexuralFactor": 0.25,
+                        "torsionFactor": 0.25,
+                        "shearAreaFactor": 0.5
+                      },
+                      "jointLaw": {
+                        "mode": "authored-spring-comparison",
+                        "compressionStiffnessKNPerMm3": 0.5,
+                        "tieStiffnessKNPerMm": 50,
+                        "shearKeyStiffnessKNPerMm": 100,
+                        "compressionGapMm": 0,
+                        "tieGapMm": 0
+                      },
+                      "membraneLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 1200,
+                        "poissonRatio": 0.15,
+                        "shearModulusMPa": 440
+                      },
+                      "edgeBand": {
+                        "mode": "authored-conventional-slab-level-band",
+                        "widthMm": 140,
+                        "depthMm": 200,
+                        "elasticModulusMPa": 33000,
+                        "flexuralFactor": 0.25,
+                        "axialRigidityKN": 180955.73684677208
+                      },
+                      "maxPitchMm": 500,
+                      "componentCase": {
+                        "schema": "str-retained-components-case/1",
+                        "sourceSHA256": {
+                          "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                          "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                          "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                          "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                          "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                          "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                          "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                          "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                          "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                          "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                          "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8"
+                        },
+                        "edits": {
+                          "floorApertures": [],
+                          "wallOpenings": []
+                        },
+                        "retentionPaths": []
+                      },
+                      "boundaryCase": {
+                        "kind": "native-floor-wind-band-only",
+                        "windIndex": 31
+                      },
+                      "receivingLaws": {
+                        "successorRoof": null,
+                        "verticalFloor": null,
+                        "dryGround": null,
+                        "intermediateSupports": {
+                          "FLOOR/RECEIVER/court-east/3917.5": null,
+                          "FLOOR/RECEIVER/court-east/6000.0": null,
+                          "FLOOR/RECEIVER/court-east/8082.5": null,
+                          "FLOOR/RECEIVER/court-north/3917.5": null,
+                          "FLOOR/RECEIVER/court-north/4377.5": null,
+                          "FLOOR/RECEIVER/court-north/7622.5": null,
+                          "FLOOR/RECEIVER/court-north/8082.5": null,
+                          "FLOOR/RECEIVER/court-south/3917.5": null,
+                          "FLOOR/RECEIVER/court-south/4785": null,
+                          "FLOOR/RECEIVER/court-south/7215": null,
+                          "FLOOR/RECEIVER/court-south/8082.5": null,
+                          "FLOOR/RECEIVER/court-west/3917.5": null,
+                          "FLOOR/RECEIVER/court-west/6000.0": null,
+                          "FLOOR/RECEIVER/court-west/8082.5": null,
+                          "FLOOR/RECEIVER/outer-east/3100.0": null,
+                          "FLOOR/RECEIVER/outer-east/5786.5": null,
+                          "FLOOR/RECEIVER/outer-east/8613.5": null,
+                          "FLOOR/RECEIVER/outer-north/2825.0": null,
+                          "FLOOR/RECEIVER/outer-north/4377.5": null,
+                          "FLOOR/RECEIVER/outer-north/7622.5": null,
+                          "FLOOR/RECEIVER/outer-north/9175.0": null,
+                          "FLOOR/RECEIVER/outer-south/2850.0": null,
+                          "FLOOR/RECEIVER/outer-south/4750.0": null,
+                          "FLOOR/RECEIVER/outer-south/7250.0": null,
+                          "FLOOR/RECEIVER/outer-south/9150.0": null,
+                          "FLOOR/RECEIVER/outer-west/3200.0": null,
+                          "FLOOR/RECEIVER/outer-west/6000.0": null,
+                          "FLOOR/RECEIVER/outer-west/8800.0": null
+                        }
+                      },
+                      "use": "bounded-diaphragm-comparison"
+                    },
+                    "geometry": {
+                      "outerUpstandDepthMm": 750,
+                      "courtUpstandDepthMm": 650
+                    },
+                    "portalDPCNormalMode": "compression",
+                    "portalDPCNormalIntegration": "exact-active-patch",
+                    "portalDPCQuadratureOrder": 8,
+                    "portalDPCNormalSubdivisions": 4,
+                    "portalDPCInsetMm": 0,
+                    "floorBoundary": "passive-floor-receiving-local-portal-challenges",
+                    "northUnion": "full-3D-upstand-owns-central-north-band-material",
+                    "use": "unqualified-eight-path-joined-comparison"
+                  },
+                  "coreAxialWidthMm": 290,
+                  "northUpstandWidthMm": 290.0,
+                  "finishedAxialWidthMm": 775,
+                  "mineralFaceLiningMm": 40,
+                  "boundary": {
+                    "kind": "native-floor-and-actual-open-north-portal-replacement",
+                    "physicalGFactor": 1.35,
+                    "includeExternalGMAXQ": false
+                  },
+                  "courtyardPressure": null,
+                  "reinforcement": "separate-worked-cage-proof-required",
+                  "use": "unqualified-source-loaded-RC-house-subsystem"
+                },
+                "jointMode": "finite-RC-20mm-former-DPC-continuity-diagnostic",
+                "waterControl": "coordinate-defined-metal-puddle-and-sealed-rod-concept-unqualified",
+                "barGeometry": {
+                  "diameterMm": 12,
+                  "nominalCoverMm": 45,
+                  "minimumCoverMm": 40,
+                  "roundedLinkBarFaceMm": 69
+                },
+                "use": "unqualified-continuous-RC-structural-replacement"
+              },
+              "plateLaw": {
+                "elasticModulusMPa": 33000,
+                "poissonRatio": 0.2,
+                "thicknessMm": 200,
+                "flexuralFactor": 0.25,
+                "shearFactor": 0.5,
+                "unitWeightKNPerM3": 27.0
+              },
+              "bearingLaw": {
+                "masonryModulusMPa": 1000,
+                "jointNormalComplianceMmPerMPa": 0.01
+              },
+              "maxPitchMm": 500,
+              "bearingQuadratureOrder": 4,
+              "freshUniformLiveKPa": 2.0,
+              "geometryPolicy": "actual-source-voids-and-service-envelopes-plus-slab-band-union-with-withheld-wet-domain",
+              "supportPolicy": "finite-clear-core-vertical-compression-only",
+              "use": "unqualified-vertical-floor-gravity-comparison"
+            },
+            "masonrySeatProjectionMm": 180.0,
+            "masonryUnitWeightKNM3": 20.0,
+            "abutmentSlices": 12,
+            "foundationWeight": {
+              "unitWeightKNPerM3": 25.0,
+              "gravityFactor": 1.0
+            },
+            "courtCornerClosure": {
+              "mode": "source-sw-formed-quarter-node-comparison"
+            },
+            "floorReinforcement": {
+              "schema": "str-floor-reinforcement-settings/1",
+              "barDiameterMm": 16.0,
+              "pitchMm": 80.0,
+              "mainBarNominalCoverMm": 50.0,
+              "minimumCoverMm": 40.0,
+              "cageSettingToleranceMm": 5.0,
+              "independentBarToleranceMm": 5.0,
+              "minimumIndependentClearMm": 21.0,
+              "steelYieldMPa": 434.7826086956522,
+              "strengthSteelFraction": 0.92,
+              "bondMPa": 2.0999999999999996,
+              "concreteCompressionMPa": 17.0,
+              "mandrelMm": 160.0,
+              "leverArmFactor": 0.9,
+              "comparisonDeeperSectionMm": 320.0,
+              "lapMultiplier": 1.5,
+              "use": "unqualified-conventional-section-and-anchorage-comparison"
+            },
+            "lowerCoreBodies": {
+              "masonryUnitWeightKNPerM3": 20.0
+            },
+            "lowerLWeight": {
+              "unitWeightKNPerM3": 25.0
+            },
+            "straightFrameCage": {
+              "schema": "str-straight-frame-six-bar-settings/1",
+              "postBarMm": 16.0,
+              "beamBarMm": 10.0,
+              "lowerWingBarMm": 16.0,
+              "postTopEndInsetMm": 59.0,
+              "lowerWingEndZMm": 2250.0,
+              "wingNormalOffsetMm": 70.0,
+              "wingInnerFaceInsetMm": 85.0,
+              "capPostEndLevelsZMm": [
+                -680.0,
+                -600.0
+              ],
+              "capWingEndZMm": -680.0,
+              "beamReturnLegWestXMm": {
+                "top": 4380.0,
+                "bottom": 4440.0
+              },
+              "capMatEWFrameOffsetsMm": [
+                -170.0,
+                0.0,
+                170.0
+              ],
+              "headProduct": "Leviat Ancon TTH16",
+              "headDiameterMm": 50.0,
+              "headLengthMm": 33.0,
+              "headTorqueNm": 110.0
+            },
+            "use": "unqualified-separate-masonry-and-straight-RC-frame",
+            "roofCoupling": null
+          },
+          "seats": [
+            {
+              "id": "ROOF/FLOOR/332.5,3800",
+              "xyMm": [
+                332.5,
+                3800
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/332.5,6000",
+              "xyMm": [
+                332.5,
+                6000
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/332.5,8200",
+              "xyMm": [
+                332.5,
+                8200
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/3917.5,3917.5",
+              "xyMm": [
+                4050.0,
+                3917.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/3917.5,6000",
+              "xyMm": [
+                3917.5,
+                6000
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/3917.5,8082.5",
+              "xyMm": [
+                4050.0,
+                8082.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/4700,332.5",
+              "xyMm": [
+                4700,
+                332.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/4700,11667.5",
+              "xyMm": [
+                4500.0,
+                11667.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/5925,8082.5",
+              "xyMm": [
+                5925,
+                8082.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/6000,3917.5",
+              "xyMm": [
+                6000,
+                3917.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/7300,332.5",
+              "xyMm": [
+                7300,
+                332.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/7300,11667.5",
+              "xyMm": [
+                7300,
+                11667.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/8082.5,3917.5",
+              "xyMm": [
+                7950.0,
+                3917.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/8082.5,6000",
+              "xyMm": [
+                8082.5,
+                6000
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/8082.5,8082.5",
+              "xyMm": [
+                7950.0,
+                8082.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/11667.5,3800",
+              "xyMm": [
+                11667.5,
+                3800
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/11667.5,6000",
+              "xyMm": [
+                11667.5,
+                6100.0
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/11667.5,8200",
+              "xyMm": [
+                11667.5,
+                8200
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            }
+          ],
+          "roofControls": {
+            "schema": "str-roof-floor-coupling-settings/1",
+            "upperFrameLaw": {
+              "mode": "authored-linear-comparison",
+              "elasticModulusMPa": 33000,
+              "poissonRatio": 0.2,
+              "flexuralFactor": 0.25,
+              "torsionFactor": 0.25,
+              "shearAreaFactor": 0.5
+            },
+            "upperUnitWeightKNPerM3": 25.0,
+            "ringPlanEIRatio": 1.0,
+            "ridgeJointKRatio": 1.0,
+            "roofWindFactor": 1.0,
+            "roofSteelGravity": {
+              "unitWeightKNPerM3": 78.5
+            },
+            "roofSurfacePressure": null,
+            "use": "unqualified-source0-roof-P2-and-crown-coupling"
+          },
+          "masonryUnitWeightKNPerM3": 20.0,
+          "masonryModulusMPa": 3000.0,
+          "jointNormalComplianceMmPerMPa": 0.1,
+          "padThicknessMm": 10.0,
+          "padUnitWeightKNPerM3": 78.5,
+          "use": "unselected-upper-clear-masonry-and-axial-roof-seat-comparison"
+        },
+        "thicknessMm": 200.0,
+        "wetSupport": {
+          "beamWidthMm": 250.0,
+          "beamDepthMm": 350.0,
+          "beamAxisXMm": 2902.5,
+          "beamSouthEndYMm": 8782.5,
+          "beamNorthEndYMm": 11737.5,
+          "beamTopZMm": 3370.0,
+          "receiverRectanglesXYMm": [
+            [
+              2772.5,
+              8627.5,
+              3032.5,
+              9077.5
+            ],
+            [
+              2772.5,
+              11287.5,
+              3032.5,
+              11737.5
+            ]
+          ],
+          "padCentreOffsetsYMm": [
+            160.0,
+            0.0
+          ],
+          "padWidthMm": 220.0,
+          "padLengthMm": 100.0,
+          "padThicknessMm": 10.0,
+          "combinedRelativePlacementToleranceMm": 10.0,
+          "bearingQuadratureOrder": 8,
+          "jointNormalComplianceMmPerMPa": 0.1,
+          "padUnitWeightKNPerM3": 78.5,
+          "concreteUnitWeightKNPerM3": 25.0,
+          "maxBeamPitchMm": 500.0,
+          "scope": "unselected-finite-gravity-support-no-friction-or-moment-frame-credit"
+        },
+        "use": "unselected-source0-section-replacement-with-fixed-origin-load-controls"
+      },
+      "requestSHA256": "5bd59b7be3a0bdd2c2d7489120e68c8fbdcc0b0676c48a39f2f5718c5de8679f",
+      "fullResultSHA256": "73d2521d2cf96a97cc1a909f363e8a73db34c0a70a05c094783d6f5cd97e2afe",
+      "captureManifestSHA256": "bc403e14fe987ae82d2ebf346578896a9e6b5eed45491b506051bb487800a4bd",
+      "elapsedSeconds": 86.06620104899997,
+      "observedChildPeakRSSKiB": 1423616,
+      "returnCode": 0,
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -105.54311417033193,
+            -78.17208666574999,
+            284.4293610133593,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            95.94252503317686,
+            2.6293747957900413,
+            -25.504881850208744,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.13043039073329288,
+            74.67403111932713,
+            -15.399840613849356,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -470.8403867685505,
+            -305.98953758849456,
+            84.06959827336013,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            277.26475983759383,
+            2.4314299392574803,
+            135.46456718453686,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            -0.5965143288530257,
+            213.71238312250884,
+            -75.62653318283763,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -244.4779495411724,
+            -433.7408361730252,
+            93.39356995994667,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            183.11428927192495,
+            6.283863195248305,
+            -64.54262819228438,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.689570600757108,
+            259.26871988717835,
+            161.3282819104987,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -155.0614166328476,
+            -203.91783258632506,
+            -66.99388300729376,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            132.6097287250429,
+            2.3420227239941926,
+            64.3452562975363,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -2.3181304758301904,
+            73.20657323921915,
+            153.5279102212074,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            40.95304735543362,
+            36.260476456006685,
+            104.33090952761503,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            17.4652628349395,
+            64.13935900234311,
+            37.797773874109865,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -0.6154106930320485,
+            29.708950982378937,
+            74.49812588106835,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            53.19623565322659,
+            107.21505691660327,
+            152.47396322249466,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -34.483538661588184,
+            84.10554089141274,
+            95.0673734107781,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -62.55234508292493,
+            4.396725447821723,
+            124.31508344349096,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -45.22148462951045,
+            188.51656676513787,
+            151.39797326358655,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            31.488022684167063,
+            -0.8558221882108963,
+            33.26465375027807,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            53.87900590114552,
+            4.120240955780255,
+            48.455507475299854,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            60.37405708560602,
+            56.533339128080996,
+            108.07115615234753,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            120.82909996295925,
+            44.63789889289919,
+            141.3873445002559,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            104.13820032880702,
+            -30.100442265803046,
+            43.708485694815096,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            0.6760240383045453,
+            -53.008077355625666,
+            92.55538892149596,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -37.74511868950977,
+            -53.42791303356378,
+            159.12411237604044,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            82.17493052789291,
+            -2.142337250772174,
+            56.83176473515894,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -5.669735707586771,
+            0.684107160609166,
+            121.03096409214052,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -9.751627722410513,
+            56.3959140431898,
+            85.13204076797076,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -50.62779427624925,
+            9.201232992813424,
+            257.4411551976179,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            11.808320261233625,
+            52.491475512026106,
+            103.18344346531038,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -1.5964844069779804,
+            -6.121210700224623,
+            54.19228709269748,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            -0.040127051836558625,
+            14.558410735542374,
+            33.46624394192008,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            24.469755003676976,
+            -5.553096801493371,
+            56.69369770055513,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            2.1730762821738603,
+            23.38117846383479,
+            70.04963590228932,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            0.5689000679091432,
+            3.4152702141253464,
+            36.877136523137665,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            13.724325971872704,
+            -18.643612115327095,
+            -16.956032550837364,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -14.917520456740275,
+            -1.0299856235650282,
+            52.42119546187098,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            4.994119621807975,
+            0.6506821327724168,
+            10.974233977707051,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            5.7849462020528035,
+            0.10437977239354757,
+            37.86024893798008,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            18.40979410509292,
+            -63.00293442755464,
+            141.63296219721653,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            11.825524558378902,
+            14.035983471992822,
+            115.43601185006436,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            59.927402950348934,
+            -73.50800322858578,
+            138.02321780669138,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            80.53041876742469,
+            100.78646513843329,
+            175.5703660695354,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -30.342321489827007,
+            17.956959664592567,
+            103.42406381350676,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            -0.014109408161279091,
+            -24.752307247932436,
+            71.67973756509073,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -41.17626341175807,
+            46.32692167265785,
+            141.0607406738086,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -13.184872297025816,
+            2.8484350216782888,
+            66.2675017640804,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -2.3597472470036625,
+            -7.313221217450911,
+            42.63006204340994,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            20.743843258335698,
+            15.057530743614938,
+            48.89332895162559,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -23.411988388490588,
+            -4.9368763930713015,
+            112.75992649434201,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            24.40892668309751,
+            -59.75149389718252,
+            92.73864453882423,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "independent52HeadBalanceResidualKN_KNm": [
+        -7.120689815565129e-09,
+        -1.2679208793997532e-09,
+        -3.119566827081144e-10,
+        -4.223693395033479e-09,
+        -1.4180841390043497e-08,
+        6.571581501191304e-08
+      ],
+      "globalEnergyRelativeResidual": 4.272188338815596e-12,
+      "maximumFreeResidualKNOrKNmm": 4.7124922275543213e-07,
+      "physicalPlateWorkRelativeResidual": 2.892917081001539e-13,
+      "mass": {
+        "sourceRCAndInfillBeforeSlabKN": 99.6866032729886,
+        "newPlatePhysicalSelfGKN": 526.84374375,
+        "joinedPhysicalGKN": 2969.885918349448,
+        "newPlateAreaM2": 97.56365625,
+        "newPlateCentroidXYMm": [
+          6332.533610828443,
+          6023.325780652178
+        ],
+        "floorSlabThicknessMm": 200.0,
+        "northUpstandOwnsRemovedStripMaterial": true,
+        "authoredSlabLevelBandsUnionIncluded": true,
+        "sourceSelfGCondensationResidualKN_KNm": [
+          0.0,
+          0.0,
+          4.661160346586257e-12,
+          3.728928277269006e-11,
+          -2.5920599000528455e-11,
+          0.0
+        ],
+        "appliedPhysicalGKN": 4009.345989771755,
+        "upperClearMasonryPhysicalGKN": 438.47708500000005,
+        "upperBearingPadsPhysicalGKN": 0.1413
+      },
+      "floorSection": {
+        "schema": "str-floor-section-successor/1",
+        "soffitZMm": 3170.0,
+        "topZMm": 3370.0,
+        "midplaneZMm": 3270.0,
+        "thicknessMm": 200.0,
+        "plateSelfGKN": 526.84374375,
+        "addedPlateGKN": 0.0,
+        "sourceGravityResidualKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sourcePressureResidualKN_KNm": [
+          -1.8616219676914625e-11,
+          5.6559201766503975e-12,
+          0.0,
+          -1.858779796748422e-11,
+          -6.070877134334296e-11,
+          1.254676362805185e-10
+        ],
+        "steelChordAxialRigidityKN": 180955.73684677208,
+        "northernUpstandGeometryChanged": false,
+        "sourceFFLMm": 3450.0,
+        "remainingSourceFinishDepthMm": 80.0,
+        "verticalPlateEnergyRepresentationPolicy": "direct-sparse-plate-block-v1",
+        "finishStairServiceEvidenceApplicable": false,
+        "candidateAccepted": false,
+        "sourceUpperMaterialResidualKN_KNm": [
+          4.773959005888173e-15,
+          -7.88865500700453e-16,
+          3.2514435588382185e-11,
+          1.291482476517558e-10,
+          1.4642864698544145e-10,
+          0.0
+        ]
+      },
+      "rawPointBendingPlusTwistingKNmPerM": 107.24168245974593,
+      "unchangedPhysicalControl": {
+        "previousArtifact": "project/str/studies/floor-section-cuts-proof.json",
+        "previousArtifactSHA256": "5b417ffddb027bd6c04598eef34234da7c5adfc3ca6a9f4ec0aeeed66ce03037",
+        "previousFullResultSHA256": "3e758fc08ad5630e1662ecdbf4bf8f1de7c6c3c8fc203edb3d27d30ac44d0c1e",
+        "maximum312ComponentDifferenceKN_KNm": 4.043954504595604e-09,
+        "maximumPermittedDifferenceKN_KNm": 1e-06,
+        "passes": true,
+        "scope": "Fresh request generated from current source. Authored physical choices match the historical500 control; only source-identity fields are omitted in that comparison, never overwritten in either request/result."
+      },
+      "completeNativeResultAvailable": true,
+      "candidateAccepted": false,
+      "completeHouseProof": false,
+      "localStressConvergenceProven": false
+    },
+    {
+      "caseId": "wet-floor-mesh-250",
+      "state": "execution-started-no-result-at-checkpoint",
+      "executedRequest": {
+        "schema": "str-coupled-floor-section-case/1",
+        "sourceSHA256": {
+          "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+          "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+          "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+          "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+          "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+          "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+          "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+          "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+          "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+          "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+          "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+          "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+          "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+          "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+          "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+          "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+          "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+          "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+          "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+          "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+          "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+          "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+          "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+          "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+          "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+          "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+          "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+          "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+          "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+          "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+          "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+          "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+          "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+          "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+          "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+          "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+          "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+          "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+          "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+          "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+          "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+          "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+          "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+          "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+          "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+          "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+          "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+          "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+          "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+          "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+          "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+          "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+          "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+        },
+        "bearingCase": {
+          "schema": "str-upper-masonry-roof-bearing-case/1",
+          "sourceSHA256": {
+            "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+            "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+            "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+            "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+            "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+            "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+            "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+            "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+            "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+            "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+            "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+            "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+            "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+            "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+            "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+            "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+            "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+            "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+            "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+            "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+            "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+            "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+            "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+            "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+            "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+            "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+            "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+            "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+            "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+            "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+            "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+            "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+            "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+            "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+            "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+            "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+            "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+            "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+            "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+            "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+            "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+            "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+            "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+            "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+            "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+            "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+            "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+            "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+            "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+            "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+            "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+            "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+            "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e"
+          },
+          "masonryCase": {
+            "schema": "str-masonry-frame-a-case/1",
+            "sourceSHA256": {
+              "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+              "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+              "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+              "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+              "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+              "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+              "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+              "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+              "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+              "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+              "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+              "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+              "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+              "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+              "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+              "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+              "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+              "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+              "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+              "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+              "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+              "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+              "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+              "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+              "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+              "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+              "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+              "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+              "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+              "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+              "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+              "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+              "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+              "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+              "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+              "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+              "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+              "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+              "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+              "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+              "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+              "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+              "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+              "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+              "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+              "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+              "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+              "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+              "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e"
+            },
+            "verticalCase": {
+              "schema": "str-vertical-rc-floor-case/1",
+              "sourceSHA256": {
+                "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+                "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+                "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+                "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+                "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+                "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+                "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521"
+              },
+              "monolithicCase": {
+                "schema": "str-monolithic-rc-portal-case/1",
+                "sourceSHA256": {
+                  "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                  "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                  "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                  "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                  "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                  "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                  "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                  "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                  "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                  "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                  "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                  "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                  "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                  "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                  "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                  "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                  "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                  "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                  "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                  "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                  "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                  "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                  "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                  "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                  "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                  "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                  "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                  "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                  "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                  "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+                  "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137"
+                },
+                "houseCase": {
+                  "schema": "str-rc-floor-house-load-case/1",
+                  "sourceSHA256": {
+                    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                    "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6"
+                  },
+                  "joinedCase": {
+                    "schema": "str-joined-rc-floor-case/1",
+                    "sourceSHA256": {
+                      "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                      "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                      "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                      "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                      "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                      "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                      "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                      "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                      "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                      "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                      "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                      "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                      "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                      "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                      "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                      "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                      "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                      "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                      "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                      "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                      "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                      "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                      "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                      "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                      "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                      "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                      "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                      "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4"
+                    },
+                    "portal": {
+                      "schema": "str-continuous-rc-portal-case/1",
+                      "sourceSHA256": {
+                        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                        "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                        "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                        "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7"
+                      },
+                      "scheme": "fullheight-piers-integral-curved-ring-no-tie-no-bore",
+                      "gridLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 33000,
+                        "poissonRatio": 0.2,
+                        "flexuralFactor": 0.25,
+                        "torsionFactor": 0.25,
+                        "shearAreaFactor": 0.5
+                      },
+                      "frameLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 33000,
+                        "poissonRatio": 0.2,
+                        "flexuralFactor": 0.25,
+                        "torsionFactor": 0.25,
+                        "shearAreaFactor": 0.5
+                      },
+                      "dpcLaw": {
+                        "mode": "authored-bilateral-elastic-comparison",
+                        "normalStiffnessKNPerMm3": 0.5,
+                        "shearStiffnessKNPerMm3": 0.05
+                      },
+                      "dpcIntervalZMm": [
+                        -50,
+                        -30
+                      ],
+                      "coverMm": 40,
+                      "archSegments": 24,
+                      "infillHeadGapMm": 30,
+                      "jointZone": "authored-monolithic-rigid-end-offset-comparison",
+                      "headBoundary": "source52-ideal-pinned-translations-free-rotations",
+                      "use": "unqualified-continuous-rc-challenger"
+                    },
+                    "floor": {
+                      "schema": "str-distributed-floor-case/1",
+                      "sourceSHA256": {
+                        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3"
+                      },
+                      "cornerWidthsMm": {
+                        "NW": 200,
+                        "NE": 200,
+                        "SW": 140,
+                        "SE": 140
+                      },
+                      "memberLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 33000,
+                        "poissonRatio": 0.2,
+                        "flexuralFactor": 0.25,
+                        "torsionFactor": 0.25,
+                        "shearAreaFactor": 0.5
+                      },
+                      "jointLaw": {
+                        "mode": "authored-spring-comparison",
+                        "compressionStiffnessKNPerMm3": 0.5,
+                        "tieStiffnessKNPerMm": 50,
+                        "shearKeyStiffnessKNPerMm": 100,
+                        "compressionGapMm": 0,
+                        "tieGapMm": 0
+                      },
+                      "membraneLaw": {
+                        "mode": "authored-linear-comparison",
+                        "elasticModulusMPa": 1200,
+                        "poissonRatio": 0.15,
+                        "shearModulusMPa": 440
+                      },
+                      "edgeBand": {
+                        "mode": "authored-conventional-slab-level-band",
+                        "widthMm": 140,
+                        "depthMm": 200,
+                        "elasticModulusMPa": 33000,
+                        "flexuralFactor": 0.25,
+                        "axialRigidityKN": 180955.73684677208
+                      },
+                      "maxPitchMm": 250,
+                      "componentCase": {
+                        "schema": "str-retained-components-case/1",
+                        "sourceSHA256": {
+                          "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                          "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                          "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                          "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                          "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                          "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                          "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                          "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                          "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                          "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                          "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8"
+                        },
+                        "edits": {
+                          "floorApertures": [],
+                          "wallOpenings": []
+                        },
+                        "retentionPaths": []
+                      },
+                      "boundaryCase": {
+                        "kind": "native-floor-wind-band-only",
+                        "windIndex": 31
+                      },
+                      "receivingLaws": {
+                        "successorRoof": null,
+                        "verticalFloor": null,
+                        "dryGround": null,
+                        "intermediateSupports": {
+                          "FLOOR/RECEIVER/court-east/3917.5": null,
+                          "FLOOR/RECEIVER/court-east/6000.0": null,
+                          "FLOOR/RECEIVER/court-east/8082.5": null,
+                          "FLOOR/RECEIVER/court-north/3917.5": null,
+                          "FLOOR/RECEIVER/court-north/4377.5": null,
+                          "FLOOR/RECEIVER/court-north/7622.5": null,
+                          "FLOOR/RECEIVER/court-north/8082.5": null,
+                          "FLOOR/RECEIVER/court-south/3917.5": null,
+                          "FLOOR/RECEIVER/court-south/4785": null,
+                          "FLOOR/RECEIVER/court-south/7215": null,
+                          "FLOOR/RECEIVER/court-south/8082.5": null,
+                          "FLOOR/RECEIVER/court-west/3917.5": null,
+                          "FLOOR/RECEIVER/court-west/6000.0": null,
+                          "FLOOR/RECEIVER/court-west/8082.5": null,
+                          "FLOOR/RECEIVER/outer-east/3100.0": null,
+                          "FLOOR/RECEIVER/outer-east/5786.5": null,
+                          "FLOOR/RECEIVER/outer-east/8613.5": null,
+                          "FLOOR/RECEIVER/outer-north/2825.0": null,
+                          "FLOOR/RECEIVER/outer-north/4377.5": null,
+                          "FLOOR/RECEIVER/outer-north/7622.5": null,
+                          "FLOOR/RECEIVER/outer-north/9175.0": null,
+                          "FLOOR/RECEIVER/outer-south/2850.0": null,
+                          "FLOOR/RECEIVER/outer-south/4750.0": null,
+                          "FLOOR/RECEIVER/outer-south/7250.0": null,
+                          "FLOOR/RECEIVER/outer-south/9150.0": null,
+                          "FLOOR/RECEIVER/outer-west/3200.0": null,
+                          "FLOOR/RECEIVER/outer-west/6000.0": null,
+                          "FLOOR/RECEIVER/outer-west/8800.0": null
+                        }
+                      },
+                      "use": "bounded-diaphragm-comparison"
+                    },
+                    "geometry": {
+                      "outerUpstandDepthMm": 750,
+                      "courtUpstandDepthMm": 650
+                    },
+                    "portalDPCNormalMode": "compression",
+                    "portalDPCNormalIntegration": "exact-active-patch",
+                    "portalDPCQuadratureOrder": 8,
+                    "portalDPCNormalSubdivisions": 4,
+                    "portalDPCInsetMm": 0,
+                    "floorBoundary": "passive-floor-receiving-local-portal-challenges",
+                    "northUnion": "full-3D-upstand-owns-central-north-band-material",
+                    "use": "unqualified-eight-path-joined-comparison"
+                  },
+                  "coreAxialWidthMm": 290,
+                  "northUpstandWidthMm": 290.0,
+                  "finishedAxialWidthMm": 775,
+                  "mineralFaceLiningMm": 40,
+                  "boundary": {
+                    "kind": "native-floor-and-actual-open-north-portal-replacement",
+                    "physicalGFactor": 1.35,
+                    "includeExternalGMAXQ": false
+                  },
+                  "courtyardPressure": null,
+                  "reinforcement": "separate-worked-cage-proof-required",
+                  "use": "unqualified-source-loaded-RC-house-subsystem"
+                },
+                "jointMode": "finite-RC-20mm-former-DPC-continuity-diagnostic",
+                "waterControl": "coordinate-defined-metal-puddle-and-sealed-rod-concept-unqualified",
+                "barGeometry": {
+                  "diameterMm": 12,
+                  "nominalCoverMm": 45,
+                  "minimumCoverMm": 40,
+                  "roundedLinkBarFaceMm": 69
+                },
+                "use": "unqualified-continuous-RC-structural-replacement"
+              },
+              "plateLaw": {
+                "elasticModulusMPa": 33000,
+                "poissonRatio": 0.2,
+                "thicknessMm": 200,
+                "flexuralFactor": 0.25,
+                "shearFactor": 0.5,
+                "unitWeightKNPerM3": 27.0
+              },
+              "bearingLaw": {
+                "masonryModulusMPa": 1000,
+                "jointNormalComplianceMmPerMPa": 0.01
+              },
+              "maxPitchMm": 250,
+              "bearingQuadratureOrder": 4,
+              "freshUniformLiveKPa": 2.0,
+              "geometryPolicy": "actual-source-voids-and-service-envelopes-plus-slab-band-union-with-withheld-wet-domain",
+              "supportPolicy": "finite-clear-core-vertical-compression-only",
+              "use": "unqualified-vertical-floor-gravity-comparison"
+            },
+            "masonrySeatProjectionMm": 180.0,
+            "masonryUnitWeightKNM3": 20.0,
+            "abutmentSlices": 12,
+            "foundationWeight": {
+              "unitWeightKNPerM3": 25.0,
+              "gravityFactor": 1.0
+            },
+            "courtCornerClosure": {
+              "mode": "source-sw-formed-quarter-node-comparison"
+            },
+            "floorReinforcement": {
+              "schema": "str-floor-reinforcement-settings/1",
+              "barDiameterMm": 16.0,
+              "pitchMm": 80.0,
+              "mainBarNominalCoverMm": 50.0,
+              "minimumCoverMm": 40.0,
+              "cageSettingToleranceMm": 5.0,
+              "independentBarToleranceMm": 5.0,
+              "minimumIndependentClearMm": 21.0,
+              "steelYieldMPa": 434.7826086956522,
+              "strengthSteelFraction": 0.92,
+              "bondMPa": 2.0999999999999996,
+              "concreteCompressionMPa": 17.0,
+              "mandrelMm": 160.0,
+              "leverArmFactor": 0.9,
+              "comparisonDeeperSectionMm": 320.0,
+              "lapMultiplier": 1.5,
+              "use": "unqualified-conventional-section-and-anchorage-comparison"
+            },
+            "lowerCoreBodies": {
+              "masonryUnitWeightKNPerM3": 20.0
+            },
+            "lowerLWeight": {
+              "unitWeightKNPerM3": 25.0
+            },
+            "straightFrameCage": {
+              "schema": "str-straight-frame-six-bar-settings/1",
+              "postBarMm": 16.0,
+              "beamBarMm": 10.0,
+              "lowerWingBarMm": 16.0,
+              "postTopEndInsetMm": 59.0,
+              "lowerWingEndZMm": 2250.0,
+              "wingNormalOffsetMm": 70.0,
+              "wingInnerFaceInsetMm": 85.0,
+              "capPostEndLevelsZMm": [
+                -680.0,
+                -600.0
+              ],
+              "capWingEndZMm": -680.0,
+              "beamReturnLegWestXMm": {
+                "top": 4380.0,
+                "bottom": 4440.0
+              },
+              "capMatEWFrameOffsetsMm": [
+                -170.0,
+                0.0,
+                170.0
+              ],
+              "headProduct": "Leviat Ancon TTH16",
+              "headDiameterMm": 50.0,
+              "headLengthMm": 33.0,
+              "headTorqueNm": 110.0
+            },
+            "use": "unqualified-separate-masonry-and-straight-RC-frame",
+            "roofCoupling": null
+          },
+          "seats": [
+            {
+              "id": "ROOF/FLOOR/332.5,3800",
+              "xyMm": [
+                332.5,
+                3800
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/332.5,6000",
+              "xyMm": [
+                332.5,
+                6000
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/332.5,8200",
+              "xyMm": [
+                332.5,
+                8200
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/3917.5,3917.5",
+              "xyMm": [
+                4050.0,
+                3917.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/3917.5,6000",
+              "xyMm": [
+                3917.5,
+                6000
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/3917.5,8082.5",
+              "xyMm": [
+                4050.0,
+                8082.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/4700,332.5",
+              "xyMm": [
+                4700,
+                332.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/4700,11667.5",
+              "xyMm": [
+                4500.0,
+                11667.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/5925,8082.5",
+              "xyMm": [
+                5925,
+                8082.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/6000,3917.5",
+              "xyMm": [
+                6000,
+                3917.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/7300,332.5",
+              "xyMm": [
+                7300,
+                332.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/7300,11667.5",
+              "xyMm": [
+                7300,
+                11667.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/8082.5,3917.5",
+              "xyMm": [
+                7950.0,
+                3917.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/8082.5,6000",
+              "xyMm": [
+                8082.5,
+                6000
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/8082.5,8082.5",
+              "xyMm": [
+                7950.0,
+                8082.5
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/11667.5,3800",
+              "xyMm": [
+                11667.5,
+                3800
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/11667.5,6000",
+              "xyMm": [
+                11667.5,
+                6100.0
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            },
+            {
+              "id": "ROOF/FLOOR/11667.5,8200",
+              "xyMm": [
+                11667.5,
+                8200
+              ],
+              "padWidthMm": 100.0,
+              "settingToleranceMm": 10.0
+            }
+          ],
+          "roofControls": {
+            "schema": "str-roof-floor-coupling-settings/1",
+            "upperFrameLaw": {
+              "mode": "authored-linear-comparison",
+              "elasticModulusMPa": 33000,
+              "poissonRatio": 0.2,
+              "flexuralFactor": 0.25,
+              "torsionFactor": 0.25,
+              "shearAreaFactor": 0.5
+            },
+            "upperUnitWeightKNPerM3": 25.0,
+            "ringPlanEIRatio": 1.0,
+            "ridgeJointKRatio": 1.0,
+            "roofWindFactor": 1.0,
+            "roofSteelGravity": {
+              "unitWeightKNPerM3": 78.5
+            },
+            "roofSurfacePressure": null,
+            "use": "unqualified-source0-roof-P2-and-crown-coupling"
+          },
+          "masonryUnitWeightKNPerM3": 20.0,
+          "masonryModulusMPa": 3000.0,
+          "jointNormalComplianceMmPerMPa": 0.1,
+          "padThicknessMm": 10.0,
+          "padUnitWeightKNPerM3": 78.5,
+          "use": "unselected-upper-clear-masonry-and-axial-roof-seat-comparison"
+        },
+        "thicknessMm": 200.0,
+        "wetSupport": {
+          "beamWidthMm": 250.0,
+          "beamDepthMm": 350.0,
+          "beamAxisXMm": 2902.5,
+          "beamSouthEndYMm": 8782.5,
+          "beamNorthEndYMm": 11737.5,
+          "beamTopZMm": 3370.0,
+          "receiverRectanglesXYMm": [
+            [
+              2772.5,
+              8627.5,
+              3032.5,
+              9077.5
+            ],
+            [
+              2772.5,
+              11287.5,
+              3032.5,
+              11737.5
+            ]
+          ],
+          "padCentreOffsetsYMm": [
+            160.0,
+            0.0
+          ],
+          "padWidthMm": 220.0,
+          "padLengthMm": 100.0,
+          "padThicknessMm": 10.0,
+          "combinedRelativePlacementToleranceMm": 10.0,
+          "bearingQuadratureOrder": 8,
+          "jointNormalComplianceMmPerMPa": 0.1,
+          "padUnitWeightKNPerM3": 78.5,
+          "concreteUnitWeightKNPerM3": 25.0,
+          "maxBeamPitchMm": 500.0,
+          "scope": "unselected-finite-gravity-support-no-friction-or-moment-frame-credit"
+        },
+        "use": "unselected-source0-section-replacement-with-fixed-origin-load-controls"
+      },
+      "requestSHA256": "260ca588e0c570d9746399122cd71715d34b8c8c046d2331fc8259b6eec720e3",
+      "completeNativeResultAvailable": false,
+      "convergenceResultAvailable": false,
+      "candidateAccepted": false
+    }
+  ],
+  "rawCaptureLocation": "/workspace/scratch/c8557608a58b/native-captures/meshes/307156a9a354d52542495cfa3cf99594dc5deaca03ef5a28690a64762316a33d",
+  "scope": "Actual source-bound numerical execution checkpoint.500 completes the nonlinear native path and unchanged physical control.250 has no result at this checkpoint. All ancestor/current proof chains still require genuine regeneration; no house, resistance or finer-mesh convergence adoption.",
+  "candidateAccepted": false,
+  "completeHouseProof": false
+}
