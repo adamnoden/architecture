@@ -18,7 +18,7 @@ interface PlatePlacement {
 const placements: readonly PlatePlacement[] = [
   {
     entryId: 'part-iv',
-    anchor: '## Programme before symmetry',
+    anchor: 'Storage and maintenance approach are treated as spatial demands rather than annotations added after the plan is composed.',
     pageClass: 'PLATE_PAIR',
     views: [
       { title: 'Current house — ground floor', image: '../../publication/current/ground-plan.svg', alt: 'Nominal current courtyard-house ground plan', scale: '1:100', caption: 'Ground floor of the accepted 12 m square courtyard layout. Wall and floor assemblies, service fit and structural selection remain open; this nominal plan does not reconcile roof or section datums.' },
@@ -35,7 +35,7 @@ const placements: readonly PlatePlacement[] = [
   },
   {
     entryId: 'part-iv',
-    anchor: '## Section as architecture',
+    anchor: 'Earlier unequal-storey studies explain a previous choice; they do not describe these current datums.',
     pageClass: 'PLATE_SINGLE',
     views: [
       { title: 'Current house — principal section', image: '../../publication/current/principal-section.svg', alt: 'Nominal current principal section through entrance void and open courtyard', scale: '1:100', caption: 'Section through the entrance void and open court, looking west, with architectural floors at 0 and +3.45 m. Floor layers, foundation envelopes and the roof build-up are provisional representations, not selected construction. This section does not adopt the reinforced-concrete cage or the +715 mm raised-ground trial.' }
@@ -52,7 +52,7 @@ const placements: readonly PlatePlacement[] = [
   },
   {
     entryId: 'part-iv',
-    anchor: '## What remains unresolved',
+    anchor: 'Task visibility, glare, arrival in darkness and replacement still require a matched physical trial.',
     pageClass: 'PLATE_SINGLE',
     views: [
       { title: 'Study — tiled comparison', image: '../../publication/current/study-tile.svg', alt: 'Furnished Study with framed tile fields', scale: 'NTS', caption: 'A worked tile-faced comparison on the same occupied room geometry. Its heavier wall finish and more fragmented set-out are reasons to prefer the timber Study proposal. Dry joints and separate removal do not establish wet-room performance or owner acceptance.' }
