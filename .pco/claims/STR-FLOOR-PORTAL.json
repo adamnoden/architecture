@@ -9,8 +9,8 @@
     "label": "convergence-20261122-primary"
   },
   "claimedAt": "2026-11-22T14:35:17.012Z",
-  "heartbeatAt": "2026-11-22T14:45:47.160Z",
-  "expiresAt": "2026-11-22T15:30:47.160Z",
+  "heartbeatAt": "2026-11-22T14:59:37.501Z",
+  "expiresAt": "2026-11-22T15:44:37.501Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "785add08-d18d-4e80-ba11-5c594226a2d6",
@@ -36,8 +36,8 @@
   },
   "pr": 1618,
   "checkpoint": {
-    "evidence": "PR1618 remote757f2eec preserves99file structural recovery. Independent32 focused controls and375 current source bindings pass; actual16case recapture underway to supply missing named-interface receipt.",
-    "next": "Complete native captures and named-interface receipt; integrate water and corrected lighting; validate exacthead before publication.",
-    "blocker": "Missing16case interface receipt and source-consumer classification; no structural/slab/wholehouse acceptance earned."
+    "evidence": "PR1618 remote84af659c plus HAD24451385 and IAS7468f3f4 preserve coordinated work. Eleven native source58states plus700/500 controls recaptured; available fullchecksums exactly match retainedevidence. Pure browser startup regression fixed and tested.",
+    "next": "Finish250/mixed captures and create named-interface proof; resolve actual door/pipe conflict; refresh finalsource outputs and exacthead CI.",
+    "blocker": "Actual joined wetdoor/transfer collision being resolved. Convergence and physical resistance remain unearned; local browser cannot open Unixsocket."
   }
 }
