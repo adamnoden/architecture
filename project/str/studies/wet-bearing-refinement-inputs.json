@@ -1,0 +1,18 @@
+{
+  "schema": "str-wet-bearing-refinement-inputs/1",
+  "orders": [
+    8,
+    16,
+    32
+  ],
+  "conditionalNextOrder": 64,
+  "criteria": {
+    "forceAbsoluteKN": 1e-05,
+    "forceRelative": 0.001,
+    "centreOfPressureAbsoluteMm": 0.1,
+    "unloadedForceKN": 1e-05,
+    "maximum52HeadComponentDifferenceKN_KNm": 0.1,
+    "maximumRawTensileResidualKN": 1e-07
+  },
+  "scope": "Authored numerical comparisons of re-equilibrated normal-pad quadrature at fixed floor mesh, physical geometry, normal compliance, loads and unilateral law. Both compared states must meet their own exact clipped-affine force/centroid screen. If16to32 fails, execute64 and apply unchanged criteria32to64. This is neither an asymptotic error bound nor physical contact, material, concrete-head, reinforcement, corner-stress or whole-house acceptance."
+}

@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process'
+import { runWetBearingContactAnalysis, wetBearingConsumerPaths } from './structural-wet-bearing.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -95,7 +96,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-coupled-floor-section-case/1' || !record(comparison.sourceSHA256)
     || Object.keys(comparison.sourceSHA256).length !== 58) throw new Error('Floor-section source contract changed; integrate explicitly')
-  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, transversePath, ...floorInterfaceConsumerPaths, ...wetSupportCageConsumerPaths].map(path => {
+  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, transversePath, ...floorInterfaceConsumerPaths, ...wetSupportCageConsumerPaths, ...wetBearingConsumerPaths].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
     if (owner.identities[path] !== blob || (Object.hasOwn(comparison.sourceSHA256, path)
@@ -205,6 +206,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
       additionalSolids.push({ id: `STR/wet-wall-support/post/${i}`, boxXYZMm: [r[0]!,r[1]!,post.physicalBottomZMm as number,r[2]!,r[3]!,post.physicalTopZMm as number] })
     }
   }
+  const wetBearingContact = wet ? runWetBearingContactAnalysis(output) : null
   const cageComparison = cageChoices ? runWetSupportCageComparison(output, cageChoices) : null
   const plateTransverseShear = recoverFloorTransverseShear(vertical)
   const cornerInterfaces = runFloorCornerInterfaceRecovery(output)
@@ -217,7 +219,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     native: vertical.native, vertical, floorSection: section, cageComparison, upperMasonry: output.upperMasonry,
     mass: output.mass, plateBending: output.plateBending, sectionCuts: recoverFloorSectionCuts(output.plateBending as FloorBendingField, sectionCuts),
     plateTransverseShear, transverseSectionCuts:recoverFloorTransverseCuts(plateTransverseShear,sectionCuts), cornerInterfaces, floorReinforcement: output.floorReinforcement,
-    roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport,
+    roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport, wetBearingContact,
       wetBeamCutRecovery: { status: 'computed-discrete-element-cuts' as const,
         physicalBeamCutsAvailable: true as const, completeBeamDemandEnvelopeAvailable: false as const,
         scope: 'Actual plate/membrane attachment stations are real beam nodes, and executed discrete beam cuts are recovered. The full load envelope, bearing stress spreading and resistance remain unqualified; receiving-grid discrete cuts have their own explicit scope.' } , wetGridCutRecovery: {
@@ -226,7 +228,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
         physicalElementCutsAvailable: (output.seatedWetSupport as Record<string, any>).receivingGridCuts.physicalElementCutsAvailable as boolean,
         completeGridDemandEnvelopeAvailable: false as const,
         scope: 'Only the two actual wet-post receiving members in this executed discrete case. Full signed demand, local3D joint/cage and foundation/site resistance remain unqualified.' } } : {}), drawings: output.drawings, floorSvg: output.drawings['floor-section-floor.svg'],
-    servicePenetrations, diagnostics: output.diagnostics, evidence: { state: 'unselected-actual-section-replacement' as const,
+    servicePenetrations, diagnostics: [...(output.diagnostics as unknown[]), ...(wetBearingContact?.diagnostics ?? [])], evidence: { state: 'unselected-actual-section-replacement' as const,
       candidateAccepted: false as const, completeHouseProof: false as const, installedAcceptance: false as const,
       scope: 'Actual plate and membrane reassembly, work maps, upper body starts, self-weight and recovery at the authored thickness. Finish, FFL, stairs, services, aerodynamic tributaries, local stress convergence, reinforcement and joints remain unqualified.' } }
 }
