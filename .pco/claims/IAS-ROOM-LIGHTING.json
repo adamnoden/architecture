@@ -1,17 +1,20 @@
 {
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
-  "generation": 1,
-  "state": "released",
-  "leaseId": "c3d35a47-cb1b-40b3-92c2-a18b35228633",
+  "generation": 2,
+  "state": "claimed",
+  "leaseId": "3525cb90-39f7-46b3-b4dc-d297a862ccb2",
   "holder": {
     "kind": "chatgpt",
-    "label": "ias-room-lighting-20261122"
+    "label": "ias-room-lighting-resume-20261122"
   },
-  "claimedAt": "2026-11-22T00:25:18.324Z",
-  "heartbeatAt": "2026-11-22T00:43:29.324Z",
-  "expiresAt": "2026-11-22T00:43:29.324Z",
-  "branch": "work/ias-room-lighting-20261122",
-  "releasedAt": "2026-11-22T00:43:29.324Z",
-  "releaseReason": "handoff"
+  "claimedAt": "2026-11-22T07:45:28.845Z",
+  "heartbeatAt": "2026-11-22T07:45:28.845Z",
+  "expiresAt": "2026-11-22T08:30:28.845Z",
+  "branch": "work/ias-room-lighting-resume-20261122",
+  "predecessor": {
+    "leaseId": "c3d35a47-cb1b-40b3-92c2-a18b35228633",
+    "generation": 1,
+    "branch": "work/ias-room-lighting-20261122"
+  }
 }
