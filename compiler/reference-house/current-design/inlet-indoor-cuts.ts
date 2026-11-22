@@ -155,15 +155,88 @@ type EntryInputs={roomPlanMm:Plan;portalXMm:readonly[number,number];wallFacesYMm
   jambFinishMm:number;shieldPlaneXMm:number;washerFirstRestMm:Plan;maintenancePlanMm:Plan;
   maintenanceTopMm:number;operatorXYZMm:Point;frameCoversMm:readonly Box[];bankXMm:number;bankYMm:number;
   utilityAxisZMm:number;plantAxisZMm:number;maintenanceShiftXMm:number;maintenanceShiftYMm:number;wheelInboardMm:number;
-  utilityLmin:number;plantLmin:number;maximumGaugeBar:number}
+  utilityLmin:number;plantLmin:number;maximumGaugeBar:number;
+  plantWall:{facesYMm:readonly[number,number];openingXMm:readonly[number,number]};
+  retainedFurniture:Readonly<Record<string,Plan>>;protectedDoorOpenLeafMm:Plan;groundFflMm:number}
 const signedBoxGap=(a:Box,b:Box)=>{
   const gaps=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));
   return gaps.some(g=>g>0)?Math.hypot(...gaps.map(g=>Math.max(g,0))):Math.max(...gaps)
 }
+/** Continuous-event lower bounds: sampled relative speeds supply a Lipschitz
+ * allowance, so a between-sample collision cannot hide behind a drawing. */
+function singleWetDoor(i:EntryInputs,jamb:readonly number[]){
+  const hinge:Point=[jamb[0],i.wallFacesYMm[1]-20,0],span=jamb[1]-jamb[0],step=Math.PI/1800,
+    setting=10,bodyR=300,leafHalf=30,handleHalf=40,shoulderZ=1450,handleZ=1100,
+    // Extend the ACTUAL existing normal Plant approach through its actual arch.
+    // A wall/roof/field bounding box is not substituted for this doorway.
+    bodyX=10570,initialY=hinge[1]+360,maxY=3780,
+    wallHeight=3100,west=i.roomPlanMm[0],east=west+i.roomPlanMm[2],
+    walls:Box[]=[
+      [west,i.wallFacesYMm[0],0,jamb[0]-west,i.wallFacesYMm[1]-i.wallFacesYMm[0],wallHeight],
+      [jamb[1],i.wallFacesYMm[0],0,east-jamb[1],i.wallFacesYMm[1]-i.wallFacesYMm[0],wallHeight],
+      [west,i.plantWall.facesYMm[0],0,i.plantWall.openingXMm[0]+i.jambFinishMm-west,i.plantWall.facesYMm[1]-i.plantWall.facesYMm[0],wallHeight],
+      [i.plantWall.openingXMm[1]-i.jambFinishMm,i.plantWall.facesYMm[0],0,east-i.plantWall.openingXMm[1]+i.jambFinishMm,i.plantWall.facesYMm[1]-i.plantWall.facesYMm[0],wallHeight]
+    ],
+    fixed=Object.entries(i.retainedFurniture).map(([id,p])=>({id,box:planBox(p,0,2000)})),
+    protectedLeaf=planBox(i.protectedDoorOpenLeafMm,0,2000),
+    distance2=(a:Point,b:Point,c:Point,d:Point)=>segmentDistance([a[0],a[1],0],[b[0],b[1],0],[c[0],c[1],0],[d[0],d[1],0]),
+    states=Array.from({length:901},(_,k)=>{
+      const angle=k*step,tip:Point=[hinge[0]+span*Math.cos(angle),hinge[1]+span*Math.sin(angle),handleZ],
+        handle:Point=[hinge[0]+(span-50)*Math.cos(angle),hinge[1]+(span-50)*Math.sin(angle),handleZ],
+        body:Point=[bodyX,Math.min(maxY,initialY+850*Math.sin(angle)),shoulderZ],
+        wall=Math.min(...walls.map(w=>segmentBoxDistance(body,body,w)))-bodyR-setting,
+        furniture=Math.min(...fixed.map(f=>segmentBoxDistance([body[0],body[1],1000],[body[0],body[1],1000],f.box)))-bodyR-setting,
+        leaf=distance2(body,body,hinge,tip)-bodyR-leafHalf-setting,
+        handleBody=Math.hypot(body[0]-handle[0],body[1]-handle[1])-bodyR-handleHalf-setting,
+        protectedGap=segmentBoxDistance([hinge[0],hinge[1],1000],[tip[0],tip[1],1000],protectedLeaf)-leafHalf-setting,
+        shield=i.shieldPlaneXMm-Math.max(hinge[0],tip[0])-leafHalf-setting,
+        rest=segmentBoxDistance([hinge[0],hinge[1],500],[tip[0],tip[1],500],planBox(i.washerFirstRestMm,0,848))-leafHalf-setting
+      return{angleDeg:k/10,bodyMm:body,handleMm:handle,tipMm:tip,reachMm:length(body,handle),wall,furniture,leaf,handleBody,protectedGap,shield,rest}
+    }),
+    // |body'|<=850, |leaf material point'|<=span, |handle'|<=span-50.
+    relativeError=(850+span)*step/2,bodyError=850*step/2,leafError=span*step/2,
+    minimum=(k:keyof typeof states[number],allowance:number)=>Math.min(...states.map(s=>s[k] as number))-allowance,
+    bounds={wallBodyMm:minimum('wall',bodyError),fixedFurnitureBodyMm:minimum('furniture',bodyError),
+      movingLeafBodyMm:minimum('leaf',relativeError),movingHandleBodyMm:minimum('handleBody',relativeError),
+      parkedProtectedDoorMm:minimum('protectedGap',leafError),shieldMm:minimum('shield',leafError),
+      occupiedWasherRestMm:minimum('rest',leafError),maximumReachMm:Math.max(...states.map(s=>s.reachMm))+relativeError},
+    after:Point[]=[states.at(-1)!.bodyMm,[bodyX,3250,shoulderZ],[i.operatorXYZMm[0],3200,shoulderZ],i.operatorXYZMm],
+    approach:Point[]=[[9750,3200,shoulderZ],states[0].bodyMm],
+    parkedDoor:Box=[hinge[0]-leafHalf,hinge[1],0,2*leafHalf,span,2300],
+    route=(path:Point[],rest:boolean)=>Math.min(...segments(path).flatMap(s=>[
+      ...walls.map(w=>segmentBoxDistance(s.a,s.b,w)),
+      ...fixed.map(f=>segmentBoxDistance([s.a[0],s.a[1],1000],[s.b[0],s.b[1],1000],f.box)),
+      segmentBoxDistance(s.a,s.b,protectedLeaf),
+      ...(rest?[segmentBoxDistance([s.a[0],s.a[1],1000],[s.b[0],s.b[1],1000],planBox(i.washerFirstRestMm,0,2000)),
+        segmentBoxDistance(s.a,s.b,parkedDoor)]:[])
+    ]))-bodyR-setting,
+    beforeMm=route(approach,false),afterMm=route(after,true),
+    diagnostics=[...Object.entries(bounds).filter(([k,v])=>k==='maximumReachMm'?v>650:v<0).map(([k])=>'wet-door/'+k),
+      ...(beforeMm<0?['wet-door/connected-before']:[]),...(afterMm<0?['wet-door/connected-after']:[])]
+  return{id:'HAD/utility/wet-door',kind:'single-west-hinge-outward-north',hingeMm:hinge,
+    rawOpeningMm:i.portalXMm[1]-i.portalXMm[0],finishedOpeningMm:span,projectLeafMm:[span,2300,60],
+    hardwareProjectionComparisonMm:80,openingStopDeg:90,effectiveOpenClearComparisonMm:span-handleHalf,
+    no900FinishedClearClaim:true,openingClosingSamePathReversed:true,
+    openingBodyAndHandleStates:states.filter((_s,k)=>k%50===0||k===900),continuousBoundsMm:bounds,
+    sampling:{stepDeg:.1,relativeSpeedUpperMmPerRadian:850+span,relativeDistanceAllowanceMm:relativeError},
+    connectedBeforeMm:beforeMm,connectedAfterMm:afterMm,approachMm:approach,afterOpenPathMm:after,
+    ordinaryBodyRmm:bodyR,ordinaryBodyTopMm:2000,reachLimitMm:650,
+    parkedOpenLeafMm:parkedDoor,actualHingesJambReceiverMassAndResistanceQualified:false,
+    actualWetSealsMeetingEdgesToeContainmentAndMaterialsQualified:false,
+    noFloorTrackOrBuriedPocket:true,selectedAsDevelopmentDoor:false,
+    alternatives:{liftOff:'Reject for ordinary isolation: full tall loaded panel requires capture/rest before reaching controls.',
+      westSingleSlide:'Full leaf does not park on the actual753mm west pier; it meets the perpendicular spine.',
+      eastParking:'Actual shield/backing-plate region is occupied.',
+      telescoping:'Not required if this simpler full opening event earns its path; overhead synchronisation, stuck-leaf and renewal would add duties.',
+      inwardSwing:'Actual washer first rest intersects its swing; isolate-before-moving alone cannot supply fault reach.'},
+    necessaryDoorEventScreen:diagnostics.length===0,diagnostics,physicalDoorOrManualFaultResponseTimeQualified:false}
+}
 /** A doorway-operated alternative to the rejected west standing-point argument.
  * Its serialisable choices and source geometry are explicit; no incumbent fixture is silently moved. */
 export function inletEntrySideCuts(i:EntryInputs){
-  if(![i.roomPlanMm,i.portalXMm,i.wallFacesYMm,i.washerFirstRestMm,i.maintenancePlanMm,i.operatorXYZMm,...i.frameCoversMm].every(finite)
+  if(!i.plantWall||![i.plantWall.facesYMm,i.plantWall.openingXMm].every(p=>Array.isArray(p)&&p.length===2&&finite(p))
+    ||!Array.isArray(i.protectedDoorOpenLeafMm)||!finite(i.protectedDoorOpenLeafMm)||!Number.isFinite(i.groundFflMm)
+    ||![i.roomPlanMm,i.portalXMm,i.wallFacesYMm,i.washerFirstRestMm,i.maintenancePlanMm,i.operatorXYZMm,...i.frameCoversMm].every(finite)
     ||!finite([i.bankXMm,i.bankYMm,i.utilityAxisZMm,i.plantAxisZMm,i.maintenanceShiftXMm,i.maintenanceShiftYMm,i.wheelInboardMm,i.maximumGaugeBar])
     ||i.portalXMm[1]<=i.portalXMm[0]||i.wallFacesYMm[1]<=i.wallFacesYMm[0]||i.wheelInboardMm<0||i.wheelInboardMm>80
     ||i.utilityAxisZMm<700||i.plantAxisZMm<=i.utilityAxisZMm||i.plantAxisZMm>2300||i.maximumGaugeBar<=0||i.maximumGaugeBar>10)
@@ -178,11 +251,8 @@ export function inletEntrySideCuts(i:EntryInputs){
     sourceMaintenance=i.maintenancePlanMm,candidateMaintenance:Plan=[sourceMaintenance[0]+i.maintenanceShiftXMm,sourceMaintenance[1]+i.maintenanceShiftYMm,sourceMaintenance[2],sourceMaintenance[3]],
     maintenanceBox=planBox(candidateMaintenance,0,i.maintenanceTopMm),sourceMaintenanceBox=planBox(sourceMaintenance,0,i.maintenanceTopMm),
     restBox=planBox(i.washerFirstRestMm,0,848),
-    door={hingeMm:[jamb[0],i.wallFacesYMm[1]],leafWidthMm:jamb[1]-jamb[0],leafThicknessComparisonMm:60,
-      openNorthBoxMm:[jamb[0]-30,i.wallFacesYMm[1],0,60,jamb[1]-jamb[0],2300] as Box,
-      closedBoxMm:[jamb[0],i.wallFacesYMm[1]-30,0,jamb[1]-jamb[0],60,2300] as Box,
-      actualWetDoorLeafFrameIronmongeryAndRatingsQualified:false,openingClosingAndOperatorEscapeQualified:false},
-    approachWalls=Math.min(...approach.slice(1).flatMap((p,k)=>[leftWall,rightWall,door.openNorthBoxMm].map(b=>segmentBoxDistance(approach[k],p,b))))-bodyR-setting,
+    door=singleWetDoor(i,jamb),
+    approachWalls=Math.min(...approach.slice(1).flatMap((p,k)=>[leftWall,rightWall,door.parkedOpenLeafMm].map(b=>segmentBoxDistance(approach[k],p,b))))-bodyR-setting,
     approachRest=Math.min(...approach.slice(1).map((p,k)=>segmentBoxDistance(approach[k],p,planBox(i.washerFirstRestMm,0,2000))))-bodyR-setting,
     // All-overlapping-height body/rest test deliberately retains a full-body proxy for path connectivity.
     approachShield=i.shieldPlaneXMm-body[0]-bodyR-setting,
@@ -226,14 +296,15 @@ export function inletEntrySideCuts(i:EntryInputs){
     }),
     bodyFailures=valves.flatMap(v=>[['maintenance',v.minimumMovedMaintenanceAfterSettingMm],['frame-cover',v.minimumFixedFrameCoverAfterSettingMm],['north',v.wallNorthAfterSettingMm],['east',v.wallEastAfterSettingMm]].filter(([,n])=>(n as number)<0).map(([k])=>v.branch+'/'+k)),
     reachFailures=valves.filter(v=>v.maximumGripReachMm>650||v.grips.some(g=>g.wallAfterArmSettingMm<0||g.washerRestAfterArmSettingMm<0)).map(v=>v.branch+'/ordinary-reach'),
-    failures=[...bodyFailures,...reachFailures,...(approachWalls<0?['doorway-connected-body-route']:[]),...(approachRest<0?['occupied-washer-rest-approach']:[]),...(approachShield<0?['dry-shield-approach']:[])]
+    failures=[...bodyFailures,...reachFailures,...(approachWalls<0?['doorway-connected-body-route']:[]),...(approachRest<0?['occupied-washer-rest-approach']:[]),...(approachShield<0?['dry-shield-approach']:[]),...door.diagnostics]
   return{schema:'had-entry-side-indoor-cuts/1',state:'unadopted-project-envelope',
-    coordinateDatum:'Actual occupied house nominal groundFFL0; no530 translation or native structural input adoption.',
+    coordinateDatum:'All geometry is relative to its actual occupied-groundFFL; the supplied saved ground stage maps explicit absolute coordinates without native structural adoption.',
+    groundStage:{fflMm:i.groundFflMm,nominalSourceFflMm:0,absoluteValveAxesMm:valves.map(v=>[v.axisMm[0],v.axisMm[1],v.axisMm[2]+i.groundFflMm]),absoluteDoorHingeMm:[...door.hingeMm.slice(0,2),i.groundFflMm],adoptedInNativeStructure:false},
     authoredChoices:{bankXMm:i.bankXMm,bankYMm:i.bankYMm,utilityAxisZMm:i.utilityAxisZMm,plantAxisZMm:i.plantAxisZMm,maintenanceShiftXMm:i.maintenanceShiftXMm,maintenanceShiftYMm:i.maintenanceShiftYMm,wheelInboardMm:i.wheelInboardMm},
     exactRoomPlanMm:i.roomPlanMm,rawPortalXMm:i.portalXMm,finishedJambXMm:jamb,door,
     ordinaryOperator:{bodyRadiusMm:bodyR,armRadiusMm:armR,reachLimitMm:650,shoulderMm:body,approachMm:approach,
       connectedWallAndOpenLeafAfterSettingMm:approachWalls,occupiedWasherRestAfterSettingMm:approachRest,dryShieldAfterSettingMm:approachShield,
-      passDoesNotProvideSourceFaultContainmentOrManualResponseTime:true,closedDoorControlClaimed:false,approachAssumesAlreadyOpenDoor:true,closedToOpenDoorOperatorRouteQualified:false,
+      passDoesNotProvideSourceFaultContainmentOrManualResponseTime:true,closedDoorControlClaimed:false,approachAssumesAlreadyOpenDoor:true,closedToOpenDoorOperatorRouteQualified:false,closedToOpenDoorGeometryScreen:door.necessaryDoorEventScreen,
       regrip:'Repeated30degree grip sector; physical grip/torque and wheel engagement remain unqualified.'},
     sourceMaintenancePlanMm:sourceMaintenance,candidateMaintenancePlanMm:candidateMaintenance,
     sameCompleteMaintenanceFieldSizePreserved:true,actualRelocatedRatedEquipmentAndHeadHandlingQualified:false,
