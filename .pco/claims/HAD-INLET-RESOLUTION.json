@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 55,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "82642b9f-5da1-40c3-878c-5f5bc871f7fb",
   "holder": {
     "kind": "chatgpt",
     "label": "had-indoor-cuts-20261122"
   },
   "claimedAt": "2026-11-22T00:26:51.658Z",
-  "heartbeatAt": "2026-11-22T00:26:51.658Z",
-  "expiresAt": "2026-11-22T01:11:51.658Z",
+  "heartbeatAt": "2026-11-22T00:43:27.617Z",
+  "expiresAt": "2026-11-22T00:43:27.617Z",
   "checkpoint": {
     "evidence": "Main769b60bc verified merged1613 actual7cf; bounded HAD54 released after source/frame/pan integration. Isolated successor holds actual occupied-bank/product geometry exploration; west local standing point rejected for disconnected washer-rest access. Entry-side doorway-operated bank under calculation.",
     "next": "Checkpoint actual ordinary-cut code and geometry on durable recovery branch; develop entry-side valve/tail/support/withdrawal and door-state comparison without native structural inputs.",
@@ -38,5 +38,7 @@
       "next": "Maintain bound1613 exact-head validation while developing isolated two-branch ordinary indoor cuts with actual product envelope, independent topology and withdrawal/support interfaces.",
       "blocker": "No physical material/installation or source-pressure qualification claimed; complete physical receiver/support path remains unqualified."
     }
-  }
+  },
+  "releasedAt": "2026-11-22T00:43:27.617Z",
+  "releaseReason": "handoff"
 }
