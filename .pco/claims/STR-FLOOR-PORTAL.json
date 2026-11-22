@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 50,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "9e437f78-ddc0-47bb-ad78-f6e2a5644fc9",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-20261121"
   },
   "claimedAt": "2026-11-21T19:47:07.671Z",
-  "heartbeatAt": "2026-11-21T23:47:08.216Z",
-  "expiresAt": "2026-11-22T00:32:08.216Z",
+  "heartbeatAt": "2026-11-22T00:18:04.164Z",
+  "expiresAt": "2026-11-22T00:18:04.164Z",
   "branch": "work/convergence-structure-20261121",
   "predecessor": {
     "leaseId": "95dc0271-adfc-448a-9789-0f1476b4b26b",
@@ -39,5 +39,7 @@
     "next": "Merge7cf afterexactheadCI andfreshboth-nodepreflight; continue exactcompactmodal representation and independent indoorcuts successor inisolatedworktrees.",
     "blocker": "Fullhealthpending;250 numericalconvergence unavailable, modalduplication fix undergoing independent physical/energy controls."
   },
-  "pr": 1613
+  "pr": 1613,
+  "releasedAt": "2026-11-22T00:18:04.164Z",
+  "releaseReason": "completed"
 }
