@@ -61,7 +61,7 @@
     "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
   },
   "processingSourceSHA256": {
-    "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "05143361ed3de2fc8c5901fad231c2edd22126fb5da5266730032565376fc629",
+    "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "9a1df4996a24aaa4006a1d36416c58a238d516daf7b5044096db2cf51dc8d4ab",
     "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
     "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62",
     "project/str/studies/four_l_joint_proof.py": "3128d7eb8c5f6257033f829fe0248b6376e1801dc313d9ae9a3c82af5cb4e670"
@@ -996,7 +996,7 @@
       "OMP_NUM_THREADS": "1"
     },
     "methodSourceSHA256": {
-      "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "05143361ed3de2fc8c5901fad231c2edd22126fb5da5266730032565376fc629",
+      "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "9a1df4996a24aaa4006a1d36416c58a238d516daf7b5044096db2cf51dc8d4ab",
       "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
       "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62"
     }
@@ -5296,7 +5296,7 @@
     "ordinaryManifestFileSHA256": "21864378f795a2e3b6ada4e13a36a53d29f84b828e69717fb7535a39980f0b00",
     "observedFullCaptureFileSHA256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff",
     "observedEnvelopeFileSHA256": "1accf0726df762337162ba65d3def63164c1a5acced55b1e2491075dbcd0eaa4",
-    "actualNodeAdmissionFileSHA256": "70ad02314a93e424a901a27413f0231f2dd0930d8ed54833afb3bc9d6d1e1a0e",
+    "actualNodeAdmissionFileSHA256": "f5a10c64250089d3454d993db432a5d9f06b0456f969a2e9e70adf259b7f54cf",
     "exactFullNativeBytesEqual": true,
     "retainedCropReconstructsCompleteNativeBytes": false
   },
@@ -5304,7 +5304,7 @@
     "actualNodeAdmissionPassing": true,
     "nativeResultSHA256": "16f14bea7b3c08c10af3b60b21e14c8c2ef60a2687950afd0595ec775df66b4d",
     "methodSourceSHA256": {
-      "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "05143361ed3de2fc8c5901fad231c2edd22126fb5da5266730032565376fc629",
+      "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "9a1df4996a24aaa4006a1d36416c58a238d516daf7b5044096db2cf51dc8d4ab",
       "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
       "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62"
     },
@@ -6387,7 +6387,7 @@
       "completeHouseProof": false,
       "candidateAccepted": false,
       "methodSourceSHA256": {
-        "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "05143361ed3de2fc8c5901fad231c2edd22126fb5da5266730032565376fc629",
+        "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "9a1df4996a24aaa4006a1d36416c58a238d516daf7b5044096db2cf51dc8d4ab",
         "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
         "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62"
       },
