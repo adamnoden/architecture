@@ -16,6 +16,31 @@ def fixture():
 
 
 class PerforatedFloorReceivingTest(unittest.TestCase):
+    def test_y_receiver_preserves_the_physical_operator_under_axis_interchange(self):
+        import numpy as np
+        bodies,holes,loops,patches,law,pitch,receivers=fixture()
+        pressure=[{'forceKN':[0,10,0],'pointXYZMm':[500,1000,3270],'loadedAlongIntervalMm':[0,1000]}]
+        original=compile_perforated_floor(bodies,holes,loops,patches,law,pitch,pressure,receivers)
+        # Interchanging X/Y preserves the actual triangular diagonals. A ninety
+        # degree rotation retriangulates those diagonals and is not an exact
+        # same-mesh test. Reflection reverses the axial rotation sign.
+        def rectangle(r):return [r[1],r[0],r[3],r[2]]
+        rotated_patches=[{**p,'originXYMm':[p['originXYMm'][1],p['originXYMm'][0]],
+            'rectangles':[rectangle(r) for r in p['rectangles']]} for p in patches]
+        rotated_receivers=[{**r,'axis':1,'datum':r['datum'],
+            'stations':[{'id':p['id'],'u':p['x']} for p in r['stations']]} for r in receivers]
+        rotated_loops=[{**r,'axis':1,'datum':r['datum']} for r in loops]
+        rotated_pressure=[{**pressure[0],'forceKN':[10,0,0],'pointXYZMm':[1000,500,3270]}]
+        rotated=compile_perforated_floor([rectangle(r) for r in bodies],[rectangle(r) for r in holes],
+            rotated_loops,rotated_patches,law,pitch,rotated_pressure,rotated_receivers)
+        # Transform every retained translation and its work-dual load, with
+        # the actual rotation in milliradians and the reflected axial sign.
+        turn=np.kron(np.eye(len(patches)),np.array([[0,1,0],[1,0,0],[0,0,-1]]))
+        expected=turn@np.array(original['condensedStiffnessKNPerMm'])@turn.T
+        np.testing.assert_allclose(rotated['condensedStiffnessKNPerMm'],expected,rtol=1e-8,atol=1e-7)
+        np.testing.assert_allclose(rotated['condensedForceKN'],turn@original['condensedForceKN'],rtol=1e-8,atol=1e-7)
+        self.assertLess(max(rotated['rigidModeResidualKN']),1e-5)
+
     def test_finite_boundary_retains_rigid_modes_and_work_dual_pressure(self):
         bodies,holes,loops,patches,law,pitch,receivers=fixture()
         pressure=[{'forceKN':[0,10,0],'pointXYZMm':[500,1000,3270],'loadedAlongIntervalMm':[0,1000]}]
@@ -48,6 +73,19 @@ class PerforatedFloorReceivingTest(unittest.TestCase):
         a=compile_perforated_floor(bodies,holes,loops,default_patches,law,pitch)
         b=compile_perforated_floor(bodies,holes,loops,default_patches,law,pitch,boundary_receivers=[])
         self.assertEqual(a,b)
+
+    def test_unattached_retained_coordinate_is_exact_zero_work_not_an_artificial_support(self):
+        bodies,holes,loops,patches,law,pitch,receivers=fixture()
+        before=compile_perforated_floor(bodies,holes,loops,patches,law,pitch,boundary_receivers=receivers)
+        extended=patches+[{'id':'vertical-only-node','originXYMm':[400,400],'rectangles':[]}]
+        after=compile_perforated_floor(bodies,holes,loops,extended,law,pitch,boundary_receivers=receivers)
+        self.assertEqual(before['meshTrianglesXYMm'],after['meshTrianglesXYMm'])
+        n=3*len(patches)
+        for old,new in zip(before['condensedStiffnessKNPerMm'],after['condensedStiffnessKNPerMm'][:n]):
+            for a,b in zip(old,new[:n]):self.assertAlmostEqual(a,b,9)
+        for row in after['condensedStiffnessKNPerMm'][-3:]:self.assertEqual(row,[0.]*len(row))
+        self.assertEqual(after['condensedForceKN'][-3:],[0.,0.,0.])
+        self.assertLess(max(after['rigidModeResidualKN']),1e-5)
 
 
 if __name__=='__main__':unittest.main()

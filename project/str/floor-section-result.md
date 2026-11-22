@@ -24,7 +24,7 @@ The new necessary section result uses the same rectangular concrete block, ultim
 
 At the matched1.35G+Q2,25kN/m³ controls, actual RC200/H16/80 gives83.893808kNm/m raw demand against86.833302kNm/m necessary strain capacity: only3.5% reserve; concrete reaches its source strain limit just before steel reaches the comparison yield stress. RC250/H16/100 gives113.923915 against114.481169: only0.49% reserve. Neither is a convincing replacement. RC250/H16/80 gives137.156476kNm/m necessary capacity and is the stronger **provisional comparison**, subject to missing loads and the actual joint/strip proof. No section is selected.
 
-The fresh receipt also executes a matched density27kN/m³,1.35G+Q2 pair, rather than comparing Q0/0.9G RC200 with Q2 RC250 or assuming ordinary reinforced-concrete density qualifies a heavy four-layer cage. The density is an authored adverse trial, not an approved complete reinforcement takeoff. See the [source-bound four-state evidence](studies/floor-section-proof.json) and [actual RC250 floor field](studies/floor-section-250.svg).
+The fresh receipt also executes a matched density27kN/m³,1.35G+Q2 pair, rather than comparing Q0/0.9G RC200 with Q2 RC250 or assuming ordinary reinforced-concrete density qualifies a heavy four-layer cage. The density is an authored adverse trial, not an approved complete reinforcement takeoff. See the [source-bound nine-state evidence](studies/floor-section-proof.json) and [actual RC250 floor field](studies/floor-section-250.svg).
 
 ## Interfaces and proof
 
@@ -39,3 +39,16 @@ Review also restored strict native upper-L material-law admission: finite positi
 ## Remaining structural work
 
 Resolve the finite corner joint and supported design-strip/local-convergence basis before selecting global thickness. Complete the source west wet-wall beam and its real receivers without double-counting slab/column stiffness or importing its obsolete no-tolerance cage. Close the wet-floor/arch/spandrel/finish/weather inventory, full pressure families, post/cap/floor reinforcement and development, grid/foundation resistance and water/thermal interfaces. Then adopt one coordinated floor/FFL/stair/service/roof arrangement. STR-FLOOR-PORTAL stays open.
+
+## Nodal wet-support and fixed-cut continuation
+
+The [seated support result](seated-wet-support-result.md) records the actual nodal
+attachment correction and its nine-state controls. The shared fixed-cut method
+consumes the same native bending field in CLI, saved-document and batch paths.
+It integrates signed normal bending, signed twisting and absolute component
+values through actual material intervals; it does not invent a strip width or
+reinforcement distribution. The [11-control cut receipt](studies/floor-section-cuts-proof.json)
+contains two additional700/500mm mesh trials. Its declared convergence screen
+fails; neither RC200 nor RC250 is an adopted engineering development baseline.
+The ground datum0 and service-floor comparison715 remain distinct, uncoordinated
+arrangements. Current room/roof/book outputs are withheld from either adoption.

@@ -135,6 +135,11 @@ def add_foundation_solid_weight(model, source, settings):
     from vertical_rc_floor import grid_member_geometry, grid_vertical_point_terms
     from joined_successor_compatibility import _wrench_at
     from rc_floor_house_loads import _family_wrench
+    # The optional actual wet-support builder owns this postprocessor through
+    # its floor-section binding. Ordinary predecessor consumers do not use it.
+    capture_grid_origins='wetGridOrigins' in model
+    if capture_grid_origins:
+        from grid_origin_recovery import record_grid_uniform_gravity,finish_grid_gravity_adapter
     _settings(settings)
     if 'foundationWeight' in model: raise ValueError('Foundation solid gravity already added; duplicate load rejected')
     current = load_foundation_solid_weight_source(source['root'])
@@ -143,7 +148,8 @@ def add_foundation_solid_weight(model, source, settings):
     inventory = foundation_solid_inventory(case, current); frame = model['model']; members = grid_member_geometry(model)
     before = _family_wrench(model, model['families']['physical-G']); family = {}; routes = {}; maximum_error = 0.
     density = settings['unitWeightKNPerM3'] * settings['gravityFactor']
-    for fragment in inventory['fragments']:
+    gravity_sources=[]
+    for fragment_index,fragment in enumerate(inventory['fragments']):
         box = fragment['boxXYZMm']; owner = fragment['ownerId']; x0,y0,z0,x1,y1,z1 = box
         if fragment['ownerKind'] == 'cap':
             head = owner[4:]; point = [(x0+x1)/2, (y0+y1)/2, (z0+z1)/2]; weight = _volume(box)*density
@@ -153,8 +159,9 @@ def add_foundation_solid_weight(model, source, settings):
         if not selected: raise ValueError('Missing finite source member for actual foundation solid: '+owner)
         horizontal = next(iter(selected.values()))['physicalStartMm'][0] != next(iter(selected.values()))['physicalEndMm'][0]
         axis = 0 if horizontal else 1; cuts = sorted({box[axis],box[axis+3],*[p[axis] for row in selected.values() for p in (row['physicalStartMm'],row['physicalEndMm']) if box[axis]<p[axis]<box[axis+3]]})
-        for lo,hi in zip(cuts,cuts[1:]):
+        for piece_index,(lo,hi) in enumerate(zip(cuts,cuts[1:])):
             piece = box[:]; piece[axis],piece[axis+3] = lo,hi
+            applied_equivalents={};receiving_member=None
             # Two-point quadrature exactly integrates the cubic finite beam load
             # shapes and the affine transverse eccentricity on each segment.
             for xi in (-1/math.sqrt(3),1/math.sqrt(3)):
@@ -164,7 +171,14 @@ def add_foundation_solid_weight(model, source, settings):
                     if route is None or route['memberId'] not in selected: raise ValueError('Solid G has no actual finite beam route')
                     weight = _volume(piece)*density/4
                     for node,row in route['terms']: _add(family,node,[-weight*value for value in row])
+                    for node,row in route['terms']: _add(applied_equivalents,node,[-weight*value for value in row])
+                    if receiving_member is not None and receiving_member!=route['memberId']:raise ValueError('Actual body piece crosses finite receiving members')
+                    receiving_member=route['memberId']
                     maximum_error = max(maximum_error,route['unitWrenchResidualKN_KNmm']); routes[owner] = routes.get(owner,0.)+weight
+            origin_id='foundation/solid-G/fragment/'+str(fragment_index)+'/piece/'+str(piece_index)
+            gravity_sources.append({'id':origin_id,'memberId':receiving_member,'centroidXYMm':[(piece[0]+piece[3])/2,(piece[1]+piece[4])/2],'physicalDownKN':_volume(piece)*density})
+            if capture_grid_origins:record_grid_uniform_gravity(model,'foundation/solid-G',receiving_member,[piece[0],piece[1],piece[3],piece[4]],_volume(piece)*density,applied_equivalents,origin_id)
+    if capture_grid_origins:finish_grid_gravity_adapter(model,'foundation/solid-G',gravity_sources)
     for node,wrench in family.items(): _add(model['families']['physical-G'],node,wrench)
     after = _family_wrench(model,model['families']['physical-G']); weight = inventory['physicalGKN']; x,y,z = inventory['centroidXYZMm']; expected = [0,0,-weight,-weight*y/1000,weight*x/1000,0]
     residual = [b-a-c for a,b,c in zip(before,after,expected)]

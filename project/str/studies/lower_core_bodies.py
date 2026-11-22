@@ -113,6 +113,11 @@ def lower_core_inventory(model,source,setting):
 
 
 def add_lower_core_bodies(model,source,setting):
+    # Only the floor-section wet-support builder installs this ledger and owns
+    # the helper dependency. Non-wet predecessor paths neither import nor call it.
+    capture_grid_origins='wetGridOrigins' in model
+    if capture_grid_origins:
+        from grid_origin_recovery import record_grid_gravity,record_grid_uniform_gravity,finish_grid_gravity_adapter
     from rc_floor_house_loads import _family_wrench
     from vertical_rc_floor import grid_member_geometry, grid_vertical_point_terms
     if setting is None:return None
@@ -121,6 +126,7 @@ def add_lower_core_bodies(model,source,setting):
     if any(row['category'].startswith('ground core') for row in model['admittedNativeActions']):raise ValueError('Old groundcore budget is already admitted; remove source load before adding actual bodies')
     inventory=lower_core_inventory(model,source,setting);frame=model['model'];data=model['verticalFloor'];law=data['request']['bearingLaw'];density=setting['masonryUnitWeightKNPerM3'];height=inventory['bodyHeightMm'];owners={row['id']:row for row in data['cores']};spring_by_id={row['id']:row for row in frame.springs}
     initial=_family_wrench(model,model['families']['physical-G']);added={};rows=[];contact_area=0.;missing_area=0.;unsupported=[]
+    base_gravity_sources=[];free_gravity_sources=[]
     def eligible(fibre):return owners[fibre['ownerId']]['materialKind']=='source-core-material-unqualified'
     for fibre in data['fibres']:
         if not eligible(fibre):continue
@@ -145,18 +151,23 @@ def add_lower_core_bodies(model,source,setting):
         frame.springs.append({'id':'LOWER-CORE/axial/'+str(len(rows)),'terms':[(node,[0,0,1,0,0,0]),*lower],'stiffness':body['bodyAxialStiffnessKNPerMm'],'mode':'bilateral','gap':0.})
         _add(added,node,[0,0,-weight/2,0,0,0])
         for lower_node,vector in lower:_add(added,lower_node,vector,weight/2)
+        ground_terms=[(lower_node,[-v for v in vector]) for lower_node,vector in lower]
+        origin_id='lower-core/base-G/'+fibre['id']
+        base_gravity_sources.append({'id':origin_id,'memberId':fibre['gridMemberId'],'centroidXYMm':list(point),'physicalDownKN':weight/2})
+        if capture_grid_origins:record_grid_gravity(model,'lower-core/base-G',fibre['gridMemberId'],point,-weight/2,ground_terms,origin_id)
         fibre['seriesCombinedStiffnessKNPerMm']=body['seriesCombinedStiffnessKNPerMm'];fibre['stiffnessKNPerMm']=body['topContactStiffnessKNPerMm'];fibre['topContactSeparatedFromBody']=True
         rows.append({'fibreId':fibre['id'],'bodyTopNodeId':node,'xyMm':point,'areaMm2':fibre['areaMm2'],'ownerId':fibre['ownerId'],**body})
         contact_area+=fibre['areaMm2']
     for fibre in data['missingGroundContactFibres']:
         if eligible(fibre):missing_area+=fibre['areaMm2'];unsupported.append({'xyMm':fibre['xyMm'],'physicalGKN':fibre['areaMm2']*height/1e9*density,'reason':'source clearcore has no actual lower ground route'})
+    if capture_grid_origins:finish_grid_gravity_adapter(model,'lower-core/base-G',base_gravity_sources)
     if abs(contact_area+missing_area+inventory['freeTopAreaMm2']-inventory['netClearCoreAreaMm2'])>1e-5:raise ValueError('Whole clearcore body/contact/free-top partition does not conserve area')
     members=grid_member_geometry(model);receiver_footprints=ground_receiver_footprints(model,members)
     partitions=partition_free_body_receivers(inventory['freeTopBodyBoxes'],receiver_footprints);free_weight=0.;receiver_allocations={}
     # Decide actual full-cell coverage and one receiving branch BEFORE sampling
     # loads. This is an explicit cell-wise branch allocation, not a claim to
     # integrate a continuous nearest-axis selector inside a joint intersection.
-    for cell in partitions:
+    for cell_index,cell in enumerate(partitions):
         box=cell['boxXYZMm'];x0,y0,z0,x1,y1,z1=box;centre=[(x0+x1)/2,(y0+y1)/2];ids=cell['receiverIds'];weight=(x1-x0)*(y1-y0)*height/1e9*density
         if not cell['supported']:
             unsupported.append({'xyMm':centre,'boxXYZMm':box,'areaMm2':(x1-x0)*(y1-y0),'physicalGKN':weight,'reason':'whole free-top body cell has no exact contained beam, unique cap or authored closure'})
@@ -180,12 +191,18 @@ def add_lower_core_bodies(model,source,setting):
             def route(point):return {'terms':[(node,[0,0,1,point[1]-p[1],p[0]-point[0],0])],'memberId':closure['addedSolid']['id']}
             route_id=closure['addedSolid']['id']
         receiver_allocations[route_id]=receiver_allocations.get(route_id,0.)+weight
+        origin_id='lower-core/free-G/cell/'+str(cell_index)
+        free_gravity_sources.append({'id':origin_id,'memberId':route_id,'centroidXYMm':centre,'physicalDownKN':weight})
+        applied_equivalents={}
         for xi in (-1/math.sqrt(3),1/math.sqrt(3)):
             for eta in (-1/math.sqrt(3),1/math.sqrt(3)):
                 point=[(x0+x1)/2+xi*(x1-x0)/2,(y0+y1)/2+eta*(y1-y0)/2];lower=route(point)
                 if lower is None:raise ValueError('Exact covered freebody cell lost its preselected physical receiver during quadrature')
                 for node,vector in lower['terms']:_add(added,node,vector,-weight/4)
+                for node,vector in lower['terms']:_add(applied_equivalents,node,vector,-weight/4)
+        if capture_grid_origins:record_grid_uniform_gravity(model,'lower-core/free-G',route_id,[x0,y0,x1,y1],weight,applied_equivalents,origin_id)
         free_weight+=weight
+    if capture_grid_origins:finish_grid_gravity_adapter(model,'lower-core/free-G',free_gravity_sources)
     for node,vector in added.items():_add(model['families']['physical-G'],node,vector)
     after=_family_wrench(model,model['families']['physical-G']);added_wrench=[b-a for a,b in zip(initial,after)]
     expected_weight=inventory['physicalGKN']-math.fsum(row['physicalGKN'] for row in unsupported)

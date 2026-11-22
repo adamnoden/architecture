@@ -82,8 +82,8 @@ def _admit_distributed(request, source):
     _exact(band,('mode','widthMm','depthMm','elasticModulusMPa','flexuralFactor','axialRigidityKN'),'authored slab-level band')
     if band['mode']!='authored-conventional-slab-level-band' or not all(_finite(band[key]) for key in band if key!='mode') or not 140 <= band['widthMm'] <= 300 or band['depthMm'] != 200 or band['elasticModulusMPa'] <= 0 or band['axialRigidityKN'] <= 0 or not 0 < band['flexuralFactor'] <= 1:
         raise ValueError('The explicit conventional band must have width140..300mm and depth200mm; source upstand height is not borrowed')
-    if not _finite(request['maxPitchMm']) or not 500 <= request['maxPitchMm'] <= 1800:
-        raise ValueError('Mesh pitch must remain within the declared500..1800mm comparison range')
+    if not _finite(request['maxPitchMm']) or not 250 <= request['maxPitchMm'] <= 1800:
+        raise ValueError('Mesh pitch must remain within the declared250..1800mm comparison range')
     _exact(request['boundaryCase'],('kind','windIndex'),'native first-floor wind boundary')
     wind = request['boundaryCase']['windIndex']
     if request['boundaryCase']['kind']!='native-floor-wind-band-only' or type(wind) is not int or not 0 <= wind < 96:

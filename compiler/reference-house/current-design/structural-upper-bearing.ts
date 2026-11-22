@@ -31,7 +31,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
   const comparison = JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root)), '--read'],
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-upper-masonry-roof-bearing-case/1' || !record(comparison.sourceSHA256)
-      || Object.keys(comparison.sourceSHA256).length !== 52) throw new Error('The upper bearing source contract changed; integrate explicitly')
+      || Object.keys(comparison.sourceSHA256).length !== 53) throw new Error('The upper bearing source contract changed; integrate explicitly')
   const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')

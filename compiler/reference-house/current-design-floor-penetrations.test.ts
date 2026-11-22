@@ -26,3 +26,16 @@ test('route segmentation and reversed orientation preserve the actual physical i
   assert.deepEqual(reverse.conflicts[0]!.intervalXYZMm, [...forward.conflicts[0]!.intervalXYZMm].reverse())
   assert.throws(() => inspectFloorServiceRoutes([[[0, Number.NaN, 3200], [10, 0, 3300]]], cells, 3170, 3420), /Unsupported/)
 })
+
+test('actual replacement beam and post material remains visible after its footprint leaves the plate mesh', () => {
+  const cells=[[0,0,40,100],[60,0,100,100]]
+  const routes=[[[50,50,2800],[50,50,3500]],[[20,50,2800],[20,50,3500]],[[50,150,2800],[50,150,3500]]]
+  const solids=[{id:'STR/wet-wall-support/beam',boxXYZMm:[40,0,3020,60,100,3370]}]
+  const result=inspectFloorServiceRoutes(routes,cells,3170,3370,solids)
+  assert.equal(result.conflicts.length,1)
+  assert.equal(result.additionalMaterialConflicts.length,1)
+  assert.deepEqual(result.additionalMaterialConflicts[0],{routeIndex:0,segmentIndex:0,solidId:solids[0]!.id,intervalXYZMm:[[50,50,3020],[50,50,3370]]})
+  assert.equal(result.serviceFitAccepted,false)
+  assert.equal(inspectFloorServiceRoutes(routes,cells,3170,3370).additionalMaterialConflicts.length,0)
+  assert.throws(()=>inspectFloorServiceRoutes(routes,cells,3170,3370,[{id:'bad',boxXYZMm:[0,0,0,1,1,NaN]}]),/Unsupported additional/)
+})

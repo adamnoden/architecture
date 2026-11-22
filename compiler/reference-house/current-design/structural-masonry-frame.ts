@@ -50,7 +50,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
   const comparison = exact(JSON.parse(execFileSync('python3', ['-B', fileURLToPath(new URL(methodPath, root)), '--read'],
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })), nativeFields, 'native masonry frame') as Comparison
   if (comparison.schema !== 'str-masonry-frame-a-case/1' || !record(comparison.sourceSHA256)
-    || Object.keys(comparison.sourceSHA256).length !== 48
+    || Object.keys(comparison.sourceSHA256).length !== 49
     || !record(comparison.verticalCase) || comparison.verticalCase.schema !== 'str-vertical-rc-floor-case/1') {
     throw new Error('The separate masonry frame native schema changed; integrate it explicitly')
   }

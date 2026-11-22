@@ -1,0 +1,54 @@
+{
+  "schema": "str-fixed-floor-section-cuts/1",
+  "scope": "Unselected physical cuts around the source south-west L, held fixed across section and mesh trials. These cuts are not an adopted reinforcement design width.",
+  "cuts": [
+    {
+      "id": "STR/SW/normal-y-450",
+      "normal": "y",
+      "positionMm": 450,
+      "intervalMm": [
+        262.5,
+        3262.5
+      ]
+    },
+    {
+      "id": "STR/SW/normal-y-650",
+      "normal": "y",
+      "positionMm": 650,
+      "intervalMm": [
+        262.5,
+        3262.5
+      ]
+    },
+    {
+      "id": "STR/SW/normal-y-1300",
+      "normal": "y",
+      "positionMm": 1300,
+      "intervalMm": [
+        262.5,
+        3262.5
+      ]
+    },
+    {
+      "id": "STR/SW/normal-x-1450",
+      "normal": "x",
+      "positionMm": 1450,
+      "intervalMm": [
+        262.5,
+        2262.5
+      ]
+    }
+  ],
+  "meshPitchesMm": [
+    700,
+    500,
+    274,
+    250
+  ],
+  "stabilityComparison": {
+    "maximumHeadComponentDifferenceKN_KNm": 0.1,
+    "maximumRelativeCutIntegralDifference": 0.05,
+    "absoluteCutIntegralFloorKNm": 0.1,
+    "scope": "Predeclared numerical stability screens for700to500 and500to250 global response and fixed physical cut integrals. Earlier failed comparisons remain visible. This does not qualify the rigid corner, element peak, local pad, design width or reinforcement."
+  }
+}

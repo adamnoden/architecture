@@ -8,6 +8,7 @@ import { beginEngineeringEdit, applyEngineeringEdit, replayEngineeringEdit, save
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 import { readCurrentDesignResolution } from './current-design/resolve.js'
 import { readFloorSectionCase, runFloorSectionCase } from './current-design/structural-floor-section.js'
+import { readWetSupportCageDefaults } from './current-design/structural-wet-support-cage.js'
 
 const predecessor = JSON.parse(readFileSync(new URL('../../project/str/studies/masonry-frame-a-proof.json', import.meta.url), 'utf8'))
 const numerical = predecessor.authoredNumericalCase
@@ -36,7 +37,8 @@ test('a semantic floor-section edit recompiles actual operators, datums, drawing
   stages.masonryFrame.freshUniformLiveKPa = 2
   stages.masonryFrame.plateLaw = { ...vertical.plateLaw, unitWeightKNPerM3: 27 }
   stages.masonryFrame.floorReinforcement = { ...numerical.floorReinforcement, barDiameterMm: 16, pitchMm: 80 }
-  const document = { ...source, stages: { ...stages, floorSection: { thicknessMm: 200 }, roofPitch: source.stages.roofPitch, studyRoomKit: source.stages.studyRoomKit } }
+  const document = { ...source, stages: { ...stages, floorSection: { thicknessMm: 200,
+    sectionCuts:[{id:'STR/SW/normal-y-450',normal:'y',positionMm:450,intervalMm:[262.5,3262.5]}] }, roofPitch: source.stages.roofPitch, studyRoomKit: source.stages.studyRoomKit } }
   const state = beginEngineeringEdit(document, 'actual-floor-section')
   const baselineBundle = await compileEngineeringDocument(JSON.parse(saveEngineeringEdit(state)))
   const baseline = baselineBundle.engineering.floorSection!
@@ -45,6 +47,8 @@ test('a semantic floor-section edit recompiles actual operators, datums, drawing
   assert.equal(baselineBundle.engineering.masonryFrame, undefined)
   assert.equal(baseline.native.heads.length, 52)
   assert.equal(baseline.floorSection.topZMm, 3370)
+  assert.equal(baseline.sectionCuts.cuts[0]!.id,'STR/SW/normal-y-450')
+  assert.equal(baseline.sectionCuts.stripResistanceAccepted,false)
   const operation = { kind: 'set-floor-section-thickness', assemblyId: editableFloorSectionId, thicknessMm: 250 }
   const edit = applyEngineeringEdit(state, { schema: 'current-engineering-edit/1', units: 'mm', base: engineeringBase(state), operation })
   assert.equal(edit.status, 'applied')
@@ -60,6 +64,8 @@ test('a semantic floor-section edit recompiles actual operators, datums, drawing
   assert.equal(changed.floorSection.steelChordAxialRigidityKN, baseline.floorSection.steelChordAxialRigidityKN)
   assert.notDeepEqual(changed.native.heads, baseline.native.heads)
   assert.notEqual(changed.floorSvg, baseline.floorSvg)
+  assert.notEqual(changed.sectionCuts.cuts[0]!.absoluteBendingPlusTwistingKNm,baseline.sectionCuts.cuts[0]!.absoluteBendingPlusTwistingKNm)
+  assert.equal(changed.sectionCuts.rawPointEnvelopeKNmPerM,(changed.plateBending as {maximumAbsoluteBendingPlusTwistingKNmPerM:number}).maximumAbsoluteBendingPlusTwistingKNmPerM)
   assert.ok(changed.floorSvg.includes('top3420 / centroid3295mm'))
   assert.notEqual(changedBundle.documentIdentity.digest, baselineBundle.documentIdentity.digest)
   assert.equal(changed.evidence.candidateAccepted, false)
@@ -98,4 +104,39 @@ test('floor section rejects stale source, unsupported geometry, implicit stage c
   const explicit=beginEngineeringEdit({...source,stages:{...source.stages,floorSection:{thicknessMm:200}}},'explicit-floor')
   for (const units of ['degrees','m']) assert.equal(applyEngineeringEdit(explicit,{...transaction,base:engineeringBase(explicit),units}).status,'rejected')
   assert.equal(applyEngineeringEdit(explicit,{...transaction,base:engineeringBase(explicit),operation:{...operation,thicknessMm:251}}).status,'rejected')
+})
+
+test('the saved wet support runs the same coupled52head case and recovers discrete beam cuts while withholding a complete envelope', async () => {
+  const source=await readEngineeringDocument(readGeorgianDesignSnapshot())
+  const stages=authoredStages()
+  stages.masonryFrame.physicalGFactor=1.35;stages.masonryFrame.freshUniformLiveKPa=2
+  stages.masonryFrame.plateLaw={...vertical.plateLaw,unitWeightKNPerM3:27}
+  stages.masonryFrame.floorReinforcement={...numerical.floorReinforcement,barDiameterMm:16,pitchMm:80}
+  const proof=JSON.parse(readFileSync(new URL('../../project/str/studies/floor-section-proof.json',import.meta.url),'utf8'))
+  const control=proof.controls.find((row:{nativeCaseId:string})=>row.nativeCaseId==='wet-aligned-G135-Q2-rho27')
+  const bundle=await compileEngineeringDocument({...source,stages:{...stages,
+    roofPitch:source.stages.roofPitch,floorSection:{thicknessMm:200,wetSupport:control.executedRequest.wetSupport,cageComparison:readWetSupportCageDefaults()}}})
+  const result=bundle.engineering.floorSection!
+  const expected=new Map<string,number[]>(control.heads.map((row:{id:string;reactionKN_KNm:number[]})=>[row.id,row.reactionKN_KNm]))
+  for(const row of result.native.heads) for(let i=0;i<6;i++) assert.ok(Math.abs(row.reactionKN_KNm[i]!-expected.get(row.id)![i]!)<1e-6)
+  assert.ok(result.cageComparison)
+  assert.equal(result.cageComparison.nativeCaseId,result.native.caseId)
+  assert.equal(Object.keys(result.cageComparison.nativeSourceSHA256).length,58)
+  assert.equal(result.cageComparison.source.rawGridIdentityVerified,true)
+  assert.equal(result.cageComparison.geometry.independentPathFailureCount,0)
+  assert.equal(result.cageComparison.geometry.internalClosureFailureCount,0)
+  assert.equal(result.cageComparison.geometry.coverFailureCount,0)
+  assert.equal(result.cageComparison.evidence.cageAccepted,false)
+  assert.equal(result.cageComparison.evidence.massFeedbackApplied,false)
+  assert.ok(bundle.coordinationDiagnostics.some(row=>row.code==='WET_SUPPORT_CAGE_MASS_NOT_COUPLED'))
+  assert.ok(bundle.coordinationDiagnostics.some(row=>row.code==='WET_SUPPORT_CAGE_NOT_ADOPTED'))
+  assert.equal(result.floorSection.finishStairServiceEvidenceApplicable,false)
+  assert.equal(result.wetBeamCutRecovery!.physicalBeamCutsAvailable,true)
+  assert.equal(result.wetBeamCutRecovery!.completeBeamDemandEnvelopeAvailable,false)
+  assert.equal(result.wetGridCutRecovery!.physicalElementCutsAvailable,true)
+  assert.equal(result.wetGridCutRecovery!.completeGridDemandEnvelopeAvailable,false)
+  assert.ok(bundle.coordinationDiagnostics.some(row=>row.code==='WET_GRID_COMPLETE_ENVELOPE_UNAVAILABLE'))
+  assert.equal(result.servicePenetrations.additionalStructuralSolids.length,3)
+  assert.ok(result.servicePenetrations.additionalStructuralSolids.some(row=>row.id==='STR/wet-wall-support/beam'&&row.boxXYZMm[2]===3020))
+  assert.ok(bundle.coordinationDiagnostics.some(row=>row.code==='WET_BEAM_COMPLETE_ENVELOPE_UNAVAILABLE'))
 })

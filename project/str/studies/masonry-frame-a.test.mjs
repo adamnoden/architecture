@@ -13,3 +13,12 @@ test('straight-frame candidate: independent geometry/equilibrium, actual source-
   assert.match(result.stderr, /Ran 8 tests/)
   assert.doesNotMatch(result.stderr, /skipped=/)
 })
+
+
+test('masonry controls retain verified captures and reject stale or corrupt reuse', () => {
+  const result = spawnSync('python3', ['-B','-m','unittest','discover','-s','project/str/studies','-p','masonry_frame_capture_test.py'], {
+    cwd: root, encoding: 'utf8', timeout: 30000, maxBuffer: 1024 * 1024,
+  })
+  assert.equal(result.status, 0, result.stdout + result.stderr)
+  assert.doesNotMatch(result.stderr, /skipped=/)
+})

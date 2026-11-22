@@ -1,5 +1,6 @@
 import { admitDesignSnapshot, type DesignSnapshot } from './snapshot.js'
 import { sameEditBase, type EditBase } from './edit.js'
+import { readFloorSectionCuts } from './structural-floor-cuts.js'
 
 /** Transport envelope only. The engineering compiler owns stage/source admission. */
 export interface EngineeringDocument {
@@ -21,6 +22,8 @@ export interface EngineeringTicket {
 }
 export const editableRoofId = 'MAT/ring-roof-field'
 export const editableFloorSectionId = 'STR/current-floor-section'
+export const editableWetSupportId = 'STR/wet-wall-support'
+export const editableWetCageId = 'STR/wet-wall-support/reinforcement'
 function record(input: unknown): input is Record<string, unknown> {
   return input !== null && typeof input === 'object' && Object.getPrototypeOf(input) === Object.prototype
 }
@@ -72,11 +75,63 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'thicknessMm'])
         || operation.assemblyId !== editableFloorSectionId || typeof operation.thicknessMm !== 'number'
         || !Number.isFinite(operation.thicknessMm) || operation.thicknessMm < 200 || operation.thicknessMm > 250
-        || !exact(current, ['thicknessMm']) || typeof current.thicknessMm !== 'number') {
+        || !record(current) || Object.keys(current).some(key => !['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison'].includes(key)) || typeof current.thicknessMm !== 'number'
+        || (current.wetSupport !== undefined && current.wetSupport !== null && operation.thicknessMm !== 200)) {
         throw new TypeError('An existing explicit STR/current-floor-section with supported thickness 200..250 mm is required')
       }
       if (operation.thicknessMm === current.thicknessMm) return { status: 'applied', state }
-      stages = { ...state.document.stages, floorSection: { thicknessMm: operation.thicknessMm } }
+      stages = { ...state.document.stages, floorSection: { ...current, thicknessMm: operation.thicknessMm } }
+    } else if (record(operation) && operation.kind === 'set-floor-section-cut') {
+      const current = state.document.stages.floorSection
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'cutId', 'positionMm', 'intervalMm'])
+        || operation.assemblyId !== editableFloorSectionId || typeof operation.cutId !== 'string'
+        || !record(current)) throw new TypeError('An existing authored floor section cut and explicit mm geometry are required')
+      const cuts = readFloorSectionCuts(current.sectionCuts)
+      const index = cuts.findIndex(cut => cut.id === operation.cutId)
+      if (index < 0) throw new TypeError('Unknown floor section cut; a semantic edit cannot invent an assessment section')
+      const changed = readFloorSectionCuts(cuts.map((cut,i) => i === index ? { ...cut, positionMm: operation.positionMm, intervalMm: operation.intervalMm } : cut))
+      if (JSON.stringify(changed) === JSON.stringify(cuts)) return { status: 'applied', state }
+      stages = { ...state.document.stages, floorSection: { ...current, sectionCuts: changed } }
+    } else if (record(operation) && operation.kind === 'set-wet-cage-hook-tail') {
+      const current = state.document.stages.floorSection
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'linkHookTailMm'])
+        || operation.assemblyId !== editableWetCageId || typeof operation.linkHookTailMm !== 'number'
+        || !Number.isFinite(operation.linkHookTailMm) || operation.linkHookTailMm < 80 || operation.linkHookTailMm > 120
+        || !record(current) || current.thicknessMm !== 200 || !record(current.wetSupport) || !record(current.cageComparison)
+        || current.cageComparison.schema !== 'str-wet-support-cage-comparison/1'
+        || typeof current.cageComparison.linkHookTailMm !== 'number' || !Number.isFinite(current.cageComparison.linkHookTailMm)) {
+        throw new TypeError('An existing explicit STR/wet-wall-support/reinforcement comparison and hook tail80..120mm are required')
+      }
+      if (operation.linkHookTailMm === current.cageComparison.linkHookTailMm) return { status: 'applied', state }
+      stages = { ...state.document.stages, floorSection: { ...current,
+        cageComparison: { ...current.cageComparison, linkHookTailMm: operation.linkHookTailMm } } }
+    } else if (record(operation) && operation.kind === 'set-wet-bearing-offset') {
+      const current = state.document.stages.floorSection
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'receiverId', 'offsetMm'])
+        || operation.assemblyId !== editableWetSupportId || (operation.receiverId !== 'south' && operation.receiverId !== 'north')
+        || typeof operation.offsetMm !== 'number' || !Number.isFinite(operation.offsetMm)
+        || !record(current) || current.thicknessMm !== 200 || !record(current.wetSupport)) throw new TypeError('An explicit current RC200 seated wet support and finite pad offset in mm are required')
+      const support = current.wetSupport, index = operation.receiverId === 'south' ? 0 : 1
+      const rectangles = support.receiverRectanglesXYMm, offsets = support.padCentreOffsetsYMm
+      if (!Array.isArray(rectangles) || rectangles.length !== 2 || !Array.isArray(rectangles[index])
+        || rectangles[index].length !== 4 || !rectangles[index].every((v: unknown) => typeof v === 'number' && Number.isFinite(v))
+        || !Array.isArray(offsets) || offsets.length !== 2 || !offsets.every(v => typeof v === 'number' && Number.isFinite(v))
+        || typeof support.padLengthMm !== 'number' || !Number.isFinite(support.padLengthMm) || support.padLengthMm <= 0
+        || typeof support.combinedRelativePlacementToleranceMm !== 'number' || !Number.isFinite(support.combinedRelativePlacementToleranceMm) || support.combinedRelativePlacementToleranceMm < 0) throw new TypeError('Actual finite pad and source post geometry required')
+      const rectangle = rectangles[index] as number[]
+      const remaining = (rectangle[3]! - rectangle[1]! - support.padLengthMm) / 2 - support.combinedRelativePlacementToleranceMm
+      if (remaining < 0 || Math.abs(operation.offsetMm) > remaining) throw new TypeError('Complete relative-placement pad envelope leaves its actual source post')
+      if (typeof support.beamSouthEndYMm !== 'number' || !Number.isFinite(support.beamSouthEndYMm)
+        || typeof support.beamNorthEndYMm !== 'number' || !Number.isFinite(support.beamNorthEndYMm)
+        || support.beamNorthEndYMm <= support.beamSouthEndYMm) throw new TypeError('Actual finite wet-beam end coordinates required')
+      const centre = (rectangle[1]! + rectangle[3]!) / 2 + operation.offsetMm
+      const endReserve = support.padLengthMm / 2 + support.combinedRelativePlacementToleranceMm
+      if (centre-endReserve < support.beamSouthEndYMm || centre+endReserve > support.beamNorthEndYMm) {
+        throw new TypeError('Complete relative-placement pad envelope leaves its actual wet beam')
+      }
+      if (offsets[index] === operation.offsetMm) return { status: 'applied', state }
+      const changed = [...offsets]; changed[index] = operation.offsetMm
+      stages = { ...state.document.stages, floorSection: { ...current, wetSupport: { ...support, padCentreOffsetsYMm: changed } } }
     } else throw new TypeError('Unsupported engineering edit; no fields changed')
     const document = readEngineeringEditDocument({ ...state.document, stages })
     return { status: 'applied', state: { ...state, revision: state.revision + 1, document,

@@ -23,6 +23,14 @@ def draw_vertical_floor(result):
         a,b,c,d=core['rectangleXYMm'];rows.append(f'<rect x="{px(a):.3f}" y="{py(d):.3f}" width="{(c-a)*scale:.3f}" height="{(d-b)*scale:.3f}" fill="none" stroke="#4a775d" stroke-width=".8"/>')
     for strip in result['northUpstandStrips']:
         a,b,c,d=strip['rectangleXYMm'];rows.append(f'<rect x="{px(a):.3f}" y="{py(d):.3f}" width="{(c-a)*scale:.3f}" height="{(d-b)*scale:.3f}" fill="#877d9e" stroke="#4b425d" stroke-width="1"/>')
+    for strip in result.get('additionalBeamReceivers',[]):
+        a,b,c,d=strip['rectangleXYMm'];rows.append(f'<rect x="{px(a):.3f}" y="{py(d):.3f}" width="{(c-a)*scale:.3f}" height="{(d-b)*scale:.3f}" fill="#4e9997" stroke="#175552" stroke-width="1"/>')
+    wet=result.get('seatedWetSupportGeometry')
+    if wet is not None:
+        for post in wet['posts']:
+            a,b,c,d=post['rectangleXYMm'];rows.append(f'<rect x="{px(a):.3f}" y="{py(d):.3f}" width="{(c-a)*scale:.3f}" height="{(d-b)*scale:.3f}" fill="none" stroke="#243339" stroke-width="1"/>')
+            a,b,c,d=post['padFit']['nominalRectangleXYMm'];rows.append(f'<rect x="{px(a):.3f}" y="{py(d):.3f}" width="{(c-a)*scale:.3f}" height="{(d-b)*scale:.3f}" fill="#eac159" stroke="#845a14" stroke-width=".6"/>')
+        rows.append('<text x="35" y="1057">Teal: actual seated wet beam; outlined260x450 posts / yellow pads. No cage, pad or closure acceptance.</text>')
     native={row['id']:row['reactionKN_KNm'] for row in result['native']['heads']};largest=max(abs(v[2]) for v in native.values()) or 1
     for head in result['headPositions']:
         x,y=head['xyMm'];value=native[head['id']][2];radius=2.5+4*math.sqrt(abs(value)/largest);color='#354b72' if value>=0 else '#b54f35'

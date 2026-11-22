@@ -6,6 +6,12 @@ import { readCurrentDesignResolution } from './current-design/resolve.js'
 import { readGroundSectionCase } from './current-design/structural-ground.js'
 import { readHouseVerticalProfileCase, runHouseVerticalProfileCase } from './current-design/house-vertical-profile.js'
 
+function wetProfile(result: ReturnType<typeof runHouseVerticalProfileCase>) {
+  return result.native.wetSupportProfile as { beam: { translatedSoffitMm: number; localGroundStructuralClearHeightMm: number };
+    posts: { fixedBottomMm: number; translatedTopMm: number; heightIncreaseMm: number }[];
+    geometrySource: { consistentControlIds: string[]; numericalCaseSelected: false }; raisedForcesReplayed: false }
+}
+
 
 test('profile replays the one authored ground case and distinguishes structural from occupied first floor', () => {
   assert.deepEqual(auditSourceCoverage().findings, [])
@@ -19,6 +25,15 @@ test('profile replays the one authored ground case and distinguishes structural 
   assert.equal(result.native.occupied.storeyIntervalMm, 3450)
   assert.equal(result.native.roof.coherentWeatherProfile, null)
   assert.ok(result.diagnostics.some(d => d.code === 'PROFILE_FORCE_REPLAY_REQUIRED'))
+  const wet = wetProfile(result)
+  assert.equal(wet.beam.translatedSoffitMm, 3550)
+  assert.equal(wet.beam.localGroundStructuralClearHeightMm, 3020)
+  assert.equal(wet.posts[0]!.fixedBottomMm, -180)
+  assert.equal(wet.posts[0]!.translatedTopMm, 3540)
+  assert.equal(wet.geometrySource.consistentControlIds.length, 7)
+  assert.equal(wet.geometrySource.numericalCaseSelected, false)
+  assert.equal(wet.raisedForcesReplayed, false)
+  assert.ok(result.diagnostics.some(d => d.code === 'PROFILE_WET_SUPPORT_REPLAY_REQUIRED'))
 })
 
 test('the sole ground250 to270 edit drives the profile, approaches, identities and rendered section', () => {
@@ -36,6 +51,11 @@ test('the sole ground250 to270 edit drives the profile, approaches, identities a
   assert.notEqual(b.source.groundCaseDigest, a.source.groundCaseDigest)
   assert.match(b.sectionSvg, /Ground FFL735/)
   assert.doesNotMatch(b.sectionSvg, /Ground FFL715/)
+  assert.equal(wetProfile(a).beam.translatedSoffitMm, 3735)
+  assert.equal(wetProfile(b).beam.translatedSoffitMm, 3755)
+  assert.equal(wetProfile(b).posts[0]!.translatedTopMm-wetProfile(a).posts[0]!.translatedTopMm, 20)
+  assert.equal(wetProfile(b).beam.localGroundStructuralClearHeightMm, wetProfile(a).beam.localGroundStructuralClearHeightMm)
+  assert.match(b.sectionSvg, /Wet beam soffit 3755/)
 })
 
 test('direct profile levels, forged computed ground, stale source and stale current-plan bindings reject', () => {
