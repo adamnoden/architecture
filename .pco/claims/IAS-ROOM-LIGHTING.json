@@ -9,8 +9,8 @@
     "label": "convergence-lighting-review-20261122"
   },
   "claimedAt": "2026-11-22T14:35:58.888Z",
-  "heartbeatAt": "2026-11-22T14:52:18.108Z",
-  "expiresAt": "2026-11-22T15:37:18.108Z",
+  "heartbeatAt": "2026-11-22T15:05:41.953Z",
+  "expiresAt": "2026-11-22T15:50:41.953Z",
   "branch": "work/convergence-primary-20261122",
   "predecessor": {
     "leaseId": "3cec4ae0-f28f-47a4-b739-ca8b4bc3e962",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1618 remote84af659c includes310bay+XYZ; remote own7468f3f4 tree859abb20 adds reviewed pure browser admission and genuine final lighting receipt;22 focused tests and typecheck pass.",
-    "next": "Root integrates pure admission checkpoint, validates exact final shared head and requests each worker publication preflight before coordinated merge."
+    "evidence": "PR1618 integrating own remote7468f3f4 exacttree859abb20:22 focused lighting/browser/save/CLI/source tests and tsc passed; common-depth and structural contact numerical follow-on assessed read-only.",
+    "next": "Await final integrated exact-head health and current native recapture; run own canonical IAS publication preflight on validated remote head, then coordinated expected-head merge."
   },
   "pr": 1618
 }
