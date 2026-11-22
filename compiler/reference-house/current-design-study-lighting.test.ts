@@ -243,6 +243,9 @@ test('common-depth purpose cases preserve real device/route volumes while reject
   assert.equal(c.purpose.collarRearClearanceMm, 6.5)
   assert.equal(c.purpose.collarFrontClearanceMm, 6.5)
   assert.equal(c.evidence.localGeometryPassing, true)
+  assert.equal(c.accessoryUse.insertedPlugRoomwardProjectionBeyondDecorationMm, 5.5)
+  assert.equal(c.accessoryUse.actualRecessOpeningAndBodyGripQualified, false)
+  assert.ok(c.diagnostics.some(d => d.code === 'IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED' && d.state === 'unsupported'))
   for (const box of c.purpose.enclosures) {
     assert.equal(box.accessoryReservedVolumeXYZMm[4]! - box.accessoryReservedVolumeXYZMm[1]!, 23)
     assert.equal(box.bodyDepthMm[0], 13.5)
