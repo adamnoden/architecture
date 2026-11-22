@@ -16,4 +16,19 @@ The existing700mm response exposes1156 retained port reactions, counted with bou
 
 The sparse vertical Schur method still materialises dense `Kir` and its full interior response simultaneously; only `Kir` survives for named loads and displacement recovery. WithI interior andP retained coordinates, those two arrays alone occupy16IP bytes during condensation. A later exact improvement could retain CSC coupling and solve RHS columns in blocks while assembling the same retained Schur matrix. The unused `referenceInteriorLoad` field has no current consumer. Neither change is folded into this first correction.
 
-The preceding individual250mm full native run was killed bySIG9 after163.225s with observed maximum childRSS4,427,904KiB. That is execution evidence, not a proven kill cause or a valid native result. This successor changes three existing native source hashes and requires a fresh, serial250mm native experiment plus an unchanged control before dependent proof regeneration. No native house solve, source-account edit or receipt rehash is performed in this worktree.
+The preceding individual250mm full native run was killed bySIG9 after163.225s with observed maximum childRSS4,427,904KiB. That is execution evidence, not a proven kill cause or a valid native result. This successor changes three existing native source hashes and requires a fresh, serial250mm native experiment plus an unchanged control before dependent proof regeneration. At the component checkpoint no native house solve, source-account edit or receipt rehash had been performed.
+
+
+The subsequent [exact source72512dc8 full250 attempt](studies/compact-floor250-execution-history.json)
+was killed bySIG9 after440.076s, with observed maximum childRSS4,441,812KiB.
+No complete native result or convergence field was produced. This does not
+identify its kill cause or invalidate the independent component equivalence
+checks; it does prevent promoting an actual250mm result.
+
+A later bounded diagnostic stopped the same actual request before its FIRST
+vertical condensation:1478 retained ports,13,585 interiors,15,063 total DOFs,
+4999 cells and340,339 stored stiffness entries. The denseKir/response pair has a
+321,258,080byte float64 minimum, and condensedK/modes34,951,744bytes. Observed
+process peak was170,400KiB at that stop. These initial-stage quantities alone do
+not locate the later4.24GiB allocation; final assembly/factorisation still needs
+phase evidence. No physical law or numerical acceptance threshold changes.

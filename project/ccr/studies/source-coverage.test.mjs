@@ -166,6 +166,7 @@ test('a changed north-transfer receipt invalidates the actual twin-tie and roof-
 test('actual native stage inventories are completely bound in their consuming source families', () => {
   const audit=auditSourceCoverage()
   for(const [id,method] of [
+    ['str-conditional-interface','distributed_floor_compatibility.py'],
     ['str-vertical-floor-comparison','vertical_rc_floor.py'],
     ['str-masonry-frame-comparison','upper_roof_bearing.py'],
     ['str-masonry-frame-comparison','floor_section_model.py'],

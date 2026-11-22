@@ -812,7 +812,8 @@
         "project/str/wet-receiving-grid-origin-result.md",
         "project/str/floor-corner-convergence-result.md",
         "project/str/wet-support-cage-comparison.md",
-        "project/str/wet-bearing-and-post-head-result.md"
+        "project/str/wet-bearing-and-post-head-result.md",
+        "project/str/vertical-direct-plate-energy-result.md"
       ],
       "authorRoots": [
         "project/str/studies/masonry_frame_a.py",
@@ -933,7 +934,8 @@
       "historicalInputs": [
         "project/str/studies/seated-pre-nodal-history.json",
         "project/str/studies/wet-support-cage-comparison-paths.json",
-        "project/str/studies/sparse-floor250-execution-history.json"
+        "project/str/studies/sparse-floor250-execution-history.json",
+        "project/str/studies/compact-floor250-execution-history.json"
       ]
     }
   ],
