@@ -20,7 +20,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -31,7 +31,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "4dc864f184ef812a308e0cacc42b6130d93922fc8d4fa3a8186d462f945d1cd4",
+      "caseDigest": "c9b855c6f00413d251dbb9f1f3c3f1bec36d78a4cba56e9f1d8d726c63a0a890",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": null,
       "directRestWitnesses": 135,
@@ -41,7 +41,7 @@
         "state": "geometry-comparison",
         "method": "IAS-STUDY-GROUND-SUPPORT-1",
         "source": {
-          "bindingDigest": "7bf92ef43c8e1a9558fba3b9cf7851af002b510848b82734c4c0bb94aa743636",
+          "bindingDigest": "3c8bac4e6cdbae0d451901a086250233e07a1f1138a80b1cd0824d22e92f4576",
           "had": {
             "path": "project/had/studies/water-replan.json",
             "gitBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
@@ -9287,7 +9287,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -9298,7 +9298,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "c7e2fe69c710ce53a90b593685f5a932c520e91c43e3077276212d3a7a235df7",
+      "caseDigest": "06557a8d2358dde373656627ae4568282c08bed3d05654abd695ddd77d90edc8",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": 144,
       "directRestWitnesses": 137,
@@ -9308,7 +9308,7 @@
         "state": "geometry-comparison",
         "method": "IAS-STUDY-GROUND-SUPPORT-1",
         "source": {
-          "bindingDigest": "7bf92ef43c8e1a9558fba3b9cf7851af002b510848b82734c4c0bb94aa743636",
+          "bindingDigest": "3c8bac4e6cdbae0d451901a086250233e07a1f1138a80b1cd0824d22e92f4576",
           "had": {
             "path": "project/had/studies/water-replan.json",
             "gitBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
@@ -18555,7 +18555,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -18566,7 +18566,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "307a46b63feda3486982c00e6d3e28f835fe7fca0df31d14e311fd3b0a39a7e4",
+      "caseDigest": "8da8b4a7c9d7339ad34426e4486b53856b5419b0eb3e20865e31e35946fa6978",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": 144,
       "directRestWitnesses": 137,
@@ -18576,7 +18576,7 @@
         "state": "geometry-comparison",
         "method": "IAS-STUDY-GROUND-SUPPORT-1",
         "source": {
-          "bindingDigest": "7bf92ef43c8e1a9558fba3b9cf7851af002b510848b82734c4c0bb94aa743636",
+          "bindingDigest": "3c8bac4e6cdbae0d451901a086250233e07a1f1138a80b1cd0824d22e92f4576",
           "had": {
             "path": "project/had/studies/water-replan.json",
             "gitBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
@@ -18645,7 +18645,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -18656,7 +18656,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "4504430d8fddf1f72e01928a809fe7d0b546789986250031b8f1eb6d6ba7a63a",
+      "caseDigest": "7282635a135b69c3e462dd35d0692b92a4451aaee38a96a4c68fe468389c5a4e",
       "floorParts": 145,
       "ordinaryHandlingWitnesses": null,
       "directRestWitnesses": 137,
@@ -18666,7 +18666,7 @@
         "state": "geometry-comparison",
         "method": "IAS-STUDY-GROUND-SUPPORT-1",
         "source": {
-          "bindingDigest": "7bf92ef43c8e1a9558fba3b9cf7851af002b510848b82734c4c0bb94aa743636",
+          "bindingDigest": "3c8bac4e6cdbae0d451901a086250233e07a1f1138a80b1cd0824d22e92f4576",
           "had": {
             "path": "project/had/studies/water-replan.json",
             "gitBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
@@ -18735,7 +18735,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -18746,7 +18746,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "e4189c2334a68cdf7dd181f994d58fc4d5a0dbfbaa6d48921d60a430e7dc6696",
+      "caseDigest": "66b93c87c4f619f6b1876742baca3e184c7c22d72cc34e4842a0b80dbe7a6766",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": null,
       "directRestWitnesses": 119,
@@ -18781,7 +18781,7 @@
         "state": "geometry-comparison",
         "method": "IAS-STUDY-GROUND-SUPPORT-1",
         "source": {
-          "bindingDigest": "7bf92ef43c8e1a9558fba3b9cf7851af002b510848b82734c4c0bb94aa743636",
+          "bindingDigest": "3c8bac4e6cdbae0d451901a086250233e07a1f1138a80b1cd0824d22e92f4576",
           "had": {
             "path": "project/had/studies/water-replan.json",
             "gitBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
@@ -18850,7 +18850,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -18861,7 +18861,7 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "caseDigest": "2d39754ce488d7c18381e997c6d27487f6a98ae0bb188e11502b5ac2d148c664",
+      "caseDigest": "4427a0e0fdbac1b1d7589612fb9b8955ba0e1fee143ad099ee9f9bb7a9c0bd0f",
       "floorParts": 144,
       "ordinaryHandlingWitnesses": null,
       "directRestWitnesses": 140,
@@ -18871,7 +18871,7 @@
         "state": "geometry-comparison",
         "method": "IAS-STUDY-GROUND-SUPPORT-1",
         "source": {
-          "bindingDigest": "7bf92ef43c8e1a9558fba3b9cf7851af002b510848b82734c4c0bb94aa743636",
+          "bindingDigest": "3c8bac4e6cdbae0d451901a086250233e07a1f1138a80b1cd0824d22e92f4576",
           "had": {
             "path": "project/had/studies/water-replan.json",
             "gitBlob": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d"
@@ -54415,7 +54415,7 @@
       "state": "candidate-unqualified",
       "source": {
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
         "jointInterfaceDigest": "2c9d1200bea048920e5be51737773ddedc33443021900731eb8bb1c566b655f6",
         "inputDigest": "efa4891193343fe175e9661603ee2afa8a368a0cf2126789946bfaa907a2b186",
         "method": "ias-whole-study-assembly/1"
@@ -60598,7 +60598,7 @@
       "state": "candidate-unqualified",
       "source": {
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
         "jointInterfaceDigest": "2c9d1200bea048920e5be51737773ddedc33443021900731eb8bb1c566b655f6",
         "inputDigest": "3308d609efb3e9837d2268130253db26b7379af570535319ec39fcab4e75b0d9",
         "method": "ias-whole-study-assembly/1"

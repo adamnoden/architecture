@@ -3,7 +3,7 @@
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "f819f897f918e854c16bac8e97cbc6957aa47834b6b17a4d7dea7c56ec392643",
+    "bindingDigest": "4edc779b0ca67a1bc1eadfd9ae10546e3f21833c490579c577e4001937d845cb",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -444,7 +444,7 @@
   ],
   "joinedDirection": {
     "state": "one-recommended-replacement-not-an-adopted-room",
-    "sourceOccupiedBindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+    "sourceOccupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
     "designDuties": {
       "status": "authored-reference-design-requirements",
       "utilityLmin": 20,
@@ -12634,7 +12634,7 @@
           "sourceReference": {
             "sourceId": "RH-LAYOUT-REVISION-02",
             "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-            "occupiedBindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+            "occupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
             "datum": "Local nominal groundFFL0; uncoordinated raised-ground or changed-slab acceptance not transferred"
           },
           "loadedRemoval": {

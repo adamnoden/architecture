@@ -6,8 +6,8 @@
     "project/ias/studies/study-door-reveal.json": "5defb570d91832c5d862226fd93c46aa0026124a02b74bae0d5fe9f60a5f20b9"
   },
   "source": {
-    "kitCaseDigest": "d8d40556e1db87c77913b5ccace33420bc3c4722e35e8f562dd44dba53796d80",
-    "binding": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
+    "kitCaseDigest": "f08f0073fc6ec7d59ef4d3e59c0bb5564dc19efac62fc95ddfbcdc80233909f3",
+    "binding": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
     "transitionCaseDigest": "690cd655347e8f8e253e33073eb69884b8b4739075edc0f57ce2d298044d3452",
     "wallId": "GROUND/G-STUDY/W1",
     "openingId": "GROUND/south-window-0",
