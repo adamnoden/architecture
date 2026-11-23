@@ -9,12 +9,12 @@
     "label": "convergence-root-20261123"
   },
   "claimedAt": "2026-11-23T07:21:50.909Z",
-  "heartbeatAt": "2026-11-23T09:35:03.278Z",
-  "expiresAt": "2026-11-23T10:20:03.278Z",
+  "heartbeatAt": "2026-11-23T09:53:34.000Z",
+  "expiresAt": "2026-11-23T10:38:34.000Z",
   "checkpoint": {
-    "evidence": "PR1620 merged mainae5d. PR1621 published eb8aaf6: publication passed; browser reached15minute limit without assertion failure. Raw width120/sharedfan/fixed-support prototype durable evidence branch1aaf2f2961bebd67b3944ddc0c85b13120fd5115.",
-    "next": "Root integrates reviewed stair-source correspondence correction and bounded25minute full browser proof, publishes exact head and reruns full CI/preflight. Root alone executes STR; parallel agents read-only review.",
-    "blocker": "Finite joint/anchorage/material/signed floor convergence and actual stair/wholehouse correspondence remain unresolved; no default adoption."
+    "evidence": "Merged1620/mainae5d28d6. Draft1621/843f317d preserves pad/fan/stair work; raw controls evidence1aaf2f29. CI fails stale crafted-study-kit-schedule.json; executor unavailable. Full handoff on1621.",
+    "next": "Fresh main/lease; regenerate via crafted-study-views.mjs then --check, genuine downstream audit; exact-head full CI/browser/preflight. Continue fixed-support prototype; no native pair executed.",
+    "blocker": "Execution environment unavailable. Native fixed-normal experiment not run; prepared wrapper local-only. Finite joints/anchors, signed convergence, material, stair/plinth/window joins remain open."
   },
   "branch": "work/convergence-head-fan-20261123",
   "predecessor": {
