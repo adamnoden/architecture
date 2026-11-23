@@ -1,0 +1,54 @@
+{
+  "schema": "ovid-unadopted-head-fan-capture/1",
+  "processingSourceRevision": "eb8aaf6a6e1e9d7dfaec264967ea0ac36578e2b6",
+  "nativeModelChanged": false,
+  "defaultChanged": false,
+  "accepted": false,
+  "files": [
+    {
+      "path": "convergence-head-fan-document.json",
+      "bytes": 42730,
+      "sha256": "0b4116243050387bc98449fd46f740dc53de94304e8c6400586945b10d1d6e00"
+    },
+    {
+      "path": "convergence-head-fan-stages.json",
+      "bytes": 9413,
+      "sha256": "cad322e3e89e7f559b3464a1265906ae8e9513008822e7b36392bfea9aed759b"
+    },
+    {
+      "path": "convergence-head-fan-stage-proof.mjs",
+      "bytes": 2728,
+      "sha256": "2886d9e3bf6fb964c036cac00b745915b35bcddd6d6dae91c1b66bc2e4a9175c"
+    },
+    {
+      "path": "convergence-head-fan-bundle-result.json",
+      "bytes": 25692626,
+      "sha256": "5516daaec3fecafe6ef32e99fd37e60c0c07a72e6426351ec44e7193fa43a879"
+    },
+    {
+      "path": "convergence-head-fan-bundle-final.log",
+      "bytes": 603,
+      "sha256": "83ad91b809ca2860c746a969e9805957f33b069d3f84a187a16442383da0371e"
+    },
+    {
+      "path": "head-fan-cage-binding-repro.mjs",
+      "bytes": 1567,
+      "sha256": "97c39ca4bb88014777ce37087dcb2b6d151e4330f715e06247a5f3218ce4fb51"
+    },
+    {
+      "path": "head-fan-cage-binding-repro.json",
+      "bytes": 316,
+      "sha256": "2520b10acf74d471cefb7a4b91469098534eb49b1739ab9bd5f897cf22a3bc55"
+    },
+    {
+      "path": "convergence-head-fan-api-result.json",
+      "bytes": 70553,
+      "sha256": "1f9b0e10e54bb73c94918e2b0ede96759f0597aa9d40307d655ed5f6da710dad"
+    },
+    {
+      "path": "convergence-head-fan-api-final.log",
+      "bytes": 453,
+      "sha256": "6ad3eee89bf8e381b99b93c54c268bae41ec21c57cc88c711bff7b29e9188da8"
+    }
+  ]
+}

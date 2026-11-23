@@ -1,0 +1,59 @@
+{
+  "schema": "str-width120-execution-checkpoint/1",
+  "scope": "Actual source58 width120 wet27/G1.35/Q2 q32/q64 controls and source-bound postprocessing. No selected pad, material, anchorage, finite node, full placement or whole-house acceptance.",
+  "comparisonSHA256": "42813a6492021652e86800c4f23b414018006250a926c284c7ddfb1d58428ecc",
+  "files": {
+    "commands.sh": {
+      "bytes": 1000,
+      "sha256": "cad0c65cd31d87e8c683467e9f03abd8fae1566593ec64066ce2b6bd75c9f7ee"
+    },
+    "compare.py": {
+      "bytes": 10054,
+      "sha256": "86f683b4b3bcae5aba1dd577d05db746309107b5c50e323b36aaf607445166f6"
+    },
+    "comparison.json": {
+      "bytes": 7195955,
+      "sha256": "42813a6492021652e86800c4f23b414018006250a926c284c7ddfb1d58428ecc"
+    },
+    "run_controls.py": {
+      "bytes": 2181,
+      "sha256": "6302f10bbf43d7bf769815fb06f54edd2332964df513dd10bba29c03e66f463c"
+    },
+    "width120-q32.capture.json": {
+      "bytes": 1632623,
+      "sha256": "68b2da41ff2badf66d0b1151f9b471ba7a536110e7e6e9118e428f266999ac20"
+    },
+    "width120-q32.full.json": {
+      "bytes": 16331720,
+      "sha256": "00eba2af056ad0ce654b8e581cd8043f4963f681efe5176e5b577a68ca78f173"
+    },
+    "width120-q32.metrics.json": {
+      "bytes": 10480,
+      "sha256": "ce35549aabe8d59afc692f2380bc0e562a4d84448038fa4e1b1cc6c23fd83499"
+    },
+    "width120-q32.request.json": {
+      "bytes": 51613,
+      "sha256": "62184eca086d36422ca74cfcd1d8c467c11bc8e121095a8e776384517d3f2f39"
+    },
+    "width120-q64.cage.json": {
+      "bytes": 2121480,
+      "sha256": "b175a2d5727bb6f8fbee7201a31e3d5a89f8abeb840c5533efb2aa8b8da85c24"
+    },
+    "width120-q64.capture.json": {
+      "bytes": 3659788,
+      "sha256": "ec7dee6832e69a0f3539c0b20b7edd2cc2b66034a962210b9276eea3e90ec670"
+    },
+    "width120-q64.full.json": {
+      "bytes": 19548531,
+      "sha256": "ca48612bed4ea44a801f6f8f06d57bc9b900821f933e0d883b81bb48d2ebbb75"
+    },
+    "width120-q64.metrics.json": {
+      "bytes": 10480,
+      "sha256": "3838fa6138d4b8a9e4089157ac3fb1d79171880b025a3c3cb39cf0aa79b440b3"
+    },
+    "width120-q64.request.json": {
+      "bytes": 51613,
+      "sha256": "8665d056923a6017e0cd49c0a053eb5ca0202f4a4e6d4afa025f68dcde801ae7"
+    }
+  }
+}

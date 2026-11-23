@@ -1,0 +1,42 @@
+{
+  "label": "joint-runtime",
+  "bytes": 3798468,
+  "gitBlob": "29f6a0d97260d3eedff7c7a1fbea2a135e62aa94",
+  "sha256": "3cf5b4fcdd762ca394caf1406638e7a98dd5cf70d514d64ddc6adc2aa2d3e412",
+  "manifest": {
+    "status": "Actual fresh matched numerical-runtime-bound control. Native58 unchanged. Strict byte equality earned; no resistance/house acceptance.",
+    "files": {
+      "node-admission.json": {
+        "bytes": 30165,
+        "sha256": "671e2120120e002e1b5aa20af5fb49b31c8b1e6d6324aaaab4be724258ca0fcc"
+      },
+      "observed-envelope.json": {
+        "bytes": 15552035,
+        "sha256": "f0aca68855d26df8fa48bb2b9ed7c126bfe8a86b0f1c9c3fa328daafb61303d9"
+      },
+      "observed-full.json": {
+        "bytes": 15331498,
+        "sha256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff"
+      },
+      "ordinary-envelope.json": {
+        "bytes": 15377,
+        "sha256": "5516f5d7ac9e59f894b0a0d8c08bbff13162cab75e9f9efa9b6e10956c70056f"
+      },
+      "ordinary-full.json": {
+        "bytes": 15331498,
+        "sha256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff"
+      },
+      "ordinary-manifest.json": {
+        "bytes": 1005209,
+        "sha256": "00b08068990425b0fb3d726570a4e24459ff4f82b21395816bd217996480c3d8"
+      },
+      "request.json": {
+        "bytes": 51659,
+        "sha256": "bbde8ace063a1e7c464d28dd98379daacaedcd92eded64b83c35574089e3b92c"
+      }
+    },
+    "checkoutBaseRevision": "b6eb3ac12ac477381f90de6e73c12798e99cbfee",
+    "processingSourceRevision": "969e4048e17d2d496d4429743446a095e237cbcb",
+    "revisionScope": "Native source and processing file identities in the captured records control applicability. This is retained evidence, not house adoption."
+  }
+}
