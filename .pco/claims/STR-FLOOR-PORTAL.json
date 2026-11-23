@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 56,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "234d4914-97e5-469f-a35f-b42dd7852ec5",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-root-20261123"
   },
   "claimedAt": "2026-11-23T07:21:50.909Z",
-  "heartbeatAt": "2026-11-23T09:53:34.000Z",
-  "expiresAt": "2026-11-23T10:38:34.000Z",
+  "heartbeatAt": "2026-11-23T09:54:51.000Z",
+  "expiresAt": "2026-11-23T09:54:51.000Z",
   "checkpoint": {
     "evidence": "Merged1620/mainae5d28d6. Draft1621/843f317d preserves pad/fan/stair work; raw controls evidence1aaf2f29. CI fails stale crafted-study-kit-schedule.json; executor unavailable. Full handoff on1621.",
     "next": "Fresh main/lease; regenerate via crafted-study-views.mjs then --check, genuine downstream audit; exact-head full CI/browser/preflight. Continue fixed-support prototype; no native pair executed.",
@@ -37,5 +37,7 @@
       "blocker": "Execution environment explicitly unavailable; exec-server recovery timed out. Local combinedb673d6c2 not published as one tree; components durable. Joint resistance, signed load programme, carrier/thermal/renewal and wholehouse selection unresolved."
     }
   },
-  "pr": 1621
+  "pr": 1621,
+  "releasedAt": "2026-11-23T09:54:51.000Z",
+  "releaseReason": "handoff"
 }
