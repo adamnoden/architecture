@@ -9,11 +9,11 @@
     "label": "convergence-resume-root-20261123"
   },
   "claimedAt": "2026-11-23T22:25:18.262Z",
-  "heartbeatAt": "2026-11-23T22:25:18.262Z",
-  "expiresAt": "2026-11-23T23:10:18.262Z",
+  "heartbeatAt": "2026-11-23T22:34:28.488Z",
+  "expiresAt": "2026-11-23T23:19:28.488Z",
   "checkpoint": {
-    "evidence": "Recover remote draft1621/843f317d; executor restored to older snapshot. Fresh mainae5d and STR56 release verified.",
-    "next": "Regenerate crafted Study output and genuine dependents; submit successor branch, exact-head CI/preflight, merge."
+    "evidence": "Successor1622 exactdeb78ff4 preserves843 plus genuine crafted/inlet dependency regeneration.185control tests,6publication assets,typecheck,allowningchecks/sourceaudit0 pass; fullNPM blocked by tsx IPC EPERM.",
+    "next": "Observe exact-head full CI/browser/publication, canonicalpreflight and merge; then controlled fixed-normal500/250 experiment using exactnative ledger."
   },
   "branch": "work/convergence-resume-final-20261123",
   "predecessor": {
@@ -37,5 +37,6 @@
       "next": "Fresh main/lease; regenerate via crafted-study-views.mjs then --check, genuine downstream audit; exact-head full CI/browser/preflight. Continue fixed-support prototype; no native pair executed.",
       "blocker": "Execution environment unavailable. Native fixed-normal experiment not run; prepared wrapper local-only. Finite joints/anchors, signed convergence, material, stair/plinth/window joins remain open."
     }
-  }
+  },
+  "pr": 1622
 }
