@@ -1,0 +1,19 @@
+# Wet post head: a nominal fan and an editable pad
+
+The 140 × 100 mm pad is the next local development comparison, ahead of widening the posts. It is not a selected bearing assembly or whole-house baseline. The existing 220 mm default remains an explicit reference; a saved width edit changes the same actual native floor/beam/contact/52-head model and reverses through the existing document history.
+
+The actual coupled wet27, 1.35G/Q2, 64-point comparison changes north contact resultant eccentricity from about 93 to 58 mm, and its head bending moment from 0.04868 to 0.00999 kNm. It increases south affine peak pressure from 2.799 to 3.670 MPa and sampled beam-axis displacement from 0.7925 to 0.8387 mm. Up to 3.668 kN moves between foundation-head components. The actual width140 32→64 quadrature comparison passes the unchanged force, centroid and head screens. Those numerical results are retained with full captures on `evidence/convergence-native-controls-20261123`; the comparison does not erase loads or qualify the numerical pad material.
+
+## What the shared method computes
+
+The fan consumes actual contact fibres and the independently generated, currently saved cage. Virtual targets derive from the straight-leg axes of its second-highest perimeter. For each downward force F at x,y relative to the post centroid, the four weights are `(1 ± x/a)(1 ± y/b)/4`. They must be nonnegative. Their inclined struts conserve the force and both first moments; four perimeter tie forces balance the bottom horizontal components. Actual pad gravity enters once at its source origin. Post gravity over the actual fan depth remains a separate centred field, added once and checked against both source end wrenches and the transported section.
+
+At the actually examined 10 mm graded cage raise, the virtual half axes are 79/174 mm and depth is 172.290 mm. The 140 mm south comparison gives about 11.374 kN in the governing ideal tie, a 0.566 necessary single-H8 steel-only ratio using the existing comparison fraction. The basic poor-bond length is about 234 mm. The existing 80 mm hook tail is not automatically a developed fan tie: finite node, bend, hook and force-introduction geometry still need their actual model. These are necessary comparisons, not resistance acceptance.
+
+The 220 mm pad lies outside this particular positive-weight fan. That rejects this topology for that input, not the post or the whole house. The 140 mm nominal half-width plus the existing 10 mm relative placement also exceeds the virtual half-axis; independent cage and fabrication allowances remain additional duties. No nominal fan is a placement pass. Missing/stale sources, request, cage paths, contact samples or incompatible head actions produce explicit diagnostics; no pressure is clipped to manufacture a fan.
+
+## Architecture and remaining work
+
+The south post crosses the rear corner of the existing stair midlanding, beyond the documented flight turn. That is an unjoined structural/landing-space interface, not a demonstrated blocked flight. Widening it would enlarge the join and cannot be selected without its actual compatibility and occupied geometry. An experimental closer upper cage also remains unadmitted: a clear bar-path drawing alone does not qualify anchorage, mass feedback or resistance.
+
+The shared floor result and browser expose nominal fan status beside actual floor/contact/cage results. CLI, browser and batch use the same saved width and cage choices. No new stage/default, steel, material law or native stiffness is introduced. Finite CCT nodes, rounded-bar force introduction, anchorage, post-section continuation, placement, complete signed loading and the existing floor/corner mesh-convergence failure remain open. Neither slab thickness nor raised-ground/roof/interior coordination is adopted.

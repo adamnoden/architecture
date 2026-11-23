@@ -283,15 +283,34 @@ def main():
         raised=json.loads(Path(download.value.path()).read_text())
         assert raised['stages']['floorSection']['cageComparison']=={**cage_document['stages']['floorSection']['cageComparison'],'postTopLevelRaiseMm':10}
         assert raised['stages']['floorSection']['wetSupport']==cage_document['stages']['floorSection']['wetSupport']
-        page.get_by_role('button',name='Undo',exact=True).click()
+        width_control=page.get_by_label('Bearing pad width (mm)')
+        expect(width_control).to_have_value('220')
+        width_control.fill('140');width_control.press('Enter')
         ready(page,2,240000)
+        expect(page.locator('#floor-result')).to_contain_text('Nominal post-head fan computed')
+        expect(page.locator('#floor-result')).to_contain_text('finite nodes, anchorage and tolerance remain unqualified')
+        with page.expect_download() as download:
+            page.get_by_role('button',name='Export JSON').click()
+        narrowed=json.loads(Path(download.value.path()).read_text())
+        expected={**raised['stages']['floorSection'],'wetSupport':{**raised['stages']['floorSection']['wetSupport'],'padWidthMm':140}}
+        assert narrowed['stages']=={**raised['stages'],'floorSection':expected}
+        cli_narrowed=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(narrowed),text=True,capture_output=True,check=True).stdout)['engineering']['floorSection']
+        assert cli_narrowed['wetPostHeadFan']['status']=='computed-nominal-demand'
+        assert cli_narrowed['wetPostHeadFan']['resistanceAccepted'] is False
+        assert cli_narrowed['wetPostHeadFan']['toleranceDomainAccepted'] is False
+        page.get_by_role('button',name='Undo',exact=True).click()
+        ready(page,3,240000)
+        expect(width_control).to_have_value('220')
+        expect(page.locator('#floor-result')).to_contain_text('This nominal post-head fan does not support the current input')
+        page.get_by_role('button',name='Undo',exact=True).click()
+        ready(page,4,240000)
         expect(raise_control).to_have_value('0')
         assert page.locator('#cage-result').inner_text()==initial_cage
         if args.screenshot:
             page.screenshot(path=args.screenshot, full_page=True)
         assert not errors, errors
         browser.close()
-        print('PASS engineering document authoring, CLI export, explicit Study and inlet bank changes/undo/adverse/stale reply and actual wet-cage level change/undo')
+        print('PASS engineering document authoring, CLI export, explicit Study/inlet changes and actual wet-cage level/pad-width changes and undo')
 
 
 if __name__ == '__main__':

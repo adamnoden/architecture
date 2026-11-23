@@ -11,6 +11,11 @@
     <form id="edit"><label>Roof pitch (degrees)<input id="pitch" type="number" step="any" required></label>
       <div class="actions"><button type="button" id="decrease">Decrease 1 degree</button><button type="button" id="increase">Increase 1 degree</button></div>
       <button class="primary" type="submit">Apply pitch</button></form>
+    <section id="wet-bearing-controls" hidden aria-label="Wet-beam pad comparison"><h2>Wet-beam bearing pad</h2>
+      <form id="wet-pad-width-edit"><label>Bearing pad width (mm)<input id="wet-pad-width" type="number" min="0" step="any" required></label>
+        <button class="primary" type="submit">Compare pad width</button></form>
+      <p>Recomputes the actual coupled floor, beam, contact and foundation-head actions. Nominal fan equilibrium supplies no material, anchor or placement acceptance.</p>
+    </section>
     <section id="wet-cage-controls" hidden aria-label="Wet-support cage comparison">
       <h2>Wet-support cage</h2><form id="wet-cage-edit">
         <label>Graded post-link raise (mm)<input id="cage-top-level" type="number" min="0" max="20" step="any" required></label>

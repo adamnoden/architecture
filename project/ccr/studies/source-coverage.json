@@ -848,7 +848,8 @@
         "project/str/wet-post-head-development-result.md",
         "project/str/floor-interface-result.md",
         "project/str/wet-bearing-refinement-development.md",
-        "project/str/four-l-joint-recovery-development.md"
+        "project/str/four-l-joint-recovery-development.md",
+        "project/str/wet-post-head-fan-development.md"
       ],
       "authorRoots": [
         "project/str/studies/masonry_frame_a.py",
@@ -880,7 +881,10 @@
         "project/str/studies/wet_bearing_refinement.py",
         "project/str/studies/four_l_joint_observer.py",
         "project/str/studies/four_l_joint_recovery.py",
-        "project/str/studies/four_l_joint_material_audit.py"
+        "project/str/studies/four_l_joint_material_audit.py",
+        "project/str/studies/wet_post_head_fan.py",
+        "project/str/studies/wet_post_head_fan_driver.py",
+        "compiler/reference-house/current-design/structural-wet-post-head-fan.ts"
       ],
       "authoredInputs": [
         "project/str/studies/floor-section-cuts-inputs.json",
@@ -983,7 +987,9 @@
         "project/str/studies/four_l_joint_proof.py",
         "project/str/studies/four_l_joint_proof_test.py",
         "project/str/studies/four_l_joint_recovery_test.py",
-        "project/str/studies/four_l_joint_material_audit_test.py"
+        "project/str/studies/four_l_joint_material_audit_test.py",
+        "project/str/studies/wet_post_head_fan_test.py",
+        "compiler/reference-house/current-design-wet-pad-edit.test.ts"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
@@ -1003,7 +1009,8 @@
         "python3 -B project/str/studies/four_l_joint_proof_test.py",
         "python3 -B project/str/studies/four_l_joint_recovery_test.py",
         "python3 -B project/str/studies/four_l_joint_material_audit_test.py",
-        "node --import tsx --test compiler/reference-house/current-design-four-l-joint.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-four-l-joint.test.ts",
+        "python3 -B -m unittest discover -s project/str/studies -p wet_post_head_fan_test.py"
       ],
       "historicalInputs": [
         "project/str/studies/seated-pre-nodal-history.json",
@@ -2223,9 +2230,9 @@
     "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
     "project/had/studies/inlet-source-envelope.results.json": "5429eec9a74bea772c2670aaff9165c530b7e183",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
-    "compiler/reference-house/current-design/engineering-edit.ts": "f7e050ac682c6caa0a14e0bed4d76806a2cae16f",
-    "project/ade/browser-editor/engineering-api.ts": "8992e5c35a8d6c3045c43f79cd5ba1088d912aa1",
-    "project/ade/browser-editor/engineering-editor.ts": "15b9acc2c3c9ba91243b8b75a12cec29443f21d5",
+    "compiler/reference-house/current-design/engineering-edit.ts": "d8002b0b3ec49678167093f303a1cc316519f0ae",
+    "project/ade/browser-editor/engineering-api.ts": "d489784af96f430d6f49fde31f7d059468f3ce16",
+    "project/ade/browser-editor/engineering-editor.ts": "7068f79851e7d5665dac09966275042192714148",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
@@ -2238,7 +2245,7 @@
     "project/str/studies/floor_section_model.py": "f3cdbbf118b0d5d064c3f6564786de770b5ffd88",
     "project/str/studies/floor_section_successor.py": "0e86fe7778fe0a5e85dbf3bcb91e5e9a99a45fd3",
     "project/str/floor-section-result.md": "57386497f30c777bcafc8090cac8b462add8b87c",
-    "compiler/reference-house/current-design/structural-floor-section.ts": "0be1ecd25a844bdeac2d9ee5ade222f5f138587d",
+    "compiler/reference-house/current-design/structural-floor-section.ts": "ff4cfe2a638507070549a3bf42d750838ea4410a",
     "project/str/studies/floor_section_proof.py": "9ab873623174bd4ec52c84473527d818874d7bc0",
     "project/str/studies/floor-section-proof.json": "43d622a67d01d40e976ee605dd2528f5104eac1f",
     "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1",
@@ -2326,7 +2333,7 @@
     "project/str/studies/monolithic-rc-translation-actions.json": "45fd6254540ff5d0f8927f3a8375e157bf330e2b",
     "compiler/reference-house/current-design/inlet-bank-receiver.ts": "cc7ca65f7619adade42caa095071c234b6eeb496",
     "project/had/studies/inlet-bank-receiver.svg": "c271ae9cd1c8839948a4ac364147bb9f8ebf92b5",
-    "project/ade/browser-editor/engineering.html": "9b0e0df569b9cbe8a1c0d171f50027eb93743d4f",
+    "project/ade/browser-editor/engineering.html": "bbf1b6857f08c97fb438c102b620608d75c7b8b8",
     "project/had/inlet-bank-carrier-rejection.md": "bb042f5a6e6aef33aeb09da34514f56a33a7ec82",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
@@ -2355,6 +2362,12 @@
     "project/str/studies/four-l-joint-material-audit.json": "c7fc98758b2d9bdc3bb0b6b7a80b6397fe40b0f1",
     "project/str/studies/four-l-joint-default-thread-attempt.json": "980256752350cc54e2071bddf34e766dd6bd0133",
     "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "8823f081b68beabe2f318105019b22ee76e1587d",
-    "project/ias/studies/adaptable-study-lighting-common-depth.svg": "64f1d78edef1f7c5afa6e82257ae3dc8a479c79b"
+    "project/ias/studies/adaptable-study-lighting-common-depth.svg": "64f1d78edef1f7c5afa6e82257ae3dc8a479c79b",
+    "project/str/studies/wet_post_head_fan.py": "a0b083357c0fb1170868b57614752313e69073a2",
+    "project/str/studies/wet_post_head_fan_driver.py": "394854813a0f18f125ba6e745c22662b075468ed",
+    "compiler/reference-house/current-design/structural-wet-post-head-fan.ts": "9e023ff329a76cc512ff3a3f7467489483b688c6",
+    "project/str/wet-post-head-fan-development.md": "2775fc1901f3403fa12cd63b7c0e50a1dddfdf36",
+    "project/str/studies/wet_post_head_fan_test.py": "27c83cdae094f7bd17126afe3a5e01238965d2ca",
+    "compiler/reference-house/current-design-wet-pad-edit.test.ts": "1f004ec837d07c75714049e2ff10d6afb392a204"
   }
 }

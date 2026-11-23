@@ -1,4 +1,4 @@
-import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableInletBankId, editableInletBankFields, editableStudyLightingId, engineeringBase,
+import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableInletBankId, editableInletBankFields, editableStudyLightingId, engineeringBase,
   engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, type EngineeringEditorState, type EngineeringTicket,
 } from '../../../compiler/reference-house/current-design/engineering-edit.js'
 import type { EngineeringReply } from './engineering-api.js'
@@ -8,6 +8,7 @@ const button = (id: string) => element<HTMLButtonElement>(id)
 const pitch = element<HTMLInputElement>('pitch')
 const inletField=element<HTMLSelectElement>('inlet-field'),inletValue=element<HTMLInputElement>('inlet-value')
 const cageTop = element<HTMLInputElement>('cage-top-level')
+const padWidth=element<HTMLInputElement>('wet-pad-width')
 const lightingDepth = element<HTMLInputElement>('lighting-depth')
 const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
 const storageKey = 'ovid-current-engineering-document/1'
@@ -28,6 +29,9 @@ function controls() {
   pitch.disabled = false
   pitch.value = String(state.document.stages.roofPitch.pitchDeg)
   const floor = state.document.stages.floorSection
+  const bearing=record(floor)&&record(floor.wetSupport)?floor.wetSupport:undefined
+  const hasBearing=typeof bearing?.padWidthMm==='number'
+  element('wet-bearing-controls').hidden=!hasBearing;padWidth.disabled=!hasBearing;padWidth.value=hasBearing?String(bearing.padWidthMm):''
   const choices = record(floor) && record(floor.wetSupport) && record(floor.cageComparison) ? floor.cageComparison : undefined
   const available = typeof choices?.postTopLevelRaiseMm === 'number'
   element('wet-cage-controls').hidden = !available
@@ -49,7 +53,7 @@ function controls() {
 }
 function draw() {
   const floor=current?.floorEvidence
-  element('floor-result').textContent=floor?`Actual floor: ${floor.headCount} foundation heads; normal-bearing analysis ${floor.contactComputed?'computed':'not applicable'}. ${floor.jointStatus==='computed-rigid-joint-demand'?'Four rigid-joint demands computed; finite-node resistance remains unqualified.':floor.jointDiagnostics.includes('FOUR_L_JOINT/runtime-not-admitted')?'Joint demand unavailable for this numerical runtime; ordinary floor and cage remain computed.':'Joint-demand evidence unavailable for this request.'}`:''
+  element('floor-result').textContent=floor?`Actual floor: ${floor.headCount} foundation heads; normal-bearing analysis ${floor.contactComputed?'computed':'not applicable'}. ${floor.jointStatus==='computed-rigid-joint-demand'?'Four rigid-joint demands computed; finite-node resistance remains unqualified.':floor.jointDiagnostics.includes('FOUR_L_JOINT/runtime-not-admitted')?'Joint demand unavailable for this numerical runtime; ordinary floor and cage remain computed.':'Joint-demand evidence unavailable for this request.'} ${floor.nominalHeadFanStatus==='computed-nominal-demand'?'Nominal post-head fan computed; finite nodes, anchorage and tolerance remain unqualified.':floor.nominalHeadFanStatus==='unsupported'?'This nominal post-head fan does not support the current input.':''}`:''
   for (const [name, result] of [['current', current], ['comparison', comparison]] as const) {
     const image = element<HTMLImageElement>(`${name}-roof`)
     if (result) image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(result.roof.svg)
@@ -134,6 +138,7 @@ element('lighting-edit').addEventListener('submit', event => {
 })
 inletField.addEventListener('change',controls)
 element('inlet-bank-edit').addEventListener('submit',event=>{event.preventDefault();changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:inletField.value.endsWith('KgM3')?'kg/m3':'mm',base:engineeringBase(state),operation:{kind:'set-inlet-bank-field',assemblyId:editableInletBankId,inputId:inletField.value,value:inletValue.valueAsNumber}}))})
+element('wet-pad-width-edit').addEventListener('submit',event=>{event.preventDefault();changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),operation:{kind:'set-wet-bearing-width',assemblyId:editableWetSupportId,widthMm:padWidth.valueAsNumber}}))})
 element('wet-cage-edit').addEventListener('submit', event => {
   event.preventDefault()
   changed(applyEngineeringEdit(state, { schema: 'current-engineering-edit/1', units: 'mm', base: engineeringBase(state),

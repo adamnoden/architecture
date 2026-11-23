@@ -2,6 +2,16 @@
 
 ## Current development disposition — 20 November 2026
 
+**23 November continuation:** [local bearing-width and post-head development](wet-post-head-fan-development.md)
+now consumes the same authored pad and independently generated cage through the
+shared compiler and browser. The 140 mm comparison reduces north eccentricity
+while increasing south pressure and beam movement. Nominal fan equilibrium is
+available for that exact input; the retained 220 mm reference lies outside this
+particular fan topology. No finite-node, anchorage, tolerance or complete signed
+resistance claim follows. The south post also crosses the rear corner of the
+existing stair midlanding; the native model has no joined landing compatibility.
+Retain the current reference until these consequences are resolved.
+
 **21 November continuation:** the [seated wet-wall beam/post model](seated-wet-support-result.md)
 now joins the actual source supports and floor/frame/roof/52-head response, with
 complete authored geometry, independent material/Q wrenches and unilateral pad

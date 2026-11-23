@@ -139,6 +139,20 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       if (operation.linkHookTailMm === current.cageComparison.linkHookTailMm) return { status: 'applied', state }
       stages = { ...state.document.stages, floorSection: { ...current,
         cageComparison: { ...current.cageComparison, linkHookTailMm: operation.linkHookTailMm } } }
+    } else if(record(operation)&&operation.kind==='set-wet-bearing-width') {
+      const current=state.document.stages.floorSection
+      if(transaction.units!=='mm'||!exact(operation,['kind','assemblyId','widthMm'])||operation.assemblyId!==editableWetSupportId
+        ||typeof operation.widthMm!=='number'||!Number.isFinite(operation.widthMm)||operation.widthMm<=0
+        ||!record(current)||current.thicknessMm!==200||!record(current.wetSupport))throw new TypeError('Explicit RC200 seated support and positive pad width in mm required')
+      const support=current.wetSupport,rectangles=support.receiverRectanglesXYMm,tol=support.combinedRelativePlacementToleranceMm,axis=support.beamAxisXMm
+      if(!Array.isArray(rectangles)||rectangles.length!==2||rectangles.some(r=>!Array.isArray(r)||r.length!==4||r.some(v=>typeof v!=='number'||!Number.isFinite(v)))
+        ||typeof tol!=='number'||!Number.isFinite(tol)||tol<0||typeof axis!=='number'||!Number.isFinite(axis)
+        ||typeof support.beamWidthMm!=='number'||!Number.isFinite(support.beamWidthMm)||support.beamWidthMm<=0
+        ||typeof support.padWidthMm!=='number'||!Number.isFinite(support.padWidthMm))throw new TypeError('Actual finite beam/post/pad geometry required')
+      const half=operation.widthMm/2+tol
+      if(operation.widthMm+2*tol>support.beamWidthMm||rectangles.some(r=>axis-half<r[0]||axis+half>r[2]))throw new TypeError('Complete relative-placement pad envelope leaves actual beam or post')
+      if(operation.widthMm===support.padWidthMm)return{status:'applied',state}
+      stages={...state.document.stages,floorSection:{...current,wetSupport:{...support,padWidthMm:operation.widthMm}}}
     } else if (record(operation) && operation.kind === 'set-wet-bearing-offset') {
       const current = state.document.stages.floorSection
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'receiverId', 'offsetMm'])

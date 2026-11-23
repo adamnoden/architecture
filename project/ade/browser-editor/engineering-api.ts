@@ -24,7 +24,7 @@ export async function runEditorEngineeringRequest(input: unknown) {
   return { ticket, documentIdentity: bundle.documentIdentity, manifest: bundle.manifest,
     coordinationDiagnostics: bundle.coordinationDiagnostics, evidence: bundle.evidence,
     floorEvidence: floor ? { headCount:floor.native.heads.length, contactComputed:floor.wetBearingContact?.status==='computed-comparison',
-      jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
+      nominalHeadFanStatus:floor.wetPostHeadFan?.status??null, jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
     studyLighting: lighting ? { svg: lighting.commonDepthCornerSvg, comparison: lighting.lighting.commonDepthCornerComparison } : null,
     inletBank: inlet&&bank?{settings:inlet.settings,receiver:bank,carrier:inlet.joinedDirection.room.bankShelfCarrier,route:inlet.joinedDirection.room.indoorRoutes,sourceOnlyBound:inlet.bound}:null,
     roof: { ...roof, svg: renderDrawingSceneV2Svg(roof.drawing) },
