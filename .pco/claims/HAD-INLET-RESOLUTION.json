@@ -9,8 +9,8 @@
     "label": "convergence-water-route-20261123-resume"
   },
   "claimedAt": "2026-11-23T22:25:11.048Z",
-  "heartbeatAt": "2026-11-23T22:54:58.776Z",
-  "expiresAt": "2026-11-23T23:39:58.776Z",
+  "heartbeatAt": "2026-11-23T23:28:25.232Z",
+  "expiresAt": "2026-11-24T00:13:25.232Z",
   "branch": "work/convergence-water-route-20261123-resume",
   "predecessor": {
     "leaseId": "6e4645a2-e69d-4369-b4b5-29cd4723f830",
@@ -36,7 +36,7 @@
   },
   "pr": 1623,
   "checkpoint": {
-    "evidence": "PR1623cb5 ADEbrowser+PLT proofs pass, fullhealth running. Durable continuation recovery/had-retained-route-20261123 head340e1037 tree95952629 matches local613e6f29, current-source retained/capture rejection and unadopted all90case; no newdefault. Pure/savedCLI/type/producer/audit pass; finalexactheadchecks running.",
-    "next": "Root merges1622 first; reconcile/rebase1623 and regenerate actual combined outputs before preflight. Continue split Utility/Plant isolation alternative against real rooms, vessel/bench/tool motion and complete duties. No source9 or physical support adoption."
+    "evidence": "PR1623cb5frozen with ADE/PLT/publication proofs green;healthpending. Durablecontinuation340e1037 exacttree95952629 fromlocal613e sharedretained/package rejection,readonlyUI;27exactheadtests/type/producer/audit0 passed. SplitPlant normal/adverse/tool/sourcegravity3controls passed before restart; new source-stage helper/case survives uncommitted, no adoption.",
+    "next": "Checkpoint surviving splitstation source helper,actual source-bound nominal/adverse results and fullmode limits; rerun lost-session checks. Continue complete independent route/fault/capture/relief/loadpath. Reconcile1623 onlyafter root1622 integration/preflight."
   }
 }
