@@ -1074,6 +1074,47 @@
         "node --import tsx project/ias/studies/adaptable-study-lighting.mjs --check",
         "node --import tsx --test compiler/reference-house/current-design-study-lighting.test.ts"
       ]
+    },
+    {
+      "id": "str-finite-joint-development",
+      "state": "candidate-interface",
+      "authority": "Executed fixed-normal numerical rejection and isolated isotropic wall-end compliance only. Neither is ordinary native admission, finite floor-joint resistance or a selected house.",
+      "decisions": [
+        "project/str/fixed-normal-experiment.md",
+        "project/str/finite-joint-solid-development.md"
+      ],
+      "authorRoots": [
+        "project/str/studies/fixed_normal_experiment.py",
+        "project/str/studies/fixed-normal-comparison.mjs",
+        "project/str/studies/finite_joint_solid.py",
+        "project/str/studies/finite_joint_solid_run.py",
+        "project/str/studies/finite_joint_solid_compare.py"
+      ],
+      "authoredInputs": [
+        "project/str/studies/fixed-normal-experiment-inputs.json",
+        "project/str/studies/finite-joint-solid-inputs.json",
+        "project/str/studies/finite-joint-solid-requirements.txt"
+      ],
+      "inputReceipts": [
+        "project/str/studies/four-l-joint-material-audit.json",
+        "project/str/studies/fixed-normal-experiment-captures.tar.xz"
+      ],
+      "receipts": [
+        "project/str/studies/fixed-normal-experiment.results.json",
+        "project/str/studies/finite-joint-solid-captures/finite-joint-solid-140.json",
+        "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json",
+        "project/str/studies/finite-joint-solid-captures/finite-joint-solid-35.json",
+        "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json"
+      ],
+      "consumers": [
+        "project/str/floor-corner-convergence-result.md",
+        "project/ccr/convergence-owner-review.md"
+      ],
+      "producerChecks": [
+        "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B project/str/studies/fixed_normal_experiment_test.py",
+        "python -B project/str/studies/finite_joint_solid_test.py",
+        "python -B project/str/studies/finite_joint_solid_compare.py project/str/studies/finite-joint-solid-captures --check"
+      ]
     }
   ],
   "receiptEdges": [
@@ -1870,6 +1911,22 @@
       ],
       "format": "map",
       "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+      "location": [
+        "methodSourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+      "location": [
+        "processingSourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
     }
   ],
   "gitBlobs": {
@@ -2265,7 +2322,7 @@
     "project/had/inlet-whole-room-convergence.md": "d85d05df1cb550aa2b2bdccfd85952b0d6889414",
     "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
     "project/str/studies/grid_origin_recovery.py": "c09369bc1acbaaa9438545fb12e0a4e15f1a90b7",
-    "project/str/floor-corner-convergence-result.md": "71829ba202118a4265ae1529844ad84205c9a19d",
+    "project/str/floor-corner-convergence-result.md": "d0b72e14ce1be9bae11918cdcc9d7094c5a0d7ad",
     "project/str/wet-receiving-grid-origin-result.md": "7a5d126baa5c4362977906d18bbbd5227c2f9f61",
     "project/str/studies/wet_support_cage_comparison.py": "5e1f2da9fb22ff7c7503b82dc158762b43a95cf8",
     "project/str/studies/wet-support-cage-comparison-settings.json": "2fa64aa04feac0ffc5ea76b3c82220b311e5e60b",
@@ -2372,6 +2429,23 @@
     "project/str/studies/wet_post_head_fan_test.py": "27c83cdae094f7bd17126afe3a5e01238965d2ca",
     "compiler/reference-house/current-design-wet-pad-edit.test.ts": "1f004ec837d07c75714049e2ff10d6afb392a204",
     "compiler/reference-house/current-design/stair-correspondence.ts": "16b0b9082501de09f3ca0f6f437dce52a629b423",
-    "compiler/reference-house/current-design/occupied-services.ts": "80f31158e629120a3719a8d3b26774b7f2f07da2"
+    "compiler/reference-house/current-design/occupied-services.ts": "80f31158e629120a3719a8d3b26774b7f2f07da2",
+    "project/str/studies/fixed_normal_experiment.py": "79f6c70e448475c1188f4c493514df75a3c77ee3",
+    "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json": "17f081768d37138ba58d91b32617d4054be863cf",
+    "project/ccr/convergence-owner-review.md": "9120e1a407948e8bef2860c66b7dbb1dca95b046",
+    "project/str/studies/finite_joint_solid_run.py": "f7759a440296b38f92e3af3f29a9e1586559bc9a",
+    "project/str/finite-joint-solid-development.md": "7033789bd234312fa0a4e96f4d66d457074d99cd",
+    "project/str/studies/finite_joint_solid.py": "b8451e22dda30b884166f82bbf86330aa9d13503",
+    "project/str/studies/finite-joint-solid-captures/finite-joint-solid-140.json": "21488c3accbff86803efe96336b50320053181f4",
+    "project/str/fixed-normal-experiment.md": "217fa4af4c55dae4f81fc1aa3c451c40d9112994",
+    "project/str/studies/finite-joint-solid-captures/finite-joint-solid-35.json": "6e03fd84894aba2f93194929cfbc43d344f02894",
+    "project/str/studies/fixed-normal-comparison.mjs": "d4c98ce24ccfb39df5d0d33042fed5530375030d",
+    "project/str/studies/fixed-normal-experiment-captures.tar.xz": "ad8c7c4a1734f2b43d0780bc99d23c238c3b98e5",
+    "project/str/studies/finite_joint_solid_compare.py": "f20669e315efccb4a1894f73eb2afcd86e0ff896",
+    "project/str/studies/fixed-normal-experiment-inputs.json": "0a61093fe68743704cdede59653498150f2d356f",
+    "project/str/studies/finite-joint-solid-requirements.txt": "d22427cf111bfa6822cda0c7b8be3c2199949117",
+    "project/str/studies/finite-joint-solid-inputs.json": "2da8a884ba307740b976ab59aec6d7f382278539",
+    "project/str/studies/fixed-normal-experiment.results.json": "d70a4ee929a02d0f46a2563484b41ec98aab8b5f",
+    "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json": "a427298f215d2ad68be3885e98777c9c7f8474fa"
   }
 }

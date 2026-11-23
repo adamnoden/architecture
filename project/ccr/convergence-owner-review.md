@@ -57,6 +57,14 @@ The [editable narrower-pad and nominal post-head fan](../str/wet-post-head-fan-d
 
 The [four L-corner demand recovery](../str/four-l-joint-recovery-development.md) now joins eight actual physical member ends into four balanced rigid-joint free bodies for one verified request. The complete ordinary native result remains byte-for-byte unchanged. Joint concrete weight is already in the plate, so no extra joint load is added. Changed or unverified requests and numerical runtimes retain explicit unavailable joint diagnostics while the ordinary floor remains computed; finite-joint behaviour, resistance and a complete signed load envelope remain unresolved.
 
+The subsequent [fixed-normal structural experiment](../str/fixed-normal-experiment.md)
+holds the actual support fibres and body gravity fixed and still fails the same
+cut screen:32.72166% twisting change. Normal-support co-refinement is therefore
+not the controlling explanation. The [finite L development](../str/finite-joint-solid-development.md)
+has checked geometry, energy and gravity but has no connected floor interface
+or resistance proof. Its distinct constitutive comparison selects neither slab
+thickness nor a different current house.
+
 ## The interior should earn its place on beauty
 
 The [completed IAS proposal](../ias/crafted-room-kit-result.md), integrated through [PR #1584](https://github.com/adamnoden/architecture/pull/1584), puts a fixed furnished room beside hung timber faces and seated oak floor modules. The furniture and occupied-room openings are matched. This is the strongest available appearance comparison, rather than an isolated panel detail.

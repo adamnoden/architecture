@@ -1,0 +1,2773 @@
+{
+  "schema": "str-fixed-normal-experiment-inputs/1",
+  "units": "mm-kN",
+  "baseNativeRequest": {
+    "schema": "str-coupled-floor-section-case/1",
+    "sourceSHA256": {
+      "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+      "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+      "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+      "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+      "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+      "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+      "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+      "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+      "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+      "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+      "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+      "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+      "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+      "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+      "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+      "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+      "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+      "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+      "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+      "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+      "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+      "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+      "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+      "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+      "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+      "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+      "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+      "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+      "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+      "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+      "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+      "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+      "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+      "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+      "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+      "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+      "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+      "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+      "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+      "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+      "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+      "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+      "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+      "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+      "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+      "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+      "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+      "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+      "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+      "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+      "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+      "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+      "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+      "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+      "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+      "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+      "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+    },
+    "bearingCase": {
+      "schema": "str-upper-masonry-roof-bearing-case/1",
+      "sourceSHA256": {
+        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+        "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+        "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+        "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+        "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+        "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+        "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+        "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+        "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+        "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+        "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+        "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+        "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+        "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+        "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+        "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+        "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+        "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+        "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+        "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+        "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+        "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+        "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+        "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+        "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+        "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+        "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+        "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+        "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+        "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e"
+      },
+      "masonryCase": {
+        "schema": "str-masonry-frame-a-case/1",
+        "sourceSHA256": {
+          "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+          "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+          "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+          "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+          "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+          "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+          "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+          "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+          "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+          "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+          "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+          "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+          "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+          "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+          "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+          "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+          "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+          "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+          "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+          "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+          "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+          "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+          "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+          "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+          "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+          "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+          "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+          "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+          "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+          "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+          "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+          "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+          "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+          "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+          "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+          "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+          "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+          "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+          "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+          "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+          "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+          "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+          "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+          "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+          "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+          "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+          "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e"
+        },
+        "verticalCase": {
+          "schema": "str-vertical-rc-floor-case/1",
+          "sourceSHA256": {
+            "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+            "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+            "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+            "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+            "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+            "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+            "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+            "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+            "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+            "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+            "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+            "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+            "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+            "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+            "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+            "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+            "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+            "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+            "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+            "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+            "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+            "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+            "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+            "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+            "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+            "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+            "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+            "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+            "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+            "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+            "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+            "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+            "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+            "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+            "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+            "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521"
+          },
+          "monolithicCase": {
+            "schema": "str-monolithic-rc-portal-case/1",
+            "sourceSHA256": {
+              "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+              "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+              "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+              "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+              "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+              "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+              "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+              "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+              "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+              "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+              "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+              "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+              "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+              "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+              "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+              "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+              "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+              "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+              "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+              "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+              "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+              "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+              "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+              "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+              "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+              "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+              "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+              "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+              "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+              "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+              "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137"
+            },
+            "houseCase": {
+              "schema": "str-rc-floor-house-load-case/1",
+              "sourceSHA256": {
+                "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+                "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6"
+              },
+              "joinedCase": {
+                "schema": "str-joined-rc-floor-case/1",
+                "sourceSHA256": {
+                  "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                  "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                  "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                  "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                  "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                  "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                  "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                  "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                  "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                  "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                  "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                  "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                  "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                  "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                  "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                  "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                  "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                  "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                  "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                  "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                  "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                  "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                  "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                  "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                  "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                  "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                  "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+                  "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+                  "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4"
+                },
+                "portal": {
+                  "schema": "str-continuous-rc-portal-case/1",
+                  "sourceSHA256": {
+                    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+                    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+                    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+                    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7"
+                  },
+                  "scheme": "fullheight-piers-integral-curved-ring-no-tie-no-bore",
+                  "gridLaw": {
+                    "mode": "authored-linear-comparison",
+                    "elasticModulusMPa": 33000,
+                    "poissonRatio": 0.2,
+                    "flexuralFactor": 0.25,
+                    "torsionFactor": 0.25,
+                    "shearAreaFactor": 0.5
+                  },
+                  "frameLaw": {
+                    "mode": "authored-linear-comparison",
+                    "elasticModulusMPa": 33000,
+                    "poissonRatio": 0.2,
+                    "flexuralFactor": 0.25,
+                    "torsionFactor": 0.25,
+                    "shearAreaFactor": 0.5
+                  },
+                  "dpcLaw": {
+                    "mode": "authored-bilateral-elastic-comparison",
+                    "normalStiffnessKNPerMm3": 0.5,
+                    "shearStiffnessKNPerMm3": 0.05
+                  },
+                  "dpcIntervalZMm": [
+                    -50,
+                    -30
+                  ],
+                  "coverMm": 40,
+                  "archSegments": 24,
+                  "infillHeadGapMm": 30,
+                  "jointZone": "authored-monolithic-rigid-end-offset-comparison",
+                  "headBoundary": "source52-ideal-pinned-translations-free-rotations",
+                  "use": "unqualified-continuous-rc-challenger"
+                },
+                "floor": {
+                  "schema": "str-distributed-floor-case/1",
+                  "sourceSHA256": {
+                    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+                    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+                    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+                    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+                    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+                    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+                    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+                    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+                    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+                    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+                    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+                    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+                    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3"
+                  },
+                  "cornerWidthsMm": {
+                    "NW": 200,
+                    "NE": 200,
+                    "SW": 140,
+                    "SE": 140
+                  },
+                  "memberLaw": {
+                    "mode": "authored-linear-comparison",
+                    "elasticModulusMPa": 33000,
+                    "poissonRatio": 0.2,
+                    "flexuralFactor": 0.25,
+                    "torsionFactor": 0.25,
+                    "shearAreaFactor": 0.5
+                  },
+                  "jointLaw": {
+                    "mode": "authored-spring-comparison",
+                    "compressionStiffnessKNPerMm3": 0.5,
+                    "tieStiffnessKNPerMm": 50,
+                    "shearKeyStiffnessKNPerMm": 100,
+                    "compressionGapMm": 0,
+                    "tieGapMm": 0
+                  },
+                  "membraneLaw": {
+                    "mode": "authored-linear-comparison",
+                    "elasticModulusMPa": 1200,
+                    "poissonRatio": 0.15,
+                    "shearModulusMPa": 440
+                  },
+                  "edgeBand": {
+                    "mode": "authored-conventional-slab-level-band",
+                    "widthMm": 140,
+                    "depthMm": 200,
+                    "elasticModulusMPa": 33000,
+                    "flexuralFactor": 0.25,
+                    "axialRigidityKN": 180955.73684677208
+                  },
+                  "maxPitchMm": 500,
+                  "componentCase": {
+                    "schema": "str-retained-components-case/1",
+                    "sourceSHA256": {
+                      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+                      "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+                      "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+                      "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+                      "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+                      "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+                      "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+                      "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+                      "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+                      "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+                      "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8"
+                    },
+                    "edits": {
+                      "floorApertures": [],
+                      "wallOpenings": []
+                    },
+                    "retentionPaths": []
+                  },
+                  "boundaryCase": {
+                    "kind": "native-floor-wind-band-only",
+                    "windIndex": 31
+                  },
+                  "receivingLaws": {
+                    "successorRoof": null,
+                    "verticalFloor": null,
+                    "dryGround": null,
+                    "intermediateSupports": {
+                      "FLOOR/RECEIVER/court-east/3917.5": null,
+                      "FLOOR/RECEIVER/court-east/6000.0": null,
+                      "FLOOR/RECEIVER/court-east/8082.5": null,
+                      "FLOOR/RECEIVER/court-north/3917.5": null,
+                      "FLOOR/RECEIVER/court-north/4377.5": null,
+                      "FLOOR/RECEIVER/court-north/7622.5": null,
+                      "FLOOR/RECEIVER/court-north/8082.5": null,
+                      "FLOOR/RECEIVER/court-south/3917.5": null,
+                      "FLOOR/RECEIVER/court-south/4785": null,
+                      "FLOOR/RECEIVER/court-south/7215": null,
+                      "FLOOR/RECEIVER/court-south/8082.5": null,
+                      "FLOOR/RECEIVER/court-west/3917.5": null,
+                      "FLOOR/RECEIVER/court-west/6000.0": null,
+                      "FLOOR/RECEIVER/court-west/8082.5": null,
+                      "FLOOR/RECEIVER/outer-east/3100.0": null,
+                      "FLOOR/RECEIVER/outer-east/5786.5": null,
+                      "FLOOR/RECEIVER/outer-east/8613.5": null,
+                      "FLOOR/RECEIVER/outer-north/2825.0": null,
+                      "FLOOR/RECEIVER/outer-north/4377.5": null,
+                      "FLOOR/RECEIVER/outer-north/7622.5": null,
+                      "FLOOR/RECEIVER/outer-north/9175.0": null,
+                      "FLOOR/RECEIVER/outer-south/2850.0": null,
+                      "FLOOR/RECEIVER/outer-south/4750.0": null,
+                      "FLOOR/RECEIVER/outer-south/7250.0": null,
+                      "FLOOR/RECEIVER/outer-south/9150.0": null,
+                      "FLOOR/RECEIVER/outer-west/3200.0": null,
+                      "FLOOR/RECEIVER/outer-west/6000.0": null,
+                      "FLOOR/RECEIVER/outer-west/8800.0": null
+                    }
+                  },
+                  "use": "bounded-diaphragm-comparison"
+                },
+                "geometry": {
+                  "outerUpstandDepthMm": 750,
+                  "courtUpstandDepthMm": 650
+                },
+                "portalDPCNormalMode": "compression",
+                "portalDPCNormalIntegration": "exact-active-patch",
+                "portalDPCQuadratureOrder": 8,
+                "portalDPCNormalSubdivisions": 4,
+                "portalDPCInsetMm": 0,
+                "floorBoundary": "passive-floor-receiving-local-portal-challenges",
+                "northUnion": "full-3D-upstand-owns-central-north-band-material",
+                "use": "unqualified-eight-path-joined-comparison"
+              },
+              "coreAxialWidthMm": 290,
+              "northUpstandWidthMm": 290,
+              "finishedAxialWidthMm": 775,
+              "mineralFaceLiningMm": 40,
+              "boundary": {
+                "kind": "native-floor-and-actual-open-north-portal-replacement",
+                "physicalGFactor": 1.35,
+                "includeExternalGMAXQ": false
+              },
+              "courtyardPressure": null,
+              "reinforcement": "separate-worked-cage-proof-required",
+              "use": "unqualified-source-loaded-RC-house-subsystem"
+            },
+            "jointMode": "finite-RC-20mm-former-DPC-continuity-diagnostic",
+            "waterControl": "coordinate-defined-metal-puddle-and-sealed-rod-concept-unqualified",
+            "barGeometry": {
+              "diameterMm": 12,
+              "nominalCoverMm": 45,
+              "minimumCoverMm": 40,
+              "roundedLinkBarFaceMm": 69
+            },
+            "use": "unqualified-continuous-RC-structural-replacement"
+          },
+          "plateLaw": {
+            "elasticModulusMPa": 33000,
+            "poissonRatio": 0.2,
+            "thicknessMm": 200,
+            "flexuralFactor": 0.25,
+            "shearFactor": 0.5,
+            "unitWeightKNPerM3": 27
+          },
+          "bearingLaw": {
+            "masonryModulusMPa": 1000,
+            "jointNormalComplianceMmPerMPa": 0.01
+          },
+          "maxPitchMm": 500,
+          "bearingQuadratureOrder": 4,
+          "freshUniformLiveKPa": 2,
+          "geometryPolicy": "actual-source-voids-and-service-envelopes-plus-slab-band-union-with-withheld-wet-domain",
+          "supportPolicy": "finite-clear-core-vertical-compression-only",
+          "use": "unqualified-vertical-floor-gravity-comparison"
+        },
+        "masonrySeatProjectionMm": 180,
+        "masonryUnitWeightKNM3": 20,
+        "abutmentSlices": 12,
+        "foundationWeight": {
+          "unitWeightKNPerM3": 25,
+          "gravityFactor": 1
+        },
+        "courtCornerClosure": {
+          "mode": "source-sw-formed-quarter-node-comparison"
+        },
+        "floorReinforcement": {
+          "schema": "str-floor-reinforcement-settings/1",
+          "barDiameterMm": 16,
+          "pitchMm": 80,
+          "mainBarNominalCoverMm": 50,
+          "minimumCoverMm": 40,
+          "cageSettingToleranceMm": 5,
+          "independentBarToleranceMm": 5,
+          "minimumIndependentClearMm": 21,
+          "steelYieldMPa": 434.7826086956522,
+          "strengthSteelFraction": 0.92,
+          "bondMPa": 2.0999999999999996,
+          "concreteCompressionMPa": 17,
+          "mandrelMm": 160,
+          "leverArmFactor": 0.9,
+          "comparisonDeeperSectionMm": 320,
+          "lapMultiplier": 1.5,
+          "use": "unqualified-conventional-section-and-anchorage-comparison"
+        },
+        "lowerCoreBodies": {
+          "masonryUnitWeightKNPerM3": 20
+        },
+        "lowerLWeight": {
+          "unitWeightKNPerM3": 25
+        },
+        "straightFrameCage": {
+          "schema": "str-straight-frame-six-bar-settings/1",
+          "postBarMm": 16,
+          "beamBarMm": 10,
+          "lowerWingBarMm": 16,
+          "postTopEndInsetMm": 59,
+          "lowerWingEndZMm": 2250,
+          "wingNormalOffsetMm": 70,
+          "wingInnerFaceInsetMm": 85,
+          "capPostEndLevelsZMm": [
+            -680,
+            -600
+          ],
+          "capWingEndZMm": -680,
+          "beamReturnLegWestXMm": {
+            "top": 4380,
+            "bottom": 4440
+          },
+          "capMatEWFrameOffsetsMm": [
+            -170,
+            0,
+            170
+          ],
+          "headProduct": "Leviat Ancon TTH16",
+          "headDiameterMm": 50,
+          "headLengthMm": 33,
+          "headTorqueNm": 110
+        },
+        "use": "unqualified-separate-masonry-and-straight-RC-frame",
+        "roofCoupling": null
+      },
+      "seats": [
+        {
+          "id": "ROOF/FLOOR/332.5,3800",
+          "xyMm": [
+            332.5,
+            3800
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/332.5,6000",
+          "xyMm": [
+            332.5,
+            6000
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/332.5,8200",
+          "xyMm": [
+            332.5,
+            8200
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/3917.5,3917.5",
+          "xyMm": [
+            4050,
+            3917.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/3917.5,6000",
+          "xyMm": [
+            3917.5,
+            6000
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/3917.5,8082.5",
+          "xyMm": [
+            4050,
+            8082.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/4700,332.5",
+          "xyMm": [
+            4700,
+            332.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/4700,11667.5",
+          "xyMm": [
+            4500,
+            11667.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/5925,8082.5",
+          "xyMm": [
+            5925,
+            8082.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/6000,3917.5",
+          "xyMm": [
+            6000,
+            3917.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/7300,332.5",
+          "xyMm": [
+            7300,
+            332.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/7300,11667.5",
+          "xyMm": [
+            7300,
+            11667.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/8082.5,3917.5",
+          "xyMm": [
+            7950,
+            3917.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/8082.5,6000",
+          "xyMm": [
+            8082.5,
+            6000
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/8082.5,8082.5",
+          "xyMm": [
+            7950,
+            8082.5
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/11667.5,3800",
+          "xyMm": [
+            11667.5,
+            3800
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/11667.5,6000",
+          "xyMm": [
+            11667.5,
+            6100
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        },
+        {
+          "id": "ROOF/FLOOR/11667.5,8200",
+          "xyMm": [
+            11667.5,
+            8200
+          ],
+          "padWidthMm": 100,
+          "settingToleranceMm": 10
+        }
+      ],
+      "roofControls": {
+        "schema": "str-roof-floor-coupling-settings/1",
+        "upperFrameLaw": {
+          "mode": "authored-linear-comparison",
+          "elasticModulusMPa": 33000,
+          "poissonRatio": 0.2,
+          "flexuralFactor": 0.25,
+          "torsionFactor": 0.25,
+          "shearAreaFactor": 0.5
+        },
+        "upperUnitWeightKNPerM3": 25,
+        "ringPlanEIRatio": 1,
+        "ridgeJointKRatio": 1,
+        "roofWindFactor": 1,
+        "roofSteelGravity": {
+          "unitWeightKNPerM3": 78.5
+        },
+        "roofSurfacePressure": null,
+        "use": "unqualified-source0-roof-P2-and-crown-coupling"
+      },
+      "masonryUnitWeightKNPerM3": 20,
+      "masonryModulusMPa": 3000,
+      "jointNormalComplianceMmPerMPa": 0.1,
+      "padThicknessMm": 10,
+      "padUnitWeightKNPerM3": 78.5,
+      "use": "unselected-upper-clear-masonry-and-axial-roof-seat-comparison"
+    },
+    "thicknessMm": 200,
+    "wetSupport": {
+      "beamWidthMm": 250,
+      "beamDepthMm": 350,
+      "beamAxisXMm": 2902.5,
+      "beamSouthEndYMm": 8782.5,
+      "beamNorthEndYMm": 11737.5,
+      "beamTopZMm": 3370,
+      "receiverRectanglesXYMm": [
+        [
+          2772.5,
+          8627.5,
+          3032.5,
+          9077.5
+        ],
+        [
+          2772.5,
+          11287.5,
+          3032.5,
+          11737.5
+        ]
+      ],
+      "padCentreOffsetsYMm": [
+        160,
+        0
+      ],
+      "padWidthMm": 220,
+      "padLengthMm": 100,
+      "padThicknessMm": 10,
+      "combinedRelativePlacementToleranceMm": 10,
+      "bearingQuadratureOrder": 8,
+      "jointNormalComplianceMmPerMPa": 0.1,
+      "padUnitWeightKNPerM3": 78.5,
+      "concreteUnitWeightKNPerM3": 25,
+      "maxBeamPitchMm": 500,
+      "scope": "unselected-finite-gravity-support-no-friction-or-moment-frame-credit"
+    },
+    "use": "unselected-source0-section-replacement-with-fixed-origin-load-controls"
+  },
+  "commonWetBeamStationsYMm": [
+    8782.5,
+    8852.5,
+    9012.5,
+    9052.5,
+    9252.5,
+    9397.5,
+    9507.5,
+    9652.5,
+    9869.5,
+    10014.166666666666,
+    10086.5,
+    10303.5,
+    10375.833333333334,
+    10520.5,
+    10737.5,
+    10917.5,
+    11097.5,
+    11257.5,
+    11390.0,
+    11512.5,
+    11522.5,
+    11537.5,
+    11597.5,
+    11667.5,
+    11737.5
+  ],
+  "ordinary500Control": {
+    "caseId": "wet-floor-mesh-500",
+    "fullResultSHA256": "b76688848ab38e54c85423161d90402e7d065069d582cc23e9246c08be466dbe",
+    "heads": [
+      {
+        "id": "P01",
+        "reactionKN_KNm": [
+          -105.54311417033193,
+          -78.17208666574999,
+          284.4293610133593,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P02",
+        "reactionKN_KNm": [
+          95.94252503317686,
+          2.6293747957900413,
+          -25.504881850208744,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P03",
+        "reactionKN_KNm": [
+          0.13043039073329288,
+          74.67403111932713,
+          -15.399840613849356,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P04",
+        "reactionKN_KNm": [
+          -470.8403867685505,
+          -305.98953758849456,
+          84.06959827336013,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P05",
+        "reactionKN_KNm": [
+          277.26475983759383,
+          2.4314299392574803,
+          135.46456718453686,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P06",
+        "reactionKN_KNm": [
+          -0.5965143288530257,
+          213.71238312250884,
+          -75.62653318283763,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P07",
+        "reactionKN_KNm": [
+          -244.4779495411724,
+          -433.7408361730252,
+          93.39356995994667,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P08",
+        "reactionKN_KNm": [
+          183.11428927192495,
+          6.283863195248305,
+          -64.54262819228438,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P09",
+        "reactionKN_KNm": [
+          5.689570600757108,
+          259.26871988717835,
+          161.3282819104987,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P10",
+        "reactionKN_KNm": [
+          -155.0614166328476,
+          -203.91783258632506,
+          -66.99388300729376,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P11",
+        "reactionKN_KNm": [
+          132.6097287250429,
+          2.3420227239941926,
+          64.3452562975363,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P12",
+        "reactionKN_KNm": [
+          -2.3181304758301904,
+          73.20657323921915,
+          153.5279102212074,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P13",
+        "reactionKN_KNm": [
+          40.95304735543362,
+          36.260476456006685,
+          104.33090952761503,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P14",
+        "reactionKN_KNm": [
+          17.4652628349395,
+          64.13935900234311,
+          37.797773874109865,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P15",
+        "reactionKN_KNm": [
+          -0.6154106930320485,
+          29.708950982378937,
+          74.49812588106835,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P16",
+        "reactionKN_KNm": [
+          53.19623565322659,
+          107.21505691660327,
+          152.47396322249466,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P17",
+        "reactionKN_KNm": [
+          -34.483538661588184,
+          84.10554089141274,
+          95.0673734107781,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P18",
+        "reactionKN_KNm": [
+          -62.55234508292493,
+          4.396725447821723,
+          124.31508344349096,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P19",
+        "reactionKN_KNm": [
+          -45.22148462951045,
+          188.51656676513787,
+          151.39797326358655,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P20",
+        "reactionKN_KNm": [
+          31.488022684167063,
+          -0.8558221882108963,
+          33.26465375027807,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P21",
+        "reactionKN_KNm": [
+          53.87900590114552,
+          4.120240955780255,
+          48.455507475299854,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P22",
+        "reactionKN_KNm": [
+          60.37405708560602,
+          56.533339128080996,
+          108.07115615234753,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P23",
+        "reactionKN_KNm": [
+          120.82909996295925,
+          44.63789889289919,
+          141.3873445002559,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P24",
+        "reactionKN_KNm": [
+          104.13820032880702,
+          -30.100442265803046,
+          43.708485694815096,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P25",
+        "reactionKN_KNm": [
+          0.6760240383045453,
+          -53.008077355625666,
+          92.55538892149596,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P26",
+        "reactionKN_KNm": [
+          -37.74511868950977,
+          -53.42791303356378,
+          159.12411237604044,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P27",
+        "reactionKN_KNm": [
+          82.17493052789291,
+          -2.142337250772174,
+          56.83176473515894,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P28",
+        "reactionKN_KNm": [
+          -5.669735707586771,
+          0.684107160609166,
+          121.03096409214052,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P29",
+        "reactionKN_KNm": [
+          -9.751627722410513,
+          56.3959140431898,
+          85.13204076797076,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P30",
+        "reactionKN_KNm": [
+          -50.62779427624925,
+          9.201232992813424,
+          257.4411551976179,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P31",
+        "reactionKN_KNm": [
+          11.808320261233625,
+          52.491475512026106,
+          103.18344346531038,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P32",
+        "reactionKN_KNm": [
+          -1.5964844069779804,
+          -6.121210700224623,
+          54.19228709269748,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P33",
+        "reactionKN_KNm": [
+          -0.040127051836558625,
+          14.558410735542374,
+          33.46624394192008,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P34",
+        "reactionKN_KNm": [
+          24.469755003676976,
+          -5.553096801493371,
+          56.69369770055513,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P35",
+        "reactionKN_KNm": [
+          2.1730762821738603,
+          23.38117846383479,
+          70.04963590228932,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P36",
+        "reactionKN_KNm": [
+          0.5689000679091432,
+          3.4152702141253464,
+          36.877136523137665,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P37",
+        "reactionKN_KNm": [
+          13.724325971872704,
+          -18.643612115327095,
+          -16.956032550837364,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P38",
+        "reactionKN_KNm": [
+          -14.917520456740275,
+          -1.0299856235650282,
+          52.42119546187098,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P39",
+        "reactionKN_KNm": [
+          4.994119621807975,
+          0.6506821327724168,
+          10.974233977707051,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P40",
+        "reactionKN_KNm": [
+          5.7849462020528035,
+          0.10437977239354757,
+          37.86024893798008,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P41",
+        "reactionKN_KNm": [
+          18.40979410509292,
+          -63.00293442755464,
+          141.63296219721653,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P42",
+        "reactionKN_KNm": [
+          11.825524558378902,
+          14.035983471992822,
+          115.43601185006436,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P43",
+        "reactionKN_KNm": [
+          59.927402950348934,
+          -73.50800322858578,
+          138.02321780669138,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P44",
+        "reactionKN_KNm": [
+          80.53041876742469,
+          100.78646513843329,
+          175.5703660695354,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P45",
+        "reactionKN_KNm": [
+          -30.342321489827007,
+          17.956959664592567,
+          103.42406381350676,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P46",
+        "reactionKN_KNm": [
+          -0.014109408161279091,
+          -24.752307247932436,
+          71.67973756509073,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P47",
+        "reactionKN_KNm": [
+          -41.17626341175807,
+          46.32692167265785,
+          141.0607406738086,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P48",
+        "reactionKN_KNm": [
+          -13.184872297025816,
+          2.8484350216782888,
+          66.2675017640804,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P49",
+        "reactionKN_KNm": [
+          -2.3597472470036625,
+          -7.313221217450911,
+          42.63006204340994,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P50",
+        "reactionKN_KNm": [
+          20.743843258335698,
+          15.057530743614938,
+          48.89332895162559,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P51",
+        "reactionKN_KNm": [
+          -23.411988388490588,
+          -4.9368763930713015,
+          112.75992649434201,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "P52",
+        "reactionKN_KNm": [
+          24.40892668309751,
+          -59.75149389718252,
+          92.73864453882423,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "sectionCuts": {
+      "schema": "str-physical-floor-section-cuts/1",
+      "rawPointEnvelopeKNmPerM": 107.24168245974593,
+      "localStressConvergenceProven": false,
+      "stripResistanceAccepted": false,
+      "cuts": [
+        {
+          "id": "STR/SW/normal-y-450",
+          "normal": "y",
+          "positionMm": 450,
+          "intervalMm": [
+            262.5,
+            3262.5
+          ],
+          "grossWidthMm": 3000,
+          "materialWidthMm": 3000,
+          "gapsMm": [],
+          "signedNormalMomentKNm": 20.568230057106977,
+          "signedTwistingMomentKNm": 9.166830177649995,
+          "absoluteBendingPlusTwistingKNm": 32.70576080688645,
+          "intervals": [
+            {
+              "cellIndex": 3,
+              "intervalMm": [
+                262.5,
+                332.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0,
+                0
+              ],
+              "twistingMomentEndsKNmPerM": [
+                5.431106525257343e-15,
+                8.793220088511895e-15
+              ],
+              "signedNormalMomentKNm": 0,
+              "signedTwistingMomentKNm": 4.978514314819234e-16,
+              "absoluteBendingPlusTwistingKNm": 4.978514314819234e-16
+            },
+            {
+              "cellIndex": 61,
+              "intervalMm": [
+                332.5,
+                402.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0,
+                0
+              ],
+              "twistingMomentEndsKNmPerM": [
+                5.431106525257343e-15,
+                8.793220088511895e-15
+              ],
+              "signedNormalMomentKNm": 0,
+              "signedTwistingMomentKNm": 4.978514314819234e-16,
+              "absoluteBendingPlusTwistingKNm": 4.978514314819234e-16
+            },
+            {
+              "cellIndex": 119,
+              "intervalMm": [
+                402.5,
+                417.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                -0.2521490525293029,
+                -0.6320582215542287
+              ],
+              "twistingMomentEndsKNmPerM": [
+                0.3301143051615863,
+                0.3021229362247452
+              ],
+              "signedNormalMomentKNm": -0.006631554555626487,
+              "signedTwistingMomentKNm": 0.004741779310397486,
+              "absoluteBendingPlusTwistingKNm": 0.011373333866023974
+            },
+            {
+              "cellIndex": 177,
+              "intervalMm": [
+                417.5,
+                462.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                -0.4810195770843493,
+                -1.3154472942325823
+              ],
+              "twistingMomentEndsKNmPerM": [
+                0.1960442685587483,
+                0.26209231880000505
+              ],
+              "signedNormalMomentKNm": -0.04042050460463096,
+              "signedTwistingMomentKNm": 0.01030807321557195,
+              "absoluteBendingPlusTwistingKNm": 0.05072857782020291
+            },
+            {
+              "cellIndex": 215,
+              "intervalMm": [
+                462.5,
+                487.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                -1.1624034543509771,
+                -1.4035069438705465
+              ],
+              "twistingMomentEndsKNmPerM": [
+                0.21014204994282426,
+                0.33326904722178485
+              ],
+              "signedNormalMomentKNm": -0.03207387997776905,
+              "signedTwistingMomentKNm": 0.006792638714557615,
+              "absoluteBendingPlusTwistingKNm": 0.03886651869232667
+            },
+            {
+              "cellIndex": 253,
+              "intervalMm": [
+                487.5,
+                647.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                -1.1400942617400578,
+                1.2027363598029925
+              ],
+              "twistingMomentEndsKNmPerM": [
+                0.0763417183274811,
+                1.2853326151713877
+              ],
+              "signedNormalMomentKNm": 0.00501136784503478,
+              "signedTwistingMomentKNm": 0.10893394667990951,
+              "absoluteBendingPlusTwistingKNm": 0.202714167976007
+            },
+            {
+              "cellIndex": 290,
+              "intervalMm": [
+                647.5,
+                955
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.8931904216288813,
+                12.548653513799316
+              ],
+              "twistingMomentEndsKNmPerM": [
+                1.8695198232073673,
+                5.12935038276184
+              ],
+              "signedNormalMomentKNm": 2.0666835050720853,
+              "signedTwistingMomentKNm": 1.0760762941677655,
+              "absoluteBendingPlusTwistingKNm": 3.142759799239851
+            },
+            {
+              "cellIndex": 328,
+              "intervalMm": [
+                955,
+                1262.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                13.719814639436263,
+                26.845178616447566
+              ],
+              "twistingMomentEndsKNmPerM": [
+                6.672709927425302,
+                10.035239491059428
+              ],
+              "signedNormalMomentKNm": 6.236867713092138,
+              "signedTwistingMomentKNm": 2.5688472230920274,
+              "absoluteBendingPlusTwistingKNm": 8.805714936184167
+            },
+            {
+              "cellIndex": 366,
+              "intervalMm": [
+                1262.5,
+                1537.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                32.11529485397846,
+                14.812151701852216
+              ],
+              "twistingMomentEndsKNmPerM": [
+                18.645951946163795,
+                13.873790498053385
+              ],
+              "signedNormalMomentKNm": 6.452523901426718,
+              "signedTwistingMomentKNm": 4.471464586079863,
+              "absoluteBendingPlusTwistingKNm": 10.92398848750658
+            },
+            {
+              "cellIndex": 404,
+              "intervalMm": [
+                1537.5,
+                1812.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                11.590899012972843,
+                7.60242440591567
+              ],
+              "twistingMomentEndsKNmPerM": [
+                6.678445362791454,
+                5.0982425492144685
+              ],
+              "signedNormalMomentKNm": 2.6390819700971706,
+              "signedTwistingMomentKNm": 1.6192945879008145,
+              "absoluteBendingPlusTwistingKNm": 4.258376557997985
+            },
+            {
+              "cellIndex": 442,
+              "intervalMm": [
+                1812.5,
+                2067.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                6.306017214450652,
+                4.56453804632154
+              ],
+              "twistingMomentEndsKNmPerM": [
+                3.052050923670171,
+                1.7226101621368213
+              ],
+              "signedNormalMomentKNm": 1.3859957957484546,
+              "signedTwistingMomentKNm": 0.6087692884403915,
+              "absoluteBendingPlusTwistingKNm": 1.994765084188846
+            },
+            {
+              "cellIndex": 477,
+              "intervalMm": [
+                2067.5,
+                2177.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                3.6959577213073347,
+                3.387893500650105
+              ],
+              "twistingMomentEndsKNmPerM": [
+                0.6571624425675827,
+                0.3067790599021046
+              ],
+              "signedNormalMomentKNm": 0.3896118172076592,
+              "signedTwistingMomentKNm": 0.0530167826358328,
+              "absoluteBendingPlusTwistingKNm": 0.442628599843492
+            },
+            {
+              "cellIndex": 512,
+              "intervalMm": [
+                2177.5,
+                2212.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                3.0894123679310233,
+                3.0142579691393623
+              ],
+              "twistingMomentEndsKNmPerM": [
+                0.04659350355159224,
+                -0.04282028408967295
+              ],
+              "signedNormalMomentKNm": 0.10681423089873175,
+              "signedTwistingMomentKNm": 6.603134058358756e-05,
+              "absoluteBendingPlusTwistingKNm": 0.10759799478623178
+            },
+            {
+              "cellIndex": 547,
+              "intervalMm": [
+                2212.5,
+                2495
+              ],
+              "normalMomentEndsKNmPerM": [
+                2.554490621189241,
+                2.1147423844765205
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -0.4108165820473262,
+                -0.9135506341488907
+              ],
+              "signedNormalMomentKNm": 0.6595291620502888,
+              "signedTwistingMomentKNm": -0.18706686928771563,
+              "absoluteBendingPlusTwistingKNm": 0.8465960313380044
+            },
+            {
+              "cellIndex": 585,
+              "intervalMm": [
+                2495,
+                2777.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                1.4759550634731229,
+                1.2026623650339459
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.2953199035449252,
+                -1.487524718445691
+              ],
+              "signedNormalMomentKNm": 0.37835471177662344,
+              "signedTwistingMomentKNm": -0.3930768028561745,
+              "absoluteBendingPlusTwistingKNm": 0.7714315146327979
+            },
+            {
+              "cellIndex": 623,
+              "intervalMm": [
+                2777.5,
+                2817.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.9553271617515896,
+                0.9246817495023679
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.597069615349591,
+                -1.6089893460895013
+              ],
+              "signedNormalMomentKNm": 0.037600178225079155,
+              "signedTwistingMomentKNm": -0.06412117922878185,
+              "absoluteBendingPlusTwistingKNm": 0.10172135745386102
+            },
+            {
+              "cellIndex": 646,
+              "intervalMm": [
+                2817.5,
+                2902.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.8659094278844273,
+                0.8071421195869745
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.6331420215826118,
+                -1.6488274512217544
+              ],
+              "signedNormalMomentKNm": 0.07110469076753458,
+              "signedTwistingMomentKNm": -0.13948370259418558,
+              "absoluteBendingPlusTwistingKNm": 0.21058839336172014
+            },
+            {
+              "cellIndex": 689,
+              "intervalMm": [
+                2902.5,
+                2917.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.761894737023015,
+                0.7523261525324776
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.6587137761025204,
+                -1.6599693527481962
+              ],
+              "signedNormalMomentKNm": 0.011356656671666195,
+              "signedTwistingMomentKNm": -0.024890123466380375,
+              "absoluteBendingPlusTwistingKNm": 0.036246780138046567
+            },
+            {
+              "cellIndex": 732,
+              "intervalMm": [
+                2917.5,
+                3027.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.7058427584340354,
+                0.6436984394505724
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.6667393836734086,
+                -1.658544871350169
+              ],
+              "signedNormalMomentKNm": 0.07422476588365343,
+              "signedTwistingMomentKNm": -0.18289063402629674,
+              "absoluteBendingPlusTwistingKNm": 0.25711539990995014
+            },
+            {
+              "cellIndex": 775,
+              "intervalMm": [
+                3027.5,
+                3262.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.6351464735750654,
+                0.49332611776255203
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.6013761024858175,
+                -1.5471493653285338
+              ],
+              "signedNormalMomentKNm": 0.13259552948217004,
+              "signedTwistingMomentKNm": -0.36995174246818624,
+              "absoluteBendingPlusTwistingKNm": 0.5025472719503563
+            }
+          ]
+        },
+        {
+          "id": "STR/SW/normal-y-650",
+          "normal": "y",
+          "positionMm": 650,
+          "intervalMm": [
+            262.5,
+            3262.5
+          ],
+          "grossWidthMm": 3000,
+          "materialWidthMm": 3000,
+          "gapsMm": [],
+          "signedNormalMomentKNm": 20.489185472161164,
+          "signedTwistingMomentKNm": 9.26570336591284,
+          "absoluteBendingPlusTwistingKNm": 32.97759731979112,
+          "intervals": [
+            {
+              "cellIndex": 3,
+              "intervalMm": [
+                262.5,
+                332.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0,
+                0
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.526558713214959e-15,
+                8.35554850039592e-16
+              ],
+              "signedNormalMomentKNm": 0,
+              "signedTwistingMomentKNm": -5.918513521113784e-17,
+              "absoluteBendingPlusTwistingKNm": 7.372082313490351e-17
+            },
+            {
+              "cellIndex": 61,
+              "intervalMm": [
+                332.5,
+                402.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0,
+                0
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.526558713214959e-15,
+                8.35554850039592e-16
+              ],
+              "signedNormalMomentKNm": 0,
+              "signedTwistingMomentKNm": -5.918513521113784e-17,
+              "absoluteBendingPlusTwistingKNm": 7.372082313490351e-17
+            },
+            {
+              "cellIndex": 119,
+              "intervalMm": [
+                402.5,
+                417.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                -0.4387581787746687,
+                -0.8186673477995943
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.6960679296380667,
+                -1.724059298574854
+              ],
+              "signedNormalMomentKNm": -0.009430691449306972,
+              "signedTwistingMomentKNm": -0.025650954211596903,
+              "absoluteBendingPlusTwistingKNm": 0.035081645660903875
+            },
+            {
+              "cellIndex": 177,
+              "intervalMm": [
+                417.5,
+                462.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                -0.33424613210376486,
+                -1.1686738492519977
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.2873827841492123,
+                -1.2213347339079665
+              ],
+              "signedNormalMomentKNm": -0.033815699580504656,
+              "signedTwistingMomentKNm": -0.05644614415628652,
+              "absoluteBendingPlusTwistingKNm": 0.09026184373679118
+            },
+            {
+              "cellIndex": 215,
+              "intervalMm": [
+                462.5,
+                487.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                -0.6698954652352966,
+                -0.910998954754866
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -0.5613891165197678,
+                -0.43826211924084024
+              ],
+              "signedNormalMomentKNm": -0.019761180249877035,
+              "signedTwistingMomentKNm": -0.0124956404470076,
+              "absoluteBendingPlusTwistingKNm": 0.03225682069688464
+            },
+            {
+              "cellIndex": 253,
+              "intervalMm": [
+                487.5,
+                647.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                -0.3844749512126183,
+                1.9583556703304317
+              ],
+              "twistingMomentEndsKNmPerM": [
+                1.247757029099004,
+                2.456747925942905
+              ],
+              "signedNormalMomentKNm": 0.12591045752942506,
+              "signedTwistingMomentKNm": 0.2963603964033527,
+              "absoluteBendingPlusTwistingKNm": 0.4323660600821723
+            },
+            {
+              "cellIndex": 290,
+              "intervalMm": [
+                647.5,
+                955
+              ],
+              "normalMomentEndsKNmPerM": [
+                1.9532979206709888,
+                13.608761012841423
+              ],
+              "twistingMomentEndsKNmPerM": [
+                4.9018354244224405,
+                8.161665983976919
+              ],
+              "signedNormalMomentKNm": 2.3926665610275335,
+              "signedTwistingMomentKNm": 2.0085133415414016,
+              "absoluteBendingPlusTwistingKNm": 4.401179902568935
+            },
+            {
+              "cellIndex": 328,
+              "intervalMm": [
+                955,
+                1262.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                14.813320188585575,
+                27.93868416559688
+              ],
+              "twistingMomentEndsKNmPerM": [
+                10.087438766972959,
+                13.449968330607089
+              ],
+              "signedNormalMomentKNm": 6.573120669455552,
+              "signedTwistingMomentKNm": 3.6188763412529323,
+              "absoluteBendingPlusTwistingKNm": 10.191997010708484
+            },
+            {
+              "cellIndex": 366,
+              "intervalMm": [
+                1262.5,
+                1537.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                30.37996341830195,
+                13.076820266175703
+              ],
+              "twistingMomentEndsKNmPerM": [
+                13.612310301908897,
+                8.840148853798478
+              ],
+              "signedNormalMomentKNm": 5.9753077566156785,
+              "signedTwistingMomentKNm": 3.087213133909764,
+              "absoluteBendingPlusTwistingKNm": 9.062520890525443
+            },
+            {
+              "cellIndex": 404,
+              "intervalMm": [
+                1537.5,
+                1812.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                11.016279808035758,
+                7.027805200978586
+              ],
+              "twistingMomentEndsKNmPerM": [
+                5.51816184073846,
+                3.937959027161475
+              ],
+              "signedNormalMomentKNm": 2.4810616887394725,
+              "signedTwistingMomentKNm": 1.3002166193362412,
+              "absoluteBendingPlusTwistingKNm": 3.7812783080757137
+            },
+            {
+              "cellIndex": 442,
+              "intervalMm": [
+                1812.5,
+                2067.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                5.784667896202276,
+                4.043188728073166
+              ],
+              "twistingMomentEndsKNmPerM": [
+                2.5057045179826067,
+                1.1762637564492566
+              ],
+              "signedNormalMomentKNm": 1.2530517195951187,
+              "signedTwistingMomentKNm": 0.46945095499006256,
+              "absoluteBendingPlusTwistingKNm": 1.7225026745851812
+            },
+            {
+              "cellIndex": 477,
+              "intervalMm": [
+                2067.5,
+                2177.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                3.377427373429625,
+                3.0693631527723957
+              ],
+              "twistingMomentEndsKNmPerM": [
+                0.43311573663505215,
+                0.08273235396957358
+              ],
+              "signedNormalMomentKNm": 0.35457347894111113,
+              "signedTwistingMomentKNm": 0.028371644983254417,
+              "absoluteBendingPlusTwistingKNm": 0.3829451239243655
+            },
+            {
+              "cellIndex": 512,
+              "intervalMm": [
+                2177.5,
+                2212.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                2.833944403241695,
+                2.7587900044500335
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -0.12518797940077625,
+                -0.21460176704204317
+              ],
+              "signedNormalMomentKNm": 0.09787285213460525,
+              "signedTwistingMomentKNm": -0.005946320562749341,
+              "absoluteBendingPlusTwistingKNm": 0.10381917269735459
+            },
+            {
+              "cellIndex": 547,
+              "intervalMm": [
+                2212.5,
+                2495
+              ],
+              "normalMomentEndsKNmPerM": [
+                2.3765316646931125,
+                1.9367834279803926
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -0.5353470561606628,
+                -1.0380811082622268
+              ],
+              "signedNormalMomentKNm": 0.6092557568401326,
+              "signedTwistingMomentKNm": -0.22224672822473313,
+              "absoluteBendingPlusTwistingKNm": 0.8315024850648657
+            },
+            {
+              "cellIndex": 585,
+              "intervalMm": [
+                2495,
+                2777.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                1.4079179608533827,
+                1.1346252624142061
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.3727125261117727,
+                -1.5649173410125374
+              ],
+              "signedNormalMomentKNm": 0.35913423028654684,
+              "signedTwistingMomentKNm": -0.4149402187313088,
+              "absoluteBendingPlusTwistingKNm": 0.7740744490178557
+            },
+            {
+              "cellIndex": 623,
+              "intervalMm": [
+                2777.5,
+                2817.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.9255278349018156,
+                0.8948824226525938
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.658360439848038,
+                -1.6702801705879464
+              ],
+              "signedNormalMomentKNm": 0.03640820515108818,
+              "signedTwistingMomentKNm": -0.06657281220871969,
+              "absoluteBendingPlusTwistingKNm": 0.10298101735980787
+            },
+            {
+              "cellIndex": 646,
+              "intervalMm": [
+                2817.5,
+                2902.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.8474559812501419,
+                0.7886886729526893
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.688452429391979,
+                -1.704137859031122
+              ],
+              "signedNormalMomentKNm": 0.06953614780362033,
+              "signedTwistingMomentKNm": -0.1441850872579818,
+              "absoluteBendingPlusTwistingKNm": 0.21372123506160212
+            },
+            {
+              "cellIndex": 689,
+              "intervalMm": [
+                2902.5,
+                2917.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.753524226051816,
+                0.7439556415612782
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.7097462267187233,
+                -1.7110018033644057
+              ],
+              "signedNormalMomentKNm": 0.011231099007098207,
+              "signedTwistingMomentKNm": -0.025655610225623467,
+              "absoluteBendingPlusTwistingKNm": 0.03688670923272167
+            },
+            {
+              "cellIndex": 732,
+              "intervalMm": [
+                2917.5,
+                3027.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.7132923150915259,
+                0.6511479961080628
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.7119352520250182,
+                -1.7037407397017779
+              ],
+              "signedNormalMomentKNm": 0.07504421711597739,
+              "signedTwistingMomentKNm": -0.18786217954497378,
+              "absoluteBendingPlusTwistingKNm": 0.26290639666095117
+            },
+            {
+              "cellIndex": 775,
+              "intervalMm": [
+                3027.5,
+                3262.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.6582216808760373,
+                0.5164013250635238
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.6496553725496512,
+                -1.5954286353923683
+              ],
+              "signedNormalMomentKNm": 0.13801820319789843,
+              "signedTwistingMomentKNm": -0.38129737093318733,
+              "absoluteBendingPlusTwistingKNm": 0.5193155741310858
+            }
+          ]
+        },
+        {
+          "id": "STR/SW/normal-y-1300",
+          "normal": "y",
+          "positionMm": 1300,
+          "intervalMm": [
+            262.5,
+            3262.5
+          ],
+          "grossWidthMm": 3000,
+          "materialWidthMm": 3000,
+          "gapsMm": [],
+          "signedNormalMomentKNm": 28.85195193238263,
+          "signedTwistingMomentKNm": 7.70426849173894,
+          "absoluteBendingPlusTwistingKNm": 42.83722104770818,
+          "intervals": [
+            {
+              "cellIndex": 5,
+              "intervalMm": [
+                262.5,
+                332.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                31.12238226521055,
+                31.55341824467289
+              ],
+              "twistingMomentEndsKNmPerM": [
+                10.79589483128855,
+                10.556267605540526
+              ],
+              "signedNormalMomentKNm": 2.1936530178459206,
+              "signedTwistingMomentKNm": 0.7473256852890178,
+              "absoluteBendingPlusTwistingKNm": 2.940978703134938
+            },
+            {
+              "cellIndex": 63,
+              "intervalMm": [
+                332.5,
+                402.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                31.646964270067603,
+                34.58293491430899
+              ],
+              "twistingMomentEndsKNmPerM": [
+                11.093039319421749,
+                11.202650588480655
+              ],
+              "signedNormalMomentKNm": 2.3180464714531808,
+              "signedTwistingMomentKNm": 0.7803491467765842,
+              "absoluteBendingPlusTwistingKNm": 3.098395618229765
+            },
+            {
+              "cellIndex": 121,
+              "intervalMm": [
+                402.5,
+                417.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                46.229627662515306,
+                44.36644474513337
+              ],
+              "twistingMomentEndsKNmPerM": [
+                31.75167190148651,
+                30.7673503059121
+              ],
+              "signedNormalMomentKNm": 0.6794705430573651,
+              "signedTwistingMomentKNm": 0.46889266655548956,
+              "absoluteBendingPlusTwistingKNm": 1.1483632096128547
+            },
+            {
+              "cellIndex": 179,
+              "intervalMm": [
+                417.5,
+                462.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                42.38241170126406,
+                38.56976339758115
+              ],
+              "twistingMomentEndsKNmPerM": [
+                25.19982279937001,
+                22.911740502932968
+              ],
+              "signedNormalMomentKNm": 1.821423939724017,
+              "signedTwistingMomentKNm": 1.082510174301817,
+              "absoluteBendingPlusTwistingKNm": 2.903934114025834
+            },
+            {
+              "cellIndex": 217,
+              "intervalMm": [
+                462.5,
+                487.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                36.51064820340533,
+                35.05342894316321
+              ],
+              "twistingMomentEndsKNmPerM": [
+                19.116627422188085,
+                18.215254292056414
+              ],
+              "signedNormalMomentKNm": 0.8945509643321068,
+              "signedTwistingMomentKNm": 0.4666485214280563,
+              "absoluteBendingPlusTwistingKNm": 1.361199485760163
+            },
+            {
+              "cellIndex": 255,
+              "intervalMm": [
+                487.5,
+                647.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                32.10670717887761,
+                25.939887095961957
+              ],
+              "twistingMomentEndsKNmPerM": [
+                14.52074354116771,
+                11.742403812055397
+              ],
+              "signedNormalMomentKNm": 4.6437275419871655,
+              "signedTwistingMomentKNm": 2.1010517882578483,
+              "absoluteBendingPlusTwistingKNm": 6.744779330245014
+            },
+            {
+              "cellIndex": 292,
+              "intervalMm": [
+                647.5,
+                955
+              ],
+              "normalMomentEndsKNmPerM": [
+                23.28106230596375,
+                14.548612208510562
+              ],
+              "twistingMomentEndsKNmPerM": [
+                9.081557821597896,
+                7.8793326580697824
+              ],
+              "signedNormalMomentKNm": 5.816312456600426,
+              "signedTwistingMomentKNm": 2.6077369112489057,
+              "absoluteBendingPlusTwistingKNm": 8.424049367849332
+            },
+            {
+              "cellIndex": 330,
+              "intervalMm": [
+                955,
+                1262.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                13.760811907306213,
+                10.537028784656396
+              ],
+              "twistingMomentEndsKNmPerM": [
+                5.020358848490747,
+                4.259461058175239
+              ],
+              "signedNormalMomentKNm": 3.735793006389251,
+              "signedTwistingMomentKNm": 1.426772310649895,
+              "absoluteBendingPlusTwistingKNm": 5.162565317039146
+            },
+            {
+              "cellIndex": 368,
+              "intervalMm": [
+                1262.5,
+                1537.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                10.531441624592357,
+                5.641556641906048
+              ],
+              "twistingMomentEndsKNmPerM": [
+                4.4050830512874235,
+                3.3757614334924275
+              ],
+              "signedNormalMomentKNm": 2.2237872616435306,
+              "signedTwistingMomentKNm": 1.0698661166572296,
+              "absoluteBendingPlusTwistingKNm": 3.2936533783007604
+            },
+            {
+              "cellIndex": 406,
+              "intervalMm": [
+                1537.5,
+                1812.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                5.4645975514189296,
+                4.606365531325981
+              ],
+              "twistingMomentEndsKNmPerM": [
+                0.8711396055165516,
+                -0.24348990396640569
+              ],
+              "signedNormalMomentKNm": 1.3847574238774254,
+              "signedTwistingMomentKNm": 0.08630183396314507,
+              "absoluteBendingPlusTwistingKNm": 1.485686554649081
+            },
+            {
+              "cellIndex": 444,
+              "intervalMm": [
+                1812.5,
+                2067.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                4.044816431915164,
+                3.6739620760634146
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.168708122459081,
+                -1.7576118036930646
+              ],
+              "signedNormalMomentKNm": 0.9841442597672688,
+              "signedTwistingMomentKNm": -0.3731057905843986,
+              "absoluteBendingPlusTwistingKNm": 1.3572500503516673
+            },
+            {
+              "cellIndex": 479,
+              "intervalMm": [
+                2067.5,
+                2177.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                3.2303856696122137,
+                3.0275922695230673
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.0445730080909987,
+                -2.1539815575357624
+              ],
+              "signedNormalMomentKNm": 0.34418878665244046,
+              "signedTwistingMomentKNm": -0.23092050110947185,
+              "absoluteBendingPlusTwistingKNm": 0.5751092877619123
+            },
+            {
+              "cellIndex": 514,
+              "intervalMm": [
+                2177.5,
+                2212.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                2.8989829738769313,
+                2.8309989618887887
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.2158034611495605,
+                -2.2426385998290996
+              ],
+              "signedNormalMomentKNm": 0.1002746838759001,
+              "signedTwistingMomentKNm": -0.07802273606712656,
+              "absoluteBendingPlusTwistingKNm": 0.17829741994302667
+            },
+            {
+              "cellIndex": 549,
+              "intervalMm": [
+                2212.5,
+                2495
+              ],
+              "normalMomentEndsKNmPerM": [
+                2.6340201451309917,
+                2.11313574065368
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.3418324459328015,
+                -2.4687990104688784
+              ],
+              "signedNormalMomentKNm": 0.6705357688670848,
+              "signedTwistingMomentKNm": -0.6795016932167373,
+              "absoluteBendingPlusTwistingKNm": 1.350037462083822
+            },
+            {
+              "cellIndex": 587,
+              "intervalMm": [
+                2495,
+                2777.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                1.8541597281168343,
+                1.4515537947148125
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.5518039856679424,
+                -2.5235509482206315
+              ],
+              "signedNormalMomentKNm": 0.46693203509997006,
+              "signedTwistingMomentKNm": -0.716893884411761,
+              "absoluteBendingPlusTwistingKNm": 1.183825919511731
+            },
+            {
+              "cellIndex": 625,
+              "intervalMm": [
+                2777.5,
+                2817.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                1.3583563212350347,
+                1.3117170096860375
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.514369804362703,
+                -2.4986217011431364
+              ],
+              "signedNormalMomentKNm": 0.05340146661842145,
+              "signedTwistingMomentKNm": -0.10025983011011678,
+              "absoluteBendingPlusTwistingKNm": 0.15366129672853823
+            },
+            {
+              "cellIndex": 648,
+              "intervalMm": [
+                2817.5,
+                2902.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                1.2994415149382874,
+                1.209031877451261
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.482633711475931,
+                -2.4397390515642963
+              ],
+              "signedNormalMomentKNm": 0.10661011917655581,
+              "signedTwistingMomentKNm": -0.2092008424292097,
+              "absoluteBendingPlusTwistingKNm": 0.3158109616057655
+            },
+            {
+              "cellIndex": 691,
+              "intervalMm": [
+                2902.5,
+                2917.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                1.2015859745602282,
+                1.1868084672570065
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.418541517999865,
+                -2.4096076271206965
+              ],
+              "signedNormalMomentKNm": 0.01791295831362926,
+              "signedTwistingMomentKNm": -0.03621111858840421,
+              "absoluteBendingPlusTwistingKNm": 0.05412407690203347
+            },
+            {
+              "cellIndex": 734,
+              "intervalMm": [
+                2917.5,
+                3027.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                1.1880121054291113,
+                1.0920603493228613
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.3701703714503255,
+                -2.290668292449881
+              ],
+              "signedNormalMomentKNm": 0.1254039850113585,
+              "signedTwistingMomentKNm": -0.25634612651451133,
+              "absoluteBendingPlusTwistingKNm": 0.3817501115258698
+            },
+            {
+              "cellIndex": 777,
+              "intervalMm": [
+                3027.5,
+                3262.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                1.189164279402295,
+                1.1174335256157097
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -2.0656191551679544,
+                -1.787352252128299
+              ],
+              "signedNormalMomentKNm": 0.27102524208961554,
+              "signedTwistingMomentKNm": -0.45272414035730973,
+              "absoluteBendingPlusTwistingKNm": 0.7237493824469252
+            }
+          ]
+        },
+        {
+          "id": "STR/SW/normal-x-1450",
+          "normal": "x",
+          "positionMm": 1450,
+          "intervalMm": [
+            262.5,
+            2262.5
+          ],
+          "grossWidthMm": 2000,
+          "materialWidthMm": 2000,
+          "gapsMm": [],
+          "signedNormalMomentKNm": 25.643120828164758,
+          "signedTwistingMomentKNm": 9.421205960714556,
+          "absoluteBendingPlusTwistingKNm": 36.29981169141033,
+          "intervals": [
+            {
+              "cellIndex": 363,
+              "intervalMm": [
+                262.5,
+                332.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                31.434309672819776,
+                32.12837541591051
+              ],
+              "twistingMomentEndsKNmPerM": [
+                13.90168585648896,
+                13.536329815418593
+              ],
+              "signedNormalMomentKNm": 2.2246939781055604,
+              "signedTwistingMomentKNm": 0.9603305485167645,
+              "absoluteBendingPlusTwistingKNm": 3.1850245266223247
+            },
+            {
+              "cellIndex": 364,
+              "intervalMm": [
+                332.5,
+                402.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                33.30562048795868,
+                39.523272933640925
+              ],
+              "twistingMomentEndsKNmPerM": [
+                19.45445842533808,
+                19.968112038063666
+              ],
+              "signedNormalMomentKNm": 2.549011269755986,
+              "signedTwistingMomentKNm": 1.3797899662190611,
+              "absoluteBendingPlusTwistingKNm": 3.9288012359750475
+            },
+            {
+              "cellIndex": 365,
+              "intervalMm": [
+                402.5,
+                417.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                42.49200269716485,
+                37.30200319535767
+              ],
+              "twistingMomentEndsKNmPerM": [
+                24.321940753115424,
+                22.486983207307798
+              ],
+              "signedNormalMomentKNm": 0.5984550441939189,
+              "signedTwistingMomentKNm": 0.35106692970317416,
+              "absoluteBendingPlusTwistingKNm": 0.949521973897093
+            },
+            {
+              "cellIndex": 366,
+              "intervalMm": [
+                417.5,
+                840
+              ],
+              "normalMomentEndsKNmPerM": [
+                36.41946842848102,
+                18.090030139147856
+              ],
+              "twistingMomentEndsKNmPerM": [
+                16.210172271461758,
+                5.576604297973276
+              ],
+              "signedNormalMomentKNm": 11.5151315724116,
+              "signedTwistingMomentKNm": 4.602456550293151,
+              "absoluteBendingPlusTwistingKNm": 16.11758812270475
+            },
+            {
+              "cellIndex": 367,
+              "intervalMm": [
+                840,
+                1262.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                16.60450838986262,
+                7.8093605697726325
+              ],
+              "twistingMomentEndsKNmPerM": [
+                2.8645520880891917,
+                5.040265780422971
+              ],
+              "signedNormalMomentKNm": 5.157429817722947,
+              "signedTwistingMomentKNm": 1.6698927747231944,
+              "absoluteBendingPlusTwistingKNm": 6.827322592446141
+            },
+            {
+              "cellIndex": 368,
+              "intervalMm": [
+                1262.5,
+                1725
+              ],
+              "normalMomentEndsKNmPerM": [
+                7.71345007288255,
+                3.3856205435172395
+              ],
+              "twistingMomentEndsKNmPerM": [
+                3.9699938563919077,
+                0.6804348680393046
+              ],
+              "signedNormalMomentKNm": 2.5666600800424515,
+              "signedTwistingMomentKNm": 1.075411642524718,
+              "absoluteBendingPlusTwistingKNm": 3.6420717225671693
+            },
+            {
+              "cellIndex": 369,
+              "intervalMm": [
+                1725,
+                2187.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                2.8826911172106824,
+                1.4019909312899754
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -0.785830843749764,
+                -1.3087000394850414
+              ],
+              "signedNormalMomentKNm": 0.9908327237157771,
+              "signedTwistingMomentKNm": -0.4843602667480488,
+              "absoluteBendingPlusTwistingKNm": 1.475192990463826
+            },
+            {
+              "cellIndex": 370,
+              "intervalMm": [
+                2187.5,
+                2262.5
+              ],
+              "normalMomentEndsKNmPerM": [
+                0.6375811523576942,
+                0.4532546400828508
+              ],
+              "twistingMomentEndsKNmPerM": [
+                -1.765599199585677,
+                -1.7912590542132405
+              ],
+              "signedNormalMomentKNm": 0.04090634221652043,
+              "signedTwistingMomentKNm": -0.1333821845174594,
+              "absoluteBendingPlusTwistingKNm": 0.17428852673397982
+            }
+          ]
+        }
+      ],
+      "scope": "Exact integrals of the declared element recovery along authored axis-aligned cuts. Tangent is positiveY for normalX and positiveX for normalY; twisting retains the source Mxy sign. Actual gaps remain absent material. No design width, redistribution, joint resistance, anchorage or mesh convergence is inferred."
+    }
+  },
+  "stabilityComparison": {
+    "maximumHeadComponentDifferenceKN_KNm": 0.1,
+    "maximumRelativeCutIntegralDifference": 0.05,
+    "absoluteCutIntegralFloorKNm": 0.1,
+    "scope": "Predeclared numerical stability screens for700to500 and500to250 global response and fixed physical cut integrals. Earlier failed comparisons remain visible. This does not qualify the rigid corner, element peak, local pad, design width or reinforcement."
+  },
+  "candidateAccepted": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "ovids-house/str-isotropic-solid-end-compliance-input/1",
+  "id": "SW-isotropic-end-compliance-development",
+  "jointId": "SW",
+  "sourceAudit": "project/str/studies/four-l-joint-material-audit.json",
+  "wallExtensionBelowMm": 1000,
+  "wallExtensionAboveMm": 1000,
+  "youngKNPerM2": 33000000,
+  "poisson": 0.2,
+  "wallUnitWeightKNPerM3": 25,
+  "comparisonPitchesMm": [140, 70, 35],
+  "nativeConstitutiveEquivalence": false,
+  "globalReplacementAvailable": false
+}
