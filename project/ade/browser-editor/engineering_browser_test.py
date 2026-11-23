@@ -303,6 +303,11 @@ def main():
         assert cli_narrowed['wetPostHeadFan']['status']=='computed-nominal-demand'
         assert cli_narrowed['wetPostHeadFan']['resistanceAccepted'] is False
         assert cli_narrowed['wetPostHeadFan']['toleranceDomainAccepted'] is False
+        compatibility=cli_narrowed['slabSolidCompatibility']
+        assert compatibility['status']=='common-modulus-ruled-out'
+        assert abs(compatibility['ratioToNecessaryBound']-2.333441840277778)<1e-12
+        assert compatibility['commonSolidMaterialQualified'] is False
+        assert len(cli_narrowed['native']['heads'])==52
         print('PASS browser-exported narrower-pad CLI replay',flush=True)
         page.get_by_role('button',name='Undo',exact=True).click()
         ready(page,3,240000)

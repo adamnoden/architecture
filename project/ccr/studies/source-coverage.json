@@ -1098,14 +1098,16 @@
       ],
       "inputReceipts": [
         "project/str/studies/four-l-joint-material-audit.json",
-        "project/str/studies/fixed-normal-experiment-captures.tar.xz"
+        "project/str/studies/fixed-normal-experiment-captures.tar.xz",
+        "project/str/studies/slab-constitutive-compiled-control.tar.xz"
       ],
       "receipts": [
         "project/str/studies/fixed-normal-experiment.results.json",
         "project/str/studies/finite-joint-solid-captures/finite-joint-solid-140.json",
         "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json",
         "project/str/studies/finite-joint-solid-captures/finite-joint-solid-35.json",
-        "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json"
+        "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json",
+        "project/str/studies/slab-constitutive-compiled-control.json"
       ],
       "consumers": [
         "project/str/floor-corner-convergence-result.md",
@@ -1928,6 +1930,24 @@
       ],
       "format": "map",
       "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/slab-constitutive-compiled-control.json",
+      "location": [
+        "executedFloorMethod",
+        "inputs"
+      ],
+      "format": "map",
+      "algorithm": "gitBlob"
+    },
+    {
+      "receipt": "project/str/studies/slab-constitutive-compiled-control.json",
+      "location": [
+        "comparisonOwnerSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/floor-section-proof.json"
     }
   ],
   "gitBlobs": {
@@ -2435,7 +2455,7 @@
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json": "17f081768d37138ba58d91b32617d4054be863cf",
     "project/ccr/convergence-owner-review.md": "9120e1a407948e8bef2860c66b7dbb1dca95b046",
     "project/str/studies/finite_joint_solid_run.py": "f7759a440296b38f92e3af3f29a9e1586559bc9a",
-    "project/str/finite-joint-solid-development.md": "7033789bd234312fa0a4e96f4d66d457074d99cd",
+    "project/str/finite-joint-solid-development.md": "e90118a8ff01fc8ac761835903926b427263205b",
     "project/str/studies/finite_joint_solid.py": "b8451e22dda30b884166f82bbf86330aa9d13503",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-140.json": "21488c3accbff86803efe96336b50320053181f4",
     "project/str/fixed-normal-experiment.md": "217fa4af4c55dae4f81fc1aa3c451c40d9112994",
@@ -2449,6 +2469,8 @@
     "project/str/studies/fixed-normal-experiment.results.json": "d70a4ee929a02d0f46a2563484b41ec98aab8b5f",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json": "a427298f215d2ad68be3885e98777c9c7f8474fa",
     "compiler/reference-house/current-design/structural-slab-constitutive.ts": "3719c065d8ebf6c7f187ad2d843706c09d54986a",
-    "project/str/floor-portal-reconciliation.md": "94f110753cdba945f553fe2a136ebff4c16c4862"
+    "project/str/floor-portal-reconciliation.md": "94f110753cdba945f553fe2a136ebff4c16c4862",
+    "project/str/studies/slab-constitutive-compiled-control.json": "f7c3ca04e4b875aa98e808ba0c1e56c574752065",
+    "project/str/studies/slab-constitutive-compiled-control.tar.xz": "193c4200f0b7b5c38b1667ddcfddb7e5bc52b0fd"
   }
 }

@@ -33,6 +33,14 @@ can each be positive-energy numerical comparisons. It prevents claiming a
 single physically equivalent3D material or tuning an isotropic solid to match
 both. The separate perimeter chord cannot repair a bulk constitutive mismatch.
 
+The shared floor-stage compiler now derives this necessary bound from the
+saved document's actual nested plate/membrane laws. CLI and browser expose the
+same explicit diagnostic. The [actual saved-stage control](studies/slab-constitutive-compiled-control.json)
+and [full input/bundle archive](studies/slab-constitutive-compiled-control.tar.xz)
+retain all52 head reaction vectors exactly equal to the owning wet-aligned
+control, with no native constitutive edit. Three pure controls cover authored
+law edits, slab-thickness edits, unchanged input and unsupported numeric inputs.
+
 Three analytical/adverse tests establish six free rigid modes, constant-strain
 energy and affine recovery, exact re-entrant void volume, modulus perturbation,
 overlap rejection, Schur potential/work equivalence and consistent gravity work.
@@ -65,6 +73,26 @@ Nearest-node or whole-cell clipping is not an admissible replacement. The patch
 contains21.6kN slab G and12kN current factored plate Q; the two wall stubs contain
 13.02kN G. Remove/reinsert these exact operators and loads once, preserve the
 independent chord, and re-solve the house before interpreting design-strip demand.
+
+The existing vertical `pre_plate_model_transform` can prepare real wall-end
+nodes, but no present hook supplies the complete replacement. Remove the rigid
+SW bindings in both plate and membrane operators while retaining footprint
+metadata for material exclusions. The bulk membrane begins at332.5mm, inside
+the plate's262.5mm edge; actual outer-band traces and yaw must therefore remain
+separate. For ζ=z−3270mm, use the work-conjugate trace
+`[U,V,W]=[u0+ζ*ry,v0−ζ*rx,w]`, with physical rotations in radians.
+The existing retained normal receiver retains only `w` and fixes its other five
+coordinates; it cannot represent this distributed solid interface.
+
+Insert the shared contour into both operators and preserve its partition across
+the later floor-section reassembly and cache identity. A tensor-grid insertion
+also changes cells elsewhere in the house, so compare an axes-only ordinary
+control and the finite component on the same exterior mesh, retaining the exact
+fixed-normal/body-G ledger. Create real wall nodes at2170/4370mm and rebuild the
+remaining members and weight; retaining the old3170mm collector would leave
+rigid1000mm arms and incorrect G. A fake floor aperture would misstate the house
+and services. These are unimplemented integration obligations, not a working
+native solid connection.
 
 The nearby ground arch reservations overlap177.5mm of each L arm in plan even
 though the clear window starts37.5mm beyond each arm. The slab underside sits
