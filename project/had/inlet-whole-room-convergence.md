@@ -228,3 +228,8 @@ HAD remains open. A finite wall carrier, its own mass and actual metal/clamp bea
 ## Thin bank carrier rejected through the shared source8 stage —23November2026
 
 The [finite shelf comparison](inlet-bank-carrier-rejection.md) now joins the actual bank, full source pressure/thermal challenges, independent steel stock, full wrapper and retained shield through the same saved inlet stage. An8mm shelf fits the nominal strip slot only after4mm recentering and can appear adequate under pressure alone. The full signed challenge needs15.896mm against8.483mm available; its wrapper also collides with the real lower shield connection. Lengthening tails to258mm buys shelf space but overlaps the actual fittings by13.033mm. Reject that shelf; do not assume sliding clamps or delete the shield to manufacture a pass. CLI, browser and batch consumers expose the same rejection and regenerated receipts; physical carrier, coupled flexibility and core resistance remain unresolved.
+
+
+## Actual route/valve/operation join rejects source8 —23November2026
+
+The [joined operation comparison](inlet-route-operation-collision.md) supersedes any reading of the preceding separate local screens as a bank pass. Utility return collides with the Plant stem/wheel and ordinary arm sector; the returning Plant approach also collides with its own insulated body. The same saved compiler now exposes the rejection with full jackets, both settings and continuous regrip allowance. Local strip/tool geometry and earlier narrow pipe/budget quantities remain reproducible, but the complete route/operation/clamp screen is rejected. No substitute route or product is adopted.

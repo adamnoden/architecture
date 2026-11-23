@@ -2,7 +2,7 @@
 
 23 November 2026 · HAD-INLET-RESOLUTION remains open.
 
-The current source8 bank earns a finite clamp/cover territory comparison, not a carrier. A real 210 mm flat shelf from each pickup to the north bare core fails the unchanged locked-pressure/thermal challenge. Increasing its thickness cannot fix that arrangement inside the actual axial slot. Its full insulation also collides with the retained lower shield connection. **Reject this flat-shelf arrangement; do not turn the successful pressure-only screen into a support selection.**
+The current source8 bank earns only its local finite clamp/cover territory comparison. The [actual route/operation join](inlet-route-operation-collision.md) rejects the bank because its cold paths collide with valve bodies/stems and ordinary arm sweeps. It does not earn a carrier. A real 210 mm flat shelf from each pickup to the north bare core fails the unchanged locked-pressure/thermal challenge. Increasing its thickness cannot fix that arrangement inside the actual axial slot. Its full insulation also collides with the retained lower shield connection. **Reject this flat-shelf arrangement; do not turn the successful pressure-only screen into a support selection.**
 
 [Source-bound result](studies/inlet-bank-carrier.results.json) · [Y/Z section](studies/inlet-bank-carrier.svg) · [Explicit candidate](studies/inlet-bank-shelf-candidate.json) · [Reusable method](../../compiler/reference-house/current-design/inlet-bank-carrier.ts).
 
