@@ -9,9 +9,9 @@
     "label": "convergence-water-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.038Z",
-  "heartbeatAt": "2026-11-23T07:31:27.896Z",
-  "expiresAt": "2026-11-23T08:16:27.896Z",
-  "branch": "work/convergence-water-20261123",
+  "heartbeatAt": "2026-11-23T07:33:56.553Z",
+  "expiresAt": "2026-11-23T08:18:56.553Z",
+  "branch": "work/convergence-integrate-20261123",
   "predecessor": {
     "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
     "generation": 59,
@@ -34,7 +34,7 @@
   },
   "pr": 1620,
   "checkpoint": {
-    "evidence": "PR1620 remote524d7151 integrates recovered source8; local finite shelf continuation has6 focused mechanical tests passing",
-    "next": "Publish source-bound finite shelf rejection, reconcile current main, validate final head"
+    "evidence": "PR1620 combined6cfb recovery; local carrier28492d2e plus43a3c293 has6 focused tests and source-bound rejection",
+    "next": "Verify submitted-head CI, merge recovery, then integrate carrier rejection into shared source8"
   }
 }
