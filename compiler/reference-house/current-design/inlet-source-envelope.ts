@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import type { runGroundSectionCase } from './structural-ground.js'
-import { inletEntrySideCuts, drawInletIndoorCuts } from './inlet-indoor-cuts.js'
+import { inletEntrySideCuts, drawInletIndoorCuts, inletSplitPlantStationComparison, drawInletSplitPlantStation, type SplitPlantStationChoice } from './inlet-indoor-cuts.js'
 import { inletIndoorRoutes, compareInletIndoorRouteCandidate, inletRouteRetainedServices, drawInletIndoorRoutes, type IndoorRoutesInput } from './inlet-indoor-routes.js'
 import { inletBankReceiver, drawInletBankReceiver } from './inlet-bank-receiver.js'
 import { compareInletBankShelfCarrier, drawInletBankShelfCarrier, type InletBankShelfCandidate } from './inlet-bank-carrier.js'
@@ -38,7 +38,7 @@ export const readLocalUtilityPocketSettings = (): InletSourceEnvelopeSettings =>
 const paths = ['project/had/studies/south-inlet-under-sill.json', 'project/had/studies/south-inlet-wet-box.json',
   'project/had/studies/south-inlet-relief.json', 'project/had/studies/south-utility-inlet.json',
   'project/had/studies/current-house-services.json', 'project/mat/studies/whole-house-service-baseline.json',
-  'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json', 'project/str/studies/current-house-grid.json', 'project/had/studies/inlet-bank-shelf-candidate.json', 'project/had/studies/utility-wide-capture.json', 'project/had/studies/inlet-route-candidate.json'] as const
+  'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json', 'project/str/studies/current-house-grid.json', 'project/had/studies/inlet-bank-shelf-candidate.json', 'project/had/studies/utility-wide-capture.json', 'project/had/studies/inlet-route-candidate.json', 'project/had/studies/inlet-split-plant-station-candidate.json'] as const
 const methodPaths = ['compiler/reference-house/current-design/inlet-bank-carrier.ts', 'compiler/reference-house/current-design/inlet-bank-receiver.ts', 'project/had/studies/service-interface-geometry.mjs', 'compiler/reference-house/current-design/inlet-indoor-routes.ts', 'compiler/reference-house/current-design/inlet-indoor-cuts.ts', 'compiler/reference-house/current-design/inlet-source-envelope.ts',
   'compiler/reference-house/current-design/inlet-room-catchment.ts',
   'compiler/reference-house/current-design/inlet-room-pocket.ts',
@@ -420,6 +420,28 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
       {id:'actual-retained-hot-terminal',pointsMm:wide.hot.terminal,radiusWithSupportsMm:25}
      ]},
     retainedServiceComparison=inletRouteRetainedServices(indoorRoutes,retainedRouteServices),
+    splitChoice=b.data['project/had/studies/inlet-split-plant-station-candidate.json'] as SplitPlantStationChoice,
+    splitDoor=model.plantReferenceDoor,splitCylinder=services.plant.cylinder,splitEmitter=services.emitters.find((v:any)=>v.id==='plant-N'),
+    splitObstacles=[
+      {id:'actual-plant-south-west-pier',boxMm:[west,plantWall.finishedFaces[0],0,plantWall.holes[0][0]+model.internalArchControls.actualRadialFinish-west,plantWall.finishedFaces[1]-plantWall.finishedFaces[0],clearHeight]},
+      {id:'actual-plant-south-east-pier',boxMm:[plantWall.holes[0][1]-model.internalArchControls.actualRadialFinish,plantWall.finishedFaces[0],0,east-plantWall.holes[0][1]+model.internalArchControls.actualRadialFinish,plantWall.finishedFaces[1]-plantWall.finishedFaces[0],clearHeight]},
+      {id:'actual-protected-door-open-leaf',boxMm:[...splitDoor.fullyOpenEastLeaf.slice(0,2),0,...splitDoor.fullyOpenEastLeaf.slice(2),2300]},
+      {id:'actual-service-spine-south',boxMm:[spine.finishedFaces[0],0,0,spine.finishedFaces[1]-spine.finishedFaces[0],splitDoor.effectiveOpenClearY[0],clearHeight]},
+      {id:'actual-service-spine-north',boxMm:[spine.finishedFaces[0],splitDoor.effectiveOpenClearY[1],0,spine.finishedFaces[1]-spine.finishedFaces[0],model.shell-splitDoor.effectiveOpenClearY[1],clearHeight]},
+      {id:'actual-vessel-home-conservative-box',boxMm:[...splitCylinder.body.slice(0,2),0,...splitCylinder.body.slice(2),splitCylinder.height]},
+      {id:'actual-buffer-complete-station',boxMm:[...services.plant.primaryBuffer.station.slice(0,2),0,...services.plant.primaryBuffer.station.slice(2),services.plant.primaryBuffer.maxRetainedHeight]},
+      {id:'actual-controls-full-height-comparator',boxMm:[...services.plant.controlsHydraulics.slice(0,2),0,...services.plant.controlsHydraulics.slice(2),clearHeight]},
+      {id:'actual-riser-full-height-comparator',boxMm:[...services.plant.riserGross.slice(0,2),0,...services.plant.riserGross.slice(2),clearHeight]},
+      {id:'actual-radiator-renewal-reservation',boxMm:[...splitEmitter.completePlanWithValvesAndBrackets.slice(0,2),splitEmitter.bottomLocal,splitEmitter.completePlanWithValvesAndBrackets[2],splitEmitter.completePlanWithValvesAndBrackets[3]+splitEmitter.renewal.requiredFrontPull,splitEmitter.topLocal-splitEmitter.bottomLocal+splitEmitter.renewal.requiredLift]},
+      {id:'actual-dry-mainboard',boxMm:boardBox},
+      ...frame.connections.filter(c=>c.wallId===plantWall.id).map(c=>({id:c.id,boxMm:c.oppositeCoverEnvelopeMm}))
+     ].map(o=>({...o,boxMm:o.boxMm as [number,number,number,number,number,number]})),
+    splitInput={reference:indoorCuts,choice:splitChoice,obstacles:splitObstacles,
+      cart:{pathMm:splitCylinder.path,radiusMm:splitCylinder.cartRadius},opposedPlateSouthFaceYMm:frame.connections.find(c=>c.wallId===plantWall.id)!.frontPlateMm[1],
+      mainboardBoxMm:boardBox as [number,number,number,number,number,number],plantCoreYMm:plantWall.structuralCore,
+      roomPlanMm:[west,plantWall.finishedFaces[1],east-west,model.groundWalls.find((w:any)=>w.id==='plant-north').finishedFaces[0]-plantWall.finishedFaces[1]] as [number,number,number,number],ceilingMm:clearHeight,groundFflMm:indoorCuts.groundStage.fflMm},
+    splitNormal=inletSplitPlantStationComparison(splitInput),
+    splitStationComparison={normal:{...splitNormal,reviewSvg:drawInletSplitPlantStation(splitNormal)},largerPositioningAdverse:inletSplitPlantStationComparison({...splitInput,choice:{...splitChoice,settingEachMm:20}})},
     routeCandidateComparison=(()=>{
       let route:ReturnType<typeof compareInletIndoorRouteCandidate>
       try{route=compareInletIndoorRouteCandidate(indoorRouteInput,b.data['project/had/studies/inlet-route-candidate.json'] as Parameters<typeof compareInletIndoorRouteCandidate>[1])}
@@ -446,7 +468,7 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
       requiredSink: { kind: 'two-independent-pillar-taps', holesMm: [28, 28], centresMm: 180, mixingOnlyInOpenBowl: true,
         actualAirGapAboveFloodRimRequired: true, tapProductsAndConstituentsSelected: false },
       oldColdConnectionRetiredInOccupiedSource: false, crossfeedIndependenceQualified: false },
-    room: { wetUtilityPlanMm, bankShelfCarrier:{...bankShelfCarrier,reviewSvg:drawInletBankShelfCarrier(bankShelfCarrier)}, indoorRoutes: {...indoorRoutes,operation:bankReceiver.routeOperation,retainedServiceComparison,candidateComparison:routeCandidateComparison,reviewSvg:drawInletIndoorRoutes(indoorRoutes,bankReceiver.routeOperation,retainedServiceComparison)}, bankReceiver:{...bankReceiver,reviewSvg:drawInletBankReceiver(bankReceiver)}, indoorCuts: {...indoorCuts,reviewSvg:drawInletIndoorCuts(indoorCuts)},
+    room: { wetUtilityPlanMm, bankShelfCarrier:{...bankShelfCarrier,reviewSvg:drawInletBankShelfCarrier(bankShelfCarrier)}, indoorRoutes: {...indoorRoutes,operation:bankReceiver.routeOperation,retainedServiceComparison,candidateComparison:routeCandidateComparison,splitStationComparison,reviewSvg:drawInletIndoorRoutes(indoorRoutes,bankReceiver.routeOperation,retainedServiceComparison)}, bankReceiver:{...bankReceiver,reviewSvg:drawInletBankReceiver(bankReceiver)}, indoorCuts: {...indoorCuts,reviewSvg:drawInletIndoorCuts(indoorCuts)},
       southWindowOpeningXMm: (() => { const opening = model.archOpeningRegister.GROUND.find((o: any) => o.id === 'south-window-4'); return [opening.centre - opening.width / 2, opening.centre + opening.width / 2] })(), northWallFacesYMm: utilityWall.finishedFaces, northOpeningXMm: candidateUtilityOpening,
       portalReplacement:{sourceOpeningXMm:sourceUtilityOpening,candidateOpeningXMm:candidateUtilityOpening,shiftXMm:s.utilityPortalShiftXMm,widthPreservedMm:candidateUtilityOpening[1]-candidateUtilityOpening[0],normalBodyAfter10Mm:Math.min(normalPathX-normalBodyR-candidateUtilityOpening[0],candidateUtilityOpening[1]-normalPathX-normalBodyR)-model.internalArchControls.actualRadialFinish-10,adoptedInOccupiedSource:false},
       retainedFurniture,

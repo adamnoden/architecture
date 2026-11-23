@@ -591,7 +591,8 @@
         "project/had/inlet-route-operation-collision.md",
         "project/had/route-operation-recovery-20261123.md",
         "project/had/inlet-isolation-product-recovery-20261123.md",
-        "project/had/inlet-retained-service-route-comparison.md"
+        "project/had/inlet-retained-service-route-comparison.md",
+        "project/had/split-isolation-station-development.md"
       ],
       "authorRoots": [
         "compiler/reference-house/current-design/inlet-fixed-entry.ts",
@@ -625,7 +626,8 @@
         "compiler/reference-house/current-design/inlet-screen-frame.ts",
         "compiler/reference-house/current-design/inlet-fixed-receiver.ts",
         "project/had/studies/inlet-bank-shelf-candidate.json",
-        "project/had/studies/inlet-route-candidate.json"
+        "project/had/studies/inlet-route-candidate.json",
+        "project/had/studies/inlet-split-plant-station-candidate.json"
       ],
       "inputReceipts": [
         "project/had/studies/south-inlet-under-sill.json",
@@ -656,7 +658,8 @@
         "project/had/studies/inlet-bank-receiver.svg",
         "project/had/studies/inlet-bank-carrier.results.json",
         "project/had/studies/inlet-bank-carrier.svg",
-        "project/had/studies/inlet-route-candidate.svg"
+        "project/had/studies/inlet-route-candidate.svg",
+        "project/had/studies/inlet-split-plant-station.svg"
       ],
       "consumers": [
         "compiler/reference-house/current-design/compile.ts",
@@ -683,7 +686,8 @@
         "node --import tsx --test compiler/reference-house/current-design-inlet-room-pan.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-indoor-cuts.test.ts compiler/reference-house/current-design-inlet-indoor-routes.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-bank-carrier.test.ts",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-retained-services.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-retained-services.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-split-station.test.ts"
       ]
     },
     {
@@ -2225,10 +2229,10 @@
     "project/str/studies/roof-surface-pressure.svg": "03610ad976377889fb0d27bfaaa107b9cdce2099",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "8fab71d50474d2d241a7c8605ba2c6901503603b",
-    "project/had/studies/inlet-source-envelope.ts": "199b339e1134c5c835c7afdfc13d550505969329",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "27bffe7a40cceb6016ac56f26fb29c6a7050707f",
+    "project/had/studies/inlet-source-envelope.ts": "13f0fc119195c29ce52da40b0e86dcce39ad1691",
     "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
-    "project/had/studies/inlet-source-envelope.results.json": "fc65ccabcba4630d5501230db0a3a2cacdf278bf",
+    "project/had/studies/inlet-source-envelope.results.json": "e347531f7b0cb80060ea14af236175404d4532a1",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
     "compiler/reference-house/current-design/engineering-edit.ts": "f7e050ac682c6caa0a14e0bed4d76806a2cae16f",
     "project/ade/browser-editor/engineering-api.ts": "8992e5c35a8d6c3045c43f79cd5ba1088d912aa1",
@@ -2273,7 +2277,7 @@
     "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
     "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3",
     "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
-    "project/had/studies/inlet-local-pocket.results.json": "1837b77f9afcb2d6d53da1a3168a11e6d6444f95",
+    "project/had/studies/inlet-local-pocket.results.json": "e0ef65db04b78151447e54fee1d01abb3235aabb",
     "project/had/studies/inlet-local-pocket.svg": "1b055c9299705e175d8fe523102bb991e6dbd913",
     "compiler/reference-house/current-design/inlet-room-pan.ts": "81c7736c2b91de574c582dd902ff903953dc9b46",
     "project/had/studies/inlet-local-pan.svg": "e3da3b38a4eb4532e8f3d3a9ab713a6d20aa2be9",
@@ -2316,7 +2320,7 @@
     "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "7aec3642a0bd2e696c2d605a06c407ba0ef3c5fd",
     "project/ias/studies/adaptable-study-lighting-construction.svg": "77735cfc13319b6bbab3e9510f63167510509a17",
     "compiler/reference-house/current-design/inlet-indoor-routes.ts": "27180bb54be4229d3d45f87fdfaec29c768c9c91",
-    "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "324c658bd3159aff595d37ef41eccfecb3a4a117",
+    "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
     "project/had/studies/inlet-indoor-cuts.svg": "41fcd95df7c6149712a761236e66269bac0aaa7d",
     "project/had/studies/inlet-indoor-routes.svg": "2ea27bd3c23b563c2d66fb13ae71f7e5abd74744",
     "compiler/reference-house/current-design/assemblies/study-lighting-case.ts": "ab75ad0f9728bf7b54717c53cdfe316340987437",
@@ -2337,7 +2341,7 @@
     "project/had/inlet-bank-carrier-rejection.md": "02e3e0c4004e7a3d636b5e56297131ff959d132d",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
-    "project/had/studies/inlet-bank-carrier.results.json": "df8231aede4408e9de51b665ee43e55e16a3b097",
+    "project/had/studies/inlet-bank-carrier.results.json": "d184f8079399366e268fb121a4884c86bdcb13f6",
     "project/had/studies/inlet-bank-carrier.svg": "dc84130cc6a7fcae0130e64b6687bb2112546f13",
     "project/str/studies/wet_bearing_refinement.py": "06f8fabdfaf5ed6cc132e7a49248845dbdb08bab",
     "project/str/studies/wet-bearing-refinement-inputs.json": "42dea6fee820d552c4bb35a59258825a54eacb64",
@@ -2368,6 +2372,9 @@
     "project/had/inlet-isolation-product-recovery-20261123.md": "2265d1f1a7e35db18ae5bf684040adaf236ef7b2",
     "project/had/studies/inlet-route-candidate.json": "6bd208ae8dbe70564122af3d16d3d86f60dde141",
     "project/had/studies/inlet-route-candidate.svg": "9503bc8122f542d68af1662e6e120ff9d501a25f",
-    "project/had/inlet-retained-service-route-comparison.md": "f574b645bf44c91378eccdd621235687ba2315fd"
+    "project/had/inlet-retained-service-route-comparison.md": "f574b645bf44c91378eccdd621235687ba2315fd",
+    "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
+    "project/had/studies/inlet-split-plant-station.svg": "7e5cb43bbf3fe2bd23d5c7471438e6a0dd26d5d5",
+    "project/had/split-isolation-station-development.md": "fecda8b22e708e9e89de61908c1beb7b683ea21f"
   }
 }

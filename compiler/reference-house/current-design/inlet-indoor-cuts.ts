@@ -16,9 +16,10 @@ export const indoorCutProductEvidence = {
   accessed: '2026-11-21',
   bellows: { model: 'Spirax Sarco BSA6T DN25 PN40, metal seat; on/off only',
     technicalRevision: 'TI-P137-18 CMGT Issue15, pp2,4,5,10,16; PDF SHA256 da348814a1f8c2a464bea0caac89a1310500a73c56c47df27787ebee6baac0ec',
-    installationRevision: 'IM-P137-02 CMGT Issue18, sections3,6',
+    installationRevision: 'Specific BSA6T manual IM-P184-03 CMGT Issue6, sections1.1(v),3.3 and Figure4; accessed2026-11-23',
     technicalUrl: 'https://content.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/ti/bsat_bsa-ti-p137-18-en.ashx?rev=97eb6d9d6bf84649a5291682e5f4b781',
-    installationUrl: 'https://content.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/im/bsa-im-p137-02-en.ashx?rev=e2301d3b866a411f90814a67b1ad645a',
+    installationUrl: 'https://content.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/im/bsa6t-im-p184-03-en.ashx?rev=d42816b8cbc64b8aa1fe4fd5ba337669',
+    exactFactoryFlowArrowAndSpindleOrientationVerified:false, ratedExternalForceMomentAndCaptureCapacityAvailable:false,
     faceMm:160, axisToTopMm:217, wheelDiameterMm:125, approximateKg:6, fullOpenKvM3h:12,
     manufacturerPreferredStem:'vertical-up', permissibleOnOffDifferential:'limited to PMO; not the separate2bar throttling duty',
     actualPotableQualification:false, actualWholeConstituentQualification:false,
@@ -373,4 +374,58 @@ ${text(35,880,'Existing shield and shifted equipment field are retained candidat
 ${text(35,920,'Ground translation is explicit geometry only; native structural forces and whole-house floor levels are not adopted.')}
 ${text(35,970,'HAD OPEN · common support, backfeed/store release, blocked/submerged drainage and occupied renewal remain unresolved.',17)}
 </g></svg>`
+}
+
+export type SplitPlantStationChoice={schema:'had-split-plant-station/1';axisMm:Point;operatorShoulderMm:Point;ordinaryApproachMm:readonly Point[];settingEachMm:number;mountCentresZMm:readonly[number,number]}
+type SplitPlantStationInputs={reference:ReturnType<typeof inletEntrySideCuts>;choice:SplitPlantStationChoice;obstacles:readonly{id:string;boxMm:Box}[];cart:{pathMm:readonly (readonly[number,number])[];radiusMm:number};opposedPlateSouthFaceYMm:number;mainboardBoxMm:Box;plantCoreYMm:readonly[number,number];roomPlanMm:Plan;ceilingMm:number;groundFflMm:number}
+/** Rigidly relocate the SAME valve/cover/tool envelopes; this is not a new product or full network. */
+export function inletSplitPlantStationComparison(i:SplitPlantStationInputs){
+ const q=i?.choice,tuple=(x:unknown,n:number)=>Array.isArray(x)&&x.length===n&&[...x].every(v=>typeof v==='number'&&Number.isFinite(v))
+ if(!i||!q||Object.keys(q).sort().join(',')!=='axisMm,mountCentresZMm,operatorShoulderMm,ordinaryApproachMm,schema,settingEachMm'||q.schema!=='had-split-plant-station/1'
+  ||!tuple(q.axisMm,3)||!tuple(q.operatorShoulderMm,3)||!Array.isArray(q.ordinaryApproachMm)||q.ordinaryApproachMm.length<2||![...q.ordinaryApproachMm].every(p=>tuple(p,3))
+  ||JSON.stringify(q.ordinaryApproachMm.at(-1))!==JSON.stringify(q.operatorShoulderMm)||!Number.isFinite(q.settingEachMm)||q.settingEachMm<10||q.settingEachMm>30||!tuple(q.mountCentresZMm,2)||q.mountCentresZMm[1]<=q.mountCentresZMm[0]
+  ||!Array.isArray(i.obstacles)||!i.obstacles.length||new Set(i.obstacles.map(o=>o?.id)).size!==i.obstacles.length||i.obstacles.some(o=>!o||!o.id||!tuple(o.boxMm,6)||o.boxMm.slice(3).some((v:number)=>v<=0))
+  ||!i.cart||!Array.isArray(i.cart.pathMm)||i.cart.pathMm.length<2||![...i.cart.pathMm].every(p=>tuple(p,2))||!Number.isFinite(i.cart.radiusMm)||i.cart.radiusMm<=0
+  ||!tuple(i.mainboardBoxMm,6)||!Number.isFinite(i.opposedPlateSouthFaceYMm)||!tuple(i.plantCoreYMm,2)||!tuple(i.roomPlanMm,4)||i.roomPlanMm.slice(2).some(v=>v<=0)||!Number.isFinite(i.ceilingMm)||i.ceilingMm<2000||!Number.isFinite(i.groundFflMm))throw Error('Unsupported actual split Plant station geometry')
+ const ref=i.reference.valves.find(v=>v.branch==='plant')
+ if(!ref)throw Error('Unsupported missing reference Plant cut')
+ const delta=q.axisMm.map((v,k)=>v-ref.axisMm[k]),translate=(b:readonly number[])=>b.map((v,k)=>v+(k<3?delta[k]:0)) as unknown as Box,
+  boxes=[{id:'same-BSA-insulated-body',boxMm:translate(ref.insulatedValveBodyEnvelopeMm)},{id:'same-BSA-stem-wheel',boxMm:translate(ref.stemWheelEnvelopeMm)}],
+  wholeValveDraw=translate(ref.replacement.wholeValveSweepMm),setting=2*q.settingEachMm,
+  gap=(a:Box,b:Box)=>{const d=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return d.some(v=>v>0)?Math.hypot(...d.map(v=>Math.max(0,v))):Math.max(...d)},
+  bodyChecks=i.obstacles.filter(o=>o.boxMm[2]<2000&&o.boxMm[2]+o.boxMm[5]>0).map(o=>({obstacle:o.id,reserveMm:Math.min(...q.ordinaryApproachMm.slice(1).map((p,k)=>segmentBoxDistance(q.ordinaryApproachMm[k],p,[o.boxMm[0],o.boxMm[1],0,o.boxMm[3],o.boxMm[4],2000])))-i.reference.ordinaryOperator.bodyRadiusMm-setting})),
+  fixedChecks=boxes.flatMap(part=>i.obstacles.map(o=>({part:part.id,obstacle:o.id,reserveMm:gap(part.boxMm,o.boxMm)-setting}))),
+  drawChecks=i.obstacles.map(o=>({obstacle:o.id,reserveMm:gap(wholeValveDraw,o.boxMm)-setting})),
+  g0=ref.grips.find(g=>g.inboardMm===0&&g.regripAngleDeg===0)!,wheelR=Math.abs(g0.pointMm[2]-ref.axisMm[2]),wheelSign=Math.sign(g0.pointMm[2]-ref.axisMm[2]),wheelX=g0.pointMm[0]-ref.axisMm[0],
+  coverMm=wheelR*Math.PI/180/2+1,armChecks=[] as {obstacle:string;angleDeg:number;inboardMm:number;gripMm:Point;reachMm:number;reserveMm:number}[]
+ for(let inboard=0;inboard<=40;inboard+=2)for(let angle=-15;angle<=15;angle++){
+  const t=angle*Math.PI/180,grip:Point=[q.axisMm[0]+wheelX+inboard,q.axisMm[1]+wheelR*Math.sin(t),q.axisMm[2]+wheelSign*wheelR*Math.cos(t)],reach=length(q.operatorShoulderMm,grip)
+  for(const o of i.obstacles)armChecks.push({obstacle:o.id,angleDeg:angle,inboardMm:inboard,gripMm:grip,reachMm:reach,reserveMm:segmentBoxDistance(q.operatorShoulderMm,grip,o.boxMm)-i.reference.ordinaryOperator.armRadiusMm-setting-coverMm})
+ }
+ const cartChecks=boxes.map(part=>({part:part.id,reserveMm:Math.min(...i.cart.pathMm.slice(1).map((p,k)=>segmentBoxDistance([...i.cart.pathMm[k],q.axisMm[2]],[...p,q.axisMm[2]],part.boxMm)))-i.cart.radiusMm-setting})),
+  backingTools=q.mountCentresZMm.map(z=>({centreZMm:z,boxMm:[q.axisMm[0]-100,i.opposedPlateSouthFaceYMm-200,z-100,200,200,200] as Box})),
+  directHeightBackingControl={centreZMm:q.axisMm[2],boxMm:[q.axisMm[0]-100,i.opposedPlateSouthFaceYMm-200,q.axisMm[2]-100,200,200,200] as Box},
+  backingChecks=backingTools.map(t=>({centreZMm:t.centreZMm,mainboardReserveMm:gap(t.boxMm,i.mainboardBoxMm)-setting})),
+  boundaryChecks=[...boxes,{id:'whole-valve-draw',boxMm:wholeValveDraw}].map(v=>({part:v.id,reserveMm:Math.min(v.boxMm[0]-i.roomPlanMm[0],i.roomPlanMm[0]+i.roomPlanMm[2]-v.boxMm[0]-v.boxMm[3],v.boxMm[1]-i.roomPlanMm[1],i.roomPlanMm[1]+i.roomPlanMm[3]-v.boxMm[1]-v.boxMm[4],v.boxMm[2],i.ceilingMm-v.boxMm[2]-v.boxMm[5])-setting})),
+  minBody=bodyChecks.reduce((a,b)=>a.reserveMm<b.reserveMm?a:b),minArm=armChecks.reduce((a,b)=>a.reserveMm<b.reserveMm?a:b),maximumGripReachMm=Math.max(...armChecks.map(v=>v.reachMm)),
+  diagnostics=[...(boundaryChecks.some(v=>v.reserveMm<0)?['SPLIT_PLANT/room-boundary']:[]),...(minBody.reserveMm<0?['SPLIT_PLANT/ordinary-body']:[]),...(minArm.reserveMm<0||maximumGripReachMm>i.reference.ordinaryOperator.reachLimitMm?['SPLIT_PLANT/ordinary-arm-or-reach']:[]),...(fixedChecks.some(v=>v.reserveMm<0)?['SPLIT_PLANT/fixed-valve']:[]),...(drawChecks.some(v=>v.reserveMm<0)?['SPLIT_PLANT/whole-valve-draw']:[]),...(cartChecks.some(v=>v.reserveMm<0)?['SPLIT_PLANT/apparatus-cart']:[]),...(backingChecks.some(v=>v.mainboardReserveMm<0)?['SPLIT_PLANT/opposed-backing-tool']:[])]
+ const absoluteAxis=q.axisMm.map((v,k)=>v+(k===2?i.groundFflMm:0)),gravity=[0,0,-ref.knownGravityN],cross=(p:readonly number[],f:readonly number[])=>[p[1]*f[2]-p[2]*f[1],p[2]*f[0]-p[0]*f[2],p[0]*f[1]-p[1]*f[0]]
+ return{schema:'had-split-plant-station-comparison/1',id:'HAD/split-plant-station',coordinateDatum:'Local occupied-ground FFL geometry; gravity origins explicitly translated by supplied groundFFL. No raised/slab-change acceptance.',state:'unadopted-normal-and-cold-mode-station-comparison',choice:q,referenceValveId:ref.id,boxes,wholeValveDraw,obstacles:i.obstacles,roomPlanMm:i.roomPlanMm,cartPathMm:i.cart.pathMm,cartRadiusMm:i.cart.radiusMm,
+  bodyChecks,minBody,boundaryChecks,cartMaximumHeightKnown:false,noOverheadCartClearanceCredit:true,minimumArm:minArm,maximumGripReachMm,reachLimitMm:i.reference.ordinaryOperator.reachLimitMm,bodyRadiusMm:i.reference.ordinaryOperator.bodyRadiusMm,armRadiusMm:i.reference.ordinaryOperator.armRadiusMm,independentSettingsEachMm:q.settingEachMm,continuousArmCoverMm:coverMm,fixedChecks,drawChecks,cartChecks,
+  backingToolEnvelopes:backingTools,backingChecks,directHeightBackingControl:{...directHeightBackingControl,mainboardReserveMm:gap(directHeightBackingControl.boxMm,i.mainboardBoxMm)-setting},
+  plantCoreYMm:i.plantCoreYMm,groundFflMm:i.groundFflMm,absoluteValveAxisMm:absoluteAxis,nativeStructuralActionsAdopted:false,nominalValveOnlyGravity:{kg:ref.nominalValveKg,referenceOriginMm:absoluteAxis,wrenchN_Nm:[...gravity,...cross(absoluteAxis.map(v=>v/1000),gravity)],actualFactoryCentroidKnown:false},
+  necessaryNormalAndColdModeStationGeometryScreen:diagnostics.length===0,diagnostics,
+  modes:{normal:'Cylinder home; east working field clear; reference protected door already open. Actual apparatus and full radiator renewal retained.',coldReplacement:'Independent Lodge/store isolation, drained/verified zero pressure; captured disconnected factory spools removed before cold/empty apparatus transit.',operatorAccessDuringCartTransitClaimed:false,closedToOpenDoorAndHardwareQualified:false,manualSourceFaultResponseCredited:false},
+  pressureCutMagnitudeReferenceN:ref.pressureCutClearBoreComparisonN,sourceBackfeedAndStoredReleaseBounded:false,
+  independentCompleteBranchesQualified:false,fullPipeCarrierAndTemporaryMassKg:null,actualThermalReactionBoundN:null,actualCoreFoundationResistanceQualified:false,actualToolsCaptureFirstRestAndReinstatementQualified:false,fullOccupiedArrangementComplete:false,selected:false}
+}
+
+/** Draw only the computed normal/cold station comparison; no pipe network or bracket is invented. */
+export function drawInletSplitPlantStation(r:ReturnType<typeof inletSplitPlantStationComparison>){
+ const scale=.2,X=(x:number)=>40+(x-8800)*scale,Y=(y:number)=>900-(y-3000)*scale,
+  text=(x:number,y:number,s:string,size=16)=>`<text x="${x}" y="${y}" font-size="${size}">${s}</text>`,
+  box=(b:readonly number[],fill:string,dash='')=>`<rect x="${X(b[0])}" y="${Y(b[1]+b[4])}" width="${b[3]*scale}" height="${b[4]*scale}" fill="${fill}" stroke="#786f5d" ${dash?'stroke-dasharray="'+dash+'"':''}/>`,
+  line=(p:readonly (readonly number[])[],colour:string,width:number,opacity=1)=>`<polyline points="${p.map(p=>`${X(p[0])},${Y(p[1])}`).join(' ')}" fill="none" stroke="${colour}" stroke-width="${width}" stroke-linecap="round" stroke-linejoin="round" opacity="${opacity}"/>`,
+  plan=r.roomPlanMm,room:Box=[plan[0],plan[1],0,plan[2],plan[3],1]
+ return `<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="1120" viewBox="0 0 1250 1120"><rect width="1250" height="1120" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#29271f">${text(35,40,'Separate Plant isolation · station geometry only',26)}${text(35,75,'Unadopted same-valve comparison. Complete branches, faults, relief, capture and support remain unresolved.')}${box(room,'#eee6d4')}${r.obstacles.filter(o=>!/service-spine|protected-door/.test(o.id)).map(o=>box(o.boxMm,'#d6d2c5')).join('')}${line(r.cartPathMm,'#a184ad',2*r.cartRadiusMm*scale,.12)}${line(r.cartPathMm,'#765a83',2)}${line(r.choice.ordinaryApproachMm,'#4c8c7a',2*r.bodyRadiusMm*scale,.13)}${line(r.choice.ordinaryApproachMm,'#2a7768',2)}${box(r.wholeValveDraw,'none','5 4')}${r.boxes.map(b=>box(b.boxMm,'#e3b37b')).join('')}${line([r.choice.operatorShoulderMm,r.minimumArm.gripMm],'#b34b34',3)}${text(790,115,`Necessary station screen: ${r.necessaryNormalAndColdModeStationGeometryScreen?'within bounds':'REJECTED'}.`)}${text(790,155,`Valve axis: ${r.choice.axisMm.join(' / ')} mm.`,16)}${text(790,195,`Two ${r.independentSettingsEachMm} mm settings retained.`)}${text(790,235,`Body minimum: ${r.minBody.reserveMm.toFixed(2)} mm.`)}${text(790,275,`Arm reserve: ${r.minimumArm.reserveMm.toFixed(2)} mm.`)}${text(790,315,`Maximum reach: ${r.maximumGripReachMm.toFixed(2)} / ${r.reachLimitMm} mm.`)}${text(790,355,`Fixed station / cart: ${Math.min(...r.cartChecks.map(v=>v.reserveMm)).toFixed(2)} mm.`)}${text(790,395,`Backing / board: ${Math.min(...r.backingChecks.map(v=>v.mainboardReserveMm)).toFixed(2)} mm.`)}${text(790,435,`Direct-height backing: ${r.directHeightBackingControl.mainboardReserveMm<0?'REJECTED':'within comparison'}.`)}${text(790,475,'Normal mode: cylinder home, field clear.')}${text(790,515,'Cold mode: isolate, drain and capture first.')}${text(790,555,'No operator access during cart transit.')}${text(790,595,'No overhead cart-height credit.')}${text(790,635,'No new pipe route or steel receiver drawn.')}${text(35,965,`Green: ordinary approach / body radius ${r.bodyRadiusMm}mm. Purple: ${2*r.cartRadiusMm}mm apparatus plan path.`,17)}${text(35,1000,'Orange: actual source valve envelope translated; dashed: whole-valve west withdrawal comparison.',17)}${text(35,1035,'No complete station, source/backfeed, relief, material, pressure/thermal support or installed acceptance.',17)}${text(35,1080,'HAD OPEN · independent complete branches and every physical renewal interface remain required.',17)}</g></svg>`
 }

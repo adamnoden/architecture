@@ -28,6 +28,7 @@ test('explicit saved bank edit shares compiler output, preserves roof/source con
  const cli=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--bundle','-'],{input:saveEngineeringEdit(changed.state),encoding:'utf8',maxBuffer:8*1024*1024}))
  assert.deepEqual(cli.engineering.inletSourceEnvelope.joinedDirection.room.bankShelfCarrier,after.inletBank!.carrier)
  assert.deepEqual(cli.engineering.inletSourceEnvelope.joinedDirection.room.indoorRoutes.candidateComparison,JSON.parse(JSON.stringify(after.inletBank!.route.candidateComparison)))
+ assert.deepEqual(cli.engineering.inletSourceEnvelope.joinedDirection.room.indoorRoutes.splitStationComparison,JSON.parse(JSON.stringify(after.inletBank!.route.splitStationComparison)))
  assert.equal(after.inletBank!.receiver.nativeStructuralActionsAdopted,false)
  const undo=replayEngineeringEdit(changed.state,engineeringBase(changed.state),'undo')
  assert.equal(undo.status,'applied');if(undo.status==='applied')assert.equal(saveEngineeringEdit(undo.state),saveEngineeringEdit(state))
