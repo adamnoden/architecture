@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
-import {inletIndoorRoutes,drawInletIndoorRoutes,type IndoorRoutesInput} from './current-design/inlet-indoor-routes.js'
+import {inletIndoorRoutes,inletRouteOperation,drawInletIndoorRoutes,type IndoorRoutesInput} from './current-design/inlet-indoor-routes.js'
 const source=JSON.parse(readFileSync(new URL('../../project/had/studies/south-inlet-under-sill.json',import.meta.url),'utf8'))
 const input:IndoorRoutesInput={roomPlanMm:[9397,429.5,2173.5,2023.5],bankMm:[11350,2350],utilityAxisZMm:1350,plantAxisZMm:1890,
  tailOffsetMm:200,utilityReturnXMm:11180,westernReturnXMm:10040,utilitySourcePathMm:source.branches[0].coordinates,plantSourcePathMm:source.branches[1].coordinates,
@@ -64,4 +64,30 @@ test('a real obstruction, insufficient ceiling, changed flow and unsupported sou
  const sparse={...input,bankMm:new Array(2)} as unknown as IndoorRoutesInput
  assert.throws(()=>inletIndoorRoutes(sparse),/Unsupported/)
 
+})
+
+test('actual source8 route counterexample joins valve bodies, precise face connections and continuous ordinary arm sweeps',()=>{
+ const receipt=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-source-envelope.results.json',import.meta.url),'utf8')),
+  r=receipt.joinedDirection.room.indoorRoutes,c=receipt.joinedDirection.room.indoorCuts,o=inletRouteOperation(r,c)
+ assert.equal(r.necessaryStraightPipeGeometryAndBudgetComparison,true,'old narrow geometry/budget check missed these interfaces')
+ assert.equal(o.necessaryRouteOperationEnvelopeScreen,false)
+ const sibling=o.valveChecks.find(v=>v.path==='utility/downstream'&&v.segment===2&&v.valve==='plant'&&v.kind==='stem-wheel')!
+ assert.ok(Math.abs(sibling.reserveMm+60.05)<1e-6)
+ assert.equal(sibling.connectedEndTrimmed,false)
+ const returning=o.valveChecks.find(v=>v.path==='plant/upstream'&&v.segment===3&&v.valve==='plant'&&v.kind==='body')!
+ assert.ok(Math.abs(returning.reserveMm+23.55)<1e-6,'same-branch returning leg has no connection exemption')
+ assert.equal(returning.connectedEndTrimmed,false)
+ assert.ok(o.valveChecks.filter(v=>v.connectedEndTrimmed).every(v=>v.reserveMm===0))
+ assert.equal(o.connectionInterfaces.length,4)
+ assert.ok(o.minimumArmReserveMm < -100)
+ assert.equal(o.armChecks.find(v=>v.valve==='plant')!.pipe.path,'utility/downstream')
+ assert.ok(o.continuousRegrip.sweepCoverMm>1.54)
+ assert.equal(o.twoIndependentSettingsMm,20)
+ assert.equal(o.pipeJacketRadiusMm,40.05)
+ assert.equal(o.armCapsuleRadiusMm,40)
+ assert.match(drawInletIndoorRoutes(r,o),/Route \/ valve \/ arm screen: REJECTED/)
+ const changed=structuredClone(r);changed.paths[0].pointsMm.at(-1)[0]+=1
+ assert.throws(()=>inletRouteOperation(changed,c),/Unsupported actual route valve-face/)
+ const wrong=structuredClone(c);wrong.authoredChoices.wheelInboardMm=NaN
+ assert.throws(()=>inletRouteOperation(r,wrong),/Unsupported actual route operation/)
 })

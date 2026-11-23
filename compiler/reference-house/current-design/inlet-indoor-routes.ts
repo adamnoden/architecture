@@ -1,5 +1,6 @@
 /** Explicit cold paths for the doorway-operated indoor cuts.
  * Coordinates and comparisons are serialisable; no pressure/thermal support is invented. */
+import type { inletEntrySideCuts } from './inlet-indoor-cuts.js'
 import { inletCabinetProductFacts } from './inlet-cabinet-copper.js'
 import { segmentBoxDistance, segmentDistance } from '../../../project/had/studies/service-interface-geometry.mjs'
 type Point=readonly[number,number,number]
@@ -141,9 +142,68 @@ export function inletIndoorRoutes(i:IndoorRoutesInput){
   fullInsulatedFittingEnvelopeQualified:false,fullRouteRenewalQualified:false,wholeOccupiedArrangementComplete:false,selected:false}
 }
 
+/** Join actual connected faces, valve bodies and continuous ordinary arm sweeps.
+ * Only the exact connected axial end inside its own expanded body interface is
+ * trimmed. All returning legs and sibling valves remain checked. */
+export function inletRouteOperation(r:ReturnType<typeof inletIndoorRoutes>,c:ReturnType<typeof inletEntrySideCuts>){
+ if(!r||!c||r.paths.length!==4||c.valves.length!==2||!tuple(c.ordinaryOperator.shoulderMm,3)||!Number.isFinite(c.authoredChoices.wheelInboardMm)||c.authoredChoices.wheelInboardMm<0||c.authoredChoices.wheelInboardMm>40||c.valves.some(v=>!tuple(v.axisMm,3)||!tuple(v.insulatedValveBodyEnvelopeMm,6)||!tuple(v.stemWheelEnvelopeMm,6)))throw Error('Unsupported actual route operation geometry')
+ const clean=(v:number)=>Math.abs(v)<1e-7?0:v,
+  radius=r.pipe.maximumOuterDiameterMm/2+r.pipe.radialInsulationMm+r.pipe.jacketEachSideMm,
+  settings=2*r.pipe.settingEachPipeMm,shoulder=c.ordinaryOperator.shoulderMm as Point,
+  armR=c.ordinaryOperator.armRadiusMm,inboard=c.authoredChoices.wheelInboardMm,
+  angleStepDeg=1,inboardSteps=Math.max(1,Math.ceil(inboard/2)),inboardStepMm=inboard/inboardSteps,
+  sweepCoverMm=62.5*Math.PI/180*angleStepDeg/2+inboardStepMm/2,
+  gap=(a:Box,b:Box)=>{const d=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return d.some(v=>v>0)?Math.hypot(...d.map(v=>Math.max(v,0))):Math.max(...d)},
+  allSegments=r.paths.flatMap(path=>segments(path.pointsMm).map(seg=>({path:path.id,...seg}))),
+  interfaces=r.paths.map(path=>{
+   const branch=path.id.split('/')[0],v=c.valves.find(v=>v.branch===branch),upstream=path.id.endsWith('/upstream')
+   if(!v)throw Error('Unsupported missing actual route valve')
+   const index=upstream?path.pointsMm.length-2:0,end=path.pointsMm[upstream?path.pointsMm.length-1:0],adjacent=path.pointsMm[upstream?path.pointsMm.length-2:1],axis=v.axisMm,sign=upstream?-1:1,
+    limit=axis[2]+sign*(v.insulatedValveBodyEnvelopeMm[5]/2+radius+settings)
+   if(end[0]!==axis[0]||end[1]!==axis[1]||end[2]!==axis[2]+sign*80||adjacent[0]!==axis[0]||adjacent[1]!==axis[1]||sign*(adjacent[2]-limit)<=0)
+    throw Error('Unsupported actual route valve-face connection: '+path.id)
+   return{path:path.id,branch,segment:index,faceMm:end,excludedToMm:[axis[0],axis[1],limit] as Point,
+    basis:'Only connected axial end through own insulated body plus jacket and two settings; no returning leg or other valve excluded.'}
+  }),
+  valveChecks=allSegments.flatMap(seg=>c.valves.flatMap(v=>{
+   const connection=interfaces.find(i=>i.path===seg.path&&i.branch===v.branch&&i.segment===seg.index),
+    a=connection&&seg.index===0?connection.excludedToMm:seg.a,
+    b=connection&&seg.index!==0?connection.excludedToMm:seg.b
+   return [{kind:'body',box:v.insulatedValveBodyEnvelopeMm},{kind:'stem-wheel',box:v.stemWheelEnvelopeMm}].map(o=>({path:seg.path,segment:seg.index,valve:v.branch,kind:o.kind,reserveMm:clean(segmentBoxDistance(a,b,o.box as Box)-radius-settings),connectedEndTrimmed:!!connection}))
+  })),
+  cornerValveChecks=r.paths.flatMap(p=>p.corners.flatMap(corner=>c.valves.flatMap(v=>[
+   {kind:'body',box:v.insulatedValveBodyEnvelopeMm},{kind:'stem-wheel',box:v.stemWheelEnvelopeMm}
+  ].map(o=>({corner:corner.id,valve:v.branch,kind:o.kind,reserveMm:gap(corner.territoryBoxMm,o.box as Box)-settings}))))),
+  armChecks=c.valves.flatMap(v=>{
+   let closest:{path:string;segment:number;valve:string;inboardMm:number;angleDeg:number;gripMm:Point;reserveMm:number}|undefined
+   let closestCorner:{corner:string;valve:string;inboardMm:number;angleDeg:number;reserveMm:number}|undefined
+   const sign=v.branch==='utility'?1:-1
+   for(let ib=0;ib<=inboardSteps;ib++)for(let angle=-15;angle<=15;angle+=angleStepDeg){
+    const inboardMm=ib*inboardStepMm,a=angle*Math.PI/180,
+     grip:Point=[v.axisMm[0]-217+inboardMm,v.axisMm[1]+62.5*Math.sin(a),v.axisMm[2]+sign*62.5*Math.cos(a)]
+    for(const seg of allSegments){const reserveMm=segmentDistance(shoulder,grip,seg.a,seg.b)-armR-radius-settings-sweepCoverMm
+     if(!closest||reserveMm<closest.reserveMm)closest={path:seg.path,segment:seg.index,valve:v.branch,inboardMm,angleDeg:angle,gripMm:grip,reserveMm}}
+    for(const path of r.paths)for(const corner of path.corners){const reserveMm=segmentBoxDistance(shoulder,grip,corner.territoryBoxMm)-armR-settings-sweepCoverMm
+     if(!closestCorner||reserveMm<closestCorner.reserveMm)closestCorner={corner:corner.id,valve:v.branch,inboardMm,angleDeg:angle,reserveMm}}
+   }
+   return{valve:v.branch,pipe:closest!,corner:closestCorner!}
+  }),
+  minimumValveReserveMm=Math.min(...valveChecks.map(v=>v.reserveMm),...cornerValveChecks.map(v=>v.reserveMm)),
+  minimumArmReserveMm=Math.min(...armChecks.flatMap(v=>[v.pipe.reserveMm,v.corner.reserveMm])),
+  diagnostics=[...(minimumValveReserveMm<0?['INLET_ROUTE_VALVE_BODY_OR_STEM_COLLISION']:[]),...(minimumArmReserveMm<0?['INLET_ROUTE_ORDINARY_ARM_COLLISION']:[])]
+ return{schema:'had-inlet-route-operation/1',state:'necessary-declared-envelope-comparison',
+  pipeJacketRadiusMm:radius,armCapsuleRadiusMm:armR,twoIndependentSettingsMm:settings,
+  continuousRegrip:{angleRangeDeg:[-15,15],inboardRangeMm:[0,inboard],angleStepDeg,inboardStepMm,sweepCoverMm,
+   interpretation:'All interpolated capsules covered by sampled capsule plus Lipschitz allowance; no reduction of arm, jacket or settings.'},
+  connectionInterfaces:interfaces,minimumValveReserveMm,minimumArmReserveMm,
+  valveChecks:valveChecks.filter(v=>v.reserveMm<10),cornerValveChecks:cornerValveChecks.filter(v=>v.reserveMm<10),armChecks,
+  necessaryRouteOperationEnvelopeScreen:diagnostics.length===0,diagnostics,
+  actualWheelPositionTorqueAndFactoryInterfacesQualified:false,fullOccupiedArrangementComplete:false}
+}
+
 /** Inspect the actual polyline coordinates in plan and in an X/Z projection. */
-export function drawInletIndoorRoutes(r:ReturnType<typeof inletIndoorRoutes>){
+export function drawInletIndoorRoutes(r:ReturnType<typeof inletIndoorRoutes>,operation?:ReturnType<typeof inletRouteOperation>){
  const colours=['#267a87','#64a2a4','#93513d','#c58c55'],text=(x:number,y:number,s:string,size=16)=>`<text x="${x}" y="${y}" font-size="${size}">${s}</text>`,
   line=(points:readonly Point[],elevation:boolean,colour:string)=>`<polyline points="${points.map(p=>`${50+(p[0]-r.roomPlanMm[0])*.13},${elevation?1160-p[2]*.13:640-(p[1]-r.roomPlanMm[1])*.13}`).join(' ')}" fill="none" stroke="${colour}" stroke-width="3"/>`
- return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1250" viewBox="0 0 1200 1250"><rect width="1200" height="1250" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#29271f">${text(35,40,'Independent indoor cold paths · actual saved-bank comparison',25)}${text(35,75,'Declared pipe and boxed fitting territories. Factory fit, independent supports and loaded renewal remain unqualified.')}${text(35,120,'PLAN · source entry to separate indoor valves and the retained terminal/Plant transfer',18)}${`<rect x="50" y="${640-r.roomPlanMm[3]*.13}" width="${r.roomPlanMm[2]*.13}" height="${r.roomPlanMm[3]*.13}" fill="none" stroke="#6f766e"/>`}${r.checkedObstacles.filter(o=>/maintenance|washer/.test(o.id)).map(o=>`<rect x="${50+(o.boxMm[0]-r.roomPlanMm[0])*.13}" y="${640-(o.boxMm[1]+o.boxMm[4]-r.roomPlanMm[1])*.13}" width="${o.boxMm[3]*.13}" height="${o.boxMm[4]*.13}" fill="#d7d2c5" stroke="#9f9a8d"/>`).join('')}${r.paths.map((p,k)=>line(p.pointsMm,false,colours[k])).join('')}${text(35,720,'X/Z PROJECTION · local floor datum; no vertical exaggeration used as clearance proof',18)}${r.paths.map((p,k)=>line(p.pointsMm,true,colours[k])).join('')}${r.paths.map((p,k)=>`<line x1="600" x2="615" y1="${145+k*40}" y2="${145+k*40}" stroke="${colours[k]}" stroke-width="4"/>`+text(620,150+k*40,`${p.id}: ${(p.centrelineLengthMm/1000).toFixed(3)}m; corner interfaces: ${p.corners.length}.`)).join('')}${text(620,345,`Closest pipes after jackets/settings: ${r.nearestPair.afterTwoJacketsAndSettingsMm.toFixed(2)}mm.`)}${text(620,385,`Upper copper stock: ${r.straightCopperStockComparisonKg.toFixed(3)} kg; water: ${r.maximumStraightPipeWaterComparisonKg.toFixed(3)} kg.`)}${text(620,425,'Valves12kg; jacket/insulation refs; complete mass unknown.')}${r.branches.map((b,k)=>text(620,485+k*40,`${b.id}: loss: ${b.comparisonLossBar.toFixed(4)} bar; rise: ${b.netRiseBar.toFixed(4)} bar.`)).join('')}${text(620,570,`Boxed fitting territories: ${r.cornerTerritory.necessaryBoxedCornerTerritoryComparison?'within declared bounds':'REJECTED'}.`)}${text(620,610,`Geometry/budget comparison: ${r.necessaryStraightPipeGeometryAndBudgetComparison?'within declared comparisons':'REJECTED'}.`)}${text(620,650,'Loss coefficients are authored comparisons, not proved limits.')}${text(620,850,'Four paths; no cross-connection, header or bypass.')}${text(620,890,'Upstream/downstream tails end at actual 160 mm valve faces.')}${text(620,930,'Named copper/water gravity and pressure-corner vectors exported.')}${text(620,970,'Actual fixed/sliding clips and masonry receivers still required.')}${text(620,1010,'Lodge cuts and actual hot/store/upper draining remain required.')}${text(620,1050,'No route or added mass is admitted into native ground-zero STR.')}${text(35,1210,'HAD OPEN · no product/material selection, full occupied arrangement or construction acceptance',18)}</g></svg>`
+ return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1250" viewBox="0 0 1200 1250"><rect width="1200" height="1250" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#29271f">${text(35,40,'Independent indoor cold paths · actual saved-bank comparison',25)}${text(35,75,'Declared pipe and boxed fitting territories. Factory fit, independent supports and loaded renewal remain unqualified.')}${text(35,120,'PLAN · source entry to separate indoor valves and the retained terminal/Plant transfer',18)}${`<rect x="50" y="${640-r.roomPlanMm[3]*.13}" width="${r.roomPlanMm[2]*.13}" height="${r.roomPlanMm[3]*.13}" fill="none" stroke="#6f766e"/>`}${r.checkedObstacles.filter(o=>/maintenance|washer/.test(o.id)).map(o=>`<rect x="${50+(o.boxMm[0]-r.roomPlanMm[0])*.13}" y="${640-(o.boxMm[1]+o.boxMm[4]-r.roomPlanMm[1])*.13}" width="${o.boxMm[3]*.13}" height="${o.boxMm[4]*.13}" fill="#d7d2c5" stroke="#9f9a8d"/>`).join('')}${r.paths.map((p,k)=>line(p.pointsMm,false,colours[k])).join('')}${text(35,720,'X/Z PROJECTION · local floor datum; no vertical exaggeration used as clearance proof',18)}${r.paths.map((p,k)=>line(p.pointsMm,true,colours[k])).join('')}${r.paths.map((p,k)=>`<line x1="600" x2="615" y1="${145+k*40}" y2="${145+k*40}" stroke="${colours[k]}" stroke-width="4"/>`+text(620,150+k*40,`${p.id}: ${(p.centrelineLengthMm/1000).toFixed(3)}m; corner interfaces: ${p.corners.length}.`)).join('')}${text(620,345,`Closest pipes after jackets/settings: ${r.nearestPair.afterTwoJacketsAndSettingsMm.toFixed(2)}mm.`)}${text(620,385,`Upper copper stock: ${r.straightCopperStockComparisonKg.toFixed(3)} kg; water: ${r.maximumStraightPipeWaterComparisonKg.toFixed(3)} kg.`)}${text(620,425,'Valves12kg; jacket/insulation refs; complete mass unknown.')}${r.branches.map((b,k)=>text(620,485+k*40,`${b.id}: loss: ${b.comparisonLossBar.toFixed(4)} bar; rise: ${b.netRiseBar.toFixed(4)} bar.`)).join('')}${text(620,570,`Boxed fitting territories: ${r.cornerTerritory.necessaryBoxedCornerTerritoryComparison?'within declared bounds':'REJECTED'}.`)}${text(620,610,`Geometry/budget comparison: ${r.necessaryStraightPipeGeometryAndBudgetComparison?'within declared comparisons':'REJECTED'}.`)}${text(620,650,'Loss coefficients are authored comparisons, not proved limits.')}${text(620,700,`Route / valve / arm screen: ${operation?.necessaryRouteOperationEnvelopeScreen?'within declared bounds':operation?'REJECTED':'not joined'}.`)}${text(620,740,operation?`Arm reserve ${operation.minimumArmReserveMm.toFixed(2)}mm; valve ${operation.minimumValveReserveMm.toFixed(2)}mm.`:'Actual valve and arm geometry must be joined.')}${text(620,850,'Four paths; no cross-connection, header or bypass.')}${text(620,890,'Upstream/downstream tails end at actual 160 mm valve faces.')}${text(620,930,'Named copper/water gravity and pressure-corner vectors exported.')}${text(620,970,'Actual fixed/sliding clips and masonry receivers still required.')}${text(620,1010,'Lodge cuts and actual hot/store/upper draining remain required.')}${text(620,1050,'No route or added mass is admitted into native ground-zero STR.')}${text(35,1210,'HAD OPEN · no product/material selection, full occupied arrangement or construction acceptance',18)}</g></svg>`
 }
