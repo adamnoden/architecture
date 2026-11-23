@@ -3,7 +3,7 @@
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "f1354d60b0143f2463fa1d69335f3c8fc8e7dd55f71ae824943babd5bbcd4b00",
+    "bindingDigest": "f819f897f918e854c16bac8e97cbc6957aa47834b6b17a4d7dea7c56ec392643",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -13,14 +13,16 @@
       "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
       "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
       "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53",
-      "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828"
+      "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+      "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979"
     },
     "methods": {
+      "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
       "compiler/reference-house/current-design/inlet-bank-receiver.ts": "cc7ca65f7619adade42caa095071c234b6eeb496",
       "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
       "compiler/reference-house/current-design/inlet-indoor-routes.ts": "a146ed0989975384bdba98391517b9e60e7a81c9",
       "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "324c658bd3159aff595d37ef41eccfecb3a4a117",
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "19e2f488da8019555e1637e253ee50365875747d",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "b2e302a755c1ffa4a6685c630a6e030bb6cfde0a",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
       "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
       "compiler/reference-house/current-design/inlet-room-pan.ts": "81c7736c2b91de574c582dd902ff903953dc9b46",
@@ -560,6 +562,980 @@
         2173.5,
         2023.5
       ],
+      "bankShelfCarrier": {
+        "schema": "had-bank-flat-shelf-carrier/1",
+        "state": "unadopted-flat-shelf-development-comparison",
+        "candidate": {
+          "shelfThicknessMm": 8,
+          "clampShiftUpMm": 4,
+          "backplateThicknessMm": 10,
+          "backplateHeightMm": 150,
+          "steelElasticModulusMPa": 200000,
+          "steelDensityKgM3": 8000,
+          "steelProofComparisonMPa": 200,
+          "proofDivisor": 1.5
+        },
+        "steelComparisonAllowableMPa": 133.33333333333334,
+        "rows": [
+          {
+            "id": "HAD/indoor-receiver/utility/below/flat-shelf",
+            "branch": "utility",
+            "side": "below",
+            "sourceReceiverId": "HAD/indoor-receiver/utility/below",
+            "sourceCaseBranch": "utility",
+            "proposedClampCentreMm": [
+              11360,
+              2350,
+              1141.2583302491978
+            ],
+            "shelfBoxMm": [
+              11255,
+              2330.95,
+              1120.7583302491978,
+              210,
+              139.05000000000018,
+              8
+            ],
+            "backplateBoxMm": [
+              11255,
+              2470,
+              1066.2583302491978,
+              210,
+              10,
+              150
+            ],
+            "joinedInsulationJacketBoxMm": [
+              11229,
+              2304.95,
+              1094.7583302491978,
+              262,
+              191.05000000000018,
+              85
+            ],
+            "wallPocketAndThermalBridgeQualified": false,
+            "fullWallWrapPenetrationMm": 16,
+            "actualRootYMm": 2470,
+            "loadArmMm": 120,
+            "shelfFullLengthMm": 139.05000000000018,
+            "shelfKg": 1.8688320000000025,
+            "backplateKg": 2.52,
+            "exactShelfCentroidMm": [
+              11360,
+              2400.475,
+              1124.7583302491978
+            ],
+            "exactBackplateCentroidMm": [
+              11360,
+              2475,
+              1141.2583302491978
+            ],
+            "lowerReserveAfterSettingMm": 0.24166975080220254,
+            "upperReserveAfterSettingMm": 0.24166975080220254,
+            "maximumShelfThicknessInAxialSlotMm": 8.483339501604604,
+            "minimumShelfThicknessForSourceStressComparisonMm": 15.895802409738549,
+            "sourceStressThicknessFitsEvenOptimallyRecenteredSlot": false,
+            "minimumObstacleReserveMm": -43,
+            "minimumOtherBranchPipeReserveMm": 400.1916697507621,
+            "minimumOrdinaryArmReserveMm": 107.48010907288631,
+            "obstacleConflicts": [
+              {
+                "part": "joined-insulated-carrier",
+                "obstacle": "HAD/utility-north/shield-connection-1",
+                "reserveMm": -43
+              }
+            ],
+            "otherBranchPipeConflicts": [],
+            "cases": [
+              {
+                "pressureSign": -1,
+                "thermalSign": 0,
+                "sourceForceN": -556.8987369613972,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -68102.46707985566,
+                "bendingMPa": 30.402887089221277,
+                "maximumShearMPa": 0.5135999811441047,
+                "stressComparisonMPa": 30.41589877320464,
+                "clampDeflectionMm": -0.1818136751970527,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1141.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -599.9531788813971,
+                  73.97839286866963,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.059856075605149855,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": true,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": -1,
+                "thermalSign": -1,
+                "sourceForceN": -9789.02929008917,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -1175958.1334551885,
+                "bendingMPa": 524.9813095782091,
+                "maximumShearMPa": 8.756573689293901,
+                "stressComparisonMPa": 525.2003504899625,
+                "clampDeflectionMm": -3.1492842101309804,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1141.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -9832.08373200917,
+                  1274.1553647752803,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": -2.907614459328778,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": -1,
+                "thermalSign": 1,
+                "sourceForceN": 8675.231816166377,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 1039753.1992954772,
+                "bendingMPa": 464.1755353997666,
+                "maximumShearMPa": 7.729373727005694,
+                "stressComparisonMPa": 464.3685576331532,
+                "clampDeflectionMm": 2.7856568597368745,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1141.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  8632.177374246377,
+                  -1126.198579037941,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": -2.543987108934672,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": 0,
+                "sourceForceN": 424.52493085275125,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 49668.37305784215,
+                "bendingMPa": 22.173380829393817,
+                "maximumShearMPa": 0.3626711508328136,
+                "stressComparisonMPa": 22.18227690063102,
+                "clampDeflectionMm": 0.1336439323146379,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1141.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  381.4704889327512,
+                  -53.606683947169664,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": 0.10802581848756465,
+                "necessaryShelfStressAndAxialSlotComparison": true,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": -1,
+                "sourceForceN": -8807.605622275021,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -1058187.2933174905,
+                "bendingMPa": 472.40504165959396,
+                "maximumShearMPa": 7.880302557316983,
+                "stressComparisonMPa": 472.60218037011566,
+                "clampDeflectionMm": -2.8338266026192893,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1141.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -8850.66006419502,
+                  1146.5702879594407,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": -2.5921568518170868,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": 1,
+                "sourceForceN": 9656.655483980527,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 1157524.0394331752,
+                "bendingMPa": 516.7518033183818,
+                "maximumShearMPa": 8.605644858982613,
+                "stressComparisonMPa": 516.9667277524893,
+                "clampDeflectionMm": 3.1011144672485655,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1141.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  9613.601042060527,
+                  -1253.7836558537806,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": -2.859444716446363,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              }
+            ],
+            "allSourceChallengesWithinShelfAndSlotComparison": false,
+            "actualClampBearingBoltCentresToolCaptureAndRenewalQualified": false
+          },
+          {
+            "id": "HAD/indoor-receiver/utility/above/flat-shelf",
+            "branch": "utility",
+            "side": "above",
+            "sourceReceiverId": "HAD/indoor-receiver/utility/above",
+            "sourceCaseBranch": "utility",
+            "proposedClampCentreMm": [
+              11360,
+              2350,
+              1406.7416697508022
+            ],
+            "shelfBoxMm": [
+              11255,
+              2330.95,
+              1386.2416697508022,
+              210,
+              139.05000000000018,
+              8
+            ],
+            "backplateBoxMm": [
+              11255,
+              2470,
+              1331.7416697508022,
+              210,
+              10,
+              150
+            ],
+            "joinedInsulationJacketBoxMm": [
+              11229,
+              2304.95,
+              1360.2416697508022,
+              262,
+              191.05000000000018,
+              85
+            ],
+            "wallPocketAndThermalBridgeQualified": false,
+            "fullWallWrapPenetrationMm": 16,
+            "actualRootYMm": 2470,
+            "loadArmMm": 120,
+            "shelfFullLengthMm": 139.05000000000018,
+            "shelfKg": 1.8688320000000025,
+            "backplateKg": 2.52,
+            "exactShelfCentroidMm": [
+              11360,
+              2400.475,
+              1390.2416697508022
+            ],
+            "exactBackplateCentroidMm": [
+              11360,
+              2475,
+              1406.7416697508022
+            ],
+            "lowerReserveAfterSettingMm": 0.24166975080220254,
+            "upperReserveAfterSettingMm": 0.24166975080220254,
+            "maximumShelfThicknessInAxialSlotMm": 8.483339501604604,
+            "minimumShelfThicknessForSourceStressComparisonMm": 15.895802409738549,
+            "sourceStressThicknessFitsEvenOptimallyRecenteredSlot": false,
+            "minimumObstacleReserveMm": 39.94999999999982,
+            "minimumOtherBranchPipeReserveMm": 134.70833024915768,
+            "minimumOrdinaryArmReserveMm": 3.717783280298221,
+            "obstacleConflicts": [],
+            "otherBranchPipeConflicts": [],
+            "cases": [
+              {
+                "pressureSign": -1,
+                "thermalSign": 0,
+                "sourceForceN": -556.8987369613972,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -68102.46707985566,
+                "bendingMPa": 30.402887089221277,
+                "maximumShearMPa": 0.5135999811441047,
+                "stressComparisonMPa": 30.41589877320464,
+                "clampDeflectionMm": -0.1818136751970527,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1406.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -599.9531788813971,
+                  73.97839286866963,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.059856075605149855,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": true,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": -1,
+                "thermalSign": -1,
+                "sourceForceN": -9789.02929008917,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -1175958.1334551885,
+                "bendingMPa": 524.9813095782091,
+                "maximumShearMPa": 8.756573689293901,
+                "stressComparisonMPa": 525.2003504899625,
+                "clampDeflectionMm": -3.1492842101309804,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1406.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -9832.08373200917,
+                  1274.1553647752803,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": -2.907614459328778,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": -1,
+                "thermalSign": 1,
+                "sourceForceN": 8675.231816166377,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 1039753.1992954772,
+                "bendingMPa": 464.1755353997666,
+                "maximumShearMPa": 7.729373727005694,
+                "stressComparisonMPa": 464.3685576331532,
+                "clampDeflectionMm": 2.7856568597368745,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1406.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  8632.177374246377,
+                  -1126.198579037941,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": -2.543987108934672,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": 0,
+                "sourceForceN": 424.52493085275125,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 49668.37305784215,
+                "bendingMPa": 22.173380829393817,
+                "maximumShearMPa": 0.3626711508328136,
+                "stressComparisonMPa": 22.18227690063102,
+                "clampDeflectionMm": 0.1336439323146379,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1406.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  381.4704889327512,
+                  -53.606683947169664,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": 0.10802581848756465,
+                "necessaryShelfStressAndAxialSlotComparison": true,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": -1,
+                "sourceForceN": -8807.605622275021,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -1058187.2933174905,
+                "bendingMPa": 472.40504165959396,
+                "maximumShearMPa": 7.880302557316983,
+                "stressComparisonMPa": 472.60218037011566,
+                "clampDeflectionMm": -2.8338266026192893,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1406.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -8850.66006419502,
+                  1146.5702879594407,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": -2.5921568518170868,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": 1,
+                "sourceForceN": 9656.655483980527,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 1157524.0394331752,
+                "bendingMPa": 516.7518033183818,
+                "maximumShearMPa": 8.605644858982613,
+                "stressComparisonMPa": 516.9667277524893,
+                "clampDeflectionMm": 3.1011144672485655,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1406.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  9613.601042060527,
+                  -1253.7836558537806,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": -2.859444716446363,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              }
+            ],
+            "allSourceChallengesWithinShelfAndSlotComparison": false,
+            "actualClampBearingBoltCentresToolCaptureAndRenewalQualified": false
+          },
+          {
+            "id": "HAD/indoor-receiver/plant/below/flat-shelf",
+            "branch": "plant",
+            "side": "below",
+            "sourceReceiverId": "HAD/indoor-receiver/plant/below",
+            "sourceCaseBranch": "plant",
+            "proposedClampCentreMm": [
+              11360,
+              2350,
+              1761.2583302491978
+            ],
+            "shelfBoxMm": [
+              11255,
+              2330.95,
+              1740.7583302491978,
+              210,
+              139.05000000000018,
+              8
+            ],
+            "backplateBoxMm": [
+              11255,
+              2470,
+              1686.2583302491978,
+              210,
+              10,
+              150
+            ],
+            "joinedInsulationJacketBoxMm": [
+              11229,
+              2304.95,
+              1714.7583302491978,
+              262,
+              191.05000000000018,
+              85
+            ],
+            "wallPocketAndThermalBridgeQualified": false,
+            "fullWallWrapPenetrationMm": 16,
+            "actualRootYMm": 2470,
+            "loadArmMm": 120,
+            "shelfFullLengthMm": 139.05000000000018,
+            "shelfKg": 1.8688320000000025,
+            "backplateKg": 2.52,
+            "exactShelfCentroidMm": [
+              11360,
+              2400.475,
+              1744.7583302491978
+            ],
+            "exactBackplateCentroidMm": [
+              11360,
+              2475,
+              1761.2583302491978
+            ],
+            "lowerReserveAfterSettingMm": 0.24166975080220254,
+            "upperReserveAfterSettingMm": 0.24166975080220254,
+            "maximumShelfThicknessInAxialSlotMm": 8.483339501604604,
+            "minimumShelfThicknessForSourceStressComparisonMm": 15.895802409738549,
+            "sourceStressThicknessFitsEvenOptimallyRecenteredSlot": false,
+            "minimumObstacleReserveMm": 39.94999999999982,
+            "minimumOtherBranchPipeReserveMm": 18.949999999827867,
+            "minimumOrdinaryArmReserveMm": 3.7177832802723785,
+            "obstacleConflicts": [],
+            "otherBranchPipeConflicts": [],
+            "cases": [
+              {
+                "pressureSign": -1,
+                "thermalSign": 0,
+                "sourceForceN": -556.8987369613972,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -68102.46707985566,
+                "bendingMPa": 30.402887089221277,
+                "maximumShearMPa": 0.5135999811441047,
+                "stressComparisonMPa": 30.41589877320464,
+                "clampDeflectionMm": -0.1818136751970527,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1761.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -599.9531788813971,
+                  73.97839286866963,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.059856075605149855,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": true,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": -1,
+                "thermalSign": -1,
+                "sourceForceN": -9789.02929008917,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -1175958.1334551885,
+                "bendingMPa": 524.9813095782091,
+                "maximumShearMPa": 8.756573689293901,
+                "stressComparisonMPa": 525.2003504899625,
+                "clampDeflectionMm": -3.1492842101309804,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1761.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -9832.08373200917,
+                  1274.1553647752803,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": -2.907614459328778,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": -1,
+                "thermalSign": 1,
+                "sourceForceN": 8675.231816166377,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 1039753.1992954772,
+                "bendingMPa": 464.1755353997666,
+                "maximumShearMPa": 7.729373727005694,
+                "stressComparisonMPa": 464.3685576331532,
+                "clampDeflectionMm": 2.7856568597368745,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1761.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  8632.177374246377,
+                  -1126.198579037941,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": -2.543987108934672,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": 0,
+                "sourceForceN": 424.52493085275125,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 49668.37305784215,
+                "bendingMPa": 22.173380829393817,
+                "maximumShearMPa": 0.3626711508328136,
+                "stressComparisonMPa": 22.18227690063102,
+                "clampDeflectionMm": 0.1336439323146379,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1761.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  381.4704889327512,
+                  -53.606683947169664,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": 0.10802581848756465,
+                "necessaryShelfStressAndAxialSlotComparison": true,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": -1,
+                "sourceForceN": -8807.605622275021,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -1058187.2933174905,
+                "bendingMPa": 472.40504165959396,
+                "maximumShearMPa": 7.880302557316983,
+                "stressComparisonMPa": 472.60218037011566,
+                "clampDeflectionMm": -2.8338266026192893,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1761.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -8850.66006419502,
+                  1146.5702879594407,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": -2.5921568518170868,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": 1,
+                "sourceForceN": 9656.655483980527,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 1157524.0394331752,
+                "bendingMPa": 516.7518033183818,
+                "maximumShearMPa": 8.605644858982613,
+                "stressComparisonMPa": 516.9667277524893,
+                "clampDeflectionMm": 3.1011144672485655,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  1761.2583302491978
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  9613.601042060527,
+                  -1253.7836558537806,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": -2.859444716446363,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              }
+            ],
+            "allSourceChallengesWithinShelfAndSlotComparison": false,
+            "actualClampBearingBoltCentresToolCaptureAndRenewalQualified": false
+          },
+          {
+            "id": "HAD/indoor-receiver/plant/above/flat-shelf",
+            "branch": "plant",
+            "side": "above",
+            "sourceReceiverId": "HAD/indoor-receiver/plant/above",
+            "sourceCaseBranch": "plant",
+            "proposedClampCentreMm": [
+              11360,
+              2350,
+              2026.7416697508022
+            ],
+            "shelfBoxMm": [
+              11255,
+              2330.95,
+              2006.2416697508022,
+              210,
+              139.05000000000018,
+              8
+            ],
+            "backplateBoxMm": [
+              11255,
+              2470,
+              1951.7416697508022,
+              210,
+              10,
+              150
+            ],
+            "joinedInsulationJacketBoxMm": [
+              11229,
+              2304.95,
+              1980.2416697508022,
+              262,
+              191.05000000000018,
+              85
+            ],
+            "wallPocketAndThermalBridgeQualified": false,
+            "fullWallWrapPenetrationMm": 16,
+            "actualRootYMm": 2470,
+            "loadArmMm": 120,
+            "shelfFullLengthMm": 139.05000000000018,
+            "shelfKg": 1.8688320000000025,
+            "backplateKg": 2.52,
+            "exactShelfCentroidMm": [
+              11360,
+              2400.475,
+              2010.2416697508022
+            ],
+            "exactBackplateCentroidMm": [
+              11360,
+              2475,
+              2026.7416697508022
+            ],
+            "lowerReserveAfterSettingMm": 0.24166975080220254,
+            "upperReserveAfterSettingMm": 0.24166975080220254,
+            "maximumShelfThicknessInAxialSlotMm": 8.483339501604604,
+            "minimumShelfThicknessForSourceStressComparisonMm": 15.895802409738549,
+            "sourceStressThicknessFitsEvenOptimallyRecenteredSlot": false,
+            "minimumObstacleReserveMm": 39.94999999999982,
+            "minimumOtherBranchPipeReserveMm": 18.949999999827867,
+            "minimumOrdinaryArmReserveMm": 107.48010907286039,
+            "obstacleConflicts": [],
+            "otherBranchPipeConflicts": [],
+            "cases": [
+              {
+                "pressureSign": -1,
+                "thermalSign": 0,
+                "sourceForceN": -556.8987369613972,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -68102.46707985566,
+                "bendingMPa": 30.402887089221277,
+                "maximumShearMPa": 0.5135999811441047,
+                "stressComparisonMPa": 30.41589877320464,
+                "clampDeflectionMm": -0.1818136751970527,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  2026.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -599.9531788813971,
+                  73.97839286866963,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.059856075605149855,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": true,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": -1,
+                "thermalSign": -1,
+                "sourceForceN": -9789.02929008917,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -1175958.1334551885,
+                "bendingMPa": 524.9813095782091,
+                "maximumShearMPa": 8.756573689293901,
+                "stressComparisonMPa": 525.2003504899625,
+                "clampDeflectionMm": -3.1492842101309804,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  2026.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -9832.08373200917,
+                  1274.1553647752803,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": -2.907614459328778,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": -1,
+                "thermalSign": 1,
+                "sourceForceN": 8675.231816166377,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 1039753.1992954772,
+                "bendingMPa": 464.1755353997666,
+                "maximumShearMPa": 7.729373727005694,
+                "stressComparisonMPa": 464.3685576331532,
+                "clampDeflectionMm": 2.7856568597368745,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  2026.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  8632.177374246377,
+                  -1126.198579037941,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": -2.543987108934672,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": 0,
+                "sourceForceN": 424.52493085275125,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 49668.37305784215,
+                "bendingMPa": 22.173380829393817,
+                "maximumShearMPa": 0.3626711508328136,
+                "stressComparisonMPa": 22.18227690063102,
+                "clampDeflectionMm": 0.1336439323146379,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  2026.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  381.4704889327512,
+                  -53.606683947169664,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": 0.10802581848756465,
+                "necessaryShelfStressAndAxialSlotComparison": true,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": -1,
+                "sourceForceN": -8807.605622275021,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": -1058187.2933174905,
+                "bendingMPa": 472.40504165959396,
+                "maximumShearMPa": 7.880302557316983,
+                "stressComparisonMPa": 472.60218037011566,
+                "clampDeflectionMm": -2.8338266026192893,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  2026.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  -8850.66006419502,
+                  1146.5702879594407,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": -2.5921568518170868,
+                "upperReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              },
+              {
+                "pressureSign": 1,
+                "thermalSign": 1,
+                "sourceForceN": 9656.655483980527,
+                "ownGravityN": 18.333241920000024,
+                "signedRootMomentNmm": 1157524.0394331752,
+                "bendingMPa": 516.7518033183818,
+                "maximumShearMPa": 8.605644858982613,
+                "stressComparisonMPa": 516.9667277524893,
+                "clampDeflectionMm": 3.1011144672485655,
+                "coreOriginMm": [
+                  11360,
+                  2480,
+                  2026.7416697508022
+                ],
+                "coreWrenchN_Nm": [
+                  0,
+                  0,
+                  9613.601042060527,
+                  -1253.7836558537806,
+                  0,
+                  0
+                ],
+                "lowerReserveAfterSettingsAndElasticMm": 0.24166975080220254,
+                "upperReserveAfterSettingsAndElasticMm": -2.859444716446363,
+                "necessaryShelfStressAndAxialSlotComparison": false,
+                "actualClampWeldBoltGroupAndMasonryResistanceQualified": false
+              }
+            ],
+            "allSourceChallengesWithinShelfAndSlotComparison": false,
+            "actualClampBearingBoltCentresToolCaptureAndRenewalQualified": false
+          }
+        ],
+        "referenceCarrierSteelKg": 17.55532800000001,
+        "anySourceStressThicknessFitsSlot": false,
+        "necessaryCarrierComparison": false,
+        "mechanics": "Each finite full-width shelf is an ideal fixed-root Euler–Bernoulli plate strip, with actual signed point force at the pipe axis and exact uniform shelf selfweight. The gross section combines maximum bending and rectangular shear as a conservative comparison. Core wrenches add shelf/backplate gravity once. Actual local plate/clamp contact, welds, prying, rod group, masonry and intermediate flexibility remain unsolved.",
+        "sourceActionScope": "Each pickup receives the complete source branch signed pressure/locked-thermal challenge separately. Above/below pickup cases are NONCONCURRENT alternative load-path challenges, never four simultaneous branch forces. Nominal valve/tail gravity is already in the source force and is not added again.",
+        "gravityScope": "Four manufactured shelves and backplates are distinct real stock. Clamps, rods/sleeves, weld stock, closures/insulation and complete handling payload remain unweighed.",
+        "decision": "Reject the thin flat shelf as the current complete pressure/thermal carrier. Do not relieve the locked source demand by assuming sliding clamps. Develop a finite deeper/side receiver and solve actual flexibility, or revise the bank/tails with their complete occupied interfaces.",
+        "nativeStructuralActionsAdopted": false,
+        "actualIndependentCarrierSelected": false,
+        "wholeOccupiedArrangementComplete": false,
+        "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"850\" viewBox=\"0 0 1200 850\"><rect width=\"1200\" height=\"850\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\"><text x=\"35\" y=\"45\" font-size=\"26\">Indoor bank: actual flat-shelf carrier comparison</text><text x=\"35\" y=\"80\" font-size=\"16\">Unadopted reference. Complete signed source challenge retained; no sliding-clamp or foundation credit.</text><text x=\"35\" y=\"125\" font-size=\"18\">Y/Z SECTION · Utility lower pickup · dimensions in mm</text><rect x=\"89.4\" y=\"279.15\" width=\"401.2050000000004\" height=\"178.5\" fill=\"#ded2b8\" stroke=\"#a79571\"/><rect x=\"144\" y=\"386.25\" width=\"292.0050000000004\" height=\"16.8\" fill=\"#64757c\" stroke=\"#3b4b53\"/><rect x=\"436.0050000000004\" y=\"202.5\" width=\"21\" height=\"315\" fill=\"#64757c\" stroke=\"#3b4b53\"/><line x1=\"184.0050000000004\" x2=\"184.0050000000004\" y1=\"220\" y2=\"500\" stroke=\"#388997\" stroke-width=\"4\"/><text x=\"35\" y=\"550\" font-size=\"16\">Pipe Y2350; plate face Y2470; bare core Y2480.</text><text x=\"35\" y=\"580\" font-size=\"16\">Shelf 8 thick; clamp shift +4; actual load arm 120.00.</text><text x=\"35\" y=\"610\" font-size=\"16\">Steel stock 17.555 kg before rods, clamps, welds and thermal closures.</text><text x=\"620\" y=\"155\" font-size=\"18\">Pickup · available thickness / required for stress</text><text x=\"620\" y=\"200\" font-size=\"16\">utility/below: 8.483 / 15.896 mm.</text><text x=\"620\" y=\"260\" font-size=\"16\">utility/above: 8.483 / 15.896 mm.</text><text x=\"620\" y=\"320\" font-size=\"16\">plant/below: 8.483 / 15.896 mm.</text><text x=\"620\" y=\"380\" font-size=\"16\">plant/above: 8.483 / 15.896 mm.</text><text x=\"620\" y=\"480\" font-size=\"16\">Full thermal source cannot fit this flat shelf in the slot.</text><text x=\"620\" y=\"515\" font-size=\"16\">Above/below challenges are separate, nonconcurrent cases.</text><text x=\"620\" y=\"550\" font-size=\"16\">Root, clamp contact, welds and masonry remain unqualified.</text><text x=\"620\" y=\"585\" font-size=\"16\">Full wrap intrudes the core; wall closure is unresolved.</text><text x=\"35\" y=\"710\" font-size=\"18\">Decision: replace the rejected carrier; preserve full source and interface duties.</text><text x=\"35\" y=\"750\" font-size=\"16\">A flexible carrier requires actual guides, valve restraint, coupled tube analysis and complete occupied clearances.</text><text x=\"35\" y=\"810\" font-size=\"17\">HAD remains OPEN · no physical support selection or native structural admission</text></g></svg>"
+      },
       "indoorRoutes": {
         "schema": "had-indoor-pipe-routes/2",
         "state": "unadopted-route-comparison",
@@ -11898,6 +12874,7 @@
       ]
     },
     "diagnostics": [
+      "INLET_BANK_FLAT_SHELF_CARRIER_REJECTED",
       "PLANT_REQUIRES_NEW_RECEIVER_AND_STORED_RELEASE_MODEL",
       "ACTUAL_INDOOR_CUT_RENEWAL_AND_INDEPENDENT_SUPPORT_REQUIRED",
       "MAINBOARD_SCREEN_IMPACT_SEAMS_TOE_AND_DRY_ESCAPE_UNQUALIFIED",

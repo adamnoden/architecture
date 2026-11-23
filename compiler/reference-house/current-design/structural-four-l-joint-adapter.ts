@@ -23,6 +23,15 @@ const digest=(v:unknown)=>typeof v==='string'&&/^[a-f0-9]{64}$/.test(v)
 type Methods=Readonly<Record<string,string>>
 const cutCatalogueKeys=['memberCuts','interiorMemberCuts','capCuts','adjacentGridMemberCuts'] as const
 
+/** Exact release evidence is bound to its executing numerical runtime.
+ * Matching this necessary identity never replaces strict result admission. */
+export function readFourLNumericalRuntime():unknown {
+  return JSON.parse(execFileSync('python3',['-B','-c',
+    'import json,sys;sys.path.insert(0,sys.argv[1]);from four_l_joint_observer import numerical_runtime;print(json.dumps(numerical_runtime(),allow_nan=False))',
+    fileURLToPath(new URL('project/str/studies/',root))],{encoding:'utf8',maxBuffer:1024*1024,
+    env:{...process.env,OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'}}))
+}
+
 /** Exact numeric semantics, independently of Python1.0/int JSON spelling. */
 export function fourLNativeCutFingerprint(native:unknown) {
   if(!record(native)||!record(native.nativeVertical)||!record(native.nativeVertical.native)
@@ -114,12 +123,12 @@ export function admitFourLJointDerivedDemand(observation:unknown,derived:unknown
 /** A release witness is derived evidence, never a new authored floor setting.
  * Initially only its exact executed request is supported. Other slab/topology/
  * load edits keep the ordinary floor path until independently admitted. */
-export function inspectFourLJointCapability(comparison:unknown,witness:unknown,methods:Methods) {
+export function inspectFourLJointCapability(comparison:unknown,witness:unknown,methods:Methods,numericalRuntime:unknown) {
   const unavailable=(reason:string)=>({status:'unsupported' as const,diagnostic:reason,
     finiteJointCapacityAvailable:false as const})
   if(!record(comparison)||!record(witness))return unavailable('FOUR_L_JOINT/strict-passivity-not-demonstrated')
   if(fourLJointMethodPaths.some(path=>!digest(methods[path])))return unavailable('FOUR_L_JOINT/missing-current-method-identity')
-  if(witness.schema!=='str-four-L-joint-passivity-witness/1'
+  if(witness.schema!=='str-four-L-joint-passivity-witness/2'
     ||witness.exactFullResultEqualityVerified!==true||witness.exactPhysicalHeadAndCutEqualityVerified!==true
     ||witness.physicalHeadCount!==52||witness.finiteJointCapacityAvailable!==false
     ||!digest(witness.ordinaryFullNativeResultSHA256)
@@ -128,6 +137,9 @@ export function inspectFourLJointCapability(comparison:unknown,witness:unknown,m
     ||!same(witness.methodSourceSHA256,methods))return unavailable('FOUR_L_JOINT/missing-or-stale-strict-method-witness')
   if(!same(witness.sourceSHA256,comparison.sourceSHA256)||!same(witness.executedRequest,comparison))
     return unavailable('FOUR_L_JOINT/request-not-yet-admitted')
+  if(!record(witness.numericalRuntime)||witness.numericalRuntime.schema!=='str-four-L-numerical-runtime/1'
+    ||!record(numericalRuntime)||!same(witness.numericalRuntime,numericalRuntime))
+    return unavailable('FOUR_L_JOINT/runtime-not-admitted')
   return {status:'available' as const,finiteJointCapacityAvailable:false as const,
     scope:'Exact previously admitted request only; finite joint laws, resistance and signed envelopes remain unsupported.'}
 }
@@ -227,7 +239,9 @@ export function readFourLJointExecution(comparison:unknown) {
     ||!same(proof.exactObservedInput.observation.methodSourceSHA256,Object.fromEntries(fourLJointMethodPaths.slice(1).map(p=>[p,methods[p]])))
     ||!same(proof.exactObservedInput.observation.runtimeThreads,proof.witness?.runtimeThreads))
     return {status:'unsupported' as const,diagnostic:'FOUR_L_JOINT/missing-or-stale-observed-input',witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined,nativeSemanticFingerprint:undefined}
-  const capability=inspectFourLJointCapability(comparison,proof.witness,methods)
+  let numericalRuntime:unknown
+  try{numericalRuntime=readFourLNumericalRuntime()}catch{return {status:'unsupported' as const,diagnostic:'FOUR_L_JOINT/runtime-unavailable',witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined,nativeSemanticFingerprint:undefined}}
+  const capability=inspectFourLJointCapability(comparison,proof.witness,methods,numericalRuntime)
   if(capability.status!=='available')return {...capability,witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined,nativeSemanticFingerprint:undefined}
   let nativeCutFingerprint:string,nativeSemanticFingerprint:string
   try{nativeCutFingerprint=readNativeCutControl(proof);nativeSemanticFingerprint=readNativeSemanticControl(proof)}catch{
@@ -255,15 +269,17 @@ export function runFloorNativeWithFourLJointCapability(comparison:unknown,caseId
 
 export function runObservedFourLJointCase(comparison:unknown,caseId:string,witness:unknown,trustedObservationFingerprint?:string,trustedNativeCutFingerprint?:string,trustedNativeSemanticFingerprint?:string) {
   const methods=Object.fromEntries(fourLJointMethodPaths.map(path=>[path,hash(readFileSync(new URL(path,root)))]))
-  const capability=inspectFourLJointCapability(comparison,witness,methods)
+  const capability=inspectFourLJointCapability(comparison,witness,methods,readFourLNumericalRuntime())
   if(capability.status!=='available')throw new Error(capability.diagnostic)
   if(!digest(trustedObservationFingerprint)||!digest(trustedNativeCutFingerprint)||!digest(trustedNativeSemanticFingerprint))throw new Error('Source-bound exact-request observed-input and native-cut fingerprints required')
+  const executingRuntime=readFourLNumericalRuntime()
   const envelope=JSON.parse(execFileSync('python3',['-B',fileURLToPath(new URL(fourLJointMethodPaths[1],root)),'--return-native'],{
     input:JSON.stringify({case:comparison,caseId}),encoding:'utf8',maxBuffer:128*1024*1024,
     env:{...process.env,OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'},
   })) as unknown
   if(fourLJointMethodPaths.some(path=>hash(readFileSync(new URL(path,root)))!==methods[path]))
     throw new Error('Joint observer/consumer source changed during native execution')
+  if(!same(readFourLNumericalRuntime(),executingRuntime))throw new Error('Joint numerical runtime changed during observed execution')
   const admitted=admitFourLJointEnvelope(envelope,comparison,caseId,methods,trustedObservationFingerprint!,trustedNativeCutFingerprint!,trustedNativeSemanticFingerprint!)
   if(fourLJointMethodPaths.some(path=>hash(readFileSync(new URL(path,root)))!==methods[path]))
     throw new Error('Joint observer/consumer source changed during pure demand admission')

@@ -353,3 +353,31 @@ relabelling, stale inputs and unchanged ordinary behaviour. Python producer
 replay independently joins its current method identities. This closes a
 specific admission gap; finite joint resistance and signed envelopes remain
 unavailable. No slab thickness or whole-house baseline is selected.
+
+
+## Numerical runtime is part of the exact control
+
+The production browser run on CI reached a native cut mismatch against the
+retained local ordinary control. Its cause is not proved. The observed Python
+patch versions differ; that fact alone does not establish the cause or prove
+that another matching environment would be bitwise identical.
+
+Exact joint admission now additionally requires the numerical runtime recorded
+by both fresh ordinary and observed executions: Python, NumPy/SciPy versions,
+system/machine, CPU feature flags and a fixed inventory of installed numerical
+shared-library byte identities. Probe and execution use the same interpreter,
+imports and one-thread policy; absolute installation paths and process identity
+are excluded. A match is necessary, never sufficient: the exact native-cut and
+complete-state controls remain unchanged.
+
+A fresh matched pair produced identical complete native bytes and identical
+runtime records. The owning producer derives the version2 witness from those
+actual captures. On an unrecorded runtime the optional four-L observer is not
+dispatched: the ordinary verified floor still computes its52heads, contact and
+cage, and the browser explicitly reports joint evidence as unavailable. Once an
+admitted observed execution starts, any mismatch remains an error; there is no
+silent second ordinary solve or result substitution. Other runtimes require
+their own actual matched ordinary/observed control before this joint evidence
+is admitted. This scopes release evidence, not the ability to calculate joint
+mechanics. The failed CI raw response was not captured, so diagnosing its
+numerical difference remains a precise evidence obligation.

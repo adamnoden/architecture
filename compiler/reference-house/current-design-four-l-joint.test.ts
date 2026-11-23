@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import test from 'node:test'
 import { sha256SemanticFingerprint } from '../core/identity.js'
-import { admitFourLJointDerivedDemand, admitFourLJointEnvelope, dispatchFourLJointNative, fourLJointMethodPaths, fourLJointObservationFingerprint, fourLNativeCutFingerprint, fourLNativeSemanticFingerprint, inspectFourLJointCapability, readFourLJointExecution, runObservedFourLJointCase } from './current-design/structural-four-l-joint-adapter.js'
+import { admitFourLJointDerivedDemand, admitFourLJointEnvelope, dispatchFourLJointNative, fourLJointMethodPaths, fourLJointObservationFingerprint, fourLNativeCutFingerprint, fourLNativeSemanticFingerprint, readFourLNumericalRuntime, inspectFourLJointCapability, readFourLJointExecution, runObservedFourLJointCase } from './current-design/structural-four-l-joint-adapter.js'
 
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex')
 function pythonNativeDigests(nativeJSON:string):{requestSHA256:string;physicalCutSHA256:string} {
@@ -17,6 +17,7 @@ function fixture() {
   const sourceSHA256=Object.fromEntries(Array.from({length:58},(_,i)=>[`project/native-${i}.py`,hash('source'+i)]))
   const comparison={sourceSHA256,thicknessMm:200,wetSupport:{bearingQuadratureOrder:8}}
   const methods=Object.fromEntries(fourLJointMethodPaths.map(p=>[p,hash(p)]))
+  const numericalRuntime={schema:'str-four-L-numerical-runtime/1',pythonVersion:'synthetic',sharedLibrariesSHA256:{fixture:hash('library')}}
   const heads=Array.from({length:52},(_,i)=>({id:'P'+i,reactionKN_KNm:[0,0,0,0,0,0]}))
   const originals=['SW','SE','NW','NE'].map(id=>({id,referenceXYZMm:[0,0,3170],jointBodyGravityInsertedByObserverKN:0,
     memberEnds:[{memberId:id+'/lower',role:'lower',masterXYZMm:[0,0,3170],physicalCutXYZMm:[0,0,3170],
@@ -40,20 +41,20 @@ function fixture() {
     requestSHA256:sha256SemanticFingerprint(comparison),physicalCutSHA256:fourLNativeCutFingerprint(native),
     fullNativeResultSHA256:hash(nativeResultJSON),runtimeThreads:{OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'},
     methodSourceSHA256:Object.fromEntries(fourLJointMethodPaths.slice(1).map(p=>[p,methods[p]])),
-    nonlinearSolvesExecuted:1,finiteJointCapacityAvailable:false,candidateAccepted:false,completeHouseProof:false,heads,joints:originals}
+    numericalRuntime,nonlinearSolvesExecuted:1,finiteJointCapacityAvailable:false,candidateAccepted:false,completeHouseProof:false,heads,joints:originals}
   const freeBodies={schema:'str-four-L-joint-free-bodies/1',joints,maximumAbsoluteResidualKN_KNm:0,
     finiteJointCapacityAvailable:false,completeHouseProof:false,candidateAccepted:false}
   const envelope={nativeResultJSON,observation,freeBodies}
-  const witness={schema:'str-four-L-joint-passivity-witness/1',sourceSHA256,executedRequest:comparison,
+  const witness={schema:'str-four-L-joint-passivity-witness/2',numericalRuntime,sourceSHA256,executedRequest:comparison,
     methodSourceSHA256:methods,runtimeThreads:{OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'},
     ordinaryFullNativeResultSHA256:hash(nativeResultJSON),observedFullNativeResultSHA256:hash(nativeResultJSON),
     exactFullResultEqualityVerified:true,exactPhysicalHeadAndCutEqualityVerified:true,physicalHeadCount:52,finiteJointCapacityAvailable:false}
-  return {comparison,methods,envelope,witness,trustedObservationFingerprint:fourLJointObservationFingerprint(observation),trustedNativeCutFingerprint:fourLNativeCutFingerprint(native),trustedNativeSemanticFingerprint:fourLNativeSemanticFingerprint(native)}
+  return {comparison,methods,envelope,witness,numericalRuntime,trustedObservationFingerprint:fourLJointObservationFingerprint(observation),trustedNativeCutFingerprint:fourLNativeCutFingerprint(native),trustedNativeSemanticFingerprint:fourLNativeSemanticFingerprint(native)}
 }
 
 test('prepared optional capability preserves exact native bytes and all joint components without starting a house builder',()=>{
   const f=fixture(),before=JSON.stringify(f)
-  assert.equal(inspectFourLJointCapability(f.comparison,f.witness,f.methods).status,'available')
+  assert.equal(inspectFourLJointCapability(f.comparison,f.witness,f.methods,f.numericalRuntime).status,'available')
   const result=admitFourLJointEnvelope(f.envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint,f.trustedNativeCutFingerprint,f.trustedNativeSemanticFingerprint)
   assert.equal(result.nativeResult.numericControl,1)
   assert.notEqual(hash(JSON.stringify(JSON.parse(f.envelope.nativeResultJSON))),f.envelope.observation.fullNativeResultSHA256)
@@ -65,12 +66,12 @@ test('prepared optional capability preserves exact native bytes and all joint co
 
 test('missing passivity and untested nonwet/default200/250 requests retain explicit unavailable capability',()=>{
   const f=fixture()
-  assert.equal(inspectFourLJointCapability(f.comparison,undefined,f.methods).status,'unsupported')
+  assert.equal(inspectFourLJointCapability(f.comparison,undefined,f.methods,f.numericalRuntime).status,'unsupported')
   for(const change of [{wetSupport:null},{thicknessMm:250},{wetSupport:{bearingQuadratureOrder:4}}])
-    assert.equal(inspectFourLJointCapability({...f.comparison,...change},f.witness,f.methods).status,'unsupported')
-  assert.equal(inspectFourLJointCapability(f.comparison,{...f.witness,exactFullResultEqualityVerified:false},f.methods).status,'unsupported')
-  assert.equal(inspectFourLJointCapability(f.comparison,{...f.witness,observedFullNativeResultSHA256:hash('changed')},f.methods).status,'unsupported')
-  assert.equal(inspectFourLJointCapability(f.comparison,f.witness,{...f.methods,[fourLJointMethodPaths[1]]:hash('changed')} ).status,'unsupported')
+    assert.equal(inspectFourLJointCapability({...f.comparison,...change},f.witness,f.methods,f.numericalRuntime).status,'unsupported')
+  assert.equal(inspectFourLJointCapability(f.comparison,{...f.witness,exactFullResultEqualityVerified:false},f.methods,f.numericalRuntime).status,'unsupported')
+  assert.equal(inspectFourLJointCapability(f.comparison,{...f.witness,observedFullNativeResultSHA256:hash('changed')},f.methods,f.numericalRuntime).status,'unsupported')
+  assert.equal(inspectFourLJointCapability(f.comparison,f.witness,{...f.methods,[fourLJointMethodPaths[1]]:hash('changed')},f.numericalRuntime).status,'unsupported')
 })
 
 test('full native edits, stale replies, runtime drift, invented acceptance and missing or modified physical actions reject',()=>{
@@ -107,7 +108,10 @@ test('available and unsupported capabilities each execute exactly one native rou
 
 test('actual retained strict witness admits only its exact current request; untested edits reject before any observer process',()=>{
   const proof=JSON.parse(readFileSync(new URL('../../project/str/studies/four-l-joint-proof.json',import.meta.url),'utf8'))
-  assert.equal(readFourLJointExecution(proof.witness.executedRequest).status,'available')
+  const runtimeMatches=sha256SemanticFingerprint(readFourLNumericalRuntime())===sha256SemanticFingerprint(proof.witness.numericalRuntime)
+  const capability=readFourLJointExecution(proof.witness.executedRequest)
+  assert.equal(capability.status,runtimeMatches?'available':'unsupported')
+  if(!runtimeMatches)assert.equal(capability.diagnostic,'FOUR_L_JOINT/runtime-not-admitted')
   const changed={...proof.witness.executedRequest,thicknessMm:250}
   assert.equal(readFourLJointExecution(changed).status,'unsupported')
   assert.throws(()=>runObservedFourLJointCase(changed,'UNTESTED-250',proof.witness),/request-not-yet-admitted/)
@@ -195,4 +199,17 @@ test('complete state normalises only consistent explicit caller labels and prese
   assert.equal(fourLNativeSemanticFingerprint(renamed),f.trustedNativeSemanticFingerprint)
   renamed.nativeVertical.native.name='MISMATCH'
   assert.throws(()=>fourLNativeSemanticFingerprint(renamed),/label fields must agree/)
+})
+
+
+test('another or missing numerical runtime never admits exact optional joint evidence',()=>{
+ const f=fixture()
+ assert.equal(inspectFourLJointCapability(f.comparison,f.witness,f.methods,undefined).status,'unsupported')
+ const changed=inspectFourLJointCapability(f.comparison,f.witness,f.methods,{...f.numericalRuntime,pythonVersion:'another-runtime'})
+ assert.equal(changed.status,'unsupported');if(changed.status==='unsupported')assert.equal(changed.diagnostic,'FOUR_L_JOINT/runtime-not-admitted')
+ const wrongRequest=inspectFourLJointCapability({...f.comparison,thicknessMm:250},f.witness,f.methods,{...f.numericalRuntime,pythonVersion:'another-runtime'})
+ assert.equal(wrongRequest.status,'unsupported');if(wrongRequest.status==='unsupported')assert.equal(wrongRequest.diagnostic,'FOUR_L_JOINT/request-not-yet-admitted')
+ const counts={ordinary:0,observed:0}
+ const result=dispatchFourLJointNative(changed,()=>{counts.ordinary++;return {heads:52,contact:'computed',cage:'computed'}},()=>{counts.observed++;throw Error('Unadmitted observer must not execute')})
+ assert.deepEqual(counts,{ordinary:1,observed:0});assert.equal(result.nativeResult.heads,52)
 })

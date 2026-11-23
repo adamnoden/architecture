@@ -2954,8 +2954,8 @@
   "scope": "Exact per-cell material attribution within retained native uniform plate cells. Joint own-G already enters the recovered plate contribution. Separating it requires subtracting the identical plate part before adding it once; no new load is needed. No local joint resistance or observer numerical passivity is established.",
   "actualFullNativeCaptureFileSHA256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff",
   "geometryObservationMethodSourceSHA256": {
-    "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
-    "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62"
+    "project/str/studies/four_l_joint_observer.py": "adb94b4ae63e83e409f5323b01d252a914591eb61bdd12b3af2ec27b6586304b",
+    "project/str/studies/four_l_joint_recovery.py": "cb8f5a127574537521c09663f38776c476dbec501835984ea0c7c675cfe0d1bb"
   },
   "methodSourceSHA256": {
     "project/str/studies/four_l_joint_material_audit.py": "4b2b332717eb3ebd43ff244df2efee18c04910ed2aa3dc1c18bc8bdd40feaa8c"

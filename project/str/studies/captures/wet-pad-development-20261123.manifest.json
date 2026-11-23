@@ -1,0 +1,98 @@
+{
+  "label": "wet-pad-development",
+  "bytes": 5173124,
+  "gitBlob": "0695409ce8288329580e2ad174a5007af236c367",
+  "sha256": "2ed13dfb0b1d4ceda5e251567521e679cd72e9807641eabb22ec74a10c081691",
+  "manifest": {
+    "status": "Exploratory actual140/220 and32/64 native comparisons, nominal equilibrium fan and unadmitted upper-cage geometry. Not current-house adoption. Drivers remain exploratory; no new shared source settings are admitted by this archive.",
+    "files": {
+      "compare.py": {
+        "bytes": 8415,
+        "sha256": "432e05dc2b83a030f54a87b9af12c3fe58bced41407c6ef17e6923fb84b1ea3b"
+      },
+      "comparison.json": {
+        "bytes": 1313161,
+        "sha256": "98dea3cf7c76ffbfedfc410402f8f2247a9b3fdd94b00401d6fe25e28082c24d"
+      },
+      "fan.json": {
+        "bytes": 28146,
+        "sha256": "2becb2a541a65be6a0a390281b1166646d3b2651c93e3fb631f631507ee5548c"
+      },
+      "fan.py": {
+        "bytes": 7930,
+        "sha256": "e52207e0a766b9f3c4eb20a960d5854e5046cc3e716f11ad4e5a64e3a33f507a"
+      },
+      "upper-head-57-geometry.json": {
+        "bytes": 4505407,
+        "sha256": "c90556ca1c85961f56dc1a714ce47aeb6211cc7527a965be73e7c90ab4222dfc"
+      },
+      "upper-head-geometry.py": {
+        "bytes": 4252,
+        "sha256": "a52d78edc840343ab8e27fd3f7f8748cfb1a5b877cec0567e5c89912b8d41123"
+      },
+      "upper-hoop-geometry.json": {
+        "bytes": 33372,
+        "sha256": "01bdaf718acc06f80835b05a0b729a32bb0792672d1542f083c2ee04e1cd7782"
+      },
+      "width140-q32.capture.json": {
+        "bytes": 1631956,
+        "sha256": "7847cb0514c16129ff1ab808687b9b03e90131709648447e327becab2936ce8e"
+      },
+      "width140-q32.full.json": {
+        "bytes": 16329799,
+        "sha256": "5886799802d2618e522bfbb2243904c9e465a7d12dee1d39231b754f7c23714b"
+      },
+      "width140-q32.metrics.json": {
+        "bytes": 7051,
+        "sha256": "6a2568d00149f01c17d6f48888da438e9b449777181fa9a06f6e736684233763"
+      },
+      "width140-q32.request.json": {
+        "bytes": 51613,
+        "sha256": "02e47d330ea9b82bae311b33bea118d012af3de16b0d23d0c1709a724c8f34c0"
+      },
+      "width140.cage.json": {
+        "bytes": 2219898,
+        "sha256": "a5f4c9c0c31458350edbd6d36b8b4d0e79dad9cecba83c6a6f08fef38d22688c"
+      },
+      "width140.capture.json": {
+        "bytes": 3658256,
+        "sha256": "f8ab6ace12c68dfd5aa0d526a6063a37e6133452a26f6263842a0c0b64c2676f"
+      },
+      "width140.full.json": {
+        "bytes": 19542934,
+        "sha256": "e077f218c94af1e5fd80333bf35d88d6c39d60730ede407511a2b11c3d98ecd1"
+      },
+      "width140.metrics.json": {
+        "bytes": 7051,
+        "sha256": "b0d5b26385d23edecbdb1e028414754eee42b9f7ebef49418bd6fe92083d9654"
+      },
+      "width140.request.json": {
+        "bytes": 51613,
+        "sha256": "0770623dd33d8760832012a235e0feba9d595226ee7fba88c015def48a981395"
+      },
+      "width220.cage.json": {
+        "bytes": 2122833,
+        "sha256": "3123d6a740207caa5660083dec68ff6bebeb00b2a0bc9f9b79d86005fd062e3e"
+      },
+      "width220.capture.json": {
+        "bytes": 3660516,
+        "sha256": "8092f2f490b16b6c22b34dff5c885992f939d8070e4f4871296bfd4de45505ee"
+      },
+      "width220.full.json": {
+        "bytes": 19539599,
+        "sha256": "fd309e5901f561f56777695a7fca5e4e5fb302a3ba143f4d3ce7db35fee9b0ea"
+      },
+      "width220.metrics.json": {
+        "bytes": 7051,
+        "sha256": "2acc2bc0b24ed7b78aee909fb7642fd090856a52ec6bfb6b40e0809459306f4c"
+      },
+      "width220.request.json": {
+        "bytes": 51613,
+        "sha256": "5fbabe9f1904382593705ef5527cf391d39893e98e551be1ac1840cd008c3378"
+      }
+    },
+    "checkoutBaseRevision": "b6eb3ac12ac477381f90de6e73c12798e99cbfee",
+    "processingSourceRevision": "969e4048e17d2d496d4429743446a095e237cbcb",
+    "revisionScope": "Native source and processing file identities in the captured records control applicability. This is retained evidence, not house adoption."
+  }
+}

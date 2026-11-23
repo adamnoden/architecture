@@ -51,7 +51,7 @@ The [indoor isolation view](../had/studies/inlet-indoor-cuts.svg) and [four cold
 
 The [wet-beam normal-bearing comparison](../str/wet-bearing-refinement-development.md) now passes the declared32→64 quadrature check for both tested wet-support material weights. The16→32 adverse failure remains recorded. This resolves numerical contact integration for those cases; pad material, post-head resistance, a complete signed envelope and floor/corner convergence remain unqualified. It selects no slab thickness, plinth or house revision.
 
-The [four L-corner demand recovery](../str/four-l-joint-recovery-development.md) now joins eight actual physical member ends into four balanced rigid-joint free bodies for one verified request. The complete ordinary native result remains byte-for-byte unchanged. Joint concrete weight is already in the plate, so no extra joint load is added. Changed or unverified requests retain explicit unavailable diagnostics; finite-joint behaviour, resistance and a complete signed load envelope remain unresolved.
+The [four L-corner demand recovery](../str/four-l-joint-recovery-development.md) now joins eight actual physical member ends into four balanced rigid-joint free bodies for one verified request. The complete ordinary native result remains byte-for-byte unchanged. Joint concrete weight is already in the plate, so no extra joint load is added. Changed or unverified requests and numerical runtimes retain explicit unavailable joint diagnostics while the ordinary floor remains computed; finite-joint behaviour, resistance and a complete signed load envelope remain unresolved.
 
 ## The interior should earn its place on beauty
 

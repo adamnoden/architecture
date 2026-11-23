@@ -48,6 +48,8 @@ function controls() {
   element('stage-scope').textContent = `Saved stages: ${Object.keys(state.document.stages).join(', ')}. All are retained and compiled.`
 }
 function draw() {
+  const floor=current?.floorEvidence
+  element('floor-result').textContent=floor?`Actual floor: ${floor.headCount} foundation heads; normal-bearing analysis ${floor.contactComputed?'computed':'not applicable'}. ${floor.jointStatus==='computed-rigid-joint-demand'?'Four rigid-joint demands computed; finite-node resistance remains unqualified.':floor.jointDiagnostics.includes('FOUR_L_JOINT/runtime-not-admitted')?'Joint demand unavailable for this numerical runtime; ordinary floor and cage remain computed.':'Joint-demand evidence unavailable for this request.'}`:''
   for (const [name, result] of [['current', current], ['comparison', comparison]] as const) {
     const image = element<HTMLImageElement>(`${name}-roof`)
     if (result) image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(result.roof.svg)
@@ -65,7 +67,8 @@ function draw() {
   const bank=current?.inletBank
   element('inlet-bank-views').hidden=!bank
   for(const [name,result]of [['current',current],['comparison',comparison]] as const){const image=element<HTMLImageElement>(`${name}-inlet-bank`);if(result?.inletBank)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(result.inletBank.receiver.reviewSvg);else image.removeAttribute('src')}
-  element('inlet-result').textContent=bank?`Finite route/operation/clamp envelope: ${bank.receiver.necessaryRouteOperationAndClampEnvelopeScreen?'within declared bounds':'REJECTED'}. Jacket reference ${bank.route.insulationAndJacketInventory.jacketDensityReferenceKg.toFixed(3)} kg; insulation reference ${bank.route.insulationAndJacketInventory.insulationDensityReferenceKg.toFixed(3)} kg. Actual materials, tools, carrier, pier, coupled pressure/thermal reactions and loaded renewal remain unqualified.`:''
+  for(const [name,result]of [['current',current],['comparison',comparison]] as const){const image=element<HTMLImageElement>(`${name}-inlet-carrier`);if(result?.inletBank)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(result.inletBank.carrier.reviewSvg);else image.removeAttribute('src')}
+  element('inlet-result').textContent=bank?`Finite route/operation/clamp envelope: ${bank.receiver.necessaryRouteOperationAndClampEnvelopeScreen?'within declared bounds':'REJECTED'}. Jacket reference ${bank.route.insulationAndJacketInventory.jacketDensityReferenceKg.toFixed(3)} kg; insulation reference ${bank.route.insulationAndJacketInventory.insulationDensityReferenceKg.toFixed(3)} kg. Flat-shelf carrier: ${bank.carrier.necessaryCarrierComparison?'within declared bounds':'REJECTED'}. Actual materials, tools, carrier, pier, coupled pressure/thermal reactions and loaded renewal remain unqualified.`:''
   const cage = current?.wetCage
   element('cage-result').textContent = cage
     ? `Graded raise ${cage.settings.postTopLevelRaiseMm} mm. Cage geometry: ${cage.geometry.independentPathFailureCount} path-pair, ${cage.geometry.internalClosureFailureCount} closure and ${cage.geometry.coverFailureCount} cover failures. Explicit steel ${cage.quantities.actualSteelMassUpperKg.toFixed(3)} kg. Native case ${cage.nativeCaseId}. Comparison only; post-head resistance and installed acceptance remain unqualified.`
