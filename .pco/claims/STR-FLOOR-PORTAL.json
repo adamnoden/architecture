@@ -1,43 +1,41 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 56,
-  "state": "released",
-  "leaseId": "234d4914-97e5-469f-a35f-b42dd7852ec5",
+  "generation": 57,
+  "state": "claimed",
+  "leaseId": "7cccf040-5554-4999-94fd-50b6bce6c599",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-root-20261123"
+    "label": "convergence-resume-root-20261123"
   },
-  "claimedAt": "2026-11-23T07:21:50.909Z",
-  "heartbeatAt": "2026-11-23T09:54:51.000Z",
-  "expiresAt": "2026-11-23T09:54:51.000Z",
+  "claimedAt": "2026-11-23T22:25:18.262Z",
+  "heartbeatAt": "2026-11-23T22:25:18.262Z",
+  "expiresAt": "2026-11-23T23:10:18.262Z",
   "checkpoint": {
-    "evidence": "Merged1620/mainae5d28d6. Draft1621/843f317d preserves pad/fan/stair work; raw controls evidence1aaf2f29. CI fails stale crafted-study-kit-schedule.json; executor unavailable. Full handoff on1621.",
-    "next": "Fresh main/lease; regenerate via crafted-study-views.mjs then --check, genuine downstream audit; exact-head full CI/browser/preflight. Continue fixed-support prototype; no native pair executed.",
-    "blocker": "Execution environment unavailable. Native fixed-normal experiment not run; prepared wrapper local-only. Finite joints/anchors, signed convergence, material, stair/plinth/window joins remain open."
+    "evidence": "Recover remote draft1621/843f317d; executor restored to older snapshot. Fresh mainae5d and STR56 release verified.",
+    "next": "Regenerate crafted Study output and genuine dependents; submit successor branch, exact-head CI/preflight, merge."
   },
-  "branch": "work/convergence-head-fan-20261123",
+  "branch": "work/convergence-resume-final-20261123",
   "predecessor": {
-    "leaseId": "cc0f34b3-6b3d-4fab-8e8d-f83c5d89ea10",
-    "generation": 55,
-    "branch": "work/convergence-integrated-house-20261122",
+    "leaseId": "234d4914-97e5-469f-a35f-b42dd7852ec5",
+    "generation": 56,
+    "branch": "work/convergence-head-fan-20261123",
+    "pr": 1621,
     "checkpoint": {
-      "evidence": "MERGED1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact-headCI and3preflights passed. Durable handoff618481bf8ac92101881fee82b1b3220fd88eac69; STR contact/book sourceee7; finaljointrepair28dcb24a passes2freshproductioncalls; preparedexperiment doc7a5f0f57 is not validated code.",
-      "next": "Fresh main/graph/occupancy then new claim; recover combined HADc78bb8d6, IAS8f12c01e, HADbrowserae142435, apply joint28dcb; genuine source-account/receipt regen, exact-head fullCI/realbrowser/publication preflight then merge. No secondbatchPR yet.",
-      "blocker": "Execution environment explicitly unavailable; exec-server recovery timed out. Local combinedb673d6c2 not published as one tree; components durable. Joint resistance, signed load programme, carrier/thermal/renewal and wholehouse selection unresolved."
+      "evidence": "Merged1620/mainae5d28d6. Draft1621/843f317d preserves pad/fan/stair work; raw controls evidence1aaf2f29. CI fails stale crafted-study-kit-schedule.json; executor unavailable. Full handoff on1621.",
+      "next": "Fresh main/lease; regenerate via crafted-study-views.mjs then --check, genuine downstream audit; exact-head full CI/browser/preflight. Continue fixed-support prototype; no native pair executed.",
+      "blocker": "Execution environment unavailable. Native fixed-normal experiment not run; prepared wrapper local-only. Finite joints/anchors, signed convergence, material, stair/plinth/window joins remain open."
     }
   },
   "recoverySource": {
-    "leaseId": "cc0f34b3-6b3d-4fab-8e8d-f83c5d89ea10",
-    "generation": 55,
-    "branch": "work/convergence-integrated-house-20261122",
+    "leaseId": "234d4914-97e5-469f-a35f-b42dd7852ec5",
+    "generation": 56,
+    "branch": "work/convergence-head-fan-20261123",
+    "pr": 1621,
     "checkpoint": {
-      "evidence": "MERGED1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact-headCI and3preflights passed. Durable handoff618481bf8ac92101881fee82b1b3220fd88eac69; STR contact/book sourceee7; finaljointrepair28dcb24a passes2freshproductioncalls; preparedexperiment doc7a5f0f57 is not validated code.",
-      "next": "Fresh main/graph/occupancy then new claim; recover combined HADc78bb8d6, IAS8f12c01e, HADbrowserae142435, apply joint28dcb; genuine source-account/receipt regen, exact-head fullCI/realbrowser/publication preflight then merge. No secondbatchPR yet.",
-      "blocker": "Execution environment explicitly unavailable; exec-server recovery timed out. Local combinedb673d6c2 not published as one tree; components durable. Joint resistance, signed load programme, carrier/thermal/renewal and wholehouse selection unresolved."
+      "evidence": "Merged1620/mainae5d28d6. Draft1621/843f317d preserves pad/fan/stair work; raw controls evidence1aaf2f29. CI fails stale crafted-study-kit-schedule.json; executor unavailable. Full handoff on1621.",
+      "next": "Fresh main/lease; regenerate via crafted-study-views.mjs then --check, genuine downstream audit; exact-head full CI/browser/preflight. Continue fixed-support prototype; no native pair executed.",
+      "blocker": "Execution environment unavailable. Native fixed-normal experiment not run; prepared wrapper local-only. Finite joints/anchors, signed convergence, material, stair/plinth/window joins remain open."
     }
-  },
-  "pr": 1621,
-  "releasedAt": "2026-11-23T09:54:51.000Z",
-  "releaseReason": "handoff"
+  }
 }
