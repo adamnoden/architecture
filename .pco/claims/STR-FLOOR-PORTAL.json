@@ -9,14 +9,14 @@
     "label": "convergence-root-20261123"
   },
   "claimedAt": "2026-11-23T07:21:50.909Z",
-  "heartbeatAt": "2026-11-23T08:51:21.461Z",
-  "expiresAt": "2026-11-23T09:36:21.461Z",
+  "heartbeatAt": "2026-11-23T09:09:21.684Z",
+  "expiresAt": "2026-11-23T09:54:21.684Z",
   "checkpoint": {
-    "evidence": "PR #1620 exact969; browser and publication proof pass; full health running. Native controls archived on evidence/convergence-native-controls-20261123.",
-    "next": "Merge exact validated969 after canonical preflight; continue actual wet-pad/fan and full load-path resolution.",
-    "blocker": "Full health CI pending; no whole-house or local-node resistance acceptance."
+    "evidence": "Merged1620/mainae5d; next explicit pad edit and nominal fan submitted PR1621 head eb8aaf6. Actual52heads unchanged to genuine140control, sourceaudit0 and10adverse Python tests pass. Native raw controls durable on evidence branch.",
+    "next": "Exact-head full health/browser proof; canonical preflight then merge; compare actual120pad and resolve finite head/stair/anchorage interfaces.",
+    "blocker": "No finite-node, placement, material, signed resistance or whole-house adoption; CI pending."
   },
-  "branch": "work/convergence-integrate-20261123",
+  "branch": "work/convergence-head-fan-20261123",
   "predecessor": {
     "leaseId": "cc0f34b3-6b3d-4fab-8e8d-f83c5d89ea10",
     "generation": 55,
@@ -37,5 +37,5 @@
       "blocker": "Execution environment explicitly unavailable; exec-server recovery timed out. Local combinedb673d6c2 not published as one tree; components durable. Joint resistance, signed load programme, carrier/thermal/renewal and wholehouse selection unresolved."
     }
   },
-  "pr": 1620
+  "pr": 1621
 }
