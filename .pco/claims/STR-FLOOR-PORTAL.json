@@ -9,12 +9,12 @@
     "label": "convergence-root-20261123"
   },
   "claimedAt": "2026-11-23T07:21:50.909Z",
-  "heartbeatAt": "2026-11-23T09:09:21.684Z",
-  "expiresAt": "2026-11-23T09:54:21.684Z",
+  "heartbeatAt": "2026-11-23T09:35:03.278Z",
+  "expiresAt": "2026-11-23T10:20:03.278Z",
   "checkpoint": {
-    "evidence": "Merged1620/mainae5d; next explicit pad edit and nominal fan submitted PR1621 head eb8aaf6. Actual52heads unchanged to genuine140control, sourceaudit0 and10adverse Python tests pass. Native raw controls durable on evidence branch.",
-    "next": "Exact-head full health/browser proof; canonical preflight then merge; compare actual120pad and resolve finite head/stair/anchorage interfaces.",
-    "blocker": "No finite-node, placement, material, signed resistance or whole-house adoption; CI pending."
+    "evidence": "PR1620 merged mainae5d. PR1621 published eb8aaf6: publication passed; browser reached15minute limit without assertion failure. Raw width120/sharedfan/fixed-support prototype durable evidence branch1aaf2f2961bebd67b3944ddc0c85b13120fd5115.",
+    "next": "Root integrates reviewed stair-source correspondence correction and bounded25minute full browser proof, publishes exact head and reruns full CI/preflight. Root alone executes STR; parallel agents read-only review.",
+    "blocker": "Finite joint/anchorage/material/signed floor convergence and actual stair/wholehouse correspondence remain unresolved; no default adoption."
   },
   "branch": "work/convergence-head-fan-20261123",
   "predecessor": {
