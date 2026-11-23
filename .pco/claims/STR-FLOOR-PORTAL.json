@@ -1,44 +1,39 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 55,
-  "state": "released",
-  "leaseId": "cc0f34b3-6b3d-4fab-8e8d-f83c5d89ea10",
+  "generation": 56,
+  "state": "claimed",
+  "leaseId": "234d4914-97e5-469f-a35f-b42dd7852ec5",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-20261122-primary"
+    "label": "convergence-root-20261123"
   },
-  "claimedAt": "2026-11-22T17:41:01.835Z",
-  "heartbeatAt": "2026-11-22T18:59:33.509Z",
-  "expiresAt": "2026-11-22T18:59:33.509Z",
+  "claimedAt": "2026-11-23T07:21:50.909Z",
+  "heartbeatAt": "2026-11-23T07:21:50.909Z",
+  "expiresAt": "2026-11-23T08:06:50.909Z",
   "checkpoint": {
-    "evidence": "MERGED1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact-headCI and3preflights passed. Durable handoff618481bf8ac92101881fee82b1b3220fd88eac69; STR contact/book sourceee7; finaljointrepair28dcb24a passes2freshproductioncalls; preparedexperiment doc7a5f0f57 is not validated code.",
-    "next": "Fresh main/graph/occupancy then new claim; recover combined HADc78bb8d6, IAS8f12c01e, HADbrowserae142435, apply joint28dcb; genuine source-account/receipt regen, exact-head fullCI/realbrowser/publication preflight then merge. No secondbatchPR yet.",
-    "blocker": "Execution environment explicitly unavailable; exec-server recovery timed out. Local combinedb673d6c2 not published as one tree; components durable. Joint resistance, signed load programme, carrier/thermal/renewal and wholehouse selection unresolved."
+    "evidence": "Main0bdbfaaa; recovery ee7a52d1,28dcb24a,7a5f0f57",
+    "next": "Integrate recovered contact and four-L proof with coordinated HAD/IAS source changes; regenerate and validate exact head"
   },
-  "branch": "work/convergence-integrated-house-20261122",
+  "branch": "work/convergence-integrate-20261123",
   "predecessor": {
-    "leaseId": "3955f4dd-a954-4def-8ecc-34da7b0b6003",
-    "generation": 54,
-    "branch": "work/convergence-primary-20261122",
-    "pr": 1618,
+    "leaseId": "cc0f34b3-6b3d-4fab-8e8d-f83c5d89ea10",
+    "generation": 55,
+    "branch": "work/convergence-integrated-house-20261122",
     "checkpoint": {
-      "evidence": "MERGED PR1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact890workflows pass and3freshleasepreflights. Next recoveries dceb3985 contact/source-complete; e6c33d20 joint-admission repair; book1619; HAD9eb9ac3d; IAScd3d23c3.",
-      "next": "Release gen54 merged increment, freshclaim STR continuation on currentmain, coordinate next integrated house/book review batch",
-      "blocker": "STR packet still planned: complete signed envelope, finitejoint capacity, physical bearing and house selection remain unresolved"
+      "evidence": "MERGED1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact-headCI and3preflights passed. Durable handoff618481bf8ac92101881fee82b1b3220fd88eac69; STR contact/book sourceee7; finaljointrepair28dcb24a passes2freshproductioncalls; preparedexperiment doc7a5f0f57 is not validated code.",
+      "next": "Fresh main/graph/occupancy then new claim; recover combined HADc78bb8d6, IAS8f12c01e, HADbrowserae142435, apply joint28dcb; genuine source-account/receipt regen, exact-head fullCI/realbrowser/publication preflight then merge. No secondbatchPR yet.",
+      "blocker": "Execution environment explicitly unavailable; exec-server recovery timed out. Local combinedb673d6c2 not published as one tree; components durable. Joint resistance, signed load programme, carrier/thermal/renewal and wholehouse selection unresolved."
     }
   },
   "recoverySource": {
-    "leaseId": "3955f4dd-a954-4def-8ecc-34da7b0b6003",
-    "generation": 54,
-    "branch": "work/convergence-primary-20261122",
-    "pr": 1618,
+    "leaseId": "cc0f34b3-6b3d-4fab-8e8d-f83c5d89ea10",
+    "generation": 55,
+    "branch": "work/convergence-integrated-house-20261122",
     "checkpoint": {
-      "evidence": "MERGED PR1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact890workflows pass and3freshleasepreflights. Next recoveries dceb3985 contact/source-complete; e6c33d20 joint-admission repair; book1619; HAD9eb9ac3d; IAScd3d23c3.",
-      "next": "Release gen54 merged increment, freshclaim STR continuation on currentmain, coordinate next integrated house/book review batch",
-      "blocker": "STR packet still planned: complete signed envelope, finitejoint capacity, physical bearing and house selection remain unresolved"
+      "evidence": "MERGED1618 main0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; all20exact-headCI and3preflights passed. Durable handoff618481bf8ac92101881fee82b1b3220fd88eac69; STR contact/book sourceee7; finaljointrepair28dcb24a passes2freshproductioncalls; preparedexperiment doc7a5f0f57 is not validated code.",
+      "next": "Fresh main/graph/occupancy then new claim; recover combined HADc78bb8d6, IAS8f12c01e, HADbrowserae142435, apply joint28dcb; genuine source-account/receipt regen, exact-head fullCI/realbrowser/publication preflight then merge. No secondbatchPR yet.",
+      "blocker": "Execution environment explicitly unavailable; exec-server recovery timed out. Local combinedb673d6c2 not published as one tree; components durable. Joint resistance, signed load programme, carrier/thermal/renewal and wholehouse selection unresolved."
     }
-  },
-  "releasedAt": "2026-11-22T18:59:33.509Z",
-  "releaseReason": "handoff"
+  }
 }
