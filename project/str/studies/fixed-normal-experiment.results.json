@@ -1,0 +1,4267 @@
+{
+  "schema": "str-fixed-normal-comparison/1",
+  "processingSourceSHA256": {
+    "project/str/studies/fixed-normal-comparison.mjs": "1915a47f3f7bb05db1f4b27ce33bd2dd60c7c34d80356ebab5b014afce3b61e8",
+    "compiler/reference-house/current-design/structural-floor-cuts.ts": "07da46f924013115ad45741443732aed3b6a6db9ccd0b9e38d1f427b7a9d4b85",
+    "project/str/studies/floor-section-cuts-inputs.json": "9c767245298e51e98aeebe9c7841ce945ba6c24f31005371ce47b1a84a0678da"
+  },
+  "methodSourceSHA256": {
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+    "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+    "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+    "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+    "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+    "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+    "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+    "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+    "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+    "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+    "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+    "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+    "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+    "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+    "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+    "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+    "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+    "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+    "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+    "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+    "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+    "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+    "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+    "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+    "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+    "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+    "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc",
+    "project/str/studies/fixed_normal_experiment.py": "1c93c7fa0be3c4aad78b8681caf5158a785ad3639d769a2465f3be4f2100c24a",
+    "project/str/studies/fixed-normal-experiment-inputs.json": "73afb77d2bf98d259a6c0a1a5536aee85cd112dfe8888fc31a7a32c09b496dbd",
+    "project/str/studies/four_l_joint_observer.py": "adb94b4ae63e83e409f5323b01d252a914591eb61bdd12b3af2ec27b6586304b",
+    "compiler/reference-house/current-design/structural-floor-cuts.ts": "07da46f924013115ad45741443732aed3b6a6db9ccd0b9e38d1f427b7a9d4b85",
+    "project/str/studies/floor-section-cuts-inputs.json": "9c767245298e51e98aeebe9c7841ce945ba6c24f31005371ce47b1a84a0678da"
+  },
+  "captures": [
+    {
+      "file": "v500.full.json",
+      "fullSHA256": "a9930793d0a86ef1dbf4c61e003dba088252e1107c60c49ee3bd3bbfbcc8b111"
+    },
+    {
+      "file": "v250.full.json",
+      "fullSHA256": "ce139fc9a3757919c1d079d879dbcd8e3fec0518ccdb3a6f7a009f31c6926818"
+    }
+  ],
+  "fixedNormalLedgerSHA256": "c1887df5cd13c38611b4a3530f2c7a4b641e61c8f915392275f1ef7d250f0ab0",
+  "physicalBodyLedgerSHA256": "6a1448e5faa0c48e3182be31adb4a0fbf35abdb42d08f346310aff2d182e0826",
+  "controls": [
+    {
+      "pitchMm": 500,
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -105.54211863447935,
+            -78.17685291958612,
+            284.430879625317,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            95.94188701173319,
+            2.6296542193755275,
+            -25.50451482440658,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.1301981372510399,
+            74.67716004176626,
+            -15.401611723726774,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -470.84129321106826,
+            -305.99715773878717,
+            84.07280799603404,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            277.2651842750009,
+            2.4316451787244864,
+            135.4647537955058,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            -0.5962751620788751,
+            213.71778181514145,
+            -75.62963107472804,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -244.4609609698621,
+            -433.736867725204,
+            93.38793284745596,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            183.1007834811239,
+            6.282906752598796,
+            -64.53614564941986,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.688447149383926,
+            259.265776140272,
+            161.32674385280197,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -155.09132981166786,
+            -203.90991038196188,
+            -67.00099428406372,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            132.6278168000809,
+            2.3412228724066875,
+            64.3537341833522,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -2.3164987329710294,
+            73.20119491666202,
+            153.524461447726,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            40.953054020707796,
+            36.26171410860846,
+            104.33095395479879,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            17.465297241163732,
+            64.13990238950927,
+            37.797479586406524,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -0.6153064266504292,
+            29.708726165342583,
+            74.49802781424306,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            53.196370059948606,
+            107.2141282907791,
+            152.47364348930597,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -34.48358006041278,
+            84.10708730043635,
+            95.0669722059404,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -62.552431634927615,
+            4.396639957887004,
+            124.31487133758205,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -45.222199614194665,
+            188.51524747414157,
+            151.3978189386247,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            31.48778971908284,
+            -0.8558302931193125,
+            33.264652629360334,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            53.87888581536103,
+            4.120147014672647,
+            48.45560444545042,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            60.37408562456585,
+            56.53331773578009,
+            108.07119178881524,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            120.829266550206,
+            44.637630730427034,
+            141.3874152319509,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            104.13117315787537,
+            -30.099508289494004,
+            43.706597360439645,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            0.6731756752736064,
+            -53.00729200498066,
+            92.55897824732509,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -37.73411475413994,
+            -53.42842126267459,
+            159.12492959968455,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            82.18191527888203,
+            -2.1424922713471286,
+            56.83173211141329,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -5.66944398962287,
+            0.6826179242175723,
+            121.03195896771666,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -9.751813649553013,
+            56.396876365235514,
+            85.13212748062486,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -50.62692438534479,
+            9.199342995772849,
+            257.4408054324618,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            11.808608547176336,
+            52.493638621870005,
+            103.18537111425339,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -1.596534533370067,
+            -6.121105640170872,
+            54.19235416673944,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            -0.04007509711786006,
+            14.558563697839098,
+            33.46627745556633,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            24.469446421090517,
+            -5.553277499983455,
+            56.692940031662026,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            2.173104502514878,
+            23.38122670640206,
+            70.04972153327994,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            0.5688757854713781,
+            3.415373909296221,
+            36.87718931034898,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            13.72411382244852,
+            -18.643414943618577,
+            -16.955591586773757,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -14.917547512320043,
+            -1.0299791279752453,
+            52.42126127640883,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            4.994132226838309,
+            0.6506828599167838,
+            10.97422840990712,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            5.78496012630224,
+            0.10437769259375429,
+            37.86029182087499,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            18.40981205807243,
+            -63.002602253349345,
+            141.63286784718642,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            11.825479732331232,
+            14.03614073684336,
+            115.4359999980589,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            59.92733897957598,
+            -73.50786726626269,
+            138.02326311763284,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            80.53081139206031,
+            100.78644218296003,
+            175.5702798028903,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -30.34233403552357,
+            17.956863690224594,
+            103.42408389108678,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            -0.014125772607141818,
+            -24.75276204080555,
+            71.67921362139487,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -41.17676751822908,
+            46.32670527722715,
+            141.0598264339965,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -13.184845309104478,
+            2.848540446215534,
+            66.26746757999807,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -2.3597762551739674,
+            -7.313182311872276,
+            42.63007293567565,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            20.74384796612462,
+            15.05751485874586,
+            48.89330346916198,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -23.41201009752423,
+            -4.936881629003558,
+            112.75991851718855,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            24.408988037097323,
+            -59.75151202941079,
+            92.73869096085009,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sectionCuts": {
+        "schema": "str-physical-floor-section-cuts/1",
+        "rawPointEnvelopeKNmPerM": 107.241754570358,
+        "localStressConvergenceProven": false,
+        "stripResistanceAccepted": false,
+        "cuts": [
+          {
+            "id": "STR/SW/normal-y-450",
+            "normal": "y",
+            "positionMm": 450,
+            "intervalMm": [
+              262.5,
+              3262.5
+            ],
+            "grossWidthMm": 3000,
+            "materialWidthMm": 3000,
+            "gapsMm": [],
+            "signedNormalMomentKNm": 20.568247452698873,
+            "signedTwistingMomentKNm": 9.166842067298868,
+            "absoluteBendingPlusTwistingKNm": 32.70578841826494,
+            "intervals": [
+              {
+                "cellIndex": 3,
+                "intervalMm": [
+                  262.5,
+                  332.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0,
+                  0
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -5.689730645507695e-15,
+                  -5.689730645507696e-15
+                ],
+                "signedNormalMomentKNm": 0,
+                "signedTwistingMomentKNm": -3.982811451855388e-16,
+                "absoluteBendingPlusTwistingKNm": 3.982811451855388e-16
+              },
+              {
+                "cellIndex": 61,
+                "intervalMm": [
+                  332.5,
+                  402.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0,
+                  0
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -5.689730645507695e-15,
+                  -5.689730645507696e-15
+                ],
+                "signedNormalMomentKNm": 0,
+                "signedTwistingMomentKNm": -3.982811451855388e-16,
+                "absoluteBendingPlusTwistingKNm": 3.982811451855388e-16
+              },
+              {
+                "cellIndex": 119,
+                "intervalMm": [
+                  402.5,
+                  417.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  -0.2521494680631825,
+                  -0.6320592954916286
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.3301148353036092,
+                  0.3021233759929942
+                ],
+                "signedNormalMomentKNm": -0.006631565726661084,
+                "signedTwistingMomentKNm": 0.004741786584724525,
+                "absoluteBendingPlusTwistingKNm": 0.011373352311385608
+              },
+              {
+                "cellIndex": 177,
+                "intervalMm": [
+                  417.5,
+                  462.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  -0.4810204320295998,
+                  -1.3154495308647283
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.1960444725089141,
+                  0.26209243934462484
+                ],
+                "signedNormalMomentKNm": -0.04042057416512238,
+                "signedTwistingMomentKNm": 0.010308080516704626,
+                "absoluteBendingPlusTwistingKNm": 0.05072865468182701
+              },
+              {
+                "cellIndex": 215,
+                "intervalMm": [
+                  462.5,
+                  487.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  -1.1624054837514037,
+                  -1.403509395311774
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.21014203133959147,
+                  0.33326909532294247
+                ],
+                "signedNormalMomentKNm": -0.032073935988289726,
+                "signedTwistingMomentKNm": 0.006792639083281674,
+                "absoluteBendingPlusTwistingKNm": 0.0388665750715714
+              },
+              {
+                "cellIndex": 253,
+                "intervalMm": [
+                  487.5,
+                  647.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  -1.1400964772725763,
+                  1.2027361701927868
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.07634139393571573,
+                  1.2853334935508163
+                ],
+                "signedNormalMomentKNm": 0.005011175433616835,
+                "signedTwistingMomentKNm": 0.10893399099892256,
+                "absoluteBendingPlusTwistingKNm": 0.202714288129427
+              },
+              {
+                "cellIndex": 290,
+                "intervalMm": [
+                  647.5,
+                  955
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.8931901031783728,
+                  12.548663627748969
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  1.8695212945860402,
+                  5.129354690559406
+                ],
+                "signedNormalMomentKNm": 2.0666850111300787,
+                "signedTwistingMomentKNm": 1.0760771827161124,
+                "absoluteBendingPlusTwistingKNm": 3.142762193846191
+              },
+              {
+                "cellIndex": 328,
+                "intervalMm": [
+                  955,
+                  1262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  13.719825274558296,
+                  26.8452004375592
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  6.672715448487226,
+                  10.035247254007565
+                ],
+                "signedNormalMomentKNm": 6.236872703238065,
+                "signedTwistingMomentKNm": 2.568849265508574,
+                "absoluteBendingPlusTwistingKNm": 8.805721968746639
+              },
+              {
+                "cellIndex": 366,
+                "intervalMm": [
+                  1262.5,
+                  1537.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  32.11531928363182,
+                  14.812163880460208
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  18.64596692337783,
+                  13.8738033779684
+                ],
+                "signedNormalMomentKNm": 6.452528935062654,
+                "signedTwistingMomentKNm": 4.471468416435107,
+                "absoluteBendingPlusTwistingKNm": 10.92399735149776
+              },
+              {
+                "cellIndex": 404,
+                "intervalMm": [
+                  1537.5,
+                  1812.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  11.590909842506505,
+                  7.602431608185979
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  6.678453850878922,
+                  5.0982499127940075
+                ],
+                "signedNormalMomentKNm": 2.639084449470217,
+                "signedTwistingMomentKNm": 1.619296767505028,
+                "absoluteBendingPlusTwistingKNm": 4.258381216975245
+              },
+              {
+                "cellIndex": 442,
+                "intervalMm": [
+                  1812.5,
+                  2067.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  6.3060239257592166,
+                  4.564542867361754
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  3.0520567466662962,
+                  1.7226148252809783
+                ],
+                "signedNormalMomentKNm": 1.3859972661229238,
+                "signedTwistingMomentKNm": 0.6087706254232775,
+                "absoluteBendingPlusTwistingKNm": 1.9947678915462013
+              },
+              {
+                "cellIndex": 477,
+                "intervalMm": [
+                  2067.5,
+                  2177.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  3.6959620432449913,
+                  3.387897390306035
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.6571661425609355,
+                  0.306782420001379
+                ],
+                "signedNormalMomentKNm": 0.3896122688453065,
+                "signedTwistingMomentKNm": 0.0530171709409273,
+                "absoluteBendingPlusTwistingKNm": 0.44262943978623376
+              },
+              {
+                "cellIndex": 512,
+                "intervalMm": [
+                  2177.5,
+                  2212.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  3.089416073749207,
+                  3.014261554387864
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.046596618998820685,
+                  -0.04281726242245569
+                ],
+                "signedNormalMomentKNm": 0.10681435849239874,
+                "signedTwistingMomentKNm": 0.00006613874008638742,
+                "absoluteBendingPlusTwistingKNm": 0.10759812773490175
+              },
+              {
+                "cellIndex": 547,
+                "intervalMm": [
+                  2212.5,
+                  2495
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.5544938816320277,
+                  2.114744881382806
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.410813988241807,
+                  -0.9135486580161964
+                ],
+                "signedNormalMomentKNm": 0.6595299752758452,
+                "signedTwistingMomentKNm": -0.18706622378394297,
+                "absoluteBendingPlusTwistingKNm": 0.8465961990597882
+              },
+              {
+                "cellIndex": 585,
+                "intervalMm": [
+                  2495,
+                  2777.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.4759570072606663,
+                  1.2026638757624508
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.2953185169630452,
+                  -1.487523730557145
+                ],
+                "signedNormalMomentKNm": 0.37835519972701526,
+                "signedTwistingMomentKNm": -0.3930764674622268,
+                "absoluteBendingPlusTwistingKNm": 0.771431667189242
+              },
+              {
+                "cellIndex": 623,
+                "intervalMm": [
+                  2777.5,
+                  2817.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.9553283801387269,
+                  0.924682930239189
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.5970688838203482,
+                  -1.6089886578987587
+                ],
+                "signedNormalMomentKNm": 0.03760022620755832,
+                "signedTwistingMomentKNm": -0.06412115083438213,
+                "absoluteBendingPlusTwistingKNm": 0.10172137704194045
+              },
+              {
+                "cellIndex": 646,
+                "intervalMm": [
+                  2817.5,
+                  2902.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.8659105081369359,
+                  0.8071431398756189
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6331414195303278,
+                  -1.6488269366842498
+                ],
+                "signedNormalMomentKNm": 0.07110478004053358,
+                "signedTwistingMomentKNm": -0.13948365513911956,
+                "absoluteBendingPlusTwistingKNm": 0.21058843517965314
+              },
+              {
+                "cellIndex": 689,
+                "intervalMm": [
+                  2902.5,
+                  2917.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.7618956779686328,
+                  0.7523270860775381
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6587133264742773,
+                  -1.6599689180689223
+                ],
+                "signedNormalMomentKNm": 0.011356670730346281,
+                "signedTwistingMomentKNm": -0.024890116834073998,
+                "absoluteBendingPlusTwistingKNm": 0.03624678756442028
+              },
+              {
+                "cellIndex": 732,
+                "intervalMm": [
+                  2917.5,
+                  3027.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.7058436016462312,
+                  0.6436992430065941
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.666739024319281,
+                  -1.6585446234330643
+                ],
+                "signedNormalMomentKNm": 0.07422485645590539,
+                "signedTwistingMomentKNm": -0.182890600626379,
+                "absoluteBendingPlusTwistingKNm": 0.2571154570822844
+              },
+              {
+                "cellIndex": 775,
+                "intervalMm": [
+                  3027.5,
+                  3262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.6351470098450223,
+                  0.49332662714627196
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6013761430905198,
+                  -1.5471496651967551
+                ],
+                "signedNormalMomentKNm": 0.13259565234647705,
+                "signedTwistingMomentKNm": -0.36995178247375476,
+                "absoluteBendingPlusTwistingKNm": 0.5025474348202318
+              }
+            ]
+          },
+          {
+            "id": "STR/SW/normal-y-650",
+            "normal": "y",
+            "positionMm": 650,
+            "intervalMm": [
+              262.5,
+              3262.5
+            ],
+            "grossWidthMm": 3000,
+            "materialWidthMm": 3000,
+            "gapsMm": [],
+            "signedNormalMomentKNm": 20.489202850333,
+            "signedTwistingMomentKNm": 9.26571537496969,
+            "absoluteBendingPlusTwistingKNm": 32.9776253439612,
+            "intervals": [
+              {
+                "cellIndex": 3,
+                "intervalMm": [
+                  262.5,
+                  332.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0,
+                  0
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  6.764015452701462e-16,
+                  6.764015452701464e-16
+                ],
+                "signedNormalMomentKNm": 0,
+                "signedTwistingMomentKNm": 4.7348108168910244e-17,
+                "absoluteBendingPlusTwistingKNm": 4.7348108168910244e-17
+              },
+              {
+                "cellIndex": 61,
+                "intervalMm": [
+                  332.5,
+                  402.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0,
+                  0
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  6.764015452701462e-16,
+                  6.764015452701464e-16
+                ],
+                "signedNormalMomentKNm": 0,
+                "signedTwistingMomentKNm": 4.7348108168910244e-17,
+                "absoluteBendingPlusTwistingKNm": 4.7348108168910244e-17
+              },
+              {
+                "cellIndex": 119,
+                "intervalMm": [
+                  402.5,
+                  417.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  -0.43875919680034925,
+                  -0.8186690242287957
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6960709109814525,
+                  -1.7240623702920126
+                ],
+                "signedNormalMomentKNm": -0.009430711657718588,
+                "signedTwistingMomentKNm": -0.025650999609550987,
+                "absoluteBendingPlusTwistingKNm": 0.035081711267269576
+              },
+              {
+                "cellIndex": 177,
+                "intervalMm": [
+                  417.5,
+                  462.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  -0.33424717239466806,
+                  -1.168676271229797
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.2873850365313124,
+                  -1.221337069695585
+                ],
+                "signedNormalMomentKNm": -0.03381577748155046,
+                "signedTwistingMomentKNm": -0.05644624739010518,
+                "absoluteBendingPlusTwistingKNm": 0.09026202487165563
+              },
+              {
+                "cellIndex": 215,
+                "intervalMm": [
+                  462.5,
+                  487.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  -0.6698972278179446,
+                  -0.9110011393783154
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.5613904856536029,
+                  -0.4382634216702023
+                ],
+                "signedNormalMomentKNm": -0.01976122958995325,
+                "signedTwistingMomentKNm": -0.012495673841547567,
+                "absoluteBendingPlusTwistingKNm": 0.03225690343150082
+              },
+              {
+                "cellIndex": 253,
+                "intervalMm": [
+                  487.5,
+                  647.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  -0.3844764150131408,
+                  1.9583562324522221
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  1.2477577176683976,
+                  2.4567498172834967
+                ],
+                "signedNormalMomentKNm": 0.1259103853951265,
+                "signedTwistingMomentKNm": 0.29636060279615156,
+                "absoluteBendingPlusTwistingKNm": 0.43236626248148613
+              },
+              {
+                "cellIndex": 290,
+                "intervalMm": [
+                  647.5,
+                  955
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.9532985246331287,
+                  13.608772049203722
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  4.901839609921479,
+                  8.161673005894848
+                ],
+                "signedNormalMomentKNm": 2.3926683507274156,
+                "signedTwistingMomentKNm": 2.0085150646817604,
+                "absoluteBendingPlusTwistingKNm": 4.401183415409176
+              },
+              {
+                "cellIndex": 328,
+                "intervalMm": [
+                  955,
+                  1262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  14.81333155277629,
+                  27.938706715777187
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  10.087447198211038,
+                  13.449979003731379
+                ],
+                "signedNormalMomentKNm": 6.573125883790097,
+                "signedTwistingMomentKNm": 3.6188792785486465,
+                "absoluteBendingPlusTwistingKNm": 10.192005162338743
+              },
+              {
+                "cellIndex": 366,
+                "intervalMm": [
+                  1262.5,
+                  1537.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  30.379987085301114,
+                  13.076831682129507
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  13.61232171518246,
+                  8.84015816977303
+                ],
+                "signedNormalMomentKNm": 5.97531258052171,
+                "signedTwistingMomentKNm": 3.08721598418138,
+                "absoluteBendingPlusTwistingKNm": 9.06252856470309
+              },
+              {
+                "cellIndex": 404,
+                "intervalMm": [
+                  1537.5,
+                  1812.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  11.016290228657446,
+                  7.02781199433692
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  5.518169273622042,
+                  3.9379653355371285
+                ],
+                "signedNormalMomentKNm": 2.481064055661726,
+                "signedTwistingMomentKNm": 1.300218508759386,
+                "absoluteBendingPlusTwistingKNm": 3.7812825644211117
+              },
+              {
+                "cellIndex": 442,
+                "intervalMm": [
+                  1812.5,
+                  2067.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  5.784674152666935,
+                  4.0431930942694745
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  2.5057097479533663,
+                  1.1762678265680484
+                ],
+                "signedNormalMomentKNm": 1.2530530739843924,
+                "signedTwistingMomentKNm": 0.4694521407514804,
+                "absoluteBendingPlusTwistingKNm": 1.7225052147358728
+              },
+              {
+                "cellIndex": 477,
+                "intervalMm": [
+                  2067.5,
+                  2177.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  3.3774313863726677,
+                  3.0693667334337107
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.43311912224169336,
+                  0.08273539968213761
+                ],
+                "signedNormalMomentKNm": 0.3545738965893508,
+                "signedTwistingMomentKNm": 0.028371998705810704,
+                "absoluteBendingPlusTwistingKNm": 0.3829458952951615
+              },
+              {
+                "cellIndex": 512,
+                "intervalMm": [
+                  2177.5,
+                  2212.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.8339478411169927,
+                  2.7587933217556486
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.12518513954139762,
+                  -0.21459902096266947
+                ],
+                "signedNormalMomentKNm": 0.09787297035027125,
+                "signedTwistingMomentKNm": -0.005946222808821175,
+                "absoluteBendingPlusTwistingKNm": 0.10381919315909242
+              },
+              {
+                "cellIndex": 547,
+                "intervalMm": [
+                  2212.5,
+                  2495
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.376534706490652,
+                  1.93678570624143
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.5353446785778715,
+                  -1.038079348352258
+                ],
+                "signedNormalMomentKNm": 0.6092565082984066,
+                "signedTwistingMomentKNm": -0.22224614380388075,
+                "absoluteBendingPlusTwistingKNm": 0.8315026521022874
+              },
+              {
+                "cellIndex": 585,
+                "intervalMm": [
+                  2495,
+                  2777.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.4079197635105434,
+                  1.1346266320123273
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.3727112621660813,
+                  -1.56491647576018
+                ],
+                "signedNormalMomentKNm": 0.35913467836760543,
+                "signedTwistingMomentKNm": -0.4149399179820844,
+                "absoluteBendingPlusTwistingKNm": 0.7740745963496898
+              },
+              {
+                "cellIndex": 623,
+                "intervalMm": [
+                  2777.5,
+                  2817.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.925528944942703,
+                  0.8948834950431654
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6583597836194237,
+                  -1.6702795576978344
+                ],
+                "signedNormalMomentKNm": 0.036408248799717366,
+                "signedTwistingMomentKNm": -0.06657278682634515,
+                "absoluteBendingPlusTwistingKNm": 0.10298103562606252
+              },
+              {
+                "cellIndex": 646,
+                "intervalMm": [
+                  2817.5,
+                  2902.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.8474569585440876,
+                  0.7886895902827711
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6884518837762739,
+                  -1.7041374009301946
+                ],
+                "signedNormalMomentKNm": 0.0695362283251415,
+                "signedTwistingMomentKNm": -0.1441850446000249,
+                "absoluteBendingPlusTwistingKNm": 0.2137212729251664
+              },
+              {
+                "cellIndex": 689,
+                "intervalMm": [
+                  2902.5,
+                  2917.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.753525067337674,
+                  0.7439564754465795
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.7097458165601165,
+                  -1.7110014081547564
+                ],
+                "signedNormalMomentKNm": 0.011231111570881901,
+                "signedTwistingMomentKNm": -0.025655604185361548,
+                "absoluteBendingPlusTwistingKNm": 0.03688671575624345
+              },
+              {
+                "cellIndex": 732,
+                "intervalMm": [
+                  2917.5,
+                  3027.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.7132930569973369,
+                  0.6511486983577
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.711934921511744,
+                  -1.7037405206255278
+                ],
+                "signedNormalMomentKNm": 0.07504429654452703,
+                "signedTwistingMomentKNm": -0.18786214931754996,
+                "absoluteBendingPlusTwistingKNm": 0.262906445862077
+              },
+              {
+                "cellIndex": 775,
+                "intervalMm": [
+                  3027.5,
+                  3262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.6582221068210924,
+                  0.5164017241223422
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.649655422307116,
+                  -1.5954289444133511
+                ],
+                "signedNormalMomentKNm": 0.13801830013585353,
+                "signedTwistingMomentKNm": -0.38129741308965487,
+                "absoluteBendingPlusTwistingKNm": 0.5193157132255084
+              }
+            ]
+          },
+          {
+            "id": "STR/SW/normal-y-1300",
+            "normal": "y",
+            "positionMm": 1300,
+            "intervalMm": [
+              262.5,
+              3262.5
+            ],
+            "grossWidthMm": 3000,
+            "materialWidthMm": 3000,
+            "gapsMm": [],
+            "signedNormalMomentKNm": 28.851998765158797,
+            "signedTwistingMomentKNm": 7.704275882596125,
+            "absoluteBendingPlusTwistingKNm": 42.837278919544936,
+            "intervals": [
+              {
+                "cellIndex": 5,
+                "intervalMm": [
+                  262.5,
+                  332.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  31.122436035156984,
+                  31.55347229677266
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  10.795904669807355,
+                  10.556276950347785
+                ],
+                "signedNormalMomentKNm": 2.193656791617538,
+                "signedTwistingMomentKNm": 0.7473263567054299,
+                "absoluteBendingPlusTwistingKNm": 2.940983148322968
+              },
+              {
+                "cellIndex": 63,
+                "intervalMm": [
+                  332.5,
+                  402.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  31.647018428312695,
+                  34.58299089924997
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  11.093048995202421,
+                  11.202660166825638
+                ],
+                "signedNormalMomentKNm": 2.3180503264646934,
+                "signedTwistingMomentKNm": 0.7803498206709822,
+                "absoluteBendingPlusTwistingKNm": 3.098400147135676
+              },
+              {
+                "cellIndex": 121,
+                "intervalMm": [
+                  402.5,
+                  417.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  46.229695490760285,
+                  44.36650963268972
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  31.75170875676709,
+                  30.76738612072624
+                ],
+                "signedNormalMomentKNm": 0.679471538425875,
+                "signedTwistingMomentKNm": 0.46889321158119995,
+                "absoluteBendingPlusTwistingKNm": 1.148364750007075
+              },
+              {
+                "cellIndex": 179,
+                "intervalMm": [
+                  417.5,
+                  462.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  42.38247438621287,
+                  38.5698199081067
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  25.19985039187923,
+                  22.911765707571515
+                ],
+                "signedNormalMomentKNm": 1.8214266216221904,
+                "signedTwistingMomentKNm": 1.0825113622376417,
+                "absoluteBendingPlusTwistingKNm": 2.903937983859832
+              },
+              {
+                "cellIndex": 217,
+                "intervalMm": [
+                  462.5,
+                  487.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  36.51070244003392,
+                  35.05348076872659
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  19.116647016739428,
+                  18.21527296285144
+                ],
+                "signedNormalMomentKNm": 0.8945522901095064,
+                "signedTwistingMomentKNm": 0.46664899974488583,
+                "absoluteBendingPlusTwistingKNm": 1.3612012898543924
+              },
+              {
+                "cellIndex": 255,
+                "intervalMm": [
+                  487.5,
+                  647.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  32.10675579932156,
+                  25.93992594972644
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  14.520756823287016,
+                  11.74241433106526
+                ],
+                "signedNormalMomentKNm": 4.64373453992384,
+                "signedTwistingMomentKNm": 2.101053692348182,
+                "absoluteBendingPlusTwistingKNm": 6.744788232272022
+              },
+              {
+                "cellIndex": 292,
+                "intervalMm": [
+                  647.5,
+                  955
+                ],
+                "normalMomentEndsKNmPerM": [
+                  23.28109827626654,
+                  14.548636197420965
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  9.081564753182834,
+                  7.879338680252456
+                ],
+                "signedNormalMomentKNm": 5.816321675329454,
+                "signedTwistingMomentKNm": 2.607738902890676,
+                "absoluteBendingPlusTwistingKNm": 8.42406057822013
+              },
+              {
+                "cellIndex": 330,
+                "intervalMm": [
+                  955,
+                  1262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  13.760835180065683,
+                  10.53704624137383
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  5.020362220062575,
+                  4.259463949262223
+                ],
+                "signedNormalMomentKNm": 3.7357992685463253,
+                "signedTwistingMomentKNm": 1.4267732735336875,
+                "absoluteBendingPlusTwistingKNm": 5.162572542080013
+              },
+              {
+                "cellIndex": 368,
+                "intervalMm": [
+                  1262.5,
+                  1537.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  10.531459086790106,
+                  5.641568353626102
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  4.405085919165768,
+                  3.375763750583287
+                ],
+                "signedNormalMomentKNm": 2.2237912730572287,
+                "signedTwistingMomentKNm": 1.0698668295904952,
+                "absoluteBendingPlusTwistingKNm": 3.293658102647724
+              },
+              {
+                "cellIndex": 406,
+                "intervalMm": [
+                  1537.5,
+                  1812.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  5.464609224883309,
+                  4.606374629818605
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.8711402417111017,
+                  -0.24348986207715148
+                ],
+                "signedNormalMomentKNm": 1.3847602800215133,
+                "signedTwistingMomentKNm": 0.08630192719966816,
+                "absoluteBendingPlusTwistingKNm": 1.4856894911977532
+              },
+              {
+                "cellIndex": 444,
+                "intervalMm": [
+                  1812.5,
+                  2067.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  4.0448252213304094,
+                  3.673968951049366
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.1687086121281969,
+                  -1.7576125697173488
+                ],
+                "signedNormalMomentKNm": 0.9841462569784214,
+                "signedTwistingMomentKNm": -0.37310595068530705,
+                "absoluteBendingPlusTwistingKNm": 1.3572522076637283
+              },
+              {
+                "cellIndex": 479,
+                "intervalMm": [
+                  2067.5,
+                  2177.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  3.230392290998255,
+                  3.0275981084159582
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.0445739492473334,
+                  -2.15398254519113
+                ],
+                "signedNormalMomentKNm": 0.3441894719677817,
+                "signedTwistingMomentKNm": -0.2309206071941155,
+                "absoluteBendingPlusTwistingKNm": 0.5751100791618973
+              },
+              {
+                "cellIndex": 514,
+                "intervalMm": [
+                  2177.5,
+                  2212.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.898988735426145,
+                  2.831004481524689
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.215804498143803,
+                  -2.242639649768847
+                ],
+                "signedNormalMomentKNm": 0.10027488129663961,
+                "signedTwistingMomentKNm": -0.07802277258847139,
+                "absoluteBendingPlusTwistingKNm": 0.17829765388511098
+              },
+              {
+                "cellIndex": 549,
+                "intervalMm": [
+                  2212.5,
+                  2495
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.634025506429486,
+                  2.113139310933573
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.3418335973072066,
+                  -2.468800252994468
+                ],
+                "signedNormalMomentKNm": 0.670537030452532,
+                "signedTwistingMomentKNm": -0.6795020313551114,
+                "absoluteBendingPlusTwistingKNm": 1.3500390618076434
+              },
+              {
+                "cellIndex": 587,
+                "intervalMm": [
+                  2495,
+                  2777.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.8541630006317027,
+                  1.451555506516549
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.5518053700649492,
+                  -2.523552393274954
+                ],
+                "signedNormalMomentKNm": 0.4669327391346906,
+                "signedTwistingMomentKNm": -0.7168942840717614,
+                "absoluteBendingPlusTwistingKNm": 1.1838270232064518
+              },
+              {
+                "cellIndex": 625,
+                "intervalMm": [
+                  2777.5,
+                  2817.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.3583578562531216,
+                  1.3117183356011413
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.514371305433977,
+                  -2.498623208474301
+                ],
+                "signedNormalMomentKNm": 0.05340152383708526,
+                "signedTwistingMomentKNm": -0.10025989027816558,
+                "absoluteBendingPlusTwistingKNm": 0.15366141411525083
+              },
+              {
+                "cellIndex": 648,
+                "intervalMm": [
+                  2817.5,
+                  2902.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.2994427696248754,
+                  1.2090326952104942
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.4826352358536234,
+                  -2.4397405896163744
+                ],
+                "signedNormalMomentKNm": 0.10661020725550321,
+                "signedTwistingMomentKNm": -0.20920097258247491,
+                "absoluteBendingPlusTwistingKNm": 0.31581117983797813
+              },
+              {
+                "cellIndex": 691,
+                "intervalMm": [
+                  2902.5,
+                  2917.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.2015867349638598,
+                  1.1868091512313768
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.418543066776632,
+                  -2.409609178450967
+                ],
+                "signedNormalMomentKNm": 0.017912969146464272,
+                "signedTwistingMomentKNm": -0.03621114183920699,
+                "absoluteBendingPlusTwistingKNm": 0.05412411098567126
+              },
+              {
+                "cellIndex": 734,
+                "intervalMm": [
+                  2917.5,
+                  3027.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.1880127151718503,
+                  1.092060421976028
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.3701719468974214,
+                  -2.2906698927002953
+                ],
+                "signedNormalMomentKNm": 0.1254040225431333,
+                "signedTwistingMomentKNm": -0.25634630117787444,
+                "absoluteBendingPlusTwistingKNm": 0.3817503237210077
+              },
+              {
+                "cellIndex": 777,
+                "intervalMm": [
+                  3027.5,
+                  3262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.1891639198586876,
+                  1.1174323135743378
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.065620863819869,
+                  -1.7873539628544781
+                ],
+                "signedNormalMomentKNm": 0.2710250574283805,
+                "signedTwistingMomentKNm": -0.4527245421342358,
+                "absoluteBendingPlusTwistingKNm": 0.7237495995626163
+              }
+            ]
+          },
+          {
+            "id": "STR/SW/normal-x-1450",
+            "normal": "x",
+            "positionMm": 1450,
+            "intervalMm": [
+              262.5,
+              2262.5
+            ],
+            "grossWidthMm": 2000,
+            "materialWidthMm": 2000,
+            "gapsMm": [],
+            "signedNormalMomentKNm": 25.643136729526187,
+            "signedTwistingMomentKNm": 9.421212288522977,
+            "absoluteBendingPlusTwistingKNm": 36.29983896562375,
+            "intervals": [
+              {
+                "cellIndex": 363,
+                "intervalMm": [
+                  262.5,
+                  332.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  31.43432268973672,
+                  32.128389058989725
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  13.901696814122955,
+                  13.53634066181424
+                ],
+                "signedNormalMomentKNm": 2.2246949112054257,
+                "signedTwistingMomentKNm": 0.9603313116578018,
+                "absoluteBendingPlusTwistingKNm": 3.1850262228632276
+              },
+              {
+                "cellIndex": 364,
+                "intervalMm": [
+                  332.5,
+                  402.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  33.30563491792043,
+                  39.52329291338873
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  19.4544745470449,
+                  19.96812863607112
+                ],
+                "signedNormalMomentKNm": 2.5490124740958207,
+                "signedTwistingMomentKNm": 1.379791111409061,
+                "absoluteBendingPlusTwistingKNm": 3.9288035855048817
+              },
+              {
+                "cellIndex": 365,
+                "intervalMm": [
+                  402.5,
+                  417.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  42.49202474026469,
+                  37.30202275363134
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  24.32195991413336,
+                  22.487001098870515
+                ],
+                "signedNormalMomentKNm": 0.5984553562042202,
+                "signedTwistingMomentKNm": 0.351067207597529,
+                "absoluteBendingPlusTwistingKNm": 0.9495225638017493
+              },
+              {
+                "cellIndex": 366,
+                "intervalMm": [
+                  417.5,
+                  840
+                ],
+                "normalMomentEndsKNmPerM": [
+                  36.419487851339106,
+                  18.09004150647108
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  16.21018639783951,
+                  5.576610895526792
+                ],
+                "signedNormalMomentKNm": 11.515138076837403,
+                "signedTwistingMomentKNm": 4.602460928223631,
+                "absoluteBendingPlusTwistingKNm": 16.117599005061034
+              },
+              {
+                "cellIndex": 367,
+                "intervalMm": [
+                  840,
+                  1262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  16.60451952270127,
+                  7.809365796140185
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  2.8645562217717595,
+                  5.040270560297392
+                ],
+                "signedNormalMomentKNm": 5.157433273605257,
+                "signedTwistingMomentKNm": 1.6698946577121083,
+                "absoluteBendingPlusTwistingKNm": 6.827327931317365
+              },
+              {
+                "cellIndex": 368,
+                "intervalMm": [
+                  1262.5,
+                  1725
+                ],
+                "normalMomentEndsKNmPerM": [
+                  7.713455567889328,
+                  3.3856237227129986
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  3.96999666239575,
+                  0.6804338055399735
+                ],
+                "signedNormalMomentKNm": 2.566662085951788,
+                "signedTwistingMomentKNm": 1.075412045710136,
+                "absoluteBendingPlusTwistingKNm": 3.642074131661924
+              },
+              {
+                "cellIndex": 369,
+                "intervalMm": [
+                  1725,
+                  2187.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.8826936625341006,
+                  1.4019941700502336
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.785834357181856,
+                  -1.3087052941996127
+                ],
+                "signedNormalMomentKNm": 0.9908340612851273,
+                "signedTwistingMomentKNm": -0.4843622943819647,
+                "absoluteBendingPlusTwistingKNm": 1.475196355667092
+              },
+              {
+                "cellIndex": 370,
+                "intervalMm": [
+                  2187.5,
+                  2262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.6375830343885125,
+                  0.45325670804207746
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.7656057429348062,
+                  -1.791265707873901
+                ],
+                "signedNormalMomentKNm": 0.04090649034114712,
+                "signedTwistingMomentKNm": -0.1333826794053265,
+                "absoluteBendingPlusTwistingKNm": 0.17428916974647363
+              }
+            ]
+          }
+        ],
+        "scope": "Exact integrals of the declared element recovery along authored axis-aligned cuts. Tangent is positiveY for normalX and positiveX for normalY; twisting retains the source Mxy sign. Actual gaps remain absent material. No design width, redistribution, joint resistance, anchorage or mesh convergence is inferred."
+      }
+    },
+    {
+      "pitchMm": 250,
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -106.70698811870619,
+            -78.49819609524378,
+            284.1761207970056,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            96.57602622093277,
+            2.6341459272757994,
+            -25.854469280706628,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.14041851551642726,
+            74.83273284516382,
+            -15.457647281482096,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -473.6297603436492,
+            -307.97404717918516,
+            84.39281929644088,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            278.7156390823084,
+            2.411120822540629,
+            136.10309654777868,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            -0.6984439438875114,
+            214.92353586492231,
+            -76.22544841894924,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -246.1788789779966,
+            -435.52960922977405,
+            93.14922335139265,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            184.18693232499533,
+            6.27173303260415,
+            -65.02558457567471,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.679599633366591,
+            260.34984188415444,
+            161.86608585262687,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -155.63717766683789,
+            -205.0198455646766,
+            -67.39866875219471,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            133.00651997219882,
+            2.3505914275055115,
+            64.49609340025556,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -2.3016901353298365,
+            74.01823961705892,
+            153.92790994307975,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            41.2481523130506,
+            36.31403121213525,
+            104.94823945302335,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            17.49347955552888,
+            64.12614942164586,
+            37.62633787876473,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -0.615060835074547,
+            30.196405668308344,
+            74.57543667425858,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            53.08805996625338,
+            107.38137684807883,
+            152.12038750106186,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -34.805619839988566,
+            84.56898304834897,
+            95.60617067786497,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -62.598276016338446,
+            4.826990762542195,
+            124.16559166516913,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -45.06097257094087,
+            188.64503178828258,
+            151.2533154448888,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            31.79321610949549,
+            -0.8610548240297489,
+            33.29314098280578,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            54.14600660763192,
+            4.08973212025939,
+            48.493696083028,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            60.692404060027926,
+            56.43945897531535,
+            108.27113488122507,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            121.62001319318162,
+            43.9493551898143,
+            140.37928401110662,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            104.88232678779926,
+            -30.324775118751127,
+            44.18573717576403,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            0.4984474339652927,
+            -53.23160292006839,
+            92.4790278943394,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -37.78392584677355,
+            -53.72544555620979,
+            158.56125007606,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            82.40532882743267,
+            -2.1504741809629557,
+            56.87519294692025,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -5.848019057133303,
+            0.5631245661777093,
+            120.6154454219656,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -9.754020859314922,
+            56.73958668416514,
+            85.15306361163078,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -50.792415806790316,
+            9.154359384920712,
+            257.31103710603907,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            11.870812706277258,
+            52.823100067053716,
+            103.63360730328952,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -1.611039439892059,
+            -6.0667890055050755,
+            54.11716473200538,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            -0.032117638651090075,
+            14.604589384098162,
+            33.539821952534524,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            24.7336617733628,
+            -5.594729410278227,
+            57.147722788018754,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            2.1702109846343878,
+            23.413333473220604,
+            70.07569303136816,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            0.5645810377234476,
+            3.520178253720946,
+            36.92743036688336,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            13.751713240797299,
+            -18.676542775880954,
+            -17.115731281779006,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -14.907927601709762,
+            -1.0287818381865002,
+            52.363573232061015,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            4.982074950306965,
+            0.6494347722447991,
+            10.974429230049674,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            5.775870372227793,
+            0.10447983676322048,
+            37.857442381280485,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            18.778222049895845,
+            -62.25391610258034,
+            141.66467657219368,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            11.917030853158616,
+            13.916260511814023,
+            115.50090548571299,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            59.967805760338145,
+            -73.05307138416146,
+            138.10870847855,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            80.49764344568757,
+            100.44177264125378,
+            175.44679701683526,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -30.44788931179565,
+            17.817702142920513,
+            103.4036948009683,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            -0.042952184043233727,
+            -24.74792340882141,
+            71.32972789894188,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -41.03683501207047,
+            46.6517489407476,
+            141.44479996084974,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -13.117878002479546,
+            2.889129850197418,
+            65.91699555605622,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -2.2958764955057154,
+            -7.331380346043059,
+            42.73121581491148,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            20.730166380002444,
+            15.200821312987285,
+            49.09819876237803,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -23.66005337624059,
+            -4.984551249439239,
+            113.30129428769415,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            24.397997350316196,
+            -59.65646864694203,
+            92.72201978511083,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "sectionCuts": {
+        "schema": "str-physical-floor-section-cuts/1",
+        "rawPointEnvelopeKNmPerM": 119.24065353466457,
+        "localStressConvergenceProven": false,
+        "stripResistanceAccepted": false,
+        "cuts": [
+          {
+            "id": "STR/SW/normal-y-450",
+            "normal": "y",
+            "positionMm": 450,
+            "intervalMm": [
+              262.5,
+              3262.5
+            ],
+            "grossWidthMm": 3000,
+            "materialWidthMm": 3000,
+            "gapsMm": [],
+            "signedNormalMomentKNm": 22.656902037716947,
+            "signedTwistingMomentKNm": 9.462867101323726,
+            "absoluteBendingPlusTwistingKNm": 34.81236767250323,
+            "intervals": [
+              {
+                "cellIndex": 3,
+                "intervalMm": [
+                  262.5,
+                  332.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0,
+                  0
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -9.051844208762253e-15,
+                  4.396610044255956e-15
+                ],
+                "signedNormalMomentKNm": 0,
+                "signedTwistingMomentKNm": -1.629331957577204e-16,
+                "absoluteBendingPlusTwistingKNm": 2.6354792561665493e-16
+              },
+              {
+                "cellIndex": 80,
+                "intervalMm": [
+                  332.5,
+                  402.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0,
+                  0
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -9.051844208762253e-15,
+                  4.396610044255956e-15
+                ],
+                "signedNormalMomentKNm": 0,
+                "signedTwistingMomentKNm": -1.629331957577204e-16,
+                "absoluteBendingPlusTwistingKNm": 2.6354792561665493e-16
+              },
+              {
+                "cellIndex": 157,
+                "intervalMm": [
+                  402.5,
+                  417.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  -0.037703410904170835,
+                  -0.005974707771719688
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.041417131475460126,
+                  -0.04818478773385997
+                ],
+                "signedNormalMomentKNm": -0.0003275858900691789,
+                "signedTwistingMomentKNm": -0.0006720143940699007,
+                "absoluteBendingPlusTwistingKNm": 0.0009996002841390797
+              },
+              {
+                "cellIndex": 234,
+                "intervalMm": [
+                  417.5,
+                  462.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.038219060411377695,
+                  0.1867794235105406
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.02879008599215694,
+                  -0.0009378735136132341
+                ],
+                "signedNormalMomentKNm": 0.005062465888243162,
+                "signedTwistingMomentKNm": -0.0006688790888798289,
+                "absoluteBendingPlusTwistingKNm": 0.00573134497712299
+              },
+              {
+                "cellIndex": 284,
+                "intervalMm": [
+                  462.5,
+                  487.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.22873594500937436,
+                  0.34182581076555557
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.05305511341020144,
+                  0.10233011541250683
+                ],
+                "signedNormalMomentKNm": 0.007132021947186625,
+                "signedTwistingMomentKNm": 0.0019423153602838535,
+                "absoluteBendingPlusTwistingKNm": 0.009074337307470478
+              },
+              {
+                "cellIndex": 334,
+                "intervalMm": [
+                  487.5,
+                  647.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.39118900191895767,
+                  2.0474579774489854
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.21014971810028937,
+                  0.9726361976971227
+                ],
+                "signedNormalMomentKNm": 0.19509175834943546,
+                "signedTwistingMomentKNm": 0.09462287326379297,
+                "absoluteBendingPlusTwistingKNm": 0.2897146316132284
+              },
+              {
+                "cellIndex": 383,
+                "intervalMm": [
+                  647.5,
+                  852.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.145683801142636,
+                  8.449738035494772
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  1.3733511393552285,
+                  2.6433626810052573
+                ],
+                "signedNormalMomentKNm": 1.086030738255334,
+                "signedTwistingMomentKNm": 0.41171316658694973,
+                "absoluteBendingPlusTwistingKNm": 1.4977439048422838
+              },
+              {
+                "cellIndex": 433,
+                "intervalMm": [
+                  852.5,
+                  1057.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  8.430928336122738,
+                  21.233081817947095
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  3.3909359999971653,
+                  6.525662411036789
+                ],
+                "signedNormalMomentKNm": 3.040561040792158,
+                "signedTwistingMomentKNm": 1.0164513371309802,
+                "absoluteBendingPlusTwistingKNm": 4.057012377923138
+              },
+              {
+                "cellIndex": 483,
+                "intervalMm": [
+                  1057.5,
+                  1262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  22.81212512599088,
+                  38.63631716460435
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  8.0504089148571,
+                  13.304312082062829
+                ],
+                "signedNormalMomentKNm": 6.298465334786011,
+                "signedTwistingMomentKNm": 2.188858902184293,
+                "absoluteBendingPlusTwistingKNm": 8.487324236970304
+              },
+              {
+                "cellIndex": 533,
+                "intervalMm": [
+                  1262.5,
+                  1445.8333333333333
+                ],
+                "normalMomentEndsKNmPerM": [
+                  44.07387271705985,
+                  18.337090940169286
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  23.091210742960342,
+                  17.401375650366575
+                ],
+                "signedNormalMomentKNm": 5.721005001912668,
+                "signedTwistingMomentKNm": 3.7118204193882995,
+                "absoluteBendingPlusTwistingKNm": 9.432825421300969
+              },
+              {
+                "cellIndex": 583,
+                "intervalMm": [
+                  1445.8333333333333,
+                  1629.1666666666667
+                ],
+                "normalMomentEndsKNmPerM": [
+                  15.420974180287468,
+                  10.427425368028088
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  9.832611066629122,
+                  8.458984681341393
+                ],
+                "signedNormalMomentKNm": 2.3694366252622614,
+                "signedTwistingMomentKNm": 1.676729610230632,
+                "absoluteBendingPlusTwistingKNm": 4.046166235492893
+              },
+              {
+                "cellIndex": 633,
+                "intervalMm": [
+                  1629.1666666666667,
+                  1812.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  9.18857203972862,
+                  6.247424412271892
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  6.471846497190005,
+                  4.889278863696545
+                ],
+                "signedNormalMomentKNm": 1.4149663414333797,
+                "signedTwistingMomentKNm": 1.0414364914146002,
+                "absoluteBendingPlusTwistingKNm": 2.4564028328479797
+              },
+              {
+                "cellIndex": 683,
+                "intervalMm": [
+                  1812.5,
+                  1940
+                ],
+                "normalMomentEndsKNmPerM": [
+                  5.385769483416239,
+                  4.551841503467496
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  3.4695196368691565,
+                  2.6594870415022873
+                ],
+                "signedNormalMomentKNm": 0.6335227004138381,
+                "signedTwistingMomentKNm": 0.39072417574617957,
+                "absoluteBendingPlusTwistingKNm": 1.0242468761600176
+              },
+              {
+                "cellIndex": 730,
+                "intervalMm": [
+                  1940,
+                  2067.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  3.9049274843753783,
+                  3.4566328701696305
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  1.8820908155053355,
+                  1.317122325681203
+                ],
+                "signedNormalMomentKNm": 0.46929947260224436,
+                "signedTwistingMomentKNm": 0.20394983775064182,
+                "absoluteBendingPlusTwistingKNm": 0.6732493103528862
+              },
+              {
+                "cellIndex": 777,
+                "intervalMm": [
+                  2067.5,
+                  2177.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.974099302410523,
+                  2.726633023811028
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.8034500388942096,
+                  0.4120158873350689
+                ],
+                "signedNormalMomentKNm": 0.3135402779421853,
+                "signedTwistingMomentKNm": 0.06685062594261032,
+                "absoluteBendingPlusTwistingKNm": 0.38039090388479563
+              },
+              {
+                "cellIndex": 824,
+                "intervalMm": [
+                  2177.5,
+                  2212.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.4560748365684884,
+                  2.401713015352537
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.15977441318508542,
+                  0.053884281996368875
+                ],
+                "signedNormalMomentKNm": 0.08501128740861795,
+                "signedTwistingMomentKNm": 0.0037390271656754506,
+                "absoluteBendingPlusTwistingKNm": 0.0887503145742934
+              },
+              {
+                "cellIndex": 871,
+                "intervalMm": [
+                  2212.5,
+                  2400.8333333333335
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.051943668382785,
+                  1.8789223327820288
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.25366858191852815,
+                  -0.6875634284236584
+                ],
+                "signedNormalMomentKNm": 0.3701565484430203,
+                "signedTwistingMomentKNm": -0.08863268097388931,
+                "absoluteBendingPlusTwistingKNm": 0.45878922941690964
+              },
+              {
+                "cellIndex": 921,
+                "intervalMm": [
+                  2400.8333333333335,
+                  2589.1666666666665
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.3639350059587034,
+                  1.3020358204383433
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.0292606684934882,
+                  -1.245375228537016
+                ],
+                "signedNormalMomentKNm": 0.25104558615238814,
+                "signedTwistingMomentKNm": -0.21419488030370545,
+                "absoluteBendingPlusTwistingKNm": 0.4652404664560936
+              },
+              {
+                "cellIndex": 971,
+                "intervalMm": [
+                  2589.1666666666665,
+                  2777.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.9569285260170787,
+                  0.8490792052385145
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.3885168237935428,
+                  -1.485778738880241
+                ],
+                "signedNormalMomentKNm": 0.1700657280265685,
+                "signedTwistingMomentKNm": -0.27066283215178155,
+                "absoluteBendingPlusTwistingKNm": 0.44072856017835005
+              },
+              {
+                "cellIndex": 1021,
+                "intervalMm": [
+                  2777.5,
+                  2817.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.7104464746395068,
+                  0.6918790994178452
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.548999657828985,
+                  -1.566739288963847
+                ],
+                "signedNormalMomentKNm": 0.028046511481147042,
+                "signedTwistingMomentKNm": -0.06231477893585664,
+                "absoluteBendingPlusTwistingKNm": 0.09036129041700369
+              },
+              {
+                "cellIndex": 1051,
+                "intervalMm": [
+                  2817.5,
+                  2902.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.6348333980026082,
+                  0.6012520302228432
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.591547244895123,
+                  -1.6196359674585055
+                ],
+                "signedNormalMomentKNm": 0.05253363069958169,
+                "signedTwistingMomentKNm": -0.13647528652502922,
+                "absoluteBendingPlusTwistingKNm": 0.1890089172246109
+              },
+              {
+                "cellIndex": 1108,
+                "intervalMm": [
+                  2902.5,
+                  2917.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.5566063827102001,
+                  0.5515495883208468
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6316635826733097,
+                  -1.63487102166208
+                ],
+                "signedNormalMomentKNm": 0.008311169782732851,
+                "signedTwistingMomentKNm": -0.024499009532515423,
+                "absoluteBendingPlusTwistingKNm": 0.032810179315248274
+              },
+              {
+                "cellIndex": 1165,
+                "intervalMm": [
+                  2917.5,
+                  3027.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.5035448167240504,
+                  0.47324334989752126
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6438713720830473,
+                  -1.6414356967980865
+                ],
+                "signedNormalMomentKNm": 0.05372334916418644,
+                "signedTwistingMomentKNm": -0.18069188878846237,
+                "absoluteBendingPlusTwistingKNm": 0.23441523795264882
+              },
+              {
+                "cellIndex": 1222,
+                "intervalMm": [
+                  3027.5,
+                  3232.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.4235886386515019,
+                  0.3017677861627531
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6007182845340446,
+                  -1.545425632702882
+                ],
+                "signedNormalMomentKNm": 0.07434903354346113,
+                "signedTwistingMomentKNm": -0.322479751516785,
+                "absoluteBendingPlusTwistingKNm": 0.3968287850602461
+              },
+              {
+                "cellIndex": 1299,
+                "intervalMm": [
+                  3232.5,
+                  3262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.3396655357694458,
+                  0.31853441892147827
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.4922828656053853,
+                  -1.4863623764105747
+                ],
+                "signedNormalMomentKNm": 0.00987299932036386,
+                "signedTwistingMomentKNm": -0.044679678630239396,
+                "absoluteBendingPlusTwistingKNm": 0.05455267795060326
+              }
+            ]
+          },
+          {
+            "id": "STR/SW/normal-y-650",
+            "normal": "y",
+            "positionMm": 650,
+            "intervalMm": [
+              262.5,
+              3262.5
+            ],
+            "grossWidthMm": 3000,
+            "materialWidthMm": 3000,
+            "gapsMm": [],
+            "signedNormalMomentKNm": 18.849973225037942,
+            "signedTwistingMomentKNm": 8.99319201116594,
+            "absoluteBendingPlusTwistingKNm": 30.87662693950728,
+            "intervals": [
+              {
+                "cellIndex": 4,
+                "intervalMm": [
+                  262.5,
+                  332.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0,
+                  0
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -9.409939144493504e-15,
+                  4.038515108524704e-15
+                ],
+                "signedNormalMomentKNm": 0,
+                "signedTwistingMomentKNm": -1.8799984125890802e-16,
+                "absoluteBendingPlusTwistingKNm": 2.728922964247899e-16
+              },
+              {
+                "cellIndex": 81,
+                "intervalMm": [
+                  332.5,
+                  402.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0,
+                  0
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -9.409939144493504e-15,
+                  4.038515108524704e-15
+                ],
+                "signedNormalMomentKNm": 0,
+                "signedTwistingMomentKNm": -1.8799984125890802e-16,
+                "absoluteBendingPlusTwistingKNm": 2.728922964247899e-16
+              },
+              {
+                "cellIndex": 158,
+                "intervalMm": [
+                  402.5,
+                  417.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.00047977942165833287,
+                  0.2770962907255341
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.26657237652807103,
+                  0.3774059890438615
+                ],
+                "signedNormalMomentKNm": 0.0020818205261039432,
+                "signedTwistingMomentKNm": 0.0048298377417894936,
+                "absoluteBendingPlusTwistingKNm": 0.006911658267893437
+              },
+              {
+                "cellIndex": 235,
+                "intervalMm": [
+                  417.5,
+                  462.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.43923716187093975,
+                  0.9146221873008391
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.4146520422874362,
+                  0.8416234971295465
+                ],
+                "signedNormalMomentKNm": 0.030461835356365027,
+                "signedTwistingMomentKNm": 0.02826619963688211,
+                "absoluteBendingPlusTwistingKNm": 0.058728034993247136
+              },
+              {
+                "cellIndex": 285,
+                "intervalMm": [
+                  462.5,
+                  487.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.0992078907914844,
+                  1.3609337868921116
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.982199445284845,
+                  1.2706731938063398
+                ],
+                "signedNormalMomentKNm": 0.03075177097104495,
+                "signedTwistingMomentKNm": 0.02816090798863981,
+                "absoluteBendingPlusTwistingKNm": 0.05891267895968476
+              },
+              {
+                "cellIndex": 335,
+                "intervalMm": [
+                  487.5,
+                  647.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.6728100255934601,
+                  5.18540587805399
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  1.8928208288591124,
+                  3.9310678442470683
+                ],
+                "signedNormalMomentKNm": 0.548657272291796,
+                "signedTwistingMomentKNm": 0.4659110938484945,
+                "absoluteBendingPlusTwistingKNm": 1.0145683661402904
+              },
+              {
+                "cellIndex": 384,
+                "intervalMm": [
+                  647.5,
+                  852.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  5.410019400905105,
+                  12.275452562475026
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  5.888426345630165,
+                  8.473185307703387
+                ],
+                "signedNormalMomentKNm": 1.8127608762464633,
+                "signedTwistingMomentKNm": 1.4720651944666892,
+                "absoluteBendingPlusTwistingKNm": 3.2848260707131525
+              },
+              {
+                "cellIndex": 434,
+                "intervalMm": [
+                  852.5,
+                  1057.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  13.018694217485846,
+                  15.68935512748114
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  11.313239270870323,
+                  12.915563992641436
+                ],
+                "signedNormalMomentKNm": 2.942575057859116,
+                "signedTwistingMomentKNm": 2.483452334509955,
+                "absoluteBendingPlusTwistingKNm": 5.426027392369071
+              },
+              {
+                "cellIndex": 484,
+                "intervalMm": [
+                  1057.5,
+                  1262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  18.002120209378,
+                  11.377663818261556
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  15.108931275734784,
+                  13.04175397939148
+                ],
+                "signedNormalMomentKNm": 3.011427862833054,
+                "signedTwistingMomentKNm": 2.885445238650442,
+                "absoluteBendingPlusTwistingKNm": 5.8968731014834965
+              },
+              {
+                "cellIndex": 534,
+                "intervalMm": [
+                  1262.5,
+                  1445.8333333333333
+                ],
+                "normalMomentEndsKNmPerM": [
+                  11.748864538203486,
+                  15.277454859958691
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  7.710409189580769,
+                  5.827435666159069
+                ],
+                "signedNormalMomentKNm": 2.477412611498199,
+                "signedTwistingMomentKNm": 1.2409691117761514,
+                "absoluteBendingPlusTwistingKNm": 3.7183817232743506
+              },
+              {
+                "cellIndex": 584,
+                "intervalMm": [
+                  1445.8333333333333,
+                  1629.1666666666667
+                ],
+                "normalMomentEndsKNmPerM": [
+                  14.48935575299115,
+                  11.595072376747744
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  6.050744158084232,
+                  4.579574539177399
+                ],
+                "signedNormalMomentKNm": 2.3910725785594007,
+                "signedTwistingMomentKNm": 0.974445880582317,
+                "absoluteBendingPlusTwistingKNm": 3.3655184591417178
+              },
+              {
+                "cellIndex": 634,
+                "intervalMm": [
+                  1629.1666666666667,
+                  1812.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  10.303523871561971,
+                  8.090959786024875
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  3.4244798023954206,
+                  2.801624689769133
+                ],
+                "signedNormalMomentKNm": 1.6861610019454603,
+                "signedTwistingMomentKNm": 0.5707262451150839,
+                "absoluteBendingPlusTwistingKNm": 2.2568872470605443
+              },
+              {
+                "cellIndex": 684,
+                "intervalMm": [
+                  1812.5,
+                  1940
+                ],
+                "normalMomentEndsKNmPerM": [
+                  7.428825600013849,
+                  6.247197120310589
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  2.0850665924306973,
+                  1.6019310277151573
+                ],
+                "signedNormalMomentKNm": 0.8718464484206829,
+                "signedTwistingMomentKNm": 0.23504609828429823,
+                "absoluteBendingPlusTwistingKNm": 1.106892546704981
+              },
+              {
+                "cellIndex": 731,
+                "intervalMm": [
+                  1940,
+                  2067.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  5.777829113976546,
+                  4.9474627521219645
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  1.064209418599284,
+                  0.6502044132976692
+                ],
+                "signedNormalMomentKNm": 0.6837373564637801,
+                "signedTwistingMomentKNm": 0.10929388178343077,
+                "absoluteBendingPlusTwistingKNm": 0.7930312382472109
+              },
+              {
+                "cellIndex": 778,
+                "intervalMm": [
+                  2067.5,
+                  2177.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  4.5498895922636855,
+                  4.028063853318692
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.24211049244278826,
+                  -0.0429224871425012
+                ],
+                "signedNormalMomentKNm": 0.4717874395070307,
+                "signedTwistingMomentKNm": 0.01095534029151579,
+                "absoluteBendingPlusTwistingKNm": 0.483453776082449
+              },
+              {
+                "cellIndex": 825,
+                "intervalMm": [
+                  2177.5,
+                  2212.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  3.8087226359002417,
+                  3.668601565332864
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.23907081981522715,
+                  -0.3179875330193658
+                ],
+                "signedNormalMomentKNm": 0.13085317352157938,
+                "signedTwistingMomentKNm": -0.009748521174605377,
+                "absoluteBendingPlusTwistingKNm": 0.14060169469618475
+              },
+              {
+                "cellIndex": 872,
+                "intervalMm": [
+                  2212.5,
+                  2400.8333333333335
+                ],
+                "normalMomentEndsKNmPerM": [
+                  3.388595012542345,
+                  2.816638024352765
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.5719584083127979,
+                  -0.903141742549755
+                ],
+                "signedNormalMomentKNm": 0.58432611097429,
+                "signedTwistingMomentKNm": -0.13890526420622384,
+                "absoluteBendingPlusTwistingKNm": 0.7232313751805138
+              },
+              {
+                "cellIndex": 922,
+                "intervalMm": [
+                  2400.8333333333335,
+                  2589.1666666666665
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.4128980241635154,
+                  2.025824373506333
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.194307608638482,
+                  -1.3854940725778335
+                ],
+                "signedNormalMomentKNm": 0.41797969244724337,
+                "signedTwistingMomentKNm": -0.24293132498120265,
+                "absoluteBendingPlusTwistingKNm": 0.660911017428446
+              },
+              {
+                "cellIndex": 972,
+                "intervalMm": [
+                  2589.1666666666665,
+                  2777.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.7427865851599944,
+                  1.4388612745147586
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.54232774100707,
+                  -1.6330622675885142
+                ],
+                "signedNormalMomentKNm": 0.29960517345270615,
+                "signedTwistingMomentKNm": -0.2990158924760844,
+                "absoluteBendingPlusTwistingKNm": 0.5986210659287905
+              },
+              {
+                "cellIndex": 1022,
+                "intervalMm": [
+                  2777.5,
+                  2817.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.309368606844255,
+                  1.2545008449133175
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.686470220964347,
+                  -1.695875189634617
+                ],
+                "signedNormalMomentKNm": 0.051277389035151444,
+                "signedTwistingMomentKNm": -0.06764690821197927,
+                "absoluteBendingPlusTwistingKNm": 0.11892429724713072
+              },
+              {
+                "cellIndex": 1052,
+                "intervalMm": [
+                  2817.5,
+                  2902.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.2086756751756238,
+                  1.103188798680824
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.714631107022832,
+                  -1.72567259347046
+                ],
+                "signedNormalMomentKNm": 0.09825424013889904,
+                "signedTwistingMomentKNm": -0.14621290727096492,
+                "absoluteBendingPlusTwistingKNm": 0.24446714740986397
+              },
+              {
+                "cellIndex": 1109,
+                "intervalMm": [
+                  2902.5,
+                  2917.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.0698559003721937,
+                  1.0526241813346298
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.7327723586531398,
+                  -1.7334654103195555
+                ],
+                "signedNormalMomentKNm": 0.015918600612801176,
+                "signedTwistingMomentKNm": -0.025996783267295213,
+                "absoluteBendingPlusTwistingKNm": 0.041915383880096385
+              },
+              {
+                "cellIndex": 1166,
+                "intervalMm": [
+                  2917.5,
+                  3027.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.0266664461254673,
+                  0.9118254506797873
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.7371670970546984,
+                  -1.732341094436532
+                ],
+                "signedNormalMomentKNm": 0.106617054324289,
+                "signedTwistingMomentKNm": -0.19082295053201767,
+                "absoluteBendingPlusTwistingKNm": 0.2974400048563067
+              },
+              {
+                "cellIndex": 1223,
+                "intervalMm": [
+                  3027.5,
+                  3232.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.8861574254100305,
+                  0.701084854189718
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.7132161289281886,
+                  -1.6683462589697986
+                ],
+                "signedNormalMomentKNm": 0.1626923336589742,
+                "signedTwistingMomentKNm": -0.34661014475954366,
+                "absoluteBendingPlusTwistingKNm": 0.5093024784185178
+              },
+              {
+                "cellIndex": 1300,
+                "intervalMm": [
+                  3232.5,
+                  3262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.7335493176880672,
+                  0.7141523085461724
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.6208993291697482,
+                  -1.6114111128189545
+                ],
+                "signedNormalMomentKNm": 0.02171552439351359,
+                "signedTwistingMomentKNm": -0.048484656629830536,
+                "absoluteBendingPlusTwistingKNm": 0.07020018102334413
+              }
+            ]
+          },
+          {
+            "id": "STR/SW/normal-y-1300",
+            "normal": "y",
+            "positionMm": 1300,
+            "intervalMm": [
+              262.5,
+              3262.5
+            ],
+            "grossWidthMm": 3000,
+            "materialWidthMm": 3000,
+            "gapsMm": [],
+            "signedNormalMomentKNm": 32.33103536107886,
+            "signedTwistingMomentKNm": 9.470649760612817,
+            "absoluteBendingPlusTwistingKNm": 47.79375643194013,
+            "intervals": [
+              {
+                "cellIndex": 7,
+                "intervalMm": [
+                  262.5,
+                  332.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  36.99071291905199,
+                  37.75987446429852
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  15.898653248531602,
+                  15.460504642231472
+                ],
+                "signedNormalMomentKNm": 2.616270558417268,
+                "signedTwistingMomentKNm": 1.0975705261767077,
+                "absoluteBendingPlusTwistingKNm": 3.7138410845939758
+              },
+              {
+                "cellIndex": 84,
+                "intervalMm": [
+                  332.5,
+                  402.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  38.095890003791496,
+                  46.08833805420948
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  17.00835175048249,
+                  17.82466115828951
+                ],
+                "signedNormalMomentKNm": 2.946447982030034,
+                "signedTwistingMomentKNm": 1.21915545180702,
+                "absoluteBendingPlusTwistingKNm": 4.165603433837054
+              },
+              {
+                "cellIndex": 161,
+                "intervalMm": [
+                  402.5,
+                  417.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  59.088039439137006,
+                  54.141219027549326
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  42.13425807601767,
+                  39.85822727577036
+                ],
+                "signedNormalMomentKNm": 0.8492194385001475,
+                "signedTwistingMomentKNm": 0.6149436401384102,
+                "absoluteBendingPlusTwistingKNm": 1.4641630786385575
+              },
+              {
+                "cellIndex": 238,
+                "intervalMm": [
+                  417.5,
+                  462.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  51.298887937892836,
+                  43.3208140686744
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  31.099447672991406,
+                  26.445456476852073
+                ],
+                "signedNormalMomentKNm": 2.1289432951477627,
+                "signedTwistingMomentKNm": 1.294760343371478,
+                "absoluteBendingPlusTwistingKNm": 3.4237036385192408
+              },
+              {
+                "cellIndex": 288,
+                "intervalMm": [
+                  462.5,
+                  487.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  40.54556206749196,
+                  38.31877238922208
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  21.0621308468138,
+                  19.56043173865366
+                ],
+                "signedNormalMomentKNm": 0.9858041807089255,
+                "signedTwistingMomentKNm": 0.5077820323183433,
+                "absoluteBendingPlusTwistingKNm": 1.4935862130272688
+              },
+              {
+                "cellIndex": 338,
+                "intervalMm": [
+                  487.5,
+                  647.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  35.090022989685686,
+                  28.085149384199113
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  14.905601959148015,
+                  11.31769070843377
+                ],
+                "signedNormalMomentKNm": 5.054013789910784,
+                "signedTwistingMomentKNm": 2.0978634134065426,
+                "absoluteBendingPlusTwistingKNm": 7.151877203317326
+              },
+              {
+                "cellIndex": 387,
+                "intervalMm": [
+                  647.5,
+                  852.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  25.514936851810212,
+                  19.167571212215375
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  9.171057448306643,
+                  8.835552305665344
+                ],
+                "signedNormalMomentKNm": 4.579957076562622,
+                "signedTwistingMomentKNm": 1.8456774997821286,
+                "absoluteBendingPlusTwistingKNm": 6.425634576344751
+              },
+              {
+                "cellIndex": 437,
+                "intervalMm": [
+                  852.5,
+                  1057.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  18.761773093844702,
+                  13.791604436126287
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  7.893029958716429,
+                  7.17524092155589
+                ],
+                "signedNormalMomentKNm": 3.336721196822026,
+                "signedTwistingMomentKNm": 1.5444977652279126,
+                "absoluteBendingPlusTwistingKNm": 4.881218962049939
+              },
+              {
+                "cellIndex": 487,
+                "intervalMm": [
+                  1057.5,
+                  1262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  13.76693024946372,
+                  10.154255033799211
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  6.174094025411693,
+                  5.261304952741216
+                ],
+                "signedNormalMomentKNm": 2.45192149153445,
+                "signedTwistingMomentKNm": 1.1721283952606731,
+                "absoluteBendingPlusTwistingKNm": 3.624049886795123
+              },
+              {
+                "cellIndex": 537,
+                "intervalMm": [
+                  1262.5,
+                  1445.8333333333333
+                ],
+                "normalMomentEndsKNmPerM": [
+                  10.118404064840874,
+                  7.900692844457598
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  4.179770812063862,
+                  3.2788221730902136
+                ],
+                "signedNormalMomentKNm": 1.651750550019026,
+                "signedTwistingMomentKNm": 0.6837043569724567,
+                "absoluteBendingPlusTwistingKNm": 2.3354549069914827
+              },
+              {
+                "cellIndex": 587,
+                "intervalMm": [
+                  1445.8333333333333,
+                  1629.1666666666667
+                ],
+                "normalMomentEndsKNmPerM": [
+                  7.727814809731486,
+                  6.2715542647871505
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  2.2793000161588917,
+                  1.4449661843518995
+                ],
+                "signedNormalMomentKNm": 1.2832754984975427,
+                "signedTwistingMomentKNm": 0.34139106838015615,
+                "absoluteBendingPlusTwistingKNm": 1.624666566877699
+              },
+              {
+                "cellIndex": 637,
+                "intervalMm": [
+                  1629.1666666666667,
+                  1812.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  5.979632230183699,
+                  5.064555352815065
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.5940085247071605,
+                  -0.09109200635136849
+                ],
+                "signedNormalMomentKNm": 1.0123838617748862,
+                "signedTwistingMomentKNm": 0.046100680849280914,
+                "absoluteBendingPlusTwistingKNm": 1.060705026716024
+              },
+              {
+                "cellIndex": 687,
+                "intervalMm": [
+                  1812.5,
+                  1940
+                ],
+                "normalMomentEndsKNmPerM": [
+                  4.753325657134986,
+                  4.3422285494980954
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.6626420661000322,
+                  -1.015069845056484
+                ],
+                "signedNormalMomentKNm": 0.579841580672859,
+                "signedTwistingMomentKNm": -0.1069541343362279,
+                "absoluteBendingPlusTwistingKNm": 0.6867957150090869
+              },
+              {
+                "cellIndex": 734,
+                "intervalMm": [
+                  1940,
+                  2067.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  4.0809623106485295,
+                  3.747461155880365
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.340951843916026,
+                  -1.5966007766608206
+                ],
+                "signedNormalMomentKNm": 0.49906199599121703,
+                "signedTwistingMomentKNm": -0.18726897956177396,
+                "absoluteBendingPlusTwistingKNm": 0.6863309755529909
+              },
+              {
+                "cellIndex": 781,
+                "intervalMm": [
+                  2067.5,
+                  2177.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  3.522343042143419,
+                  3.263807047206824
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.8083311020690964,
+                  -1.9639351882354767
+                ],
+                "signedNormalMomentKNm": 0.37323825491426343,
+                "signedTwistingMomentKNm": -0.20747464596675153,
+                "absoluteBendingPlusTwistingKNm": 0.580712900881015
+              },
+              {
+                "cellIndex": 828,
+                "intervalMm": [
+                  2177.5,
+                  2212.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  3.1379151737158066,
+                  3.059697561019826
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.0561380952311614,
+                  -2.095081866398199
+                ],
+                "signedNormalMomentKNm": 0.10845822285787358,
+                "signedTwistingMomentKNm": -0.07264634932851381,
+                "absoluteBendingPlusTwistingKNm": 0.1811045721863874
+              },
+              {
+                "cellIndex": 875,
+                "intervalMm": [
+                  2212.5,
+                  2400.8333333333335
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.9037551420972436,
+                  2.514655550499995
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.2022663324761664,
+                  -2.34511283453941
+                ],
+                "signedNormalMomentKNm": 0.510233673552907,
+                "signedTwistingMomentKNm": -0.4282115382273004,
+                "absoluteBendingPlusTwistingKNm": 0.9384452117802075
+              },
+              {
+                "cellIndex": 925,
+                "intervalMm": [
+                  2400.8333333333335,
+                  2589.1666666666665
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.2987827547336845,
+                  1.9687407634396066
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.447124477490458,
+                  -2.494271027602044
+                ],
+                "signedNormalMomentKNm": 0.4018584646279843,
+                "signedTwistingMomentKNm": -0.4653147433962098,
+                "absoluteBendingPlusTwistingKNm": 0.8671732080241941
+              },
+              {
+                "cellIndex": 975,
+                "intervalMm": [
+                  2589.1666666666665,
+                  2777.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.8318372834010737,
+                  1.567113214861906
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.516111800161047,
+                  -2.487411597801932
+                ],
+                "signedNormalMomentKNm": 0.32006783858643084,
+                "signedTwistingMomentKNm": -0.4711651199748476,
+                "absoluteBendingPlusTwistingKNm": 0.7912329585612785
+              },
+              {
+                "cellIndex": 1025,
+                "intervalMm": [
+                  2777.5,
+                  2817.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.511892974965767,
+                  1.464737216772785
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.467582975112929,
+                  -2.4526654386491775
+                ],
+                "signedNormalMomentKNm": 0.05953260383477105,
+                "signedTwistingMomentKNm": -0.09840496827524213,
+                "absoluteBendingPlusTwistingKNm": 0.1579375721100132
+              },
+              {
+                "cellIndex": 1055,
+                "intervalMm": [
+                  2817.5,
+                  2902.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.4525272274604155,
+                  1.3635431424664775
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.4324481344122013,
+                  -2.3913188582381757
+                ],
+                "signedNormalMomentKNm": 0.11968299072189297,
+                "signedTwistingMomentKNm": -0.20501009718764104,
+                "absoluteBendingPlusTwistingKNm": 0.324693087909534
+              },
+              {
+                "cellIndex": 1112,
+                "intervalMm": [
+                  2902.5,
+                  2917.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.3563345225920707,
+                  1.3423318814957197
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.367660978670951,
+                  -2.3590757293352507
+                ],
+                "signedNormalMomentKNm": 0.020239998030658426,
+                "signedTwistingMomentKNm": -0.03545052531004651,
+                "absoluteBendingPlusTwistingKNm": 0.05569052334070494
+              },
+              {
+                "cellIndex": 1169,
+                "intervalMm": [
+                  2917.5,
+                  3027.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.3452648938805847,
+                  1.2595043112668423
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.3235253683319614,
+                  -2.248492673443511
+                ],
+                "signedNormalMomentKNm": 0.1432623062831085,
+                "signedTwistingMomentKNm": -0.25146099229765095,
+                "absoluteBendingPlusTwistingKNm": 0.39472329858075944
+              },
+              {
+                "cellIndex": 1226,
+                "intervalMm": [
+                  3027.5,
+                  3232.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.2970802125809193,
+                  1.2289828292787923
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -2.126146816943021,
+                  -1.9225670448480143
+                ],
+                "signedNormalMomentKNm": 0.2589214617906205,
+                "signedTwistingMomentKNm": -0.41499317083358106,
+                "absoluteBendingPlusTwistingKNm": 0.6739146326242016
+              },
+              {
+                "cellIndex": 1303,
+                "intervalMm": [
+                  3232.5,
+                  3262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.3258297254120919,
+                  1.3359735605081577
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.7058490989806474,
+                  -1.6654941265199656
+                ],
+                "signedNormalMomentKNm": 0.039927049288803744,
+                "signedTwistingMomentKNm": -0.0505701483825092,
+                "absoluteBendingPlusTwistingKNm": 0.09049719767131295
+              }
+            ]
+          },
+          {
+            "id": "STR/SW/normal-x-1450",
+            "normal": "x",
+            "positionMm": 1450,
+            "intervalMm": [
+              262.5,
+              2262.5
+            ],
+            "grossWidthMm": 2000,
+            "materialWidthMm": 2000,
+            "gapsMm": [],
+            "signedNormalMomentKNm": 20.35577960656715,
+            "signedTwistingMomentKNm": 6.338435440583706,
+            "absoluteBendingPlusTwistingKNm": 28.082239571878638,
+            "intervals": [
+              {
+                "cellIndex": 580,
+                "intervalMm": [
+                  262.5,
+                  332.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  27.58374353615639,
+                  27.25860350473252
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  7.522493472158038,
+                  7.3955122991247375
+                ],
+                "signedNormalMomentKNm": 1.919482146431112,
+                "signedTwistingMomentKNm": 0.5221302019948972,
+                "absoluteBendingPlusTwistingKNm": 2.441612348426009
+              },
+              {
+                "cellIndex": 581,
+                "intervalMm": [
+                  332.5,
+                  402.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  29.551787351847548,
+                  22.3309627186015
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  17.304054216068835,
+                  15.781331100087128
+                ],
+                "signedNormalMomentKNm": 1.815896252465717,
+                "signedTwistingMomentKNm": 1.1579884860654588,
+                "absoluteBendingPlusTwistingKNm": 2.9738847385311757
+              },
+              {
+                "cellIndex": 582,
+                "intervalMm": [
+                  402.5,
+                  417.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  19.817605658409995,
+                  21.203849309036727
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  4.938153212489763,
+                  5.2795473715151955
+                ],
+                "signedNormalMomentKNm": 0.3076609122558504,
+                "signedTwistingMomentKNm": 0.0766327543800372,
+                "absoluteBendingPlusTwistingKNm": 0.3842936666358876
+              },
+              {
+                "cellIndex": 583,
+                "intervalMm": [
+                  417.5,
+                  628.75
+                ],
+                "normalMomentEndsKNmPerM": [
+                  24.203262941222505,
+                  20.246282388149325
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  10.155480291832799,
+                  7.853908248364151
+                ],
+                "signedNormalMomentKNm": 4.6949832254149,
+                "signedTwistingMomentKNm": 1.902241664558303,
+                "absoluteBendingPlusTwistingKNm": 6.597224889973202
+              },
+              {
+                "cellIndex": 584,
+                "intervalMm": [
+                  628.75,
+                  840
+                ],
+                "normalMomentEndsKNmPerM": [
+                  20.220481584183915,
+                  15.982510011537546
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  6.151497986916726,
+                  4.817496467139088
+                ],
+                "signedNormalMomentKNm": 3.8239409872980787,
+                "signedTwistingMomentKNm": 1.1586000392096454,
+                "absoluteBendingPlusTwistingKNm": 4.982541026507724
+              },
+              {
+                "cellIndex": 585,
+                "intervalMm": [
+                  840,
+                  1051.25
+                ],
+                "normalMomentEndsKNmPerM": [
+                  15.081712461678123,
+                  11.056808262032241
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  4.250441642600961,
+                  4.275771895111178
+                ],
+                "signedNormalMomentKNm": 2.760881251441907,
+                "signedTwistingMomentKNm": 0.9005813049208445,
+                "absoluteBendingPlusTwistingKNm": 3.6614625563627516
+              },
+              {
+                "cellIndex": 586,
+                "intervalMm": [
+                  1051.25,
+                  1262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  11.123436656769025,
+                  7.585680046563976
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  3.821350362632564,
+                  3.2196657991653925
+                ],
+                "signedNormalMomentKNm": 1.9761504517895483,
+                "signedTwistingMomentKNm": 0.7437073320899091,
+                "absoluteBendingPlusTwistingKNm": 2.7198577838794575
+              },
+              {
+                "cellIndex": 587,
+                "intervalMm": [
+                  1262.5,
+                  1493.75
+                ],
+                "normalMomentEndsKNmPerM": [
+                  7.546116501726466,
+                  4.915120611653288
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  2.379486473658723,
+                  1.6447368350731757
+                ],
+                "signedNormalMomentKNm": 1.4408305412345341,
+                "signedTwistingMomentKNm": 0.4653008200721258,
+                "absoluteBendingPlusTwistingKNm": 1.90613136130666
+              },
+              {
+                "cellIndex": 588,
+                "intervalMm": [
+                  1493.75,
+                  1725
+                ],
+                "normalMomentEndsKNmPerM": [
+                  4.729373758257368,
+                  3.0317413274461944
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  0.7937223094168431,
+                  0.11516878336747041
+                ],
+                "signedNormalMomentKNm": 0.8973789317844744,
+                "signedTwistingMomentKNm": 0.10509053260318625,
+                "absoluteBendingPlusTwistingKNm": 1.0024694643876606
+              },
+              {
+                "cellIndex": 589,
+                "intervalMm": [
+                  1725,
+                  1956.25
+                ],
+                "normalMomentEndsKNmPerM": [
+                  2.701943696481823,
+                  1.6590461517862343
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -0.5646999255429324,
+                  -1.047251063206129
+                ],
+                "signedNormalMomentKNm": 0.5042394512059941,
+                "signedTwistingMomentKNm": -0.18638183307411021,
+                "absoluteBendingPlusTwistingKNm": 0.6906212842801043
+              },
+              {
+                "cellIndex": 590,
+                "intervalMm": [
+                  1956.25,
+                  2187.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  1.2651594261641224,
+                  0.5419838366212117
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.4601440139069206,
+                  -1.7074071396627497
+                ],
+                "signedNormalMomentKNm": 0.20895093975955426,
+                "signedTwistingMomentKNm": -0.36624810213149317,
+                "absoluteBendingPlusTwistingKNm": 0.5751990418910474
+              },
+              {
+                "cellIndex": 591,
+                "intervalMm": [
+                  2187.5,
+                  2262.5
+                ],
+                "normalMomentEndsKNmPerM": [
+                  0.17451167847399807,
+                  -0.030924598861106666
+                ],
+                "twistingMomentEndsKNmPerM": [
+                  -1.873353836299054,
+                  -1.892186433170211
+                ],
+                "signedNormalMomentKNm": 0.005384515485483428,
+                "signedTwistingMomentKNm": -0.14120776010509745,
+                "absoluteBendingPlusTwistingKNm": 0.14694140969695407
+              }
+            ]
+          }
+        ],
+        "scope": "Exact integrals of the declared element recovery along authored axis-aligned cuts. Tangent is positiveY for normalX and positiveX for normalY; twisting retains the source Mxy sign. Actual gaps remain absent material. No design width, redistribution, joint resistance, anchorage or mesh convergence is inferred."
+      }
+    }
+  ],
+  "fixedNormal500To250": {
+    "maximumHeadComponentDifferenceKN_KNm": 2.7884671325809336,
+    "governingHeadChange": {
+      "id": "P04",
+      "component": 0,
+      "coarse": -470.84129321106826,
+      "fine": -473.6297603436492,
+      "difference": 2.7884671325809336
+    },
+    "relativeCutIntegralChanges": [
+      {
+        "id": "STR/SW/normal-y-450",
+        "signedNormalMomentKNm": 0.09218623894569035,
+        "signedTwistingMomentKNm": 0.03128280581933228,
+        "absoluteBendingPlusTwistingKNm": 0.060512380946217165
+      },
+      {
+        "id": "STR/SW/normal-y-650",
+        "signedNormalMomentKNm": 0.08000455836515949,
+        "signedTwistingMomentKNm": 0.029412015454299546,
+        "absoluteBendingPlusTwistingKNm": 0.06370981483779432
+      },
+      {
+        "id": "STR/SW/normal-y-1300",
+        "signedNormalMomentKNm": 0.10760671772696274,
+        "signedTwistingMomentKNm": 0.18651031583522473,
+        "absoluteBendingPlusTwistingKNm": 0.10370554403802475
+      },
+      {
+        "id": "STR/SW/normal-x-1450",
+        "signedNormalMomentKNm": 0.2061899516712023,
+        "signedTwistingMomentKNm": 0.32721657824171346,
+        "absoluteBendingPlusTwistingKNm": 0.22638115286206217
+      }
+    ],
+    "declaredScreenPasses": false,
+    "localCornerJointAccepted": false,
+    "stripResistanceAccepted": false
+  },
+  "retainedOrdinary500ToCommonStation500": {
+    "maximumHeadComponentDifferenceKN_KNm": 0.029913178820265784,
+    "governingHeadChange": {
+      "id": "P10",
+      "component": 0,
+      "coarse": -155.0614166328476,
+      "fine": -155.09132981166786,
+      "difference": 0.029913178820265784
+    },
+    "relativeCutIntegralChanges": [
+      {
+        "id": "STR/SW/normal-y-450",
+        "signedNormalMomentKNm": 8.457498353583297e-7,
+        "signedTwistingMomentKNm": 0.00000129702778615203,
+        "absoluteBendingPlusTwistingKNm": 8.442352201339578e-7
+      },
+      {
+        "id": "STR/SW/normal-y-650",
+        "signedNormalMomentKNm": 8.48162418206812e-7,
+        "signedTwistingMomentKNm": 0.0000012960744382279126,
+        "absoluteBendingPlusTwistingKNm": 8.497934519408263e-7
+      },
+      {
+        "id": "STR/SW/normal-y-1300",
+        "signedNormalMomentKNm": 0.000001623207339933196,
+        "signedTwistingMomentKNm": 9.593188636489539e-7,
+        "absoluteBendingPlusTwistingKNm": 0.0000013509690208824164
+      },
+      {
+        "id": "STR/SW/normal-x-1450",
+        "signedNormalMomentKNm": 6.20102041224232e-7,
+        "signedTwistingMomentKNm": 6.716554332350236e-7,
+        "absoluteBendingPlusTwistingKNm": 7.513590746664193e-7
+      }
+    ],
+    "declaredScreenPasses": true,
+    "localCornerJointAccepted": false,
+    "stripResistanceAccepted": false
+  },
+  "completeHouseProof": false,
+  "physicalJointAccepted": false,
+  "candidateAccepted": false,
+  "scope": "Actual coupled numerical experiment with fixed physical normal points, ground maps and direct body G. Common-station sensitivity is separately measured against the retained ordinary500 control. Existing signed cuts and unchanged thresholds; no local joint, material, reinforcement or house adoption."
+}
