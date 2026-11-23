@@ -1,5 +1,5 @@
 /** Pure finite receiver comparisons. A geometric admission is never a support selection. */
-import type {inletIndoorRoutes} from './inlet-indoor-routes.js'
+import {inletRouteOperation,type inletIndoorRoutes} from './inlet-indoor-routes.js'
 import type {inletEntrySideCuts} from './inlet-indoor-cuts.js'
 import {segmentBoxDistance} from '../../../project/had/studies/service-interface-geometry.mjs'
 type Point=readonly[number,number,number]
@@ -17,7 +17,7 @@ export const inletBankClampReference={model:'Walraven DMC113028, geometric compa
  actualBoltCentresLengthTorqueCopperToleranceAndWholeMaterialQualified:false} as const
 export function inletBankReceiver(i:Inputs){
  if(!i||!i.settings||!i.routes||!i.cuts||!Array.isArray(i.wallCoreYMm)||i.routes.paths.length!==4||i.cuts.valves.length!==2||!i.routes.checkedObstacles.length)throw Error('Unsupported complete bank receiver source')
- const s=i.settings,r=i.routes,c=i.cuts,setting=r.pipe.settingEachPipeMm,
+ const s=i.settings,r=i.routes,c=i.cuts,routeOperation=inletRouteOperation(r,c),setting=r.pipe.settingEachPipeMm,
   values=[s.clampWidthMm,s.clampHeightMm,s.clampRadialThicknessMm,s.toolAxialMm,s.toolSouthStrokeMm,...i.wallCoreYMm]
  if(values.some(v=>!Number.isFinite(v))||s.clampWidthMm<40||s.clampHeightMm<=0||s.clampRadialThicknessMm<=0||s.toolAxialMm<=0||s.toolSouthStrokeMm<=0||i.wallCoreYMm.length!==2||i.wallCoreYMm[1]<=i.wallCoreYMm[0])throw Error('Unsupported finite bank receiver comparison')
  const wrapping=r.pipe.radialInsulationMm+r.pipe.jacketEachSideMm,jacketR=r.pipe.maximumOuterDiameterMm/2+wrapping,
@@ -74,8 +74,8 @@ export function inletBankReceiver(i:Inputs){
   installation:{maintenanceFieldRetained:true,plannedState:'No equipment withdrawn into the complete maintenance working field; all fixed equipment, doors and ordinary body corridor remain.',
    actualBoltToolAssemblyAndCoverWithdrawalQualified:false,actualContinuousLoadedCaptureQualified:false,
    sequence:'Independently capture valve and both flange/tail halves before clamp release or10mm flange separation; remove new split cover first. No fixed clamp is silently made sliding.'},
-  necessaryRouteOperationAndClampEnvelopeScreen:r.necessaryStraightPipeGeometryAndBudgetComparison&&c.necessaryOrdinaryOperationEnvelopeScreen&&receivers.every(v=>v.necessaryFiniteClampTerritory),
-  diagnostics:receivers.filter(v=>!v.necessaryFiniteClampTerritory).map(v=>'INLET_RECEIVER_TERRITORY/'+v.id),
+  routeOperation,necessaryRouteOperationAndClampEnvelopeScreen:r.necessaryStraightPipeGeometryAndBudgetComparison&&c.necessaryOrdinaryOperationEnvelopeScreen&&routeOperation.necessaryRouteOperationEnvelopeScreen&&receivers.every(v=>v.necessaryFiniteClampTerritory),
+  diagnostics:[...routeOperation.diagnostics,...receivers.filter(v=>!v.necessaryFiniteClampTerritory).map(v=>'INLET_RECEIVER_TERRITORY/'+v.id)],
   lockedStraight1700NClampRejected:r.completelyLockedStraightTubeAxialComparisonN>inletBankClampReference.publishedFaZN,
   actualMaterialProductToolAndCarrierSelected:false,actualCoupledThermalAndPressureReactionSolved:false,actualPierTransferQualified:false,nativeStructuralActionsAdopted:false,wholeOccupiedArrangementComplete:false}
 }

@@ -11,7 +11,7 @@ test('explicit saved bank edit shares compiler output, preserves roof/source con
  const start=await readEditorEngineeringDocument(),resolved=readCurrentDesignResolution(),request=readInletSourceEnvelopeCase(resolved),
   doc={...start,stages:{...start.stages,inletSourceEnvelope:request.sourceEnvelope.settings}},state=beginEngineeringEdit(doc,'inlet-bank'),baseTicket=engineeringTicket(state,'base'),
   before=await runEditorEngineeringRequest({ticket:baseTicket})
- assert.equal(before.inletBank?.receiver.necessaryRouteOperationAndClampEnvelopeScreen,true)
+ assert.equal(before.inletBank?.receiver.necessaryRouteOperationAndClampEnvelopeScreen,false)
  assert.equal(before.inletBank?.carrier.necessaryCarrierComparison,false)
  assert.ok(before.inletBank!.carrier.rows.every(v=>v.minimumShelfThicknessForSourceStressComparisonMm>15.89))
  const changed=edit(state,'pipeJacketDensityComparisonKgM3',4000,'kg/m3')
