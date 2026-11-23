@@ -56,6 +56,14 @@ def semantic_cut_fingerprint(catalogues):
         input=json.dumps(catalogues,allow_nan=False),text=True,capture_output=True,check=True,cwd=ROOT).stdout.strip()
 
 
+def semantic_native_fingerprint(native):
+    code=('import {fourLNativeSemanticFingerprint} from "./compiler/reference-house/current-design/structural-four-l-joint-adapter.ts";'
+        'let text="";for await(const chunk of process.stdin)text+=chunk;'
+        'console.log(fourLNativeSemanticFingerprint(JSON.parse(text)));')
+    return subprocess.run(['node','--import','tsx','--input-type=module','-e',code],
+        input=json.dumps(native,allow_nan=False),text=True,capture_output=True,check=True,cwd=ROOT).stdout.strip()
+
+
 def source_current(identities):
     if not isinstance(identities,dict) or len(identities)!=58:
         raise ValueError('Actual58-source native tuple required')
@@ -84,6 +92,13 @@ def check(proof):
             or observed['freeBodies']!=recover(observation)):
         raise ValueError('Actual source/witness/free-body replay differs')
     captures=proof['verifiedFullCaptures'];node=proof['actualNodeAdmission']
+    semantic=proof['nativeSemanticControl']
+    if (semantic['schema']!='str-complete-native-semantic-control/1'
+            or semantic['normalisation']!='three-explicit-caller-labels/1'
+            or semantic['ordinaryFullCaptureFileSHA256']!=captures['ordinaryFullCaptureFileSHA256']
+            or semantic['fingerprint']!=semantic['observedFingerprint']
+            or len(semantic['fingerprint'])!=64):
+        raise ValueError('Complete ordinary native semantic control lost')
     cut_control=proof['nativeCutControl'];cut_fingerprint=semantic_cut_fingerprint(unpack_cut_control(cut_control))
     if (captures['exactFullNativeBytesEqual'] is not True
             or captures['retainedCropReconstructsCompleteNativeBytes'] is not False
@@ -98,6 +113,7 @@ def check(proof):
                 'status':'computed-rigid-joint-demand','methodSourceSHA256':methods(),
                 'nativeResultSHA256':observation['fullNativeResultSHA256'],
                 'nativeCutSemanticFingerprint':cut_fingerprint,
+                'nativeSemanticFingerprint':semantic['fingerprint'],
                 'patchOwnGAlreadyIncludedInPlateContribution':True,
                 'diagnostics':['FOUR_L_JOINT/finite-joint-laws-and-resistance-unqualified',
                     'FOUR_L_JOINT/complete-signed-demand-envelope-unavailable']}
@@ -131,6 +147,10 @@ def write(ordinary_path,ordinary_manifest,observed_path,envelope_path,node_path)
     proof={'schema':'str-four-L-actual-joint-demand-proof/1','sourceSHA256':actual['sourceSHA256'],
         'processingSourceSHA256':{**methods(),METHOD:file_sha(ROOT/METHOD)},
         'nativeCutControl':pack_cut_control(old,file_sha(ordinary_path)),
+        'nativeSemanticControl':{'schema':'str-complete-native-semantic-control/1',
+            'normalisation':'three-explicit-caller-labels/1',
+            'ordinaryFullCaptureFileSHA256':file_sha(ordinary_path),
+            'fingerprint':semantic_native_fingerprint(old),'observedFingerprint':semantic_native_fingerprint(actual)},
         'witness':witness(ordinary,observed),'ordinaryControl':ordinary,'exactObservedInput':observed,
         'verifiedFullCaptures':{'ordinaryFullCaptureFileSHA256':file_sha(ordinary_path),
             'ordinaryManifestFileSHA256':file_sha(ordinary_manifest),

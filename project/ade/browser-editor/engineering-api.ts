@@ -18,8 +18,12 @@ export async function runEditorEngineeringRequest(input: unknown) {
   const roof = bundle.engineering.roofPitch
   if (!roof) throw new TypeError('The saved document has no compiled roof-pitch stage')
   const cage = bundle.engineering.floorSection?.cageComparison
+  const lighting = bundle.engineering.studyLighting
+  const inlet=bundle.engineering.inletSourceEnvelope, bank=inlet?.joinedDirection.room.bankReceiver
   return { ticket, documentIdentity: bundle.documentIdentity, manifest: bundle.manifest,
     coordinationDiagnostics: bundle.coordinationDiagnostics, evidence: bundle.evidence,
+    studyLighting: lighting ? { svg: lighting.commonDepthCornerSvg, comparison: lighting.lighting.commonDepthCornerComparison } : null,
+    inletBank: inlet&&bank?{settings:inlet.settings,receiver:bank,route:inlet.joinedDirection.room.indoorRoutes,sourceOnlyBound:inlet.bound}:null,
     roof: { ...roof, svg: renderDrawingSceneV2Svg(roof.drawing) },
     wetCage: cage ? { settings: cage.settings, geometry: cage.geometry, quantities: cage.quantities,
       nativeCaseId: cage.nativeCaseId, nativeSourceSHA256: cage.nativeSourceSHA256, method: cage.method, evidence: cage.evidence } : null }

@@ -328,9 +328,9 @@ export function prepareCurrentDesignCompile(input: unknown) {
     },
     studyLighting: async (input: unknown, kit: ReturnType<typeof import('./assemblies/study-room-kit-projection.js').compileStudyRoomKitProjection>) => {
       const { compileStudyLighting } = await import('./assemblies/study-lighting.js')
-      const { drawStudyLightingComparison, drawStudyLightingServiceCorner, drawKitchenLightingCheck, drawStudyLightingRoutes, drawStudyLightingConstruction } = await import('./assemblies/study-lighting-views.js')
+      const { drawStudyLightingComparison, drawStudyLightingServiceCorner, drawKitchenLightingCheck, drawStudyLightingRoutes, drawStudyLightingConstruction, drawCommonDepthCornerComparison } = await import('./assemblies/study-lighting-views.js')
       const lighting = compileStudyLighting(resolved, input, kit)
-      return { lighting, comparisonSvg: drawStudyLightingComparison(lighting), serviceCornerSvg: drawStudyLightingServiceCorner(lighting), kitchenSvg: drawKitchenLightingCheck(lighting), routesSvg: drawStudyLightingRoutes(lighting), constructionSvg: drawStudyLightingConstruction(lighting) }
+      return { lighting, comparisonSvg: drawStudyLightingComparison(lighting), serviceCornerSvg: drawStudyLightingServiceCorner(lighting), kitchenSvg: drawKitchenLightingCheck(lighting), routesSvg: drawStudyLightingRoutes(lighting), constructionSvg: drawStudyLightingConstruction(lighting), commonDepthCornerSvg: drawCommonDepthCornerComparison(lighting) }
     },
     studyDraftRoomKit: async (input: unknown) => {
       const { compileStudyDraftRoomKit } = await import('./assemblies/study-draft-room-kit.js')

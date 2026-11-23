@@ -31,6 +31,33 @@ export function fourLNativeCutFingerprint(native:unknown) {
   return sha256SemanticFingerprint(Object.fromEntries(cutCatalogueKeys.map(key=>[key,native.nativeVertical.native[key]])))
 }
 
+/** Complete native state, with only the three documented caller labels normalised.
+ * All physical fields, diagnostics and drawing geometry remain bound. */
+export function fourLNativeSemanticFingerprint(native:unknown) {
+  if(!record(native)||!record(native.nativeVertical)||!record(native.nativeVertical.native)
+    ||!record(native.drawings))throw new Error('Complete native state and drawing required')
+  const copy=structuredClone(native),frame=copy.nativeVertical.native,caseId=frame.caseId
+  if(typeof caseId!=='string'||!(/^[A-Za-z][A-Za-z0-9._:-]*$/).test(caseId)||frame.name!==caseId)
+    throw new Error('Native caller label fields must agree')
+  const key='floor-section-floor.svg',drawing=copy.drawings[key]
+  const caption=`<text x="35" y="52">${caseId} · sourceground0 control · no physical or complete-house acceptance</text>`
+  if(typeof drawing!=='string'||drawing.split(caption).length!==2)
+    throw new Error('Exact native caller caption required')
+  frame.caseId='FOUR_L_CALLER_LABEL';frame.name='FOUR_L_CALLER_LABEL'
+  copy.drawings[key]=drawing.replace(caption,caption.replace(caseId,'FOUR_L_CALLER_LABEL'))
+  return sha256SemanticFingerprint(copy)
+}
+
+function readNativeSemanticControl(proof:Record<string,any>) {
+  const control=proof.nativeSemanticControl
+  if(!record(control)||control.schema!=='str-complete-native-semantic-control/1'
+    ||!digest(control.fingerprint)||control.normalisation!=='three-explicit-caller-labels/1'
+    ||control.ordinaryFullCaptureFileSHA256!==proof.verifiedFullCaptures?.ordinaryFullCaptureFileSHA256
+    ||control.observedFingerprint!==control.fingerprint)
+    throw new Error('Verified complete ordinary native semantic control required')
+  return control.fingerprint as string
+}
+
 function readNativeCutControl(proof:Record<string,any>) {
   const control=proof.nativeCutControl
   if(!record(control)||control.encoding!=='base64-zlib-json'||typeof control.data!=='string'
@@ -106,7 +133,7 @@ export function inspectFourLJointCapability(comparison:unknown,witness:unknown,m
 
 /** Validate exact native JSON bytes before parsing them; JS reserialization
  * would change Python numeric spelling and cannot supply this checksum join. */
-export function admitFourLJointEnvelope(envelope:unknown,comparison:unknown,caseId:string,methods:Methods,trustedObservationFingerprint:string,trustedNativeCutFingerprint:string) {
+export function admitFourLJointEnvelope(envelope:unknown,comparison:unknown,caseId:string,methods:Methods,trustedObservationFingerprint:string,trustedNativeCutFingerprint:string,trustedNativeSemanticFingerprint:string) {
   if(!/^[A-Za-z][A-Za-z0-9._:-]*$/.test(caseId)||fourLJointMethodPaths.some(path=>!digest(methods[path])))
     throw new Error('Explicit stable case ID and complete current joint method identities required')
   if(!record(envelope)||typeof envelope.nativeResultJSON!=='string'||!record(envelope.observation)||!record(envelope.freeBodies))
@@ -117,6 +144,8 @@ export function admitFourLJointEnvelope(envelope:unknown,comparison:unknown,case
   const native=JSON.parse(envelope.nativeResultJSON) as unknown
   if(!digest(trustedNativeCutFingerprint)||fourLNativeCutFingerprint(native)!==trustedNativeCutFingerprint)
     throw new Error('Actual native cuts differ from the source-bound ordinary cut control')
+  if(!digest(trustedNativeSemanticFingerprint)||fourLNativeSemanticFingerprint(native)!==trustedNativeSemanticFingerprint)
+    throw new Error('Complete native state differs from the source-bound ordinary semantic control')
   if(!record(native)||!record(comparison)||!record(native.sourceSHA256)||!record(comparison.sourceSHA256)
     ||!record(native.nativeVertical)||!record(native.nativeVertical.native)
     ||native.schema!=='str-coupled-floor-section-result/1'||!same(native.request,comparison)
@@ -179,6 +208,7 @@ export function admitFourLJointEnvelope(envelope:unknown,comparison:unknown,case
     completeHouseProof:false as const,candidateAccepted:false as const,
     methodSourceSHA256:methods,nativeResultSHA256:observation.fullNativeResultSHA256,
     nativeCutSemanticFingerprint:trustedNativeCutFingerprint,
+    nativeSemanticFingerprint:trustedNativeSemanticFingerprint,
     patchOwnGAlreadyIncludedInPlateContribution:true as const,
     diagnostics:['FOUR_L_JOINT/finite-joint-laws-and-resistance-unqualified','FOUR_L_JOINT/complete-signed-demand-envelope-unavailable']}}
 }
@@ -189,21 +219,21 @@ export function readFourLJointExecution(comparison:unknown) {
   const proof=JSON.parse(readFileSync(new URL(proofPath,root),'utf8')) as unknown
   if(!record(proof)||proof.schema!=='str-four-L-actual-joint-demand-proof/1'
     ||!same(proof.processingSourceSHA256,{...methods,[proofProducer]:hash(readFileSync(new URL(proofProducer,root)))}))
-    return {status:'unsupported' as const,diagnostic:'FOUR_L_JOINT/missing-or-stale-strict-method-witness',witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined}
+    return {status:'unsupported' as const,diagnostic:'FOUR_L_JOINT/missing-or-stale-strict-method-witness',witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined,nativeSemanticFingerprint:undefined}
   if(!record(proof.exactObservedInput)||!record(proof.exactObservedInput.observation)
     ||!same(proof.exactObservedInput.observation.sourceSHA256,proof.witness?.sourceSHA256)
     ||!same(proof.exactObservedInput.observation.request,proof.witness?.executedRequest)
     ||!same(proof.exactObservedInput.observation.methodSourceSHA256,Object.fromEntries(fourLJointMethodPaths.slice(1).map(p=>[p,methods[p]])))
     ||!same(proof.exactObservedInput.observation.runtimeThreads,proof.witness?.runtimeThreads))
-    return {status:'unsupported' as const,diagnostic:'FOUR_L_JOINT/missing-or-stale-observed-input',witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined}
+    return {status:'unsupported' as const,diagnostic:'FOUR_L_JOINT/missing-or-stale-observed-input',witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined,nativeSemanticFingerprint:undefined}
   const capability=inspectFourLJointCapability(comparison,proof.witness,methods)
-  if(capability.status!=='available')return {...capability,witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined}
-  let nativeCutFingerprint:string
-  try{nativeCutFingerprint=readNativeCutControl(proof)}catch{
-    return {status:'unsupported' as const,diagnostic:'FOUR_L_JOINT/missing-or-corrupt-native-cut-control',witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined}
+  if(capability.status!=='available')return {...capability,witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined,nativeSemanticFingerprint:undefined}
+  let nativeCutFingerprint:string,nativeSemanticFingerprint:string
+  try{nativeCutFingerprint=readNativeCutControl(proof);nativeSemanticFingerprint=readNativeSemanticControl(proof)}catch{
+    return {status:'unsupported' as const,diagnostic:'FOUR_L_JOINT/missing-or-corrupt-native-cut-control',witness:undefined,observedInputFingerprint:undefined,nativeCutFingerprint:undefined,nativeSemanticFingerprint:undefined}
   }
   return {...capability,witness:proof.witness,
-    observedInputFingerprint:fourLJointObservationFingerprint(proof.exactObservedInput.observation),nativeCutFingerprint}
+    observedInputFingerprint:fourLJointObservationFingerprint(proof.exactObservedInput.observation),nativeCutFingerprint,nativeSemanticFingerprint}
 }
 
 /** Exactly one chosen native execution. An admitted observer failure is an
@@ -219,21 +249,21 @@ export function dispatchFourLJointNative<T>(capability:{status:'available'|'unsu
 /** Same normal stage input; the derived witness is not an authored toggle. */
 export function runFloorNativeWithFourLJointCapability(comparison:unknown,caseId:string,ordinary:()=>unknown) {
   const capability=readFourLJointExecution(comparison)
-  return dispatchFourLJointNative(capability,ordinary,()=>runObservedFourLJointCase(comparison,caseId,capability.witness,capability.observedInputFingerprint,capability.nativeCutFingerprint))
+  return dispatchFourLJointNative(capability,ordinary,()=>runObservedFourLJointCase(comparison,caseId,capability.witness,capability.observedInputFingerprint,capability.nativeCutFingerprint,capability.nativeSemanticFingerprint))
 }
 
-export function runObservedFourLJointCase(comparison:unknown,caseId:string,witness:unknown,trustedObservationFingerprint?:string,trustedNativeCutFingerprint?:string) {
+export function runObservedFourLJointCase(comparison:unknown,caseId:string,witness:unknown,trustedObservationFingerprint?:string,trustedNativeCutFingerprint?:string,trustedNativeSemanticFingerprint?:string) {
   const methods=Object.fromEntries(fourLJointMethodPaths.map(path=>[path,hash(readFileSync(new URL(path,root)))]))
   const capability=inspectFourLJointCapability(comparison,witness,methods)
   if(capability.status!=='available')throw new Error(capability.diagnostic)
-  if(!digest(trustedObservationFingerprint)||!digest(trustedNativeCutFingerprint))throw new Error('Source-bound exact-request observed-input and native-cut fingerprints required')
+  if(!digest(trustedObservationFingerprint)||!digest(trustedNativeCutFingerprint)||!digest(trustedNativeSemanticFingerprint))throw new Error('Source-bound exact-request observed-input and native-cut fingerprints required')
   const envelope=JSON.parse(execFileSync('python3',['-B',fileURLToPath(new URL(fourLJointMethodPaths[1],root)),'--return-native'],{
     input:JSON.stringify({case:comparison,caseId}),encoding:'utf8',maxBuffer:128*1024*1024,
     env:{...process.env,OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'},
   })) as unknown
   if(fourLJointMethodPaths.some(path=>hash(readFileSync(new URL(path,root)))!==methods[path]))
     throw new Error('Joint observer/consumer source changed during native execution')
-  const admitted=admitFourLJointEnvelope(envelope,comparison,caseId,methods,trustedObservationFingerprint!,trustedNativeCutFingerprint!)
+  const admitted=admitFourLJointEnvelope(envelope,comparison,caseId,methods,trustedObservationFingerprint!,trustedNativeCutFingerprint!,trustedNativeSemanticFingerprint!)
   if(fourLJointMethodPaths.some(path=>hash(readFileSync(new URL(path,root)))!==methods[path]))
     throw new Error('Joint observer/consumer source changed during pure demand admission')
   return admitted

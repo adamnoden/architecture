@@ -331,3 +331,25 @@ request, runtime, all52 heads, all physical cuts, source wrench and passive join
 recovery. The programme remains a bounded declared comparison: +6.3kPa is not a
 physical wind bound, unmodeled roof background G/patterning remain explicit, and
 no local joint capacity or whole-house acceptance follows.
+
+## Complete native-state admission — 23 November 2026
+
+Recovery review reproduced an integrity gap: changed mass or bending fields could
+pass admission after an opaque full-byte digest was recomputed, while trusted
+heads, cuts and joint observations were unchanged. The adapter now also requires
+the complete ordinary native semantic control. Only the actual caller's `name`,
+`caseId` and exact floor-view caption are normalised. All other physical fields,
+loads, reinforcement, roof/masonry fields, diagnostics and drawing geometry stay
+bound. Numeric JSON spelling remains representation, without rounding physics.
+
+Fresh ordinary and observed executions on the unchanged native58 source, with
+both BLAS/OMP thread counts one, produced identical complete native capture
+bytes. The owning producer verifies those captures and actual Node admission;
+the updated retained proof records the complete semantic control and capture
+identities. The four joint residual maximum remains 5.798781899102323e-9 kN/kNm.
+Eleven focused Node tests include invented downstream-state rejection after
+opaque hashes are recomputed, exact numeric transport, consistent caller
+relabelling, stale inputs and unchanged ordinary behaviour. Python producer
+replay independently joins its current method identities. This closes a
+specific admission gap; finite joint resistance and signed envelopes remain
+unavailable. No slab thickness or whole-house baseline is selected.

@@ -4,9 +4,9 @@ import {readFileSync} from 'node:fs'
 import {inletIndoorRoutes,drawInletIndoorRoutes,type IndoorRoutesInput} from './current-design/inlet-indoor-routes.js'
 const source=JSON.parse(readFileSync(new URL('../../project/had/studies/south-inlet-under-sill.json',import.meta.url),'utf8'))
 const input:IndoorRoutesInput={roomPlanMm:[9397,429.5,2173.5,2023.5],bankMm:[11350,2350],utilityAxisZMm:1350,plantAxisZMm:1890,
- utilitySourcePathMm:source.branches[0].coordinates,plantSourcePathMm:source.branches[1].coordinates,
+ tailOffsetMm:200,utilityReturnXMm:11180,westernReturnXMm:10040,utilitySourcePathMm:source.branches[0].coordinates,plantSourcePathMm:source.branches[1].coordinates,
  plantTransferMm:[[10900,2360,2400],[10600,3900,2400]],groundFflMm:0,ceilingMm:3100,utilityLmin:20,plantLmin:45,maximumGaugeBar:9,
- networkAllowancesBar:[.5,1],obstacles:[{id:'maintenance',boxMm:[10145,1505,0,1100,750,3100]},{id:'ordinary-body-approach',boxMm:[10370,2130,0,600,1060,2000]}],comparison:{frictionFactor:.03,cornerK:.9,temperatureChangeK:40}}
+ networkAllowancesBar:[.5,1],obstacles:[{id:'maintenance',boxMm:[10145,1505,0,1100,750,3100]},{id:'ordinary-body-approach',boxMm:[10370,2130,0,600,1060,2000]}],comparison:{frictionFactor:.03,cornerK:.9,temperatureChangeK:40,jacketDensityKgM3:8000,insulationDensityKgM3:200}}
 test('four actual paths join opposite valve faces, avoid each other and preserve the full equipment field',()=>{
  const r=inletIndoorRoutes(input)
  assert.deepEqual(r.diagnostics,[])
@@ -31,7 +31,7 @@ test('four actual paths join opposite valve faces, avoid each other and preserve
  assert.match(drawInletIndoorRoutes(r),/actual saved-bank/)
 })
 test('gravity, fixed-pressure corners and thermal comparisons have independent physical closure',()=>{
- const r=inletIndoorRoutes(input),translated=inletIndoorRoutes({...input,groundFflMm:530}),pressured=inletIndoorRoutes({...input,maximumGaugeBar:10}),hot=inletIndoorRoutes({...input,comparison:{...input.comparison,temperatureChangeK:80}})
+ const r=inletIndoorRoutes(input),translated=inletIndoorRoutes({...input,groundFflMm:530}),pressured=inletIndoorRoutes({...input,maximumGaugeBar:10}),hot=inletIndoorRoutes({...input,comparison:{...input.comparison,temperatureChangeK:80,jacketDensityKgM3:8000,insulationDensityKgM3:200}})
  for(let k=0;k<r.paths.length;k++)for(let j=0;j<r.paths[k].stock.length;j++){
   const a=r.paths[k].stock[j],b=translated.paths[k].stock[j]
   assert.deepEqual(a.fullWaterGravityWrenchKNKNm,b.fullWaterGravityWrenchKNKNm,'vertical datum translation preserves vertical-force moments')

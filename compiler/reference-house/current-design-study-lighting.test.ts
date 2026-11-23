@@ -226,3 +226,116 @@ test('side-entry bends meet a real straight collar tangent and retain setting te
   assert.equal(deeper[2].bend.startMm[1], branches[2].bend.startMm[1] - 10)
   assert.deepEqual(deeper[0].bend.startMm.filter((_, i) => i !== 1), branches[0].bend.startMm.filter((_, i) => i !== 1))
 })
+
+test('common-depth purpose cases preserve real device/route volumes while rejecting the stock rear route and unknown reference ports', () => {
+  const r = run(), c = r.commonDepthCornerComparison
+  assert.equal(c.selection, 'unselected-comparison')
+  assert.equal(c.commonAxisCoreDepthMm, 37)
+  assert.equal(c.accessoryFaceRecessMm, 14.5)
+  assert.equal(c.stockComparison.nominalRearSpaceMm, 24)
+  assert.equal(c.stockComparison.requiredRouteSpaceMm, 30)
+  assert.equal(c.stockComparison.rearThroughRouteFits, false)
+  assert.equal(c.stockComparison.manufacturerPortCoordinatesQualified, false)
+  assert.ok(c.diagnostics.some(d => d.code === 'IAS_LIGHTING_REFERENCE_BOX_PORT_COORDINATES_UNSUPPORTED' && d.state === 'unsupported'))
+  assert.equal(c.purpose.internalBypassWidthMm, 45)
+  assert.equal(c.purpose.requiredCollarSpaceMm, 40)
+  assert.equal(c.purpose.collarSideClearanceMm, 7.5)
+  assert.equal(c.purpose.collarRearClearanceMm, 6.5)
+  assert.equal(c.purpose.collarFrontClearanceMm, 6.5)
+  assert.equal(c.evidence.localGeometryPassing, true)
+  assert.equal(c.accessoryUse.insertedPlugRoomwardProjectionBeyondDecorationMm, 5.5)
+  assert.equal(c.accessoryUse.actualRecessOpeningAndBodyGripQualified, false)
+  assert.ok(c.diagnostics.some(d => d.code === 'IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED' && d.state === 'unsupported'))
+  for (const box of c.purpose.enclosures) {
+    assert.equal(box.accessoryReservedVolumeXYZMm[4]! - box.accessoryReservedVolumeXYZMm[1]!, 23)
+    assert.equal(box.bodyDepthMm[0], 13.5)
+    assert.equal(box.fixings.length, 4)
+    assert.ok(box.fixings.every(f => f.hardLandDepthMm[0]! >= 7.5 && f.hardLandDepthMm[1]! >= f.hardLandDepthMm[0]!))
+    assert.equal(box.actualProductInterfaceQualified, false)
+    assert.match(box.deviceReferenceBinding, /unbound/)
+    assert.equal(box.protectedCoverRetainedOnDecorativeRelease, true)
+    assert.equal(box.fixedRecessSurroundRetainedOnDecorativeRelease, true)
+  }
+  assert.equal(c.purpose.permanentFabricCutsRequired, false)
+  assert.equal(c.purpose.deviceTerminalsConnected, false)
+  assert.equal(c.purpose.completeRoomCircuit, false)
+  for (const key of ['actualReferenceProductConnected', 'equipmentTerminalGeometryComplete', 'installedProtectionQualified', 'materialAdmission', 'completeRenewalQualified', 'physicalTrialComplete', 'ownerAcceptance', 'candidateSelected'] as const) assert.equal(c.evidence[key], false)
+})
+
+test('finite straight pieces, collars and authored case ports meet at the same common plane with independent supports', () => {
+  const c = run().commonDepthCornerComparison
+  assert.equal(c.purpose.allMatesCoaxial, true)
+  assert.equal(c.purpose.externalBendsRequired, 0)
+  assert.equal(c.purpose.legacyR70RequirementRetainedWhereBendsExist, true)
+  assert.equal(c.purpose.pipes.length, 3)
+  assert.equal(c.purpose.collars.length, 6)
+  assert.equal(c.purpose.pipeClips.length, 3)
+  assert.equal(c.purpose.straightContainmentLengthMm, 960)
+  for (const [i, pipe] of c.purpose.pipes.entries()) {
+    const collar = c.purpose.collars.find(x => JSON.stringify(x.startXYZMm) === JSON.stringify(pipe.endXYZMm))!
+    assert.ok(collar)
+    assert.deepEqual(collar.endXYZMm, c.purpose.enclosures[i]!.bottomPort.pointXYZMm)
+    assert.equal(pipe.startXYZMm[0], pipe.endXYZMm[0])
+    assert.equal(pipe.startXYZMm[1], pipe.endXYZMm[1])
+    assert.equal(pipe.outsideDiameterMm, 20)
+    assert.ok(c.purpose.pipeClips[i]!.maximumUnsupportedLengthToEndPortMm <= c.choices.maximumClipSpanMm)
+  }
+})
+
+test('whole cases require a paid 75mm draw and a separate rest; the parked module and occupied floor remain controls', () => {
+  const c = run().commonDepthCornerComparison
+  assert.equal(c.renewal.requiredWholeEnclosureNormalDrawMm, 66.5)
+  assert.equal(c.renewal.firstNormalDrawMm, 75)
+  assert.equal(c.renewal.additionalTemporaryFloorTerritoryM2, .04)
+  assert.deepEqual(c.renewal.secondaryRestPlanMm, [800, 2450.5, 1000, 2650.5])
+  assert.ok(c.renewal.moves.every(move => move.conflictingIds.length === 0))
+  assert.equal(c.renewal.qualifiedUnionsAndToolRelease, false)
+  const short = structuredClone(components)
+  short.commonDepthCornerCandidate = { ...short.commonDepthCornerCandidate, firstNormalDrawMm: 50 }
+  const failed = deriveStudyLighting(choices, basis, short).commonDepthCornerComparison
+  assert.equal(failed.status, 'GEOMETRY_REJECTED')
+  assert.ok(failed.geometryIssues.includes('complete-enclosure-normal-draw-is-too-short'))
+  const blocked = structuredClone(basis)
+  blocked.room.occupied = [...blocked.room.occupied, ['new-obstruction-in-rest-corner', [800, 2450.5, 805, 2455.5]]]
+  assert.ok(deriveStudyLighting(choices, blocked, components).commonDepthCornerComparison.geometryIssues.includes('secondary-rest-intersects-occupied-or-main-rest'))
+  const unsupported = structuredClone(basis)
+  unsupported.room.bands = unsupported.room.bands.map(b => [b[0], Math.max(b[1]!, 2500), b[2], b[3]])
+  assert.ok(deriveStudyLighting(choices, unsupported, components).commonDepthCornerComparison.geometryIssues.includes('secondary-rest-is-outside-actual-floor'))
+  const weakFixing = structuredClone(components)
+  weakFixing.commonDepthCornerCandidate = { ...weakFixing.commonDepthCornerCandidate, fixingEdgeMm: 10 }
+  assert.ok(deriveStudyLighting(choices, basis, weakFixing).commonDepthCornerComparison.geometryIssues.includes('front-fixing-access-intersects-internal-port-hardware'))
+  const smallRest = structuredClone(components)
+  smallRest.commonDepthCornerCandidate = { ...smallRest.commonDepthCornerCandidate, secondaryRestSizeMm: 180 }
+  assert.ok(deriveStudyLighting(choices, basis, smallRest).commonDepthCornerComparison.geometryIssues.includes('complete-enclosure-does-not-fit-secondary-rest'))
+})
+
+test('narrow cases cannot manufacture a pass by dropping collars, device volume or either 5mm allowance', () => {
+  const narrow = structuredClone(components)
+  narrow.commonDepthCornerCandidate = { ...narrow.commonDepthCornerCandidate, enclosureWidthMm: 150 }
+  const result = deriveStudyLighting(choices, basis, narrow)
+  assert.equal(result.commonDepthCornerComparison.status, 'GEOMETRY_REJECTED')
+  assert.ok(result.commonDepthCornerComparison.geometryIssues.includes('purpose-bypass-loses-collar-and-two-setting-allowances'))
+  assert.deepEqual(result.construction, run().construction)
+  const deepDevice = structuredClone(components)
+  deepDevice.socket = { ...deepDevice.socket, bodyDepthMm: 48 }
+  assert.ok(deriveStudyLighting(choices, basis, deepDevice).commonDepthCornerComparison.geometryIssues.includes('device-body-enters-case-rear-shell'))
+  const shallow = run({ serviceTotalDepthMm: 27 }).commonDepthCornerComparison
+  assert.ok(shallow.geometryIssues.includes('purpose-enclosure-enters-retained-boundary-or-setting-space'))
+  assert.equal(shallow.evidence.candidateSelected, false)
+})
+
+test('candidate parameter changes recompute side space, depth and mass requirements without adopting or rewriting the legacy comparison', () => {
+  const baseline = run(), wider = structuredClone(components)
+  wider.commonDepthCornerCandidate = { ...wider.commonDepthCornerCandidate, enclosureWidthMm: 190, secondaryRestSizeMm: 220, maximumEnclosureMassKg: 4 }
+  const changed = deriveStudyLighting(choices, basis, wider)
+  assert.equal(changed.commonDepthCornerComparison.purpose.internalBypassWidthMm, 50)
+  assert.equal(changed.commonDepthCornerComparison.loadInterface.authoredTotalCaseGravityN, 4 * 3 * 9.81)
+  assert.equal(changed.commonDepthCornerComparison.loadInterface.sourceModelMassFeedbackApplied, false)
+  assert.deepEqual(changed.construction, baseline.construction)
+  assert.deepEqual(changed.commonRoom, baseline.commonRoom)
+  assert.deepEqual(changed.kitchen, baseline.kitchen)
+  const deeper = run({ serviceTotalDepthMm: 85 }).commonDepthCornerComparison
+  assert.equal(deeper.commonAxisCoreDepthMm, 47)
+  assert.equal(deeper.accessoryFaceRecessMm, 14.5)
+  assert.equal(deeper.purpose.enclosures[0]!.bodyDepthMm[0], 23.5)
+})

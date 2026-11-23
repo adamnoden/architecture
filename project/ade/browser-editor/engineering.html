@@ -17,12 +17,34 @@
         <button class="primary" type="submit">Compare cage levels</button></form>
       <p>Moves all post-link levels within the saved cage. The admitted range includes comparisons that fail cover.</p>
     </section>
+    <section id="inlet-bank-controls" hidden aria-label="Indoor water bank comparison"><h2>Indoor water bank</h2>
+      <form id="inlet-bank-edit"><label>Saved input<select id="inlet-field">
+        <option value="indoorBankXMm">Bank X</option><option value="indoorUtilityAxisZMm">Utility valve axis above FFL</option>
+        <option value="indoorTailOffsetMm">Valve-to-elbow offset</option><option value="indoorUtilityReturnXMm">Utility rising return X</option>
+        <option value="indoorWesternReturnXMm">Western return X</option><option value="pipeJacketDensityComparisonKgM3">Jacket density reference</option>
+        <option value="pipeInsulationDensityComparisonKgM3">Insulation density reference</option></select></label>
+        <label><span id="inlet-unit">mm</span><input id="inlet-value" type="number" step="any" required></label>
+        <button class="primary" type="submit">Compare bank input</button></form>
+      <p>Retains the complete occupied equipment and working fields. Density references select no material; physical support and renewal remain unresolved.</p>
+    </section><p id="inlet-result" role="status"></p>
+    <section id="lighting-controls" hidden aria-label="Study service comparison">
+      <h2>Study service depth</h2><form id="lighting-edit">
+        <label>Study service depth (mm)<input id="lighting-depth" type="number" min="25" max="100" step="any" required></label>
+        <button class="primary" type="submit">Compare Study depth</button></form>
+      <p>Edits the saved lighting stage. Both the earlier local entries and the unselected common-depth comparison recompute; no arrangement is adopted.</p>
+    </section>
+    <p id="lighting-result" role="status"></p><p id="lighting-diagnostics"></p>
     <p id="cage-result" role="status"></p>
     <p id="diagnostic" role="alert"></p><p id="evidence"></p>
   </aside><section class="drawing" aria-label="Roof comparison"><div class="drawing-bar"><p id="analysis" role="status"></p><button id="pin" disabled>Use current as comparison</button></div>
     <p id="stale" role="status"></p><p id="identity"></p><p id="affected"></p>
     <div class="plans"><figure><figcaption id="current-caption">Current revision</figcaption><img id="current-roof" alt="Compiled roof section"></figure>
     <figure><figcaption id="comparison-caption">Starting document</figcaption><img id="comparison-roof" alt="Comparison roof section"></figure></div>
+    <section id="inlet-bank-views" hidden aria-label="Finite water bank comparison"><div class="plans"><figure><figcaption>Current bank comparison</figcaption><img id="current-inlet-bank" alt="Finite bank clamp and receiver comparison"></figure><figure><figcaption>Pinned bank comparison</figcaption><img id="comparison-inlet-bank" alt="Previous bank comparison"></figure></div></section>
+    <section id="lighting-views" hidden aria-label="Unselected Study enclosure comparison"><div class="plans">
+      <figure><figcaption>Edited unselected Study comparison</figcaption><img id="current-lighting" alt="Source-derived common-depth Study enclosure and withdrawal comparison"></figure>
+      <figure><figcaption>Pinned unselected Study comparison</figcaption><img id="comparison-lighting" alt="Previous common-depth Study comparison"></figure>
+    </div></section>
     <table><thead><tr><th>Output</th><th>Current</th><th>Comparison</th></tr></thead><tbody id="schedule"></tbody></table>
   </section></div><p id="storage" role="status"></p>
 </main><script type="module" src="./engineering-editor.ts"></script></body></html>
