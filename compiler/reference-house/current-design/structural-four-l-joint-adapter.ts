@@ -31,19 +31,20 @@ export function fourLNativeCutFingerprint(native:unknown) {
   return sha256SemanticFingerprint(Object.fromEntries(cutCatalogueKeys.map(key=>[key,native.nativeVertical.native[key]])))
 }
 
-/** Complete native state, with only the three documented caller labels normalised.
+/** Complete native state, with only the four documented caller labels normalised.
  * All physical fields, diagnostics and drawing geometry remain bound. */
 export function fourLNativeSemanticFingerprint(native:unknown) {
   if(!record(native)||!record(native.nativeVertical)||!record(native.nativeVertical.native)
     ||!record(native.drawings))throw new Error('Complete native state and drawing required')
   const copy=structuredClone(native),frame=copy.nativeVertical.native,caseId=frame.caseId
-  if(typeof caseId!=='string'||!(/^[A-Za-z][A-Za-z0-9._:-]*$/).test(caseId)||frame.name!==caseId)
+  if(typeof caseId!=='string'||!(/^[A-Za-z][A-Za-z0-9._:-]*$/).test(caseId)||frame.name!==caseId
+    ||!record(copy.floorReinforcement)||copy.floorReinforcement.sourceCaseId!==caseId)
     throw new Error('Native caller label fields must agree')
   const key='floor-section-floor.svg',drawing=copy.drawings[key]
   const caption=`<text x="35" y="52">${caseId} · sourceground0 control · no physical or complete-house acceptance</text>`
   if(typeof drawing!=='string'||drawing.split(caption).length!==2)
     throw new Error('Exact native caller caption required')
-  frame.caseId='FOUR_L_CALLER_LABEL';frame.name='FOUR_L_CALLER_LABEL'
+  frame.caseId='FOUR_L_CALLER_LABEL';frame.name='FOUR_L_CALLER_LABEL';copy.floorReinforcement.sourceCaseId='FOUR_L_CALLER_LABEL'
   copy.drawings[key]=drawing.replace(caption,caption.replace(caseId,'FOUR_L_CALLER_LABEL'))
   return sha256SemanticFingerprint(copy)
 }
@@ -51,7 +52,7 @@ export function fourLNativeSemanticFingerprint(native:unknown) {
 function readNativeSemanticControl(proof:Record<string,any>) {
   const control=proof.nativeSemanticControl
   if(!record(control)||control.schema!=='str-complete-native-semantic-control/1'
-    ||!digest(control.fingerprint)||control.normalisation!=='three-explicit-caller-labels/1'
+    ||!digest(control.fingerprint)||control.normalisation!=='four-explicit-caller-labels/1'
     ||control.ordinaryFullCaptureFileSHA256!==proof.verifiedFullCaptures?.ordinaryFullCaptureFileSHA256
     ||control.observedFingerprint!==control.fingerprint)
     throw new Error('Verified complete ordinary native semantic control required')

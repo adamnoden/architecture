@@ -338,7 +338,7 @@ Recovery review reproduced an integrity gap: changed mass or bending fields coul
 pass admission after an opaque full-byte digest was recomputed, while trusted
 heads, cuts and joint observations were unchanged. The adapter now also requires
 the complete ordinary native semantic control. Only the actual caller's `name`,
-`caseId` and exact floor-view caption are normalised. All other physical fields,
+`caseId`, reinforcement `sourceCaseId` and exact floor-view caption are normalised. All other physical fields,
 loads, reinforcement, roof/masonry fields, diagnostics and drawing geometry stay
 bound. Numeric JSON spelling remains representation, without rounding physics.
 

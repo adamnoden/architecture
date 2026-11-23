@@ -94,7 +94,7 @@ def check(proof):
     captures=proof['verifiedFullCaptures'];node=proof['actualNodeAdmission']
     semantic=proof['nativeSemanticControl']
     if (semantic['schema']!='str-complete-native-semantic-control/1'
-            or semantic['normalisation']!='three-explicit-caller-labels/1'
+            or semantic['normalisation']!='four-explicit-caller-labels/1'
             or semantic['ordinaryFullCaptureFileSHA256']!=captures['ordinaryFullCaptureFileSHA256']
             or semantic['fingerprint']!=semantic['observedFingerprint']
             or len(semantic['fingerprint'])!=64):
@@ -148,7 +148,7 @@ def write(ordinary_path,ordinary_manifest,observed_path,envelope_path,node_path)
         'processingSourceSHA256':{**methods(),METHOD:file_sha(ROOT/METHOD)},
         'nativeCutControl':pack_cut_control(old,file_sha(ordinary_path)),
         'nativeSemanticControl':{'schema':'str-complete-native-semantic-control/1',
-            'normalisation':'three-explicit-caller-labels/1',
+            'normalisation':'four-explicit-caller-labels/1',
             'ordinaryFullCaptureFileSHA256':file_sha(ordinary_path),
             'fingerprint':semantic_native_fingerprint(old),'observedFingerprint':semantic_native_fingerprint(actual)},
         'witness':witness(ordinary,observed),'ordinaryControl':ordinary,'exactObservedInput':observed,

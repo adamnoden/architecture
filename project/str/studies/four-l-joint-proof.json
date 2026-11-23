@@ -61,10 +61,10 @@
     "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
   },
   "processingSourceSHA256": {
-    "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "dd1afa5797f7fad2d2b63b4ec0d07eafc1dcb4f1cc0ab64ea3ba621ebdb205a7",
+    "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "6994f3a3c2d7dc5ff6de40dd5aa696abb895fed4505f0a3feb65a6dcdc2c64a3",
     "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
     "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62",
-    "project/str/studies/four_l_joint_proof.py": "34ef11e02772252409787fe0518b1a7f1e0d1405604092487c07c0d297e2eb14"
+    "project/str/studies/four_l_joint_proof.py": "b19a0cd0fcbdf90cedb6edf8154cfc8cd8a747d8378f1d4634d44b152731c6a7"
   },
   "nativeCutControl": {
     "encoding": "base64-zlib-json",
@@ -75,10 +75,10 @@
   },
   "nativeSemanticControl": {
     "schema": "str-complete-native-semantic-control/1",
-    "normalisation": "three-explicit-caller-labels/1",
+    "normalisation": "four-explicit-caller-labels/1",
     "ordinaryFullCaptureFileSHA256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff",
-    "fingerprint": "3eac56774d18174cf0a88c2bef1f652dae42cee119c77d006e6e35579c06e86f",
-    "observedFingerprint": "3eac56774d18174cf0a88c2bef1f652dae42cee119c77d006e6e35579c06e86f"
+    "fingerprint": "b5dff938544d0d17c3ed03af7a61440cb9cf833a70e7c34fcae82e5ed1bd5eca",
+    "observedFingerprint": "b5dff938544d0d17c3ed03af7a61440cb9cf833a70e7c34fcae82e5ed1bd5eca"
   },
   "witness": {
     "schema": "str-four-L-joint-passivity-witness/1",
@@ -1010,7 +1010,7 @@
       "OMP_NUM_THREADS": "1"
     },
     "methodSourceSHA256": {
-      "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "dd1afa5797f7fad2d2b63b4ec0d07eafc1dcb4f1cc0ab64ea3ba621ebdb205a7",
+      "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "6994f3a3c2d7dc5ff6de40dd5aa696abb895fed4505f0a3feb65a6dcdc2c64a3",
       "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
       "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62"
     }
@@ -5310,7 +5310,7 @@
     "ordinaryManifestFileSHA256": "21864378f795a2e3b6ada4e13a36a53d29f84b828e69717fb7535a39980f0b00",
     "observedFullCaptureFileSHA256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff",
     "observedEnvelopeFileSHA256": "40e1bf8fab04ece3076b4c4317ec5760bb8ac4dc754a5627ee705af9b0823eb9",
-    "actualNodeAdmissionFileSHA256": "a83195c68117358e459428fe5167a1fbc42c79f6f9a575e8bf41c0a786c8d3f2",
+    "actualNodeAdmissionFileSHA256": "f82c7b0d63101e68c0a08593fca278b7d388d32ba293b9ac95728fed19a45d35",
     "exactFullNativeBytesEqual": true,
     "retainedCropReconstructsCompleteNativeBytes": false
   },
@@ -5318,7 +5318,7 @@
     "actualNodeAdmissionPassing": true,
     "physicalHeadCount": 52,
     "methodSourceSHA256": {
-      "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "dd1afa5797f7fad2d2b63b4ec0d07eafc1dcb4f1cc0ab64ea3ba621ebdb205a7",
+      "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "6994f3a3c2d7dc5ff6de40dd5aa696abb895fed4505f0a3feb65a6dcdc2c64a3",
       "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
       "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62"
     },
@@ -6401,13 +6401,13 @@
       "completeHouseProof": false,
       "candidateAccepted": false,
       "methodSourceSHA256": {
-        "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "dd1afa5797f7fad2d2b63b4ec0d07eafc1dcb4f1cc0ab64ea3ba621ebdb205a7",
+        "compiler/reference-house/current-design/structural-four-l-joint-adapter.ts": "6994f3a3c2d7dc5ff6de40dd5aa696abb895fed4505f0a3feb65a6dcdc2c64a3",
         "project/str/studies/four_l_joint_observer.py": "609be2b7ea80e2dba020233e705e1d20cb1ca384bd79a71191e61ca43074a503",
         "project/str/studies/four_l_joint_recovery.py": "3f29a5d73d59db9c0150e791dfdedd916a25ef5e7a4ddd2f794dd2d40185ac62"
       },
       "nativeResultSHA256": "16f14bea7b3c08c10af3b60b21e14c8c2ef60a2687950afd0595ec775df66b4d",
       "nativeCutSemanticFingerprint": "b08f7ec3624385cbcd406e7db7ae7e0ecd13c0905faa1a38840133a0d7c84648",
-      "nativeSemanticFingerprint": "3eac56774d18174cf0a88c2bef1f652dae42cee119c77d006e6e35579c06e86f",
+      "nativeSemanticFingerprint": "b5dff938544d0d17c3ed03af7a61440cb9cf833a70e7c34fcae82e5ed1bd5eca",
       "patchOwnGAlreadyIncludedInPlateContribution": true,
       "diagnostics": [
         "FOUR_L_JOINT/finite-joint-laws-and-resistance-unqualified",

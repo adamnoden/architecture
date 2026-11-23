@@ -33,7 +33,7 @@ function fixture() {
     directAppliedLoads:r.directAppliedLoads.map(d=>({...d,loadAtReferenceKN_KNm:[0,0,-7,0,0,0]})),
     freeBodyResidualKN_KNm:[0,0,0,0,0,0],maximumAbsoluteResidualKN_KNm:0}))
   const native={schema:'str-coupled-floor-section-result/1',sourceSHA256,request:comparison,candidateAccepted:false,completeHouseProof:false,
-    numericControl:1,drawings:{'floor-section-floor.svg':'<svg><text x="35" y="52">actual-case · sourceground0 control · no physical or complete-house acceptance</text></svg>'},nativeVertical:{native:{caseId:'actual-case',name:'actual-case',heads,memberCuts:[{memberId:'existing-cut',breadthMm:1}],interiorMemberCuts:[],capCuts:[],adjacentGridMemberCuts:[]}}}
+    numericControl:1,floorReinforcement:{sourceCaseId:'actual-case'},drawings:{'floor-section-floor.svg':'<svg><text x="35" y="52">actual-case · sourceground0 control · no physical or complete-house acceptance</text></svg>'},nativeVertical:{native:{caseId:'actual-case',name:'actual-case',heads,memberCuts:[{memberId:'existing-cut',breadthMm:1}],interiorMemberCuts:[],capCuts:[],adjacentGridMemberCuts:[]}}}
   // A real Python JSON spelling that JS parse/stringify does not retain.
   const nativeResultJSON=JSON.stringify(native).replace('"numericControl":1,','"numericControl":1.0,')
   const observation={schema:'str-four-L-joint-observation/1',sourceSHA256,request:comparison,caseId:'actual-case',
@@ -181,7 +181,7 @@ test('complete ordinary state rejects changed downstream fields even when opaque
   for(const field of ['mass','plateBending','floorReinforcement','roofCoupling','upperMasonry','diagnostics','drawings']) {
     const f=fixture(),native=JSON.parse(f.envelope.nativeResultJSON)
     if(field==='drawings')native.drawings['floor-section-floor.svg']=native.drawings['floor-section-floor.svg'].replace('<svg>','<svg viewBox="0 0 999 999">')
-    else native[field]={invented:1e99}
+    else native[field]={...(field==='floorReinforcement'?{sourceCaseId:'actual-case'}:{}),invented:1e99}
     f.envelope.nativeResultJSON=JSON.stringify(native)
     Object.assign(f.envelope.observation,pythonNativeDigests(f.envelope.nativeResultJSON),{fullNativeResultSHA256:hash(f.envelope.nativeResultJSON)})
     assert.throws(()=>admitFourLJointEnvelope(f.envelope,f.comparison,'actual-case',f.methods,f.trustedObservationFingerprint,f.trustedNativeCutFingerprint,f.trustedNativeSemanticFingerprint),/Complete native state differs/)
@@ -190,7 +190,7 @@ test('complete ordinary state rejects changed downstream fields even when opaque
 
 test('complete state normalises only consistent explicit caller labels and preserves drawing geometry',()=>{
   const f=fixture(),native=JSON.parse(f.envelope.nativeResultJSON),renamed=structuredClone(native)
-  renamed.nativeVertical.native.caseId='OTHER-CASE';renamed.nativeVertical.native.name='OTHER-CASE'
+  renamed.nativeVertical.native.caseId='OTHER-CASE';renamed.nativeVertical.native.name='OTHER-CASE';renamed.floorReinforcement.sourceCaseId='OTHER-CASE'
   renamed.drawings['floor-section-floor.svg']=renamed.drawings['floor-section-floor.svg'].replace('actual-case','OTHER-CASE')
   assert.equal(fourLNativeSemanticFingerprint(renamed),f.trustedNativeSemanticFingerprint)
   renamed.nativeVertical.native.name='MISMATCH'
