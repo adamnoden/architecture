@@ -366,11 +366,11 @@ export async function compileCurrentDesignBundle(input: unknown) {
   }
   if (plans.status === 'CANDIDATE_NOMINAL_PLAN_ONLY') {
     return { schema, source: compile.source, plans,
-      occupiedServices: excluded('occupied-services'), selectedWaterEvent: excluded('selected-water-event') }
+      occupiedServices: excluded('occupied-services'), selectedWaterEvent: excluded('selected-water-event'), stairCorrespondence: null }
   }
 
   const [occupiedServices, selectedWaterEvent] = await Promise.all([
     compile.occupiedServices(), compile.selectedWaterEvent(),
   ])
-  return { schema, source: compile.source, plans, occupiedServices, selectedWaterEvent }
+  return { schema, source: compile.source, plans, occupiedServices, selectedWaterEvent, stairCorrespondence: occupiedServices.stairCorrespondence }
 }

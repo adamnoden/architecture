@@ -32,7 +32,10 @@ jobs:
     needs: scope
     if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # Real wet-cage/pad edits, CLI replay and both undo operations execute
+    # additional coupled native solves. The former15-minute budget expired
+    # on the expanded proof; retain every assertion within a bounded25 minutes.
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v6
       - name: Setup structural numerical runtime

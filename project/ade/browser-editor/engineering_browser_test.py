@@ -250,12 +250,14 @@ def main():
         expect(page.locator('#inlet-result')).to_contain_text('Jacket reference 45.132 kg')
         # Import the actual current wet request. No default structural stage is
         # silently created, and edits use the same HTTP compiler as the CLI.
+        print('Starting actual wet-cage and pad-width native replay',flush=True)
         cage_document={**saved,'stages':current_wet_stages()}
         with page.expect_file_chooser() as chooser:
             page.get_by_role('button', name='Import JSON').click()
         chooser.value.set_files({'name':'wet-cage.json','mimeType':'application/json','buffer':json.dumps(cage_document).encode()})
         expect(page.locator('#wet-cage-controls')).to_be_visible(timeout=240000)
         ready(page,0,240000)
+        print('PASS actual wet-cage baseline compile',flush=True)
         expect(page.locator('#lighting-controls')).to_be_hidden()
         expect(page.locator('#lighting-views')).to_be_hidden()
         expect(page.locator('#inlet-bank-controls')).to_be_hidden()
@@ -275,6 +277,7 @@ def main():
         expect(page.locator('#cage-result')).to_contain_text('0 cover failures')
         raise_control.fill('10');raise_control.press('Enter')
         ready(page,1,240000)
+        print('PASS actual graded cage raise compile',flush=True)
         expect(page.locator('#cage-result')).to_contain_text('Graded raise 10 mm')
         expect(page.locator('#cage-result')).to_contain_text('0 cover failures')
         expect(page.locator('#cage-result')).to_contain_text('post-head resistance and installed acceptance remain unqualified')
@@ -287,6 +290,7 @@ def main():
         expect(width_control).to_have_value('220')
         width_control.fill('140');width_control.press('Enter')
         ready(page,2,240000)
+        print('PASS actual narrower-pad compile',flush=True)
         expect(page.locator('#floor-result')).to_contain_text('Nominal post-head fan computed')
         expect(page.locator('#floor-result')).to_contain_text('finite nodes, anchorage and tolerance remain unqualified')
         with page.expect_download() as download:
@@ -298,12 +302,15 @@ def main():
         assert cli_narrowed['wetPostHeadFan']['status']=='computed-nominal-demand'
         assert cli_narrowed['wetPostHeadFan']['resistanceAccepted'] is False
         assert cli_narrowed['wetPostHeadFan']['toleranceDomainAccepted'] is False
+        print('PASS browser-exported narrower-pad CLI replay',flush=True)
         page.get_by_role('button',name='Undo',exact=True).click()
         ready(page,3,240000)
+        print('PASS actual pad-width undo compile',flush=True)
         expect(width_control).to_have_value('220')
         expect(page.locator('#floor-result')).to_contain_text('This nominal post-head fan does not support the current input')
         page.get_by_role('button',name='Undo',exact=True).click()
         ready(page,4,240000)
+        print('PASS actual cage-raise undo compile',flush=True)
         expect(raise_control).to_have_value('0')
         assert page.locator('#cage-result').inner_text()==initial_cage
         if args.screenshot:

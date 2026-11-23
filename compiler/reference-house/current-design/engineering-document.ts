@@ -275,7 +275,7 @@ export async function compileEngineeringDocument(input: unknown) {
     studyLighting?: Awaited<ReturnType<typeof compile.studyLighting>>
   } = {}
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[];
-    applicability?: { state: 'withheld-for-stage-change'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'masonryFrame' | 'upperRoofBearing' | 'floorSection' | 'inletCabinet' | 'inletSourceEnvelope';
+    applicability?: { state: 'withheld-for-stage-change' | 'withheld-for-source-correspondence'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'masonryFrame' | 'upperRoofBearing' | 'floorSection' | 'inletCabinet' | 'inletSourceEnvelope' | 'stairCorrespondence';
       additionalControllingStages?: readonly string[]; reason: string } }[] = []
   const coordinationDiagnostics: { code: string; objectId?: string; state: 'uncoordinated-comparisons'; stages: readonly string[]; message: string }[] = []
   const recordResult = (stage: string, settings: unknown, result: unknown, upstream: readonly string[] = []) => {
@@ -287,6 +287,7 @@ export async function compileEngineeringDocument(input: unknown) {
   recordResult('plans', {}, base.plans)
   recordResult('occupiedServices', {}, base.occupiedServices)
   recordResult('selectedWaterEvent', {}, base.selectedWaterEvent)
+  if (base.stairCorrespondence) recordResult('stairCorrespondence', {}, base.stairCorrespondence, ['plans', 'occupiedServices'])
   if (stages.roofPitch) {
     if (!exactKeys(stages.roofPitch, ['pitchDeg'])) throw new TypeError('The saved roof stage requires its authored pitch')
     const request = await compile.readRoofPitchCase()
@@ -613,6 +614,17 @@ export async function compileEngineeringDocument(input: unknown) {
       stages: ['groundSection', ...affected.map(row => row.stage)], message: sourceReason })
     if (engineering.joinedRcFloor || engineering.verticalRcFloor || engineering.masonryFrame || engineering.upperRoofBearing || engineering.floorSection) coordinationDiagnostics.push({ code: 'RC_GROUND_DATUM_NOT_COORDINATED',
       state: 'uncoordinated-comparisons', stages: [...(engineering.joinedRcFloor ? ['joinedRcFloor'] : []), ...(engineering.verticalRcFloor ? ['verticalRcFloor'] : []), ...(engineering.masonryFrame ? ['masonryFrame'] : []), ...(engineering.upperRoofBearing ? ['upperRoofBearing'] : []), ...(engineering.floorSection ? ['floorSection'] : []), 'groundSection'], message: rcReason })
+  }
+  if (base.stairCorrespondence?.diagnostics.length) {
+    coordinationDiagnostics.push(...base.stairCorrespondence.diagnostics)
+    const affected = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor',
+      'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection', 'retainedComponents', 'houseVerticalProfile']
+    for (const row of manifest.filter(item => affected.includes(item.stage))) {
+      const previous = row.applicability
+      row.applicability = { state: previous?.state ?? 'withheld-for-source-correspondence', controllingStage: previous?.controllingStage ?? 'stairCorrespondence',
+        ...(previous ? { additionalControllingStages: [...new Set([...(previous.additionalControllingStages ?? []), 'stairCorrespondence'])] } : {}),
+        reason: [previous?.reason, ...base.stairCorrespondence.diagnostics.map(issue => issue.message)].filter(Boolean).join(' ') }
+    }
   }
   const completedBindings = sourceBindings(resolveCurrentDesign(resolved.design))
   if (stableJsonStringify(completedBindings) !== stableJsonStringify(observedBindings)) {
