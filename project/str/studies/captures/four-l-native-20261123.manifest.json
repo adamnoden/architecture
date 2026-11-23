@@ -1,0 +1,43 @@
+{
+  "purpose": "Actual fresh full native controls and actual renamed production admission. No capacity or whole-house acceptance.",
+  "consumerRevision": "e52b8c2b13bfd5339ac7c4247e79234ea86f7bd0",
+  "nativeSourceCount": 58,
+  "runtimeThreads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "files": {
+    "request.json": {
+      "bytes": 51659,
+      "sha256": "bbde8ace063a1e7c464d28dd98379daacaedcd92eded64b83c35574089e3b92c"
+    },
+    "ordinary-full.json": {
+      "bytes": 15331498,
+      "sha256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff"
+    },
+    "ordinary-manifest.json": {
+      "bytes": 1002683,
+      "sha256": "21864378f795a2e3b6ada4e13a36a53d29f84b828e69717fb7535a39980f0b00"
+    },
+    "ordinary-envelope.json": {
+      "bytes": 12956,
+      "sha256": "a1916930eda007e7c64a983f6144f038cba4f0438cb9b1ae999f593b22246105"
+    },
+    "observed-full.json": {
+      "bytes": 15331498,
+      "sha256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff"
+    },
+    "observed-envelope.json": {
+      "bytes": 15549614,
+      "sha256": "40e1bf8fab04ece3076b4c4317ec5760bb8ac4dc754a5627ee705af9b0823eb9"
+    },
+    "node-admission.json": {
+      "bytes": 30165,
+      "sha256": "f82c7b0d63101e68c0a08593fca278b7d388d32ba293b9ac95728fed19a45d35"
+    },
+    "renamed-production-result.json": {
+      "bytes": 14439607,
+      "sha256": "b8115ba6f364b8653407edb1c175083ba575b0d10643b2b78da41b0dc5866c67"
+    }
+  }
+}
