@@ -9,11 +9,11 @@
     "label": "convergence-resume-root-20261123"
   },
   "claimedAt": "2026-11-23T22:25:18.262Z",
-  "heartbeatAt": "2026-11-23T22:34:28.488Z",
-  "expiresAt": "2026-11-23T23:19:28.488Z",
+  "heartbeatAt": "2026-11-23T22:55:39.071Z",
+  "expiresAt": "2026-11-23T23:40:39.071Z",
   "checkpoint": {
-    "evidence": "Successor1622 exactdeb78ff4 preserves843 plus genuine crafted/inlet dependency regeneration.185control tests,6publication assets,typecheck,allowningchecks/sourceaudit0 pass; fullNPM blocked by tsx IPC EPERM.",
-    "next": "Observe exact-head full CI/browser/publication, canonicalpreflight and merge; then controlled fixed-normal500/250 experiment using exactnative ledger."
+    "evidence": "1622/deb78ff4 publicationgreen, health/browserpending. Exact fixed-normal native500/250 and rawcaptures durable recovery/str-fixed-normal-20261123-resume91e3fb21: same19216normalpoints/bodyG, unchangedscreensfail2.788467kN/32.72166%.",
+    "next": "Observe exactheadCI, preflight/merge1622 then coordinateHAD1623; develop dimensionedfiniteLjoint using existing solver/libraries, preserving geometry/mass/work."
   },
   "branch": "work/convergence-resume-final-20261123",
   "predecessor": {
