@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
-  "generation": 5,
-  "state": "released",
-  "leaseId": "68f6136d-f6b2-495d-a338-9f14cd05b3b2",
+  "generation": 6,
+  "state": "claimed",
+  "leaseId": "f28e7c3c-9429-4aaa-bd48-dc5a620970d8",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-lighting-review-20261122"
+    "label": "convergence-lighting-20261123"
   },
-  "claimedAt": "2026-11-22T17:46:22.080Z",
-  "heartbeatAt": "2026-11-22T18:58:20.000Z",
-  "expiresAt": "2026-11-22T18:58:20.000Z",
-  "checkpoint": {
-    "evidence": "Verified merged PR1618 main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; generation4 was released after20green checks. Current-cycle complete IAS/HAD source, explicit lighting pane/grip obligation and producer-only regeneration repair are preserved at recovery/lighting-browser-pane-20261122 head8f12c01e2030c7625dbe85a0432f1e07b61fd50f tree dfad784bd19269e1d1d9888b17b22d0cbc5826f3. Logical producer delta ce034ea2 was genuinely tested on combined01298725; private --write, strict --check, source audit0 and mutation regression passed. Root combined immutable b673d6c2 included genuine refresh. Actual DOM/screenshots were NOT run: local Chromium Unix socket denied. Actual HTTP job ended exit1 during environment loss; its cause/outcome could not be read. No new acceptance.",
-    "next": "Recover from explicit remote component checkpoints, compare with fresh main/current source, regenerate affected evidence and rerun actual HTTP/compiler/CLI plus exact-head browser CI. Read-only floor result pane requested by root was NOT implemented before the execution limit. Reacquire a fresh canonical lease before new work; require publication preflight and exact-head validation before merge.",
-    "blocker": "Execution environment explicitly unavailable; exec-server transport recovery timed out. Canonical CLI unavailable. This is an exact-identity connector-only handoff/release, not a CLI or merge-preflight claim."
-  },
-  "branch": "work/convergence-integrated-house-20261122",
+  "claimedAt": "2026-11-23T07:22:45.614Z",
+  "heartbeatAt": "2026-11-23T07:22:45.614Z",
+  "expiresAt": "2026-11-23T08:07:45.614Z",
+  "branch": "work/convergence-lighting-20261123",
   "predecessor": {
-    "leaseId": "26712064-31c6-4c7b-ac68-dc22f8a4423b",
-    "generation": 4,
-    "branch": "work/convergence-primary-20261122",
-    "pr": 1618,
+    "leaseId": "68f6136d-f6b2-495d-a338-9f14cd05b3b2",
+    "generation": 5,
+    "branch": "work/convergence-integrated-house-20261122",
     "checkpoint": {
-      "evidence": "Verified PR1618 merged at main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f, submitted head 890379a22e3515aca747dfaddab08755be0c4414 passed all20 workflows and fresh IAS preflight. Unselected successor preserved at recovery/lighting-common-depth-20261122 head cd3d23c3294e0958068ad939d8533f17c9779ff3; geometry/comparison only, not actual product/circuit/renewal acceptance",
-      "next": "Release this merged cycle as handoff; fresh-main directed claim before coordinating successor onto work/convergence-integrated-house-20261122 with current source/evidence regeneration"
+      "evidence": "Verified merged PR1618 main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; generation4 was released after20green checks. Current-cycle complete IAS/HAD source, explicit lighting pane/grip obligation and producer-only regeneration repair are preserved at recovery/lighting-browser-pane-20261122 head8f12c01e2030c7625dbe85a0432f1e07b61fd50f tree dfad784bd19269e1d1d9888b17b22d0cbc5826f3. Logical producer delta ce034ea2 was genuinely tested on combined01298725; private --write, strict --check, source audit0 and mutation regression passed. Root combined immutable b673d6c2 included genuine refresh. Actual DOM/screenshots were NOT run: local Chromium Unix socket denied. Actual HTTP job ended exit1 during environment loss; its cause/outcome could not be read. No new acceptance.",
+      "next": "Recover from explicit remote component checkpoints, compare with fresh main/current source, regenerate affected evidence and rerun actual HTTP/compiler/CLI plus exact-head browser CI. Read-only floor result pane requested by root was NOT implemented before the execution limit. Reacquire a fresh canonical lease before new work; require publication preflight and exact-head validation before merge.",
+      "blocker": "Execution environment explicitly unavailable; exec-server transport recovery timed out. Canonical CLI unavailable. This is an exact-identity connector-only handoff/release, not a CLI or merge-preflight claim."
     }
   },
   "recoverySource": {
-    "leaseId": "26712064-31c6-4c7b-ac68-dc22f8a4423b",
-    "generation": 4,
-    "branch": "work/convergence-primary-20261122",
-    "pr": 1618,
+    "leaseId": "68f6136d-f6b2-495d-a338-9f14cd05b3b2",
+    "generation": 5,
+    "branch": "work/convergence-integrated-house-20261122",
     "checkpoint": {
-      "evidence": "Verified PR1618 merged at main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f, submitted head 890379a22e3515aca747dfaddab08755be0c4414 passed all20 workflows and fresh IAS preflight. Unselected successor preserved at recovery/lighting-common-depth-20261122 head cd3d23c3294e0958068ad939d8533f17c9779ff3; geometry/comparison only, not actual product/circuit/renewal acceptance",
-      "next": "Release this merged cycle as handoff; fresh-main directed claim before coordinating successor onto work/convergence-integrated-house-20261122 with current source/evidence regeneration"
+      "evidence": "Verified merged PR1618 main 0bdbfaaad08331a4f3f33fe35aa10d1320b3059f; generation4 was released after20green checks. Current-cycle complete IAS/HAD source, explicit lighting pane/grip obligation and producer-only regeneration repair are preserved at recovery/lighting-browser-pane-20261122 head8f12c01e2030c7625dbe85a0432f1e07b61fd50f tree dfad784bd19269e1d1d9888b17b22d0cbc5826f3. Logical producer delta ce034ea2 was genuinely tested on combined01298725; private --write, strict --check, source audit0 and mutation regression passed. Root combined immutable b673d6c2 included genuine refresh. Actual DOM/screenshots were NOT run: local Chromium Unix socket denied. Actual HTTP job ended exit1 during environment loss; its cause/outcome could not be read. No new acceptance.",
+      "next": "Recover from explicit remote component checkpoints, compare with fresh main/current source, regenerate affected evidence and rerun actual HTTP/compiler/CLI plus exact-head browser CI. Read-only floor result pane requested by root was NOT implemented before the execution limit. Reacquire a fresh canonical lease before new work; require publication preflight and exact-head validation before merge.",
+      "blocker": "Execution environment explicitly unavailable; exec-server transport recovery timed out. Canonical CLI unavailable. This is an exact-identity connector-only handoff/release, not a CLI or merge-preflight claim."
     }
-  },
-  "releasedAt": "2026-11-22T18:58:20.000Z",
-  "releaseReason": "handoff"
+  }
 }
