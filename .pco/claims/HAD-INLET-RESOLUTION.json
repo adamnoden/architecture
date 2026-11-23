@@ -9,8 +9,8 @@
     "label": "convergence-water-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.038Z",
-  "heartbeatAt": "2026-11-23T07:22:45.038Z",
-  "expiresAt": "2026-11-23T08:07:45.038Z",
+  "heartbeatAt": "2026-11-23T07:31:27.896Z",
+  "expiresAt": "2026-11-23T08:16:27.896Z",
   "branch": "work/convergence-water-20261123",
   "predecessor": {
     "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
@@ -31,5 +31,10 @@
       "next": "Resume from fresh main/ACO and the coordinated recovery branch, reacquire HAD canonically, reconcile all shared sources and rerun actual matched browser/full-health/native-fingerprint proof and publication preflight before merge. The unpushed isolated carrier CAD refactor has no observed final validation; regenerate it from admitted source8 inputs instead of treating it as earned evidence. CAD reconstruction pointers only, not acceptance: compare source8 control; tail255/U1260; custom clampWidth250/tail275/U1220; then also returnX11140/lower frame row1000. Trial side endlands10x40mm, fixed50mm/slider70mm, offsetX±120mm; trial floor posts30mm atX11275,Y2050/2220, feet70x120x10 atX11290. Confirm all against fresh complete geometry, actual force/thermal law, working/renewal fields and both alternatives' unchanged187kg shield duty.",
       "blocker": "Execution environment explicitly unavailable. Stopped implementation; no final successor CI/preflight or physical carrier/thermal/renewal acceptance. Connector-only CAS checkpoint/release, not a canonical CLI run. Unpushed local-only branch recovery/had-side-carrier-cad-20261122, last known HEAD9dfe3864d8e9e7504afc884940601bb82ad5bf79, worktree /workspace/scratch/ae142320334c/water-carrier-cad: untracked project/had/studies/inlet-side-carrier-cad-case.json, inlet-side-carrier-cad.ts and inlet-side-carrier-cad.results.json. Pre-refactor pure CAD controls completed; last per-variant consistency/support-identity refactor plus TypeScript/producer/--check was in flight when execution disappeared. Final files/output identity and validation are UNKNOWN; no CAD commit or remote push. Temporary node_modules link also remains there."
     }
+  },
+  "pr": 1620,
+  "checkpoint": {
+    "evidence": "PR1620 remote524d7151 integrates recovered source8; local finite shelf continuation has6 focused mechanical tests passing",
+    "next": "Publish source-bound finite shelf rejection, reconcile current main, validate final head"
   }
 }
