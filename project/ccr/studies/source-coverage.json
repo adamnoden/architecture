@@ -2142,7 +2142,7 @@
     "compiler/reference-house/current-design/house-vertical-profile.ts": "3f3cbb5b711763265ad8c65358ceb15a9acf066c",
     "compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts": "43a0ff67f3a38aa1f050859c893efbb8f5087f32",
     "project/had/fixed-inlet-shared-service-frame-development.md": "6b52562f403e1b2c2c8df405c0471408f0952feb",
-    "scripts/compile-current-design.ts": "614a70141a5c031e81dfb85ab845ebc592e3cf67",
+    "scripts/compile-current-design.ts": "6e0d321ec8119455c05669c6672d8a41abf3a862",
     "project/str/studies/vertical_rc_floor.py": "841cf4075fcee0e536a1dac62b5e530f480ec13a",
     "project/str/vertical-rc-floor-gravity-result.md": "0e1e13b47a082c77ebc9d652b54b5b10a36b814d",
     "project/str/studies/vertical-rc-floor-proof.json": "daa24297449594b8be52c662e675815a638bb66a",

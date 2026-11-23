@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import {execFileSync} from 'node:child_process'
+import {readGeorgianDesignSnapshot} from './current-design/georgian-source.js'
 import {applyEngineeringEdit,beginEngineeringEdit,currentEngineeringReply,editableInletBankId,engineeringBase,engineeringTicket,replayEngineeringEdit,saveEngineeringEdit} from './current-design/engineering-edit.js'
 import {readInletSourceEnvelopeCase,readLegacyIndoorBankControlSettings,runInletSourceEnvelopeCase} from './current-design/inlet-source-envelope.js'
 import {readCurrentDesignResolution} from './current-design/resolve.js'
@@ -33,4 +35,11 @@ test('legacy bank is an explicit current-method adverse control; old source7 req
  assert.equal(legacy.joinedDirection.room.bankReceiver.necessaryRouteOperationAndClampEnvelopeScreen,false)
  assert.ok(legacy.joinedDirection.room.bankReceiver.receivers.every(v=>v.stripAfterTwoSettingsMm<0))
  assert.throws(()=>runInletSourceEnvelopeCase(resolved,{...request.sourceEnvelope,schema:'had-inlet-source-envelope-case/7'}),/Stale/)
+})
+
+
+test('the public inlet reader dispatches its explicit design through the shared current-source method',()=>{
+ const request=readInletSourceEnvelopeCase(readCurrentDesignResolution())
+ const actual=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--read-inlet-source-envelope','-'],{input:JSON.stringify(readGeorgianDesignSnapshot()),encoding:'utf8'}))
+ assert.deepEqual(actual,request)
 })

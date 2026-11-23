@@ -206,7 +206,7 @@ def main():
         ready(page, 7)
         assert lighting_svg(page) == latest_lighting
         # Explicit current inlet stage: real HTTP edits and CLI consume the same source8.
-        inlet_request=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--read-inlet-source-envelope'],text=True,capture_output=True,check=True).stdout)
+        inlet_request=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--read-inlet-source-envelope','-'],input=json.dumps(saved['design']),text=True,capture_output=True,check=True).stdout)
         inlet_document={**saved,'stages':{'roofPitch':saved['stages']['roofPitch'],'inletSourceEnvelope':inlet_request['sourceEnvelope']['settings']}}
         with page.expect_file_chooser() as chooser:
             page.get_by_role('button',name='Import JSON').click()
