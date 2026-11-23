@@ -9,8 +9,8 @@
     "label": "convergence-water-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.038Z",
-  "heartbeatAt": "2026-11-23T09:42:32.673Z",
-  "expiresAt": "2026-11-23T10:27:32.673Z",
+  "heartbeatAt": "2026-11-23T09:53:39.000Z",
+  "expiresAt": "2026-11-23T10:38:39.000Z",
   "branch": "recovery/had-side-receiver-20261123",
   "predecessor": {
     "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
@@ -34,8 +34,9 @@
   },
   "pr": 1620,
   "checkpoint": {
-    "evidence": "Remote4d068929 preserves19 source8 side-receiver files; full3D192-case recovery being committed with exact source admission and independent controls. Source8 cold route counterexample found: Utility return crosses Plant wheel and arm sweeps; corrective shared collision check now priority.",
-    "next": "Publish full3D recovery; add precise connected-end route-operation checks and reject current collision. Prove all90degree reroute before authored default change."
+    "evidence": "Merged1620/main ae5d28d6. Recovery4d068929 and route recovery f1a945aa on recovery/had-route-operation-unverified-20261123. See project/had/route-operation-recovery-20261123.md: source8 valve/arm collisions; unverified patch;130b full3D rawfiles NOT uploaded.",
+    "next": "Recover fresh main/lease; validate route rejection and regenerate genuine receipts before PR. Prove all90degree reroute and full3D/capture before source9; no water-system adoption.",
+    "blocker": "Execution environment unavailable. Remote patch reconstructed, untested; generated receipts unchanged/stale. Canonical Actions handoff requested; no local CLI execution."
   },
   "note": "PR1620 is merged provenance; current unadopted continuation is the verified recovery branch."
 }
