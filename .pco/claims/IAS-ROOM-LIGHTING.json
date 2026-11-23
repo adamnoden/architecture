@@ -9,8 +9,8 @@
     "label": "convergence-lighting-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.614Z",
-  "heartbeatAt": "2026-11-23T07:31:08.061Z",
-  "expiresAt": "2026-11-23T08:16:08.061Z",
+  "heartbeatAt": "2026-11-23T08:07:47.092Z",
+  "expiresAt": "2026-11-23T08:52:47.092Z",
   "branch": "work/convergence-integrate-20261123",
   "predecessor": {
     "leaseId": "68f6136d-f6b2-495d-a338-9f14cd05b3b2",
@@ -34,7 +34,7 @@
   },
   "pr": 1620,
   "checkpoint": {
-    "evidence": "PR #1620 remote524d7151 includes recovered IAS source and genuinely regenerated evidence;22 exact-head IAS/producer/browser-import/HTTP tests and strict producer check passed",
-    "next": "Observe exact submitted-head full health and actual browser CI, then shared publication preflight/merge; retained recessed grip/circuit/material/load limits remain open"
+    "evidence": "PR #1620 parent925 published; recovered IAS source and genuine receipt validated22tests; HAD carrier recoveryb6 durable; runtime evidence guard and floor status awaiting final actual proof publication",
+    "next": "Observe exact submitted-head runtime/native and browser CI, then canonical shared publication preflight and merge; retain unqualified IAS electrical/material/grip/load interfaces"
   }
 }
