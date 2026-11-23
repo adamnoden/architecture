@@ -1,0 +1,3606 @@
+{
+  "schema": "had-side-receiver-prototype-geometry/1",
+  "source": {
+    "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+    "bindingDigest": "f819f897f918e854c16bac8e97cbc6957aa47834b6b17a4d7dea7c56ec392643",
+    "inputs": {
+      "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
+      "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
+      "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
+      "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f",
+      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+      "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+      "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53",
+      "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+      "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979"
+    },
+    "methods": {
+      "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
+      "compiler/reference-house/current-design/inlet-bank-receiver.ts": "cc7ca65f7619adade42caa095071c234b6eeb496",
+      "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
+      "compiler/reference-house/current-design/inlet-indoor-routes.ts": "a146ed0989975384bdba98391517b9e60e7a81c9",
+      "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "324c658bd3159aff595d37ef41eccfecb3a4a117",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "b2e302a755c1ffa4a6685c630a6e030bb6cfde0a",
+      "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
+      "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
+      "compiler/reference-house/current-design/inlet-room-pan.ts": "81c7736c2b91de574c582dd902ff903953dc9b46",
+      "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
+      "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
+      "compiler/reference-house/current-design/inlet-fixed-receiver.ts": "c8cd4c81c3419fdb3b97f79b3c641d5e307256e3",
+      "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
+      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
+    }
+  },
+  "checks": [
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/0",
+      "reserveMm": 2085.941486421051
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/1",
+      "reserveMm": 2333.478997541059
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/2",
+      "reserveMm": 1607.0376131999142
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/3",
+      "reserveMm": 256.0584323141342
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/4",
+      "reserveMm": 170.1689786580008
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/5",
+      "reserveMm": 59.03808325523711
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/6",
+      "reserveMm": 13.949999999959914
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/0",
+      "reserveMm": 196.24939164511696
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/1",
+      "reserveMm": 361.1916697507527
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/2",
+      "reserveMm": 390.13389586034043
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/3",
+      "reserveMm": 1101.6809608102524
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/4",
+      "reserveMm": 1658.2457233718626
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/5",
+      "reserveMm": 1618.3899286639776
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/6",
+      "reserveMm": 1176.0693753094306
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/0",
+      "reserveMm": 1960.7105010238304
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/1",
+      "reserveMm": 2226.1718294023767
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/2",
+      "reserveMm": 1401.2808158100092
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/3",
+      "reserveMm": 435.3881030162358
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/4",
+      "reserveMm": 429.68606301815805
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/5",
+      "reserveMm": 429.6860630181463
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/0",
+      "reserveMm": 759.4870116449999
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/1",
+      "reserveMm": 929.4362713404821
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/2",
+      "reserveMm": 942.3686157344413
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/3",
+      "reserveMm": 1779.1916697506608
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/4",
+      "reserveMm": 1245.127669683867
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/5",
+      "reserveMm": 1245.1276696836362
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/0",
+      "reserveMm": 2562.226586576646
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/1",
+      "reserveMm": 2288.4672761889037
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/2",
+      "reserveMm": 1552.1032345871051
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/3",
+      "reserveMm": 208.22890670776152
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/4",
+      "reserveMm": 116.10563504252326
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/5",
+      "reserveMm": 9.69358666356391
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/0",
+      "reserveMm": 310.72500925240684
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/1",
+      "reserveMm": 363.3160583259801
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/2",
+      "reserveMm": 1048.843025808754
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/3",
+      "reserveMm": 1609.3442631232488
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/4",
+      "reserveMm": 1900.3904450457533
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/5",
+      "reserveMm": 1566.6201665174256
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/0",
+      "reserveMm": 2349.997553709409
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/1",
+      "reserveMm": 2165.669857679719
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/2",
+      "reserveMm": 1348.9802308251963
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/3",
+      "reserveMm": 420.72500925240684
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/4",
+      "reserveMm": 420.72500925240684
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/0",
+      "reserveMm": 878.7250092524066
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/1",
+      "reserveMm": 923.4370200809602
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/2",
+      "reserveMm": 1730.185664334997
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/3",
+      "reserveMm": 1752.1989678880727
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/4",
+      "reserveMm": 1225.1103641257355
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "own-valve-metal",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 45.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "ordinary-operator-body-and-approach",
+      "reserveMm": 298
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-0",
+      "reserveMm": 685.7657651825073
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-1",
+      "reserveMm": 298.4574524954779
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "protected-parked-leaf-full2300-comparison",
+      "reserveMm": 1543.7840905351038
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "complete-shifted-utility-maintenance",
+      "reserveMm": 49.86653906816379
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "occupied-washer-rest",
+      "reserveMm": 666.5998272072686
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-washer",
+      "reserveMm": 1101.178350300664
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-sink-conservative2000-high-envelope",
+      "reserveMm": 954.9499999999998
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "utility-radiator",
+      "reserveMm": 365.1686813030485
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-1",
+      "reserveMm": 6
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-2",
+      "reserveMm": 1457.3289056830858
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 174.68974769543814
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 176.39574758320202
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 174.6897476954394
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 153.18829375591753
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 155.0732418521689
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 153.1882937559187
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 563.9379884856725
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 563.148403666091
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 563.9379884856735
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 552.2113107487928
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 551.3739914016353
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 552.2113107487938
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "joined-wrap-to-uncut-core",
+      "source": "utility-north/bare-core-face",
+      "reserveMm": 4
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/0",
+      "kind": "bare-valve-first-west-draw",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 55.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/0",
+      "reserveMm": 2170.9769618527675
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/1",
+      "reserveMm": 2333.478997541059
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/2",
+      "reserveMm": 1596.8824186483628
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/3",
+      "reserveMm": 191.63762150330007
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/4",
+      "reserveMm": 58.022749736986114
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/5",
+      "reserveMm": 45.70833024916479
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/6",
+      "reserveMm": 51.9499999999599
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/0",
+      "reserveMm": 207.05124386263566
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/1",
+      "reserveMm": 370.4397742927034
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/2",
+      "reserveMm": 459.7434563228154
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/3",
+      "reserveMm": 1129.4725890987097
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/4",
+      "reserveMm": 1766.7844774972073
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/5",
+      "reserveMm": 1670.419922833194
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/6",
+      "reserveMm": 1246.2034524457433
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/0",
+      "reserveMm": 2034.1441176734338
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/1",
+      "reserveMm": 2226.959019054352
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/2",
+      "reserveMm": 1402.3465786461438
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/3",
+      "reserveMm": 438.52287724095555
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/4",
+      "reserveMm": 432.8571022216307
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/5",
+      "reserveMm": 432.85710222161896
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/0",
+      "reserveMm": 761.3858851766926
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/1",
+      "reserveMm": 929.1916697507693
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/2",
+      "reserveMm": 929.3938241613107
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/3",
+      "reserveMm": 1779.1916697506608
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/4",
+      "reserveMm": 1293.0962409663618
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/5",
+      "reserveMm": 1293.096240966131
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/0",
+      "reserveMm": 2629.0283903427176
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/1",
+      "reserveMm": 2285.162256783793
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/2",
+      "reserveMm": 1543.545749820191
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/3",
+      "reserveMm": 138.91873847524818
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/4",
+      "reserveMm": 37.24166975080243
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/5",
+      "reserveMm": 6.34088785393806
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/0",
+      "reserveMm": 316.7627742778002
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/1",
+      "reserveMm": 418.75787057216655
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/2",
+      "reserveMm": 1075.4134754687238
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/3",
+      "reserveMm": 1716.5425408526846
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/4",
+      "reserveMm": 1992.1423234556453
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/5",
+      "reserveMm": 1618.7888275242294
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/0",
+      "reserveMm": 2407.6238738748307
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/1",
+      "reserveMm": 2165.700023758016
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/2",
+      "reserveMm": 1349.028392501893
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/3",
+      "reserveMm": 420.8745863243233
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/4",
+      "reserveMm": 420.8745863243233
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/0",
+      "reserveMm": 878.7250092524066
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/1",
+      "reserveMm": 920.7250092524066
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/2",
+      "reserveMm": 1728.7250092524066
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/3",
+      "reserveMm": 1780.6943401153935
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/4",
+      "reserveMm": 1269.9756149911427
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "own-valve-metal",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 51.19498206947411
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "ordinary-operator-body-and-approach",
+      "reserveMm": 440
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-0",
+      "reserveMm": 822.1934871170287
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-1",
+      "reserveMm": 413.33202099534117
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "protected-parked-leaf-full2300-comparison",
+      "reserveMm": 1648.9770944771963
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "complete-shifted-utility-maintenance",
+      "reserveMm": 171.9890175257836
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "occupied-washer-rest",
+      "reserveMm": 795.9077653037634
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-washer",
+      "reserveMm": 1184.3271436992904
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-sink-conservative2000-high-envelope",
+      "reserveMm": 954.9499999999998
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "utility-radiator",
+      "reserveMm": 363.7583302491978
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-1",
+      "reserveMm": 148
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-2",
+      "reserveMm": 1465.7242687755465
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 280.1355520379696
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 281.299010749704
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 280.13555203797085
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 247.37095137120787
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 248.66207413016923
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 247.370951371209
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 652.8201184882088
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 651.7262729053853
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 652.8201184882098
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 636.6804028921941
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 635.5359907697932
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 636.6804028921952
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "joined-wrap-to-uncut-core",
+      "source": "utility-north/bare-core-face",
+      "reserveMm": 4
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/below/blade/1",
+      "kind": "bare-valve-first-west-draw",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 61.19498206947411
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/0",
+      "reserveMm": 2064.231178130748
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/1",
+      "reserveMm": 2160.9523809954358
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/2",
+      "reserveMm": 1352.2192568819794
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/3",
+      "reserveMm": 282.0115485941679
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/4",
+      "reserveMm": 378.58520273029933
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/5",
+      "reserveMm": 321.74180784877336
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/6",
+      "reserveMm": 161.1566669379752
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/0",
+      "reserveMm": 51.949999999959914
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/1",
+      "reserveMm": 95.70833024914829
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/2",
+      "reserveMm": 139.99948798833034
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/3",
+      "reserveMm": 833.4984922656686
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/4",
+      "reserveMm": 1463.367906408265
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/5",
+      "reserveMm": 1436.8929930940183
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/6",
+      "reserveMm": 1159.469544246887
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/0",
+      "reserveMm": 1942.31085721283
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/1",
+      "reserveMm": 2066.563023927549
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/2",
+      "reserveMm": 1137.5628145349817
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/3",
+      "reserveMm": 183.4357138638685
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/4",
+      "reserveMm": 171.6130966638751
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/5",
+      "reserveMm": 171.6130966638633
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/0",
+      "reserveMm": 496.94936114894676
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/1",
+      "reserveMm": 666.1910898627667
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/2",
+      "reserveMm": 690.8335599510791
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/3",
+      "reserveMm": 1513.7083302490564
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/4",
+      "reserveMm": 980.8056347228949
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/5",
+      "reserveMm": 980.8056347226641
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/0",
+      "reserveMm": 2394.1904452557396
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/1",
+      "reserveMm": 2116.50354407896
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/2",
+      "reserveMm": 1296.2930560267778
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/3",
+      "reserveMm": 360.37269878648425
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/4",
+      "reserveMm": 340.87158454713034
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/5",
+      "reserveMm": 267.8135945608545
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/0",
+      "reserveMm": 48.68776709148423
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/1",
+      "reserveMm": 98.95927865104797
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/2",
+      "reserveMm": 780.7174583287268
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/3",
+      "reserveMm": 1411.7880993732667
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/4",
+      "reserveMm": 1735.8911968448658
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/5",
+      "reserveMm": 1389.4135613978556
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/0",
+      "reserveMm": 2192.120634528777
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/1",
+      "reserveMm": 2004.496519427259
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/2",
+      "reserveMm": 1083.6180364591066
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/3",
+      "reserveMm": 155.61751024074567
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/4",
+      "reserveMm": 155.61751024074567
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/0",
+      "reserveMm": 613.3457818560831
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/1",
+      "reserveMm": 664.0598761777181
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/2",
+      "reserveMm": 1467.2772873903402
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/3",
+      "reserveMm": 1484.0780224578616
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/4",
+      "reserveMm": 959.6119221637089
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "own-valve-metal",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 12.319630208164803
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "ordinary-operator-body-and-approach",
+      "reserveMm": 260
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-0",
+      "reserveMm": 649.6559709424299
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-1",
+      "reserveMm": 271.93970986719836
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "protected-parked-leaf-full2300-comparison",
+      "reserveMm": 1516.645014402497
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "complete-shifted-utility-maintenance",
+      "reserveMm": 39.94999999999982
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "occupied-washer-rest",
+      "reserveMm": 766.9677474641765
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-washer",
+      "reserveMm": 1164.9931406606406
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-sink-conservative2000-high-envelope",
+      "reserveMm": 954.9499999999998
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "utility-radiator",
+      "reserveMm": 633.1175338503792
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-1",
+      "reserveMm": 147.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-2",
+      "reserveMm": 1191.7583302491978
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 47.40482566671423
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 47.233996683290925
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 47.40482566671547
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 7.686220739196187
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 7.397300555117312
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 7.686220739197331
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 333.10778870987446
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 331.9443519978313
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 333.1077887098754
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 316.2021906746378
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 315.02336890187723
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 316.2021906746387
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "joined-wrap-to-uncut-core",
+      "source": "utility-north/bare-core-face",
+      "reserveMm": 4
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/0",
+      "kind": "bare-valve-first-west-draw",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 5.2416697508022025
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/0",
+      "reserveMm": 2170.9769618527675
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/1",
+      "reserveMm": 2160.9523809954358
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/2",
+      "reserveMm": 1334.4464203738817
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/3",
+      "reserveMm": 191.63762150330007
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/4",
+      "reserveMm": 314.24270812390336
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/5",
+      "reserveMm": 311.19166975076917
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/upstream/6",
+      "reserveMm": 161.1566669379752
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/0",
+      "reserveMm": 51.949999999959914
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/1",
+      "reserveMm": 121.62024207935329
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/2",
+      "reserveMm": 289.14224042193314
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/3",
+      "reserveMm": 875.2356462258781
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/4",
+      "reserveMm": 1613.9853110391882
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/5",
+      "reserveMm": 1508.1021614070269
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "utility/downstream/6",
+      "reserveMm": 1246.2034524457433
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/0",
+      "reserveMm": 2034.1441176734338
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/1",
+      "reserveMm": 2067.4092718870725
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/2",
+      "reserveMm": 1137.5628145349817
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/3",
+      "reserveMm": 183.4357138638685
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/4",
+      "reserveMm": 171.6130966638751
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/upstream/5",
+      "reserveMm": 171.6130966638633
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/0",
+      "reserveMm": 496.94936114894676
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/1",
+      "reserveMm": 663.7083302491649
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/2",
+      "reserveMm": 663.9846128499775
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/3",
+      "reserveMm": 1513.7083302490564
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/4",
+      "reserveMm": 1052.6855716136608
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "plant/downstream/5",
+      "reserveMm": 1052.68557161343
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/0",
+      "reserveMm": 2482.888233258666
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/1",
+      "reserveMm": 2110.392105910404
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/2",
+      "reserveMm": 1280.6819008211564
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/3",
+      "reserveMm": 302.22567830875255
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/4",
+      "reserveMm": 302.72500925240684
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/5",
+      "reserveMm": 261.54584830166675
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/0",
+      "reserveMm": 71.03081822190106
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/1",
+      "reserveMm": 235.11823180195378
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/2",
+      "reserveMm": 820.9532985207882
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/3",
+      "reserveMm": 1561.3131137530888
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/4",
+      "reserveMm": 1859.81060146438
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/5",
+      "reserveMm": 1460.8445527038834
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/0",
+      "reserveMm": 2268.4692927650517
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/1",
+      "reserveMm": 2004.5290870370802
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/2",
+      "reserveMm": 1083.6180364591066
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/3",
+      "reserveMm": 155.61751024074567
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/4",
+      "reserveMm": 155.61751024074567
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/0",
+      "reserveMm": 613.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/1",
+      "reserveMm": 655.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/2",
+      "reserveMm": 1463.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/3",
+      "reserveMm": 1524.1718814380513
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/4",
+      "reserveMm": 1027.3650367784167
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "own-valve-metal",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 12.319630208164803
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "ordinary-operator-body-and-approach",
+      "reserveMm": 440
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-0",
+      "reserveMm": 822.1934871170287
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-1",
+      "reserveMm": 413.33202099534117
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "protected-parked-leaf-full2300-comparison",
+      "reserveMm": 1648.9770944771963
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "complete-shifted-utility-maintenance",
+      "reserveMm": 171.9890175257836
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "occupied-washer-rest",
+      "reserveMm": 906.4272369367663
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-washer",
+      "reserveMm": 1261.5222690144108
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-sink-conservative2000-high-envelope",
+      "reserveMm": 954.9499999999998
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "utility-radiator",
+      "reserveMm": 629.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-1",
+      "reserveMm": 212.9101673455483
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-2",
+      "reserveMm": 1202.1002781632135
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 227.14202146755161
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 227.0820277660829
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 227.14202146755287
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 187.16597577039997
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 187.09586692089206
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 187.16597577040113
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 445.77527744548354
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 444.22615807581
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 445.7752774454845
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 423.2756877578229
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 421.7075934530632
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 423.2756877578238
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "joined-wrap-to-uncut-core",
+      "source": "utility-north/bare-core-face",
+      "reserveMm": 4
+    },
+    {
+      "blade": "HAD/indoor-receiver/utility/above/blade/1",
+      "kind": "bare-valve-first-west-draw",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 22.319630208164803
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/0",
+      "reserveMm": 2002.0980311795752
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/1",
+      "reserveMm": 1901.144512760019
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/2",
+      "reserveMm": 948.6297890711428
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/3",
+      "reserveMm": 219.24465175647993
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/4",
+      "reserveMm": 642.765969923925
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/5",
+      "reserveMm": 616.3746355508813
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/6",
+      "reserveMm": 447.2688891569277
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/0",
+      "reserveMm": 123.77588863099382
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/1",
+      "reserveMm": 113.70833024914825
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/2",
+      "reserveMm": 29.949999999827867
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/3",
+      "reserveMm": 427.5692961986653
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/4",
+      "reserveMm": 1232.1081087563807
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/5",
+      "reserveMm": 1194.1398104055506
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/6",
+      "reserveMm": 1098.9666101050132
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/0",
+      "reserveMm": 2003.5904006836108
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/1",
+      "reserveMm": 1950.4551145240594
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/2",
+      "reserveMm": 841.2956743324096
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/3",
+      "reserveMm": 98.56561936642039
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/4",
+      "reserveMm": 83.24190613223685
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/5",
+      "reserveMm": 51.9499999999599
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/0",
+      "reserveMm": 207.05124386263566
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/1",
+      "reserveMm": 370.4397742927199
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/2",
+      "reserveMm": 421.24328735137277
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/3",
+      "reserveMm": 1211.1916697506608
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/4",
+      "reserveMm": 716.4815754700867
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/5",
+      "reserveMm": 716.4815754698559
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/0",
+      "reserveMm": 2138.639308353664
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/1",
+      "reserveMm": 1841.7508297260326
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/2",
+      "reserveMm": 883.6302158238141
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/3",
+      "reserveMm": 591.575318239479
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/4",
+      "reserveMm": 614.7548717585357
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/5",
+      "reserveMm": 563.354705492133
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/0",
+      "reserveMm": 105.24166975080243
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/1",
+      "reserveMm": 63.24166975080243
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/2",
+      "reserveMm": 370.9322195400233
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/3",
+      "reserveMm": 1170.158524830671
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/4",
+      "reserveMm": 1511.864543805795
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/5",
+      "reserveMm": 1141.978085828684
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/0",
+      "reserveMm": 2122.615083231718
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/1",
+      "reserveMm": 1896.762822428288
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/2",
+      "reserveMm": 787.0579059658089
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/3",
+      "reserveMm": 54.76517316443335
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/4",
+      "reserveMm": 45.287386921736655
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/0",
+      "reserveMm": 316.76277427779996
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/1",
+      "reserveMm": 386.2029067581831
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/2",
+      "reserveMm": 1171.7173742228442
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/3",
+      "reserveMm": 1198.6087428203418
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/4",
+      "reserveMm": 699.9456520103672
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "own-valve-metal",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 51.19498206947411
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "ordinary-operator-body-and-approach",
+      "reserveMm": 260
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-0",
+      "reserveMm": 649.6559709424299
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-1",
+      "reserveMm": 271.93970986719836
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "protected-parked-leaf-full2300-comparison",
+      "reserveMm": 1516.645014402497
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "complete-shifted-utility-maintenance",
+      "reserveMm": 39.94999999999982
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "occupied-washer-rest",
+      "reserveMm": 1028.1077283624813
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-washer",
+      "reserveMm": 1351.8361339331213
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-sink-conservative2000-high-envelope",
+      "reserveMm": 954.9499999999998
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "utility-radiator",
+      "reserveMm": 986.2559254226164
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-1",
+      "reserveMm": 501.7583302491978
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-2",
+      "reserveMm": 837.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 326.11143815452135
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 324.0542489724603
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 326.1114381545226
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 316.8377820370919
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 314.8655180371485
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 316.83778203709306
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 63.4673108164925
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 62.37711994030079
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 63.467310816493494
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 31.94407009622131
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 30.427713420715577
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 31.944070096222262
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "joined-wrap-to-uncut-core",
+      "source": "utility-north/bare-core-face",
+      "reserveMm": 4
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/0",
+      "kind": "bare-valve-first-west-draw",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 55.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/0",
+      "reserveMm": 2108.4643537679626
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/1",
+      "reserveMm": 1901.144512760019
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/2",
+      "reserveMm": 928.8053569054571
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/3",
+      "reserveMm": 135.92321883318888
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/4",
+      "reserveMm": 614.0051072279704
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/5",
+      "reserveMm": 613.7083302491649
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/6",
+      "reserveMm": 447.2688891569277
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/0",
+      "reserveMm": 123.77588863099382
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/1",
+      "reserveMm": 123.77588863098438
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/2",
+      "reserveMm": 209.9499999998278
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/3",
+      "reserveMm": 490.01597606582527
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/4",
+      "reserveMm": 1400.7965278819602
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/5",
+      "reserveMm": 1273.4386878129426
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/6",
+      "reserveMm": 1184.3452356463222
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/0",
+      "reserveMm": 2096.0998544698627
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/1",
+      "reserveMm": 1952.3176773377454
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/2",
+      "reserveMm": 841.2956743324096
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/3",
+      "reserveMm": 98.56561936642039
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/4",
+      "reserveMm": 83.24190613223685
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/5",
+      "reserveMm": 51.9499999999599
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/0",
+      "reserveMm": 207.05124386263566
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/1",
+      "reserveMm": 361.19166975076917
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/2",
+      "reserveMm": 363.85950919429246
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/3",
+      "reserveMm": 1211.1916697506608
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/4",
+      "reserveMm": 818.8612766153242
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/5",
+      "reserveMm": 818.8612766150934
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/0",
+      "reserveMm": 2233.250466723609
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/1",
+      "reserveMm": 1838.5288672380493
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/2",
+      "reserveMm": 870.8425028046395
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/3",
+      "reserveMm": 572.5176518325521
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/4",
+      "reserveMm": 605.2416697508024
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/5",
+      "reserveMm": 563.2416697508024
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/0",
+      "reserveMm": 105.76701844314422
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/1",
+      "reserveMm": 177.84702358526906
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/2",
+      "reserveMm": 427.39468313231754
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/3",
+      "reserveMm": 1339.5187812044735
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/4",
+      "reserveMm": 1646.8602169317958
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/5",
+      "reserveMm": 1220.1318777318284
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/0",
+      "reserveMm": 2205.5636133601392
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/1",
+      "reserveMm": 1897.6934890543355
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/2",
+      "reserveMm": 787.0579059658089
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/3",
+      "reserveMm": 54.76517316443335
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/4",
+      "reserveMm": 45.287386921736655
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/0",
+      "reserveMm": 311.4220355093271
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/1",
+      "reserveMm": 352.7250092524066
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/2",
+      "reserveMm": 1160.7250092524066
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/3",
+      "reserveMm": 1255.1248448137749
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/4",
+      "reserveMm": 801.2038383186056
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "own-valve-metal",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 51.19498206947411
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "ordinary-operator-body-and-approach",
+      "reserveMm": 440
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-0",
+      "reserveMm": 822.1934871170287
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-1",
+      "reserveMm": 413.33202099534117
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "protected-parked-leaf-full2300-comparison",
+      "reserveMm": 1648.9770944771963
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "complete-shifted-utility-maintenance",
+      "reserveMm": 171.9890175257836
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "occupied-washer-rest",
+      "reserveMm": 1136.223213726677
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-washer",
+      "reserveMm": 1435.945246434287
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-sink-conservative2000-high-envelope",
+      "reserveMm": 954.9499999999998
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "utility-radiator",
+      "reserveMm": 983.7583302491978
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-1",
+      "reserveMm": 525.5936786216273
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-2",
+      "reserveMm": 851.8482737478374
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 406.9242977897361
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 405.2324474093783
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 406.92429778973735
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 383.84307521342447
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 382.06085355460056
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 383.8430752134256
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 233.18691817221605
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 232.75186486746236
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 233.18691817221702
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 194.20243779267443
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 193.69779868935075
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 194.2024377926754
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "joined-wrap-to-uncut-core",
+      "source": "utility-north/bare-core-face",
+      "reserveMm": 4
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/below/blade/1",
+      "kind": "bare-valve-first-west-draw",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 61.19498206947411
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/0",
+      "reserveMm": 2002.0980311795752
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/1",
+      "reserveMm": 1784.4364569559473
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/2",
+      "reserveMm": 697.103412390514
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/3",
+      "reserveMm": 219.2446517564798
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/4",
+      "reserveMm": 900.2493877932893
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/5",
+      "reserveMm": 881.1061582416667
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/6",
+      "reserveMm": 711.5280883882982
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/0",
+      "reserveMm": 383.2707015755493
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/1",
+      "reserveMm": 379.1916697507527
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/2",
+      "reserveMm": 29.949999999827867
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/3",
+      "reserveMm": 171.88236891560365
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/4",
+      "reserveMm": 1158.8399145330118
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/5",
+      "reserveMm": 1118.5135860022676
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/6",
+      "reserveMm": 1098.9666101050134
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/0",
+      "reserveMm": 2003.5904006836108
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/1",
+      "reserveMm": 1849.915885360547
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/2",
+      "reserveMm": 580.1950302630195
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/3",
+      "reserveMm": 98.56561936642039
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/4",
+      "reserveMm": 321.7418078487781
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/5",
+      "reserveMm": 161.1566669379752
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/0",
+      "reserveMm": 51.949999999959914
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/1",
+      "reserveMm": 121.62024207936977
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/2",
+      "reserveMm": 226.55165822372544
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/3",
+      "reserveMm": 945.7083302490563
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/4",
+      "reserveMm": 500.615835825045
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/5",
+      "reserveMm": 500.6158358248142
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/0",
+      "reserveMm": 2044.8562582423733
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/1",
+      "reserveMm": 1725.7729677998068
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/2",
+      "reserveMm": 628.4252235862687
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/3",
+      "reserveMm": 848.4397882850104
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/4",
+      "reserveMm": 877.4283501963397
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/5",
+      "reserveMm": 828.8026910988249
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/0",
+      "reserveMm": 370.72500925240684
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/1",
+      "reserveMm": 328.72500925240684
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/2",
+      "reserveMm": 110.03605891894452
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/3",
+      "reserveMm": 1101.7210393202342
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/4",
+      "reserveMm": 1459.3207077560576
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/5",
+      "reserveMm": 1081.9412181649143
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/0",
+      "reserveMm": 2038.1842724808243
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/1",
+      "reserveMm": 1795.76491361643
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/2",
+      "reserveMm": 524.6701462144559
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/3",
+      "reserveMm": 270.11041594758206
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/4",
+      "reserveMm": 267.8135945608545
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/0",
+      "reserveMm": 71.03081822190089
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/1",
+      "reserveMm": 173.84954131369696
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/2",
+      "reserveMm": 909.3793986304687
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/3",
+      "reserveMm": 943.6197562588239
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/4",
+      "reserveMm": 482.83918753069753
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "own-valve-metal",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 12.319630208164803
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "ordinary-operator-body-and-approach",
+      "reserveMm": 260
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-0",
+      "reserveMm": 649.6559709424299
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-1",
+      "reserveMm": 271.93970986719836
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "protected-parked-leaf-full2300-comparison",
+      "reserveMm": 1516.645014402497
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "complete-shifted-utility-maintenance",
+      "reserveMm": 39.94999999999982
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "occupied-washer-rest",
+      "reserveMm": 1253.8111216042337
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-washer",
+      "reserveMm": 1530.827229474658
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-sink-conservative2000-high-envelope",
+      "reserveMm": 954.9499999999998
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "utility-radiator",
+      "reserveMm": 1251.2136348917215
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-1",
+      "reserveMm": 767.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-2",
+      "reserveMm": 571.7583302491978
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 583.4580882903828
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 581.6404266025893
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 583.4580882903839
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 575.3842437548655
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 573.6475720057384
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 575.3842437548666
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 111.88971347821504
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 113.59971744682915
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 111.88971347821604
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 91.59194655792521
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 93.54395685185068
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 91.59194655792618
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "joined-wrap-to-uncut-core",
+      "source": "utility-north/bare-core-face",
+      "reserveMm": 4
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/0",
+      "kind": "bare-valve-first-west-draw",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 5.2416697508022025
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/0",
+      "reserveMm": 2108.4643537679626
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/1",
+      "reserveMm": 1784.4364569559473
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/2",
+      "reserveMm": 670.4849340686035
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/3",
+      "reserveMm": 135.92321883318888
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/4",
+      "reserveMm": 879.4045833600305
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/5",
+      "reserveMm": 879.1916697507693
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/upstream/6",
+      "reserveMm": 711.5280883882982
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/0",
+      "reserveMm": 383.2707015755493
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/1",
+      "reserveMm": 383.2707015755399
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/2",
+      "reserveMm": 209.94999999982787
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/3",
+      "reserveMm": 284.3227976346924
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/4",
+      "reserveMm": 1336.4071686056827
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/5",
+      "reserveMm": 1202.571133297909
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-pipe-and-wrap",
+      "source": "utility/downstream/6",
+      "reserveMm": 1184.3452356463224
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/0",
+      "reserveMm": 2096.0998544698627
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/1",
+      "reserveMm": 1851.8777444277523
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/2",
+      "reserveMm": 580.1950302630195
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/3",
+      "reserveMm": 98.56561936642039
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/4",
+      "reserveMm": 321.7418078487781
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/upstream/5",
+      "reserveMm": 161.1566669379752
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/0",
+      "reserveMm": 51.949999999959914
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/1",
+      "reserveMm": 95.70833024916477
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/2",
+      "reserveMm": 103.62070955364719
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/3",
+      "reserveMm": 945.7083302490563
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/4",
+      "reserveMm": 636.7909319640954
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-pipe-metal",
+      "source": "plant/downstream/5",
+      "reserveMm": 636.7909319638646
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/0",
+      "reserveMm": 2143.5723628811843
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/1",
+      "reserveMm": 1722.336550001785
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/2",
+      "reserveMm": 610.4824092996918
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/3",
+      "reserveMm": 835.1259928980965
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/4",
+      "reserveMm": 870.7250092524068
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/upstream/corner/5",
+      "reserveMm": 828.7250092524068
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/0",
+      "reserveMm": 370.8937194959808
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/1",
+      "reserveMm": 372.203265204077
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/2",
+      "reserveMm": 233.4627760436411
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/3",
+      "reserveMm": 1280.0277275020883
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/4",
+      "reserveMm": 1598.7043456469935
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "independent-branch-fitting-and-wrap",
+      "source": "HAD/indoor-pipe/utility/downstream/corner/5",
+      "reserveMm": 1164.0643776887102
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/0",
+      "reserveMm": 2124.401198868346
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/1",
+      "reserveMm": 1796.7473192600607
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/2",
+      "reserveMm": 524.6701462144559
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/3",
+      "reserveMm": 270.11041594758206
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/upstream/corner/4",
+      "reserveMm": 267.8135945608545
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/0",
+      "reserveMm": 48.68776709148402
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/1",
+      "reserveMm": 87.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/2",
+      "reserveMm": 895.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/3",
+      "reserveMm": 1014.1659133985679
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-fitting-metal-territory",
+      "source": "HAD/indoor-pipe/plant/downstream/corner/4",
+      "reserveMm": 619.4538691235747
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "own-valve-metal",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 12.319630208164803
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "ordinary-operator-body-and-approach",
+      "reserveMm": 440
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-0",
+      "reserveMm": 822.1934871170287
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "wet-door-complete-moving-leaf-1",
+      "reserveMm": 413.33202099534117
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "protected-parked-leaf-full2300-comparison",
+      "reserveMm": 1648.9770944771963
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "complete-shifted-utility-maintenance",
+      "reserveMm": 171.9890175257836
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "occupied-washer-rest",
+      "reserveMm": 1344.0230984331658
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-washer",
+      "reserveMm": 1605.644933483391
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "retained-sink-conservative2000-high-envelope",
+      "reserveMm": 954.9499999999998
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "utility-radiator",
+      "reserveMm": 1249.2416697508022
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-1",
+      "reserveMm": 783.1384577720432
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-occupied-obstacle",
+      "source": "HAD/utility-north/shield-connection-2",
+      "reserveMm": 592.8322775153423
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 637.1740092702987
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 635.2255983264666
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 637.1740092702998
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 622.0477059082993
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 620.0553115988675
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/utility",
+      "reserveMm": 622.0477059083005
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 255.82393518169386
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 256.73256682106836
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 255.82393518169482
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 220.12641361041176
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 221.15469302346094
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-ordinary-arm",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 220.12641361041267
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "joined-wrap-to-uncut-core",
+      "source": "utility-north/bare-core-face",
+      "reserveMm": 4
+    },
+    {
+      "blade": "HAD/indoor-receiver/plant/above/blade/1",
+      "kind": "bare-valve-first-west-draw",
+      "source": "HAD/entry-indoor-cut/plant",
+      "reserveMm": 22.319630208164803
+    }
+  ],
+  "conflicts": [],
+  "minimumByKind": {
+    "own-pipe-metal": 13.949999999959914,
+    "independent-branch-pipe-and-wrap": 29.949999999827867,
+    "own-fitting-metal-territory": 6.34088785393806,
+    "independent-branch-fitting-and-wrap": 63.24166975080243,
+    "own-valve-metal": 12.319630208164803,
+    "joined-wrap-to-occupied-obstacle": 6,
+    "joined-wrap-to-ordinary-arm": 7.397300555117312,
+    "joined-wrap-to-uncut-core": 4,
+    "bare-valve-first-west-draw": 5.2416697508022025
+  },
+  "actualJointedInsulationAndJacketQualified": false,
+  "actualMetalFittingAndValveExteriorQualified": false,
+  "actualClampEndlandsAndFactoryToolCaptureQualified": false,
+  "actualColdBridgeAndFinishClosureQualified": false,
+  "scope": "Own-branch metal territory is distinguished from insulation which must be replaced by one demountable joined26mm envelope. The support exit at the ambient frame remains a real unqualified thermal/jacket interface; no complete warm boundary is claimed. Both10mm relative settings remain. No interference is waived for another branch or occupied apparatus."
+}

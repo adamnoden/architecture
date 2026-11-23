@@ -1,0 +1,48 @@
+{
+  "schema": "had-side-receiver-recovery-case/1",
+  "sourceCommit": "969e4048",
+  "sourceBindingDigest": "f819f897f918e854c16bac8e97cbc6957aa47834b6b17a4d7dea7c56ec392643",
+  "sourcePlanDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+  "candidate": {
+    "postXMm": 11475,
+    "postDepthMm": 30,
+    "postWidthMm": 100,
+    "postWallMm": 6,
+    "mountZMm": [
+      1000,
+      1550,
+      2120
+    ],
+    "postBottomMm": 950,
+    "postTopMm": 2220,
+    "mountPlateWidthMm": 150,
+    "mountPlateHeightMm": 200,
+    "mountPlateThicknessMm": 20,
+    "landAxisXMm": [
+      11270,
+      11450
+    ],
+    "utilityBelowLeftLandXMm": 11308,
+    "bladeWidthMm": 8,
+    "bladeHeightMm": 25,
+    "barHeightMm": 100,
+    "barWallMm": 4
+  },
+  "materialComparison": {
+    "elasticModulusMPa": 200000,
+    "poissonRatio": 0.3,
+    "densityKgM3": 8000,
+    "proofMPa": 200,
+    "proofDivisor": 1.5
+  },
+  "scope": "Experimental recovery only. No source adoption, actual-force bound, valve/clamp/contact/thermal or core resistance qualification.",
+  "nativeSources": {
+    "compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts": "339071ac73fbd42509f8f48d7f3afb25f64277bc3eb441f1e9bec0bb1b5c4e73",
+    "compiler/reference-house/current-design/inlet-fixed-thermal.ts": "c194c6f9085f0a87a8414ead8db142db63a6d90aa46fcfc3e6511fe1e669acf7"
+  },
+  "kernelCopies": {
+    "frame-kernel.ts": "4b95ea4d363a275c8d76e8df647e3cc5ce1c07da8379e88725c7f89fefc52677",
+    "thermal-experiment.ts": "dc7f277106f9a2c5406e7bb62ead5a9ef29db9ad60e1d469a7fd8cc4154a3d81"
+  },
+  "sourceReceiptSHA256": "f9ee68f0724dadb6ae334b9ce2d885291dc211f999b17c76e9cc1f64053398bb"
+}

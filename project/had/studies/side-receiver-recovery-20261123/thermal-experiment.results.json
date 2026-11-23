@@ -1,0 +1,4966 @@
+{
+  "source": {
+    "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+    "bindingDigest": "f819f897f918e854c16bac8e97cbc6957aa47834b6b17a4d7dea7c56ec392643",
+    "inputs": {
+      "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
+      "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
+      "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
+      "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f",
+      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
+      "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
+      "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53",
+      "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+      "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979"
+    },
+    "methods": {
+      "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
+      "compiler/reference-house/current-design/inlet-bank-receiver.ts": "cc7ca65f7619adade42caa095071c234b6eeb496",
+      "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
+      "compiler/reference-house/current-design/inlet-indoor-routes.ts": "a146ed0989975384bdba98391517b9e60e7a81c9",
+      "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "324c658bd3159aff595d37ef41eccfecb3a4a117",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "b2e302a755c1ffa4a6685c630a6e030bb6cfde0a",
+      "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
+      "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
+      "compiler/reference-house/current-design/inlet-room-pan.ts": "81c7736c2b91de574c582dd902ff903953dc9b46",
+      "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
+      "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
+      "compiler/reference-house/current-design/inlet-fixed-receiver.ts": "c8cd4c81c3419fdb3b97f79b3c641d5e307256e3",
+      "project/had/studies/south-inlet-relief-hydraulics.mjs": "1cb8dd67e832ce2986f042844122a39e625fef93",
+      "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
+    }
+  },
+  "methodSHA256": "dc7f277106f9a2c5406e7bb62ead5a9ef29db9ad60e1d469a7fd8cc4154a3d81",
+  "nativeMethodSHA256": "c194c6f9085f0a87a8414ead8db142db63a6d90aa46fcfc3e6511fe1e669acf7",
+  "cases": [
+    {
+      "branch": "utility",
+      "model": {
+        "id": "rigid-valve",
+        "kT": null,
+        "kR": null
+      },
+      "input": {
+        "supportAxisXYMm": [
+          11360,
+          2350
+        ],
+        "pathMm": [
+          [
+            10080,
+            600,
+            478.39
+          ],
+          [
+            10080,
+            600,
+            2740
+          ],
+          [
+            11500,
+            600,
+            2740
+          ],
+          [
+            11500,
+            2110,
+            2740
+          ],
+          [
+            11500,
+            2110,
+            1020
+          ],
+          [
+            11500,
+            2350,
+            1020
+          ],
+          [
+            11360,
+            2350,
+            1020
+          ],
+          [
+            11360,
+            2350,
+            1190
+          ],
+          [
+            11360,
+            2350,
+            1350
+          ],
+          [
+            11360,
+            2350,
+            1520
+          ],
+          [
+            11150,
+            2350,
+            1520
+          ],
+          [
+            11150,
+            2350,
+            2250
+          ],
+          [
+            10040,
+            2350,
+            2250
+          ],
+          [
+            10040,
+            1250,
+            2250
+          ],
+          [
+            10760,
+            1250,
+            2250
+          ],
+          [
+            10760,
+            1250,
+            1000
+          ]
+        ],
+        "fixedPointZMm": 1137.2583302491978,
+        "guideZMm": 1402.7416697508022,
+        "temperatureExcursionK": 40,
+        "pipe": {
+          "outerDiameterMm": 28,
+          "wallMm": 1.2,
+          "elasticModulusMpa": 117200,
+          "poissonRatio": 0.34,
+          "expansionMmMK": 0.017
+        },
+        "valve": {
+          "facesMm": [
+            [
+              11360,
+              2350,
+              1190
+            ],
+            [
+              11360,
+              2350,
+              1350
+            ]
+          ],
+          "expansionMmMK": 0.017,
+          "translationalNPerMm": null,
+          "rotationalNmmPerRad": null
+        }
+      },
+      "result": {
+        "schema": "had-fixed-inlet-thermal-flexibility/2",
+        "sourceContext": {
+          "supportAxisXYMm": [
+            11360,
+            2350
+          ],
+          "pathMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11500,
+              600,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              1020
+            ],
+            [
+              11500,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1190
+            ],
+            [
+              11360,
+              2350,
+              1350
+            ],
+            [
+              11360,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "fixedPointZMm": 1137.2583302491978,
+          "guideZMm": 1402.7416697508022,
+          "temperatureExcursionK": 40,
+          "pipe": {
+            "outerDiameterMm": 28,
+            "wallMm": 1.2,
+            "elasticModulusMpa": 117200,
+            "poissonRatio": 0.34,
+            "expansionMmMK": 0.017
+          },
+          "valve": {
+            "facesMm": [
+              [
+                11360,
+                2350,
+                1190
+              ],
+              [
+                11360,
+                2350,
+                1350
+              ]
+            ],
+            "expansionMmMK": 0.017,
+            "translationalNPerMm": null,
+            "rotationalNmmPerRad": null
+          }
+        },
+        "fixedPointMm": [
+          11360,
+          2350,
+          1137.2583302491978
+        ],
+        "upperSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1137.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1190
+              ],
+              [
+                11360,
+                2350,
+                1350
+              ],
+              [
+                11360,
+                2350,
+                1402.7416697508022
+              ],
+              [
+                11360,
+                2350,
+                1520
+              ],
+              [
+                11150,
+                2350,
+                1520
+              ],
+              [
+                11150,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                1000
+              ]
+            ],
+            "guideMm": [
+              11360,
+              2350,
+              1402.7416697508022
+            ],
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 11,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "lateralGuideMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "fullyFixedTerminalMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.408,
+              -0.748,
+              -0.09333566
+            ],
+            "terminalForceN": [
+              0.27722657,
+              0.50594305,
+              0.01546076
+            ],
+            "terminalMomentNmm": [
+              -506.31159206,
+              284.15409394,
+              -204.84863382
+            ],
+            "guideLateralForceN": [
+              -1.10452573,
+              -1.9602671
+            ],
+            "fixedPointForceN": [
+              0.82729916,
+              1.45432405,
+              -0.01546076
+            ],
+            "fixedPointMomentNmm": [
+              -66.54472566,
+              37.85428382,
+              203.4652376
+            ]
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.91698993,
+              0.63615876,
+              0.80871312
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              1059.18791041,
+              789.15142395,
+              575.72559164
+            ],
+            "guideLateralComponentBoundsN": [
+              4.41403764,
+              3.73034683
+            ],
+            "fixedPointComponentBoundsN": [
+              3.77868893,
+              3.09418807,
+              0.80871312
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              141.5791043,
+              172.89944322,
+              634.61406847
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false,
+            "valveAndFactoryFittingStressIncluded": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "lowerSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1137.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1020
+              ],
+              [
+                11500,
+                2350,
+                1020
+              ],
+              [
+                11500,
+                2110,
+                1020
+              ],
+              [
+                11500,
+                2110,
+                2740
+              ],
+              [
+                11500,
+                600,
+                2740
+              ],
+              [
+                10080,
+                600,
+                2740
+              ],
+              [
+                10080,
+                600,
+                478.39
+              ]
+            ],
+            "guideMm": null,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 8,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "lateralGuideMm": null,
+          "fullyFixedTerminalMm": [
+            10080,
+            600,
+            478.39
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.8704,
+              -1.19,
+              -0.44803046
+            ],
+            "terminalForceN": [
+              0.20928114,
+              0.24171751,
+              0.06584666
+            ],
+            "terminalMomentNmm": [
+              -356.78349069,
+              283.33880601,
+              64.99661784
+            ],
+            "guideLateralForceN": [],
+            "fixedPointForceN": [
+              -0.20928114,
+              -0.24171751,
+              -0.06584666
+            ],
+            "fixedPointMomentNmm": [
+              312.75512988,
+              -229.7338136,
+              -121.84019822
+            ],
+            "elasticExtremeFibreStressMpa": 0.7077618,
+            "guideFreeAxialThermalTravelMm": null,
+            "guideAxialTravelIncludingElasticMm": null
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.2691563,
+              0.29115933,
+              0.45152258
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              724.75777502,
+              693.87954808,
+              208.26585891
+            ],
+            "guideLateralComponentBoundsN": [],
+            "fixedPointComponentBoundsN": [
+              0.2691563,
+              0.29115933,
+              0.45152258
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              713.65436874,
+              427.85664106,
+              213.30445818
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "combinedFixedPointWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "forceComponentBoundsN": [
+            4.04784523,
+            3.3853474,
+            1.2602357
+          ],
+          "momentComponentBoundsNmm": [
+            855.23347304,
+            600.75608428,
+            847.91852665
+          ],
+          "uniformForceN": [
+            0.61801802,
+            1.21260654,
+            -0.08130742
+          ],
+          "uniformMomentNmm": [
+            246.21040422,
+            -191.87952978,
+            81.62503938
+          ],
+          "law": "Independent signed segment-temperature absolute-sum bounds from BOTH subroutes meeting the fixed clamp; all force and moment components retained."
+        },
+        "guideWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "forceComponentBoundsN": [
+            4.41403764,
+            3.73034683,
+            0
+          ],
+          "momentComponentBoundsNmm": [
+            0,
+            0,
+            0
+          ],
+          "axialFrictionQualified": false
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10080,
+            600,
+            478.39
+          ],
+          "forceComponentBoundsN": [
+            0.2691563,
+            0.29115933,
+            0.45152258
+          ],
+          "momentComponentBoundsNmm": [
+            724.75777502,
+            693.87954808,
+            208.26585891
+          ],
+          "scope": "first authored outer cut point only; its assumed six-axis restraint is not a source-bound Lodge/network restraint"
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            0.91698993,
+            0.63615876,
+            0.80871312
+          ],
+          "momentComponentBoundsNmm": [
+            1059.18791041,
+            789.15142395,
+            575.72559164
+          ]
+        },
+        "whollyRestrainedAxialComparisonN": 8051.97535876,
+        "fullLodgeAndHouseSupportNetworkEstablished": false,
+        "actualClampGuideAndTerminalStiffnessQualified": false,
+        "remaining": "Retain complete fixed-point force AND moment envelopes, guide force at its actual height and both terminal wrenches in the receiver. Qualify the actual clamp/guide law and extend the outer route to a real declared support; no full-Lodge thermal admission follows from an outer repair-cut endpoint.",
+        "experimentalScope": "Explicit valve rigidity/joint compliance sensitivities, not an actual-force bound. No copper tube stiffness represents the valve; stress qualification is withheld."
+      }
+    },
+    {
+      "branch": "utility",
+      "model": {
+        "id": "joint-1e6-1e8",
+        "kT": 1000000,
+        "kR": 100000000
+      },
+      "input": {
+        "supportAxisXYMm": [
+          11360,
+          2350
+        ],
+        "pathMm": [
+          [
+            10080,
+            600,
+            478.39
+          ],
+          [
+            10080,
+            600,
+            2740
+          ],
+          [
+            11500,
+            600,
+            2740
+          ],
+          [
+            11500,
+            2110,
+            2740
+          ],
+          [
+            11500,
+            2110,
+            1020
+          ],
+          [
+            11500,
+            2350,
+            1020
+          ],
+          [
+            11360,
+            2350,
+            1020
+          ],
+          [
+            11360,
+            2350,
+            1190
+          ],
+          [
+            11360,
+            2350,
+            1350
+          ],
+          [
+            11360,
+            2350,
+            1520
+          ],
+          [
+            11150,
+            2350,
+            1520
+          ],
+          [
+            11150,
+            2350,
+            2250
+          ],
+          [
+            10040,
+            2350,
+            2250
+          ],
+          [
+            10040,
+            1250,
+            2250
+          ],
+          [
+            10760,
+            1250,
+            2250
+          ],
+          [
+            10760,
+            1250,
+            1000
+          ]
+        ],
+        "fixedPointZMm": 1137.2583302491978,
+        "guideZMm": 1402.7416697508022,
+        "temperatureExcursionK": 40,
+        "pipe": {
+          "outerDiameterMm": 28,
+          "wallMm": 1.2,
+          "elasticModulusMpa": 117200,
+          "poissonRatio": 0.34,
+          "expansionMmMK": 0.017
+        },
+        "valve": {
+          "facesMm": [
+            [
+              11360,
+              2350,
+              1190
+            ],
+            [
+              11360,
+              2350,
+              1350
+            ]
+          ],
+          "expansionMmMK": 0.017,
+          "translationalNPerMm": 1000000,
+          "rotationalNmmPerRad": 100000000
+        }
+      },
+      "result": {
+        "schema": "had-fixed-inlet-thermal-flexibility/2",
+        "sourceContext": {
+          "supportAxisXYMm": [
+            11360,
+            2350
+          ],
+          "pathMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11500,
+              600,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              1020
+            ],
+            [
+              11500,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1190
+            ],
+            [
+              11360,
+              2350,
+              1350
+            ],
+            [
+              11360,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "fixedPointZMm": 1137.2583302491978,
+          "guideZMm": 1402.7416697508022,
+          "temperatureExcursionK": 40,
+          "pipe": {
+            "outerDiameterMm": 28,
+            "wallMm": 1.2,
+            "elasticModulusMpa": 117200,
+            "poissonRatio": 0.34,
+            "expansionMmMK": 0.017
+          },
+          "valve": {
+            "facesMm": [
+              [
+                11360,
+                2350,
+                1190
+              ],
+              [
+                11360,
+                2350,
+                1350
+              ]
+            ],
+            "expansionMmMK": 0.017,
+            "translationalNPerMm": 1000000,
+            "rotationalNmmPerRad": 100000000
+          }
+        },
+        "fixedPointMm": [
+          11360,
+          2350,
+          1137.2583302491978
+        ],
+        "upperSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1137.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1190
+              ],
+              [
+                11360,
+                2350,
+                1350
+              ],
+              [
+                11360,
+                2350,
+                1402.7416697508022
+              ],
+              [
+                11360,
+                2350,
+                1520
+              ],
+              [
+                11150,
+                2350,
+                1520
+              ],
+              [
+                11150,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                1000
+              ]
+            ],
+            "guideMm": [
+              11360,
+              2350,
+              1402.7416697508022
+            ],
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 11,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "lateralGuideMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "fullyFixedTerminalMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.408,
+              -0.748,
+              -0.09333566
+            ],
+            "terminalForceN": [
+              0.27761264,
+              0.50519164,
+              0.01534031
+            ],
+            "terminalMomentNmm": [
+              -505.61554454,
+              284.52318383,
+              -204.64380945
+            ],
+            "guideLateralForceN": [
+              -1.10898897,
+              -1.96314416
+            ],
+            "fixedPointForceN": [
+              0.83137633,
+              1.45795252,
+              -0.01534031
+            ],
+            "fixedPointMomentNmm": [
+              -68.03394548,
+              38.79537311,
+              202.38489342
+            ]
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.91683367,
+              0.63576949,
+              0.80834285
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              1059.46782311,
+              789.00181221,
+              575.80808041
+            ],
+            "guideLateralComponentBoundsN": [
+              4.43015992,
+              3.74151382
+            ],
+            "fixedPointComponentBoundsN": [
+              3.79462066,
+              3.10574432,
+              0.80834285
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              144.92655748,
+              177.0723059,
+              631.2464134
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false,
+            "valveAndFactoryFittingStressIncluded": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "lowerSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1137.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1020
+              ],
+              [
+                11500,
+                2350,
+                1020
+              ],
+              [
+                11500,
+                2110,
+                1020
+              ],
+              [
+                11500,
+                2110,
+                2740
+              ],
+              [
+                11500,
+                600,
+                2740
+              ],
+              [
+                10080,
+                600,
+                2740
+              ],
+              [
+                10080,
+                600,
+                478.39
+              ]
+            ],
+            "guideMm": null,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 8,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "lateralGuideMm": null,
+          "fullyFixedTerminalMm": [
+            10080,
+            600,
+            478.39
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.8704,
+              -1.19,
+              -0.44803046
+            ],
+            "terminalForceN": [
+              0.20928114,
+              0.24171751,
+              0.06584666
+            ],
+            "terminalMomentNmm": [
+              -356.78349069,
+              283.33880601,
+              64.99661784
+            ],
+            "guideLateralForceN": [],
+            "fixedPointForceN": [
+              -0.20928114,
+              -0.24171751,
+              -0.06584666
+            ],
+            "fixedPointMomentNmm": [
+              312.75512988,
+              -229.7338136,
+              -121.84019822
+            ],
+            "elasticExtremeFibreStressMpa": 0.7077618,
+            "guideFreeAxialThermalTravelMm": null,
+            "guideAxialTravelIncludingElasticMm": null
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.2691563,
+              0.29115933,
+              0.45152258
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              724.75777502,
+              693.87954808,
+              208.26585891
+            ],
+            "guideLateralComponentBoundsN": [],
+            "fixedPointComponentBoundsN": [
+              0.2691563,
+              0.29115933,
+              0.45152258
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              713.65436874,
+              427.85664106,
+              213.30445818
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "combinedFixedPointWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "forceComponentBoundsN": [
+            4.06377696,
+            3.39690365,
+            1.25986543
+          ],
+          "momentComponentBoundsNmm": [
+            858.58092622,
+            604.92894696,
+            844.55087158
+          ],
+          "uniformForceN": [
+            0.62209519,
+            1.21623501,
+            -0.08118697
+          ],
+          "uniformMomentNmm": [
+            244.7211844,
+            -190.93844049,
+            80.5446952
+          ],
+          "law": "Independent signed segment-temperature absolute-sum bounds from BOTH subroutes meeting the fixed clamp; all force and moment components retained."
+        },
+        "guideWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "forceComponentBoundsN": [
+            4.43015992,
+            3.74151382,
+            0
+          ],
+          "momentComponentBoundsNmm": [
+            0,
+            0,
+            0
+          ],
+          "axialFrictionQualified": false
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10080,
+            600,
+            478.39
+          ],
+          "forceComponentBoundsN": [
+            0.2691563,
+            0.29115933,
+            0.45152258
+          ],
+          "momentComponentBoundsNmm": [
+            724.75777502,
+            693.87954808,
+            208.26585891
+          ],
+          "scope": "first authored outer cut point only; its assumed six-axis restraint is not a source-bound Lodge/network restraint"
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            0.91683367,
+            0.63576949,
+            0.80834285
+          ],
+          "momentComponentBoundsNmm": [
+            1059.46782311,
+            789.00181221,
+            575.80808041
+          ]
+        },
+        "whollyRestrainedAxialComparisonN": 8051.97535876,
+        "fullLodgeAndHouseSupportNetworkEstablished": false,
+        "actualClampGuideAndTerminalStiffnessQualified": false,
+        "remaining": "Retain complete fixed-point force AND moment envelopes, guide force at its actual height and both terminal wrenches in the receiver. Qualify the actual clamp/guide law and extend the outer route to a real declared support; no full-Lodge thermal admission follows from an outer repair-cut endpoint.",
+        "experimentalScope": "Explicit valve rigidity/joint compliance sensitivities, not an actual-force bound. No copper tube stiffness represents the valve; stress qualification is withheld."
+      }
+    },
+    {
+      "branch": "utility",
+      "model": {
+        "id": "joint-1e4-1e6",
+        "kT": 10000,
+        "kR": 1000000
+      },
+      "input": {
+        "supportAxisXYMm": [
+          11360,
+          2350
+        ],
+        "pathMm": [
+          [
+            10080,
+            600,
+            478.39
+          ],
+          [
+            10080,
+            600,
+            2740
+          ],
+          [
+            11500,
+            600,
+            2740
+          ],
+          [
+            11500,
+            2110,
+            2740
+          ],
+          [
+            11500,
+            2110,
+            1020
+          ],
+          [
+            11500,
+            2350,
+            1020
+          ],
+          [
+            11360,
+            2350,
+            1020
+          ],
+          [
+            11360,
+            2350,
+            1190
+          ],
+          [
+            11360,
+            2350,
+            1350
+          ],
+          [
+            11360,
+            2350,
+            1520
+          ],
+          [
+            11150,
+            2350,
+            1520
+          ],
+          [
+            11150,
+            2350,
+            2250
+          ],
+          [
+            10040,
+            2350,
+            2250
+          ],
+          [
+            10040,
+            1250,
+            2250
+          ],
+          [
+            10760,
+            1250,
+            2250
+          ],
+          [
+            10760,
+            1250,
+            1000
+          ]
+        ],
+        "fixedPointZMm": 1137.2583302491978,
+        "guideZMm": 1402.7416697508022,
+        "temperatureExcursionK": 40,
+        "pipe": {
+          "outerDiameterMm": 28,
+          "wallMm": 1.2,
+          "elasticModulusMpa": 117200,
+          "poissonRatio": 0.34,
+          "expansionMmMK": 0.017
+        },
+        "valve": {
+          "facesMm": [
+            [
+              11360,
+              2350,
+              1190
+            ],
+            [
+              11360,
+              2350,
+              1350
+            ]
+          ],
+          "expansionMmMK": 0.017,
+          "translationalNPerMm": 10000,
+          "rotationalNmmPerRad": 1000000
+        }
+      },
+      "result": {
+        "schema": "had-fixed-inlet-thermal-flexibility/2",
+        "sourceContext": {
+          "supportAxisXYMm": [
+            11360,
+            2350
+          ],
+          "pathMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11500,
+              600,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              1020
+            ],
+            [
+              11500,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1190
+            ],
+            [
+              11360,
+              2350,
+              1350
+            ],
+            [
+              11360,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "fixedPointZMm": 1137.2583302491978,
+          "guideZMm": 1402.7416697508022,
+          "temperatureExcursionK": 40,
+          "pipe": {
+            "outerDiameterMm": 28,
+            "wallMm": 1.2,
+            "elasticModulusMpa": 117200,
+            "poissonRatio": 0.34,
+            "expansionMmMK": 0.017
+          },
+          "valve": {
+            "facesMm": [
+              [
+                11360,
+                2350,
+                1190
+              ],
+              [
+                11360,
+                2350,
+                1350
+              ]
+            ],
+            "expansionMmMK": 0.017,
+            "translationalNPerMm": 10000,
+            "rotationalNmmPerRad": 1000000
+          }
+        },
+        "fixedPointMm": [
+          11360,
+          2350,
+          1137.2583302491978
+        ],
+        "upperSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1137.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1190
+              ],
+              [
+                11360,
+                2350,
+                1350
+              ],
+              [
+                11360,
+                2350,
+                1402.7416697508022
+              ],
+              [
+                11360,
+                2350,
+                1520
+              ],
+              [
+                11150,
+                2350,
+                1520
+              ],
+              [
+                11150,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                1000
+              ]
+            ],
+            "guideMm": [
+              11360,
+              2350,
+              1402.7416697508022
+            ],
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 11,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "lateralGuideMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "fullyFixedTerminalMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.408,
+              -0.748,
+              -0.09333566
+            ],
+            "terminalForceN": [
+              0.30251223,
+              0.45667631,
+              0.00753909
+            ],
+            "terminalMomentNmm": [
+              -460.68485859,
+              308.30729398,
+              -191.41110278
+            ],
+            "guideLateralForceN": [
+              -1.19672875,
+              -1.79126192
+            ],
+            "fixedPointForceN": [
+              0.89421652,
+              1.33458561,
+              -0.00753909
+            ],
+            "fixedPointMomentNmm": [
+              -69.2549713,
+              46.40312256,
+              132.65343943
+            ]
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.90674557,
+              0.61059941,
+              0.78440432
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              1077.52815413,
+              779.35015338,
+              581.13647094
+            ],
+            "guideLateralComponentBoundsN": [
+              4.55149727,
+              3.70737206
+            ],
+            "fixedPointComponentBoundsN": [
+              3.90374752,
+              3.09677265,
+              0.78440432
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              160.69924574,
+              202.57518174,
+              413.84759791
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false,
+            "valveAndFactoryFittingStressIncluded": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "lowerSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1137.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1020
+              ],
+              [
+                11500,
+                2350,
+                1020
+              ],
+              [
+                11500,
+                2110,
+                1020
+              ],
+              [
+                11500,
+                2110,
+                2740
+              ],
+              [
+                11500,
+                600,
+                2740
+              ],
+              [
+                10080,
+                600,
+                2740
+              ],
+              [
+                10080,
+                600,
+                478.39
+              ]
+            ],
+            "guideMm": null,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 8,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "lateralGuideMm": null,
+          "fullyFixedTerminalMm": [
+            10080,
+            600,
+            478.39
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.8704,
+              -1.19,
+              -0.44803046
+            ],
+            "terminalForceN": [
+              0.20928114,
+              0.24171751,
+              0.06584666
+            ],
+            "terminalMomentNmm": [
+              -356.78349069,
+              283.33880601,
+              64.99661784
+            ],
+            "guideLateralForceN": [],
+            "fixedPointForceN": [
+              -0.20928114,
+              -0.24171751,
+              -0.06584666
+            ],
+            "fixedPointMomentNmm": [
+              312.75512988,
+              -229.7338136,
+              -121.84019822
+            ],
+            "elasticExtremeFibreStressMpa": 0.7077618,
+            "guideFreeAxialThermalTravelMm": null,
+            "guideAxialTravelIncludingElasticMm": null
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.2691563,
+              0.29115933,
+              0.45152258
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              724.75777502,
+              693.87954808,
+              208.26585891
+            ],
+            "guideLateralComponentBoundsN": [],
+            "fixedPointComponentBoundsN": [
+              0.2691563,
+              0.29115933,
+              0.45152258
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              713.65436874,
+              427.85664106,
+              213.30445818
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "combinedFixedPointWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "forceComponentBoundsN": [
+            4.17290382,
+            3.38793198,
+            1.2359269
+          ],
+          "momentComponentBoundsNmm": [
+            874.35361448,
+            630.4318228,
+            627.15205609
+          ],
+          "uniformForceN": [
+            0.68493538,
+            1.0928681,
+            -0.07338575
+          ],
+          "uniformMomentNmm": [
+            243.50015858,
+            -183.33069104,
+            10.81324121
+          ],
+          "law": "Independent signed segment-temperature absolute-sum bounds from BOTH subroutes meeting the fixed clamp; all force and moment components retained."
+        },
+        "guideWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "forceComponentBoundsN": [
+            4.55149727,
+            3.70737206,
+            0
+          ],
+          "momentComponentBoundsNmm": [
+            0,
+            0,
+            0
+          ],
+          "axialFrictionQualified": false
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10080,
+            600,
+            478.39
+          ],
+          "forceComponentBoundsN": [
+            0.2691563,
+            0.29115933,
+            0.45152258
+          ],
+          "momentComponentBoundsNmm": [
+            724.75777502,
+            693.87954808,
+            208.26585891
+          ],
+          "scope": "first authored outer cut point only; its assumed six-axis restraint is not a source-bound Lodge/network restraint"
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            0.90674557,
+            0.61059941,
+            0.78440432
+          ],
+          "momentComponentBoundsNmm": [
+            1077.52815413,
+            779.35015338,
+            581.13647094
+          ]
+        },
+        "whollyRestrainedAxialComparisonN": 8051.97535876,
+        "fullLodgeAndHouseSupportNetworkEstablished": false,
+        "actualClampGuideAndTerminalStiffnessQualified": false,
+        "remaining": "Retain complete fixed-point force AND moment envelopes, guide force at its actual height and both terminal wrenches in the receiver. Qualify the actual clamp/guide law and extend the outer route to a real declared support; no full-Lodge thermal admission follows from an outer repair-cut endpoint.",
+        "experimentalScope": "Explicit valve rigidity/joint compliance sensitivities, not an actual-force bound. No copper tube stiffness represents the valve; stress qualification is withheld."
+      }
+    },
+    {
+      "branch": "utility",
+      "model": {
+        "id": "joint-1e3-1e5",
+        "kT": 1000,
+        "kR": 100000
+      },
+      "input": {
+        "supportAxisXYMm": [
+          11360,
+          2350
+        ],
+        "pathMm": [
+          [
+            10080,
+            600,
+            478.39
+          ],
+          [
+            10080,
+            600,
+            2740
+          ],
+          [
+            11500,
+            600,
+            2740
+          ],
+          [
+            11500,
+            2110,
+            2740
+          ],
+          [
+            11500,
+            2110,
+            1020
+          ],
+          [
+            11500,
+            2350,
+            1020
+          ],
+          [
+            11360,
+            2350,
+            1020
+          ],
+          [
+            11360,
+            2350,
+            1190
+          ],
+          [
+            11360,
+            2350,
+            1350
+          ],
+          [
+            11360,
+            2350,
+            1520
+          ],
+          [
+            11150,
+            2350,
+            1520
+          ],
+          [
+            11150,
+            2350,
+            2250
+          ],
+          [
+            10040,
+            2350,
+            2250
+          ],
+          [
+            10040,
+            1250,
+            2250
+          ],
+          [
+            10760,
+            1250,
+            2250
+          ],
+          [
+            10760,
+            1250,
+            1000
+          ]
+        ],
+        "fixedPointZMm": 1137.2583302491978,
+        "guideZMm": 1402.7416697508022,
+        "temperatureExcursionK": 40,
+        "pipe": {
+          "outerDiameterMm": 28,
+          "wallMm": 1.2,
+          "elasticModulusMpa": 117200,
+          "poissonRatio": 0.34,
+          "expansionMmMK": 0.017
+        },
+        "valve": {
+          "facesMm": [
+            [
+              11360,
+              2350,
+              1190
+            ],
+            [
+              11360,
+              2350,
+              1350
+            ]
+          ],
+          "expansionMmMK": 0.017,
+          "translationalNPerMm": 1000,
+          "rotationalNmmPerRad": 100000
+        }
+      },
+      "result": {
+        "schema": "had-fixed-inlet-thermal-flexibility/2",
+        "sourceContext": {
+          "supportAxisXYMm": [
+            11360,
+            2350
+          ],
+          "pathMm": [
+            [
+              10080,
+              600,
+              478.39
+            ],
+            [
+              10080,
+              600,
+              2740
+            ],
+            [
+              11500,
+              600,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              2740
+            ],
+            [
+              11500,
+              2110,
+              1020
+            ],
+            [
+              11500,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1020
+            ],
+            [
+              11360,
+              2350,
+              1190
+            ],
+            [
+              11360,
+              2350,
+              1350
+            ],
+            [
+              11360,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              1520
+            ],
+            [
+              11150,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              2350,
+              2250
+            ],
+            [
+              10040,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              2250
+            ],
+            [
+              10760,
+              1250,
+              1000
+            ]
+          ],
+          "fixedPointZMm": 1137.2583302491978,
+          "guideZMm": 1402.7416697508022,
+          "temperatureExcursionK": 40,
+          "pipe": {
+            "outerDiameterMm": 28,
+            "wallMm": 1.2,
+            "elasticModulusMpa": 117200,
+            "poissonRatio": 0.34,
+            "expansionMmMK": 0.017
+          },
+          "valve": {
+            "facesMm": [
+              [
+                11360,
+                2350,
+                1190
+              ],
+              [
+                11360,
+                2350,
+                1350
+              ]
+            ],
+            "expansionMmMK": 0.017,
+            "translationalNPerMm": 1000,
+            "rotationalNmmPerRad": 100000
+          }
+        },
+        "fixedPointMm": [
+          11360,
+          2350,
+          1137.2583302491978
+        ],
+        "upperSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1137.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1190
+              ],
+              [
+                11360,
+                2350,
+                1350
+              ],
+              [
+                11360,
+                2350,
+                1402.7416697508022
+              ],
+              [
+                11360,
+                2350,
+                1520
+              ],
+              [
+                11150,
+                2350,
+                1520
+              ],
+              [
+                11150,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                2350,
+                2250
+              ],
+              [
+                10040,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                2250
+              ],
+              [
+                10760,
+                1250,
+                1000
+              ]
+            ],
+            "guideMm": [
+              11360,
+              2350,
+              1402.7416697508022
+            ],
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 11,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "lateralGuideMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "fullyFixedTerminalMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.408,
+              -0.748,
+              -0.09333566
+            ],
+            "terminalForceN": [
+              0.3373184,
+              0.38544925,
+              -0.00538755
+            ],
+            "terminalMomentNmm": [
+              -394.95019519,
+              340.54390528,
+              -171.77499856
+            ],
+            "guideLateralForceN": [
+              -1.28201974,
+              -1.48174708
+            ],
+            "fixedPointForceN": [
+              0.94470134,
+              1.09629783,
+              0.00538755
+            ],
+            "fixedPointMomentNmm": [
+              -57.26139871,
+              49.34327028,
+              31.99430768
+            ]
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.89235665,
+              0.63274507,
+              0.77649525
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              1103.4016995,
+              766.55373236,
+              588.95228688
+            ],
+            "guideLateralComponentBoundsN": [
+              4.5487079,
+              3.51484477
+            ],
+            "fixedPointComponentBoundsN": [
+              3.88740438,
+              2.94448111,
+              0.77649525
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              153.794984,
+              203.0453826,
+              100.01976753
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false,
+            "valveAndFactoryFittingStressIncluded": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "lowerSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1137.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1020
+              ],
+              [
+                11500,
+                2350,
+                1020
+              ],
+              [
+                11500,
+                2110,
+                1020
+              ],
+              [
+                11500,
+                2110,
+                2740
+              ],
+              [
+                11500,
+                600,
+                2740
+              ],
+              [
+                10080,
+                600,
+                2740
+              ],
+              [
+                10080,
+                600,
+                478.39
+              ]
+            ],
+            "guideMm": null,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 8,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "lateralGuideMm": null,
+          "fullyFixedTerminalMm": [
+            10080,
+            600,
+            478.39
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.8704,
+              -1.19,
+              -0.44803046
+            ],
+            "terminalForceN": [
+              0.20928114,
+              0.24171751,
+              0.06584666
+            ],
+            "terminalMomentNmm": [
+              -356.78349069,
+              283.33880601,
+              64.99661784
+            ],
+            "guideLateralForceN": [],
+            "fixedPointForceN": [
+              -0.20928114,
+              -0.24171751,
+              -0.06584666
+            ],
+            "fixedPointMomentNmm": [
+              312.75512988,
+              -229.7338136,
+              -121.84019822
+            ],
+            "elasticExtremeFibreStressMpa": 0.7077618,
+            "guideFreeAxialThermalTravelMm": null,
+            "guideAxialTravelIncludingElasticMm": null
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.2691563,
+              0.29115933,
+              0.45152258
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              724.75777502,
+              693.87954808,
+              208.26585891
+            ],
+            "guideLateralComponentBoundsN": [],
+            "fixedPointComponentBoundsN": [
+              0.2691563,
+              0.29115933,
+              0.45152258
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              713.65436874,
+              427.85664106,
+              213.30445818
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "combinedFixedPointWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1137.2583302491978
+          ],
+          "forceComponentBoundsN": [
+            4.15656068,
+            3.23564044,
+            1.22801783
+          ],
+          "momentComponentBoundsNmm": [
+            867.44935274,
+            630.90202366,
+            313.32422571
+          ],
+          "uniformForceN": [
+            0.7354202,
+            0.85458032,
+            -0.06045911
+          ],
+          "uniformMomentNmm": [
+            255.49373117,
+            -180.39054332,
+            -89.84589054
+          ],
+          "law": "Independent signed segment-temperature absolute-sum bounds from BOTH subroutes meeting the fixed clamp; all force and moment components retained."
+        },
+        "guideWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1402.7416697508022
+          ],
+          "forceComponentBoundsN": [
+            4.5487079,
+            3.51484477,
+            0
+          ],
+          "momentComponentBoundsNmm": [
+            0,
+            0,
+            0
+          ],
+          "axialFrictionQualified": false
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10080,
+            600,
+            478.39
+          ],
+          "forceComponentBoundsN": [
+            0.2691563,
+            0.29115933,
+            0.45152258
+          ],
+          "momentComponentBoundsNmm": [
+            724.75777502,
+            693.87954808,
+            208.26585891
+          ],
+          "scope": "first authored outer cut point only; its assumed six-axis restraint is not a source-bound Lodge/network restraint"
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10760,
+            1250,
+            1000
+          ],
+          "forceComponentBoundsN": [
+            0.89235665,
+            0.63274507,
+            0.77649525
+          ],
+          "momentComponentBoundsNmm": [
+            1103.4016995,
+            766.55373236,
+            588.95228688
+          ]
+        },
+        "whollyRestrainedAxialComparisonN": 8051.97535876,
+        "fullLodgeAndHouseSupportNetworkEstablished": false,
+        "actualClampGuideAndTerminalStiffnessQualified": false,
+        "remaining": "Retain complete fixed-point force AND moment envelopes, guide force at its actual height and both terminal wrenches in the receiver. Qualify the actual clamp/guide law and extend the outer route to a real declared support; no full-Lodge thermal admission follows from an outer repair-cut endpoint.",
+        "experimentalScope": "Explicit valve rigidity/joint compliance sensitivities, not an actual-force bound. No copper tube stiffness represents the valve; stress qualification is withheld."
+      }
+    },
+    {
+      "branch": "plant",
+      "model": {
+        "id": "rigid-valve",
+        "kT": null,
+        "kR": null
+      },
+      "input": {
+        "supportAxisXYMm": [
+          11360,
+          2350
+        ],
+        "pathMm": [
+          [
+            10285,
+            545,
+            598.39
+          ],
+          [
+            10285,
+            545,
+            2610
+          ],
+          [
+            11360,
+            545,
+            2610
+          ],
+          [
+            11360,
+            2230,
+            2610
+          ],
+          [
+            11360,
+            2230,
+            1640
+          ],
+          [
+            11360,
+            2350,
+            1640
+          ],
+          [
+            11360,
+            2350,
+            1810
+          ],
+          [
+            11360,
+            2350,
+            1970
+          ],
+          [
+            11360,
+            2350,
+            2140
+          ],
+          [
+            11500,
+            2350,
+            2140
+          ],
+          [
+            11500,
+            2350,
+            2990
+          ],
+          [
+            10900,
+            2360,
+            2990
+          ],
+          [
+            10900,
+            2360,
+            2400
+          ],
+          [
+            10600,
+            3900,
+            2400
+          ]
+        ],
+        "fixedPointZMm": 1757.2583302491978,
+        "guideZMm": 2022.7416697508022,
+        "temperatureExcursionK": 40,
+        "pipe": {
+          "outerDiameterMm": 28,
+          "wallMm": 1.2,
+          "elasticModulusMpa": 117200,
+          "poissonRatio": 0.34,
+          "expansionMmMK": 0.017
+        },
+        "valve": {
+          "facesMm": [
+            [
+              11360,
+              2350,
+              1810
+            ],
+            [
+              11360,
+              2350,
+              1970
+            ]
+          ],
+          "expansionMmMK": 0.017,
+          "translationalNPerMm": null,
+          "rotationalNmmPerRad": null
+        }
+      },
+      "result": {
+        "schema": "had-fixed-inlet-thermal-flexibility/2",
+        "sourceContext": {
+          "supportAxisXYMm": [
+            11360,
+            2350
+          ],
+          "pathMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11360,
+              545,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1810
+            ],
+            [
+              11360,
+              2350,
+              1970
+            ],
+            [
+              11360,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "fixedPointZMm": 1757.2583302491978,
+          "guideZMm": 2022.7416697508022,
+          "temperatureExcursionK": 40,
+          "pipe": {
+            "outerDiameterMm": 28,
+            "wallMm": 1.2,
+            "elasticModulusMpa": 117200,
+            "poissonRatio": 0.34,
+            "expansionMmMK": 0.017
+          },
+          "valve": {
+            "facesMm": [
+              [
+                11360,
+                2350,
+                1810
+              ],
+              [
+                11360,
+                2350,
+                1970
+              ]
+            ],
+            "expansionMmMK": 0.017,
+            "translationalNPerMm": null,
+            "rotationalNmmPerRad": null
+          }
+        },
+        "fixedPointMm": [
+          11360,
+          2350,
+          1757.2583302491978
+        ],
+        "upperSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1757.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1810
+              ],
+              [
+                11360,
+                2350,
+                1970
+              ],
+              [
+                11360,
+                2350,
+                2022.7416697508022
+              ],
+              [
+                11360,
+                2350,
+                2140
+              ],
+              [
+                11500,
+                2350,
+                2140
+              ],
+              [
+                11500,
+                2350,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2400
+              ],
+              [
+                10600,
+                3900,
+                2400
+              ]
+            ],
+            "guideMm": [
+              11360,
+              2350,
+              2022.7416697508022
+            ],
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 10,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "lateralGuideMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "fullyFixedTerminalMm": [
+            10600,
+            3900,
+            2400
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.5168,
+              1.054,
+              0.43706434
+            ],
+            "terminalForceN": [
+              1.26337932,
+              -2.11531617,
+              0.02979643
+            ],
+            "terminalMomentNmm": [
+              313.82761724,
+              159.84816392,
+              588.40440151
+            ],
+            "guideLateralForceN": [
+              -4.26307531,
+              7.3856443
+            ],
+            "fixedPointForceN": [
+              2.99969599,
+              -5.27032814,
+              -0.02979643
+            ],
+            "fixedPointMomentNmm": [
+              241.15157821,
+              137.25548069,
+              -237.80673851
+            ]
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              1.76010177,
+              2.75719333,
+              1.500387
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              1428.8387756,
+              485.7982425,
+              911.80970224
+            ],
+            "guideLateralComponentBoundsN": [
+              8.13037611,
+              11.57238823
+            ],
+            "fixedPointComponentBoundsN": [
+              6.37027435,
+              8.81519489,
+              1.500387
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              403.35214545,
+              291.48122718,
+              393.63573944
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false,
+            "valveAndFactoryFittingStressIncluded": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "lowerSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1757.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1640
+              ],
+              [
+                11360,
+                2230,
+                1640
+              ],
+              [
+                11360,
+                2230,
+                2610
+              ],
+              [
+                11360,
+                545,
+                2610
+              ],
+              [
+                10285,
+                545,
+                2610
+              ],
+              [
+                10285,
+                545,
+                598.39
+              ]
+            ],
+            "guideMm": null,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 7,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "lateralGuideMm": null,
+          "fullyFixedTerminalMm": [
+            10285,
+            545,
+            598.39
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.731,
+              -1.2274,
+              -0.78803046
+            ],
+            "terminalForceN": [
+              0.37471205,
+              0.55576174,
+              0.29033996
+            ],
+            "terminalMomentNmm": [
+              -720.93542609,
+              405.66292909,
+              104.17083838
+            ],
+            "guideLateralForceN": [],
+            "fixedPointForceN": [
+              -0.37471205,
+              -0.55576174,
+              -0.29033996
+            ],
+            "fixedPointMomentNmm": [
+              600.9443809,
+              -283.53646838,
+              -183.08220874
+            ],
+            "elasticExtremeFibreStressMpa": 1.28461635,
+            "guideFreeAxialThermalTravelMm": null,
+            "guideAxialTravelIncludingElasticMm": null
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.45188512,
+              0.62038013,
+              0.60414808
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              873.62972863,
+              589.86836777,
+              212.95426873
+            ],
+            "guideLateralComponentBoundsN": [],
+            "fixedPointComponentBoundsN": [
+              0.45188512,
+              0.62038013,
+              0.60414808
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              1022.91000866,
+              447.51518241,
+              281.75229045
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "combinedFixedPointWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "forceComponentBoundsN": [
+            6.82215947,
+            9.43557502,
+            2.10453508
+          ],
+          "momentComponentBoundsNmm": [
+            1426.26215411,
+            738.99640959,
+            675.38802989
+          ],
+          "uniformForceN": [
+            2.62498394,
+            -5.82608988,
+            -0.32013639
+          ],
+          "uniformMomentNmm": [
+            842.09595911,
+            -146.28098769,
+            -420.88894725
+          ],
+          "law": "Independent signed segment-temperature absolute-sum bounds from BOTH subroutes meeting the fixed clamp; all force and moment components retained."
+        },
+        "guideWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "forceComponentBoundsN": [
+            8.13037611,
+            11.57238823,
+            0
+          ],
+          "momentComponentBoundsNmm": [
+            0,
+            0,
+            0
+          ],
+          "axialFrictionQualified": false
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10285,
+            545,
+            598.39
+          ],
+          "forceComponentBoundsN": [
+            0.45188512,
+            0.62038013,
+            0.60414808
+          ],
+          "momentComponentBoundsNmm": [
+            873.62972863,
+            589.86836777,
+            212.95426873
+          ],
+          "scope": "first authored outer cut point only; its assumed six-axis restraint is not a source-bound Lodge/network restraint"
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10600,
+            3900,
+            2400
+          ],
+          "forceComponentBoundsN": [
+            1.76010177,
+            2.75719333,
+            1.500387
+          ],
+          "momentComponentBoundsNmm": [
+            1428.8387756,
+            485.7982425,
+            911.80970224
+          ]
+        },
+        "whollyRestrainedAxialComparisonN": 8051.97535876,
+        "fullLodgeAndHouseSupportNetworkEstablished": false,
+        "actualClampGuideAndTerminalStiffnessQualified": false,
+        "remaining": "Retain complete fixed-point force AND moment envelopes, guide force at its actual height and both terminal wrenches in the receiver. Qualify the actual clamp/guide law and extend the outer route to a real declared support; no full-Lodge thermal admission follows from an outer repair-cut endpoint.",
+        "experimentalScope": "Explicit valve rigidity/joint compliance sensitivities, not an actual-force bound. No copper tube stiffness represents the valve; stress qualification is withheld."
+      }
+    },
+    {
+      "branch": "plant",
+      "model": {
+        "id": "joint-1e6-1e8",
+        "kT": 1000000,
+        "kR": 100000000
+      },
+      "input": {
+        "supportAxisXYMm": [
+          11360,
+          2350
+        ],
+        "pathMm": [
+          [
+            10285,
+            545,
+            598.39
+          ],
+          [
+            10285,
+            545,
+            2610
+          ],
+          [
+            11360,
+            545,
+            2610
+          ],
+          [
+            11360,
+            2230,
+            2610
+          ],
+          [
+            11360,
+            2230,
+            1640
+          ],
+          [
+            11360,
+            2350,
+            1640
+          ],
+          [
+            11360,
+            2350,
+            1810
+          ],
+          [
+            11360,
+            2350,
+            1970
+          ],
+          [
+            11360,
+            2350,
+            2140
+          ],
+          [
+            11500,
+            2350,
+            2140
+          ],
+          [
+            11500,
+            2350,
+            2990
+          ],
+          [
+            10900,
+            2360,
+            2990
+          ],
+          [
+            10900,
+            2360,
+            2400
+          ],
+          [
+            10600,
+            3900,
+            2400
+          ]
+        ],
+        "fixedPointZMm": 1757.2583302491978,
+        "guideZMm": 2022.7416697508022,
+        "temperatureExcursionK": 40,
+        "pipe": {
+          "outerDiameterMm": 28,
+          "wallMm": 1.2,
+          "elasticModulusMpa": 117200,
+          "poissonRatio": 0.34,
+          "expansionMmMK": 0.017
+        },
+        "valve": {
+          "facesMm": [
+            [
+              11360,
+              2350,
+              1810
+            ],
+            [
+              11360,
+              2350,
+              1970
+            ]
+          ],
+          "expansionMmMK": 0.017,
+          "translationalNPerMm": 1000000,
+          "rotationalNmmPerRad": 100000000
+        }
+      },
+      "result": {
+        "schema": "had-fixed-inlet-thermal-flexibility/2",
+        "sourceContext": {
+          "supportAxisXYMm": [
+            11360,
+            2350
+          ],
+          "pathMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11360,
+              545,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1810
+            ],
+            [
+              11360,
+              2350,
+              1970
+            ],
+            [
+              11360,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "fixedPointZMm": 1757.2583302491978,
+          "guideZMm": 2022.7416697508022,
+          "temperatureExcursionK": 40,
+          "pipe": {
+            "outerDiameterMm": 28,
+            "wallMm": 1.2,
+            "elasticModulusMpa": 117200,
+            "poissonRatio": 0.34,
+            "expansionMmMK": 0.017
+          },
+          "valve": {
+            "facesMm": [
+              [
+                11360,
+                2350,
+                1810
+              ],
+              [
+                11360,
+                2350,
+                1970
+              ]
+            ],
+            "expansionMmMK": 0.017,
+            "translationalNPerMm": 1000000,
+            "rotationalNmmPerRad": 100000000
+          }
+        },
+        "fixedPointMm": [
+          11360,
+          2350,
+          1757.2583302491978
+        ],
+        "upperSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1757.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1810
+              ],
+              [
+                11360,
+                2350,
+                1970
+              ],
+              [
+                11360,
+                2350,
+                2022.7416697508022
+              ],
+              [
+                11360,
+                2350,
+                2140
+              ],
+              [
+                11500,
+                2350,
+                2140
+              ],
+              [
+                11500,
+                2350,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2400
+              ],
+              [
+                10600,
+                3900,
+                2400
+              ]
+            ],
+            "guideMm": [
+              11360,
+              2350,
+              2022.7416697508022
+            ],
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 10,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "lateralGuideMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "fullyFixedTerminalMm": [
+            10600,
+            3900,
+            2400
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.5168,
+              1.054,
+              0.43706434
+            ],
+            "terminalForceN": [
+              1.26363117,
+              -2.11456185,
+              0.02968485
+            ],
+            "terminalMomentNmm": [
+              313.83576044,
+              159.92160377,
+              588.53573978
+            ],
+            "guideLateralForceN": [
+              -4.2761509,
+              7.40469539
+            ],
+            "fixedPointForceN": [
+              3.01251973,
+              -5.29013354,
+              -0.02968485
+            ],
+            "fixedPointMomentNmm": [
+              246.85896916,
+              140.57632166,
+              -236.97442785
+            ]
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              1.76037782,
+              2.7562808,
+              1.50024082
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              1428.81908266,
+              485.67596852,
+              911.95207027
+            ],
+            "guideLateralComponentBoundsN": [
+              8.15743237,
+              11.60551865
+            ],
+            "fixedPointComponentBoundsN": [
+              6.39705455,
+              8.84923785,
+              1.50024082
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              412.94113247,
+              298.51236823,
+              392.2597202
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false,
+            "valveAndFactoryFittingStressIncluded": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "lowerSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1757.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1640
+              ],
+              [
+                11360,
+                2230,
+                1640
+              ],
+              [
+                11360,
+                2230,
+                2610
+              ],
+              [
+                11360,
+                545,
+                2610
+              ],
+              [
+                10285,
+                545,
+                2610
+              ],
+              [
+                10285,
+                545,
+                598.39
+              ]
+            ],
+            "guideMm": null,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 7,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "lateralGuideMm": null,
+          "fullyFixedTerminalMm": [
+            10285,
+            545,
+            598.39
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.731,
+              -1.2274,
+              -0.78803046
+            ],
+            "terminalForceN": [
+              0.37471205,
+              0.55576174,
+              0.29033996
+            ],
+            "terminalMomentNmm": [
+              -720.93542609,
+              405.66292909,
+              104.17083838
+            ],
+            "guideLateralForceN": [],
+            "fixedPointForceN": [
+              -0.37471205,
+              -0.55576174,
+              -0.29033996
+            ],
+            "fixedPointMomentNmm": [
+              600.9443809,
+              -283.53646838,
+              -183.08220874
+            ],
+            "elasticExtremeFibreStressMpa": 1.28461635,
+            "guideFreeAxialThermalTravelMm": null,
+            "guideAxialTravelIncludingElasticMm": null
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.45188512,
+              0.62038013,
+              0.60414808
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              873.62972863,
+              589.86836777,
+              212.95426873
+            ],
+            "guideLateralComponentBoundsN": [],
+            "fixedPointComponentBoundsN": [
+              0.45188512,
+              0.62038013,
+              0.60414808
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              1022.91000866,
+              447.51518241,
+              281.75229045
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "combinedFixedPointWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "forceComponentBoundsN": [
+            6.84893967,
+            9.46961798,
+            2.1043889
+          ],
+          "momentComponentBoundsNmm": [
+            1435.85114113,
+            746.02755064,
+            674.01201065
+          ],
+          "uniformForceN": [
+            2.63780768,
+            -5.84589528,
+            -0.32002481
+          ],
+          "uniformMomentNmm": [
+            847.80335006,
+            -142.96014672,
+            -420.05663659
+          ],
+          "law": "Independent signed segment-temperature absolute-sum bounds from BOTH subroutes meeting the fixed clamp; all force and moment components retained."
+        },
+        "guideWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "forceComponentBoundsN": [
+            8.15743237,
+            11.60551865,
+            0
+          ],
+          "momentComponentBoundsNmm": [
+            0,
+            0,
+            0
+          ],
+          "axialFrictionQualified": false
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10285,
+            545,
+            598.39
+          ],
+          "forceComponentBoundsN": [
+            0.45188512,
+            0.62038013,
+            0.60414808
+          ],
+          "momentComponentBoundsNmm": [
+            873.62972863,
+            589.86836777,
+            212.95426873
+          ],
+          "scope": "first authored outer cut point only; its assumed six-axis restraint is not a source-bound Lodge/network restraint"
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10600,
+            3900,
+            2400
+          ],
+          "forceComponentBoundsN": [
+            1.76037782,
+            2.7562808,
+            1.50024082
+          ],
+          "momentComponentBoundsNmm": [
+            1428.81908266,
+            485.67596852,
+            911.95207027
+          ]
+        },
+        "whollyRestrainedAxialComparisonN": 8051.97535876,
+        "fullLodgeAndHouseSupportNetworkEstablished": false,
+        "actualClampGuideAndTerminalStiffnessQualified": false,
+        "remaining": "Retain complete fixed-point force AND moment envelopes, guide force at its actual height and both terminal wrenches in the receiver. Qualify the actual clamp/guide law and extend the outer route to a real declared support; no full-Lodge thermal admission follows from an outer repair-cut endpoint.",
+        "experimentalScope": "Explicit valve rigidity/joint compliance sensitivities, not an actual-force bound. No copper tube stiffness represents the valve; stress qualification is withheld."
+      }
+    },
+    {
+      "branch": "plant",
+      "model": {
+        "id": "joint-1e4-1e6",
+        "kT": 10000,
+        "kR": 1000000
+      },
+      "input": {
+        "supportAxisXYMm": [
+          11360,
+          2350
+        ],
+        "pathMm": [
+          [
+            10285,
+            545,
+            598.39
+          ],
+          [
+            10285,
+            545,
+            2610
+          ],
+          [
+            11360,
+            545,
+            2610
+          ],
+          [
+            11360,
+            2230,
+            2610
+          ],
+          [
+            11360,
+            2230,
+            1640
+          ],
+          [
+            11360,
+            2350,
+            1640
+          ],
+          [
+            11360,
+            2350,
+            1810
+          ],
+          [
+            11360,
+            2350,
+            1970
+          ],
+          [
+            11360,
+            2350,
+            2140
+          ],
+          [
+            11500,
+            2350,
+            2140
+          ],
+          [
+            11500,
+            2350,
+            2990
+          ],
+          [
+            10900,
+            2360,
+            2990
+          ],
+          [
+            10900,
+            2360,
+            2400
+          ],
+          [
+            10600,
+            3900,
+            2400
+          ]
+        ],
+        "fixedPointZMm": 1757.2583302491978,
+        "guideZMm": 2022.7416697508022,
+        "temperatureExcursionK": 40,
+        "pipe": {
+          "outerDiameterMm": 28,
+          "wallMm": 1.2,
+          "elasticModulusMpa": 117200,
+          "poissonRatio": 0.34,
+          "expansionMmMK": 0.017
+        },
+        "valve": {
+          "facesMm": [
+            [
+              11360,
+              2350,
+              1810
+            ],
+            [
+              11360,
+              2350,
+              1970
+            ]
+          ],
+          "expansionMmMK": 0.017,
+          "translationalNPerMm": 10000,
+          "rotationalNmmPerRad": 1000000
+        }
+      },
+      "result": {
+        "schema": "had-fixed-inlet-thermal-flexibility/2",
+        "sourceContext": {
+          "supportAxisXYMm": [
+            11360,
+            2350
+          ],
+          "pathMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11360,
+              545,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1810
+            ],
+            [
+              11360,
+              2350,
+              1970
+            ],
+            [
+              11360,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "fixedPointZMm": 1757.2583302491978,
+          "guideZMm": 2022.7416697508022,
+          "temperatureExcursionK": 40,
+          "pipe": {
+            "outerDiameterMm": 28,
+            "wallMm": 1.2,
+            "elasticModulusMpa": 117200,
+            "poissonRatio": 0.34,
+            "expansionMmMK": 0.017
+          },
+          "valve": {
+            "facesMm": [
+              [
+                11360,
+                2350,
+                1810
+              ],
+              [
+                11360,
+                2350,
+                1970
+              ]
+            ],
+            "expansionMmMK": 0.017,
+            "translationalNPerMm": 10000,
+            "rotationalNmmPerRad": 1000000
+          }
+        },
+        "fixedPointMm": [
+          11360,
+          2350,
+          1757.2583302491978
+        ],
+        "upperSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1757.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1810
+              ],
+              [
+                11360,
+                2350,
+                1970
+              ],
+              [
+                11360,
+                2350,
+                2022.7416697508022
+              ],
+              [
+                11360,
+                2350,
+                2140
+              ],
+              [
+                11500,
+                2350,
+                2140
+              ],
+              [
+                11500,
+                2350,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2400
+              ],
+              [
+                10600,
+                3900,
+                2400
+              ]
+            ],
+            "guideMm": [
+              11360,
+              2350,
+              2022.7416697508022
+            ],
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 10,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "lateralGuideMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "fullyFixedTerminalMm": [
+            10600,
+            3900,
+            2400
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.5168,
+              1.054,
+              0.43706434
+            ],
+            "terminalForceN": [
+              1.28205462,
+              -2.05927946,
+              0.02149409
+            ],
+            "terminalMomentNmm": [
+              314.45098197,
+              165.29282664,
+              598.12872619
+            ],
+            "guideLateralForceN": [
+              -4.39686091,
+              7.32470708
+            ],
+            "fixedPointForceN": [
+              3.11480629,
+              -5.26542762,
+              -0.02149409
+            ],
+            "fixedPointMomentNmm": [
+              273.23615368,
+              161.63505667,
+              -175.99645897
+            ]
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              1.78051662,
+              2.68938337,
+              1.4894611
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              1427.30071875,
+              476.71828471,
+              922.31795525
+            ],
+            "guideLateralComponentBoundsN": [
+              8.36068999,
+              11.56596338
+            ],
+            "fixedPointComponentBoundsN": [
+              6.58017337,
+              8.87658001,
+              1.4894611
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              460.62784571,
+              341.46158529,
+              291.4170114
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false,
+            "valveAndFactoryFittingStressIncluded": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "lowerSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1757.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1640
+              ],
+              [
+                11360,
+                2230,
+                1640
+              ],
+              [
+                11360,
+                2230,
+                2610
+              ],
+              [
+                11360,
+                545,
+                2610
+              ],
+              [
+                10285,
+                545,
+                2610
+              ],
+              [
+                10285,
+                545,
+                598.39
+              ]
+            ],
+            "guideMm": null,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 7,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "lateralGuideMm": null,
+          "fullyFixedTerminalMm": [
+            10285,
+            545,
+            598.39
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.731,
+              -1.2274,
+              -0.78803046
+            ],
+            "terminalForceN": [
+              0.37471205,
+              0.55576174,
+              0.29033996
+            ],
+            "terminalMomentNmm": [
+              -720.93542609,
+              405.66292909,
+              104.17083838
+            ],
+            "guideLateralForceN": [],
+            "fixedPointForceN": [
+              -0.37471205,
+              -0.55576174,
+              -0.29033996
+            ],
+            "fixedPointMomentNmm": [
+              600.9443809,
+              -283.53646838,
+              -183.08220874
+            ],
+            "elasticExtremeFibreStressMpa": 1.28461635,
+            "guideFreeAxialThermalTravelMm": null,
+            "guideAxialTravelIncludingElasticMm": null
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.45188512,
+              0.62038013,
+              0.60414808
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              873.62972863,
+              589.86836777,
+              212.95426873
+            ],
+            "guideLateralComponentBoundsN": [],
+            "fixedPointComponentBoundsN": [
+              0.45188512,
+              0.62038013,
+              0.60414808
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              1022.91000866,
+              447.51518241,
+              281.75229045
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "combinedFixedPointWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "forceComponentBoundsN": [
+            7.03205849,
+            9.49696014,
+            2.09360918
+          ],
+          "momentComponentBoundsNmm": [
+            1483.53785437,
+            788.9767677,
+            573.16930185
+          ],
+          "uniformForceN": [
+            2.74009424,
+            -5.82118936,
+            -0.31183405
+          ],
+          "uniformMomentNmm": [
+            874.18053458,
+            -121.90141171,
+            -359.07866771
+          ],
+          "law": "Independent signed segment-temperature absolute-sum bounds from BOTH subroutes meeting the fixed clamp; all force and moment components retained."
+        },
+        "guideWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "forceComponentBoundsN": [
+            8.36068999,
+            11.56596338,
+            0
+          ],
+          "momentComponentBoundsNmm": [
+            0,
+            0,
+            0
+          ],
+          "axialFrictionQualified": false
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10285,
+            545,
+            598.39
+          ],
+          "forceComponentBoundsN": [
+            0.45188512,
+            0.62038013,
+            0.60414808
+          ],
+          "momentComponentBoundsNmm": [
+            873.62972863,
+            589.86836777,
+            212.95426873
+          ],
+          "scope": "first authored outer cut point only; its assumed six-axis restraint is not a source-bound Lodge/network restraint"
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10600,
+            3900,
+            2400
+          ],
+          "forceComponentBoundsN": [
+            1.78051662,
+            2.68938337,
+            1.4894611
+          ],
+          "momentComponentBoundsNmm": [
+            1427.30071875,
+            476.71828471,
+            922.31795525
+          ]
+        },
+        "whollyRestrainedAxialComparisonN": 8051.97535876,
+        "fullLodgeAndHouseSupportNetworkEstablished": false,
+        "actualClampGuideAndTerminalStiffnessQualified": false,
+        "remaining": "Retain complete fixed-point force AND moment envelopes, guide force at its actual height and both terminal wrenches in the receiver. Qualify the actual clamp/guide law and extend the outer route to a real declared support; no full-Lodge thermal admission follows from an outer repair-cut endpoint.",
+        "experimentalScope": "Explicit valve rigidity/joint compliance sensitivities, not an actual-force bound. No copper tube stiffness represents the valve; stress qualification is withheld."
+      }
+    },
+    {
+      "branch": "plant",
+      "model": {
+        "id": "joint-1e3-1e5",
+        "kT": 1000,
+        "kR": 100000
+      },
+      "input": {
+        "supportAxisXYMm": [
+          11360,
+          2350
+        ],
+        "pathMm": [
+          [
+            10285,
+            545,
+            598.39
+          ],
+          [
+            10285,
+            545,
+            2610
+          ],
+          [
+            11360,
+            545,
+            2610
+          ],
+          [
+            11360,
+            2230,
+            2610
+          ],
+          [
+            11360,
+            2230,
+            1640
+          ],
+          [
+            11360,
+            2350,
+            1640
+          ],
+          [
+            11360,
+            2350,
+            1810
+          ],
+          [
+            11360,
+            2350,
+            1970
+          ],
+          [
+            11360,
+            2350,
+            2140
+          ],
+          [
+            11500,
+            2350,
+            2140
+          ],
+          [
+            11500,
+            2350,
+            2990
+          ],
+          [
+            10900,
+            2360,
+            2990
+          ],
+          [
+            10900,
+            2360,
+            2400
+          ],
+          [
+            10600,
+            3900,
+            2400
+          ]
+        ],
+        "fixedPointZMm": 1757.2583302491978,
+        "guideZMm": 2022.7416697508022,
+        "temperatureExcursionK": 40,
+        "pipe": {
+          "outerDiameterMm": 28,
+          "wallMm": 1.2,
+          "elasticModulusMpa": 117200,
+          "poissonRatio": 0.34,
+          "expansionMmMK": 0.017
+        },
+        "valve": {
+          "facesMm": [
+            [
+              11360,
+              2350,
+              1810
+            ],
+            [
+              11360,
+              2350,
+              1970
+            ]
+          ],
+          "expansionMmMK": 0.017,
+          "translationalNPerMm": 1000,
+          "rotationalNmmPerRad": 100000
+        }
+      },
+      "result": {
+        "schema": "had-fixed-inlet-thermal-flexibility/2",
+        "sourceContext": {
+          "supportAxisXYMm": [
+            11360,
+            2350
+          ],
+          "pathMm": [
+            [
+              10285,
+              545,
+              598.39
+            ],
+            [
+              10285,
+              545,
+              2610
+            ],
+            [
+              11360,
+              545,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              2610
+            ],
+            [
+              11360,
+              2230,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1640
+            ],
+            [
+              11360,
+              2350,
+              1810
+            ],
+            [
+              11360,
+              2350,
+              1970
+            ],
+            [
+              11360,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2140
+            ],
+            [
+              11500,
+              2350,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2990
+            ],
+            [
+              10900,
+              2360,
+              2400
+            ],
+            [
+              10600,
+              3900,
+              2400
+            ]
+          ],
+          "fixedPointZMm": 1757.2583302491978,
+          "guideZMm": 2022.7416697508022,
+          "temperatureExcursionK": 40,
+          "pipe": {
+            "outerDiameterMm": 28,
+            "wallMm": 1.2,
+            "elasticModulusMpa": 117200,
+            "poissonRatio": 0.34,
+            "expansionMmMK": 0.017
+          },
+          "valve": {
+            "facesMm": [
+              [
+                11360,
+                2350,
+                1810
+              ],
+              [
+                11360,
+                2350,
+                1970
+              ]
+            ],
+            "expansionMmMK": 0.017,
+            "translationalNPerMm": 1000,
+            "rotationalNmmPerRad": 100000
+          }
+        },
+        "fixedPointMm": [
+          11360,
+          2350,
+          1757.2583302491978
+        ],
+        "upperSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1757.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1810
+              ],
+              [
+                11360,
+                2350,
+                1970
+              ],
+              [
+                11360,
+                2350,
+                2022.7416697508022
+              ],
+              [
+                11360,
+                2350,
+                2140
+              ],
+              [
+                11500,
+                2350,
+                2140
+              ],
+              [
+                11500,
+                2350,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2990
+              ],
+              [
+                10900,
+                2360,
+                2400
+              ],
+              [
+                10600,
+                3900,
+                2400
+              ]
+            ],
+            "guideMm": [
+              11360,
+              2350,
+              2022.7416697508022
+            ],
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 10,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "lateralGuideMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "fullyFixedTerminalMm": [
+            10600,
+            3900,
+            2400
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.5168,
+              1.054,
+              0.43706434
+            ],
+            "terminalForceN": [
+              1.3055309,
+              -1.92793775,
+              -0.00502781
+            ],
+            "terminalMomentNmm": [
+              320.98035494,
+              176.01233926,
+              610.55808386
+            ],
+            "guideLateralForceN": [
+              -4.42256826,
+              6.80723145
+            ],
+            "fixedPointForceN": [
+              3.11703735,
+              -4.8792937,
+              0.00502781
+            ],
+            "fixedPointMomentNmm": [
+              254.85335707,
+              162.80787402,
+              -52.21787992
+            ]
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              1.79489502,
+              2.51846979,
+              1.44826013
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              1412.66405741,
+              465.2865193,
+              928.9893622
+            ],
+            "guideLateralComponentBoundsN": [
+              8.3210672,
+              10.87597686
+            ],
+            "fixedPointComponentBoundsN": [
+              6.52617218,
+              8.35750706,
+              1.44826013
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              436.526035,
+              340.87246895,
+              86.70586656
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false,
+            "valveAndFactoryFittingStressIncluded": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "lowerSubroute": {
+          "schema": "had-fixed-inlet-thermal-subroute/1",
+          "sourceContext": {
+            "pathMm": [
+              [
+                11360,
+                2350,
+                1757.2583302491978
+              ],
+              [
+                11360,
+                2350,
+                1640
+              ],
+              [
+                11360,
+                2230,
+                1640
+              ],
+              [
+                11360,
+                2230,
+                2610
+              ],
+              [
+                11360,
+                545,
+                2610
+              ],
+              [
+                10285,
+                545,
+                2610
+              ],
+              [
+                10285,
+                545,
+                598.39
+              ]
+            ],
+            "guideMm": null,
+            "pipe": {
+              "outerDiameterMm": 28,
+              "wallMm": 1.2,
+              "elasticModulusMpa": 117200,
+              "poissonRatio": 0.34,
+              "expansionMmMK": 0.017
+            },
+            "temperatureExcursionK": 40
+          },
+          "method": "Linear three-dimensional thin centreline beam flexibility; both end translations/rotations fixed, optional declared lateral guide with axial slide. Simpson integration is exact for each straight chord flexibility integrand.",
+          "sourceRouteVertices": 7,
+          "fixedPointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "lateralGuideMm": null,
+          "fullyFixedTerminalMm": [
+            10285,
+            545,
+            598.39
+          ],
+          "uniformTemperature": {
+            "temperatureExcursionK": 40,
+            "freeTerminalTranslationMm": [
+              -0.731,
+              -1.2274,
+              -0.78803046
+            ],
+            "terminalForceN": [
+              0.37471205,
+              0.55576174,
+              0.29033996
+            ],
+            "terminalMomentNmm": [
+              -720.93542609,
+              405.66292909,
+              104.17083838
+            ],
+            "guideLateralForceN": [],
+            "fixedPointForceN": [
+              -0.37471205,
+              -0.55576174,
+              -0.29033996
+            ],
+            "fixedPointMomentNmm": [
+              600.9443809,
+              -283.53646838,
+              -183.08220874
+            ],
+            "elasticExtremeFibreStressMpa": 1.28461635,
+            "guideFreeAxialThermalTravelMm": null,
+            "guideAxialTravelIncludingElasticMm": null
+          },
+          "independentSegmentTemperatureBound": {
+            "eachSegmentAbsoluteExcursionK": 40,
+            "terminalForceComponentBoundsN": [
+              0.45188512,
+              0.62038013,
+              0.60414808
+            ],
+            "terminalMomentComponentBoundsNmm": [
+              873.62972863,
+              589.86836777,
+              212.95426873
+            ],
+            "guideLateralComponentBoundsN": [],
+            "fixedPointComponentBoundsN": [
+              0.45188512,
+              0.62038013,
+              0.60414808
+            ],
+            "fixedPointMomentComponentBoundsNmm": [
+              1022.91000866,
+              447.51518241,
+              281.75229045
+            ],
+            "interpretation": "Linear absolute-sum force envelope for independently signed segment temperatures; does not depend on uniform-route expansion cancellation. Different component maxima need not be simultaneous."
+          },
+          "validity": {
+            "actualSlidingGuideFrictionQualified": false,
+            "extraClampsOrUnmodelledRestraintsAllowed": false,
+            "thermalGradientsAcrossTheTubeWallIncluded": false,
+            "pipeBendOvalisationOrStressIntensificationIncluded": false,
+            "pressureDeadloadAndToolActionsIncluded": false,
+            "actualValveBodyStiffnessIncluded": false,
+            "physicalGuideAndPipeStressAcceptance": false
+          },
+          "remaining": "Qualify the actual fixed clamp and axial sliding guide, real remaining support positions and terminal stiffness; retain full restrained bound when a guide seizes or runs out of travel. This calculation does not itself select the lighter support or prove tube/fitting stress capacity."
+        },
+        "combinedFixedPointWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            1757.2583302491978
+          ],
+          "forceComponentBoundsN": [
+            6.9780573,
+            8.97788719,
+            2.05240821
+          ],
+          "momentComponentBoundsNmm": [
+            1459.43604366,
+            788.38765136,
+            368.45815701
+          ],
+          "uniformForceN": [
+            2.7423253,
+            -5.43505544,
+            -0.28531215
+          ],
+          "uniformMomentNmm": [
+            855.79773797,
+            -120.72859436,
+            -235.30008866
+          ],
+          "law": "Independent signed segment-temperature absolute-sum bounds from BOTH subroutes meeting the fixed clamp; all force and moment components retained."
+        },
+        "guideWrench": {
+          "pointMm": [
+            11360,
+            2350,
+            2022.7416697508022
+          ],
+          "forceComponentBoundsN": [
+            8.3210672,
+            10.87597686,
+            0
+          ],
+          "momentComponentBoundsNmm": [
+            0,
+            0,
+            0
+          ],
+          "axialFrictionQualified": false
+        },
+        "outerTerminalWrench": {
+          "pointMm": [
+            10285,
+            545,
+            598.39
+          ],
+          "forceComponentBoundsN": [
+            0.45188512,
+            0.62038013,
+            0.60414808
+          ],
+          "momentComponentBoundsNmm": [
+            873.62972863,
+            589.86836777,
+            212.95426873
+          ],
+          "scope": "first authored outer cut point only; its assumed six-axis restraint is not a source-bound Lodge/network restraint"
+        },
+        "upperTerminalWrench": {
+          "pointMm": [
+            10600,
+            3900,
+            2400
+          ],
+          "forceComponentBoundsN": [
+            1.79489502,
+            2.51846979,
+            1.44826013
+          ],
+          "momentComponentBoundsNmm": [
+            1412.66405741,
+            465.2865193,
+            928.9893622
+          ]
+        },
+        "whollyRestrainedAxialComparisonN": 8051.97535876,
+        "fullLodgeAndHouseSupportNetworkEstablished": false,
+        "actualClampGuideAndTerminalStiffnessQualified": false,
+        "remaining": "Retain complete fixed-point force AND moment envelopes, guide force at its actual height and both terminal wrenches in the receiver. Qualify the actual clamp/guide law and extend the outer route to a real declared support; no full-Lodge thermal admission follows from an outer repair-cut endpoint.",
+        "experimentalScope": "Explicit valve rigidity/joint compliance sensitivities, not an actual-force bound. No copper tube stiffness represents the valve; stress qualification is withheld."
+      }
+    }
+  ]
+}
