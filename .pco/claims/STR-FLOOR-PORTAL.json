@@ -9,11 +9,11 @@
     "label": "convergence-resume-root-20261123"
   },
   "claimedAt": "2026-11-23T22:25:18.262Z",
-  "heartbeatAt": "2026-11-23T23:19:14.277Z",
-  "expiresAt": "2026-11-24T00:04:14.277Z",
+  "heartbeatAt": "2026-11-23T23:54:45.469Z",
+  "expiresAt": "2026-11-24T00:39:45.469Z",
   "checkpoint": {
-    "evidence": "1622/deb78ff4 browser, PLT and publication green; health running. Fixed-normal pair91e3fb21 fails2.788467kN/32.72166%; finiteL971c7afc and coordinated reviewbd9a8929 durable. Common3Dslab representation bound fails2.33344x; no native replacement.",
-    "next": "Finish exact-head health/preflight and merge1622, coordinate1623 rebase; submit actual numerical rejection/shared constitutive diagnostics, then distributed finite-joint replacement."
+    "evidence": "Merged1623/mainfa711061. Shared1622/5d4d0c9d joinsSTR/HAD,39focusedcontrols/type/sourceauditPASS; actual52headsunchanged. Projectionproducer/check refreshed provenanceonly. Fixednormal91e3 fails32.72%; finiteL971c durable; distributedfloorportdevelopment remains separate.",
+    "next": "Observe exact5d4d0c9d CI, bothfreshpreflights andmerge; continue finite floor-contour component, preserving nativeband/chord/exterior and gravity obligations."
   },
   "branch": "work/convergence-resume-final-20261123",
   "predecessor": {
