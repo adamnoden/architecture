@@ -9,11 +9,11 @@
     "label": "convergence-resume-root-20261123"
   },
   "claimedAt": "2026-11-23T22:25:18.262Z",
-  "heartbeatAt": "2026-11-23T22:55:39.071Z",
-  "expiresAt": "2026-11-23T23:40:39.071Z",
+  "heartbeatAt": "2026-11-23T23:19:14.277Z",
+  "expiresAt": "2026-11-24T00:04:14.277Z",
   "checkpoint": {
-    "evidence": "1622/deb78ff4 publicationgreen, health/browserpending. Exact fixed-normal native500/250 and rawcaptures durable recovery/str-fixed-normal-20261123-resume91e3fb21: same19216normalpoints/bodyG, unchangedscreensfail2.788467kN/32.72166%.",
-    "next": "Observe exactheadCI, preflight/merge1622 then coordinateHAD1623; develop dimensionedfiniteLjoint using existing solver/libraries, preserving geometry/mass/work."
+    "evidence": "1622/deb78ff4 browser, PLT and publication green; health running. Fixed-normal pair91e3fb21 fails2.788467kN/32.72166%; finiteL971c7afc and coordinated reviewbd9a8929 durable. Common3Dslab representation bound fails2.33344x; no native replacement.",
+    "next": "Finish exact-head health/preflight and merge1622, coordinate1623 rebase; submit actual numerical rejection/shared constitutive diagnostics, then distributed finite-joint replacement."
   },
   "branch": "work/convergence-resume-final-20261123",
   "predecessor": {
