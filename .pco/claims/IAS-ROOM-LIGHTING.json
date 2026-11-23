@@ -9,8 +9,8 @@
     "label": "convergence-lighting-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.614Z",
-  "heartbeatAt": "2026-11-23T08:51:10.950Z",
-  "expiresAt": "2026-11-23T09:36:10.950Z",
+  "heartbeatAt": "2026-11-23T09:02:40.420Z",
+  "expiresAt": "2026-11-23T09:47:40.420Z",
   "branch": "work/convergence-integrate-20261123",
   "predecessor": {
     "leaseId": "68f6136d-f6b2-495d-a338-9f14cd05b3b2",
@@ -34,7 +34,7 @@
   },
   "pr": 1620,
   "checkpoint": {
-    "evidence": "Shared PR #1620 head969 retains recovered IAS common-depth comparison and genuine source-bound evidence; prior22 IAS/producer/browser-import/HTTP tests passed; final combined validation remains tracked by coordinator",
-    "next": "Observe exact submitted-head CI and canonical shared publication preflight, then merge and release; retain unqualified IAS electrical/material/grip/load interfaces"
+    "evidence": "Verified merged PR #1620 exact969e4048 to mainae5d28d605c2ebf190cb6bf922a8af8f0ddb29b3 after9greenchecks and3canonical publication preflights. Recovered IAS common-depth authoring and genuinely regenerated source-bound evidence integrated;22 IAS/producer/browser-import/HTTP tests passed. Scope remains planned, with actual device/circuit/material/grip/renewal/load duties unresolved.",
+    "next": "Resume from fresh main and new canonical lease; complete recessed ordinary plug grip, actual terminal/earth and feeder interfaces, qualified unions/protection/materials, complete mass/native feedback and physical/owner review without treating unselected comparison as adopted house."
   }
 }
