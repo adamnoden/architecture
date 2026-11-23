@@ -9,8 +9,8 @@
     "label": "convergence-water-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.038Z",
-  "heartbeatAt": "2026-11-23T08:35:19.840Z",
-  "expiresAt": "2026-11-23T09:20:19.840Z",
+  "heartbeatAt": "2026-11-23T09:06:11.210Z",
+  "expiresAt": "2026-11-23T09:51:11.210Z",
   "branch": "work/convergence-integrate-20261123",
   "predecessor": {
     "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
@@ -34,7 +34,7 @@
   },
   "pr": 1620,
   "checkpoint": {
-    "evidence": "Remote969e4048; canonical show reconciled timed-out prior renewal as unchanged gen60; isolated side-frame144cases and explicit valve-law sensitivities are exploratory, unadopted",
-    "next": "Publish recoverable side-frame evidence only after valid renewal; complete cold-wrap and coupled seized-guide analysis"
+    "evidence": "Verified mergedPR1620 mainae5d28d605c2ebf190cb6bf922a8af8f0ddb29b3; local86efc8ad preserves19-file unadopted side-receiver recovery for remote upload, no current source adoption",
+    "next": "Publish recovery/had-side-receiver-20261123 from exact manifest; record remote identity, then complete full3D coupling and physical capture/thermal interfaces"
   }
 }
