@@ -74,9 +74,10 @@ def source_current(identities):
 
 def witness(ordinary,observed):
     observation=observed['observation']
-    return {'schema':'str-four-L-joint-passivity-witness/1',**verify_passivity(ordinary,observed),
+    return {'schema':'str-four-L-joint-passivity-witness/2',**verify_passivity(ordinary,observed),
         'sourceSHA256':observation['sourceSHA256'],'executedRequest':observation['request'],
         'caseId':observation['caseId'],'runtimeThreads':observation['runtimeThreads'],
+        'numericalRuntime':observation['numericalRuntime'],
         'methodSourceSHA256':methods()}
 
 
@@ -140,9 +141,14 @@ def write(ordinary_path,ordinary_manifest,observed_path,envelope_path,node_path)
     if (envelope['nativeResultJSON']!=json.dumps(actual,sort_keys=True,separators=(',',':'),allow_nan=False)
             or digest(actual)!=observation['fullNativeResultSHA256']):
         raise ValueError('Observed envelope does not bind the actual complete native bytes')
+    if (not isinstance(manifest.get('numericalRuntime'),dict)
+            or manifest['numericalRuntime'].get('schema')!='str-four-L-numerical-runtime/1'
+            or manifest['numericalRuntime']!=observation['numericalRuntime']):
+        raise ValueError('Actual ordinary and observed numerical runtimes must match')
     ordinary={'schema':'str-four-L-joint-ordinary-control/1','sourceSHA256':old['sourceSHA256'],
         'requestSHA256':digest(old['request']),'caseId':old['nativeVertical']['native']['caseId'],
-        'runtimeThreads':observation['runtimeThreads'],**_controls(old)}
+        'runtimeThreads':observation['runtimeThreads'],**_controls(old),
+        'numericalRuntime':manifest['numericalRuntime']}
     observed={key:envelope[key] for key in ('observation','freeBodies')}
     proof={'schema':'str-four-L-actual-joint-demand-proof/1','sourceSHA256':actual['sourceSHA256'],
         'processingSourceSHA256':{**methods(),METHOD:file_sha(ROOT/METHOD)},

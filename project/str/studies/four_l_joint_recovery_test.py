@@ -84,13 +84,14 @@ class JointRecovery(unittest.TestCase):
         observation={'schema':'str-four-L-joint-observation/1','joints':joints,
             'sourceSHA256':{'native.py':'source'},'requestSHA256':'request','caseId':'bounded-case',
             'runtimeThreads':{'OPENBLAS_NUM_THREADS':'1','OMP_NUM_THREADS':'1'},
+            'numericalRuntime':{'schema':'str-four-L-numerical-runtime/1','pythonVersion':'synthetic'},
             'fullNativeResultSHA256':'entire-result','physicalCutSHA256':'all-physical-cuts',
             'physicalHeadCount':52,'heads':[{'id':'P'+str(i),'reactionKN_KNm':[0]*6} for i in range(52)]}
         observed={'observation':observation,'freeBodies':recover(observation)}
         ordinary={**{k:v for k,v in observation.items() if k not in ('schema','joints')},
             'schema':'str-four-L-joint-ordinary-control/1'}
         self.assertTrue(verify_passivity(ordinary,observed)['exactFullResultEqualityVerified'])
-        for key in ('sourceSHA256','requestSHA256','caseId','runtimeThreads','fullNativeResultSHA256','physicalCutSHA256'):
+        for key in ('sourceSHA256','requestSHA256','caseId','runtimeThreads','fullNativeResultSHA256','physicalCutSHA256','numericalRuntime'):
             changed=copy.deepcopy(ordinary);changed[key]='changed'
             with self.subTest(key=key),self.assertRaises(ValueError):verify_passivity(changed,observed)
         changed=copy.deepcopy(observed);changed['freeBodies']['joints'][0]['freeBodyResidualKN_KNm'][0]=1

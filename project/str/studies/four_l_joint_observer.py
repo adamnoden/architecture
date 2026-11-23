@@ -36,9 +36,34 @@ def _multiply(matrix, vector):
     return [sum(a*b for a,b in zip(row,vector)) for row in matrix]
 
 
+def numerical_runtime():
+    """Fixed installed numerical inventory; identical before/after native work.
+
+    Necessary evidence domain only, never a guarantee of bitwise portability.
+    Paths, process identity and addresses are deliberately excluded.
+    """
+    import platform
+    import numpy as np
+    import scipy
+    from scipy.linalg import _fblas
+    from scipy.sparse.linalg._dsolve import _superlu
+    modules={'numpy/core':Path(np._core._multiarray_umath.__file__),
+        'scipy/fblas':Path(_fblas.__file__),'scipy/superlu':Path(_superlu.__file__)}
+    for package,module in (('numpy',np),('scipy',scipy)):
+        directory=Path(module.__file__).resolve().parent.parent/(package+'.libs')
+        for path in sorted(directory.glob('*.so*')):
+            if path.is_file():modules[package+'.libs/'+path.name]=path
+    libraries={key:hashlib.sha256(path.read_bytes()).hexdigest() for key,path in sorted(modules.items())}
+    return {'schema':'str-four-L-numerical-runtime/1','pythonImplementation':platform.python_implementation(),
+        'pythonVersion':platform.python_version(),'numpyVersion':np.__version__,'scipyVersion':scipy.__version__,
+        'system':platform.system(),'machine':platform.machine(),'byteorder':sys.byteorder,
+        'cpuFeatures':dict(sorted(np._core._multiarray_umath.__cpu_features__.items())),
+        'sharedLibrariesSHA256':libraries}
+
+
 def _controls(result):
     native = result['nativeVertical']['native']
-    return {'fullNativeResultSHA256':digest(result), 'heads':native['heads'],
+    return {'fullNativeResultSHA256':digest(result), 'heads':native['heads'], 'numericalRuntime':numerical_runtime(),
         'physicalCutSHA256':digest({key:native[key] for key in
             ('memberCuts','interiorMemberCuts','capCuts','adjacentGridMemberCuts')}),
         'physicalHeadCount':len(native['heads'])}

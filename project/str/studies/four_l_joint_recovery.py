@@ -91,7 +91,7 @@ def verify_passivity(ordinary, observed):
     if ordinary.get('schema') != 'str-four-L-joint-ordinary-control/1':
         raise ValueError('Executed ordinary full-result control required')
     for key in ('sourceSHA256','requestSHA256','caseId','runtimeThreads','fullNativeResultSHA256',
-            'heads','physicalCutSHA256','physicalHeadCount'):
+            'heads','physicalCutSHA256','physicalHeadCount','numericalRuntime'):
         if ordinary[key] != observation[key]:
             raise ValueError('Passive observer changed or mismatched ordinary native '+key)
     if ordinary['physicalHeadCount'] != 52 or len({r['id'] for r in ordinary['heads']}) != 52:

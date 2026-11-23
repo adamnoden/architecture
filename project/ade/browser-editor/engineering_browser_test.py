@@ -262,6 +262,15 @@ def main():
         expect(page.locator('#inlet-bank-views')).to_be_hidden()
         raise_control=page.get_by_label('Graded post-link raise (mm)')
         expect(raise_control).to_have_value('0')
+        expect(page.locator('#floor-result')).to_contain_text('52 foundation heads')
+        runtime=json.loads(subprocess.run(['node','--import','tsx','--input-type=module','-e',
+            'import {readFourLNumericalRuntime} from "./compiler/reference-house/current-design/structural-four-l-joint-adapter.ts";console.log(JSON.stringify(readFourLNumericalRuntime()));'],text=True,capture_output=True,check=True).stdout)
+        joint_proof=json.loads(Path('project/str/studies/four-l-joint-proof.json').read_text())
+        if runtime!=joint_proof['witness']['numericalRuntime']:
+            expect(page.locator('#floor-result')).to_contain_text('Joint demand unavailable for this numerical runtime')
+            expect(page.locator('#floor-result')).to_contain_text('ordinary floor and cage remain computed')
+        else:
+            expect(page.locator('#floor-result')).to_contain_text('Four rigid-joint demands computed')
         initial_cage=page.locator('#cage-result').inner_text()
         expect(page.locator('#cage-result')).to_contain_text('0 cover failures')
         raise_control.fill('10');raise_control.press('Enter')
