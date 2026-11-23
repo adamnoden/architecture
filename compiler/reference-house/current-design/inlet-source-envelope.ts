@@ -4,7 +4,7 @@ import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import type { runGroundSectionCase } from './structural-ground.js'
 import { inletEntrySideCuts, drawInletIndoorCuts } from './inlet-indoor-cuts.js'
-import { inletIndoorRoutes, drawInletIndoorRoutes } from './inlet-indoor-routes.js'
+import { inletIndoorRoutes, compareInletIndoorRouteCandidate, inletRouteRetainedServices, drawInletIndoorRoutes, type IndoorRoutesInput } from './inlet-indoor-routes.js'
 import { inletBankReceiver, drawInletBankReceiver } from './inlet-bank-receiver.js'
 import { compareInletBankShelfCarrier, drawInletBankShelfCarrier, type InletBankShelfCandidate } from './inlet-bank-carrier.js'
 import { inletStaticGravityMps2 } from './inlet-room-pan.js'
@@ -38,7 +38,7 @@ export const readLocalUtilityPocketSettings = (): InletSourceEnvelopeSettings =>
 const paths = ['project/had/studies/south-inlet-under-sill.json', 'project/had/studies/south-inlet-wet-box.json',
   'project/had/studies/south-inlet-relief.json', 'project/had/studies/south-utility-inlet.json',
   'project/had/studies/current-house-services.json', 'project/mat/studies/whole-house-service-baseline.json',
-  'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json', 'project/str/studies/current-house-grid.json', 'project/had/studies/inlet-bank-shelf-candidate.json'] as const
+  'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json', 'project/str/studies/current-house-grid.json', 'project/had/studies/inlet-bank-shelf-candidate.json', 'project/had/studies/utility-wide-capture.json', 'project/had/studies/inlet-route-candidate.json'] as const
 const methodPaths = ['compiler/reference-house/current-design/inlet-bank-carrier.ts', 'compiler/reference-house/current-design/inlet-bank-receiver.ts', 'project/had/studies/service-interface-geometry.mjs', 'compiler/reference-house/current-design/inlet-indoor-routes.ts', 'compiler/reference-house/current-design/inlet-indoor-cuts.ts', 'compiler/reference-house/current-design/inlet-source-envelope.ts',
   'compiler/reference-house/current-design/inlet-room-catchment.ts',
   'compiler/reference-house/current-design/inlet-room-pocket.ts',
@@ -389,7 +389,7 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
         return [id,p as [number,number,number,number]]
       })),
       protectedDoorOpenLeafMm:model.plantReferenceDoor.fullyOpenEastLeaf}),
-    indoorRoutes=inletIndoorRoutes({roomPlanMm:wetUtilityPlanMm,bankMm:[s.indoorBankXMm,s.indoorBankYMm],utilityAxisZMm:s.indoorUtilityAxisZMm,plantAxisZMm:s.indoorPlantAxisZMm,
+    indoorRouteInput:IndoorRoutesInput={roomPlanMm:wetUtilityPlanMm,bankMm:[s.indoorBankXMm,s.indoorBankYMm],utilityAxisZMm:s.indoorUtilityAxisZMm,plantAxisZMm:s.indoorPlantAxisZMm,
       tailOffsetMm:s.indoorTailOffsetMm,utilityReturnXMm:s.indoorUtilityReturnXMm,westernReturnXMm:s.indoorWesternReturnXMm,
       utilitySourcePathMm:b.data[paths[0]].branches[0].coordinates,plantSourcePathMm:b.data[paths[0]].branches[1].coordinates,
       plantTransferMm:transfer as readonly (readonly[number,number,number])[],groundFflMm,ceilingMm:clearHeight,
@@ -404,9 +404,32 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
         {id:'retained-washer',boxMm:[...services.utility.washer.slice(0,2),0,...services.utility.washer.slice(2),b.data[paths[6]].native.height] as [number,number,number,number,number,number]},
         {id:'retained-sink-conservative2000-high-envelope',boxMm:[...services.utility.sink.slice(0,2),0,...services.utility.sink.slice(2),2000] as [number,number,number,number,number,number]},
         {id:'utility-radiator',boxMm:[...services.emitters.find((e:any)=>e.id==='utility-E').completePlanWithValvesAndBrackets.slice(0,2),services.emitters.find((e:any)=>e.id==='utility-E').bottomLocal,...services.emitters.find((e:any)=>e.id==='utility-E').completePlanWithValvesAndBrackets.slice(2),services.emitters.find((e:any)=>e.id==='utility-E').topLocal-services.emitters.find((e:any)=>e.id==='utility-E').bottomLocal] as [number,number,number,number,number,number]},
-        ...frame.connections.filter(c=>c.wallId===utilityWall.id).map(c=>({id:c.id,boxMm:c.oppositeCoverEnvelopeMm as [number,number,number,number,number,number]}))]}),
+        ...frame.connections.filter(c=>c.wallId===utilityWall.id).map(c=>({id:c.id,boxMm:c.oppositeCoverEnvelopeMm as [number,number,number,number,number,number]}))]},
+    indoorRoutes=inletIndoorRoutes(indoorRouteInput),
     bankReceiver=inletBankReceiver({routes:indoorRoutes,cuts:indoorCuts,wallCoreYMm:utilityWall.structuralCore,settings:{clampWidthMm:s.indoorClampWidthMm,clampHeightMm:s.indoorClampHeightMm,clampRadialThicknessMm:s.indoorClampRadialThicknessMm,toolAxialMm:s.indoorToolAxialMm,toolSouthStrokeMm:s.indoorToolSouthStrokeMm}}),
-    bankShelfCarrier=compareInletBankShelfCarrier({bank:bankReceiver,routes:indoorRoutes,cuts:indoorCuts,candidate:b.data['project/had/studies/inlet-bank-shelf-candidate.json'] as InletBankShelfCandidate})
+    bankShelfCarrier=compareInletBankShelfCarrier({bank:bankReceiver,routes:indoorRoutes,cuts:indoorCuts,candidate:b.data['project/had/studies/inlet-bank-shelf-candidate.json'] as InletBankShelfCandidate}),
+    wide=b.data['project/had/studies/utility-wide-capture.json'],fan=services.fanAccess.find((v:any)=>v.id==='utility'),
+    retainedRouteServices={boxes:[
+      {id:'actual-utility-fan-pod',boxMm:[...fan.podPlan.slice(0,2),fan.podZ[0],...fan.podPlan.slice(2),fan.podZ[1]-fan.podZ[0]] as [number,number,number,number,number,number]},
+      {id:'actual-hot-H0-body',boxMm:wide.hot.body as [number,number,number,number,number,number]},
+      ...wide.stages.map((v:any)=>({id:'complete620mm-head-sweep/'+v.stage,boxMm:v.box as [number,number,number,number,number,number]}))
+     ],paths:[
+      {id:'actual-utility-fan-duct-with20mm-supports',pointsMm:fan.path,radiusWithSupportsMm:fan.selectedRoute.maximumCollarOD/2+20},
+      {id:'actual-utility-fan-condensate',pointsMm:fan.ceilingTrapDrainPort.path,radiusWithSupportsMm:fan.ceilingTrapDrainPort.maximumDrainOD/2},
+      {id:'actual-retained-hot-backbone',pointsMm:wide.hot.backbone,radiusWithSupportsMm:37},
+      {id:'actual-retained-hot-terminal',pointsMm:wide.hot.terminal,radiusWithSupportsMm:25}
+     ]},
+    retainedServiceComparison=inletRouteRetainedServices(indoorRoutes,retainedRouteServices),
+    routeCandidateComparison=(()=>{
+      let route:ReturnType<typeof compareInletIndoorRouteCandidate>
+      try{route=compareInletIndoorRouteCandidate(indoorRouteInput,b.data['project/had/studies/inlet-route-candidate.json'] as Parameters<typeof compareInletIndoorRouteCandidate>[1])}
+      catch(error){if(error instanceof Error&&error.message==='Unsupported changed candidate connection')return{state:'unsupported-for-edited-connections' as const,diagnostics:['INLET_ROUTE_CANDIDATE/current-connections-changed'],selected:false,comparison:null};throw error}
+      const bank=inletBankReceiver({routes:route,cuts:indoorCuts,wallCoreYMm:utilityWall.structuralCore,settings:bankReceiver.settings}),retained=inletRouteRetainedServices(route,retainedRouteServices),
+       diagnostics=[...route.diagnostics,...bank.diagnostics,...retained.diagnostics]
+      return{state:'unadopted-explicit-comparison' as const,selected:false,diagnostics,
+       comparison:{route,bank,retained,necessaryJoinedEnvelopeScreen:diagnostics.length===0,completeOccupiedArrangementQualified:false,
+        reviewSvg:drawInletIndoorRoutes(route,bank.routeOperation,retained)}}
+    })()
   return { state: 'one-recommended-replacement-not-an-adopted-room' as const,
     sourceOccupiedBindingDigest: b.occupied.binding.digest,
     designDuties: { status: 'authored-reference-design-requirements', utilityLmin: s.requiredUtilityLmin, plantLmin: s.requiredPlantLmin,
@@ -423,7 +446,7 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
       requiredSink: { kind: 'two-independent-pillar-taps', holesMm: [28, 28], centresMm: 180, mixingOnlyInOpenBowl: true,
         actualAirGapAboveFloodRimRequired: true, tapProductsAndConstituentsSelected: false },
       oldColdConnectionRetiredInOccupiedSource: false, crossfeedIndependenceQualified: false },
-    room: { wetUtilityPlanMm, bankShelfCarrier:{...bankShelfCarrier,reviewSvg:drawInletBankShelfCarrier(bankShelfCarrier)}, indoorRoutes: {...indoorRoutes,operation:bankReceiver.routeOperation,reviewSvg:drawInletIndoorRoutes(indoorRoutes,bankReceiver.routeOperation)}, bankReceiver:{...bankReceiver,reviewSvg:drawInletBankReceiver(bankReceiver)}, indoorCuts: {...indoorCuts,reviewSvg:drawInletIndoorCuts(indoorCuts)},
+    room: { wetUtilityPlanMm, bankShelfCarrier:{...bankShelfCarrier,reviewSvg:drawInletBankShelfCarrier(bankShelfCarrier)}, indoorRoutes: {...indoorRoutes,operation:bankReceiver.routeOperation,retainedServiceComparison,candidateComparison:routeCandidateComparison,reviewSvg:drawInletIndoorRoutes(indoorRoutes,bankReceiver.routeOperation,retainedServiceComparison)}, bankReceiver:{...bankReceiver,reviewSvg:drawInletBankReceiver(bankReceiver)}, indoorCuts: {...indoorCuts,reviewSvg:drawInletIndoorCuts(indoorCuts)},
       southWindowOpeningXMm: (() => { const opening = model.archOpeningRegister.GROUND.find((o: any) => o.id === 'south-window-4'); return [opening.centre - opening.width / 2, opening.centre + opening.width / 2] })(), northWallFacesYMm: utilityWall.finishedFaces, northOpeningXMm: candidateUtilityOpening,
       portalReplacement:{sourceOpeningXMm:sourceUtilityOpening,candidateOpeningXMm:candidateUtilityOpening,shiftXMm:s.utilityPortalShiftXMm,widthPreservedMm:candidateUtilityOpening[1]-candidateUtilityOpening[0],normalBodyAfter10Mm:Math.min(normalPathX-normalBodyR-candidateUtilityOpening[0],candidateUtilityOpening[1]-normalPathX-normalBodyR)-model.internalArchControls.actualRadialFinish-10,adoptedInOccupiedSource:false},
       retainedFurniture,
@@ -488,7 +511,7 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
         'https://manuals.sma.de/STPxx-3av-40-BE/en-US/3190770571.html'] },
     diagnostics: [...(bufferReserve < 10 ? ['TRANSFER_INTERCEPTS_BUFFER_RESERVATION'] : []), ...(doorReserve < 10 ? ['TRANSFER_LOWERED_EXPORT_EXCEEDS_EAST_CARGO_HEIGHT'] : []),
       ...(s.plantWithdrawalLoweringZMm>s.plantTransferZMm?['TRANSFER_PLANNED_LOWERING_RAISES']:[]),
-      ...indoorRoutes.diagnostics,...bankReceiver.diagnostics,
+      ...indoorRoutes.diagnostics,...bankReceiver.diagnostics,...retainedServiceComparison.diagnostics,
       ...(!bankShelfCarrier.necessaryCarrierComparison?['INLET_BANK_FLAT_SHELF_CARRIER_REJECTED']:[]),
       ...(plantWall.finishedFaces[0] - boardBox[1] - boardBox[4] < 10 ? ['MAINBOARD_INTERCEPTS_PLANT_WALL'] : []),
       ...(boardBox[1] < lobbySouth ? ['MAINBOARD_INTERCEPTS_UTILITY_WALL'] : []),

@@ -17,6 +17,7 @@ for (const [name, content] of [['inlet-source-envelope.results.json', JSON.strin
   ['inlet-source-envelope.svg', reviewSvg + '\n'],
   ['inlet-indoor-cuts.svg', result.joinedDirection.room.indoorCuts.reviewSvg + '\n'],
   ['inlet-indoor-routes.svg', result.joinedDirection.room.indoorRoutes.reviewSvg + '\n'],
+  ['inlet-route-candidate.svg', (result.joinedDirection.room.indoorRoutes.candidateComparison.comparison?.reviewSvg??'<svg xmlns="http://www.w3.org/2000/svg"><text x="20" y="30">Unsupported candidate/current connections; no adoption.</text></svg>')+'\n'],
   ['inlet-bank-receiver.svg', result.joinedDirection.room.bankReceiver.reviewSvg + '\n'],
   ['inlet-bank-carrier.svg', result.joinedDirection.room.bankShelfCarrier.reviewSvg + '\n'],
   ['inlet-bank-carrier.results.json', JSON.stringify({source:result.source,comparison:result.joinedDirection.room.bankShelfCarrier},null,2)+'\n'],
