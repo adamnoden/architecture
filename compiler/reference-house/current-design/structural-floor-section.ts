@@ -1,4 +1,5 @@
 import {runWetPostHeadFan,wetPostHeadFanPaths} from './structural-wet-post-head-fan.js'
+import { inspectSlabSolidCompatibility } from './structural-slab-constitutive.js'
 import { execFileSync } from 'node:child_process'
 import { runWetBearingContactAnalysis, wetBearingConsumerPaths } from './structural-wet-bearing.js'
 import { createHash } from 'node:crypto'
@@ -98,7 +99,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-coupled-floor-section-case/1' || !record(comparison.sourceSHA256)
     || Object.keys(comparison.sourceSHA256).length !== 58) throw new Error('Floor-section source contract changed; integrate explicitly')
-  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, transversePath, ...floorInterfaceConsumerPaths, ...wetSupportCageConsumerPaths, ...wetBearingConsumerPaths, ...fourLJointConsumerPaths, ...wetPostHeadFanPaths].map(path => {
+  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, transversePath, 'compiler/reference-house/current-design/structural-slab-constitutive.ts', ...floorInterfaceConsumerPaths, ...wetSupportCageConsumerPaths, ...wetBearingConsumerPaths, ...fourLJointConsumerPaths, ...wetPostHeadFanPaths].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
     if (owner.identities[path] !== blob || (Object.hasOwn(comparison.sourceSHA256, path)
@@ -220,7 +221,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
   return { status: 'computed-comparison' as const,
     source: { planDigest: current.planDigest, bindingDigest: current.bindingDigest, caseDigest: sha256SemanticFingerprint(input) },
     method: { id: 'str-current-floor-section/1', path: methodPath, inputs: current.inputs },
-    native: vertical.native, vertical, floorSection: section, cageComparison, wetPostHeadFan, upperMasonry: output.upperMasonry,
+    native: vertical.native, vertical, floorSection: section, slabSolidCompatibility: inspectSlabSolidCompatibility(input.comparison), cageComparison, wetPostHeadFan, upperMasonry: output.upperMasonry,
     mass: output.mass, plateBending: output.plateBending, sectionCuts: recoverFloorSectionCuts(output.plateBending as FloorBendingField, sectionCuts),
     plateTransverseShear, transverseSectionCuts:recoverFloorTransverseCuts(plateTransverseShear,sectionCuts), cornerInterfaces, fourLJointDemands: jointExecution.jointDemands, floorReinforcement: output.floorReinforcement,
     roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport, wetBearingContact,

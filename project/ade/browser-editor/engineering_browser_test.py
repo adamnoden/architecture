@@ -265,6 +265,7 @@ def main():
         raise_control=page.get_by_label('Graded post-link raise (mm)')
         expect(raise_control).to_have_value('0')
         expect(page.locator('#floor-result')).to_contain_text('52 foundation heads')
+        expect(page.locator('#floor-result')).to_contain_text('authored slab laws cannot describe one common positive 3D modulus')
         runtime=json.loads(subprocess.run(['node','--import','tsx','--input-type=module','-e',
             'import {readFourLNumericalRuntime} from "./compiler/reference-house/current-design/structural-four-l-joint-adapter.ts";console.log(JSON.stringify(readFourLNumericalRuntime()));'],text=True,capture_output=True,check=True).stdout)
         joint_proof=json.loads(Path('project/str/studies/four-l-joint-proof.json').read_text())

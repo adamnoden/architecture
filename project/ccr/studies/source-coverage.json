@@ -886,7 +886,8 @@
         "project/str/studies/four_l_joint_material_audit.py",
         "project/str/studies/wet_post_head_fan.py",
         "project/str/studies/wet_post_head_fan_driver.py",
-        "compiler/reference-house/current-design/structural-wet-post-head-fan.ts"
+        "compiler/reference-house/current-design/structural-wet-post-head-fan.ts",
+        "compiler/reference-house/current-design/structural-slab-constitutive.ts"
       ],
       "authoredInputs": [
         "project/str/studies/floor-section-cuts-inputs.json",
@@ -2290,8 +2291,8 @@
     "project/had/studies/inlet-source-envelope.results.json": "aaecb777d9b23d99a7ada7387439534fca65b544",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
     "compiler/reference-house/current-design/engineering-edit.ts": "d8002b0b3ec49678167093f303a1cc316519f0ae",
-    "project/ade/browser-editor/engineering-api.ts": "d489784af96f430d6f49fde31f7d059468f3ce16",
-    "project/ade/browser-editor/engineering-editor.ts": "7068f79851e7d5665dac09966275042192714148",
+    "project/ade/browser-editor/engineering-api.ts": "790a1111e1a39144f834cd9741c2dcaaae62ab8a",
+    "project/ade/browser-editor/engineering-editor.ts": "016eb6bbaa8dbb741f5bed514a9d1a33c72d574e",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
@@ -2300,11 +2301,11 @@
     "project/str/studies/upper_masonry_inventory.py": "f67f24b64bc4245272b4961325415be72f77eaf3",
     "project/str/studies/upper_roof_bearing.py": "ff4338d24efd221aa945cf7db28264fb614531c2",
     "project/str/studies/upper_roof_bearing_proof.py": "28c75e7b5dadb1d2a6d9af26f1b60431656a8712",
-    "project/str/upper-masonry-roof-bearing-result.md": "7102ac5c85c17efa85bf128673893d20b33de935",
+    "project/str/upper-masonry-roof-bearing-result.md": "98e34a6193fd25a6243b347aeae904761993a5b9",
     "project/str/studies/floor_section_model.py": "f3cdbbf118b0d5d064c3f6564786de770b5ffd88",
     "project/str/studies/floor_section_successor.py": "0e86fe7778fe0a5e85dbf3bcb91e5e9a99a45fd3",
     "project/str/floor-section-result.md": "57386497f30c777bcafc8090cac8b462add8b87c",
-    "compiler/reference-house/current-design/structural-floor-section.ts": "ff4cfe2a638507070549a3bf42d750838ea4410a",
+    "compiler/reference-house/current-design/structural-floor-section.ts": "bb495f7bbcd31e7a24f28d3cea857a51b114700c",
     "project/str/studies/floor_section_proof.py": "9ab873623174bd4ec52c84473527d818874d7bc0",
     "project/str/studies/floor-section-proof.json": "43d622a67d01d40e976ee605dd2528f5104eac1f",
     "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1",
@@ -2446,6 +2447,8 @@
     "project/str/studies/finite-joint-solid-requirements.txt": "d22427cf111bfa6822cda0c7b8be3c2199949117",
     "project/str/studies/finite-joint-solid-inputs.json": "2da8a884ba307740b976ab59aec6d7f382278539",
     "project/str/studies/fixed-normal-experiment.results.json": "d70a4ee929a02d0f46a2563484b41ec98aab8b5f",
-    "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json": "a427298f215d2ad68be3885e98777c9c7f8474fa"
+    "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json": "a427298f215d2ad68be3885e98777c9c7f8474fa",
+    "compiler/reference-house/current-design/structural-slab-constitutive.ts": "3719c065d8ebf6c7f187ad2d843706c09d54986a",
+    "project/str/floor-portal-reconciliation.md": "94f110753cdba945f553fe2a136ebff4c16c4862"
   }
 }
