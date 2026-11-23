@@ -9,9 +9,9 @@
     "label": "convergence-water-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.038Z",
-  "heartbeatAt": "2026-11-23T09:06:11.210Z",
-  "expiresAt": "2026-11-23T09:51:11.210Z",
-  "branch": "work/convergence-integrate-20261123",
+  "heartbeatAt": "2026-11-23T09:12:47.644Z",
+  "expiresAt": "2026-11-23T09:57:47.644Z",
+  "branch": "recovery/had-side-receiver-20261123",
   "predecessor": {
     "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
     "generation": 59,
@@ -34,7 +34,8 @@
   },
   "pr": 1620,
   "checkpoint": {
-    "evidence": "Verified mergedPR1620 mainae5d28d605c2ebf190cb6bf922a8af8f0ddb29b3; local86efc8ad preserves19-file unadopted side-receiver recovery for remote upload, no current source adoption",
-    "next": "Publish recovery/had-side-receiver-20261123 from exact manifest; record remote identity, then complete full3D coupling and physical capture/thermal interfaces"
-  }
+    "evidence": "Fresh Git verified4d06892903bb4fba7185cae8a29d47c2498acb0c/tree17856c73 and all19 checkpoint blobs; PR1620 mergedmainae5d28d6. Prototypechecks and typecheck pass; no side-receiver adoption.",
+    "next": "Join actual bank source-route and finite receiver in full3D; retain explicit valve/terminal/guide laws, whole known gravity, cold-wrap and capture qualification."
+  },
+  "note": "PR1620 is merged provenance; current unadopted continuation is the verified recovery branch."
 }
