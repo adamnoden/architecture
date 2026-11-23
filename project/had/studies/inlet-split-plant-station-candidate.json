@@ -1,0 +1,40 @@
+{
+  "schema": "had-split-plant-station/1",
+  "axisMm": [
+    11360,
+    4000,
+    1450
+  ],
+  "operatorShoulderMm": [
+    10680,
+    4300,
+    1450
+  ],
+  "ordinaryApproachMm": [
+    [
+      8800,
+      3200,
+      1450
+    ],
+    [
+      10545,
+      3200,
+      1450
+    ],
+    [
+      10545,
+      4250,
+      1450
+    ],
+    [
+      10680,
+      4300,
+      1450
+    ]
+  ],
+  "settingEachMm": 10,
+  "mountCentresZMm": [
+    1750,
+    2000
+  ]
+}

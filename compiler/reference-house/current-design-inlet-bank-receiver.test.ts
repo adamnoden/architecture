@@ -15,9 +15,11 @@ const receipt=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-s
   networkAllowancesBar:[receipt.settings.utilityNetworkLossBar,receipt.settings.plantNetworkLossBar],
   comparison:r.authoredComparison,obstacles:r.checkedObstacles},
  run=(routes=inletIndoorRoutes(input),settings=bank.settings)=>inletBankReceiver({routes,cuts,wallCoreYMm:bank.datum.wallCoreYMm,settings})
-test('finite clamp and full arm/tool territories retain occupied duties, while physical receivers stay unresolved',()=>{
+test('finite clamps retain their local duties but actual route/operation collisions reject the bank',()=>{
  const b=run()
- assert.equal(b.necessaryRouteOperationAndClampEnvelopeScreen,true)
+ assert.equal(b.necessaryRouteOperationAndClampEnvelopeScreen,false)
+ assert.ok(b.diagnostics.includes('INLET_ROUTE_ORDINARY_ARM_COLLISION'))
+ assert.ok(b.diagnostics.includes('INLET_ROUTE_VALVE_BODY_OR_STEM_COLLISION'))
  assert.equal(b.receivers.length,4)
  assert.ok(b.receivers.every(v=>v.stripAfterTwoSettingsMm>8.48&&v.toolAfterTwoSettingsMm>3.48))
  assert.ok(b.receivers.every(v=>v.ordinaryFullArmAfterSettingMm>5.88))

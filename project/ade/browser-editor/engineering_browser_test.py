@@ -213,8 +213,11 @@ def main():
         chooser.value.set_files({'name':'inlet-bank.json','mimeType':'application/json','buffer':json.dumps(inlet_document).encode()})
         expect(page.locator('#inlet-bank-controls')).to_be_visible(timeout=120000)
         ready(page,0)
-        expect(page.locator('#inlet-result')).to_contain_text('within declared bounds')
+        expect(page.locator('#inlet-result')).to_contain_text('Finite route/operation/clamp envelope: REJECTED')
         initial_bank=page.locator('#current-inlet-bank').get_attribute('src')
+        expect(page.locator('#inlet-candidate-result')).to_contain_text('Explicit unadopted route: REJECTED')
+        initial_candidate=page.locator('#current-inlet-candidate').get_attribute('src')
+        assert initial_candidate and 'complete' in page.locator('#current-inlet-candidate').get_attribute('alt')
         expect(page.locator('#inlet-result')).to_contain_text('remain unqualified')
         page.locator('#inlet-field').select_option('indoorTailOffsetMm')
         expect(page.locator('#inlet-value')).to_have_value('250')
@@ -222,17 +225,22 @@ def main():
         ready(page,1)
         expect(page.locator('#inlet-result')).to_contain_text('REJECTED')
         assert page.locator('#current-inlet-bank').get_attribute('src')!=initial_bank
+        expect(page.locator('#inlet-candidate-result')).to_contain_text('unavailable for the edited connections')
+        assert page.locator('#current-inlet-candidate').get_attribute('src') is None
         with page.expect_download() as download:
             page.get_by_role('button',name='Export JSON').click()
         changed_bank=json.loads(Path(download.value.path()).read_text())
         assert changed_bank['stages']['inletSourceEnvelope']=={**inlet_document['stages']['inletSourceEnvelope'],'indoorTailOffsetMm':200}
         cli_bank=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(changed_bank),text=True,capture_output=True,check=True).stdout)['engineering']['inletSourceEnvelope']
         assert not cli_bank['joinedDirection']['room']['bankReceiver']['necessaryRouteOperationAndClampEnvelopeScreen']
+        assert 'INLET_ROUTE_ORDINARY_ARM_COLLISION' in cli_bank['joinedDirection']['room']['bankReceiver']['diagnostics']
+        assert not cli_bank['joinedDirection']['room']['indoorRoutes']['operation']['necessaryRouteOperationEnvelopeScreen']
         assert not cli_bank['joinedDirection']['room']['bankReceiver']['nativeStructuralActionsAdopted']
         assert not cli_bank['joinedDirection']['room']['bankReceiver']['wholeOccupiedArrangementComplete']
         page.get_by_role('button',name='Undo',exact=True).click();ready(page,2)
         expect(page.locator('#inlet-value')).to_have_value('250')
         assert page.locator('#current-inlet-bank').get_attribute('src')==initial_bank
+        assert page.locator('#current-inlet-candidate').get_attribute('src')==initial_candidate
         page.locator('#inlet-field').select_option('pipeJacketDensityComparisonKgM3')
         page.locator('#inlet-value').fill('4000');page.locator('#inlet-value').press('Enter')
         ready(page,3)

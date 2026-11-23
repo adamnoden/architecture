@@ -73,6 +73,16 @@ function draw() {
   for(const [name,result]of [['current',current],['comparison',comparison]] as const){const image=element<HTMLImageElement>(`${name}-inlet-bank`);if(result?.inletBank)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(result.inletBank.receiver.reviewSvg);else image.removeAttribute('src')}
   for(const [name,result]of [['current',current],['comparison',comparison]] as const){const image=element<HTMLImageElement>(`${name}-inlet-carrier`);if(result?.inletBank)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(result.inletBank.carrier.reviewSvg);else image.removeAttribute('src')}
   element('inlet-result').textContent=bank?`Finite route/operation/clamp envelope: ${bank.receiver.necessaryRouteOperationAndClampEnvelopeScreen?'within declared bounds':'REJECTED'}. Jacket reference ${bank.route.insulationAndJacketInventory.jacketDensityReferenceKg.toFixed(3)} kg; insulation reference ${bank.route.insulationAndJacketInventory.insulationDensityReferenceKg.toFixed(3)} kg. Flat-shelf carrier: ${bank.carrier.necessaryCarrierComparison?'within declared bounds':'REJECTED'}. Actual materials, tools, carrier, pier, coupled pressure/thermal reactions and loaded renewal remain unqualified.`:''
+  const routeCandidate=bank?.route.candidateComparison
+  element('inlet-candidate-result').textContent=routeCandidate?.comparison
+    ? `Explicit unadopted route: ${routeCandidate.comparison.necessaryJoinedEnvelopeScreen?'within declared comparisons':'REJECTED'}. Retained services and complete package: ${routeCandidate.comparison.retained.necessaryRetainedServiceEnvelopeScreen?'within declared comparisons':'REJECTED'}. No route is selected.`
+    : routeCandidate?'Explicit unadopted route unavailable for the edited connections; no historical geometry is substituted.':''
+  for(const [name,result]of [['current',current],['comparison',comparison]] as const){
+    const image=element<HTMLImageElement>(`${name}-inlet-candidate`),candidate=result?.inletBank?.route.candidateComparison.comparison
+    image.hidden=!candidate
+    if(candidate)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(candidate.reviewSvg)
+    else image.removeAttribute('src')
+  }
   const cage = current?.wetCage
   element('cage-result').textContent = cage
     ? `Graded raise ${cage.settings.postTopLevelRaiseMm} mm. Cage geometry: ${cage.geometry.independentPathFailureCount} path-pair, ${cage.geometry.internalClosureFailureCount} closure and ${cage.geometry.coverFailureCount} cover failures. Explicit steel ${cage.quantities.actualSteelMassUpperKg.toFixed(3)} kg. Native case ${cage.nativeCaseId}. Comparison only; post-head resistance and installed acceptance remain unqualified.`

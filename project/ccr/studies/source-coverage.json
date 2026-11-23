@@ -589,7 +589,12 @@
         "project/had/inlet-cabinet-copper-wet-matrix.md",
         "project/had/inlet-source-and-room-decision.md",
         "project/had/inlet-whole-room-convergence.md",
-        "project/had/inlet-bank-carrier-rejection.md"
+        "project/had/inlet-bank-carrier-rejection.md",
+        "project/had/inlet-route-operation-collision.md",
+        "project/had/route-operation-recovery-20261123.md",
+        "project/had/inlet-isolation-product-recovery-20261123.md",
+        "project/had/inlet-retained-service-route-comparison.md",
+        "project/had/split-isolation-station-development.md"
       ],
       "authorRoots": [
         "compiler/reference-house/current-design/inlet-fixed-entry.ts",
@@ -622,7 +627,9 @@
         "compiler/reference-house/current-design/inlet-electrical-screen.ts",
         "compiler/reference-house/current-design/inlet-screen-frame.ts",
         "compiler/reference-house/current-design/inlet-fixed-receiver.ts",
-        "project/had/studies/inlet-bank-shelf-candidate.json"
+        "project/had/studies/inlet-bank-shelf-candidate.json",
+        "project/had/studies/inlet-route-candidate.json",
+        "project/had/studies/inlet-split-plant-station-candidate.json"
       ],
       "inputReceipts": [
         "project/had/studies/south-inlet-under-sill.json",
@@ -652,7 +659,9 @@
         "project/had/studies/inlet-indoor-routes.svg",
         "project/had/studies/inlet-bank-receiver.svg",
         "project/had/studies/inlet-bank-carrier.results.json",
-        "project/had/studies/inlet-bank-carrier.svg"
+        "project/had/studies/inlet-bank-carrier.svg",
+        "project/had/studies/inlet-route-candidate.svg",
+        "project/had/studies/inlet-split-plant-station.svg"
       ],
       "consumers": [
         "compiler/reference-house/current-design/compile.ts",
@@ -678,7 +687,9 @@
         "node --import tsx --test compiler/reference-house/current-design-inlet-room-pocket.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-room-pan.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-indoor-cuts.test.ts compiler/reference-house/current-design-inlet-indoor-routes.test.ts",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-bank-carrier.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-bank-carrier.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-retained-services.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-split-station.test.ts"
       ]
     },
     {
@@ -2305,14 +2316,14 @@
     "project/str/studies/roof-surface-pressure.svg": "03610ad976377889fb0d27bfaaa107b9cdce2099",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "b2e302a755c1ffa4a6685c630a6e030bb6cfde0a",
-    "project/had/studies/inlet-source-envelope.ts": "383d4ffe37ed9d6a7953a5e68e7c1f0f8b1c74ee",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "27bffe7a40cceb6016ac56f26fb29c6a7050707f",
+    "project/had/studies/inlet-source-envelope.ts": "13f0fc119195c29ce52da40b0e86dcce39ad1691",
     "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
-    "project/had/studies/inlet-source-envelope.results.json": "aaecb777d9b23d99a7ada7387439534fca65b544",
+    "project/had/studies/inlet-source-envelope.results.json": "ee7dfc2216b878dc487548327b08537521e229fc",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
     "compiler/reference-house/current-design/engineering-edit.ts": "d8002b0b3ec49678167093f303a1cc316519f0ae",
     "project/ade/browser-editor/engineering-api.ts": "790a1111e1a39144f834cd9741c2dcaaae62ab8a",
-    "project/ade/browser-editor/engineering-editor.ts": "016eb6bbaa8dbb741f5bed514a9d1a33c72d574e",
+    "project/ade/browser-editor/engineering-editor.ts": "8fccec6b3c6df0837c0189d8447343691aa21d23",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
@@ -2340,7 +2351,7 @@
     "project/str/studies/seated-wet-support-floor.svg": "8d6fa5285ee3e12584fd336a2abbeee32b0feac8",
     "project/str/studies/floor-section-cuts.ts": "432c289742d3a954ef06ef47ecb41f0857bcd976",
     "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
-    "project/had/inlet-whole-room-convergence.md": "d85d05df1cb550aa2b2bdccfd85952b0d6889414",
+    "project/had/inlet-whole-room-convergence.md": "5142ba87553d42094e62a908e207f5335f1d8731",
     "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
     "project/str/studies/grid_origin_recovery.py": "c09369bc1acbaaa9438545fb12e0a4e15f1a90b7",
     "project/str/floor-corner-convergence-result.md": "d0b72e14ce1be9bae11918cdcc9d7094c5a0d7ad",
@@ -2353,7 +2364,7 @@
     "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
     "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3",
     "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
-    "project/had/studies/inlet-local-pocket.results.json": "0783eb8fa2a93f0008ecc1af7343c4cba8aabb05",
+    "project/had/studies/inlet-local-pocket.results.json": "ca81e52f6b00cce5b9303e068f3392fe7d88741d",
     "project/had/studies/inlet-local-pocket.svg": "1b055c9299705e175d8fe523102bb991e6dbd913",
     "compiler/reference-house/current-design/inlet-room-pan.ts": "81c7736c2b91de574c582dd902ff903953dc9b46",
     "project/had/studies/inlet-local-pan.svg": "e3da3b38a4eb4532e8f3d3a9ab713a6d20aa2be9",
@@ -2395,10 +2406,10 @@
     "project/str/studies/floor-interface-proof.ts": "7fc632d6570eb8800a142825a8f55deb44a0de6a",
     "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "7aec3642a0bd2e696c2d605a06c407ba0ef3c5fd",
     "project/ias/studies/adaptable-study-lighting-construction.svg": "77735cfc13319b6bbab3e9510f63167510509a17",
-    "compiler/reference-house/current-design/inlet-indoor-routes.ts": "a146ed0989975384bdba98391517b9e60e7a81c9",
-    "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "324c658bd3159aff595d37ef41eccfecb3a4a117",
+    "compiler/reference-house/current-design/inlet-indoor-routes.ts": "27180bb54be4229d3d45f87fdfaec29c768c9c91",
+    "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
     "project/had/studies/inlet-indoor-cuts.svg": "41fcd95df7c6149712a761236e66269bac0aaa7d",
-    "project/had/studies/inlet-indoor-routes.svg": "f0c241b01ddee767a21ffba71dcf4a31b01c47c9",
+    "project/had/studies/inlet-indoor-routes.svg": "2ea27bd3c23b563c2d66fb13ae71f7e5abd74744",
     "compiler/reference-house/current-design/assemblies/study-lighting-case.ts": "ab75ad0f9728bf7b54717c53cdfe316340987437",
     "compiler/reference-house/current-design-engineering-browser-boundary.test.ts": "3d53124a25f253b30d7e358d8b2cbc1374e76b89",
     "project/str/studies/floor-interface-proof.json": "0486e7f011b014d4f4f21a042f7c3f3ecb785abb",
@@ -2411,13 +2422,13 @@
     "project/str/studies/monolithic-rc-governing-actions.json": "1ecfceb4b52d7769842938d02dab23269ea2ac68",
     "project/str/studies/monolithic-rc-translation-replay.json": "e0c6ca80adfae59270fcd560de6c0bf6fef3979a",
     "project/str/studies/monolithic-rc-translation-actions.json": "45fd6254540ff5d0f8927f3a8375e157bf330e2b",
-    "compiler/reference-house/current-design/inlet-bank-receiver.ts": "cc7ca65f7619adade42caa095071c234b6eeb496",
-    "project/had/studies/inlet-bank-receiver.svg": "c271ae9cd1c8839948a4ac364147bb9f8ebf92b5",
-    "project/ade/browser-editor/engineering.html": "bbf1b6857f08c97fb438c102b620608d75c7b8b8",
-    "project/had/inlet-bank-carrier-rejection.md": "bb042f5a6e6aef33aeb09da34514f56a33a7ec82",
+    "compiler/reference-house/current-design/inlet-bank-receiver.ts": "27ae1b2964495559cee1bd13b3c270ab2c660744",
+    "project/had/studies/inlet-bank-receiver.svg": "36daa77f163c959d9578b34783bee1e5e2806b04",
+    "project/ade/browser-editor/engineering.html": "a5646395dcf2f7eec7d7d8ed6e1a288eb0887c62",
+    "project/had/inlet-bank-carrier-rejection.md": "02e3e0c4004e7a3d636b5e56297131ff959d132d",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
-    "project/had/studies/inlet-bank-carrier.results.json": "c6d1672d394105dcaeb8a7d5ddedd92678465aca",
+    "project/had/studies/inlet-bank-carrier.results.json": "b55fab277434e65d80626b2dbf0cb4212d2da34f",
     "project/had/studies/inlet-bank-carrier.svg": "dc84130cc6a7fcae0130e64b6687bb2112546f13",
     "project/str/studies/wet_bearing_refinement.py": "06f8fabdfaf5ed6cc132e7a49248845dbdb08bab",
     "project/str/studies/wet-bearing-refinement-inputs.json": "42dea6fee820d552c4bb35a59258825a54eacb64",
@@ -2443,6 +2454,9 @@
     "project/str/studies/four-l-joint-default-thread-attempt.json": "980256752350cc54e2071bddf34e766dd6bd0133",
     "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "8823f081b68beabe2f318105019b22ee76e1587d",
     "project/ias/studies/adaptable-study-lighting-common-depth.svg": "64f1d78edef1f7c5afa6e82257ae3dc8a479c79b",
+    "project/had/inlet-route-operation-collision.md": "79ddc6d61a3924bd6c9f2c427bd79f42e0fa1ce2",
+    "project/had/route-operation-recovery-20261123.md": "b1d4b1740997d17832aadb237274ecb0ee8ea182",
+    "project/had/inlet-isolation-product-recovery-20261123.md": "2265d1f1a7e35db18ae5bf684040adaf236ef7b2",
     "project/str/studies/wet_post_head_fan.py": "a0b083357c0fb1170868b57614752313e69073a2",
     "project/str/studies/wet_post_head_fan_driver.py": "394854813a0f18f125ba6e745c22662b075468ed",
     "compiler/reference-house/current-design/structural-wet-post-head-fan.ts": "9e023ff329a76cc512ff3a3f7467489483b688c6",
@@ -2471,6 +2485,12 @@
     "compiler/reference-house/current-design/structural-slab-constitutive.ts": "3719c065d8ebf6c7f187ad2d843706c09d54986a",
     "project/str/floor-portal-reconciliation.md": "94f110753cdba945f553fe2a136ebff4c16c4862",
     "project/str/studies/slab-constitutive-compiled-control.json": "f7c3ca04e4b875aa98e808ba0c1e56c574752065",
-    "project/str/studies/slab-constitutive-compiled-control.tar.xz": "193c4200f0b7b5c38b1667ddcfddb7e5bc52b0fd"
+    "project/str/studies/slab-constitutive-compiled-control.tar.xz": "193c4200f0b7b5c38b1667ddcfddb7e5bc52b0fd",
+    "project/had/studies/inlet-route-candidate.json": "6bd208ae8dbe70564122af3d16d3d86f60dde141",
+    "project/had/studies/inlet-route-candidate.svg": "9503bc8122f542d68af1662e6e120ff9d501a25f",
+    "project/had/inlet-retained-service-route-comparison.md": "f574b645bf44c91378eccdd621235687ba2315fd",
+    "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
+    "project/had/studies/inlet-split-plant-station.svg": "7e5cb43bbf3fe2bd23d5c7471438e6a0dd26d5d5",
+    "project/had/split-isolation-station-development.md": "fecda8b22e708e9e89de61908c1beb7b683ea21f"
   }
 }
