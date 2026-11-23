@@ -38,6 +38,15 @@ class ActualJointProof(unittest.TestCase):
             else:proof['exactObservedInput'][location]['joints'][0]['memberCuts'][0]['memberOnJointAtReferenceKN_KNm'][2]+=1
             with self.subTest(location=location),self.assertRaises(ValueError):check(proof)
 
+    def test_complete_native_semantic_control_rejects_stale_or_incomplete_admission(self):
+        for key,value in [('fingerprint','0'*64),('observedFingerprint','0'*64),
+                ('ordinaryFullCaptureFileSHA256','0'*64),('normalisation','all-strings')]:
+            proof=copy.deepcopy(self.proof);proof['nativeSemanticControl'][key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):check(proof)
+        proof=copy.deepcopy(self.proof)
+        proof['actualNodeAdmission']['jointDemands']['nativeSemanticFingerprint']='0'*64
+        with self.assertRaises(ValueError):check(proof)
+
     def test_actual_node_admission_and_exact_request_are_bound(self):
         proof=copy.deepcopy(self.proof);proof['actualNodeAdmission']['actualNodeAdmissionPassing']=False
         with self.assertRaises(ValueError):check(proof)
