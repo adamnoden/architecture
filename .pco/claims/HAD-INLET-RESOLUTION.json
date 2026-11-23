@@ -9,8 +9,8 @@
     "label": "convergence-water-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.038Z",
-  "heartbeatAt": "2026-11-23T09:12:47.644Z",
-  "expiresAt": "2026-11-23T09:57:47.644Z",
+  "heartbeatAt": "2026-11-23T09:42:32.673Z",
+  "expiresAt": "2026-11-23T10:27:32.673Z",
   "branch": "recovery/had-side-receiver-20261123",
   "predecessor": {
     "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
@@ -34,8 +34,8 @@
   },
   "pr": 1620,
   "checkpoint": {
-    "evidence": "Fresh Git verified4d06892903bb4fba7185cae8a29d47c2498acb0c/tree17856c73 and all19 checkpoint blobs; PR1620 mergedmainae5d28d6. Prototypechecks and typecheck pass; no side-receiver adoption.",
-    "next": "Join actual bank source-route and finite receiver in full3D; retain explicit valve/terminal/guide laws, whole known gravity, cold-wrap and capture qualification."
+    "evidence": "Remote4d068929 preserves19 source8 side-receiver files; full3D192-case recovery being committed with exact source admission and independent controls. Source8 cold route counterexample found: Utility return crosses Plant wheel and arm sweeps; corrective shared collision check now priority.",
+    "next": "Publish full3D recovery; add precise connected-end route-operation checks and reject current collision. Prove all90degree reroute before authored default change."
   },
   "note": "PR1620 is merged provenance; current unadopted continuation is the verified recovery branch."
 }
