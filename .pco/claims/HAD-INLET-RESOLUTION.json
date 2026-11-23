@@ -9,8 +9,8 @@
     "label": "convergence-water-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.038Z",
-  "heartbeatAt": "2026-11-23T07:49:16.868Z",
-  "expiresAt": "2026-11-23T08:34:16.868Z",
+  "heartbeatAt": "2026-11-23T08:35:19.840Z",
+  "expiresAt": "2026-11-23T09:20:19.840Z",
   "branch": "work/convergence-integrate-20261123",
   "predecessor": {
     "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
@@ -34,7 +34,7 @@
   },
   "pr": 1620,
   "checkpoint": {
-    "evidence": "Remote92559fd3 recovery; local3813cf0b joins reviewed carrier and preserves IAS pane;20 carrier/edit controls and root34 focused checks passed",
-    "next": "Finish exact submitted-head checks, publish combined carrier/recovery PR1620, verify preflight and merge"
+    "evidence": "Remote969e4048; canonical show reconciled timed-out prior renewal as unchanged gen60; isolated side-frame144cases and explicit valve-law sensitivities are exploratory, unadopted",
+    "next": "Publish recoverable side-frame evidence only after valid renewal; complete cold-wrap and coupled seized-guide analysis"
   }
 }
