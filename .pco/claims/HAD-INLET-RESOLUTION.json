@@ -9,8 +9,8 @@
     "label": "convergence-water-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.038Z",
-  "heartbeatAt": "2026-11-23T07:33:56.553Z",
-  "expiresAt": "2026-11-23T08:18:56.553Z",
+  "heartbeatAt": "2026-11-23T07:49:16.868Z",
+  "expiresAt": "2026-11-23T08:34:16.868Z",
   "branch": "work/convergence-integrate-20261123",
   "predecessor": {
     "leaseId": "468f5084-031b-46c6-80ea-50280340b9bc",
@@ -34,7 +34,7 @@
   },
   "pr": 1620,
   "checkpoint": {
-    "evidence": "PR1620 combined6cfb recovery; local carrier28492d2e plus43a3c293 has6 focused tests and source-bound rejection",
-    "next": "Verify submitted-head CI, merge recovery, then integrate carrier rejection into shared source8"
+    "evidence": "Remote92559fd3 recovery; local3813cf0b joins reviewed carrier and preserves IAS pane;20 carrier/edit controls and root34 focused checks passed",
+    "next": "Finish exact submitted-head checks, publish combined carrier/recovery PR1620, verify preflight and merge"
   }
 }
