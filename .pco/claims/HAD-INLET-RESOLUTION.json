@@ -9,9 +9,9 @@
     "label": "convergence-water-route-20261123-resume"
   },
   "claimedAt": "2026-11-23T22:25:11.048Z",
-  "heartbeatAt": "2026-11-23T23:28:25.232Z",
-  "expiresAt": "2026-11-24T00:13:25.232Z",
-  "branch": "work/convergence-water-route-20261123-resume",
+  "heartbeatAt": "2026-11-23T23:37:49.427Z",
+  "expiresAt": "2026-11-24T00:22:49.427Z",
+  "branch": "work/convergence-resume-final-20261123",
   "predecessor": {
     "leaseId": "6e4645a2-e69d-4369-b4b5-29cd4723f830",
     "generation": 60,
@@ -34,9 +34,9 @@
       "blocker": "Execution environment unavailable. Remote patch reconstructed, untested; generated receipts unchanged/stale. Canonical Actions handoff requested; no local CLI execution."
     }
   },
-  "pr": 1623,
+  "pr": 1622,
   "checkpoint": {
-    "evidence": "PR1623cb5frozen with ADE/PLT/publication proofs green;healthpending. Durablecontinuation340e1037 exacttree95952629 fromlocal613e sharedretained/package rejection,readonlyUI;27exactheadtests/type/producer/audit0 passed. SplitPlant normal/adverse/tool/sourcegravity3controls passed before restart; new source-stage helper/case survives uncommitted, no adoption.",
-    "next": "Checkpoint surviving splitstation source helper,actual source-bound nominal/adverse results and fullmode limits; rerun lost-session checks. Continue complete independent route/fault/capture/relief/loadpath. Reconcile1623 onlyafter root1622 integration/preflight."
+    "evidence": "Merged1623 exactcb5/mainfa711061. FROZEN handedoffcontinuation recovery/had-retained-route-20261123 head9fd9ad01 treebb82b535 exactlocalfb316;22HAD/ADE files vsnewmain. Retained/head rejection+unadoptedsplitstation with10/20mmadverse,actualsource/datum/modeholds; no source9.27then7focused/type/producer/audit0pass;final30running.",
+    "next": "Root deliberatelyintegrates9fd withSTRsuccessore94+stairfix in shared1622 branch, reconcilesactual source-account and genuinelyregenerates dependentoutputs; exactheadCI and BOTHHAD/STR publicationpreflights beforemerge. Compactresearch remainsread-only, completewaterroute/support/relief stillunqualified."
   }
 }
