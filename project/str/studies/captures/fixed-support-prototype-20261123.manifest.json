@@ -1,0 +1,48 @@
+{
+  "schema": "str-readonly-continuation-checkpoint/1",
+  "files": {
+    "REVIEW.md": {
+      "bytes": 7281,
+      "sha256": "a5e6b8aa40994ba309ce0085185741532e5c8197a859f0e3592c90d23f306522"
+    },
+    "commands.sh": {
+      "bytes": 762,
+      "sha256": "9ff14aedce4e91b81ef44caf08ea5dbcd6765008250d0229c8ab754f3a715b2c"
+    },
+    "frozen-normal-q4.json": {
+      "bytes": 7385244,
+      "sha256": "e8475fff67c3d2c2e2d8ee8cd9da83749dd9ae14d2b02e96dcbce3074af2257c"
+    },
+    "geometry-250.json": {
+      "bytes": 346535,
+      "sha256": "3787dae6f15acc69d17c9c913012e7ba8ca1f3e58df1209155440091cdfa5c0d"
+    },
+    "geometry-500.json": {
+      "bytes": 242926,
+      "sha256": "773ce10f32662489f980a22a55d1057a406bb5841cabcf45b3342d2ce0bbda55"
+    },
+    "monolithic-bounds.json": {
+      "bytes": 93369,
+      "sha256": "d9787544a66e2fa35fdcf62d92854e3321e505db5aac113c1dcf923e0aa0410c"
+    },
+    "monolithic_bounds.py": {
+      "bytes": 5175,
+      "sha256": "9bec4fcb7f22369835c7cd3e7811a7b707880539b5794621b28f214230880f09"
+    },
+    "prototype.py": {
+      "bytes": 9188,
+      "sha256": "44ab00082a062574c3b464f333e18729f6bc8802b526d1994c8b4941c582ed8b"
+    },
+    "prototype_test.py": {
+      "bytes": 1571,
+      "sha256": "142f5feac3098fda545f0220ff3ad1c8275ec6c1798c5e1d66e04978bf55e371"
+    },
+    "report.json": {
+      "bytes": 80200,
+      "sha256": "26351a6fed249d59a69948d8d1b9ab9a8748f7735300ba4ae5087f08d8840b07"
+    }
+  },
+  "repositorySourcesEdited": false,
+  "nativeSource58Edited": false,
+  "coupledHouseSolveExecuted": false
+}
