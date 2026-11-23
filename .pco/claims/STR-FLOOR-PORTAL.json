@@ -9,12 +9,12 @@
     "label": "convergence-root-20261123"
   },
   "claimedAt": "2026-11-23T07:21:50.909Z",
-  "heartbeatAt": "2026-11-23T08:07:48.852Z",
-  "expiresAt": "2026-11-23T08:52:48.852Z",
+  "heartbeatAt": "2026-11-23T08:51:21.461Z",
+  "expiresAt": "2026-11-23T09:36:21.461Z",
   "checkpoint": {
-    "evidence": "Remote92559fd3 PR1620; remoteHADcarrierb6eb3ac1; evidence/de521fae nativearchive. Fresh runtime-bound ordinary/observed actual native bytes equal; local21Python+21Node; finalsource/witnessregen ongoing",
-    "next": "Publish combined carrier+runtime domain; exacthead fullCI/browser/book/preflight thenmerge; preserve140pad/fan exploration beforehandoff",
-    "blocker": "PreviousCI browser exactcutcontrol mismatch on different numerical runtime; causeunproved. Newversion2runtimewitness keepsordinaryfloor available and strictjointchecks unchanged. Physicaljoint/signedenvelope/house unresolved."
+    "evidence": "PR #1620 exact969; browser and publication proof pass; full health running. Native controls archived on evidence/convergence-native-controls-20261123.",
+    "next": "Merge exact validated969 after canonical preflight; continue actual wet-pad/fan and full load-path resolution.",
+    "blocker": "Full health CI pending; no whole-house or local-node resistance acceptance."
   },
   "branch": "work/convergence-integrate-20261123",
   "predecessor": {
