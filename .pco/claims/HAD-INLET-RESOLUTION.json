@@ -9,8 +9,8 @@
     "label": "convergence-water-route-20261123-resume"
   },
   "claimedAt": "2026-11-23T22:25:11.048Z",
-  "heartbeatAt": "2026-11-23T22:25:11.048Z",
-  "expiresAt": "2026-11-23T23:10:11.048Z",
+  "heartbeatAt": "2026-11-23T22:32:30.818Z",
+  "expiresAt": "2026-11-23T23:17:30.818Z",
   "branch": "work/convergence-water-route-20261123-resume",
   "predecessor": {
     "leaseId": "6e4645a2-e69d-4369-b4b5-29cd4723f830",
@@ -33,5 +33,10 @@
       "next": "Recover fresh main/lease; validate route rejection and regenerate genuine receipts before PR. Prove all90degree reroute and full3D/capture before source9; no water-system adoption.",
       "blocker": "Execution environment unavailable. Remote patch reconstructed, untested; generated receipts unchanged/stale. Canonical Actions handoff requested; no local CLI execution."
     }
+  },
+  "pr": 1623,
+  "checkpoint": {
+    "evidence": "PR1623 exact0319b017 remote treef1251005 equals localce78 tree;17blobs verified.30focused+8finalchecks/type/producer pass, sourceaudit0, actualSVGinspected. Source8 valve/stem/arm collision rejection now coherent; no route/product/support adoption.",
+    "next": "Observe exact-headCI; reconcile STR successor main/source-account and regenerate actual combined outputs before canonical publication preflight. In separate candidate worktree prove all90degree reroute against full room duties."
   }
 }
