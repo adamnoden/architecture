@@ -9,11 +9,12 @@
     "label": "convergence-root-20261123"
   },
   "claimedAt": "2026-11-23T07:21:50.909Z",
-  "heartbeatAt": "2026-11-23T07:21:50.909Z",
-  "expiresAt": "2026-11-23T08:06:50.909Z",
+  "heartbeatAt": "2026-11-23T07:35:12.366Z",
+  "expiresAt": "2026-11-23T08:20:12.366Z",
   "checkpoint": {
-    "evidence": "Main0bdbfaaa; recovery ee7a52d1,28dcb24a,7a5f0f57",
-    "next": "Integrate recovered contact and four-L proof with coordinated HAD/IAS source changes; regenerate and validate exact head"
+    "evidence": "PR1620 remote6cfb6afc; actual fresh complete ordinary/observed bytes identical, new semantic native control, 21Python/20Node joint-contact tests; source8+IAS producer genuine; owner index+canonical proof added",
+    "next": "Finish exact-headCI/browser/production publication then three canonical preflights and merge; retain water carrier continuation28492+43 pending shared stage integration",
+    "blocker": "FullCI pending; local npmcheck TSX Unix IPC EPERM. Finite joint resistance/signed envelope/whole-house selection remain open"
   },
   "branch": "work/convergence-integrate-20261123",
   "predecessor": {
@@ -35,5 +36,6 @@
       "next": "Fresh main/graph/occupancy then new claim; recover combined HADc78bb8d6, IAS8f12c01e, HADbrowserae142435, apply joint28dcb; genuine source-account/receipt regen, exact-head fullCI/realbrowser/publication preflight then merge. No secondbatchPR yet.",
       "blocker": "Execution environment explicitly unavailable; exec-server recovery timed out. Local combinedb673d6c2 not published as one tree; components durable. Joint resistance, signed load programme, carrier/thermal/renewal and wholehouse selection unresolved."
     }
-  }
+  },
+  "pr": 1620
 }
