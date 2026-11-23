@@ -1,0 +1,10 @@
+{
+  "shelfThicknessMm": 8,
+  "clampShiftUpMm": 4,
+  "backplateThicknessMm": 10,
+  "backplateHeightMm": 150,
+  "steelElasticModulusMPa": 200000,
+  "steelDensityKgM3": 8000,
+  "steelProofComparisonMPa": 200,
+  "proofDivisor": 1.5
+}

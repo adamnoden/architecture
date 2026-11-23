@@ -33,6 +33,36 @@ test('current book placements retire predecessor artwork and keep genuine propos
   for (const view of current) assert.ok(composed.includes(view.image))
 })
 
+test('full-page plates preserve complete programme/section explanations and do not split the unresolved obligations', () => {
+  const source = readFileSync(resolve(root, 'docs/manuscript/part-iv.md'), 'utf8')
+  const composed = applyPublicationPlates('part-iv', source)
+  const at = (text: string) => {
+    const index = composed.indexOf(text)
+    assert.ok(index >= 0, `Missing composed text: ${text}`)
+    return index
+  }
+  assert.ok(at('Storage and maintenance approach are treated as spatial demands rather than annotations added after the plan is composed.')
+    < at('data-plate-image="../../publication/current/ground-plan.svg"'))
+  assert.ok(at('data-plate-image="../../publication/current/first-plan.svg"') < at('## The site is allowed to change the house'))
+  assert.ok(at('Earlier unequal-storey studies explain a previous choice; they do not describe these current datums.')
+    < at('data-plate-image="../../publication/current/principal-section.svg"'))
+  assert.ok(at('data-plate-image="../../publication/current/principal-section.svg"') < at('## Arrival, compression and recentering'))
+  assert.ok(at('Task visibility, glare, arrival in darkness and replacement still require a matched physical trial.')
+    < at('data-plate-image="../../publication/current/study-tile.svg"'))
+  assert.ok(at('data-plate-image="../../publication/current/study-tile.svg"') < at('## Openings as life-separated assemblies'))
+  const unresolved = composed.slice(at('## What remains unresolved'), at('# 16. Maintenance geography'))
+  assert.ok(!unresolved.includes('hk-plate-page'))
+  assert.ok(unresolved.includes('Important open obligations include:'))
+  assert.ok(unresolved.includes('- ordinary workmanship tolerances.'))
+  const proseOnly = composed.replace(/<style>[\s\S]*?<\/style>/g, '').replace(/<section class="hk-plate-page\b[\s\S]*?<\/section>/g, '')
+  assert.equal(proseOnly.replace(/\s+/g, ' ').trim(), source.replace(/\s+/g, ' ').trim())
+  assert.deepEqual(publicationPlatePlacements().filter(placement => placement.pageClass === 'PLATE_PAIR')
+    .map(placement => placement.views.map(view => view.image)), [
+    ['../../publication/current/ground-plan.svg', '../../publication/current/first-plan.svg'],
+    ['../../publication/current/study-fixed.svg', '../../publication/current/study-timber.svg'],
+  ])
+})
+
 test('the publication consumer replays an authored opening edit and keeps the other storey unchanged', () => {
   const accepted = readGeorgianDesignSnapshot()
   const baseline = compilePublicationPlanAssets(accepted)

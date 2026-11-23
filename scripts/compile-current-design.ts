@@ -157,10 +157,10 @@ const args = process.argv.slice(2)
 const modes = [
   '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
   '--bundle', '--read-engineering', '--read-study-lighting', '--read-retained-inlet-comparison', '--study-assembly', '--study-linings', '--renewable-openings',
-  '--read-service-floor', '--service-floor', '--read-vertical-rc-floor', '--read-masonry-frame', '--read-house-vertical-profile',
+  '--read-service-floor', '--service-floor', '--read-vertical-rc-floor', '--read-masonry-frame', '--read-floor-section', '--read-upper-roof-bearing', '--read-house-vertical-profile',
   '--read-roof-pitch', '--read-court-intake', '--read-inlet-route', '--read-east-ground-receiving',
   '--read-occupied-condensate', '--read-structural-successor', '--read-retained-components', '--read-ground-section', '--read-distributed-floor', '--read-joined-rc-floor', '--read-structural-case', '--read-structural-interfaces',
-  '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-fixed-inlet', '--read-inlet-cabinet', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
+  '--read-north-collector', '--read-rear-foul-vent', '--read-inlet-sill-insert', '--read-inlet-fault', '--read-inlet-source-envelope', '--read-fixed-inlet', '--read-inlet-cabinet', '--read-inlet-removal', '--read-inlet-cover', ...Object.keys(trialModes),
 ]
 const mode = modes.includes(args[0]) ? args.shift() : undefined
 const [argument, ...extra] = args

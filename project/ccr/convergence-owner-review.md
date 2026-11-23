@@ -49,6 +49,10 @@ The [named floor-to-corner comparison](../str/floor-interface-result.md) now dis
 
 The [indoor isolation view](../had/studies/inlet-indoor-cuts.svg) and [four cold-water paths](../had/studies/inlet-indoor-routes.svg) now show the actual valve bank, the unchanged full equipment field and separate Utility/Plant continuations. The full single leaf clashes with the protected door; the paired outward leaves pass the declared connected access comparison. The pipes have explicit lengths, tolerance-specific bores, pressure losses and named gravity/pressure actions. Their fitted turns, independent supports and loaded removal still need completion. These proposed loads are not admitted to the source-ground-zero structural model.
 
+The [wet-beam normal-bearing comparison](../str/wet-bearing-refinement-development.md) now passes the declared32→64 quadrature check for both tested wet-support material weights. The16→32 adverse failure remains recorded. This resolves numerical contact integration for those cases; pad material, post-head resistance, a complete signed envelope and floor/corner convergence remain unqualified. It selects no slab thickness, plinth or house revision.
+
+The [four L-corner demand recovery](../str/four-l-joint-recovery-development.md) now joins eight actual physical member ends into four balanced rigid-joint free bodies for one verified request. The complete ordinary native result remains byte-for-byte unchanged. Joint concrete weight is already in the plate, so no extra joint load is added. Changed or unverified requests and numerical runtimes retain explicit unavailable joint diagnostics while the ordinary floor remains computed; finite-joint behaviour, resistance and a complete signed load envelope remain unresolved.
+
 ## The interior should earn its place on beauty
 
 The [completed IAS proposal](../ias/crafted-room-kit-result.md), integrated through [PR #1584](https://github.com/adamnoden/architecture/pull/1584), puts a fixed furnished room beside hung timber faces and seated oak floor modules. The furniture and occupied-room openings are matched. This is the strongest available appearance comparison, rather than an isolated panel detail.
@@ -66,6 +70,8 @@ For an ordinary renewal, the [eastern](../ias/studies/crafted-study-handling-eas
 The occupied Study opening/set-out still differs from the nominal house plan; the wall-hung inlet support is a stated candidate. Judge the matched room comparison at that scope, then reconcile its actual openings and support with the selected house before calling it the interior scheme.
 
 The [lighting service corner](../ias/studies/adaptable-study-lighting-corner.svg) charges the real bend, straight entry collar and setting envelope to the room. Its proposed service bay is now310mm wide, retaining the door stop; the former300mm comparison fails the declared setting margin. Local entries do not establish a connected common riser: the remaining depth transition, independent support, electrical/material admission and actual removal sequence stay visible in the [owning comparison](../ias/adaptable-room-lighting-result.md). The browser and command line now share the same editable lighting choices, with pure input admission kept separate from source loading.
+
+The [common-depth lighting comparison](../ias/studies/adaptable-study-lighting-common-depth.svg) now shows the complete three-case depth transition and supported whole-case withdrawal in the same browser-editable source. It remains an unselected development comparison: recessed plug grip, terminal/protection/material evidence and qualified loaded renewal are unresolved. Its 88.29 N case-demand ceiling has not entered the structural mass inventory. The completed furnished Study comparison above is retained.
 
 ## The owner decision this package prepares
 

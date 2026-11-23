@@ -14,6 +14,10 @@ def roof_svg(page):
     return page.locator('#current-roof').evaluate("img => decodeURIComponent(img.src.split(',')[1])")
 
 
+def lighting_svg(page):
+    return page.locator('#current-lighting').evaluate("img => decodeURIComponent(img.src.split(',')[1])")
+
+
 def current_wet_stages():
     """Project authored choices from the actual current request, not a second model."""
     studies=Path('project/str/studies')
@@ -55,6 +59,10 @@ def main():
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(args.url)
         ready(page, 0)
+        expect(page.locator('#lighting-controls')).to_be_hidden()
+        expect(page.locator('#lighting-views')).to_be_hidden()
+        expect(page.locator('#inlet-bank-controls')).to_be_hidden()
+        expect(page.locator('#inlet-bank-views')).to_be_hidden()
         original = roof_svg(page)
         expect(page.locator('#schedule')).to_contain_text('8409.33')
         pitch = page.get_by_label('Roof pitch (degrees)')
@@ -132,6 +140,114 @@ def main():
         assert page.locator('#current-roof').get_attribute('src') is None
         page.get_by_role('button', name='Undo', exact=True).click()
         ready(page, 5)
+        # The public CLI authors the explicit lighting/room-kit document. The
+        # browser exposes the same comparison without adopting it by default.
+        lighting_document = json.loads(subprocess.run(
+            ['node', '--import', 'tsx', 'scripts/compile-current-design.ts', '--read-study-lighting', '-'],
+            input=json.dumps(saved['design']), text=True, capture_output=True, check=True).stdout)
+        with page.expect_file_chooser() as chooser:
+            page.get_by_role('button', name='Import JSON').click()
+        chooser.value.set_files({'name': 'study-lighting.json', 'mimeType': 'application/json',
+                                'buffer': json.dumps(lighting_document).encode()})
+        expect(page.locator('#lighting-controls')).to_be_visible(timeout=120000)
+        ready(page, 0)
+        depth = page.get_by_label('Study service depth (mm)')
+        expect(depth).to_have_value('75')
+        expect(page.locator('#lighting-result')).to_contain_text('common axis 37 mm')
+        expect(page.locator('#lighting-result')).to_contain_text('owner acceptance remain unqualified')
+        expect(page.locator('#lighting-diagnostics')).to_contain_text('without dimensioned axes')
+        initial_lighting, lighting_roof = lighting_svg(page), roof_svg(page)
+        depth.fill('85'); depth.press('Enter')
+        ready(page, 1)
+        expect(page.locator('#lighting-result')).to_contain_text('common axis 47 mm')
+        changed_lighting = lighting_svg(page)
+        assert changed_lighting != initial_lighting
+        assert roof_svg(page) == lighting_roof
+        with page.expect_download() as download:
+            page.get_by_role('button', name='Export JSON').click()
+        lighting_saved = json.loads(Path(download.value.path()).read_text())
+        assert lighting_saved['stages']['studyLighting'] == {
+            **lighting_document['stages']['studyLighting'], 'serviceTotalDepthMm': 85}
+        assert lighting_saved['stages']['studyRoomKit'] == lighting_document['stages']['studyRoomKit']
+        cli_lighting = json.loads(subprocess.run(
+            ['node', '--import', 'tsx', 'scripts/compile-current-design.ts', '--bundle', '-'],
+            input=json.dumps(lighting_saved), text=True, capture_output=True, check=True).stdout)
+        assert cli_lighting['engineering']['studyLighting']['commonDepthCornerSvg'] == changed_lighting
+        page.get_by_role('button', name='Undo', exact=True).click()
+        ready(page, 2)
+        assert lighting_svg(page) == initial_lighting
+        page.get_by_role('button', name='Redo', exact=True).click()
+        ready(page, 3)
+        assert lighting_svg(page) == changed_lighting
+        if args.screenshot:
+            page.screenshot(path=str(Path(args.screenshot).with_name('study-lighting-comparison.png')), full_page=True)
+        held_lighting = []
+        def hold_lighting_reply(route):
+            if route.request.post_data_json['ticket']['base']['revision'] == 4 and not held_lighting:
+                held_lighting.append((route, route.fetch(timeout=120000)))
+            else:
+                route.continue_()
+        page.route('**/api/engineering/compile', hold_lighting_reply)
+        depth.fill('90'); depth.press('Enter')
+        expect(page.locator('#analysis')).to_have_text('Compiling revision 4…')
+        depth.fill('80'); depth.press('Enter')
+        ready(page, 5)
+        latest_lighting = lighting_svg(page)
+        assert held_lighting
+        held_lighting[0][0].fulfill(response=held_lighting[0][1])
+        expect(page.locator('#stale')).to_have_text('Ignored analysis from earlier revision 4.')
+        assert lighting_svg(page) == latest_lighting
+        page.unroute('**/api/engineering/compile', hold_lighting_reply)
+        depth.fill('27'); depth.press('Enter')
+        ready(page, 6)
+        expect(page.locator('#lighting-result')).to_contain_text('REJECTED')
+        expect(page.locator('#lighting-diagnostics')).to_contain_text('purpose-enclosure-enters-retained-boundary')
+        page.get_by_role('button', name='Undo', exact=True).click()
+        ready(page, 7)
+        assert lighting_svg(page) == latest_lighting
+        # Explicit current inlet stage: real HTTP edits and CLI consume the same source8.
+        inlet_request=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--read-inlet-source-envelope','-'],input=json.dumps(saved['design']),text=True,capture_output=True,check=True).stdout)
+        inlet_document={**saved,'stages':{'roofPitch':saved['stages']['roofPitch'],'inletSourceEnvelope':inlet_request['sourceEnvelope']['settings']}}
+        with page.expect_file_chooser() as chooser:
+            page.get_by_role('button',name='Import JSON').click()
+        chooser.value.set_files({'name':'inlet-bank.json','mimeType':'application/json','buffer':json.dumps(inlet_document).encode()})
+        expect(page.locator('#inlet-bank-controls')).to_be_visible(timeout=120000)
+        ready(page,0)
+        expect(page.locator('#inlet-result')).to_contain_text('within declared bounds')
+        initial_bank=page.locator('#current-inlet-bank').get_attribute('src')
+        expect(page.locator('#inlet-result')).to_contain_text('remain unqualified')
+        page.locator('#inlet-field').select_option('indoorTailOffsetMm')
+        expect(page.locator('#inlet-value')).to_have_value('250')
+        page.locator('#inlet-value').fill('200');page.locator('#inlet-value').press('Enter')
+        ready(page,1)
+        expect(page.locator('#inlet-result')).to_contain_text('REJECTED')
+        assert page.locator('#current-inlet-bank').get_attribute('src')!=initial_bank
+        with page.expect_download() as download:
+            page.get_by_role('button',name='Export JSON').click()
+        changed_bank=json.loads(Path(download.value.path()).read_text())
+        assert changed_bank['stages']['inletSourceEnvelope']=={**inlet_document['stages']['inletSourceEnvelope'],'indoorTailOffsetMm':200}
+        cli_bank=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(changed_bank),text=True,capture_output=True,check=True).stdout)['engineering']['inletSourceEnvelope']
+        assert not cli_bank['joinedDirection']['room']['bankReceiver']['necessaryRouteOperationAndClampEnvelopeScreen']
+        assert not cli_bank['joinedDirection']['room']['bankReceiver']['nativeStructuralActionsAdopted']
+        assert not cli_bank['joinedDirection']['room']['bankReceiver']['wholeOccupiedArrangementComplete']
+        page.get_by_role('button',name='Undo',exact=True).click();ready(page,2)
+        expect(page.locator('#inlet-value')).to_have_value('250')
+        assert page.locator('#current-inlet-bank').get_attribute('src')==initial_bank
+        page.locator('#inlet-field').select_option('pipeJacketDensityComparisonKgM3')
+        page.locator('#inlet-value').fill('4000');page.locator('#inlet-value').press('Enter')
+        ready(page,3)
+        expect(page.locator('#inlet-result')).to_contain_text('Jacket reference 22.566 kg')
+        assert page.locator('#current-inlet-bank').get_attribute('src')==initial_bank
+        with page.expect_download() as download:
+            page.get_by_role('button',name='Export JSON').click()
+        density_bank=json.loads(Path(download.value.path()).read_text())
+        cli_density=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(density_bank),text=True,capture_output=True,check=True).stdout)['engineering']['inletSourceEnvelope']
+        assert cli_density['joinedDirection']['room']['indoorRoutes']['insulationAndJacketInventory']['jacketDensityReferenceKg']<23
+        assert cli_density['bound']==cli_bank['bound']
+        assert not cli_density['joinedDirection']['room']['bankReceiver']['actualMaterialProductToolAndCarrierSelected']
+        page.get_by_role('button',name='Undo',exact=True).click();ready(page,4)
+        expect(page.locator('#inlet-value')).to_have_value('8000')
+        expect(page.locator('#inlet-result')).to_contain_text('Jacket reference 45.132 kg')
         # Import the actual current wet request. No default structural stage is
         # silently created, and edits use the same HTTP compiler as the CLI.
         cage_document={**saved,'stages':current_wet_stages()}
@@ -140,8 +256,21 @@ def main():
         chooser.value.set_files({'name':'wet-cage.json','mimeType':'application/json','buffer':json.dumps(cage_document).encode()})
         expect(page.locator('#wet-cage-controls')).to_be_visible(timeout=240000)
         ready(page,0,240000)
+        expect(page.locator('#lighting-controls')).to_be_hidden()
+        expect(page.locator('#lighting-views')).to_be_hidden()
+        expect(page.locator('#inlet-bank-controls')).to_be_hidden()
+        expect(page.locator('#inlet-bank-views')).to_be_hidden()
         raise_control=page.get_by_label('Graded post-link raise (mm)')
         expect(raise_control).to_have_value('0')
+        expect(page.locator('#floor-result')).to_contain_text('52 foundation heads')
+        runtime=json.loads(subprocess.run(['node','--import','tsx','--input-type=module','-e',
+            'import {readFourLNumericalRuntime} from "./compiler/reference-house/current-design/structural-four-l-joint-adapter.ts";console.log(JSON.stringify(readFourLNumericalRuntime()));'],text=True,capture_output=True,check=True).stdout)
+        joint_proof=json.loads(Path('project/str/studies/four-l-joint-proof.json').read_text())
+        if runtime!=joint_proof['witness']['numericalRuntime']:
+            expect(page.locator('#floor-result')).to_contain_text('Joint demand unavailable for this numerical runtime')
+            expect(page.locator('#floor-result')).to_contain_text('ordinary floor and cage remain computed')
+        else:
+            expect(page.locator('#floor-result')).to_contain_text('Four rigid-joint demands computed')
         initial_cage=page.locator('#cage-result').inner_text()
         expect(page.locator('#cage-result')).to_contain_text('0 cover failures')
         raise_control.fill('10');raise_control.press('Enter')
@@ -162,7 +291,7 @@ def main():
             page.screenshot(path=args.screenshot, full_page=True)
         assert not errors, errors
         browser.close()
-        print('PASS engineering document authoring, CLI export, retained stages, late HTTP reply and actual wet-cage level change/undo')
+        print('PASS engineering document authoring, CLI export, explicit Study and inlet bank changes/undo/adverse/stale reply and actual wet-cage level change/undo')
 
 
 if __name__ == '__main__':

@@ -17,9 +17,16 @@ export async function runEditorEngineeringRequest(input: unknown) {
   const bundle = await compileEngineeringDocument(document)
   const roof = bundle.engineering.roofPitch
   if (!roof) throw new TypeError('The saved document has no compiled roof-pitch stage')
-  const cage = bundle.engineering.floorSection?.cageComparison
+  const floor = bundle.engineering.floorSection
+  const cage = floor?.cageComparison
+  const lighting = bundle.engineering.studyLighting
+  const inlet=bundle.engineering.inletSourceEnvelope, bank=inlet?.joinedDirection.room.bankReceiver
   return { ticket, documentIdentity: bundle.documentIdentity, manifest: bundle.manifest,
     coordinationDiagnostics: bundle.coordinationDiagnostics, evidence: bundle.evidence,
+    floorEvidence: floor ? { headCount:floor.native.heads.length, contactComputed:floor.wetBearingContact?.status==='computed-comparison',
+      jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
+    studyLighting: lighting ? { svg: lighting.commonDepthCornerSvg, comparison: lighting.lighting.commonDepthCornerComparison } : null,
+    inletBank: inlet&&bank?{settings:inlet.settings,receiver:bank,carrier:inlet.joinedDirection.room.bankShelfCarrier,route:inlet.joinedDirection.room.indoorRoutes,sourceOnlyBound:inlet.bound}:null,
     roof: { ...roof, svg: renderDrawingSceneV2Svg(roof.drawing) },
     wetCage: cage ? { settings: cage.settings, geometry: cage.geometry, quantities: cage.quantities,
       nativeCaseId: cage.nativeCaseId, nativeSourceSHA256: cage.nativeSourceSHA256, method: cage.method, evidence: cage.evidence } : null }

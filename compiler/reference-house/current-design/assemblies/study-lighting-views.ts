@@ -247,3 +247,88 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
     + text(70, 1115, 'Never enable an opened repair enclosure. Reconnect earth/strain relief, reinstate closures and verify before energising.')
   return page(1510, 1170, 'Study lighting carrier and first-release detail', body)
 }
+
+export function drawCommonDepthCornerComparison(result: StudyLightingResult) {
+  const c = result.commonDepthCornerComparison, p = c.purpose
+  const q = (x: number, z: number) => [80 + (x - result.corner.bayPlanMm[0]!) * .4, 1000 - z * .4]
+  let body = text(35, 48, 'One depth · a replaceable enclosure comparison', 'title')
+    + text(35, 82, 'Unselected purpose design · containment geometry is distinct from actual terminals, protection and material acceptance')
+    + text(60, 130, 'Actual local elevation', 'heading')
+    + text(320, 135, 'What the candidate buys', 'heading')
+    + text(320, 185, `All port axes: ${c.commonAxisCoreDepthMm} mm from the masonry core`)
+    + text(320, 220, `Accessory faces: ${c.accessoryFaceRecessMm} mm behind decoration`)
+    + text(320, 255, `Three ${c.choices.enclosureWidthMm} × ${c.choices.enclosureHeightMm} × ${result.corner.backBoxSizeMm[2]} mm cases`)
+    + text(320, 290, `${p.straightContainmentLengthMm} mm of finite straight tube; ${p.collars.length} finite collars`)
+    + text(320, 325, 'No external bend; existing R70 demand remains where bends exist')
+    + text(320, 370, `${p.pipes[0]!.outsideDiameterMm} mm route + two ${c.settingMm} mm allowances: ${c.stockComparison.requiredRouteSpaceMm} mm`)
+    + text(320, 405, `Stock rear space ${c.stockComparison.nominalRearSpaceMm} mm: reject that through-route`)
+    + text(320, 440, 'BG HGS06: offset knockouts have no dimensioned entry axes')
+    + text(320, 475, 'No actual HGS06 connection has been qualified')
+    + text(320, 525, `Purpose side bypass ${p.internalBypassWidthMm} mm`)
+    + text(320, 560, `Collar side clearances ${p.collarSideClearanceMm} mm; depth ${p.collarRearClearanceMm}/${p.collarFrontClearanceMm} mm`)
+    + text(320, 605, `The ${result.commonDepthCornerComparison.purpose.enclosures[0]!.accessoryReservedVolumeXYZMm[4]! - result.commonDepthCornerComparison.purpose.enclosures[0]!.accessoryReservedVolumeXYZMm[1]!} mm interface reserve is retained; nothing enters permanent fabric`)
+    + text(320, 650, 'Independent closed cases remain when decoration is released')
+    + text(320, 685, 'Unbound device/earth terminals and union/tool details stay explicit')
+    + text(320, 730, 'Equipment terminals and circuit acceptance remain unqualified')
+  const left = q(result.corner.bayPlanMm[0]!, 2100), right = q(result.corner.bayPlanMm[2]!, 155)
+  body += rect(left[0], left[1], right[0]! - left[0]!, right[1]! - left[1]!, '#dfd0b4')
+  for (const pipe of p.pipes) body += line(q(pipe.startXYZMm[0]!, pipe.startXYZMm[2]!), q(pipe.endXYZMm[0]!, pipe.endXYZMm[2]!), '#57777e', pipe.outsideDiameterMm * .4)
+  for (const collar of p.collars) body += line(q(collar.startXYZMm[0]!, collar.startXYZMm[2]!), q(collar.endXYZMm[0]!, collar.endXYZMm[2]!), '#a47c50', collar.outsideDiameterMm * .4)
+  for (const clip of p.pipeClips) {
+    const point = q(clip.pointXYZMm[0]!, clip.pointXYZMm[2]!)
+    body += `<circle cx="${n(point[0])}" cy="${n(point[1])}" r="4" fill="#f2eee3" stroke="#315d64"/>`
+  }
+  for (const [i, box] of p.enclosures.entries()) {
+    const top = q(box.xMm[0]!, box.zMm[1]!)
+    body += rect(top[0], top[1], (box.xMm[1]! - box.xMm[0]!) * .4, (box.zMm[1]! - box.zMm[0]!) * .4, '#b8c3c1')
+    const device = box.accessoryReservedVolumeXYZMm
+    const dp = q(device[0]!, device[5]!)
+    body += rect(dp[0], dp[1], (device[3]! - device[0]!) * .4, (device[5]! - device[2]!) * .4, '#eadcba')
+    const path = box.internalRoute.pointXYZMm
+    body += line(q(path[0]![0]!, path[0]![2]!), q(path[1]![0]!, path[1]![2]!), '#57777e', box.internalRoute.diameterRequirementMm * .4)
+    body += text(60, top[1] - 12, `${['Socket', 'Switch', 'Light enclosure'][i]} · ${(box.zMm[0]! + box.zMm[1]!) / 2} mm`, 'small')
+    for (const fixing of box.fixings) {
+      const xy = q(fixing.pointXYZMm[0]!, fixing.pointXYZMm[2]!)
+      body += `<circle cx="${n(xy[0])}" cy="${n(xy[1])}" r="2" fill="#735b3e"/>`
+    }
+  }
+  const depth = (d: number) => 920 + d * 5
+  const sample = p.enclosures[0]!, device = sample.accessoryReservedVolumeXYZMm
+  body += text(900, 135, 'Core-to-face budget · enlarged section', 'heading')
+    + rect(depth(0), 190, result.corner.boundaryDepthMm * 5, 320, '#a7a69c')
+    + rect(depth(sample.bodyDepthMm[0]!), 190, (sample.bodyDepthMm[1]! - sample.bodyDepthMm[0]!) * 5, 320, '#d5dddd')
+    + rect(depth(sample.fixedCoverDepthMm[0]!), 190, (sample.fixedCoverDepthMm[1]! - sample.fixedCoverDepthMm[0]!) * 5, 115, '#8faaa5')
+    + rect(depth(sample.fixedCoverDepthMm[0]!), 391, (sample.fixedCoverDepthMm[1]! - sample.fixedCoverDepthMm[0]!) * 5, 119, '#8faaa5')
+    + rect(depth(result.corner.totalLiningDepthMm - result.corner.decorativeFaceMm), 150, result.corner.decorativeFaceMm * 5, 30, '#ad865f')
+    + rect(depth(result.corner.totalLiningDepthMm - result.corner.decorativeFaceMm), 520, result.corner.decorativeFaceMm * 5, 30, '#ad865f')
+    + line([depth(sample.accessoryFaceDepthMm),190], [depth(result.corner.totalLiningDepthMm),190], '#8faaa5', 6)
+    + line([depth(sample.accessoryFaceDepthMm),510], [depth(result.corner.totalLiningDepthMm),510], '#8faaa5', 6)
+    + rect(depth(sample.accessoryFaceDepthMm - (device[4]! - device[1]!)), 305, (device[4]! - device[1]!) * 5, result.corner.plateSizeMm[1]!, '#eadcba')
+    + text(900, 575, `Purpose body d ${sample.bodyDepthMm.join('..')} mm; own cover ${sample.fixedCoverDepthMm.join('..')} mm`)
+    + text(900, 610, 'Recess lies entirely in replaceable lining; retained boundary is intact')
+    + text(900, 645, `Inserted plug projects ${c.accessoryUse.insertedPlugRoomwardProjectionBeyondDecorationMm} mm beyond decoration`)
+    + text(900, 680, 'The side bypass is beside the device, not inside its occupied depth')
+    + text(900, 725, `Local enclosure geometry: ${c.evidence.localGeometryPassing ? 'within declared checks' : 'REJECTED'}`)
+    + text(900, 760, `Device terminals connected: ${p.deviceTerminalsConnected}; complete room circuit: ${p.completeRoomCircuit}`)
+  const s = (x: number, y: number) => [80 + (x - result.commonRoom.bands[0]![0]!) * .36, 1350 - (y - c.renewal.secondaryRestPlanMm[1]! + 50) * .36]
+  const plan = (r: readonly number[], fill: string) => polygon([s(r[0]!, r[1]!), s(r[2]!, r[1]!), s(r[2]!, r[3]!), s(r[0]!, r[3]!)], fill)
+  body += text(550, 855, 'Pay for complete enclosure withdrawal', 'heading')
+    + text(550, 900, `Required normal draw ${c.renewal.requiredWholeEnclosureNormalDrawMm} mm; proposed ${c.renewal.firstNormalDrawMm} mm`)
+    + text(550, 935, 'Keep the light module in its existing separate rest')
+    + text(550, 970, 'Isolate/prove dead; support and disconnect; qualified unions must release first')
+    + text(550, 1005, 'Draw normal, translate left above the main rest, then south and lower')
+    + text(550, 1040, `Additional rest ${c.choices.secondaryRestSizeMm} × ${c.choices.secondaryRestSizeMm} mm: ${c.renewal.additionalTemporaryFloorTerritoryM2} m²`)
+    + text(550, 1075, `Occupied/main-rest conflicts: ${c.renewal.moves.flatMap(m => m.conflictingIds).length}`)
+    + text(550, 1110, 'Actual union release, tools and temporary support remain unqualified')
+    + text(550, 1155, `Additional case gravity ceiling: ${c.loadInterface.authoredTotalCaseGravityN.toFixed(2)} N`)
+    + text(550, 1190, 'Actual complete mass, remaining clips/pipe hardware and house feedback are outstanding')
+    + text(550, 1235, 'A smaller box, 50 mm draw or missing device volume is not a substitute')
+  const main = result.construction.firstRelease.parked
+  body += c.renewal.moves.slice(1).map(move => plan(move.planMm, '#e0e6df')).join('')
+    + plan([main.xMm[0]!, main.yMm[0]!, main.xMm[1]!, main.yMm[1]!], '#a6b29c')
+    + plan(c.renewal.secondaryRestPlanMm, '#b9cbd1')
+    + plan([c.renewal.parkedCase.xMm[0]!, c.renewal.parkedCase.yMm[0]!, c.renewal.parkedCase.xMm[1]!, c.renewal.parkedCase.yMm[1]!], '#8dabb3')
+    + text(65, 1385, 'Plan: green = retained module rest; blue = additional case rest', 'small')
+    + text(35, 1450, 'Unselected geometric comparison. Actual terminals, fabrication, protective enclosure/earth continuity, material admission, physical renewal and owner appearance remain open.', 'small')
+  return page(1650, 1490, 'Common-depth service enclosure comparison and renewal', body)
+}

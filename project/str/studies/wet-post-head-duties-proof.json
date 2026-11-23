@@ -55,8 +55,8 @@
   "controls": [
     {
       "nativeCaseId": "wet-aligned-G135-Q2-rho27",
-      "fullResultSHA256": "25eb3e45c0cbdd8afbbed90d37bd7c2b9f6b6483e66469f714876903e0855af4",
-      "assessmentInputSHA256": "fd0fb5ffb2d3501555e4e700ef56d35ac7ad4af2fef176a36b65e17813c164c5",
+      "fullResultSHA256": "bc0b157abe068a54cc5fcebb071150b20df6f779148f75720d2612d1d8726daf",
+      "assessmentInputSHA256": "b33f285c9b28bf2db3db2e9e9765442413731bdce31a85a25f7a5b4ed3b12208",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
@@ -145,8 +145,8 @@
     },
     {
       "nativeCaseId": "wet-south-pad-north160",
-      "fullResultSHA256": "fd8802751287734fa0d3745fa9600e30bce2f862f7e34401034b4390677a9985",
-      "assessmentInputSHA256": "ec5f8b26ee7dc32ff1ee412bfc077c84dfc31a9da930e34d4fe7381404e699df",
+      "fullResultSHA256": "408b759f654e7d7c393c6721348327391205b01b5e215d488b12c6fb909ffb32",
+      "assessmentInputSHA256": "96bb80e9ca61a4be23c2219299fabbffc342af0449c25ae1867fed236f29cecf",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
@@ -235,8 +235,8 @@
     },
     {
       "nativeCaseId": "wet-shifted-quadrature8",
-      "fullResultSHA256": "35ec6ce62cf309ca5731a3e1663ad039a849eb5e2571c6aa41ed756ad3aedd06",
-      "assessmentInputSHA256": "d886ecff78e97372d914e7daae2dec611cbb29fa58f0b0c5767b412fdc3d7b07",
+      "fullResultSHA256": "6a2b43867d4c88aabb8ee9c1e7cda8a9b76038018c9e7b97dfaeca6940dec25e",
+      "assessmentInputSHA256": "58238368cae1a58c14dd19b593575a4492c6018d983cb5915e495d0f20be1217",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
@@ -325,8 +325,8 @@
     },
     {
       "nativeCaseId": "wet-zeroG-roof-suction",
-      "fullResultSHA256": "480c50b0cf958534252ecf46f03c8c3e221caba0da5c622206faba0182476819",
-      "assessmentInputSHA256": "c63a0e017cade4a20873dada6ff5d07e9c67347e69849ef4529af0998a026519",
+      "fullResultSHA256": "99a52f542b001aa97d5a0aa8ebd1f0114e2fb3764e697bee861608a68abd1cf8",
+      "assessmentInputSHA256": "becedfca6aae9caf0893cd5beb6ab2da8b9b528a6acc028d631586396cc3e7d7",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
@@ -409,8 +409,8 @@
     },
     {
       "nativeCaseId": "wet-heavy-roof3",
-      "fullResultSHA256": "d52e18050eccdf9a7b79967709f71cf84a2fb748e443445eba6fff1bcc7b3f70",
-      "assessmentInputSHA256": "8606db5927a8b0efbe4f6bd27edd2b5b29dabbb1d47cea555e99b39352edc95a",
+      "fullResultSHA256": "68bddf16d82f792d1b20d2827e36627621a1e2cff17a3e58bb5cfad7cc010b8f",
+      "assessmentInputSHA256": "2a1ff1d179ac181bad0a2f794dcd9a261a6750f09809bc8733da43e49be4bc27",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
@@ -499,8 +499,8 @@
     },
     {
       "nativeCaseId": "wet-aligned-quadrature8",
-      "fullResultSHA256": "5f12af2343027548c4a0916d5c087a1234f4a2a1c24017cc5bd5400740d8dbba",
-      "assessmentInputSHA256": "9a4af90e2a3b7edba000a69ebd3cf335bb05ae1ad50e7125fc3874d4babb22e2",
+      "fullResultSHA256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff",
+      "assessmentInputSHA256": "71632b414e5c2ed851ec4f169b0964f3d729bd4b13e03554bb67758c647a66ae",
       "actualWetConcreteWeightKNPerM3": 25.0,
       "posts": [
         {
@@ -589,8 +589,8 @@
     },
     {
       "nativeCaseId": "wet-aligned-concrete27",
-      "fullResultSHA256": "a3fa67978070ee76021d15683a1f3964d8a25f7510ae6a23cf1cbd2797494a50",
-      "assessmentInputSHA256": "89d320cf2f2fffbdbe9fce98ee105e3779a4b136e2785b8cccb9195ef39980ef",
+      "fullResultSHA256": "250e0ea17cbda4a0568296fdce2d70947f1f39e09cd774943a48260cccb82fc2",
+      "assessmentInputSHA256": "c56b02eb99d901ddbd0e5c51738478f47e268f29dc0cc244c187073bfde3334c",
       "actualWetConcreteWeightKNPerM3": 27.0,
       "posts": [
         {
@@ -13588,6 +13588,6 @@
     "project/str/studies/wet_post_head_duties.py": "cc46128890cf6c970c274fcdfda69341cf9cc23f7e8bf0d26d2ab168f539b10a",
     "project/str/studies/wet_support_cage_comparison.py": "6638d031196a7b329b8d543969d964929e660553a13e102b8631ff8cd0a307a1",
     "project/str/studies/wet-support-cage-comparison-settings.json": "d5c5ca39227e4219032b51954e8ca974251fb6e5754afd0101c0b67440bc7d84",
-    "project/str/studies/wet-support-cage-comparison-proof.json": "61ec34475acb6e9a92609bb54d0370b08576057db7245e9ac0c8d8922d659f3d"
+    "project/str/studies/wet-support-cage-comparison-proof.json": "0eb16b04be6228e6f6cbecdc6cfbaf3528d4f5c03d435dcbef60946b23b0dc34"
   }
 }

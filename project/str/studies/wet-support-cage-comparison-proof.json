@@ -56,7 +56,7 @@
     "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
     "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
     "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-    "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+    "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
     "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
     "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
   },
@@ -122,38 +122,38 @@
   "controls": [
     {
       "nativeCaseId": "current200",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/current200-bdf833740c7bd3a5bcc2c020358bc8b225e8db9346ee6079fbd2bd40050e8cc2",
-      "requestCanonicalSHA256": "839597db3a32122c669dc83c4c114478d19d3bb1589cc7811ced9bd4607b3488",
-      "requestFileSHA256": "fcc69e436382c300f4f317a878c80ebe44073414771258a699617491a0162263",
-      "captureManifestSHA256": "baa51a60cde07628fcd36901e79fd394c1b9c4542cf443b98831f1fc5c6efce4",
-      "fullResultSHA256": "8b234b83183d28c5db2bb1f1eefb6779254dddc8c786d6d5c73774aae18e6995",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/current200-2da0fb78e292215cfffb2522a26c9a40d782e59e4dd646475f9567073cd3300b",
+      "requestCanonicalSHA256": "b5e8a3a3810f2367573c7e946cf450757adba45a64a828db4f932d2dceba76a0",
+      "requestFileSHA256": "b77a472b922515a7d7f9041464d0b57dabd2f79c30f8b66474355ba57d55d825",
+      "captureManifestSHA256": "a4c9c5084a479507d0f0b786ccb5a116c4925a4a76bfcb57be8c528c4ee7e0ff",
+      "fullResultSHA256": "2323d51ddcbef4a2040142644de2108fa6dd3681cc7eb1d83da2a557362e90c3",
       "status": "not-applicable-no-seated-wet-support"
     },
     {
       "nativeCaseId": "matched200-G135-Q2-rho27",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/matched200-G135-Q2-rho27-494f1158ca43b96712172198c03c9423466073aba6ed9f6fc570bc415e202232",
-      "requestCanonicalSHA256": "d96eb0a6ae353d8c3b856884575da0486163782878a2682262c1413d34026f84",
-      "requestFileSHA256": "5c0eb1e4409189a944af3a3b4d341b12dd519717a5055d4f09e6e4d7b38d2a2a",
-      "captureManifestSHA256": "c2f90ded23d2c2a274f25836048605f8dd703655e122d194d36625c3ea415f88",
-      "fullResultSHA256": "ea83b05f528b6c2616ee177fa44e6a35f5c038380f7762ca4c9195de4f49838f",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/matched200-G135-Q2-rho27-1969436044c62a4cc10e5f1458d75c1607d1a98116aaa19e1d954e7c31bf2b90",
+      "requestCanonicalSHA256": "a3ce63caef8881f32655eed84b9fef78d974fb406c750a18ae9282987474d84b",
+      "requestFileSHA256": "ce3e130487e2c42b57d88a250b980c30dd0d4e83dd928f76346184753532ab81",
+      "captureManifestSHA256": "9336fbeaf72f096e97a9a416ba534b641fdc1654227027ae38898903a59df403",
+      "fullResultSHA256": "ccee00e0bf7c50b0504ba87cd5b4446f01f908a2ecaa85178cc339c222d25995",
       "status": "not-applicable-no-seated-wet-support"
     },
     {
       "nativeCaseId": "matched250-G135-Q2-rho27",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/matched250-G135-Q2-rho27-5c4675087b105452e58d01a94b7b60b241d699d16e74a51ce7b88a5ec46f4f16",
-      "requestCanonicalSHA256": "bf237f6be341a86aa826c34f3220078085a5a21e5e1f626fe8189abee2572b6f",
-      "requestFileSHA256": "3bab2cfee549a005f2c9a4ee0752e5953a4fcc93648cc2b7b7e1492fe3acc42c",
-      "captureManifestSHA256": "436e4c20d32973f9496567b9d40cbdb2091545a9b57f65aca55b37b685cfe524",
-      "fullResultSHA256": "524e168b04a47d1ab615220f3ba8914b302d90ef6cc4d558bb62431885a1c5b3",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/matched250-G135-Q2-rho27-928dc009d0b09a8031aa113f672d0b1f10e6c42ada1ee0c5cce46fe40b1dd35b",
+      "requestCanonicalSHA256": "35c1862de28e08384999b831b72bc55242e50adc206ad791fde3c40a0796c3bb",
+      "requestFileSHA256": "841eeb754687fe0efb669fd224a4505d18dbfc371a2fad4fca6ce49599f1cb36",
+      "captureManifestSHA256": "0a0a32b4f7c129cd99b9cb00d1059d24b85f91fccdad96887c9c26dc24798010",
+      "fullResultSHA256": "e224737b89dea1d7bbda85689f540b082d424a5ad5f7ab7521f1b8f4552ed0d0",
       "status": "not-applicable-no-seated-wet-support"
     },
     {
       "nativeCaseId": "wet-aligned-G135-Q2-rho27",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/wet-aligned-G135-Q2-rho27-c3ed3a9b113a790cf275dac829a67dc5ccd90a0b727e8e6f791032e5c50b3b81",
-      "requestCanonicalSHA256": "07ea97edd26e812ae3fc42627c47604039f71ba842e90cd5108635c7e7923d0e",
-      "requestFileSHA256": "a310920a900fa01074d928bf23f3f969382b22f2dccb06339253560d0111ac22",
-      "captureManifestSHA256": "4f8f8c3305b6d2f0f81d7675d63765de3692b843e9d03c107c09bdad7c0f990e",
-      "fullResultSHA256": "25eb3e45c0cbdd8afbbed90d37bd7c2b9f6b6483e66469f714876903e0855af4",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/wet-aligned-G135-Q2-rho27-bb4004db2ead521c9670495c8af34439b26f05efdf845dfc4acd99fbb24336fb",
+      "requestCanonicalSHA256": "cff63d9e96d76425d29e01ffdcb074a9fe97ea83655555d2f423ed1f51012329",
+      "requestFileSHA256": "8922fa1210d23d755393e0ce0e097eab8f3e950ea8baa0e86b4954bd5c49aa12",
+      "captureManifestSHA256": "520cc17e2de2b8697408544ef1daae3f0d63a09604a915555924224f1b79c847",
+      "fullResultSHA256": "bc0b157abe068a54cc5fcebb071150b20df6f779148f75720d2612d1d8726daf",
       "status": "assessed-incomplete-design",
       "exactAssessmentInput": {
         "sourceSHA256": {
@@ -212,7 +212,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -968,7 +968,7 @@
           }
         }
       },
-      "exactAssessmentInputSHA256": "fd0fb5ffb2d3501555e4e700ef56d35ac7ad4af2fef176a36b65e17813c164c5",
+      "exactAssessmentInputSHA256": "b33f285c9b28bf2db3db2e9e9765442413731bdce31a85a25f7a5b4ed3b12208",
       "geometryInputSHA256": "875ecc576cbb1c1f46e270065c5204a87830562491bd434ea73585bb4175a83f",
       "beamCutOriginAudit": {
         "allPlateAttachmentsAtRealBeamNodes": true,
@@ -1086,7 +1086,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -3605,11 +3605,11 @@
     },
     {
       "nativeCaseId": "wet-south-pad-north160",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/wet-south-pad-north160-9fbe5a21593c2a91b6f52af800a89b318f0cad24cd3fa263be3680a47eeffcb1",
-      "requestCanonicalSHA256": "0d1683584f3f183c09faf07af7d07451b20d672a1b78cc90c01bfe20e13c7c87",
-      "requestFileSHA256": "9cebf848f754fc28616038119cf46bfc588f7026200a5d19800e4e75cf317f2d",
-      "captureManifestSHA256": "f7bb8594db325898f507bb1eb95918f192d4fe3be5d80a9a3a25336774284450",
-      "fullResultSHA256": "fd8802751287734fa0d3745fa9600e30bce2f862f7e34401034b4390677a9985",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/wet-south-pad-north160-0c115bbd65c52a6e7db9aeb24e37bfd14be144aaa5a2a33f5f1891beecf03cc2",
+      "requestCanonicalSHA256": "1d1cb312b1ce7b255ef4746d307b1aca50889f3dad23a871afcada5fc06a2abf",
+      "requestFileSHA256": "2a2b5620325302559b01b77f1c5aaddd80254b20806c4be723e1922b030dfbee",
+      "captureManifestSHA256": "aec0199b3bd07bf93fc1d5c2da474bd396bee4485c8e985d97077bbc1c720b8b",
+      "fullResultSHA256": "408b759f654e7d7c393c6721348327391205b01b5e215d488b12c6fb909ffb32",
       "status": "assessed-incomplete-design",
       "exactAssessmentInput": {
         "sourceSHA256": {
@@ -3668,7 +3668,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -4458,7 +4458,7 @@
           }
         }
       },
-      "exactAssessmentInputSHA256": "ec5f8b26ee7dc32ff1ee412bfc077c84dfc31a9da930e34d4fe7381404e699df",
+      "exactAssessmentInputSHA256": "96bb80e9ca61a4be23c2219299fabbffc342af0449c25ae1867fed236f29cecf",
       "geometryInputSHA256": "875ecc576cbb1c1f46e270065c5204a87830562491bd434ea73585bb4175a83f",
       "beamCutOriginAudit": {
         "allPlateAttachmentsAtRealBeamNodes": true,
@@ -4576,7 +4576,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -7221,11 +7221,11 @@
     },
     {
       "nativeCaseId": "wet-shifted-quadrature8",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/wet-shifted-quadrature8-761d35bd4caf4f3a0eb33336acf8f5a9b4b469574971fa75ef9d49b3e5def627",
-      "requestCanonicalSHA256": "ed84d42c155a887d32d1848f6efbb83e028dca10fb1cfa92d4bd00c08f041dc6",
-      "requestFileSHA256": "5efe5a20564b2632fd8bbf37edee2ec4bc42aad84d1a9cd2365dcab347d7afe7",
-      "captureManifestSHA256": "131ef9759b62fa7fdc222252b880a9573ff0fa18ffeba09f7d02f8ba8b169c88",
-      "fullResultSHA256": "35ec6ce62cf309ca5731a3e1663ad039a849eb5e2571c6aa41ed756ad3aedd06",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/wet-shifted-quadrature8-5b905e838f3d671d25947184dd569b466662edf0ef25e8f2eed453cdd7977b3f",
+      "requestCanonicalSHA256": "f6a0f259d9b29eb28a2c13786412a21661baa82450bfe16510985f6c89f7685f",
+      "requestFileSHA256": "519aa6fdda08ea6c622d65483a6346824715d7971e087d6443f3cb7c38ffa992",
+      "captureManifestSHA256": "d2af041c664ad0dc3e50a8603171099fb80041c2ee75a1b302d69bfb33a3a6f0",
+      "fullResultSHA256": "6a2b43867d4c88aabb8ee9c1e7cda8a9b76038018c9e7b97dfaeca6940dec25e",
       "status": "assessed-incomplete-design",
       "exactAssessmentInput": {
         "sourceSHA256": {
@@ -7284,7 +7284,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -8074,7 +8074,7 @@
           }
         }
       },
-      "exactAssessmentInputSHA256": "d886ecff78e97372d914e7daae2dec611cbb29fa58f0b0c5767b412fdc3d7b07",
+      "exactAssessmentInputSHA256": "58238368cae1a58c14dd19b593575a4492c6018d983cb5915e495d0f20be1217",
       "geometryInputSHA256": "875ecc576cbb1c1f46e270065c5204a87830562491bd434ea73585bb4175a83f",
       "beamCutOriginAudit": {
         "allPlateAttachmentsAtRealBeamNodes": true,
@@ -8192,7 +8192,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -10837,11 +10837,11 @@
     },
     {
       "nativeCaseId": "wet-zeroG-roof-suction",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/wet-zeroG-roof-suction-d89b6aa5169425ea5f4a5a286eb56cdb903d30f3de8556439dfbd3b7a7888a5e",
-      "requestCanonicalSHA256": "cd33c3477d650ec9cceb66848bce25950acb0d7bc7d442d8f224b86c40b534cb",
-      "requestFileSHA256": "d564dd3aab4a630c28ee48df5c2eba44f66a0cc2d2b29a7de1e5ca4b6c8588c3",
-      "captureManifestSHA256": "35cf2a56123a3a64fc9820bbf0fb3eacc1227cd6e4befe1afbc646ba1e377ce5",
-      "fullResultSHA256": "480c50b0cf958534252ecf46f03c8c3e221caba0da5c622206faba0182476819",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/wet-zeroG-roof-suction-a437789e026bb86fe2aee403038e5b5221caa0758bb0f812f982ebbb22d3752a",
+      "requestCanonicalSHA256": "7c1fa589fd36eeaba265e9beeae018ae5109e53a9cf80e8c91a31c261527f633",
+      "requestFileSHA256": "66a601e4c4511e470008478631ebf6824c63ea0a07a4865281150b671bd201ab",
+      "captureManifestSHA256": "b0aa7c5c345776400bcca47826aa8249f048383aa93e1870b704c221d6e127c7",
+      "fullResultSHA256": "99a52f542b001aa97d5a0aa8ebd1f0114e2fb3764e697bee861608a68abd1cf8",
       "status": "assessed-incomplete-design",
       "exactAssessmentInput": {
         "sourceSHA256": {
@@ -10900,7 +10900,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -11673,7 +11673,7 @@
           }
         }
       },
-      "exactAssessmentInputSHA256": "c63a0e017cade4a20873dada6ff5d07e9c67347e69849ef4529af0998a026519",
+      "exactAssessmentInputSHA256": "becedfca6aae9caf0893cd5beb6ab2da8b9b528a6acc028d631586396cc3e7d7",
       "geometryInputSHA256": "875ecc576cbb1c1f46e270065c5204a87830562491bd434ea73585bb4175a83f",
       "beamCutOriginAudit": {
         "allPlateAttachmentsAtRealBeamNodes": true,
@@ -11791,7 +11791,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -14358,11 +14358,11 @@
     },
     {
       "nativeCaseId": "wet-heavy-roof3",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/wet-heavy-roof3-3917a4970a7c846797eb75baaa14d6991fd17712048a7881bfad7f9947165fd4",
-      "requestCanonicalSHA256": "dcdcdaafa9ff083ec0224b3c1492dcbcbcec13f45c396bbc2646a178213a0a91",
-      "requestFileSHA256": "15226c296927eac4188454b5f9c5f66e439eaf439879d84050b7b0793aaaff21",
-      "captureManifestSHA256": "85f20ef3cae768b42b5779371f1193005857060e5f72f1a99749be0d53af5dc8",
-      "fullResultSHA256": "d52e18050eccdf9a7b79967709f71cf84a2fb748e443445eba6fff1bcc7b3f70",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/wet-heavy-roof3-2d484baea216cfcf69be0be58d4b9950d8bafef4d8dc25f01907cddf18cc12fc",
+      "requestCanonicalSHA256": "b6013c5362103ea144eec20e968e719928d2d28e10787f1b6e15bb6ca90e91c1",
+      "requestFileSHA256": "243b80792dbb9a72a97c9af7a29916e695e2d01f4c4ca24728615409ada8e9a1",
+      "captureManifestSHA256": "3ec6445d08a00f35c32313ef027d5ae7109a5602377cb91be7c9ff86a8a67a3c",
+      "fullResultSHA256": "68bddf16d82f792d1b20d2827e36627621a1e2cff17a3e58bb5cfad7cc010b8f",
       "status": "assessed-incomplete-design",
       "exactAssessmentInput": {
         "sourceSHA256": {
@@ -14421,7 +14421,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -15211,7 +15211,7 @@
           }
         }
       },
-      "exactAssessmentInputSHA256": "8606db5927a8b0efbe4f6bd27edd2b5b29dabbb1d47cea555e99b39352edc95a",
+      "exactAssessmentInputSHA256": "2a1ff1d179ac181bad0a2f794dcd9a261a6750f09809bc8733da43e49be4bc27",
       "geometryInputSHA256": "875ecc576cbb1c1f46e270065c5204a87830562491bd434ea73585bb4175a83f",
       "beamCutOriginAudit": {
         "allPlateAttachmentsAtRealBeamNodes": true,
@@ -15329,7 +15329,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -17974,11 +17974,11 @@
     },
     {
       "nativeCaseId": "wet-aligned-quadrature8",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/wet-aligned-quadrature8-db55d5a2763db1c6ecfffcae159d8f58e6e91a6b88cf28f8cd52b2cd7cdd3ec7",
-      "requestCanonicalSHA256": "934b4a8c3ac9ed27e8a536c6ec5c19d2ce527aa97cdbc91c68b14796bb75be10",
-      "requestFileSHA256": "7e6f76a747bce6bf9950646e24897417d57c03231de1670373ff8b2db5033152",
-      "captureManifestSHA256": "08cffa631c003965d010357e7096c7f4eb89bc78b929be0e14efb8c0b75386c9",
-      "fullResultSHA256": "5f12af2343027548c4a0916d5c087a1234f4a2a1c24017cc5bd5400740d8dbba",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/wet-aligned-quadrature8-e23182c6e0a5733fec71fed444ae80792dba9ea704157c7ce13868ac6abf4d28",
+      "requestCanonicalSHA256": "04e0d748801e3498d0372c4ccea9c64fa915044e7f02989f3f12dcac1795dea4",
+      "requestFileSHA256": "96c68a681ac0aaac509a31e5495684e48771bdb56eb03fda8648c5b7c6b4c3e2",
+      "captureManifestSHA256": "21864378f795a2e3b6ada4e13a36a53d29f84b828e69717fb7535a39980f0b00",
+      "fullResultSHA256": "e20abd0f305c963a250acd3e0857079dccc9ed851bf39e43b2e41bf531a6b5ff",
       "status": "assessed-incomplete-design",
       "exactAssessmentInput": {
         "sourceSHA256": {
@@ -18037,7 +18037,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -18793,7 +18793,7 @@
           }
         }
       },
-      "exactAssessmentInputSHA256": "9a4af90e2a3b7edba000a69ebd3cf335bb05ae1ad50e7125fc3874d4babb22e2",
+      "exactAssessmentInputSHA256": "71632b414e5c2ed851ec4f169b0964f3d729bd4b13e03554bb67758c647a66ae",
       "geometryInputSHA256": "875ecc576cbb1c1f46e270065c5204a87830562491bd434ea73585bb4175a83f",
       "beamCutOriginAudit": {
         "allPlateAttachmentsAtRealBeamNodes": true,
@@ -18911,7 +18911,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -21430,11 +21430,11 @@
     },
     {
       "nativeCaseId": "wet-aligned-concrete27",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/wet-aligned-concrete27-35b6e8d32384b1724a70e770bd544b2cd563869af6bcf3c8e3d165bb7053127b",
-      "requestCanonicalSHA256": "e37d52991e5dca409ce188b89efb7b5ff483b3621964c1e1c4463f5690b55935",
-      "requestFileSHA256": "4f3180d1d39c0357e2cba81b8b359c133b950c3db10d79bd1e49f4f7704fd616",
-      "captureManifestSHA256": "ffb8678231383b4a93bae234cda1192c2061671d6c71acb9535cacd464fbb905",
-      "fullResultSHA256": "a3fa67978070ee76021d15683a1f3964d8a25f7510ae6a23cf1cbd2797494a50",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/wet-aligned-concrete27-bd7cb5c1bdf213d8e99cb089c4058594d646f7a97c07199582de6d32c9007e40",
+      "requestCanonicalSHA256": "a618128e32c6b728809b2231dc9a83f28e23181885792211751cd6c0a8a1c241",
+      "requestFileSHA256": "93f7ec50753248b5dbf737a5046daf1073a7ad1a6d7a627523df4a0a6392d287",
+      "captureManifestSHA256": "d8809e16fc9118f20fc092b9f9f3aeb86843a7a62ab2dc210655dc3265e1b613",
+      "fullResultSHA256": "250e0ea17cbda4a0568296fdce2d70947f1f39e09cd774943a48260cccb82fc2",
       "status": "assessed-incomplete-design",
       "exactAssessmentInput": {
         "sourceSHA256": {
@@ -21493,7 +21493,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -22249,7 +22249,7 @@
           }
         }
       },
-      "exactAssessmentInputSHA256": "89d320cf2f2fffbdbe9fce98ee105e3779a4b136e2785b8cccb9195ef39980ef",
+      "exactAssessmentInputSHA256": "c56b02eb99d901ddbd0e5c51738478f47e268f29dc0cc244c187073bfde3334c",
       "geometryInputSHA256": "875ecc576cbb1c1f46e270065c5204a87830562491bd434ea73585bb4175a83f",
       "beamCutOriginAudit": {
         "allPlateAttachmentsAtRealBeamNodes": true,
@@ -22367,7 +22367,7 @@
           "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
           "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
           "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-          "project/str/studies/seated_wet_support.py": "bad637741b770dc8808a48034dbc37a91f041a5687a80d86396a90bd1ff4bb3c",
+          "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
           "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
           "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
         },
@@ -24886,11 +24886,11 @@
     },
     {
       "nativeCaseId": "restored200",
-      "captureRelativeDirectory": "147fdd255ea081e8eff05768d8c34efb6ed658c33d97894d1e17044d2a94c48b/restored200-cb4602e594f80948087f53f0ea5f5e6b5614dc479ea4df98cdf3bda64b7d28e8",
-      "requestCanonicalSHA256": "839597db3a32122c669dc83c4c114478d19d3bb1589cc7811ced9bd4607b3488",
-      "requestFileSHA256": "fcc69e436382c300f4f317a878c80ebe44073414771258a699617491a0162263",
-      "captureManifestSHA256": "c2d00e7050509932c5432319230f9f4a79df9e8e089cda512f81ae04695684b3",
-      "fullResultSHA256": "3ded67e279869260c49bb0fcda146f16ccf9c88b66e17a9e4e491bf0cf383da1",
+      "captureRelativeDirectory": "f25a58d9e517a13fc7b04d52685a750e8d5ef9d43b579883ba55fb699e5e7d88/restored200-1f27c97de9239f761d3946d80a1fd5b99f14a9f111b1ae315072b34cfe1e2623",
+      "requestCanonicalSHA256": "b5e8a3a3810f2367573c7e946cf450757adba45a64a828db4f932d2dceba76a0",
+      "requestFileSHA256": "b77a472b922515a7d7f9041464d0b57dabd2f79c30f8b66474355ba57d55d825",
+      "captureManifestSHA256": "993a6ab8e1376b1c51a83fe43b9d77b2893ba629912f205506d31ac6c7762d0f",
+      "fullResultSHA256": "e05c9e6126f6969ceb9a6c7c840ed46b2b2bc1667085988856565e42880eeee5",
       "status": "not-applicable-no-seated-wet-support"
     }
   ],

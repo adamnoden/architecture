@@ -154,7 +154,7 @@ export function inletIndoorCuts(i:IndoorCutInputs) {
 type EntryInputs={roomPlanMm:Plan;portalXMm:readonly[number,number];wallFacesYMm:readonly[number,number];
   jambFinishMm:number;shieldPlaneXMm:number;washerFirstRestMm:Plan;maintenancePlanMm:Plan;
   maintenanceTopMm:number;operatorXYZMm:Point;frameCoversMm:readonly Box[];bankXMm:number;bankYMm:number;
-  utilityAxisZMm:number;plantAxisZMm:number;maintenanceShiftXMm:number;maintenanceShiftYMm:number;wheelInboardMm:number;
+  utilityAxisZMm:number;plantAxisZMm:number;tailOffsetMm:number;maintenanceShiftXMm:number;maintenanceShiftYMm:number;wheelInboardMm:number;
   utilityLmin:number;plantLmin:number;maximumGaugeBar:number;
   plantWall:{facesYMm:readonly[number,number];openingXMm:readonly[number,number]};
   retainedFurniture:Readonly<Record<string,Plan>>;protectedDoorOpenLeafMm:Plan;groundFflMm:number;doorHingeNorthOfWallMm:number}
@@ -250,9 +250,9 @@ export function inletEntrySideCuts(i:EntryInputs){
   if(!i.plantWall||![i.plantWall.facesYMm,i.plantWall.openingXMm].every(p=>Array.isArray(p)&&p.length===2&&finite(p))
     ||!Array.isArray(i.protectedDoorOpenLeafMm)||!finite(i.protectedDoorOpenLeafMm)||!Number.isFinite(i.groundFflMm)||!Number.isFinite(i.doorHingeNorthOfWallMm)||i.doorHingeNorthOfWallMm < -30||i.doorHingeNorthOfWallMm>150
     ||![i.roomPlanMm,i.portalXMm,i.wallFacesYMm,i.washerFirstRestMm,i.maintenancePlanMm,i.operatorXYZMm,...i.frameCoversMm].every(finite)
-    ||!finite([i.bankXMm,i.bankYMm,i.utilityAxisZMm,i.plantAxisZMm,i.maintenanceShiftXMm,i.maintenanceShiftYMm,i.wheelInboardMm,i.maximumGaugeBar])
+    ||!finite([i.bankXMm,i.bankYMm,i.utilityAxisZMm,i.plantAxisZMm,i.tailOffsetMm,i.maintenanceShiftXMm,i.maintenanceShiftYMm,i.wheelInboardMm,i.maximumGaugeBar])
     ||i.portalXMm[1]<=i.portalXMm[0]||i.wallFacesYMm[1]<=i.wallFacesYMm[0]||i.wheelInboardMm<0||i.wheelInboardMm>80
-    ||i.utilityAxisZMm<700||i.plantAxisZMm<=i.utilityAxisZMm||i.plantAxisZMm>2300||i.maximumGaugeBar<=0||i.maximumGaugeBar>12)
+    ||i.tailOffsetMm<200||i.tailOffsetMm>400||i.utilityAxisZMm<700||i.plantAxisZMm<=i.utilityAxisZMm||i.plantAxisZMm>2300||i.maximumGaugeBar<=0||i.maximumGaugeBar>12)
     throw Error('Unsupported entry-side indoor-cut envelope')
   const [west,south,width]=i.roomPlanMm,east=west+width,north=i.wallFacesYMm[0],setting=10,
     jamb=[i.portalXMm[0]+i.jambFinishMm,i.portalXMm[1]-i.jambFinishMm],
@@ -292,7 +292,7 @@ export function inletEntrySideCuts(i:EntryInputs){
         candidateGap=Math.min(signedBoxGap(bodyBox,maintenanceBox),signedBoxGap(stemBox,maintenanceBox))-setting
       return{id:'HAD/entry-indoor-cut/'+v.id,branch:v.id,axisMm:[x,y,z],flowAxis:'vertical',stem:'horizontal-west',
         insulatedValveBodyEnvelopeMm:bodyBox,stemWheelEnvelopeMm:stemBox,
-        tailElbowVirtualCornersMm:[[x,y,z-200],[x,y,z+200]],
+        tailElbowVirtualCornersMm:[[x,y,z-i.tailOffsetMm],[x,y,z+i.tailOffsetMm]],
         minimumSourceMaintenanceAfterSettingMm:sourceGap,minimumMovedMaintenanceAfterSettingMm:candidateGap,
         minimumFixedFrameCoverAfterSettingMm:coverGap,grips,maximumGripReachMm:Math.max(...grips.map(g=>g.reachMm)),
         wallNorthAfterSettingMm:north-y-83.5-setting,wallEastAfterSettingMm:east-x-83.5-setting,
@@ -314,7 +314,7 @@ export function inletEntrySideCuts(i:EntryInputs){
   return{schema:'had-entry-side-indoor-cuts/2',state:'unadopted-project-envelope',
     coordinateDatum:'All geometry is relative to its actual occupied-groundFFL; the supplied saved ground stage maps explicit absolute coordinates without native structural adoption.',
     groundStage:{fflMm:i.groundFflMm,nominalSourceFflMm:0,absoluteValveAxesMm:valves.map(v=>[v.axisMm[0],v.axisMm[1],v.axisMm[2]+i.groundFflMm]),absoluteDoorHingeMm:[...door.hingeMm.slice(0,2),i.groundFflMm],adoptedInNativeStructure:false},
-    authoredChoices:{bankXMm:i.bankXMm,bankYMm:i.bankYMm,utilityAxisZMm:i.utilityAxisZMm,plantAxisZMm:i.plantAxisZMm,maintenanceShiftXMm:i.maintenanceShiftXMm,maintenanceShiftYMm:i.maintenanceShiftYMm,wheelInboardMm:i.wheelInboardMm,doorHingeNorthOfWallMm:i.doorHingeNorthOfWallMm},
+    authoredChoices:{bankXMm:i.bankXMm,bankYMm:i.bankYMm,utilityAxisZMm:i.utilityAxisZMm,plantAxisZMm:i.plantAxisZMm,maintenanceShiftXMm:i.maintenanceShiftXMm,maintenanceShiftYMm:i.maintenanceShiftYMm,wheelInboardMm:i.wheelInboardMm,doorHingeNorthOfWallMm:i.doorHingeNorthOfWallMm,tailOffsetMm:i.tailOffsetMm},
     exactRoomPlanMm:i.roomPlanMm,rawPortalXMm:i.portalXMm,finishedJambXMm:jamb,door,
     rejectedSingleLeafComparison:{hingeNorthOfWallMm:i.doorHingeNorthOfWallMm,continuousBoundsMm:singleLeaf.continuousBoundsMm,diagnostics:singleLeaf.diagnostics,selected:false},
     ordinaryOperator:{bodyRadiusMm:bodyR,armRadiusMm:armR,reachLimitMm:650,shoulderMm:body,approachMm:approach,

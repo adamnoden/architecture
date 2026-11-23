@@ -1,3 +1,4 @@
+import { deriveCommonDepthCorner, type CommonDepthCornerChoices } from './study-lighting-common-depth.js'
 import { deriveLightingCornerDetail, type LightingCornerDetailInput } from './study-lighting-corner.js'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
@@ -22,8 +23,8 @@ export function readLightingComponents() {
   const data = JSON.parse(read(studyLightingComponentsPath).toString('utf8'))
   if (data.schema !== 'ias-lighting-component-references/1') throw new TypeError('Unsupported lighting component reference schema')
   return data as {
-    cornerConstruction: LightingCornerDetailInput['construction'],
-    socket: { plateWidthMm: number; plateHeightMm: number; recommendedBoxDepthMm: number },
+    cornerConstruction: LightingCornerDetailInput['construction'], commonDepthCornerCandidate: CommonDepthCornerChoices,
+    socket: { plateWidthMm: number; plateHeightMm: number; recommendedBoxDepthMm: number; bodyDepthMm: number },
     backBox: { widthMm: number; heightMm: number; depthMm: number }, plug: { insertedProjectionMm: number },
     deskLamp: { baseDiameterMm: number; leadLengthMm: number }, floorLamp: { baseDiameterMm: number; leadLengthMm: number },
     wallLamp: { shadeWidthMm: number; shadeHeightMm: number; reservedCompleteProjectionMm: number },
@@ -185,12 +186,27 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     moduleMassLimitKg: corner.module.authoredMassLimitKg, socketCentreZMm: request.socketCentreZMm, firstRestPlanMm: parking,
     normalDrawMm: p.panelRoomwardDrawMm, occupied: room.occupied, ceilingZMm: room.ceilingZMm,
     construction: components.cornerConstruction, boxSizeMm: corner.backBoxSizeMm, plateSizeMm: corner.plateSizeMm })
+  const floorLampRadius = components.floorLamp.baseDiameterMm / 2
+  const commonDepthCornerComparison = deriveCommonDepthCorner({ bayPlanMm: bay, coreFaceYMm: construction.coreFaceYMm,
+    totalDepthMm: request.serviceTotalDepthMm, fixedBoundaryDepthMm: p.fixedBoundaryDepthMm, settingMm: room.settingMm, fixedRails: construction.fixedRails,
+    legacyJunctionBodyDepthMm: construction.fixedEnclosures[2]!.bodyDepthMm,
+    legacyJunctionAxisDepthMm: construction.fixedEnclosures[2]!.sideEntryAxisDepthMm,
+    referenceBoxDepthMm: components.backBox.depthMm, accessoryBodyDepthMm: components.socket.bodyDepthMm,
+    insertedPlugProjectionMm: components.plug.insertedProjectionMm, plateSizeMm: corner.plateSizeMm,
+    socketCentreZMm: request.socketCentreZMm, switchCentreZMm: 1100, lightCentreZMm: W.positionMm[2],
+    fieldBottomZMm: corner.bayBottomZMm, fieldTopZMm: 2100,
+    routeDiameterMm: components.cornerConstruction.containmentOutsideDiameterMm,
+    collarDiameterMm: components.cornerConstruction.entryCollarOutsideDiameterMm,
+    collarLengthMm: components.cornerConstruction.entryCollarAxialLengthMm, mainRestPlanMm: parking,
+    parkedModule: construction.firstRelease.parked, floorBandsMm: room.bands,
+    occupiedPlanMm: [...room.occupied, ['reserved-floor-lamp', [floorBase[0] - floorLampRadius, floorBase[1] - floorLampRadius, floorBase[0] + floorLampRadius, floorBase[1] + floorLampRadius]]],
+  }, components.commonDepthCornerCandidate)
   fail('IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.', ['IAS/STUDY/room-supply-interface'])
   fail('IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED', 'The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.', construction.containment.localEntryBranches.map(branch => branch.id))
   for (const issue of construction.issues) fail('IAS_LIGHTING_CONSTRUCTION_REJECTED', issue)
   return {
     schema: studyLightingMethod, status: diagnostics.some(d => /REJECTED|MISSING/.test(d.code)) ? 'GEOMETRY_REJECTED' : 'DEVELOPMENT_COMPARISON', request, source: basis.source,
-    caseDigest: sha256SemanticFingerprint({ request, basis, components }), commonRoom: room, arrangements, selectedArrangement: selected.id, corner, serviceStations, fixedInterfaces, construction,
+    caseDigest: sha256SemanticFingerprint({ request, basis, components }), commonRoom: room, arrangements, selectedArrangement: selected.id, corner, serviceStations, fixedInterfaces, construction, commonDepthCornerComparison,
     leads: { desk: { pathMm: deskLead, routedMm: length(deskLead), suppliedMm: components.deskLamp.leadLengthMm }, floor: { pathMm: floorLead, routedMm: length(floorLead), suppliedMm: components.floorLamp.leadLengthMm },
       side: { pathMm: sideLead, routedMm: length(sideLead), suppliedMm: components.deskLamp.leadLengthMm }, authoredSlackMm: 200 },
     controls: { automationConnected: request.automationConnected, automationRequired: false, ordinaryArrivalWorking: !!selected.roles[0].liveSourceIds.length,

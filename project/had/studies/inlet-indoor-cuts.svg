@@ -6,12 +6,12 @@
 <polyline points="185.4,311.85 258.84000000000003,311.85" fill="none" stroke="#a9865c" stroke-width="3"/><polyline points="256.14,194.31000000000006 256.14,212.31 274.14,221.31 274.14,359.91" fill="none" stroke="#2e7c83" stroke-width="3"/><polyline points="108.53999999999999,221.31 256.14,239.85000000000002" fill="none" stroke="#496983" stroke-width="3"/>
 <circle cx="256.14" cy="239.85000000000002" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="218.88565734669584" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="199.35000000000002" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="194.31000000000006" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="194.31000000000006" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="194.31000000000006" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="194.31000000000006" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="225.92374287736783" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="205.74609911723326" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="194.31000000000006" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="194.31000000000006" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="194.31000000000006" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/><circle cx="256.14" cy="194.31000000000006" r="54" fill="none" stroke="#9baeb0" stroke-width="1"/>
 <circle cx="274.14" cy="359.91" r="54" fill="none" stroke="#25747c" stroke-width="3"/>
-<circle cx="396.53999999999996" cy="374.31" r="15.03" fill="#bc9759" stroke="#755e38"/><polyline points="274.14,359.91 357.47999999999996,377.2217142574034" fill="none" stroke="#755e38" stroke-width="3"/><circle cx="396.53999999999996" cy="374.31" r="15.03" fill="#bc9759" stroke="#755e38"/><polyline points="274.14,359.91 357.47999999999996,377.2217142574034" fill="none" stroke="#755e38" stroke-width="3"/>
+<circle cx="398.34" cy="374.31" r="15.03" fill="#bc9759" stroke="#755e38"/><polyline points="274.14,359.91 359.28,377.2217142574034" fill="none" stroke="#755e38" stroke-width="3"/><circle cx="398.34" cy="374.31" r="15.03" fill="#bc9759" stroke="#755e38"/><polyline points="274.14,359.91 359.28,377.2217142574034" fill="none" stroke="#755e38" stroke-width="3"/>
 <text x="505" y="150" font-size="20">Geometry screen: within declared envelopes</text>
-<text x="505" y="190" font-size="16">Local bank XY 11350/2350mm.</text>
-<text x="505" y="230" font-size="16">Valve local axes 1350 / 1890mm above FFL.</text>
-<text x="505" y="270" font-size="16">Saved ground FFL 0mm; absolute axes 1350 / 1890mm.</text>
-<text x="505" y="310" font-size="16">Maximum reaches 513.64 / 637.48mm; limit650.</text>
+<text x="505" y="190" font-size="16">Local bank XY 11360/2350mm.</text>
+<text x="505" y="230" font-size="16">Valve local axes 1270 / 1890mm above FFL.</text>
+<text x="505" y="270" font-size="16">Saved ground FFL 0mm; absolute axes 1270 / 1890mm.</text>
+<text x="505" y="310" font-size="16">Maximum reaches 535.47 / 645.40mm; limit650.</text>
 <text x="505" y="350" font-size="16">Complete field shift -100/-20mm; size preserved.</text>
 <text x="505" y="390" font-size="16">Finished opening 846mm; projected open-clear 766mm.</text>
 <text x="505" y="430" font-size="16">Connected parked-leaf route reserve 13.000mm.</text>

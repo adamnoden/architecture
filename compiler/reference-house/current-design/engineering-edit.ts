@@ -21,6 +21,8 @@ export interface EngineeringTicket {
   readonly requestId: string
   readonly documentJson: string
 }
+export const editableInletBankId='HAD/indoor-isolation-bank'
+export const editableInletBankFields=['indoorBankXMm','indoorUtilityAxisZMm','indoorTailOffsetMm','indoorUtilityReturnXMm','indoorWesternReturnXMm','pipeJacketDensityComparisonKgM3','pipeInsulationDensityComparisonKgM3'] as const
 export const editableRoofId = 'MAT/ring-roof-field'
 export const editableFloorSectionId = 'STR/current-floor-section'
 export const editableWetSupportId = 'STR/wet-wall-support'
@@ -72,6 +74,14 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       }
       if (operation.pitchDeg === state.document.stages.roofPitch.pitchDeg) return { status: 'applied', state }
       stages = { ...state.document.stages, roofPitch: { pitchDeg: operation.pitchDeg } }
+    } else if(record(operation)&&operation.kind==='set-inlet-bank-field'){
+      const current=state.document.stages.inletSourceEnvelope
+      if(!exact(operation,['kind','assemblyId','inputId','value'])||operation.assemblyId!==editableInletBankId
+        ||!record(current)||typeof operation.inputId!=='string'||!(editableInletBankFields as readonly string[]).includes(operation.inputId)
+        ||typeof operation.value!=='number'||!Number.isFinite(operation.value)
+        ||transaction.units!==(operation.inputId.endsWith('KgM3')?'kg/m3':'mm'))throw new TypeError('Expected one finite supported input on an existing explicit inlet stage')
+      if(current[operation.inputId]===operation.value)return{status:'applied',state}
+      stages={...state.document.stages,inletSourceEnvelope:{...current,[operation.inputId]:operation.value}}
     } else if (record(operation) && operation.kind === 'set-lighting-service-depth') {
       const current = state.document.stages.studyLighting
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'totalDepthMm'])

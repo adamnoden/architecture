@@ -225,3 +225,21 @@ test('actual native stage inventories are completely bound in their consuming so
     }
   }
 })
+
+test('wet-bearing methods, numerical choices and native contact laws invalidate the retained observation replay', () => {
+  const receipt = 'project/str/studies/wet-bearing-refinement-proof.json'
+  const baseline = auditSourceCoverage()
+  assert.ok(!baseline.findings.some(row => row.kind === 'source-contradiction' && row.receipt === receipt))
+  const digest = (audit, id) => audit.bindings.find(row => row.id === id).digest
+  for (const source of ['project/str/studies/wet_bearing_refinement.py',
+    'project/str/studies/wet-bearing-refinement-inputs.json', 'project/str/studies/seated_wet_support.py']) {
+    const changed = auditSourceCoverage(path => path === source ? Buffer.concat([read(path), Buffer.from('\n')]) : read(path))
+    assert.ok(changed.findings.some(row => row.kind === 'source-contradiction' && row.receipt === receipt && row.source === source))
+    assert.notEqual(digest(changed, 'str-masonry-frame-comparison'), digest(baseline, 'str-masonry-frame-comparison'))
+    assert.equal(digest(changed, 'had-inlet-indoor-reference'), digest(baseline, 'had-inlet-indoor-reference'))
+  }
+  const adapter = 'compiler/reference-house/current-design/structural-wet-bearing.ts'
+  const changed = auditSourceCoverage(path => path === adapter ? Buffer.concat([read(path), Buffer.from('\n')]) : read(path))
+  assert.notEqual(digest(changed, 'str-masonry-frame-comparison'), digest(baseline, 'str-masonry-frame-comparison'))
+  assert.equal(digest(changed, 'had-inlet-indoor-reference'), digest(baseline, 'had-inlet-indoor-reference'))
+})
