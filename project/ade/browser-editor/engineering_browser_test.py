@@ -215,6 +215,9 @@ def main():
         ready(page,0)
         expect(page.locator('#inlet-result')).to_contain_text('Finite route/operation/clamp envelope: REJECTED')
         initial_bank=page.locator('#current-inlet-bank').get_attribute('src')
+        expect(page.locator('#inlet-candidate-result')).to_contain_text('Explicit unadopted route: REJECTED')
+        initial_candidate=page.locator('#current-inlet-candidate').get_attribute('src')
+        assert initial_candidate and 'complete' in page.locator('#current-inlet-candidate').get_attribute('alt')
         expect(page.locator('#inlet-result')).to_contain_text('remain unqualified')
         page.locator('#inlet-field').select_option('indoorTailOffsetMm')
         expect(page.locator('#inlet-value')).to_have_value('250')
@@ -222,6 +225,8 @@ def main():
         ready(page,1)
         expect(page.locator('#inlet-result')).to_contain_text('REJECTED')
         assert page.locator('#current-inlet-bank').get_attribute('src')!=initial_bank
+        expect(page.locator('#inlet-candidate-result')).to_contain_text('unavailable for the edited connections')
+        assert page.locator('#current-inlet-candidate').get_attribute('src') is None
         with page.expect_download() as download:
             page.get_by_role('button',name='Export JSON').click()
         changed_bank=json.loads(Path(download.value.path()).read_text())
@@ -235,6 +240,7 @@ def main():
         page.get_by_role('button',name='Undo',exact=True).click();ready(page,2)
         expect(page.locator('#inlet-value')).to_have_value('250')
         assert page.locator('#current-inlet-bank').get_attribute('src')==initial_bank
+        assert page.locator('#current-inlet-candidate').get_attribute('src')==initial_candidate
         page.locator('#inlet-field').select_option('pipeJacketDensityComparisonKgM3')
         page.locator('#inlet-value').fill('4000');page.locator('#inlet-value').press('Enter')
         ready(page,3)

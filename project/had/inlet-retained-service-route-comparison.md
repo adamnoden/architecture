@@ -26,4 +26,6 @@ All comparison geometry uses local occupied-ground FFL. Nominal native service h
 
 Three meaningful controls cover actual rejection despite local passes,90degree/connection and pressure/density changes, unsupported candidate edits, and exact retained radii/settings. The existing saved-editor/CLI test compares the new candidate result after JSON transport (including the ordinary−0→0 JSON normalisation). Missing/duplicate service identities and invalid boxes/radii reject explicitly. Source/receipt regeneration and exact-head verification accompany integration; CI cannot supply occupied-house acceptance.
 
+The existing browser pane now exposes the exact shared candidate SVG and status read-only. A tail/connection edit removes unsupported candidate geometry; undo restores it. No frontend geometry or new design controls are introduced. New browser assertions await exact-head browser execution; rendered SVG inspection is separate from that proof.
+
 The next physical simplification to compare is separate ordinary Utility and Plant isolation stations. Co-location is a prior engineering arrangement, not an identified owner requirement. A split must still prove both actual room approaches, vessel/bench/tool movement, source/backfeed and stored release, relief/drainage, material/renewal duties and complete loads. It is a next comparison, not a selected solution.

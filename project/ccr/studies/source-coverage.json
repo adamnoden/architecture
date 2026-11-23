@@ -2232,7 +2232,7 @@
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
     "compiler/reference-house/current-design/engineering-edit.ts": "f7e050ac682c6caa0a14e0bed4d76806a2cae16f",
     "project/ade/browser-editor/engineering-api.ts": "8992e5c35a8d6c3045c43f79cd5ba1088d912aa1",
-    "project/ade/browser-editor/engineering-editor.ts": "15b9acc2c3c9ba91243b8b75a12cec29443f21d5",
+    "project/ade/browser-editor/engineering-editor.ts": "486279d913761099bc3436833038874235e0302d",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
@@ -2333,7 +2333,7 @@
     "project/str/studies/monolithic-rc-translation-actions.json": "45fd6254540ff5d0f8927f3a8375e157bf330e2b",
     "compiler/reference-house/current-design/inlet-bank-receiver.ts": "27ae1b2964495559cee1bd13b3c270ab2c660744",
     "project/had/studies/inlet-bank-receiver.svg": "36daa77f163c959d9578b34783bee1e5e2806b04",
-    "project/ade/browser-editor/engineering.html": "9b0e0df569b9cbe8a1c0d171f50027eb93743d4f",
+    "project/ade/browser-editor/engineering.html": "d3f621cf938767218f1f179c7f364e2e8065be99",
     "project/had/inlet-bank-carrier-rejection.md": "02e3e0c4004e7a3d636b5e56297131ff959d132d",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
@@ -2368,6 +2368,6 @@
     "project/had/inlet-isolation-product-recovery-20261123.md": "2265d1f1a7e35db18ae5bf684040adaf236ef7b2",
     "project/had/studies/inlet-route-candidate.json": "6bd208ae8dbe70564122af3d16d3d86f60dde141",
     "project/had/studies/inlet-route-candidate.svg": "9503bc8122f542d68af1662e6e120ff9d501a25f",
-    "project/had/inlet-retained-service-route-comparison.md": "7c32707d43816e493e8e64e44d83f485e1605592"
+    "project/had/inlet-retained-service-route-comparison.md": "f574b645bf44c91378eccdd621235687ba2315fd"
   }
 }
