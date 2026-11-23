@@ -9,9 +9,9 @@
     "label": "convergence-lighting-20261123"
   },
   "claimedAt": "2026-11-23T07:22:45.614Z",
-  "heartbeatAt": "2026-11-23T07:22:45.614Z",
-  "expiresAt": "2026-11-23T08:07:45.614Z",
-  "branch": "work/convergence-lighting-20261123",
+  "heartbeatAt": "2026-11-23T07:31:08.061Z",
+  "expiresAt": "2026-11-23T08:16:08.061Z",
+  "branch": "work/convergence-integrate-20261123",
   "predecessor": {
     "leaseId": "68f6136d-f6b2-495d-a338-9f14cd05b3b2",
     "generation": 5,
@@ -31,5 +31,10 @@
       "next": "Recover from explicit remote component checkpoints, compare with fresh main/current source, regenerate affected evidence and rerun actual HTTP/compiler/CLI plus exact-head browser CI. Read-only floor result pane requested by root was NOT implemented before the execution limit. Reacquire a fresh canonical lease before new work; require publication preflight and exact-head validation before merge.",
       "blocker": "Execution environment explicitly unavailable; exec-server transport recovery timed out. Canonical CLI unavailable. This is an exact-identity connector-only handoff/release, not a CLI or merge-preflight claim."
     }
+  },
+  "pr": 1620,
+  "checkpoint": {
+    "evidence": "PR #1620 remote524d7151 includes recovered IAS source and genuinely regenerated evidence;22 exact-head IAS/producer/browser-import/HTTP tests and strict producer check passed",
+    "next": "Observe exact submitted-head full health and actual browser CI, then shared publication preflight/merge; retained recessed grip/circuit/material/load limits remain open"
   }
 }
