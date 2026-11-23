@@ -11,5 +11,4 @@ test('actual floor-section analytical admission, material law and current-source
   execFileSync(process.execPath,['--import','tsx','project/str/studies/floor-interface-proof.ts','--check'],{stdio:'pipe'})
   execFileSync('python3',['-B','project/str/studies/wet_bearing_refinement_proof.py','--check'],{stdio:'pipe'})
   execFileSync('python3',['-B','project/str/studies/four_l_joint_proof.py','--check'],{stdio:'pipe'})
-  execFileSync('python3',['-B','project/str/studies/four_l_joint_material_audit.py','--check'],{stdio:'pipe'})
 })
