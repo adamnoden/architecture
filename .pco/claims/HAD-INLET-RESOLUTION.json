@@ -9,8 +9,8 @@
     "label": "convergence-20261124"
   },
   "claimedAt": "2026-11-24T09:33:01.836Z",
-  "heartbeatAt": "2026-11-24T09:33:01.836Z",
-  "expiresAt": "2026-11-24T10:18:01.836Z",
+  "heartbeatAt": "2026-11-24T09:35:56.618Z",
+  "expiresAt": "2026-11-24T10:20:56.618Z",
   "branch": "work/convergence-recovery-20261124",
   "predecessor": {
     "leaseId": "b2192c71-acc8-4e27-a670-1601ac2c22ea",
@@ -31,5 +31,10 @@
       "evidence": "Merged1623 exactcb5/mainfa711061. FROZEN handedoffcontinuation recovery/had-retained-route-20261123 head9fd9ad01 treebb82b535 exactlocalfb316;22HAD/ADE files vsnewmain. Retained/head rejection+unadoptedsplitstation with10/20mmadverse,actualsource/datum/modeholds; no source9.27then7focused/type/producer/audit0pass;final30running.",
       "next": "Root deliberatelyintegrates9fd withSTRsuccessore94+stairfix in shared1622 branch, reconcilesactual source-account and genuinelyregenerates dependentoutputs; exactheadCI and BOTHHAD/STR publicationpreflights beforemerge. Compactresearch remainsread-only, completewaterroute/support/relief stillunqualified."
     }
+  },
+  "pr": 1624,
+  "checkpoint": {
+    "evidence": "PR1624 d694ae3 recovers PR1622 complete shared source tree;12 current-source controls pass; browser/full health CI running",
+    "next": "Observe exact-head CI, both fresh canonical preflights then merge; separate Plant station/source continuation proposed in scratch only"
   }
 }
