@@ -104,6 +104,19 @@ These are specific editorial boundaries to preserve, not reasons to disguise the
 
 *Reference design — not released for construction. Assumptions and outstanding verification accompany the proposal; internal checks do not constitute external assurance or certification.*
 
+## The occupied room programme also differs
+
+The nominal plans and the occupied development differ in more than the stair position. Their furniture and ordinary-use assumptions need an explicit choice at the existing joined-house review; none of the changes below records the owner's acceptance.
+
+| Item | Accepted nominal drawing | Current occupied development | Consequence to judge |
+|---|---|---|---|
+| Front bedrooms 2 and 3 | Each shows a 1500 × 2000 mm double-bed reservation. | Each now uses a **950 × 2055 mm complete single-bed frame** for a 900 × 2000 mm mattress. Bedroom 2 has 652.5 mm side strips and a 618 mm foot strip after trim; the foot strip becomes 593 mm under the declared 25 mm positioning comparison. | The two front bedrooms are being tested as single rooms. These geometric witnesses do not preserve the nominal double-bed programme or establish comfortable use. |
+| Bedroom 3 secondary side | The nominal double-bed symbol does not establish finished bedside access. | The single frame has **527.5 / 660 mm** ordinary west/east strips. Moving the whole frame **132.5 mm east** gives 660 mm on the west and 527.5 mm on the east. | West-head bedding and cleaning require a move and restoration. Two simultaneous 600 mm side strips are not available in either state. |
+| Stair | A **1100 mm flight reservation**; finished handrails are not represented by that number. | Each flight has 1094 mm body territory, **1004 mm between the modelled rails**, or 984 mm after the declared 20 mm positioning loss. | Judge the actual finished passage. Do not describe either drawing as proving 1100 mm clear between rails. |
+| Utility and Plant | A separate Utility room with its own nominal door. | A **900 mm open arch** at the Utility north wall joins the shared service zone; the protected Plant entrance remains separate. | The Utility loses its own acoustic/privacy closure. Distinct duties and water/electrical boundaries still need the complete arrangement. |
+
+The nominal values come from [`layout-revision.ts`](../../compiler/reference-house/georgian/layout-revision.ts), `furniture.bed2`, `furniture.bed3`, `stair` and `revisionOpenings()`. The occupied values come from [`water-replan.json`](../had/studies/water-replan.json), `model.frontBedControl`, `model.stairGuard` and `model.utilityDisposition`. These current source fields supersede the earlier solid-wall study's double-bed pinch comparison. The separate pantry/service-passage conflict below remains part of the same unresolved room programme.
+
 ## The pantry and service-passage conflict
 
 The accepted nominal Georgian plan retains G-PANTRY, its north wall and door. The conditional occupied-water proposal inserts an outdoor eastern passage and weather separator, expressly loses that pantry and substitutes a low kitchen larder. These are different architectural revisions, not one coordinated accepted plan. Its inherited principal lower-foul route also assumes the displaced pantry working field. Retaining the pantry is the preferred architectural control; the service layout and actual current-host foul route need a coordinated replacement before a joined owner review.
