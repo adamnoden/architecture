@@ -9,9 +9,9 @@
     "label": "convergence-20261124"
   },
   "claimedAt": "2026-11-24T09:32:25.409Z",
-  "heartbeatAt": "2026-11-24T10:28:28.604Z",
-  "expiresAt": "2026-11-24T11:13:28.604Z",
-  "branch": "work/convergence-recovery-20261124",
+  "heartbeatAt": "2026-11-24T10:53:40.056Z",
+  "expiresAt": "2026-11-24T11:38:40.056Z",
+  "branch": "work/convergence-continuation-20261124",
   "predecessor": {
     "leaseId": "7cccf040-5554-4999-94fd-50b6bce6c599",
     "generation": 57,
@@ -34,7 +34,7 @@
   },
   "pr": 1624,
   "checkpoint": {
-    "evidence": "Combined continuation f6581ce736be79ddd337eccbe1effc3d77f19963 remote verified48file tree41a447db. Saved-stage52heads EXACT unchanged delta0; native control archive genuinely regenerated. Sourceaudit0,25featurechecks+3realPythonadapter PASS. Recovery1624 CI pending; graded nested nearfield3.6957percent separate work in final sharedmode.",
-    "next": "Merge recovery exacthead afterCI and freshpreflights, then submit combined current-source continuation with STR/HAD/IAS leases; finish graded far/slab qualification"
+    "evidence": "Recovery PR1624 merged f8ad6989; continuation checkpoint f6581ce736be79ddd337eccbe1effc3d77f19963. Shared distributed contour introduced; current far-field refinement still12.2492pct; no slab or component convergence selected.",
+    "next": "Publish final MMD method with genuinely regenerated captures, matched numerical-order controls and current saved-stage proof; exact-head CI and preflight."
   }
 }
