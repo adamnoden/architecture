@@ -9,8 +9,8 @@
     "label": "convergence-20261124"
   },
   "claimedAt": "2026-11-24T09:33:01.836Z",
-  "heartbeatAt": "2026-11-24T09:55:10.024Z",
-  "expiresAt": "2026-11-24T10:40:10.024Z",
+  "heartbeatAt": "2026-11-24T10:29:07.745Z",
+  "expiresAt": "2026-11-24T11:14:07.745Z",
   "branch": "work/convergence-recovery-20261124",
   "predecessor": {
     "leaseId": "b2192c71-acc8-4e27-a670-1601ac2c22ea",
@@ -34,7 +34,7 @@
   },
   "pr": 1624,
   "checkpoint": {
-    "evidence": "Recovery PR1624 d694ae3 exact CI running. Continuation00ca6288 remotely retains own-fitting correction+regenerated receipts and owner programme disclosure. Independent Plant branch and whole fault development remain unadopted.",
-    "next": "Verify recovery exactCI and fresh preflights then merge; finish current-source Plant route and finite contour integration with full mutation/adverse/control checks"
+    "evidence": "Combined continuation f6581ce7/tree41a447db verified remote: independent connectedPlant branch+fullsourcepressure andgravitywrenches, actualdrop/port/roomfailures retained, ownfittingfix andownerprogramme.25features andsourceaudit0. Recovery1624 fullCI pending.",
+    "next": "Merge recovery afterexactCI andfreshHAD/STRpreflight; finish wholePlantcatchment/weather/support comparison and exactheadcombinedintegration"
   }
 }
