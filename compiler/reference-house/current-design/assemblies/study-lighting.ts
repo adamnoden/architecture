@@ -25,7 +25,7 @@ export function readLightingComponents() {
   return data as {
     cornerConstruction: LightingCornerDetailInput['construction'], commonDepthCornerCandidate: CommonDepthCornerChoices,
     socket: { plateWidthMm: number; plateHeightMm: number; recommendedBoxDepthMm: number; bodyDepthMm: number },
-    backBox: { widthMm: number; heightMm: number; depthMm: number }, plug: { insertedProjectionMm: number },
+    backBox: { widthMm: number; heightMm: number; depthMm: number }, plug: { widthMm: number; heightMm: number; depthMm: number; insertedProjectionMm: number },
     deskLamp: { baseDiameterMm: number; leadLengthMm: number }, floorLamp: { baseDiameterMm: number; leadLengthMm: number },
     wallLamp: { shadeWidthMm: number; shadeHeightMm: number; reservedCompleteProjectionMm: number },
     wallTaskLamp: { wallPlateDiameterMm: number; maximumReachMm: number; shadeDiameterMm: number; shadeHeightMm: number },
@@ -193,6 +193,8 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     legacyJunctionAxisDepthMm: construction.fixedEnclosures[2]!.sideEntryAxisDepthMm,
     referenceBoxDepthMm: components.backBox.depthMm, accessoryBodyDepthMm: components.socket.bodyDepthMm,
     insertedPlugProjectionMm: components.plug.insertedProjectionMm, plateSizeMm: corner.plateSizeMm,
+    plugSizeMm: [components.plug.widthMm, components.plug.heightMm, components.plug.depthMm],
+    steelDensityKgM3Comparison: components.cornerConstruction.steelDensityKgM3Comparison,
     socketCentreZMm: request.socketCentreZMm, switchCentreZMm: 1100, lightCentreZMm: W.positionMm[2],
     fieldBottomZMm: corner.bayBottomZMm, fieldTopZMm: 2100,
     routeDiameterMm: components.cornerConstruction.containmentOutsideDiameterMm,

@@ -1,11 +1,11 @@
 {
   "schema": "ias-study-lighting-review/1",
   "methodSHA256": {
-    "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "b0d1573ee93298486b03876e5c218de2b9ce1ed08b6464ad7c5e9b43b7bc05df",
+    "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "0ef57bf4613ddf85a917810ac10c328432fb1b9a6db3f593164592e9c058e9ee",
     "compiler/reference-house/current-design/assemblies/study-lighting-case.ts": "105716ebc3bf7677357459197c727650c74ffaa698fbdd6bcfb1612c68fab2b8",
     "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "45c03ba8f231b950563cda2b7c39f403978fb6c03593c5e62df4ace09c8faff9",
-    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "148b859c3c16d26cb03048af6ab3f7f1497a944d02287d58cce3e74d9ca8d161",
-    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "3f5ae9d3d6286b94acbc887d1564da0f1e25330f5243b0defd9b3dedc5f338fd",
+    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "5767ceeac2f9e6395aa7721dad2e0b4aeea96853315253a5c8308eb2695da839",
+    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "4d5810b16441c727de642dec686e6deea62a5836a99b10128aed61512a5ce87c",
     "project/ias/studies/adaptable-study-lighting.mjs": "ab9c1ef53e220da20531d6aa037d9bcf3c1d83ec17028be60fe344c0b098473c"
   },
   "reference": {
@@ -44,10 +44,10 @@
       "occupiedBindingDigest": "384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c",
       "inputsSHA256": {
         "project/ias/studies/adaptable-study-lighting.json": "02fb40391ab20ff76f90aef1074b82fca711f6b46bb8d6dd66a36fb5778f2302",
-        "project/ias/studies/lighting-component-references.json": "15132bb81a886559f37ba5425fa749f4247a1ebf4225d6397c4df2d6c181a963"
+        "project/ias/studies/lighting-component-references.json": "b1e972740fb11209afab69bc762c6b5a9d3267a740be4c5288d83e27715e2c08"
       }
     },
-    "caseDigest": "18038aea1c878863a8d6a68dcaf23d2cbb48cba1b812c3984f1dfd32fa964cae",
+    "caseDigest": "d63d53a0e58452bf9cae0e07564d42faea8565ac09a8a1b8ef57dae7db25d6c6",
     "commonRoom": {
       "bands": [
         [
@@ -3252,10 +3252,10 @@
       "issues": []
     },
     "commonDepthCornerComparison": {
-      "schema": "ias-common-depth-corner-comparison/1",
+      "schema": "ias-common-depth-corner-comparison/2",
       "selection": "unselected-comparison",
       "choices": {
-        "schema": "ias-common-depth-corner-choices/1",
+        "schema": "ias-common-depth-corner-choices/2",
         "units": "mm",
         "enclosureWidthMm": 180,
         "enclosureHeightMm": 200,
@@ -3268,7 +3268,15 @@
         "maximumEnclosureMassKg": 3,
         "fixingEdgeMm": 25,
         "fixingHoleDiameterMm": 5,
-        "maximumClipSpanMm": 300
+        "maximumClipSpanMm": 300,
+        "accessoryOpeningWidthMm": 120,
+        "accessoryOpeningHeightMm": 130,
+        "fingerThicknessMm": 20,
+        "fingerHeightMm": 50,
+        "gripRearOffsetMm": 5,
+        "gripEngagementMm": 12,
+        "plugNormalDrawMm": 27,
+        "pipeWallMm": 1
       },
       "status": "LOCAL_ENCLOSURE_GEOMETRY_WITH_UNBOUND_DEVICE_INTERFACES",
       "settingMm": 5,
@@ -3988,6 +3996,118 @@
       "accessoryUse": {
         "insertedPlugRoomwardProjectionBeyondDecorationMm": 5.5,
         "actualRecessOpeningAndBodyGripQualified": false,
+        "geometryStatus": "DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR",
+        "surroundOpenings": [
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/0/fixed-surround-opening",
+            "openingXZMm": [
+              1085,
+              535,
+              1205,
+              665
+            ],
+            "depthMm": [
+              60.5,
+              75
+            ],
+            "ordinaryUseLeavesElectricalFaceClosed": true,
+            "retainedOnDecorationRelease": true,
+            "fixingChecks": [
+              {
+                "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/0",
+                "reserveMm": 3.680339887498949
+              },
+              {
+                "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/1",
+                "reserveMm": 3.680339887498949
+              },
+              {
+                "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/0",
+                "reserveMm": 3.680339887498949
+              },
+              {
+                "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/1",
+                "reserveMm": 3.680339887498949
+              }
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/1/fixed-surround-opening",
+            "openingXZMm": [
+              1085,
+              1035,
+              1205,
+              1165
+            ],
+            "depthMm": [
+              60.5,
+              75
+            ],
+            "ordinaryUseLeavesElectricalFaceClosed": true,
+            "retainedOnDecorationRelease": true,
+            "fixingChecks": [
+              {
+                "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/0",
+                "reserveMm": 3.680339887498949
+              },
+              {
+                "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/1",
+                "reserveMm": 3.680339887498949
+              },
+              {
+                "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/0",
+                "reserveMm": 3.680339887498949
+              },
+              {
+                "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/1",
+                "reserveMm": 3.680339887498949
+              }
+            ]
+          }
+        ],
+        "completeReferencePlugMm": [
+          50,
+          52,
+          42
+        ],
+        "twoIndependentSettingsMm": 10,
+        "gripSideReserveMm": 5,
+        "gripVerticalReserveMm": 29,
+        "isolatedPlateDrawReserveMm": 7,
+        "requiredPlugNormalDrawMm": 27,
+        "authoredPlugNormalDrawMm": 27,
+        "fingerSweeps": [
+          {
+            "id": "IAS/STUDY/common-depth/socket/finger/0",
+            "intendedPlugSideContact": true,
+            "sweptXYZMm": [
+              1100,
+              3073,
+              575,
+              1120,
+              3112,
+              625
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/socket/finger/1",
+            "intendedPlugSideContact": true,
+            "sweptXYZMm": [
+              1170,
+              3073,
+              575,
+              1190,
+              3112,
+              625
+            ]
+          }
+        ],
+        "fingerNormalIntervalBeyondDecorationMm": [
+          -9.5,
+          29.5
+        ],
+        "ordinaryUseChangesProtectiveClosures": false,
+        "suppliedLeadBendAndGripForceQualified": false,
         "plateFirstDrawClearanceRequirementMm": 42.5
       },
       "renewal": {
@@ -4056,6 +4176,334 @@
         "authoredTotalCaseGravityN": 88.29,
         "sourceModelMassFeedbackApplied": false,
         "actualInstalledMassQualified": false,
+        "steelDensityKgM3Comparison": 7850,
+        "pipeWallMmComparison": 1,
+        "knownStock": [
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
+            "kg": 1.6912040000000002,
+            "originXYZMm": [
+              1145,
+              3140.5,
+              600
+            ],
+            "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -16.59071124,
+              -52.103128649220004,
+              18.996364369800002,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/0/surround-face-stock",
+            "kg": 0.32028,
+            "originXYZMm": [
+              1145,
+              3103.5,
+              600
+            ],
+            "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -3.1419468000000004,
+              -9.7510318938,
+              3.5975290860000007,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/0/surround-return-stock",
+            "kg": 0.1174674,
+            "originXYZMm": [
+              1145,
+              3109.75,
+              600
+            ],
+            "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.152355194,
+              -3.5835365645415003,
+              1.31944669713,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
+            "kg": 1.6912040000000002,
+            "originXYZMm": [
+              1145,
+              3140.5,
+              1100
+            ],
+            "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -16.59071124,
+              -52.103128649220004,
+              18.996364369800002,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/1/surround-face-stock",
+            "kg": 0.32028,
+            "originXYZMm": [
+              1145,
+              3103.5,
+              1100
+            ],
+            "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -3.1419468000000004,
+              -9.7510318938,
+              3.5975290860000007,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/1/surround-return-stock",
+            "kg": 0.1174674,
+            "originXYZMm": [
+              1145,
+              3109.75,
+              1100
+            ],
+            "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.152355194,
+              -3.5835365645415003,
+              1.31944669713,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
+            "kg": 1.6912040000000002,
+            "originXYZMm": [
+              1145,
+              3140.5,
+              1800
+            ],
+            "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -16.59071124,
+              -52.103128649220004,
+              18.996364369800002,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/pipe/0/tube-stock",
+            "kg": 0.13119919239921696,
+            "originXYZMm": [
+              1079.5,
+              3140.5,
+              330
+            ],
+            "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.2870640774363185,
+              -4.0420247351887575,
+              1.3893856715925057,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/pipe/1/tube-stock",
+            "kg": 0.11245645062790022,
+            "originXYZMm": [
+              1079.5,
+              3140.5,
+              850
+            ],
+            "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.103197780659701,
+              -3.4645926301617913,
+              1.1909020042221472,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/pipe/2/tube-stock",
+            "kg": 0.20617015948448375,
+            "originXYZMm": [
+              1079.5,
+              3140.5,
+              1450
+            ],
+            "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -2.0225292645427855,
+              -6.351753155296618,
+              2.183320341073937,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/entry-collar/gross-stock",
+            "kg": 0.16646514073208918,
+            "originXYZMm": [
+              1079.5,
+              3140.5,
+              175
+            ],
+            "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.633023030581795,
+              -5.128508827542127,
+              1.7628483615130475,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/0/bottom-collar/gross-stock",
+            "kg": 0.16646514073208918,
+            "originXYZMm": [
+              1079.5,
+              3140.5,
+              485
+            ],
+            "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.633023030581795,
+              -5.128508827542127,
+              1.7628483615130475,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/0/top-collar/gross-stock",
+            "kg": 0.16646514073208918,
+            "originXYZMm": [
+              1079.5,
+              3140.5,
+              715
+            ],
+            "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.633023030581795,
+              -5.128508827542127,
+              1.7628483615130475,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/1/bottom-collar/gross-stock",
+            "kg": 0.16646514073208918,
+            "originXYZMm": [
+              1079.5,
+              3140.5,
+              985
+            ],
+            "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.633023030581795,
+              -5.128508827542127,
+              1.7628483615130475,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/1/top-collar/gross-stock",
+            "kg": 0.16646514073208918,
+            "originXYZMm": [
+              1079.5,
+              3140.5,
+              1215
+            ],
+            "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.633023030581795,
+              -5.128508827542127,
+              1.7628483615130475,
+              0
+            ]
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/2/bottom-collar/gross-stock",
+            "kg": 0.16646514073208918,
+            "originXYZMm": [
+              1079.5,
+              3140.5,
+              1685
+            ],
+            "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+            "gravityWrenchN_Nm": [
+              0,
+              0,
+              -1.633023030581795,
+              -5.128508827542127,
+              1.7628483615130475,
+              0
+            ]
+          }
+        ],
+        "totalKnownSteelStockKgComparison": 7.397723446904138,
+        "caseBudgets": [
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/0",
+            "knownSteelStockKgComparison": 2.1289514,
+            "maximumCompleteCaseRequirementKg": 3,
+            "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/1",
+            "knownSteelStockKgComparison": 2.1289514,
+            "maximumCompleteCaseRequirementKg": 3,
+            "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+          },
+          {
+            "id": "IAS/STUDY/common-depth/enclosure/2",
+            "knownSteelStockKgComparison": 1.6912040000000002,
+            "maximumCompleteCaseRequirementKg": 3,
+            "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+          }
+        ],
+        "knownStockGravityWrenchN_Nm": [
+          0,
+          0,
+          -72.57166701412957,
+          -227.607946350243,
+          82.16374286162691,
+          0
+        ],
+        "secondaryRestCompleteCaseDemandN": 29.43,
+        "unknownInstalledStock": [
+          "actual devices and terminal/earth/strain-relief hardware",
+          "front-serviced unions",
+          "clips and cross-cleats",
+          "fixings and finishes"
+        ],
         "scope": "A requirements ceiling for three independent cases, additional to the retained luminaire/module. Conduit, unions, clips and delivered complete mass remain to be inventoried; no selected house load is changed."
       },
       "diagnostics": [
@@ -4078,10 +4526,10 @@
           "message": "Finite cases, collars and trunk meet, but actual device/earth terminal coordinates, conductor paths and compatible hardware are unbound; this is not a completed electrical connection."
         },
         {
-          "code": "IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED",
+          "code": "IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING",
           "objectId": "IAS/STUDY/common-depth/accessory-use",
-          "state": "unsupported",
-          "message": "The inserted plug projects 5.5 mm beyond decoration. Actual fixed-surround opening and finger/body grip are unbound; the legacy flush accessory grip does not qualify this recessed interface."
+          "state": "unqualified",
+          "message": "A finite fixed-surround opening and complete referenced plug/two-finger normal sweep are now explicit. Actual supplied plug shape, grip/withdrawal force, lead and human operation still require the representative trial; no physical result is inferred."
         },
         {
           "code": "IAS_LIGHTING_COMMON_DEPTH_HARDWARE_AND_RENEWAL_UNQUALIFIED",
@@ -4280,7 +4728,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "1bfbe5c4e3b8c5c12c470a3ceab406bc34f5d05ad4a85aa22be0abfe89e372dd",
+      "caseDigest": "efdd18eef910670b2e2d6af9d6a2d6683726ea50a45c9b2a301d261180d5aa19",
       "status": "GEOMETRY_REJECTED",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -5134,10 +5582,10 @@
         ]
       },
       "commonDepthCornerComparison": {
-        "schema": "ias-common-depth-corner-comparison/1",
+        "schema": "ias-common-depth-corner-comparison/2",
         "selection": "unselected-comparison",
         "choices": {
-          "schema": "ias-common-depth-corner-choices/1",
+          "schema": "ias-common-depth-corner-choices/2",
           "units": "mm",
           "enclosureWidthMm": 180,
           "enclosureHeightMm": 200,
@@ -5150,7 +5598,15 @@
           "maximumEnclosureMassKg": 3,
           "fixingEdgeMm": 25,
           "fixingHoleDiameterMm": 5,
-          "maximumClipSpanMm": 300
+          "maximumClipSpanMm": 300,
+          "accessoryOpeningWidthMm": 120,
+          "accessoryOpeningHeightMm": 130,
+          "fingerThicknessMm": 20,
+          "fingerHeightMm": 50,
+          "gripRearOffsetMm": 5,
+          "gripEngagementMm": 12,
+          "plugNormalDrawMm": 27,
+          "pipeWallMm": 1
         },
         "status": "GEOMETRY_REJECTED",
         "settingMm": 5,
@@ -5870,6 +6326,118 @@
         "accessoryUse": {
           "insertedPlugRoomwardProjectionBeyondDecorationMm": 5.5,
           "actualRecessOpeningAndBodyGripQualified": false,
+          "geometryStatus": "DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR",
+          "surroundOpenings": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                535,
+                1205,
+                665
+              ],
+              "depthMm": [
+                12.5,
+                27
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                1035,
+                1205,
+                1165
+              ],
+              "depthMm": [
+                12.5,
+                27
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            }
+          ],
+          "completeReferencePlugMm": [
+            50,
+            52,
+            42
+          ],
+          "twoIndependentSettingsMm": 10,
+          "gripSideReserveMm": 5,
+          "gripVerticalReserveMm": 29,
+          "isolatedPlateDrawReserveMm": 7,
+          "requiredPlugNormalDrawMm": 27,
+          "authoredPlugNormalDrawMm": 27,
+          "fingerSweeps": [
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/0",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1100,
+                3121,
+                575,
+                1120,
+                3160,
+                625
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/1",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1170,
+                3121,
+                575,
+                1190,
+                3160,
+                625
+              ]
+            }
+          ],
+          "fingerNormalIntervalBeyondDecorationMm": [
+            -9.5,
+            29.5
+          ],
+          "ordinaryUseChangesProtectiveClosures": false,
+          "suppliedLeadBendAndGripForceQualified": false,
           "plateFirstDrawClearanceRequirementMm": 42.5
         },
         "renewal": {
@@ -5938,6 +6506,334 @@
           "authoredTotalCaseGravityN": 88.29,
           "sourceModelMassFeedbackApplied": false,
           "actualInstalledMassQualified": false,
+          "steelDensityKgM3Comparison": 7850,
+          "pipeWallMmComparison": 1,
+          "knownStock": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3188.5,
+                600
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.89948278874,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3151.5,
+                600
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.901845340200001,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3157.75,
+                600
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.6388496138535005,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3188.5,
+                1100
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.89948278874,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3151.5,
+                1100
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.901845340200001,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3157.75,
+                1100
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.6388496138535005,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3188.5,
+                1800
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.89948278874,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/0/tube-stock",
+              "kg": 0.13119919239921696,
+              "originXYZMm": [
+                1079.5,
+                3188.5,
+                330
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.2870640774363185,
+                -4.103803810905701,
+                1.3893856715925057,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/1/tube-stock",
+              "kg": 0.11245645062790022,
+              "originXYZMm": [
+                1079.5,
+                3188.5,
+                850
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.103197780659701,
+                -3.5175461236334566,
+                1.1909020042221472,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/2/tube-stock",
+              "kg": 0.20617015948448375,
+              "originXYZMm": [
+                1079.5,
+                3188.5,
+                1450
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.0225292645427855,
+                -6.448834559994672,
+                2.183320341073937,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/entry-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3188.5,
+                175
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.206893933010053,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3188.5,
+                485
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.206893933010053,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3188.5,
+                715
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.206893933010053,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3188.5,
+                985
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.206893933010053,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3188.5,
+                1215
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.206893933010053,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3188.5,
+                1685
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.206893933010053,
+                1.7628483615130475,
+                0
+              ]
+            }
+          ],
+          "totalKnownSteelStockKgComparison": 7.397723446904138,
+          "caseBudgets": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2",
+              "knownSteelStockKgComparison": 1.6912040000000002,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+            }
+          ],
+          "knownStockGravityWrenchN_Nm": [
+            0,
+            0,
+            -72.57166701412957,
+            -231.09138636692123,
+            82.16374286162691,
+            0
+          ],
+          "secondaryRestCompleteCaseDemandN": 29.43,
+          "unknownInstalledStock": [
+            "actual devices and terminal/earth/strain-relief hardware",
+            "front-serviced unions",
+            "clips and cross-cleats",
+            "fixings and finishes"
+          ],
           "scope": "A requirements ceiling for three independent cases, additional to the retained luminaire/module. Conduit, unions, clips and delivered complete mass remain to be inventoried; no selected house load is changed."
         },
         "diagnostics": [
@@ -5960,10 +6856,10 @@
             "message": "Finite cases, collars and trunk meet, but actual device/earth terminal coordinates, conductor paths and compatible hardware are unbound; this is not a completed electrical connection."
           },
           {
-            "code": "IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED",
+            "code": "IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING",
             "objectId": "IAS/STUDY/common-depth/accessory-use",
-            "state": "unsupported",
-            "message": "The inserted plug projects 5.5 mm beyond decoration. Actual fixed-surround opening and finger/body grip are unbound; the legacy flush accessory grip does not qualify this recessed interface."
+            "state": "unqualified",
+            "message": "A finite fixed-surround opening and complete referenced plug/two-finger normal sweep are now explicit. Actual supplied plug shape, grip/withdrawal force, lead and human operation still require the representative trial; no physical result is inferred."
           },
           {
             "code": "IAS_LIGHTING_COMMON_DEPTH_HARDWARE_AND_RENEWAL_UNQUALIFIED",
@@ -6135,7 +7031,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "2d538c6ca1f08e5250214724186772b8ebfa639a531c2930cbde472727756e14",
+      "caseDigest": "befaa34e1e4799c3c7cdc65522c6816c07039624c9dcb19379040a2e552aa9fa",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -6981,10 +7877,10 @@
         "issues": []
       },
       "commonDepthCornerComparison": {
-        "schema": "ias-common-depth-corner-comparison/1",
+        "schema": "ias-common-depth-corner-comparison/2",
         "selection": "unselected-comparison",
         "choices": {
-          "schema": "ias-common-depth-corner-choices/1",
+          "schema": "ias-common-depth-corner-choices/2",
           "units": "mm",
           "enclosureWidthMm": 180,
           "enclosureHeightMm": 200,
@@ -6997,7 +7893,15 @@
           "maximumEnclosureMassKg": 3,
           "fixingEdgeMm": 25,
           "fixingHoleDiameterMm": 5,
-          "maximumClipSpanMm": 300
+          "maximumClipSpanMm": 300,
+          "accessoryOpeningWidthMm": 120,
+          "accessoryOpeningHeightMm": 130,
+          "fingerThicknessMm": 20,
+          "fingerHeightMm": 50,
+          "gripRearOffsetMm": 5,
+          "gripEngagementMm": 12,
+          "plugNormalDrawMm": 27,
+          "pipeWallMm": 1
         },
         "status": "LOCAL_ENCLOSURE_GEOMETRY_WITH_UNBOUND_DEVICE_INTERFACES",
         "settingMm": 5,
@@ -7717,6 +8621,118 @@
         "accessoryUse": {
           "insertedPlugRoomwardProjectionBeyondDecorationMm": 5.5,
           "actualRecessOpeningAndBodyGripQualified": false,
+          "geometryStatus": "DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR",
+          "surroundOpenings": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                535,
+                1205,
+                665
+              ],
+              "depthMm": [
+                70.5,
+                85
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                1035,
+                1205,
+                1165
+              ],
+              "depthMm": [
+                70.5,
+                85
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            }
+          ],
+          "completeReferencePlugMm": [
+            50,
+            52,
+            42
+          ],
+          "twoIndependentSettingsMm": 10,
+          "gripSideReserveMm": 5,
+          "gripVerticalReserveMm": 29,
+          "isolatedPlateDrawReserveMm": 7,
+          "requiredPlugNormalDrawMm": 27,
+          "authoredPlugNormalDrawMm": 27,
+          "fingerSweeps": [
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/0",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1100,
+                3063,
+                575,
+                1120,
+                3102,
+                625
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/1",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1170,
+                3063,
+                575,
+                1190,
+                3102,
+                625
+              ]
+            }
+          ],
+          "fingerNormalIntervalBeyondDecorationMm": [
+            -9.5,
+            29.5
+          ],
+          "ordinaryUseChangesProtectiveClosures": false,
+          "suppliedLeadBendAndGripForceQualified": false,
           "plateFirstDrawClearanceRequirementMm": 42.5
         },
         "renewal": {
@@ -7785,6 +8801,334 @@
           "authoredTotalCaseGravityN": 88.29,
           "sourceModelMassFeedbackApplied": false,
           "actualInstalledMassQualified": false,
+          "steelDensityKgM3Comparison": 7850,
+          "pipeWallMmComparison": 1,
+          "knownStock": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3130.5,
+                600
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -51.937221536820005,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3093.5,
+                600
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.719612425800001,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3099.75,
+                600
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5720130126015,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3130.5,
+                1100
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -51.937221536820005,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3093.5,
+                1100
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.719612425800001,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3099.75,
+                1100
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5720130126015,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3130.5,
+                1800
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -51.937221536820005,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/0/tube-stock",
+              "kg": 0.13119919239921696,
+              "originXYZMm": [
+                1079.5,
+                3130.5,
+                330
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.2870640774363185,
+                -4.029154094414395,
+                1.3893856715925057,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/1/tube-stock",
+              "kg": 0.11245645062790022,
+              "originXYZMm": [
+                1079.5,
+                3130.5,
+                850
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.103197780659701,
+                -3.4535606523551943,
+                1.1909020042221472,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/2/tube-stock",
+              "kg": 0.20617015948448375,
+              "originXYZMm": [
+                1079.5,
+                3130.5,
+                1450
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.0225292645427855,
+                -6.33152786265119,
+                2.183320341073937,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/entry-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3130.5,
+                175
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.112178597236309,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3130.5,
+                485
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.112178597236309,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3130.5,
+                715
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.112178597236309,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3130.5,
+                985
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.112178597236309,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3130.5,
+                1215
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.112178597236309,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3130.5,
+                1685
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.112178597236309,
+                1.7628483615130475,
+                0
+              ]
+            }
+          ],
+          "totalKnownSteelStockKgComparison": 7.397723446904138,
+          "caseBudgets": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2",
+              "knownSteelStockKgComparison": 1.6912040000000002,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+            }
+          ],
+          "knownStockGravityWrenchN_Nm": [
+            0,
+            0,
+            -72.57166701412957,
+            -226.88222968010174,
+            82.16374286162691,
+            0
+          ],
+          "secondaryRestCompleteCaseDemandN": 29.43,
+          "unknownInstalledStock": [
+            "actual devices and terminal/earth/strain-relief hardware",
+            "front-serviced unions",
+            "clips and cross-cleats",
+            "fixings and finishes"
+          ],
           "scope": "A requirements ceiling for three independent cases, additional to the retained luminaire/module. Conduit, unions, clips and delivered complete mass remain to be inventoried; no selected house load is changed."
         },
         "diagnostics": [
@@ -7807,10 +9151,10 @@
             "message": "Finite cases, collars and trunk meet, but actual device/earth terminal coordinates, conductor paths and compatible hardware are unbound; this is not a completed electrical connection."
           },
           {
-            "code": "IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED",
+            "code": "IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING",
             "objectId": "IAS/STUDY/common-depth/accessory-use",
-            "state": "unsupported",
-            "message": "The inserted plug projects 5.5 mm beyond decoration. Actual fixed-surround opening and finger/body grip are unbound; the legacy flush accessory grip does not qualify this recessed interface."
+            "state": "unqualified",
+            "message": "A finite fixed-surround opening and complete referenced plug/two-finger normal sweep are now explicit. Actual supplied plug shape, grip/withdrawal force, lead and human operation still require the representative trial; no physical result is inferred."
           },
           {
             "code": "IAS_LIGHTING_COMMON_DEPTH_HARDWARE_AND_RENEWAL_UNQUALIFIED",
@@ -7960,7 +9304,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "51d246fb90b0530a6bee92c3f59b3ac3917fe8cbe2da2f8bdd40037de0d70fa3",
+      "caseDigest": "70b08273f579178198cf912b125a03643ada69ee32f9bfe96e4a11df60fc604e",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -8806,10 +10150,10 @@
         "issues": []
       },
       "commonDepthCornerComparison": {
-        "schema": "ias-common-depth-corner-comparison/1",
+        "schema": "ias-common-depth-corner-comparison/2",
         "selection": "unselected-comparison",
         "choices": {
-          "schema": "ias-common-depth-corner-choices/1",
+          "schema": "ias-common-depth-corner-choices/2",
           "units": "mm",
           "enclosureWidthMm": 180,
           "enclosureHeightMm": 200,
@@ -8822,7 +10166,15 @@
           "maximumEnclosureMassKg": 3,
           "fixingEdgeMm": 25,
           "fixingHoleDiameterMm": 5,
-          "maximumClipSpanMm": 300
+          "maximumClipSpanMm": 300,
+          "accessoryOpeningWidthMm": 120,
+          "accessoryOpeningHeightMm": 130,
+          "fingerThicknessMm": 20,
+          "fingerHeightMm": 50,
+          "gripRearOffsetMm": 5,
+          "gripEngagementMm": 12,
+          "plugNormalDrawMm": 27,
+          "pipeWallMm": 1
         },
         "status": "LOCAL_ENCLOSURE_GEOMETRY_WITH_UNBOUND_DEVICE_INTERFACES",
         "settingMm": 5,
@@ -9542,6 +10894,118 @@
         "accessoryUse": {
           "insertedPlugRoomwardProjectionBeyondDecorationMm": 5.5,
           "actualRecessOpeningAndBodyGripQualified": false,
+          "geometryStatus": "DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR",
+          "surroundOpenings": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                535,
+                1205,
+                665
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                1035,
+                1205,
+                1165
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            }
+          ],
+          "completeReferencePlugMm": [
+            50,
+            52,
+            42
+          ],
+          "twoIndependentSettingsMm": 10,
+          "gripSideReserveMm": 5,
+          "gripVerticalReserveMm": 29,
+          "isolatedPlateDrawReserveMm": 7,
+          "requiredPlugNormalDrawMm": 27,
+          "authoredPlugNormalDrawMm": 27,
+          "fingerSweeps": [
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/0",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1100,
+                3073,
+                575,
+                1120,
+                3112,
+                625
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/1",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1170,
+                3073,
+                575,
+                1190,
+                3112,
+                625
+              ]
+            }
+          ],
+          "fingerNormalIntervalBeyondDecorationMm": [
+            -9.5,
+            29.5
+          ],
+          "ordinaryUseChangesProtectiveClosures": false,
+          "suppliedLeadBendAndGripForceQualified": false,
           "plateFirstDrawClearanceRequirementMm": 42.5
         },
         "renewal": {
@@ -9610,6 +11074,334 @@
           "authoredTotalCaseGravityN": 88.29,
           "sourceModelMassFeedbackApplied": false,
           "actualInstalledMassQualified": false,
+          "steelDensityKgM3Comparison": 7850,
+          "pipeWallMmComparison": 1,
+          "knownStock": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                600
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                600
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                600
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1100
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                1100
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                1100
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1800
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/0/tube-stock",
+              "kg": 0.13119919239921696,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                330
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.2870640774363185,
+                -4.0420247351887575,
+                1.3893856715925057,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/1/tube-stock",
+              "kg": 0.11245645062790022,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                850
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.103197780659701,
+                -3.4645926301617913,
+                1.1909020042221472,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/2/tube-stock",
+              "kg": 0.20617015948448375,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1450
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.0225292645427855,
+                -6.351753155296618,
+                2.183320341073937,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/entry-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                175
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                485
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                715
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                985
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1215
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1685
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            }
+          ],
+          "totalKnownSteelStockKgComparison": 7.397723446904138,
+          "caseBudgets": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2",
+              "knownSteelStockKgComparison": 1.6912040000000002,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+            }
+          ],
+          "knownStockGravityWrenchN_Nm": [
+            0,
+            0,
+            -72.57166701412957,
+            -227.607946350243,
+            82.16374286162691,
+            0
+          ],
+          "secondaryRestCompleteCaseDemandN": 29.43,
+          "unknownInstalledStock": [
+            "actual devices and terminal/earth/strain-relief hardware",
+            "front-serviced unions",
+            "clips and cross-cleats",
+            "fixings and finishes"
+          ],
           "scope": "A requirements ceiling for three independent cases, additional to the retained luminaire/module. Conduit, unions, clips and delivered complete mass remain to be inventoried; no selected house load is changed."
         },
         "diagnostics": [
@@ -9632,10 +11424,10 @@
             "message": "Finite cases, collars and trunk meet, but actual device/earth terminal coordinates, conductor paths and compatible hardware are unbound; this is not a completed electrical connection."
           },
           {
-            "code": "IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED",
+            "code": "IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING",
             "objectId": "IAS/STUDY/common-depth/accessory-use",
-            "state": "unsupported",
-            "message": "The inserted plug projects 5.5 mm beyond decoration. Actual fixed-surround opening and finger/body grip are unbound; the legacy flush accessory grip does not qualify this recessed interface."
+            "state": "unqualified",
+            "message": "A finite fixed-surround opening and complete referenced plug/two-finger normal sweep are now explicit. Actual supplied plug shape, grip/withdrawal force, lead and human operation still require the representative trial; no physical result is inferred."
           },
           {
             "code": "IAS_LIGHTING_COMMON_DEPTH_HARDWARE_AND_RENEWAL_UNQUALIFIED",
@@ -9785,7 +11577,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "507c3ddf8180f4c3a162aaf3e34b2e87eba51009122d2f514fc65b71196de25e",
+      "caseDigest": "fc933ac3793546155007675c0f475aa645064fec90b393d66bebbf6106672cb2",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -10631,10 +12423,10 @@
         "issues": []
       },
       "commonDepthCornerComparison": {
-        "schema": "ias-common-depth-corner-comparison/1",
+        "schema": "ias-common-depth-corner-comparison/2",
         "selection": "unselected-comparison",
         "choices": {
-          "schema": "ias-common-depth-corner-choices/1",
+          "schema": "ias-common-depth-corner-choices/2",
           "units": "mm",
           "enclosureWidthMm": 180,
           "enclosureHeightMm": 200,
@@ -10647,7 +12439,15 @@
           "maximumEnclosureMassKg": 3,
           "fixingEdgeMm": 25,
           "fixingHoleDiameterMm": 5,
-          "maximumClipSpanMm": 300
+          "maximumClipSpanMm": 300,
+          "accessoryOpeningWidthMm": 120,
+          "accessoryOpeningHeightMm": 130,
+          "fingerThicknessMm": 20,
+          "fingerHeightMm": 50,
+          "gripRearOffsetMm": 5,
+          "gripEngagementMm": 12,
+          "plugNormalDrawMm": 27,
+          "pipeWallMm": 1
         },
         "status": "LOCAL_ENCLOSURE_GEOMETRY_WITH_UNBOUND_DEVICE_INTERFACES",
         "settingMm": 5,
@@ -11367,6 +13167,118 @@
         "accessoryUse": {
           "insertedPlugRoomwardProjectionBeyondDecorationMm": 5.5,
           "actualRecessOpeningAndBodyGripQualified": false,
+          "geometryStatus": "DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR",
+          "surroundOpenings": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                535,
+                1205,
+                665
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                1035,
+                1205,
+                1165
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            }
+          ],
+          "completeReferencePlugMm": [
+            50,
+            52,
+            42
+          ],
+          "twoIndependentSettingsMm": 10,
+          "gripSideReserveMm": 5,
+          "gripVerticalReserveMm": 29,
+          "isolatedPlateDrawReserveMm": 7,
+          "requiredPlugNormalDrawMm": 27,
+          "authoredPlugNormalDrawMm": 27,
+          "fingerSweeps": [
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/0",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1100,
+                3073,
+                575,
+                1120,
+                3112,
+                625
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/1",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1170,
+                3073,
+                575,
+                1190,
+                3112,
+                625
+              ]
+            }
+          ],
+          "fingerNormalIntervalBeyondDecorationMm": [
+            -9.5,
+            29.5
+          ],
+          "ordinaryUseChangesProtectiveClosures": false,
+          "suppliedLeadBendAndGripForceQualified": false,
           "plateFirstDrawClearanceRequirementMm": 42.5
         },
         "renewal": {
@@ -11435,6 +13347,334 @@
           "authoredTotalCaseGravityN": 88.29,
           "sourceModelMassFeedbackApplied": false,
           "actualInstalledMassQualified": false,
+          "steelDensityKgM3Comparison": 7850,
+          "pipeWallMmComparison": 1,
+          "knownStock": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                600
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                600
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                600
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1100
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                1100
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                1100
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1800
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/0/tube-stock",
+              "kg": 0.13119919239921696,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                330
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.2870640774363185,
+                -4.0420247351887575,
+                1.3893856715925057,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/1/tube-stock",
+              "kg": 0.11245645062790022,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                850
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.103197780659701,
+                -3.4645926301617913,
+                1.1909020042221472,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/2/tube-stock",
+              "kg": 0.20617015948448375,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1450
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.0225292645427855,
+                -6.351753155296618,
+                2.183320341073937,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/entry-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                175
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                485
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                715
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                985
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1215
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1685
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            }
+          ],
+          "totalKnownSteelStockKgComparison": 7.397723446904138,
+          "caseBudgets": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2",
+              "knownSteelStockKgComparison": 1.6912040000000002,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+            }
+          ],
+          "knownStockGravityWrenchN_Nm": [
+            0,
+            0,
+            -72.57166701412957,
+            -227.607946350243,
+            82.16374286162691,
+            0
+          ],
+          "secondaryRestCompleteCaseDemandN": 29.43,
+          "unknownInstalledStock": [
+            "actual devices and terminal/earth/strain-relief hardware",
+            "front-serviced unions",
+            "clips and cross-cleats",
+            "fixings and finishes"
+          ],
           "scope": "A requirements ceiling for three independent cases, additional to the retained luminaire/module. Conduit, unions, clips and delivered complete mass remain to be inventoried; no selected house load is changed."
         },
         "diagnostics": [
@@ -11457,10 +13697,10 @@
             "message": "Finite cases, collars and trunk meet, but actual device/earth terminal coordinates, conductor paths and compatible hardware are unbound; this is not a completed electrical connection."
           },
           {
-            "code": "IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED",
+            "code": "IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING",
             "objectId": "IAS/STUDY/common-depth/accessory-use",
-            "state": "unsupported",
-            "message": "The inserted plug projects 5.5 mm beyond decoration. Actual fixed-surround opening and finger/body grip are unbound; the legacy flush accessory grip does not qualify this recessed interface."
+            "state": "unqualified",
+            "message": "A finite fixed-surround opening and complete referenced plug/two-finger normal sweep are now explicit. Actual supplied plug shape, grip/withdrawal force, lead and human operation still require the representative trial; no physical result is inferred."
           },
           {
             "code": "IAS_LIGHTING_COMMON_DEPTH_HARDWARE_AND_RENEWAL_UNQUALIFIED",
@@ -11617,7 +13857,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "dc4be879ffb1f60f7399c3aadd65a4a1aaef5b066f1dd8fa17b74dcdd21f68d1",
+      "caseDigest": "e7e9bed9ec550b4113380ece18413f6e0ae98588a657d04722e244e6bd274d65",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -12463,10 +14703,10 @@
         "issues": []
       },
       "commonDepthCornerComparison": {
-        "schema": "ias-common-depth-corner-comparison/1",
+        "schema": "ias-common-depth-corner-comparison/2",
         "selection": "unselected-comparison",
         "choices": {
-          "schema": "ias-common-depth-corner-choices/1",
+          "schema": "ias-common-depth-corner-choices/2",
           "units": "mm",
           "enclosureWidthMm": 180,
           "enclosureHeightMm": 200,
@@ -12479,7 +14719,15 @@
           "maximumEnclosureMassKg": 3,
           "fixingEdgeMm": 25,
           "fixingHoleDiameterMm": 5,
-          "maximumClipSpanMm": 300
+          "maximumClipSpanMm": 300,
+          "accessoryOpeningWidthMm": 120,
+          "accessoryOpeningHeightMm": 130,
+          "fingerThicknessMm": 20,
+          "fingerHeightMm": 50,
+          "gripRearOffsetMm": 5,
+          "gripEngagementMm": 12,
+          "plugNormalDrawMm": 27,
+          "pipeWallMm": 1
         },
         "status": "LOCAL_ENCLOSURE_GEOMETRY_WITH_UNBOUND_DEVICE_INTERFACES",
         "settingMm": 5,
@@ -13199,6 +15447,118 @@
         "accessoryUse": {
           "insertedPlugRoomwardProjectionBeyondDecorationMm": 5.5,
           "actualRecessOpeningAndBodyGripQualified": false,
+          "geometryStatus": "DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR",
+          "surroundOpenings": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                535,
+                1205,
+                665
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                1035,
+                1205,
+                1165
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            }
+          ],
+          "completeReferencePlugMm": [
+            50,
+            52,
+            42
+          ],
+          "twoIndependentSettingsMm": 10,
+          "gripSideReserveMm": 5,
+          "gripVerticalReserveMm": 29,
+          "isolatedPlateDrawReserveMm": 7,
+          "requiredPlugNormalDrawMm": 27,
+          "authoredPlugNormalDrawMm": 27,
+          "fingerSweeps": [
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/0",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1100,
+                3073,
+                575,
+                1120,
+                3112,
+                625
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/1",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1170,
+                3073,
+                575,
+                1190,
+                3112,
+                625
+              ]
+            }
+          ],
+          "fingerNormalIntervalBeyondDecorationMm": [
+            -9.5,
+            29.5
+          ],
+          "ordinaryUseChangesProtectiveClosures": false,
+          "suppliedLeadBendAndGripForceQualified": false,
           "plateFirstDrawClearanceRequirementMm": 42.5
         },
         "renewal": {
@@ -13267,6 +15627,334 @@
           "authoredTotalCaseGravityN": 88.29,
           "sourceModelMassFeedbackApplied": false,
           "actualInstalledMassQualified": false,
+          "steelDensityKgM3Comparison": 7850,
+          "pipeWallMmComparison": 1,
+          "knownStock": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                600
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                600
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                600
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1100
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                1100
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                1100
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1800
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/0/tube-stock",
+              "kg": 0.13119919239921696,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                330
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.2870640774363185,
+                -4.0420247351887575,
+                1.3893856715925057,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/1/tube-stock",
+              "kg": 0.11245645062790022,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                850
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.103197780659701,
+                -3.4645926301617913,
+                1.1909020042221472,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/2/tube-stock",
+              "kg": 0.20617015948448375,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1450
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.0225292645427855,
+                -6.351753155296618,
+                2.183320341073937,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/entry-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                175
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                485
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                715
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                985
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1215
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1685
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            }
+          ],
+          "totalKnownSteelStockKgComparison": 7.397723446904138,
+          "caseBudgets": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2",
+              "knownSteelStockKgComparison": 1.6912040000000002,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+            }
+          ],
+          "knownStockGravityWrenchN_Nm": [
+            0,
+            0,
+            -72.57166701412957,
+            -227.607946350243,
+            82.16374286162691,
+            0
+          ],
+          "secondaryRestCompleteCaseDemandN": 29.43,
+          "unknownInstalledStock": [
+            "actual devices and terminal/earth/strain-relief hardware",
+            "front-serviced unions",
+            "clips and cross-cleats",
+            "fixings and finishes"
+          ],
           "scope": "A requirements ceiling for three independent cases, additional to the retained luminaire/module. Conduit, unions, clips and delivered complete mass remain to be inventoried; no selected house load is changed."
         },
         "diagnostics": [
@@ -13289,10 +15977,10 @@
             "message": "Finite cases, collars and trunk meet, but actual device/earth terminal coordinates, conductor paths and compatible hardware are unbound; this is not a completed electrical connection."
           },
           {
-            "code": "IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED",
+            "code": "IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING",
             "objectId": "IAS/STUDY/common-depth/accessory-use",
-            "state": "unsupported",
-            "message": "The inserted plug projects 5.5 mm beyond decoration. Actual fixed-surround opening and finger/body grip are unbound; the legacy flush accessory grip does not qualify this recessed interface."
+            "state": "unqualified",
+            "message": "A finite fixed-surround opening and complete referenced plug/two-finger normal sweep are now explicit. Actual supplied plug shape, grip/withdrawal force, lead and human operation still require the representative trial; no physical result is inferred."
           },
           {
             "code": "IAS_LIGHTING_COMMON_DEPTH_HARDWARE_AND_RENEWAL_UNQUALIFIED",
@@ -13456,7 +16144,7 @@
         "automationConnected": true,
         "localWallModule": true
       },
-      "caseDigest": "eb4920254519583a3d95c592781714c152fe8ce9fb6f5cc282879e7c5b31c3a8",
+      "caseDigest": "c51618c3739876a1598ba2fd0f9c6a00890691846832dfb2f5239de410a2f971",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -14302,10 +16990,10 @@
         "issues": []
       },
       "commonDepthCornerComparison": {
-        "schema": "ias-common-depth-corner-comparison/1",
+        "schema": "ias-common-depth-corner-comparison/2",
         "selection": "unselected-comparison",
         "choices": {
-          "schema": "ias-common-depth-corner-choices/1",
+          "schema": "ias-common-depth-corner-choices/2",
           "units": "mm",
           "enclosureWidthMm": 180,
           "enclosureHeightMm": 200,
@@ -14318,7 +17006,15 @@
           "maximumEnclosureMassKg": 3,
           "fixingEdgeMm": 25,
           "fixingHoleDiameterMm": 5,
-          "maximumClipSpanMm": 300
+          "maximumClipSpanMm": 300,
+          "accessoryOpeningWidthMm": 120,
+          "accessoryOpeningHeightMm": 130,
+          "fingerThicknessMm": 20,
+          "fingerHeightMm": 50,
+          "gripRearOffsetMm": 5,
+          "gripEngagementMm": 12,
+          "plugNormalDrawMm": 27,
+          "pipeWallMm": 1
         },
         "status": "LOCAL_ENCLOSURE_GEOMETRY_WITH_UNBOUND_DEVICE_INTERFACES",
         "settingMm": 5,
@@ -15038,6 +17734,118 @@
         "accessoryUse": {
           "insertedPlugRoomwardProjectionBeyondDecorationMm": 5.5,
           "actualRecessOpeningAndBodyGripQualified": false,
+          "geometryStatus": "DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR",
+          "surroundOpenings": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                535,
+                1205,
+                665
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                1035,
+                1205,
+                1165
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            }
+          ],
+          "completeReferencePlugMm": [
+            50,
+            52,
+            42
+          ],
+          "twoIndependentSettingsMm": 10,
+          "gripSideReserveMm": 5,
+          "gripVerticalReserveMm": 29,
+          "isolatedPlateDrawReserveMm": 7,
+          "requiredPlugNormalDrawMm": 27,
+          "authoredPlugNormalDrawMm": 27,
+          "fingerSweeps": [
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/0",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1100,
+                3073,
+                575,
+                1120,
+                3112,
+                625
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/1",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1170,
+                3073,
+                575,
+                1190,
+                3112,
+                625
+              ]
+            }
+          ],
+          "fingerNormalIntervalBeyondDecorationMm": [
+            -9.5,
+            29.5
+          ],
+          "ordinaryUseChangesProtectiveClosures": false,
+          "suppliedLeadBendAndGripForceQualified": false,
           "plateFirstDrawClearanceRequirementMm": 42.5
         },
         "renewal": {
@@ -15106,6 +17914,334 @@
           "authoredTotalCaseGravityN": 88.29,
           "sourceModelMassFeedbackApplied": false,
           "actualInstalledMassQualified": false,
+          "steelDensityKgM3Comparison": 7850,
+          "pipeWallMmComparison": 1,
+          "knownStock": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                600
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                600
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                600
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1100
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                1100
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                1100
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1800
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/0/tube-stock",
+              "kg": 0.13119919239921696,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                330
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.2870640774363185,
+                -4.0420247351887575,
+                1.3893856715925057,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/1/tube-stock",
+              "kg": 0.11245645062790022,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                850
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.103197780659701,
+                -3.4645926301617913,
+                1.1909020042221472,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/2/tube-stock",
+              "kg": 0.20617015948448375,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1450
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.0225292645427855,
+                -6.351753155296618,
+                2.183320341073937,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/entry-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                175
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                485
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                715
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                985
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1215
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1685
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            }
+          ],
+          "totalKnownSteelStockKgComparison": 7.397723446904138,
+          "caseBudgets": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2",
+              "knownSteelStockKgComparison": 1.6912040000000002,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+            }
+          ],
+          "knownStockGravityWrenchN_Nm": [
+            0,
+            0,
+            -72.57166701412957,
+            -227.607946350243,
+            82.16374286162691,
+            0
+          ],
+          "secondaryRestCompleteCaseDemandN": 29.43,
+          "unknownInstalledStock": [
+            "actual devices and terminal/earth/strain-relief hardware",
+            "front-serviced unions",
+            "clips and cross-cleats",
+            "fixings and finishes"
+          ],
           "scope": "A requirements ceiling for three independent cases, additional to the retained luminaire/module. Conduit, unions, clips and delivered complete mass remain to be inventoried; no selected house load is changed."
         },
         "diagnostics": [
@@ -15128,10 +18264,10 @@
             "message": "Finite cases, collars and trunk meet, but actual device/earth terminal coordinates, conductor paths and compatible hardware are unbound; this is not a completed electrical connection."
           },
           {
-            "code": "IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED",
+            "code": "IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING",
             "objectId": "IAS/STUDY/common-depth/accessory-use",
-            "state": "unsupported",
-            "message": "The inserted plug projects 5.5 mm beyond decoration. Actual fixed-surround opening and finger/body grip are unbound; the legacy flush accessory grip does not qualify this recessed interface."
+            "state": "unqualified",
+            "message": "A finite fixed-surround opening and complete referenced plug/two-finger normal sweep are now explicit. Actual supplied plug shape, grip/withdrawal force, lead and human operation still require the representative trial; no physical result is inferred."
           },
           {
             "code": "IAS_LIGHTING_COMMON_DEPTH_HARDWARE_AND_RENEWAL_UNQUALIFIED",
@@ -15281,7 +18417,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "c32e1b84f81b21cccce8ef1fcc3633ddc2f92ca9a6ccca31218d9c74b20af41c",
+      "caseDigest": "647e6c1a0ea57192d41435ad0c2598cfa7b9b6e3cfad18e43dff45054e8ed6db",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -16127,10 +19263,10 @@
         "issues": []
       },
       "commonDepthCornerComparison": {
-        "schema": "ias-common-depth-corner-comparison/1",
+        "schema": "ias-common-depth-corner-comparison/2",
         "selection": "unselected-comparison",
         "choices": {
-          "schema": "ias-common-depth-corner-choices/1",
+          "schema": "ias-common-depth-corner-choices/2",
           "units": "mm",
           "enclosureWidthMm": 180,
           "enclosureHeightMm": 200,
@@ -16143,7 +19279,15 @@
           "maximumEnclosureMassKg": 3,
           "fixingEdgeMm": 25,
           "fixingHoleDiameterMm": 5,
-          "maximumClipSpanMm": 300
+          "maximumClipSpanMm": 300,
+          "accessoryOpeningWidthMm": 120,
+          "accessoryOpeningHeightMm": 130,
+          "fingerThicknessMm": 20,
+          "fingerHeightMm": 50,
+          "gripRearOffsetMm": 5,
+          "gripEngagementMm": 12,
+          "plugNormalDrawMm": 27,
+          "pipeWallMm": 1
         },
         "status": "LOCAL_ENCLOSURE_GEOMETRY_WITH_UNBOUND_DEVICE_INTERFACES",
         "settingMm": 5,
@@ -16863,6 +20007,118 @@
         "accessoryUse": {
           "insertedPlugRoomwardProjectionBeyondDecorationMm": 5.5,
           "actualRecessOpeningAndBodyGripQualified": false,
+          "geometryStatus": "DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR",
+          "surroundOpenings": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                535,
+                1205,
+                665
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                1035,
+                1205,
+                1165
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            }
+          ],
+          "completeReferencePlugMm": [
+            50,
+            52,
+            42
+          ],
+          "twoIndependentSettingsMm": 10,
+          "gripSideReserveMm": 5,
+          "gripVerticalReserveMm": 29,
+          "isolatedPlateDrawReserveMm": 7,
+          "requiredPlugNormalDrawMm": 27,
+          "authoredPlugNormalDrawMm": 27,
+          "fingerSweeps": [
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/0",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1100,
+                3073,
+                575,
+                1120,
+                3112,
+                625
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/1",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1170,
+                3073,
+                575,
+                1190,
+                3112,
+                625
+              ]
+            }
+          ],
+          "fingerNormalIntervalBeyondDecorationMm": [
+            -9.5,
+            29.5
+          ],
+          "ordinaryUseChangesProtectiveClosures": false,
+          "suppliedLeadBendAndGripForceQualified": false,
           "plateFirstDrawClearanceRequirementMm": 42.5
         },
         "renewal": {
@@ -16931,6 +20187,334 @@
           "authoredTotalCaseGravityN": 88.29,
           "sourceModelMassFeedbackApplied": false,
           "actualInstalledMassQualified": false,
+          "steelDensityKgM3Comparison": 7850,
+          "pipeWallMmComparison": 1,
+          "knownStock": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                600
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                600
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                600
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1100
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                1100
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                1100
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1800
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/0/tube-stock",
+              "kg": 0.13119919239921696,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                330
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.2870640774363185,
+                -4.0420247351887575,
+                1.3893856715925057,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/1/tube-stock",
+              "kg": 0.11245645062790022,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                850
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.103197780659701,
+                -3.4645926301617913,
+                1.1909020042221472,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/2/tube-stock",
+              "kg": 0.20617015948448375,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1450
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.0225292645427855,
+                -6.351753155296618,
+                2.183320341073937,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/entry-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                175
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                485
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                715
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                985
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1215
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1685
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            }
+          ],
+          "totalKnownSteelStockKgComparison": 7.397723446904138,
+          "caseBudgets": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2",
+              "knownSteelStockKgComparison": 1.6912040000000002,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+            }
+          ],
+          "knownStockGravityWrenchN_Nm": [
+            0,
+            0,
+            -72.57166701412957,
+            -227.607946350243,
+            82.16374286162691,
+            0
+          ],
+          "secondaryRestCompleteCaseDemandN": 29.43,
+          "unknownInstalledStock": [
+            "actual devices and terminal/earth/strain-relief hardware",
+            "front-serviced unions",
+            "clips and cross-cleats",
+            "fixings and finishes"
+          ],
           "scope": "A requirements ceiling for three independent cases, additional to the retained luminaire/module. Conduit, unions, clips and delivered complete mass remain to be inventoried; no selected house load is changed."
         },
         "diagnostics": [
@@ -16953,10 +20537,10 @@
             "message": "Finite cases, collars and trunk meet, but actual device/earth terminal coordinates, conductor paths and compatible hardware are unbound; this is not a completed electrical connection."
           },
           {
-            "code": "IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED",
+            "code": "IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING",
             "objectId": "IAS/STUDY/common-depth/accessory-use",
-            "state": "unsupported",
-            "message": "The inserted plug projects 5.5 mm beyond decoration. Actual fixed-surround opening and finger/body grip are unbound; the legacy flush accessory grip does not qualify this recessed interface."
+            "state": "unqualified",
+            "message": "A finite fixed-surround opening and complete referenced plug/two-finger normal sweep are now explicit. Actual supplied plug shape, grip/withdrawal force, lead and human operation still require the representative trial; no physical result is inferred."
           },
           {
             "code": "IAS_LIGHTING_COMMON_DEPTH_HARDWARE_AND_RENEWAL_UNQUALIFIED",
@@ -17113,7 +20697,7 @@
         "automationConnected": false,
         "localWallModule": false
       },
-      "caseDigest": "22696f091423ec1d5b1a6e3f7240fdab926c555c0a356e0caa2b6120ba90e155",
+      "caseDigest": "84bb3153e58d13c39e81e4790f6526eefd2890404ed72dff5acfdb0a03f80d5b",
       "status": "GEOMETRY_REJECTED",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -17959,10 +21543,10 @@
         "issues": []
       },
       "commonDepthCornerComparison": {
-        "schema": "ias-common-depth-corner-comparison/1",
+        "schema": "ias-common-depth-corner-comparison/2",
         "selection": "unselected-comparison",
         "choices": {
-          "schema": "ias-common-depth-corner-choices/1",
+          "schema": "ias-common-depth-corner-choices/2",
           "units": "mm",
           "enclosureWidthMm": 180,
           "enclosureHeightMm": 200,
@@ -17975,7 +21559,15 @@
           "maximumEnclosureMassKg": 3,
           "fixingEdgeMm": 25,
           "fixingHoleDiameterMm": 5,
-          "maximumClipSpanMm": 300
+          "maximumClipSpanMm": 300,
+          "accessoryOpeningWidthMm": 120,
+          "accessoryOpeningHeightMm": 130,
+          "fingerThicknessMm": 20,
+          "fingerHeightMm": 50,
+          "gripRearOffsetMm": 5,
+          "gripEngagementMm": 12,
+          "plugNormalDrawMm": 27,
+          "pipeWallMm": 1
         },
         "status": "LOCAL_ENCLOSURE_GEOMETRY_WITH_UNBOUND_DEVICE_INTERFACES",
         "settingMm": 5,
@@ -18695,6 +22287,118 @@
         "accessoryUse": {
           "insertedPlugRoomwardProjectionBeyondDecorationMm": 5.5,
           "actualRecessOpeningAndBodyGripQualified": false,
+          "geometryStatus": "DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR",
+          "surroundOpenings": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                535,
+                1205,
+                665
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/0/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/fixed-surround-opening",
+              "openingXZMm": [
+                1085,
+                1035,
+                1205,
+                1165
+              ],
+              "depthMm": [
+                60.5,
+                75
+              ],
+              "ordinaryUseLeavesElectricalFaceClosed": true,
+              "retainedOnDecorationRelease": true,
+              "fixingChecks": [
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/0/1",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/0",
+                  "reserveMm": 3.680339887498949
+                },
+                {
+                  "id": "IAS/STUDY/common-depth/enclosure/1/fixing/1/1",
+                  "reserveMm": 3.680339887498949
+                }
+              ]
+            }
+          ],
+          "completeReferencePlugMm": [
+            50,
+            52,
+            42
+          ],
+          "twoIndependentSettingsMm": 10,
+          "gripSideReserveMm": 5,
+          "gripVerticalReserveMm": 29,
+          "isolatedPlateDrawReserveMm": 7,
+          "requiredPlugNormalDrawMm": 27,
+          "authoredPlugNormalDrawMm": 27,
+          "fingerSweeps": [
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/0",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1100,
+                3073,
+                575,
+                1120,
+                3112,
+                625
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/socket/finger/1",
+              "intendedPlugSideContact": true,
+              "sweptXYZMm": [
+                1170,
+                3073,
+                575,
+                1190,
+                3112,
+                625
+              ]
+            }
+          ],
+          "fingerNormalIntervalBeyondDecorationMm": [
+            -9.5,
+            29.5
+          ],
+          "ordinaryUseChangesProtectiveClosures": false,
+          "suppliedLeadBendAndGripForceQualified": false,
           "plateFirstDrawClearanceRequirementMm": 42.5
         },
         "renewal": {
@@ -18763,6 +22467,334 @@
           "authoredTotalCaseGravityN": 88.29,
           "sourceModelMassFeedbackApplied": false,
           "actualInstalledMassQualified": false,
+          "steelDensityKgM3Comparison": 7850,
+          "pipeWallMmComparison": 1,
+          "knownStock": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                600
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                600
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                600
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1100
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-face-stock",
+              "kg": 0.32028,
+              "originXYZMm": [
+                1145,
+                3103.5,
+                1100
+              ],
+              "interpretation": "Separate front face ring at the decorative plane; actual clear mouth deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -3.1419468000000004,
+                -9.7510318938,
+                3.5975290860000007,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/surround-return-stock",
+              "kg": 0.1174674,
+              "originXYZMm": [
+                1145,
+                3109.75,
+                1100
+              ],
+              "interpretation": "Four full outside-width returns; corner overlap charged in full.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.152355194,
+                -3.5835365645415003,
+                1.31944669713,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
+              "kg": 1.6912040000000002,
+              "originXYZMm": [
+                1145,
+                3140.5,
+                1800
+              ],
+              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -16.59071124,
+                -52.103128649220004,
+                18.996364369800002,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/0/tube-stock",
+              "kg": 0.13119919239921696,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                330
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.2870640774363185,
+                -4.0420247351887575,
+                1.3893856715925057,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/1/tube-stock",
+              "kg": 0.11245645062790022,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                850
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.103197780659701,
+                -3.4645926301617913,
+                1.1909020042221472,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/pipe/2/tube-stock",
+              "kg": 0.20617015948448375,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1450
+              ],
+              "interpretation": "Authored tube wall at explicit comparison density; not a selected product.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -2.0225292645427855,
+                -6.351753155296618,
+                2.183320341073937,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/entry-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                175
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                485
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                715
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                985
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1/top-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1215
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2/bottom-collar/gross-stock",
+              "kg": 0.16646514073208918,
+              "originXYZMm": [
+                1079.5,
+                3140.5,
+                1685
+              ],
+              "interpretation": "Gross solid cylindrical stock, without bore/thread deductions.",
+              "gravityWrenchN_Nm": [
+                0,
+                0,
+                -1.633023030581795,
+                -5.128508827542127,
+                1.7628483615130475,
+                0
+              ]
+            }
+          ],
+          "totalKnownSteelStockKgComparison": 7.397723446904138,
+          "caseBudgets": [
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/0",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/1",
+              "knownSteelStockKgComparison": 2.1289514,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            },
+            {
+              "id": "IAS/STUDY/common-depth/enclosure/2",
+              "knownSteelStockKgComparison": 1.6912040000000002,
+              "maximumCompleteCaseRequirementKg": 3,
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+            }
+          ],
+          "knownStockGravityWrenchN_Nm": [
+            0,
+            0,
+            -72.57166701412957,
+            -227.607946350243,
+            82.16374286162691,
+            0
+          ],
+          "secondaryRestCompleteCaseDemandN": 29.43,
+          "unknownInstalledStock": [
+            "actual devices and terminal/earth/strain-relief hardware",
+            "front-serviced unions",
+            "clips and cross-cleats",
+            "fixings and finishes"
+          ],
           "scope": "A requirements ceiling for three independent cases, additional to the retained luminaire/module. Conduit, unions, clips and delivered complete mass remain to be inventoried; no selected house load is changed."
         },
         "diagnostics": [
@@ -18785,10 +22817,10 @@
             "message": "Finite cases, collars and trunk meet, but actual device/earth terminal coordinates, conductor paths and compatible hardware are unbound; this is not a completed electrical connection."
           },
           {
-            "code": "IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED",
+            "code": "IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING",
             "objectId": "IAS/STUDY/common-depth/accessory-use",
-            "state": "unsupported",
-            "message": "The inserted plug projects 5.5 mm beyond decoration. Actual fixed-surround opening and finger/body grip are unbound; the legacy flush accessory grip does not qualify this recessed interface."
+            "state": "unqualified",
+            "message": "A finite fixed-surround opening and complete referenced plug/two-finger normal sweep are now explicit. Actual supplied plug shape, grip/withdrawal force, lead and human operation still require the representative trial; no physical result is inferred."
           },
           {
             "code": "IAS_LIGHTING_COMMON_DEPTH_HARDWARE_AND_RENEWAL_UNQUALIFIED",

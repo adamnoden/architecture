@@ -6,6 +6,7 @@ import { resolveCurrentDesign } from './current-design/resolve.js'
 import { readStudyRoomKitReferenceCase } from './current-design/assemblies/study-room-kit.js'
 import { admitStudyLightingCase, deriveStudyLighting, lightingBasis, readLightingComponents, readStudyLightingReferenceCase } from './current-design/assemblies/study-lighting.js'
 import { drawStudyLightingComparison, drawStudyLightingServiceCorner } from './current-design/assemblies/study-lighting-views.js'
+import { admitCommonDepthChoices } from './current-design/assemblies/study-lighting-common-depth.js'
 import { compileEngineeringDocument, readStudyLightingDocument } from './current-design/engineering-document.js'
 import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableStudyLightingId, engineeringBase, engineeringTicket, replayEngineeringEdit, saveEngineeringEdit } from './current-design/engineering-edit.js'
 
@@ -245,7 +246,8 @@ test('common-depth purpose cases preserve real device/route volumes while reject
   assert.equal(c.evidence.localGeometryPassing, true)
   assert.equal(c.accessoryUse.insertedPlugRoomwardProjectionBeyondDecorationMm, 5.5)
   assert.equal(c.accessoryUse.actualRecessOpeningAndBodyGripQualified, false)
-  assert.ok(c.diagnostics.some(d => d.code === 'IAS_LIGHTING_COMMON_DEPTH_RECESSED_GRIP_UNQUALIFIED' && d.state === 'unsupported'))
+  assert.equal(c.accessoryUse.geometryStatus, 'DECLARED_PLUG_AND_FINGER_SWEEP_CLEAR')
+  assert.ok(c.diagnostics.some(d => d.code === 'IAS_LIGHTING_COMMON_DEPTH_GRIP_PHYSICAL_EVIDENCE_PENDING' && d.state === 'unqualified'))
   for (const box of c.purpose.enclosures) {
     assert.equal(box.accessoryReservedVolumeXYZMm[4]! - box.accessoryReservedVolumeXYZMm[1]!, 23)
     assert.equal(box.bodyDepthMm[0], 13.5)
@@ -260,6 +262,70 @@ test('common-depth purpose cases preserve real device/route volumes while reject
   assert.equal(c.purpose.deviceTerminalsConnected, false)
   assert.equal(c.purpose.completeRoomCircuit, false)
   for (const key of ['actualReferenceProductConnected', 'equipmentTerminalGeometryComplete', 'installedProtectionQualified', 'materialAdmission', 'completeRenewalQualified', 'physicalTrialComplete', 'ownerAcceptance', 'candidateSelected'] as const) assert.equal(c.evidence[key], false)
+})
+
+test('ordinary recessed grip charges the complete plug, fingers, pins and both settings without opening electrical closures', () => {
+  const r = run(), c = r.commonDepthCornerComparison, a = c.accessoryUse
+  assert.deepEqual(a.completeReferencePlugMm, [50, 52, 42])
+  assert.equal(a.gripSideReserveMm, 5)
+  assert.equal(a.gripVerticalReserveMm, 29)
+  assert.equal(a.isolatedPlateDrawReserveMm, 7)
+  assert.equal(a.requiredPlugNormalDrawMm, 27)
+  assert.equal(a.authoredPlugNormalDrawMm, 27)
+  assert.equal(a.ordinaryUseChangesProtectiveClosures, false)
+  assert.equal(a.actualRecessOpeningAndBodyGripQualified, false)
+  assert.equal(a.suppliedLeadBendAndGripForceQualified, false)
+  assert.ok(a.surroundOpenings.every(row => row.fixingChecks.every(f => f.reserveMm > 3.68)))
+  assert.equal(a.fingerSweeps.length, 2)
+  assert.ok(a.fingerSweeps.every(f => f.intendedPlugSideContact))
+  for (const [change, issue] of [
+    [{ accessoryOpeningWidthMm: 100 }, 'ordinary-plug-finger-sweep-loses-two-settings'],
+    [{ plugNormalDrawMm: 20 }, 'normal-plug-draw-leaves-pins-in-socket'],
+    [{ gripRearOffsetMm: 1 }, 'finger-engagement-crosses-protected-face-or-complete-plug-body'],
+    [{ accessoryOpeningHeightMm: 180 }, 'surround-opening-removes-fixing-tool-lands'],
+  ] as const) {
+    const altered = structuredClone(components)
+    altered.commonDepthCornerCandidate = { ...altered.commonDepthCornerCandidate, ...change }
+    const x = deriveStudyLighting(choices, basis, altered)
+    assert.ok(x.commonDepthCornerComparison.geometryIssues.includes(issue))
+    assert.deepEqual(x.construction, r.construction)
+    assert.deepEqual(x.commonRoom, r.commonRoom)
+    assert.deepEqual(x.kitchen, r.kitchen)
+  }
+  const biggerPlug = structuredClone(components)
+  biggerPlug.plug.widthMm = 70
+  assert.ok(deriveStudyLighting(choices, basis, biggerPlug).commonDepthCornerComparison.geometryIssues.includes('ordinary-plug-finger-sweep-loses-two-settings'))
+  assert.throws(() => admitCommonDepthChoices({ ...components.commonDepthCornerCandidate, schema: 'ias-common-depth-corner-choices/1' }), /IAS_COMMON_DEPTH_CHOICES_UNSUPPORTED/)
+  const missing = { ...components.commonDepthCornerCandidate } as Record<string, unknown>
+  delete missing.fingerThicknessMm
+  assert.throws(() => admitCommonDepthChoices(missing), /IAS_COMMON_DEPTH_CHOICES_UNSUPPORTED/)
+  const impossibleOpening = structuredClone(components)
+  impossibleOpening.commonDepthCornerCandidate = { ...impossibleOpening.commonDepthCornerCandidate, accessoryOpeningWidthMm: 500 }
+  assert.throws(() => deriveStudyLighting(choices, basis, impossibleOpening), /IAS_COMMON_DEPTH_OPENING_OUTSIDE_CASE/)
+})
+
+test('explicit metal stock conserves six gravity components and fails an inadequate complete-case mass ceiling', () => {
+  const c = run().commonDepthCornerComparison, load = c.loadInterface
+  assert.ok(load.totalKnownSteelStockKgComparison > 7.39 && load.totalKnownSteelStockKgComparison < 7.4)
+  assert.ok(load.caseBudgets.every(row => row.remainingRequirementForDeviceFixingsAndOtherStockKg > .87))
+  assert.equal(load.secondaryRestCompleteCaseDemandN, 29.43)
+  assert.ok(load.unknownInstalledStock.includes('front-serviced unions'))
+  const wrench = [0, 0, 0, 0, 0, 0]
+  for (const row of load.knownStock) {
+    const gravity = row.kg * 9.81, [x, y] = row.originXYZMm
+    const independent = [0, 0, -gravity, -y! / 1000 * gravity, x! / 1000 * gravity, 0]
+    row.gravityWrenchN_Nm.forEach((v, k) => assert.ok(Math.abs(v - independent[k]!) < 1e-10))
+    independent.forEach((v, k) => { wrench[k]! += v })
+  }
+  wrench.forEach((v, k) => assert.ok(Math.abs(v - load.knownStockGravityWrenchN_Nm[k]!) < 1e-10))
+  assert.ok(Math.abs(wrench[2]! + load.totalKnownSteelStockKgComparison * 9.81) < 1e-10)
+  const tooHeavy = structuredClone(components)
+  tooHeavy.commonDepthCornerCandidate = { ...tooHeavy.commonDepthCornerCandidate, shellThicknessMm: 3 }
+  const failed = deriveStudyLighting(choices, basis, tooHeavy).commonDepthCornerComparison
+  assert.ok(failed.geometryIssues.includes('known-case-steel-exceeds-complete-case-mass-ceiling'))
+  assert.equal(failed.evidence.candidateSelected, false)
+  assert.equal(load.sourceModelMassFeedbackApplied, false)
+  assert.equal(load.actualInstalledMassQualified, false)
 })
 
 test('finite straight pieces, collars and authored case ports meet at the same common plane with independent supports', () => {
