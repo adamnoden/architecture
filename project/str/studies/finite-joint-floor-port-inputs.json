@@ -1,0 +1,21 @@
+{
+  "schema": "ovids-house/str-finite-joint-floor-port-development-input/1",
+  "jointId": "SW",
+  "geometryArchive": "project/str/studies/fixed-normal-experiment-captures.tar.xz",
+  "geometryArchiveSHA256": "2ea260c237fc0abdc114c5a5f7eac46ed06f2c70afef9002dc2ac461dc9a4be2",
+  "geometryCapture": "v500.full.json",
+  "geometryComparison": "project/str/studies/fixed-normal-experiment.results.json",
+  "patchSideMm": 2000,
+  "wallExtensionBelowMm": 1000,
+  "wallExtensionAboveMm": 1000,
+  "youngKNPerM2": 33000000,
+  "poisson": 0.2,
+  "wallUnitWeightKNPerM3": 25,
+  "comparisonPitchesMm": [140, 70, 35],
+  "componentEnergyRelativeChangeTolerance": 0.05,
+  "contourPolicy": "east-north-five-coordinate-midplane-trace",
+  "nativeConstitutiveEquivalence": false,
+  "nativeBandYawMappingAvailable": false,
+  "globalReplacementAvailable": false,
+  "jointResistanceAvailable": false
+}
