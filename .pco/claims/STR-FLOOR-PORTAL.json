@@ -9,8 +9,8 @@
     "label": "convergence-20261124"
   },
   "claimedAt": "2026-11-24T09:32:25.409Z",
-  "heartbeatAt": "2026-11-24T09:32:25.409Z",
-  "expiresAt": "2026-11-24T10:17:25.409Z",
+  "heartbeatAt": "2026-11-24T09:35:18.133Z",
+  "expiresAt": "2026-11-24T10:20:18.133Z",
   "branch": "work/convergence-recovery-20261124",
   "predecessor": {
     "leaseId": "7cccf040-5554-4999-94fd-50b6bce6c599",
@@ -31,5 +31,10 @@
       "evidence": "Merged1623/mainfa711061. Shared1622/5d4d0c9d joinsSTR/HAD,39focusedcontrols/type/sourceauditPASS; actual52headsunchanged. Projectionproducer/check refreshed provenanceonly. Fixednormal91e3 fails32.72%; finiteL971c durable; distributedfloorportdevelopment remains separate.",
       "next": "Observe exact5d4d0c9d CI, bothfreshpreflights andmerge; continue finite floor-contour component, preserving nativeband/chord/exterior and gravity obligations."
     }
+  },
+  "pr": 1624,
+  "checkpoint": {
+    "evidence": "PR1624 d694ae3 recovers complete PR1622 source tree; two failing source-binding tests repaired,12 focused checks pass",
+    "next": "Observe full exact-head CI and both canonical preflights; integrate then continue distributed contour joint development"
   }
 }
