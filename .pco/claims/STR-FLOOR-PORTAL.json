@@ -9,8 +9,8 @@
     "label": "convergence-20261124"
   },
   "claimedAt": "2026-11-24T09:32:25.409Z",
-  "heartbeatAt": "2026-11-24T09:35:18.133Z",
-  "expiresAt": "2026-11-24T10:20:18.133Z",
+  "heartbeatAt": "2026-11-24T09:52:03.372Z",
+  "expiresAt": "2026-11-24T10:37:03.372Z",
   "branch": "work/convergence-recovery-20261124",
   "predecessor": {
     "leaseId": "7cccf040-5554-4999-94fd-50b6bce6c599",
@@ -34,7 +34,7 @@
   },
   "pr": 1624,
   "checkpoint": {
-    "evidence": "PR1624 d694ae3 recovers complete PR1622 source tree; two failing source-binding tests repaired,12 focused checks pass",
-    "next": "Observe full exact-head CI and both canonical preflights; integrate then continue distributed contour joint development"
+    "evidence": "PR1624 d694ae3 fresh full CI pending;26 focused recovered controls pass. Continuation00ca6288 remotely checkpoints own-fitting correction and exact occupied programme. Distributed contour112port prototype analytical controls pass but140/70/35 all-mode sensitivity fails; shared-stage integration under review.",
+    "next": "Finish exact-head recovery CI/preflights and merge; integrate finite contour through actual saved floor comparison and owning binding, never historical current-reader fallback"
   }
 }
