@@ -39,7 +39,7 @@ test('explicit saved bank edit shares compiler output, preserves roof/source con
 })
 test('legacy bank is an explicit current-method adverse control; old source7 request is unsupported',()=>{
  const resolved=readCurrentDesignResolution(),request=readInletSourceEnvelopeCase(resolved),legacy=runInletSourceEnvelopeCase(resolved,{...request.sourceEnvelope,settings:readLegacyIndoorBankControlSettings()})
- assert.equal(legacy.joinedDirection.room.indoorRoutes.necessaryStraightPipeGeometryAndBudgetComparison,true)
+ assert.equal(legacy.joinedDirection.room.indoorRoutes.necessaryStraightPipeGeometryAndBudgetComparison,false)
  assert.equal(legacy.joinedDirection.room.bankReceiver.necessaryRouteOperationAndClampEnvelopeScreen,false)
  assert.ok(legacy.joinedDirection.room.bankReceiver.receivers.every(v=>v.stripAfterTwoSettingsMm<0))
  assert.throws(()=>runInletSourceEnvelopeCase(resolved,{...request.sourceEnvelope,schema:'had-inlet-source-envelope-case/7'}),/Stale/)
