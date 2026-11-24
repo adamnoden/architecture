@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 57,
+  "generation": 58,
   "state": "claimed",
-  "leaseId": "7cccf040-5554-4999-94fd-50b6bce6c599",
+  "leaseId": "81d1d5af-717b-47e5-b8e9-5cdc634a77a7",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-resume-root-20261123"
+    "label": "convergence-20261124"
   },
-  "claimedAt": "2026-11-23T22:25:18.262Z",
-  "heartbeatAt": "2026-11-23T23:54:45.469Z",
-  "expiresAt": "2026-11-24T00:39:45.469Z",
-  "checkpoint": {
-    "evidence": "Merged1623/mainfa711061. Shared1622/5d4d0c9d joinsSTR/HAD,39focusedcontrols/type/sourceauditPASS; actual52headsunchanged. Projectionproducer/check refreshed provenanceonly. Fixednormal91e3 fails32.72%; finiteL971c durable; distributedfloorportdevelopment remains separate.",
-    "next": "Observe exact5d4d0c9d CI, bothfreshpreflights andmerge; continue finite floor-contour component, preserving nativeband/chord/exterior and gravity obligations."
-  },
-  "branch": "work/convergence-resume-final-20261123",
+  "claimedAt": "2026-11-24T09:32:25.409Z",
+  "heartbeatAt": "2026-11-24T09:32:25.409Z",
+  "expiresAt": "2026-11-24T10:17:25.409Z",
+  "branch": "work/convergence-recovery-20261124",
   "predecessor": {
-    "leaseId": "234d4914-97e5-469f-a35f-b42dd7852ec5",
-    "generation": 56,
-    "branch": "work/convergence-head-fan-20261123",
-    "pr": 1621,
+    "leaseId": "7cccf040-5554-4999-94fd-50b6bce6c599",
+    "generation": 57,
+    "branch": "work/convergence-resume-final-20261123",
+    "pr": 1622,
     "checkpoint": {
-      "evidence": "Merged1620/mainae5d28d6. Draft1621/843f317d preserves pad/fan/stair work; raw controls evidence1aaf2f29. CI fails stale crafted-study-kit-schedule.json; executor unavailable. Full handoff on1621.",
-      "next": "Fresh main/lease; regenerate via crafted-study-views.mjs then --check, genuine downstream audit; exact-head full CI/browser/preflight. Continue fixed-support prototype; no native pair executed.",
-      "blocker": "Execution environment unavailable. Native fixed-normal experiment not run; prepared wrapper local-only. Finite joints/anchors, signed convergence, material, stair/plinth/window joins remain open."
+      "evidence": "Merged1623/mainfa711061. Shared1622/5d4d0c9d joinsSTR/HAD,39focusedcontrols/type/sourceauditPASS; actual52headsunchanged. Projectionproducer/check refreshed provenanceonly. Fixednormal91e3 fails32.72%; finiteL971c durable; distributedfloorportdevelopment remains separate.",
+      "next": "Observe exact5d4d0c9d CI, bothfreshpreflights andmerge; continue finite floor-contour component, preserving nativeband/chord/exterior and gravity obligations."
     }
   },
   "recoverySource": {
-    "leaseId": "234d4914-97e5-469f-a35f-b42dd7852ec5",
-    "generation": 56,
-    "branch": "work/convergence-head-fan-20261123",
-    "pr": 1621,
+    "leaseId": "7cccf040-5554-4999-94fd-50b6bce6c599",
+    "generation": 57,
+    "branch": "work/convergence-resume-final-20261123",
+    "pr": 1622,
     "checkpoint": {
-      "evidence": "Merged1620/mainae5d28d6. Draft1621/843f317d preserves pad/fan/stair work; raw controls evidence1aaf2f29. CI fails stale crafted-study-kit-schedule.json; executor unavailable. Full handoff on1621.",
-      "next": "Fresh main/lease; regenerate via crafted-study-views.mjs then --check, genuine downstream audit; exact-head full CI/browser/preflight. Continue fixed-support prototype; no native pair executed.",
-      "blocker": "Execution environment unavailable. Native fixed-normal experiment not run; prepared wrapper local-only. Finite joints/anchors, signed convergence, material, stair/plinth/window joins remain open."
+      "evidence": "Merged1623/mainfa711061. Shared1622/5d4d0c9d joinsSTR/HAD,39focusedcontrols/type/sourceauditPASS; actual52headsunchanged. Projectionproducer/check refreshed provenanceonly. Fixednormal91e3 fails32.72%; finiteL971c durable; distributedfloorportdevelopment remains separate.",
+      "next": "Observe exact5d4d0c9d CI, bothfreshpreflights andmerge; continue finite floor-contour component, preserving nativeband/chord/exterior and gravity obligations."
     }
-  },
-  "pr": 1622
+  }
 }
