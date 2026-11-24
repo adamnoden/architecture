@@ -1,41 +1,33 @@
 {
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
-  "generation": 7,
-  "state": "released",
-  "leaseId": "4acc9812-8706-4c41-8b01-7591686083e2",
+  "generation": 8,
+  "state": "claimed",
+  "leaseId": "6ae96d7d-811c-4b13-8256-4493e0ba1c1b",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-lighting-20261124"
+    "label": "convergence-20261124"
   },
-  "claimedAt": "2026-11-24T09:46:24.998Z",
-  "heartbeatAt": "2026-11-24T10:13:28.743Z",
-  "expiresAt": "2026-11-24T10:13:28.743Z",
-  "branch": "work/convergence-lighting-20261124",
+  "claimedAt": "2026-11-24T10:14:17.829Z",
+  "heartbeatAt": "2026-11-24T10:14:17.829Z",
+  "expiresAt": "2026-11-24T10:59:17.829Z",
+  "branch": "work/convergence-continuation-20261124",
   "predecessor": {
-    "leaseId": "f28e7c3c-9429-4aaa-bd48-dc5a620970d8",
-    "generation": 6,
-    "branch": "work/convergence-integrate-20261123",
-    "pr": 1620,
+    "leaseId": "4acc9812-8706-4c41-8b01-7591686083e2",
+    "generation": 7,
+    "branch": "work/convergence-lighting-20261124",
     "checkpoint": {
-      "evidence": "Verified merged PR #1620 exact969e4048 to mainae5d28d605c2ebf190cb6bf922a8af8f0ddb29b3 after9greenchecks and3canonical publication preflights. Recovered IAS common-depth authoring and genuinely regenerated source-bound evidence integrated;22 IAS/producer/browser-import/HTTP tests passed. Scope remains planned, with actual device/circuit/material/grip/renewal/load duties unresolved.",
-      "next": "Resume from fresh main and new canonical lease; complete recessed ordinary plug grip, actual terminal/earth and feeder interfaces, qualified unions/protection/materials, complete mass/native feedback and physical/owner review without treating unselected comparison as adopted house."
+      "evidence": "Verified remote fb9b177e473f677cda41e0a31584d04789a82f23 tree c045b51ed72c5306a8e026e9dd9eada37573a9ec,11owned files over mainfa711061; full61.5mm case/surround renewal,120x130 ordinary finger opening,7.397723kg known steel with6wrench origins.19shared/producer tests,TypeScript,genuine producer/check,audit0 and corrected raster inspection pass. No full CI or physical/owner/electrical acceptance.",
+      "next": "Root explicitly takes integration: acquire successor lease, import authored files and genuinely regenerate IAS family against combined current bindings; exact submitted-head CI/browser and canonical preflight before merge. Actual terminal/earth/feeder/union/support/complete-material/native-load duties remain unresolved; retain IAS planned and checkpoint branch."
     }
   },
   "recoverySource": {
-    "leaseId": "f28e7c3c-9429-4aaa-bd48-dc5a620970d8",
-    "generation": 6,
-    "branch": "work/convergence-integrate-20261123",
-    "pr": 1620,
+    "leaseId": "4acc9812-8706-4c41-8b01-7591686083e2",
+    "generation": 7,
+    "branch": "work/convergence-lighting-20261124",
     "checkpoint": {
-      "evidence": "Verified merged PR #1620 exact969e4048 to mainae5d28d605c2ebf190cb6bf922a8af8f0ddb29b3 after9greenchecks and3canonical publication preflights. Recovered IAS common-depth authoring and genuinely regenerated source-bound evidence integrated;22 IAS/producer/browser-import/HTTP tests passed. Scope remains planned, with actual device/circuit/material/grip/renewal/load duties unresolved.",
-      "next": "Resume from fresh main and new canonical lease; complete recessed ordinary plug grip, actual terminal/earth and feeder interfaces, qualified unions/protection/materials, complete mass/native feedback and physical/owner review without treating unselected comparison as adopted house."
+      "evidence": "Verified remote fb9b177e473f677cda41e0a31584d04789a82f23 tree c045b51ed72c5306a8e026e9dd9eada37573a9ec,11owned files over mainfa711061; full61.5mm case/surround renewal,120x130 ordinary finger opening,7.397723kg known steel with6wrench origins.19shared/producer tests,TypeScript,genuine producer/check,audit0 and corrected raster inspection pass. No full CI or physical/owner/electrical acceptance.",
+      "next": "Root explicitly takes integration: acquire successor lease, import authored files and genuinely regenerate IAS family against combined current bindings; exact submitted-head CI/browser and canonical preflight before merge. Actual terminal/earth/feeder/union/support/complete-material/native-load duties remain unresolved; retain IAS planned and checkpoint branch."
     }
-  },
-  "checkpoint": {
-    "evidence": "Verified remote fb9b177e473f677cda41e0a31584d04789a82f23 tree c045b51ed72c5306a8e026e9dd9eada37573a9ec,11owned files over mainfa711061; full61.5mm case/surround renewal,120x130 ordinary finger opening,7.397723kg known steel with6wrench origins.19shared/producer tests,TypeScript,genuine producer/check,audit0 and corrected raster inspection pass. No full CI or physical/owner/electrical acceptance.",
-    "next": "Root explicitly takes integration: acquire successor lease, import authored files and genuinely regenerate IAS family against combined current bindings; exact submitted-head CI/browser and canonical preflight before merge. Actual terminal/earth/feeder/union/support/complete-material/native-load duties remain unresolved; retain IAS planned and checkpoint branch."
-  },
-  "releasedAt": "2026-11-24T10:13:28.743Z",
-  "releaseReason": "handoff"
+  }
 }
