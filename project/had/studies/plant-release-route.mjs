@@ -6,6 +6,7 @@ import {deriveFixedStation} from './inlet-fixed-station.mjs';
 import {compareInletSite} from './incoming-water-site-applicability.mjs';
 import {exactSegmentBoxDistance,finiteBends} from './incoming-water-geometry.mjs';
 import {pathSeparation} from './service-interface-geometry.mjs';
+import {derivePlantReleaseProfiles} from './plant-release-profiles.mjs';
 
 const read=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),'utf8'));
 const setting=10;
@@ -47,17 +48,18 @@ export function derivePlantReleaseRoute(){
     eastNorth:[east,northJamb,eastDepth,top-northJamb],
     riser:plant.riserGross,hydraulicControls:plant.controlsHydraulics,emitter,
   };
-  const bufferCentre=buffer.station.slice(0,2).map((v,i)=>v+buffer.station[i+2]/2);
+  const goodsProfiles=derivePlantReleaseProfiles({plant,insideWestMm:left,insideSouthMm:bottom,openingHeightMm:opening.height});
+  const bufferCentre=goodsProfiles.bufferCentreMm;
   const d2=safety.tundish.slice(0,2);
   const expansion=safety.expansion.slice(0,2);
   const lowThroat=plant.riserGross[1]-bottom;
-  const cylinderR=415,bufferR=375;
+  const cylinderR=goodsProfiles.cylinder.completeRadiusMm,bufferR=goodsProfiles.buffer.completeRadiusMm;
   const approachY=bottom+cylinderR+reserve+1;
-  const a=[[left+cylinderR+reserve+1,approachY],[10515,approachY],[10515,4560],[11050,4560],[11400,4575],[12590,4575]];
-  const b=[bufferCentre,[11100,4575],[12590,4575]];
+  const a=goodsProfiles.cylinder.pathMm;
+  const b=goodsProfiles.buffer.pathMm;
   const p0=finiteBends(deriveFixedStation().paths.plant);
-  const heightLimit=opening.height-reserve;
-  const cylinderReserveHeight=1830;
+  const heightLimit=goodsProfiles.buffer.maximumCompleteHeightMm;
+  const cylinderReserveHeight=goodsProfiles.cylinder.maximumCompleteHeightMm;
   const oldBufferHeight=buffer.maxRetainedHeight+buffer.maxDeck;
   const roomGaps=(path,r)=>Object.fromEntries(Object.entries(rooms).map(([id,rect])=>[id,round(pathRectGap(path,r,rect))]));
   const cylinderPlan={...roomGaps(a,cylinderR),

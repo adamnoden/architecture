@@ -27,3 +27,30 @@ The existing saved source8 compiler, CLI and browser API carry normal and larger
 The exact specific supplier installation source is now [IM-P184-03 CMGT Issue6](https://content.spiraxsarco.com/-/media/spiraxsarco/international/documents/en/im/bsa6t-im-p184-03-en.ashx?rev=d42816b8cbc64b8aa1fe4fd5ba337669), rather than the generic manual previously cited. It requires the factory flow arrow and permits vertical-to-horizontal spindle orientation. It does not provide the external force/moment or capture-land qualification required here. Factory CAD was not obtained. Compact alternatives remain an independent engineering comparison under the same duties, never a mass-only pass.
 
 Next: join actual separate source/valve/factory-tree routes, retained hot/fan/head/vessel motion and tool states, complete pressure/temperature/gravity/support/capture paths, and unchanged source/store/relief/floor/DPC duties. The existing factory mains-port coordinate is a **trial**, not an approved connection. No complete-route or selected-house claim is made by this station screen.
+
+## Connected Plant branch development —24November2026
+
+The current saved inlet stage now carries a **complete explicit Plant branch topology**, with a dedicated east entry, both actual valve faces, the domestic cold-tree interface and the retained independently removable store connection. It remains an unadopted, rejected-interface development case. The [branch drawing](studies/inlet-split-plant-branch.svg), [geometry case](studies/inlet-split-plant-branch-candidate.json) and [pure shared method](../../compiler/reference-house/current-design/inlet-split-plant-branch.ts) are consumed by CLI, batch and the existing browser comparison; no historical result supplies the current computation.
+
+The entry atY4000/Z1000 is within the **200mm south service infill of the existing raw east arch**, whose masonry opening isY3900–5300 and fitted cargo comparisonY4100–5100. It is not a new hole through a303mm masonry jamb. The fixed source pipe, removable infill, frame, weather/thermal closures and relief paths need distinct supports and service states. The100mm port fails the80.1mm complete backbone plus10mm positional allocation by0.05mm radially, before any seal or liner. Its40mm side land is a separate comparison. A140mm perturbation gives19.95mm radial and20mm side land after the same settings, without qualifying a seal, support or assembled infill.
+
+The unchanged separate Plant station has its lower/upper valve faces at1370/1530. The outlet reaches a tee at[11360,4000,2260]. One branch reaches the retained high store split at[10222.5,3842.9,2260], the explicit R75 removable drop and R25 exposed connector, ending at the actual factory-port trial. The other rises2945 and joins the selected `ground-front-west` cold-tree occurrence at[10350,5000,2945]. Common headers and Plant routing through Utility are absent from this candidate. Source, station and both downstream references must resolve in the same current input binding; missing or changed references produce unsupported diagnostics.
+
+| Current necessary comparison | Result |
+|---|---:|
+| Fixed routes against declared complete cylinder/buffer goods profiles |76.483340mm minimum |
+| Fixed routes against actual retained objects |104.719830mm minimum |
+| Ordinary continuous arm / fixed pipe |76.267594mm minimum |
+| Different fixed paths, including fittings |56.194160mm minimum outside the explicit tee reservation |
+| Same fixed-path fittings / returning pipe |798.966679mm minimum |
+| Full-jacket retained drop / cylinder |**13.378506mm against25mm: reject** |
+| Retained high split / finished rectangular room boundary |**−4.152856mm: arch interface unresolved** |
+|100mm service-infill port / full pipe and positioning |**−0.05mm before seal/liner: reject** |
+
+The goods profiles now derive through one pure method shared with the original Plant release producer. Their1830mm cylinder and2265mm buffer maxima are **design limits**, not measured or factory-qualified apparatus. The actual room/buffer geometry and required doorway comparison drive their paths and height limits; no checked release receipt is read as a current input. The old producer's output remains unchanged. The south arch must be checked explicitly before the rectangular-boundary failure can be discharged; a generous opening caption is not a physical interface.
+
+Only the incident straight ends at the explicitly named common tee have a local connection exclusion. Other segments and all fixed fitting territories remain checked. The tee geometry and its resistance are separately unsupported. Exact axial valve-face connections are required, and non90degree fixed factory-fitting paths reject. The removable formed tubes use the existing finite-bend method and its continuous chord-error allowance.
+
+The complete static source-pressure nodal reference includes source/valve cuts, corners, the common tee and both downstream outlets, with six-wrench equilibrium residual below1.1×10⁻¹²Nm. Every reference stock segment and the nominal6kg valve export gravity at their translated origins. The current **34.242581kg straight-stock subtotal** excludes unknown terminal wrappers, fittings, tee, receiver and capture equipment. It is a virtual-corner/tolerance/density comparison, not manufactured cut lengths or complete installed mass. The full9232.130553N locked40K straight-tube reference stays; actual pressure/thermal guide reactions, valve compliance and receiving resistance are unsolved. No new load is adopted by native STR.
+
+Moving the retained drop20mm east improves the local cylinder comparison but has not earned its ordinary approach, high-union handler/podium, capture and first-rest changes. Preserve that as a perturbation, not a selected remedy. Source/store/backfeed release, safe primary and independent backup receiving including blocked/submerged states, electrical/PV protection, materials, loaded renewal and the floor/DPC/weather interfaces remain essential duties. The Utility-alone replan also remains open. This development neither changes the current house nor closes HAD-INLET-RESOLUTION.

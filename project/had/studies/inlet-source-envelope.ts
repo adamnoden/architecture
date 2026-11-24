@@ -16,6 +16,7 @@ const local = { schema: 'had-local-room-pocket-receipt/1', source: localResult.s
 for (const [name, content] of [['inlet-source-envelope.results.json', JSON.stringify(result, null, 2) + '\n'],
   ['inlet-source-envelope.svg', reviewSvg + '\n'],
   ['inlet-indoor-cuts.svg', result.joinedDirection.room.indoorCuts.reviewSvg + '\n'],
+  ['inlet-split-plant-branch.svg',(result.joinedDirection.room.indoorRoutes.splitStationComparison.branchDevelopment.comparison?.reviewSvg??'<svg xmlns="http://www.w3.org/2000/svg"><text x="20" y="30">Unsupported current Plant branch; no historical route is substituted.</text></svg>')+'\n'],
   ['inlet-split-plant-station.svg', result.joinedDirection.room.indoorRoutes.splitStationComparison.normal.reviewSvg+'\n'],
   ['inlet-indoor-routes.svg', result.joinedDirection.room.indoorRoutes.reviewSvg + '\n'],
   ['inlet-route-candidate.svg', (result.joinedDirection.room.indoorRoutes.candidateComparison.comparison?.reviewSvg??'<svg xmlns="http://www.w3.org/2000/svg"><text x="20" y="30">Unsupported candidate/current connections; no adoption.</text></svg>')+'\n'],

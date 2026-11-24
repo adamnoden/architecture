@@ -13,6 +13,7 @@ test('explicit saved bank edit shares compiler output, preserves roof/source con
   before=await runEditorEngineeringRequest({ticket:baseTicket})
  assert.equal(before.inletBank?.receiver.necessaryRouteOperationAndClampEnvelopeScreen,false)
  assert.equal(before.inletBank?.carrier.necessaryCarrierComparison,false)
+ assert.equal(before.inletBank?.route.splitStationComparison.branchDevelopment.state,'unadopted-current-source-branch-development')
  assert.ok(before.inletBank!.carrier.rows.every(v=>v.minimumShelfThicknessForSourceStressComparisonMm>15.89))
  const changed=edit(state,'pipeJacketDensityComparisonKgM3',4000,'kg/m3')
  assert.equal(changed.status,'applied');if(changed.status!=='applied')return
@@ -20,6 +21,7 @@ test('explicit saved bank edit shares compiler output, preserves roof/source con
  assert.equal(currentEngineeringReply(changed.state,baseTicket,before),undefined)
  assert.ok(currentEngineeringReply(changed.state,ticket,after))
  assert.ok(after.inletBank!.route.insulationAndJacketInventory.jacketDensityReferenceKg<before.inletBank!.route.insulationAndJacketInventory.jacketDensityReferenceKg)
+ assert.ok(after.inletBank!.route.splitStationComparison.branchDevelopment.comparison!.referenceStraightStockKg<before.inletBank!.route.splitStationComparison.branchDevelopment.comparison!.referenceStraightStockKg)
  assert.deepEqual(after.inletBank!.sourceOnlyBound,before.inletBank!.sourceOnlyBound)
  assert.deepEqual(after.inletBank!.receiver.receivers,before.inletBank!.receiver.receivers)
  assert.deepEqual(after.roof,before.roof)

@@ -42,6 +42,8 @@ jobs:
           python -m venv --system-site-packages "$finite_joint_runtime"
           "$finite_joint_runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_joint_solid_test.py
+          "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_test.py
+          echo "STR_FINITE_SOLID_PYTHON=$finite_joint_runtime/bin/python" >> "$GITHUB_ENV"
 
       - name: Verify cage geometry evidence before full validation
         run: |
@@ -61,6 +63,11 @@ jobs:
 
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
+
+      - name: Prove actual finite contour adapter with pinned runtime
+        run: |
+          test -n "$STR_FINITE_SOLID_PYTHON"
+          node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts
 
       - name: Cache verified publication fonts
         uses: actions/cache@v6

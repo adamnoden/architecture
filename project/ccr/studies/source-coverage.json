@@ -621,7 +621,11 @@
         "compiler/reference-house/current-design/inlet-indoor-routes.ts",
         "project/had/studies/service-interface-geometry.mjs",
         "compiler/reference-house/current-design/inlet-bank-receiver.ts",
-        "compiler/reference-house/current-design/inlet-bank-carrier.ts"
+        "compiler/reference-house/current-design/inlet-bank-carrier.ts",
+        "compiler/reference-house/current-design/inlet-split-plant-branch.ts",
+        "project/had/studies/plant-release-profiles.mjs",
+        "project/had/studies/plant-release-profiles.d.mts",
+        "project/had/studies/plant-release-route.mjs"
       ],
       "authoredInputs": [
         "compiler/reference-house/current-design/inlet-electrical-screen.ts",
@@ -629,7 +633,8 @@
         "compiler/reference-house/current-design/inlet-fixed-receiver.ts",
         "project/had/studies/inlet-bank-shelf-candidate.json",
         "project/had/studies/inlet-route-candidate.json",
-        "project/had/studies/inlet-split-plant-station-candidate.json"
+        "project/had/studies/inlet-split-plant-station-candidate.json",
+        "project/had/studies/inlet-split-plant-branch-candidate.json"
       ],
       "inputReceipts": [
         "project/had/studies/south-inlet-under-sill.json",
@@ -644,7 +649,8 @@
         "project/mat/studies/whole-house-service-baseline.json",
         "project/ias/studies/utility-first-release.json",
         "project/had/studies/boundary-service-lodge.json",
-        "project/str/studies/current-house-grid.json"
+        "project/str/studies/current-house-grid.json",
+        "project/had/studies/inlet-fixed-station.json"
       ],
       "receipts": [
         "project/had/studies/inlet-cabinet-copper.results.json",
@@ -661,7 +667,8 @@
         "project/had/studies/inlet-bank-carrier.results.json",
         "project/had/studies/inlet-bank-carrier.svg",
         "project/had/studies/inlet-route-candidate.svg",
-        "project/had/studies/inlet-split-plant-station.svg"
+        "project/had/studies/inlet-split-plant-station.svg",
+        "project/had/studies/inlet-split-plant-branch.svg"
       ],
       "consumers": [
         "compiler/reference-house/current-design/compile.ts",
@@ -689,7 +696,9 @@
         "node --import tsx --test compiler/reference-house/current-design-inlet-indoor-cuts.test.ts compiler/reference-house/current-design-inlet-indoor-routes.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-bank-carrier.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-retained-services.test.ts",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-split-station.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-split-station.test.ts",
+        "node project/had/studies/plant-release-route.mjs --check",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-split-branch.test.ts"
       ]
     },
     {
@@ -1090,22 +1099,28 @@
     {
       "id": "str-finite-joint-development",
       "state": "candidate-interface",
-      "authority": "Executed fixed-normal numerical rejection and isolated isotropic wall-end compliance only. Neither is ordinary native admission, finite floor-joint resistance or a selected house.",
+      "authority": "Executed fixed-normal rejection, isolated isotropic wall-end compliance and explicitly unconverged distributed slab-contour development. None is ordinary native admission, finite joint resistance or a selected house.",
       "decisions": [
         "project/str/fixed-normal-experiment.md",
-        "project/str/finite-joint-solid-development.md"
+        "project/str/finite-joint-solid-development.md",
+        "project/str/finite-floor-contour-development.md"
       ],
       "authorRoots": [
         "project/str/studies/fixed_normal_experiment.py",
         "project/str/studies/fixed-normal-comparison.mjs",
         "project/str/studies/finite_joint_solid.py",
         "project/str/studies/finite_joint_solid_run.py",
-        "project/str/studies/finite_joint_solid_compare.py"
+        "project/str/studies/finite_joint_solid_compare.py",
+        "project/str/studies/finite_floor_contour.py",
+        "project/str/studies/finite_floor_contour_run.py",
+        "project/str/studies/finite_floor_contour_compare.py",
+        "compiler/reference-house/current-design/structural-finite-floor-contour.ts"
       ],
       "authoredInputs": [
         "project/str/studies/fixed-normal-experiment-inputs.json",
         "project/str/studies/finite-joint-solid-inputs.json",
-        "project/str/studies/finite-joint-solid-requirements.txt"
+        "project/str/studies/finite-joint-solid-requirements.txt",
+        "project/str/studies/finite-floor-contour-inputs.json"
       ],
       "inputReceipts": [
         "project/str/studies/four-l-joint-material-audit.json",
@@ -1118,16 +1133,23 @@
         "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json",
         "project/str/studies/finite-joint-solid-captures/finite-joint-solid-35.json",
         "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json",
-        "project/str/studies/slab-constitutive-compiled-control.json"
+        "project/str/studies/slab-constitutive-compiled-control.json",
+        "project/str/studies/finite-floor-contour-captures/contour140.json",
+        "project/str/studies/finite-floor-contour-captures/contour70.json",
+        "project/str/studies/finite-floor-contour-captures/contour35.json",
+        "project/str/studies/finite-floor-contour-captures/contour-comparison.json"
       ],
       "consumers": [
         "project/str/floor-corner-convergence-result.md",
-        "project/ccr/convergence-owner-review.md"
+        "project/ccr/convergence-owner-review.md",
+        "compiler/reference-house/current-design/structural-floor-section.ts"
       ],
       "producerChecks": [
         "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B project/str/studies/fixed_normal_experiment_test.py",
         "python -B project/str/studies/finite_joint_solid_test.py",
-        "python -B project/str/studies/finite_joint_solid_compare.py project/str/studies/finite-joint-solid-captures --check"
+        "python -B project/str/studies/finite_joint_solid_compare.py project/str/studies/finite-joint-solid-captures --check",
+        "python -B project/str/studies/finite_floor_contour_test.py",
+        "STR_FINITE_SOLID_PYTHON=/ABSOLUTE/PINNED/PYTHON node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts"
       ]
     }
   ],
@@ -1959,6 +1981,213 @@
       "format": "value",
       "algorithm": "sha256",
       "source": "project/str/studies/floor-section-proof.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+      "location": [
+        "methodSHA256",
+        "finite_floor_contour.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+      "location": [
+        "methodSHA256",
+        "finite_floor_contour_run.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour_run.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+      "location": [
+        "inputs",
+        "authoredInputSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-inputs.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+      "location": [
+        "inputs",
+        "sourceAuditSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/four-l-joint-material-audit.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+      "location": [
+        "inputs",
+        "archiveSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/fixed-normal-experiment-captures.tar.xz"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+      "location": [
+        "inputs",
+        "nativeSourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+      "location": [
+        "methodSHA256",
+        "finite_floor_contour.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+      "location": [
+        "methodSHA256",
+        "finite_floor_contour_run.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour_run.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+      "location": [
+        "inputs",
+        "authoredInputSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-inputs.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+      "location": [
+        "inputs",
+        "sourceAuditSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/four-l-joint-material-audit.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+      "location": [
+        "inputs",
+        "archiveSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/fixed-normal-experiment-captures.tar.xz"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+      "location": [
+        "inputs",
+        "nativeSourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+      "location": [
+        "methodSHA256",
+        "finite_floor_contour.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+      "location": [
+        "methodSHA256",
+        "finite_floor_contour_run.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour_run.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+      "location": [
+        "inputs",
+        "authoredInputSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-inputs.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+      "location": [
+        "inputs",
+        "sourceAuditSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/four-l-joint-material-audit.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+      "location": [
+        "inputs",
+        "archiveSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/fixed-normal-experiment-captures.tar.xz"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+      "location": [
+        "inputs",
+        "nativeSourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour-comparison.json",
+      "location": [
+        "captureSHA256",
+        "contour140.json"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-captures/contour140.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour-comparison.json",
+      "location": [
+        "captureSHA256",
+        "contour70.json"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-captures/contour70.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour-comparison.json",
+      "location": [
+        "captureSHA256",
+        "contour35.json"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-captures/contour35.json"
     }
   ],
   "gitBlobs": {
@@ -2316,14 +2545,14 @@
     "project/str/studies/roof-surface-pressure.svg": "03610ad976377889fb0d27bfaaa107b9cdce2099",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "27bffe7a40cceb6016ac56f26fb29c6a7050707f",
-    "project/had/studies/inlet-source-envelope.ts": "13f0fc119195c29ce52da40b0e86dcce39ad1691",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "1a1071662354737fc6e24864268227b3678739ad",
+    "project/had/studies/inlet-source-envelope.ts": "b6cd55eea82078183f06e78317c90bed2f92147c",
     "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
-    "project/had/studies/inlet-source-envelope.results.json": "f2c5ebec4ca660c01f14185bc3374569a459ad3f",
+    "project/had/studies/inlet-source-envelope.results.json": "41b50a2da0c09a0bf31a1e2f77d9c060bf788ad4",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
-    "compiler/reference-house/current-design/engineering-edit.ts": "d8002b0b3ec49678167093f303a1cc316519f0ae",
-    "project/ade/browser-editor/engineering-api.ts": "790a1111e1a39144f834cd9741c2dcaaae62ab8a",
-    "project/ade/browser-editor/engineering-editor.ts": "8fccec6b3c6df0837c0189d8447343691aa21d23",
+    "compiler/reference-house/current-design/engineering-edit.ts": "b8f905132f16e927da222042edcf8e4b55a6caff",
+    "project/ade/browser-editor/engineering-api.ts": "18d046a8daaccf21808a8d3aabe663276d445607",
+    "project/ade/browser-editor/engineering-editor.ts": "010525a9562bcb46415326c986c69d90fa24124c",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
@@ -2336,7 +2565,7 @@
     "project/str/studies/floor_section_model.py": "f3cdbbf118b0d5d064c3f6564786de770b5ffd88",
     "project/str/studies/floor_section_successor.py": "0e86fe7778fe0a5e85dbf3bcb91e5e9a99a45fd3",
     "project/str/floor-section-result.md": "57386497f30c777bcafc8090cac8b462add8b87c",
-    "compiler/reference-house/current-design/structural-floor-section.ts": "bb495f7bbcd31e7a24f28d3cea857a51b114700c",
+    "compiler/reference-house/current-design/structural-floor-section.ts": "528cd2c4538f761d23ed6542cee98e6bc886df56",
     "project/str/studies/floor_section_proof.py": "9ab873623174bd4ec52c84473527d818874d7bc0",
     "project/str/studies/floor-section-proof.json": "43d622a67d01d40e976ee605dd2528f5104eac1f",
     "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1",
@@ -2354,7 +2583,7 @@
     "project/had/inlet-whole-room-convergence.md": "5142ba87553d42094e62a908e207f5335f1d8731",
     "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
     "project/str/studies/grid_origin_recovery.py": "c09369bc1acbaaa9438545fb12e0a4e15f1a90b7",
-    "project/str/floor-corner-convergence-result.md": "d0b72e14ce1be9bae11918cdcc9d7094c5a0d7ad",
+    "project/str/floor-corner-convergence-result.md": "b543455b80e5979738a401294bda0433e236823d",
     "project/str/wet-receiving-grid-origin-result.md": "7a5d126baa5c4362977906d18bbbd5227c2f9f61",
     "project/str/studies/wet_support_cage_comparison.py": "5e1f2da9fb22ff7c7503b82dc158762b43a95cf8",
     "project/str/studies/wet-support-cage-comparison-settings.json": "2fa64aa04feac0ffc5ea76b3c82220b311e5e60b",
@@ -2364,7 +2593,7 @@
     "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
     "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3",
     "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
-    "project/had/studies/inlet-local-pocket.results.json": "ec50cf46c4e948623972e8dfaff11b592d0247d6",
+    "project/had/studies/inlet-local-pocket.results.json": "c7cc0f751bccf40670dfb970420dfee6675cc2d6",
     "project/had/studies/inlet-local-pocket.svg": "1b055c9299705e175d8fe523102bb991e6dbd913",
     "compiler/reference-house/current-design/inlet-room-pan.ts": "81c7736c2b91de574c582dd902ff903953dc9b46",
     "project/had/studies/inlet-local-pan.svg": "e3da3b38a4eb4532e8f3d3a9ab713a6d20aa2be9",
@@ -2384,20 +2613,20 @@
     "project/str/studies/global-mmd-mesh-cut-controls.json": "ca43d2e938f0d604abbd1bbc73e1d67cd82b6f48",
     "project/str/studies/wet-post-head-duties-proof.json": "d3060dd359727d4073fe2cb4c0a0e3566a317b08",
     "project/ias/adaptable-room-lighting-brief.md": "70f7030deee8a50c4c6491dfc20092db7b8fe8bd",
-    "project/ias/adaptable-room-lighting-result.md": "638bf4dac266ffd9043d8bfc23a7da4c089a2fa1",
-    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "9d73ddc0cde53586f90fc6d0564b278b027ff278",
-    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "284e6db47c436d63c522c247a6f02c905bff0d4a",
+    "project/ias/adaptable-room-lighting-result.md": "0dbc162e9524874186ca8c619568ca9417caa11c",
+    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "33c54b6aea02f4813ce242fc3488f044f61c5631",
+    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "db9d853d8312672e42ebbf0633e81fe6848b6fb2",
     "project/ias/studies/adaptable-study-lighting.mjs": "85cc05ec5a0d07bdb008ca10d7c2943bed8b686d",
     "project/ias/studies/adaptable-study-lighting.json": "63b335e82c72518bb1346c3d70e9ce3bfa02bd9d",
-    "project/ias/studies/lighting-component-references.json": "f3b5a71f747f93b914ec2498c6e5bd7cdfc75c75",
+    "project/ias/studies/lighting-component-references.json": "c1a14e82f4434831ca96e354f04f191f0d2b398f",
     "project/ias/studies/study-door-reveal.json": "58afaada3083a21bf103fe3a658db31807a75e26",
-    "project/ias/studies/adaptable-study-lighting.results.json": "dc779c0651733640af8e04763239d4071a177fe9",
-    "project/ias/studies/adaptable-study-lighting-comparison.svg": "2e4954a2a27335a1de93e8486863040467d346e0",
+    "project/ias/studies/adaptable-study-lighting.results.json": "ee6588d109985c4dd5585419b1102d1ff1501a4d",
+    "project/ias/studies/adaptable-study-lighting-comparison.svg": "bc23730697def45bcfef295a5aa0f7fb660bbb9a",
     "project/ias/studies/adaptable-study-lighting-corner.svg": "ca2a59a458a2cc858ebc23acf6eb6c779912f828",
-    "project/ias/studies/adaptable-study-lighting-routes.svg": "520e1f41233b61161d5a2b8651cce1f0ce295ffa",
+    "project/ias/studies/adaptable-study-lighting-routes.svg": "7c72f27f918f6b00005544990f7d8bc25cc51d32",
     "project/ias/studies/adaptable-kitchen-lighting.svg": "1861c38180fc9bcfec15c2e68e9c1a5f16a884c7",
     "compiler/reference-house/current-design/assemblies/study-room-kit-projection.ts": "3f1d9df2c5b279081a189b7a3e43c3c7fe6fb5a4",
-    "compiler/reference-house/current-design-study-lighting.test.ts": "0eb364564f5dcdb86c96ef6384fc7619a3f6a29b",
+    "compiler/reference-house/current-design-study-lighting.test.ts": "f79fd1969eca0ce44fa2af5675ecf198598dbf2d",
     "project/had/owner-design-pack-preparation.md": "8bc611b30eb9271b099ec65d7ba577f9b17e80b1",
     "project/str/floor-interface-result.md": "69c4d381f6989a6f7ef6036c6f523bf25c4e1e8c",
     "compiler/reference-house/current-design/structural-floor-interfaces.ts": "c88bcd852b2994ab25dbf06669be6858d422a910",
@@ -2424,11 +2653,11 @@
     "project/str/studies/monolithic-rc-translation-actions.json": "45fd6254540ff5d0f8927f3a8375e157bf330e2b",
     "compiler/reference-house/current-design/inlet-bank-receiver.ts": "27ae1b2964495559cee1bd13b3c270ab2c660744",
     "project/had/studies/inlet-bank-receiver.svg": "36daa77f163c959d9578b34783bee1e5e2806b04",
-    "project/ade/browser-editor/engineering.html": "a5646395dcf2f7eec7d7d8ed6e1a288eb0887c62",
+    "project/ade/browser-editor/engineering.html": "aaae8fbb9fc6748aabe749f2a5940d164be3a558",
     "project/had/inlet-bank-carrier-rejection.md": "02e3e0c4004e7a3d636b5e56297131ff959d132d",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
-    "project/had/studies/inlet-bank-carrier.results.json": "3e4100a3ad3ad4ffb54b4a7ec08f4c9834a45f3f",
+    "project/had/studies/inlet-bank-carrier.results.json": "44e53f962785fd33c54880960fb41e5fd502012d",
     "project/had/studies/inlet-bank-carrier.svg": "dc84130cc6a7fcae0130e64b6687bb2112546f13",
     "project/str/studies/wet_bearing_refinement.py": "06f8fabdfaf5ed6cc132e7a49248845dbdb08bab",
     "project/str/studies/wet-bearing-refinement-inputs.json": "42dea6fee820d552c4bb35a59258825a54eacb64",
@@ -2452,8 +2681,8 @@
     "project/str/studies/four-l-joint-proof.json": "74dc6eb4d72698dec7f42ac02e100bed5b53112c",
     "project/str/studies/four-l-joint-material-audit.json": "c7fc98758b2d9bdc3bb0b6b7a80b6397fe40b0f1",
     "project/str/studies/four-l-joint-default-thread-attempt.json": "980256752350cc54e2071bddf34e766dd6bd0133",
-    "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "8823f081b68beabe2f318105019b22ee76e1587d",
-    "project/ias/studies/adaptable-study-lighting-common-depth.svg": "64f1d78edef1f7c5afa6e82257ae3dc8a479c79b",
+    "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "18d273912c19c65c32d3c4c338443590b8e524e9",
+    "project/ias/studies/adaptable-study-lighting-common-depth.svg": "a3e7bd76dde6ca24085fb1cc02a5551186536007",
     "project/had/inlet-route-operation-collision.md": "79ddc6d61a3924bd6c9f2c427bd79f42e0fa1ce2",
     "project/had/route-operation-recovery-20261123.md": "b1d4b1740997d17832aadb237274ecb0ee8ea182",
     "project/had/inlet-isolation-product-recovery-20261123.md": "2265d1f1a7e35db18ae5bf684040adaf236ef7b2",
@@ -2467,7 +2696,7 @@
     "compiler/reference-house/current-design/occupied-services.ts": "80f31158e629120a3719a8d3b26774b7f2f07da2",
     "project/str/studies/fixed_normal_experiment.py": "79f6c70e448475c1188f4c493514df75a3c77ee3",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json": "17f081768d37138ba58d91b32617d4054be863cf",
-    "project/ccr/convergence-owner-review.md": "c55b9228725576953e95b69802db9588f0b44331",
+    "project/ccr/convergence-owner-review.md": "16823c2149a22c24aef5766abf60ec4ef2504239",
     "project/str/studies/finite_joint_solid_run.py": "f7759a440296b38f92e3af3f29a9e1586559bc9a",
     "project/str/finite-joint-solid-development.md": "e90118a8ff01fc8ac761835903926b427263205b",
     "project/str/studies/finite_joint_solid.py": "b8451e22dda30b884166f82bbf86330aa9d13503",
@@ -2483,15 +2712,31 @@
     "project/str/studies/fixed-normal-experiment.results.json": "d70a4ee929a02d0f46a2563484b41ec98aab8b5f",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json": "a427298f215d2ad68be3885e98777c9c7f8474fa",
     "compiler/reference-house/current-design/structural-slab-constitutive.ts": "3719c065d8ebf6c7f187ad2d843706c09d54986a",
-    "project/str/floor-portal-reconciliation.md": "94f110753cdba945f553fe2a136ebff4c16c4862",
-    "project/str/studies/slab-constitutive-compiled-control.json": "f7c3ca04e4b875aa98e808ba0c1e56c574752065",
-    "project/str/studies/slab-constitutive-compiled-control.tar.xz": "193c4200f0b7b5c38b1667ddcfddb7e5bc52b0fd",
+    "project/str/floor-portal-reconciliation.md": "f764925096f7eaafa10762a1a75d50a8093dfe36",
+    "project/str/studies/slab-constitutive-compiled-control.json": "973a8a16df87070808bbf417cd1a20a8304fdf62",
+    "project/str/studies/slab-constitutive-compiled-control.tar.xz": "ac0f383e08cb330c30fc8a3d2a9d5323adf94f3b",
     "project/had/studies/inlet-route-candidate.json": "6bd208ae8dbe70564122af3d16d3d86f60dde141",
     "project/had/studies/inlet-route-candidate.svg": "03cf436f49e53919156b7406c1264b643a8658cb",
     "project/had/inlet-retained-service-route-comparison.md": "8249a23406763f52afa82776f95089e298367f7c",
     "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
     "project/had/studies/inlet-split-plant-station.svg": "7e5cb43bbf3fe2bd23d5c7471438e6a0dd26d5d5",
-    "project/had/split-isolation-station-development.md": "fecda8b22e708e9e89de61908c1beb7b683ea21f",
-    "project/ccr/studies/roof-pitch-27deg-field-section.svg": "9db5d0c9b0d27692ce128644a04af567019be04a"
+    "project/had/split-isolation-station-development.md": "fd459d7ad54688df63477c506a40c3acfc143446",
+    "project/ccr/studies/roof-pitch-27deg-field-section.svg": "9db5d0c9b0d27692ce128644a04af567019be04a",
+    "project/str/finite-floor-contour-development.md": "0944a0b6251637ef2cb19fb0e95f7667fd0fd6fc",
+    "project/str/studies/finite_floor_contour.py": "e8e14c33d1f0b5993d47f5a408ee56882afa5f06",
+    "project/str/studies/finite_floor_contour_run.py": "c855ea34249d6fba485065ac6f2f1fd898e04c24",
+    "project/str/studies/finite_floor_contour_compare.py": "9bebbf55be7d639b1ce065bbf035c8e781fa2ba1",
+    "compiler/reference-house/current-design/structural-finite-floor-contour.ts": "f6facbabaa4479fcf244f0312710cc1870dfb8f5",
+    "project/str/studies/finite-floor-contour-inputs.json": "bdb14c00cb2284b1ed239c03ee200d4df1227e34",
+    "project/str/studies/finite-floor-contour-captures/contour140.json": "7e06788fd1cfa03b501a9806ef495baadd243701",
+    "project/str/studies/finite-floor-contour-captures/contour70.json": "ef209beef72cbfa548546875dab6fd0af5f87814",
+    "project/str/studies/finite-floor-contour-captures/contour35.json": "1064b1d7a02be29b54656cb0fb711650810e6b42",
+    "project/str/studies/finite-floor-contour-captures/contour-comparison.json": "5d4da8958eebd9e687a7dc568c704f53f51dc933",
+    "project/had/studies/plant-release-profiles.d.mts": "a8f76cd9f2d0c87edb48308c121d191f19c15481",
+    "compiler/reference-house/current-design/inlet-split-plant-branch.ts": "fcb5ffe5a4c362af5ccd12785adcfaee4668383a",
+    "project/had/studies/plant-release-route.mjs": "b84fcfafc0456eee29593bdf0b5c8076a0878368",
+    "project/had/studies/inlet-split-plant-branch-candidate.json": "6afb0bbc4f5e063e16d6ff7b040ae46a129c41f6",
+    "project/had/studies/plant-release-profiles.mjs": "6c140a8bb44a2ca8e36e6fd4f87303ddf2779e6a",
+    "project/had/studies/inlet-split-plant-branch.svg": "5c10e078e7c7a017794d94200c83483c72fafed1"
   }
 }

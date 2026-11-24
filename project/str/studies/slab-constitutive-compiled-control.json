@@ -1,20 +1,20 @@
 {
   "schema": "str-slab-constitutive-shared-compile-control/1",
-  "inputSHA256": "fcffc9f018df118d206a5c143b3f1bc9545064c602a7bf15d3528c1aa5b3acd7",
-  "fullCompiledBundleSHA256": "3c408587181432f4b4fbc12ac6ce8a8599deb54d19d391be3a73dd40ead1e469",
-  "archiveSHA256": "9828acb39aeafc7053477b83b232b60b0f4d24ea9ae4a71485ef7b780e7d595d",
+  "inputSHA256": "e7d013c160cfb8654a039ec1995cb41c787f8be42c2b10e0ef196cbf11c040d5",
+  "fullCompiledBundleSHA256": "a9c8bf4ca3ff429c793ed2cca8835707bc6cbef0a7445aeee76962aa49ae83a3",
+  "archiveSHA256": "fcd64c7ea4d5f46f8625351def1579be9efb7b8507b3c6efb06b433022b7c34d",
   "comparisonOwner": "project/str/studies/floor-section-proof.json",
   "comparisonOwnerSHA256": "8b2b789df42882c4ee7ad0459532010d65f0f4566cdb7cd8b206ca07ce671184",
   "comparisonCaseId": "wet-aligned-quadrature8",
   "nativeHeadCount": 52,
-  "maxNativeHeadComponentDeltaFromOwningControlKN_KNm": 0.0,
+  "maxNativeHeadComponentDeltaFromOwningControlKN_KNm": 0,
   "nativeBalanceKN_KNm": [
-    -6.710166644552373e-09,
-    -1.4925092273188056e-09,
+    -6.710166644552373e-9,
+    -1.4925092273188056e-9,
     -9.00399754755199e-10,
-    -6.4559280872344974e-09,
-    -1.163780689239502e-08,
-    6.14066666457802e-08
+    -6.4559280872344974e-9,
+    -1.163780689239502e-8,
+    6.14066666457802e-8
   ],
   "slabSolidCompatibility": {
     "status": "common-modulus-ruled-out",
@@ -33,7 +33,7 @@
     "diagnostics": [
       "SLAB_SOLID_LAW/common-positive-modulus-impossible"
     ],
-    "scope": "Necessary bound D11/A11 \u2264 h\u00b2/4 for a common positive local through-thickness modulus. Separate positive native operators may remain valid numerical comparisons; no equivalent solid, strength or global stability qualification follows."
+    "scope": "Necessary bound D11/A11 ≤ h²/4 for a common positive local through-thickness modulus. Separate positive native operators may remain valid numerical comparisons; no equivalent solid, strength or global stability qualification follows."
   },
   "executedFloorMethod": {
     "id": "str-current-floor-section/1",
@@ -97,7 +97,7 @@
       "project/str/studies/seated_wet_support.py": "f2dca4fc0895dfa7e3841728bcec7386a4630472",
       "project/str/studies/finite_mapped_frame.py": "55fdd236f6c8c303f0d1d916340b0555ead7c40f",
       "project/str/studies/grid_origin_recovery.py": "c09369bc1acbaaa9438545fb12e0a4e15f1a90b7",
-      "compiler/reference-house/current-design/structural-floor-section.ts": "bb495f7bbcd31e7a24f28d3cea857a51b114700c",
+      "compiler/reference-house/current-design/structural-floor-section.ts": "528cd2c4538f761d23ed6542cee98e6bc886df56",
       "compiler/reference-house/current-design/structural-floor-cuts.ts": "1485f67dd29c197b36a56f0577f71106723d435e",
       "compiler/reference-house/current-design/structural-floor-transverse.ts": "675581c823ece0f212927f2abce8cea4bcda118a",
       "compiler/reference-house/current-design/structural-slab-constitutive.ts": "3719c065d8ebf6c7f187ad2d843706c09d54986a",
@@ -127,5 +127,10 @@
     "caseDigest": "6001da12f16ebe38104116b1b276387e2ac6e0c008e8d4d3d2bb2ddfa172e27e"
   },
   "physicalAcceptance": false,
-  "scope": "Actual shared saved-stage CLI compile. All52 reaction vectors exactly equal retained owning control; new constitutive metadata does not change native laws or qualify a joint/house."
+  "scope": "Actual shared saved-stage CLI compile. All52 reaction vectors exactly equal retained owning control; new constitutive metadata does not change native laws or qualify a joint/house.",
+  "regeneration": {
+    "context": "Fresh shared engineering bindings; exact prior authored stage controls. The outgoing edge of this overwritten receipt was explicitly invalidated only during isolated production; all source edges must be restored and audited before publication.",
+    "ordinaryNativeResponseChanged": false,
+    "absentContourComponent": null
+  }
 }
