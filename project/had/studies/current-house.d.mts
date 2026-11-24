@@ -2,6 +2,8 @@
 interface OccupiedHouse {
   readonly inputs: Readonly<Record<string, string>>
   readonly model: {
+    readonly stair: readonly [number, number, number, number]
+    readonly sections: { readonly groundFFL: number; readonly firstFFL: number }
     readonly studyDoorOperation: {
       readonly rough: readonly [number, number]
       readonly hinge: readonly [number, number]

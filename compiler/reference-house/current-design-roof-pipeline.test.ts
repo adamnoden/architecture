@@ -25,8 +25,12 @@ test('saved roof pitch recomputes native geometry, slate stock and drawing while
     && changed.evidence.invalidated.includes('STR roof actions and stiffness'))
   assert.deepEqual(after.plans, before.plans)
   assert.deepEqual(after.selectedWaterEvent, before.selectedWaterEvent)
-  assert.equal(before.manifest.find(row => row.stage === 'selectedWaterEvent')?.applicability, undefined)
+  // The bounded event above remains unchanged. Its use for the nominal house
+  // still requires correspondence with the selected HAD stair source.
+  assert.equal(before.manifest.find(row => row.stage === 'selectedWaterEvent')?.applicability?.state, 'withheld-for-source-correspondence')
+  assert.equal(before.manifest.find(row => row.stage === 'selectedWaterEvent')?.applicability?.controllingStage, 'stairCorrespondence')
   assert.equal(after.manifest.find(row => row.stage === 'selectedWaterEvent')?.applicability?.state, 'withheld-for-stage-change')
+  assert.ok(after.manifest.find(row => row.stage === 'selectedWaterEvent')?.applicability?.additionalControllingStages?.includes('stairCorrespondence'))
   assert.ok(after.manifest.find(row => row.stage === 'selectedWaterEvent')?.dependsOn.includes('roofPitch'))
   assert.equal(changed.schedule.planCatchmentM2, baseline.schedule.planCatchmentM2)
   assert.notEqual(after.documentIdentity.digest, before.documentIdentity.digest)

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
 <title id="title">Study thin lining and retained mineral return</title>
-<metadata>Current IAS room case: d8d40556e1db87c77913b5ccace33420bc3c4722e35e8f562dd44dba53796d80; source binding: 384837dd37a4ca46629d67068e5fd3352301f8e4172911513cabcb54f5e1fb1c; transition: 690cd655347e8f8e253e33073eb69884b8b4739075edc0f57ce2d298044d3452</metadata>
+<metadata>Current IAS room case: f08f0073fc6ec7d59ef4d3e59c0bb5564dc19efac62fc95ddfbcdc80233909f3; source binding: 06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a; transition: 690cd655347e8f8e253e33073eb69884b8b4739075edc0f57ce2d298044d3452</metadata>
 <desc id="desc">Dimensioned trial sections of a structural rail anchored to the wall core, a sealed air-control penetration, and a fixed lap into the retained lime window return.</desc>
 <defs>
   <pattern id="core" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#e2ded1"/><path d="M0 14L14 0M-4 4L4 -4M10 18L18 10" fill="none" stroke="#c6bcaa" stroke-width="1"/></pattern>

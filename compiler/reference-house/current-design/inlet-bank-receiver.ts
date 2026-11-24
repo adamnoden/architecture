@@ -8,7 +8,7 @@ export type InletBankReceiverSettings={clampWidthMm:number;clampHeightMm:number;
 type Inputs={routes:ReturnType<typeof inletIndoorRoutes>;cuts:ReturnType<typeof inletEntrySideCuts>;wallCoreYMm:readonly[number,number];settings:InletBankReceiverSettings}
 const gap=(a:Box,b:Box)=>{const d=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return d.some(v=>v>0)?Math.hypot(...d.map(v=>Math.max(0,v))):Math.max(...d)}
 const minimum=<T extends {reserveMm:number}>(rows:T[])=>rows.reduce((a,b)=>b.reserveMm<a.reserveMm?b:a)
-const segments=(p:readonly Point[])=>p.slice(1).map((b,k)=>({a:p[k],b}))
+const segments=(p:readonly Point[])=>p.slice(1).map((b,k)=>({a:p[k],b,index:k}))
 const cross=(a:readonly number[],b:readonly number[])=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]
 const wrench=(p:readonly number[],f:readonly number[],origin:readonly number[]= [0,0,0])=>[...f,...cross(p.map((v,k)=>(v-origin[k])/1000),f)]
 const sum=(rows:readonly number[][])=>rows.reduce((a,b)=>a.map((v,k)=>v+b[k]),[0,0,0,0,0,0])
@@ -31,7 +31,7 @@ export function inletBankReceiver(i:Inputs){
     tool:Box=[centre[0]-half[0]-s.toolAxialMm/2,centre[1]-half[1]-s.toolSouthStrokeMm,centre[2]-s.toolAxialMm/2,
      2*half[0]+s.toolAxialMm,2*half[1]+s.toolSouthStrokeMm+s.toolAxialMm/2,s.toolAxialMm],
     obstacles=[{id:'receiver-cover',box:cover},{id:'declared-tool-sweep',box:tool}].flatMap(part=>r.checkedObstacles.map(o=>({part:part.id,obstacle:o.id,reserveMm:gap(part.box,o.boxMm)-setting}))),
-    otherPipes=r.paths.filter(p=>!p.id.startsWith(v.branch+'/')).flatMap(p=>segments(p.pointsMm).flatMap(seg=>[{id:'cover',box:cover},{id:'tool',box:tool}].map(part=>({part:part.id,path:p.id,reserveMm:segmentBoxDistance(seg.a,seg.b,part.box)-jacketR-2*setting})))),
+    otherPipes=r.paths.flatMap(p=>segments(p.pointsMm).filter(seg=>!(p.id.startsWith(v.branch+'/')&&((p.id.endsWith('/upstream')&&seg.index===p.pointsMm.length-2)||(p.id.endsWith('/downstream')&&seg.index===0)))).flatMap(seg=>[{id:'cover',box:cover},{id:'tool',box:tool}].map(part=>({part:part.id,path:p.id,reserveMm:segmentBoxDistance(seg.a,seg.b,part.box)-jacketR-2*setting})))),
     arms=c.valves.flatMap(valve=>valve.grips.map(g=>segmentBoxDistance(c.ordinaryOperator.shoulderMm,g.pointMm,cover)-c.ordinaryOperator.armRadiusMm-setting)),
     minCover=minimum(obstacles.filter(o=>o.part==='receiver-cover')),
     minPlannedTool=minimum(obstacles.filter(o=>o.part==='declared-tool-sweep'&&o.obstacle!=='complete-shifted-utility-maintenance')),

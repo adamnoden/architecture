@@ -25,8 +25,10 @@ test('explicit saved bank edit shares compiler output, preserves roof/source con
  assert.deepEqual(after.roof,before.roof)
  assert.notEqual(after.inletBank!.carrier.rows[0].cases[0].sourceForceN,before.inletBank!.carrier.rows[0].cases[0].sourceForceN)
  assert.deepEqual(after.inletBank!.carrier.candidate,before.inletBank!.carrier.candidate)
- const cli=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--bundle','-'],{input:saveEngineeringEdit(changed.state),encoding:'utf8'}))
+ const cli=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--bundle','-'],{input:saveEngineeringEdit(changed.state),encoding:'utf8',maxBuffer:8*1024*1024}))
  assert.deepEqual(cli.engineering.inletSourceEnvelope.joinedDirection.room.bankShelfCarrier,after.inletBank!.carrier)
+ assert.deepEqual(cli.engineering.inletSourceEnvelope.joinedDirection.room.indoorRoutes.candidateComparison,JSON.parse(JSON.stringify(after.inletBank!.route.candidateComparison)))
+ assert.deepEqual(cli.engineering.inletSourceEnvelope.joinedDirection.room.indoorRoutes.splitStationComparison,JSON.parse(JSON.stringify(after.inletBank!.route.splitStationComparison)))
  assert.equal(after.inletBank!.receiver.nativeStructuralActionsAdopted,false)
  const undo=replayEngineeringEdit(changed.state,engineeringBase(changed.state),'undo')
  assert.equal(undo.status,'applied');if(undo.status==='applied')assert.equal(saveEngineeringEdit(undo.state),saveEngineeringEdit(state))
@@ -52,6 +54,8 @@ test('longer tails cannot rescue the shelf by silently colliding the actual fitt
  assert.ok(longer.joinedDirection.diagnostics.includes('INLET_BANK_FLAT_SHELF_CARRIER_REJECTED'))
  const stale={...resolved,disciplineBindings:resolved.disciplineBindings.map(f=>f.id==='had-fixed-inlet-arrangement'?{...f,identities:{...f.identities,'project/had/studies/inlet-bank-shelf-candidate.json':'0'.repeat(40)}}:f)}
  assert.throws(()=>runInletSourceEnvelopeCase(stale,request.sourceEnvelope),/Stale or missing.*inlet-bank-shelf-candidate/)
+ const staleRoute={...resolved,disciplineBindings:resolved.disciplineBindings.map(f=>f.id==='had-fixed-inlet-arrangement'?{...f,identities:{...f.identities,'project/had/studies/inlet-route-candidate.json':'0'.repeat(40)}}:f)}
+ assert.throws(()=>runInletSourceEnvelopeCase(staleRoute,request.sourceEnvelope),/Stale or missing.*inlet-route-candidate/)
  assert.throws(()=>runInletSourceEnvelopeCase(resolved,{...request.sourceEnvelope,settings:{...request.sourceEnvelope.settings,derivedShelfCarrier:{selected:true}}}),/Complete authored/)
 })
 

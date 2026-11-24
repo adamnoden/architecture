@@ -1,0 +1,53 @@
+{
+  "schema": "ovids-house/str-isotropic-solid-end-compliance-comparison/1",
+  "sourceIdentities": {
+    "inputSHA256": "09a1c662b6df292cc6a4be5e110e4fee243174e739ca700493039e5f5e79da46",
+    "sourceAuditSHA256": "d06538867c28ff8655a0fce0013d53ed17e3f725e92618a1f024f2044ae74a8f",
+    "methodSHA256": {
+      "finite_joint_solid_run.py": "282cbef4a35b6d85a7fb192c329a9f7f27343348e005b58c0e2d71753c2e2452",
+      "finite_joint_solid.py": "90c83178fda7eaa198d373b3279471d02d32a103ca40b4b50827dbcb308caf46"
+    },
+    "runtime": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "scikit-fem": "12.0.2"
+    }
+  },
+  "captureSHA256": {
+    "finite-joint-solid-140.json": "021a13d1fbb3d2cb68072ca448926870ee3fa54120f34c5c67639995fa6fda33",
+    "finite-joint-solid-70.json": "757c872647ae970507549f781c622c8376f58a6ed981efbed8117ac23d02396b",
+    "finite-joint-solid-35.json": "e54c96e65c74f240ba003d19e859316d61c8aca846fba5fb44333b1408a4372d"
+  },
+  "processingMethodSHA256": "dad16a3b62b02371947b1480b2050ba584df355dcd7943272d878c70b375cbeb",
+  "comparisons": [
+    {
+      "fromPitchMm": 140.0,
+      "toPitchMm": 70.0,
+      "relativeEnergyChangeEigenvalues": [
+        0.0011516581853863173,
+        0.004098827763557855,
+        0.01248499394448288,
+        0.0166926035583419,
+        0.02019026920701772,
+        0.08932875684945674
+      ],
+      "maxAbsoluteRelativeEnergyChange": 0.08932875684945674
+    },
+    {
+      "fromPitchMm": 70.0,
+      "toPitchMm": 35.0,
+      "relativeEnergyChangeEigenvalues": [
+        0.0005312086723983089,
+        0.0014101998107709512,
+        0.003964722363165141,
+        0.005954459233155518,
+        0.006700626534445142,
+        0.034016348022970266
+      ],
+      "maxAbsoluteRelativeEnergyChange": 0.034016348022970266
+    }
+  ],
+  "nativeFloorAdmission": false,
+  "scope": "End-compliance energy sensitivity only; no floor-interface/global/strength qualification"
+}

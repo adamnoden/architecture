@@ -215,6 +215,9 @@ def main():
         ready(page,0)
         expect(page.locator('#inlet-result')).to_contain_text('Finite route/operation/clamp envelope: REJECTED')
         initial_bank=page.locator('#current-inlet-bank').get_attribute('src')
+        expect(page.locator('#inlet-candidate-result')).to_contain_text('Explicit unadopted route: REJECTED')
+        initial_candidate=page.locator('#current-inlet-candidate').get_attribute('src')
+        assert initial_candidate and 'complete' in page.locator('#current-inlet-candidate').get_attribute('alt')
         expect(page.locator('#inlet-result')).to_contain_text('remain unqualified')
         page.locator('#inlet-field').select_option('indoorTailOffsetMm')
         expect(page.locator('#inlet-value')).to_have_value('250')
@@ -222,6 +225,8 @@ def main():
         ready(page,1)
         expect(page.locator('#inlet-result')).to_contain_text('REJECTED')
         assert page.locator('#current-inlet-bank').get_attribute('src')!=initial_bank
+        expect(page.locator('#inlet-candidate-result')).to_contain_text('unavailable for the edited connections')
+        assert page.locator('#current-inlet-candidate').get_attribute('src') is None
         with page.expect_download() as download:
             page.get_by_role('button',name='Export JSON').click()
         changed_bank=json.loads(Path(download.value.path()).read_text())
@@ -235,6 +240,7 @@ def main():
         page.get_by_role('button',name='Undo',exact=True).click();ready(page,2)
         expect(page.locator('#inlet-value')).to_have_value('250')
         assert page.locator('#current-inlet-bank').get_attribute('src')==initial_bank
+        assert page.locator('#current-inlet-candidate').get_attribute('src')==initial_candidate
         page.locator('#inlet-field').select_option('pipeJacketDensityComparisonKgM3')
         page.locator('#inlet-value').fill('4000');page.locator('#inlet-value').press('Enter')
         ready(page,3)
@@ -252,12 +258,14 @@ def main():
         expect(page.locator('#inlet-result')).to_contain_text('Jacket reference 45.132 kg')
         # Import the actual current wet request. No default structural stage is
         # silently created, and edits use the same HTTP compiler as the CLI.
+        print('Starting actual wet-cage and pad-width native replay',flush=True)
         cage_document={**saved,'stages':current_wet_stages()}
         with page.expect_file_chooser() as chooser:
             page.get_by_role('button', name='Import JSON').click()
         chooser.value.set_files({'name':'wet-cage.json','mimeType':'application/json','buffer':json.dumps(cage_document).encode()})
         expect(page.locator('#wet-cage-controls')).to_be_visible(timeout=240000)
         ready(page,0,240000)
+        print('PASS actual wet-cage baseline compile',flush=True)
         expect(page.locator('#lighting-controls')).to_be_hidden()
         expect(page.locator('#lighting-views')).to_be_hidden()
         expect(page.locator('#inlet-bank-controls')).to_be_hidden()
@@ -265,6 +273,7 @@ def main():
         raise_control=page.get_by_label('Graded post-link raise (mm)')
         expect(raise_control).to_have_value('0')
         expect(page.locator('#floor-result')).to_contain_text('52 foundation heads')
+        expect(page.locator('#floor-result')).to_contain_text('authored slab laws cannot describe one common positive 3D modulus')
         runtime=json.loads(subprocess.run(['node','--import','tsx','--input-type=module','-e',
             'import {readFourLNumericalRuntime} from "./compiler/reference-house/current-design/structural-four-l-joint-adapter.ts";console.log(JSON.stringify(readFourLNumericalRuntime()));'],text=True,capture_output=True,check=True).stdout)
         joint_proof=json.loads(Path('project/str/studies/four-l-joint-proof.json').read_text())
@@ -277,6 +286,7 @@ def main():
         expect(page.locator('#cage-result')).to_contain_text('0 cover failures')
         raise_control.fill('10');raise_control.press('Enter')
         ready(page,1,240000)
+        print('PASS actual graded cage raise compile',flush=True)
         expect(page.locator('#cage-result')).to_contain_text('Graded raise 10 mm')
         expect(page.locator('#cage-result')).to_contain_text('0 cover failures')
         expect(page.locator('#cage-result')).to_contain_text('post-head resistance and installed acceptance remain unqualified')
@@ -285,15 +295,43 @@ def main():
         raised=json.loads(Path(download.value.path()).read_text())
         assert raised['stages']['floorSection']['cageComparison']=={**cage_document['stages']['floorSection']['cageComparison'],'postTopLevelRaiseMm':10}
         assert raised['stages']['floorSection']['wetSupport']==cage_document['stages']['floorSection']['wetSupport']
-        page.get_by_role('button',name='Undo',exact=True).click()
+        width_control=page.get_by_label('Bearing pad width (mm)')
+        expect(width_control).to_have_value('220')
+        width_control.fill('140');width_control.press('Enter')
         ready(page,2,240000)
+        print('PASS actual narrower-pad compile',flush=True)
+        expect(page.locator('#floor-result')).to_contain_text('Nominal post-head fan computed')
+        expect(page.locator('#floor-result')).to_contain_text('finite nodes, anchorage and tolerance remain unqualified')
+        with page.expect_download() as download:
+            page.get_by_role('button',name='Export JSON').click()
+        narrowed=json.loads(Path(download.value.path()).read_text())
+        expected={**raised['stages']['floorSection'],'wetSupport':{**raised['stages']['floorSection']['wetSupport'],'padWidthMm':140}}
+        assert narrowed['stages']=={**raised['stages'],'floorSection':expected}
+        cli_narrowed=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(narrowed),text=True,capture_output=True,check=True).stdout)['engineering']['floorSection']
+        assert cli_narrowed['wetPostHeadFan']['status']=='computed-nominal-demand'
+        assert cli_narrowed['wetPostHeadFan']['resistanceAccepted'] is False
+        assert cli_narrowed['wetPostHeadFan']['toleranceDomainAccepted'] is False
+        compatibility=cli_narrowed['slabSolidCompatibility']
+        assert compatibility['status']=='common-modulus-ruled-out'
+        assert abs(compatibility['ratioToNecessaryBound']-2.333441840277778)<1e-12
+        assert compatibility['commonSolidMaterialQualified'] is False
+        assert len(cli_narrowed['native']['heads'])==52
+        print('PASS browser-exported narrower-pad CLI replay',flush=True)
+        page.get_by_role('button',name='Undo',exact=True).click()
+        ready(page,3,240000)
+        print('PASS actual pad-width undo compile',flush=True)
+        expect(width_control).to_have_value('220')
+        expect(page.locator('#floor-result')).to_contain_text('This nominal post-head fan does not support the current input')
+        page.get_by_role('button',name='Undo',exact=True).click()
+        ready(page,4,240000)
+        print('PASS actual cage-raise undo compile',flush=True)
         expect(raise_control).to_have_value('0')
         assert page.locator('#cage-result').inner_text()==initial_cage
         if args.screenshot:
             page.screenshot(path=args.screenshot, full_page=True)
         assert not errors, errors
         browser.close()
-        print('PASS engineering document authoring, CLI export, explicit Study and inlet bank changes/undo/adverse/stale reply and actual wet-cage level change/undo')
+        print('PASS engineering document authoring, CLI export, explicit Study/inlet changes and actual wet-cage level/pad-width changes and undo')
 
 
 if __name__ == '__main__':

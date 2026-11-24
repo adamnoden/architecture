@@ -43,7 +43,9 @@ The court is an inhabited external room, not merely a drainage aperture. Read it
 
 The accepted south Utility opening is **X9700–10700**. The structural rewind and current inlet host use **X9400–10400**. The light pipes fit the accepted aperture, but restoring its jambs also changes the corner toe, receiver lever and wind proof. Preserve the accepted uniform window grid as the architectural constraint; neither a convenient support nor a good local pipe fit chooses a new facade. [Owning corner disposition](../str/whole-house-corner-rewind.md) · [shared interface](../triad-interface-contract.md).
 
-The **3450 mm first-floor finish and 3170–3370 mm structural slab are compatible layer datums**, not competing floor heights. The real unresolved change is the proposed ground rise and its consequences for supports, approaches, occupied services and roof interfaces. No composite resolved-house image adopts the +715 ground trial while retaining untransformed source-ground details. The drawings above remain the architectural reference while those actual changes are coordinated.
+The **3450 mm first-floor finish and 3170–3370 mm structural slab are compatible layer datums**, not competing floor heights. The proposed ground rise has unresolved consequences for supports, approaches, occupied services and roof interfaces. No composite resolved-house image adopts the +715 ground trial while retaining untransformed source-ground details. The drawings above remain the architectural reference while those actual changes are coordinated.
+
+The stairs also describe two actual plan sources. The nominal revision places its 2400 ×4335 mm stair at X417.5/Y3832.5; the selected HAD development and structural aperture use X417.5/Y4432.5, **600 mm farther north**. That shift originated in the [solid-wall joined replan](../str/house-plan-study.md), then entered the selected HAD development; it was never adopted into the nominal drawing family. Both sources retain local finished floors 0/+3450 mm, so a vertical datum translation cannot reconcile the plan difference. The shared compiler now reports this disagreement and withholds cross-source exact-plan applicability while retaining both source comparisons. TRIAD-GATE and the existing owner design-review gate must reconcile the actual stair, supports, finished clearances and room consequences before one house is selected.
 
 The [named floor-to-corner comparison](../str/floor-interface-result.md) now distinguishes simultaneous six-component interface actions from a complete joint free body. It joins the actual plate and membrane actions at each named collector, with physical origins and work checks. It does not supply the missing upper/lower member actions, finite concrete transfer, reinforcement or a converged local demand. The next structural selection must resolve those actual interfaces rather than treating a raw corner sample as a whole-floor thickness instruction.
 
@@ -51,7 +53,17 @@ The [indoor isolation view](../had/studies/inlet-indoor-cuts.svg) and [four cold
 
 The [wet-beam normal-bearing comparison](../str/wet-bearing-refinement-development.md) now passes the declared32→64 quadrature check for both tested wet-support material weights. The16→32 adverse failure remains recorded. This resolves numerical contact integration for those cases; pad material, post-head resistance, a complete signed envelope and floor/corner convergence remain unqualified. It selects no slab thickness, plinth or house revision.
 
+The [editable narrower-pad and nominal post-head fan](../str/wet-post-head-fan-development.md) compares the actual 140 mm pad with the retained 220 mm reference through the same saved document, native floor and cage. Lower north-head eccentricity costs higher south pressure, greater beam movement and redistributed foundation actions. The nominal fan conserves actual force and moments, but its finite nodes, anchorage and placement remain unqualified. Neither width is selected by this comparison; the stair-midlanding/post join also remains unresolved.
+
 The [four L-corner demand recovery](../str/four-l-joint-recovery-development.md) now joins eight actual physical member ends into four balanced rigid-joint free bodies for one verified request. The complete ordinary native result remains byte-for-byte unchanged. Joint concrete weight is already in the plate, so no extra joint load is added. Changed or unverified requests and numerical runtimes retain explicit unavailable joint diagnostics while the ordinary floor remains computed; finite-joint behaviour, resistance and a complete signed load envelope remain unresolved.
+
+The subsequent [fixed-normal structural experiment](../str/fixed-normal-experiment.md)
+holds the actual support fibres and body gravity fixed and still fails the same
+cut screen:32.72166% twisting change. Normal-support co-refinement is therefore
+not the controlling explanation. The [finite L development](../str/finite-joint-solid-development.md)
+has checked geometry, energy and gravity but has no connected floor interface
+or resistance proof. Its distinct constitutive comparison selects neither slab
+thickness nor a different current house.
 
 ## The interior should earn its place on beauty
 

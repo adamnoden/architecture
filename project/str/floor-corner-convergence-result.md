@@ -21,6 +21,22 @@ refinement changes the head response by2.795102kN and reproduces the large cut
 changes. Neither meets the complete declared screen. Those are mesh-pitch edits,
 not slab-thickness selections.
 
+The [executed fixed-normal control](fixed-normal-experiment.md),23 November,
+now holds all19,216 literal native normal fibres, common wet-beam stations and
+the complete direct body-G ledger fixed. Its500→250 comparison still fails the
+unchanged screens: maximum head change2.788467kN and signed twisting change
+32.72166%. The common-station500 unchanged control passes. This rules out
+normal-support co-refinement as the controlling explanation; it does not isolate
+a plate-kernel defect or validate the rigid-tip physical idealisation.
+
+The [finite L development](finite-joint-solid-development.md) uses a separate,
+source-bound3D elastic component with checked energy, rigid modes and consistent
+gravity. Its wall-end compliance does not yet include distributed floor ports.
+The independently authored native membrane and bending laws cannot be reproduced
+by one common positive through-thickness elastic modulus; substitution must
+therefore declare its constitutive change. No global replacement, joint capacity
+or slab selection follows from this experiment.
+
 The shared compiler now recovers MITC4 transverse shear from the exact native
 assumed-shear field and integrates it on the same physical cuts. Bending plus
 shear energy is checked against the actual native plate energy. This supplies

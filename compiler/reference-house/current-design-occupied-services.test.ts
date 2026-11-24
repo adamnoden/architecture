@@ -23,7 +23,12 @@ test('the explicit current schedule uses the actual HAD compositor and all seven
   const result = await prepareCurrentDesignCompile(input).occupiedServices()
   assert.equal(result.schedule, expectedSchedule)
   assert.equal(result.bindingDigest, had.digest)
-  assert.deepEqual(result.source, had.applicability)
+  const { scope, ...requestSource } = result.source
+  const { scope: boundRequestScope, ...boundRequestSource } = had.applicability
+  assert.deepEqual(requestSource, boundRequestSource)
+  assert.notEqual(scope, boundRequestScope, 'Source binding must not masquerade as exact nominal-plan correspondence')
+  assert.equal(result.applicability.nominalPlanApplicability.state, 'withheld-for-source-correspondence')
+  assert.deepEqual(result.stairCorrespondence.deltaXYWHMm, [0, 600, 0, 0])
   const schedule = JSON.parse(result.schedule)
   assert.equal(Object.keys(schedule.sources).length, 17)
   assert.deepEqual(schedule.sources, had.inputReceiptIdentities)
