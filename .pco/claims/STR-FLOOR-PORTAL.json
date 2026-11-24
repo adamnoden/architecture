@@ -9,8 +9,8 @@
     "label": "convergence-20261124"
   },
   "claimedAt": "2026-11-24T09:32:25.409Z",
-  "heartbeatAt": "2026-11-24T09:52:03.372Z",
-  "expiresAt": "2026-11-24T10:37:03.372Z",
+  "heartbeatAt": "2026-11-24T10:28:28.604Z",
+  "expiresAt": "2026-11-24T11:13:28.604Z",
   "branch": "work/convergence-recovery-20261124",
   "predecessor": {
     "leaseId": "7cccf040-5554-4999-94fd-50b6bce6c599",
@@ -34,7 +34,7 @@
   },
   "pr": 1624,
   "checkpoint": {
-    "evidence": "PR1624 d694ae3 fresh full CI pending;26 focused recovered controls pass. Continuation00ca6288 remotely checkpoints own-fitting correction and exact occupied programme. Distributed contour112port prototype analytical controls pass but140/70/35 all-mode sensitivity fails; shared-stage integration under review.",
-    "next": "Finish exact-head recovery CI/preflights and merge; integrate finite contour through actual saved floor comparison and owning binding, never historical current-reader fallback"
+    "evidence": "Combined continuation f6581ce736be79ddd337eccbe1effc3d77f19963 remote verified48file tree41a447db. Saved-stage52heads EXACT unchanged delta0; native control archive genuinely regenerated. Sourceaudit0,25featurechecks+3realPythonadapter PASS. Recovery1624 CI pending; graded nested nearfield3.6957percent separate work in final sharedmode.",
+    "next": "Merge recovery exacthead afterCI and freshpreflights, then submit combined current-source continuation with STR/HAD/IAS leases; finish graded far/slab qualification"
   }
 }
