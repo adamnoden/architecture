@@ -15,14 +15,16 @@ const gap=(path,box,radius)=>dist(path,(a,b)=>exactSegmentBoxDistance(a,b,box),r
 const boxGap=(a,b)=>Math.hypot(...[0,1,2].map(i=>Math.max(a[i]-b[i]-b[i+3],b[i]-a[i]-a[i+3],0)))-settingMM;
 const pair=(a,b,radius)=>pathSeparation(a.path,b.path)-radius-a.hausdorffError-b.hausdorffError-settingMM;
 
-export function deriveUtilityWideCapture(){
+export function deriveUtilityWideCapture(options={}){
+  if(!options||Array.isArray(options)||typeof options!=='object'||Object.keys(options).some(key=>key!=='hotRiserXMm')
+    ||(Object.hasOwn(options,'hotRiserXMm')&&(!Number.isFinite(options.hotRiserXMm)||options.hotRiserXMm<=0)))throw new Error('Unsupported Utility hot-riser comparison');
   const {model}=deriveCurrentHouse();
   const input=read('./incoming-water.json');
   const predecessor=read('./utility-cutover-lift.json');
   const host=read('../../ias/studies/utility-host-revised-route.json');
   const frame=Object.fromEntries(Object.entries(host.geometry.frame).map(([id,box])=>[id,[box[0]-10,...box.slice(1)]]));
   const virtualHost={...host,geometry:{...host.geometry,frame}};
-  const x=10840,y=1345;
+  const x=options.hotRiserXMm??10840,y=1345;
   const hotIsolation={...utilityH0,axis:[x,y,1500],wheel:[x,y+95,1500],bodyBox:[x-37,y-37,1417.5,74,147,165]};
   const coldPath=input.utility.vertices.cold;
   const hotPath=input.utility.vertices.hot.map((p,i)=>i<2?p:i===2?[x,p[1],p[2]]:[x,y,p[2]]);
@@ -87,7 +89,8 @@ export function deriveUtilityWideCapture(){
   const sways=operations.hotIsolation.fixedObjectClearances.flatMap(row=>[row.handMM,row.armMM]);
   const coldCapClearance=exactSegmentBoxDistance(operations.hotIsolation.shoulder,hotHand,fixed.coldCap)-40-settingMM;
   return {
-    disposition:'PREFER_WIDER_RESERVATION_FOR_JOINED_DETAIL',
+    ...(Object.hasOwn(options,'hotRiserXMm')?{experimentalAuthoredChoices:{hotRiserXMm:x,selected:false,completeOccupiedArrangementQualified:false}}:{}),
+    disposition:Object.hasOwn(options,'hotRiserXMm')?'EXPERIMENTAL_HOT_RISER_COMPARISON_UNSELECTED':'PREFER_WIDER_RESERVATION_FOR_JOINED_DETAIL',
     candidate:'620 mm complete captured head with a dedicated hot riser turn and 10 mm bench shift west',
     package:head, bareTop:[10925,740,600,600],moves,stages,workClear,staticClear,
     hot:{body:fixed.H0,cap:fixed.hotCap,backbone:hotPath,terminal:hotVertices,

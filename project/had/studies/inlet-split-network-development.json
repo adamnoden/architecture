@@ -1,0 +1,11 @@
+{
+  "schema": "had-split-network-development/1",
+  "expectedUtilityBankMm": [11360,2350,1270],
+  "cases": [
+    {"id":"east-below-fan","descentXMm":11515,"descentYMm":2178,"highRouteZMm":2200,"hotRiserXMm":10840},
+    {"id":"whole-hot-two-east","descentXMm":11515,"descentYMm":2178,"highRouteZMm":2200,"hotRiserXMm":10842},
+    {"id":"whole-hot-ten-east-adverse","descentXMm":11515,"descentYMm":2178,"highRouteZMm":2200,"hotRiserXMm":10850},
+    {"id":"west-riser-maintenance-adverse","descentXMm":11020,"descentYMm":2210,"highRouteZMm":2200,"hotRiserXMm":10840},
+    {"id":"east-high-fan-adverse","descentXMm":11515,"descentYMm":2178,"highRouteZMm":2700,"hotRiserXMm":10840}
+  ]
+}
