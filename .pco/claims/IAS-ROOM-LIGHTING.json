@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
   "generation": 7,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "4acc9812-8706-4c41-8b01-7591686083e2",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-lighting-20261124"
   },
   "claimedAt": "2026-11-24T09:46:24.998Z",
-  "heartbeatAt": "2026-11-24T10:12:45.690Z",
-  "expiresAt": "2026-11-24T10:57:45.690Z",
+  "heartbeatAt": "2026-11-24T10:13:28.743Z",
+  "expiresAt": "2026-11-24T10:13:28.743Z",
   "branch": "work/convergence-lighting-20261124",
   "predecessor": {
     "leaseId": "f28e7c3c-9429-4aaa-bd48-dc5a620970d8",
@@ -35,5 +35,7 @@
   "checkpoint": {
     "evidence": "Verified remote fb9b177e473f677cda41e0a31584d04789a82f23 tree c045b51ed72c5306a8e026e9dd9eada37573a9ec,11owned files over mainfa711061; full61.5mm case/surround renewal,120x130 ordinary finger opening,7.397723kg known steel with6wrench origins.19shared/producer tests,TypeScript,genuine producer/check,audit0 and corrected raster inspection pass. No full CI or physical/owner/electrical acceptance.",
     "next": "Root explicitly takes integration: acquire successor lease, import authored files and genuinely regenerate IAS family against combined current bindings; exact submitted-head CI/browser and canonical preflight before merge. Actual terminal/earth/feeder/union/support/complete-material/native-load duties remain unresolved; retain IAS planned and checkpoint branch."
-  }
+  },
+  "releasedAt": "2026-11-24T10:13:28.743Z",
+  "releaseReason": "handoff"
 }
