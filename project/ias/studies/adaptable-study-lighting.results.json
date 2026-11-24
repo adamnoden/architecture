@@ -1,11 +1,11 @@
 {
   "schema": "ias-study-lighting-review/1",
   "methodSHA256": {
-    "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "0ef57bf4613ddf85a917810ac10c328432fb1b9a6db3f593164592e9c058e9ee",
+    "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "177da40b8e79ca904b6f522625e0563890689ee3965e35e9ffb3a308b22e6c6c",
     "compiler/reference-house/current-design/assemblies/study-lighting-case.ts": "105716ebc3bf7677357459197c727650c74ffaa698fbdd6bcfb1612c68fab2b8",
     "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "45c03ba8f231b950563cda2b7c39f403978fb6c03593c5e62df4ace09c8faff9",
     "compiler/reference-house/current-design/assemblies/study-lighting.ts": "5767ceeac2f9e6395aa7721dad2e0b4aeea96853315253a5c8308eb2695da839",
-    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "4d5810b16441c727de642dec686e6deea62a5836a99b10128aed61512a5ce87c",
+    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "9860c1be2c2e9fec5bf620dc126e9ce1eb5df125b068833377ed4fb921f799a9",
     "project/ias/studies/adaptable-study-lighting.mjs": "ab9c1ef53e220da20531d6aa037d9bcf3c1d83ec17028be60fe344c0b098473c"
   },
   "reference": {
@@ -3469,6 +3469,7 @@
               }
             ],
             "protectedCoverRetainedOnDecorativeRelease": true,
+            "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
             "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
           },
           {
@@ -3641,6 +3642,7 @@
               }
             ],
             "protectedCoverRetainedOnDecorativeRelease": true,
+            "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
             "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
           },
           {
@@ -3801,6 +3803,7 @@
               }
             ],
             "protectedCoverRetainedOnDecorativeRelease": true,
+            "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": false,
             "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
           }
         ],
@@ -4113,12 +4116,16 @@
       "renewal": {
         "firstNormalDrawMm": 75,
         "requiredWholeEnclosureNormalDrawMm": 66.5,
+        "completeCaseIncludingSurroundDepthMm": 61.5,
+        "completeCaseFrontCoreDepthMm": 75,
+        "wholeIsolatedCaseIncludesSurround": true,
+        "drawingCaseThroughSmallerSurroundOpeningClaimed": false,
         "moves": [
           {
             "id": "normal-draw",
             "planMm": [
               1055,
-              3040,
+              3027.5,
               1235,
               3164
             ],
@@ -4128,7 +4135,7 @@
             "id": "translate-left-above-main-rest",
             "planMm": [
               810,
-              3040,
+              3027.5,
               1235,
               3089
             ],
@@ -4138,7 +4145,7 @@
             "id": "translate-south-beside-main-rest",
             "planMm": [
               810,
-              2601.5,
+              2589,
               990,
               3089
             ],
@@ -4157,7 +4164,7 @@
             990
           ],
           "yMm": [
-            2601.5,
+            2589,
             2650.5
           ],
           "zMm": [
@@ -5799,6 +5806,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -5971,6 +5979,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -6131,6 +6140,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": false,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             }
           ],
@@ -6443,12 +6453,16 @@
         "renewal": {
           "firstNormalDrawMm": 75,
           "requiredWholeEnclosureNormalDrawMm": 66.5,
+          "completeCaseIncludingSurroundDepthMm": 61.5,
+          "completeCaseFrontCoreDepthMm": 27,
+          "wholeIsolatedCaseIncludesSurround": true,
+          "drawingCaseThroughSmallerSurroundOpeningClaimed": false,
           "moves": [
             {
               "id": "normal-draw",
               "planMm": [
                 1055,
-                3088,
+                3075.5,
                 1235,
                 3212
               ],
@@ -6458,7 +6472,7 @@
               "id": "translate-left-above-main-rest",
               "planMm": [
                 810,
-                3088,
+                3075.5,
                 1235,
                 3137
               ],
@@ -6468,7 +6482,7 @@
               "id": "translate-south-beside-main-rest",
               "planMm": [
                 810,
-                2601.5,
+                2589,
                 990,
                 3137
               ],
@@ -6487,7 +6501,7 @@
               990
             ],
             "yMm": [
-              2601.5,
+              2589,
               2650.5
             ],
             "zMm": [
@@ -8094,6 +8108,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -8266,6 +8281,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -8426,6 +8442,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": false,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             }
           ],
@@ -8738,12 +8755,16 @@
         "renewal": {
           "firstNormalDrawMm": 75,
           "requiredWholeEnclosureNormalDrawMm": 66.5,
+          "completeCaseIncludingSurroundDepthMm": 61.5,
+          "completeCaseFrontCoreDepthMm": 85,
+          "wholeIsolatedCaseIncludesSurround": true,
+          "drawingCaseThroughSmallerSurroundOpeningClaimed": false,
           "moves": [
             {
               "id": "normal-draw",
               "planMm": [
                 1055,
-                3030,
+                3017.5,
                 1235,
                 3154
               ],
@@ -8753,7 +8774,7 @@
               "id": "translate-left-above-main-rest",
               "planMm": [
                 810,
-                3030,
+                3017.5,
                 1235,
                 3079
               ],
@@ -8763,7 +8784,7 @@
               "id": "translate-south-beside-main-rest",
               "planMm": [
                 810,
-                2601.5,
+                2589,
                 990,
                 3079
               ],
@@ -8782,7 +8803,7 @@
               990
             ],
             "yMm": [
-              2601.5,
+              2589,
               2650.5
             ],
             "zMm": [
@@ -10367,6 +10388,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -10539,6 +10561,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -10699,6 +10722,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": false,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             }
           ],
@@ -11011,12 +11035,16 @@
         "renewal": {
           "firstNormalDrawMm": 75,
           "requiredWholeEnclosureNormalDrawMm": 66.5,
+          "completeCaseIncludingSurroundDepthMm": 61.5,
+          "completeCaseFrontCoreDepthMm": 75,
+          "wholeIsolatedCaseIncludesSurround": true,
+          "drawingCaseThroughSmallerSurroundOpeningClaimed": false,
           "moves": [
             {
               "id": "normal-draw",
               "planMm": [
                 1055,
-                3040,
+                3027.5,
                 1235,
                 3164
               ],
@@ -11026,7 +11054,7 @@
               "id": "translate-left-above-main-rest",
               "planMm": [
                 810,
-                3040,
+                3027.5,
                 1235,
                 3089
               ],
@@ -11036,7 +11064,7 @@
               "id": "translate-south-beside-main-rest",
               "planMm": [
                 810,
-                2601.5,
+                2589,
                 990,
                 3089
               ],
@@ -11055,7 +11083,7 @@
               990
             ],
             "yMm": [
-              2601.5,
+              2589,
               2650.5
             ],
             "zMm": [
@@ -12640,6 +12668,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -12812,6 +12841,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -12972,6 +13002,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": false,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             }
           ],
@@ -13284,12 +13315,16 @@
         "renewal": {
           "firstNormalDrawMm": 75,
           "requiredWholeEnclosureNormalDrawMm": 66.5,
+          "completeCaseIncludingSurroundDepthMm": 61.5,
+          "completeCaseFrontCoreDepthMm": 75,
+          "wholeIsolatedCaseIncludesSurround": true,
+          "drawingCaseThroughSmallerSurroundOpeningClaimed": false,
           "moves": [
             {
               "id": "normal-draw",
               "planMm": [
                 1055,
-                3040,
+                3027.5,
                 1235,
                 3164
               ],
@@ -13299,7 +13334,7 @@
               "id": "translate-left-above-main-rest",
               "planMm": [
                 810,
-                3040,
+                3027.5,
                 1235,
                 3089
               ],
@@ -13309,7 +13344,7 @@
               "id": "translate-south-beside-main-rest",
               "planMm": [
                 810,
-                2601.5,
+                2589,
                 990,
                 3089
               ],
@@ -13328,7 +13363,7 @@
               990
             ],
             "yMm": [
-              2601.5,
+              2589,
               2650.5
             ],
             "zMm": [
@@ -14920,6 +14955,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -15092,6 +15128,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -15252,6 +15289,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": false,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             }
           ],
@@ -15564,12 +15602,16 @@
         "renewal": {
           "firstNormalDrawMm": 75,
           "requiredWholeEnclosureNormalDrawMm": 66.5,
+          "completeCaseIncludingSurroundDepthMm": 61.5,
+          "completeCaseFrontCoreDepthMm": 75,
+          "wholeIsolatedCaseIncludesSurround": true,
+          "drawingCaseThroughSmallerSurroundOpeningClaimed": false,
           "moves": [
             {
               "id": "normal-draw",
               "planMm": [
                 1055,
-                3040,
+                3027.5,
                 1235,
                 3164
               ],
@@ -15579,7 +15621,7 @@
               "id": "translate-left-above-main-rest",
               "planMm": [
                 810,
-                3040,
+                3027.5,
                 1235,
                 3089
               ],
@@ -15589,7 +15631,7 @@
               "id": "translate-south-beside-main-rest",
               "planMm": [
                 810,
-                2601.5,
+                2589,
                 990,
                 3089
               ],
@@ -15608,7 +15650,7 @@
               990
             ],
             "yMm": [
-              2601.5,
+              2589,
               2650.5
             ],
             "zMm": [
@@ -17207,6 +17249,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -17379,6 +17422,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -17539,6 +17583,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": false,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             }
           ],
@@ -17851,12 +17896,16 @@
         "renewal": {
           "firstNormalDrawMm": 75,
           "requiredWholeEnclosureNormalDrawMm": 66.5,
+          "completeCaseIncludingSurroundDepthMm": 61.5,
+          "completeCaseFrontCoreDepthMm": 75,
+          "wholeIsolatedCaseIncludesSurround": true,
+          "drawingCaseThroughSmallerSurroundOpeningClaimed": false,
           "moves": [
             {
               "id": "normal-draw",
               "planMm": [
                 1055,
-                3040,
+                3027.5,
                 1235,
                 3164
               ],
@@ -17866,7 +17915,7 @@
               "id": "translate-left-above-main-rest",
               "planMm": [
                 810,
-                3040,
+                3027.5,
                 1235,
                 3089
               ],
@@ -17876,7 +17925,7 @@
               "id": "translate-south-beside-main-rest",
               "planMm": [
                 810,
-                2601.5,
+                2589,
                 990,
                 3089
               ],
@@ -17895,7 +17944,7 @@
               990
             ],
             "yMm": [
-              2601.5,
+              2589,
               2650.5
             ],
             "zMm": [
@@ -19480,6 +19529,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -19652,6 +19702,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -19812,6 +19863,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": false,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             }
           ],
@@ -20124,12 +20176,16 @@
         "renewal": {
           "firstNormalDrawMm": 75,
           "requiredWholeEnclosureNormalDrawMm": 66.5,
+          "completeCaseIncludingSurroundDepthMm": 61.5,
+          "completeCaseFrontCoreDepthMm": 75,
+          "wholeIsolatedCaseIncludesSurround": true,
+          "drawingCaseThroughSmallerSurroundOpeningClaimed": false,
           "moves": [
             {
               "id": "normal-draw",
               "planMm": [
                 1055,
-                3040,
+                3027.5,
                 1235,
                 3164
               ],
@@ -20139,7 +20195,7 @@
               "id": "translate-left-above-main-rest",
               "planMm": [
                 810,
-                3040,
+                3027.5,
                 1235,
                 3089
               ],
@@ -20149,7 +20205,7 @@
               "id": "translate-south-beside-main-rest",
               "planMm": [
                 810,
-                2601.5,
+                2589,
                 990,
                 3089
               ],
@@ -20168,7 +20224,7 @@
               990
             ],
             "yMm": [
-              2601.5,
+              2589,
               2650.5
             ],
             "zMm": [
@@ -21760,6 +21816,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -21932,6 +21989,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": true,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             },
             {
@@ -22092,6 +22150,7 @@
                 }
               ],
               "protectedCoverRetainedOnDecorativeRelease": true,
+              "fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal": false,
               "supportPath": "Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing."
             }
           ],
@@ -22404,12 +22463,16 @@
         "renewal": {
           "firstNormalDrawMm": 75,
           "requiredWholeEnclosureNormalDrawMm": 66.5,
+          "completeCaseIncludingSurroundDepthMm": 61.5,
+          "completeCaseFrontCoreDepthMm": 75,
+          "wholeIsolatedCaseIncludesSurround": true,
+          "drawingCaseThroughSmallerSurroundOpeningClaimed": false,
           "moves": [
             {
               "id": "normal-draw",
               "planMm": [
                 1055,
-                3040,
+                3027.5,
                 1235,
                 3164
               ],
@@ -22419,7 +22482,7 @@
               "id": "translate-left-above-main-rest",
               "planMm": [
                 810,
-                3040,
+                3027.5,
                 1235,
                 3089
               ],
@@ -22429,7 +22492,7 @@
               "id": "translate-south-beside-main-rest",
               "planMm": [
                 810,
-                2601.5,
+                2589,
                 990,
                 3089
               ],
@@ -22448,7 +22511,7 @@
               990
             ],
             "yMm": [
-              2601.5,
+              2589,
               2650.5
             ],
             "zMm": [

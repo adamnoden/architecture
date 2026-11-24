@@ -112,6 +112,7 @@ export function deriveCommonDepthCorner(context: CommonDepthCornerContext, input
         crossCleatXMm: c.fixedRails.map(rail => (rail.xMm[0]! + rail.xMm[1]!) / 2),
         intentionalSupportContact: true, loadCapacityQualified: false }))),
       protectedCoverRetainedOnDecorativeRelease: true,
+      fixedSurroundAndClosedCoverMoveWithCaseOnWholeRenewal: i < 2,
       supportPath: 'Case positive fixings → independent fixed rails/cross-cleats → existing declared hard lands; no decoration or mineral-board bearing.',
     }
   })
@@ -149,9 +150,12 @@ export function deriveCommonDepthCorner(context: CommonDepthCornerContext, input
   const right = c.parkedModule.xMm[0]! - q.secondaryRestSideGapMm, north = c.mainRestPlanMm[1]! - q.secondaryRestGapMm
   const secondaryRest = [right - extraSize, north - extraSize, right, north]
   const parkedX = [(secondaryRest[0]! + secondaryRest[2]!) / 2 - q.enclosureWidthMm / 2, (secondaryRest[0]! + secondaryRest[2]!) / 2 + q.enclosureWidthMm / 2]
-  const completeDepth = c.referenceBoxDepthMm + q.shellThicknessMm
+  // Socket/switch renew as a complete isolated case, closed face and surround.
+  // A 180 mm case cannot be pulled through its smaller 120 mm fixed mouth.
+  const completeFrontDepth = Math.max(frontDepth + q.shellThicknessMm, c.totalDepthMm)
+  const completeDepth = completeFrontDepth - rearDepth
   const parkedY = [secondaryRest[3]! - completeDepth, secondaryRest[3]!]
-  const withdrawnY = [c.coreFaceYMm - (frontDepth + q.shellThicknessMm) - q.firstNormalDrawMm, c.coreFaceYMm - rearDepth - q.firstNormalDrawMm]
+  const withdrawnY = [c.coreFaceYMm - completeFrontDepth - q.firstNormalDrawMm, c.coreFaceYMm - rearDepth - q.firstNormalDrawMm]
   const initialX = enclosures[0]!.xMm
   const mainModulePlan = rect(c.parkedModule.xMm, c.parkedModule.yMm)
   const obstacles = [...c.occupiedPlanMm, ['parked-light-module', mainModulePlan] as const]
@@ -266,6 +270,8 @@ export function deriveCommonDepthCorner(context: CommonDepthCornerContext, input
       ordinaryUseChangesProtectiveClosures: false, suppliedLeadBendAndGripForceQualified: false,
       plateFirstDrawClearanceRequirementMm: c.accessoryBodyDepthMm + c.totalDepthMm - frontDepth + c.settingMm },
     renewal: { firstNormalDrawMm: q.firstNormalDrawMm, requiredWholeEnclosureNormalDrawMm: c.totalDepthMm - rearDepth + c.settingMm,
+      completeCaseIncludingSurroundDepthMm: completeDepth, completeCaseFrontCoreDepthMm: completeFrontDepth,
+      wholeIsolatedCaseIncludesSurround: true, drawingCaseThroughSmallerSurroundOpeningClaimed: false,
       moves, secondaryRestPlanMm: secondaryRest, parkedCase: { xMm: parkedX, yMm: parkedY, zMm: [c.parkedModule.zMm[0]!, c.parkedModule.zMm[0]! + q.enclosureHeightMm] },
       additionalTemporaryFloorTerritoryM2: extraSize ** 2 / 1e6, preservesSeparateMainModuleRest: true,
       qualifiedUnionsAndToolRelease: false, temporarySupportCapacityQualified: false },

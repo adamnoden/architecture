@@ -203,3 +203,11 @@ actual terminal/earth/strain-relief geometry, front-serviced unions and protecti
 material admission and the representative physical trial still prevent an
 installable or trial-ready whole electrical assembly. IAS-ROOM-LIGHTING remains
 open; no material, circuit, physical, owner or house acceptance is claimed.
+
+Whole-case renewal carries the socket/switch surround and closed face together.
+The full **61.5mm** rear-to-surround depth now controls every normal/left/south
+sweep and the parked case; the former49mm body/cover envelope is insufficient.
+The75mm draw and200mm rest still contain this larger actual assembly in the
+checked room. The180mm-wide case is never claimed to pass through its120mm
+mouth. Actual connector release, positive temporary support and loaded human
+handling remain qualification duties.

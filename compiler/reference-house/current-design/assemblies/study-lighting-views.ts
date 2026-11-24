@@ -315,6 +315,7 @@ export function drawCommonDepthCornerComparison(result: StudyLightingResult) {
   body += text(550, 855, 'Pay for complete enclosure withdrawal', 'heading')
     + text(550, 900, `Required normal draw ${c.renewal.requiredWholeEnclosureNormalDrawMm} mm; proposed ${c.renewal.firstNormalDrawMm} mm`)
     + text(550, 935, 'Keep the light module in its existing separate rest')
+    + text(1050, 900, `Charge full ${c.renewal.completeCaseIncludingSurroundDepthMm} mm case/surround depth`)
     + text(550, 970, 'Isolate/prove dead; support and disconnect; qualified unions must release first')
     + text(550, 1005, 'Draw normal, translate left above the main rest, then south and lower')
     + text(550, 1040, `Additional rest ${c.choices.secondaryRestSizeMm} × ${c.choices.secondaryRestSizeMm} mm: ${c.renewal.additionalTemporaryFloorTerritoryM2} m²`)

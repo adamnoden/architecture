@@ -351,10 +351,16 @@ test('finite straight pieces, collars and authored case ports meet at the same c
 test('whole cases require a paid 75mm draw and a separate rest; the parked module and occupied floor remain controls', () => {
   const c = run().commonDepthCornerComparison
   assert.equal(c.renewal.requiredWholeEnclosureNormalDrawMm, 66.5)
+  assert.equal(c.renewal.completeCaseIncludingSurroundDepthMm, 61.5)
+  assert.equal(c.renewal.wholeIsolatedCaseIncludesSurround, true)
+  assert.equal(c.renewal.drawingCaseThroughSmallerSurroundOpeningClaimed, false)
   assert.equal(c.renewal.firstNormalDrawMm, 75)
   assert.equal(c.renewal.additionalTemporaryFloorTerritoryM2, .04)
   assert.deepEqual(c.renewal.secondaryRestPlanMm, [800, 2450.5, 1000, 2650.5])
   assert.ok(c.renewal.moves.every(move => move.conflictingIds.length === 0))
+  const moved = c.renewal.moves.find(move => move.id === 'translate-left-above-main-rest')!
+  assert.equal(moved.planMm[3]! - moved.planMm[1]!, 61.5)
+  assert.equal(c.renewal.parkedCase.yMm[1]! - c.renewal.parkedCase.yMm[0]!, 61.5)
   assert.equal(c.renewal.qualifiedUnionsAndToolRelease, false)
   const short = structuredClone(components)
   short.commonDepthCornerCandidate = { ...short.commonDepthCornerCandidate, firstNormalDrawMm: 50 }
