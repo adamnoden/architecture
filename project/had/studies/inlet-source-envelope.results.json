@@ -3,7 +3,7 @@
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "a62a2cafd4c776d642a5036b7eb642664b33b5bb199a8ed4ab6034dfbbe72bec",
+    "bindingDigest": "ed7b31737760fd41f71c1f6ee599fd8db44eabeb43c03273bc7cf16e53b183ee",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -23,7 +23,7 @@
       "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
       "compiler/reference-house/current-design/inlet-bank-receiver.ts": "27ae1b2964495559cee1bd13b3c270ab2c660744",
       "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
-      "compiler/reference-house/current-design/inlet-indoor-routes.ts": "27180bb54be4229d3d45f87fdfaec29c768c9c91",
+      "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
       "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
       "compiler/reference-house/current-design/inlet-source-envelope.ts": "27bffe7a40cceb6016ac56f26fb29c6a7050707f",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
@@ -1588,7 +1588,72 @@
               "reserveMm": 5.161380418860087
             }
           ],
-          "necessaryBoxedCornerTerritoryComparison": true,
+          "minimumSamePathCornerReserveMm": -81.03332099679119,
+          "minimumSamePathPipeReserveMm": -30.56666049862433,
+          "perSamePathCorner": [
+            {
+              "a": "HAD/indoor-pipe/utility/upstream/corner/4",
+              "b": "HAD/indoor-pipe/utility/upstream/corner/5",
+              "reserveMm": -61.03332099679028
+            },
+            {
+              "a": "HAD/indoor-pipe/utility/downstream/corner/0",
+              "b": "HAD/indoor-pipe/utility/downstream/corner/1",
+              "reserveMm": 8.96667900320972
+            },
+            {
+              "a": "HAD/indoor-pipe/plant/upstream/corner/3",
+              "b": "HAD/indoor-pipe/plant/upstream/corner/4",
+              "reserveMm": -81.03332099679119
+            },
+            {
+              "a": "HAD/indoor-pipe/plant/downstream/corner/0",
+              "b": "HAD/indoor-pipe/plant/downstream/corner/1",
+              "reserveMm": -61.03332099679028
+            }
+          ],
+          "perSamePathPipe": [
+            {
+              "corner": "HAD/indoor-pipe/utility/upstream/corner/4",
+              "path": "utility/upstream",
+              "segment": 6,
+              "reserveMm": -10.566660498435226
+            },
+            {
+              "corner": "HAD/indoor-pipe/utility/upstream/corner/5",
+              "path": "utility/upstream",
+              "segment": 4,
+              "reserveMm": -10.566660498451732
+            },
+            {
+              "corner": "HAD/indoor-pipe/plant/upstream/corner/3",
+              "path": "plant/upstream",
+              "segment": 5,
+              "reserveMm": -30.56666049843568
+            },
+            {
+              "corner": "HAD/indoor-pipe/plant/upstream/corner/4",
+              "path": "plant/upstream",
+              "segment": 3,
+              "reserveMm": -30.56666049862433
+            },
+            {
+              "corner": "HAD/indoor-pipe/plant/downstream/corner/0",
+              "path": "plant/downstream",
+              "segment": 2,
+              "reserveMm": -10.566660498595589
+            },
+            {
+              "corner": "HAD/indoor-pipe/plant/downstream/corner/1",
+              "path": "plant/downstream",
+              "segment": 0,
+              "reserveMm": -10.566660498435226
+            }
+          ],
+          "necessarySamePathTerritoryComparison": false,
+          "incidentStraightLegsOnlyExempt": true,
+          "overlappingReservationsInterpretation": "A negative reserve rejects these separate boxed reservations; an actual joined fitting can replace them only with new explicit geometry and evidence.",
+          "necessaryBoxedCornerTerritoryComparison": false,
           "actualFittingBodyAndToolsQualified": false
         },
         "roomPlanMm": [
@@ -3976,8 +4041,11 @@
           "nativeStructuralActionsAdopted": false,
           "noPanShieldFurnitureOrFloorCoverSupportCredited": true
         },
-        "necessaryStraightPipeGeometryAndBudgetComparison": true,
-        "diagnostics": [],
+        "necessaryStraightPipeGeometryAndBudgetComparison": false,
+        "diagnostics": [
+          "INLET_PIPE_FITTING_TERRITORY",
+          "INLET_PIPE_OWN_FITTING_TERRITORY"
+        ],
         "fullInsulatedFittingEnvelopeQualified": false,
         "fullRouteRenewalQualified": false,
         "wholeOccupiedArrangementComplete": false,
@@ -4656,6 +4724,8 @@
           "state": "unadopted-explicit-comparison",
           "selected": false,
           "diagnostics": [
+            "INLET_PIPE_FITTING_TERRITORY",
+            "INLET_PIPE_OWN_FITTING_TERRITORY",
             "INLET_RETAINED_SERVICE_COLLISION/complete620mm-head-sweep/1",
             "INLET_RETAINED_SERVICE_COLLISION/complete620mm-head-sweep/2",
             "INLET_RETAINED_SERVICE_COLLISION/actual-retained-hot-backbone"
@@ -4738,7 +4808,84 @@
                     "reserveMm": 4.483339501604405
                   }
                 ],
-                "necessaryBoxedCornerTerritoryComparison": true,
+                "minimumSamePathCornerReserveMm": -91.03332099679028,
+                "minimumSamePathPipeReserveMm": -40.566660498623875,
+                "perSamePathCorner": [
+                  {
+                    "a": "HAD/indoor-pipe/utility/upstream/corner/4",
+                    "b": "HAD/indoor-pipe/utility/upstream/corner/5",
+                    "reserveMm": -61.03332099679028
+                  },
+                  {
+                    "a": "HAD/indoor-pipe/plant/upstream/corner/3",
+                    "b": "HAD/indoor-pipe/plant/upstream/corner/4",
+                    "reserveMm": -91.03332099679028
+                  },
+                  {
+                    "a": "HAD/indoor-pipe/plant/upstream/corner/5",
+                    "b": "HAD/indoor-pipe/plant/upstream/corner/6",
+                    "reserveMm": -91.03332099679028
+                  },
+                  {
+                    "a": "HAD/indoor-pipe/plant/downstream/corner/0",
+                    "b": "HAD/indoor-pipe/plant/downstream/corner/1",
+                    "reserveMm": -57.80133259862123
+                  }
+                ],
+                "perSamePathPipe": [
+                  {
+                    "corner": "HAD/indoor-pipe/utility/upstream/corner/4",
+                    "path": "utility/upstream",
+                    "segment": 6,
+                    "reserveMm": -10.566660498435226
+                  },
+                  {
+                    "corner": "HAD/indoor-pipe/utility/upstream/corner/5",
+                    "path": "utility/upstream",
+                    "segment": 4,
+                    "reserveMm": -10.566660498571999
+                  },
+                  {
+                    "corner": "HAD/indoor-pipe/plant/upstream/corner/3",
+                    "path": "plant/upstream",
+                    "segment": 5,
+                    "reserveMm": -40.566660498513045
+                  },
+                  {
+                    "corner": "HAD/indoor-pipe/plant/upstream/corner/4",
+                    "path": "plant/upstream",
+                    "segment": 3,
+                    "reserveMm": -40.566660498623875
+                  },
+                  {
+                    "corner": "HAD/indoor-pipe/plant/upstream/corner/5",
+                    "path": "plant/upstream",
+                    "segment": 7,
+                    "reserveMm": -40.566660498435226
+                  },
+                  {
+                    "corner": "HAD/indoor-pipe/plant/upstream/corner/6",
+                    "path": "plant/upstream",
+                    "segment": 5,
+                    "reserveMm": -40.566660498513045
+                  },
+                  {
+                    "corner": "HAD/indoor-pipe/plant/downstream/corner/0",
+                    "path": "plant/downstream",
+                    "segment": 2,
+                    "reserveMm": -8.950666299511063
+                  },
+                  {
+                    "corner": "HAD/indoor-pipe/plant/downstream/corner/1",
+                    "path": "plant/downstream",
+                    "segment": 0,
+                    "reserveMm": -8.9506662993507
+                  }
+                ],
+                "necessarySamePathTerritoryComparison": false,
+                "incidentStraightLegsOnlyExempt": true,
+                "overlappingReservationsInterpretation": "A negative reserve rejects these separate boxed reservations; an actual joined fitting can replace them only with new explicit geometry and evidence.",
+                "necessaryBoxedCornerTerritoryComparison": false,
                 "actualFittingBodyAndToolsQualified": false
               },
               "roomPlanMm": [
@@ -7537,8 +7684,11 @@
                 "nativeStructuralActionsAdopted": false,
                 "noPanShieldFurnitureOrFloorCoverSupportCredited": true
               },
-              "necessaryStraightPipeGeometryAndBudgetComparison": true,
-              "diagnostics": [],
+              "necessaryStraightPipeGeometryAndBudgetComparison": false,
+              "diagnostics": [
+                "INLET_PIPE_FITTING_TERRITORY",
+                "INLET_PIPE_OWN_FITTING_TERRITORY"
+              ],
               "fullInsulatedFittingEnvelopeQualified": false,
               "fullRouteRenewalQualified": false,
               "wholeOccupiedArrangementComplete": false,
@@ -9384,7 +9534,7 @@
                 "actualWheelPositionTorqueAndFactoryInterfacesQualified": false,
                 "fullOccupiedArrangementComplete": false
               },
-              "necessaryRouteOperationAndClampEnvelopeScreen": true,
+              "necessaryRouteOperationAndClampEnvelopeScreen": false,
               "diagnostics": [],
               "lockedStraight1700NClampRejected": true,
               "actualMaterialProductToolAndCarrierSelected": false,
@@ -9847,7 +9997,7 @@
             },
             "necessaryJoinedEnvelopeScreen": false,
             "completeOccupiedArrangementQualified": false,
-            "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1250\" viewBox=\"0 0 1200 1250\"><rect width=\"1200\" height=\"1250\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\"><text x=\"35\" y=\"40\" font-size=\"25\">Independent indoor cold paths · actual saved-bank comparison</text><text x=\"35\" y=\"75\" font-size=\"16\">Declared pipe and boxed fitting territories. Factory fit, independent supports and loaded renewal remain unqualified.</text><text x=\"35\" y=\"120\" font-size=\"18\">PLAN · source entry to separate indoor valves and the retained terminal/Plant transfer</text><rect x=\"50\" y=\"376.945\" width=\"282.555\" height=\"263.055\" fill=\"none\" stroke=\"#6f766e\"/><rect x=\"147.24\" y=\"402.685\" width=\"143\" height=\"97.5\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"422.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"513.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"294.33500000000004\" y=\"379.48\" width=\"21.71\" height=\"21.71\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"382.21\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"294.33500000000004\" y=\"379.48\" width=\"21.71\" height=\"21.71\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"382.21\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><polyline points=\"138.79000000000002,617.835 138.79000000000002,617.835 323.39,617.835 323.39,487.83500000000004 323.39,487.83500000000004 323.39,390.335 305.19,390.335 305.19,390.335\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"305.19,390.335 305.19,390.335 298.69,418.935 298.69,418.935 298.69,389.03499999999997 133.59,389.03499999999997 133.59,533.335 227.19,533.335 227.19,533.335\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,624.985 165.44,624.985 305.19,624.985 305.19,455.335 305.19,455.335 319.49,455.335 319.49,390.335 305.19,390.335 305.19,390.335\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"305.19,390.335 305.19,390.335 323.39,385.135 323.39,385.135 245.39000000000001,389.03499999999997 245.39000000000001,389.03499999999997 206.39000000000001,188.83499999999998\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><polyline points=\"215.49,379.935 282.18,390.335\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><polyline points=\"215.49,379.935 282.18,390.335\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><text x=\"35\" y=\"720\" font-size=\"18\">X/Z PROJECTION · local floor datum; no vertical exaggeration used as clearance proof</text><rect x=\"294.33500000000004\" y=\"981.12\" width=\"21.71\" height=\"27.560000000000002\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"986.775\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"294.33500000000004\" y=\"900.52\" width=\"21.71\" height=\"27.560000000000002\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"906.175\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><polyline points=\"138.79000000000002,1097.8093 138.79000000000002,805.36 323.39,805.36 323.39,805.36 323.39,1027.4 323.39,1027.4 305.19,1027.4 305.19,1005.3\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"305.19,984.5 305.19,962.4 298.69,962.4 298.69,863.5999999999999 298.69,863.5999999999999 133.59,863.5999999999999 133.59,863.5999999999999 227.19,863.5999999999999 227.19,1030\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,1082.2093 165.44,820.7 305.19,820.7 305.19,820.7 305.19,946.8 319.49,946.8 319.49,946.8 305.19,946.8 305.19,924.7\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"305.19,903.9 305.19,881.8 323.39,881.8 323.39,771.3 245.39000000000001,771.3 245.39000000000001,848 206.39000000000001,848\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><polyline points=\"215.49,971.5 282.18,986.775\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><polyline points=\"215.49,971.5 282.18,922.425\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><line x1=\"600\" x2=\"615\" y1=\"145\" y2=\"145\" stroke=\"#267a87\" stroke-width=\"4\"/><text x=\"620\" y=\"150\" font-size=\"16\">utility/upstream: 7.438m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"185\" y2=\"185\" stroke=\"#64a2a4\" stroke-width=\"4\"/><text x=\"620\" y=\"190\" font-size=\"16\">utility/downstream: 5.766m; corner interfaces: 7.</text><line x1=\"600\" x2=\"615\" y1=\"225\" y2=\"225\" stroke=\"#93513d\" stroke-width=\"4\"/><text x=\"620\" y=\"230\" font-size=\"16\">plant/upstream: 6.252m; corner interfaces: 7.</text><line x1=\"600\" x2=\"615\" y1=\"265\" y2=\"265\" stroke=\"#c58c55\" stroke-width=\"4\"/><text x=\"620\" y=\"270\" font-size=\"16\">plant/downstream: 3.925m; corner interfaces: 5.</text><text x=\"620\" y=\"345\" font-size=\"16\">Closest pipes after jackets/settings: 17.90mm.</text><text x=\"620\" y=\"385\" font-size=\"16\">Upper copper stock: 24.267 kg; water: 12.471 kg.</text><text x=\"620\" y=\"425\" font-size=\"16\">Valves12kg; jacket/insulation refs; complete mass unknown.</text><text x=\"620\" y=\"485\" font-size=\"16\">utility: loss: 0.0719 bar; rise: 0.0512 bar.</text><text x=\"620\" y=\"525\" font-size=\"16\">plant: loss: 0.3125 bar; rise: 0.1767 bar.</text><text x=\"620\" y=\"570\" font-size=\"16\">Boxed fitting territories: within declared bounds.</text><text x=\"620\" y=\"610\" font-size=\"16\">Geometry/budget comparison: within declared comparisons.</text><text x=\"620\" y=\"650\" font-size=\"16\">Loss coefficients are authored comparisons, not proved limits.</text><text x=\"620\" y=\"700\" font-size=\"16\">Route / valve / arm screen: within declared bounds.</text><text x=\"620\" y=\"740\" font-size=\"16\">Arm reserve 76.27mm; valve 0.00mm.</text><text x=\"620\" y=\"785\" font-size=\"16\">Retained services / complete package: REJECTED.</text><text x=\"620\" y=\"820\" font-size=\"16\">Worst reserve: -103.52 mm.</text><text x=\"620\" y=\"850\" font-size=\"16\">Four paths; no cross-connection, header or bypass.</text><text x=\"620\" y=\"890\" font-size=\"16\">Upstream/downstream tails end at actual 160 mm valve faces.</text><text x=\"620\" y=\"930\" font-size=\"16\">Named copper/water gravity and pressure-corner vectors exported.</text><text x=\"620\" y=\"970\" font-size=\"16\">Actual fixed/sliding clips and masonry receivers still required.</text><text x=\"620\" y=\"1010\" font-size=\"16\">Lodge cuts and actual hot/store/upper draining remain required.</text><text x=\"620\" y=\"1050\" font-size=\"16\">No route or added mass is admitted into native ground-zero STR.</text><text x=\"35\" y=\"1210\" font-size=\"18\">HAD OPEN · no product/material selection, full occupied arrangement or construction acceptance</text></g></svg>"
+            "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1250\" viewBox=\"0 0 1200 1250\"><rect width=\"1200\" height=\"1250\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\"><text x=\"35\" y=\"40\" font-size=\"25\">Independent indoor cold paths · actual saved-bank comparison</text><text x=\"35\" y=\"75\" font-size=\"16\">Declared pipe and boxed fitting territories. Factory fit, independent supports and loaded renewal remain unqualified.</text><text x=\"35\" y=\"120\" font-size=\"18\">PLAN · source entry to separate indoor valves and the retained terminal/Plant transfer</text><rect x=\"50\" y=\"376.945\" width=\"282.555\" height=\"263.055\" fill=\"none\" stroke=\"#6f766e\"/><rect x=\"147.24\" y=\"402.685\" width=\"143\" height=\"97.5\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"422.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"513.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"294.33500000000004\" y=\"379.48\" width=\"21.71\" height=\"21.71\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"382.21\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"294.33500000000004\" y=\"379.48\" width=\"21.71\" height=\"21.71\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"382.21\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><polyline points=\"138.79000000000002,617.835 138.79000000000002,617.835 323.39,617.835 323.39,487.83500000000004 323.39,487.83500000000004 323.39,390.335 305.19,390.335 305.19,390.335\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"305.19,390.335 305.19,390.335 298.69,418.935 298.69,418.935 298.69,389.03499999999997 133.59,389.03499999999997 133.59,533.335 227.19,533.335 227.19,533.335\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,624.985 165.44,624.985 305.19,624.985 305.19,455.335 305.19,455.335 319.49,455.335 319.49,390.335 305.19,390.335 305.19,390.335\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"305.19,390.335 305.19,390.335 323.39,385.135 323.39,385.135 245.39000000000001,389.03499999999997 245.39000000000001,389.03499999999997 206.39000000000001,188.83499999999998\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><polyline points=\"215.49,379.935 282.18,390.335\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><polyline points=\"215.49,379.935 282.18,390.335\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><text x=\"35\" y=\"720\" font-size=\"18\">X/Z PROJECTION · local floor datum; no vertical exaggeration used as clearance proof</text><rect x=\"294.33500000000004\" y=\"981.12\" width=\"21.71\" height=\"27.560000000000002\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"986.775\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"294.33500000000004\" y=\"900.52\" width=\"21.71\" height=\"27.560000000000002\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"906.175\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><polyline points=\"138.79000000000002,1097.8093 138.79000000000002,805.36 323.39,805.36 323.39,805.36 323.39,1027.4 323.39,1027.4 305.19,1027.4 305.19,1005.3\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"305.19,984.5 305.19,962.4 298.69,962.4 298.69,863.5999999999999 298.69,863.5999999999999 133.59,863.5999999999999 133.59,863.5999999999999 227.19,863.5999999999999 227.19,1030\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,1082.2093 165.44,820.7 305.19,820.7 305.19,820.7 305.19,946.8 319.49,946.8 319.49,946.8 305.19,946.8 305.19,924.7\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"305.19,903.9 305.19,881.8 323.39,881.8 323.39,771.3 245.39000000000001,771.3 245.39000000000001,848 206.39000000000001,848\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><polyline points=\"215.49,971.5 282.18,986.775\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><polyline points=\"215.49,971.5 282.18,922.425\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><line x1=\"600\" x2=\"615\" y1=\"145\" y2=\"145\" stroke=\"#267a87\" stroke-width=\"4\"/><text x=\"620\" y=\"150\" font-size=\"16\">utility/upstream: 7.438m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"185\" y2=\"185\" stroke=\"#64a2a4\" stroke-width=\"4\"/><text x=\"620\" y=\"190\" font-size=\"16\">utility/downstream: 5.766m; corner interfaces: 7.</text><line x1=\"600\" x2=\"615\" y1=\"225\" y2=\"225\" stroke=\"#93513d\" stroke-width=\"4\"/><text x=\"620\" y=\"230\" font-size=\"16\">plant/upstream: 6.252m; corner interfaces: 7.</text><line x1=\"600\" x2=\"615\" y1=\"265\" y2=\"265\" stroke=\"#c58c55\" stroke-width=\"4\"/><text x=\"620\" y=\"270\" font-size=\"16\">plant/downstream: 3.925m; corner interfaces: 5.</text><text x=\"620\" y=\"345\" font-size=\"16\">Closest pipes after jackets/settings: 17.90mm.</text><text x=\"620\" y=\"385\" font-size=\"16\">Upper copper stock: 24.267 kg; water: 12.471 kg.</text><text x=\"620\" y=\"425\" font-size=\"16\">Valves12kg; jacket/insulation refs; complete mass unknown.</text><text x=\"620\" y=\"485\" font-size=\"16\">utility: loss: 0.0719 bar; rise: 0.0512 bar.</text><text x=\"620\" y=\"525\" font-size=\"16\">plant: loss: 0.3125 bar; rise: 0.1767 bar.</text><text x=\"620\" y=\"570\" font-size=\"16\">Boxed fitting territories: REJECTED.</text><text x=\"620\" y=\"610\" font-size=\"16\">Geometry/budget comparison: REJECTED.</text><text x=\"620\" y=\"650\" font-size=\"16\">Loss coefficients are authored comparisons, not proved limits.</text><text x=\"620\" y=\"700\" font-size=\"16\">Route / valve / arm screen: within declared bounds.</text><text x=\"620\" y=\"740\" font-size=\"16\">Arm reserve 76.27mm; valve 0.00mm.</text><text x=\"620\" y=\"785\" font-size=\"16\">Retained services / complete package: REJECTED.</text><text x=\"620\" y=\"820\" font-size=\"16\">Worst reserve: -103.52 mm.</text><text x=\"620\" y=\"850\" font-size=\"16\">Four paths; no cross-connection, header or bypass.</text><text x=\"620\" y=\"890\" font-size=\"16\">Upstream/downstream tails end at actual 160 mm valve faces.</text><text x=\"620\" y=\"930\" font-size=\"16\">Named copper/water gravity and pressure-corner vectors exported.</text><text x=\"620\" y=\"970\" font-size=\"16\">Actual fixed/sliding clips and masonry receivers still required.</text><text x=\"620\" y=\"1010\" font-size=\"16\">Lodge cuts and actual hot/store/upper draining remain required.</text><text x=\"620\" y=\"1050\" font-size=\"16\">No route or added mass is admitted into native ground-zero STR.</text><text x=\"35\" y=\"1210\" font-size=\"18\">HAD OPEN · no product/material selection, full occupied arrangement or construction acceptance</text></g></svg>"
           }
         },
         "splitStationComparison": {
@@ -11105,7 +11255,7 @@
             "selected": false
           }
         },
-        "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1250\" viewBox=\"0 0 1200 1250\"><rect width=\"1200\" height=\"1250\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\"><text x=\"35\" y=\"40\" font-size=\"25\">Independent indoor cold paths · actual saved-bank comparison</text><text x=\"35\" y=\"75\" font-size=\"16\">Declared pipe and boxed fitting territories. Factory fit, independent supports and loaded renewal remain unqualified.</text><text x=\"35\" y=\"120\" font-size=\"18\">PLAN · source entry to separate indoor valves and the retained terminal/Plant transfer</text><rect x=\"50\" y=\"376.945\" width=\"282.555\" height=\"263.055\" fill=\"none\" stroke=\"#6f766e\"/><rect x=\"147.24\" y=\"402.685\" width=\"143\" height=\"97.5\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"422.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"513.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"294.33500000000004\" y=\"379.48\" width=\"21.71\" height=\"21.71\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"382.21\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"294.33500000000004\" y=\"379.48\" width=\"21.71\" height=\"21.71\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"382.21\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><polyline points=\"138.79000000000002,617.835 138.79000000000002,617.835 323.39,617.835 323.39,421.53499999999997 323.39,421.53499999999997 323.39,390.335 305.19,390.335 305.19,390.335\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"305.19,390.335 305.19,390.335 277.89,390.335 277.89,390.335 133.59,390.335 133.59,533.335 227.19,533.335 227.19,533.335\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,624.985 165.44,624.985 305.19,624.985 305.19,405.935 305.19,405.935 305.19,390.335 305.19,390.335\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"305.19,390.335 305.19,390.335 323.39,390.335 323.39,390.335 245.39000000000001,389.03499999999997 245.39000000000001,389.03499999999997 206.39000000000001,188.83499999999998\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><polyline points=\"215.49,379.935 282.18,390.76022964447395\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><polyline points=\"215.49,379.935 279.58000000000004,390.6185584107078\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><text x=\"35\" y=\"720\" font-size=\"18\">X/Z PROJECTION · local floor datum; no vertical exaggeration used as clearance proof</text><rect x=\"294.33500000000004\" y=\"981.12\" width=\"21.71\" height=\"27.560000000000002\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"986.775\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"294.33500000000004\" y=\"900.52\" width=\"21.71\" height=\"27.560000000000002\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"906.175\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><polyline points=\"138.79000000000002,1097.8093 138.79000000000002,803.8 323.39,803.8 323.39,803.8 323.39,1027.4 323.39,1027.4 305.19,1027.4 305.19,1005.3\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"305.19,984.5 305.19,962.4 277.89,962.4 277.89,867.5 133.59,867.5 133.59,867.5 227.19,867.5 227.19,1030\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,1082.2093 165.44,820.7 305.19,820.7 305.19,820.7 305.19,946.8 305.19,946.8 305.19,924.7\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"305.19,903.9 305.19,881.8 323.39,881.8 323.39,771.3 245.39000000000001,771.3 245.39000000000001,848 206.39000000000001,848\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><polyline points=\"215.49,971.5 282.18,986.7861350301191\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><polyline points=\"215.49,971.5 279.58000000000004,922.4200504695301\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><line x1=\"600\" x2=\"615\" y1=\"145\" y2=\"145\" stroke=\"#267a87\" stroke-width=\"4\"/><text x=\"620\" y=\"150\" font-size=\"16\">utility/upstream: 7.462m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"185\" y2=\"185\" stroke=\"#64a2a4\" stroke-width=\"4\"/><text x=\"620\" y=\"190\" font-size=\"16\">utility/downstream: 5.290m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"225\" y2=\"225\" stroke=\"#93513d\" stroke-width=\"4\"/><text x=\"620\" y=\"230\" font-size=\"16\">plant/upstream: 6.032m; corner interfaces: 5.</text><line x1=\"600\" x2=\"615\" y1=\"265\" y2=\"265\" stroke=\"#c58c55\" stroke-width=\"4\"/><text x=\"620\" y=\"270\" font-size=\"16\">plant/downstream: 3.919m; corner interfaces: 5.</text><text x=\"620\" y=\"345\" font-size=\"16\">Closest pipes after jackets/settings: 19.90mm.</text><text x=\"620\" y=\"385\" font-size=\"16\">Upper copper stock: 23.564 kg; water: 12.109 kg.</text><text x=\"620\" y=\"425\" font-size=\"16\">Valves12kg; jacket/insulation refs; complete mass unknown.</text><text x=\"620\" y=\"485\" font-size=\"16\">utility: loss: 0.0687 bar; rise: 0.0512 bar.</text><text x=\"620\" y=\"525\" font-size=\"16\">plant: loss: 0.2889 bar; rise: 0.1767 bar.</text><text x=\"620\" y=\"570\" font-size=\"16\">Boxed fitting territories: within declared bounds.</text><text x=\"620\" y=\"610\" font-size=\"16\">Geometry/budget comparison: within declared comparisons.</text><text x=\"620\" y=\"650\" font-size=\"16\">Loss coefficients are authored comparisons, not proved limits.</text><text x=\"620\" y=\"700\" font-size=\"16\">Route / valve / arm screen: REJECTED.</text><text x=\"620\" y=\"740\" font-size=\"16\">Arm reserve -101.58mm; valve -60.05mm.</text><text x=\"620\" y=\"785\" font-size=\"16\">Retained services / complete package: REJECTED.</text><text x=\"620\" y=\"820\" font-size=\"16\">Worst reserve: -193.55 mm.</text><text x=\"620\" y=\"850\" font-size=\"16\">Four paths; no cross-connection, header or bypass.</text><text x=\"620\" y=\"890\" font-size=\"16\">Upstream/downstream tails end at actual 160 mm valve faces.</text><text x=\"620\" y=\"930\" font-size=\"16\">Named copper/water gravity and pressure-corner vectors exported.</text><text x=\"620\" y=\"970\" font-size=\"16\">Actual fixed/sliding clips and masonry receivers still required.</text><text x=\"620\" y=\"1010\" font-size=\"16\">Lodge cuts and actual hot/store/upper draining remain required.</text><text x=\"620\" y=\"1050\" font-size=\"16\">No route or added mass is admitted into native ground-zero STR.</text><text x=\"35\" y=\"1210\" font-size=\"18\">HAD OPEN · no product/material selection, full occupied arrangement or construction acceptance</text></g></svg>"
+        "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1200\" height=\"1250\" viewBox=\"0 0 1200 1250\"><rect width=\"1200\" height=\"1250\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\"><text x=\"35\" y=\"40\" font-size=\"25\">Independent indoor cold paths · actual saved-bank comparison</text><text x=\"35\" y=\"75\" font-size=\"16\">Declared pipe and boxed fitting territories. Factory fit, independent supports and loaded renewal remain unqualified.</text><text x=\"35\" y=\"120\" font-size=\"18\">PLAN · source entry to separate indoor valves and the retained terminal/Plant transfer</text><rect x=\"50\" y=\"376.945\" width=\"282.555\" height=\"263.055\" fill=\"none\" stroke=\"#6f766e\"/><rect x=\"147.24\" y=\"402.685\" width=\"143\" height=\"97.5\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"422.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"138.26999999999998\" y=\"513.835\" width=\"77.74000000000001\" height=\"78\" fill=\"#d7d2c5\" stroke=\"#9f9a8d\"/><rect x=\"294.33500000000004\" y=\"379.48\" width=\"21.71\" height=\"21.71\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"382.21\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"294.33500000000004\" y=\"379.48\" width=\"21.71\" height=\"21.71\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"382.21\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><polyline points=\"138.79000000000002,617.835 138.79000000000002,617.835 323.39,617.835 323.39,421.53499999999997 323.39,421.53499999999997 323.39,390.335 305.19,390.335 305.19,390.335\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"305.19,390.335 305.19,390.335 277.89,390.335 277.89,390.335 133.59,390.335 133.59,533.335 227.19,533.335 227.19,533.335\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,624.985 165.44,624.985 305.19,624.985 305.19,405.935 305.19,405.935 305.19,390.335 305.19,390.335\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"305.19,390.335 305.19,390.335 323.39,390.335 323.39,390.335 245.39000000000001,389.03499999999997 245.39000000000001,389.03499999999997 206.39000000000001,188.83499999999998\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><polyline points=\"215.49,379.935 282.18,390.76022964447395\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><polyline points=\"215.49,379.935 279.58000000000004,390.6185584107078\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><text x=\"35\" y=\"720\" font-size=\"18\">X/Z PROJECTION · local floor datum; no vertical exaggeration used as clearance proof</text><rect x=\"294.33500000000004\" y=\"981.12\" width=\"21.71\" height=\"27.560000000000002\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"986.775\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"294.33500000000004\" y=\"900.52\" width=\"21.71\" height=\"27.560000000000002\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><rect x=\"276.98\" y=\"906.175\" width=\"28.21\" height=\"16.25\" fill=\"#e5b8a8\" stroke=\"#9b4331\"/><polyline points=\"138.79000000000002,1097.8093 138.79000000000002,803.8 323.39,803.8 323.39,803.8 323.39,1027.4 323.39,1027.4 305.19,1027.4 305.19,1005.3\" fill=\"none\" stroke=\"#267a87\" stroke-width=\"3\"/><polyline points=\"305.19,984.5 305.19,962.4 277.89,962.4 277.89,867.5 133.59,867.5 133.59,867.5 227.19,867.5 227.19,1030\" fill=\"none\" stroke=\"#64a2a4\" stroke-width=\"3\"/><polyline points=\"165.44,1082.2093 165.44,820.7 305.19,820.7 305.19,820.7 305.19,946.8 305.19,946.8 305.19,924.7\" fill=\"none\" stroke=\"#93513d\" stroke-width=\"3\"/><polyline points=\"305.19,903.9 305.19,881.8 323.39,881.8 323.39,771.3 245.39000000000001,771.3 245.39000000000001,848 206.39000000000001,848\" fill=\"none\" stroke=\"#c58c55\" stroke-width=\"3\"/><polyline points=\"215.49,971.5 282.18,986.7861350301191\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><polyline points=\"215.49,971.5 279.58000000000004,922.4200504695301\" fill=\"none\" stroke=\"#bd2525\" stroke-width=\"3\"/><line x1=\"600\" x2=\"615\" y1=\"145\" y2=\"145\" stroke=\"#267a87\" stroke-width=\"4\"/><text x=\"620\" y=\"150\" font-size=\"16\">utility/upstream: 7.462m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"185\" y2=\"185\" stroke=\"#64a2a4\" stroke-width=\"4\"/><text x=\"620\" y=\"190\" font-size=\"16\">utility/downstream: 5.290m; corner interfaces: 6.</text><line x1=\"600\" x2=\"615\" y1=\"225\" y2=\"225\" stroke=\"#93513d\" stroke-width=\"4\"/><text x=\"620\" y=\"230\" font-size=\"16\">plant/upstream: 6.032m; corner interfaces: 5.</text><line x1=\"600\" x2=\"615\" y1=\"265\" y2=\"265\" stroke=\"#c58c55\" stroke-width=\"4\"/><text x=\"620\" y=\"270\" font-size=\"16\">plant/downstream: 3.919m; corner interfaces: 5.</text><text x=\"620\" y=\"345\" font-size=\"16\">Closest pipes after jackets/settings: 19.90mm.</text><text x=\"620\" y=\"385\" font-size=\"16\">Upper copper stock: 23.564 kg; water: 12.109 kg.</text><text x=\"620\" y=\"425\" font-size=\"16\">Valves12kg; jacket/insulation refs; complete mass unknown.</text><text x=\"620\" y=\"485\" font-size=\"16\">utility: loss: 0.0687 bar; rise: 0.0512 bar.</text><text x=\"620\" y=\"525\" font-size=\"16\">plant: loss: 0.2889 bar; rise: 0.1767 bar.</text><text x=\"620\" y=\"570\" font-size=\"16\">Boxed fitting territories: REJECTED.</text><text x=\"620\" y=\"610\" font-size=\"16\">Geometry/budget comparison: REJECTED.</text><text x=\"620\" y=\"650\" font-size=\"16\">Loss coefficients are authored comparisons, not proved limits.</text><text x=\"620\" y=\"700\" font-size=\"16\">Route / valve / arm screen: REJECTED.</text><text x=\"620\" y=\"740\" font-size=\"16\">Arm reserve -101.58mm; valve -60.05mm.</text><text x=\"620\" y=\"785\" font-size=\"16\">Retained services / complete package: REJECTED.</text><text x=\"620\" y=\"820\" font-size=\"16\">Worst reserve: -193.55 mm.</text><text x=\"620\" y=\"850\" font-size=\"16\">Four paths; no cross-connection, header or bypass.</text><text x=\"620\" y=\"890\" font-size=\"16\">Upstream/downstream tails end at actual 160 mm valve faces.</text><text x=\"620\" y=\"930\" font-size=\"16\">Named copper/water gravity and pressure-corner vectors exported.</text><text x=\"620\" y=\"970\" font-size=\"16\">Actual fixed/sliding clips and masonry receivers still required.</text><text x=\"620\" y=\"1010\" font-size=\"16\">Lodge cuts and actual hot/store/upper draining remain required.</text><text x=\"620\" y=\"1050\" font-size=\"16\">No route or added mass is admitted into native ground-zero STR.</text><text x=\"35\" y=\"1210\" font-size=\"18\">HAD OPEN · no product/material selection, full occupied arrangement or construction acceptance</text></g></svg>"
       },
       "bankReceiver": {
         "schema": "had-bank-receiver-comparison/1",
@@ -20256,6 +20406,8 @@
       ]
     },
     "diagnostics": [
+      "INLET_PIPE_FITTING_TERRITORY",
+      "INLET_PIPE_OWN_FITTING_TERRITORY",
       "INLET_ROUTE_VALVE_BODY_OR_STEM_COLLISION",
       "INLET_ROUTE_ORDINARY_ARM_COLLISION",
       "INLET_RECEIVER_TERRITORY/HAD/indoor-receiver/plant/below",
