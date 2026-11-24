@@ -8,11 +8,15 @@ const receipt=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-s
  input:IndoorRoutesInput={roomPlanMm:r.roomPlanMm,bankMm:[c.authoredChoices.bankXMm,c.authoredChoices.bankYMm],utilityAxisZMm:c.authoredChoices.utilityAxisZMm,plantAxisZMm:c.authoredChoices.plantAxisZMm,...r.authoredRouteGeometry,
   utilitySourcePathMm:source.branches[0].coordinates,plantSourcePathMm:source.branches[1].coordinates,plantTransferMm:receipt.joinedDirection.transfer.pathMm,groundFflMm:c.groundStage.fflMm,ceilingMm:3100,utilityLmin:receipt.settings.requiredUtilityLmin,plantLmin:receipt.settings.requiredPlantLmin,
   maximumGaugeBar:receipt.bound.maximumAbsoluteTotalBar-receipt.settings.atmosphericMinimumBar,networkAllowancesBar:[receipt.settings.utilityNetworkLossBar,receipt.settings.plantNetworkLossBar],comparison:r.authoredComparison,obstacles:r.checkedObstacles}
-test('whole retained duties reject the explicit reroute even when separate route/operation/clamp checks pass',()=>{
+test('own fitting and whole retained duties reject the reroute despite separate operation/clamp checks',()=>{
  const x=r.candidateComparison
  assert.equal(x.state,'unadopted-explicit-comparison');assert.equal(x.selected,false)
- assert.equal(x.comparison.route.necessaryStraightPipeGeometryAndBudgetComparison,true)
- assert.equal(x.comparison.bank.necessaryRouteOperationAndClampEnvelopeScreen,true)
+ assert.equal(x.comparison.route.necessaryStraightPipeGeometryAndBudgetComparison,false)
+ assert.ok(Math.abs(x.comparison.route.cornerTerritory.minimumSamePathCornerReserveMm+91.03332099679028)<1e-8)
+ assert.ok(Math.abs(x.comparison.route.cornerTerritory.minimumSamePathPipeReserveMm+40.566660498623875)<1e-8)
+ assert.equal(x.comparison.bank.necessaryRouteOperationAndClampEnvelopeScreen,false)
+ assert.equal(x.comparison.bank.routeOperation.necessaryRouteOperationEnvelopeScreen,true)
+ assert.deepEqual(x.comparison.bank.diagnostics,[],'unchanged operation/clamp method remains a separate passing control')
  assert.equal(x.comparison.retained.necessaryRetainedServiceEnvelopeScreen,false)
  assert.equal(x.comparison.necessaryJoinedEnvelopeScreen,false)
  const minima=x.comparison.retained.minimumByObstacle
@@ -46,4 +50,22 @@ test('retained comparison uses exact physical radii and both settings; obstacle 
  assert.equal(a.twoIndependentSettingsMm,20);assert.equal(a.pipeJacketRadiusMm,40.05)
  assert.throws(()=>inletRouteRetainedServices(candidate.route,{...services,paths:[...services.paths,...services.paths]}),/Unsupported/)
  assert.throws(()=>inletRouteRetainedServices(candidate.route,{...services,boxes:[{id:'bad',boxMm:[0,0,0,1,1,0]}]}),/Unsupported/)
+})
+
+test('a real own-dogleg edit recomputes fitting reserves, quantities and exact reversal without changing Utility',()=>{
+ const before=compareInletIndoorRouteCandidate(input,authored),changed=structuredClone(authored)
+ const plant=changed.paths.find((p:any)=>p.id==='plant/upstream')
+ plant.pointsMm[5][0]+=1;plant.pointsMm[6][0]+=1
+ const after=compareInletIndoorRouteCandidate(input,changed)
+ assert.ok(Math.abs(after.cornerTerritory.minimumSamePathCornerReserveMm-before.cornerTerritory.minimumSamePathCornerReserveMm-1)<1e-8)
+ assert.ok(Math.abs(after.cornerTerritory.minimumSamePathPipeReserveMm-before.cornerTerritory.minimumSamePathPipeReserveMm-1)<1e-8)
+ assert.deepEqual(after.paths.filter(p=>p.id.startsWith('utility/')),before.paths.filter(p=>p.id.startsWith('utility/')))
+ assert.deepEqual(after.branches[0],before.branches[0])
+ assert.ok(after.straightCopperStockComparisonKg>before.straightCopperStockComparisonKg)
+ assert.equal(after.cornerTerritory.necessarySamePathTerritoryComparison,false)
+ assert.ok(after.cornerTerritory.perSamePathPipe.every(c=>{
+  const index=Number(c.corner.split('/').at(-1));return c.segment!==index&&c.segment!==index+1
+ }))
+ plant.pointsMm[5][0]-=1;plant.pointsMm[6][0]-=1
+ assert.deepEqual(compareInletIndoorRouteCandidate(input,changed),before)
 })
