@@ -1,42 +1,35 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 61,
+  "generation": 62,
   "state": "claimed",
-  "leaseId": "b2192c71-acc8-4e27-a670-1601ac2c22ea",
+  "leaseId": "ddd8cd17-f15b-4d8c-bcd6-92f4991039f2",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-water-route-20261123-resume"
+    "label": "convergence-20261124"
   },
-  "claimedAt": "2026-11-23T22:25:11.048Z",
-  "heartbeatAt": "2026-11-23T23:37:49.427Z",
-  "expiresAt": "2026-11-24T00:22:49.427Z",
-  "branch": "work/convergence-resume-final-20261123",
+  "claimedAt": "2026-11-24T09:33:01.836Z",
+  "heartbeatAt": "2026-11-24T09:33:01.836Z",
+  "expiresAt": "2026-11-24T10:18:01.836Z",
+  "branch": "work/convergence-recovery-20261124",
   "predecessor": {
-    "leaseId": "6e4645a2-e69d-4369-b4b5-29cd4723f830",
-    "generation": 60,
-    "branch": "recovery/had-side-receiver-20261123",
-    "pr": 1620,
+    "leaseId": "b2192c71-acc8-4e27-a670-1601ac2c22ea",
+    "generation": 61,
+    "branch": "work/convergence-resume-final-20261123",
+    "pr": 1622,
     "checkpoint": {
-      "evidence": "Merged1620/main ae5d28d6. Recovery4d068929 and route recovery f1a945aa on recovery/had-route-operation-unverified-20261123. See project/had/route-operation-recovery-20261123.md: source8 valve/arm collisions; unverified patch;130b full3D rawfiles NOT uploaded.",
-      "next": "Recover fresh main/lease; validate route rejection and regenerate genuine receipts before PR. Prove all90degree reroute and full3D/capture before source9; no water-system adoption.",
-      "blocker": "Execution environment unavailable. Remote patch reconstructed, untested; generated receipts unchanged/stale. Canonical Actions handoff requested; no local CLI execution."
+      "evidence": "Merged1623 exactcb5/mainfa711061. FROZEN handedoffcontinuation recovery/had-retained-route-20261123 head9fd9ad01 treebb82b535 exactlocalfb316;22HAD/ADE files vsnewmain. Retained/head rejection+unadoptedsplitstation with10/20mmadverse,actualsource/datum/modeholds; no source9.27then7focused/type/producer/audit0pass;final30running.",
+      "next": "Root deliberatelyintegrates9fd withSTRsuccessore94+stairfix in shared1622 branch, reconcilesactual source-account and genuinelyregenerates dependentoutputs; exactheadCI and BOTHHAD/STR publicationpreflights beforemerge. Compactresearch remainsread-only, completewaterroute/support/relief stillunqualified."
     }
   },
   "recoverySource": {
-    "leaseId": "6e4645a2-e69d-4369-b4b5-29cd4723f830",
-    "generation": 60,
-    "branch": "recovery/had-side-receiver-20261123",
-    "pr": 1620,
+    "leaseId": "b2192c71-acc8-4e27-a670-1601ac2c22ea",
+    "generation": 61,
+    "branch": "work/convergence-resume-final-20261123",
+    "pr": 1622,
     "checkpoint": {
-      "evidence": "Merged1620/main ae5d28d6. Recovery4d068929 and route recovery f1a945aa on recovery/had-route-operation-unverified-20261123. See project/had/route-operation-recovery-20261123.md: source8 valve/arm collisions; unverified patch;130b full3D rawfiles NOT uploaded.",
-      "next": "Recover fresh main/lease; validate route rejection and regenerate genuine receipts before PR. Prove all90degree reroute and full3D/capture before source9; no water-system adoption.",
-      "blocker": "Execution environment unavailable. Remote patch reconstructed, untested; generated receipts unchanged/stale. Canonical Actions handoff requested; no local CLI execution."
+      "evidence": "Merged1623 exactcb5/mainfa711061. FROZEN handedoffcontinuation recovery/had-retained-route-20261123 head9fd9ad01 treebb82b535 exactlocalfb316;22HAD/ADE files vsnewmain. Retained/head rejection+unadoptedsplitstation with10/20mmadverse,actualsource/datum/modeholds; no source9.27then7focused/type/producer/audit0pass;final30running.",
+      "next": "Root deliberatelyintegrates9fd withSTRsuccessore94+stairfix in shared1622 branch, reconcilesactual source-account and genuinelyregenerates dependentoutputs; exactheadCI and BOTHHAD/STR publicationpreflights beforemerge. Compactresearch remainsread-only, completewaterroute/support/relief stillunqualified."
     }
-  },
-  "pr": 1622,
-  "checkpoint": {
-    "evidence": "Merged1623 exactcb5/mainfa711061. FROZEN handedoffcontinuation recovery/had-retained-route-20261123 head9fd9ad01 treebb82b535 exactlocalfb316;22HAD/ADE files vsnewmain. Retained/head rejection+unadoptedsplitstation with10/20mmadverse,actualsource/datum/modeholds; no source9.27then7focused/type/producer/audit0pass;final30running.",
-    "next": "Root deliberatelyintegrates9fd withSTRsuccessore94+stairfix in shared1622 branch, reconcilesactual source-account and genuinelyregenerates dependentoutputs; exactheadCI and BOTHHAD/STR publicationpreflights beforemerge. Compactresearch remainsread-only, completewaterroute/support/relief stillunqualified."
   }
 }
