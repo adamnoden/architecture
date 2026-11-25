@@ -9,8 +9,8 @@
     "label": "structure-convergence-20261125"
   },
   "claimedAt": "2026-11-25T08:40:52.436Z",
-  "heartbeatAt": "2026-11-25T09:05:17.605Z",
-  "expiresAt": "2026-11-25T09:50:17.605Z",
+  "heartbeatAt": "2026-11-25T09:40:40.301Z",
+  "expiresAt": "2026-11-25T11:10:40.301Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "81d1d5af-717b-47e5-b8e9-5cdc634a77a7",
@@ -33,7 +33,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "Combined current contour140/70/50 and ordering checkpoint3f4b2095d6581d84625795937ba62434c1218b77 pushed on work/convergence-lighting-20261125; all-mode changes12.05566pct and13.80010pct,35unavailable; no convergence or house selection.",
-    "next": "Recover authenticated120pad controls through current shared fan method; finish exact-head CI and publication preflight on combined branch."
+    "evidence": "Remote combined checkpoint3f4b2095d6581d84625795937ba62434c1218b77; firstPR source frozen locally63a74c8b410721a4c8d4fb1404522c6656d08665 pending verified upload. Source-bound120pad recovery and genuine sharednative equality remain unadopted development.",
+    "next": "Verify firstPR exact-head CI/publication preflight; preserve separate actualsouth40/q32/q64 and rectangularend comparison for next integration."
   }
 }
