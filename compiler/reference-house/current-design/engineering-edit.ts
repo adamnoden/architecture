@@ -1,3 +1,4 @@
+import {readWetBeamEndDevelopmentControls} from './structural-wet-beam-end-settings.js'
 import {readFiniteFloorContourSettings} from './structural-finite-floor-contour-settings.js'
 import { admitDesignSnapshot, type DesignSnapshot } from './snapshot.js'
 import { sameEditBase, type EditBase } from './edit.js'
@@ -31,6 +32,7 @@ export const editableRoofId = 'MAT/ring-roof-field'
 export const editableFloorSectionId = 'STR/current-floor-section'
 export const editableWetSupportId = 'STR/wet-wall-support'
 export const editableWetCageId = 'STR/wet-wall-support/reinforcement'
+export const editableWetBeamEndId = 'STR/WET-CAGE/beam/rectangular-return-development'
 export const editableStudyLightingId = 'IAS/STUDY/service-corner'
 function record(input: unknown): input is Record<string, unknown> {
   return input !== null && typeof input === 'object' && Object.getPrototypeOf(input) === Object.prototype
@@ -132,6 +134,17 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       const changed = readFloorSectionCuts(cuts.map((cut,i) => i === index ? { ...cut, positionMm: operation.positionMm, intervalMm: operation.intervalMm } : cut))
       if (JSON.stringify(changed) === JSON.stringify(cuts)) return { status: 'applied', state }
       stages = { ...state.document.stages, floorSection: { ...current, sectionCuts: changed } }
+    } else if (record(operation) && operation.kind === 'set-wet-beam-end-mandrel') {
+      const current = state.document.stages.floorSection
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'endReturnMandrelMm'])
+        || operation.assemblyId !== editableWetBeamEndId || !record(current) || current.thicknessMm !== 200
+        || !record(current.wetSupport) || !record(current.cageComparison) || !record(current.beamEndDevelopment)) {
+        throw new TypeError('An existing explicit RC200 wet cage and local beam-end development comparison are required')
+      }
+      const before = readWetBeamEndDevelopmentControls(current.beamEndDevelopment)
+      const changed = readWetBeamEndDevelopmentControls({...before, endReturnMandrelMm:operation.endReturnMandrelMm})
+      if (changed.endReturnMandrelMm === before.endReturnMandrelMm) return {status:'applied',state}
+      stages = {...state.document.stages,floorSection:{...current,beamEndDevelopment:changed}}
     } else if (record(operation) && operation.kind === 'set-wet-cage-top-level') {
       const current = state.document.stages.floorSection
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'postTopLevelRaiseMm'])

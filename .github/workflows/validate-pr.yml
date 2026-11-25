@@ -51,6 +51,8 @@ jobs:
         run: |
           python -B project/str/studies/continuous_rc_closed_links_proof.py --check
           python -B project/str/studies/wet_pad_fan_recovery_proof.py --check
+          python -B project/str/studies/wet_beam_end_development_proof.py --check
+          python -B -m unittest discover -s project/str/studies -p wet_beam_rectangular_return_test.py
           python -B -m unittest discover -s project/str/studies -p portal_architectural_simplification_test.py
           if ! python -B project/str/studies/portal_architectural_simplification.py --check; then
             python -B project/str/studies/portal_architectural_simplification.py
@@ -71,6 +73,18 @@ jobs:
         run: |
           test -n "$STR_FINITE_SOLID_PYTHON"
           node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts
+
+      - name: Prove wet-beam end edits on the authenticated native case
+        env:
+          STR_WET_BEAM_END_NATIVE: ${{ runner.temp }}/wet-beam-end-native.json
+        run: |
+          python -B - <<'PY'
+          import os, tarfile
+          from pathlib import Path
+          with tarfile.open('project/str/studies/wet-beam-end-native-captures.tar.xz', 'r:xz') as archive:
+              Path(os.environ['STR_WET_BEAM_END_NATIVE']).write_bytes(archive.extractfile('south40-q64.full.json').read())
+          PY
+          node --import tsx --test compiler/reference-house/current-design-wet-beam-end.test.ts
 
       - name: Cache verified publication fonts
         uses: actions/cache@v6

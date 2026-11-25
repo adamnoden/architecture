@@ -22,6 +22,12 @@
         <button class="primary" type="submit">Compare cage levels</button></form>
       <p>Moves all post-link levels within the saved cage. The admitted range includes comparisons that fail cover.</p>
     </section>
+    <section id="wet-beam-end-controls" hidden aria-label="Unadopted wet-beam end development">
+      <h2>Wet-beam rectangular return</h2><form id="wet-beam-end-edit">
+        <label>End-return mandrel (mm)<input id="beam-end-mandrel" type="number" min="48" step="any" required></label>
+        <button class="primary" type="submit">Compare end return</button></form>
+      <p>48 mm or greater and below 200 mm. Edits the explicit saved comparison. Geometry and straight-section comparisons recompute on the same native loads; curved-bar forces, finite end transfer and anchorage remain unresolved.</p>
+    </section>
     <section id="inlet-bank-controls" hidden aria-label="Indoor water bank comparison"><h2>Indoor water bank</h2>
       <form id="inlet-bank-edit"><label>Saved input<select id="inlet-field">
         <option value="indoorBankXMm">Bank X</option><option value="indoorUtilityAxisZMm">Utility valve axis above FFL</option>
@@ -43,13 +49,17 @@
       <label><span id="plant-room-unit">mm</span><input id="plant-room-value" type="number" step="any" required></label><button class="primary" type="submit">Compare Plant input</button></form>
       <p>Uses the complete saved Plant choice and actual saved ground. Source flow and Utility remain separate controls; failing comparisons stay visible.</p></section>
     <p id="lighting-result" role="status"></p><p id="lighting-diagnostics"></p>
-    <p id="floor-result" role="status"></p><p id="cage-result" role="status"></p>
+    <p id="floor-result" role="status"></p><p id="cage-result" role="status"></p><p id="beam-end-result" role="status"></p>
     <p id="diagnostic" role="alert"></p><p id="evidence"></p>
   </aside><section class="drawing" aria-label="Roof comparison"><div class="drawing-bar"><p id="analysis" role="status"></p><button id="pin" disabled>Use current as comparison</button></div>
     <p id="stale" role="status"></p><p id="identity"></p><p id="affected"></p>
     <div class="plans"><figure><figcaption id="current-caption">Current revision</figcaption><img id="current-roof" alt="Compiled roof section"></figure>
     <figure><figcaption id="comparison-caption">Starting document</figcaption><img id="comparison-roof" alt="Comparison roof section"></figure></div>
     <section id="inlet-bank-views" hidden aria-label="Finite water bank comparison"><div class="plans"><figure><figcaption>Current bank comparison</figcaption><img id="current-inlet-bank" alt="Finite bank clamp and receiver comparison"></figure><figure><figcaption>Pinned bank comparison</figcaption><img id="comparison-inlet-bank" alt="Previous bank comparison"></figure></div><details><summary>Flat-shelf carrier development comparison</summary><div class="plans"><figure><figcaption>Current carrier comparison</figcaption><img id="current-inlet-carrier" alt="Actual flat-shelf carrier and unchanged pressure and thermal rejection"></figure><figure><figcaption>Pinned carrier comparison</figcaption><img id="comparison-inlet-carrier" alt="Previous flat-shelf carrier comparison"></figure></div></details><details><summary>Unadopted route and retained service comparison</summary><p id="inlet-candidate-result" role="status"></p><div class="plans"><figure><figcaption>Explicit route candidate · no adoption</figcaption><img id="current-inlet-candidate" alt="Unadopted route comparison including retained services and the complete removal package"></figure><figure><figcaption>Pinned candidate comparison</figcaption><img id="comparison-inlet-candidate" alt="Previous unadopted route comparison"></figure></div></details><details><summary>Independent Plant inlet branch</summary><p id="inlet-plant-branch-result" role="status"></p><div class="plans"><figure><figcaption>Plant source, store and cold tree · no adoption</figcaption><img id="current-inlet-plant-branch" alt="Independent Plant branch with service infill, fixed and removable connections and unresolved interfaces"></figure><figure><figcaption>Pinned Plant branch</figcaption><img id="comparison-inlet-plant-branch" alt="Previous independent Plant branch comparison"></figure></div></details><details><summary>Plant wet floor and threshold</summary><p id="inlet-plant-room-result" role="status"></p><div class="plans"><figure><figcaption>Whole Plant comparison · no adoption</figcaption><img id="current-inlet-plant-room" alt="Plant floor, independent threshold channels, bridge and adverse source and stored-water states"></figure><figure><figcaption>Pinned Plant floor comparison</figcaption><img id="comparison-inlet-plant-room" alt="Previous Plant floor and threshold comparison"></figure></div></details></section>
+    <section id="wet-beam-end-views" hidden aria-label="Unadopted wet-beam end comparison"><div class="plans">
+      <figure><figcaption>Draft rectangular return · no adoption</figcaption><img id="current-beam-end" alt="Exact saved rectangular return and actual bearing pad against the stadium reference"></figure>
+      <figure><figcaption>Pinned rectangular return · no adoption</figcaption><img id="comparison-beam-end" alt="Previous rectangular-return comparison"></figure>
+    </div></section>
     <section id="lighting-views" hidden aria-label="Unselected Study enclosure comparison"><div class="plans">
       <figure><figcaption>Edited unselected Study comparison</figcaption><img id="current-lighting" alt="Source-derived common-depth Study enclosure and withdrawal comparison"></figure>
       <figure><figcaption>Pinned unselected Study comparison</figcaption><img id="comparison-lighting" alt="Previous common-depth Study comparison"></figure>
