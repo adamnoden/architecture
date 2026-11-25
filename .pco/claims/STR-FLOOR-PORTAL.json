@@ -9,8 +9,8 @@
     "label": "structure-convergence-20261125"
   },
   "claimedAt": "2026-11-25T08:40:52.436Z",
-  "heartbeatAt": "2026-11-25T09:43:16.504Z",
-  "expiresAt": "2026-11-25T11:13:16.504Z",
+  "heartbeatAt": "2026-11-25T10:25:41.768Z",
+  "expiresAt": "2026-11-25T11:55:41.768Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "81d1d5af-717b-47e5-b8e9-5cdc634a77a7",
@@ -33,8 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1625 exactremotehead6f35272f3d15a6affcc71c6ee851c48298f9fb95; source-tree404a4e0c39288b1134d4eb9cf43dcde7539a60d7. Includes current contour and authenticated120pad proof; nohouseorpacketclosure. Separate genuine south40/q32/q64 captures and rectangularend receipt ready for next checkpoint.",
-    "next": "Observe exact-head PR1625 CI and publishpreflight; push separate nextend-development rawcaptures and receipt, then integrate same-document comparison controls."
+    "evidence": "Durable UI and end-development checkpoint remote6670a3611a560ac3f9bf06ae4981abcc356710ea. Current actual120/south40/q64 shared compiler nativeRequest exact and all52 heads match archive control; unadopted end-return comparison and reversible browser controls verified. PR1625 remains first publication branch; next source family under coordinated integration.",
+    "next": "Complete exact-head PR1625 validation and canonical publication preflight; integrate current-source saved-stage receipts and hosted end-only browser proof, then coordinate lower-arch and uniform-material comparisons without implied selection."
   },
   "pr": 1625
 }
