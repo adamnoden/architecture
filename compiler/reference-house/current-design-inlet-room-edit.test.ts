@@ -7,7 +7,7 @@ import {readCurrentDesignResolution} from './current-design/resolve.js'
 import {readInletSourceEnvelopeCase,readLocalUtilityPocketSettings} from './current-design/inlet-source-envelope.js'
 import {readGroundSectionCase} from './current-design/structural-ground.js'
 import {readEngineeringDocument,compileEngineeringDocument} from './current-design/engineering-document.js'
-import {applyEngineeringEdit,beginEngineeringEdit,currentEngineeringReply,editablePlantRoomId,engineeringBase,engineeringTicket,replayEngineeringEdit,saveEngineeringEdit} from './current-design/engineering-edit.js'
+import {applyEngineeringEdit,beginEngineeringEdit,currentEngineeringReply,editablePlantRoomId,editablePlantRoomFields,plantRoomEditableNumber,engineeringBase,engineeringTicket,replayEngineeringEdit,saveEngineeringEdit} from './current-design/engineering-edit.js'
 import {runEditorEngineeringRequest} from '../../project/ade/browser-editor/engineering-api.js'
 import {admitSplitPlantRoomChoice} from './current-design/inlet-split-plant-room.js'
 const edit=(state:ReturnType<typeof beginEngineeringEdit>,inputId:string,value:number,units='mm')=>applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units,base:engineeringBase(state),operation:{kind:'set-plant-room-field',assemblyId:editablePlantRoomId,inputId,value}})
@@ -98,4 +98,17 @@ test('one saved fitted-width edit coordinates actual inlet and station while pre
  assert.equal(pa.completeOccupiedArrangementQualified,false);assert.equal(pb.completeOccupiedArrangementQualified,false)
  const undo=replayEngineeringEdit(editResult.state,engineeringBase(editResult.state),'undo');assert.equal(undo.status,'applied');if(undo.status==='applied')assert.equal(saveEngineeringEdit(undo.state),saveEngineeringEdit(state))
  assert.equal(edit(state,'fittedFrame.clearWidthMm',800).status,'rejected');assert.equal(edit(state,'fittedFrame.selected',1).status,'rejected')
+})
+
+
+test('nested Plant control paths preserve availability and show actual authored numbers',()=>{
+ const room=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-split-plant-room-candidate.json',import.meta.url),'utf8'))
+ assert.ok(editablePlantRoomFields.every(field=>plantRoomEditableNumber(room,field)!==undefined))
+ assert.equal(plantRoomEditableNumber(room,'fittedFrame.clearWidthMm'),1100)
+ assert.equal(plantRoomEditableNumber(room,'fittedFrame.sourceOpeningDiameterMm'),125)
+ assert.equal(plantRoomEditableNumber(room,'clearWidthMm'),400)
+ for(const value of [undefined,{}, {...room,fittedFrame:{}},{...room,fittedFrame:{...room.fittedFrame,clearWidthMm:null}}])
+  assert.equal(plantRoomEditableNumber(value,'fittedFrame.clearWidthMm'),undefined)
+ assert.equal(plantRoomEditableNumber(room,'fittedFrame.selected'),undefined)
+ assert.equal(plantRoomEditableNumber({...room,clearWidthMm:NaN},'clearWidthMm'),undefined)
 })

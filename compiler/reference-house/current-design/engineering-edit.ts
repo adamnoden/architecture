@@ -27,6 +27,14 @@ export interface EngineeringTicket {
 }
 export const editablePlantRoomId='HAD/plant-wet-floor-threshold-successor'
 export const editablePlantRoomFields=['clearWidthMm','clearHeightMm','receiverHighAdverseMm','bridgeLiftMm','bridgeHardwareBudgetEachKg','fittedFrame.clearWidthMm','fittedFrame.sourceOpeningDiameterMm'] as const
+/** Read the same authored scalar for control availability and its displayed value. */
+export function plantRoomEditableNumber(input:unknown,field:string):number|undefined {
+  if(!record(input)||!(editablePlantRoomFields as readonly string[]).includes(field))return undefined
+  const value=field.startsWith('fittedFrame.')
+    ? record(input.fittedFrame)?input.fittedFrame[field.slice('fittedFrame.'.length)]:undefined
+    : input[field]
+  return typeof value==='number'&&Number.isFinite(value)?value:undefined
+}
 export const editableInletBankId='HAD/indoor-isolation-bank'
 export const editableInletBankFields=['indoorBankXMm','indoorUtilityAxisZMm','indoorTailOffsetMm','indoorUtilityReturnXMm','indoorWesternReturnXMm','pipeJacketDensityComparisonKgM3','pipeInsulationDensityComparisonKgM3'] as const
 export const editableRoofId = 'MAT/ring-roof-field'

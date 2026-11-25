@@ -4,7 +4,7 @@ import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import type { runGroundSectionCase } from './structural-ground.js'
 import {runHouseVerticalProfileCase} from './house-vertical-profile.js'
-import { inletEntrySideCuts, drawInletIndoorCuts, inletSplitPlantStationComparison, drawInletSplitPlantStation, type SplitPlantStationChoice } from './inlet-indoor-cuts.js'
+import { indoorCutProductEvidence, inletEntrySideCuts, drawInletIndoorCuts, inletSplitPlantStationComparison, drawInletSplitPlantStation, type SplitPlantStationChoice } from './inlet-indoor-cuts.js'
 import {inletSplitPlantBranch,drawInletSplitPlantBranch,derivePlantFittedFrame,coordinatePlantFrameBranch,type SplitPlantBranchChoice} from './inlet-split-plant-branch.js'
 import {inletSplitPlantRoom,drawInletSplitPlantRoom,admitSplitPlantRoomChoice,type SplitPlantRoomChoice} from './inlet-split-plant-room.js'
 import {derivePlantReleaseProfiles} from '../../../project/had/studies/plant-release-profiles.mjs'
@@ -265,7 +265,14 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
       electricalDirection: 'sealed-indoor-mainboard-and-independent-streethead-pv',
       rationale: 'The current small lobby is circulation, the Utility valve bay already contains rack/waste duties, and the plant control reservation is occupied. None is spare room. Replan the whole Utility wet station and separate its electrical task before adding footprint, roof, openings and another frost boundary.',
       newRoomGeometryAuthored: true, electricalRelocationSelected: false, replacementOccupiedHouseCompiled: false, annexSelected: false },
-    materials: { valve: inletCabinetProductFacts.valve.model, knownPolymerItemsAcrossTwoValves: 6, ownerExceptionsApproved: 0,
+    materials: { currentIndoorValveGeometryComparison:{model:indoorCutProductEvidence.bellows.model,
+      knownConstituents:indoorCutProductEvidence.bellows.knownConstituents,unresolvedConstituents:indoorCutProductEvidence.bellows.unresolvedConstituents,
+      actualPotableQualification:indoorCutProductEvidence.bellows.actualPotableQualification,actualWholeConstituentQualification:indoorCutProductEvidence.bellows.actualWholeConstituentQualification,
+      knownPolymerItemsAcrossCurrentValves:null,polymerAbsenceEstablished:false,selected:false,
+      status:'Unqualified geometry comparison; known catalogue materials do not establish a complete constituent inventory or potable admission.'},
+      historicalRejectedConexCabinetControl:{state:'rejected-historical-comparison',valve:inletCabinetProductFacts.valve.model,comparedValveCount:2,
+       knownPolymerConstituentsPerValve:inletCabinetProductFacts.valve.knownPolymerItems,knownPolymerItemsPerValve:inletCabinetProductFacts.valve.knownPolymerItemsPerValve,
+       knownPolymerItemsAcrossComparedValves:2*inletCabinetProductFacts.valve.knownPolymerItemsPerValve,selected:false},ownerExceptionsApproved: 0,
       fixedRestrictionAllConstituentsQualified: false, potableApprovalQualified: false },
     selected: false, preSiteArrangementComplete: false, installedAcceptance: false }
   return { ...result, reviewSvg: draw(result) }
