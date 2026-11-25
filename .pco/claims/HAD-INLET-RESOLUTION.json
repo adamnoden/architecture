@@ -9,8 +9,8 @@
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-25T22:28:23.456Z",
-  "expiresAt": "2026-11-25T23:13:23.456Z",
+  "heartbeatAt": "2026-11-25T22:47:45.321Z",
+  "expiresAt": "2026-11-25T23:32:45.321Z",
   "branch": "work/convergence-structure-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
@@ -36,8 +36,8 @@
   },
   "pr": 1626,
   "checkpoint": {
-    "evidence": "PR1626@36591e45fabe7f5754392a72c1b5c8e836e5f73c; recovered125mm Plant frame and genuinely regenerated current-source receipts; strict audit and producer check passed",
-    "next": "Verify exact-head focused and browser CI, publication preflight; continue conditional finite-inventory cap comparison privately",
-    "blocker": "Exact-head CI pending; no complete arrangement or native frame support acceptance"
+    "evidence": "PR1626@5ad43f28dc1523974ea81b97e138ed853cc0c114 retains source-authenticated Plant125/frame1100 recovery; strict current-source producer regenerated and local focused controls passed",
+    "next": "Verify recovery CI and publication; root integrates finite-inventory and actual incident-station followups already committed for shared publication",
+    "blocker": "Exact-head recovery CI pending; actual maximum store release, room support and whole occupied arrangement remain unqualified"
   }
 }
