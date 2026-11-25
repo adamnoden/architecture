@@ -9,8 +9,8 @@
     "label": "convergence-water-20261125"
   },
   "claimedAt": "2026-11-25T08:40:34.501Z",
-  "heartbeatAt": "2026-11-25T09:14:57.004Z",
-  "expiresAt": "2026-11-25T09:59:57.004Z",
+  "heartbeatAt": "2026-11-25T09:56:43.303Z",
+  "expiresAt": "2026-11-25T10:41:43.303Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "ddd8cd17-f15b-4d8c-bcd6-92f4991039f2",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Root remote work/convergence-lighting-20261125 at3f4b2095 retains authentic f658HAD recovery; completed Plant threshold/source-store continuation055cab8b is merged locally into root85715647 with current-source union.",
-    "next": "Publish combined source-bound Plant threshold and structural controls; complete optional saved Plantroom choice path, run exact-head health and publication preflight."
-  }
+    "evidence": "PR1625 exact remote6f35272f3d15a6affcc71c6ee851c48298f9fb95/tree404a4e0c39288b1134d4eb9cf43dcde7539a60d7 retains validated Plant branch, saved choices and corrected actual floor/DPC/junction comparisons. Next independent frame1100 continuation based frozen63a74c8b.",
+    "next": "Observe firstPR exact-head CI and mergepreflight; next independent1100frame linkedstation/branch, exact rectangular door and bridgewithdrawal comparisons under unchanged source/storeduties."
+  },
+  "pr": 1625
 }
