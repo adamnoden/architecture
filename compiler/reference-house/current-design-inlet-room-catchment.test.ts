@@ -34,6 +34,11 @@ test('the actual default ground rejects the duct; its enlarged saved zone change
   const old = run(65), changed = run(250)
   assert.equal(old.roomCatchment.state, 'whole-room-development-comparison')
   assert.equal(changed.roomCatchment.state, 'whole-room-development-comparison')
+  assert.equal(old.splitPlantRoom.state,'unadopted-threshold-drainage-successor')
+  assert.ok(old.splitPlantRoom.comparison)
+  assert.equal(changed.splitPlantRoom.state,'unsupported-current-ground')
+  assert.equal(changed.splitPlantRoom.comparison,null)
+  assert.deepEqual(changed.splitPlantRoom.diagnostics,['SPLIT_PLANT_ROOM/local-pocket-not-deeper-than-saved-distribution'])
   if (old.roomCatchment.state !== 'whole-room-development-comparison' || changed.roomCatchment.state !== 'whole-room-development-comparison') return
   assert.equal(old.roomCatchment.levelsMm.ffl, 530)
   assert.equal(old.roomCatchment.route.fitsActualDistributionZone, false)
@@ -54,6 +59,8 @@ test('the actual default ground rejects the duct; its enlarged saved zone change
   assert.notEqual(widened.roomCatchment.sourceOnlyEvent.hydraulic.requiredHeadAboveInvertMm,
     changed.roomCatchment.sourceOnlyEvent.hydraulic.requiredHeadAboveInvertMm)
   assert.equal(widened.preSiteArrangementComplete, false)
+  assert.equal(widened.splitPlantRoom.state,'unsupported-current-ground')
+  assert.equal(widened.splitPlantRoom.comparison,null)
   assert.equal(widened.roomCatchment.selected, false)
   assert.ok(changed.roomCatchment.diagnostics.includes('INLET_ROOM_STORED_RELEASE_UNBOUNDED'))
   assert.ok(changed.roomCatchment.diagnostics.includes('INLET_ROOM_ADDED_LOADS_NOT_IN_52_HEAD_MODEL'))
@@ -69,6 +76,9 @@ test('high tailwater, excess outlet width and forged computed ground stay advers
   for (const code of ['INLET_FLOOR_RECEIVER_TAILWATER_SCREEN_FAILS', 'INLET_FLOOR_PORT_EXCEEDS_EXISTING_WINDOW_AXIS', 'INLET_FLOOR_SEPARATE_RECEIVER_LANES_OVERLAP']) {
     assert.ok(adverse.roomCatchment.diagnostics.includes(code), code)
   }
+  assert.equal(adverse.splitPlantRoom.state,'unsupported-current-ground')
+  assert.equal(adverse.splitPlantRoom.comparison,null)
+  const boundary=run(245);assert.equal(boundary.splitPlantRoom.state,'unsupported-current-ground');assert.equal(boundary.roomCatchment.state,'whole-room-development-comparison')
   const computed = runGroundSectionCase(current, ground)
   assert.throws(() => runInletSourceEnvelopeCase(current, source, { ...computed,
     native: { ...computed.native, levelsMm: { ...computed.native.levelsMm, ffl: 715 } } }), /Stale or modified/)
@@ -87,6 +97,8 @@ test('one saved document and public CLI regenerate the joined floor/source resul
   const after = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--bundle', '-'], {
     input: JSON.stringify(document), encoding: 'utf8', maxBuffer: 24 * 1024 * 1024,
   }))
+  assert.equal(after.engineering.inletSourceEnvelope.splitPlantRoom.state,'unsupported-current-ground')
+  assert.equal(after.engineering.inletSourceEnvelope.splitPlantRoom.comparison,null)
   assert.deepEqual(after, JSON.parse(JSON.stringify(await compileEngineeringDocument(JSON.parse(JSON.stringify(document))))))
   assert.deepEqual(after.plans, JSON.parse(JSON.stringify(before.plans)))
   assert.deepEqual(after.occupiedServices, JSON.parse(JSON.stringify(before.occupiedServices)))
