@@ -45,7 +45,7 @@ Six response-derived interior moment-stationary cuts move. The comparison direct
 
 ## Scope and next executable boundary
 
-The former1200/440MPa membrane was an authored cracked/steel-only comparison, with its own retained rationale. Increasing membrane stiffness to8250/3437.5MPa is a new material-model assumption, not a demonstrated improvement in actual RC. No cracking, long-term stiffness, reinforcement, local stress convergence, signed envelope, anchorage, node resistance or foundation acceptance follows. The changed law has not received a q32→q64 convergence check.
+The former1200/440MPa membrane was an authored cracked/steel-only comparison, with its own retained rationale. Increasing membrane stiffness to8250/3437.5MPa is a new material-model assumption, not a demonstrated improvement in actual RC. No cracking, long-term stiffness, reinforcement, local stress convergence, signed envelope, anchorage, node resistance or foundation acceptance follows. The later q32→q64 check below addresses only normal-bearing integration at the unchanged slab mesh.
 
 The current finite-contour solid assigns one E to both slab and adjoining L-wall volumes. Applying8250MPa to that entire patch would also change retained L-wall axial/frame stiffness. The present comparison resolves **the slab** constitutive mismatch. A finite replacement still needs body-specific material ownership, explicit frame/solid cut conditions, fresh station-response evidence, reciprocal work maps and subtraction of the replaced native energy/load exactly once. No finite patch is inserted here.
 
@@ -82,6 +82,27 @@ At the same physical boundary cut—`WET-SUPPORT/beam/3`, end0, `[2902.5,9252.5,
 
 D80 passes the old-law nominal comparisons. Under the uniform law, its three supported straight cuts pass the cot1 comparison but fail cot2.5. D100 passes both declared cot choices at those three cuts. The longer basic poor-bond comparison does not prove that a compatible development path exists; its actual stressed length and curved transfer remain unresolved.
 
-All five curved/ramp cuts remain explicitly unsupported. The four-corner equilibrium allocation leaves a self-equilibrating corner mode unresolved, so the displayed force is not an actual bar-force bound. The study supplies no compatible curved-bar force, finite concrete node, bend-pressure resistance, bond/anchorage, placement-force envelope, full signed-load envelope, cage-mass feedback or changed-law q32→q64 evidence. The slightly improved floor point moment cannot cancel these increased end demands.
+All five curved/ramp cuts remain explicitly unsupported. The four-corner equilibrium allocation leaves a self-equilibrating corner mode unresolved, so the displayed force is not an actual bar-force bound. The study supplies no compatible curved-bar force, finite concrete node, bend-pressure resistance, bond/anchorage, placement-force envelope, full signed-load envelope, cage-mass feedback or global mesh/stress convergence. The slightly improved floor point moment cannot cancel these increased end demands.
 
 Reproduce with `python3 -B project/str/studies/uniform_slab_end_consequence.py --check`; regenerate with `--write`. This postprocessing executes no new native solve and pairs the exact same physical cuts, retaining separate coincident member-end cuts rather than erasing their nodal force jumps.
+
+## Actual normal-bearing refinement and fine end witnesses
+
+The uniform8250 case now has an actually re-equilibrated order64 normal-bearing counterpart. Its only authored change from the actual q32 case is `wetSupport.bearingQuadratureOrder:32→64`. All six slab-law fields, physical geometry, supports, loads, other frame laws, slab cells and voids remain unchanged. The [fine native archive](studies/uniform-slab-contact-refinement-native-captures.tar.xz) retains the complete actual request/result/capture and execution-start source/runtime identities; q32 remains authenticated through its existing archive.
+
+The [normal-contact receipt](studies/uniform-slab-contact-refinement.json) applies the existing unmodified `compare_contacts` criteria to both actual responses. Both states meet their own exact clipped-affine same-plane force/centroid comparisons, and the coupled normal refinement passes:
+
+| Monitored comparison | Actual q32→q64 change | Existing criterion |
+| --- | ---: | ---: |
+| Maximum of all312 signed head components, kN/kNm | 0.000010837 | 0.1 |
+| South post normal force, kN | +0.000000795 | 0.044143047 |
+| North post normal force, kN | −0.000011173 | 0.001367245 |
+| Largest post centre-of-pressure component, mm | 0.000961140 | 0.1 |
+
+The complete per-post head/base wrenches, contact forces/first moments/centres, both52-head lists, source-origin/mass controls and work/strain-energy residuals are retained. No global slab mesh was refined. The monitored floor point moment changes81.676046624→81.676046425kNm/m; this small contact-quadrature sensitivity is **not** evidence of slab/corner stress convergence or a material qualification.
+
+The [fine end receipt](studies/uniform-slab-contact-end.json) recomputes D80/D100 nominal force cases from both actual q32/q64 responses. The existing complete geometric checks are reused only after matching the current complete cage/quantity identity and unchanged geometry methods/choices. All eight exact physical end cuts retain six signed native-action comparisons, including the five cuts for which a compatible curved-bar force remains unavailable.
+
+The governing chosen-allocation mandrel changes92.918420367→92.918417552mm, a difference of−0.000002815mm; the corresponding basic poor-bond comparison changes342.045225029→342.045214666mm. D80 still fails three cot2.5 nominal witnesses and D100 passes all six declared comparisons. Continue D100 as the next uniform-law development comparison, retain D80 under the old law, and preserve the unresolved allocation/curved-force/anchorage and assembly-selection boundaries. The [fine D100 view](studies/uniform-slab-contact-end.svg) uses the actual q64 force case.
+
+Reproduce with `python3 -B project/str/studies/uniform_slab_contact_refinement.py --check`, `python3 -B project/str/studies/uniform_slab_contact_end.py --check`, and `python3 -B project/str/studies/uniform_slab_contact_refinement_test.py`. These replay checks execute no native solve. A fresh actual fine solve requires explicit `uniform_slab_contact_refinement.py --capture-to /absolute/new/directory` and refuses overwriting retained evidence.
