@@ -331,18 +331,30 @@ def main():
         page.get_by_role('button',name='Undo',exact=True).click();ready(page,4)
         expect(page.locator('#inlet-value')).to_have_value('8000')
         expect(page.locator('#inlet-result')).to_contain_text('Jacket reference 45.132 kg')
+        # The preceding bank-only document deliberately has no ground profile.
+        # Import the actual complete saved floor/profile case before room edits;
+        # controls must never be manufactured from an unsupported room result.
+        plant_stages=json.loads(subprocess.run(['node','--import','tsx','--input-type=module','-e',
+            "import {readFileSync} from 'node:fs'; import {resolveCurrentDesign} from './compiler/reference-house/current-design/resolve.ts'; import {readGroundSectionCase} from './compiler/reference-house/current-design/structural-ground.ts'; import {readLocalUtilityPocketSettings,readInletSourceEnvelopeCase} from './compiler/reference-house/current-design/inlet-source-envelope.ts'; const resolved=resolveCurrentDesign(JSON.parse(readFileSync(0,'utf8'))),ground=readGroundSectionCase(resolved),inlet=readInletSourceEnvelopeCase(resolved); console.log(JSON.stringify({groundSection:{caseId:ground.ground.caseId,settings:ground.ground.settings},houseVerticalProfile:{},inletSourceEnvelope:{...readLocalUtilityPocketSettings(),splitPlantRoom:inlet.sourceEnvelope.splitPlantRoom}}));"],
+            input=json.dumps(saved['design']),text=True,capture_output=True,check=True).stdout)
+        plant_document={**inlet_document,'stages':{'roofPitch':inlet_document['stages']['roofPitch'],**plant_stages}}
+        with page.expect_file_chooser() as chooser:
+            page.get_by_role('button',name='Import JSON').click()
+        chooser.value.set_files({'name':'plant-room.json','mimeType':'application/json','buffer':json.dumps(plant_document).encode()})
+        ready(page,0)
         expect(page.locator('#plant-room-controls')).to_be_visible()
+        initial_plant_bank=page.locator('#current-inlet-bank').get_attribute('src')
         initial_plant_room=page.locator('#current-inlet-plant-room').get_attribute('src')
         expect(page.locator('#plant-room-value')).to_have_value('400')
         page.locator('#plant-room-value').fill('350');page.locator('#plant-room-value').press('Enter')
-        ready(page,5)
+        ready(page,1)
         assert page.locator('#current-inlet-plant-room').get_attribute('src')!=initial_plant_room
-        assert page.locator('#current-inlet-bank').get_attribute('src')==initial_bank
+        assert page.locator('#current-inlet-bank').get_attribute('src')==initial_plant_bank
         with page.expect_download() as download:
             page.get_by_role('button',name='Export JSON').click()
         plant_choice=json.loads(Path(download.value.path()).read_text())
         assert plant_choice['stages']['inletSourceEnvelope']['splitPlantRoom']['clearWidthMm']==350
-        page.get_by_role('button',name='Undo',exact=True).click();ready(page,6)
+        page.get_by_role('button',name='Undo',exact=True).click();ready(page,2)
         expect(page.locator('#plant-room-value')).to_have_value('400')
         assert page.locator('#current-inlet-plant-room').get_attribute('src')==initial_plant_room
 
