@@ -5,6 +5,9 @@ import {readFileSync} from 'node:fs'
 import {fileURLToPath} from 'node:url'
 import {sha256SemanticFingerprint} from '../../core/identity.js'
 import type {CurrentDesignResolution} from './resolve.js'
+import {readFiniteFloorContourSettings,type FiniteFloorContourSettings} from './structural-finite-floor-contour-settings.js'
+export {readFiniteFloorContourSettings,finiteFloorContourDefaults} from './structural-finite-floor-contour-settings.js'
+export type {FiniteFloorContourSettings} from './structural-finite-floor-contour-settings.js'
 const root=new URL('../../../',import.meta.url)
 const record=(v:unknown):v is Record<string,any>=>!!v&&typeof v==='object'&&!Array.isArray(v)
 const finite=(v:unknown):v is number=>typeof v==='number'&&Number.isFinite(v)
@@ -12,6 +15,7 @@ const same=(a:unknown,b:unknown)=>sha256SemanticFingerprint(a)===sha256SemanticF
 const sha=(p:string)=>createHash('sha256').update(readFileSync(new URL(p,root))).digest('hex')
 export const finiteFloorContourPaths=[
  'compiler/reference-house/current-design/structural-finite-floor-contour.ts',
+ 'compiler/reference-house/current-design/structural-finite-floor-contour-settings.ts',
  'project/str/studies/finite_floor_contour.py','project/str/studies/finite_floor_contour_run.py',
  'project/str/studies/finite-joint-solid-requirements.txt','project/str/studies/finite-floor-contour-inputs.json',
  'project/str/studies/fixed-normal-experiment-inputs.json',
@@ -20,17 +24,6 @@ export const finiteFloorContourPaths=[
 ] as const
 const limits={nativeFloorAdmission:false,globalReplacementAvailable:false,jointResistanceAvailable:false,
  nativeConstitutiveEquivalence:false,outerBandAndChordInterfaceAvailable:false} as const
-export type FiniteFloorContourSettings={execution:'deferred'|'compute';pitchMm:number;youngKNPerM2:number;poisson:number;slabVolumeLoadEquivalentKPa:number}
-export const finiteFloorContourDefaults:FiniteFloorContourSettings={execution:'deferred',pitchMm:140,youngKNPerM2:33e6,poisson:.2,slabVolumeLoadEquivalentKPa:0}
-export function readFiniteFloorContourSettings(value:unknown):FiniteFloorContourSettings{
- if(!record(value)||!same(Object.keys(value).sort(),Object.keys(finiteFloorContourDefaults).sort())
- ||!['deferred','compute'].includes(value.execution)||![140,100,70,50,35].includes(value.pitchMm)
- ||!finite(value.youngKNPerM2)||value.youngKNPerM2<1e6||value.youngKNPerM2>1e8
- ||!finite(value.poisson)||value.poisson<0||value.poisson>=.5
- ||!finite(value.slabVolumeLoadEquivalentKPa)||value.slabVolumeLoadEquivalentKPa<0||value.slabVolumeLoadEquivalentKPa>10)
- throw new TypeError('Explicit bounded finite contour controls required; no local acceptance or injected matrix')
- return {...value} as FiniteFloorContourSettings
-}
 function reference(){
  const input=JSON.parse(readFileSync(new URL('project/str/studies/fixed-normal-experiment-inputs.json',root),'utf8'))
  if(input.schema!=='str-fixed-normal-experiment-inputs/1'||!record(input.baseNativeRequest))throw Error('Explicit experimental contour reference required')

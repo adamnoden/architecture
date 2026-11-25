@@ -197,6 +197,8 @@ The Study is the first furnished comparison. Appearance, sound, solidity, ordina
 
 The Study lighting comparison combines a desk task lamp, movable floor fill and a switched door-side wall source. An ordinary ceiling fitting remains a serious alternative. Fixed electrical enclosures and fitting supports remain independent of decorative faces, with explicit local space for deeper service stations. Task visibility, glare, arrival in darkness and replacement still require a matched physical trial.
 
+A common-depth route is a comparison, not a requirement. Its recessed controls need real plug and finger space; renewing the complete enclosure also moves its protective surround and needs a separate temporary rest. The modelled steel stock is about 7.4 kilograms before actual devices and several fittings. That burden favours simpler independently fixed local accessory islands with accessible side entries unless the more elaborate arrangement demonstrates a useful advantage. Neither geometry establishes a connected electrical circuit, material admission or installed protection.
+
 ## Openings as life-separated assemblies
 
 The representative window relationship is:

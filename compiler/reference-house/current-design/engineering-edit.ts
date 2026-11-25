@@ -1,4 +1,4 @@
-import {readFiniteFloorContourSettings} from './structural-finite-floor-contour.js'
+import {readFiniteFloorContourSettings} from './structural-finite-floor-contour-settings.js'
 import { admitDesignSnapshot, type DesignSnapshot } from './snapshot.js'
 import { sameEditBase, type EditBase } from './edit.js'
 import { readFloorSectionCuts } from './structural-floor-cuts.js'

@@ -1,7 +1,7 @@
 {
   "schema": "ias-study-lighting-review/1",
   "methodSHA256": {
-    "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "177da40b8e79ca904b6f522625e0563890689ee3965e35e9ffb3a308b22e6c6c",
+    "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "31d3aabf1d34296ba2247f0ced2b221e475793d5968f7c61808fed30140c089c",
     "compiler/reference-house/current-design/assemblies/study-lighting-case.ts": "105716ebc3bf7677357459197c727650c74ffaa698fbdd6bcfb1612c68fab2b8",
     "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "45c03ba8f231b950563cda2b7c39f403978fb6c03593c5e62df4ace09c8faff9",
     "compiler/reference-house/current-design/assemblies/study-lighting.ts": "5767ceeac2f9e6395aa7721dad2e0b4aeea96853315253a5c8308eb2695da839",
@@ -4188,18 +4188,18 @@
         "knownStock": [
           {
             "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
-            "kg": 1.6912040000000002,
+            "kg": 1.691204,
             "originXYZMm": [
               1145,
-              3140.5,
+              3139.8316004455996,
               600
             ],
-            "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+            "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
             "gravityWrenchN_Nm": [
               0,
               0,
               -16.59071124,
-              -52.103128649220004,
+              -52.09203942522,
               18.996364369800002,
               0
             ]
@@ -4242,18 +4242,18 @@
           },
           {
             "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
-            "kg": 1.6912040000000002,
+            "kg": 1.691204,
             "originXYZMm": [
               1145,
-              3140.5,
+              3139.8316004455996,
               1100
             ],
-            "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+            "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
             "gravityWrenchN_Nm": [
               0,
               0,
               -16.59071124,
-              -52.103128649220004,
+              -52.09203942522,
               18.996364369800002,
               0
             ]
@@ -4296,18 +4296,18 @@
           },
           {
             "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
-            "kg": 1.6912040000000002,
+            "kg": 1.691204,
             "originXYZMm": [
               1145,
-              3140.5,
+              3139.8316004455996,
               1800
             ],
-            "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+            "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
             "gravityWrenchN_Nm": [
               0,
               0,
               -16.59071124,
-              -52.103128649220004,
+              -52.09203942522,
               18.996364369800002,
               0
             ]
@@ -4475,32 +4475,50 @@
             ]
           }
         ],
+        "caseStockDepthPieces": [
+          {
+            "id": "rear-face",
+            "kg": 0.5652,
+            "coreDepthMm": 14.5
+          },
+          {
+            "id": "side-shell",
+            "kg": 0.560804,
+            "coreDepthMm": 37
+          },
+          {
+            "id": "fixed-front-cover",
+            "kg": 0.5652,
+            "coreDepthMm": 61.5
+          }
+        ],
+        "caseStockCentroidCoreDepthMm": 37.6683995544003,
         "totalKnownSteelStockKgComparison": 7.397723446904138,
         "caseBudgets": [
           {
             "id": "IAS/STUDY/common-depth/enclosure/0",
             "knownSteelStockKgComparison": 2.1289514,
             "maximumCompleteCaseRequirementKg": 3,
-            "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
           },
           {
             "id": "IAS/STUDY/common-depth/enclosure/1",
             "knownSteelStockKgComparison": 2.1289514,
             "maximumCompleteCaseRequirementKg": 3,
-            "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+            "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
           },
           {
             "id": "IAS/STUDY/common-depth/enclosure/2",
-            "knownSteelStockKgComparison": 1.6912040000000002,
+            "knownSteelStockKgComparison": 1.691204,
             "maximumCompleteCaseRequirementKg": 3,
-            "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+            "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.308796
           }
         ],
         "knownStockGravityWrenchN_Nm": [
           0,
           0,
           -72.57166701412957,
-          -227.607946350243,
+          -227.574678678243,
           82.16374286162691,
           0
         ],
@@ -6525,18 +6543,18 @@
           "knownStock": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3188.5,
+                3187.8316004455996,
                 600
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.89948278874,
+                -52.88839356474,
                 18.996364369800002,
                 0
               ]
@@ -6579,18 +6597,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3188.5,
+                3187.8316004455996,
                 1100
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.89948278874,
+                -52.88839356474,
                 18.996364369800002,
                 0
               ]
@@ -6633,18 +6651,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3188.5,
+                3187.8316004455996,
                 1800
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.89948278874,
+                -52.88839356474,
                 18.996364369800002,
                 0
               ]
@@ -6812,32 +6830,50 @@
               ]
             }
           ],
+          "caseStockDepthPieces": [
+            {
+              "id": "rear-face",
+              "kg": 0.5652,
+              "coreDepthMm": -33.5
+            },
+            {
+              "id": "side-shell",
+              "kg": 0.560804,
+              "coreDepthMm": -11
+            },
+            {
+              "id": "fixed-front-cover",
+              "kg": 0.5652,
+              "coreDepthMm": 13.5
+            }
+          ],
+          "caseStockCentroidCoreDepthMm": -10.331600445599705,
           "totalKnownSteelStockKgComparison": 7.397723446904138,
           "caseBudgets": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2",
-              "knownSteelStockKgComparison": 1.6912040000000002,
+              "knownSteelStockKgComparison": 1.691204,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.308796
             }
           ],
           "knownStockGravityWrenchN_Nm": [
             0,
             0,
             -72.57166701412957,
-            -231.09138636692123,
+            -231.0581186949212,
             82.16374286162691,
             0
           ],
@@ -8827,18 +8863,18 @@
           "knownStock": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3130.5,
+                3129.8316004455996,
                 600
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -51.937221536820005,
+                -51.92613231282,
                 18.996364369800002,
                 0
               ]
@@ -8881,18 +8917,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3130.5,
+                3129.8316004455996,
                 1100
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -51.937221536820005,
+                -51.92613231282,
                 18.996364369800002,
                 0
               ]
@@ -8935,18 +8971,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3130.5,
+                3129.8316004455996,
                 1800
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -51.937221536820005,
+                -51.92613231282,
                 18.996364369800002,
                 0
               ]
@@ -9114,32 +9150,50 @@
               ]
             }
           ],
+          "caseStockDepthPieces": [
+            {
+              "id": "rear-face",
+              "kg": 0.5652,
+              "coreDepthMm": 24.5
+            },
+            {
+              "id": "side-shell",
+              "kg": 0.560804,
+              "coreDepthMm": 47
+            },
+            {
+              "id": "fixed-front-cover",
+              "kg": 0.5652,
+              "coreDepthMm": 71.5
+            }
+          ],
+          "caseStockCentroidCoreDepthMm": 47.668399554400295,
           "totalKnownSteelStockKgComparison": 7.397723446904138,
           "caseBudgets": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2",
-              "knownSteelStockKgComparison": 1.6912040000000002,
+              "knownSteelStockKgComparison": 1.691204,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.308796
             }
           ],
           "knownStockGravityWrenchN_Nm": [
             0,
             0,
             -72.57166701412957,
-            -226.88222968010174,
+            -226.84896200810172,
             82.16374286162691,
             0
           ],
@@ -11107,18 +11161,18 @@
           "knownStock": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 600
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -11161,18 +11215,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1100
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -11215,18 +11269,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1800
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -11394,32 +11448,50 @@
               ]
             }
           ],
+          "caseStockDepthPieces": [
+            {
+              "id": "rear-face",
+              "kg": 0.5652,
+              "coreDepthMm": 14.5
+            },
+            {
+              "id": "side-shell",
+              "kg": 0.560804,
+              "coreDepthMm": 37
+            },
+            {
+              "id": "fixed-front-cover",
+              "kg": 0.5652,
+              "coreDepthMm": 61.5
+            }
+          ],
+          "caseStockCentroidCoreDepthMm": 37.6683995544003,
           "totalKnownSteelStockKgComparison": 7.397723446904138,
           "caseBudgets": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2",
-              "knownSteelStockKgComparison": 1.6912040000000002,
+              "knownSteelStockKgComparison": 1.691204,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.308796
             }
           ],
           "knownStockGravityWrenchN_Nm": [
             0,
             0,
             -72.57166701412957,
-            -227.607946350243,
+            -227.574678678243,
             82.16374286162691,
             0
           ],
@@ -13387,18 +13459,18 @@
           "knownStock": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 600
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -13441,18 +13513,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1100
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -13495,18 +13567,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1800
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -13674,32 +13746,50 @@
               ]
             }
           ],
+          "caseStockDepthPieces": [
+            {
+              "id": "rear-face",
+              "kg": 0.5652,
+              "coreDepthMm": 14.5
+            },
+            {
+              "id": "side-shell",
+              "kg": 0.560804,
+              "coreDepthMm": 37
+            },
+            {
+              "id": "fixed-front-cover",
+              "kg": 0.5652,
+              "coreDepthMm": 61.5
+            }
+          ],
+          "caseStockCentroidCoreDepthMm": 37.6683995544003,
           "totalKnownSteelStockKgComparison": 7.397723446904138,
           "caseBudgets": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2",
-              "knownSteelStockKgComparison": 1.6912040000000002,
+              "knownSteelStockKgComparison": 1.691204,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.308796
             }
           ],
           "knownStockGravityWrenchN_Nm": [
             0,
             0,
             -72.57166701412957,
-            -227.607946350243,
+            -227.574678678243,
             82.16374286162691,
             0
           ],
@@ -15674,18 +15764,18 @@
           "knownStock": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 600
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -15728,18 +15818,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1100
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -15782,18 +15872,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1800
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -15961,32 +16051,50 @@
               ]
             }
           ],
+          "caseStockDepthPieces": [
+            {
+              "id": "rear-face",
+              "kg": 0.5652,
+              "coreDepthMm": 14.5
+            },
+            {
+              "id": "side-shell",
+              "kg": 0.560804,
+              "coreDepthMm": 37
+            },
+            {
+              "id": "fixed-front-cover",
+              "kg": 0.5652,
+              "coreDepthMm": 61.5
+            }
+          ],
+          "caseStockCentroidCoreDepthMm": 37.6683995544003,
           "totalKnownSteelStockKgComparison": 7.397723446904138,
           "caseBudgets": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2",
-              "knownSteelStockKgComparison": 1.6912040000000002,
+              "knownSteelStockKgComparison": 1.691204,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.308796
             }
           ],
           "knownStockGravityWrenchN_Nm": [
             0,
             0,
             -72.57166701412957,
-            -227.607946350243,
+            -227.574678678243,
             82.16374286162691,
             0
           ],
@@ -17968,18 +18076,18 @@
           "knownStock": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 600
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -18022,18 +18130,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1100
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -18076,18 +18184,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1800
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -18255,32 +18363,50 @@
               ]
             }
           ],
+          "caseStockDepthPieces": [
+            {
+              "id": "rear-face",
+              "kg": 0.5652,
+              "coreDepthMm": 14.5
+            },
+            {
+              "id": "side-shell",
+              "kg": 0.560804,
+              "coreDepthMm": 37
+            },
+            {
+              "id": "fixed-front-cover",
+              "kg": 0.5652,
+              "coreDepthMm": 61.5
+            }
+          ],
+          "caseStockCentroidCoreDepthMm": 37.6683995544003,
           "totalKnownSteelStockKgComparison": 7.397723446904138,
           "caseBudgets": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2",
-              "knownSteelStockKgComparison": 1.6912040000000002,
+              "knownSteelStockKgComparison": 1.691204,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.308796
             }
           ],
           "knownStockGravityWrenchN_Nm": [
             0,
             0,
             -72.57166701412957,
-            -227.607946350243,
+            -227.574678678243,
             82.16374286162691,
             0
           ],
@@ -20248,18 +20374,18 @@
           "knownStock": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 600
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -20302,18 +20428,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1100
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -20356,18 +20482,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1800
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -20535,32 +20661,50 @@
               ]
             }
           ],
+          "caseStockDepthPieces": [
+            {
+              "id": "rear-face",
+              "kg": 0.5652,
+              "coreDepthMm": 14.5
+            },
+            {
+              "id": "side-shell",
+              "kg": 0.560804,
+              "coreDepthMm": 37
+            },
+            {
+              "id": "fixed-front-cover",
+              "kg": 0.5652,
+              "coreDepthMm": 61.5
+            }
+          ],
+          "caseStockCentroidCoreDepthMm": 37.6683995544003,
           "totalKnownSteelStockKgComparison": 7.397723446904138,
           "caseBudgets": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2",
-              "knownSteelStockKgComparison": 1.6912040000000002,
+              "knownSteelStockKgComparison": 1.691204,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.308796
             }
           ],
           "knownStockGravityWrenchN_Nm": [
             0,
             0,
             -72.57166701412957,
-            -227.607946350243,
+            -227.574678678243,
             82.16374286162691,
             0
           ],
@@ -22535,18 +22679,18 @@
           "knownStock": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 600
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -22589,18 +22733,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1100
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -22643,18 +22787,18 @@
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2/case-stock",
-              "kg": 1.6912040000000002,
+              "kg": 1.691204,
               "originXYZMm": [
                 1145,
-                3140.5,
+                3139.8316004455996,
                 1800
               ],
-              "interpretation": "Full front/rear face and four side stock; no holes deducted.",
+              "interpretation": "Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.",
               "gravityWrenchN_Nm": [
                 0,
                 0,
                 -16.59071124,
-                -52.103128649220004,
+                -52.09203942522,
                 18.996364369800002,
                 0
               ]
@@ -22822,32 +22966,50 @@
               ]
             }
           ],
+          "caseStockDepthPieces": [
+            {
+              "id": "rear-face",
+              "kg": 0.5652,
+              "coreDepthMm": 14.5
+            },
+            {
+              "id": "side-shell",
+              "kg": 0.560804,
+              "coreDepthMm": 37
+            },
+            {
+              "id": "fixed-front-cover",
+              "kg": 0.5652,
+              "coreDepthMm": 61.5
+            }
+          ],
+          "caseStockCentroidCoreDepthMm": 37.6683995544003,
           "totalKnownSteelStockKgComparison": 7.397723446904138,
           "caseBudgets": [
             {
               "id": "IAS/STUDY/common-depth/enclosure/0",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/1",
               "knownSteelStockKgComparison": 2.1289514,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710485999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 0.8710486000000001
             },
             {
               "id": "IAS/STUDY/common-depth/enclosure/2",
-              "knownSteelStockKgComparison": 1.6912040000000002,
+              "knownSteelStockKgComparison": 1.691204,
               "maximumCompleteCaseRequirementKg": 3,
-              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.3087959999999998
+              "remainingRequirementForDeviceFixingsAndOtherStockKg": 1.308796
             }
           ],
           "knownStockGravityWrenchN_Nm": [
             0,
             0,
             -72.57166701412957,
-            -227.607946350243,
+            -227.574678678243,
             82.16374286162691,
             0
           ],
