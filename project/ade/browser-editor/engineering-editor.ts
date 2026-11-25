@@ -1,5 +1,5 @@
 import {readWetBeamEndDevelopmentControls} from '../../../compiler/reference-house/current-design/structural-wet-beam-end-settings.js'
-import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableWetBeamEndId, editableInletBankId, editableInletBankFields, editablePlantRoomId, editablePlantRoomFields, editableStudyLightingId, engineeringBase,
+import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableWetBeamEndId, editableInletBankId, editableInletBankFields, editablePlantRoomId, editablePlantRoomFields, plantRoomEditableNumber, editableStudyLightingId, engineeringBase,
   engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, type EngineeringEditorState, type EngineeringTicket,
 } from '../../../compiler/reference-house/current-design/engineering-edit.js'
 import type { EngineeringReply } from './engineering-api.js'
@@ -54,10 +54,10 @@ function controls() {
   inletField.disabled=!hasInlet;inletValue.disabled=!hasInlet
   if(hasInlet){inletValue.value=String(inlet[inletField.value]);element('inlet-unit').textContent=inletField.value.endsWith('KgM3')?'kg/m³ density comparison':'mm'}
   const plant = record(inlet) && record(inlet.splitPlantRoom) ? inlet.splitPlantRoom : undefined
-  const hasPlant = !!plant && editablePlantRoomFields.every(key => typeof plant[key] === 'number')
+  const hasPlant = !!plant && editablePlantRoomFields.every(key => plantRoomEditableNumber(plant,key) !== undefined)
   element('plant-room-controls').hidden = !hasPlant
   plantField.disabled = !hasPlant; plantValue.disabled = !hasPlant
-  if (hasPlant) { plantValue.value=String(plantField.value.startsWith('fittedFrame.')?(plant.fittedFrame as Record<string,unknown>)[plantField.value.slice('fittedFrame.'.length)]:plant[plantField.value]); element('plant-room-unit').textContent=plantField.value.endsWith('Kg')?'kg':'mm' }
+  if (hasPlant) { plantValue.value=String(plantRoomEditableNumber(plant,plantField.value)); element('plant-room-unit').textContent=plantField.value.endsWith('Kg')?'kg':'mm' }
   const lighting = state.document.stages.studyLighting
   const hasLighting = record(lighting) && typeof lighting.serviceTotalDepthMm === 'number'
   element('lighting-controls').hidden = !hasLighting
