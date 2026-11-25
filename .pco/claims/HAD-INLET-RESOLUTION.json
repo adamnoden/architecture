@@ -9,9 +9,9 @@
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-25T22:20:22.000Z",
-  "expiresAt": "2026-11-25T23:05:22.000Z",
-  "branch": "work/convergence-had-recovery-20261125",
+  "heartbeatAt": "2026-11-25T22:28:23.456Z",
+  "expiresAt": "2026-11-25T23:13:23.456Z",
+  "branch": "work/convergence-structure-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
     "generation": 63,
@@ -33,5 +33,11 @@
       "next": "Recover7c228220 onto5d8e12e0 plus merged1625; genuinely regenerate source account/outputs and saved-profile controls; run current-source browser and full checks.",
       "blocker": "Executor unavailable. Latest root combined source account and added real-browser frame test were not pushed; native loads, stored release and physical interfaces remain unqualified."
     }
+  },
+  "pr": 1626,
+  "checkpoint": {
+    "evidence": "PR1626@36591e45fabe7f5754392a72c1b5c8e836e5f73c; recovered125mm Plant frame and genuinely regenerated current-source receipts; strict audit and producer check passed",
+    "next": "Verify exact-head focused and browser CI, publication preflight; continue conditional finite-inventory cap comparison privately",
+    "blocker": "Exact-head CI pending; no complete arrangement or native frame support acceptance"
   }
 }
