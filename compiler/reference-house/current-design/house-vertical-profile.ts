@@ -8,6 +8,7 @@ import { readGroundSectionCase, runGroundSectionCase } from './structural-ground
 
 const repository = new URL('../../../', import.meta.url)
 const methodPath = 'project/had/studies/house_vertical_profile.py'
+const wrapperPath='compiler/reference-house/current-design/house-vertical-profile.ts'
 type GroundCase = ReturnType<typeof readGroundSectionCase>['ground']
 type NativeCase = {
   readonly schema: 'house-vertical-profile/1'
@@ -40,8 +41,13 @@ function binding(resolved: CurrentDesignResolution) {
     if (identities[path] !== blob || createHash('sha256').update(bytes).digest('hex') !== sha256) throw new Error(`Stale vertical-profile current source binding at ${path}`)
     return [path, blob]
   }))
+  const wrapperBytes=readFileSync(new URL(wrapperPath,repository)),wrapperBlob=createHash('sha1').update(`blob ${wrapperBytes.length}\0`).update(wrapperBytes).digest('hex')
+  if(identities[wrapperPath]!==wrapperBlob)throw Error(`Stale vertical-profile current source binding at ${wrapperPath}`)
+  inputs[wrapperPath]=wrapperBlob
   const planDigest = sha256SemanticFingerprint(resolved.design)
-  return { reference, inputs, planDigest, bindingDigest: sha256SemanticFingerprint({ disciplines: resolved.disciplineBindings, inputs }) }
+  // Receipts are outputs: a profile may itself be recorded inside one. Bind
+  // only exact authored sources/methods and the plan, avoiding a self-reference.
+  return { reference, inputs, planDigest, bindingDigest: sha256SemanticFingerprint({ planDigest, inputs }) }
 }
 
 export function readHouseVerticalProfileCase(resolved: CurrentDesignResolution, groundCase?: GroundCase) {

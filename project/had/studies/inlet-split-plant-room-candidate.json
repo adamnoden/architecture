@@ -51,7 +51,7 @@
     "clearWidthMm": 1100,
     "clearHeightMm": 2300,
     "headerDepthMm": 100,
-    "sourceOpeningDiameterMm": 110,
+    "sourceOpeningDiameterMm": 125,
     "leafThicknessMm": 44,
     "leafMassBudgetKg": 100,
     "handleOffsetFromFreeEndMm": 50,

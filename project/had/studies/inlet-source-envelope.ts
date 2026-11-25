@@ -1,6 +1,8 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { readCurrentDesignResolution, type CurrentDesignResolution } from '../../../compiler/reference-house/current-design/resolve.js'
 import { fileURLToPath } from 'node:url'
+import {sha256SemanticFingerprint} from '../../../compiler/core/identity.js'
+import {readHouseVerticalProfileCase,runHouseVerticalProfileCase} from '../../../compiler/reference-house/current-design/house-vertical-profile.js'
 import { readInletSourceEnvelopeCase, runInletSourceEnvelopeCase, readLocalUtilityPocketSettings } from '../../../compiler/reference-house/current-design/inlet-source-envelope.js'
 import { readGroundSectionCase, runGroundSectionCase } from '../../../compiler/reference-house/current-design/structural-ground.js'
 export function produceInletSourceEnvelopeOutputs(resolved:CurrentDesignResolution,check=false){
@@ -8,9 +10,17 @@ const request = readInletSourceEnvelopeCase(resolved)
 const { reviewSvg, ...result } = runInletSourceEnvelopeCase(resolved, request.sourceEnvelope)
 const { ground: groundCase } = readGroundSectionCase(resolved), ground = runGroundSectionCase(resolved, groundCase)
 if (ground.native.levelsMm.ffl !== 530 || JSON.stringify((ground.native.levelsMm as unknown as Record<string, unknown>).accessibleDistribution) !== '[450,515]') throw new Error('The local530 Utility pocket requires its unchanged global ground530/65 reference')
-const localResult = runInletSourceEnvelopeCase(resolved, { ...request.sourceEnvelope, settings: readLocalUtilityPocketSettings() }, ground)
+const localRequest={...request.sourceEnvelope,settings:readLocalUtilityPocketSettings()},unjoined=runInletSourceEnvelopeCase(resolved,localRequest,ground),
+ profile=runHouseVerticalProfileCase(resolved,readHouseVerticalProfileCase(resolved,groundCase).profile),localResult=runInletSourceEnvelopeCase(resolved,localRequest,ground,profile),
+ unjoinedPlant=unjoined.splitPlantRoom.comparison,joinedPlant=localResult.splitPlantRoom.comparison
+if(!unjoinedPlant||!joinedPlant||unjoinedPlant.state!=='unadopted-threshold-drainage-successor'||joinedPlant.state!=='unadopted-threshold-drainage-successor')throw Error('Unsupported joined/unjoined Plant producer controls')
+if(sha256SemanticFingerprint([unjoined.bound,unjoined.branches,unjoined.roomCatchment,unjoinedPlant.pocket,unjoinedPlant.storedRelease])!==sha256SemanticFingerprint([localResult.bound,localResult.branches,localResult.roomCatchment,joinedPlant.pocket,joinedPlant.storedRelease]))throw Error('Joining the house profile changed an unchanged source/Utility/floor/stored control')
+const unjoinedProfileControl={schema:'had-unjoined-plant-profile-control/1',inputChange:'Omit only the recomputed houseVerticalProfile; same530ground, source settings and complete Plant choice.',source:unjoined.source,groundCaseDigest:ground.source.caseDigest,implicitTranslationCredited:false,
+ rawArchVerticalReservation:unjoinedPlant.rawArchVerticalReservation,frameVerticalDatum:unjoinedPlant.actualFittedFrame.verticalDatum,frameSourceFixedCountercase:unjoinedPlant.actualFittedFrame.sourceFixedCountercase,
+ necessaryDoorGeometryScreen:unjoinedPlant.fittedDoor.necessaryDeclaredDoorAndParkedGoodsGeometryScreen,diagnostics:unjoinedPlant.diagnostics,completeOccupiedArrangementQualified:false}
 const local = { schema: 'had-local-room-pocket-receipt/1', source: localResult.source, authoredSettings: localResult.settings,
   ground: { source: ground.source, method: ground.method, authoredCase: ground.authoredCase },
+  houseVerticalProfile:{source:profile.source,method:profile.method,authoredCase:profile.authoredCase,geometryOnly:true,selectedHouseAdmitted:false},unjoinedProfileControl,
   sourceOnlyEvent: localResult.bound, branches: localResult.branches, roomCatchment: localResult.roomCatchment, indoorCuts:localResult.joinedDirection.room.indoorCuts, indoorRoutes:localResult.joinedDirection.room.indoorRoutes, bankReceiver:localResult.joinedDirection.room.bankReceiver, bankShelfCarrier:localResult.joinedDirection.room.bankShelfCarrier, splitPlantRoom:localResult.splitPlantRoom,
   houseAdopted: false, physicalInstallationAdmitted: false }
 for (const [name, content] of [['inlet-source-envelope.results.json', JSON.stringify(result, null, 2) + '\n'],

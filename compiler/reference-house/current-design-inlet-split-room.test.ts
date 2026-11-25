@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import {derivePlantFittedFrame} from './current-design/inlet-split-plant-branch.js'
 import {readFileSync} from 'node:fs'
 import {inletSplitPlantRoom,type SplitPlantRoomInput} from './current-design/inlet-split-plant-room.js'
 const receipt=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-local-pocket.results.json',import.meta.url),'utf8')),
@@ -101,17 +102,25 @@ test('actual floor body, retained wall DPC and independent bridge settings repla
  assert.equal(lower.storedRelease.conditionalAdverse.sourcePlusStoredDrainScreen,false);assert.equal(lower.bridge.removablePieces.fittedFrameAndLowerInfillFirstReleaseQualified,false);assert.equal(lower.completeOccupiedArrangementQualified,false)
 })
 
-test('authored1100 effective frame retains150infills and all eleven whole strips; exact door and source clearances remain separate from the unjoined raised profile',()=>{
+test('authored1100 effective frame retains150infills and all eleven whole strips; joined geometry and unjoined adverse profile stay separate',()=>{
  const x=inletSplitPlantRoom(input);if(x.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
  const f=x.actualFittedFrame,d=x.fittedDoor,p=x.bridge.removablePieces
  assert.equal(f.effectiveOpenWidthMm,1100);assert.deepEqual(f.minimumCargoMm,[1000,2300]);assert.deepEqual(f.infills.map(v=>v.widthMm),[150,150]);assert.equal(f.sourceAxisYMm,3975)
- assert.equal(f.sourceOpeningDiameterMm,110);assert.equal(f.sourceBoreSideReserveMm,10)
- close(f.sourceFixedCountercase.headerToSpringReserveMm,-400);close(f.sourceFixedCountercase.headerToHeadReserveMm,-100);assert.equal(f.headerToRawSpringReserveMm,null)
+ assert.equal(f.sourceOpeningDiameterMm,125);assert.equal(f.sourceBoreSideReserveMm,2.5)
+ close(f.sourceFixedCountercase.headerToSpringReserveMm,-400);close(f.sourceFixedCountercase.headerToHeadReserveMm,-100);assert.equal(f.headerToRawSpringReserveMm,130)
  assert.equal(d.continuous.executedPoses,901);assert.ok(Object.values(d.minima).every(v=>v>0));assert.ok(d.minima.leafPipe>13.75);assert.ok(d.minima.armLeaf>5);assert.equal(d.minima.deckFixed,5)
  assert.ok(d.maxReachMm>d.sampledMaxReachMm);assert.ok(d.maxReachMm<650);assert.equal(d.requiredExternalDeckFootprintM2,4.41)
- assert.ok(d.diagnostics.includes('PLANT_FITTED_DOOR/raised-arch-profile-not-joined'));assert.equal(d.necessaryDeclaredDoorAndParkedGoodsGeometryScreen,false)
+ assert.deepEqual(d.diagnostics,[]);assert.equal(d.necessaryDeclaredDoorAndParkedGoodsGeometryScreen,true)
+ assert.equal(receipt.houseVerticalProfile.geometryOnly,true);assert.equal(receipt.unjoinedProfileControl.implicitTranslationCredited,false);assert.equal(receipt.unjoinedProfileControl.necessaryDoorGeometryScreen,false);assert.ok(receipt.unjoinedProfileControl.diagnostics.includes('PLANT_FITTED_DOOR/raised-arch-profile-not-joined'))
  assert.equal(p.actualFrameLiftEdgeReserveMm,7.5);assert.equal(p.necessaryAuthoredFittedFrameFirstLiftWidthScreen,true);assert.equal(p.firstLiftRequiresSeparatelyAdmittedLowerFrameInfillRelease,false)
  assert.ok(p.pieces.every(v=>v.minimumAuthoredFrameReserveMm===7.5&&v.frameFailures.length===0));assert.equal(p.fittedFrameAndLowerInfillFirstReleaseQualified,false)
  assert.equal(d.leafGravityBudget.kg,100);assert.equal(d.leafGravityBudget.actualCompleteStockMassAndCentroidKnown,false);assert.equal(d.matchedWeatherAirThermalFireSealsAndHardwareQualified,false)
  assert.equal(x.completeOccupiedArrangementQualified,false);assert.equal(x.nativeStructuralActionsAdopted,false)
+})
+
+
+test('an internally rederived frame cannot substitute another raw arch, wall or profile into the current room',()=>{
+ for(const change of[{rawOpeningYMm:[3890,5330] as const},{wallOuterXMm:12091},{rawSpringMm:2551},{openingShiftMm:null}]){
+  const bad=structuredClone(input);bad.branch.fittedFrame=derivePlantFittedFrame({...bad.branch.fittedFrame.resolvedInput,...change});assert.throws(()=>inletSplitPlantRoom(bad),/Unsupported mixed-source/)
+ }
 })

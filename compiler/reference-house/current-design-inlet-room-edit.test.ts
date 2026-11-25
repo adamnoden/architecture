@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import {readFileSync} from 'node:fs'
 import {execFileSync} from 'node:child_process'
 import {readGeorgianDesignSnapshot} from './current-design/georgian-source.js'
 import {readCurrentDesignResolution} from './current-design/resolve.js'
@@ -82,9 +83,11 @@ test('one saved fitted-width edit coordinates actual inlet and station while pre
  const after=await compileEngineeringDocument(JSON.parse(saveEngineeringEdit(editResult.state))),a=before.engineering.inletSourceEnvelope!,b=after.engineering.inletSourceEnvelope!,pa=a.splitPlantRoom.comparison!,pb=b.splitPlantRoom.comparison!,
   sa=a.joinedDirection.room.indoorRoutes.splitStationComparison,sb=b.joinedDirection.room.indoorRoutes.splitStationComparison
  if(pa.state!=='unadopted-threshold-drainage-successor'||pb.state!=='unadopted-threshold-drainage-successor')throw Error('savedground')
+ assert.equal(pa.reviewSvg,readFileSync(new URL('../../project/had/studies/inlet-split-plant-room.svg',import.meta.url),'utf8').trim());
  assert.equal(pa.actualFittedFrame.effectiveOpenWidthMm,1100);assert.equal(pb.actualFittedFrame.effectiveOpenWidthMm,1000)
  assert.deepEqual(pa.actualFittedFrame.minimumCargoMm,pb.actualFittedFrame.minimumCargoMm)
  assert.equal(sa.branchDevelopment.comparison!.choice.sourceEntryMm[1],3975);assert.equal(sb.branchDevelopment.comparison!.choice.sourceEntryMm[1],4000)
+ assert.equal(sa.branchDevelopment.comparison!.choice.sourceEntryOpeningDiameterMm,125);assert.ok(Math.abs(sa.branchDevelopment.comparison!.geometry.ingressBoreAfterTwoIndependentSettingsMm-2.45)<1e-9)
  assert.equal(sa.frameCoordination.stationShiftYMm,-25);assert.equal(sb.frameCoordination.stationShiftYMm,0)
  assert.equal(pa.actualFittedFrame.headerToRawSpringReserveMm,130);assert.equal(pb.actualFittedFrame.headerToRawSpringReserveMm,130)
  assert.equal(pa.fittedDoor.necessaryDeclaredDoorAndParkedGoodsGeometryScreen,true)

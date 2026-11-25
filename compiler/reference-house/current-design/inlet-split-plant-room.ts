@@ -8,7 +8,7 @@ import {inletRoomPan,inletClosedOutfall} from './inlet-room-pan.js'
 import {inletCabinetProductFacts} from './inlet-cabinet-copper.js'
 import {rectangularCatchmentScreen} from './inlet-room-catchment.js'
 import {segmentBoxDistance,segmentDistance} from '../../../project/had/studies/service-interface-geometry.mjs'
-import type {inletSplitPlantBranch} from './inlet-split-plant-branch.js'
+import {admitResolvedPlantFittedFrame,type inletSplitPlantBranch} from './inlet-split-plant-branch.js'
 type Pair=readonly[number,number]
 type Point=readonly[number,number,number]
 /** Minimum cargo duty is not installed clearance. Raw arch is on sourceFFL0;
@@ -54,6 +54,9 @@ export function inletSplitPlantRoom(i:SplitPlantRoomInput){
   ||!i.grid||!i.grid.girders||!i.grid.crossBeams||!Array.isArray(i.grid.heads)||!i.branch||i.branch.schema!=='had-split-plant-branch-result/1'||!i.branch.sourceBindingDigest||!tuple(i.branch.roomPlanMm,4)||i.branch.selected!==false
   ||!i.stored||i.stored.maximumRetainedAndDrainableL!==null||!tuple(i.stored.d2OutfallMm,3)||!i.stored.family||![i.stored.orderedMinimumUsableL,i.stored.catalogueComparatorL].every(Number.isFinite)||i.stored.orderedMinimumUsableL<=0||i.stored.catalogueComparatorL<=0)
   throw Error('Unsupported complete Plant room inputs')
+ const frame=admitResolvedPlantFittedFrame(i.branch.fittedFrame),fr=frame.resolvedInput,a=i.rawArchVerticalInput
+ if(JSON.stringify(frame.rawOpeningYMm)!==JSON.stringify(i.rawEastOpeningYMm)||fr.wallOuterXMm!==i.eastOuterXMm||fr.wallInnerXMm!==i.branch.roomPlanMm[0]+i.branch.roomPlanMm[2]
+  ||(i.ground&&i.ground.ffl!==fr.groundFflMm)||(a&&(a.rawSpringMm!==fr.rawSpringMm||a.rawHeadMm!==fr.rawHeadMm||a.groundFflMm!==fr.groundFflMm||fr.openingShiftMm!==(a.translatedProfile?.occupiedShiftMm??(a.groundFflMm===0?0:null)))))throw Error('Unsupported mixed-source Plant frame/room geometry')
  if(Object.keys(c.fittedFrame).some(k=>JSON.stringify((c.fittedFrame as any)[k])!==JSON.stringify((i.branch.fittedFrame.choice as any)[k])))throw Error('Unsupported unjoined fitted frame and branch revision')
  const rawArchVerticalReservation=i.rawArchVerticalInput?comparePlantRawArchReservation(i.rawArchVerticalInput):null
  const [west,south,width,depth]=i.branch.roomPlanMm,east=west+width,
