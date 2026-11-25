@@ -47,7 +47,7 @@ function controls() {
   const hasPlant = !!plant && editablePlantRoomFields.every(key => typeof plant[key] === 'number')
   element('plant-room-controls').hidden = !hasPlant
   plantField.disabled = !hasPlant; plantValue.disabled = !hasPlant
-  if (hasPlant) { plantValue.value=String(plant[plantField.value]); element('plant-room-unit').textContent=plantField.value.endsWith('Kg')?'kg':'mm' }
+  if (hasPlant) { plantValue.value=String(plantField.value.startsWith('fittedFrame.')?(plant.fittedFrame as Record<string,unknown>)[plantField.value.slice('fittedFrame.'.length)]:plant[plantField.value]); element('plant-room-unit').textContent=plantField.value.endsWith('Kg')?'kg':'mm' }
   const lighting = state.document.stages.studyLighting
   const hasLighting = record(lighting) && typeof lighting.serviceTotalDepthMm === 'number'
   element('lighting-controls').hidden = !hasLighting

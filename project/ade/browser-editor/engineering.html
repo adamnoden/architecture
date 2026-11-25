@@ -39,7 +39,7 @@
       <p>Edits the saved lighting stage. Both the earlier local entries and the unselected common-depth comparison recompute; no arrangement is adopted.</p>
     </section>
     <section id="plant-room-controls" hidden aria-label="Plant threshold comparison controls"><h2>Plant threshold</h2>
-      <form id="plant-room-edit"><label>Saved Plant input<select id="plant-room-field"><option value="clearWidthMm">Outfall clear width</option><option value="clearHeightMm">Outfall clear height</option><option value="receiverHighAdverseMm">Adverse receiver height</option><option value="bridgeLiftMm">Bridge capture lift</option><option value="bridgeHardwareBudgetEachKg">Hardware budget per piece</option></select></label>
+      <form id="plant-room-edit"><label>Saved Plant input<select id="plant-room-field"><option value="clearWidthMm">Outfall clear width</option><option value="clearHeightMm">Outfall clear height</option><option value="fittedFrame.clearWidthMm">Effective fitted frame width</option><option value="fittedFrame.sourceOpeningDiameterMm">Plant source bore diameter</option><option value="receiverHighAdverseMm">Adverse receiver height</option><option value="bridgeLiftMm">Bridge capture lift</option><option value="bridgeHardwareBudgetEachKg">Hardware budget per piece</option></select></label>
       <label><span id="plant-room-unit">mm</span><input id="plant-room-value" type="number" step="any" required></label><button class="primary" type="submit">Compare Plant input</button></form>
       <p>Uses the complete saved Plant choice and actual saved ground. Source flow and Utility remain separate controls; failing comparisons stay visible.</p></section>
     <p id="lighting-result" role="status"></p><p id="lighting-diagnostics"></p>

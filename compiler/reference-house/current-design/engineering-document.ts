@@ -542,8 +542,8 @@ export async function compileEngineeringDocument(input: unknown) {
     const request = await compile.readInletSourceEnvelopeCase()
     const {splitPlantRoom,...sourceSettings}=stages.inletSourceEnvelope,{splitPlantRoom:_boundCurrentPlantRoom,...baseCase}=request.sourceEnvelope
     engineering.inletSourceEnvelope = await compile.inletSourceEnvelopeCase({ ...baseCase,
-      ...(splitPlantRoom?{splitPlantRoom:admitSplitPlantRoomChoice(splitPlantRoom)}:{}),settings: { ...request.sourceEnvelope.settings, ...sourceSettings } }, engineering.groundSection)
-    recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope, engineering.groundSection ? ['groundSection'] : [])
+      ...(splitPlantRoom?{splitPlantRoom:admitSplitPlantRoomChoice(splitPlantRoom)}:{}),settings: { ...request.sourceEnvelope.settings, ...sourceSettings } }, engineering.groundSection, engineering.houseVerticalProfile)
+    recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope, [...(engineering.groundSection?['groundSection']:[]),...(engineering.houseVerticalProfile?['houseVerticalProfile']:[])])
     const reason = 'The source-envelope comparison authors boundary restrictions and a whole internal service-hub replacement. Neither the retained occupied network nor earlier inlet/cabinet outputs include that source or room; their former fault and operating claims are withheld.'
     const previousStages = new Set(['occupiedServices', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletRemovals', 'inletCovers', 'inletAssembly'])
     const affected = manifest.filter(row => previousStages.has(row.stage.split('/')[0]))
