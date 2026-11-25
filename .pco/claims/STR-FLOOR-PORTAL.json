@@ -9,8 +9,8 @@
     "label": "structure-convergence-20261125"
   },
   "claimedAt": "2026-11-25T08:40:52.436Z",
-  "heartbeatAt": "2026-11-25T11:11:26.786Z",
-  "expiresAt": "2026-11-25T12:41:26.786Z",
+  "heartbeatAt": "2026-11-25T11:26:20.000Z",
+  "expiresAt": "2026-11-25T12:11:20.000Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "81d1d5af-717b-47e5-b8e9-5cdc634a77a7",
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Durable UI and end-development checkpoint remote6670a3611a560ac3f9bf06ae4981abcc356710ea. Current actual120/south40/q64 shared compiler nativeRequest exact and all52 heads match archive control; unadopted end-return comparison and reversible browser controls verified. PR1625 remains first publication branch; next source family under coordinated integration.",
-    "next": "Complete exact-head PR1625 validation and canonical publication preflight; integrate current-source saved-stage receipts and hosted end-only browser proof, then coordinate lower-arch and uniform-material comparisons without implied selection."
+    "evidence": "PR1625 head5526b838; coherent continuation5d8e12e0; uniform law/contact/end2d044ead; actual masonry v2-v4 ef2faa3d all published with exact trees. No selected slab, ring or local joint.",
+    "next": "Finish exact-head CI/preflight for1625; recover continuation plus published water7c228220 and uniform2d044ead; regenerate current source account before next PR.",
+    "blocker": "Executor explicitly unavailable. Latest local assembly and unpublished bearing-bed files cannot be inspected; no bearing-bed native result exists."
   },
   "pr": 1625
 }
