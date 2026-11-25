@@ -9,8 +9,8 @@
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-25T23:11:29.867Z",
-  "expiresAt": "2026-11-25T23:56:29.867Z",
+  "heartbeatAt": "2026-11-25T23:13:29.356Z",
+  "expiresAt": "2026-11-25T23:58:29.356Z",
   "branch": "work/convergence-structure-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
@@ -36,8 +36,8 @@
   },
   "pr": 1626,
   "checkpoint": {
-    "evidence": "PR1626@3ef6d998c4a30c8ae3a15f581f560470c4537069 retains recovered125mm entry/1100 Plant frame/profile and original wet-end controls only; incident and impulse continuations are not included in this PR",
-    "next": "Verify exact-head recoveryCI and publication; obtain separate remote checkpoint for locally verified incident and impulse work",
-    "blocker": "RecoveryCI pending; actual hot/store release and complete Plant support/occupied arrangement remain unresolved"
+    "evidence": "RecoveryPR1626@3ef6d998 covers recovered125mm Plant frame/profile only. Separate UNMERGED checkpoint work/convergence-bed-water-20261125@ab2c3532b13c016671b2d0c37db050856e0be7bf tree4755e385c0025689b3beb9e1cebbe2ad464083b8 contains incident/impulse methods, byte-matched to locally verified0b9ef7e2 water files",
+    "next": "Complete recoveryUI fix and exact-head preflight; then separately validate/integrate the unmerged bed-water checkpoint. Narrow160x140 independent spill failed unchanged hydraulic duties and was not authored as a candidate",
+    "blocker": "Recovery browserCI pending; no actual hot/store release model, supported Plant installation or selected occupied arrangement"
   }
 }
