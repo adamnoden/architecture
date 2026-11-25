@@ -319,7 +319,7 @@ def main():
         ready(page,2,240000)
         print('PASS actual narrower-pad compile',flush=True)
         expect(page.locator('#floor-result')).to_contain_text('Nominal post-head fan computed')
-        expect(page.locator('#floor-result')).to_contain_text('finite nodes, anchorage and tolerance remain unqualified')
+        expect(page.locator('#floor-result')).to_contain_text('Finite nodes, anchorage and tolerance remain unqualified')
         with page.expect_download() as download:
             page.get_by_role('button',name='Export JSON').click()
         narrowed=json.loads(Path(download.value.path()).read_text())

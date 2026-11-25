@@ -99,3 +99,21 @@ test('actual floor body, retained wall DPC and independent bridge settings repla
  assert.ok(lower.inventory.outfallCopperKg[0]<before.inventory.outfallCopperKg[0]);assert.ok(lower.inventory.closedWaterKg[0]<before.inventory.closedWaterKg[0])
  assert.equal(lower.storedRelease.conditionalAdverse.sourcePlusStoredDrainScreen,false);assert.equal(lower.bridge.removablePieces.fittedFrameAndLowerInfillFirstReleaseQualified,false);assert.equal(lower.completeOccupiedArrangementQualified,false)
 })
+
+
+test('threshold rejection includes the independently adverse rail span even when its nominal strip passes',()=>{
+ const changed=structuredClone(input);changed.choice.clearHeightMm=140;changed.choice.bridgeThicknessMm=28.65
+ const x=inletSplitPlantRoom(changed);if(x.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
+ assert.equal(x.bridge.nominalStripScreen,true)
+ assert.equal(x.bridge.adverseSpanOnlyStripScreen,false)
+ assert.ok(x.bridge.nominalStripStressMPa<x.bridge.proofComparisonMPa)
+ assert.ok(x.bridge.adverseStripStressMPa>x.bridge.proofComparisonMPa)
+ assert.ok(x.diagnostics.includes('SPLIT_PLANT_ROOM/threshold-bridge-comparison-fails'))
+ assert.equal(x.drainageGeometry.necessarySourceOnlyDrainGeometry,true)
+ assert.equal(x.completeOccupiedArrangementQualified,false)
+ const thicker=structuredClone(changed);thicker.choice.bridgeThicknessMm=29
+ const control=inletSplitPlantRoom(thicker);if(control.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
+ assert.equal(control.bridge.adverseSpanOnlyStripScreen,true)
+ assert.deepEqual(control.thresholdRoute.hydraulic,x.thresholdRoute.hydraulic)
+ assert.deepEqual(control.pocket,x.pocket)
+})

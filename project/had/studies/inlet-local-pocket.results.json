@@ -2,7 +2,7 @@
   "schema": "had-local-room-pocket-receipt/1",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "95b788a8b4fc074bd3dd7d6d5fa8e010ad4e1a273bbd9feb4619c77284354158",
+    "bindingDigest": "af7416a5a04c3d4f3da1ec66b3e50d9a666cac18dc23aca233020740c35f4921",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -23,7 +23,7 @@
     },
     "methods": {
       "compiler/reference-house/current-design/inlet-split-plant-room-choice.ts": "33cf6e36ec7b0d22409bf875332c53749f631f8c",
-      "compiler/reference-house/current-design/inlet-split-plant-room.ts": "e434fb246b24c99f19d6a3330e2bd97af38ff957",
+      "compiler/reference-house/current-design/inlet-split-plant-room.ts": "8134b1874024bf4dce21f67d8aa84f57d8b596e1",
       "compiler/reference-house/current-design/inlet-split-plant-branch.ts": "fcb5ffe5a4c362af5ccd12785adcfaee4668383a",
       "project/had/studies/plant-release-profiles.mjs": "6c140a8bb44a2ca8e36e6fd4f87303ddf2779e6a",
       "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
@@ -25238,7 +25238,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "95b788a8b4fc074bd3dd7d6d5fa8e010ad4e1a273bbd9feb4619c77284354158",
+          "sourceBindingDigest": "af7416a5a04c3d4f3da1ec66b3e50d9a666cac18dc23aca233020740c35f4921",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -25376,7 +25376,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "95b788a8b4fc074bd3dd7d6d5fa8e010ad4e1a273bbd9feb4619c77284354158",
+            "sourceBindingDigest": "af7416a5a04c3d4f3da1ec66b3e50d9a666cac18dc23aca233020740c35f4921",
             "groundFflMm": 530,
             "roomPlanMm": [
               9397,
@@ -35599,12 +35599,12 @@
         ],
         "storedAdverseMinimumDensityKgM3": 958
       },
-      "sourceBindingDigest": "95b788a8b4fc074bd3dd7d6d5fa8e010ad4e1a273bbd9feb4619c77284354158",
+      "sourceBindingDigest": "af7416a5a04c3d4f3da1ec66b3e50d9a666cac18dc23aca233020740c35f4921",
       "groundFflMm": 530,
       "selected": false,
       "branchIdentity": "HAD/plant-independent-east-entry-development",
       "branchPrerequisites": {
-        "sameCurrentSource": "95b788a8b4fc074bd3dd7d6d5fa8e010ad4e1a273bbd9feb4619c77284354158",
+        "sameCurrentSource": "af7416a5a04c3d4f3da1ec66b3e50d9a666cac18dc23aca233020740c35f4921",
         "connections": [
           {
             "id": "source-entry",
@@ -35881,7 +35881,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "95b788a8b4fc074bd3dd7d6d5fa8e010ad4e1a273bbd9feb4619c77284354158",
+          "sourceBindingDigest": "af7416a5a04c3d4f3da1ec66b3e50d9a666cac18dc23aca233020740c35f4921",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -36019,7 +36019,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "95b788a8b4fc074bd3dd7d6d5fa8e010ad4e1a273bbd9feb4619c77284354158",
+            "sourceBindingDigest": "af7416a5a04c3d4f3da1ec66b3e50d9a666cac18dc23aca233020740c35f4921",
             "groundFflMm": 530,
             "roomPlanMm": [
               9397,
