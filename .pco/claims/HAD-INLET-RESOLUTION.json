@@ -9,9 +9,9 @@
     "label": "convergence-water-20261125"
   },
   "claimedAt": "2026-11-25T08:40:34.501Z",
-  "heartbeatAt": "2026-11-25T08:40:34.501Z",
-  "expiresAt": "2026-11-25T09:25:34.501Z",
-  "branch": "work/water-convergence-20261125",
+  "heartbeatAt": "2026-11-25T09:14:57.004Z",
+  "expiresAt": "2026-11-25T09:59:57.004Z",
+  "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "ddd8cd17-f15b-4d8c-bcd6-92f4991039f2",
     "generation": 62,
@@ -31,5 +31,9 @@
       "evidence": "Recovery PR1624 merged f8ad6989; continuation durable f6581ce736be79ddd337eccbe1effc3d77f19963 contains independent Plant route with full fitting and goods checks. Whole Plant comparison integrated locally; adverse drainage fails, no slab or occupied-house selection.",
       "next": "Regenerate actual nominal/local530 outputs and source audit; publish source-bound full Plant comparison with genuine adverse and stored/backfeed obligations; verify exact-head CI and preflight."
     }
+  },
+  "checkpoint": {
+    "evidence": "Root remote work/convergence-lighting-20261125 at3f4b2095 retains authentic f658HAD recovery; completed Plant threshold/source-store continuation055cab8b is merged locally into root85715647 with current-source union.",
+    "next": "Publish combined source-bound Plant threshold and structural controls; complete optional saved Plantroom choice path, run exact-head health and publication preflight."
   }
 }
