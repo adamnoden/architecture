@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 63,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-water-20261125"
   },
   "claimedAt": "2026-11-25T08:40:34.501Z",
-  "heartbeatAt": "2026-11-25T11:53:01.000Z",
-  "expiresAt": "2026-11-25T12:38:01.000Z",
+  "heartbeatAt": "2026-11-25T12:09:43.000Z",
+  "expiresAt": "2026-11-25T12:09:43.000Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "ddd8cd17-f15b-4d8c-bcd6-92f4991039f2",
@@ -37,5 +37,7 @@
     "next": "Recover7c228220 onto5d8e12e0 plus merged1625; genuinely regenerate source account/outputs and saved-profile controls; run current-source browser and full checks.",
     "blocker": "Executor unavailable. Latest root combined source account and added real-browser frame test were not pushed; native loads, stored release and physical interfaces remain unqualified."
   },
-  "pr": 1625
+  "pr": 1625,
+  "releasedAt": "2026-11-25T12:09:43.000Z",
+  "releaseReason": "handoff"
 }
