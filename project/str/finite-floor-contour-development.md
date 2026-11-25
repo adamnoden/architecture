@@ -38,28 +38,59 @@ independent virtual work, six rigid motions, exact full potential with consisten
 G condensation, separate local floor-load changes, modulus doubling, unchanged
 control and rejected material overlap/invalid contour/orphan data. The source
 reader validates native byte identities and complete executed capture receipts.
-All140/70/35 runs preserve six free rigid modes and106 positive relative modes;
-rigid residuals are below4e−14 and independent complete-G wrench residuals below
-3e−13kN/kNm. The isolated pinned scikit-fem runtime remains separate from the
+The retained uniform140/70/35 history and the current graded140/70/50 controls preserve six free rigid modes and106 positive relative modes. Each receipt records its actual residuals; a killed process contributes no response or convergence value. The isolated pinned scikit-fem runtime remains separate from the
 ordinary native runtime.
 
-## Numerical result: not converged
+## Current graded-contour comparison — 25 November2026
 
-| Maximum solid pitch | Nodes | Bricks | Worst all-relative-motion energy sensitivity from previous |
+The original uniform140/70/35 trial is retained in
+`studies/finite-floor-contour-uniform-history.tar.xz`, with its original method
+and input identities inside the captures. Its all-motion sensitivities were
+86.4487% and84.3436%; the35mm governing mode concentrated rotations around the
+literal15mm north-contour station interval. These are historical executed
+comparisons, not current graded outputs or an inferred locking diagnosis.
+
+The versioned authored `meshControls` now explicitly retain normal contour
+layers at7.5/15/30/60/120mm from both interior edges and divide the slab depth
+into at most15mm intervals. The global maximum pitch changes independently. It can also subdivide tangential contour intervals and intervals between the authored layer positions; the complete near-field mesh is not held fixed.
+These retain every112port coordinate and all106 relative modes; no averaging,
+mode removal, rigid middle port or relaxed threshold hides the old response.
+Sparse condensation uses the explicitly recorded MMD_AT_PLUS_A ordering.
+
+| Global maximum pitch | Nodes | Bricks | Worst all-relative-motion energy sensitivity from previous |
 | --- | ---: | ---: | ---: |
-|140mm|2364|1464|n/a|
-|70mm|7284|4956|86.4487%|
-|35mm|42310|34342|84.3436%|
+|140mm|10464|8754|n/a|
+|70mm|22485|19116|12.05566%|
+|50mm|44250|38596|13.80010%|
+|35mm|Unavailable|Unavailable|Process killed; no result|
 
 The comparison fixes the lower wall-end six coordinates only to quotient the
-same six global rigid modes. Generalised eigenvalues compare every remaining
-relative contour/wall motion. These large changes are not a numerical pass.
-The35mm governing mode is concentrated in north-contour rotations near X402.5,
-417.5 and462.5mm, including the15mm station interval. This identifies a concrete
-investigation of interface/high-frequency resolution and element behaviour;
-it does not establish locking, continuum convergence or the actual house demand.
-Retain the all-motion comparison rather than suppressing that mode or averaging
-its energy away.
+same six global rigid motions. Both the12.05566%140→70 and13.80010%70→50 changes remain material. The latter is larger; a falling nominal maximum pitch is not evidence of a monotone convergence rate. Its governing relative eigenvector is concentrated in in-plane east-contour `u/v` at Y262.5–417.5mm; this observation does not establish a physical house demand or element-locking diagnosis.
+Fixed authored contour-layer and slab-depth positions plus changing global pitch are **not complete mesh convergence** or a far-field-only test. Actual tangential subdivisions can change beside those fixed positions. Separate near-field/depth and component-domain sensitivity checks remain necessary. No convergence acceptance follows.
+The largest current rigid-mode residual is below6.7e−14; the independently
+integrated complete-G wrench residual is below1.12e−11kN/kNm.
+
+The actual graded35 process was killed before emitting a complete result. The
+[execution record](studies/finite-floor-contour-execution-limit.json) binds its
+exact inputs, methods and runtime. The shell's kill observation establishes an
+execution failure; its underlying cause is unknown. The old uniform35 capture
+was removed from the current family after the producer correctly rejected its
+incompatible inputs. It remains available only in labelled history. The literal50mm intermediate control completed in204.02s; it is reported as50 and is not substituted for the missing35 response.
+
+A passive actual140 numerical-order observer retains the unchanged assembled
+solid matrix, contour trace, boundary and consistent load from the ordinary
+MMD call. It then calls the existing same condensation method with COLAMD on
+those **identical** operators. The repeated ordinary result must equal the
+current140 capture exactly except elapsed time. This changes no physical
+operator or authored input, and does not require a second implementation of
+assembly. The source-bound ordering receipt reports an all-relative-motion
+energy difference1.831e−11 and maximum consistent-load difference4.26e−12kN/kNm.
+Those satisfy the explicit1e−7 numerical reproducibility screen; that screen
+supplies no physical convergence or resistance claim.
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PINNED_PYTHON -B project/str/studies/finite_floor_contour_ordering_control.py --root . --retained project/str/studies/finite-floor-contour-captures/contour140.json --out project/str/studies/finite-floor-contour-captures/ordering-control.json
+```
 
 The isotropic33GPa/ν0.2 comparison is not equivalent to the native separate
 plate/membrane/frame laws. The [existing common-modulus bound](finite-joint-solid-development.md)
@@ -96,3 +127,16 @@ The retained experiment is an applicability reference, never an independently cu
 and signed loading, physical material/contact laws, exact native band/chord and
 wall replacements, finite concrete/steel transfer, reinforcement/anchorage,
 foundation resistance and whole-house architectural coordination remain open.
+
+
+## Actual native loading: precise next missing observation
+
+The retained complete native result exposes vertical contour `w/rx/ry` but does
+not retain the bulk membrane's interior `u/v` field or actual wall displacements
+at the authored2170/4370mm end stations. Fixing those missing coordinates or
+substituting nearby masters would invent a different submodel boundary. The
+next demand comparison requires passive recovery of actual membrane Schur
+coordinates and the real finite wall interpolation, with an ordinary/observed
+full-result passivity control. Even that one-way native-driven component would
+remain a constitutive/domain comparison, not compatible global demand: native
+band/chord replacement and feedback still have to be proved.

@@ -1099,7 +1099,7 @@
     {
       "id": "str-finite-joint-development",
       "state": "candidate-interface",
-      "authority": "Executed fixed-normal rejection, isolated isotropic wall-end compliance and explicitly unconverged distributed slab-contour development. None is ordinary native admission, finite joint resistance or a selected house.",
+      "authority": "Executed fixed-normal rejection, isolated isotropic wall-end compliance and graded distributed slab-contour development with explicit unconverged sensitivities and numerical-order controls. None is ordinary native admission, finite joint resistance or a selected house.",
       "decisions": [
         "project/str/fixed-normal-experiment.md",
         "project/str/finite-joint-solid-development.md",
@@ -1115,7 +1115,8 @@
         "project/str/studies/finite_floor_contour_run.py",
         "project/str/studies/finite_floor_contour_compare.py",
         "compiler/reference-house/current-design/structural-finite-floor-contour.ts",
-        "compiler/reference-house/current-design/structural-finite-floor-contour-settings.ts"
+        "compiler/reference-house/current-design/structural-finite-floor-contour-settings.ts",
+        "project/str/studies/finite_floor_contour_ordering_control.py"
       ],
       "authoredInputs": [
         "project/str/studies/fixed-normal-experiment-inputs.json",
@@ -1137,8 +1138,10 @@
         "project/str/studies/slab-constitutive-compiled-control.json",
         "project/str/studies/finite-floor-contour-captures/contour140.json",
         "project/str/studies/finite-floor-contour-captures/contour70.json",
-        "project/str/studies/finite-floor-contour-captures/contour35.json",
-        "project/str/studies/finite-floor-contour-captures/contour-comparison.json"
+        "project/str/studies/finite-floor-contour-captures/contour-comparison.json",
+        "project/str/studies/finite-floor-contour-captures/ordering-control.json",
+        "project/str/studies/finite-floor-contour-execution-limit.json",
+        "project/str/studies/finite-floor-contour-captures/contour50.json"
       ],
       "consumers": [
         "project/str/floor-corner-convergence-result.md",
@@ -1150,7 +1153,12 @@
         "python -B project/str/studies/finite_joint_solid_test.py",
         "python -B project/str/studies/finite_joint_solid_compare.py project/str/studies/finite-joint-solid-captures --check",
         "python -B project/str/studies/finite_floor_contour_test.py",
-        "STR_FINITE_SOLID_PYTHON=/ABSOLUTE/PINNED/PYTHON node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts"
+        "STR_FINITE_SOLID_PYTHON=/ABSOLUTE/PINNED/PYTHON node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts",
+        "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B project/str/studies/finite_floor_contour_compare.py project/str/studies/finite-floor-contour-captures/contour140.json project/str/studies/finite-floor-contour-captures/contour70.json project/str/studies/finite-floor-contour-captures/contour50.json --out project/str/studies/finite-floor-contour-captures/contour-comparison.json --check",
+        "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B project/str/studies/finite_floor_contour_ordering_control.py --root . --retained project/str/studies/finite-floor-contour-captures/contour140.json --out project/str/studies/finite-floor-contour-captures/ordering-control.json --check"
+      ],
+      "historicalInputs": [
+        "project/str/studies/finite-floor-contour-uniform-history.tar.xz"
       ]
     }
   ],
@@ -2102,65 +2110,6 @@
       "algorithm": "sha256"
     },
     {
-      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
-      "location": [
-        "methodSHA256",
-        "finite_floor_contour.py"
-      ],
-      "format": "value",
-      "algorithm": "sha256",
-      "source": "project/str/studies/finite_floor_contour.py"
-    },
-    {
-      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
-      "location": [
-        "methodSHA256",
-        "finite_floor_contour_run.py"
-      ],
-      "format": "value",
-      "algorithm": "sha256",
-      "source": "project/str/studies/finite_floor_contour_run.py"
-    },
-    {
-      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
-      "location": [
-        "inputs",
-        "authoredInputSHA256"
-      ],
-      "format": "value",
-      "algorithm": "sha256",
-      "source": "project/str/studies/finite-floor-contour-inputs.json"
-    },
-    {
-      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
-      "location": [
-        "inputs",
-        "sourceAuditSHA256"
-      ],
-      "format": "value",
-      "algorithm": "sha256",
-      "source": "project/str/studies/four-l-joint-material-audit.json"
-    },
-    {
-      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
-      "location": [
-        "inputs",
-        "archiveSHA256"
-      ],
-      "format": "value",
-      "algorithm": "sha256",
-      "source": "project/str/studies/fixed-normal-experiment-captures.tar.xz"
-    },
-    {
-      "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
-      "location": [
-        "inputs",
-        "nativeSourceSHA256"
-      ],
-      "format": "map",
-      "algorithm": "sha256"
-    },
-    {
       "receipt": "project/str/studies/finite-floor-contour-captures/contour-comparison.json",
       "location": [
         "captureSHA256",
@@ -2181,14 +2130,120 @@
       "source": "project/str/studies/finite-floor-contour-captures/contour70.json"
     },
     {
-      "receipt": "project/str/studies/finite-floor-contour-captures/contour-comparison.json",
+      "receipt": "project/str/studies/finite-floor-contour-captures/ordering-control.json",
       "location": [
-        "captureSHA256",
-        "contour35.json"
+        "observerMethodSHA256"
       ],
       "format": "value",
       "algorithm": "sha256",
-      "source": "project/str/studies/finite-floor-contour-captures/contour35.json"
+      "source": "project/str/studies/finite_floor_contour_ordering_control.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/ordering-control.json",
+      "location": [
+        "authoredInputSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-inputs.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/ordering-control.json",
+      "location": [
+        "retainedCaptureSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-captures/contour140.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/ordering-control.json",
+      "location": [
+        "executionMethodSHA256",
+        "finite_floor_contour_run.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour_run.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/ordering-control.json",
+      "location": [
+        "executionMethodSHA256",
+        "finite_floor_contour.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+      "location": [
+        "methodSHA256",
+        "finite_floor_contour.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+      "location": [
+        "methodSHA256",
+        "finite_floor_contour_run.py"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite_floor_contour_run.py"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+      "location": [
+        "inputs",
+        "authoredInputSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-inputs.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+      "location": [
+        "inputs",
+        "sourceAuditSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/four-l-joint-material-audit.json"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+      "location": [
+        "inputs",
+        "archiveSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/fixed-normal-experiment-captures.tar.xz"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+      "location": [
+        "inputs",
+        "nativeSourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/finite-floor-contour-captures/contour-comparison.json",
+      "location": [
+        "captureSHA256",
+        "contour50.json"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/finite-floor-contour-captures/contour50.json"
     }
   ],
   "gitBlobs": {
@@ -2697,7 +2752,7 @@
     "compiler/reference-house/current-design/occupied-services.ts": "80f31158e629120a3719a8d3b26774b7f2f07da2",
     "project/str/studies/fixed_normal_experiment.py": "79f6c70e448475c1188f4c493514df75a3c77ee3",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json": "17f081768d37138ba58d91b32617d4054be863cf",
-    "project/ccr/convergence-owner-review.md": "16823c2149a22c24aef5766abf60ec4ef2504239",
+    "project/ccr/convergence-owner-review.md": "a3fc42bf8440dfabd8a257e8d443ebec21dd079f",
     "project/str/studies/finite_joint_solid_run.py": "f7759a440296b38f92e3af3f29a9e1586559bc9a",
     "project/str/finite-joint-solid-development.md": "e90118a8ff01fc8ac761835903926b427263205b",
     "project/str/studies/finite_joint_solid.py": "b8451e22dda30b884166f82bbf86330aa9d13503",
@@ -2723,22 +2778,26 @@
     "project/had/studies/inlet-split-plant-station.svg": "7e5cb43bbf3fe2bd23d5c7471438e6a0dd26d5d5",
     "project/had/split-isolation-station-development.md": "fd459d7ad54688df63477c506a40c3acfc143446",
     "project/ccr/studies/roof-pitch-27deg-field-section.svg": "9db5d0c9b0d27692ce128644a04af567019be04a",
-    "project/str/finite-floor-contour-development.md": "0944a0b6251637ef2cb19fb0e95f7667fd0fd6fc",
-    "project/str/studies/finite_floor_contour.py": "e8e14c33d1f0b5993d47f5a408ee56882afa5f06",
-    "project/str/studies/finite_floor_contour_run.py": "c855ea34249d6fba485065ac6f2f1fd898e04c24",
-    "project/str/studies/finite_floor_contour_compare.py": "9bebbf55be7d639b1ce065bbf035c8e781fa2ba1",
+    "project/str/finite-floor-contour-development.md": "ae4b1426ad210849e9b76e194dea7bef2e879da7",
+    "project/str/studies/finite_floor_contour.py": "4f0b2ff95c6264f229407e6f7d01dd635811eee9",
+    "project/str/studies/finite_floor_contour_run.py": "6d9811ad85f27aa482fe396bc8d5c1a7e7ce3eb6",
+    "project/str/studies/finite_floor_contour_compare.py": "5bdba7f8dd7e935b4a085b6222676f5e577d3d42",
     "compiler/reference-house/current-design/structural-finite-floor-contour.ts": "7256ed3b24c373d020370a79cdce599cc0130053",
-    "project/str/studies/finite-floor-contour-inputs.json": "bdb14c00cb2284b1ed239c03ee200d4df1227e34",
-    "project/str/studies/finite-floor-contour-captures/contour140.json": "7e06788fd1cfa03b501a9806ef495baadd243701",
-    "project/str/studies/finite-floor-contour-captures/contour70.json": "ef209beef72cbfa548546875dab6fd0af5f87814",
-    "project/str/studies/finite-floor-contour-captures/contour35.json": "1064b1d7a02be29b54656cb0fb711650810e6b42",
-    "project/str/studies/finite-floor-contour-captures/contour-comparison.json": "5d4da8958eebd9e687a7dc568c704f53f51dc933",
+    "project/str/studies/finite-floor-contour-inputs.json": "53cf153e41c35e02604f46d2e89ec328bc60f6a7",
+    "project/str/studies/finite-floor-contour-captures/contour140.json": "35f8fb266a08212854b1f13a8012f14fa7f808e9",
+    "project/str/studies/finite-floor-contour-captures/contour70.json": "10c50c4b99eb58352132f3f7bda9c5d7921871a1",
+    "project/str/studies/finite-floor-contour-captures/contour-comparison.json": "60cc74a59e7e86f959ff2077e2800b0baca408c6",
     "project/had/studies/plant-release-profiles.d.mts": "a8f76cd9f2d0c87edb48308c121d191f19c15481",
     "compiler/reference-house/current-design/inlet-split-plant-branch.ts": "fcb5ffe5a4c362af5ccd12785adcfaee4668383a",
     "project/had/studies/plant-release-route.mjs": "b84fcfafc0456eee29593bdf0b5c8076a0878368",
     "project/had/studies/inlet-split-plant-branch-candidate.json": "6afb0bbc4f5e063e16d6ff7b040ae46a129c41f6",
     "project/had/studies/plant-release-profiles.mjs": "6c140a8bb44a2ca8e36e6fd4f87303ddf2779e6a",
     "project/had/studies/inlet-split-plant-branch.svg": "5c10e078e7c7a017794d94200c83483c72fafed1",
-    "compiler/reference-house/current-design/structural-finite-floor-contour-settings.ts": "3e6461fa8d4f00c4b6b21c0eded4fb933e5b9603"
+    "compiler/reference-house/current-design/structural-finite-floor-contour-settings.ts": "3e6461fa8d4f00c4b6b21c0eded4fb933e5b9603",
+    "project/str/studies/finite_floor_contour_ordering_control.py": "1c4f1cd1da1fea99affa0075374c48b8f7100e43",
+    "project/str/studies/finite-floor-contour-captures/ordering-control.json": "5245cd1782991fd82548918f624e09d90d042b25",
+    "project/str/studies/finite-floor-contour-execution-limit.json": "4482883e31721969ecac55dde4e3dca7c25294b9",
+    "project/str/studies/finite-floor-contour-uniform-history.tar.xz": "291eeabcdcf04852ce766f1182f408a6c82ca0b1",
+    "project/str/studies/finite-floor-contour-captures/contour50.json": "7287c4571e3be55f931c67159510fb1cceed75de"
   }
 }

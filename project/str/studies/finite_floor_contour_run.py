@@ -12,7 +12,7 @@ def sha(value):return hashlib.sha256(value).hexdigest()
 def source_input(root, capture_archive=None):
     root=Path(root);authored_path=root/'project/str/studies/finite-floor-contour-inputs.json'
     authored=json.loads(authored_path.read_bytes())
-    if (set(authored)!={'schema','id','jointId','units','datum','patchXYMm','wallEndZMm','wallUnitWeightKNPerM3','contourReferencePitchMm'}
+    if (set(authored)!={'schema','id','jointId','units','datum','patchXYMm','wallEndZMm','wallUnitWeightKNPerM3','contourReferencePitchMm','meshControls'}
         or authored['schema']!='ovids-house/str-finite-floor-contour-input/1' or authored['id']!='STR/SW/floor-contour-development'
         or authored['jointId']!='SW' or authored['units']!='mm-kN-kNm' or authored['datum']!='source-ground-zero'
         or authored['contourReferencePitchMm']!=500):raise ValueError('unsupported authored contour occurrence or units/datum')
@@ -21,6 +21,15 @@ def source_input(root, capture_archive=None):
         or ends.shape!=(2,) or not np.isfinite(ends).all() or ends[1]<=ends[0]
         or not isinstance(authored['wallUnitWeightKNPerM3'],(int,float)) or not np.isfinite(authored['wallUnitWeightKNPerM3'])
         or authored['wallUnitWeightKNPerM3']<=0):raise ValueError('unsupported authored contour geometry or density')
+    mesh_controls=authored['meshControls']
+    if (not isinstance(mesh_controls,dict) or set(mesh_controls)!={'contourBoundaryLayerDepthsMm','slabMaximumPitchMm','factorizationOrdering'}
+        or mesh_controls['factorizationOrdering']!='MMD_AT_PLUS_A'):
+        raise ValueError('explicit supported contour mesh/factorization controls required')
+    depths=np.asarray(mesh_controls['contourBoundaryLayerDepthsMm'],float)
+    slab_pitch=mesh_controls['slabMaximumPitchMm']
+    if (depths.ndim!=1 or len(depths)<1 or not np.isfinite(depths).all() or depths[0]<=0 or np.any(np.diff(depths)<=0)
+        or depths[-1]>=min(patch[2:]-patch[:2]) or not isinstance(slab_pitch,(int,float)) or not np.isfinite(slab_pitch) or not 5<=slab_pitch<=50):
+        raise ValueError('finite positive bounded near-contour/depth resolution required')
     patch=patch.tolist();ends=ends.tolist()
     audit_path=root/'project/str/studies/four-l-joint-material-audit.json'
     audit=json.loads(audit_path.read_bytes())
@@ -71,7 +80,7 @@ def source_input(root, capture_archive=None):
             'contoursMm':{'east':east,'north':north},
             'wallOriginsMm':[[*joint['gravityCentroidXYZMm'][:2],z] for z in ends],
             'slabUnitWeightKNPerM3':audit['plateUnitWeightKNPerM3'],'wallUnitWeightKNPerM3':authored['wallUnitWeightKNPerM3'],
-            'authoredInput':authored,'authoredInputSHA256':sha(authored_path.read_bytes()),'sourceAuditSHA256':sha(audit_path.read_bytes()),'captureSHA256':capture_ids,
+            'meshControls':mesh_controls,'authoredInput':authored,'authoredInputSHA256':sha(authored_path.read_bytes()),'sourceAuditSHA256':sha(audit_path.read_bytes()),'captureSHA256':capture_ids,
             'archiveSHA256':sha(raw),'nativeSourceSHA256':audit['sourceSHA256']}
 
 
@@ -110,15 +119,21 @@ def run(root,pitch_mm,young_kn_m2=33e6,poisson=.2,floor_live_kpa=0):
     inputs=source_input(root);start=time.monotonic()
     patch=np.array(inputs['patchXYMm'])/1000;slab=np.array(inputs['slabZMm'])/1000
     contours={k:np.array(v)/1000 for k,v in inputs['contoursMm'].items()}
+    mesh_controls=inputs['meshControls']
+    depths=np.array(mesh_controls['contourBoundaryLayerDepthsMm'])/1000
+    through_depth=np.linspace(slab[0],slab[1],int(np.ceil((slab[1]-slab[0])*1000/mesh_controls['slabMaximumPitchMm']))+1)
+    # Contour stations and local depth mesh remain literal, independently authored
+    # controls while pitch_mm refines the remaining far field. This is not a
+    # simultaneous near-field convergence claim.
     mesh,basis,k,volume=solid_boxes(np.array(inputs['boxesXYZMm'])/1000,pitch_mm/1000,young_kn_m2,poisson,
-                                   (contours['north'],contours['east'],()))
+                                   ([*contours['north'],*(patch[2]-depths)],[*contours['east'],*(patch[3]-depths)],through_depth))
     t,boundary,ports=contour_ports(mesh,basis,patch,slab,contours,np.array(inputs['wallOriginsMm'])/1000)
     @LinearForm
     def body(v,w):
         in_slab=(w.x[2]>slab[0])&(w.x[2]<slab[1])
         weight=np.where(in_slab,inputs['slabUnitWeightKNPerM3']+floor_live_kpa/(slab[1]-slab[0]),inputs['wallUnitWeightKNPerM3'])
         return -weight*v[2]
-    force=asm(body,basis);result=condense(k,t,boundary,force);c=result['stiffness'];modes=rigid_port_modes(ports)
+    force=asm(body,basis);result=condense(k,t,boundary,force,ordering=mesh_controls['factorizationOrdering']);c=result['stiffness'];modes=rigid_port_modes(ports)
     relative_rigid=float(abs(c @ modes).max()/abs(c).max());eigen=np.linalg.eigvalsh(c)
     positive=int(np.count_nonzero(eigen>eigen[-1]*1e-9))
     if relative_rigid>1e-9 or eigen[0]<-eigen[-1]*1e-9 or positive!=len(ports)-6:
@@ -136,7 +151,7 @@ def run(root,pitch_mm,young_kn_m2=33e6,poisson=.2,floor_live_kpa=0):
             'globalReplacementAvailable':False,'jointResistanceAvailable':False,'nativeConstitutiveEquivalence':False,
             'outerBandAndChordInterfaceAvailable':False,'inputs':inputs,'methodSHA256':methods,
             'runtime':{'python':platform.python_version(),'numpy':np.__version__,'scipy':scipy.__version__,'scikit-fem':skfem.__version__},
-            'pitchMm':pitch_mm,'youngKNPerM2':young_kn_m2,'poisson':poisson,'floorLiveKPa':floor_live_kpa,
+            'meshControls':mesh_controls,'pitchMm':pitch_mm,'youngKNPerM2':young_kn_m2,'poisson':poisson,'floorLiveKPa':floor_live_kpa,
             'nodes':int(mesh.nvertices),'elements':int(mesh.nelements),'unknowns':int(basis.N),'volumeM3':volume,
             'ports':ports,'condensedStiffness':c.tolist(),'consistentLoad':result['force'].tolist(),
             'loadPotentialConstantKNM':result['energyConstant'],'distributedLoadWrenchKN_KNM':wrench.tolist(),

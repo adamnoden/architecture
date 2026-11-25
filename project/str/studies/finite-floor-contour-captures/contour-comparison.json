@@ -4,24 +4,25 @@
     {
       "fromPitchMm": 140.0,
       "toPitchMm": 70.0,
-      "maximumRelativeEnergySensitivity": 0.8644867074619405,
-      "minimumRelativeEnergyChange": 0.0010543985308726356,
-      "maximumRelativeEnergyChange": 0.8644867074619405
+      "maximumRelativeEnergySensitivity": 0.12055659397617546,
+      "minimumRelativeEnergyChange": 1.6562688258670022e-06,
+      "maximumRelativeEnergyChange": 0.12055659397617546
     },
     {
       "fromPitchMm": 70.0,
-      "toPitchMm": 35.0,
-      "maximumRelativeEnergySensitivity": 0.8434358385277856,
-      "minimumRelativeEnergyChange": 0.00045349271792427537,
-      "maximumRelativeEnergyChange": 0.8434358385277856
+      "toPitchMm": 50.0,
+      "maximumRelativeEnergySensitivity": 0.13800096408544849,
+      "minimumRelativeEnergyChange": 0.0002187142407243936,
+      "maximumRelativeEnergyChange": 0.13800096408544849
     }
   ],
   "captureSHA256": {
-    "contour140.json": "9ba0ffb38d14db12d4edb55cacc56869fd0497a1078052be5985bef748a66b72",
-    "contour70.json": "0ff07835eb32bd267af8a15943dc66c8c24de4ddfd5e30a2c5a3f7fdb0c0f875",
-    "contour35.json": "7710e8c3ac68071b41715021119d3f99885b70fba242131c5471a61eb064e16f"
+    "contour140.json": "6ae04a1bc94f51cc4b9d9f4e71d75c848c8aad10efd7646bd8aef0fb4f4f257e",
+    "contour70.json": "967539286449f467f2fc8ffcf1e63293d695d394deb9bf8e06e2528df3e45fea",
+    "contour50.json": "940546a31b539fd3ef6b5635a6f62661b5c803785a022d499e5d68da4ddf8e79"
   },
-  "processingMethodSHA256": "b0254d7f74fd43108c9022d333aa4d1cfa98d74ab2dcebcc26ec675e5a373558",
+  "processingMethodSHA256": "c022a1cc9537bbc2e0e76530b9ca3f8af6db1babe7c9ddafff686430104289b6",
+  "fixedAuthoredContourLayersAndDepthGlobalPitchSensitivityOnly": true,
   "allMotionEnergySensitivityOnly": true,
   "convergenceAcceptanceClaimed": false,
   "nativeFloorAdmission": false,

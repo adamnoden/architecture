@@ -1,4 +1,3 @@
-import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import {
   copyFileSync,
@@ -24,7 +23,7 @@ import {
 import { applyProductionTypography } from './typography.js'
 import { buildCurrentPublicationAssets } from '../current-assets.js'
 import { fetchPublicationFonts, type PublicationFontSlot } from '../fonts.js'
-import { publicationSourceUrl, renderPublicationMermaid } from '../preparation.js'
+import { assertPublicationSourceSnapshot, capturePublicationSourceSnapshot, publicationSourceUrl, renderPublicationMermaid } from '../preparation.js'
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(scriptDirectory, '../..')
@@ -47,9 +46,6 @@ const entries: readonly PublicationEntry[] = smokeMode
     : publicationEntries
 const mode = smokeMode ? 'smoke' : primerMode ? 'primer' : 'full'
 
-function sha256(path: string): string {
-  return createHash('sha256').update(readFileSync(path)).digest('hex')
-}
 function repoPath(path: string): string { return resolve(repoRoot, path) }
 function workPath(path: string): string { return resolve(workSourceRoot, path) }
 function gitOutput(args: string[]): string { return execFileSync('git', args, { cwd: repoRoot, encoding: 'utf8' }).trim() }
@@ -135,6 +131,10 @@ function writeContentsTemplate(): string {
   return path
 }
 
+// Pin the source before the first copy and before slow current-asset work.
+// Capturing afterwards could authenticate newer source against older copies.
+const canonicalSources = new Set(entries.flatMap((entry) => [entry.source, ...dependenciesForAdapter(entry.adapter)]))
+const canonicalHashes = capturePublicationSourceSnapshot(canonicalSources, source => readFileSync(repoPath(source)))
 rmSync(workRoot, { recursive: true, force: true })
 mkdirSync(workSourceRoot, { recursive: true })
 cpSync(repoPath('docs'), workPath('docs'), { recursive: true })
@@ -156,14 +156,16 @@ if (currentAssets) {
 const metadata = editionMetadata()
 const titlePage = smokeMode ? null : writeTitlePage(metadata, primerMode ? 'Primer' : 'Working Edition')
 const contentsPage = fullMode ? writeContentsTemplate() : null
-const canonicalSources = new Set(entries.flatMap((entry) => [entry.source, ...dependenciesForAdapter(entry.adapter)]))
 // Explicit source dependencies may live outside docs/ (for example the owner-house charter).
 for (const source of canonicalSources) {
   if (existsSync(workPath(source))) continue
   mkdirSync(dirname(workPath(source)), { recursive: true })
   copyFileSync(repoPath(source), workPath(source))
 }
-const canonicalHashes = new Map([...canonicalSources].map((source) => [source, sha256(repoPath(source))]))
+// A source edit during copying or asset generation invalidates this attempt.
+// Check copied bytes too, before adapters/typography intentionally change them.
+assertPublicationSourceSnapshot(canonicalHashes, source => readFileSync(repoPath(source)))
+assertPublicationSourceSnapshot(canonicalHashes, source => readFileSync(workPath(source)), 'copied source')
 const included = new Set(entries.map((entry) => entry.source))
 
 for (const entry of entries) {
@@ -183,10 +185,7 @@ for (const entry of entries) {
   writeFileSync(preparedPath, markdown)
 }
 
-for (const [source, before] of canonicalHashes) {
-  const after = sha256(repoPath(source))
-  if (before !== after) throw new Error(`Preparation mutated canonical source: ${source}`)
-}
+assertPublicationSourceSnapshot(canonicalHashes, source => readFileSync(repoPath(source)))
 
 const buildTitle = smokeMode ? `${projectIdentity.name} — Publication Smoke` : primerMode ? `${projectIdentity.name} — Primer` : `${projectIdentity.name} — Working Edition`
 const output = smokeMode ? `${projectIdentity.slug}-smoke.pdf` : primerMode ? `${projectIdentity.slug}-primer.pdf` : `${projectIdentity.slug}.pdf`

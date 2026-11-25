@@ -124,9 +124,10 @@ def contour_ports(mesh, basis, patch_xy, slab_z, contours, wall_origins):
     return transform,boundary,catalog
 
 
-def condense(k, transform, boundary, force=None):
+def condense(k, transform, boundary, force=None, ordering="MMD_AT_PLUS_A"):
     interior=np.setdiff1d(np.arange(k.shape[0]),boundary)
-    factor=splu(k[interior][:,interior])
+    if ordering not in ["MMD_AT_PLUS_A", "COLAMD"]:raise ValueError("unsupported factorization ordering")
+    factor=splu(k[interior][:,interior],permc_spec=ordering)
     response=transform.toarray()
     response[interior]=-factor.solve((k @ transform)[interior].toarray())
     condensed=np.asarray(response.T @ (k @ response))

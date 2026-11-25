@@ -40,6 +40,12 @@ class DistributedContourControls(unittest.TestCase):
         self.assertLess(float(abs(c @ modes).max()/abs(c).max()),1e-11)
         eigen=np.linalg.eigvalsh(c)
         self.assertEqual(np.count_nonzero(eigen>eigen[-1]*1e-9),len(ports)-6)
+        # Ordering changes the sparse permutation, never the physical operator.
+        alternate=condense(k,t,boundary,force,ordering='COLAMD')
+        np.testing.assert_allclose(alternate['stiffness'],c,rtol=1e-10,atol=1e-8)
+        np.testing.assert_allclose(alternate['force'],result['force'],atol=1e-10)
+        with self.assertRaisesRegex(ValueError,'ordering'):
+            condense(k,t,boundary,force,ordering='unqualified')
         q=np.sin(np.arange(t.shape[1]))*.00001
         u=result['response'] @ q+result['particular']
         actual=.5*u @ k @ u-force @ u
@@ -81,6 +87,14 @@ class DistributedContourControls(unittest.TestCase):
             self.assertAlmostEqual(revised['wallOriginsMm'][1][2]-baseline['wallOriginsMm'][1][2],100)
             self.assertNotEqual(revised['authoredInputSHA256'],baseline['authoredInputSHA256'])
             self.assertEqual(revised['slabZMm'],baseline['slabZMm'])
+            mesh_change=json.loads(original);mesh_change['meshControls']['slabMaximumPitchMm']=10
+            path.write_text(json.dumps(mesh_change));mesh_revised=source_input(trial)
+            self.assertNotEqual(mesh_revised['authoredInputSHA256'],baseline['authoredInputSHA256'])
+            self.assertEqual(mesh_revised['boxesXYZMm'],baseline['boxesXYZMm'])
+            self.assertEqual(mesh_revised['captureSHA256'],baseline['captureSHA256'])
+            mesh_change['meshControls']['contourBoundaryLayerDepthsMm']=[15,7.5]
+            path.write_text(json.dumps(mesh_change))
+            with self.assertRaisesRegex(ValueError,'near-contour'):source_input(trial)
             changed['patchXYMm'][2]+=1;path.write_text(json.dumps(changed))
             with self.assertRaisesRegex(ValueError,'exact executed mesh axis'):source_input(trial)
             changed=json.loads(original);changed['units']='m-kN-kNm';path.write_text(json.dumps(changed))
