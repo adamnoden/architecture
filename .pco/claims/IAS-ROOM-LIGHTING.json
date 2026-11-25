@@ -9,8 +9,8 @@
     "label": "convergence-root-20261125"
   },
   "claimedAt": "2026-11-25T08:41:06.007Z",
-  "heartbeatAt": "2026-11-25T11:04:38.413Z",
-  "expiresAt": "2026-11-25T12:34:38.413Z",
+  "heartbeatAt": "2026-11-25T11:30:07.000Z",
+  "expiresAt": "2026-11-25T12:15:07.000Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "6ae96d7d-811c-4b13-8256-4493e0ba1c1b",
@@ -31,8 +31,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote3f4b2095 contains recovered source and graded contour;055cab8b Plant source/store/adverse comparison integrated and browser built locally",
-    "next": "Finish120fan join, genuinely regenerate current compiled witness, publish exact head and validate merge"
+    "evidence": "PR1625@5526b838 preserves corrected complete-case gravity centroid, actual grip/rest geometry and PartIV limits. Prior263page WorkingEdition/10page Primer digitally reviewed; current publicationCI passed.",
+    "next": "Finish exact-head CI and canonical preflight, then merge1625 if earned. Circuit, protection/material qualification and owner appearance/print approval remain open.",
+    "blocker": "Execution environment unavailable; local review files and current process state cannot be inspected. Published PR/checkpoints remain recovery authority."
   },
   "pr": 1625
 }
