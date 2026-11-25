@@ -25,7 +25,9 @@ Zero physicalG/Q0 suction remains a distinct nonlinear diagnostic. Its opening/t
 
 For all three paired v2-to-v3 controls, actual plate cells/holes, physical G and the complete external source wrench remain identical. The E-only comparison likewise preserves them. Existing full58 native source identities and additive method/runtime identities authenticate every complete response. The independent six-component arch free body and native global/energy checks pass in every case. No admission of the material/joints follows from balance. Both the actual capture and the derived receipt correctly mark finish/stair/service evidence inapplicable.
 
-## Coordinated next geometric comparison
+## Coordinated geometric comparison
+
+The subsequent [actual450/600-rise comparison](wet-masonry-arch-rise-development.md) is complete. Rise450 improves the gravity action screen but still fails under0.9G/Q0 even without roof suction;600is worse. The all-six pier-foot interface is the next bounded comparison, before further geometry tuning. The dimensions below remain the actual architectural costs.
 
 At fixed2150finished span,27finish,head2850 and ring215, rise450/600 would lower raw spring from2550 to2400/2250. Their actual full-opening minimum finished intrados is2388.599/2241.991mm, compared with2534.491mm now. Their outer-ring projection at the raw spring contracts toY8790.525..11574.475 /8831.652..11533.348. These are useful actual room/abutment tradeoffs, not accepted proportions. A2560 tie still crosses the opening with an exposed-envelope underside2535; moving it lower would introduce its own head/appearance price and must be authored separately.
 
