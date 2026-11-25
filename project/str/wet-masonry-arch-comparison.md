@@ -1,6 +1,6 @@
 # Lower wet wall: arched masonry comparison
 
-**Retain an arched-wall alternative for the next actual coupled comparison. Reject a solid wall in the present furnished living room. Do not select either replacement.** This is a partial local gravity investigation, rather than a fresh house solution or a replacement set of foundation demands.
+**Retain an arched-wall alternative as a partial mechanical hypothesis. Reject a solid wall in the present furnished living room. Do not select either replacement.** The subsequent [actual coupled elastic-frame comparison](wet-masonry-arch-native-development.md) has now run and fails necessary compression-only ring admission; the partial three-hinge result below does not override that failure. This is a partial local gravity investigation, rather than a fresh house solution or a replacement set of foundation demands.
 
 The current upper wet wall occupies X2832.5–2972.5. A solid lower wall on that axis cuts the current family sofa over194×750mm. Its source-ground room is3851×2621mm; introducing a closed divider leaves only1281mm on its east side. That is not the same inhabited room with a harmless structural substitution.
 
