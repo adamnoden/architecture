@@ -33,7 +33,7 @@ outer RC band/chord interfaces are unavailable. The bulk membrane starts at
 332.5mm; its domain must not silently extend to the plate edge262.5mm during
 any future global insertion.
 
-Four analytical/adverse controls cover authored source-extent edits with exact restoration, unit/datum and off-mesh rejection, two differently sized geometries,
+Five analytical/adverse controls cover authored source-extent edits with exact restoration, unit/datum and off-mesh rejection, two differently sized geometries,
 independent virtual work, six rigid motions, exact full potential with consistent
 G condensation, separate local floor-load changes, modulus doubling, unchanged
 control and rejected material overlap/invalid contour/orphan data. The source
@@ -67,7 +67,7 @@ Sparse condensation uses the explicitly recorded MMD_AT_PLUS_A ordering.
 The comparison fixes the lower wall-end six coordinates only to quotient the
 same six global rigid motions. Both the12.05566%140→70 and13.80010%70→50 changes remain material. The latter is larger; a falling nominal maximum pitch is not evidence of a monotone convergence rate. Its governing relative eigenvector is concentrated in in-plane east-contour `u/v` at Y262.5–417.5mm; this observation does not establish a physical house demand or element-locking diagnosis.
 Fixed authored contour-layer and slab-depth positions plus changing global pitch are **not complete mesh convergence** or a far-field-only test. Actual tangential subdivisions can change beside those fixed positions. Separate near-field/depth and component-domain sensitivity checks remain necessary. No convergence acceptance follows.
-The largest current rigid-mode residual is below6.7e−14; the independently
+The largest current rigid-mode residual is below7.0e−14; the independently
 integrated complete-G wrench residual is below1.12e−11kN/kNm.
 
 The actual graded35 process was killed before emitting a complete result. The
@@ -84,7 +84,7 @@ those **identical** operators. The repeated ordinary result must equal the
 current140 capture exactly except elapsed time. This changes no physical
 operator or authored input, and does not require a second implementation of
 assembly. The source-bound ordering receipt reports an all-relative-motion
-energy difference1.831e−11 and maximum consistent-load difference4.26e−12kN/kNm.
+energy difference1.9273e−11 and maximum consistent-load difference4.26e−12kN/kNm.
 Those satisfy the explicit1e−7 numerical reproducibility screen; that screen
 supplies no physical convergence or resistance claim.
 
@@ -98,6 +98,16 @@ still rules out an equivalent common positive local material for those authored
 slab laws. A solid insertion would be a declared constitutive candidate change,
 requiring whole-system comparison and exact operator/G replacement. No slab
 thickness is selected.
+
+## Bounded direct-solve residency — 25 November2026
+
+The same current component now releases the assembly basis after constructing its complete contour trace and body load, then solves the112 port right-hand sides in batches of16. Condensed energy columns are likewise multiplied in bounded batches. The full response, all112 ports, all106 relative motions, consistent load, particular displacement and potential remain present. The physical matrix, trace, boundary, material and loads are unchanged; the direct sparse method retains MMD_AT_PLUS_A. No iterative approximation, projected mode, repaired symmetry or new numerical acceptance threshold is introduced.
+
+The [source-bound residency control](studies/finite-floor-contour-captures/residency-control.json) executes the immutable predecessor and current condensation on the **same freshly assembled operators** at140/70/50. All-motion energy differences are at most1.18e−12, consistent-load differences at most1.78e−15kN/kNm, and potential differences zero. The actual140 matrix/trace/boundary/load fingerprints also exactly match the preceding ordering receipt. Original methods, captures, ordering and failed35 execution are preserved in `studies/finite-floor-contour-residency-history.tar.xz`; no old method hash is rebound. The current140/70/50 captures and ordering receipt were genuinely regenerated. Their12.05566%/13.80010% mesh sensitivity remains unresolved. Captured elapsed timings include the independent predecessor execution; they are not a production performance benchmark.
+
+The fifth analytical control compares independent dense block elimination against batches1/7/16/19/128, with19 distributed ports, noncontiguous boundary coordinates, interior and boundary loads, exact potential and rejected batch controls. Two separate receipt controls replay the actual comparisons and reject altered scalar metrics, predecessor condensation, fingerprints, capture/method identity, nonfinite values and acceptance flags. Their1e−7 numerical reproducibility screen is the existing ordering screen, not physical convergence.
+
+An attempted current-method35 execution assembled75700 nodes/66404 bricks and reached factorisation after releasing the basis. The environment then restarted; there is no completed response or observed process exit code. The [partial execution observation](studies/finite-floor-contour-residency-interruption.json) retains the actual recorded phases, with underlying cause unknown. It supplies no35 convergence value. Memory measurements are execution observations, not structural evidence or promises about another machine.
 
 ## Shared saved-document, CLI and browser route
 

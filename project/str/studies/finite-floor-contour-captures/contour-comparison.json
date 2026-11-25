@@ -2,24 +2,24 @@
   "schema": "ovids-house/str-finite-floor-contour-sensitivity/1",
   "comparisons": [
     {
-      "fromPitchMm": 140.0,
-      "toPitchMm": 70.0,
-      "maximumRelativeEnergySensitivity": 0.12055659397617546,
-      "minimumRelativeEnergyChange": 1.6562688258670022e-06,
-      "maximumRelativeEnergyChange": 0.12055659397617546
+      "fromPitchMm": 140,
+      "toPitchMm": 70,
+      "maximumRelativeEnergySensitivity": 0.12055659397611662,
+      "minimumRelativeEnergyChange": 1.6562688229804223e-06,
+      "maximumRelativeEnergyChange": 0.12055659397611662
     },
     {
-      "fromPitchMm": 70.0,
-      "toPitchMm": 50.0,
-      "maximumRelativeEnergySensitivity": 0.13800096408544849,
-      "minimumRelativeEnergyChange": 0.0002187142407243936,
-      "maximumRelativeEnergyChange": 0.13800096408544849
+      "fromPitchMm": 70,
+      "toPitchMm": 50,
+      "maximumRelativeEnergySensitivity": 0.13800096408544804,
+      "minimumRelativeEnergyChange": 0.00021871424072306134,
+      "maximumRelativeEnergyChange": 0.13800096408544804
     }
   ],
   "captureSHA256": {
-    "contour140.json": "6ae04a1bc94f51cc4b9d9f4e71d75c848c8aad10efd7646bd8aef0fb4f4f257e",
-    "contour70.json": "967539286449f467f2fc8ffcf1e63293d695d394deb9bf8e06e2528df3e45fea",
-    "contour50.json": "940546a31b539fd3ef6b5635a6f62661b5c803785a022d499e5d68da4ddf8e79"
+    "contour140.json": "c8ccb0a0986a8e17a68ec737b671504796c11fc330ccfff1b36c5a666b6b7c86",
+    "contour70.json": "c0ebab8ed14574e79e61304283fa9a54aed513ca46d2f8d14cc618fa43e1e223",
+    "contour50.json": "4501c0df2e24c124e548eebefa11ea8c86e067d3ac2bedd0bd2cb88d669ad5ec"
   },
   "processingMethodSHA256": "8d12feed4f7abead2679098c2bfe7a58d4670823e7d9b8ab85234c31279b0125",
   "fixedAuthoredContourLayersAndDepthGlobalPitchSensitivityOnly": true,
