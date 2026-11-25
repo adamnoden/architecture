@@ -9,8 +9,8 @@
     "label": "convergence-root-20261125"
   },
   "claimedAt": "2026-11-25T08:41:06.007Z",
-  "heartbeatAt": "2026-11-25T09:14:59.353Z",
-  "expiresAt": "2026-11-25T09:59:59.353Z",
+  "heartbeatAt": "2026-11-25T09:57:16.872Z",
+  "expiresAt": "2026-11-25T11:27:16.872Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "6ae96d7d-811c-4b13-8256-4493e0ba1c1b",
@@ -33,5 +33,6 @@
   "checkpoint": {
     "evidence": "Remote3f4b2095 contains recovered source and graded contour;055cab8b Plant source/store/adverse comparison integrated and browser built locally",
     "next": "Finish120fan join, genuinely regenerate current compiled witness, publish exact head and validate merge"
-  }
+  },
+  "pr": 1625
 }
