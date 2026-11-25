@@ -9,8 +9,8 @@
     "label": "convergence-20261125"
   },
   "claimedAt": "2026-11-25T22:18:56.729Z",
-  "heartbeatAt": "2026-11-25T23:25:21.686Z",
-  "expiresAt": "2026-11-26T00:10:21.686Z",
+  "heartbeatAt": "2026-11-25T23:49:09.168Z",
+  "expiresAt": "2026-11-26T00:34:09.168Z",
   "branch": "work/convergence-structure-20261125",
   "predecessor": {
     "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
@@ -36,8 +36,8 @@
   },
   "pr": 1626,
   "checkpoint": {
-    "evidence": "Recovery PR1626 head243593e528807ca544ea5fdcc19a0826268841ca; actual bed and incident followup saved remotely at work/convergence-bed-water-20261125 ab2c3532b13c016671b2d0c37db050856e0be7bf. Contour residency experiment remains separate,140 numerical equivalence observed;35 interrupted without result.",
-    "next": "Verify exact-head CI and both lease publication preflights, merge recovery, then reconcile and submit saved followup.",
-    "blocker": "Recovery exact-head health and full browser proof pending; no structural or room admission."
+    "evidence": "RecoveryPR1626 head243593e528807ca544ea5fdcc19a0826268841ca: bothactual browserproofs and publicationproofsgreen; healthpending. Followup2d861dae5c6856b09453121a1fa60c38daf1ba02 saved: actualnormalbed andstoreincident/material boundaries. Contourmethod/controlcheckpoint ee4a0ffebe29e9ed89365f6e1d012e7de7735c40 has fresh140/70/50 sameoperator checks and retainedoriginalhistory; no35response orphysicaladmission.",
+    "next": "Merge recoveryafterexacthealth andfreshbothleasepreflights; submitjoinedfollowup aftercurrent-source/witnessreconciliation. Resume35onlywithrecoverablecheckpoints.",
+    "blocker": "Canonicalhealth stillrunning; actualcurvedbar transfer, masonry/contact andwholewaterroom remainunqualified."
   }
 }
