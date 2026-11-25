@@ -9,8 +9,8 @@
     "label": "structure-convergence-20261125"
   },
   "claimedAt": "2026-11-25T08:40:52.436Z",
-  "heartbeatAt": "2026-11-25T09:40:40.301Z",
-  "expiresAt": "2026-11-25T11:10:40.301Z",
+  "heartbeatAt": "2026-11-25T09:43:16.504Z",
+  "expiresAt": "2026-11-25T11:13:16.504Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "81d1d5af-717b-47e5-b8e9-5cdc634a77a7",
@@ -33,7 +33,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Remote combined checkpoint3f4b2095d6581d84625795937ba62434c1218b77; firstPR source frozen locally63a74c8b410721a4c8d4fb1404522c6656d08665 pending verified upload. Source-bound120pad recovery and genuine sharednative equality remain unadopted development.",
-    "next": "Verify firstPR exact-head CI/publication preflight; preserve separate actualsouth40/q32/q64 and rectangularend comparison for next integration."
-  }
+    "evidence": "PR1625 exactremotehead6f35272f3d15a6affcc71c6ee851c48298f9fb95; source-tree404a4e0c39288b1134d4eb9cf43dcde7539a60d7. Includes current contour and authenticated120pad proof; nohouseorpacketclosure. Separate genuine south40/q32/q64 captures and rectangularend receipt ready for next checkpoint.",
+    "next": "Observe exact-head PR1625 CI and publishpreflight; push separate nextend-development rawcaptures and receipt, then integrate same-document comparison controls."
+  },
+  "pr": 1625
 }
