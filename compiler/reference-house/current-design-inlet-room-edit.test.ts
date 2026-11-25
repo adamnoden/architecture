@@ -60,3 +60,16 @@ test('the140mm aspect-ratio comparison is an atomic complete saved choice, with 
  assert.equal(edit(state,'clearHeightMm',47).status,'rejected')
  const undo=replayEngineeringEdit(change.state,engineeringBase(change.state),'undo');assert.equal(undo.status,'applied');if(undo.status==='applied')assert.equal(saveEngineeringEdit(undo.state),saveEngineeringEdit(state))
 })
+
+test('the same saved ground joins the existing vertical-profile arch; an absent profile stays explicitly unjoined',async()=>{
+ const resolved=readCurrentDesignResolution(),request=readInletSourceEnvelopeCase(resolved),ground=readGroundSectionCase(resolved),start=await readEngineeringDocument(readGeorgianDesignSnapshot()),
+  stages={roofPitch:start.stages.roofPitch,groundSection:{caseId:ground.ground.caseId,settings:ground.ground.settings},inletSourceEnvelope:{...readLocalUtilityPocketSettings(),splitPlantRoom:request.sourceEnvelope.splitPlantRoom}},
+  absent=await compileEngineeringDocument({...start,stages}),joined=await compileEngineeringDocument({...start,stages:{...stages,houseVerticalProfile:{}}}),
+  a=absent.engineering.inletSourceEnvelope!.splitPlantRoom.comparison!.rawArchVerticalReservation!,b=joined.engineering.inletSourceEnvelope!.splitPlantRoom.comparison!.rawArchVerticalReservation!
+ assert.equal(a.groundFflAbsoluteMm,530);assert.equal(a.sourceFixedCountercase.belowSpringReserveMm,-300);assert.equal(a.sourceFixedCountercase.belowCrownHeadReserveMm,0)
+ assert.equal(a.joinedProfileComparison,null);assert.ok(a.diagnostics.includes('SPLIT_PLANT_ROOM/raised-ground-arch-profile-not-joined'))
+ assert.equal(b.joinedProfileComparison!.springAbsoluteMm,3080);assert.equal(b.joinedProfileComparison!.headAbsoluteMm,3380)
+ assert.equal(b.joinedProfileComparison!.belowSpringReserveMm,230);assert.equal(b.joinedProfileComparison!.geometryOnly,true);assert.equal(b.actualFittedClearanceQualified,false)
+ assert.deepEqual(absent.engineering.inletSourceEnvelope!.bound,joined.engineering.inletSourceEnvelope!.bound)
+ assert.deepEqual(absent.engineering.inletSourceEnvelope!.roomCatchment,joined.engineering.inletSourceEnvelope!.roomCatchment)
+})

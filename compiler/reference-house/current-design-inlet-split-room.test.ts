@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {readFileSync} from 'node:fs'
-import {inletSplitPlantRoom,type SplitPlantRoomInput} from './current-design/inlet-split-plant-room.js'
+import {comparePlantRawArchReservation,inletSplitPlantRoom,type SplitPlantRoomInput} from './current-design/inlet-split-plant-room.js'
 const receipt=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-local-pocket.results.json',import.meta.url),'utf8')),
  r=receipt.splitPlantRoom.comparison,input=r.resolvedInput as SplitPlantRoomInput,
  nominal=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-source-envelope.results.json',import.meta.url),'utf8'))
@@ -65,7 +65,7 @@ test('eleven complete piece budgets, first release and positive rests replace an
  assert.ok(p.minimumHomeObstacleReserveMm>0);assert.ok(p.minimumActualPipeReserveMm>0);assert.ok(p.firstRestEdgeReserveMm>0)
  assert.ok(p.pieces.every(v=>v.phases.length===4));assert.equal(p.completeHardwareMeasured,false)
  assert.equal(p.gripsRetainersCapturedFirstReleaseAndRestResistanceQualified,false)
- assert.equal(p.fittedFrameAndLowerInfillFirstReleaseQualified,false);assert.equal(p.requiredStraightFirstLiftWidthWithSettingsMm,1065);assert.equal(x.bridge.outerBearingWidthAfterIndependentSettingsMm,5);assert.equal(x.bridge.simplySupportedRailCentreStripSpanMm,510);assert.equal(x.bridge.adverseRailCentreSpanMm,530);
+ assert.equal(p.fittedFrameAndLowerInfillFirstReleaseQualified,false);assert.equal(p.requiredStraightFirstLiftWidthWithSettingsMm,1085);assert.equal(x.bridge.outerBearingWidthAfterIndependentSettingsMm,5);assert.equal(x.bridge.simplySupportedRailCentreStripSpanMm,510);assert.equal(x.bridge.adverseRailCentreSpanMm,530);
  assert.equal(x.bridge.oldThresholdPlateReused,false);assert.equal(x.bridge.ordinaryHandRemovalClaimed,false)
  const larger=structuredClone(input);larger.choice.bridgeHardwareBudgetEachKg=2
  const bad=inletSplitPlantRoom(larger);assert.ok(bad.diagnostics.includes('SPLIT_PLANT_ROOM/bridge-piece-renewal-comparison-fails'))
@@ -116,4 +116,16 @@ test('threshold rejection includes the independently adverse rail span even when
  assert.equal(control.bridge.adverseSpanOnlyStripScreen,true)
  assert.deepEqual(control.thresholdRoute.hydraulic,x.thresholdRoute.hydraulic)
  assert.deepEqual(control.pocket,x.pocket)
+})
+
+
+test('a minimum cargo duty never becomes actual fitted clearance when saved ground consumes the source arch',()=>{
+ const reference={rawSpringMm:2550,rawHeadMm:2850,groundFflMm:0,minimumCargoHeightMm:2300,settingEachMm:10},nominal=comparePlantRawArchReservation(reference),raised=comparePlantRawArchReservation({...reference,groundFflMm:530})
+ assert.equal(nominal.sourceFixedCountercase.belowSpringReserveMm,230);assert.equal(nominal.actualFittedClearanceQualified,false)
+ assert.equal(raised.minimumCargoTopAbsoluteMm,2830);assert.equal(raised.sourceFixedCountercase.belowSpringReserveMm,-300);assert.equal(raised.sourceFixedCountercase.belowCrownHeadReserveMm,0)
+ assert.equal(raised.necessaryJoinedProfileBelowSpringReservation,null);assert.equal(raised.curvedCrownNotRectangularClearance,true);assert.equal(raised.minimumCargoIsActualFrame,false)
+ assert.deepEqual(raised.diagnostics,['SPLIT_PLANT_ROOM/raised-ground-arch-profile-not-joined'])
+ const translated=comparePlantRawArchReservation({...reference,groundFflMm:530,translatedProfile:{springAbsoluteMm:3080,headAbsoluteMm:3380,occupiedShiftMm:530,groundCaseDigest:'ground-case',profileCaseDigest:'profile-case'}})
+ assert.equal(translated.joinedProfileComparison!.belowSpringReserveMm,230);assert.equal(translated.necessaryJoinedProfileBelowSpringReservation,true);assert.equal(translated.actualFittedClearanceQualified,false);assert.deepEqual(translated.diagnostics,[])
+ assert.throws(()=>comparePlantRawArchReservation({...reference,rawSpringMm:NaN}),/Unsupported/)
 })
