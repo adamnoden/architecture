@@ -9,6 +9,16 @@ const resolved=readCurrentDesignResolution(),request=readInletSourceEnvelopeCase
 const baseline=runInletSourceEnvelopeCase(resolved,request.sourceEnvelope)
 const run=(edit:object)=>runInletSourceEnvelopeCase(resolved,{...request.sourceEnvelope,settings:{...request.sourceEnvelope.settings,...edit}})
 
+test('current valve material uncertainty cannot inherit the rejected Conex polymer count',()=>{
+ const m=baseline.materials,current=m.currentIndoorValveGeometryComparison,old=m.historicalRejectedConexCabinetControl
+ assert.match(current.model,/BSA6T/);assert.equal(current.actualPotableQualification,false);assert.equal(current.actualWholeConstituentQualification,false)
+ assert.equal(current.knownPolymerItemsAcrossCurrentValves,null);assert.equal(current.polymerAbsenceEstablished,false);assert.equal(current.selected,false)
+ assert.ok(current.unresolvedConstituents.includes('graphite binder and gasket manufacture'))
+ assert.match(old.valve,/ConexS701/);assert.equal(old.knownPolymerItemsAcrossComparedValves,6);assert.equal(old.state,'rejected-historical-comparison');assert.equal(old.selected,false)
+ assert.equal(Object.hasOwn(m,'valve'),false);assert.equal(Object.hasOwn(m,'knownPolymerItemsAcrossTwoValves'),false)
+ assert.equal(m.ownerExceptionsApproved,0);assert.equal(m.fixedRestrictionAllConstituentsQualified,false);assert.equal(baseline.preSiteArrangementComplete,false)
+})
+
 test('distinct authored duties recover Utility operation and decisively reject the old Plant receiver',()=>{
  const [u,p]=baseline.branches
  assert.equal(u.requiredDeliveryEachLmin,20);assert.equal(p.requiredDeliveryEachLmin,45)
@@ -77,7 +87,7 @@ test('joined direction prices cold backfeed, open-bowl taps, actual stored relea
  assert.ok(j.receivingAndThermal.rejectTransplantedBase.afterTwo5MmSettings<0)
  assert.equal(j.completeArrangementSelected,false)
  assert.equal(j.hadPacketComplete,false)
- assert.equal(baseline.materials.knownPolymerItemsAcrossTwoValves,6)
+ assert.equal(baseline.materials.historicalRejectedConexCabinetControl.knownPolymerItemsAcrossComparedValves,6)
  assert.equal(baseline.materials.ownerExceptionsApproved,0)
 })
 

@@ -4,7 +4,7 @@ import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import type { runGroundSectionCase } from './structural-ground.js'
 import {runHouseVerticalProfileCase} from './house-vertical-profile.js'
-import { inletEntrySideCuts, drawInletIndoorCuts, inletSplitPlantStationComparison, drawInletSplitPlantStation, type SplitPlantStationChoice } from './inlet-indoor-cuts.js'
+import { indoorCutProductEvidence, inletEntrySideCuts, drawInletIndoorCuts, inletSplitPlantStationComparison, drawInletSplitPlantStation, type SplitPlantStationChoice } from './inlet-indoor-cuts.js'
 import {inletSplitPlantBranch,drawInletSplitPlantBranch,derivePlantFittedFrame,coordinatePlantFrameBranch,type SplitPlantBranchChoice} from './inlet-split-plant-branch.js'
 import {inletSplitPlantRoom,drawInletSplitPlantRoom,admitSplitPlantRoomChoice,type SplitPlantRoomChoice} from './inlet-split-plant-room.js'
 import {derivePlantReleaseProfiles} from '../../../project/had/studies/plant-release-profiles.mjs'
@@ -43,7 +43,7 @@ const paths = ['project/had/studies/south-inlet-under-sill.json', 'project/had/s
   'project/had/studies/south-inlet-relief.json', 'project/had/studies/south-utility-inlet.json',
   'project/had/studies/current-house-services.json', 'project/mat/studies/whole-house-service-baseline.json',
   'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json', 'project/str/studies/current-house-grid.json', 'project/had/studies/inlet-bank-shelf-candidate.json', 'project/had/studies/utility-wide-capture.json', 'project/had/studies/inlet-route-candidate.json', 'project/had/studies/inlet-split-plant-station-candidate.json', 'project/had/studies/inlet-split-plant-branch-candidate.json','project/had/studies/inlet-fixed-station.json','project/had/studies/inlet-split-plant-room-candidate.json'] as const
-const methodPaths = ['compiler/reference-house/current-design/house-vertical-profile.ts','project/had/studies/house_vertical_profile.py','compiler/reference-house/current-design/inlet-split-plant-room-choice.ts','compiler/reference-house/current-design/inlet-split-plant-room.ts','compiler/reference-house/current-design/inlet-split-plant-branch.ts', 'project/had/studies/plant-release-profiles.mjs', 'project/had/studies/incoming-water-geometry.mjs', 'compiler/reference-house/current-design/inlet-bank-carrier.ts', 'compiler/reference-house/current-design/inlet-bank-receiver.ts', 'project/had/studies/service-interface-geometry.mjs', 'compiler/reference-house/current-design/inlet-indoor-routes.ts', 'compiler/reference-house/current-design/inlet-indoor-cuts.ts', 'compiler/reference-house/current-design/inlet-source-envelope.ts',
+const methodPaths = ['compiler/reference-house/current-design/inlet-store-impulse.ts','compiler/reference-house/current-design/house-vertical-profile.ts','project/had/studies/house_vertical_profile.py','compiler/reference-house/current-design/inlet-split-plant-room-choice.ts','compiler/reference-house/current-design/inlet-split-plant-room.ts','compiler/reference-house/current-design/inlet-split-plant-branch.ts', 'project/had/studies/plant-release-profiles.mjs', 'project/had/studies/incoming-water-geometry.mjs', 'compiler/reference-house/current-design/inlet-bank-carrier.ts', 'compiler/reference-house/current-design/inlet-bank-receiver.ts', 'project/had/studies/service-interface-geometry.mjs', 'compiler/reference-house/current-design/inlet-indoor-routes.ts', 'compiler/reference-house/current-design/inlet-indoor-cuts.ts', 'compiler/reference-house/current-design/inlet-source-envelope.ts',
   'compiler/reference-house/current-design/inlet-room-catchment.ts',
   'compiler/reference-house/current-design/inlet-room-pocket.ts',
   'compiler/reference-house/current-design/inlet-room-pan.ts',
@@ -265,7 +265,14 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
       electricalDirection: 'sealed-indoor-mainboard-and-independent-streethead-pv',
       rationale: 'The current small lobby is circulation, the Utility valve bay already contains rack/waste duties, and the plant control reservation is occupied. None is spare room. Replan the whole Utility wet station and separate its electrical task before adding footprint, roof, openings and another frost boundary.',
       newRoomGeometryAuthored: true, electricalRelocationSelected: false, replacementOccupiedHouseCompiled: false, annexSelected: false },
-    materials: { valve: inletCabinetProductFacts.valve.model, knownPolymerItemsAcrossTwoValves: 6, ownerExceptionsApproved: 0,
+    materials: { currentIndoorValveGeometryComparison:{model:indoorCutProductEvidence.bellows.model,
+      knownConstituents:indoorCutProductEvidence.bellows.knownConstituents,unresolvedConstituents:indoorCutProductEvidence.bellows.unresolvedConstituents,
+      actualPotableQualification:indoorCutProductEvidence.bellows.actualPotableQualification,actualWholeConstituentQualification:indoorCutProductEvidence.bellows.actualWholeConstituentQualification,
+      knownPolymerItemsAcrossCurrentValves:null,polymerAbsenceEstablished:false,selected:false,
+      status:'Unqualified geometry comparison; known catalogue materials do not establish a complete constituent inventory or potable admission.'},
+      historicalRejectedConexCabinetControl:{state:'rejected-historical-comparison',valve:inletCabinetProductFacts.valve.model,comparedValveCount:2,
+       knownPolymerConstituentsPerValve:inletCabinetProductFacts.valve.knownPolymerItems,knownPolymerItemsPerValve:inletCabinetProductFacts.valve.knownPolymerItemsPerValve,
+       knownPolymerItemsAcrossComparedValves:2*inletCabinetProductFacts.valve.knownPolymerItemsPerValve,selected:false},ownerExceptionsApproved: 0,
       fixedRestrictionAllConstituentsQualified: false, potableApprovalQualified: false },
     selected: false, preSiteArrangementComplete: false, installedAcceptance: false }
   return { ...result, reviewSvg: draw(result) }

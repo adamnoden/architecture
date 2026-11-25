@@ -141,6 +141,26 @@ export function inletSplitPlantBranch(i:SplitPlantBranchInputs){
   valveOrigin=i.valve.axisMm.map((v,k)=>v+(k===2?i.groundFflMm:0)) as unknown as Point,valveForce:Point=[0,0,-i.valve.knownKg*9.81],
   nominalValveGravityWrenchN_Nm=[...valveForce,...cross(valveOrigin.map(v=>v/1000) as unknown as Point,valveForce)],
   referenceGravityResultantWrenchN_Nm=rows.flatMap(r=>r.stock).reduce((a,s)=>a.map((v,k)=>v+s.referenceGravityWrenchN_Nm[k]),nominalValveGravityWrenchN_Nm),
+  incidentCuts=[
+   {role:'source-outer-cut',kind:'joint-free-wall-spool-boundary',point:q.sourceEntryMm},
+   {role:'source-inner-cut',kind:'joint-free-wall-spool-boundary',point:q.insideEntryMm},
+   {role:'valve-lower-face',kind:'separating-interface',point:bottom},
+   {role:'valve-upper-face',kind:'separating-interface',point:top},
+   {role:'common-outlet-tee',kind:'three-branch-connection',point:commonTee},
+   {role:'store-high-split',kind:'separating-interface',point:q.storeFixedPathMm.at(-1)!},
+   {role:'store-low-split',kind:'separating-interface',point:q.storeRemovableDropMm.at(-1)!},
+   ...q.storeTerminalMm.slice(1,-1).map((point,k)=>({role:'store-terminal/vertex-'+(k+1),kind:'formed-tube-wall-cut-not-invented-joint',point})),
+   {role:'store-factory-port',kind:'actual-factory-port-trial',point:q.storePortTrialMm},
+   {role:'cold-tree-interface',kind:'connected-current-cold-tree-boundary',point:q.coldTreeInterfaceMm}],
+  incidentStations={schema:'had-plant-incident-stations/1',coordinateDatum:'Local occupied groundFFL; absolute XYZ adds the same saved groundFFL to Z.',
+   storeOuterEnvelopeTopLocalMm:i.cylindricalStore.heightMm,storeOuterEnvelopeTopAbsoluteMm:i.cylindricalStore.heightMm+i.groundFflMm,actualLiquidLevelKnown:false,
+   stations:incidentCuts.map(n=>({id:q.id+'/incident/'+n.role,role:n.role,kind:n.kind,localPointMm:[...n.point],absolutePointMm:n.point.map((v,k)=>v+(k===2?i.groundFflMm:0)),
+    outerTopMinusStationSignedMm:i.cylindricalStore.heightMm-n.point[2],nonnegativeOuterTopGravityHeadComparisonMm:Math.max(0,i.cylindricalStore.heightMm-n.point[2]),
+    sourceStoreAndColdTreePotentiallyConnectedWithAllCutsOpen:true,actualValveNonreturnAirAdmissionAndPressureStateKnown:false,actualMaximumReleaseLmin:null,actualDrainableInventoryLitres:null})),
+   interpretation:'Geometric outer-top-to-cut comparisons only. Zero positive gravity head at a high cut does not exclude pressure release, siphon or upper-network backfeed. Actual pressure, air paths and liquid inventory must be solved at each real station.',
+   pressureAndGravityCombinedAtActualStation:false,allFaultLocationsCovered:false,
+   unsupportedIncidentFamilies:['actual-store-hot-outlet-and-secondary-return-network','expansion-vessel-and-safety-manifold-faults','primary-buffer-and-heat-exchanger-breach','vessel-shell-element-or-flange-breach'],
+   completeReleaseNetworkQualified:false},
   diagnostics=[...(crossPathChecks.some(v=>v.reserveMm<0)?['SPLIT_PLANT_BRANCH/cross-path-fixed-territory']:[]),...(roomBoundaryChecks.some(v=>v.reserveMm < -1e-7)?['SPLIT_PLANT_BRANCH/finished-room-boundary']:[]),...(valveChecks.some(v=>v.reserveMm < -1e-7)?['SPLIT_PLANT_BRANCH/valve-route']:[]),...new Set(obstacleChecks.filter(v=>v.reserveMm<0).map(v=>'SPLIT_PLANT_BRANCH/fixed-obstacle/'+v.obstacle)),...new Set(goodsChecks.filter(v=>v.reserveMm<0).map(v=>'SPLIT_PLANT_BRANCH/goods/'+v.goods)),
    ...(selfChecks.some(v=>v.reserveMm<0)?['SPLIT_PLANT_BRANCH/self-fitting-territory']:[]),...(arms.some(v=>v.reserveMm<0)?['SPLIT_PLANT_BRANCH/ordinary-arm']:[]),
    ...(dropStoreReserveMm<25?['SPLIT_PLANT_BRANCH/full-backbone-drop-cylinder-clearance']:[]),...(ingressBoreAfterTwoIndependentSettingsMm<0?['SPLIT_PLANT_BRANCH/service-infill-port-pipe-position-envelope']:[]),...(ingressInfillSideReserveMm<0?['SPLIT_PLANT_BRANCH/service-infill-port-side-land']:[]),...(ingressCargoJambReserveMm<0?['SPLIT_PLANT_BRANCH/entry-cargo-jamb']:[]),
@@ -148,7 +168,7 @@ export function inletSplitPlantBranch(i:SplitPlantBranchInputs){
  return{schema:'had-split-plant-branch-result/1',id:q.id,state:'explicit-connected-branch-development-with-rejected-interfaces',choice:q,
   sourceBindingDigest:i.sourceBindingDigest,resolvedInput:i,fittedFrame:i.fittedFrame,sourceIndependent:true,entryKind:'south-service-infill-within-existing-raw-arch',sourceEntryInfillYMm:i.sourceEntryInfillYMm,newMasonryHoleCredited:false,actualInfillFrameAndIndependentSupportQualified:false,noUtilityColdHeaderOrPlantTransferThroughUtility:true,roomPlanMm:i.roomPlanMm,ceilingMm:i.ceilingMm,groundFflMm:i.groundFflMm,obstacles:i.obstacles,goods:i.goods,referenceValve:i.valve,ordinaryShoulderMm:i.ordinaryShoulderMm,connections:connections.map(([id,a])=>({id,pointMm:a})),paths:rows,
   lengthInterpretation:'Full virtual-corner polyline stock reference, not manufactured tube cuts; formed paths and their chord error are returned separately. Real fittings/tee and full installed stock remain unqualified.',massInterpretation:'Separate adverse pipe tolerance/density reference; terminal contains copper/water only. Terminal wrapper, fittings, tee, receiver, capture and actual materials remain unqualified; this is not complete installed mass.',knownValveKg:i.valve.knownKg,referenceStraightStockKg:rows.flatMap(r=>r.stock).reduce((n,s)=>n+s.referenceCopperKg+s.referenceWaterKg+s.referenceJacketKg+s.referenceInsulationKg,0),
-  pressureNodalWrenches,pressureNetworkEquilibriumResidualN_Nm,referenceGravityResultantWrenchN_Nm,nominalValveGravity:{referenceOriginMm:valveOrigin,wrenchN_Nm:nominalValveGravityWrenchN_Nm,actualFactoryCentroidKnown:false},
+  incidentStations,pressureNodalWrenches,pressureNetworkEquilibriumResidualN_Nm,referenceGravityResultantWrenchN_Nm,nominalValveGravity:{referenceOriginMm:valveOrigin,wrenchN_Nm:nominalValveGravityWrenchN_Nm,actualFactoryCentroidKnown:false},
   pressureInterpretation:'Uniform source-pressure nodal reference includes every pipe end, corner and shared tee exactly once; endpoint cuts complete equilibrium. These are not simultaneous solved guide reactions. Actual momentum, loss, valve closed/open states and thermal compatibility remain unqualified.',
   lockedStraightTubeThermalReferenceN:117200*copperArea*.000017*i.operating.temperatureChangeK,actualValveGuideAndSupportReactionsN:null,
   geometry:{crossPathChecks,roomBoundaryChecks,valveChecks,obstacleChecks,goodsChecks,selfChecks,arms,dropStoreReserveMm,ingressCargoJambReserveMm,ingressBorePipePositionReserveMm,ingressBoreAfterTwoIndependentSettingsMm,ingressBoreAdditionalIndependentMachiningAdverseMm,ingressBorePerCoordinatePositionAdverseMm,ingressPositionBudget:{pipeAxisTotalMm:i.envelope.settingsEachMm,frameHoleAxisTotalMm:i.fittedFrame.resolvedInput.settingEachMm,withinInfillHolePositionMm:i.fittedFrame.resolvedInput.settingEachMm,norm:'Euclidean radial displacement in the bore YZ plane; independent per-coordinate boxes are an adverse control, not credited.',ownership:'Frame/hole total includes fabrication and installation; within-infill land is another constraint on that same finished hole, not a third independently added radial error.',additionalIndependentMachiningAdverseTotalMm:i.envelope.settingsEachMm+2*i.fittedFrame.resolvedInput.settingEachMm,actualFabricatedInstalledPositionAndSealQualified:false},ingressInfillSideReserveMm},hydraulicComparisons,
@@ -164,7 +184,7 @@ export function drawInletSplitPlantBranch(r:ReturnType<typeof inletSplitPlantBra
   txt=(x:number,y:number,s:string,size=16)=>`<text x="${x}" y="${y}" font-size="${size}">${esc(s)}</text>`,
   poly=(points:Path,elevation:boolean,c:string,w=3)=>`<polyline points="${points.map(p=>`${X(p[0])},${elevation?Z(p[2]):Y(p[1])}`).join(' ')}" fill="none" stroke="${c}" stroke-width="${w}"/>`,
   box=(b:Box,elevation:boolean,c:string)=>`<rect x="${X(b[0])}" y="${elevation?Z(b[2]+b[5]):Y(b[1]+b[4])}" width="${b[3]*sx}" height="${(elevation?b[5]:b[4])*sx}" fill="${c}" stroke="#7c786e"/>`,
-  min=(a:readonly{reserveMm:number}[])=>Math.min(...a.map(v=>v.reserveMm))
+  min=(a:readonly{reserveMm:number}[])=>Math.min(...a.map(v=>v.reserveMm)),high=r.incidentStations.stations.find(s=>s.role==='common-outlet-tee')!,low=r.incidentStations.stations.find(s=>s.role==='store-factory-port')!
  return`<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1360" viewBox="0 0 1280 1360"><defs><clipPath id="plant-branch-plan"><rect x="25" y="130" width="625" height="550"/></clipPath><clipPath id="plant-branch-elevation"><rect x="25" y="740" width="625" height="540"/></clipPath></defs><rect width="1280" height="1360" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#29271f">
  ${txt(35,40,'Independent Plant branch · complete explicit topology, unresolved interfaces',24)}
  ${txt(35,75,'New east entry; no Plant cold feed in Utility. Source entry, containment, materials and structural admission remain unqualified.')}
@@ -180,6 +200,7 @@ export function drawInletSplitPlantBranch(r:ReturnType<typeof inletSplitPlantBra
  ${txt(680,395,'Red connection leaves before cylinder travel; no pipe-flex credit.')}${txt(680,435,`Goods height design limits: ${r.goods.map(g=>g.maximumCompleteHeightMm).join(' / ')} mm.`)}
  ${txt(680,475,`Source port / fitted-cargo reserve: ${r.geometry.ingressCargoJambReserveMm.toFixed(1)} mm.`)}
  ${txt(680,515,`${r.choice.sourceEntryOpeningDiameterMm} mm service-infill port: ${r.geometry.ingressBoreAfterTwoIndependentSettingsMm.toFixed(2)} mm pipe plus total frame/hole reserve.`)}${txt(680,550,'Existing raw arch; infill/frame, seals and weather path remain unqualified.')}
+ ${txt(680,590,`Outer-top gravity comparison: tee${high.nonnegativeOuterTopGravityHeadComparisonMm.toFixed(0)} / port${low.nonnegativeOuterTopGravityHeadComparisonMm.toFixed(0)} mm.`)}${txt(680,630,'Geometry only; pressure, air paths and actual release unknown.')}
  ${txt(35,715,'X/Z PROJECTION · exact local heights; intersecting projections do not establish physical contact',18)}
  <g clip-path="url(#plant-branch-elevation)">${r.obstacles.filter(o=>!o.id.includes('south-west')&&!o.id.includes('service-spine')).map(o=>box(o.boxMm,true,'#e3dfd4')).join('')}
  ${box(r.referenceValve.bodyMm,true,'#dfa666')}${box(r.referenceValve.stemMm,true,'#dfa666')}${r.paths.map(p=>poly(p.formedGeometry?.path??p.points,true,p.removable?'#a24f38':'#247d8a')).join('')}</g>
