@@ -52,6 +52,8 @@ test('browser engineering edits initialize without Node globals and retain light
     if (contourUndo.status !== 'applied') throw new Error(contourUndo.message)
     const endTransaction = (endReturnMandrelMm, extra={}) => ({schema:'current-engineering-edit/1',units:'mm',base:api.engineeringBase(state),
       operation:{kind:'set-wet-beam-end-mandrel',assemblyId:api.editableWetBeamEndId,endReturnMandrelMm,...extra}})
+    const thicknessTransaction=thicknessMm=>({schema:'current-engineering-edit/1',units:'mm',base:api.engineeringBase(state),
+      operation:{kind:'set-floor-section-thickness',assemblyId:api.editableFloorSectionId,thicknessMm}})
     const endEdit=api.applyEngineeringEdit(state,endTransaction(100))
     if(endEdit.status!=='applied')throw new Error(endEdit.message)
     const endUndo=api.replayEngineeringEdit(endEdit.state,api.engineeringBase(endEdit.state),'undo')
@@ -60,9 +62,14 @@ test('browser engineering edits initialize without Node globals and retain light
       operation: { kind: 'set-plant-room-field', assemblyId: api.editablePlantRoomId, inputId, value } })
     const plantEdit = api.applyEngineeringEdit(state, plantTransaction('clearWidthMm', 350))
     if (plantEdit.status !== 'applied') throw new Error(plantEdit.message)
+    const frameEdit = api.applyEngineeringEdit(state, plantTransaction('fittedFrame.clearWidthMm', 1000))
+    if (frameEdit.status !== 'applied') throw new Error(frameEdit.message)
+    const frameUndo = api.replayEngineeringEdit(frameEdit.state, api.engineeringBase(frameEdit.state), 'undo')
+    if (frameUndo.status !== 'applied') throw new Error(frameUndo.message)
     const plantUndo = api.replayEngineeringEdit(plantEdit.state, api.engineeringBase(plantEdit.state), 'undo')
     if (plantUndo.status !== 'applied') throw new Error(plantUndo.message)
-    return {endMandrel:endEdit.state.document.stages.floorSection.beamEndDevelopment.endReturnMandrelMm,
+    return {endThicknessNoOp:api.applyEngineeringEdit(state,thicknessTransaction(200)).status==='applied'&&api.applyEngineeringEdit(state,thicknessTransaction(200)).state===state,
+      endThickness250Rejected:api.applyEngineeringEdit(state,thicknessTransaction(250)).status==='rejected',endMandrel:endEdit.state.document.stages.floorSection.beamEndDevelopment.endReturnMandrelMm,
       endRejected:[47,200,NaN].every(value=>api.applyEngineeringEdit(state,endTransaction(value)).status==='rejected'),
       endInjectionRejected:api.applyEngineeringEdit(state,endTransaction(100,{accepted:true})).status==='rejected',
       endUnchangedControl:JSON.stringify(endEdit.state.document.stages.floorSection.cageComparison)===JSON.stringify(state.document.stages.floorSection.cageComparison),
@@ -70,6 +77,9 @@ test('browser engineering edits initialize without Node globals and retain light
       endRestored:api.saveEngineeringEdit(endUndo.state)===api.saveEngineeringEdit(state),
       endStaleIgnored:api.currentEngineeringReply(endEdit.state,api.engineeringTicket(endEdit.state,'after-end'),{ticket})===undefined,
       depth: changed.state.document.stages.studyLighting.serviceTotalDepthMm,
+      frameWidth: frameEdit.state.document.stages.inletSourceEnvelope.splitPlantRoom.fittedFrame.clearWidthMm,
+      frameRestored: api.saveEngineeringEdit(frameUndo.state) === api.saveEngineeringEdit(state),
+      frameRejected: api.applyEngineeringEdit(state, plantTransaction('fittedFrame.clearWidthMm', 800)).status === 'rejected',
       plantWidth: plantEdit.state.document.stages.inletSourceEnvelope.splitPlantRoom.clearWidthMm,
       plantRejected: api.applyEngineeringEdit(state, plantTransaction('selected', 1)).status === 'rejected',
       plantRestored: api.saveEngineeringEdit(plantUndo.state) === api.saveEngineeringEdit(state),
@@ -82,7 +92,7 @@ test('browser engineering edits initialize without Node globals and retain light
       restored: api.saveEngineeringEdit(undo.state) === api.saveEngineeringEdit(state),
       originalUnchanged: state.document.stages.studyLighting.serviceTotalDepthMm === 75 }
   })()`, { inputJson: JSON.stringify(document), URL }, { timeout: 1000 })
-  assert.deepEqual(JSON.parse(JSON.stringify(result)), {endMandrel:100,endRejected:true,endInjectionRejected:true,endUnchangedControl:true,endNoOp:true,endRestored:true,endStaleIgnored:true, depth: 85, plantWidth: 350, plantRejected: true, plantRestored: true,
+  assert.deepEqual(JSON.parse(JSON.stringify(result)), {endThicknessNoOp:true,endThickness250Rejected:true,endMandrel:100,endRejected:true,endInjectionRejected:true,endUnchangedControl:true,endNoOp:true,endRestored:true,endStaleIgnored:true, depth: 85, frameWidth: 1000, frameRestored: true, frameRejected: true, plantWidth: 350, plantRejected: true, plantRestored: true,
     contourAdmitted: true, contourRejected: true, contourRestored: true,
     roofUnchanged: true, adverseRejected: true,
     staleIgnored: true, restored: true, originalUnchanged: true })

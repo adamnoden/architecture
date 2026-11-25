@@ -1,0 +1,29 @@
+{
+  "schema": "str-uniform-slab-law-input/1",
+  "id": "STR/FLOOR/RC200/uniform8250-constitutive-comparison",
+  "units": "mm-N-kN-MPa",
+  "datum": "source-ground-zero",
+  "control": {
+    "nativeFamily": "wet-aligned-concrete27",
+    "bearingQuadratureOrder": 32,
+    "padWidthMm": 120,
+    "padCentreOffsetsYMm": [
+      40,
+      0
+    ],
+    "nativeCaseId": "WET120-SOUTH40-q32",
+    "fullNativeSHA256": "306be075d19a59db2155b0b4ebdc34124ae6b09558cb1e891a779d0da2910777"
+  },
+  "uniformSlabLaw": {
+    "elasticModulusMPa": 8250,
+    "poissonRatio": 0.2,
+    "shearModulusMPa": 3437.5,
+    "flexuralFactor": 1,
+    "transverseShearCorrectionFactor": 0.8333333333333334
+  },
+  "changedNativeCaseId": "UNIFORM8250-RC200-WET120-SOUTH40-q32",
+  "purpose": "explicit-unselected-constitutive-comparison",
+  "materialQualified": false,
+  "stiffnessSelected": false,
+  "floorSelected": false
+}

@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
-import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableWetBeamEndId, engineeringBase,
+import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableWetBeamEndId, editableFloorSectionId, engineeringBase,
   engineeringTicket, replayEngineeringEdit, saveEngineeringEdit } from './current-design/engineering-edit.js'
 
 const support = JSON.parse(execFileSync('python3', ['-B', '-c', "import sys,json;sys.path.insert(0,'project/str/studies');from seated_wet_support import reference_support;print(json.dumps(reference_support(json.load(open('project/had/studies/water-replan.json'))['model'])))"], { encoding: 'utf8' }))
@@ -47,5 +47,36 @@ test('mandrel edits require an explicit current end comparison and cannot manufa
     const rejected=applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),
       operation:{kind:'set-wet-beam-end-mandrel',assemblyId:editableWetBeamEndId,endReturnMandrelMm:100}})
     assert.equal(rejected.status,'rejected');assert.equal(rejected.state,state)
+  }
+})
+
+
+test('thickness editing admits known optional fields, keeps active end development at RC200 and preserves ordinary comparisons', () => {
+  const state=beginEngineeringEdit(document(),'end-thickness')
+  const thickness=(base:ReturnType<typeof beginEngineeringEdit>,thicknessMm:number)=>applyEngineeringEdit(base,{
+    schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(base),
+    operation:{kind:'set-floor-section-thickness',assemblyId:editableFloorSectionId,thicknessMm}})
+  const unchanged=thickness(state,200)
+  assert.equal(unchanged.status,'applied','A valid end comparison must permit an unchanged RC200 control')
+  assert.equal(unchanged.state,state)
+  const rejected=thickness(state,250)
+  assert.equal(rejected.status,'rejected');assert.equal(rejected.state,state)
+  assert.equal(saveEngineeringEdit(rejected.state),saveEngineeringEdit(state))
+  // End controls themselves remain RC200-only even if an unadmitted transport
+  // document lacks its support. This operation cannot produce another conflict.
+  const missingSupport:Record<string,any>=document()
+  delete missingSupport.stages.floorSection.wetSupport
+  const unsupported=beginEngineeringEdit(missingSupport,'end-without-support')
+  assert.equal(thickness(unsupported,250).status,'rejected')
+  for(const contour of [undefined,{execution:'deferred',pitchMm:140,youngKNPerM2:33000000,poisson:.2,slabVolumeLoadEquivalentKPa:0}]) {
+    const ordinary={schema:'current-engineering-document/1',design:readGeorgianDesignSnapshot(),bindings:{},stages:{roofPitch:{pitchDeg:25},
+      floorSection:{thicknessMm:200,...(contour?{contourComponent:contour}:{})}}}
+    const before=beginEngineeringEdit(ordinary,'ordinary-'+String(!!contour)),changed=thickness(before,250)
+    assert.equal(changed.status,'applied')
+    const saved=JSON.parse(saveEngineeringEdit(changed.state))
+    assert.equal(saved.stages.floorSection.thicknessMm,250)
+    assert.deepEqual(saved.stages.floorSection.contourComponent,contour)
+    const undo=replayEngineeringEdit(changed.state,engineeringBase(changed.state),'undo')
+    assert.equal(saveEngineeringEdit(undo.state),saveEngineeringEdit(before))
   }
 })

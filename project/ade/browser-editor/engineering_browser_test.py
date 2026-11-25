@@ -87,6 +87,7 @@ def check_wet_beam_end(page,saved,args):
     compiled=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],
         input=json.dumps(exported),text=True,capture_output=True,check=True).stdout)['engineering']['floorSection']
     end=compiled['wetBeamEndDevelopment']
+    assert end['nativeRequest']==request
     assert end['status']=='computed-development-comparison' and end['controls']['endReturnMandrelMm']==100
     for key in ('candidateAccepted','nativeSolveExecuted','nativeCageMassFeedbackApplied','beamEndDRegionAccepted','bendPressureAccepted','bondAndAnchorageAccepted'):
         assert end[key] is False

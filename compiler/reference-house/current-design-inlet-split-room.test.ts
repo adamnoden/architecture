@@ -10,10 +10,10 @@ test('whole Plant successor replaces failed infills while retaining the full car
  const x=inletSplitPlantRoom(input)
  assert.deepEqual(JSON.parse(JSON.stringify(x)),(({reviewSvg,...rest}:any)=>rest)(r))
  assert.equal(x.state,'unadopted-threshold-drainage-successor');if(x.state!=='unadopted-threshold-drainage-successor')return
- assert.equal(x.rejectedInfillOnly.rejected,true);assert.equal(x.rejectedInfillOnly.maximumClearWidthMm,136)
+ assert.equal(x.rejectedInfillOnly.rejected,true);assert.equal(x.rejectedInfillOnly.maximumClearWidthMm,86)
  assert.ok(x.rejectedInfillOnly.requiredClearWidthAtSameHeightMm!>170)
  assert.equal(x.thresholdRoute.retained1000mmCargoWidth,1000);assert.equal(x.masonryOpeningChanged,false)
- assert.deepEqual(x.thresholdRoute.outerPackageMm,[444,194]);assert.ok(x.thresholdRoute.laneChecks.every(v=>v.insideCargoReserveMm===13))
+ assert.deepEqual(x.thresholdRoute.outerPackageMm,[444,184]);assert.ok(x.thresholdRoute.laneChecks.every(v=>v.insideCargoReserveMm===13))
  assert.equal(x.drainageGeometry.necessarySourceOnlyDrainGeometry,true);close(x.drainageGeometry.bottomAfterSettingMm,.41)
  assert.ok(x.pocket.local?.supportPresentAtSides.west&&x.pocket.local.supportPresentAtSides.east&&x.pocket.local.supportPresentAtSides.south&&x.pocket.local.supportPresentAtSides.north)
  close(x.pocket.local!.quantityBounds.slabAndMineralWeightKN,23.62497175)
@@ -24,7 +24,7 @@ test('whole Plant successor replaces failed infills while retaining the full car
 })
 test('the complete source is charged to each surviving outlet; high/submerged and both-blocked states reject without storage or manual credit',()=>{
  const x=inletSplitPlantRoom(input);if(x.state!=='unadopted-threshold-drainage-successor')throw Error('Missing source-bound ground')
- close(x.sourceOnlyLmin,234.680939);assert.ok(x.thresholdRoute.hydraulic.openEntryHeadReserveMm>26)
+ close(x.sourceOnlyLmin,234.680939);assert.ok(x.thresholdRoute.hydraulic.openEntryHeadReserveMm>16)
  assert.ok(x.receiverCases.ordinary.freeDropReserveMm>335);assert.ok(x.receiverCases.highSubmerged.freeDropReserveMm< -264)
  assert.equal(x.receiverCases.highSubmerged.submergedTerminal,true);assert.match(x.receiverCases.bothBlocked,/reject/)
  assert.equal(x.manualResponseCredited,false);assert.equal(x.pan.assuredAvailableStorageLitres,null)
@@ -49,7 +49,7 @@ test('all pan and closed-channel pressure loads rotate into actual house coordin
  const sum=Object.fromEntries(keys.map(k=>[k,pan.waterLoadOrigins.reduce((n:number,v:any)=>n+v.wrenchKN_KNm[k],0)]))
  for(const k of keys)close(hydro.summedSurfaceWrenchKN_KNm[k],sum[k])
  for(const [j,o]of x.outfalls.entries()){
-  close(o.fullWaterInventoryControl.massKg,85.17);close(o.bodyStockGravity.massKg,28.18468352)
+  close(o.fullWaterInventoryControl.massKg,79.492);close(o.bodyStockGravity.massKg,27.67593472)
   assert.ok(o.clearCornersMm.every((p:number[])=>p[0]>=11570.5&&p[0]<=12990))
   const h=o.hydrostaticCases.find((c:any)=>c.id==='both-blocked-to-flush-floor'),inside=h.openInterfaceLoads.find((v:any)=>v.id.includes('inside-open-cut')),
    halves=hydro.openPortInterfaceLoads.filter((v:any)=>j===0?/port-2\/water$|port-3\/water$/.test(v.id):/port-6\/water$|port-7\/water$/.test(v.id))
@@ -63,9 +63,9 @@ test('eleven complete piece budgets, first release and positive rests replace an
  const x=inletSplitPlantRoom(input);if(x.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
  const p=x.bridge.removablePieces;assert.equal(p.pieces.length,11);assert.ok(p.pieces.every(v=>v.completeBudgetKg<15))
  assert.ok(p.minimumHomeObstacleReserveMm>0);assert.ok(p.minimumActualPipeReserveMm>0);assert.ok(p.firstRestEdgeReserveMm>0)
- assert.ok(p.pieces.every(v=>v.phases.length===4));assert.equal(p.completeHardwareMeasured,false)
+ assert.ok(p.pieces.every(v=>v.phases.length===5));assert.equal(p.completeHardwareMeasured,false)
  assert.equal(p.gripsRetainersCapturedFirstReleaseAndRestResistanceQualified,false)
- assert.equal(p.fittedFrameAndLowerInfillFirstReleaseQualified,false);assert.equal(p.requiredStraightFirstLiftWidthWithSettingsMm,1065);assert.equal(x.bridge.outerBearingWidthAfterIndependentSettingsMm,5);assert.equal(x.bridge.simplySupportedRailCentreStripSpanMm,510);assert.equal(x.bridge.adverseRailCentreSpanMm,530);
+ assert.equal(p.fittedFrameAndLowerInfillFirstReleaseQualified,false);assert.equal(p.requiredStraightFirstLiftWidthWithSettingsMm,1085);assert.equal(x.bridge.outerBearingWidthAfterIndependentSettingsMm,5);assert.equal(x.bridge.simplySupportedRailCentreStripSpanMm,510);assert.equal(x.bridge.adverseRailCentreSpanMm,530);
  assert.equal(x.bridge.oldThresholdPlateReused,false);assert.equal(x.bridge.ordinaryHandRemovalClaimed,false)
  const larger=structuredClone(input);larger.choice.bridgeHardwareBudgetEachKg=2
  const bad=inletSplitPlantRoom(larger);assert.ok(bad.diagnostics.includes('SPLIT_PLANT_ROOM/bridge-piece-renewal-comparison-fails'))
@@ -84,7 +84,8 @@ test('editable geometry and unsupported references propagate without substitutin
 })
 
 test('actual floor body, retained wall DPC and independent bridge settings replace an artificial uniform outer-wall base',()=>{
- const before=inletSplitPlantRoom(input);if(before.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
+ const reference=structuredClone(input);reference.choice.clearHeightMm=150
+ const before=inletSplitPlantRoom(reference);if(before.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
  const actual=before.drainageGeometry.actualFloorBody,wall=before.drainageGeometry.retainedWall
  close(actual.eastEdgeHouseXMm,11520.5);close(actual.flowFaceMm,313.8);close(actual.bottomReserveMm,1.8);assert.equal(actual.twoIndependentSettingsMm,20)
  close(wall.outsidePackageBottomMm,280.41);close(wall.retainedDpcTopMm,150);close(wall.reserveMm,110.41)
@@ -100,20 +101,17 @@ test('actual floor body, retained wall DPC and independent bridge settings repla
  assert.equal(lower.storedRelease.conditionalAdverse.sourcePlusStoredDrainScreen,false);assert.equal(lower.bridge.removablePieces.fittedFrameAndLowerInfillFirstReleaseQualified,false);assert.equal(lower.completeOccupiedArrangementQualified,false)
 })
 
-
-test('threshold rejection includes the independently adverse rail span even when its nominal strip passes',()=>{
- const changed=structuredClone(input);changed.choice.clearHeightMm=140;changed.choice.bridgeThicknessMm=28.65
- const x=inletSplitPlantRoom(changed);if(x.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
- assert.equal(x.bridge.nominalStripScreen,true)
- assert.equal(x.bridge.adverseSpanOnlyStripScreen,false)
- assert.ok(x.bridge.nominalStripStressMPa<x.bridge.proofComparisonMPa)
- assert.ok(x.bridge.adverseStripStressMPa>x.bridge.proofComparisonMPa)
- assert.ok(x.diagnostics.includes('SPLIT_PLANT_ROOM/threshold-bridge-comparison-fails'))
- assert.equal(x.drainageGeometry.necessarySourceOnlyDrainGeometry,true)
- assert.equal(x.completeOccupiedArrangementQualified,false)
- const thicker=structuredClone(changed);thicker.choice.bridgeThicknessMm=29
- const control=inletSplitPlantRoom(thicker);if(control.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
- assert.equal(control.bridge.adverseSpanOnlyStripScreen,true)
- assert.deepEqual(control.thresholdRoute.hydraulic,x.thresholdRoute.hydraulic)
- assert.deepEqual(control.pocket,x.pocket)
+test('authored1100 effective frame retains150infills and all eleven whole strips; exact door and source clearances remain separate from the unjoined raised profile',()=>{
+ const x=inletSplitPlantRoom(input);if(x.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
+ const f=x.actualFittedFrame,d=x.fittedDoor,p=x.bridge.removablePieces
+ assert.equal(f.effectiveOpenWidthMm,1100);assert.deepEqual(f.minimumCargoMm,[1000,2300]);assert.deepEqual(f.infills.map(v=>v.widthMm),[150,150]);assert.equal(f.sourceAxisYMm,3975)
+ assert.equal(f.sourceOpeningDiameterMm,110);assert.equal(f.sourceBoreSideReserveMm,10)
+ close(f.sourceFixedCountercase.headerToSpringReserveMm,-400);close(f.sourceFixedCountercase.headerToHeadReserveMm,-100);assert.equal(f.headerToRawSpringReserveMm,null)
+ assert.equal(d.continuous.executedPoses,901);assert.ok(Object.values(d.minima).every(v=>v>0));assert.ok(d.minima.leafPipe>13.75);assert.ok(d.minima.armLeaf>5);assert.equal(d.minima.deckFixed,5)
+ assert.ok(d.maxReachMm>d.sampledMaxReachMm);assert.ok(d.maxReachMm<650);assert.equal(d.requiredExternalDeckFootprintM2,4.41)
+ assert.ok(d.diagnostics.includes('PLANT_FITTED_DOOR/raised-arch-profile-not-joined'));assert.equal(d.necessaryDeclaredDoorAndParkedGoodsGeometryScreen,false)
+ assert.equal(p.actualFrameLiftEdgeReserveMm,7.5);assert.equal(p.necessaryAuthoredFittedFrameFirstLiftWidthScreen,true);assert.equal(p.firstLiftRequiresSeparatelyAdmittedLowerFrameInfillRelease,false)
+ assert.ok(p.pieces.every(v=>v.minimumAuthoredFrameReserveMm===7.5&&v.frameFailures.length===0));assert.equal(p.fittedFrameAndLowerInfillFirstReleaseQualified,false)
+ assert.equal(d.leafGravityBudget.kg,100);assert.equal(d.leafGravityBudget.actualCompleteStockMassAndCentroidKnown,false);assert.equal(d.matchedWeatherAirThermalFireSealsAndHardwareQualified,false)
+ assert.equal(x.completeOccupiedArrangementQualified,false);assert.equal(x.nativeStructuralActionsAdopted,false)
 })

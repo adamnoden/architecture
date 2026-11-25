@@ -3,8 +3,9 @@ import { createHash } from 'node:crypto'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
 import type { CurrentDesignResolution } from './resolve.js'
 import type { runGroundSectionCase } from './structural-ground.js'
+import {runHouseVerticalProfileCase} from './house-vertical-profile.js'
 import { inletEntrySideCuts, drawInletIndoorCuts, inletSplitPlantStationComparison, drawInletSplitPlantStation, type SplitPlantStationChoice } from './inlet-indoor-cuts.js'
-import {inletSplitPlantBranch,drawInletSplitPlantBranch,type SplitPlantBranchChoice} from './inlet-split-plant-branch.js'
+import {inletSplitPlantBranch,drawInletSplitPlantBranch,derivePlantFittedFrame,coordinatePlantFrameBranch,type SplitPlantBranchChoice} from './inlet-split-plant-branch.js'
 import {inletSplitPlantRoom,drawInletSplitPlantRoom,admitSplitPlantRoomChoice,type SplitPlantRoomChoice} from './inlet-split-plant-room.js'
 import {derivePlantReleaseProfiles} from '../../../project/had/studies/plant-release-profiles.mjs'
 import { inletIndoorRoutes, compareInletIndoorRouteCandidate, inletRouteRetainedServices, drawInletIndoorRoutes, type IndoorRoutesInput } from './inlet-indoor-routes.js'
@@ -42,7 +43,7 @@ const paths = ['project/had/studies/south-inlet-under-sill.json', 'project/had/s
   'project/had/studies/south-inlet-relief.json', 'project/had/studies/south-utility-inlet.json',
   'project/had/studies/current-house-services.json', 'project/mat/studies/whole-house-service-baseline.json',
   'project/ias/studies/utility-first-release.json', 'project/had/studies/boundary-service-lodge.json', 'project/str/studies/current-house-grid.json', 'project/had/studies/inlet-bank-shelf-candidate.json', 'project/had/studies/utility-wide-capture.json', 'project/had/studies/inlet-route-candidate.json', 'project/had/studies/inlet-split-plant-station-candidate.json', 'project/had/studies/inlet-split-plant-branch-candidate.json','project/had/studies/inlet-fixed-station.json','project/had/studies/inlet-split-plant-room-candidate.json'] as const
-const methodPaths = ['compiler/reference-house/current-design/inlet-split-plant-room-choice.ts','compiler/reference-house/current-design/inlet-split-plant-room.ts','compiler/reference-house/current-design/inlet-split-plant-branch.ts', 'project/had/studies/plant-release-profiles.mjs', 'project/had/studies/incoming-water-geometry.mjs', 'compiler/reference-house/current-design/inlet-bank-carrier.ts', 'compiler/reference-house/current-design/inlet-bank-receiver.ts', 'project/had/studies/service-interface-geometry.mjs', 'compiler/reference-house/current-design/inlet-indoor-routes.ts', 'compiler/reference-house/current-design/inlet-indoor-cuts.ts', 'compiler/reference-house/current-design/inlet-source-envelope.ts',
+const methodPaths = ['compiler/reference-house/current-design/house-vertical-profile.ts','project/had/studies/house_vertical_profile.py','compiler/reference-house/current-design/inlet-split-plant-room-choice.ts','compiler/reference-house/current-design/inlet-split-plant-room.ts','compiler/reference-house/current-design/inlet-split-plant-branch.ts', 'project/had/studies/plant-release-profiles.mjs', 'project/had/studies/incoming-water-geometry.mjs', 'compiler/reference-house/current-design/inlet-bank-carrier.ts', 'compiler/reference-house/current-design/inlet-bank-receiver.ts', 'project/had/studies/service-interface-geometry.mjs', 'compiler/reference-house/current-design/inlet-indoor-routes.ts', 'compiler/reference-house/current-design/inlet-indoor-cuts.ts', 'compiler/reference-house/current-design/inlet-source-envelope.ts',
   'compiler/reference-house/current-design/inlet-room-catchment.ts',
   'compiler/reference-house/current-design/inlet-room-pocket.ts',
   'compiler/reference-house/current-design/inlet-room-pan.ts',
@@ -114,16 +115,22 @@ function settings(value: unknown): InletSourceEnvelopeSettings {
   return s
 }
 
-export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, input: unknown, ground?: ReturnType<typeof runGroundSectionCase>) {
+export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, input: unknown, ground?: ReturnType<typeof runGroundSectionCase>, profile?:ReturnType<typeof runHouseVerticalProfileCase>) {
   const b = binding(resolved)
   if (!input || typeof input !== 'object' || Array.isArray(input)
     || Object.keys(input).some(key=>!['schema','planDigest','bindingDigest','settings','splitPlantRoom'].includes(key)) || !['schema', 'planDigest', 'bindingDigest', 'settings'].every(key => Object.hasOwn(input, key))) throw new Error('Versioned source-bound inlet source-envelope case required')
   const v = input as Record<string, unknown>
   if (v.schema !== 'had-inlet-source-envelope-case/8' || v.planDigest !== b.planDigest || v.bindingDigest !== b.bindingDigest) throw new Error('Stale inlet source-envelope source, design or method')
+  const currentRoomChoice=admitSplitPlantRoomChoice(b.data['project/had/studies/inlet-split-plant-room-candidate.json']),authoredRoomChoice=admitSplitPlantRoomChoice(Object.hasOwn(v,'splitPlantRoom')?v.splitPlantRoom:currentRoomChoice)
+  if(authoredRoomChoice.id!==currentRoomChoice.id||authoredRoomChoice.fittedFrame.id!==currentRoomChoice.fittedFrame.id)throw Error('Unsupported saved Plant room object identity')
   const s = settings(v.settings), native = b.data[paths[0]], wet = b.data[paths[1]], relief = b.data[paths[2]], inlet = b.data[paths[3]], services = b.data[paths[4]]
   const groundDatumLiftMm = ground?.native.levelsMm.ffl ?? 0, groundDatumLiftBar = groundDatumLiftMm * 9.80665e-5,
     deliveryAtRoomDatumBar = s.sourceMinimumDynamicBar - groundDatumLiftBar,
     absoluteMaximumBar = s.sourceMaximumTotalBar + s.atmosphericMaximumBar + Math.max(0, -groundDatumLiftBar)
+  const joinedProfile=profile?runHouseVerticalProfileCase(resolved,profile.authoredCase):undefined
+  if(joinedProfile&&(!ground||joinedProfile.source.groundResultDigest!==sha256SemanticFingerprint(ground.native)||sha256SemanticFingerprint(joinedProfile)!==sha256SemanticFingerprint(profile)))throw Error('Unsupported inlet and house vertical profile ground/source join')
+  const profileArch=(joinedProfile?.native.arches as readonly {id:string;datumsMm:{spring:number;head:number}}[]|undefined)?.find(a=>a.id==='GROUND/plant-replacement')
+  if(joinedProfile&&!profileArch)throw Error('Unsupported joined Plant profile arch')
   const fullBoreMm = inletCabinetProductFacts.pipe.maximumOuterDiameterIncludingOvalityMm - 2 * inletCabinetProductFacts.pipe.minimumWallMm
   type Point = readonly [number, number, number]
   type Branch = { id: string; coordinates: readonly Point[]; bores: readonly { inner: Point; outer: Point; radius: number }[] }
@@ -193,7 +200,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
         .5 * 1000 * (requiredLmin / 60000 / (s.dischargeCoefficientComparison * Math.PI * ((maximumContainmentDiameterMm - 2 * s.apertureToleranceMm) / 1000) ** 2 / 4)) ** 2 / 1e5 - s.atmosphericMinimumBar)) }
   })
   const maximumCombinedLmin = round(branches.reduce((total, branch) => total + branch.maximumLimitedEachLmin, 0))
-    const joinedDirection = joinedServiceDirection(resolved, b, s, branches, absoluteMaximumBar, groundDatumLiftMm),
+    const joinedDirection = joinedServiceDirection(resolved, b, s, branches, absoluteMaximumBar, groundDatumLiftMm,authoredRoomChoice,profileArch),
     rawCatchment = runInletRoomCatchment(resolved, ground, maximumCombinedLmin, { planMm: joinedDirection.room.wetUtilityPlanMm,
       rawWindowXMm: joinedDirection.room.southWindowOpeningXMm, retainedFurniture: joinedDirection.room.retainedFurniture,
       northOpeningXMm: joinedDirection.room.northOpeningXMm, purgeBodyMm: joinedDirection.room.purge.body, wallFacesYMm: [native.branches[0].bores[0].outer[1], native.branches[0].bores[0].inner[1]] }, s, b.data['project/str/studies/current-house-grid.json'])
@@ -203,13 +210,14 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
   const plantBranch=joinedDirection.room.indoorRoutes.splitStationComparison.branchDevelopment.comparison,
     splitPlantRoom=(()=>{
       if(!plantBranch)return{state:'unsupported-current-source' as const,selected:false as const,diagnostics:['SPLIT_PLANT_ROOM/current-branch-required'],comparison:null}
-      const currentChoice=admitSplitPlantRoomChoice(b.data['project/had/studies/inlet-split-plant-room-candidate.json']),choice=admitSplitPlantRoomChoice(Object.hasOwn(v,'splitPlantRoom')?v.splitPlantRoom:currentChoice),
+      const currentChoice=currentRoomChoice,choice=authoredRoomChoice,
         levels=ground?.native.levelsMm as Record<string,any>|undefined,raw=services.plant.cylinder.doorRaw,
+        actualArch=(b.occupied.house.model as any).archOpeningRegister.GROUND.find((a:any)=>a.id==='plant-replacement'),
         cargo=services.plant.cylinder.minDoor[0],cargoYMm=[(raw[0]+raw[1]-cargo)/2,(raw[0]+raw[1]+cargo)/2] as const,
         reference={plateWidthYMm:[cargoYMm[0]+choice.bridgePlateCargoInsetsYMm[0],cargoYMm[1]-choice.bridgePlateCargoInsetsYMm[1]] as const,outerEdgeXMm:plantBranch.choice.sourceEntryMm[0],wheelActionIncludingDynamicN:choice.referenceWheelActionIncludingDynamicN,wheelBandMm:choice.referenceWheelBandMm,elasticModulusMPa:choice.referenceElasticModulusMPa,steelDensityKgM3:choice.referenceSteelDensityKgM3,proofComparisonMPa:choice.referenceProofComparisonMPa},
-        result=(()=>{if(choice.id!==currentChoice.id)throw Error('Unsupported saved Plant room object identity');return inletSplitPlantRoom({choice,branch:plantBranch,sourceMaximumAbsoluteBar:absoluteMaximumBar,sourceMaximumPlantLmin:branches.find(v=>v.id==='plant')!.maximumLimitedEachLmin,rawEastOpeningYMm:raw,cargoClearYMm:cargoYMm,eastOuterXMm:resolved.design.envelope.widthMm+Math.abs(native.branches[0].bores[0].outer[1]),
+        result=(()=>{if(choice.id!==currentChoice.id)throw Error('Unsupported saved Plant room object identity');return inletSplitPlantRoom({choice,branch:plantBranch,rawArchVerticalInput:{rawSpringMm:actualArch?.spring,rawHeadMm:actualArch?.head,groundFflMm:groundDatumLiftMm,minimumCargoHeightMm:services.plant.cylinder.minDoor[1],settingEachMm:choice.settingMm,...(profileArch&&joinedProfile?{translatedProfile:{springAbsoluteMm:profileArch.datumsMm.spring,headAbsoluteMm:profileArch.datumsMm.head,occupiedShiftMm:(joinedProfile.native.transforms as any).occupiedTranslationMm,groundCaseDigest:joinedProfile.source.groundCaseDigest,profileCaseDigest:joinedProfile.source.caseDigest}}:{})},sourceMaximumAbsoluteBar:absoluteMaximumBar,sourceMaximumPlantLmin:branches.find(v=>v.id==='plant')!.maximumLimitedEachLmin,rawEastOpeningYMm:raw,cargoClearYMm:cargoYMm,eastOuterXMm:resolved.design.envelope.widthMm+Math.abs(native.branches[0].bores[0].outer[1]),
           ...(levels?{ground:{ffl:levels.ffl,mineralCourse:levels.mineralCourse,dryRC:levels.dryRC,glass:levels.glass,accessibleDistribution:levels.accessibleDistribution,finish:levels.finish,coldGridTop:levels.coldGridTop,exteriorGrade:levels.authoredExteriorGrade,rcDensityKNm3:(ground!.authoredCase.settings as any).rcDensityKNm3,mineralDensityKNm3:(ground!.authoredCase.settings as any).mineralDensityBudgetKNm3}}:{}),
-          grid:b.data['project/str/studies/current-house-grid.json'],threshold:reference,bridgeHomeObstacles:[{id:'actual-Plant-valve-body',boxMm:plantBranch.referenceValve.bodyMm},{id:'actual-Plant-valve-stem',boxMm:plantBranch.referenceValve.stemMm},...plantBranch.obstacles.filter(o=>o.id!=='actual-radiator-renewal-reservation'),...(b.occupied.house.model as any).architecturalServices.emitters.filter((e:any)=>e.id==='plant-N').map((e:any)=>({id:'actual-plant-radiator-home',boxMm:[...e.completePlanWithValvesAndBrackets.slice(0,2),e.bottomLocal,...e.completePlanWithValvesAndBrackets.slice(2),e.topLocal-e.bottomLocal] as const}))],
+          grid:b.data['project/str/studies/current-house-grid.json'],threshold:reference,exteriorPlanObstacles:[{id:'actual-east-foul-downstack-territory',planMm:b.data[paths[5]].eastFoulExit.externalDownstackBodyTerritory}],bridgeHomeObstacles:[{id:'actual-Plant-valve-body',boxMm:plantBranch.referenceValve.bodyMm},{id:'actual-Plant-valve-stem',boxMm:plantBranch.referenceValve.stemMm},...plantBranch.obstacles.filter(o=>o.id!=='actual-radiator-renewal-reservation'),...(b.occupied.house.model as any).architecturalServices.emitters.filter((e:any)=>e.id==='plant-N').map((e:any)=>({id:'actual-plant-radiator-home',boxMm:[...e.completePlanWithValvesAndBrackets.slice(0,2),e.bottomLocal,...e.completePlanWithValvesAndBrackets.slice(2),e.topLocal-e.bottomLocal] as const}))],
           stored:{family:services.plant.cylinder.family,orderedMinimumUsableL:services.plant.cylinder.orderedMinUsableL,catalogueComparatorL:services.plant.cylinder.catalogueL,maximumRetainedAndDrainableL:null,d2OutfallMm:services.plant.independentSafety.outfall}})})()
       return{choiceOwnership:Object.hasOwn(v,'splitPlantRoom')?'complete-authored-request':'bound-current-source-default',state:result.state,selected:false as const,diagnostics:result.diagnostics,comparison:{...result,reviewSvg:drawInletSplitPlantRoom(result)}}
     })()
@@ -325,7 +333,7 @@ function inletVerticalInventory(c:Extract<ReturnType<typeof runInletRoomCatchmen
       'INLET_VERTICAL_INVENTORY_NOT_ADOPTED_IN_SOURCE_STR_GROUND0','INLET_LOCAL_RC_MINERAL_RETENTION_GRID_AND_SOIL_PATH_UNQUALIFIED']}
 }
 
-function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType<typeof binding>, s: InletSourceEnvelopeSettings, branches: readonly any[], maximumAbsoluteBar: number, groundFflMm: number) {
+function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType<typeof binding>, s: InletSourceEnvelopeSettings, branches: readonly any[], maximumAbsoluteBar: number, groundFflMm: number,plantRoomChoice:SplitPlantRoomChoice,profileArch?:{id:string;datumsMm:{spring:number;head:number}}) {
   const model = b.occupied.house.model as unknown as { architecturalServices: any; groundWalls: any[]; shell: number; envelope: number; groundFurniture: Record<string, readonly number[]>; plantReferenceDoor: any; archOpeningRegister: any; serviceMaintenanceFields: any[]; internalArchControls: any }, services = model.architecturalServices, utilityWall = model.groundWalls.find((w: any) => w.id === 'utility-north'),
     spine = model.groundWalls.find((w: any) => w.id === 'service-spine'), plantWall = model.groundWalls.find((w: any) => w.id === 'plant-intermediate-arch')
   if (!utilityWall || !spine || !plantWall || utilityWall.holes.length !== 1 || plantWall.holes.length !== 1) throw new Error('Unsupported joined Utility/Plant room topology')
@@ -436,7 +444,10 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
       {id:'actual-retained-hot-terminal',pointsMm:wide.hot.terminal,radiusWithSupportsMm:25}
      ]},
     retainedServiceComparison=inletRouteRetainedServices(indoorRoutes,retainedRouteServices),
-    splitChoice=b.data['project/had/studies/inlet-split-plant-station-candidate.json'] as SplitPlantStationChoice,
+    referenceSplitChoice=b.data['project/had/studies/inlet-split-plant-station-candidate.json'] as SplitPlantStationChoice,
+    rawPlantArch=model.archOpeningRegister.GROUND.find((o:any)=>o.id==='plant-replacement'),
+    fittedFrame=derivePlantFittedFrame({choice:plantRoomChoice.fittedFrame,rawOpeningYMm:services.plant.cylinder.doorRaw,rawSpringMm:rawPlantArch?.spring,rawHeadMm:rawPlantArch?.head,groundFflMm,openingShiftMm:profileArch?groundFflMm:groundFflMm===0?0:null,minimumCargoMm:services.plant.cylinder.minDoor,wallInnerXMm:east,wallOuterXMm:model.shell+Math.abs(b.data[paths[0]].branches[0].bores[0].outer[1]),settingEachMm:plantRoomChoice.settingMm}),
+    frameBranch=coordinatePlantFrameBranch(fittedFrame,b.data['project/had/studies/inlet-split-plant-branch-candidate.json'] as SplitPlantBranchChoice,referenceSplitChoice),splitChoice=frameBranch.stationChoice,
     splitDoor=model.plantReferenceDoor,splitCylinder=services.plant.cylinder,splitEmitter=services.emitters.find((v:any)=>v.id==='plant-N'),
     splitObstacles=[
       {id:'actual-plant-south-west-pier',boxMm:[west,plantWall.finishedFaces[0],0,plantWall.holes[0][0]+model.internalArchControls.actualRadialFinish-west,plantWall.finishedFaces[1]-plantWall.finishedFaces[0],clearHeight]},
@@ -458,26 +469,26 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
       roomPlanMm:[west,plantWall.finishedFaces[1],east-west,model.groundWalls.find((w:any)=>w.id==='plant-north').finishedFaces[0]-plantWall.finishedFaces[1]] as [number,number,number,number],ceilingMm:clearHeight,groundFflMm:indoorCuts.groundStage.fflMm},
     splitNormal=inletSplitPlantStationComparison(splitInput),
     splitBranchDevelopment=(()=>{
-      const choice=b.data['project/had/studies/inlet-split-plant-branch-candidate.json'] as SplitPlantBranchChoice,
+      const choice=frameBranch.choice,
         tree=b.data[paths[5]].trunks?.find((v:any)=>v.id==='ground-front-west'),treePoint=tree?.selected3DProfile?.[1],
         profiles=derivePlantReleaseProfiles({plant:services.plant,insideWestMm:west,insideSouthMm:plantWall.finishedFaces[1],openingHeightMm:services.plant.cylinder.minDoor[1]}),
-        rawDoor=services.plant.cylinder.doorRaw,cargoSouth=(rawDoor[0]+rawDoor[1]-services.plant.cylinder.minDoor[0])/2,
+        rawDoor=services.plant.cylinder.doorRaw,cargoSouth=fittedFrame.effectiveClearYMm[0],
         actualValve=splitNormal.referenceValveId===indoorCuts.valves.find(v=>v.branch==='plant')?.id
           ?{axisMm:splitChoice.axisMm,bodyMm:splitNormal.boxes[0].boxMm,stemMm:splitNormal.boxes[1].boxMm,knownKg:splitNormal.nominalValveOnlyGravity.kg}:null
       if(!actualValve||!Array.isArray(treePoint)||treePoint.length!==3||!tree.duties?.includes('cold'))return{state:'unsupported-current-source' as const,selected:false,diagnostics:['SPLIT_PLANT_BRANCH/current-station-or-cold-tree-reference-missing'],comparison:null}
       try{
        const result=inletSplitPlantBranch({choice,sourceBindingDigest:b.bindingDigest,groundFflMm,roomPlanMm:splitInput.roomPlanMm,ceilingMm:clearHeight,
-        valve:actualValve,ordinaryShoulderMm:splitChoice.operatorShoulderMm,
+        fittedFrame,valve:actualValve,ordinaryShoulderMm:splitChoice.operatorShoulderMm,
         envelope:{backboneRadiusMm:jacketR,terminalRadiusMm:b.data['project/had/studies/inlet-fixed-station.json'].removal.exposedColdConnectorEnvelopeOD/2,settingsEachMm:indoorRoutes.pipe.settingEachPipeMm,insulationRadialThicknessMm:insulation.selectedInternalRadialThickness,jacketThicknessMm:insulation.jacketThicknessEachSide},
         operating:{plantDutyLmin:s.requiredPlantLmin,temperatureChangeK:s.pipeTemperatureChangeK,maximumGaugeBar:maximumAbsoluteBar-s.atmosphericMinimumBar},
         obstacles:splitObstacles,goods:[profiles.cylinder,profiles.buffer],cylindricalStore:{centreXYMm:splitCylinder.centre,radiusMm:splitCylinder.body[2]/2,heightMm:splitCylinder.height},
-        retainedStorePortTrialMm:services.plant.independentSafety.mainsPortTrial,retainedTreeInterfaceMm:treePoint as [number,number,number],sourceEntryCargoSouthYMm:cargoSouth,sourceEntryInfillYMm:[rawDoor[0],cargoSouth],
+        retainedStorePortTrialMm:services.plant.independentSafety.mainsPortTrial,retainedTreeInterfaceMm:treePoint as [number,number,number],sourceEntryCargoSouthYMm:cargoSouth,sourceEntryInfillYMm:fittedFrame.infills[0].intervalYMm,
         comparison:{frictionFactor:s.pipeFrictionFactorComparison,cornerK:s.pipeCornerKComparison,jacketDensityKgM3:s.pipeJacketDensityComparisonKgM3,insulationDensityKgM3:s.pipeInsulationDensityComparisonKgM3}})
        return{state:'unadopted-current-source-branch-development' as const,selected:false,diagnostics:result.diagnostics,
         goodsEvidence:{...profiles,requiredDoorwayIsAReferenceComparisonNotMeasuredClearance:true,cargoJambBoundaryIsARequiredClearWidthComparison:true},comparison:{...result,reviewSvg:drawInletSplitPlantBranch(result)}}
       }catch(error){if(error instanceof Error&&error.message.startsWith('Unsupported'))return{state:'unsupported-current-source' as const,selected:false,diagnostics:[error.message],comparison:null};throw error}
     })(),
-    splitStationComparison={branchDevelopment:splitBranchDevelopment,normal:{...splitNormal,reviewSvg:drawInletSplitPlantStation(splitNormal)},largerPositioningAdverse:inletSplitPlantStationComparison({...splitInput,choice:{...splitChoice,settingEachMm:20}})},
+    splitStationComparison={fittedFrame,frameCoordination:{referenceAxisYMm:frameBranch.referenceAxisYMm,stationShiftYMm:frameBranch.stationShiftYMm,retainedStoreAndTreeInterfacesMoved:false},branchDevelopment:splitBranchDevelopment,normal:{...splitNormal,reviewSvg:drawInletSplitPlantStation(splitNormal)},largerPositioningAdverse:inletSplitPlantStationComparison({...splitInput,choice:{...splitChoice,settingEachMm:20}})},
     routeCandidateComparison=(()=>{
       let route:ReturnType<typeof compareInletIndoorRouteCandidate>
       try{route=compareInletIndoorRouteCandidate(indoorRouteInput,b.data['project/had/studies/inlet-route-candidate.json'] as Parameters<typeof compareInletIndoorRouteCandidate>[1])}

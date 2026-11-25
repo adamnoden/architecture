@@ -5,6 +5,7 @@ import { resolveCurrentDesign, type CurrentDesignResolution } from './resolve.js
 import type { StoreyId } from './snapshot.js'
 import type { InletCoverSources } from './inlet-cover.js'
 import type { runGroundSectionCase } from './structural-ground.js'
+import type {runHouseVerticalProfileCase} from './house-vertical-profile.js'
 
 type Domain = 'plans' | 'occupied-services' | 'selected-water-event'
 type CompileDiagnostic = {
@@ -252,9 +253,9 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const { readInletSourceEnvelopeCase } = await import('./inlet-source-envelope.js')
       return readInletSourceEnvelopeCase(resolved)
     },
-    inletSourceEnvelopeCase: async (input: unknown, ground?: ReturnType<typeof runGroundSectionCase>) => {
+    inletSourceEnvelopeCase: async (input: unknown, ground?: ReturnType<typeof runGroundSectionCase>, profile?:ReturnType<typeof runHouseVerticalProfileCase>) => {
       const { runInletSourceEnvelopeCase } = await import('./inlet-source-envelope.js')
-      return runInletSourceEnvelopeCase(resolved, input, ground)
+      return runInletSourceEnvelopeCase(resolved, input, ground, profile)
     },
     readInletCabinetCase: async () => {
       const { readInletCabinetCase } = await import('./inlet-cabinet-copper.js')
