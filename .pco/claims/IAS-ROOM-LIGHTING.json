@@ -9,8 +9,8 @@
     "label": "convergence-root-20261125"
   },
   "claimedAt": "2026-11-25T08:41:06.007Z",
-  "heartbeatAt": "2026-11-25T08:41:06.007Z",
-  "expiresAt": "2026-11-25T09:26:06.007Z",
+  "heartbeatAt": "2026-11-25T08:47:28.035Z",
+  "expiresAt": "2026-11-25T09:32:28.035Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "6ae96d7d-811c-4b13-8256-4493e0ba1c1b",
@@ -29,5 +29,9 @@
       "evidence": "Durable combined continuation f6581ce736be79ddd337eccbe1effc3d77f19963; genuine IAS producer and 18 tests passed; full case and surround gravity/renewal costs preserved.",
       "next": "Integrate final structural convergence and whole-Plant comparison, source-audit, publish exact combined head and validate PR."
     }
+  },
+  "checkpoint": {
+    "evidence": "Recovered f6581ce7 on remote branch; corrected shell/cover gravity origins in cc44fd50af15ea6faae50603c7dbfabd2126cc4e",
+    "next": "Regenerate lighting receipts, integrate structural and threshold-water continuations, exact-head checks and merge"
   }
 }
