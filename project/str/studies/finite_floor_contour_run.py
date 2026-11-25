@@ -1,11 +1,11 @@
 """Source-bound local contour experiment; no current-house operator substitution."""
 from __future__ import annotations
-import argparse, hashlib, io, json, platform, tarfile, time
+import argparse, gc, hashlib, io, json, platform, tarfile, time
 from pathlib import Path
 import numpy as np
 import scipy, skfem
 from skfem import LinearForm, asm
-from finite_floor_contour import solid_boxes, contour_ports, condense, rigid_port_modes
+from finite_floor_contour import solid_boxes, contour_ports, condense, rigid_port_modes, memory_phase
 
 
 def sha(value):return hashlib.sha256(value).hexdigest()
@@ -125,15 +125,22 @@ def run(root,pitch_mm,young_kn_m2=33e6,poisson=.2,floor_live_kpa=0):
     # Contour stations and local depth mesh remain literal, independently authored
     # controls while pitch_mm refines the remaining far field. This is not a
     # simultaneous near-field convergence claim.
+    memory_phase('assembly:start',pitchMm=pitch_mm)
     mesh,basis,k,volume=solid_boxes(np.array(inputs['boxesXYZMm'])/1000,pitch_mm/1000,young_kn_m2,poisson,
                                    ([*contours['north'],*(patch[2]-depths)],[*contours['east'],*(patch[3]-depths)],through_depth))
+    memory_phase('assembly:complete',nodes=int(mesh.nvertices),elements=int(mesh.nelements),unknowns=int(basis.N))
     t,boundary,ports=contour_ports(mesh,basis,patch,slab,contours,np.array(inputs['wallOriginsMm'])/1000)
     @LinearForm
     def body(v,w):
         in_slab=(w.x[2]>slab[0])&(w.x[2]<slab[1])
         weight=np.where(in_slab,inputs['slabUnitWeightKNPerM3']+floor_live_kpa/(slab[1]-slab[0]),inputs['wallUnitWeightKNPerM3'])
         return -weight*v[2]
-    force=asm(body,basis);result=condense(k,t,boundary,force,ordering=mesh_controls['factorizationOrdering']);c=result['stiffness'];modes=rigid_port_modes(ports)
+    force=asm(body,basis);unknowns=int(basis.N)
+    memory_phase('load:complete',unknowns=unknowns,ports=len(ports))
+    del basis
+    gc.collect()
+    memory_phase('basis:released')
+    result=condense(k,t,boundary,force,ordering=mesh_controls['factorizationOrdering']);c=result['stiffness'];modes=rigid_port_modes(ports)
     relative_rigid=float(abs(c @ modes).max()/abs(c).max());eigen=np.linalg.eigvalsh(c)
     positive=int(np.count_nonzero(eigen>eigen[-1]*1e-9))
     if relative_rigid>1e-9 or eigen[0]<-eigen[-1]*1e-9 or positive!=len(ports)-6:
@@ -152,7 +159,7 @@ def run(root,pitch_mm,young_kn_m2=33e6,poisson=.2,floor_live_kpa=0):
             'outerBandAndChordInterfaceAvailable':False,'inputs':inputs,'methodSHA256':methods,
             'runtime':{'python':platform.python_version(),'numpy':np.__version__,'scipy':scipy.__version__,'scikit-fem':skfem.__version__},
             'meshControls':mesh_controls,'pitchMm':pitch_mm,'youngKNPerM2':young_kn_m2,'poisson':poisson,'floorLiveKPa':floor_live_kpa,
-            'nodes':int(mesh.nvertices),'elements':int(mesh.nelements),'unknowns':int(basis.N),'volumeM3':volume,
+            'nodes':int(mesh.nvertices),'elements':int(mesh.nelements),'unknowns':unknowns,'volumeM3':volume,
             'ports':ports,'condensedStiffness':c.tolist(),'consistentLoad':result['force'].tolist(),
             'loadPotentialConstantKNM':result['energyConstant'],'distributedLoadWrenchKN_KNM':wrench.tolist(),
             'loadWrenchResidualKN_KNM':wrench_residual,'relativeRigidModeResidual':relative_rigid,
