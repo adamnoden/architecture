@@ -9,8 +9,8 @@
     "label": "convergence-water-20261125"
   },
   "claimedAt": "2026-11-25T08:40:34.501Z",
-  "heartbeatAt": "2026-11-25T11:09:18.408Z",
-  "expiresAt": "2026-11-25T12:39:18.408Z",
+  "heartbeatAt": "2026-11-25T11:29:14.000Z",
+  "expiresAt": "2026-11-25T12:14:14.000Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "ddd8cd17-f15b-4d8c-bcd6-92f4991039f2",
@@ -33,8 +33,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1625 source-bound first integration; saved Plant opening/profile join correction durable local481de350fd5726e505394649772cb5f94607ad7d ready for root publication. Independent1100frame continuation has genuine producer outputs and focused/shared tests running; no current house acceptance.",
-    "next": "Complete firstPR exact-head CI and publication preflight; checkpoint and publish coordinated1100frame inlet/station/door/withdrawal successor with unchanged source/store and explicit profile/material/support holds."
+    "evidence": "PR1625@5526b838 has corrected unsupported-ground/choice controls; latest Plant125/frame1100/profile source is published7c228220; coherent prior root account5d8e12e0. No complete occupied arrangement.",
+    "next": "Recover7c228220 onto5d8e12e0 plus merged1625; genuinely regenerate source account/outputs and saved-profile controls; run current-source browser and full checks.",
+    "blocker": "Executor unavailable. Latest root combined source account and added real-browser frame test were not pushed; native loads, stored release and physical interfaces remain unqualified."
   },
   "pr": 1625
 }
