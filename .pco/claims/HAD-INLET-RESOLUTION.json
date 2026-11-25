@@ -9,8 +9,8 @@
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-25T22:47:45.321Z",
-  "expiresAt": "2026-11-25T23:32:45.321Z",
+  "heartbeatAt": "2026-11-25T23:11:29.867Z",
+  "expiresAt": "2026-11-25T23:56:29.867Z",
   "branch": "work/convergence-structure-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
@@ -36,8 +36,8 @@
   },
   "pr": 1626,
   "checkpoint": {
-    "evidence": "PR1626@5ad43f28dc1523974ea81b97e138ed853cc0c114 retains source-authenticated Plant125/frame1100 recovery; strict current-source producer regenerated and local focused controls passed",
-    "next": "Verify recovery CI and publication; root integrates finite-inventory and actual incident-station followups already committed for shared publication",
-    "blocker": "Exact-head recovery CI pending; actual maximum store release, room support and whole occupied arrangement remain unqualified"
+    "evidence": "PR1626@3ef6d998c4a30c8ae3a15f581f560470c4537069 retains recovered125mm entry/1100 Plant frame/profile and original wet-end controls only; incident and impulse continuations are not included in this PR",
+    "next": "Verify exact-head recoveryCI and publication; obtain separate remote checkpoint for locally verified incident and impulse work",
+    "blocker": "RecoveryCI pending; actual hot/store release and complete Plant support/occupied arrangement remain unresolved"
   }
 }
