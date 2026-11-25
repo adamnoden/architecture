@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 59,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
   "holder": {
     "kind": "chatgpt",
     "label": "structure-convergence-20261125"
   },
   "claimedAt": "2026-11-25T08:40:52.436Z",
-  "heartbeatAt": "2026-11-25T11:52:02.000Z",
-  "expiresAt": "2026-11-25T12:37:02.000Z",
+  "heartbeatAt": "2026-11-25T12:08:33.000Z",
+  "expiresAt": "2026-11-25T12:08:33.000Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "81d1d5af-717b-47e5-b8e9-5cdc634a77a7",
@@ -37,5 +37,7 @@
     "next": "Finish exact-head CI/preflight for1625; recover continuation plus published water7c228220 and uniform2d044ead; regenerate current source account before next PR.",
     "blocker": "Executor explicitly unavailable. Latest local assembly and unpublished bearing-bed files cannot be inspected; no bearing-bed native result exists."
   },
-  "pr": 1625
+  "pr": 1625,
+  "releasedAt": "2026-11-25T12:08:33.000Z",
+  "releaseReason": "handoff"
 }
