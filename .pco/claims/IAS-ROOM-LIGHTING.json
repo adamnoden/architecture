@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
   "generation": 9,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-root-20261125"
   },
   "claimedAt": "2026-11-25T08:41:06.007Z",
-  "heartbeatAt": "2026-11-25T11:54:43.000Z",
-  "expiresAt": "2026-11-25T12:39:43.000Z",
+  "heartbeatAt": "2026-11-25T12:10:32.000Z",
+  "expiresAt": "2026-11-25T12:10:32.000Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "6ae96d7d-811c-4b13-8256-4493e0ba1c1b",
@@ -35,5 +35,7 @@
     "next": "Finish exact-head CI and canonical preflight, then merge1625 if earned. Circuit, protection/material qualification and owner appearance/print approval remain open.",
     "blocker": "Execution environment unavailable; local review files and current process state cannot be inspected. Published PR/checkpoints remain recovery authority."
   },
-  "pr": 1625
+  "pr": 1625,
+  "releasedAt": "2026-11-25T12:10:32.000Z",
+  "releaseReason": "handoff"
 }
