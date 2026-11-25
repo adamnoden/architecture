@@ -7,10 +7,10 @@ const input:IndoorRoutesInput={roomPlanMm:[9397,429.5,2173.5,2023.5],bankMm:[113
  tailOffsetMm:200,utilityReturnXMm:11180,westernReturnXMm:10040,utilitySourcePathMm:source.branches[0].coordinates,plantSourcePathMm:source.branches[1].coordinates,
  plantTransferMm:[[10900,2360,2400],[10600,3900,2400]],groundFflMm:0,ceilingMm:3100,utilityLmin:20,plantLmin:45,maximumGaugeBar:9,
  networkAllowancesBar:[.5,1],obstacles:[{id:'maintenance',boxMm:[10145,1505,0,1100,750,3100]},{id:'ordinary-body-approach',boxMm:[10370,2130,0,600,1060,2000]}],comparison:{frictionFactor:.03,cornerK:.9,temperatureChangeK:40,jacketDensityKgM3:8000,insulationDensityKgM3:200}}
-test('four actual paths join opposite valve faces, avoid each other and preserve the full equipment field',()=>{
+test('four paths preserve opposite valve faces and equipment but reject their own fitting reservations',()=>{
  const r=inletIndoorRoutes(input)
- assert.deepEqual(r.diagnostics,[])
- assert.equal(r.necessaryStraightPipeGeometryAndBudgetComparison,true)
+ assert.deepEqual(r.diagnostics,['INLET_PIPE_FITTING_TERRITORY','INLET_PIPE_OWN_FITTING_TERRITORY'])
+ assert.equal(r.necessaryStraightPipeGeometryAndBudgetComparison,false)
  assert.ok(r.nearestPair.afterTwoJacketsAndSettingsMm>14)
  assert.ok(r.minimumSelfClearanceMm>19)
  assert.deepEqual(r.paths[0].pointsMm.at(-1),[11350,2350,1270])
@@ -23,7 +23,11 @@ test('four actual paths join opposite valve faces, avoid each other and preserve
  assert.equal(r.pipe.minimumHydraulicBoreMm,25.14)
  assert.equal(r.pipe.maximumWaterAndPressureBoreMm,26.060000000000002)
  assert.ok(r.maximumStraightPipeWaterComparisonKg>10)
- assert.equal(r.cornerTerritory.necessaryBoxedCornerTerritoryComparison,true)
+ assert.equal(r.cornerTerritory.necessaryBoxedCornerTerritoryComparison,false)
+ assert.equal(r.cornerTerritory.necessarySamePathTerritoryComparison,false)
+ assert.ok(r.cornerTerritory.minimumSamePathCornerReserveMm < 0)
+ assert.ok(r.cornerTerritory.minimumSamePathPipeReserveMm < 0)
+ assert.equal(r.cornerTerritory.incidentStraightLegsOnlyExempt,true)
  assert.equal(r.support.nativeStructuralActionsAdopted,false)
  assert.equal(r.fullInsulatedFittingEnvelopeQualified,false)
  assert.equal(r.fullRouteRenewalQualified,false)
@@ -69,7 +73,7 @@ test('a real obstruction, insufficient ceiling, changed flow and unsupported sou
 test('actual source8 route counterexample joins valve bodies, precise face connections and continuous ordinary arm sweeps',()=>{
  const receipt=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-source-envelope.results.json',import.meta.url),'utf8')),
   r=receipt.joinedDirection.room.indoorRoutes,c=receipt.joinedDirection.room.indoorCuts,o=inletRouteOperation(r,c)
- assert.equal(r.necessaryStraightPipeGeometryAndBudgetComparison,true,'old narrow geometry/budget check missed these interfaces')
+ assert.equal(r.necessaryStraightPipeGeometryAndBudgetComparison,false,'own fitting territories now reject before operation is considered')
  assert.equal(o.necessaryRouteOperationEnvelopeScreen,false)
  const sibling=o.valveChecks.find(v=>v.path==='utility/downstream'&&v.segment===2&&v.valve==='plant'&&v.kind==='stem-wheel')!
  assert.ok(Math.abs(sibling.reserveMm+60.05)<1e-6)

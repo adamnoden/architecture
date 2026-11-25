@@ -11,7 +11,13 @@
     "bodyDepthMm": 23,
     "minimumBoxDepthMm": 35,
     "recommendedBoxDepthMm": 47,
-    "materialAdmission": "NOT_ADMITTED: insulating inserts, rocker insulation and complete constituent/finish inventory unresolved; metal visible plate is insufficient."
+    "materialAdmission": "NOT_ADMITTED: insulating inserts, rocker insulation and complete constituent/finish inventory unresolved; metal visible plate is insufficient.",
+    "terminalGeometryEvidence": {
+      "source": "https://forbesandlomax.com/uk/wp-content/uploads/sites/2/2020/02/13amp-Sockets-1.pdf",
+      "checkedDate": "2026-11-24",
+      "page": 2,
+      "finding": "The manufacturer provides plate/depth and L/N/earth terminal capacities but no dimensioned terminal coordinates. The geometric device shadow remains an interface requirement; current cases cannot claim an actual connected conductor/earth path."
+    }
   },
   "backBox": {
     "manufacturer": "BG Electrical",
@@ -77,7 +83,12 @@
     "instructionsCheckedDate": "2026-11-22",
     "mountingSequenceAuthority": "Astro82244Issue2: fixture body releases from retained bracket at two side screws; terminal access and earth require isolation. No bracket hole pitch or complete installed mass is supplied by this witness.",
     "datasheet": "https://assets.astrolighting.com/pdfs/original/5346-7170-backplate3-datasheet-issue1.pdf",
-    "datasheetAuthority": "Manufacturer current product link serves legacy7170sheet22May2013: geometry witness only, not current complete assembly identity or installed mass."
+    "datasheetAuthority": "Manufacturer current product link serves legacy7170sheet22May2013: geometry witness only, not current complete assembly identity or installed mass.",
+    "terminalGeometryEvidence": {
+      "source": "https://assets.astrolighting.com/pdfs/original/82244-instructions-backplate3-issue2.pdf",
+      "checkedDate": "2026-11-24",
+      "finding": "Factory enclosed termination and earthing remain required; the installation instructions do not supply a dimensioned terminal/bracket model for this new case. No invented terminal coordinate or mechanical connection is admitted."
+    }
   },
   "projectRequirements": {
     "fixedBoundaryDepthMm": 7.5,
@@ -132,7 +143,7 @@
     "entryCollarAxialLengthMm": 30
   },
   "commonDepthCornerCandidate": {
-    "schema": "ias-common-depth-corner-choices/1",
+    "schema": "ias-common-depth-corner-choices/2",
     "units": "mm",
     "enclosureWidthMm": 180,
     "enclosureHeightMm": 200,
@@ -145,6 +156,16 @@
     "maximumEnclosureMassKg": 3,
     "fixingEdgeMm": 25,
     "fixingHoleDiameterMm": 5,
-    "maximumClipSpanMm": 300
-  }
+    "maximumClipSpanMm": 300,
+    "accessoryOpeningWidthMm": 120,
+    "accessoryOpeningHeightMm": 130,
+    "fingerThicknessMm": 20,
+    "fingerHeightMm": 50,
+    "gripRearOffsetMm": 5,
+    "gripEngagementMm": 12,
+    "plugNormalDrawMm": 27,
+    "pipeWallMm": 1
+  },
+  "commonDepthGripAuthority": "Authored two-finger geometry and normal withdrawal through a fixed surround, using the unadmitted50x52x42mm plug envelope. Contact, actual grip force/plug shape, supplied lead, enclosure qualification and physical usability remain unproved; no instruction to replace a supplied plug.",
+  "commonDepthSteelStockAuthority": "Purpose case/surround/tube geometry at the retained7850kg/m3 steel density comparison. Covers and overlaps charged in full; collars charged as gross solid30mm stock. Not delivered weights or a complete installed mass; devices, unions, clips, cleats and fasteners remain to be qualified."
 }

@@ -51,6 +51,8 @@ The [named floor-to-corner comparison](../str/floor-interface-result.md) now dis
 
 The [indoor isolation view](../had/studies/inlet-indoor-cuts.svg) and [four cold-water paths](../had/studies/inlet-indoor-routes.svg) now show the actual valve bank, the unchanged full equipment field and separate Utility/Plant continuations. The full single leaf clashes with the protected door; the paired outward leaves pass the declared connected access comparison. The pipes have explicit lengths, tolerance-specific bores, pressure losses and named gravity/pressure actions. Their fitted turns, independent supports and loaded removal still need completion. These proposed loads are not admitted to the source-ground-zero structural model.
 
+The [independent Plant branch comparison](../had/studies/inlet-split-plant-branch.svg) now keeps the Plant feed out of Utility and connects both the store and the domestic cold tree. Its entry lies in the200mm fitted infill inside the existing east masonry arch, not a new masonry opening. The fixed route retains76.48mm to the complete goods envelopes, but the100mm infill port fails its pipe/positioning allowance by0.05mm, the retained removable drop gives13.38mm against25mm, and the south finished-room boundary still conflicts by4.15mm. These are current, explicitly unselected development results. Tee/receivers, the complete source/backfeed/relief and thermal boundary, loaded renewal and structural admission remain unqualified. The new pressure/gravity vectors are visible at their actual origins; no reaction path is assigned to the native structure without a supported physical interface.
+
 The [wet-beam normal-bearing comparison](../str/wet-bearing-refinement-development.md) now passes the declared32→64 quadrature check for both tested wet-support material weights. The16→32 adverse failure remains recorded. This resolves numerical contact integration for those cases; pad material, post-head resistance, a complete signed envelope and floor/corner convergence remain unqualified. It selects no slab thickness, plinth or house revision.
 
 The [editable narrower-pad and nominal post-head fan](../str/wet-post-head-fan-development.md) compares the actual 140 mm pad with the retained 220 mm reference through the same saved document, native floor and cage. Lower north-head eccentricity costs higher south pressure, greater beam movement and redistributed foundation actions. The nominal fan conserves actual force and moments, but its finite nodes, anchorage and placement remain unqualified. Neither width is selected by this comparison; the stair-midlanding/post join also remains unresolved.
@@ -61,9 +63,7 @@ The subsequent [fixed-normal structural experiment](../str/fixed-normal-experime
 holds the actual support fibres and body gravity fixed and still fails the same
 cut screen:32.72166% twisting change. Normal-support co-refinement is therefore
 not the controlling explanation. The [finite L development](../str/finite-joint-solid-development.md)
-has checked geometry, energy and gravity but has no connected floor interface
-or resistance proof. Its distinct constitutive comparison selects neither slab
-thickness nor a different current house.
+has checked geometry, energy and gravity. The [distributed local slab-contour comparison](../str/finite-floor-contour-development.md) now adds actual floor interfaces but remains strongly unconverged:86.45% and84.34% all-motion energy changes across140/70/35mm solid meshes. It has no native outer-band/chord connection, global insertion or resistance proof. The saved editor and CLI expose its pending/computed/unsupported result under the same actual floor revision. These distinct constitutive comparisons select neither slab thickness nor a different current house.
 
 ## The interior should earn its place on beauty
 
@@ -85,6 +85,8 @@ The [lighting service corner](../ias/studies/adaptable-study-lighting-corner.svg
 
 The [common-depth lighting comparison](../ias/studies/adaptable-study-lighting-common-depth.svg) now shows the complete three-case depth transition and supported whole-case withdrawal in the same browser-editable source. It remains an unselected development comparison: recessed plug grip, terminal/protection/material evidence and qualified loaded renewal are unresolved. Its 88.29 N case-demand ceiling has not entered the structural mass inventory. The completed furnished Study comparison above is retained.
 
+The common-depth lighting detail now includes a120×130mm fixed opening for the full plug and authored finger envelopes, with5/29mm residual after both settings. Its complete61.5mm case/surround depth is charged to the75mm draw, translation and rest. Known case/surround/tube/collar steel totals7.398kg at named gravity origins; actual devices, unions and full installed mass remain distinct unknowns. This resolves the geometric grip and known-stock question for the proposal. It does not connect the unbound terminals/earth or the missing Study feeder, qualify materials/supports or record an owner appearance choice. The furnished room comparison is retained.
+
 ## The owner decision this package prepares
 
 At the existing **post-integration design gate**, the useful decision is whether the **joined house and timber room are a desirable home**: court and entrance sequence, facade rhythm, visible plinth/approach and northern opening, then the timber room's proportions, grain, seams, mouldings and brass interfaces against the fixed and tile alternatives. Aesthetic approval must attach to the drawings actually shown, with any requested changes recorded there. It cannot be inferred from passing calculations.
@@ -103,6 +105,19 @@ These are specific editorial boundaries to preserve, not reasons to disguise the
 | [Part IV floor-zone and interior prose](../../docs/manuscript/part-iv.md#the-floor-zone), [active Study plate captions](../../publication/plates-current.ts) and [IAS result](../ias/crafted-room-kit-result.md) | The prose correctly retains an unselected floor/interior and the captions disclose the occupied opening mismatch. Keep those qualifications when replacing pictures; the timber proposal and ordinary geometric renewal do not select the entire assembly. |
 
 *Reference design — not released for construction. Assumptions and outstanding verification accompany the proposal; internal checks do not constitute external assurance or certification.*
+
+## The occupied room programme also differs
+
+The nominal plans and the occupied development differ in more than the stair position. Their furniture and ordinary-use assumptions need an explicit choice at the existing joined-house review; none of the changes below records the owner's acceptance.
+
+| Item | Accepted nominal drawing | Current occupied development | Consequence to judge |
+|---|---|---|---|
+| Front bedrooms 2 and 3 | Each shows a 1500 × 2000 mm double-bed reservation. | Each now uses a **950 × 2055 mm complete single-bed frame** for a 900 × 2000 mm mattress. Bedroom 2 has 652.5 mm side strips and a 618 mm foot strip after trim; the foot strip becomes 593 mm under the declared 25 mm positioning comparison. | The two front bedrooms are being tested as single rooms. These geometric witnesses do not preserve the nominal double-bed programme or establish comfortable use. |
+| Bedroom 3 secondary side | The nominal double-bed symbol does not establish finished bedside access. | The single frame has **527.5 / 660 mm** ordinary west/east strips. Moving the whole frame **132.5 mm east** gives 660 mm on the west and 527.5 mm on the east. | West-head bedding and cleaning require a move and restoration. Two simultaneous 600 mm side strips are not available in either state. |
+| Stair | A **1100 mm flight reservation**; finished handrails are not represented by that number. | Each flight has 1094 mm body territory, **1004 mm between the modelled rails**, or 984 mm after the declared 20 mm positioning loss. | Judge the actual finished passage. Do not describe either drawing as proving 1100 mm clear between rails. |
+| Utility and Plant | A separate Utility room with its own nominal door. | A **900 mm open arch** at the Utility north wall joins the shared service zone; the protected Plant entrance remains separate. | The Utility loses its own acoustic/privacy closure. Distinct duties and water/electrical boundaries still need the complete arrangement. |
+
+The nominal values come from [`layout-revision.ts`](../../compiler/reference-house/georgian/layout-revision.ts), `furniture.bed2`, `furniture.bed3`, `stair` and `revisionOpenings()`. The occupied values come from [`water-replan.json`](../had/studies/water-replan.json), `model.frontBedControl`, `model.stairGuard` and `model.utilityDisposition`. These current source fields supersede the earlier solid-wall study's double-bed pinch comparison. The separate pantry/service-passage conflict below remains part of the same unresolved room programme.
 
 ## The pantry and service-passage conflict
 

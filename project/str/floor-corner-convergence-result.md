@@ -45,6 +45,8 @@ moment field. It does not supply membrane traction or a closed six-wrench L
 free body. A complete finite joint demand and physical transfer model remain
 necessary before local reinforcement or global thickness can be selected.
 
+The24November [distributed slab-contour development](finite-floor-contour-development.md) provides100 independent shell coordinates plus12 wall-end coordinates and explicit saved-document controls. Its characteristic material/G accounting and six rigid modes pass; its140/70/35mm all-motion energy sensitivity remains86.45% and84.34%. Those failures remain visible. The governing refinement mode is localised around the15mm north-contour station interval. The component still has free outer edges, distinct constitutive laws and no native band/chord replacement; it cannot qualify the house's finite joint or design-strip demand.
+
 ## Existing evidence, before extending the mesh scope
 
 The complete native responses joined at structural checkpoint

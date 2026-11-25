@@ -124,9 +124,20 @@ function evaluateInletIndoorRoutes(i:IndoorRoutesInput,candidatePaths?:readonly 
    distance=gaps.some(g=>g>0)?Math.hypot(...gaps.map(g=>Math.max(g,0))):Math.max(...gaps)
    return{a:c.id,b:d.id,reserveMm:distance-2*setting}
   })))),
+  // Only the two incident straight legs are fitting interfaces. A returning
+  // leg on the same path has no exemption; separate fittings retain both settings.
+  samePathCornerPipeChecks=pipeRows.flatMap(p=>p.corners.flatMap((c,ci)=>segments(p.pointsMm)
+   .filter(s=>s.index!==ci&&s.index!==ci+1).map(s=>({corner:c.id,path:p.id,segment:s.index,
+    reserveMm:segmentBoxDistance(s.a,s.b,c.territoryBoxMm)-jacketRadius-2*setting})))),
+  samePathCornerCornerChecks=pipeRows.flatMap(p=>p.corners.flatMap((c,ci)=>p.corners.slice(ci+1).map(d=>{const aa=c.territoryBoxMm,bb=d.territoryBoxMm,
+   gaps=[0,1,2].map(k=>Math.max(aa[k]-bb[k]-bb[k+3],bb[k]-aa[k]-aa[k+3])),
+   distance=gaps.some(g=>g>0)?Math.hypot(...gaps.map(g=>Math.max(g,0))):Math.max(...gaps)
+   return{a:c.id,b:d.id,reserveMm:distance-2*setting}
+  }))),
+  samePathTerritoryPass=samePathCornerPipeChecks.every(c=>c.reserveMm>=0)&&samePathCornerCornerChecks.every(c=>c.reserveMm>=0),
   cornerCeilingReserveMm=Math.min(...pipeRows.flatMap(p=>p.corners.map(c=>i.ceilingMm-c.territoryBoxMm[2]-c.territoryBoxMm[5]-setting))),
-  cornerTerritoryPass=cornerCeilingReserveMm>=0&&cornerCornerChecks.every(c=>c.reserveMm>=0)&&cornerPipeChecks.every(c=>c.reserveMm>=0)&&cornerObstacleChecks.every(c=>c.reserveMm>=0),
-  diagnostics=[...(!cornerTerritoryPass?['INLET_PIPE_FITTING_TERRITORY']:[]),...selfSeparations.filter(s=>s.afterTwoJacketsAndSettingsMm<0).map(s=>'INLET_PIPE_SELF_COLLISION/'+s.id),...(nearest.afterTwoJacketsAndSettingsMm<0?['INLET_INDOOR_ROUTE_COLLISION']:[]),
+  cornerTerritoryPass=samePathTerritoryPass&&cornerCeilingReserveMm>=0&&cornerCornerChecks.every(c=>c.reserveMm>=0)&&cornerPipeChecks.every(c=>c.reserveMm>=0)&&cornerObstacleChecks.every(c=>c.reserveMm>=0),
+  diagnostics=[...(!cornerTerritoryPass?['INLET_PIPE_FITTING_TERRITORY']:[]),...(!samePathTerritoryPass?['INLET_PIPE_OWN_FITTING_TERRITORY']:[]),...selfSeparations.filter(s=>s.afterTwoJacketsAndSettingsMm<0).map(s=>'INLET_PIPE_SELF_COLLISION/'+s.id),...(nearest.afterTwoJacketsAndSettingsMm<0?['INLET_INDOOR_ROUTE_COLLISION']:[]),
    ...pipeRows.filter(r=>r.roomReserveAfterSettingMm<0||r.ceilingReserveAfterSettingMm<0||!r.straightLeg84MmTakeoffScreen||r.obstacles.some(o=>o.afterJacketAndSettingMm<0)).map(r=>'INLET_PIPE_ENVELOPE/'+r.id),
    ...branches.filter(b=>!b.lossAndRiseWithinExistingAllowanceComparison).map(b=>'INLET_PIPE_BUDGET/'+b.id)]
  return{schema:'had-indoor-pipe-routes/2',state:'unadopted-route-comparison',coordinateDatum:'Local occupied-groundFFL; stock origins include supplied saved-groundFFL translation.',
@@ -139,7 +150,13 @@ function evaluateInletIndoorRoutes(i:IndoorRoutesInput,candidatePaths?:readonly 
    minimumOtherCornerReserveMm:Math.min(...cornerCornerChecks.map(c=>c.reserveMm)),
    minimumOtherPipeReserveMm:Math.min(...cornerPipeChecks.map(c=>c.reserveMm)),minimumObstacleReserveMm:Math.min(...cornerObstacleChecks.map(c=>c.reserveMm)),
    perOtherCorner:cornerCornerChecks.filter(c=>c.reserveMm<10),perOtherPipe:cornerPipeChecks.filter(c=>c.reserveMm<10),perObstacle:cornerObstacleChecks.filter(c=>c.reserveMm<10),
-   necessaryBoxedCornerTerritoryComparison:cornerCeilingReserveMm>=0&&cornerCornerChecks.every(c=>c.reserveMm>=0)&&cornerPipeChecks.every(c=>c.reserveMm>=0)&&cornerObstacleChecks.every(c=>c.reserveMm>=0),actualFittingBodyAndToolsQualified:false},
+   minimumSamePathCornerReserveMm:Math.min(...samePathCornerCornerChecks.map(c=>c.reserveMm)),
+   minimumSamePathPipeReserveMm:Math.min(...samePathCornerPipeChecks.map(c=>c.reserveMm)),
+   perSamePathCorner:samePathCornerCornerChecks.filter(c=>c.reserveMm<10),perSamePathPipe:samePathCornerPipeChecks.filter(c=>c.reserveMm<10),
+   necessarySamePathTerritoryComparison:samePathTerritoryPass,
+   incidentStraightLegsOnlyExempt:true,
+   overlappingReservationsInterpretation:'A negative reserve rejects these separate boxed reservations; an actual joined fitting can replace them only with new explicit geometry and evidence.',
+   necessaryBoxedCornerTerritoryComparison:cornerTerritoryPass,actualFittingBodyAndToolsQualified:false},
   roomPlanMm:i.roomPlanMm,authoredRouteGeometry:{tailOffsetMm:t,utilityReturnXMm:candidatePaths?candidatePaths.find(p=>p.id==='utility/downstream')!.pointsMm[2][0]:returnX,westernReturnXMm:candidatePaths?Math.min(...candidatePaths.find(p=>p.id==='utility/downstream')!.pointsMm.map(p=>p[0])):west},explicitCandidatePaths:candidatePaths??null,checkedObstacles:i.obstacles,authoredComparison:i.comparison,paths:pipeRows,nearestPair:nearest,minimumSelfClearanceMm:Math.min(...selfSeparations.map(s=>s.afterTwoJacketsAndSettingsMm)),branches,
   straightCopperStockComparisonKg:pipeRows.reduce((n,r)=>n+r.stock.reduce((n,s)=>n+s.copperKg,0),0),maximumStraightPipeWaterComparisonKg:pipeRows.reduce((n,r)=>n+r.stock.reduce((n,s)=>n+s.fullWaterKg,0),0),
   twoValveReferenceKg:12,narrowCopperWaterAndNominalValveSubtotalKg:pipeRows.reduce((n,r)=>n+r.stock.reduce((n,s)=>n+s.copperKg+s.fullWaterKg,0),12),

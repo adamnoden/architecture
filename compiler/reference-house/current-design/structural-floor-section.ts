@@ -1,3 +1,4 @@
+import {readFiniteFloorContourSettings,runFiniteFloorContourComponent} from './structural-finite-floor-contour.js'
 import {runWetPostHeadFan,wetPostHeadFanPaths} from './structural-wet-post-head-fan.js'
 import { inspectSlabSolidCompatibility } from './structural-slab-constitutive.js'
 import { execFileSync } from 'node:child_process'
@@ -23,7 +24,7 @@ const record = (v: unknown): v is Record<string, unknown> => v !== null && typeo
 const same = (a: unknown, b: unknown) => sha256SemanticFingerprint(a) === sha256SemanticFingerprint(b)
 const finite = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v)
 const six = (v: unknown): v is number[] => Array.isArray(v) && v.length === 6 && v.every(finite)
-export const floorSectionStageFields = ['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison'] as const
+export const floorSectionStageFields = ['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison', 'contourComponent'] as const
 
 /** Inspect declared source centrelines; absent service envelopes never earn fit. */
 export function inspectFloorServiceRoutes(routes: readonly (readonly (readonly number[])[])[], cells: readonly (readonly number[])[], soffit: number, top: number,
@@ -126,19 +127,20 @@ export function savedFloorSectionCase(request: ReturnType<typeof readFloorSectio
   }
   const cageComparison = settings.cageComparison === undefined || settings.cageComparison === null ? null : validateWetSupportCageChoices(settings.cageComparison)
   if (cageComparison && !record(settings.wetSupport)) throw new Error('An explicit actual wet support is required before selecting its cage comparison')
-  return { ...request, cageComparison, caseId: upper.caseId, sectionCuts: readFloorSectionCuts(settings.sectionCuts ?? []),
+  return { ...request, cageComparison, ...(settings.contourComponent===undefined?{}:{contourComponent:readFiniteFloorContourSettings(settings.contourComponent)}), caseId: upper.caseId, sectionCuts: readFloorSectionCuts(settings.sectionCuts ?? []),
     comparison: { ...request.comparison, bearingCase: upper.comparison, thicknessMm: settings.thicknessMm, wetSupport: settings.wetSupport ?? null } }
 }
 
 export function runFloorSectionCase(resolved: CurrentDesignResolution, input: unknown) {
   const current = currentBinding(resolved)
-  if (!record(input) || !same(Object.keys(input).sort(), ['schema', 'planDigest', 'bindingDigest', 'comparison', 'sectionCuts', 'cageComparison', 'caseId'].sort())
+  if (!record(input) || !same(Object.keys(input).sort(), ['schema', 'planDigest', 'bindingDigest', 'comparison', 'sectionCuts', 'cageComparison', 'caseId', ...(Object.hasOwn(input,'contourComponent')?['contourComponent']:[])].sort())
     || input.schema !== 'str-current-floor-section-case/1' || input.planDigest !== current.planDigest || input.bindingDigest !== current.bindingDigest
     || !record(input.comparison) || !same(Object.keys(input.comparison).sort(), Object.keys(current.comparison).sort())
     || !same(input.comparison.sourceSHA256, current.comparison.sourceSHA256) || input.comparison.schema !== current.comparison.schema
     || input.comparison.use !== current.comparison.use || typeof input.caseId !== 'string' || !/^[A-Za-z][A-Za-z0-9._:-]*$/.test(input.caseId)) {
     throw new Error('Stale or malformed floor-section request or binding')
   }
+  const contourSettings=input.contourComponent===undefined?undefined:readFiniteFloorContourSettings(input.contourComponent)
   const sectionCuts = readFloorSectionCuts(input.sectionCuts)
   const cageChoices = input.cageComparison === null ? null : validateWetSupportCageChoices(input.cageComparison)
   if (cageChoices && !record(input.comparison.wetSupport)) throw new Error('An explicit actual wet support is required before selecting its cage comparison')
@@ -161,6 +163,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
     || !record(output.drawings) || !output.drawings['floor-section-floor.svg']?.startsWith('<svg')) {
     throw new Error('Floor-section result lost current source, actual datums, 52-head balance or explicit proof limits')
   }
+  const contourComponent=runFiniteFloorContourComponent(resolved,input.comparison,contourSettings,{planDigest:current.planDigest,bindingDigest:current.bindingDigest,caseDigest:sha256SemanticFingerprint(input),nativeRequestDigest:sha256SemanticFingerprint(input.comparison)})
   const wet = output.seatedWetSupport
   if (input.comparison.wetSupport !== null && input.comparison.wetSupport !== undefined) {
     if (!record(wet) || !same(wet.settings, input.comparison.wetSupport)
@@ -221,7 +224,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
   return { status: 'computed-comparison' as const,
     source: { planDigest: current.planDigest, bindingDigest: current.bindingDigest, caseDigest: sha256SemanticFingerprint(input) },
     method: { id: 'str-current-floor-section/1', path: methodPath, inputs: current.inputs },
-    native: vertical.native, vertical, floorSection: section, slabSolidCompatibility: inspectSlabSolidCompatibility(input.comparison), cageComparison, wetPostHeadFan, upperMasonry: output.upperMasonry,
+    native: vertical.native, vertical, floorSection: section, contourComponent, slabSolidCompatibility: inspectSlabSolidCompatibility(input.comparison), cageComparison, wetPostHeadFan, upperMasonry: output.upperMasonry,
     mass: output.mass, plateBending: output.plateBending, sectionCuts: recoverFloorSectionCuts(output.plateBending as FloorBendingField, sectionCuts),
     plateTransverseShear, transverseSectionCuts:recoverFloorTransverseCuts(plateTransverseShear,sectionCuts), cornerInterfaces, fourLJointDemands: jointExecution.jointDemands, floorReinforcement: output.floorReinforcement,
     roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport, wetBearingContact,

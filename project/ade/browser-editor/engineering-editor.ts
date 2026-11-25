@@ -53,7 +53,7 @@ function controls() {
 }
 function draw() {
   const floor=current?.floorEvidence
-  element('floor-result').textContent=floor?`Actual floor: ${floor.headCount} foundation heads; normal-bearing analysis ${floor.contactComputed?'computed':'not applicable'}. ${floor.slabSolidCompatibility.status==='common-modulus-ruled-out'?'The authored slab laws cannot describe one common positive 3D modulus; a solid replacement requires a declared constitutive change.':''} ${floor.jointStatus==='computed-rigid-joint-demand'?'Four rigid-joint demands computed; finite-node resistance remains unqualified.':floor.jointDiagnostics.includes('FOUR_L_JOINT/runtime-not-admitted')?'Joint demand unavailable for this numerical runtime; ordinary floor and cage remain computed.':'Joint-demand evidence unavailable for this request.'} ${floor.nominalHeadFanStatus==='computed-nominal-demand'?'Nominal post-head fan computed; finite nodes, anchorage and tolerance remain unqualified.':floor.nominalHeadFanStatus==='unsupported'?'This nominal post-head fan does not support the current input.':''}`:''
+  element('floor-result').textContent=floor?`Actual floor: ${floor.headCount} foundation heads; normal-bearing analysis ${floor.contactComputed?'computed':'not applicable'}. ${floor.contourStatus==='deferred'?'Finite floor-contour analysis pending for this saved revision.':floor.contourStatus==='computed-local-comparison'?'Finite contour component computed; exterior band/chord, native insertion and joint resistance remain unavailable.':floor.contourStatus==='unsupported'?'The finite contour component does not support this saved revision or numerical runtime.':''} ${floor.slabSolidCompatibility.status==='common-modulus-ruled-out'?'The authored slab laws cannot describe one common positive 3D modulus; a solid replacement requires a declared constitutive change.':''} ${floor.jointStatus==='computed-rigid-joint-demand'?'Four rigid-joint demands computed; finite-node resistance remains unqualified.':floor.jointDiagnostics.includes('FOUR_L_JOINT/runtime-not-admitted')?'Joint demand unavailable for this numerical runtime; ordinary floor and cage remain computed.':'Joint-demand evidence unavailable for this request.'} ${floor.nominalHeadFanStatus==='computed-nominal-demand'?'Nominal post-head fan computed; finite nodes, anchorage and tolerance remain unqualified.':floor.nominalHeadFanStatus==='unsupported'?'This nominal post-head fan does not support the current input.':''}`:''
   for (const [name, result] of [['current', current], ['comparison', comparison]] as const) {
     const image = element<HTMLImageElement>(`${name}-roof`)
     if (result) image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(result.roof.svg)
@@ -81,6 +81,16 @@ function draw() {
     const image=element<HTMLImageElement>(`${name}-inlet-candidate`),candidate=result?.inletBank?.route.candidateComparison.comparison
     image.hidden=!candidate
     if(candidate)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(candidate.reviewSvg)
+    else image.removeAttribute('src')
+  }
+  const plantBranch=bank?.route.splitStationComparison.branchDevelopment
+  element('inlet-plant-branch-result').textContent=plantBranch?.comparison
+    ? `Independent Plant branch remains unadopted. Service-infill port / pipe reserve ${plantBranch.comparison.geometry.ingressBorePipePositionReserveMm.toFixed(2)} mm; retained drop / cylinder ${plantBranch.comparison.geometry.dropStoreReserveMm.toFixed(2)} mm against25 mm. ${plantBranch.diagnostics.join('; ')}.`
+    : plantBranch?'Plant branch unavailable for current connections; no historical route is substituted.':''
+  for(const[name,result]of[['current',current],['comparison',comparison]]as const){
+    const image=element<HTMLImageElement>(`${name}-inlet-plant-branch`),branch=result?.inletBank?.route.splitStationComparison.branchDevelopment.comparison
+    image.hidden=!branch
+    if(branch)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(branch.reviewSvg)
     else image.removeAttribute('src')
   }
   const cage = current?.wetCage

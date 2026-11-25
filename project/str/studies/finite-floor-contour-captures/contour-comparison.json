@@ -1,0 +1,29 @@
+{
+  "schema": "ovids-house/str-finite-floor-contour-sensitivity/1",
+  "comparisons": [
+    {
+      "fromPitchMm": 140.0,
+      "toPitchMm": 70.0,
+      "maximumRelativeEnergySensitivity": 0.8644867074619405,
+      "minimumRelativeEnergyChange": 0.0010543985308726356,
+      "maximumRelativeEnergyChange": 0.8644867074619405
+    },
+    {
+      "fromPitchMm": 70.0,
+      "toPitchMm": 35.0,
+      "maximumRelativeEnergySensitivity": 0.8434358385277856,
+      "minimumRelativeEnergyChange": 0.00045349271792427537,
+      "maximumRelativeEnergyChange": 0.8434358385277856
+    }
+  ],
+  "captureSHA256": {
+    "contour140.json": "9ba0ffb38d14db12d4edb55cacc56869fd0497a1078052be5985bef748a66b72",
+    "contour70.json": "0ff07835eb32bd267af8a15943dc66c8c24de4ddfd5e30a2c5a3f7fdb0c0f875",
+    "contour35.json": "7710e8c3ac68071b41715021119d3f99885b70fba242131c5471a61eb064e16f"
+  },
+  "processingMethodSHA256": "b0254d7f74fd43108c9022d333aa4d1cfa98d74ab2dcebcc26ec675e5a373558",
+  "allMotionEnergySensitivityOnly": true,
+  "convergenceAcceptanceClaimed": false,
+  "nativeFloorAdmission": false,
+  "jointResistanceAvailable": false
+}
