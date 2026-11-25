@@ -9,8 +9,8 @@
     "label": "convergence-20261125"
   },
   "claimedAt": "2026-11-25T22:18:56.729Z",
-  "heartbeatAt": "2026-11-25T22:54:37.312Z",
-  "expiresAt": "2026-11-25T23:39:37.312Z",
+  "heartbeatAt": "2026-11-25T23:25:21.686Z",
+  "expiresAt": "2026-11-26T00:10:21.686Z",
   "branch": "work/convergence-structure-20261125",
   "predecessor": {
     "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
@@ -36,8 +36,8 @@
   },
   "pr": 1626,
   "checkpoint": {
-    "evidence": "PR1626 head3ef6d998; strict source audit and43focused source/profile tests pass; A4/B5 rendered inspected; witness and actual-ground browser proof inputs corrected.",
-    "next": "Finish exact-head CI and preflight; merge recovery, then publish current-source normal-bed and actual incident/inventory continuations.",
-    "blocker": "Exact-head validation rerun; lower continuation remains unselected and8to16 contact screen fails."
+    "evidence": "Recovery PR1626 head243593e528807ca544ea5fdcc19a0826268841ca; actual bed and incident followup saved remotely at work/convergence-bed-water-20261125 ab2c3532b13c016671b2d0c37db050856e0be7bf. Contour residency experiment remains separate,140 numerical equivalence observed;35 interrupted without result.",
+    "next": "Verify exact-head CI and both lease publication preflights, merge recovery, then reconcile and submit saved followup.",
+    "blocker": "Recovery exact-head health and full browser proof pending; no structural or room admission."
   }
 }
