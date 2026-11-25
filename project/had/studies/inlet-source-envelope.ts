@@ -1,3 +1,4 @@
+import {drawInletWetServiceSuite} from '../../../compiler/reference-house/current-design/inlet-wet-service-suite.js'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { readCurrentDesignResolution, type CurrentDesignResolution } from '../../../compiler/reference-house/current-design/resolve.js'
 import { fileURLToPath } from 'node:url'
@@ -21,10 +22,11 @@ const unjoinedProfileControl={schema:'had-unjoined-plant-profile-control/1',inpu
 const local = { schema: 'had-local-room-pocket-receipt/1', source: localResult.source, authoredSettings: localResult.settings,
   ground: { source: ground.source, method: ground.method, authoredCase: ground.authoredCase },
   houseVerticalProfile:{source:profile.source,method:profile.method,authoredCase:profile.authoredCase,geometryOnly:true,selectedHouseAdmitted:false},unjoinedProfileControl,
-  sourceOnlyEvent: localResult.bound, branches: localResult.branches, roomCatchment: localResult.roomCatchment, indoorCuts:localResult.joinedDirection.room.indoorCuts, indoorRoutes:localResult.joinedDirection.room.indoorRoutes, bankReceiver:localResult.joinedDirection.room.bankReceiver, bankShelfCarrier:localResult.joinedDirection.room.bankShelfCarrier, splitPlantRoom:localResult.splitPlantRoom,
+  sourceOnlyEvent: localResult.bound, branches: localResult.branches, roomCatchment: localResult.roomCatchment, indoorCuts:localResult.joinedDirection.room.indoorCuts, indoorRoutes:localResult.joinedDirection.room.indoorRoutes, bankReceiver:localResult.joinedDirection.room.bankReceiver, bankShelfCarrier:localResult.joinedDirection.room.bankShelfCarrier, splitPlantRoom:localResult.splitPlantRoom, wetServiceSuite:localResult.wetServiceSuite,
   houseAdopted: false, physicalInstallationAdmitted: false }
 for (const [name, content] of [['inlet-source-envelope.results.json', JSON.stringify(result, null, 2) + '\n'],
   ['inlet-source-envelope.svg', reviewSvg + '\n'],
+  ['inlet-wet-service-suite.svg',localResult.wetServiceSuite.state==='unselected-connected-wet-service-suite'?drawInletWetServiceSuite(localResult.wetServiceSuite)+'\n':''],
   ['inlet-indoor-cuts.svg', result.joinedDirection.room.indoorCuts.reviewSvg + '\n'],
   ['inlet-split-plant-branch.svg',(result.joinedDirection.room.indoorRoutes.splitStationComparison.branchDevelopment.comparison?.reviewSvg??'<svg xmlns="http://www.w3.org/2000/svg"><text x="20" y="30">Unsupported current Plant branch; no historical route is substituted.</text></svg>')+'\n'],
   ['inlet-split-plant-room.svg',(localResult.splitPlantRoom.comparison?.reviewSvg??'<svg xmlns="http://www.w3.org/2000/svg"><text x="20" y="30">Unsupported Plant floor; no historical result substituted.</text></svg>')+'\n'],

@@ -2,7 +2,7 @@
   "schema": "had-local-room-pocket-receipt/1",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "c270c03daa6a15b7e226ebb26017b46ba1c97db7a25cdb078e7c337aedcf25c9",
+    "bindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -19,9 +19,11 @@
       "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
       "project/had/studies/inlet-split-plant-branch-candidate.json": "6afb0bbc4f5e063e16d6ff7b040ae46a129c41f6",
       "project/had/studies/inlet-fixed-station.json": "69e0be05955a9f8fa3494f6a8c5e686dd8bc2e16",
-      "project/had/studies/inlet-split-plant-room-candidate.json": "39ee4ca1a81334e42bab110b114ad9c244d6193c"
+      "project/had/studies/inlet-split-plant-room-candidate.json": "39ee4ca1a81334e42bab110b114ad9c244d6193c",
+      "project/had/studies/inlet-wet-service-suite-candidate.json": "4fef1bb19699f531b74415572ed3464220f3c96d"
     },
     "methods": {
+      "compiler/reference-house/current-design/inlet-wet-service-suite.ts": "5e3ee54b1bd8216a2b3254e35eaab1fbb5a736d1",
       "compiler/reference-house/current-design/inlet-store-impulse.ts": "f378afdf23c3e4d673b33c63f3d952e6dac679fe",
       "compiler/reference-house/current-design/house-vertical-profile.ts": "702d5cda1182e25d576e2f4cce754f3d816b0f2d",
       "project/had/studies/house_vertical_profile.py": "1f41e39d3c37728c6aad8a4168ed7e230aad7929",
@@ -35,9 +37,9 @@
       "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
       "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
       "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "3e014e5294721214801d85843729c9d6c166760e",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "c6ef0c60aff3d8bcddbadad0cb7bcd0e1a8d6f84",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
-      "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
+      "compiler/reference-house/current-design/inlet-room-pocket.ts": "07e2f6238620cd2508d8335b525d735950a5c90b",
       "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
       "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
       "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
@@ -301,7 +303,7 @@
     "inputChange": "Omit only the recomputed houseVerticalProfile; same530ground, source settings and complete Plant choice.",
     "source": {
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-      "bindingDigest": "c270c03daa6a15b7e226ebb26017b46ba1c97db7a25cdb078e7c337aedcf25c9",
+      "bindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
       "inputs": {
         "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
         "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -318,9 +320,11 @@
         "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
         "project/had/studies/inlet-split-plant-branch-candidate.json": "6afb0bbc4f5e063e16d6ff7b040ae46a129c41f6",
         "project/had/studies/inlet-fixed-station.json": "69e0be05955a9f8fa3494f6a8c5e686dd8bc2e16",
-        "project/had/studies/inlet-split-plant-room-candidate.json": "39ee4ca1a81334e42bab110b114ad9c244d6193c"
+        "project/had/studies/inlet-split-plant-room-candidate.json": "39ee4ca1a81334e42bab110b114ad9c244d6193c",
+        "project/had/studies/inlet-wet-service-suite-candidate.json": "4fef1bb19699f531b74415572ed3464220f3c96d"
       },
       "methods": {
+        "compiler/reference-house/current-design/inlet-wet-service-suite.ts": "5e3ee54b1bd8216a2b3254e35eaab1fbb5a736d1",
         "compiler/reference-house/current-design/inlet-store-impulse.ts": "f378afdf23c3e4d673b33c63f3d952e6dac679fe",
         "compiler/reference-house/current-design/house-vertical-profile.ts": "702d5cda1182e25d576e2f4cce754f3d816b0f2d",
         "project/had/studies/house_vertical_profile.py": "1f41e39d3c37728c6aad8a4168ed7e230aad7929",
@@ -334,9 +338,9 @@
         "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
         "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
         "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
-        "compiler/reference-house/current-design/inlet-source-envelope.ts": "3e014e5294721214801d85843729c9d6c166760e",
+        "compiler/reference-house/current-design/inlet-source-envelope.ts": "c6ef0c60aff3d8bcddbadad0cb7bcd0e1a8d6f84",
         "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
-        "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
+        "compiler/reference-house/current-design/inlet-room-pocket.ts": "07e2f6238620cd2508d8335b525d735950a5c90b",
         "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
         "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
         "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
@@ -25644,7 +25648,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "c270c03daa6a15b7e226ebb26017b46ba1c97db7a25cdb078e7c337aedcf25c9",
+          "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -25782,7 +25786,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "c270c03daa6a15b7e226ebb26017b46ba1c97db7a25cdb078e7c337aedcf25c9",
+            "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
             "groundFflMm": 530,
             "roomPlanMm": [
               9397,
@@ -36604,7 +36608,7 @@
           "deckGuardIntrusionMm": 50
         }
       },
-      "sourceBindingDigest": "c270c03daa6a15b7e226ebb26017b46ba1c97db7a25cdb078e7c337aedcf25c9",
+      "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
       "groundFflMm": 530,
       "selected": false,
       "rawArchVerticalReservation": {
@@ -36640,7 +36644,7 @@
       },
       "branchIdentity": "HAD/plant-independent-east-entry-development",
       "branchPrerequisites": {
-        "sameCurrentSource": "c270c03daa6a15b7e226ebb26017b46ba1c97db7a25cdb078e7c337aedcf25c9",
+        "sameCurrentSource": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
         "connections": [
           {
             "id": "source-entry",
@@ -36941,7 +36945,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "c270c03daa6a15b7e226ebb26017b46ba1c97db7a25cdb078e7c337aedcf25c9",
+          "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -37079,7 +37083,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "c270c03daa6a15b7e226ebb26017b46ba1c97db7a25cdb078e7c337aedcf25c9",
+            "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
             "groundFflMm": 530,
             "roomPlanMm": [
               9397,
@@ -61951,6 +61955,1221 @@
       ],
       "reviewSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1250\" height=\"1050\" viewBox=\"0 0 1250 1050\"><rect width=\"1250\" height=\"1050\" fill=\"#f5f1e6\"/><g font-family=\"Arial,sans-serif\" fill=\"#29271f\"><text x=\"30\" y=\"40\" font-size=\"25\">Plant wet-floor successor · two independent threshold outfalls</text><text x=\"30\" y=\"75\" font-size=\"16\">Unchanged masonry/cargo opening. Local floor, bridge, source/store and receivers remain unadopted.</text>\n <rect x=\"40\" y=\"361.65\" width=\"217.35000000000002\" height=\"198.35000000000002\" fill=\"#dce9e5\" stroke=\"#6c7168\"/><text x=\"40\" y=\"145\" font-size=\"16\">Plant room · actual bound geometry</text>\n <rect x=\"313.3\" y=\"394.7\" width=\"210\" height=\"210\" fill=\"#eee3ce\" stroke=\"#6c7168\"/>\n <rect x=\"257.35\" y=\"534.7\" width=\"51.95\" height=\"15\" fill=\"#c6b494\" stroke=\"#6c7168\"/><rect x=\"257.35\" y=\"409.7\" width=\"51.95\" height=\"15\" fill=\"#c6b494\" stroke=\"#6c7168\"/>\n <rect x=\"300.3\" y=\"362.2\" width=\"45\" height=\"30\" fill=\"#b6a3a1\" stroke=\"#6c7168\"/>\n <rect x=\"309.3\" y=\"422.5\" width=\"4.4\" height=\"112.2\" fill=\"#e6e4dd\" stroke=\"#6c7168\"/><rect x=\"311.5\" y=\"420.29999999999995\" width=\"112.2\" height=\"4.4\" fill=\"#e6e4dd\" stroke=\"#6c7168\"/>\n <polyline points=\"313.3,542.2 236.3,542.2 236.3,542.2\" fill=\"none\" stroke=\"#357d91\" stroke-width=\"2\"/><polyline points=\"236.3,542.2 236.3,542.2\" fill=\"none\" stroke=\"#357d91\" stroke-width=\"2\"/><polyline points=\"236.3,542.2 122.55000000000001,542.2 122.55000000000001,555.41\" fill=\"none\" stroke=\"#357d91\" stroke-width=\"2\"/><polyline points=\"236.3,542.2 236.3,542.2 236.3,439.7 135.3,439.7\" fill=\"none\" stroke=\"#357d91\" stroke-width=\"2\"/><polyline points=\"122.55000000000001,555.41 120.60117912767274,551.4344054204523 120.54356560781434,551.3168738399412 120.4859696375921,551.199378060688 120.42840876129668,551.0819538730453 120.37090051252854,550.9646370455582 120.31346240885742,550.847463314069 120.25611194648592,550.7304683708311 120.1988665949204,550.6136878536378 120.14174379164979,550.4971573349658 120.0847609368333,550.3809123111398 120.02793538800034,550.2649881915205 119.97128445476356,550.1494202877175 119.91482539354602,550.0342438028338 119.85857540232483,549.9194938207426 119.80255161539208,549.8052052953999 119.74677109813602,549.6914130401976 119.6912508418427,549.5781517173592 119.63600775851992,549.4654558273807 119.58105867574596,549.3533596985218 119.52642033154389,549.2418974763494 119.4721093692824,549.131103113336 119.41814233260685,549.0210103585181 119.36453566039945,548.911652747215 119.31130568177196,548.8030635908148 119.2584686110913,548.6952759666261 119.20604054304096,548.5883227078036 119.15403744771866,548.482236393346 119.10247516577093,548.3770493381725 119.05136940356806,548.2727935832788 119.00073572842066,548.169500885978 118.95058956383637,548.0672027102262 118.9009461848229,547.9659302170387 118.85182071323435,547.8657142549981 118.80322811316529,547.7665853508572 118.75518318639243,547.6685737002405 118.70770056786569,547.5717091584461 118.66079472125094,547.476021231352 118.6144799345233,547.3815390664275 118.56877031561544,547.2882914438555 118.52367978812018,547.1963067677651 118.47922208704895,547.1056130575797 118.435410754648,547.0162379394819 118.3922591362738,546.9282086379988 118.34978037632737,546.8415519677078 118.30798741425042,546.7562943250707 118.26689298058392,546.672461680391 118.2265095930905,546.5900795699047 118.1868495529414,546.5091730880004 118.14792494096874,546.4297668795763 118.10974761398666,546.3518851325329 118.07232920117877,546.2755515704046 118.03568110055585,546.2007894451339 117.99981447548453,546.1276215299886 117.96474025128629,546.0560701126242 117.93046911190959,545.9861569882956 117.89701149667545,545.917903453218 117.86437759709753,545.851330298079 117.83257735377794,545.7864578017069 117.80162045337858,545.7233057248923 117.7715163256713,545.6618933043695 117.74227414066519,545.602239246957 117.7139028058129,545.5443617238584 117.68641096329793,545.4882783651278 117.65980698740186,545.4340062542998 117.63409898195333,545.381561923185 117.60929477786013,545.3309613468346 117.58540193072277,545.2822199386744 117.56242771853414,545.2353525458095 117.54037913946178,545.1903734445019 117.51926290971642,545.1472963358214 117.49908546150618,545.1061343414726 117.47985294107748,545.0668999997979 117.46157120684202,545.0296052619577 117.44424582759348,544.9942614882905 117.42788208080984,544.9608794448521 117.41248495104719,544.9294693001364 117.3980591284204,544.9000406219775 117.38460900717456,544.8726023746361 117.37213868434719,544.8471629160682 117.36065195851916,544.823729995379 117.35015232865862,544.8023107504634 117.34064299305429,544.7829117058309 117.33212684834234,544.7655387706183 117.32460648862252,544.75019723679 117.3180842046695,544.7368917775257 117.31256198323409,544.7256264457974 117.30804150643836,544.7164046731342 117.30452415126348,544.7092292685774 117.30201098912967,544.7041024178246 117.30050278557083,544.7010256825644 117.30000000000001,544.7 117.30000000000001,544.7\" fill=\"none\" stroke=\"#357d91\" stroke-width=\"2\"/><polyline points=\"117.30000000000001,544.7 117.30000000000001,544.7 117.30014909850507,544.6996675740007 117.30059635056332,544.6986703928935 117.30134162581635,544.697008747322 117.30238470704226,544.6946831215978 117.30372529021935,544.69169419356 117.3053629846143,544.6880428343768 117.30729731289613,544.6837301082924 117.30952771127578,544.678757272316 117.31205352966954,544.6731257758563 117.31487403188949,544.6668372602983 117.31798839585736,544.659893558525 117.32139571384488,544.6522966943837 117.3250949927371,544.6440488820958 117.32908515432337,544.635152525611 117.3333650356106,544.6256102179075 117.3379333891624,544.6154247402355 117.34278888346272,544.604599061307 117.3479301033045,544.5931363364301 117.35335555020083,544.5810399065899 118.30435603282186,542.4607149203499 118.30972759524266,542.4478353999099 118.31448742880039,542.4345135874287 118.31863409087565,542.4207535205059 118.32216632469063,542.4065593695683 118.32508305968913,542.3919354366056 118.32738341186177,542.3768861538667 118.32906668401357,542.3614160825163 118.33013236597509,542.3455299112522 118.33058013475767,542.3292324548851 118.3304098546505,542.3125286528782 118.32962157726251,542.2954235678511 118.32821554150632,542.2779223840447 118.32619217352585,542.2600304057505 118.32355208656719,542.2417530557027 118.32029608079284,542.2230958734344 118.31642514303913,542.2040645135993 118.31194044651693,542.1846647442574 118.30684335045663,542.1649024451268 118.30113539969553,542.1447836058021 118.29481832420988,542.1243143239386 118.28789403859082,542.1035008034044 118.28036464146354,542.0823493524 118.27223241485208,542.0608663815466 118.26349982348657,542.0390584019431 118.25416951405714,542.0169320231925 118.2442443144113,541.9944939513989 118.23372723269732,541.971750987135 118.22262145645163,541.9487100233807 118.21093035163358,541.9253780434344 118.19865746160522,541.9017621187959 118.18580650605674,541.8778694070236 118.17238137987988,541.8537071495651 118.15838615198663,541.8292826695626 118.1438250640771,541.8046033696329 118.12870252935264,541.7796767296243 118.11302313117922,541.754510304349 118.09679162169833,541.7291117212944 118.0800129203859,541.7034886783101 118.06269211256205,541.6776489412761 118.04483444784947,541.6516003417476 118.02644533858256,541.625350774583 118.0075303581667,541.5989081955498 117.98809523938927,541.5722806189144 117.96814587268273,541.5454761150121 117.94768830433787,541.518502807802 117.92672873467274,541.4913688724042 117.90527351615293,541.4640825326226 117.88332915146584,541.4366520584516 117.86090229155053,541.4090857635708 117.83799973358128,541.3813920028239 117.81462841890844,541.3535791696877 117.79079543095322,541.3256556937274 117.76650799306226,541.2976300380421 117.74177346631751,541.2695106966999 117.71659934730525,541.2413061921629 117.69099326584438,541.2130250727052 117.66496298267394,541.184675909821 117.63851638710058,541.1562672956275 117.61166149460769,541.1278078402602 117.58440644442618,541.0993061692641 117.55675949706747,541.0707709209787 117.5287290318198,541.0422107439202 117.50032354420892,541.0136342941603 117.47155164342294,540.9850502327026 117.44242204970305,540.9564672228578 117.4129435917008,540.9278939276176 117.38312520380242,540.8993390070297 117.35297592342013,540.8708111155727 117.32250488825412,540.8423188995329 117.29172133352259,540.8138709943844 117.26063458916269,540.7854760221712 117.22925407700278,540.7571425888945 117.19758930790668,540.7288792819038 117.16564987889215,540.7006946672952 117.13344547022044,540.6725972873139 117.10098584246371,540.6445956577664 117.06828083354685,540.6166982654388 117.0353403557645,540.5889135655244 117.00217439277804,540.5612499790622 116.96879299658958,540.5337158903833 116.93520628449478,540.5063196445707 116.90142443601673,540.4790695449296 116.86745768982128,540.451973850471 116.83331634061307,540.4250407734085 116.79901073601596,540.398278476669 116.76455127343615,540.3716950714197 113.45,537.829\" fill=\"none\" stroke=\"#357d91\" stroke-width=\"2\"/>\n <polyline points=\"351.5,566.7 368.8203054124448,560.6703023669704 385.3184886057274,552.6079077960126 400.70973728544817,542.5167359751433 414.6750412455735,530.4822290801932 426.8998266896446,516.6866232540482 437.11578664896734,501.4045314143249 445.13645096732984,484.97954155979716 450.87841762726094,467.78679311687284 454.3633363181773,450.1896551945905 455.70000000000005,432.5\" fill=\"none\" stroke=\"#866457\" stroke-dasharray=\"4 4\"/>\n <circle cx=\"351.5\" cy=\"566.7\" r=\"30\" fill=\"#ad8369\" fill-opacity=\".12\" stroke=\"#866457\"/><circle cx=\"426.8998266896446\" cy=\"516.6866232540482\" r=\"30\" fill=\"#ad8369\" fill-opacity=\".12\" stroke=\"#866457\"/><circle cx=\"455.70000000000005\" cy=\"432.5\" r=\"30\" fill=\"#ad8369\" fill-opacity=\".12\" stroke=\"#866457\"/>\n <text x=\"40\" y=\"200\" font-size=\"16\">Effective frame 1100mm; minimum cargo 1000mm.</text><text x=\"40\" y=\"230\" font-size=\"16\">Exterior deck 4.410m² at local FFL.</text><text x=\"40\" y=\"260\" font-size=\"14\">Closed/parked leaf and body poses are separate states.</text><text x=\"40\" y=\"290\" font-size=\"14\">Actual deck, frame, hardware and site remain unqualified.</text>\n <rect x=\"252.35000000000002\" y=\"427.45\" width=\"60.95\" height=\"104.5\" fill=\"#c8bb96\" stroke=\"#6c7168\"/><rect x=\"257.35\" y=\"485.2\" width=\"141.95000000000002\" height=\"40\" fill=\"#94bcc4\" stroke=\"#6c7168\"/><rect x=\"257.35\" y=\"434.2\" width=\"141.95000000000002\" height=\"40\" fill=\"#94bcc4\" stroke=\"#6c7168\"/>\n <text x=\"600\" y=\"150\" font-size=\"16\">Source-only 234.681 L/min; stored backfeed remains unbounded.</text><text x=\"600\" y=\"195\" font-size=\"16\">Old infill-only route: REJECTED.</text><text x=\"600\" y=\"240\" font-size=\"16\">Two complete packages: 444 × 184 mm.</text><text x=\"600\" y=\"285\" font-size=\"16\">Cargo width retained: 1000 mm.</text><text x=\"600\" y=\"330\" font-size=\"16\">Each lane edge reserve: 13.0 / 13.0 mm.</text><text x=\"600\" y=\"375\" font-size=\"16\">Source-only drain geometry: within declared comparisons.</text>\n <text x=\"600\" y=\"420\" font-size=\"16\">Bridge stock 147.77 kg; nominal strip 125.3 MPa.</text><text x=\"600\" y=\"465\" font-size=\"16\">New rail seats, exterior support and loaded capture required.</text><text x=\"600\" y=\"510\" font-size=\"16\">Old120 mm plate proof is not reused.</text><text x=\"600\" y=\"555\" font-size=\"16\">Conditional impulse cap 42.65 L; free volume unqualified.</text><text x=\"600\" y=\"595\" font-size=\"16\">Source + store sensitivity: 1715.5 L/min · REJECTED.</text><text x=\"600\" y=\"630\" font-size=\"16\">Fitted 1100mm; spring reserve 130mm; renewal withheld.</text><text x=\"30\" y=\"650\" font-size=\"20\">Adverse states and current limits</text><text x=\"35\" y=\"690\" font-size=\"14\">high-or-submerged-tailwater-rejected</text><text x=\"35\" y=\"715\" font-size=\"14\">both-outfalls-blocked-unattended-spill</text><text x=\"35\" y=\"740\" font-size=\"14\">conditional-source-plus-store-drain-fails</text><text x=\"35\" y=\"765\" font-size=\"14\">store-backfeed-release-unbounded</text><text x=\"35\" y=\"790\" font-size=\"14\">finite-store-inventory-and-free-volume-unqualified</text><text x=\"35\" y=\"815\" font-size=\"14\">pressure-jet-wet-door-and-electrical-separation-unqualified</text><text x=\"35\" y=\"840\" font-size=\"14\">threshold-support-and-captured-renewal-unqualified</text><text x=\"35\" y=\"865\" font-size=\"14\">DPC-weather-warmth-material-interfaces-unqualified</text><text x=\"35\" y=\"890\" font-size=\"14\">replacement-dead-and-water-actions-not-in-52-head-model</text><text x=\"30\" y=\"1020\" font-size=\"17\">HAD OPEN · no complete occupied arrangement, material exception, support capacity or selected house</text></g></svg>"
     }
+  },
+  "wetServiceSuite": {
+    "schema": "had-wet-service-suite-comparison/1",
+    "state": "unselected-connected-wet-service-suite",
+    "selected": false,
+    "authoredChoice": {
+      "schema": "had-wet-service-suite/1",
+      "id": "HAD/connected-wet-service-suite",
+      "centreXMm": 10537.5,
+      "plantEndYMm": 3900,
+      "utilityEndYMm": 2400,
+      "clearWidthMm": 520,
+      "slopeRatio": 100,
+      "localPocketDepthMm": 245,
+      "isolationGapMm": 50,
+      "railCentresOffsetMm": 320,
+      "railWidthMm": 30,
+      "barThicknessMm": 35,
+      "barWidthMm": 25,
+      "barGapMm": 10,
+      "metalMm": 2,
+      "insulationMm": 20,
+      "settingMm": 10
+    },
+    "datum": "Absolute source-ground XYZ from the same saved ground case; no finished-floor adoption.",
+    "geometry": {
+      "lobbyPlanMm": [
+        9397,
+        2647,
+        2173.5,
+        956
+      ],
+      "commonFinishedOpeningXMm": [
+        10177,
+        10898
+      ],
+      "utilityPanJoin": {
+        "samples": [
+          {
+            "pointMm": [
+              10277.5,
+              2400,
+              343.28
+            ],
+            "cellIds": [
+              "HAD/utility-floor-pan/7-2"
+            ]
+          },
+          {
+            "pointMm": [
+              10360,
+              2400,
+              344.105
+            ],
+            "cellIds": [
+              "HAD/utility-floor-pan/7-2",
+              "HAD/utility-floor-pan/8-2"
+            ]
+          },
+          {
+            "pointMm": [
+              10537.5,
+              2400,
+              345.88
+            ],
+            "cellIds": [
+              "HAD/utility-floor-pan/8-2"
+            ]
+          },
+          {
+            "pointMm": [
+              10797.5,
+              2400,
+              348.48
+            ],
+            "cellIds": [
+              "HAD/utility-floor-pan/8-2"
+            ]
+          }
+        ],
+        "highestSurfaceMm": 348.48,
+        "lowestSurfaceMm": 343.28
+      },
+      "plantPanJoin": {
+        "samples": [
+          {
+            "pointMm": [
+              10277.5,
+              3900,
+              332.78
+            ],
+            "cellIds": [
+              "HAD/plant-floor-pan/1-2"
+            ]
+          },
+          {
+            "pointMm": [
+              10537.5,
+              3900,
+              330.18
+            ],
+            "cellIds": [
+              "HAD/plant-floor-pan/1-2"
+            ]
+          },
+          {
+            "pointMm": [
+              10797.5,
+              3900,
+              327.58
+            ],
+            "cellIds": [
+              "HAD/plant-floor-pan/1-2"
+            ]
+          }
+        ],
+        "highestSurfaceMm": 332.78,
+        "lowestSurfaceMm": 327.58
+      },
+      "linkBottomEndsXYZMm": [
+        [
+          10537.5,
+          3900,
+          363.48
+        ],
+        [
+          10537.5,
+          2400,
+          348.48
+        ]
+      ],
+      "clearWidthMm": 520,
+      "outerWidthMm": 564,
+      "archAfterTwoSettingsMm": 5.5,
+      "railGutterAfterTwoSettingsMm": 3,
+      "bottomAfterTwoSettingsMm": 36.48000000000002,
+      "raisedPlantSpillLipMm": 30.700000000000045,
+      "utilitySpillStepMaximumMm": 5.2000000000000455,
+      "openSideWallTopMm": 530,
+      "fixedFloorConflicts": [
+        "actual-vessel-home-conservative-box",
+        "actual-cylinder-floor-footprint"
+      ],
+      "necessaryGeometryScreen": false
+    },
+    "newGravityInventory": {
+      "metalRows": [
+        {
+          "id": "HAD/connected-wet-service-suite/floor-sheet",
+          "areaM2": 0.7800389990250487,
+          "centreMm": [
+            10537.5,
+            3150,
+            355.98
+          ],
+          "massKg": 13.978298862528874,
+          "originMm": [
+            10537.5,
+            3150,
+            355.98
+          ],
+          "forceKN": [
+            0,
+            0,
+            -0.13712711184140827
+          ],
+          "actualGridReceiverReactions": null
+        },
+        {
+          "id": "HAD/connected-wet-service-suite/side-sheet-1",
+          "areaM2": 0.26103,
+          "centreMm": [
+            10277.5,
+            3139.2253763935178,
+            442.93612688196754
+          ],
+          "massKg": 4.6776576,
+          "originMm": [
+            10277.5,
+            3139.2253763935178,
+            442.93612688196754
+          ],
+          "forceKN": [
+            0,
+            0,
+            -0.045887821056
+          ],
+          "actualGridReceiverReactions": null
+        },
+        {
+          "id": "HAD/connected-wet-service-suite/side-sheet-2",
+          "areaM2": 0.26103,
+          "centreMm": [
+            10797.5,
+            3139.2253763935178,
+            442.93612688196754
+          ],
+          "massKg": 4.6776576,
+          "originMm": [
+            10797.5,
+            3139.2253763935178,
+            442.93612688196754
+          ],
+          "forceKN": [
+            0,
+            0,
+            -0.045887821056
+          ],
+          "actualGridReceiverReactions": null
+        }
+      ],
+      "comparisonCopperDensityKgM3": 8960,
+      "grossUndisplacedGutterWaterToFloorLitres": 135.7356,
+      "actualAssuredStorageLitres": null,
+      "grateStockTotalKg": 201.67,
+      "railsCapturesHardwareInsulationAndSeamsKg": null,
+      "actualHydrostaticFaceActionsAndSourceJetLoads": null,
+      "wholeLoadPathQualified": false
+    },
+    "lobbyPocket": {
+      "state": "local-room-pocket-reservation",
+      "levels": {
+        "mineralCourse": [
+          -180,
+          -30
+        ],
+        "dryRC": [
+          -30,
+          170
+        ],
+        "glass": [
+          170,
+          270
+        ],
+        "accessibleDistribution": [
+          270,
+          515
+        ],
+        "finish": [
+          515,
+          530
+        ],
+        "ffl": 530,
+        "coldGridTop": -180
+      },
+      "local": {
+        "id": "HAD/local-lobby-service-pocket",
+        "selected": false,
+        "groundDatum": "Same absolute datum as saved groundSection; no translation of house, roof or retained walls",
+        "roomMinMaxMm": [
+          9397,
+          2647,
+          11570.5,
+          3603
+        ],
+        "bodyMinMaxMm": [
+          9447,
+          2697,
+          11520.5,
+          3553
+        ],
+        "depthMm": 245,
+        "loweringMm": 180,
+        "isolationGapMm": 50,
+        "levelBoxes": [
+          {
+            "id": "mineralCourse",
+            "planMinMaxMm": [
+              9447,
+              2697,
+              11520.5,
+              3553
+            ],
+            "zMm": [
+              -180,
+              -30
+            ]
+          },
+          {
+            "id": "dryRC",
+            "planMinMaxMm": [
+              9447,
+              2697,
+              11520.5,
+              3553
+            ],
+            "zMm": [
+              -30,
+              170
+            ]
+          },
+          {
+            "id": "glass",
+            "planMinMaxMm": [
+              9447,
+              2697,
+              11520.5,
+              3553
+            ],
+            "zMm": [
+              170,
+              270
+            ]
+          },
+          {
+            "id": "accessibleDistribution",
+            "planMinMaxMm": [
+              9447,
+              2697,
+              11520.5,
+              3553
+            ],
+            "zMm": [
+              270,
+              515
+            ]
+          },
+          {
+            "id": "finish",
+            "planMinMaxMm": [
+              9447,
+              2697,
+              11520.5,
+              3553
+            ],
+            "zMm": [
+              515,
+              530
+            ]
+          }
+        ],
+        "retainedGlobal": {
+          "ffl": 530,
+          "mineralCourse": [
+            0,
+            150
+          ],
+          "dryRC": [
+            150,
+            350
+          ],
+          "glass": [
+            350,
+            450
+          ],
+          "accessibleDistribution": [
+            450,
+            515
+          ],
+          "finish": [
+            515,
+            530
+          ],
+          "coldGridTop": -180,
+          "exteriorGrade": -150,
+          "rcDensityKNm3": 25,
+          "mineralDensityKNm3": 20
+        },
+        "wallAndExteriorDpcMm": [
+          0,
+          150
+        ],
+        "floorStep": {
+          "northEdgeYmm": 3603,
+          "thresholdOpeningSupport": "Independent flush bridge over50mm perimeter separation; exact metal, fixings, removal and foot loads unqualified",
+          "clearanceClaim": "No RC or mineral bridges the declared perimeter gap. Upstand and gap infill cannot be credited as structural or waterproof support."
+        },
+        "thermalReservation": {
+          "horizontalGlassMm": [
+            170,
+            270
+          ],
+          "verticalSeparationGapMm": 50,
+          "minimumJunctionTemperatureOrPsi": null,
+          "requirement": "Continuous load-compatible insulation across slab edge and lower mineral/cold-grid contact; complete2D/3D thermal and moisture path not established."
+        },
+        "lowerPlinthRequiredMm": 0,
+        "coldGridContact": [
+          {
+            "id": "outer-E",
+            "rectangleMm": [
+              11217.5,
+              2697,
+              11520.5,
+              3553
+            ],
+            "coldTopMm": -180
+          },
+          {
+            "id": "spine",
+            "rectangleMm": [
+              9447,
+              2697,
+              9750,
+              3553
+            ],
+            "coldTopMm": -180
+          },
+          {
+            "id": "utility-north",
+            "rectangleMm": [
+              9447,
+              2697,
+              11520.5,
+              2850
+            ],
+            "coldTopMm": -180
+          },
+          {
+            "id": "plant-intermediate",
+            "rectangleMm": [
+              9447,
+              3400,
+              11520.5,
+              3553
+            ],
+            "coldTopMm": -180
+          },
+          {
+            "id": "P17",
+            "rectangleMm": [
+              11217.5,
+              3100,
+              11520.5,
+              3553
+            ],
+            "coldTopMm": -180
+          },
+          {
+            "id": "P41",
+            "rectangleMm": [
+              9447,
+              2697,
+              9750,
+              2950
+            ],
+            "coldTopMm": -180
+          }
+        ],
+        "disjointContactCells": [
+          {
+            "id": "HAD/local-lobby-contact/1-1",
+            "rectangleMm": [
+              9447,
+              2697,
+              9750,
+              2850
+            ],
+            "possibleReceivers": [
+              "spine",
+              "utility-north",
+              "P41"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/1-2",
+            "rectangleMm": [
+              9447,
+              2850,
+              9750,
+              2950
+            ],
+            "possibleReceivers": [
+              "spine",
+              "P41"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/1-3",
+            "rectangleMm": [
+              9447,
+              2950,
+              9750,
+              3100
+            ],
+            "possibleReceivers": [
+              "spine"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/1-4",
+            "rectangleMm": [
+              9447,
+              3100,
+              9750,
+              3400
+            ],
+            "possibleReceivers": [
+              "spine"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/1-5",
+            "rectangleMm": [
+              9447,
+              3400,
+              9750,
+              3553
+            ],
+            "possibleReceivers": [
+              "spine",
+              "plant-intermediate"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/2-1",
+            "rectangleMm": [
+              9750,
+              2697,
+              11217.5,
+              2850
+            ],
+            "possibleReceivers": [
+              "utility-north"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/2-5",
+            "rectangleMm": [
+              9750,
+              3400,
+              11217.5,
+              3553
+            ],
+            "possibleReceivers": [
+              "plant-intermediate"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-1",
+            "rectangleMm": [
+              11217.5,
+              2697,
+              11520.5,
+              2850
+            ],
+            "possibleReceivers": [
+              "outer-E",
+              "utility-north"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-2",
+            "rectangleMm": [
+              11217.5,
+              2850,
+              11520.5,
+              2950
+            ],
+            "possibleReceivers": [
+              "outer-E"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-3",
+            "rectangleMm": [
+              11217.5,
+              2950,
+              11520.5,
+              3100
+            ],
+            "possibleReceivers": [
+              "outer-E"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-4",
+            "rectangleMm": [
+              11217.5,
+              3100,
+              11520.5,
+              3400
+            ],
+            "possibleReceivers": [
+              "outer-E",
+              "P17"
+            ]
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-5",
+            "rectangleMm": [
+              11217.5,
+              3400,
+              11520.5,
+              3553
+            ],
+            "possibleReceivers": [
+              "outer-E",
+              "plant-intermediate",
+              "P17"
+            ]
+          }
+        ],
+        "contactUnionM2": 0.967791,
+        "supportPresentAtSides": {
+          "west": true,
+          "east": true,
+          "south": true,
+          "north": true
+        },
+        "unsupportedCentralSlabAreaM2": 0.807125,
+        "loadOrigins": [
+          {
+            "id": "HAD/local-lobby-dry-rc-G",
+            "piece": {
+              "planMinMaxMm": [
+                9447,
+                2697,
+                11520.5,
+                3553
+              ],
+              "zMm": [
+                -30,
+                170
+              ]
+            },
+            "originMm": [
+              10483.75,
+              3125,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -8.87458,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/1-1/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                9447,
+                2697,
+                9750,
+                2850
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              9598.5,
+              2773.5,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.13907699999999998,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/1-2/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                9447,
+                2850,
+                9750,
+                2950
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              9598.5,
+              2900,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.0909,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/1-3/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                9447,
+                2950,
+                9750,
+                3100
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              9598.5,
+              3025,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.13635,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/1-4/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                9447,
+                3100,
+                9750,
+                3400
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              9598.5,
+              3250,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.2727,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/1-5/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                9447,
+                3400,
+                9750,
+                3553
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              9598.5,
+              3476.5,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.13907699999999998,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/2-1/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                9750,
+                2697,
+                11217.5,
+                2850
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              10483.75,
+              2773.5,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.6735825,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/2-5/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                9750,
+                3400,
+                11217.5,
+                3553
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              10483.75,
+              3476.5,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.6735825,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-1/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                11217.5,
+                2697,
+                11520.5,
+                2850
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              11369,
+              2773.5,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.13907699999999998,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-2/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                11217.5,
+                2850,
+                11520.5,
+                2950
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              11369,
+              2900,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.0909,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-3/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                11217.5,
+                2950,
+                11520.5,
+                3100
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              11369,
+              3025,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.13635,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-4/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                11217.5,
+                3100,
+                11520.5,
+                3400
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              11369,
+              3250,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.2727,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          },
+          {
+            "id": "HAD/local-lobby-contact/3-5/mineral-G",
+            "piece": {
+              "planMinMaxMm": [
+                11217.5,
+                3400,
+                11520.5,
+                3553
+              ],
+              "zMm": [
+                -180,
+                -30
+              ]
+            },
+            "originMm": [
+              11369,
+              3476.5,
+              -180
+            ],
+            "wrenchKN_KNm": {
+              "Fx": 0,
+              "Fy": 0,
+              "Fz": -0.13907699999999998,
+              "Mx": 0,
+              "My": 0,
+              "Mz": 0
+            },
+            "action": "unfactored-gravity-only",
+            "transferToReceivers": "unresolved-plate/contact-distribution"
+          }
+        ],
+        "quantityBounds": {
+          "dryRcM3": 0.3549832,
+          "mineralOnContactOnlyM3": 0.14516864999999998,
+          "glassM3": 0.1774916,
+          "slabAndMineralWeightKN": 11.777953,
+          "glassLinerCoversFramesFixturesAndUnknownPlinthWeightKN": null,
+          "floorCoverAndEquipmentTemporaryReactionsKN": null
+        },
+        "structuralJoin": {
+          "originMm": [
+            10483.75,
+            3125,
+            -180
+          ],
+          "reactionsAtColdGridAnd52Heads": null,
+          "replacingExistingFloorNotAutomaticallyAdded": true,
+          "requirement": "Remove original floor/mineral stock over the exact replaced polygon before adding this candidate. Preserve wall and exterior DPC/plinth. Solve actual local plate/contact and signed full wrenches on current grid; no centroid lump or head mapping invented."
+        },
+        "necessaryGeometryScreen": true,
+        "constructionAdmitted": false,
+        "diagnostics": [
+          "LOCAL_POCKET_SLAB_SPAN_EDGE_AND_CONTACT_RESISTANCE_UNQUALIFIED",
+          "LOCAL_POCKET_MINERAL_DRY_BEARING_AND_RETENTION_UNQUALIFIED",
+          "LOCAL_POCKET_STEP_THERMAL_AND_WATERPROOFING_UNQUALIFIED",
+          "LOCAL_POCKET_PERIMETER_FLOOR_BRIDGE_AND_LOADED_RENEWAL_UNQUALIFIED",
+          "LOCAL_POCKET_REPLACEMENT_ACTIONS_NOT_IN_52_HEAD_MODEL"
+        ]
+      }
+    },
+    "walkingFloor": {
+      "flushLevelMm": 530,
+      "barWidthMm": 25,
+      "openGapMm": 10,
+      "pieceCount": 43,
+      "barStockEachKg": 4.6899999999999995,
+      "hardwareEachKg": null,
+      "adverseStripStressMPa": 111.2979560091922,
+      "referenceProofComparisonMPa": 133.33333333333334,
+      "referenceStripScreen": true,
+      "actualStockWheelSeatCaptureAndSlipQualified": false,
+      "withdrawalAndFirstRestQualified": false
+    },
+    "coupledSourceCases": [
+      {
+        "id": "Plant-East-both-unavailable_Utility-South-one-unavailable",
+        "byBranchLmin": {
+          "plant": 234.680939,
+          "utility": 92.722918
+        },
+        "transferLmin": 234.680939,
+        "receivingTotalLmin": 327.403857,
+        "receivingPoolMm": 462.2564836845023,
+        "sourcePoolMm": 499.9654816020152,
+        "link": {
+          "requiredUpstreamPoolMm": 499.9654816020152,
+          "downstreamPoolMm": 462.2564836845023,
+          "downstreamEnergyMm": 464.49542689290183,
+          "criticalDepthMm": 28.467269321869743,
+          "survivingWidthMm": 260,
+          "chargedFrictionMm": 14.119602717711079,
+          "entranceKComparison": 1.5,
+          "bedDepositMm": 32,
+          "freeOutletAssumed": false,
+          "actualProfileQualified": false
+        },
+        "outlet": {
+          "validDepth": true,
+          "requiredHeadAboveInvertMm": 127.25648368450231,
+          "criticalDepthMm": 42.336214970889905,
+          "maximumWaterDepthMm": 103,
+          "control": "critical-inlet-supercritical-chute",
+          "criticalFrictionSlope": 0.010139924780061496,
+          "actualBedSlope": 0.02,
+          "chargedFrictionHeadMm": 0,
+          "survivingClearWidthMm": 200,
+          "velocityAtControlMps": 0.6444519135392727,
+          "openEntryHeadReserveMm": 7.743516315497686,
+          "necessaryOpenChannelScreen": true,
+          "entranceKComparison": 1.5,
+          "entranceKMaximumBeforeOpenEntryFailure": 1.8658105156931049,
+          "entranceKCeilingQualified": false
+        },
+        "freeDropReserveMm": 334.3280275216776,
+        "outletCrownReserveMm": 7.743516315497686,
+        "visibleFloorReserveMm": 5.034518397984812,
+        "conditionalSteadyEnergyScreen": false,
+        "otherRoomOutletsCredited": 0,
+        "actualSurfaceDistributionQualified": false
+      },
+      {
+        "id": "Utility-South-both-unavailable_Plant-East-one-unavailable",
+        "byBranchLmin": {
+          "plant": 234.680939,
+          "utility": 92.722918
+        },
+        "transferLmin": 92.722918,
+        "receivingTotalLmin": 327.403857,
+        "receivingPoolMm": 455.2564836845023,
+        "sourcePoolMm": 482.94323115601793,
+        "link": {
+          "requiredUpstreamPoolMm": 482.94323115601793,
+          "downstreamPoolMm": 455.2564836845023,
+          "downstreamEnergyMm": 455.98322115578816,
+          "criticalDepthMm": 15.327994136900596,
+          "survivingWidthMm": 260,
+          "chargedFrictionMm": 15.464014397554285,
+          "entranceKComparison": 1.5,
+          "bedDepositMm": 32,
+          "freeOutletAssumed": false,
+          "actualProfileQualified": false
+        },
+        "outlet": {
+          "validDepth": true,
+          "requiredHeadAboveInvertMm": 127.25648368450231,
+          "criticalDepthMm": 42.336214970889905,
+          "maximumWaterDepthMm": 93.00000000000001,
+          "control": "critical-inlet-supercritical-chute",
+          "criticalFrictionSlope": 0.010139924780061496,
+          "actualBedSlope": 0.02,
+          "chargedFrictionHeadMm": 0,
+          "survivingClearWidthMm": 200,
+          "velocityAtControlMps": 0.6444519135392727,
+          "openEntryHeadReserveMm": -2.2564836845023137,
+          "necessaryOpenChannelScreen": false,
+          "entranceKComparison": 1.5,
+          "entranceKMaximumBeforeOpenEntryFailure": 1.3934017277617352,
+          "entranceKCeilingQualified": false
+        },
+        "freeDropReserveMm": 335.3070381436006,
+        "outletCrownReserveMm": -2.2564836845023137,
+        "visibleFloorReserveMm": 22.05676884398207,
+        "conditionalSteadyEnergyScreen": false,
+        "otherRoomOutletsCredited": 0,
+        "actualSurfaceDistributionQualified": false
+      },
+      {
+        "id": "unlocated-full-height-store-energy-sensitivity",
+        "byBranchLmin": {
+          "plant": 234.680939,
+          "utility": 92.722918
+        },
+        "transferLmin": 1715.4640139144915,
+        "receivingTotalLmin": 1808.1869319144914,
+        "receivingPoolMm": 664.6237394976174,
+        "sourcePoolMm": 768.7810968420531,
+        "link": {
+          "requiredUpstreamPoolMm": 768.7810968420531,
+          "downstreamPoolMm": 664.6237394976174,
+          "downstreamEnergyMm": 672.8245798855987,
+          "criticalDepthMm": 107.22144933125968,
+          "survivingWidthMm": 260,
+          "chargedFrictionMm": 15.540429958009499,
+          "entranceKComparison": 1.5,
+          "bedDepositMm": 32,
+          "freeOutletAssumed": false,
+          "actualProfileQualified": false
+        },
+        "outlet": {
+          "validDepth": false,
+          "requiredHeadAboveInvertMm": 329.6237394976174,
+          "criticalDepthMm": 132.27721755449664,
+          "maximumWaterDepthMm": 103,
+          "control": "critical-inlet-supercritical-chute",
+          "criticalFrictionSlope": 0.01332596480158491,
+          "actualBedSlope": 0.02,
+          "chargedFrictionHeadMm": 0,
+          "survivingClearWidthMm": 200,
+          "velocityAtControlMps": 1.1391398088951206,
+          "openEntryHeadReserveMm": -194.6237394976174,
+          "necessaryOpenChannelScreen": false,
+          "entranceKComparison": 1.5,
+          "entranceKMaximumBeforeOpenEntryFailure": -1.4426645509448335,
+          "entranceKCeilingQualified": false
+        },
+        "freeDropReserveMm": 334.3280275216776,
+        "outletCrownReserveMm": -194.6237394976174,
+        "visibleFloorReserveMm": -263.7810968420531,
+        "conditionalSteadyEnergyScreen": false,
+        "otherRoomOutletsCredited": 0,
+        "actualSurfaceDistributionQualified": false
+      }
+    ],
+    "allOutletsBlocked": {
+      "conditionalSteadyEnergyScreen": false,
+      "sourceLmin": 327.403857,
+      "reason": "No outlet credit with all four blocked, or all available terminals high/submerged. No pump, manual response or invented automatic closure."
+    },
+    "highSubmerged": {
+      "conditionalSteadyEnergyScreen": false,
+      "sourceLmin": 327.403857,
+      "reason": "No outlet credit with all four blocked, or all available terminals high/submerged. No pump, manual response or invented automatic closure."
+    },
+    "storedRelease": {
+      "completeMaximumInventoryLitres": null,
+      "actualReleaseHydrograph": null,
+      "conditionalImpulseTestRequired": false,
+      "actualContainmentScreen": null,
+      "meaning": "Visible dryable wetting is permissible;42L sufficient impulse test is optional and is not a required capacity. Source+store sensitivity remains adverse, not an actual low-port peak."
+    },
+    "interfaces": {
+      "eastDoorFrameCargoAndExteriorDeckReplanned": false,
+      "existingFourOutletsRetained": true,
+      "lobbyChangesFromDryToWet": true,
+      "ordinaryPassageRequiresCapturedFlushRemovableGrate": true,
+      "independentColdCutsRetained": true,
+      "commonPanWorkRequiresBothFeedsAndStoreUpperEnergyIsolated": true,
+      "PVRemainsSeparateDryStreethead": true,
+      "actualMainboardJetAndWetFloorSeparationQualified": false,
+      "dpcWarmthWeatherSeamsAndMaterialsQualified": false,
+      "noProlongedConcealedWettingQualified": false,
+      "floorReplacementNotAutomaticallyAdditionalLoad": true,
+      "wholeFloorGridAndFoundationResistanceQualified": false
+    },
+    "diagnostics": [
+      "WET_SUITE/actual-store-pressure-backfeed-air-and-upper-network-unbounded",
+      "WET_SUITE/open-link-transition-jet-debris-and-spreading-unqualified",
+      "WET_SUITE/actual-site-receiver-capacity-unqualified",
+      "WET_SUITE/common-wet-lobby-electrical-boundary-and-loaded-grate-renewal-unqualified",
+      "WET_SUITE/actual-geometry-screen-fails"
+    ],
+    "preSiteArrangementComplete": false,
+    "installedAcceptance": false
   },
   "houseAdopted": false,
   "physicalInstallationAdmitted": false

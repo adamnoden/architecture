@@ -19,10 +19,10 @@ const intersect = (a: Rectangle, b: Rectangle): Rectangle | null => {
  */
 export function inletRoomPocket(input: {
   levels: Levels; roomPlanMm: readonly number[]; depthMm: number; isolationGapMm: number; grid: Grid
-  rcDensityKNm3: number; mineralDensityKNm3: number; roomId?: 'utility' | 'plant'
+  rcDensityKNm3: number; mineralDensityKNm3: number; roomId?: 'utility' | 'plant' | 'lobby'
 }) {
   const { levels: g, depthMm, isolationGapMm: gap, grid } = input,roomId=input.roomId??'utility'
-  if(!['utility','plant'].includes(roomId))throw new Error('Unsupported local pocket identity')
+  if(!['utility','plant','lobby'].includes(roomId))throw new Error('Unsupported local pocket identity')
   if (![depthMm, gap, input.rcDensityKNm3, input.mineralDensityKNm3, ...input.roomPlanMm,
     ...Object.values(g).flat()].every(Number.isFinite) || depthMm < 0 || depthMm > 350 || gap < 25 || gap > 100
     || input.roomPlanMm.length !== 4 || Math.min(...input.roomPlanMm.slice(2)) <= 2 * gap

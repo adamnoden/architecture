@@ -1,3 +1,4 @@
+import {admitWetServiceSuiteChoice} from './inlet-wet-service-suite.js'
 import { createHash } from 'node:crypto'
 import { readdirSync, readFileSync } from 'node:fs'
 import { sha256SemanticFingerprint, stableJsonStringify } from '../../core/identity.js'
@@ -215,7 +216,7 @@ function admitStages(value: unknown): EngineeringStages {
     ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
     ...(Object.hasOwn(value, 'inletFault') ? { inletFault: settings(value.inletFault, faultFields, 'inlet fault') } : {}),
     ...(Object.hasOwn(value, 'fixedInlet') ? { fixedInlet: settings(value.fixedInlet, Object.keys(readFixedInletSettings()), 'fixed inlet') } : {}),
-    ...(Object.hasOwn(value, 'inletSourceEnvelope') ? { inletSourceEnvelope: (()=>{const stage=settings(value.inletSourceEnvelope,[...inletSourceEnvelopeFields,'splitPlantRoom'],'inlet source envelope');return{...stage,...(Object.hasOwn(stage,'splitPlantRoom')?{splitPlantRoom:admitSplitPlantRoomChoice(stage.splitPlantRoom)}:{})}})() } : {}),
+    ...(Object.hasOwn(value, 'inletSourceEnvelope') ? { inletSourceEnvelope: (()=>{const stage=settings(value.inletSourceEnvelope,[...inletSourceEnvelopeFields,'splitPlantRoom','wetServiceSuite'],'inlet source envelope');return{...stage,...(Object.hasOwn(stage,'wetServiceSuite')?{wetServiceSuite:admitWetServiceSuiteChoice(stage.wetServiceSuite)}:{}),...(Object.hasOwn(stage,'splitPlantRoom')?{splitPlantRoom:admitSplitPlantRoomChoice(stage.splitPlantRoom)}:{})}})() } : {}),
     ...(Object.hasOwn(value, 'inletCabinet') ? { inletCabinet: settings(value.inletCabinet, inletCabinetStageFields, 'inlet cabinet') } : {}),
     ...(Object.hasOwn(value, 'inletRemovals') ? { inletRemovals: branchSettings(value.inletRemovals, removalFields, 'inlet removal') } : {}),
     ...(Object.hasOwn(value, 'inletCovers') ? { inletCovers: branchSettings(value.inletCovers, inletFields, 'inlet cover') } : {}),
@@ -540,9 +541,9 @@ export async function compileEngineeringDocument(input: unknown) {
   }
   if (stages.inletSourceEnvelope) {
     const request = await compile.readInletSourceEnvelopeCase()
-    const {splitPlantRoom,...sourceSettings}=stages.inletSourceEnvelope,{splitPlantRoom:_boundCurrentPlantRoom,...baseCase}=request.sourceEnvelope
+    const {splitPlantRoom,wetServiceSuite,...sourceSettings}=stages.inletSourceEnvelope,{splitPlantRoom:_boundCurrentPlantRoom,wetServiceSuite:_boundWetSuite,...baseCase}=request.sourceEnvelope
     engineering.inletSourceEnvelope = await compile.inletSourceEnvelopeCase({ ...baseCase,
-      ...(splitPlantRoom?{splitPlantRoom:admitSplitPlantRoomChoice(splitPlantRoom)}:{}),settings: { ...request.sourceEnvelope.settings, ...sourceSettings } }, engineering.groundSection, engineering.houseVerticalProfile)
+      ...(splitPlantRoom?{splitPlantRoom:admitSplitPlantRoomChoice(splitPlantRoom)}:{}),...(wetServiceSuite?{wetServiceSuite:admitWetServiceSuiteChoice(wetServiceSuite)}:{}),settings: { ...request.sourceEnvelope.settings, ...sourceSettings } }, engineering.groundSection, engineering.houseVerticalProfile)
     recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope, [...(engineering.groundSection?['groundSection']:[]),...(engineering.houseVerticalProfile?['houseVerticalProfile']:[])])
     const reason = 'The source-envelope comparison authors boundary restrictions and a whole internal service-hub replacement. Neither the retained occupied network nor earlier inlet/cabinet outputs include that source or room; their former fault and operating claims are withheld.'
     const previousStages = new Set(['occupiedServices', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletRemovals', 'inletCovers', 'inletAssembly'])
