@@ -43,6 +43,7 @@ jobs:
           "$finite_joint_runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_joint_solid_test.py
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_test.py
+          "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_compare_test.py
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_compare.py project/str/studies/finite-floor-contour-captures/contour140.json project/str/studies/finite-floor-contour-captures/contour70.json project/str/studies/finite-floor-contour-captures/contour50.json --out project/str/studies/finite-floor-contour-captures/contour-comparison.json --check
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_ordering_control.py --root . --retained project/str/studies/finite-floor-contour-captures/contour140.json --out project/str/studies/finite-floor-contour-captures/ordering-control.json --check
           echo "STR_FINITE_SOLID_PYTHON=$finite_joint_runtime/bin/python" >> "$GITHUB_ENV"

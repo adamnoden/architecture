@@ -1231,7 +1231,8 @@
       "consumers": [
         "project/str/floor-corner-convergence-result.md",
         "project/ccr/convergence-owner-review.md",
-        "compiler/reference-house/current-design/structural-floor-section.ts"
+        "compiler/reference-house/current-design/structural-floor-section.ts",
+        "project/str/studies/finite_floor_contour_compare_test.py"
       ],
       "producerChecks": [
         "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B project/str/studies/fixed_normal_experiment_test.py",
@@ -1240,7 +1241,8 @@
         "python -B project/str/studies/finite_floor_contour_test.py",
         "STR_FINITE_SOLID_PYTHON=/ABSOLUTE/PINNED/PYTHON node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts",
         "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B project/str/studies/finite_floor_contour_compare.py project/str/studies/finite-floor-contour-captures/contour140.json project/str/studies/finite-floor-contour-captures/contour70.json project/str/studies/finite-floor-contour-captures/contour50.json --out project/str/studies/finite-floor-contour-captures/contour-comparison.json --check",
-        "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B project/str/studies/finite_floor_contour_ordering_control.py --root . --retained project/str/studies/finite-floor-contour-captures/contour140.json --out project/str/studies/finite-floor-contour-captures/ordering-control.json --check"
+        "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B project/str/studies/finite_floor_contour_ordering_control.py --root . --retained project/str/studies/finite-floor-contour-captures/contour140.json --out project/str/studies/finite-floor-contour-captures/ordering-control.json --check",
+        "PINNED_PYTHON -B project/str/studies/finite_floor_contour_compare_test.py"
       ],
       "historicalInputs": [
         "project/str/studies/finite-floor-contour-uniform-history.tar.xz"
@@ -3004,7 +3006,7 @@
     "compiler/reference-house/current-design/occupied-services.ts": "80f31158e629120a3719a8d3b26774b7f2f07da2",
     "project/str/studies/fixed_normal_experiment.py": "79f6c70e448475c1188f4c493514df75a3c77ee3",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json": "17f081768d37138ba58d91b32617d4054be863cf",
-    "project/ccr/convergence-owner-review.md": "48a5131ea602e0c2e2598813ab3fc9d4a8f409a2",
+    "project/ccr/convergence-owner-review.md": "674ace15ce957f64cc896fafc27d64a95bd8b1d3",
     "project/str/studies/finite_joint_solid_run.py": "f7759a440296b38f92e3af3f29a9e1586559bc9a",
     "project/str/finite-joint-solid-development.md": "e90118a8ff01fc8ac761835903926b427263205b",
     "project/str/studies/finite_joint_solid.py": "b8451e22dda30b884166f82bbf86330aa9d13503",
@@ -3030,15 +3032,15 @@
     "project/had/studies/inlet-split-plant-station.svg": "bee70b5c62401e14b44de2add9c069c262a3944f",
     "project/had/split-isolation-station-development.md": "28b5b1b1fc442629a4da544ed4f0c1233079e515",
     "project/ccr/studies/roof-pitch-27deg-field-section.svg": "dcdb5009c1542acc8faac4e3a3f6d3d5dbe6f731",
-    "project/str/finite-floor-contour-development.md": "ae4b1426ad210849e9b76e194dea7bef2e879da7",
+    "project/str/finite-floor-contour-development.md": "c2fcbda189c71d2e38341ff5561c93d2c3b5f31b",
     "project/str/studies/finite_floor_contour.py": "4f0b2ff95c6264f229407e6f7d01dd635811eee9",
     "project/str/studies/finite_floor_contour_run.py": "6d9811ad85f27aa482fe396bc8d5c1a7e7ce3eb6",
-    "project/str/studies/finite_floor_contour_compare.py": "5bdba7f8dd7e935b4a085b6222676f5e577d3d42",
+    "project/str/studies/finite_floor_contour_compare.py": "9ae1b03371f48d96b3ddb059a7db4434bd7d0df0",
     "compiler/reference-house/current-design/structural-finite-floor-contour.ts": "7256ed3b24c373d020370a79cdce599cc0130053",
     "project/str/studies/finite-floor-contour-inputs.json": "53cf153e41c35e02604f46d2e89ec328bc60f6a7",
     "project/str/studies/finite-floor-contour-captures/contour140.json": "35f8fb266a08212854b1f13a8012f14fa7f808e9",
     "project/str/studies/finite-floor-contour-captures/contour70.json": "10c50c4b99eb58352132f3f7bda9c5d7921871a1",
-    "project/str/studies/finite-floor-contour-captures/contour-comparison.json": "60cc74a59e7e86f959ff2077e2800b0baca408c6",
+    "project/str/studies/finite-floor-contour-captures/contour-comparison.json": "2128d6f4c4f8411a5fb741b5b2d5c92695c7e7cd",
     "project/had/studies/plant-release-profiles.d.mts": "a8f76cd9f2d0c87edb48308c121d191f19c15481",
     "compiler/reference-house/current-design/inlet-split-plant-branch.ts": "208518166204aa659e44ceffe3a91142b0d84542",
     "project/had/studies/plant-release-route.mjs": "b84fcfafc0456eee29593bdf0b5c8076a0878368",
@@ -3114,6 +3116,7 @@
     "project/str/wet-masonry-arch-comparison.md": "08a8f8f2acd15f0666340c4334b19511ba08d394",
     "project/str/wet-masonry-arch-native-development.md": "c7daeb2fda32c8c631c6420bf245515220398f86",
     "project/str/wet-masonry-arch-released-development.md": "e4448542cd5997481b1289f70daa236e6623e651",
-    "project/str/wet-masonry-arch-rise-development.md": "2e44abb44c6e4c6fe37260e03509f79c6054fa43"
+    "project/str/wet-masonry-arch-rise-development.md": "2e44abb44c6e4c6fe37260e03509f79c6054fa43",
+    "project/str/studies/finite_floor_contour_compare_test.py": "4e8bf4a1994796cc48ef73c9e16d1b0714fb03af"
   }
 }

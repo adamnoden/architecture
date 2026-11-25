@@ -21,7 +21,7 @@
     "contour70.json": "967539286449f467f2fc8ffcf1e63293d695d394deb9bf8e06e2528df3e45fea",
     "contour50.json": "940546a31b539fd3ef6b5635a6f62661b5c803785a022d499e5d68da4ddf8e79"
   },
-  "processingMethodSHA256": "c022a1cc9537bbc2e0e76530b9ca3f8af6db1babe7c9ddafff686430104289b6",
+  "processingMethodSHA256": "8d12feed4f7abead2679098c2bfe7a58d4670823e7d9b8ab85234c31279b0125",
   "fixedAuthoredContourLayersAndDepthGlobalPitchSensitivityOnly": true,
   "allMotionEnergySensitivityOnly": true,
   "convergenceAcceptanceClaimed": false,

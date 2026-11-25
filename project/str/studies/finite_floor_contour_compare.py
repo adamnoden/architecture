@@ -1,5 +1,5 @@
 """Compare all relative contour/wall motions at unchanged physical port stations."""
-import argparse, hashlib, json
+import argparse, copy, hashlib, json, math
 from pathlib import Path
 import numpy as np
 from scipy.linalg import eigvalsh
@@ -36,9 +36,28 @@ def compare(paths):
             'fixedAuthoredContourLayersAndDepthGlobalPitchSensitivityOnly':True,'allMotionEnergySensitivityOnly':True,'convergenceAcceptanceClaimed':False,
             'nativeFloorAdmission':False,'jointResistanceAvailable':False}
 
+def check_receipt(retained, actual):
+    """Exact provenance/shape, existing1e-12 absolute numerical replay screen.
+
+    LAPACK eigenvalue roundoff differs across runner CPUs. This is the same
+    scalar replay tolerance as the ordering control, not mesh acceptance.
+    """
+    left=copy.deepcopy(retained);right=copy.deepcopy(actual)
+    keys=('maximumRelativeEnergySensitivity','minimumRelativeEnergyChange','maximumRelativeEnergyChange')
+    if len(left['comparisons'])!=len(right['comparisons']):
+        raise ValueError('changed contour comparison count')
+    for i,(old,new) in enumerate(zip(left['comparisons'],right['comparisons'])):
+        for key in keys:
+            a=old.pop(key);b=new.pop(key)
+            if type(a) not in (int,float) or type(b) not in (int,float) or not math.isfinite(a) or not math.isfinite(b) or abs(a-b)>1e-12:
+                raise ValueError('contour scalar replay differs beyond1e-12: '+str(i)+'/'+key+' '+str(a)+' -> '+str(b))
+    if json.dumps(left,sort_keys=True)!=json.dumps(right,sort_keys=True):
+        raise ValueError('changed exact contour source, method, capture, ports, mesh or claim boundary')
+
+
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('captures',nargs='+',type=Path);p.add_argument('--out',type=Path,required=True);p.add_argument('--check',action='store_true');a=p.parse_args();r=compare(a.captures);text=json.dumps(r,indent=2)+'\n'
     if a.check:
-        if a.out.read_text()!=text:raise SystemExit('stale finite contour sensitivity')
+        check_receipt(json.loads(a.out.read_text()),r)
     else:a.out.write_text(text)
     print(json.dumps(r['comparisons']))
