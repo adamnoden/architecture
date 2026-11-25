@@ -1,43 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 59,
-  "state": "released",
-  "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
+  "generation": 60,
+  "state": "claimed",
+  "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
   "holder": {
     "kind": "chatgpt",
-    "label": "structure-convergence-20261125"
+    "label": "convergence-20261125"
   },
-  "claimedAt": "2026-11-25T08:40:52.436Z",
-  "heartbeatAt": "2026-11-25T12:08:33.000Z",
-  "expiresAt": "2026-11-25T12:08:33.000Z",
-  "branch": "work/convergence-lighting-20261125",
+  "claimedAt": "2026-11-25T22:18:56.729Z",
+  "heartbeatAt": "2026-11-25T22:18:56.729Z",
+  "expiresAt": "2026-11-25T23:03:56.729Z",
+  "branch": "work/convergence-structure-20261125",
   "predecessor": {
-    "leaseId": "81d1d5af-717b-47e5-b8e9-5cdc634a77a7",
-    "generation": 58,
-    "branch": "work/convergence-continuation-20261124",
-    "pr": 1624,
+    "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
+    "generation": 59,
+    "branch": "work/convergence-lighting-20261125",
+    "pr": 1625,
     "checkpoint": {
-      "evidence": "Recovery PR1624 merged f8ad6989; continuation checkpoint f6581ce736be79ddd337eccbe1effc3d77f19963. Shared distributed contour introduced; current far-field refinement still12.2492pct; no slab or component convergence selected.",
-      "next": "Publish final MMD method with genuinely regenerated captures, matched numerical-order controls and current saved-stage proof; exact-head CI and preflight."
+      "evidence": "PR1625 head5526b838; coherent continuation5d8e12e0; uniform law/contact/end2d044ead; actual masonry v2-v4 ef2faa3d all published with exact trees. No selected slab, ring or local joint.",
+      "next": "Finish exact-head CI/preflight for1625; recover continuation plus published water7c228220 and uniform2d044ead; regenerate current source account before next PR.",
+      "blocker": "Executor explicitly unavailable. Latest local assembly and unpublished bearing-bed files cannot be inspected; no bearing-bed native result exists."
     }
   },
   "recoverySource": {
-    "leaseId": "81d1d5af-717b-47e5-b8e9-5cdc634a77a7",
-    "generation": 58,
-    "branch": "work/convergence-continuation-20261124",
-    "pr": 1624,
+    "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
+    "generation": 59,
+    "branch": "work/convergence-lighting-20261125",
+    "pr": 1625,
     "checkpoint": {
-      "evidence": "Recovery PR1624 merged f8ad6989; continuation checkpoint f6581ce736be79ddd337eccbe1effc3d77f19963. Shared distributed contour introduced; current far-field refinement still12.2492pct; no slab or component convergence selected.",
-      "next": "Publish final MMD method with genuinely regenerated captures, matched numerical-order controls and current saved-stage proof; exact-head CI and preflight."
+      "evidence": "PR1625 head5526b838; coherent continuation5d8e12e0; uniform law/contact/end2d044ead; actual masonry v2-v4 ef2faa3d all published with exact trees. No selected slab, ring or local joint.",
+      "next": "Finish exact-head CI/preflight for1625; recover continuation plus published water7c228220 and uniform2d044ead; regenerate current source account before next PR.",
+      "blocker": "Executor explicitly unavailable. Latest local assembly and unpublished bearing-bed files cannot be inspected; no bearing-bed native result exists."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1625 head5526b838; coherent continuation5d8e12e0; uniform law/contact/end2d044ead; actual masonry v2-v4 ef2faa3d all published with exact trees. No selected slab, ring or local joint.",
-    "next": "Finish exact-head CI/preflight for1625; recover continuation plus published water7c228220 and uniform2d044ead; regenerate current source account before next PR.",
-    "blocker": "Executor explicitly unavailable. Latest local assembly and unpublished bearing-bed files cannot be inspected; no bearing-bed native result exists."
-  },
-  "pr": 1625,
-  "releasedAt": "2026-11-25T12:08:33.000Z",
-  "releaseReason": "handoff"
+  }
 }
