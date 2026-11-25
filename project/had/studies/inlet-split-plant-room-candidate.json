@@ -1,0 +1,48 @@
+{
+  "schema": "had-split-plant-room/1",
+  "id": "HAD/plant-wet-floor-threshold-successor",
+  "localPocketDepthMm": 245,
+  "isolationGapMm": 50,
+  "outletAxesYMm": [
+    4345,
+    4855
+  ],
+  "clearWidthMm": 400,
+  "clearHeightMm": 150,
+  "insideRunMm": 260,
+  "outsideRunMm": 900,
+  "invertAboveDistributionMm": 48,
+  "panSlopeRatio": 100,
+  "outfallSlopeRatio": 50,
+  "metalMm": 2,
+  "insulationMm": 20,
+  "settingMm": 10,
+  "receiverWidthMm": 400,
+  "receiverCrestAboveGradeMm": 0,
+  "receiverHighAdverseMm": 600,
+  "bridgeThicknessMm": 29,
+  "centralRailWidthMm": 25,
+  "bridgePlateCargoInsetsYMm": [
+    -22.5,
+    -22.5
+  ],
+  "referenceWheelActionIncludingDynamicN": 3442.9291947287993,
+  "referenceWheelBandMm": 25,
+  "referenceElasticModulusMPa": 200000,
+  "referenceSteelDensityKgM3": 8000,
+  "referenceProofComparisonMPa": 133.33333333333334,
+  "bridgePieceCount": 11,
+  "bridgeJointGapMm": 1,
+  "bridgeHardwareBudgetEachKg": 0.5,
+  "bridgeCompletePieceMassLimitKg": 15,
+  "bridgeLiftMm": 800,
+  "bridgeFirstRestBoxMm": [
+    10450,
+    4400,
+    650,
+    1100,
+    100,
+    50
+  ],
+  "storedAdverseMinimumDensityKgM3": 958
+}

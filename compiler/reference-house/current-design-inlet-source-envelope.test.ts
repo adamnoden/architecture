@@ -120,9 +120,10 @@ test('stale identities, unknown branch/duty and injected results reject; exact d
 test('saved document and public CLI carry branch and room edits through the existing transport then reverse',async()=>{
  const original=await readEngineeringDocument(readGeorgianDesignSnapshot())
  assert.ok(!Object.hasOwn(original.stages,'inletSourceEnvelope'))
- const doc={...original,stages:{inletSourceEnvelope:request.sourceEnvelope.settings}}
+ const authoredStage={...request.sourceEnvelope.settings,splitPlantRoom:request.sourceEnvelope.splitPlantRoom}
+ const doc={...original,stages:{inletSourceEnvelope:authoredStage}}
  const first=await compileEngineeringDocument(JSON.parse(JSON.stringify(doc)))
- const changedDoc={...doc,stages:{inletSourceEnvelope:{...request.sourceEnvelope.settings,utilityApertureNominalMm:6.7,plantTransferZMm:2220,mainboardBaseZMm:2600}}}
+ const changedDoc={...doc,stages:{inletSourceEnvelope:{...authoredStage,utilityApertureNominalMm:6.7,plantTransferZMm:2220,mainboardBaseZMm:2600}}}
  const changed=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--bundle','-'],{input:JSON.stringify(changedDoc),encoding:'utf8',maxBuffer:24*1024*1024}))
  const a=first.engineering.inletSourceEnvelope!,c=changed.engineering.inletSourceEnvelope
  assert.notEqual(a.branches[0].maximumLimitedEachLmin,c.branches[0].maximumLimitedEachLmin)
@@ -136,8 +137,13 @@ test('saved document and public CLI carry branch and room edits through the exis
  assert.equal(changed.manifest.find((r:any)=>r.stage==='occupiedServices').applicability.controllingStage,'inletSourceEnvelope')
  assert.ok(changed.coordinationDiagnostics.some((r:any)=>r.code==='INLET_SOURCE_AND_ROOM_REPLAN_NOT_COORDINATED'))
  assert.deepEqual((await compileEngineeringDocument(doc)).engineering.inletSourceEnvelope,a)
- const standalone=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--inlet-source-envelope','-'],{input:JSON.stringify({...request,sourceEnvelope:{...request.sourceEnvelope,settings:changedDoc.stages.inletSourceEnvelope}}),encoding:'utf8',maxBuffer:4*1024*1024}))
+ assert.equal(a.splitPlantRoom.choiceOwnership,'complete-authored-request');assert.equal(c.splitPlantRoom.choiceOwnership,'complete-authored-request')
+ const {splitPlantRoom,...changedSettings}=changedDoc.stages.inletSourceEnvelope
+ const standalone=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--inlet-source-envelope','-'],{input:JSON.stringify({...request,sourceEnvelope:{...request.sourceEnvelope,splitPlantRoom,settings:changedSettings}}),encoding:'utf8',maxBuffer:4*1024*1024}))
  assert.deepEqual(standalone,c)
+ const {splitPlantRoom:_authoredChoice,...boundCase}=request.sourceEnvelope
+ const boundDefault=runInletSourceEnvelopeCase(resolved,boundCase)
+ assert.equal(boundDefault.splitPlantRoom.choiceOwnership,'bound-current-source-default');assert.deepEqual(boundDefault.bound,baseline.bound)
 })
 
 test('actual elevated mainboard and complete portal shield join geometry, source actions and sheet quantities',()=>{
@@ -214,8 +220,9 @@ test('installed pipes preserve complete moving leaves and ordinary bodies while 
  assert.ok(j.transfer.fixedTransferAboveWetLeafAfter10Mm>=49.94)
  assert.ok([...j.transfer.utilityArch,...j.transfer.plantArch].every(a=>a.archHeadAfterJacketAnd10Mm!>276))
  assert.equal(c.necessaryOrdinaryOperationEnvelopeScreen,true)
- assert.equal(r.necessaryStraightPipeGeometryAndBudgetComparison,true)
- assert.equal(r.cornerTerritory.necessaryBoxedCornerTerritoryComparison,true)
+ assert.equal(r.necessaryStraightPipeGeometryAndBudgetComparison,false)
+ assert.equal(r.cornerTerritory.necessaryBoxedCornerTerritoryComparison,false)
+ assert.ok(r.diagnostics.includes('INLET_PIPE_OWN_FITTING_TERRITORY'))
  assert.ok(r.checkedObstacles.some(o=>o.id==='ordinary-operator-body-and-approach'))
  assert.equal(r.checkedObstacles.filter(o=>o.id.startsWith('wet-door-complete-moving-leaf-')).length,2)
  assert.ok(r.paths.every(p=>p.corners.every(c=>Math.abs(c.turnAngleDeg-90)<1e-6)))

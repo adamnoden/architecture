@@ -1,6 +1,10 @@
 # Floor and portal reconciliation
 
-## Current development disposition — 20 November 2026
+## Current development disposition — 24 November 2026
+
+The [distributed SW slab-contour component](finite-floor-contour-development.md) now exposes100 shell coordinates and12 wall-end coordinates on exact source-derived material. It preserves rigid motions, potential and characteristic gravity, and enters the existing saved floor stage through explicit optional controls and current source/request bindings. Its140/70/35mm all-relative-motion sensitivities remain86.45% and84.34%; it is not converged and is not inserted into the native house. The earlier fixed-normal500/250 failure remains unchanged. This resolves a missing computational interface, not a finite joint demand, reinforcement selection or structural baseline. No whole-slab increase is selected.
+
+The continuation below retains the seated wet support and straight-frame/separate-masonry architectural direction, with their actual limits.
 
 **23 November continuation:** [local bearing-width and post-head development](wet-post-head-fan-development.md)
 now consumes the same authored pad and independently generated cage through the

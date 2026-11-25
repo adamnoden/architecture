@@ -1,4 +1,4 @@
-import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableInletBankId, editableInletBankFields, editableStudyLightingId, engineeringBase,
+import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableInletBankId, editableInletBankFields, editablePlantRoomId, editablePlantRoomFields, editableStudyLightingId, engineeringBase,
   engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, type EngineeringEditorState, type EngineeringTicket,
 } from '../../../compiler/reference-house/current-design/engineering-edit.js'
 import type { EngineeringReply } from './engineering-api.js'
@@ -7,6 +7,7 @@ const element = <T extends HTMLElement>(id: string) => document.getElementById(i
 const button = (id: string) => element<HTMLButtonElement>(id)
 const pitch = element<HTMLInputElement>('pitch')
 const inletField=element<HTMLSelectElement>('inlet-field'),inletValue=element<HTMLInputElement>('inlet-value')
+const plantField=element<HTMLSelectElement>('plant-room-field'),plantValue=element<HTMLInputElement>('plant-room-value')
 const cageTop = element<HTMLInputElement>('cage-top-level')
 const padWidth=element<HTMLInputElement>('wet-pad-width')
 const lightingDepth = element<HTMLInputElement>('lighting-depth')
@@ -42,6 +43,11 @@ function controls() {
   element('inlet-bank-controls').hidden=!hasInlet
   inletField.disabled=!hasInlet;inletValue.disabled=!hasInlet
   if(hasInlet){inletValue.value=String(inlet[inletField.value]);element('inlet-unit').textContent=inletField.value.endsWith('KgM3')?'kg/m³ density comparison':'mm'}
+  const plant = record(inlet) && record(inlet.splitPlantRoom) ? inlet.splitPlantRoom : undefined
+  const hasPlant = !!plant && editablePlantRoomFields.every(key => typeof plant[key] === 'number')
+  element('plant-room-controls').hidden = !hasPlant
+  plantField.disabled = !hasPlant; plantValue.disabled = !hasPlant
+  if (hasPlant) { plantValue.value=String(plant[plantField.value]); element('plant-room-unit').textContent=plantField.value.endsWith('Kg')?'kg':'mm' }
   const lighting = state.document.stages.studyLighting
   const hasLighting = record(lighting) && typeof lighting.serviceTotalDepthMm === 'number'
   element('lighting-controls').hidden = !hasLighting
@@ -53,7 +59,7 @@ function controls() {
 }
 function draw() {
   const floor=current?.floorEvidence
-  element('floor-result').textContent=floor?`Actual floor: ${floor.headCount} foundation heads; normal-bearing analysis ${floor.contactComputed?'computed':'not applicable'}. ${floor.slabSolidCompatibility.status==='common-modulus-ruled-out'?'The authored slab laws cannot describe one common positive 3D modulus; a solid replacement requires a declared constitutive change.':''} ${floor.jointStatus==='computed-rigid-joint-demand'?'Four rigid-joint demands computed; finite-node resistance remains unqualified.':floor.jointDiagnostics.includes('FOUR_L_JOINT/runtime-not-admitted')?'Joint demand unavailable for this numerical runtime; ordinary floor and cage remain computed.':'Joint-demand evidence unavailable for this request.'} ${floor.nominalHeadFanStatus==='computed-nominal-demand'?'Nominal post-head fan computed; finite nodes, anchorage and tolerance remain unqualified.':floor.nominalHeadFanStatus==='unsupported'?'This nominal post-head fan does not support the current input.':''}`:''
+  element('floor-result').textContent=floor?`Actual floor: ${floor.headCount} foundation heads; normal-bearing analysis ${floor.contactComputed?'computed':'not applicable'}. ${floor.contourStatus==='deferred'?'Finite floor-contour analysis pending for this saved revision.':floor.contourStatus==='computed-local-comparison'?'Finite contour component computed; exterior band/chord, native insertion and joint resistance remain unavailable.':floor.contourStatus==='unsupported'?'The finite contour component does not support this saved revision or numerical runtime.':''} ${floor.slabSolidCompatibility.status==='common-modulus-ruled-out'?'The authored slab laws cannot describe one common positive 3D modulus; a solid replacement requires a declared constitutive change.':''} ${floor.jointStatus==='computed-rigid-joint-demand'?'Four rigid-joint demands computed; finite-node resistance remains unqualified.':floor.jointDiagnostics.includes('FOUR_L_JOINT/runtime-not-admitted')?'Joint demand unavailable for this numerical runtime; ordinary floor and cage remain computed.':'Joint-demand evidence unavailable for this request.'} ${floor.nominalHeadFanStatus==='computed-nominal-demand'?`Nominal post-head fan computed; necessary virtual-domain reserve ${floor.nominalHeadFanPlacementReserveMm ?? 'unavailable'} mm. Finite nodes, anchorage and tolerance remain unqualified.`:floor.nominalHeadFanStatus==='unsupported'?'This nominal post-head fan does not support the current input.':''}`:''
   for (const [name, result] of [['current', current], ['comparison', comparison]] as const) {
     const image = element<HTMLImageElement>(`${name}-roof`)
     if (result) image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(result.roof.svg)
@@ -81,6 +87,28 @@ function draw() {
     const image=element<HTMLImageElement>(`${name}-inlet-candidate`),candidate=result?.inletBank?.route.candidateComparison.comparison
     image.hidden=!candidate
     if(candidate)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(candidate.reviewSvg)
+    else image.removeAttribute('src')
+  }
+  const plantBranch=bank?.route.splitStationComparison.branchDevelopment
+  const plantRoom = current?.plantRoom?.comparison
+  element('inlet-plant-room-result').textContent = plantRoom
+    ? plantRoom.state === 'unadopted-threshold-drainage-successor'
+      ? `Plant threshold comparison: each surviving outlet receives the complete ${plantRoom.sourceOnlyLmin.toFixed(2)} L/min source challenge. Source-only drain geometry ${plantRoom.drainageGeometry.necessarySourceOnlyDrainGeometry ? 'within declared comparisons' : 'REJECTED'}. Threshold junction ${plantRoom.diagnostics.includes('SPLIT_PLANT_ROOM/threshold-bridge-comparison-fails')?'REJECTED':'within declared comparisons'}. Stored backfeed, supports and complete renewal remain unresolved; no arrangement is adopted.`
+      : 'The Plant floor comparison requires the actual saved ground profile. No floor, receiver level or support is inferred from the nominal plan.'
+    : ''
+  for (const [name, result] of [['current', current], ['comparison', comparison]] as const) {
+    const image = element<HTMLImageElement>(`${name}-inlet-plant-room`), room = result?.plantRoom?.comparison
+    image.hidden = !room
+    if (room) image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(room.reviewSvg)
+    else image.removeAttribute('src')
+  }
+  element('inlet-plant-branch-result').textContent=plantBranch?.comparison
+    ? `Independent Plant branch remains unadopted. Service-infill port / pipe reserve ${plantBranch.comparison.geometry.ingressBorePipePositionReserveMm.toFixed(2)} mm; retained drop / cylinder ${plantBranch.comparison.geometry.dropStoreReserveMm.toFixed(2)} mm against25 mm. ${plantBranch.diagnostics.join('; ')}.`
+    : plantBranch?'Plant branch unavailable for current connections; no historical route is substituted.':''
+  for(const[name,result]of[['current',current],['comparison',comparison]]as const){
+    const image=element<HTMLImageElement>(`${name}-inlet-plant-branch`),branch=result?.inletBank?.route.splitStationComparison.branchDevelopment.comparison
+    image.hidden=!branch
+    if(branch)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(branch.reviewSvg)
     else image.removeAttribute('src')
   }
   const cage = current?.wetCage
@@ -147,6 +175,12 @@ element('lighting-edit').addEventListener('submit', event => {
     operation: { kind: 'set-lighting-service-depth', assemblyId: editableStudyLightingId, totalDepthMm: lightingDepth.valueAsNumber } }))
 })
 inletField.addEventListener('change',controls)
+plantField.addEventListener('change',controls)
+element('plant-room-edit').addEventListener('submit', event => {
+  event.preventDefault()
+  changed(applyEngineeringEdit(state, { schema:'current-engineering-edit/1', units:plantField.value.endsWith('Kg')?'kg':'mm',base:engineeringBase(state),
+    operation:{kind:'set-plant-room-field',assemblyId:editablePlantRoomId,inputId:plantField.value,value:plantValue.valueAsNumber} }))
+})
 element('inlet-bank-edit').addEventListener('submit',event=>{event.preventDefault();changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:inletField.value.endsWith('KgM3')?'kg/m3':'mm',base:engineeringBase(state),operation:{kind:'set-inlet-bank-field',assemblyId:editableInletBankId,inputId:inletField.value,value:inletValue.valueAsNumber}}))})
 element('wet-pad-width-edit').addEventListener('submit',event=>{event.preventDefault();changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),operation:{kind:'set-wet-bearing-width',assemblyId:editableWetSupportId,widthMm:padWidth.valueAsNumber}}))})
 element('wet-cage-edit').addEventListener('submit', event => {

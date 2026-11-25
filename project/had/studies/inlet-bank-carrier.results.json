@@ -1,7 +1,7 @@
 {
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "a62a2cafd4c776d642a5036b7eb642664b33b5bb199a8ed4ab6034dfbbe72bec",
+    "bindingDigest": "62eab61c04ca93b276b3dcd607864e5356408c2039619a88120164b8140b1c12",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -15,18 +15,28 @@
       "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
       "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2",
       "project/had/studies/inlet-route-candidate.json": "6bd208ae8dbe70564122af3d16d3d86f60dde141",
-      "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521"
+      "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
+      "project/had/studies/inlet-split-plant-branch-candidate.json": "6afb0bbc4f5e063e16d6ff7b040ae46a129c41f6",
+      "project/had/studies/inlet-fixed-station.json": "69e0be05955a9f8fa3494f6a8c5e686dd8bc2e16",
+      "project/had/studies/inlet-split-plant-room-candidate.json": "5250cb2289e62a29f69f2193531ffc0675e7b6ca"
     },
     "methods": {
+      "compiler/reference-house/current-design/house-vertical-profile.ts": "3f3cbb5b711763265ad8c65358ceb15a9acf066c",
+      "project/had/studies/house_vertical_profile.py": "1f41e39d3c37728c6aad8a4168ed7e230aad7929",
+      "compiler/reference-house/current-design/inlet-split-plant-room-choice.ts": "33cf6e36ec7b0d22409bf875332c53749f631f8c",
+      "compiler/reference-house/current-design/inlet-split-plant-room.ts": "9d8f341565e5943c910cc4f188ffbdbd9b1fc831",
+      "compiler/reference-house/current-design/inlet-split-plant-branch.ts": "fcb5ffe5a4c362af5ccd12785adcfaee4668383a",
+      "project/had/studies/plant-release-profiles.mjs": "6c140a8bb44a2ca8e36e6fd4f87303ddf2779e6a",
+      "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
       "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
       "compiler/reference-house/current-design/inlet-bank-receiver.ts": "27ae1b2964495559cee1bd13b3c270ab2c660744",
       "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
-      "compiler/reference-house/current-design/inlet-indoor-routes.ts": "27180bb54be4229d3d45f87fdfaec29c768c9c91",
+      "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
       "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "27bffe7a40cceb6016ac56f26fb29c6a7050707f",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "a68cfb8750bfb64c55a593ce62d692619e204691",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
-      "compiler/reference-house/current-design/inlet-room-pocket.ts": "6262535d5a03666b92c876e4b8d52c4a0b097fb3",
-      "compiler/reference-house/current-design/inlet-room-pan.ts": "81c7736c2b91de574c582dd902ff903953dc9b46",
+      "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
+      "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
       "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
       "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
       "compiler/reference-house/current-design/inlet-fixed-receiver.ts": "c8cd4c81c3419fdb3b97f79b3c641d5e307256e3",

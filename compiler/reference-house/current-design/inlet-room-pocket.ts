@@ -19,9 +19,10 @@ const intersect = (a: Rectangle, b: Rectangle): Rectangle | null => {
  */
 export function inletRoomPocket(input: {
   levels: Levels; roomPlanMm: readonly number[]; depthMm: number; isolationGapMm: number; grid: Grid
-  rcDensityKNm3: number; mineralDensityKNm3: number
+  rcDensityKNm3: number; mineralDensityKNm3: number; roomId?: 'utility' | 'plant'
 }) {
-  const { levels: g, depthMm, isolationGapMm: gap, grid } = input
+  const { levels: g, depthMm, isolationGapMm: gap, grid } = input,roomId=input.roomId??'utility'
+  if(!['utility','plant'].includes(roomId))throw new Error('Unsupported local pocket identity')
   if (![depthMm, gap, input.rcDensityKNm3, input.mineralDensityKNm3, ...input.roomPlanMm,
     ...Object.values(g).flat()].every(Number.isFinite) || depthMm < 0 || depthMm > 350 || gap < 25 || gap > 100
     || input.roomPlanMm.length !== 4 || Math.min(...input.roomPlanMm.slice(2)) <= 2 * gap
@@ -60,7 +61,7 @@ export function inletRoomPocket(input: {
   for (let i = 1; i < xs.length; i++) for (let j = 1; j < ys.length; j++) {
     const r = [xs[i - 1], ys[j - 1], xs[i], ys[j]] as const,
       receivers = contact.filter(s => intersect(s.rectangleMm, r)).map(s => s.id)
-    if (receivers.length) cells.push({ id: `HAD/local-utility-contact/${i}-${j}`, rectangleMm: r, possibleReceivers: receivers })
+    if (receivers.length) cells.push({ id: `HAD/local-${roomId}-contact/${i}-${j}`, rectangleMm: r, possibleReceivers: receivers })
   }
   const contactM2 = cells.reduce((sum, s) => sum + area(s.rectangleMm), 0) / 1e6,
     sides = { west: contact.some(s => s.rectangleMm[0] === inner[0]), east: contact.some(s => s.rectangleMm[2] === inner[2]),
@@ -82,7 +83,7 @@ export function inletRoomPocket(input: {
     wrenchKN_KNm: { Fx: 0, Fy: 0, Fz: -forceKN, Mx: 0, My: 0, Mz: 0 },
     action: 'unfactored-gravity-only', transferToReceivers: 'unresolved-plate/contact-distribution' })
   return { state: 'local-room-pocket-reservation' as const, levels: local, local: {
-    id: 'HAD/local-utility-service-pocket', selected: false as const, groundDatum: 'Same absolute datum as saved groundSection; no translation of house, roof or retained walls',
+    id: `HAD/local-${roomId}-service-pocket`, selected: false as const, groundDatum: 'Same absolute datum as saved groundSection; no translation of house, roof or retained walls',
     roomMinMaxMm: room, bodyMinMaxMm: inner, depthMm, loweringMm: drop, isolationGapMm: gap,
     levelBoxes: Object.entries(local).filter((row): row is [string, Pair] => Array.isArray(row[1])).map(([id, z]) => ({ id, planMinMaxMm: inner, zMm: z })),
     retainedGlobal: g, wallAndExteriorDpcMm: g.mineralCourse,
@@ -93,7 +94,7 @@ export function inletRoomPocket(input: {
     lowerPlinthRequiredMm: plinth, coldGridContact: contact, disjointContactCells: cells,
     contactUnionM2: contactM2, supportPresentAtSides: sides,
     unsupportedCentralSlabAreaM2: area(inner) / 1e6 - contactM2,
-    loadOrigins: [load('HAD/local-utility-dry-rc-G', slabVolume * input.rcDensityKNm3, inner, local.dryRC),
+    loadOrigins: [load(`HAD/local-${roomId}-dry-rc-G`, slabVolume * input.rcDensityKNm3, inner, local.dryRC),
       ...cells.map(c => load(c.id + '/mineral-G', area(c.rectangleMm) / 1e6 * (local.mineralCourse[1] - local.mineralCourse[0]) / 1000 * input.mineralDensityKNm3, c.rectangleMm, local.mineralCourse))],
     quantityBounds: { dryRcM3: slabVolume, mineralOnContactOnlyM3: mineralVolume, glassM3: area(inner) / 1e6 * (local.glass[1] - local.glass[0]) / 1000,
       slabAndMineralWeightKN: slabVolume * input.rcDensityKNm3 + mineralVolume * input.mineralDensityKNm3,

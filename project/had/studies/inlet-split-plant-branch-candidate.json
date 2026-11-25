@@ -1,0 +1,136 @@
+{
+  "schema": "had-split-plant-branch/1",
+  "id": "HAD/plant-independent-east-entry-development",
+  "units": "mm",
+  "datum": "occupied-ground-FFL",
+  "sourceEntryMm": [
+    12130,
+    4000,
+    1000
+  ],
+  "insideEntryMm": [
+    11570.5,
+    4000,
+    1000
+  ],
+  "upstreamPathMm": [
+    [
+      12130,
+      4000,
+      1000
+    ],
+    [
+      11360,
+      4000,
+      1000
+    ],
+    [
+      11360,
+      4000,
+      1370
+    ]
+  ],
+  "outletStemMm": [
+    [
+      11360,
+      4000,
+      1530
+    ],
+    [
+      11360,
+      4000,
+      2260
+    ]
+  ],
+  "storeFixedPathMm": [
+    [
+      11360,
+      4000,
+      2260
+    ],
+    [
+      10222.5,
+      4000,
+      2260
+    ],
+    [
+      10222.5,
+      3842.9,
+      2260
+    ]
+  ],
+  "treeFixedPathMm": [
+    [
+      11360,
+      4000,
+      2260
+    ],
+    [
+      11360,
+      4000,
+      2945
+    ],
+    [
+      11360,
+      5000,
+      2945
+    ],
+    [
+      10350,
+      5000,
+      2945
+    ]
+  ],
+  "storeRemovableDropMm": [
+    [
+      10222.5,
+      3842.9,
+      2260
+    ],
+    [
+      10170,
+      3950,
+      2260
+    ],
+    [
+      10170,
+      3950,
+      520
+    ]
+  ],
+  "storeTerminalMm": [
+    [
+      10170,
+      3950,
+      520
+    ],
+    [
+      10170,
+      3950,
+      475
+    ],
+    [
+      10183.072848061485,
+      3979.1468688950554,
+      380
+    ],
+    [
+      10131.5,
+      4018.71,
+      380
+    ]
+  ],
+  "storePortTrialMm": [
+    10131.5,
+    4018.71,
+    380
+  ],
+  "coldTreeInterfaceMm": [
+    10350,
+    5000,
+    2945
+  ],
+  "sourceEntryOpeningDiameterMm": 100,
+  "storeDropBendRadiusMm": 75,
+  "storeTerminalBendRadiusMm": 25
+}

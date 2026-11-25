@@ -1,0 +1,30 @@
+{
+  "schema": "ovids-house/str-finite-floor-contour-input/1",
+  "id": "STR/SW/floor-contour-development",
+  "jointId": "SW",
+  "units": "mm-kN-kNm",
+  "datum": "source-ground-zero",
+  "patchXYMm": [
+    262.5,
+    262.5,
+    2177.5,
+    2187.5
+  ],
+  "wallEndZMm": [
+    2170,
+    4370
+  ],
+  "wallUnitWeightKNPerM3": 25,
+  "contourReferencePitchMm": 500,
+  "meshControls": {
+    "contourBoundaryLayerDepthsMm": [
+      7.5,
+      15,
+      30,
+      60,
+      120
+    ],
+    "slabMaximumPitchMm": 15,
+    "factorizationOrdering": "MMD_AT_PLUS_A"
+  }
+}

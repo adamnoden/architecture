@@ -9,6 +9,7 @@ import { readStructuralDpcOriginSettings } from './structural-dpc.js'
 import { compileInletAssembly, readInletAssemblySettings } from './inlet-assembly.js'
 import { readFixedInletSettings } from './inlet-fixed-entry.js'
 import { inletCabinetStageFields } from './inlet-cabinet-copper.js'
+import {admitSplitPlantRoomChoice} from './inlet-split-plant-room.js'
 import { inletSourceEnvelopeFields } from './inlet-source-envelope.js'
 import { joinedRcFloorStageFields, savedJoinedRcFloorCase } from './structural-rc-floor.js'
 import { verticalRcFloorStageFields, savedVerticalRcFloorCase } from './structural-vertical-floor.js'
@@ -214,7 +215,7 @@ function admitStages(value: unknown): EngineeringStages {
     ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
     ...(Object.hasOwn(value, 'inletFault') ? { inletFault: settings(value.inletFault, faultFields, 'inlet fault') } : {}),
     ...(Object.hasOwn(value, 'fixedInlet') ? { fixedInlet: settings(value.fixedInlet, Object.keys(readFixedInletSettings()), 'fixed inlet') } : {}),
-    ...(Object.hasOwn(value, 'inletSourceEnvelope') ? { inletSourceEnvelope: settings(value.inletSourceEnvelope, inletSourceEnvelopeFields, 'inlet source envelope') } : {}),
+    ...(Object.hasOwn(value, 'inletSourceEnvelope') ? { inletSourceEnvelope: (()=>{const stage=settings(value.inletSourceEnvelope,[...inletSourceEnvelopeFields,'splitPlantRoom'],'inlet source envelope');return{...stage,...(Object.hasOwn(stage,'splitPlantRoom')?{splitPlantRoom:admitSplitPlantRoomChoice(stage.splitPlantRoom)}:{})}})() } : {}),
     ...(Object.hasOwn(value, 'inletCabinet') ? { inletCabinet: settings(value.inletCabinet, inletCabinetStageFields, 'inlet cabinet') } : {}),
     ...(Object.hasOwn(value, 'inletRemovals') ? { inletRemovals: branchSettings(value.inletRemovals, removalFields, 'inlet removal') } : {}),
     ...(Object.hasOwn(value, 'inletCovers') ? { inletCovers: branchSettings(value.inletCovers, inletFields, 'inlet cover') } : {}),
@@ -539,9 +540,10 @@ export async function compileEngineeringDocument(input: unknown) {
   }
   if (stages.inletSourceEnvelope) {
     const request = await compile.readInletSourceEnvelopeCase()
-    engineering.inletSourceEnvelope = await compile.inletSourceEnvelopeCase({ ...request.sourceEnvelope,
-      settings: { ...request.sourceEnvelope.settings, ...stages.inletSourceEnvelope } }, engineering.groundSection)
-    recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope, engineering.groundSection ? ['groundSection'] : [])
+    const {splitPlantRoom,...sourceSettings}=stages.inletSourceEnvelope,{splitPlantRoom:_boundCurrentPlantRoom,...baseCase}=request.sourceEnvelope
+    engineering.inletSourceEnvelope = await compile.inletSourceEnvelopeCase({ ...baseCase,
+      ...(splitPlantRoom?{splitPlantRoom:admitSplitPlantRoomChoice(splitPlantRoom)}:{}),settings: { ...request.sourceEnvelope.settings, ...sourceSettings } }, engineering.groundSection, engineering.houseVerticalProfile)
+    recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope, [...(engineering.groundSection?['groundSection']:[]),...(engineering.houseVerticalProfile?['houseVerticalProfile']:[])])
     const reason = 'The source-envelope comparison authors boundary restrictions and a whole internal service-hub replacement. Neither the retained occupied network nor earlier inlet/cabinet outputs include that source or room; their former fault and operating claims are withheld.'
     const previousStages = new Set(['occupiedServices', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletRemovals', 'inletCovers', 'inletAssembly'])
     const affected = manifest.filter(row => previousStages.has(row.stage.split('/')[0]))

@@ -1,14 +1,40 @@
 import assert from 'node:assert/strict'
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { copyFileSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, posix, resolve } from 'node:path'
 import { test } from 'node:test'
 import { applyAdapter } from './adapters.js'
 import { primerPublicationEntries } from './publication.js'
-import { publicationSourceUrl, renderPublicationMermaid } from './preparation.js'
+import { assertPublicationSourceSnapshot, capturePublicationSourceSnapshot, publicationSourceUrl, renderPublicationMermaid } from './preparation.js'
 
 const repoRoot = resolve(import.meta.dirname, '..')
 const liveBaseUrl = 'https://adamnoden.github.io/architecture/'
+
+test('source snapshot rejects the stale-copy window during slow asset preparation and checks copied bytes independently', () => {
+  const root = mkdtempSync(join(tmpdir(), 'publication-source-snapshot-'))
+  try {
+    const source = join(root, 'part-iv.md'), staged = join(root, 'copied-part-iv.md')
+    const before = '# The Study\n\nOriginal comparison.\n'
+    writeFileSync(source, before)
+    const read = () => readFileSync(source)
+    const snapshot = capturePublicationSourceSnapshot(['part-iv.md'], read)
+    copyFileSync(source, staged)
+    assert.doesNotThrow(() => assertPublicationSourceSnapshot(snapshot, read))
+    assert.doesNotThrow(() => assertPublicationSourceSnapshot(snapshot, () => readFileSync(staged), 'copied source'))
+    // This was the observed window: copying has finished, current asset work
+    // is still running, and another worker edits the original manuscript.
+    writeFileSync(source, before.replace('Original', 'Revised'))
+    assert.equal(readFileSync(staged, 'utf8'), before)
+    assert.throws(() => assertPublicationSourceSnapshot(snapshot, read), /Preparation mutated canonical source: part-iv.md/)
+    // Restoration of the original cannot conceal a different copied payload.
+    writeFileSync(staged, readFileSync(source))
+    writeFileSync(source, before)
+    assert.doesNotThrow(() => assertPublicationSourceSnapshot(snapshot, read))
+    assert.throws(() => assertPublicationSourceSnapshot(snapshot, () => readFileSync(staged), 'copied source'), /Preparation mutated copied source: part-iv.md/)
+  } finally {
+    rmSync(root, { recursive: true, force: true })
+  }
+})
 
 test('every Primer pattern-index link uses the published route without the source docs prefix', () => {
   const entry = primerPublicationEntries.find(({ id }) => id === 'primer-patterns')!

@@ -37,9 +37,10 @@ function faceWaterLoad(face:{id:string;cornersMm:readonly Point[];normal:Point},
  */
 export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: readonly number[]; inletYmm: number;
   invertMm: number; slopeRatio: number; floorMm: number; floorUndersideMm: number; distributionBottomMm: number;
-  datumMm: number; settingMm: number; metalMm: number; insulationMm: number;
+  datumMm: number; roomId?: 'utility' | 'plant'; settingMm: number; metalMm: number; insulationMm: number;
   chuteWidthMm:number; chuteHeightMm:number; chuteSlopeRatio:number; waterStageComparisonsMm: Readonly<Record<string,number>> }) {
-  const { roomPlanMm: r, outletXmm: axes, inletYmm: sy, slopeRatio: ratio, invertMm: iz } = input
+  const { roomPlanMm: r, outletXmm: axes, inletYmm: sy, slopeRatio: ratio, invertMm: iz } = input, roomId=input.roomId??'utility'
+  if(!['utility','plant'].includes(roomId))throw new Error('Unsupported room-pan identity')
   if (r.length !== 4 || axes.length !== 2 || ![...r, ...axes, sy, ratio, iz, input.floorMm, input.floorUndersideMm,
     input.distributionBottomMm, input.datumMm, input.settingMm, input.metalMm, input.insulationMm].every(Number.isFinite)
     || ratio < 50 || ratio > 200 || r[2] <= 0 || r[3] <= 0 || axes[0] <= r[0] || axes[1] <= axes[0]
@@ -61,7 +62,7 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
       points = [[xs[i - 1], ys[j - 1]], [xs[i], ys[j - 1]], [xs[i], ys[j]], [xs[i - 1], ys[j]]].map(([x, y]) => [x, y, surface(x, y)]),
       projected = (xs[i] - xs[i - 1]) * (ys[j] - ys[j - 1]) / 1e6,
       mean = points.reduce((sum, p) => sum + p[2], 0) / 4
-    cells.push({ id: `HAD/utility-floor-pan/${i}-${j}`, cornersMm: points, actualAreaM2: projected * Math.sqrt(1 + (channel?1/input.chuteSlopeRatio**2:2/ratio**2)),
+    cells.push({ id: `HAD/${roomId}-floor-pan/${i}-${j}`, cornersMm: points, actualAreaM2: projected * Math.sqrt(1 + (channel?1/input.chuteSlopeRatio**2:2/ratio**2)),
       projectedAreaM2: projected, meanSurfaceMm: mean, nominalUndisplacedWaterLitres: points.every(p => p[2] < input.floorMm) ? projected * (input.floorMm - mean) : null })
   }
   const vertices=cells.flatMap(c=>c.cornersMm.map(pointMm=>({pointMm})))
@@ -95,14 +96,14 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
     internalStepFaces:typeof upstandFaces=[],flowInterfaceFaces:typeof upstandFaces=[]
   const side=(id:string,points:number[][],normal:number[])=>{for(let i=1;i<points.length;i++) {
     const a=points[i-1],b=points[i]
-    upstandFaces.push({id:`HAD/utility-pan-return/${id}-${i}`,cornersMm:[a,b,[b[0],b[1],input.floorMm],[a[0],a[1],input.floorMm]],normal})
+    upstandFaces.push({id:`HAD/${roomId}-pan-return/${id}-${i}`,cornersMm:[a,b,[b[0],b[1],input.floorMm],[a[0],a[1],input.floorMm]],normal})
   }}
   if(waterDomain){
     for(let i=1;i<xs.length;i++) {
       const a=xs[i-1],b=xs[i],channel=axes.some(x=>Math.abs((a+b)/2-x)<half),bottom=channel?chuteBed(ys[0])+input.chuteHeightMm:0,
         az=channel?bottom:elevation(a,ys[0]),bz=channel?bottom:elevation(b,ys[0])
       side('south-'+i,[[a,ys[0],az],[b,ys[0],bz]],[0,-1,0])
-      if(channel)flowInterfaceFaces.push({id:`HAD/utility-pan/wall-open-port-${i}`,normal:[0,-1,0],
+      if(channel)flowInterfaceFaces.push({id:`HAD/${roomId}-pan/wall-open-port-${i}`,normal:[0,-1,0],
         cornersMm:[[a,ys[0],chuteBed(ys[0])],[b,ys[0],chuteBed(ys[0])],[b,ys[0],bottom],[a,ys[0],bottom]]})
     }
     side('north',xs.map(x=>[x,ys[2],elevation(x,ys[2])]),[0,1,0])
@@ -110,10 +111,10 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
   }
   for(const [i,axis] of axes.entries()) {
     for(const [label,edge,normal] of [['west',axis-half,[-1,0,0]],['east',axis+half,[1,0,0]]] as const)
-      internalStepFaces.push({id:`HAD/utility-pan/chute-${i+1}-${label}`,normal:[...normal],
+      internalStepFaces.push({id:`HAD/${roomId}-pan/chute-${i+1}-${label}`,normal:[...normal],
         cornersMm:[[edge,ys[0],chuteBed(ys[0])],[edge,sy,chuteBed(sy)],[edge,sy,elevation(edge,sy)],[edge,ys[0],elevation(edge,ys[0])]]})
     for(const [label,a,b] of [['west',axis-half,axis],['east',axis,axis+half]] as const)
-      internalStepFaces.push({id:`HAD/utility-pan/chute-${i+1}-north-${label}`,normal:[0,1,0],
+      internalStepFaces.push({id:`HAD/${roomId}-pan/chute-${i+1}-north-${label}`,normal:[0,1,0],
         cornersMm:[[a,sy,iz],[b,sy,iz],[b,sy,elevation(b,sy)],[a,sy,elevation(a,sy)]]})
   }
   const faces=[...floorFaces,...upstandFaces,...internalStepFaces],
@@ -139,7 +140,7 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
         actualSourceTransientJetAirPressureAndOverflowDistributionQualified:false,
         interpretation:stage>input.floorMm?'Declared submerged/backwater pressure comparator on finite pan faces; NOT containment, actual maximum flood level or whole-house water mass.':'Finite below-floor hydrostatic face actions; not support reactions or a guaranteed hydraulic stage.'}
     }):[]
-  return { id: 'HAD/utility-graded-room-pan', geometryOnly: true, selected: false, slopeRatio: ratio,
+  return { id: `HAD/${roomId}-graded-room-pan`, geometryOnly: true, selected: false, slopeRatio: ratio,
     metalComparison: '2mm copper reference; exact constituents, support, seams, corrosion and loaded renewal unqualified',
     openChutes:{clearWidthMm:input.chuteWidthMm,runYMm:[ys[0],sy],bedSlopeRatio:input.chuteSlopeRatio,bedEndsMm:[chuteBed(ys[0]),iz],
       closure:`Open integrated indoor copper pan/chutes. Closed${input.chuteWidthMm}×${input.chuteHeightMm} wall passage starts at actual inner wall; no indoor roof box intersects the floor pan.`},

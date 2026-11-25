@@ -146,3 +146,89 @@ canonical publication preflight. The three-case comparison remains unselected;
 recessed grip, actual device/earth connections, qualified unions, protective
 qualification, material admission, full room circuit, complete mass feedback
 and owner acceptance remain outstanding as recorded above.
+
+## Ordinary recessed grip and charged metal stock — 24 November 2026
+
+Retain the common37mm route,180×200mm cases,75mm enclosure draw and separate
+rests. A **120×130mm clear fixed surround opening**,14.5mm deep, now gives the
+recessed socket a complete ordinary-use comparison. The50×52×42mm reference
+plug is joined to two explicitly authored20mm-wide,50mm-high finger envelopes.
+The fingers engage the exposed body5–17mm in front of the protected accessory
+face and move27mm normal to it. The complete inserted length comparison is22mm;
+the extra5mm is retained as a setting allowance. No hand enters a live enclosure
+and no protective closure is removed for this ordinary plug operation.
+
+After both independent5mm settings the mouth retains **5mm sideways and29mm
+vertically** around that declared grip sweep. The86mm accessory plate retains7mm
+for a separate isolated normal draw. Actual fixing-tool envelopes clear the
+opening corners by at least3.68mm. Those corner positions make the existing180mm
+case sufficient; increasing its width is unnecessary. Smaller mouths, larger
+plugs, a20mm draw, fingers reaching the protected face and loss of fixing lands
+remain rejected controls. These are bounded geometric results, not measured grip
+force, full supplied-lead/bend or human-use qualification. The polypropylene
+reference plug remains an unadmitted dimensional witness.
+
+The same shared result now charges the complete known case faces/sides, two
+surround face-rings and returns,960mm of20×1mm comparison steel tube and six
+30mm gross-solid collar stocks. At the retained7850kg/m³ density comparison they
+sum **7.397723kg**. Every row has its actual authored origin and vertical
+force/moment wrench; summation closes all six components. Full case faces and
+closure overlaps are charged without unsupported aperture credits. This is
+explicit stock arithmetic, not delivered or complete installed mass.
+
+Each case keeps its3kg complete-mass requirement; the socket/switch steel leaves
+about0.87kg each for its device, fixings and other case stock. A3mm shell exceeds
+that ceiling and is rejected. The separate rest must take the full29.43N case
+requirement. The case ceilings and known stock are **overlapping accounts** and
+must not be added together as physical mass. Actual devices, union/clip/cleat and
+fastener/finish inventory, load resistance and native house feedback remain
+unqualified. No load is silently admitted to the source-ground-zero structure.
+
+The [updated common-depth drawing](studies/adaptable-study-lighting-common-depth.svg)
+shows the actual opening, plug/fingers, case withdrawal and known stock account.
+The versioned choice contract is now`ias-common-depth-corner-choices/2`; an older
+shape is rejected rather than silently assuming finger, opening or metal-wall
+requirements. Existing saved lighting documents consume the authenticated current
+component source through the same CLI/browser/batch compiler; their source
+bindings invalidate when these requirements change.
+
+The [Forbes & Lomax socket sheet](https://forbesandlomax.com/uk/wp-content/uploads/sites/2/2020/02/13amp-Sockets-1.pdf),
+rechecked24November, supplies envelope and terminal capacities but no dimensioned
+terminal coordinates. The [Astro factory instructions](https://assets.astrolighting.com/pdfs/original/82244-instructions-backplate3-issue2.pdf)
+retain enclosed termination and earth duties without supplying the new case's
+terminal/bracket interface. The current occupied source still has no Study
+feeder/protection/cable object. These exact endpoint and source omissions remain
+explicit; a finite containment route is not a connected room circuit. Complete
+actual terminal/earth/strain-relief geometry, front-serviced unions and protection,
+material admission and the representative physical trial still prevent an
+installable or trial-ready whole electrical assembly. IAS-ROOM-LIGHTING remains
+open; no material, circuit, physical, owner or house acceptance is claimed.
+
+Whole-case renewal carries the socket/switch surround and closed face together.
+The full **61.5mm** rear-to-surround depth now controls every normal/left/south
+sweep and the parked case; the former49mm body/cover envelope is insufficient.
+The75mm draw and200mm rest still contain this larger actual assembly in the
+checked room. The180mm-wide case is never claimed to pass through its120mm
+mouth. Actual connector release, positive temporary support and loaded human
+handling remain qualification duties.
+
+
+## Recovery and stock first moments — 25 November 2026
+
+The recoverable continuation `f6581ce7` supplies the finite plug/finger and
+complete case/surround comparisons above. Independent internal review found
+that its case-stock mass was correct but its depth origin treated the separate
+front cover as symmetric about the body. The rear plate occupies13.5..15.5mm,
+the side shell13.5..60.5mm and the fixed cover60.5..62.5mm. Their actual
+mass-weighted centroid now governs each case's gravity wrench. The same mass,
+grip geometry, room, kitchen and renewal path remain unchanged controls. An
+independent plate/shell first-moment regression checks the physical intervals,
+not merely arithmetic from the reported origin.
+
+Retain the bespoke common-depth assembly as a comparison. Prefer the simpler
+independently fixed local accessory islands with accessible side-entry
+containment as the development direction; do not impose a common depth across
+all stations to justify extra steel, recessed ordinary controls or bespoke
+unions. The local depth transition, actual matched connections, feeder,
+protective and material duties still require completion. This judgement
+selects no product, circuit, fabricated assembly or owner appearance verdict.
