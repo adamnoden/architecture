@@ -2,6 +2,7 @@ import {readFiniteFloorContourSettings} from './structural-finite-floor-contour-
 import { admitDesignSnapshot, type DesignSnapshot } from './snapshot.js'
 import { sameEditBase, type EditBase } from './edit.js'
 import { readFloorSectionCuts } from './structural-floor-cuts.js'
+import {admitSplitPlantRoomChoice} from './inlet-split-plant-room-choice.js'
 import { admitStudyLightingCase } from './assemblies/study-lighting-case.js'
 
 /** Transport envelope only. The engineering compiler owns stage/source admission. */
@@ -22,6 +23,8 @@ export interface EngineeringTicket {
   readonly requestId: string
   readonly documentJson: string
 }
+export const editablePlantRoomId='HAD/plant-wet-floor-threshold-successor'
+export const editablePlantRoomFields=['clearWidthMm','clearHeightMm','receiverHighAdverseMm','bridgeLiftMm','bridgeHardwareBudgetEachKg'] as const
 export const editableInletBankId='HAD/indoor-isolation-bank'
 export const editableInletBankFields=['indoorBankXMm','indoorUtilityAxisZMm','indoorTailOffsetMm','indoorUtilityReturnXMm','indoorWesternReturnXMm','pipeJacketDensityComparisonKgM3','pipeInsulationDensityComparisonKgM3'] as const
 export const editableRoofId = 'MAT/ring-roof-field'
@@ -75,6 +78,14 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       }
       if (operation.pitchDeg === state.document.stages.roofPitch.pitchDeg) return { status: 'applied', state }
       stages = { ...state.document.stages, roofPitch: { pitchDeg: operation.pitchDeg } }
+    } else if(record(operation)&&operation.kind==='set-plant-room-field'){
+      const current=state.document.stages.inletSourceEnvelope
+      if(!exact(operation,['kind','assemblyId','inputId','value'])||operation.assemblyId!==editablePlantRoomId||!record(current)||!record(current.splitPlantRoom)
+       ||typeof operation.inputId!=='string'||!(editablePlantRoomFields as readonly string[]).includes(operation.inputId)||typeof operation.value!=='number'||!Number.isFinite(operation.value)
+       ||transaction.units!==(operation.inputId.endsWith('Kg')?'kg':'mm'))throw new TypeError('Expected one finite supported field on an explicit complete Plant room choice')
+      const choice=admitSplitPlantRoomChoice({...current.splitPlantRoom,[operation.inputId]:operation.value})
+      if(current.splitPlantRoom[operation.inputId]===operation.value)return{status:'applied',state}
+      stages={...state.document.stages,inletSourceEnvelope:{...current,splitPlantRoom:choice}}
     } else if(record(operation)&&operation.kind==='set-inlet-bank-field'){
       const current=state.document.stages.inletSourceEnvelope
       if(!exact(operation,['kind','assemblyId','inputId','value'])||operation.assemblyId!==editableInletBankId

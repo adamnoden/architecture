@@ -207,7 +207,7 @@ def main():
         assert lighting_svg(page) == latest_lighting
         # Explicit current inlet stage: real HTTP edits and CLI consume the same source8.
         inlet_request=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--read-inlet-source-envelope','-'],input=json.dumps(saved['design']),text=True,capture_output=True,check=True).stdout)
-        inlet_document={**saved,'stages':{'roofPitch':saved['stages']['roofPitch'],'inletSourceEnvelope':inlet_request['sourceEnvelope']['settings']}}
+        inlet_document={**saved,'stages':{'roofPitch':saved['stages']['roofPitch'],'inletSourceEnvelope':{**inlet_request['sourceEnvelope']['settings'],'splitPlantRoom':inlet_request['sourceEnvelope']['splitPlantRoom']}}}
         with page.expect_file_chooser() as chooser:
             page.get_by_role('button',name='Import JSON').click()
         chooser.value.set_files({'name':'inlet-bank.json','mimeType':'application/json','buffer':json.dumps(inlet_document).encode()})
@@ -219,6 +219,9 @@ def main():
         initial_candidate=page.locator('#current-inlet-candidate').get_attribute('src')
         assert initial_candidate and 'complete' in page.locator('#current-inlet-candidate').get_attribute('alt')
         expect(page.locator('#inlet-result')).to_contain_text('remain unqualified')
+        expect(page.locator('#inlet-plant-room-result')).to_contain_text('requires the actual saved ground profile')
+        assert page.locator('#current-inlet-plant-room').get_attribute('src')
+        assert page.locator('#comparison-inlet-plant-room').get_attribute('src')
         page.locator('#inlet-field').select_option('indoorTailOffsetMm')
         expect(page.locator('#inlet-value')).to_have_value('250')
         page.locator('#inlet-value').fill('200');page.locator('#inlet-value').press('Enter')
@@ -256,6 +259,21 @@ def main():
         page.get_by_role('button',name='Undo',exact=True).click();ready(page,4)
         expect(page.locator('#inlet-value')).to_have_value('8000')
         expect(page.locator('#inlet-result')).to_contain_text('Jacket reference 45.132 kg')
+        expect(page.locator('#plant-room-controls')).to_be_visible()
+        initial_plant_room=page.locator('#current-inlet-plant-room').get_attribute('src')
+        expect(page.locator('#plant-room-value')).to_have_value('400')
+        page.locator('#plant-room-value').fill('350');page.locator('#plant-room-value').press('Enter')
+        ready(page,5)
+        assert page.locator('#current-inlet-plant-room').get_attribute('src')!=initial_plant_room
+        assert page.locator('#current-inlet-bank').get_attribute('src')==initial_bank
+        with page.expect_download() as download:
+            page.get_by_role('button',name='Export JSON').click()
+        plant_choice=json.loads(Path(download.value.path()).read_text())
+        assert plant_choice['stages']['inletSourceEnvelope']['splitPlantRoom']['clearWidthMm']==350
+        page.get_by_role('button',name='Undo',exact=True).click();ready(page,6)
+        expect(page.locator('#plant-room-value')).to_have_value('400')
+        assert page.locator('#current-inlet-plant-room').get_attribute('src')==initial_plant_room
+
         # Import the actual current wet request. No default structural stage is
         # silently created, and edits use the same HTTP compiler as the CLI.
         print('Starting actual wet-cage and pad-width native replay',flush=True)

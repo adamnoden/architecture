@@ -43,11 +43,14 @@ jobs:
           "$finite_joint_runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_joint_solid_test.py
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_test.py
+          "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_compare.py project/str/studies/finite-floor-contour-captures/contour140.json project/str/studies/finite-floor-contour-captures/contour70.json project/str/studies/finite-floor-contour-captures/contour50.json --out project/str/studies/finite-floor-contour-captures/contour-comparison.json --check
+          "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_ordering_control.py --root . --retained project/str/studies/finite-floor-contour-captures/contour140.json --out project/str/studies/finite-floor-contour-captures/ordering-control.json --check
           echo "STR_FINITE_SOLID_PYTHON=$finite_joint_runtime/bin/python" >> "$GITHUB_ENV"
 
       - name: Verify cage geometry evidence before full validation
         run: |
           python -B project/str/studies/continuous_rc_closed_links_proof.py --check
+          python -B project/str/studies/wet_pad_fan_recovery_proof.py --check
           python -B -m unittest discover -s project/str/studies -p portal_architectural_simplification_test.py
           if ! python -B project/str/studies/portal_architectural_simplification.py --check; then
             python -B project/str/studies/portal_architectural_simplification.py

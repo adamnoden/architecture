@@ -19,13 +19,16 @@ export async function runEditorEngineeringRequest(input: unknown) {
   if (!roof) throw new TypeError('The saved document has no compiled roof-pitch stage')
   const floor = bundle.engineering.floorSection
   const cage = floor?.cageComparison
+  const fanReserves = floor?.wetPostHeadFan?.posts.flatMap((post: any) =>
+    typeof post.necessaryPlacementDomain?.minimumReserveMm === 'number' ? [post.necessaryPlacementDomain.minimumReserveMm] : []) ?? []
   const lighting = bundle.engineering.studyLighting
   const inlet=bundle.engineering.inletSourceEnvelope, bank=inlet?.joinedDirection.room.bankReceiver
   return { ticket, documentIdentity: bundle.documentIdentity, manifest: bundle.manifest,
     coordinationDiagnostics: bundle.coordinationDiagnostics, evidence: bundle.evidence,
     floorEvidence: floor ? { headCount:floor.native.heads.length, contactComputed:floor.wetBearingContact?.status==='computed-comparison',
-      contourStatus:floor.contourComponent?.status??null,contourDiagnostics:floor.contourComponent?.diagnostics??[],slabSolidCompatibility:floor.slabSolidCompatibility, nominalHeadFanStatus:floor.wetPostHeadFan?.status??null, jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
+      contourStatus:floor.contourComponent?.status??null,contourDiagnostics:floor.contourComponent?.diagnostics??[],slabSolidCompatibility:floor.slabSolidCompatibility, nominalHeadFanPlacementReserveMm:fanReserves.length?Math.min(...fanReserves):null, nominalHeadFanStatus:floor.wetPostHeadFan?.status??null, jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
     studyLighting: lighting ? { svg: lighting.commonDepthCornerSvg, comparison: lighting.lighting.commonDepthCornerComparison } : null,
+    plantRoom: inlet?.splitPlantRoom ?? null,
     inletBank: inlet&&bank?{settings:inlet.settings,receiver:bank,carrier:inlet.joinedDirection.room.bankShelfCarrier,route:inlet.joinedDirection.room.indoorRoutes,sourceOnlyBound:inlet.bound}:null,
     roof: { ...roof, svg: renderDrawingSceneV2Svg(roof.drawing) },
     wetCage: cage ? { settings: cage.settings, geometry: cage.geometry, quantities: cage.quantities,

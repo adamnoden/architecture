@@ -2,12 +2,12 @@
 import copy
 import math
 import unittest
-from wet_post_head_fan import compression_fan,recover_wet_head_fans,cage_geometry_digest,cross,transport
+from wet_post_head_fan import compression_fan,recover_wet_head_fans,cage_geometry_digest,cross,transport,pad_placement_domain
 
 
 def fixture(unloaded=False):
     source={'project/fixture.py':'0'*64};g=0. if unloaded else 1.
-    settings={'bearingQuadratureOrder':2,'padWidthMm':140.,'padLengthMm':100.}
+    settings={'bearingQuadratureOrder':2,'padWidthMm':140.,'padLengthMm':100.,'combinedRelativePlacementToleranceMm':10.}
     request={'sourceSHA256':source,'wetSupport':settings,'bearingCase':{'masonryCase':{'verticalCase':{'monolithicCase':{'houseCase':{'boundary':{'physicalGFactor':g}}}}}}}
     native={'schema':'str-coupled-floor-section-result/1','sourceSHA256':source,'request':request,'candidateAccepted':False,'completeHouseProof':False,
       'nativeVertical':{'native':{'caseId':'SYNTHETIC-LOCAL-FAN'}},'seatedWetSupport':{'physicalAcceptance':False,'settings':settings,'posts':[],'contactFibres':[]}}
@@ -22,7 +22,7 @@ def fixture(unloaded=False):
             points=[[cx-79,-174,z],[cx+79,-174,z],[cx+79,174,z],[cx-79,174,z],[cx-79,-174,z]]
             links.append({'id':f'STR/WET-CAGE/post/{i}/link/{j}','kind':'post-link',
                           'parts':[{'kind':'line','points':[a,b]} for a,b in zip(points,points[1:])]})
-    cage={'nativeSourceSHA256':source,'nativeCaseId':'SYNTHETIC-LOCAL-FAN','settings':{'linkDiameterMm':8.,'sourceSteelYieldMPa':500/1.15,'comparisonSteelFraction':.92,'sourcePoorBondMPa':2.1},'mainBars':[],'links':links}
+    cage={'nativeSourceSHA256':source,'nativeCaseId':'SYNTHETIC-LOCAL-FAN','settings':{'linkDiameterMm':8.,'sourceSteelYieldMPa':500/1.15,'comparisonSteelFraction':.92,'sourcePoorBondMPa':2.1,'cageInstallationToleranceMm':5.,'linkFabricationToleranceMm':1.},'mainBars':[],'links':links}
     binding={'sourceSHA256':source,'request':copy.deepcopy(request),'nativeCaseId':'SYNTHETIC-LOCAL-FAN','cageGeometrySHA256':cage_geometry_digest(cage)}
     return native,cage,binding
 
@@ -87,6 +87,30 @@ class FanTest(unittest.TestCase):
             self.assertLess(max(abs(x) for x in p['bottomInterfaceSourceResidualKN_KNm']),1e-12)
             self.assertLess(max(abs(x) for x in p['sourceBaseResidualKN_KNm']),1e-12)
         self.assertEqual((native,cage,binding),before)
+
+    def test_actual_source_placement_envelope_changes_without_force_or_acceptance_credit(self):
+        native,cage,binding=fixture();before=copy.deepcopy((native,cage,binding))
+        result=recover_wet_head_fans(native,cage,binding)
+        domain=result['posts'][0]['necessaryPlacementDomain']
+        self.assertEqual(domain['positiveFanDomainEnvelopeReserveXYMm'],[-7.,108.])
+        self.assertFalse(domain['wholePadEnvelopeWithinVirtualDomain'])
+        self.assertEqual((native,cage,binding),before)
+        settings=copy.deepcopy(native['request']['wetSupport']);settings['padWidthMm']=120
+        trial=pad_placement_domain(settings,cage['settings'],[0,0],[0,0],[79,174])
+        self.assertEqual(trial['positiveFanDomainEnvelopeReserveXYMm'],[3.,108.])
+        self.assertTrue(trial['wholePadEnvelopeWithinVirtualDomain'])
+        self.assertFalse(trial['toleranceDomainAccepted']);self.assertFalse(trial['finiteCCTNodesAccepted'])
+        self.assertFalse(trial['anchorageAccepted'])
+        shifted=pad_placement_domain(settings,cage['settings'],[4,-2],[0,0],[79,174])
+        self.assertEqual(shifted['positiveFanDomainEnvelopeReserveXYMm'],[-1.,106.])
+        self.assertFalse(shifted['wholePadEnvelopeWithinVirtualDomain'])
+        restored=pad_placement_domain(settings,cage['settings'],[0,0],[0,0],[79,174])
+        self.assertEqual(restored,trial)
+        with self.assertRaises((KeyError,ValueError)):
+            pad_placement_domain(settings,{},[0,0],[0,0],[79,174])
+        for bad in (-1,float('nan')):
+            settings['combinedRelativePlacementToleranceMm']=bad
+            with self.assertRaises(ValueError):pad_placement_domain(settings,cage['settings'],[0,0],[0,0],[79,174])
 
     def test_actual_140_extent_plus10_placement_and_220_extent_are_rejected_not_clipped(self):
         nominal=[{'id':'edge','xyMm':[70,0],'forceDownKN':1}]

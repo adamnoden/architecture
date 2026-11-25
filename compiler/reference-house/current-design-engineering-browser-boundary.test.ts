@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { fileURLToPath } from 'node:url'
 import { runInNewContext } from 'node:vm'
+import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import { build } from 'vite'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
@@ -20,14 +21,18 @@ test('browser engineering edits initialize without Node globals and retain light
     return bundle.output.filter(item => item.type === 'chunk').map(item => item.code)
   }).join('\n')
   const document = { schema: 'current-engineering-document/1', design: readGeorgianDesignSnapshot(), bindings: {}, stages: {
-    roofPitch: { pitchDeg: 25 }, floorSection: { thicknessMm: 200 }, studyRoomKit: { pitchMm: 300 }, studyLighting: {
+    roofPitch: { pitchDeg: 25 }, floorSection: { thicknessMm: 200 },
+    inletSourceEnvelope: { splitPlantRoom: JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-split-plant-room-candidate.json', import.meta.url), 'utf8')) },
+    studyRoomKit: { pitchMm: 300 }, studyLighting: {
       arrangement: 'lamps-with-wall', socketCentreZMm: 600, serviceTotalDepthMm: 75,
       lampHand: 'left', failedSourceId: null, finishTrial: 'crafted-oak', automationConnected: false, localWallModule: true,
     },
   } }
   // Deliberately no process, require, Buffer or filesystem. The same production
   // browser entry must load before any HTTP/compiler response can be requested.
-  const result = runInNewContext(`${script}\n(() => {
+  // The document contract is plain JSON. Clone inside this browser realm;
+  // injecting Node's structuredClone would manufacture foreign prototypes.
+  const result = runInNewContext(`const structuredClone = value => JSON.parse(JSON.stringify(value));\n${script}\n(() => {
     const api = EngineeringAuthoring, document = JSON.parse(inputJson)
     const state = api.beginEngineeringEdit(document, 'browser-regression')
     const ticket = api.engineeringTicket(state, 'before-edit')
@@ -44,7 +49,16 @@ test('browser engineering edits initialize without Node globals and retain light
     if (contourEdit.status !== 'applied') throw new Error(contourEdit.message)
     const contourUndo = api.replayEngineeringEdit(contourEdit.state, api.engineeringBase(contourEdit.state), 'undo')
     if (contourUndo.status !== 'applied') throw new Error(contourUndo.message)
+    const plantTransaction = (inputId, value) => ({ schema: 'current-engineering-edit/1', units: 'mm', base: api.engineeringBase(state),
+      operation: { kind: 'set-plant-room-field', assemblyId: api.editablePlantRoomId, inputId, value } })
+    const plantEdit = api.applyEngineeringEdit(state, plantTransaction('clearWidthMm', 350))
+    if (plantEdit.status !== 'applied') throw new Error(plantEdit.message)
+    const plantUndo = api.replayEngineeringEdit(plantEdit.state, api.engineeringBase(plantEdit.state), 'undo')
+    if (plantUndo.status !== 'applied') throw new Error(plantUndo.message)
     return { depth: changed.state.document.stages.studyLighting.serviceTotalDepthMm,
+      plantWidth: plantEdit.state.document.stages.inletSourceEnvelope.splitPlantRoom.clearWidthMm,
+      plantRejected: api.applyEngineeringEdit(state, plantTransaction('selected', 1)).status === 'rejected',
+      plantRestored: api.saveEngineeringEdit(plantUndo.state) === api.saveEngineeringEdit(state),
       contourAdmitted: contourEdit.state.document.stages.floorSection.contourComponent.pitchMm === 140,
       contourRejected: api.applyEngineeringEdit(state, contourTransaction({ ...contour, matrix: [] })).status === 'rejected',
       contourRestored: api.saveEngineeringEdit(contourUndo.state) === api.saveEngineeringEdit(state),
@@ -53,8 +67,9 @@ test('browser engineering edits initialize without Node globals and retain light
       staleIgnored: api.currentEngineeringReply(changed.state, api.engineeringTicket(changed.state, 'after-edit'), { ticket }) === undefined,
       restored: api.saveEngineeringEdit(undo.state) === api.saveEngineeringEdit(state),
       originalUnchanged: state.document.stages.studyLighting.serviceTotalDepthMm === 75 }
-  })()`, { inputJson: JSON.stringify(document), structuredClone, URL }, { timeout: 1000 })
-  assert.deepEqual(JSON.parse(JSON.stringify(result)), { depth: 85, contourAdmitted: true, contourRejected: true, contourRestored: true,
+  })()`, { inputJson: JSON.stringify(document), URL }, { timeout: 1000 })
+  assert.deepEqual(JSON.parse(JSON.stringify(result)), { depth: 85, plantWidth: 350, plantRejected: true, plantRestored: true,
+    contourAdmitted: true, contourRejected: true, contourRestored: true,
     roofUnchanged: true, adverseRejected: true,
     staleIgnored: true, restored: true, originalUnchanged: true })
 })

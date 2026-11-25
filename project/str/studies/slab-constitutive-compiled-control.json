@@ -1,20 +1,20 @@
 {
   "schema": "str-slab-constitutive-shared-compile-control/1",
-  "inputSHA256": "e7d013c160cfb8654a039ec1995cb41c787f8be42c2b10e0ef196cbf11c040d5",
-  "fullCompiledBundleSHA256": "a9c8bf4ca3ff429c793ed2cca8835707bc6cbef0a7445aeee76962aa49ae83a3",
-  "archiveSHA256": "fcd64c7ea4d5f46f8625351def1579be9efb7b8507b3c6efb06b433022b7c34d",
+  "inputSHA256": "75d224210ef0828896859489e0cfff23d91fcd2d75a85c75f0c0b46bc9717534",
+  "fullCompiledBundleSHA256": "3a35067029cf9eec2cdcd3e23217176d2c7bd8848cbbf93ecc5e658dc136d8b0",
+  "archiveSHA256": "913ca3ce9698e58f2122fc401b1e2fad4e078f5e6f00da8ec87c9f2cd1f6264c",
   "comparisonOwner": "project/str/studies/floor-section-proof.json",
   "comparisonOwnerSHA256": "8b2b789df42882c4ee7ad0459532010d65f0f4566cdb7cd8b206ca07ce671184",
   "comparisonCaseId": "wet-aligned-quadrature8",
   "nativeHeadCount": 52,
   "maxNativeHeadComponentDeltaFromOwningControlKN_KNm": 0,
   "nativeBalanceKN_KNm": [
-    -6.710166644552373e-9,
-    -1.4925092273188056e-9,
+    -6.710166644552373e-09,
+    -1.4925092273188056e-09,
     -9.00399754755199e-10,
-    -6.4559280872344974e-9,
-    -1.163780689239502e-8,
-    6.14066666457802e-8
+    -6.4559280872344974e-09,
+    -1.163780689239502e-08,
+    6.14066666457802e-08
   ],
   "slabSolidCompatibility": {
     "status": "common-modulus-ruled-out",
@@ -33,7 +33,7 @@
     "diagnostics": [
       "SLAB_SOLID_LAW/common-positive-modulus-impossible"
     ],
-    "scope": "Necessary bound D11/A11 ≤ h²/4 for a common positive local through-thickness modulus. Separate positive native operators may remain valid numerical comparisons; no equivalent solid, strength or global stability qualification follows."
+    "scope": "Necessary bound D11/A11 \u2264 h\u00b2/4 for a common positive local through-thickness modulus. Separate positive native operators may remain valid numerical comparisons; no equivalent solid, strength or global stability qualification follows."
   },
   "executedFloorMethod": {
     "id": "str-current-floor-section/1",
@@ -116,21 +116,23 @@
       "project/str/studies/four_l_joint_recovery.py": "411cac94568de388b231b60f06c2943258c389db",
       "project/str/studies/four_l_joint_proof.py": "956a6f4e7b2afb59cf1cf58c60326b9231cdecae",
       "project/str/studies/four-l-joint-proof.json": "74dc6eb4d72698dec7f42ac02e100bed5b53112c",
-      "project/str/studies/wet_post_head_fan.py": "a0b083357c0fb1170868b57614752313e69073a2",
+      "project/str/studies/wet_post_head_fan.py": "eaf8239a1ed5b86633a3e3bd26f6ee08d8036308",
       "project/str/studies/wet_post_head_fan_driver.py": "394854813a0f18f125ba6e745c22662b075468ed",
       "compiler/reference-house/current-design/structural-wet-post-head-fan.ts": "9e023ff329a76cc512ff3a3f7467489483b688c6"
     }
   },
   "executedFloorSource": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "e10a6631856b22e3a1b3f480dfb814454abb035866fd17d97e2bac880d9f2217",
-    "caseDigest": "6001da12f16ebe38104116b1b276387e2ac6e0c008e8d4d3d2bb2ddfa172e27e"
+    "bindingDigest": "843df348a3cc7d767da89e13fe4302454694ece0cb082fa4d91d587e746143a9",
+    "caseDigest": "c41306cc7abf6b591b0411288ce07a19fdb80dbeb6593d25ba4d66df670594b1"
   },
   "physicalAcceptance": false,
   "scope": "Actual shared saved-stage CLI compile. All52 reaction vectors exactly equal retained owning control; new constitutive metadata does not change native laws or qualify a joint/house.",
   "regeneration": {
-    "context": "Fresh shared engineering bindings; exact prior authored stage controls. The outgoing edge of this overwritten receipt was explicitly invalidated only during isolated production; all source edges must be restored and audited before publication.",
+    "context": "Fresh current saved-document bindings with exact prior authored stage controls. Actual shared CLI/compiler execution after wet-fan recovery; superseded outgoing receipt edges were invalidated only during isolated production and restored before publication. No native response or head vector was manufactured from a receipt.",
     "ordinaryNativeResponseChanged": false,
-    "absentContourComponent": null
+    "absentContourComponent": null,
+    "nativeControlReplayed": "wet-aligned-quadrature8",
+    "previousAll52HeadVectorsExactlyEqual": true
   }
 }

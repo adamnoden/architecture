@@ -157,6 +157,40 @@ def hoop_geometry(links, post_index, centroid, post_top, post_bottom):
             'virtualTargetsAreActualAnchoredNodes':False}
 
 
+def pad_placement_domain(support_settings, cage_settings, pad_centre, post_centre, half_axes):
+    """Necessary geometric containment in a virtual fan, never a node/bar pass.
+
+    Independent pad-to-post, whole-cage and link-fabrication bounds are charged
+    once each. Main-bar placement is not a virtual hoop-axis displacement and
+    is not silently substituted for the independently authored cage bound.
+    """
+    pad = [support_settings['padWidthMm'], support_settings['padLengthMm']]
+    allowances = {
+        'padToPostRelative': support_settings['combinedRelativePlacementToleranceMm'],
+        'cageInstallation': cage_settings['cageInstallationToleranceMm'],
+        'linkFabrication': cage_settings['linkFabricationToleranceMm'],
+    }
+    if (not vector(pad, 2) or min(pad) <= 0 or not vector(pad_centre, 2)
+            or not vector(post_centre, 2) or not vector(half_axes, 2) or min(half_axes) <= 0
+            or any(not finite(value) or value < 0 for value in allowances.values())):
+        raise Unsupported('FAN_PLACEMENT_INPUT_UNSUPPORTED', 'Actual pad, virtual axes and explicit independent nonnegative source bounds required')
+    offset = [a-b for a,b in zip(pad_centre,post_centre)]
+    independent_bound = math.fsum(allowances.values())
+    reserve = [a-abs(d)-p/2-independent_bound for a,d,p in zip(half_axes,offset,pad)]
+    return {
+        'schema': 'str-wet-fan-necessary-placement-domain/1',
+        'actualPadRelativeCentreXYMm': offset, 'padDimensionsXYMm': pad,
+        'virtualHalfAxesXYMm': list(half_axes), 'independentBoundsMm': allowances,
+        'combinedIndependentBoundMm': independent_bound,
+        'positiveFanDomainEnvelopeReserveXYMm': reserve,
+        'minimumReserveMm': min(reserve),
+        'wholePadEnvelopeWithinVirtualDomain': min(reserve) >= 0,
+        'toleranceDomainAccepted': False, 'finiteCCTNodesAccepted': False,
+        'anchorageAccepted': False,
+        'scope': 'Necessary whole-pad outline containment in extended straight-leg virtual axes under the declared independent coordinate bounds. No re-equilibrated placement state, finite rounded node, bar force introduction or complete tolerance/resistance acceptance.',
+    }
+
+
 def recover_wet_head_fans(native, cage, binding):
     """Source/request/cage-bound wrapper, called after native-floor validation.
 
@@ -206,7 +240,8 @@ def recover_wet_head_fans(native, cage, binding):
             if len(loaded)!=order*order:raise Unsupported('FAN_CONTACT_INVENTORY_MISSING','Missing actual post quadrature samples')
             loads=[{'id':r['id'],'xyMm':[r['pointXYZMm'][i]-centre[i] for i in (0,1)],'forceDownKN':r['normalCompressionKN']} for r in loaded]
             loads.append({'id':'actual-factored-pad-G','xyMm':[post['padCentreXYMm'][i]-centre[i] for i in (0,1)],'forceDownKN':g*post['padPhysicalGKN']})
-            fan=compression_fan(loads,geom['halfAxesXYMm'],geom['depthMm']); row={'id':post['id'],'geometry':geom,'fan':fan}
+            placement=pad_placement_domain(wet['settings'],settings,post['padCentreXYMm'],centre,geom['halfAxesXYMm'])
+            fan=compression_fan(loads,geom['halfAxesXYMm'],geom['depthMm']); row={'id':post['id'],'geometry':geom,'fan':fan,'necessaryPlacementDomain':placement}
             if fan['status']=='computed-nominal-equilibrium':
                 body=g*post['physicalGKN']; height=top-bottom; H=geom['depthMm']; q=body/height; top_w=[*raw[6:9],*[v/1000 for v in raw[9:12]]]
                 expected_base=transport(top_w,[0,0,top],[0,0,bottom]);expected_base[2]-=body
