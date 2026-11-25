@@ -9,8 +9,8 @@
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-25T23:13:29.356Z",
-  "expiresAt": "2026-11-25T23:58:29.356Z",
+  "heartbeatAt": "2026-11-25T23:46:09.510Z",
+  "expiresAt": "2026-11-26T00:31:09.510Z",
   "branch": "work/convergence-structure-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
@@ -36,8 +36,8 @@
   },
   "pr": 1626,
   "checkpoint": {
-    "evidence": "RecoveryPR1626@3ef6d998 covers recovered125mm Plant frame/profile only. Separate UNMERGED checkpoint work/convergence-bed-water-20261125@ab2c3532b13c016671b2d0c37db050856e0be7bf tree4755e385c0025689b3beb9e1cebbe2ad464083b8 contains incident/impulse methods, byte-matched to locally verified0b9ef7e2 water files",
-    "next": "Complete recoveryUI fix and exact-head preflight; then separately validate/integrate the unmerged bed-water checkpoint. Narrow160x140 independent spill failed unchanged hydraulic duties and was not authored as a candidate",
-    "blocker": "Recovery browserCI pending; no actual hot/store release model, supported Plant installation or selected occupied arrangement"
+    "evidence": "Recovery PR1626 exact publication head243593e5 contains recovered125mm Plant entry/fitted frame and current profile; parent reports both browser proofs green, health still running. Separate UNMERGED work/convergence-bed-water-20261125@2d861dae5c6856b09453121a1fa60c38daf1ba02 contains incident/impulse/material corrections and governing baseline decision. Own verified material commit ef4f1160; strict source audit0, canonical producer check, focused tests pass.",
+    "next": "Maintain publication preflight for recovery and implement separately unselected connected wet-service-suite candidate with actual geometry and coupled backwater adverse controls.",
+    "blocker": "Recovery health pending; actual stored network release, source/product admission, support and occupied wet-suite interfaces unresolved."
   }
 }
