@@ -1,0 +1,12 @@
+{
+  "schema": "str-wet-masonry-arch-choices/1",
+  "id": "STR/WET/masonry-arch-alternative",
+  "finishedClearSpanMm": 2150,
+  "lowerCoreEastOffsetMm": 12,
+  "masonryUnitWeightKNPerM3": 20,
+  "integrationIntervals": 800,
+  "sectionSamples": 400,
+  "tieCentreZMm": 2560,
+  "tieBearingFacesYMm": [8700, 11650],
+  "scope": "unselected-frozen-native-load-local-comparison"
+}
