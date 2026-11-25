@@ -1,5 +1,5 @@
 {
-  "schema": "had-split-plant-room/1",
+  "schema": "had-split-plant-room/2",
   "id": "HAD/plant-wet-floor-threshold-successor",
   "localPocketDepthMm": 245,
   "isolationGapMm": 50,
@@ -8,7 +8,7 @@
     4855
   ],
   "clearWidthMm": 400,
-  "clearHeightMm": 150,
+  "clearHeightMm": 140,
   "insideRunMm": 260,
   "outsideRunMm": 900,
   "invertAboveDistributionMm": 48,
@@ -44,5 +44,30 @@
     100,
     50
   ],
-  "storedAdverseMinimumDensityKgM3": 958
+  "storedAdverseMinimumDensityKgM3": 958,
+  "fittedFrame": {
+    "schema": "had-plant-fitted-frame/1",
+    "id": "HAD/plant-east-fitted-frame",
+    "clearWidthMm": 1100,
+    "clearHeightMm": 2300,
+    "headerDepthMm": 100,
+    "sourceOpeningDiameterMm": 125,
+    "leafThicknessMm": 44,
+    "leafMassBudgetKg": 100,
+    "handleOffsetFromFreeEndMm": 50,
+    "handleProjectionMm": 130,
+    "handleHeightMm": 1100,
+    "operatorEndOffsetMm": 320,
+    "operatorBulgeMm": 40,
+    "operatorNormalStartMm": 400,
+    "operatorNormalEndMm": -100,
+    "operatorShoulderHeightMm": 1450,
+    "externalWorkDeckPlanMm": [
+      12130,
+      3350,
+      2100,
+      2100
+    ],
+    "deckGuardIntrusionMm": 50
+  }
 }

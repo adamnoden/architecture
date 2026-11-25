@@ -1,0 +1,30 @@
+{
+  "schema": "str-wet-beam-rectangular-return-input/1",
+  "id": "STR/WET-CAGE/beam/rectangular-return-development",
+  "units": "mm-kN-kNm",
+  "datum": "source-ground-zero",
+  "nativeFamily": "wet-aligned-concrete27",
+  "padWidthMm": 120,
+  "padCentreOffsetsYMm": [
+    40,
+    0
+  ],
+  "bearingQuadratureOrders": [
+    32,
+    64
+  ],
+  "endReturnMandrelMm": 80,
+  "postTopLevelRaiseMm": 10,
+  "purpose": "unadopted-geometry-and-same-case-force-development",
+  "bendPressureAccepted": false,
+  "beamEndDRegionAccepted": false,
+  "comparisonEndMandrelsMm": [
+    80,
+    100
+  ],
+  "strutCotangentComparisons": [
+    1,
+    2.5
+  ],
+  "reviewBoundaryPolicy": "first-actual-cut-at-or-beyond-south-pad-centre-plus-beam-depth"
+}

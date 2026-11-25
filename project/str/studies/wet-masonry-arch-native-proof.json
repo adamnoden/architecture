@@ -1,0 +1,4885 @@
+{
+  "schema": "str-wet-masonry-arch-native-proof/1",
+  "sourceSHA256": {
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+    "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+    "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+    "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+    "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+    "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+    "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+    "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+    "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+    "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+    "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+    "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+    "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+    "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+    "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+    "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+    "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+    "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+    "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+    "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+    "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+    "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+    "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+    "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+    "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+    "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+    "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+  },
+  "processingMethodSHA256": {
+    "project/str/studies/wet_masonry_arch_native.py": "522cbea33662899c54534a47d40c01308a1b5496e8357c21c4aa9ac3b3c47e81",
+    "project/str/studies/wet_masonry_arch_native_proof.py": "20e562011be1162800c9a73b404ceb2607ab34db284916454042b21dd71082cd",
+    "project/str/studies/wet_masonry_arch_comparison.py": "09f8c05f31e552cf203c14777dad386ed9911afbaa70efc462acfb321a13daba",
+    "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7"
+  },
+  "archiveSHA256": "56f62caa54a0e817c00fea1b00c40e71a3e14047807386b55072df8bdd3e2fe9",
+  "actualFullCaptureProvenance": {
+    "oriented": {
+      "fullFileSHA256": "ad5ddc4f515af6862fce2b5da624371d62632672ec12be48774652347b272e98",
+      "fullBytes": 17694151
+    },
+    "soft": {
+      "fullFileSHA256": "a4bbb43fad029611f29110b2caf993697e1ee05327956f9e5a01c4e20389532b",
+      "fullBytes": 17695566
+    },
+    "suction": {
+      "fullFileSHA256": "42fd74deed9d41c9617f37f3f9b35b8811b378f66b63283bd7e381333a26b971",
+      "fullBytes": 17386820
+    }
+  },
+  "controls": {
+    "oriented": {
+      "nativeCaseId": "WET-MASONRY-ARCH-NATIVE-FLOOR-E3000-16-B8-ORIENTED",
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -101.26536962859254,
+            -80.3991162781199,
+            285.65394300914704,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            93.53413039445822,
+            2.6701853147907784,
+            -24.15052294542668,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.07199762879469063,
+            76.0932863374147,
+            -16.232213824521025,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -466.26548970458623,
+            -303.4384430057842,
+            83.72831849564737,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            274.9763546020164,
+            2.5053580755999665,
+            134.46378867697993,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            -0.32554588674712903,
+            212.4279461885816,
+            -75.05865672899017,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -244.01458697842648,
+            -432.5944224820874,
+            93.09654154511,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            182.93235271259476,
+            6.202112916471398,
+            -64.40504062019755,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.632085533869763,
+            258.72913219829485,
+            160.9604991020903,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -156.2663562553705,
+            -201.69208757401398,
+            -66.12433866311812,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            133.29333208789507,
+            2.2893536729096304,
+            64.66880980488396,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -2.272062277775075,
+            72.04859137608202,
+            152.31234647893749,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            40.307917274146476,
+            37.02725676112258,
+            102.67210358700028,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            17.439720595878793,
+            65.09779308035225,
+            38.0995210111401,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -0.6055814694099078,
+            29.001665539478225,
+            74.67790739009266,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            58.439590961423754,
+            106.88777204652051,
+            154.43981426300977,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -33.703683332910856,
+            83.50087671078224,
+            93.3451983962972,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -62.60546263890607,
+            3.6415239333210607,
+            125.13994134830813,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -45.545978275472706,
+            187.47604595376507,
+            150.90189440290123,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            30.451991954708646,
+            -0.8513351798398876,
+            33.20181040166116,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            53.13224986197033,
+            4.298743772969676,
+            48.554873053289725,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            59.76543923517483,
+            56.8996717161312,
+            107.6824174097749,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            119.39596427345346,
+            46.41403364548057,
+            144.04929757349998,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            104.1284164067739,
+            -23.885531882770294,
+            43.22102176156676,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            0.4458325345394183,
+            -53.377428005839676,
+            92.63604517248977,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -37.26947897273391,
+            -53.38774445061032,
+            158.8085063539234,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            82.41633568247062,
+            -2.1570348445037855,
+            57.19905395610054,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -5.414866612206579,
+            1.998310847037713,
+            125.22379793762151,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -10.028021983922011,
+            56.09250114130415,
+            88.49897119127479,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -50.414958205246194,
+            9.305243399504748,
+            256.09459713307945,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            11.848586156013802,
+            52.296449379502604,
+            103.55928660403582,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -1.4725791184785035,
+            -6.203310461520111,
+            54.004501845682775,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            -0.005189556645156634,
+            14.981646181382395,
+            33.065660132518204,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            23.990267811825426,
+            -5.337642003591839,
+            56.43067918096291,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            2.1640687750218017,
+            23.364931635507336,
+            70.04267435716419,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            0.5785136360314153,
+            3.2910148683198166,
+            36.84332041221698,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            13.680835024729205,
+            -18.567118166895746,
+            -16.720476091588026,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -15.09527901034537,
+            -1.0336190213635241,
+            52.63940215094141,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            4.978577533568965,
+            0.6457530704009042,
+            10.978755621825716,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            5.784718143696015,
+            0.10520078968011237,
+            37.92153325585299,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            17.613804596944952,
+            -64.8644298260508,
+            141.5024002789214,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            11.547916858846834,
+            14.484943462281535,
+            114.98978322281984,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            60.00363904632875,
+            -74.34851652813774,
+            138.12340551617845,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            80.60369808796375,
+            101.26282850634297,
+            175.69025770335298,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -29.939349495552538,
+            20.61727433050773,
+            103.47303954647813,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            0.055013617146313365,
+            -18.189167632707683,
+            75.21974544728806,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -46.37290389543195,
+            29.031393655599473,
+            121.76136598084213,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -13.413506667946569,
+            2.6513016844357202,
+            67.26465070357868,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -2.5110712305458045,
+            -7.286710741558158,
+            42.36383026772825,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            20.78397955556061,
+            14.98631245631017,
+            48.206103178510034,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -22.879436628151943,
+            -4.485708386002644,
+            112.03918934073968,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            24.435969668784313,
+            -60.11721473493941,
+            92.7235126976735,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "externalWrenchKN_KNm": [
+        -186.7465424340356,
+        -186.10987344258766,
+        -4295.4828680271185,
+        -25243.875828212218,
+        26087.198000934277,
+        3.820013948624168
+      ],
+      "globalWrenchResidualKN_KNm": [
+        -6.8083920723438496e-09,
+        -7.391065537376562e-10,
+        1.800799509510398e-10,
+        1.0732561349868774e-08,
+        -2.6073306798934935e-08,
+        6.613429286517203e-08
+      ],
+      "archFreeBodyResidualKN_KNm": [
+        8.719110503041527e-14,
+        -7.960299086562372e-13,
+        -2.778888230636767e-13,
+        5.027089855502709e-12,
+        1.1228795671058833e-12,
+        -5.279332526697544e-12
+      ],
+      "frameEnergyRelativeResidual": 3.201131734296458e-12,
+      "plateWorkRelativeResidual": 1.8291380703647284e-13,
+      "plateAreaM2": 98.30240624999988,
+      "plateSelfGKN": 530.8329937499993,
+      "joinedPhysicalGKN": 2963.389369834923,
+      "maximumPlateDeflectionMm": 2.9172387028154954,
+      "rawPointMomentInspectionKNmPerM": 84.73892910547005,
+      "tieState": {
+        "id": "WET-ARCH/tie",
+        "terms": [
+          [
+            "WET-ARCH/tie-end/1",
+            [
+              0,
+              1,
+              0,
+              -0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            "WET-ARCH/tie-end/0",
+            [
+              0,
+              -1,
+              0,
+              -0.0,
+              -0.0,
+              -0.0
+            ]
+          ]
+        ],
+        "stiffness": 47.92259980052226,
+        "mode": "tension",
+        "gap": 0.0,
+        "relativeMm": 0.17524766537365633,
+        "active": true,
+        "forceKN": 8.398323733677575
+      },
+      "floorNormalCompressionKN": 18.667010079642846,
+      "activeNormalFibres": 20,
+      "normalFibreCount": 32,
+      "minimumRawNormalCompressionKN": -0.0,
+      "maximumRigidWorkResidual": 1.8189894035458565e-12,
+      "ringMemberAxialRangeKN": [
+        2.181815562704882,
+        12.555388080948187
+      ],
+      "actualRingMemberEndActions": [
+        {
+          "id": "WET-ARCH/ring-member/0",
+          "axialCompressionKN": 12.555388080948187,
+          "rawEndWrenchesKN_KNmm": [
+            -0.010520344856151054,
+            8.934118666070475,
+            9.849569957311331,
+            -353.046346122208,
+            3.409182760005507,
+            2.9731797982476706,
+            0.010520344856151054,
+            -8.934118666070475,
+            -9.849569957311331,
+            1017.1160298363739,
+            -4.1713782542408175,
+            -1.5725311269628648
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9026.00844676956,
+              2642.665638866486
+            ],
+            [
+              2914.5,
+              9159.145591077639,
+              2715.1153070719347
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 12.555388080948187,
+              "inPlaneMomentKNmm": -353.046346122208,
+              "outOfPlaneMomentKNmm": -0.9820103263246751,
+              "inPlaneEccentricityMm": 28.119110603831356,
+              "outOfPlaneEccentricityMm": 0.07821425510652263,
+              "grossAffineBiaxialKernRatio": 0.7880714051928822,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 12.555388080948187,
+              "inPlaneMomentKNmm": 1017.1160298363739,
+              "outOfPlaneMomentKNmm": -0.6125926561773964,
+              "inPlaneEccentricityMm": 81.0103218856108,
+              "outOfPlaneEccentricityMm": 0.04879121634694491,
+              "grossAffineBiaxialKernRatio": 2.2628442210299213,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/1",
+          "axialCompressionKN": 8.584092373238262,
+          "rawEndWrenchesKN_KNmm": [
+            -0.010918141690141048,
+            7.378390373420444,
+            4.4989171733351085,
+            -606.0194573107729,
+            -0.12510058756565456,
+            1.1334553753246226,
+            0.010918141690141048,
+            -7.378390373420444,
+            -4.4989171733351085,
+            757.1569531238292,
+            -0.5676513364681846,
+            0.3694695421458576
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9159.145591077639,
+              2715.1153070719347
+            ],
+            [
+              2914.5,
+              9296.79950326561,
+              2778.5649254863574
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 8.584092373238262,
+              "inPlaneMomentKNmm": -606.0194573107729,
+              "outOfPlaneMomentKNmm": -1.0817353243523764,
+              "inPlaneEccentricityMm": 70.59796551119337,
+              "outOfPlaneEccentricityMm": 0.12601627257935746,
+              "grossAffineBiaxialKernRatio": 1.9755764791039803,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 8.584092373238262,
+              "inPlaneMomentKNmm": 757.1569531238292,
+              "outOfPlaneMomentKNmm": -0.5731630217118873,
+              "inPlaneEccentricityMm": 88.20466045826106,
+              "outOfPlaneEccentricityMm": 0.06677036974797457,
+              "grossAffineBiaxialKernRatio": 2.4643869954124313,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/2",
+          "axialCompressionKN": 6.222588213213826,
+          "rawEndWrenchesKN_KNmm": [
+            0.008259356086655067,
+            5.6013401629295885,
+            2.7734195253324856,
+            -430.34364965697523,
+            -3.070813295051625,
+            -1.6121021079697613,
+            -0.008259356086655067,
+            -5.6013401629295885,
+            -2.7734195253324856,
+            519.5356488727111,
+            3.5182186642622426,
+            0.4428819032172555
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9296.79950326561,
+              2778.5649254863574
+            ],
+            [
+              2914.5,
+              9438.362621804752,
+              2832.7344472404125
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 6.222588213213826,
+              "inPlaneMomentKNmm": -430.34364965697523,
+              "outOfPlaneMomentKNmm": 0.40818356473414297,
+              "inPlaneEccentricityMm": 69.15830437616448,
+              "outOfPlaneEccentricityMm": 0.06559707162806543,
+              "grossAffineBiaxialKernRatio": 1.9328104949627365,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 6.222588213213826,
+              "inPlaneMomentKNmm": 519.5356488727111,
+              "outOfPlaneMomentKNmm": 0.8437139756420575,
+              "inPlaneEccentricityMm": 83.49188972033596,
+              "outOfPlaneEccentricityMm": 0.13558891360517947,
+              "grossAffineBiaxialKernRatio": 2.3358171781937833,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/3",
+          "axialCompressionKN": 4.568443905078169,
+          "rawEndWrenchesKN_KNmm": [
+            0.0355961137786156,
+            4.204271093570696,
+            1.8695434512614213,
+            -309.8869497463928,
+            -8.239939145164957,
+            -3.710005119848603,
+            -0.0355961137786156,
+            -4.204271093570696,
+            -1.8695434512614213,
+            392.96353822857054,
+            9.829317645579536,
+            -1.4460033032141624
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9438.362621804752,
+              2832.7344472404125
+            ],
+            [
+              2914.5,
+              9583.2101311461,
+              2877.384784923331
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 4.568443905078169,
+              "inPlaneMomentKNmm": -309.8869497463928,
+              "outOfPlaneMomentKNmm": 1.1180661694540937,
+              "inPlaneEccentricityMm": 67.83205752005189,
+              "outOfPlaneEccentricityMm": 0.2447367621634314,
+              "grossAffineBiaxialKernRatio": 1.903476370100811,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 4.568443905078169,
+              "inPlaneMomentKNmm": 392.96353822857054,
+              "outOfPlaneMomentKNmm": 4.277352894555141,
+              "inPlaneEccentricityMm": 86.01693407940546,
+              "outOfPlaneEccentricityMm": 0.9362822403927388,
+              "grossAffineBiaxialKernRatio": 2.4405989606912697,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/4",
+          "axialCompressionKN": 3.4075508856236274,
+          "rawEndWrenchesKN_KNmm": [
+            0.04666933175354637,
+            3.1701814349654995,
+            1.400218213323825,
+            -269.31757444384937,
+            -16.261390733196546,
+            -4.550089006765688,
+            -0.04666933175354637,
+            -3.1701814349654995,
+            -1.400218213323825,
+            365.09200816312205,
+            17.891740945017776,
+            -2.333291528530353
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9583.2101311461,
+              2877.384784923331
+            ],
+            [
+              2914.5,
+              9730.70271946183,
+              2912.3188658403424
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 3.4075508856236274,
+              "inPlaneMomentKNmm": -269.31757444384937,
+              "outOfPlaneMomentKNmm": 0.679721897669102,
+              "inPlaneEccentricityMm": 79.0355253622458,
+              "outOfPlaneEccentricityMm": 0.19947520095351526,
+              "grossAffineBiaxialKernRatio": 2.214191505432442,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 3.4075508856236274,
+              "inPlaneMomentKNmm": 365.09200816312205,
+              "outOfPlaneMomentKNmm": 6.394100930680358,
+              "inPlaneEccentricityMm": 107.14205610353059,
+              "outOfPlaneEccentricityMm": 1.8764506078711578,
+              "grossAffineBiaxialKernRatio": 3.070430179771412,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/5",
+          "axialCompressionKN": 2.610006863183951,
+          "rawEndWrenchesKN_KNmm": [
+            0.07541135262694576,
+            2.4726583163717777,
+            1.0364724498012592,
+            -282.4717228140512,
+            -25.16453014527079,
+            -6.914612163709492,
+            -0.07541135262694576,
+            -2.4726583163717777,
+            -1.0364724498012592,
+            375.4367412174013,
+            27.054612837016464,
+            -4.358380643191332
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9730.70271946183,
+              2912.3188658403424
+            ],
+            [
+              2914.5,
+              9880.189400368716,
+              2937.382501830215
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 2.610006863183951,
+              "inPlaneMomentKNmm": -282.4717228140512,
+              "outOfPlaneMomentKNmm": 2.6583039420521155,
+              "inPlaneEccentricityMm": 108.22642913262824,
+              "outOfPlaneEccentricityMm": 1.0185045792597063,
+              "grossAffineBiaxialKernRatio": 3.0639226371645427,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 2.610006863183951,
+              "inPlaneMomentKNmm": 375.4367412174013,
+              "outOfPlaneMomentKNmm": 8.772040733681608,
+              "inPlaneEccentricityMm": 143.8451164681634,
+              "outOfPlaneEccentricityMm": 3.3609263092054036,
+              "grossAffineBiaxialKernRatio": 4.1583220190077155,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/6",
+          "axialCompressionKN": 2.181815562704882,
+          "rawEndWrenchesKN_KNmm": [
+            0.103019126042595,
+            2.1734771207190704,
+            0.19220460109175974,
+            -343.6925233792276,
+            -34.06356216982647,
+            -8.560964795912668,
+            -0.103019126042595,
+            -2.1734771207190704,
+            -0.19220460109175974,
+            339.89939438092813,
+            35.61735514094498,
+            -6.976481351189413
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9880.189400368716,
+              2937.382501830215
+            ],
+            [
+              2914.5,
+              10031.010386179416,
+              2952.4650698038163
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 2.181815562704882,
+              "inPlaneMomentKNmm": -343.6925233792276,
+              "outOfPlaneMomentKNmm": 5.128920168368957,
+              "inPlaneEccentricityMm": 157.52592898051316,
+              "outOfPlaneEccentricityMm": 2.350757899082191,
+              "grossAffineBiaxialKernRatio": 4.496819203769006,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 2.181815562704882,
+              "inPlaneMomentKNmm": 339.89939438092813,
+              "outOfPlaneMomentKNmm": 10.486024768171632,
+              "inPlaneEccentricityMm": 155.78740943599354,
+              "outOfPlaneEccentricityMm": 4.806100454784407,
+              "grossAffineBiaxialKernRatio": 4.553531345943736,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/7",
+          "axialCompressionKN": 2.2312139729089546,
+          "rawEndWrenchesKN_KNmm": [
+            0.1051533903993076,
+            2.242597282650884,
+            -0.30542969796297825,
+            -371.8825288896812,
+            -39.2002239540375,
+            -8.482633606817394,
+            -0.1051533903993076,
+            -2.242597282650884,
+            0.30542969796297825,
+            314.3217811196349,
+            39.72966393459007,
+            -7.4470128966986024
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10031.010386179416,
+              2952.4650698038163
+            ],
+            [
+              2914.5,
+              10182.5,
+              2957.5
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 2.2312139729089546,
+              "inPlaneMomentKNmm": -371.8825288896812,
+              "outOfPlaneMomentKNmm": 7.175807176385869,
+              "inPlaneEccentricityMm": 166.67273215613554,
+              "outOfPlaneEccentricityMm": 3.2160999632995217,
+              "grossAffineBiaxialKernRatio": 4.789164915741204,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 2.2312139729089546,
+              "inPlaneMomentKNmm": 314.3217811196349,
+              "outOfPlaneMomentKNmm": 8.762635169715173,
+              "inPlaneEccentricityMm": 140.87478159247837,
+              "outOfPlaneEccentricityMm": 3.9272948610530842,
+              "grossAffineBiaxialKernRatio": 4.099701890645857,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/8",
+          "axialCompressionKN": 2.779904484742845,
+          "rawEndWrenchesKN_KNmm": [
+            0.10962402821013939,
+            2.747930018194479,
+            -1.0082229735392012,
+            -381.88301231920315,
+            -39.045481597714826,
+            -8.838965793823775,
+            -0.10962402821013939,
+            -2.747930018194479,
+            1.0082229735392012,
+            242.9833392383132,
+            38.493532267852316,
+            -7.767935905187336
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10182.5,
+              2957.5
+            ],
+            [
+              2914.5,
+              10333.989613820584,
+              2952.4650698038163
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 2.779904484742845,
+              "inPlaneMomentKNmm": -381.88301231920315,
+              "outOfPlaneMomentKNmm": 10.131092867399468,
+              "inPlaneEccentricityMm": 137.37270989529313,
+              "outOfPlaneEccentricityMm": 3.644403224284393,
+              "grossAffineBiaxialKernRatio": 3.9898457299459498,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 2.779904484742845,
+              "inPlaneMomentKNmm": 242.9833392383132,
+              "outOfPlaneMomentKNmm": 6.484978632908712,
+              "inPlaneEccentricityMm": 87.40708199576517,
+              "outOfPlaneEccentricityMm": 2.332806277518058,
+              "grossAffineBiaxialKernRatio": 2.5392448164266126,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/9",
+          "axialCompressionKN": 3.816806122996304,
+          "rawEndWrenchesKN_KNmm": [
+            0.11788400339604133,
+            3.6754835750821186,
+            -1.6035529687381551,
+            -345.68360595018726,
+            -31.95709747224671,
+            -7.731985353799473,
+            -0.11788400339604133,
+            -3.6754835750821186,
+            1.6035529687381551,
+            159.2698972624562,
+            30.17910397802561,
+            -10.047396249703766
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10333.989613820584,
+              2952.4650698038163
+            ],
+            [
+              2914.5,
+              10484.810599631284,
+              2937.382501830215
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 3.816806122996304,
+              "inPlaneMomentKNmm": -345.68360595018726,
+              "outOfPlaneMomentKNmm": 10.873558642992222,
+              "inPlaneEccentricityMm": 90.56881455608638,
+              "outOfPlaneEccentricityMm": 2.8488632360650694,
+              "grossAffineBiaxialKernRatio": 2.6495959402537044,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 3.816806122996304,
+              "inPlaneMomentKNmm": 159.2698972624562,
+              "outOfPlaneMomentKNmm": 6.994504236583783,
+              "inPlaneEccentricityMm": 41.728579375004955,
+              "outOfPlaneEccentricityMm": 1.8325542380687896,
+              "grossAffineBiaxialKernRatio": 1.2430565329605616,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/10",
+          "axialCompressionKN": 5.180163227912572,
+          "rawEndWrenchesKN_KNmm": [
+            0.060582007357736556,
+            4.8393650075117165,
+            -2.463873285699382,
+            -300.42342641037544,
+            -16.693728260875165,
+            -1.043659327827342,
+            -0.060582007357736556,
+            -4.8393650075117165,
+            2.463873285699382,
+            53.399269726432294,
+            15.175322880925055,
+            -8.012543874757121
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10484.810599631284,
+              2937.382501830215
+            ],
+            [
+              2914.5,
+              10634.29728053817,
+              2912.3188658403424
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 5.180163227912572,
+              "inPlaneMomentKNmm": -300.42342641037544,
+              "outOfPlaneMomentKNmm": 3.789709949342171,
+              "inPlaneEccentricityMm": 57.994972975289,
+              "outOfPlaneEccentricityMm": 0.7315811843383349,
+              "grossAffineBiaxialKernRatio": 1.649817841429874,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 5.180163227912572,
+              "inPlaneMomentKNmm": 53.399269726432294,
+              "outOfPlaneMomentKNmm": 5.39290249725289,
+              "inPlaneEccentricityMm": 10.308414499121946,
+              "outOfPlaneEccentricityMm": 1.0410680629123814,
+              "grossAffineBiaxialKernRatio": 0.3322938863926713,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/11",
+          "axialCompressionKN": 6.797823702776399,
+          "rawEndWrenchesKN_KNmm": [
+            -0.014458239837134457,
+            6.166020839847214,
+            -3.4615462503951306,
+            -227.14363100889545,
+            -2.185606751577545,
+            4.032378757793126,
+            0.014458239837134457,
+            -6.166020839847214,
+            3.4615462503951306,
+            -68.00451408128993,
+            2.6906920719655876,
+            -1.8998955417243764
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10634.29728053817,
+              2912.3188658403424
+            ],
+            [
+              2914.5,
+              10781.7898688539,
+              2877.384784923331
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 6.797823702776399,
+              "inPlaneMomentKNmm": -227.14363100889545,
+              "outOfPlaneMomentKNmm": -3.420087498514162,
+              "inPlaneEccentricityMm": 33.41416914300446,
+              "outOfPlaneEccentricityMm": 0.5031150627100426,
+              "grossAffineBiaxialKernRatio": 0.9540505153162689,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 6.797823702776399,
+              "inPlaneMomentKNmm": -68.00451408128993,
+              "outOfPlaneMomentKNmm": 1.2286049300946897,
+              "inPlaneEccentricityMm": 10.00386550970941,
+              "outOfPlaneEccentricityMm": 0.18073503871436047,
+              "grossAffineBiaxialKernRatio": 0.28692342950489796,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/12",
+          "axialCompressionKN": 8.309602271671945,
+          "rawEndWrenchesKN_KNmm": [
+            -0.028070045392581955,
+            7.420381476896075,
+            -4.13635714336354,
+            -116.13149345692977,
+            6.357945897474627,
+            2.969293376290125,
+            0.028070045392581955,
+            -7.420381476896075,
+            4.13635714336354,
+            -151.68699782608155,
+            -5.104608891921037,
+            1.0965827859241912
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10781.7898688539,
+              2877.384784923331
+            ],
+            [
+              2914.5,
+              10926.637378195248,
+              2832.734447240412
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 8.309602271671945,
+              "inPlaneMomentKNmm": -116.13149345692977,
+              "outOfPlaneMomentKNmm": -4.710456013412232,
+              "inPlaneEccentricityMm": 13.975577850799274,
+              "outOfPlaneEccentricityMm": 0.5668690100211569,
+              "grossAffineBiaxialKernRatio": 0.41431051221258086,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 8.309602271671945,
+              "inPlaneMomentKNmm": -151.68699782608155,
+              "outOfPlaneMomentKNmm": 0.45578768133831393,
+              "inPlaneEccentricityMm": 18.25442336069367,
+              "outOfPlaneEccentricityMm": 0.054850721663554,
+              "grossAffineBiaxialKernRatio": 0.5117765134195571,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/13",
+          "axialCompressionKN": 9.446974243163913,
+          "rawEndWrenchesKN_KNmm": [
+            -0.041850958753280154,
+            8.373948119390079,
+            -4.549910717132491,
+            11.618208184564082,
+            10.688203644276697,
+            1.9655497026876603,
+            0.041850958753280154,
+            -8.373948119390079,
+            4.549910717132491,
+            -202.10499355587535,
+            -8.421157223662508,
+            3.9590025322798397
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10926.637378195248,
+              2832.734447240412
+            ],
+            [
+              2914.5,
+              11068.20049673439,
+              2778.5649254863574
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 9.446974243163913,
+              "inPlaneMomentKNmm": 11.618208184564082,
+              "outOfPlaneMomentKNmm": -5.655510850645646,
+              "inPlaneEccentricityMm": 1.22983379498164,
+              "outOfPlaneEccentricityMm": 0.5986584386781966,
+              "grossAffineBiaxialKernRatio": 0.059977733344832265,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 9.446974243163913,
+              "inPlaneMomentKNmm": -202.10499355587535,
+              "outOfPlaneMomentKNmm": -0.6879754666784499,
+              "inPlaneEccentricityMm": 21.39362174106953,
+              "outOfPlaneEccentricityMm": 0.07282495420968123,
+              "grossAffineBiaxialKernRatio": 0.6001523738680695,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/14",
+          "axialCompressionKN": 10.450845607303274,
+          "rawEndWrenchesKN_KNmm": [
+            -0.03180680326140539,
+            8.937905785864324,
+            -5.57499107679304,
+            106.96322171324778,
+            14.198096810446607,
+            -0.7579825260888384,
+            0.03180680326140539,
+            -8.937905785864324,
+            5.57499107679304,
+            -307.2758423096916,
+            -12.179967280527947,
+            5.136313429214702
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              11068.20049673439,
+              2778.5649254863574
+            ],
+            [
+              2914.5,
+              11205.854408922361,
+              2715.1153070719347
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 10.450845607303274,
+              "inPlaneMomentKNmm": 106.96322171324778,
+              "outOfPlaneMomentKNmm": -5.255046679014624,
+              "inPlaneEccentricityMm": 10.234886796002382,
+              "outOfPlaneEccentricityMm": 0.502834591235592,
+              "grossAffineBiaxialKernRatio": 0.30717480170551215,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 10.450845607303274,
+              "inPlaneMomentKNmm": -307.2758423096916,
+              "outOfPlaneMomentKNmm": 0.4339857691321676,
+              "inPlaneEccentricityMm": 29.402007632278167,
+              "outOfPlaneEccentricityMm": 0.04152637838500734,
+              "grossAffineBiaxialKernRatio": 0.8223008451571535,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/15",
+          "axialCompressionKN": 11.059091188868226,
+          "rawEndWrenchesKN_KNmm": [
+            -0.01593007833380722,
+            9.145204820705374,
+            -6.331237653962518,
+            267.92452677868437,
+            20.02264212761972,
+            -2.786870589006199,
+            0.01593007833380722,
+            -9.145204820705374,
+            6.331237653962518,
+            -448.28037303205974,
+            -18.868513237848553,
+            4.907755726973637
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              11205.854408922361,
+              2715.1153070719347
+            ],
+            [
+              2914.5,
+              11338.99155323044,
+              2642.665638866486
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 11.059091188868226,
+              "inPlaneMomentKNmm": 267.92452677868437,
+              "outOfPlaneMomentKNmm": -7.122613684695312,
+              "inPlaneEccentricityMm": 24.22663148382118,
+              "outOfPlaneEccentricityMm": 0.6440505429473931,
+              "grossAffineBiaxialKernRatio": 0.7036942075352799,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 11.059091188868226,
+              "inPlaneMomentKNmm": -448.28037303205974,
+              "outOfPlaneMomentKNmm": 4.708039754856845,
+              "inPlaneEccentricityMm": 40.53501009949952,
+              "outOfPlaneEccentricityMm": 0.42571669538233187,
+              "grossAffineBiaxialKernRatio": 1.1494545854027511,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        }
+      ],
+      "masonryLaw": {
+        "elasticModulusMPa": 3000,
+        "poissonRatio": 0.2,
+        "flexuralFactor": 1.0,
+        "torsionFactor": 1.0,
+        "shearAreaFactor": 0.8333333333333334
+      },
+      "necessaryCompressionOnlyRingScreen": {
+        "worstPositiveCompressionCut": {
+          "id": "WET-ARCH/ring-member/7",
+          "end": 0,
+          "axialCompressionKN": 2.2312139729089546,
+          "inPlaneMomentKNmm": -371.8825288896812,
+          "outOfPlaneMomentKNmm": 7.175807176385869,
+          "inPlaneEccentricityMm": 166.67273215613554,
+          "outOfPlaneEccentricityMm": 3.2160999632995217,
+          "grossAffineBiaxialKernRatio": 4.789164915741204,
+          "resultantInside215By140Rectangle": false
+        },
+        "nonCompressiveCutCount": 0,
+        "resultantOutsideSectionCount": 7,
+        "fixedRecoveredActionsAdmitCompressionOnlySection": false,
+        "scope": "Necessary section-resultant bounds only. Failure rejects compression-only admission of these fixed elastic actions; does not establish arch collapse or exclude a genuinely released/contact redistribution."
+      },
+      "floorSection": {
+        "schema": "str-floor-section-successor/1",
+        "soffitZMm": 3170.0,
+        "topZMm": 3370.0,
+        "midplaneZMm": 3270.0,
+        "thicknessMm": 200.0,
+        "plateSelfGKN": 530.8329937499993,
+        "addedPlateGKN": 0.0,
+        "sourceGravityResidualKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sourcePressureResidualKN_KNm": [
+          -3.5569769352150615e-11,
+          -7.119638212316204e-12,
+          0.0,
+          2.3248958314070478e-11,
+          -1.16358478408074e-10,
+          1.0768985703180078e-10
+        ],
+        "steelChordAxialRigidityKN": 180955.73684677208,
+        "northernUpstandGeometryChanged": false,
+        "sourceFFLMm": 3450.0,
+        "remainingSourceFinishDepthMm": 80.0,
+        "verticalPlateEnergyRepresentationPolicy": "direct-sparse-plate-block-v1",
+        "finishStairServiceEvidenceApplicable": false,
+        "candidateAccepted": false,
+        "sourceUpperMaterialResidualKN_KNm": [
+          4.773959005888173e-15,
+          -7.88865500700453e-16,
+          5.1159076974727213e-11,
+          1.4006218407303095e-10,
+          4.4565240386873484e-11,
+          0.0
+        ],
+        "architecturalApplicabilityDiagnostic": "EXPERIMENTAL_LOWER_ARCH_SUPPORT_REPLACES_SOURCE_HOUSE_INTERFACES"
+      },
+      "captureApplicabilityOverride": {
+        "capturedInheritedValue": true,
+        "derivedApplicable": false,
+        "captureAltered": false,
+        "executedBackendSHA256Retained": true
+      },
+      "candidateAccepted": false,
+      "masonryStressTensionAndJointResistanceAccepted": false,
+      "completeSignedLoadEnvelope": false
+    },
+    "soft": {
+      "nativeCaseId": "WET-MASONRY-ARCH-NATIVE-FLOOR-E1500-16-B8",
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -100.913014659699,
+            -80.60701829277,
+            285.5780409079565,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            93.32237792758968,
+            2.6735964494055082,
+            -24.030680010155642,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.06626895342817862,
+            76.2137286353238,
+            -16.297042160686985,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -466.1138183605374,
+            -303.4622095560303,
+            83.87366526181896,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            274.8718734429892,
+            2.506403039245849,
+            134.4197344860041,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            -0.32490040658868935,
+            212.48726605639172,
+            -75.08571813401642,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -243.40353787962977,
+            -433.2540086341763,
+            94.25001121249579,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            182.8071610743075,
+            6.229027650537834,
+            -64.33204750854519,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.657227098340588,
+            258.99745393366567,
+            161.10181969800658,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -155.5136355989314,
+            -202.37368570296923,
+            -66.09444176079998,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            132.79056875568202,
+            2.294777965232907,
+            64.46579466895534,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -2.285050436298724,
+            72.46161719521683,
+            152.6026301889188,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            40.311620040370954,
+            37.091941562927936,
+            102.66993288981993,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            17.44668785792393,
+            65.15475399859453,
+            38.08304295800964,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -0.6057385008512102,
+            29.021827775305255,
+            74.65908668562444,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            60.10884631986983,
+            107.08992442497996,
+            155.01922604152003,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -33.697632378579925,
+            83.54576896192764,
+            93.3383175211117,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -62.60099816399279,
+            3.7275171665651,
+            125.15657521377744,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -45.556122657709736,
+            187.65266114683058,
+            150.92399775246378,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            30.36524463883775,
+            -0.8509922371576757,
+            33.19806080159402,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            53.07137554579003,
+            4.295303182574261,
+            48.5736442587106,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            59.728478442273115,
+            56.90129314687628,
+            107.68327293424035,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            119.34123789757544,
+            46.39294784246424,
+            144.01106227531142,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            103.94685592541038,
+            -24.448309929619406,
+            40.63579672805454,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            0.41715027217578715,
+            -53.78778290585157,
+            93.91553130527261,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -37.23672256227426,
+            -53.40619557325731,
+            158.34520029477463,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            82.13015385551532,
+            -2.158259312552058,
+            57.14363550942865,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -5.290096803522708,
+            2.3272342171642784,
+            126.25911874134863,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -10.275446019849834,
+            56.10457391360765,
+            90.7036758618643,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -50.3621317402919,
+            9.258714043768851,
+            255.61683058703858,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            11.847213285124859,
+            52.33645523308597,
+            103.52203553532877,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -1.4571682022526948,
+            -6.208283917636688,
+            53.979630207537724,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            -0.008851589227555356,
+            15.006146936036004,
+            32.97862758315662,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            23.936570999404363,
+            -5.286556578239303,
+            56.490641714230165,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            2.1661435618170763,
+            23.36188091466778,
+            70.04099958542112,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            0.5787869357940226,
+            3.2824595667615775,
+            36.84315982473297,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            13.656365691216585,
+            -18.521232607913994,
+            -16.632767157163123,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -15.083408245629064,
+            -1.033393380072448,
+            52.62273154325872,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            4.978612434174732,
+            0.6455798952350142,
+            10.979003356964567,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            5.784506783373414,
+            0.10488830037446384,
+            37.92029723898524,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            17.601611093394197,
+            -64.84614377847578,
+            141.47801903800666,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            11.54509317037679,
+            14.481619160853375,
+            114.99043555441999,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            60.00727582559021,
+            -74.35772386274337,
+            138.12569840525913,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            80.56361221855614,
+            101.28435720905463,
+            175.72957662430167,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -29.970407984768087,
+            20.480334599398223,
+            103.4430733742143,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            0.052208029285699425,
+            -17.732101775825875,
+            75.52280049421371,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -48.06115529089778,
+            29.28946231016774,
+            118.4302586180846,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -13.416544092819102,
+            2.6527218485820683,
+            67.2661160361735,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -2.509082700095896,
+            -7.2849446291223146,
+            42.36093895327863,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            20.783233704515986,
+            14.989149866140272,
+            48.223062659136446,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -22.888586793829578,
+            -4.495586022591192,
+            112.05488914887056,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            24.436231714396037,
+            -60.11908601028693,
+            92.72586447928205,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "externalWrenchKN_KNm": [
+        -186.7465424340356,
+        -186.10987344258766,
+        -4295.4828680271185,
+        -25243.875828212218,
+        26087.198000934277,
+        3.820013948624168
+      ],
+      "globalWrenchResidualKN_KNm": [
+        -7.212832997538499e-09,
+        -9.154064173344523e-10,
+        4.938556230627e-10,
+        1.212581992149353e-08,
+        -3.083422780036926e-08,
+        7.029154221527279e-08
+      ],
+      "archFreeBodyResidualKN_KNm": [
+        7.731838173180572e-13,
+        1.5216161664000083e-12,
+        -3.180455898643686e-12,
+        -3.743494403352088e-11,
+        9.855449789597515e-12,
+        -2.8388402739665253e-12
+      ],
+      "frameEnergyRelativeResidual": 4.270527460304035e-12,
+      "plateWorkRelativeResidual": 2.679897314508089e-14,
+      "plateAreaM2": 98.30240624999988,
+      "plateSelfGKN": 530.8329937499993,
+      "joinedPhysicalGKN": 2963.389369834923,
+      "maximumPlateDeflectionMm": 2.9167466849546635,
+      "rawPointMomentInspectionKNmPerM": 84.69620381200323,
+      "tieState": {
+        "id": "WET-ARCH/tie",
+        "terms": [
+          [
+            "WET-ARCH/tie-end/1",
+            [
+              0,
+              1,
+              0,
+              -0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            "WET-ARCH/tie-end/0",
+            [
+              0,
+              -1,
+              0,
+              -0.0,
+              -0.0,
+              -0.0
+            ]
+          ]
+        ],
+        "stiffness": 47.92259980052226,
+        "mode": "tension",
+        "gap": 0.0,
+        "relativeMm": 0.11020184193021981,
+        "active": true,
+        "forceKN": 5.281158768102338
+      },
+      "floorNormalCompressionKN": 8.183719166773702,
+      "activeNormalFibres": 17,
+      "normalFibreCount": 32,
+      "minimumRawNormalCompressionKN": -0.0,
+      "maximumRigidWorkResidual": 1.8189894035458565e-12,
+      "ringMemberAxialRangeKN": [
+        1.7753546568811012,
+        7.521835397026047
+      ],
+      "actualRingMemberEndActions": [
+        {
+          "id": "WET-ARCH/ring-member/0",
+          "axialCompressionKN": 7.521835397026047,
+          "rawEndWrenchesKN_KNmm": [
+            -0.00795891077572533,
+            5.501201276685663,
+            5.627284511344776,
+            -204.46224006678494,
+            1.7641613395336808,
+            0.6960959341660331,
+            0.00795891077572533,
+            -5.501201276685663,
+            -5.627284511344776,
+            555.1026228890428,
+            -2.340781784511644,
+            0.3635307183167775
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9026.00844676956,
+              2642.665638866486
+            ],
+            [
+              2914.5,
+              9159.145591077639,
+              2715.1153070719347
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 7.521835397026047,
+              "inPlaneMomentKNmm": -204.46224006678494,
+              "outOfPlaneMomentKNmm": 0.23181317411086,
+              "inPlaneEccentricityMm": 27.182493271206706,
+              "outOfPlaneEccentricityMm": 0.030818698080326692,
+              "grossAffineBiaxialKernRatio": 0.7599020089148589,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 7.521835397026047,
+              "inPlaneMomentKNmm": 555.1026228890428,
+              "outOfPlaneMomentKNmm": -1.438171238790875,
+              "inPlaneEccentricityMm": 73.79882616263006,
+              "outOfPlaneEccentricityMm": 0.19119950954516943,
+              "grossAffineBiaxialKernRatio": 2.067696390163539,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/1",
+          "axialCompressionKN": 5.275145059119411,
+          "rawEndWrenchesKN_KNmm": [
+            -0.009401070902915518,
+            4.620936280187479,
+            2.5765479591239817,
+            -335.23282920022666,
+            0.49258048140397515,
+            0.04344973819477982,
+            0.009401070902915518,
+            -4.620936280187479,
+            -2.5765479591239817,
+            396.70809201831935,
+            -1.0890748428808408,
+            1.2506444503480383
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9159.145591077639,
+              2715.1153070719347
+            ],
+            [
+              2914.5,
+              9296.79950326561,
+              2778.5649254863574
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 5.275145059119411,
+              "inPlaneMomentKNmm": -335.23282920022666,
+              "outOfPlaneMomentKNmm": 0.16673796472147911,
+              "inPlaneEccentricityMm": 63.54949967123514,
+              "outOfPlaneEccentricityMm": 0.031608223632301966,
+              "grossAffineBiaxialKernRatio": 1.774829047585488,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 5.275145059119411,
+              "inPlaneMomentKNmm": 396.70809201831935,
+              "outOfPlaneMomentKNmm": -1.5916889435603965,
+              "inPlaneEccentricityMm": 75.20325745971856,
+              "outOfPlaneEccentricityMm": 0.30173368233898384,
+              "grossAffineBiaxialKernRatio": 2.1116270005442157,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/2",
+          "axialCompressionKN": 4.01028970697119,
+          "rawEndWrenchesKN_KNmm": [
+            0.000506908214552626,
+            3.665651175492954,
+            1.6417290737659869,
+            -231.69132496325574,
+            -0.5873956495515662,
+            -1.260938232522566,
+            -0.000506908214552626,
+            -3.665651175492954,
+            -1.6417290737659869,
+            265.53304134830364,
+            0.61485462510726,
+            1.1891787248572347
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9296.79950326561,
+              2778.5649254863574
+            ],
+            [
+              2914.5,
+              9438.362621804752,
+              2832.7344472404125
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 4.01028970697119,
+              "inPlaneMomentKNmm": -231.69132496325574,
+              "outOfPlaneMomentKNmm": 0.9677393331932211,
+              "inPlaneEccentricityMm": 57.774211314584264,
+              "outOfPlaneEccentricityMm": 0.24131407052986092,
+              "grossAffineBiaxialKernRatio": 1.6226456031639303,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 4.01028970697119,
+              "inPlaneMomentKNmm": 265.53304134830364,
+              "outOfPlaneMomentKNmm": -0.8909056018056405,
+              "inPlaneEccentricityMm": 66.21293241900221,
+              "outOfPlaneEccentricityMm": 0.22215492318596242,
+              "grossAffineBiaxialKernRatio": 1.8573236904608557,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/3",
+          "axialCompressionKN": 3.116921909607141,
+          "rawEndWrenchesKN_KNmm": [
+            0.015602326303148034,
+            2.90243394551851,
+            1.1653146315761838,
+            -162.16529938022114,
+            -3.0033594434434576,
+            -2.2815651816545257,
+            -0.015602326303148034,
+            -2.90243394551851,
+            -1.1653146315761838,
+            201.36356559329624,
+            3.700008581518052,
+            0.021607076712959472
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9438.362621804752,
+              2832.7344472404125
+            ],
+            [
+              2914.5,
+              9583.2101311461,
+              2877.384784923331
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 3.116921909607141,
+              "inPlaneMomentKNmm": -162.16529938022114,
+              "outOfPlaneMomentKNmm": 1.2955980403044447,
+              "inPlaneEccentricityMm": 52.02738601836212,
+              "outOfPlaneEccentricityMm": 0.4156658645540923,
+              "grossAffineBiaxialKernRatio": 1.4697413030132547,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 3.116921909607141,
+              "inPlaneMomentKNmm": 201.36356559329624,
+              "outOfPlaneMomentKNmm": 1.0692974452659323,
+              "inPlaneEccentricityMm": 64.60333990808138,
+              "outOfPlaneEccentricityMm": 0.34306199394026754,
+              "grossAffineBiaxialKernRatio": 1.8175865612947277,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/4",
+          "axialCompressionKN": 2.4555511565176658,
+          "rawEndWrenchesKN_KNmm": [
+            0.021976745790974417,
+            2.3207878997450777,
+            0.8558085013772043,
+            -143.26919045066978,
+            -7.043688372913318,
+            -2.5893062786031282,
+            -0.021976745790974417,
+            -2.3207878997450777,
+            -0.8558085013772043,
+            188.4200091404831,
+            7.81142578866777,
+            -0.6521008408643252
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9583.2101311461,
+              2877.384784923331
+            ],
+            [
+              2914.5,
+              9730.70271946183,
+              2912.3188658403424
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 2.4555511565176658,
+              "inPlaneMomentKNmm": -143.26919045066978,
+              "outOfPlaneMomentKNmm": 0.8961917425848025,
+              "inPlaneEccentricityMm": 58.34502371102977,
+              "outOfPlaneEccentricityMm": 0.36496561686612744,
+              "grossAffineBiaxialKernRatio": 1.6438746034226683,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 2.4555511565176658,
+              "inPlaneMomentKNmm": 188.4200091404831,
+              "outOfPlaneMomentKNmm": 2.434895295257892,
+              "inPlaneEccentricityMm": 76.73226788225031,
+              "outOfPlaneEccentricityMm": 0.9915880957295685,
+              "grossAffineBiaxialKernRatio": 2.183862247992738,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/5",
+          "axialCompressionKN": 2.0245487023652626,
+          "rawEndWrenchesKN_KNmm": [
+            0.03768707715148016,
+            1.9356627366067727,
+            0.6986876184081687,
+            -143.30319899333915,
+            -11.413892409022418,
+            -3.643293899775985,
+            -0.03768707715148016,
+            -1.9356627366067727,
+            -0.6986876184081687,
+            199.23294583044037,
+            12.358467592269392,
+            -1.9904221766806902
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9730.70271946183,
+              2912.3188658403424
+            ],
+            [
+              2914.5,
+              9880.189400368716,
+              2937.382501830215
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 2.0245487023652626,
+              "inPlaneMomentKNmm": -143.30319899333915,
+              "outOfPlaneMomentKNmm": 1.7057775588563437,
+              "inPlaneEccentricityMm": 70.78278671484627,
+              "outOfPlaneEccentricityMm": 0.8425470609146121,
+              "grossAffineBiaxialKernRatio": 2.0114427424933794,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 2.0245487023652626,
+              "inPlaneMomentKNmm": 199.23294583044037,
+              "outOfPlaneMomentKNmm": 4.006575643365351,
+              "inPlaneEccentricityMm": 98.40857154865094,
+              "outOfPlaneEccentricityMm": 1.9789969185154714,
+              "grossAffineBiaxialKernRatio": 2.831099871287434,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/6",
+          "axialCompressionKN": 1.7753546568811012,
+          "rawEndWrenchesKN_KNmm": [
+            0.05179556404849028,
+            1.7751395525174978,
+            0.09070063503785342,
+            -182.2356726075351,
+            -15.260105266224837,
+            -4.122657999051605,
+            -0.05179556404849028,
+            -1.7751395525174978,
+            -0.09070063503785342,
+            169.14156883412647,
+            16.041315381717197,
+            -3.6892000313629545
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9880.189400368716,
+              2937.382501830215
+            ],
+            [
+              2914.5,
+              10031.010386179416,
+              2952.4650698038163
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 1.7753546568811012,
+              "inPlaneMomentKNmm": -182.2356726075351,
+              "outOfPlaneMomentKNmm": 2.5837127512108125,
+              "inPlaneEccentricityMm": 102.64747491505848,
+              "outOfPlaneEccentricityMm": 1.4553220344997515,
+              "grossAffineBiaxialKernRatio": 2.926951639639661,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 1.7753546568811012,
+              "inPlaneMomentKNmm": 169.14156883412647,
+              "outOfPlaneMomentKNmm": 5.267109825557817,
+              "inPlaneEccentricityMm": 95.27198871422692,
+              "outOfPlaneEccentricityMm": 2.966793032109395,
+              "grossAffineBiaxialKernRatio": 2.7859014462249743,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/7",
+          "axialCompressionKN": 1.8252016345564372,
+          "rawEndWrenchesKN_KNmm": [
+            0.04914863093877396,
+            1.8340136752241651,
+            -0.234811331056326,
+            -196.99138959130528,
+            -16.124660695521914,
+            -3.283001073819259,
+            -0.04914863093877396,
+            -1.8340136752241651,
+            0.234811331056326,
+            152.1857808952841,
+            16.372120621536645,
+            -4.1625060469063415
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10031.010386179416,
+              2952.4650698038163
+            ],
+            [
+              2914.5,
+              10182.5,
+              2957.5
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 1.8252016345564372,
+              "inPlaneMomentKNmm": -196.99138959130528,
+              "outOfPlaneMomentKNmm": 2.745563561438943,
+              "inPlaneEccentricityMm": 107.92856299363241,
+              "outOfPlaneEccentricityMm": 1.5042521929946515,
+              "grossAffineBiaxialKernRatio": 3.0764278486250607,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 1.8252016345564372,
+              "inPlaneMomentKNmm": 152.1857808952841,
+              "outOfPlaneMomentKNmm": 4.704054730779715,
+              "inPlaneEccentricityMm": 83.38025674202756,
+              "outOfPlaneEccentricityMm": 2.5772794861225843,
+              "grossAffineBiaxialKernRatio": 2.437345720943564,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/8",
+          "axialCompressionKN": 2.149681469776985,
+          "rawEndWrenchesKN_KNmm": [
+            0.03809229558687785,
+            2.1294207287409384,
+            -0.6453133782285949,
+            -199.61321708074956,
+            -13.33691443117779,
+            -2.143637622745309,
+            -0.03809229558687785,
+            -2.1294207287409384,
+            0.6453133782285949,
+            112.57642734716319,
+            13.145122381885459,
+            -3.6269495252502972
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10182.5,
+              2957.5
+            ],
+            [
+              2914.5,
+              10333.989613820584,
+              2952.4650698038163
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 2.149681469776985,
+              "inPlaneMomentKNmm": -199.61321708074956,
+              "outOfPlaneMomentKNmm": 2.5854775758011743,
+              "inPlaneEccentricityMm": 92.85711389671982,
+              "outOfPlaneEccentricityMm": 1.202725897837041,
+              "grossAffineBiaxialKernRatio": 2.642906713669582,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 2.149681469776985,
+              "inPlaneMomentKNmm": 112.57642734716319,
+              "outOfPlaneMomentKNmm": 3.188295906314643,
+              "inPlaneEccentricityMm": 52.36888763749833,
+              "outOfPlaneEccentricityMm": 1.4831480622314743,
+              "grossAffineBiaxialKernRatio": 1.525020817799907,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/9",
+          "axialCompressionKN": 2.7354598331590245,
+          "rawEndWrenchesKN_KNmm": [
+            0.030170759471681942,
+            2.646264168021709,
+            -1.028365875605175,
+            -179.17255515294937,
+            -8.194404403428928,
+            -1.0050149166917797,
+            -0.030170759471681942,
+            -2.646264168021709,
+            1.028365875605175,
+            63.985859210385456,
+            7.739351872882114,
+            -3.5453687694848153
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10333.989613820584,
+              2952.4650698038163
+            ],
+            [
+              2914.5,
+              10484.810599631284,
+              2937.382501830215
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 2.7354598331590245,
+              "inPlaneMomentKNmm": -179.17255515294937,
+              "outOfPlaneMomentKNmm": 1.8154257491710282,
+              "inPlaneEccentricityMm": 65.49997663319127,
+              "outOfPlaneEccentricityMm": 0.6636638298119325,
+              "grossAffineBiaxialKernRatio": 1.8563490602105666,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 2.7354598331590245,
+              "inPlaneMomentKNmm": 63.985859210385456,
+              "outOfPlaneMomentKNmm": 2.7576546674605398,
+              "inPlaneEccentricityMm": 23.39126257119699,
+              "outOfPlaneEccentricityMm": 1.0081137489326186,
+              "grossAffineBiaxialKernRatio": 0.6959842955457991,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/10",
+          "axialCompressionKN": 3.5070789323157974,
+          "rawEndWrenchesKN_KNmm": [
+            -0.0005651826371726454,
+            3.2966336807437493,
+            -1.5471244957339572,
+            -150.36203368011138,
+            -1.9176189645950108,
+            1.485379342396084,
+            0.0005651826371726454,
+            -3.2966336807437493,
+            1.5471244957339572,
+            1.7131544292170702,
+            1.9317844964809225,
+            -1.400892065859055
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10484.810599631284,
+              2937.382501830215
+            ],
+            [
+              2914.5,
+              10634.29728053817,
+              2912.3188658403424
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 3.5070789323157974,
+              "inPlaneMomentKNmm": -150.36203368011138,
+              "outOfPlaneMomentKNmm": -1.1478404720252788,
+              "inPlaneEccentricityMm": 42.87386642330978,
+              "outOfPlaneEccentricityMm": 0.3272924545406042,
+              "grossAffineBiaxialKernRatio": 1.2105068126889567,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 3.5070789323157974,
+              "inPlaneMomentKNmm": 1.7131544292170702,
+              "outOfPlaneMomentKNmm": 1.062173896336419,
+              "inPlaneEccentricityMm": 0.48848470829421525,
+              "outOfPlaneEccentricityMm": 0.30286569445274597,
+              "grossAffineBiaxialKernRatio": 0.026612089727946285,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/11",
+          "axialCompressionKN": 4.359906613917429,
+          "rawEndWrenchesKN_KNmm": [
+            -0.01489371040694315,
+            4.0070375620844985,
+            -1.9991058070324286,
+            -102.66691774474975,
+            1.9069516931248807,
+            1.736590635146607,
+            0.01489371040694315,
+            -4.0070375620844985,
+            1.9991058070324286,
+            -52.204197620106015,
+            -1.3866536086140857,
+            0.460121262398447
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10634.29728053817,
+              2912.3188658403424
+            ],
+            [
+              2914.5,
+              10781.7898688539,
+              2877.384784923331
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 4.359906613917429,
+              "inPlaneMomentKNmm": -102.66691774474975,
+              "outOfPlaneMomentKNmm": -2.1293455657666103,
+              "inPlaneEccentricityMm": 23.547962568056537,
+              "outOfPlaneEccentricityMm": 0.48839247129042684,
+              "grossAffineBiaxialKernRatio": 0.6780835496721642,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 4.359906613917429,
+              "inPlaneMomentKNmm": -52.204197620106015,
+              "outOfPlaneMomentKNmm": -0.12814269722870242,
+              "inPlaneEccentricityMm": 11.973696283645834,
+              "outOfPlaneEccentricityMm": 0.029391156411390344,
+              "grossAffineBiaxialKernRatio": 0.33540928471871073,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/12",
+          "axialCompressionKN": 5.141071825184256,
+          "rawEndWrenchesKN_KNmm": [
+            -0.013887673513211601,
+            4.648206308387479,
+            -2.373283680304411,
+            -52.17169315209446,
+            3.39167392279073,
+            0.8590881444763108,
+            0.013887673513211601,
+            -4.648206308387479,
+            2.373283680304411,
+            -84.0485556110907,
+            -2.7715846107956894,
+            1.1525067744576205
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10781.7898688539,
+              2877.384784923331
+            ],
+            [
+              2914.5,
+              10926.637378195248,
+              2832.734447240412
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 5.141071825184256,
+              "inPlaneMomentKNmm": -52.17169315209446,
+              "outOfPlaneMomentKNmm": -1.8200846321427822,
+              "inPlaneEccentricityMm": 10.148018725691433,
+              "outOfPlaneEccentricityMm": 0.354028244310232,
+              "grossAffineBiaxialKernRatio": 0.29837316161930244,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 5.141071825184256,
+              "inPlaneMomentKNmm": -84.0485556110907,
+              "outOfPlaneMomentKNmm": -0.28491533762712073,
+              "inPlaneEccentricityMm": 16.348449986511987,
+              "outOfPlaneEccentricityMm": 0.055419443126902695,
+              "grossAffineBiaxialKernRatio": 0.4586109325682316,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/13",
+          "axialCompressionKN": 5.671141590595759,
+          "rawEndWrenchesKN_KNmm": [
+            -0.01135308360604076,
+            5.128442067481842,
+            -2.466242472986629,
+            13.115654406450744,
+            3.9602939385536478,
+            0.21152316841672025,
+            0.01135308360604076,
+            -5.128442067481842,
+            2.466242472986629,
+            -84.43937581725504,
+            -3.3453028291806186,
+            1.395654751889916
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10926.637378195248,
+              2832.734447240412
+            ],
+            [
+              2914.5,
+              11068.20049673439,
+              2778.5649254863574
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 5.671141590595759,
+              "inPlaneMomentKNmm": 13.115654406450744,
+              "outOfPlaneMomentKNmm": -1.6128907270164727,
+              "inPlaneEccentricityMm": 2.312700925718367,
+              "outOfPlaneEccentricityMm": 0.28440318430614897,
+              "grossAffineBiaxialKernRatio": 0.07672919884911496,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 5.671141590595759,
+              "inPlaneMomentKNmm": -84.43937581725504,
+              "outOfPlaneMomentKNmm": -0.10793318382653783,
+              "inPlaneEccentricityMm": 14.889308346185128,
+              "outOfPlaneEccentricityMm": 0.01903200301073762,
+              "grossAffineBiaxialKernRatio": 0.4163312390258923,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/14",
+          "axialCompressionKN": 6.31283715506437,
+          "rawEndWrenchesKN_KNmm": [
+            -0.008652360205474427,
+            5.4488537874597895,
+            -3.2592989780739003,
+            29.310280680481014,
+            4.5958775950564785,
+            -0.29697241581318146,
+            0.008652360205474427,
+            -5.4488537874597895,
+            3.2592989780739003,
+            -132.23784239230554,
+            -4.0468886416351335,
+            1.4880036477559346
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              11068.20049673439,
+              2778.5649254863574
+            ],
+            [
+              2914.5,
+              11205.854408922361,
+              2715.1153070719347
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 6.31283715506437,
+              "inPlaneMomentKNmm": 29.310280680481014,
+              "outOfPlaneMomentKNmm": -1.6541655320300928,
+              "inPlaneEccentricityMm": 4.642964797051246,
+              "outOfPlaneEccentricityMm": 0.2620320295610771,
+              "grossAffineBiaxialKernRatio": 0.1408010547394298,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 6.31283715506437,
+              "inPlaneMomentKNmm": -132.23784239230554,
+              "outOfPlaneMomentKNmm": 0.3426990755617101,
+              "inPlaneEccentricityMm": 20.947450273799618,
+              "outOfPlaneEccentricityMm": 0.054286063008418546,
+              "grossAffineBiaxialKernRatio": 0.5869065531984232,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/15",
+          "axialCompressionKN": 6.7288208196474235,
+          "rawEndWrenchesKN_KNmm": [
+            -0.004370212537807776,
+            5.622329251424944,
+            -3.745613525388194,
+            92.29187331925812,
+            6.122172974636083,
+            -0.7197598942481505,
+            0.004370212537807776,
+            -5.622329251424944,
+            3.745613525388194,
+            -183.63627296363256,
+            -5.805552526284581,
+            1.301597511550856
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              11205.854408922361,
+              2715.1153070719347
+            ],
+            [
+              2914.5,
+              11338.99155323044,
+              2642.665638866486
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 6.7288208196474235,
+              "inPlaneMomentKNmm": 92.29187331925812,
+              "outOfPlaneMomentKNmm": -2.2940894735657342,
+              "inPlaneEccentricityMm": 13.715905920659369,
+              "outOfPlaneEccentricityMm": 0.34093484357129006,
+              "grossAffineBiaxialKernRatio": 0.39738096084919716,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 6.7288208196474235,
+              "inPlaneMomentKNmm": -183.63627296363256,
+              "outOfPlaneMomentKNmm": 1.6316821055339499,
+              "inPlaneEccentricityMm": 27.291003562977135,
+              "outOfPlaneEccentricityMm": 0.24249153741315504,
+              "grossAffineBiaxialKernRatio": 0.7720018962180653,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        }
+      ],
+      "masonryLaw": {
+        "elasticModulusMPa": 1500,
+        "poissonRatio": 0.2,
+        "flexuralFactor": 1.0,
+        "torsionFactor": 1.0,
+        "shearAreaFactor": 0.8333333333333334
+      },
+      "necessaryCompressionOnlyRingScreen": {
+        "worstPositiveCompressionCut": {
+          "id": "WET-ARCH/ring-member/7",
+          "end": 0,
+          "axialCompressionKN": 1.8252016345564372,
+          "inPlaneMomentKNmm": -196.99138959130528,
+          "outOfPlaneMomentKNmm": 2.745563561438943,
+          "inPlaneEccentricityMm": 107.92856299363241,
+          "outOfPlaneEccentricityMm": 1.5042521929946515,
+          "grossAffineBiaxialKernRatio": 3.0764278486250607,
+          "resultantInside215By140Rectangle": false
+        },
+        "nonCompressiveCutCount": 0,
+        "resultantOutsideSectionCount": 1,
+        "fixedRecoveredActionsAdmitCompressionOnlySection": false,
+        "scope": "Necessary section-resultant bounds only. Failure rejects compression-only admission of these fixed elastic actions; does not establish arch collapse or exclude a genuinely released/contact redistribution."
+      },
+      "floorSection": {
+        "schema": "str-floor-section-successor/1",
+        "soffitZMm": 3170.0,
+        "topZMm": 3370.0,
+        "midplaneZMm": 3270.0,
+        "thicknessMm": 200.0,
+        "plateSelfGKN": 530.8329937499993,
+        "addedPlateGKN": 0.0,
+        "sourceGravityResidualKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sourcePressureResidualKN_KNm": [
+          -3.5569769352150615e-11,
+          -7.119638212316204e-12,
+          0.0,
+          2.3248958314070478e-11,
+          -1.16358478408074e-10,
+          1.0768985703180078e-10
+        ],
+        "steelChordAxialRigidityKN": 180955.73684677208,
+        "northernUpstandGeometryChanged": false,
+        "sourceFFLMm": 3450.0,
+        "remainingSourceFinishDepthMm": 80.0,
+        "verticalPlateEnergyRepresentationPolicy": "direct-sparse-plate-block-v1",
+        "finishStairServiceEvidenceApplicable": false,
+        "candidateAccepted": false,
+        "sourceUpperMaterialResidualKN_KNm": [
+          4.773959005888173e-15,
+          -7.88865500700453e-16,
+          5.1159076974727213e-11,
+          1.4006218407303095e-10,
+          4.4565240386873484e-11,
+          0.0
+        ],
+        "architecturalApplicabilityDiagnostic": "EXPERIMENTAL_LOWER_ARCH_SUPPORT_REPLACES_SOURCE_HOUSE_INTERFACES"
+      },
+      "captureApplicabilityOverride": {
+        "capturedInheritedValue": true,
+        "derivedApplicable": false,
+        "captureAltered": false,
+        "executedBackendSHA256Retained": true
+      },
+      "candidateAccepted": false,
+      "masonryStressTensionAndJointResistanceAccepted": false,
+      "completeSignedLoadEnvelope": false
+    },
+    "suction": {
+      "nativeCaseId": "WET-MASONRY-ARCH-NATIVE-FLOOR-ZEROG-SUCTION",
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -191.77639708571667,
+            -162.89469936006526,
+            76.80444095187488,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            125.36555622013617,
+            2.4616660046838024,
+            -69.3421939633732,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            1.7683817373272102,
+            103.22272254479789,
+            -55.40117376373232,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -406.95269467813006,
+            -436.6418132239254,
+            -76.54352338639401,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            247.12667618703512,
+            3.041875897247486,
+            107.45750139154347,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            3.889574088341206,
+            277.04407164083864,
+            -154.17624841927113,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -372.7102061595006,
+            -344.3457333431061,
+            -71.8820844155614,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            260.9718645482375,
+            4.893773066873905,
+            -117.35655653551805,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            6.337608589644455,
+            210.35139037701884,
+            114.33399592931355,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -27.780294927532147,
+            -111.47192793786877,
+            -242.502558621624,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            62.23703777246952,
+            0.6488258506301321,
+            19.72367008821739,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            1.3621310696299505,
+            90.55258678359306,
+            72.41342594293229,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            -2.656466210244991,
+            56.069039166252615,
+            10.31830665337568,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            -0.7262190298373202,
+            47.59801112285232,
+            -12.554285920776614,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -1.632033035916196,
+            43.94355195785671,
+            2.017220059349069,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            -2.74871610298608,
+            96.61244563998409,
+            35.857718440426,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -8.662332110387077,
+            103.43650308559117,
+            -16.05526360354059,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -1.944038455991301,
+            62.800361821521776,
+            2.4689279401106763,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            16.753530891251675,
+            70.26087983070451,
+            -0.9429845875301007,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            59.15767562635804,
+            -1.631864721005726,
+            5.044348634948807,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            52.99633465516014,
+            -1.2140420011006254,
+            -7.594491852162019,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            56.30714214335602,
+            -1.6069625896596118,
+            5.983167523269902,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            115.34819817844685,
+            -6.037214532596334,
+            52.5461618130347,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            156.49431555753569,
+            -11.625877683679814,
+            -2.7198194223711862,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            -18.598638090648194,
+            -39.90714158740536,
+            -70.3000026537825,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -44.74433416125383,
+            -35.8980965437034,
+            -7.214867941436808,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            51.72008806443506,
+            -0.007113581894158116,
+            14.643239965635901,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -33.27063670429703,
+            -28.104409649688314,
+            -61.70325420390648,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -2.4268773311360095,
+            68.6312896433889,
+            5.078181751415299,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -45.301183590493814,
+            -31.710698671628514,
+            59.169056646482964,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            1.5404475737475556,
+            70.2362898121407,
+            7.5333336428257605,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -0.5168547880101648,
+            6.159869218218233,
+            -1.2570411979187228,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            1.9617271353337158,
+            12.603602358684682,
+            1.2541904414779248,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            50.10462955527305,
+            -6.151469458531146,
+            68.66667710304719,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            0.9905120317080779,
+            8.703068979907501,
+            2.710546226303614,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            -1.6989333244195395,
+            22.99446114713062,
+            4.0457387839085515,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            7.867514244747752,
+            -12.883487034321735,
+            -34.59044737337748,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -0.9440363323131316,
+            -0.08117850458212095,
+            1.5151647803723207,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            0.7364025722822376,
+            0.04322516349739969,
+            -0.43470387367779495,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            1.0284118600392969,
+            0.6579782235944438,
+            0.9718346869854397,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            13.539433393257973,
+            10.612550485563524,
+            2.436982153191502,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            -0.6769568692842105,
+            6.796014071130358,
+            -2.3946572718537573,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            -1.3685181114972065,
+            6.480271115516689,
+            1.447707453243617,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            27.275275907601575,
+            1.452900502259415,
+            -1.0776194655434626,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            3.9001550905179405,
+            3.999533891173302,
+            1.1341414888128278,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            -0.07081783021599526,
+            9.298581310638141,
+            2.2463682995527074,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            12.967019281664912,
+            13.194030154576163,
+            1.6162847502802633,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            1.3057507723960722,
+            2.803183290356741,
+            -3.4711656627742014,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            0.6687834085792383,
+            0.9786125728709241,
+            -1.1660193721723802,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            5.428974350924451,
+            0.0487931228090599,
+            2.6718458505235243,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            0.6220594381090967,
+            0.5286670436271002,
+            1.329993536620679,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            6.1805154095915835,
+            -0.837023030565207,
+            2.9032905816656895,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "externalWrenchKN_KNm": [
+        -186.74654243403566,
+        -186.10987344258768,
+        324.3374999999999,
+        2894.4983198847735,
+        -2912.823891406428,
+        3.8200139486241387
+      ],
+      "globalWrenchResidualKN_KNm": [
+        -8.708155974090914e-09,
+        -3.843751983367838e-10,
+        2.4439827939204406e-09,
+        2.2425316274166108e-08,
+        -5.095312371850014e-08,
+        8.552579674869775e-08
+      ],
+      "archFreeBodyResidualKN_KNm": [
+        -9.933893985181186e-15,
+        -5.398459457239824e-15,
+        -1.4613830978671416e-13,
+        -1.2785189573705225e-12,
+        3.943512183468556e-13,
+        1.8742646323843815e-13
+      ],
+      "frameEnergyRelativeResidual": 2.762776418511281e-12,
+      "plateWorkRelativeResidual": 2.2147717850657457e-12,
+      "plateAreaM2": 98.30240624999988,
+      "plateSelfGKN": 530.8329937499993,
+      "joinedPhysicalGKN": 2963.389369834923,
+      "maximumPlateDeflectionMm": 5.424311475552009,
+      "rawPointMomentInspectionKNmPerM": 114.28446357383916,
+      "tieState": {
+        "id": "WET-ARCH/tie",
+        "terms": [
+          [
+            "WET-ARCH/tie-end/1",
+            [
+              0,
+              1,
+              0,
+              -0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            "WET-ARCH/tie-end/0",
+            [
+              0,
+              -1,
+              0,
+              -0.0,
+              -0.0,
+              -0.0
+            ]
+          ]
+        ],
+        "stiffness": 47.92259980052226,
+        "mode": "tension",
+        "gap": 0.0,
+        "relativeMm": -0.002902342619105769,
+        "active": false,
+        "forceKN": -0.0
+      },
+      "floorNormalCompressionKN": 0.010628405802891266,
+      "activeNormalFibres": 1,
+      "normalFibreCount": 32,
+      "minimumRawNormalCompressionKN": -0.0,
+      "maximumRigidWorkResidual": 1.8189894035458565e-12,
+      "ringMemberAxialRangeKN": [
+        -0.009630679068872465,
+        0.042477624389073924
+      ],
+      "actualRingMemberEndActions": [
+        {
+          "id": "WET-ARCH/ring-member/0",
+          "axialCompressionKN": 0.018583739795871905,
+          "rawEndWrenchesKN_KNmm": [
+            0.005993811813709948,
+            0.012417172098408313,
+            0.016060959945808084,
+            11.4007354855499,
+            0.5934634384448287,
+            -6.020697466958808,
+            -0.005993811813709948,
+            -0.012417172098408313,
+            -0.016060959945808084,
+            -10.162045142098338,
+            -0.15921376125523068,
+            5.222698478560943
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9026.00844676956,
+              2642.665638866486
+            ],
+            [
+              2914.5,
+              9159.145591077639,
+              2715.1153070719347
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.018583739795871905,
+              "inPlaneMomentKNmm": 11.4007354855499,
+              "outOfPlaneMomentKNmm": 5.5720559685256665,
+              "inPlaneEccentricityMm": 613.4790742217774,
+              "outOfPlaneEccentricityMm": 299.83501866311184,
+              "grossAffineBiaxialKernRatio": 29.970418485771006,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.018583739795871905,
+              "inPlaneMomentKNmm": -10.162045142098338,
+              "outOfPlaneMomentKNmm": -4.66355436279055,
+              "inPlaneEccentricityMm": 546.8245495105178,
+              "outOfPlaneEccentricityMm": 250.94810915435264,
+              "grossAffineBiaxialKernRatio": 26.015138950098006,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/1",
+          "axialCompressionKN": 0.032572508993810714,
+          "rawEndWrenchesKN_KNmm": [
+            0.005984589010222141,
+            0.02713420180141024,
+            0.018944044473511668,
+            6.8495891173692165,
+            0.3890431699234682,
+            -4.694633153156559,
+            -0.005984589010222141,
+            -0.02713420180141024,
+            -0.018944044473511668,
+            -5.963522033206946,
+            -0.009323280858218652,
+            3.870831063062795
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9159.145591077639,
+              2715.1153070719347
+            ],
+            [
+              2914.5,
+              9296.79950326561,
+              2778.5649254863574
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.032572508993810714,
+              "inPlaneMomentKNmm": 6.8495891173692165,
+              "outOfPlaneMomentKNmm": 4.426369490415799,
+              "inPlaneEccentricityMm": 210.287427310888,
+              "outOfPlaneEccentricityMm": 135.89280123483513,
+              "grossAffineBiaxialKernRatio": 11.692463539338315,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.032572508993810714,
+              "inPlaneMomentKNmm": -5.963522033206946,
+              "outOfPlaneMomentKNmm": -3.51926581508724,
+              "inPlaneEccentricityMm": 183.08451566749457,
+              "outOfPlaneEccentricityMm": 108.04405075936752,
+              "grossAffineBiaxialKernRatio": 9.739794639211945,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/2",
+          "axialCompressionKN": 0.039125833823477014,
+          "rawEndWrenchesKN_KNmm": [
+            0.005504378278102795,
+            0.03555061500747203,
+            0.016573421512011466,
+            4.236694377714546,
+            0.036725745861588166,
+            -3.7172732422180133,
+            -0.005504378278102795,
+            -0.03555061500747203,
+            -0.016573421512011466,
+            -3.8162689566276207,
+            0.2614437930176621,
+            2.9380562875483776
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9296.79950326561,
+              2778.5649254863574
+            ],
+            [
+              2914.5,
+              9438.362621804752,
+              2832.7344472404125
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.039125833823477014,
+              "inPlaneMomentKNmm": 4.236694377714546,
+              "outOfPlaneMomentKNmm": 3.484903625549725,
+              "inPlaneEccentricityMm": 108.28381055926188,
+              "outOfPlaneEccentricityMm": 89.06912096167642,
+              "grossAffineBiaxialKernRatio": 6.839121824263873,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.039125833823477014,
+              "inPlaneMomentKNmm": -3.8162689566276207,
+              "outOfPlaneMomentKNmm": -2.6505870571177628,
+              "inPlaneEccentricityMm": 97.53834190078555,
+              "outOfPlaneEccentricityMm": 67.74519027700077,
+              "grossAffineBiaxialKernRatio": 5.625365536677437,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/3",
+          "axialCompressionKN": 0.04214311858349281,
+          "rawEndWrenchesKN_KNmm": [
+            0.0051410230769186605,
+            0.039948239095836946,
+            0.013468363987517606,
+            3.0306519790178115,
+            -0.25761956319126966,
+            -3.0060768670980167,
+            -0.0051410230769186605,
+            -0.039948239095836946,
+            -0.013468363987517606,
+            -2.8634953659901115,
+            0.4871679796112218,
+            2.2614124789390218
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9438.362621804752,
+              2832.7344472404125
+            ],
+            [
+              2914.5,
+              9583.2101311461,
+              2877.384784923331
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.04214311858349281,
+              "inPlaneMomentKNmm": 3.0306519790178115,
+              "outOfPlaneMomentKNmm": 2.7967990017250246,
+              "inPlaneEccentricityMm": 71.91332964629956,
+              "outOfPlaneEccentricityMm": 66.3643103721449,
+              "grossAffineBiaxialKernRatio": 4.851068348271049,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.04214311858349281,
+              "inPlaneMomentKNmm": -2.8634953659901115,
+              "outOfPlaneMomentKNmm": -2.0175573662401654,
+              "inPlaneEccentricityMm": 67.94692614684013,
+              "outOfPlaneEccentricityMm": 47.87394559429756,
+              "grossAffineBiaxialKernRatio": 3.947933813288689,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/4",
+          "axialCompressionKN": 0.042477624389073924,
+          "rawEndWrenchesKN_KNmm": [
+            0.00502183158917946,
+            0.04095970212172503,
+            0.01137054643037122,
+            2.677997992308793,
+            -0.4624191149821897,
+            -2.4440815398355085,
+            -0.00502183158917946,
+            -0.04095970212172503,
+            -0.01137054643037122,
+            -2.4318162169861175,
+            0.6378521860700417,
+            1.703398600662453
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9583.2101311461,
+              2877.384784923331
+            ],
+            [
+              2914.5,
+              9730.70271946183,
+              2912.3188658403424
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.042477624389073924,
+              "inPlaneMomentKNmm": 2.677997992308793,
+              "outOfPlaneMomentKNmm": 2.2717049303973393,
+              "inPlaneEccentricityMm": 63.0449096630184,
+              "outOfPlaneEccentricityMm": 53.4800371506102,
+              "grossAffineBiaxialKernRatio": 4.051394419974173,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.042477624389073924,
+              "inPlaneMomentKNmm": -2.4318162169861175,
+              "outOfPlaneMomentKNmm": -1.5105295374599748,
+              "inPlaneEccentricityMm": 57.24934602537773,
+              "outOfPlaneEccentricityMm": 35.560593587444416,
+              "grossAffineBiaxialKernRatio": 3.1216816076119795,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/5",
+          "axialCompressionKN": 0.04010957512348151,
+          "rawEndWrenchesKN_KNmm": [
+            0.005063774808583776,
+            0.03898954679610089,
+            0.010019343579285245,
+            2.6354335901718784,
+            -0.6011846479224019,
+            -1.9421232868418628,
+            -0.005063774808583776,
+            -0.03898954679610089,
+            -0.010019343579285245,
+            -2.1148949819464704,
+            0.7281012564594818,
+            1.1851563978462138
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9730.70271946183,
+              2912.3188658403424
+            ],
+            [
+              2914.5,
+              9880.189400368716,
+              2937.382501830215
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.04010957512348151,
+              "inPlaneMomentKNmm": 2.6354335901718784,
+              "outOfPlaneMomentKNmm": 1.815977884653695,
+              "inPlaneEccentricityMm": 65.7058465979363,
+              "outOfPlaneEccentricityMm": 45.27542062121121,
+              "grossAffineBiaxialKernRatio": 3.774026702446145,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.04010957512348151,
+              "inPlaneMomentKNmm": -2.1148949819464704,
+              "outOfPlaneMomentKNmm": -1.0484450211499194,
+              "inPlaneEccentricityMm": 52.72793280496105,
+              "outOfPlaneEccentricityMm": 26.139519501819006,
+              "grossAffineBiaxialKernRatio": 2.5917423160635815,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/6",
+          "axialCompressionKN": 0.035204464814836314,
+          "rawEndWrenchesKN_KNmm": [
+            0.0051463643103808465,
+            0.034469860927157266,
+            0.009101709180770023,
+            2.570356429437961,
+            -0.6967389516372933,
+            -1.4526252408023197,
+            -0.0051463643103808465,
+            -0.034469860927157266,
+            -0.009101709180770023,
+            -1.7175216987064665,
+            0.774359341165507,
+            0.6764455021701963
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              9880.189400368716,
+              2937.382501830215
+            ],
+            [
+              2914.5,
+              10031.010386179416,
+              2952.4650698038163
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.035204464814836314,
+              "inPlaneMomentKNmm": 2.570356429437961,
+              "outOfPlaneMomentKNmm": 1.3760854394590738,
+              "inPlaneEccentricityMm": 73.01222850445744,
+              "outOfPlaneEccentricityMm": 39.08837832635213,
+              "grossAffineBiaxialKernRatio": 3.7127667769016113,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.035204464814836314,
+              "inPlaneMomentKNmm": -1.7175216987064665,
+              "outOfPlaneMomentKNmm": -0.5960342157990228,
+              "inPlaneEccentricityMm": 48.787041863583354,
+              "outOfPlaneEccentricityMm": 16.930642716313486,
+              "grossAffineBiaxialKernRatio": 2.087097816260944,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/7",
+          "axialCompressionKN": 0.028266126844487496,
+          "rawEndWrenchesKN_KNmm": [
+            0.0051989030794643565,
+            0.028000139007156397,
+            0.008472568732815683,
+            2.330079791111837,
+            -0.75744439726002,
+            -0.9587072189188461,
+            -0.0051989030794643565,
+            -0.028000139007156397,
+            -0.008472568732815683,
+            -1.1875523710936715,
+            0.7836205113618204,
+            0.17112739911917174
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10031.010386179416,
+              2952.4650698038163
+            ],
+            [
+              2914.5,
+              10182.5,
+              2957.5
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.028266126844487496,
+              "inPlaneMomentKNmm": 2.330079791111837,
+              "outOfPlaneMomentKNmm": 0.9330175074748721,
+              "inPlaneEccentricityMm": 82.43364235684992,
+              "outOfPlaneEccentricityMm": 33.00832521583447,
+              "grossAffineBiaxialKernRatio": 3.715116249441209,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.028266126844487496,
+              "inPlaneMomentKNmm": -1.1875523710936715,
+              "outOfPlaneMomentKNmm": -0.14500281122539363,
+              "inPlaneEccentricityMm": 42.01326830616943,
+              "outOfPlaneEccentricityMm": 5.129914403312469,
+              "grossAffineBiaxialKernRatio": 1.3923167759951962,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/8",
+          "axialCompressionKN": 0.020061606657230103,
+          "rawEndWrenchesKN_KNmm": [
+            0.005199945367788228,
+            0.02034065063531887,
+            0.008062506332207342,
+            1.8967242414675756,
+            -0.7835363643958084,
+            -0.45792287173588875,
+            -0.005199945367788228,
+            -0.02034065063531887,
+            -0.008062506332207342,
+            -0.5729245146817217,
+            0.7573550024449798,
+            -0.3298148439183137
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10182.5,
+              2957.5
+            ],
+            [
+              2914.5,
+              10333.989613820584,
+              2952.4650698038163
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.020061606657230103,
+              "inPlaneMomentKNmm": 1.8967242414675756,
+              "outOfPlaneMomentKNmm": 0.4836975146471237,
+              "inPlaneEccentricityMm": 94.54498205825432,
+              "outOfPlaneEccentricityMm": 24.110607037188693,
+              "grossAffineBiaxialKernRatio": 3.67177634574442,
+              "resultantInside215By140Rectangle": true
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.020061606657230103,
+              "inPlaneMomentKNmm": -0.5729245146817217,
+              "outOfPlaneMomentKNmm": 0.30447516464194,
+              "inPlaneEccentricityMm": 28.558256797206347,
+              "outOfPlaneEccentricityMm": 15.17700799562874,
+              "grossAffineBiaxialKernRatio": 1.4474178081067908,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/9",
+          "axialCompressionKN": 0.011483208872559401,
+          "rawEndWrenchesKN_KNmm": [
+            0.005147353994236603,
+            0.01232613037585284,
+            0.007856202791531264,
+            1.3400181876879724,
+            -0.774343633866982,
+            0.048122761243377,
+            -0.005147353994236603,
+            -0.01232613037585284,
+            -0.007856202791531264,
+            0.03077176130486059,
+            0.6967083173647062,
+            -0.8244517649703482
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10333.989613820584,
+              2952.4650698038163
+            ],
+            [
+              2914.5,
+              10484.810599631284,
+              2937.382501830215
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.011483208872559401,
+              "inPlaneMomentKNmm": 1.3400181876879724,
+              "outOfPlaneMomentKNmm": 0.029168523239441906,
+              "inPlaneEccentricityMm": 116.6937049181538,
+              "outOfPlaneEccentricityMm": 2.5401021232962004,
+              "grossAffineBiaxialKernRatio": 3.3654300289136643,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.011483208872559401,
+              "inPlaneMomentKNmm": 0.03077176130486059,
+              "outOfPlaneMomentKNmm": 0.7510327100306166,
+              "inPlaneEccentricityMm": 2.6797179818259385,
+              "outOfPlaneEccentricityMm": 65.40268651085024,
+              "grossAffineBiaxialKernRatio": 2.8777551064362323,
+              "resultantInside215By140Rectangle": true
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/10",
+          "axialCompressionKN": 0.0034590530954071884,
+          "rawEndWrenchesKN_KNmm": [
+            0.005056191096937113,
+            0.004832640310373573,
+            0.007904495602366335,
+            0.7490573010713604,
+            -0.729002134640357,
+            0.557739164926403,
+            -0.005056191096937113,
+            -0.004832640310373573,
+            -0.007904495602366335,
+            0.553683048378474,
+            0.6022756014915416,
+            -1.3135723900377627
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10484.810599631284,
+              2937.382501830215
+            ],
+            [
+              2914.5,
+              10634.29728053817,
+              2912.3188658403424
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": 0.0034590530954071884,
+              "inPlaneMomentKNmm": 0.7490573010713604,
+              "outOfPlaneMomentKNmm": -0.4295159434549313,
+              "inPlaneEccentricityMm": 216.5498130300263,
+              "outOfPlaneEccentricityMm": 124.17153816610326,
+              "grossAffineBiaxialKernRatio": 11.364887946162634,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": 0.0034590530954071884,
+              "inPlaneMomentKNmm": 0.553683048378474,
+              "outOfPlaneMomentKNmm": 1.1958993190484768,
+              "inPlaneEccentricityMm": 160.06780847441613,
+              "outOfPlaneEccentricityMm": 345.7302579819751,
+              "grossAffineBiaxialKernRatio": 19.28401966495872,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/11",
+          "axialCompressionKN": -0.003138545770740351,
+          "rawEndWrenchesKN_KNmm": [
+            0.004988751119495927,
+            -0.001248463032218483,
+            0.008346593564503124,
+            0.15750340951787933,
+            -0.6409238599344746,
+            1.073867801183951,
+            -0.004988751119495927,
+            0.001248463032218483,
+            -0.008346593564503124,
+            1.0299433703408383,
+            0.4666464246513655,
+            -1.8096716162603315
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10634.29728053817,
+              2912.3188658403424
+            ],
+            [
+              2914.5,
+              10781.7898688539,
+              2877.384784923331
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": -0.003138545770740351,
+              "inPlaneMomentKNmm": 0.15750340951787933,
+              "outOfPlaneMomentKNmm": -0.8972390916986324,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": -0.003138545770740351,
+              "inPlaneMomentKNmm": 1.0299433703408383,
+              "outOfPlaneMomentKNmm": 1.6534003699520314,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/12",
+          "axialCompressionKN": -0.007619675842595408,
+          "rawEndWrenchesKN_KNmm": [
+            0.005066603672897685,
+            -0.0050412730427673025,
+            0.009512207461784161,
+            -0.5271658500910377,
+            -0.4907431333316197,
+            1.618435706144993,
+            -0.005066603672897685,
+            0.0050412730427673025,
+            -0.009512207461784161,
+            1.6798908655576241,
+            0.2645175684313159,
+            -2.352320628983989
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10781.7898688539,
+              2877.384784923331
+            ],
+            [
+              2914.5,
+              10926.637378195248,
+              2832.734447240412
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": -0.007619675842595408,
+              "inPlaneMomentKNmm": -0.5271658500910377,
+              "outOfPlaneMomentKNmm": -1.4020582012223968,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": -0.007619675842595408,
+              "inPlaneMomentKNmm": 1.6798908655576241,
+              "outOfPlaneMomentKNmm": 2.1700198449161823,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/13",
+          "axialCompressionKN": -0.009630679068872465,
+          "rawEndWrenchesKN_KNmm": [
+            0.005400955433349619,
+            -0.005622449548757236,
+            0.01225452845042585,
+            -1.616108597263839,
+            -0.24974033148516384,
+            2.255914169706827,
+            -0.005400955433349619,
+            0.005622449548757236,
+            -0.01225452845042585,
+            3.0463324577903776,
+            -0.04282684135431225,
+            -3.020490263942378
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              10926.637378195248,
+              2832.734447240412
+            ],
+            [
+              2914.5,
+              11068.20049673439,
+              2778.5649254863574
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": -0.009630679068872465,
+              "inPlaneMomentKNmm": -1.616108597263839,
+              "outOfPlaneMomentKNmm": -2.0176773104248396,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": -0.009630679068872465,
+              "inPlaneMomentKNmm": 3.0463324577903776,
+              "outOfPlaneMomentKNmm": 2.8363177409557134,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/14",
+          "axialCompressionKN": -0.00932679209645429,
+          "rawEndWrenchesKN_KNmm": [
+            0.005915935610982359,
+            -0.0020591600657841047,
+            0.01781320183237034,
+            -3.7913445387686693,
+            0.08800126634948668,
+            3.107231566961559,
+            -0.005915935610982359,
+            0.0020591600657841047,
+            -0.01781320183237034,
+            6.112748539159952,
+            -0.46336512343086156,
+            -3.9215832480657866
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              11068.20049673439,
+              2778.5649254863574
+            ],
+            [
+              2914.5,
+              11205.854408922361,
+              2715.1153070719347
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": -0.00932679209645429,
+              "inPlaneMomentKNmm": -3.7913445387686693,
+              "outOfPlaneMomentKNmm": -2.858724709085222,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": -0.00932679209645429,
+              "inPlaneMomentKNmm": 6.112748539159952,
+              "outOfPlaneMomentKNmm": 3.7554223647754155,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        },
+        {
+          "id": "WET-ARCH/ring-member/15",
+          "axialCompressionKN": -0.005454178134800286,
+          "rawEndWrenchesKN_KNmm": [
+            0.006028701725778296,
+            0.00602235868757206,
+            0.022477773148980695,
+            -8.153679640294385,
+            0.4161460242195858,
+            4.323257266029515,
+            -0.006028701725778296,
+            -0.00602235868757206,
+            -0.022477773148980695,
+            11.582624056483056,
+            -0.8529234639622345,
+            -5.125901397685695
+          ],
+          "physicalStartEndXYZMm": [
+            [
+              2914.5,
+              11205.854408922361,
+              2715.1153070719347
+            ],
+            [
+              2914.5,
+              11338.99155323044,
+              2642.665638866486
+            ]
+          ],
+          "cutScreens": [
+            {
+              "end": 0,
+              "axialCompressionKN": -0.005454178134800286,
+              "inPlaneMomentKNmm": -8.153679640294385,
+              "outOfPlaneMomentKNmm": -3.996323373164335,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            },
+            {
+              "end": 1,
+              "axialCompressionKN": -0.005454178134800286,
+              "inPlaneMomentKNmm": 11.582624056483056,
+              "outOfPlaneMomentKNmm": 4.910113356667243,
+              "inPlaneEccentricityMm": null,
+              "outOfPlaneEccentricityMm": null,
+              "grossAffineBiaxialKernRatio": null,
+              "resultantInside215By140Rectangle": false
+            }
+          ]
+        }
+      ],
+      "masonryLaw": {
+        "elasticModulusMPa": 3000,
+        "poissonRatio": 0.2,
+        "flexuralFactor": 1.0,
+        "torsionFactor": 1.0,
+        "shearAreaFactor": 0.8333333333333334
+      },
+      "necessaryCompressionOnlyRingScreen": {
+        "worstPositiveCompressionCut": {
+          "id": "WET-ARCH/ring-member/0",
+          "end": 0,
+          "axialCompressionKN": 0.018583739795871905,
+          "inPlaneMomentKNmm": 11.4007354855499,
+          "outOfPlaneMomentKNmm": 5.5720559685256665,
+          "inPlaneEccentricityMm": 613.4790742217774,
+          "outOfPlaneEccentricityMm": 299.83501866311184,
+          "grossAffineBiaxialKernRatio": 29.970418485771006,
+          "resultantInside215By140Rectangle": false
+        },
+        "nonCompressiveCutCount": 10,
+        "resultantOutsideSectionCount": 18,
+        "fixedRecoveredActionsAdmitCompressionOnlySection": false,
+        "scope": "Necessary section-resultant bounds only. Failure rejects compression-only admission of these fixed elastic actions; does not establish arch collapse or exclude a genuinely released/contact redistribution."
+      },
+      "floorSection": {
+        "schema": "str-floor-section-successor/1",
+        "soffitZMm": 3170.0,
+        "topZMm": 3370.0,
+        "midplaneZMm": 3270.0,
+        "thicknessMm": 200.0,
+        "plateSelfGKN": 530.8329937499993,
+        "addedPlateGKN": 0.0,
+        "sourceGravityResidualKN_KNm": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "sourcePressureResidualKN_KNm": [
+          -3.5569769352150615e-11,
+          -7.119638212316204e-12,
+          0.0,
+          2.3248958314070478e-11,
+          -1.16358478408074e-10,
+          1.0768985703180078e-10
+        ],
+        "steelChordAxialRigidityKN": 180955.73684677208,
+        "northernUpstandGeometryChanged": false,
+        "sourceFFLMm": 3450.0,
+        "remainingSourceFinishDepthMm": 80.0,
+        "verticalPlateEnergyRepresentationPolicy": "direct-sparse-plate-block-v1",
+        "finishStairServiceEvidenceApplicable": false,
+        "candidateAccepted": false,
+        "sourceUpperMaterialResidualKN_KNm": [
+          4.773959005888173e-15,
+          -7.88865500700453e-16,
+          5.1159076974727213e-11,
+          1.4006218407303095e-10,
+          4.4565240386873484e-11,
+          0.0
+        ],
+        "architecturalApplicabilityDiagnostic": "EXPERIMENTAL_LOWER_ARCH_SUPPORT_REPLACES_SOURCE_HOUSE_INTERFACES"
+      },
+      "captureApplicabilityOverride": {
+        "capturedInheritedValue": true,
+        "derivedApplicable": false,
+        "captureAltered": false,
+        "executedBackendSHA256Retained": true
+      },
+      "candidateAccepted": false,
+      "masonryStressTensionAndJointResistanceAccepted": false,
+      "completeSignedLoadEnvelope": false
+    }
+  },
+  "independentMaterialReplacement": {
+    "terms": {
+      "removedOldBeamPostGKN": -27.1356075,
+      "removedOldPadGKN": -0.03454,
+      "addedArchMasonryGKN": 12.182895041925148,
+      "addedGrossTieHardwareGKN": 0.24020894354673097,
+      "restoredRC200StripGKN": 3.98925,
+      "restoredAdjacentClearMasonryGKN": 2.2512
+    },
+    "actualCoreUnionAreaDifferenceMm2": 33600.0,
+    "expectedTotalGChangeKN": -8.50659351452812,
+    "actualTotalGChangeKN": -8.506593514528504,
+    "residualKN": -3.836930773104541e-13,
+    "scope": "Actual native gross-material and retained-core union account. Product/delivered weights, pocket removals, finishes and eventual material qualification remain unearned."
+  },
+  "actualNumericalRuntime": {
+    "schema": "str-four-L-numerical-runtime/1",
+    "pythonImplementation": "CPython",
+    "pythonVersion": "3.12.14",
+    "numpyVersion": "2.3.5",
+    "scipyVersion": "1.17.0",
+    "system": "Linux",
+    "machine": "x86_64",
+    "byteorder": "little",
+    "cpuFeatures": {
+      "ASIMD": false,
+      "ASIMDDP": false,
+      "ASIMDFHM": false,
+      "ASIMDHP": false,
+      "AVX": true,
+      "AVX2": true,
+      "AVX5124FMAPS": false,
+      "AVX5124VNNIW": false,
+      "AVX512BITALG": true,
+      "AVX512BW": true,
+      "AVX512CD": true,
+      "AVX512DQ": true,
+      "AVX512ER": false,
+      "AVX512F": true,
+      "AVX512FP16": true,
+      "AVX512IFMA": true,
+      "AVX512PF": false,
+      "AVX512VBMI": true,
+      "AVX512VBMI2": true,
+      "AVX512VL": true,
+      "AVX512VNNI": true,
+      "AVX512VPOPCNTDQ": true,
+      "AVX512_CLX": true,
+      "AVX512_CNL": true,
+      "AVX512_ICL": true,
+      "AVX512_KNL": false,
+      "AVX512_KNM": false,
+      "AVX512_SKX": true,
+      "AVX512_SPR": true,
+      "F16C": true,
+      "FMA3": true,
+      "FMA4": false,
+      "FPHP": false,
+      "LSX": false,
+      "MMX": true,
+      "NEON": false,
+      "NEON_FP16": false,
+      "NEON_VFPV4": false,
+      "POPCNT": true,
+      "RVV": false,
+      "SSE": true,
+      "SSE2": true,
+      "SSE3": true,
+      "SSE41": true,
+      "SSE42": true,
+      "SSSE3": true,
+      "SVE": false,
+      "VSX": false,
+      "VSX2": false,
+      "VSX3": false,
+      "VSX4": false,
+      "VX": false,
+      "VXE": false,
+      "VXE2": false,
+      "XOP": false
+    },
+    "sharedLibrariesSHA256": {
+      "numpy.libs/libgfortran-040039e1-0352e75f.so.5.0.0": "c6090048eccc763522c12ef016f81da6b627cb3a044f55cf0479a839c41c0980",
+      "numpy.libs/libquadmath-96973f99-934c22de.so.0.0.0": "6ed5137f412781ad7863439fb543613f620b43c32b63292a0029246162f5bbc6",
+      "numpy.libs/libscipy_openblas64_-fdde5778.so": "ee2039cf13a45e1e89f04d0cea9585657d93ffaa425594e1935161013fdf4e12",
+      "numpy/core": "ba96467ae494babaf7c3458b09cc03c4200c2e10010860d80e452ffb8b01c8cd",
+      "scipy.libs/libgfortran-040039e1-0352e75f.so.5.0.0": "c6090048eccc763522c12ef016f81da6b627cb3a044f55cf0479a839c41c0980",
+      "scipy.libs/libgfortran-8f1e9814.so.5.0.0": "a95cc4ac4afad889f2d83088f46b5e6fa6cd5efd729db887e1e639147ec55b73",
+      "scipy.libs/libquadmath-828275a7.so.0.0.0": "71bdc2ec57ab2fc939360597968f73230426b1c6764048e62a2cb6c8d8c3a1fd",
+      "scipy.libs/libquadmath-96973f99-934c22de.so.0.0.0": "6ed5137f412781ad7863439fb543613f620b43c32b63292a0029246162f5bbc6",
+      "scipy.libs/libscipy_openblas-6cdc3b4a.so": "8fb864c29cac4b25f6e2c139491ea96f2724dde42d51394f84e9c4a622e34790",
+      "scipy/fblas": "0e03bbae64d3a3a947a21db865aff984afa8867fa292273faf56dfc887fa71ac",
+      "scipy/superlu": "8bc863fc723ee3bc4d603bf2cdf540fa728ce5df35302686588f0ee926dae261"
+    }
+  },
+  "headChanges": {
+    "predecessorToArch": {
+      "componentCount": 312,
+      "maximum": {
+        "id": "P47",
+        "component": 2,
+        "before": 144.370096710334,
+        "after": 121.76136598084213,
+        "difference": -22.608730729491867
+      }
+    },
+    "archE3000ToE1500": {
+      "componentCount": 312,
+      "maximum": {
+        "id": "P47",
+        "component": 2,
+        "before": 121.76136598084213,
+        "after": 118.4302586180846,
+        "difference": -3.3311073627575354
+      }
+    }
+  },
+  "stiffnessEditUnchangedControls": {
+    "physicalGWithin1eMinus8KN": true,
+    "actualPlateCellsAndHolesIdentical": true
+  },
+  "nativeSolvesExecutedByThisReplay": false,
+  "candidateAccepted": false,
+  "wholeHouseAccepted": false,
+  "scope": "Three actually coupled elastic-frame masonry/nativeRC200 comparisons. No masonry tensile/compression/contact/material, finite-node/tie/base resistance, complete pressure/signed envelope, mesh convergence, raised-ground or owner acceptance."
+}

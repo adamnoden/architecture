@@ -29,12 +29,22 @@ jobs:
   scope:
     uses: ./.github/workflows/proof-scope.yml
   proof:
+    name: ${{ matrix.check }}
     needs: scope
     if: needs.scope.outputs.run != 'false'
     runs-on: ubuntu-latest
-    # Real wet-cage/pad edits, CLI replay and both undo operations execute
-    # additional coupled native solves. The former15-minute budget expired
-    # on the expanded proof; retain every assertion within a bounded25 minutes.
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - mode: full
+            check: proof
+            artifact: ade-browser-editor-review
+          - mode: wet-beam-end
+            check: wet-beam-end-proof
+            artifact: wet-beam-end-browser-review
+    # Keep the original complete proof and the additional end-return proof
+    # independent: each executes actual native solves within its25-minute budget.
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v6
@@ -60,6 +70,8 @@ jobs:
           "$RUNNER_TEMP/ade-browser-proof/bin/python" -m pip install playwright==1.62.0
           "$RUNNER_TEMP/ade-browser-proof/bin/python" -m playwright install --with-deps --only-shell chromium
       - name: Build and exercise editor
+        env:
+          ADE_PROOF_MODE: ${{ matrix.mode }}
         run: |
           mkdir -p "$RUNNER_TEMP/ade-browser-review"
           node node_modules/vite/bin/vite.js build --config project/ade/browser-editor/vite.config.ts --outDir "$RUNNER_TEMP/ade-editor-dist"
@@ -78,11 +90,15 @@ jobs:
                       raise
                   time.sleep(1)
           PY
-          "$RUNNER_TEMP/ade-browser-proof/bin/python" project/ade/browser-editor/engineering_browser_test.py --screenshot "$RUNNER_TEMP/ade-browser-review/engineering-editor.png"
+          if [ "$ADE_PROOF_MODE" = full ]; then
+            "$RUNNER_TEMP/ade-browser-proof/bin/python" project/ade/browser-editor/engineering_browser_test.py --screenshot "$RUNNER_TEMP/ade-browser-review/engineering-editor.png"
+          else
+            "$RUNNER_TEMP/ade-browser-proof/bin/python" project/ade/browser-editor/engineering_browser_test.py --wet-beam-end-only --screenshot "$RUNNER_TEMP/ade-browser-review/wet-beam-end-editor.png"
+          fi
       - name: Retain browser evidence
         uses: actions/upload-artifact@v6
         with:
-          name: ade-browser-editor-review
+          name: ${{ matrix.artifact }}
           path: ${{ runner.temp }}/ade-browser-review
           if-no-files-found: error
           retention-days: 7

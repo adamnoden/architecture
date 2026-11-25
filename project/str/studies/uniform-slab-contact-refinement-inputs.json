@@ -1,0 +1,15 @@
+{
+  "schema": "str-uniform-slab-contact-refinement-input/1",
+  "id": "STR/FLOOR/RC200/uniform8250-normal-bearing-refinement",
+  "units": "mm-kN-kNm-MPa",
+  "datum": "source-ground-zero",
+  "coarseOrder": 32,
+  "fineOrder": 64,
+  "coarseNativeCaseId": "UNIFORM8250-RC200-WET120-SOUTH40-q32",
+  "coarseFullNativeSHA256": "4d98c317a2508cf55b910669f70a364f9813d836026168e6aeeb2ca0778220d5",
+  "fineNativeCaseId": "UNIFORM8250-RC200-WET120-SOUTH40-q64",
+  "comparisonScope": "normal-bearing-quadrature-only-fixed-slab-frame-laws-and-mesh",
+  "materialQualified": false,
+  "globalStressConverged": false,
+  "floorSelected": false
+}

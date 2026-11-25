@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import {readFileSync} from 'node:fs'
 import {execFileSync} from 'node:child_process'
 import {readGeorgianDesignSnapshot} from './current-design/georgian-source.js'
 import {readCurrentDesignResolution} from './current-design/resolve.js'
@@ -40,7 +41,7 @@ test('complete saved Plant choice drives the same CLI/browser/compiler, regenera
 test('complete authored schema, identity ownership and atomic field bounds reject invented passes or missing choices',async()=>{
  const request=readInletSourceEnvelopeCase(readCurrentDesignResolution()),c=request.sourceEnvelope.splitPlantRoom,start=await readEngineeringDocument(readGeorgianDesignSnapshot()),
   state=beginEngineeringEdit({...start,stages:{roofPitch:start.stages.roofPitch,inletSourceEnvelope:{...request.sourceEnvelope.settings,splitPlantRoom:c}}},'choices')
- for(const value of[{clearWidthMm:350},{...c,derivedPass:true},{...c,settingMm:0},{...c,bridgeFirstRestBoxMm:[0,0,0,0,1,1]}])assert.throws(()=>admitSplitPlantRoomChoice(value),/Unsupported complete/)
+ for(const value of[{clearWidthMm:350},{...c,schema:'had-split-plant-room/1'},{...c,fittedFrame:{clearWidthMm:1100}},{...c,derivedPass:true},{...c,settingMm:0},{...c,bridgeFirstRestBoxMm:[0,0,0,0,1,1]}])assert.throws(()=>admitSplitPlantRoomChoice(value),/Unsupported complete/)
  assert.equal(edit(state,'selected',1).status,'rejected');assert.equal(edit(state,'clearWidthMm',NaN).status,'rejected');assert.equal(edit(state,'bridgeHardwareBudgetEachKg',1).status,'rejected');assert.equal(edit(state,'bridgeHardwareBudgetEachKg',1,'kg').status,'applied')
  assert.equal(edit(beginEngineeringEdit(start,'missing'),'clearWidthMm',350).status,'rejected')
  const partial={...state.document,stages:{...state.document.stages,inletSourceEnvelope:{...request.sourceEnvelope.settings,splitPlantRoom:{clearWidthMm:350}}}}
@@ -51,7 +52,7 @@ test('complete authored schema, identity ownership and atomic field bounds rejec
 
 test('the140mm aspect-ratio comparison is an atomic complete saved choice, with exact reversal and unsupported undersize rejection',()=>{
  const resolved=readCurrentDesignResolution(),request=readInletSourceEnvelopeCase(resolved),choice=request.sourceEnvelope.splitPlantRoom,
-  state=beginEngineeringEdit({schema:'current-engineering-document/1',design:readGeorgianDesignSnapshot(),bindings:{},stages:{roofPitch:{pitchDeg:42},inletSourceEnvelope:{...request.sourceEnvelope.settings,splitPlantRoom:choice}}},'height'),
+  state=beginEngineeringEdit({schema:'current-engineering-document/1',design:readGeorgianDesignSnapshot(),bindings:{},stages:{roofPitch:{pitchDeg:42},inletSourceEnvelope:{...request.sourceEnvelope.settings,splitPlantRoom:{...choice,clearHeightMm:150}}}},'height'),
   change=edit(state,'clearHeightMm',140)
  assert.equal(change.status,'applied');if(change.status!=='applied')return
  const saved=JSON.parse(saveEngineeringEdit(change.state))
@@ -72,4 +73,29 @@ test('the same saved ground joins the existing vertical-profile arch; an absent 
  assert.equal(b.joinedProfileComparison!.belowSpringReserveMm,230);assert.equal(b.joinedProfileComparison!.geometryOnly,true);assert.equal(b.actualFittedClearanceQualified,false)
  assert.deepEqual(absent.engineering.inletSourceEnvelope!.bound,joined.engineering.inletSourceEnvelope!.bound)
  assert.deepEqual(absent.engineering.inletSourceEnvelope!.roomCatchment,joined.engineering.inletSourceEnvelope!.roomCatchment)
+})
+
+test('one saved fitted-width edit coordinates actual inlet and station while preserving minimum cargo, Utility, source and stored duties',async()=>{
+ const resolved=readCurrentDesignResolution(),request=readInletSourceEnvelopeCase(resolved),ground=readGroundSectionCase(resolved),start=await readEngineeringDocument(readGeorgianDesignSnapshot()),
+  doc={...start,stages:{roofPitch:start.stages.roofPitch,groundSection:{caseId:ground.ground.caseId,settings:ground.ground.settings},houseVerticalProfile:{},inletSourceEnvelope:{...readLocalUtilityPocketSettings(),splitPlantRoom:request.sourceEnvelope.splitPlantRoom}}},
+  state=beginEngineeringEdit(doc,'fitted-frame'),before=await compileEngineeringDocument(JSON.parse(saveEngineeringEdit(state))),editResult=edit(state,'fittedFrame.clearWidthMm',1000)
+ assert.equal(editResult.status,'applied');if(editResult.status!=='applied')return
+ const after=await compileEngineeringDocument(JSON.parse(saveEngineeringEdit(editResult.state))),a=before.engineering.inletSourceEnvelope!,b=after.engineering.inletSourceEnvelope!,pa=a.splitPlantRoom.comparison!,pb=b.splitPlantRoom.comparison!,
+  sa=a.joinedDirection.room.indoorRoutes.splitStationComparison,sb=b.joinedDirection.room.indoorRoutes.splitStationComparison
+ if(pa.state!=='unadopted-threshold-drainage-successor'||pb.state!=='unadopted-threshold-drainage-successor')throw Error('savedground')
+ assert.equal(pa.reviewSvg,readFileSync(new URL('../../project/had/studies/inlet-split-plant-room.svg',import.meta.url),'utf8').trim());
+ assert.equal(pa.actualFittedFrame.effectiveOpenWidthMm,1100);assert.equal(pb.actualFittedFrame.effectiveOpenWidthMm,1000)
+ assert.deepEqual(pa.actualFittedFrame.minimumCargoMm,pb.actualFittedFrame.minimumCargoMm)
+ assert.equal(sa.branchDevelopment.comparison!.choice.sourceEntryMm[1],3975);assert.equal(sb.branchDevelopment.comparison!.choice.sourceEntryMm[1],4000)
+ assert.equal(sa.branchDevelopment.comparison!.choice.sourceEntryOpeningDiameterMm,125);assert.ok(Math.abs(sa.branchDevelopment.comparison!.geometry.ingressBoreAfterTwoIndependentSettingsMm-2.45)<1e-9)
+ assert.equal(sa.frameCoordination.stationShiftYMm,-25);assert.equal(sb.frameCoordination.stationShiftYMm,0)
+ assert.equal(pa.actualFittedFrame.headerToRawSpringReserveMm,130);assert.equal(pb.actualFittedFrame.headerToRawSpringReserveMm,130)
+ assert.equal(pa.fittedDoor.necessaryDeclaredDoorAndParkedGoodsGeometryScreen,true)
+ assert.equal(pa.bridge.removablePieces.necessaryAuthoredFittedFrameFirstLiftWidthScreen,true);assert.equal(pb.bridge.removablePieces.necessaryAuthoredFittedFrameFirstLiftWidthScreen,false)
+ assert.equal(pa.bridge.removablePieces.actualFrameLiftEdgeReserveMm,7.5);assert.equal(pb.bridge.removablePieces.actualFrameLiftEdgeReserveMm,-42.5)
+ assert.deepEqual(a.bound,b.bound);assert.deepEqual(a.branches,b.branches);assert.deepEqual(a.roomCatchment,b.roomCatchment);assert.deepEqual(a.joinedDirection.room.indoorCuts,b.joinedDirection.room.indoorCuts)
+ assert.deepEqual(pa.storedRelease,pb.storedRelease);assert.deepEqual(pa.pocket,pb.pocket);assert.equal(pa.sourceOnlyLmin,pb.sourceOnlyLmin)
+ assert.equal(pa.completeOccupiedArrangementQualified,false);assert.equal(pb.completeOccupiedArrangementQualified,false)
+ const undo=replayEngineeringEdit(editResult.state,engineeringBase(editResult.state),'undo');assert.equal(undo.status,'applied');if(undo.status==='applied')assert.equal(saveEngineeringEdit(undo.state),saveEngineeringEdit(state))
+ assert.equal(edit(state,'fittedFrame.clearWidthMm',800).status,'rejected');assert.equal(edit(state,'fittedFrame.selected',1).status,'rejected')
 })

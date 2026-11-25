@@ -1,3 +1,4 @@
+import {readWetBeamEndDevelopmentControls} from './structural-wet-beam-end-settings.js'
 import {readFiniteFloorContourSettings} from './structural-finite-floor-contour-settings.js'
 import { admitDesignSnapshot, type DesignSnapshot } from './snapshot.js'
 import { sameEditBase, type EditBase } from './edit.js'
@@ -24,13 +25,14 @@ export interface EngineeringTicket {
   readonly documentJson: string
 }
 export const editablePlantRoomId='HAD/plant-wet-floor-threshold-successor'
-export const editablePlantRoomFields=['clearWidthMm','clearHeightMm','receiverHighAdverseMm','bridgeLiftMm','bridgeHardwareBudgetEachKg'] as const
+export const editablePlantRoomFields=['clearWidthMm','clearHeightMm','receiverHighAdverseMm','bridgeLiftMm','bridgeHardwareBudgetEachKg','fittedFrame.clearWidthMm','fittedFrame.sourceOpeningDiameterMm'] as const
 export const editableInletBankId='HAD/indoor-isolation-bank'
 export const editableInletBankFields=['indoorBankXMm','indoorUtilityAxisZMm','indoorTailOffsetMm','indoorUtilityReturnXMm','indoorWesternReturnXMm','pipeJacketDensityComparisonKgM3','pipeInsulationDensityComparisonKgM3'] as const
 export const editableRoofId = 'MAT/ring-roof-field'
 export const editableFloorSectionId = 'STR/current-floor-section'
 export const editableWetSupportId = 'STR/wet-wall-support'
 export const editableWetCageId = 'STR/wet-wall-support/reinforcement'
+export const editableWetBeamEndId = 'STR/WET-CAGE/beam/rectangular-return-development'
 export const editableStudyLightingId = 'IAS/STUDY/service-corner'
 function record(input: unknown): input is Record<string, unknown> {
   return input !== null && typeof input === 'object' && Object.getPrototypeOf(input) === Object.prototype
@@ -83,8 +85,10 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       if(!exact(operation,['kind','assemblyId','inputId','value'])||operation.assemblyId!==editablePlantRoomId||!record(current)||!record(current.splitPlantRoom)
        ||typeof operation.inputId!=='string'||!(editablePlantRoomFields as readonly string[]).includes(operation.inputId)||typeof operation.value!=='number'||!Number.isFinite(operation.value)
        ||transaction.units!==(operation.inputId.endsWith('Kg')?'kg':'mm'))throw new TypeError('Expected one finite supported field on an explicit complete Plant room choice')
-      const choice=admitSplitPlantRoomChoice({...current.splitPlantRoom,[operation.inputId]:operation.value})
-      if(current.splitPlantRoom[operation.inputId]===operation.value)return{status:'applied',state}
+      const nested=operation.inputId.startsWith('fittedFrame.'),field=nested?operation.inputId.slice('fittedFrame.'.length):operation.inputId,frame=current.splitPlantRoom.fittedFrame
+      if(nested&&!record(frame))throw new TypeError('Expected a complete explicit fitted Plant frame choice')
+      const choice=admitSplitPlantRoomChoice({...current.splitPlantRoom,...(nested?{fittedFrame:{...(frame as Record<string,unknown>),[field]:operation.value}}:{[field]:operation.value})})
+      if((nested?(frame as Record<string,unknown>)[field]:current.splitPlantRoom[field])===operation.value)return{status:'applied',state}
       stages={...state.document.stages,inletSourceEnvelope:{...current,splitPlantRoom:choice}}
     } else if(record(operation)&&operation.kind==='set-inlet-bank-field'){
       const current=state.document.stages.inletSourceEnvelope
@@ -115,8 +119,9 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'thicknessMm'])
         || operation.assemblyId !== editableFloorSectionId || typeof operation.thicknessMm !== 'number'
         || !Number.isFinite(operation.thicknessMm) || operation.thicknessMm < 200 || operation.thicknessMm > 250
-        || !record(current) || Object.keys(current).some(key => !['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison'].includes(key)) || typeof current.thicknessMm !== 'number'
-        || (current.wetSupport !== undefined && current.wetSupport !== null && operation.thicknessMm !== 200)) {
+        || !record(current) || Object.keys(current).some(key => !['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison', 'contourComponent', 'beamEndDevelopment'].includes(key)) || typeof current.thicknessMm !== 'number'
+        || (current.wetSupport !== undefined && current.wetSupport !== null && operation.thicknessMm !== 200)
+        || (Object.hasOwn(current, 'beamEndDevelopment') && operation.thicknessMm !== 200)) {
         throw new TypeError('An existing explicit STR/current-floor-section with supported thickness 200..250 mm is required')
       }
       if (operation.thicknessMm === current.thicknessMm) return { status: 'applied', state }
@@ -132,6 +137,17 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       const changed = readFloorSectionCuts(cuts.map((cut,i) => i === index ? { ...cut, positionMm: operation.positionMm, intervalMm: operation.intervalMm } : cut))
       if (JSON.stringify(changed) === JSON.stringify(cuts)) return { status: 'applied', state }
       stages = { ...state.document.stages, floorSection: { ...current, sectionCuts: changed } }
+    } else if (record(operation) && operation.kind === 'set-wet-beam-end-mandrel') {
+      const current = state.document.stages.floorSection
+      if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'endReturnMandrelMm'])
+        || operation.assemblyId !== editableWetBeamEndId || !record(current) || current.thicknessMm !== 200
+        || !record(current.wetSupport) || !record(current.cageComparison) || !record(current.beamEndDevelopment)) {
+        throw new TypeError('An existing explicit RC200 wet cage and local beam-end development comparison are required')
+      }
+      const before = readWetBeamEndDevelopmentControls(current.beamEndDevelopment)
+      const changed = readWetBeamEndDevelopmentControls({...before, endReturnMandrelMm:operation.endReturnMandrelMm})
+      if (changed.endReturnMandrelMm === before.endReturnMandrelMm) return {status:'applied',state}
+      stages = {...state.document.stages,floorSection:{...current,beamEndDevelopment:changed}}
     } else if (record(operation) && operation.kind === 'set-wet-cage-top-level') {
       const current = state.document.stages.floorSection
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'postTopLevelRaiseMm'])
