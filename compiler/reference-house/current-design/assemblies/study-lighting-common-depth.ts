@@ -207,7 +207,17 @@ export function deriveCommonDepthCorner(context: CommonDepthCornerContext, input
   // Charge case faces without aperture credits, then the separate fixed
   // surround face and its finite return. Collars are charged as solid stock.
   const density = c.steelDensityKgM3Comparison, width = q.enclosureWidthMm, height = q.enclosureHeightMm, t = q.shellThicknessMm
-  const caseSteelKg = (2 * width * height + 2 * (width + height) * c.referenceBoxDepthMm) * t / 1e9 * density
+  const caseFaceKg = width * height * t / 1e9 * density
+  const caseSideKg = 2 * (width + height) * c.referenceBoxDepthMm * t / 1e9 * density
+  const caseSteelKg = 2 * caseFaceKg + caseSideKg
+  // The independently fixed front cover lies beyond the body's front face.
+  // Its stock is not symmetric about the 47 mm body-depth midpoint.
+  const caseStockDepthPieces = [
+    { id: 'rear-face', kg: caseFaceKg, coreDepthMm: rearDepth + t / 2 },
+    { id: 'side-shell', kg: caseSideKg, coreDepthMm: (rearDepth + frontDepth) / 2 },
+    { id: 'fixed-front-cover', kg: caseFaceKg, coreDepthMm: frontDepth + t / 2 },
+  ]
+  const caseStockCentroidCoreDepthMm = caseStockDepthPieces.reduce((sum, piece) => sum + piece.kg * piece.coreDepthMm, 0) / caseSteelKg
   const surroundFaceKg = (width * height - q.accessoryOpeningWidthMm * q.accessoryOpeningHeightMm) * t / 1e9 * density
   const surroundReturnKg = 2 * (q.accessoryOpeningWidthMm + q.accessoryOpeningHeightMm + 4 * t) * recessMm * t / 1e9 * density
   const surroundSteelKg = surroundFaceKg + surroundReturnKg
@@ -215,7 +225,7 @@ export function deriveCommonDepthCorner(context: CommonDepthCornerContext, input
   const steelStock: Stock[] = enclosures.flatMap((box, i) => {
     const z = (box.zMm[0]! + box.zMm[1]!) / 2
     const rows: Stock[] = [{ id: `${box.id}/case-stock`, kg: caseSteelKg,
-      originXYZMm: [cx, c.coreFaceYMm - (rearDepth + frontDepth) / 2, z], interpretation: 'Full front/rear face and four side stock; no holes deducted.' }]
+      originXYZMm: [cx, c.coreFaceYMm - caseStockCentroidCoreDepthMm, z], interpretation: 'Full rear face, separately fixed front cover and four side stock at their mass-weighted geometric centroid; no holes deducted.' }]
     if (i < 2) rows.push({ id: `${box.id}/surround-face-stock`, kg: surroundFaceKg,
       originXYZMm: [cx, c.coreFaceYMm - (c.totalDepthMm - t / 2), z], interpretation: 'Separate front face ring at the decorative plane; actual clear mouth deducted.' },
       { id: `${box.id}/surround-return-stock`, kg: surroundReturnKg,
@@ -279,6 +289,7 @@ export function deriveCommonDepthCorner(context: CommonDepthCornerContext, input
       authoredTotalCaseGravityN: q.maximumEnclosureMassKg * enclosures.length * 9.81,
       sourceModelMassFeedbackApplied: false, actualInstalledMassQualified: false,
       steelDensityKgM3Comparison: density, pipeWallMmComparison: q.pipeWallMm, knownStock,
+      caseStockDepthPieces, caseStockCentroidCoreDepthMm,
       totalKnownSteelStockKgComparison: knownStock.reduce((sum, row) => sum + row.kg, 0), caseBudgets,
       knownStockGravityWrenchN_Nm: [0, 0, 0, 0, 0, 0].map((_, k) => knownStock.reduce((sum, row) => sum + row.gravityWrenchN_Nm[k]!, 0)),
       secondaryRestCompleteCaseDemandN: q.maximumEnclosureMassKg * 9.81,

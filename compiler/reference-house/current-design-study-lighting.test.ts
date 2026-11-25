@@ -310,6 +310,23 @@ test('explicit metal stock conserves six gravity components and fails an inadequ
   assert.ok(load.caseBudgets.every(row => row.remainingRequirementForDeviceFixingsAndOtherStockKg > .87))
   assert.equal(load.secondaryRestCompleteCaseDemandN, 29.43)
   assert.ok(load.unknownInstalledStock.includes('front-serviced unions'))
+  // Derive first moments from the physical rear plate, side shell and
+  // independently fixed cover, rather than trusting the supplied lump origin.
+  const firstCase = c.purpose.enclosures[0]!, thickness = c.choices.shellThicknessMm
+  const width = firstCase.xMm[1]! - firstCase.xMm[0]!, height = firstCase.zMm[1]! - firstCase.zMm[0]!
+  const [rear, front] = firstCase.bodyDepthMm, [coverRear, coverFront] = firstCase.fixedCoverDepthMm
+  const faceVolume = width * height * thickness
+  const sideVolume = 2 * (width + height) * (front! - rear!) * thickness
+  const expectedDepth = (faceVolume * (rear! + thickness / 2) + sideVolume * (rear! + front!) / 2
+    + faceVolume * (coverRear! + coverFront!) / 2) / (2 * faceVolume + sideVolume)
+  assert.ok(expectedDepth > 37 && expectedDepth < 38)
+  assert.ok(Math.abs(load.caseStockCentroidCoreDepthMm - expectedDepth) < 1e-12)
+  for (const box of c.purpose.enclosures) {
+    const row = load.knownStock.find(row => row.id === `${box.id}/case-stock`)!
+    const coreY = box.bottomPort.pointXYZMm[1]! + c.commonAxisCoreDepthMm
+    assert.ok(Math.abs(row.originXYZMm[1]! - (coreY - expectedDepth)) < 1e-12)
+    assert.ok(Math.abs(row.kg - (2 * faceVolume + sideVolume) / 1e9 * load.steelDensityKgM3Comparison) < 1e-12)
+  }
   const wrench = [0, 0, 0, 0, 0, 0]
   for (const row of load.knownStock) {
     const gravity = row.kg * 9.81, [x, y] = row.originXYZMm

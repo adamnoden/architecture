@@ -211,3 +211,24 @@ The75mm draw and200mm rest still contain this larger actual assembly in the
 checked room. The180mm-wide case is never claimed to pass through its120mm
 mouth. Actual connector release, positive temporary support and loaded human
 handling remain qualification duties.
+
+
+## Recovery and stock first moments — 25 November 2026
+
+The recoverable continuation `f6581ce7` supplies the finite plug/finger and
+complete case/surround comparisons above. Independent internal review found
+that its case-stock mass was correct but its depth origin treated the separate
+front cover as symmetric about the body. The rear plate occupies13.5..15.5mm,
+the side shell13.5..60.5mm and the fixed cover60.5..62.5mm. Their actual
+mass-weighted centroid now governs each case's gravity wrench. The same mass,
+grip geometry, room, kitchen and renewal path remain unchanged controls. An
+independent plate/shell first-moment regression checks the physical intervals,
+not merely arithmetic from the reported origin.
+
+Retain the bespoke common-depth assembly as a comparison. Prefer the simpler
+independently fixed local accessory islands with accessible side-entry
+containment as the development direction; do not impose a common depth across
+all stations to justify extra steel, recessed ordinary controls or bespoke
+unions. The local depth transition, actual matched connections, feeder,
+protective and material duties still require completion. This judgement
+selects no product, circuit, fabricated assembly or owner appearance verdict.
