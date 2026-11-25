@@ -9,8 +9,8 @@
     "label": "convergence-20261125"
   },
   "claimedAt": "2026-11-25T22:18:56.729Z",
-  "heartbeatAt": "2026-11-25T22:18:56.729Z",
-  "expiresAt": "2026-11-25T23:03:56.729Z",
+  "heartbeatAt": "2026-11-25T22:28:16.996Z",
+  "expiresAt": "2026-11-25T23:13:16.996Z",
   "branch": "work/convergence-structure-20261125",
   "predecessor": {
     "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
@@ -33,5 +33,11 @@
       "next": "Finish exact-head CI/preflight for1625; recover continuation plus published water7c228220 and uniform2d044ead; regenerate current source account before next PR.",
       "blocker": "Executor explicitly unavailable. Latest local assembly and unpublished bearing-bed files cannot be inspected; no bearing-bed native result exists."
     }
+  },
+  "pr": 1626,
+  "checkpoint": {
+    "evidence": "PR1626 head36591e45; exact treeaabaf1d7, authenticated structural proof replays and current inlet regeneration; strict source audit0.",
+    "next": "Inspect exact-head full health and both browser proofs, reconcile failure, publication preflight and merge.",
+    "blocker": "Exact-head CI pending; no slab, joint or complete house selection."
   }
 }
