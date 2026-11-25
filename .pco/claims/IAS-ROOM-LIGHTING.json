@@ -9,8 +9,8 @@
     "label": "convergence-root-20261125"
   },
   "claimedAt": "2026-11-25T08:41:06.007Z",
-  "heartbeatAt": "2026-11-25T08:47:28.035Z",
-  "expiresAt": "2026-11-25T09:32:28.035Z",
+  "heartbeatAt": "2026-11-25T09:14:59.353Z",
+  "expiresAt": "2026-11-25T09:59:59.353Z",
   "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "6ae96d7d-811c-4b13-8256-4493e0ba1c1b",
@@ -31,7 +31,7 @@
     }
   },
   "checkpoint": {
-    "evidence": "Recovered f6581ce7 on remote branch; corrected shell/cover gravity origins in cc44fd50af15ea6faae50603c7dbfabd2126cc4e",
-    "next": "Regenerate lighting receipts, integrate structural and threshold-water continuations, exact-head checks and merge"
+    "evidence": "Remote3f4b2095 contains recovered source and graded contour;055cab8b Plant source/store/adverse comparison integrated and browser built locally",
+    "next": "Finish120fan join, genuinely regenerate current compiled witness, publish exact head and validate merge"
   }
 }
