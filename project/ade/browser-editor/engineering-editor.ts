@@ -1,4 +1,5 @@
-import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableInletBankId, editableInletBankFields, editablePlantRoomId, editablePlantRoomFields, editableStudyLightingId, engineeringBase,
+import {readWetBeamEndDevelopmentControls} from '../../../compiler/reference-house/current-design/structural-wet-beam-end-settings.js'
+import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableWetBeamEndId, editableInletBankId, editableInletBankFields, editablePlantRoomId, editablePlantRoomFields, editableStudyLightingId, engineeringBase,
   engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, type EngineeringEditorState, type EngineeringTicket,
 } from '../../../compiler/reference-house/current-design/engineering-edit.js'
 import type { EngineeringReply } from './engineering-api.js'
@@ -9,6 +10,7 @@ const pitch = element<HTMLInputElement>('pitch')
 const inletField=element<HTMLSelectElement>('inlet-field'),inletValue=element<HTMLInputElement>('inlet-value')
 const plantField=element<HTMLSelectElement>('plant-room-field'),plantValue=element<HTMLInputElement>('plant-room-value')
 const cageTop = element<HTMLInputElement>('cage-top-level')
+const endMandrel = element<HTMLInputElement>('beam-end-mandrel')
 const padWidth=element<HTMLInputElement>('wet-pad-width')
 const lightingDepth = element<HTMLInputElement>('lighting-depth')
 const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
@@ -38,6 +40,14 @@ function controls() {
   element('wet-cage-controls').hidden = !available
   cageTop.disabled = !available
   cageTop.value = available ? String(choices.postTopLevelRaiseMm) : ''
+  let endControls
+  if (record(floor) && floor.thicknessMm === 200 && record(floor.wetSupport) && record(floor.cageComparison)
+    && floor.beamEndDevelopment !== undefined) {
+    try { endControls = readWetBeamEndDevelopmentControls(floor.beamEndDevelopment) } catch { /* Compiler reports unsupported saved controls. */ }
+  }
+  element('wet-beam-end-controls').hidden = !endControls
+  endMandrel.disabled = !endControls
+  endMandrel.value = endControls ? String(endControls.endReturnMandrelMm) : ''
   const inlet=state.document.stages.inletSourceEnvelope
   const hasInlet=record(inlet)&&editableInletBankFields.every(key=>typeof inlet[key]==='number')
   element('inlet-bank-controls').hidden=!hasInlet
@@ -115,6 +125,17 @@ function draw() {
   element('cage-result').textContent = cage
     ? `Graded raise ${cage.settings.postTopLevelRaiseMm} mm. Cage geometry: ${cage.geometry.independentPathFailureCount} path-pair, ${cage.geometry.internalClosureFailureCount} closure and ${cage.geometry.coverFailureCount} cover failures. Explicit steel ${cage.quantities.actualSteelMassUpperKg.toFixed(3)} kg. Native case ${cage.nativeCaseId}. Comparison only; post-head resistance and installed acceptance remain unqualified.`
     : ''
+  const end = current?.wetBeamEnd, endComparison = end?.comparison
+  element('wet-beam-end-views').hidden = !endComparison
+  element('beam-end-result').textContent = endComparison
+    ? `Unadopted end return: mandrel ${endComparison.controls.endReturnMandrelMm} mm; strut cotangent comparisons ${endComparison.controls.strutCotangentComparisons.join(', ')}. Geometry: ${endComparison.geometry.independentPathFailureCount} path-pair, ${endComparison.geometry.internalClosureFailureCount} closure and ${endComparison.geometry.coverFailureCount} cover failures. Explicit steel ${endComparison.steelMassUpperKg.toFixed(3)} kg. Native case ${endComparison.nativeCaseId}. Native loads unchanged. Straight-section forces use a chosen allocation; curved-bar force, finite end transfer, anchorage and placement remain unresolved.`
+    : end?.status === 'unsupported' ? `Local end comparison unavailable. ${end.diagnostics.map(issue => issue.message).join(' ')}` : ''
+  for (const [name,result] of [['current',current],['comparison',comparison]] as const) {
+    const image = element<HTMLImageElement>(`${name}-beam-end`), candidate = result?.wetBeamEnd?.comparison
+    image.hidden = !candidate
+    if (candidate) image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(candidate.svg)
+    else image.removeAttribute('src')
+  }
   element('current-caption').textContent = `Draft revision ${state.revision}`
   element('comparison-caption').textContent = comparisonLabel
   button('pin').disabled = !current
@@ -183,6 +204,11 @@ element('plant-room-edit').addEventListener('submit', event => {
 })
 element('inlet-bank-edit').addEventListener('submit',event=>{event.preventDefault();changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:inletField.value.endsWith('KgM3')?'kg/m3':'mm',base:engineeringBase(state),operation:{kind:'set-inlet-bank-field',assemblyId:editableInletBankId,inputId:inletField.value,value:inletValue.valueAsNumber}}))})
 element('wet-pad-width-edit').addEventListener('submit',event=>{event.preventDefault();changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),operation:{kind:'set-wet-bearing-width',assemblyId:editableWetSupportId,widthMm:padWidth.valueAsNumber}}))})
+element('wet-beam-end-edit').addEventListener('submit',event => {
+  event.preventDefault()
+  changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),
+    operation:{kind:'set-wet-beam-end-mandrel',assemblyId:editableWetBeamEndId,endReturnMandrelMm:endMandrel.valueAsNumber}}))
+})
 element('wet-cage-edit').addEventListener('submit', event => {
   event.preventDefault()
   changed(applyEngineeringEdit(state, { schema: 'current-engineering-edit/1', units: 'mm', base: engineeringBase(state),
@@ -231,6 +257,7 @@ file.addEventListener('change', () => {
 for (const control of document.querySelectorAll<HTMLButtonElement>('button')) control.disabled = true
 pitch.disabled = true
 cageTop.disabled = true
+endMandrel.disabled = true
 lightingDepth.disabled = true
 void fetch('/api/engineering/document').then(async response => {
   if (!response.ok) throw new Error('The local engineering compiler is unavailable')

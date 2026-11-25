@@ -2,6 +2,7 @@
 import argparse
 import json
 import subprocess
+import tarfile
 from pathlib import Path
 
 
@@ -18,11 +19,12 @@ def lighting_svg(page):
     return page.locator('#current-lighting').evaluate("img => decodeURIComponent(img.src.split(',')[1])")
 
 
-def current_wet_stages():
+def current_wet_stages(request=None):
     """Project authored choices from the actual current request, not a second model."""
     studies=Path('project/str/studies')
-    proof=json.loads((studies/'floor-section-proof.json').read_text())
-    request=next(c['executedRequest'] for c in proof['controls'] if c['nativeCaseId']=='wet-aligned-quadrature8')
+    if request is None:
+        proof=json.loads((studies/'floor-section-proof.json').read_text())
+        request=next(c['executedRequest'] for c in proof['controls'] if c['nativeCaseId']=='wet-aligned-quadrature8')
     bearing=request['bearingCase'];masonry=bearing['masonryCase'];vertical=masonry['verticalCase']
     house=vertical['monolithicCase']['houseCase'];joined=house['joinedCase'];floor=joined['floor']
     pick=lambda value,keys:{key:value[key] for key in keys.split()}
@@ -45,12 +47,71 @@ def current_wet_stages():
             'cageComparison':json.loads((studies/'wet-support-cage-comparison-settings.json').read_text())}}
 
 
+def check_wet_beam_end(page,saved,args):
+    """Exercise the actual authored120/south40/q64 alternative in the same editor."""
+    from playwright.sync_api import expect
+    studies=Path('project/str/studies')
+    with tarfile.open(studies/'wet-beam-end-native-captures.tar.xz') as archive:
+        request=json.load(archive.extractfile('south40-q64.request.json'))
+        native_control=json.load(archive.extractfile('south40-q64.full.json'))
+    stages=current_wet_stages(request)
+    stages['masonryFrame']['caseId']='WET120-SOUTH40-q64'
+    stages['floorSection']['cageComparison']['postTopLevelRaiseMm']=10
+    stages['floorSection']['beamEndDevelopment']={'endReturnMandrelMm':80,'strutCotangentComparisons':[1,2.5]}
+    source={**saved,'stages':stages}
+    with page.expect_file_chooser() as chooser:
+        page.get_by_role('button',name='Import JSON').click()
+    chooser.value.set_files({'name':'wet-beam-end.json','mimeType':'application/json','buffer':json.dumps(source).encode()})
+    expect(page.locator('#wet-beam-end-controls')).to_be_visible(timeout=300000)
+    ready(page,0,300000)
+    control=page.get_by_label('End-return mandrel (mm)')
+    expect(control).to_have_value('80')
+    expect(page.locator('#beam-end-result')).to_contain_text('0 path-pair, 0 closure and 0 cover failures')
+    expect(page.locator('#beam-end-result')).to_contain_text('curved-bar force, finite end transfer, anchorage and placement remain unresolved')
+    initial=page.locator('#current-beam-end').get_attribute('src')
+    assert initial and page.locator('#comparison-beam-end').get_attribute('src')==initial
+    native_cage=page.locator('#cage-result').inner_text()
+    roof=roof_svg(page)
+    control.fill('100');control.press('Enter')
+    ready(page,1,300000)
+    expect(page.locator('#beam-end-result')).to_contain_text('mandrel 100 mm')
+    assert page.locator('#current-beam-end').get_attribute('src')!=initial
+    assert page.locator('#comparison-beam-end').get_attribute('src')==initial
+    assert page.locator('#cage-result').inner_text()==native_cage
+    assert roof_svg(page)==roof
+    with page.expect_download() as download:
+        page.get_by_role('button',name='Export JSON').click()
+    exported=json.loads(Path(download.value.path()).read_text())
+    expected={**source['stages']['floorSection'],'beamEndDevelopment':{'endReturnMandrelMm':100,'strutCotangentComparisons':[1,2.5]}}
+    assert exported['stages']=={**source['stages'],'floorSection':expected}
+    compiled=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],
+        input=json.dumps(exported),text=True,capture_output=True,check=True).stdout)['engineering']['floorSection']
+    end=compiled['wetBeamEndDevelopment']
+    assert end['status']=='computed-development-comparison' and end['controls']['endReturnMandrelMm']==100
+    for key in ('candidateAccepted','nativeSolveExecuted','nativeCageMassFeedbackApplied','beamEndDRegionAccepted','bendPressureAccepted','bondAndAnchorageAccepted'):
+        assert end[key] is False
+    assert end['drawings']['wet-beam-end.svg'] in page.locator('#current-beam-end').evaluate("img=>decodeURIComponent(img.src.split(',')[1])")
+    expected_heads=native_control['nativeVertical']['native']['heads']
+    actual_heads=compiled['native']['heads']
+    assert [row['id'] for row in actual_heads]==[row['id'] for row in expected_heads]
+    assert max(abs(a-b) for left,right in zip(actual_heads,expected_heads) for a,b in zip(left['reactionKN_KNm'],right['reactionKN_KNm']))<1e-8
+    page.get_by_role('button',name='Undo',exact=True).click()
+    ready(page,2,300000)
+    expect(control).to_have_value('80')
+    assert page.locator('#current-beam-end').get_attribute('src')==initial
+    assert page.locator('#cage-result').inner_text()==native_cage
+    print('PASS actual wet-beam-end browser80/100/undo, unchanged native heads/reference cage/roof and exported CLI',flush=True)
+    if args.screenshot:
+        page.screenshot(path=str(Path(args.screenshot).with_name('wet-beam-end-comparison.png')),full_page=True)
+
+
 def main():
     from playwright.sync_api import expect, sync_playwright
     parser = argparse.ArgumentParser()
     parser.add_argument('url', nargs='?', default='http://127.0.0.1:4187/engineering.html')
     parser.add_argument('--chromium')
     parser.add_argument('--screenshot')
+    parser.add_argument('--wet-beam-end-only',action='store_true',help='Run only the actual end-return extension after the initial roof control')
     args = parser.parse_args()
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(executable_path=args.chromium)
@@ -59,6 +120,16 @@ def main():
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(args.url)
         ready(page, 0)
+        if args.wet_beam_end_only:
+            with page.expect_download() as download:
+                page.get_by_role('button',name='Export JSON').click()
+            saved=json.loads(Path(download.value.path()).read_text())
+            check_wet_beam_end(page,saved,args)
+            assert not errors,errors
+            browser.close()
+            return
+        expect(page.locator('#wet-beam-end-controls')).to_be_hidden()
+        expect(page.locator('#wet-beam-end-views')).to_be_hidden()
         expect(page.locator('#lighting-controls')).to_be_hidden()
         expect(page.locator('#lighting-views')).to_be_hidden()
         expect(page.locator('#inlet-bank-controls')).to_be_hidden()
