@@ -9,9 +9,9 @@
     "label": "structure-convergence-20261125"
   },
   "claimedAt": "2026-11-25T08:40:52.436Z",
-  "heartbeatAt": "2026-11-25T08:57:45.429Z",
-  "expiresAt": "2026-11-25T09:42:45.429Z",
-  "branch": "work/structural-convergence-20261125",
+  "heartbeatAt": "2026-11-25T09:05:17.605Z",
+  "expiresAt": "2026-11-25T09:50:17.605Z",
+  "branch": "work/convergence-lighting-20261125",
   "predecessor": {
     "leaseId": "81d1d5af-717b-47e5-b8e9-5cdc634a77a7",
     "generation": 58,
@@ -31,5 +31,9 @@
       "evidence": "Recovery PR1624 merged f8ad6989; continuation checkpoint f6581ce736be79ddd337eccbe1effc3d77f19963. Shared distributed contour introduced; current far-field refinement still12.2492pct; no slab or component convergence selected.",
       "next": "Publish final MMD method with genuinely regenerated captures, matched numerical-order controls and current saved-stage proof; exact-head CI and preflight."
     }
+  },
+  "checkpoint": {
+    "evidence": "Combined current contour140/70/50 and ordering checkpoint3f4b2095d6581d84625795937ba62434c1218b77 pushed on work/convergence-lighting-20261125; all-mode changes12.05566pct and13.80010pct,35unavailable; no convergence or house selection.",
+    "next": "Recover authenticated120pad controls through current shared fan method; finish exact-head CI and publication preflight on combined branch."
   }
 }
