@@ -53,9 +53,16 @@ test('browser engineering edits initialize without Node globals and retain light
       operation: { kind: 'set-plant-room-field', assemblyId: api.editablePlantRoomId, inputId, value } })
     const plantEdit = api.applyEngineeringEdit(state, plantTransaction('clearWidthMm', 350))
     if (plantEdit.status !== 'applied') throw new Error(plantEdit.message)
+    const frameEdit = api.applyEngineeringEdit(state, plantTransaction('fittedFrame.clearWidthMm', 1000))
+    if (frameEdit.status !== 'applied') throw new Error(frameEdit.message)
+    const frameUndo = api.replayEngineeringEdit(frameEdit.state, api.engineeringBase(frameEdit.state), 'undo')
+    if (frameUndo.status !== 'applied') throw new Error(frameUndo.message)
     const plantUndo = api.replayEngineeringEdit(plantEdit.state, api.engineeringBase(plantEdit.state), 'undo')
     if (plantUndo.status !== 'applied') throw new Error(plantUndo.message)
     return { depth: changed.state.document.stages.studyLighting.serviceTotalDepthMm,
+      frameWidth: frameEdit.state.document.stages.inletSourceEnvelope.splitPlantRoom.fittedFrame.clearWidthMm,
+      frameRestored: api.saveEngineeringEdit(frameUndo.state) === api.saveEngineeringEdit(state),
+      frameRejected: api.applyEngineeringEdit(state, plantTransaction('fittedFrame.clearWidthMm', 800)).status === 'rejected',
       plantWidth: plantEdit.state.document.stages.inletSourceEnvelope.splitPlantRoom.clearWidthMm,
       plantRejected: api.applyEngineeringEdit(state, plantTransaction('selected', 1)).status === 'rejected',
       plantRestored: api.saveEngineeringEdit(plantUndo.state) === api.saveEngineeringEdit(state),
@@ -68,7 +75,7 @@ test('browser engineering edits initialize without Node globals and retain light
       restored: api.saveEngineeringEdit(undo.state) === api.saveEngineeringEdit(state),
       originalUnchanged: state.document.stages.studyLighting.serviceTotalDepthMm === 75 }
   })()`, { inputJson: JSON.stringify(document), URL }, { timeout: 1000 })
-  assert.deepEqual(JSON.parse(JSON.stringify(result)), { depth: 85, plantWidth: 350, plantRejected: true, plantRestored: true,
+  assert.deepEqual(JSON.parse(JSON.stringify(result)), { depth: 85, frameWidth: 1000, frameRestored: true, frameRejected: true, plantWidth: 350, plantRejected: true, plantRestored: true,
     contourAdmitted: true, contourRejected: true, contourRestored: true,
     roofUnchanged: true, adverseRejected: true,
     staleIgnored: true, restored: true, originalUnchanged: true })
