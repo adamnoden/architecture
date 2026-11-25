@@ -1,0 +1,3902 @@
+{
+  "schema": "str-normal-bed-source-proof/1",
+  "sourceSHA256": {
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+    "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+    "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+    "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+    "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+    "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+    "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+    "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+    "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+    "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+    "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+    "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+    "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+    "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+    "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+    "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+    "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+    "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+    "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+    "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+    "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+    "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+    "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+    "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+    "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+    "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+    "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+  },
+  "processingMethodSHA256": {
+    "project/str/studies/wet_masonry_arch_bed.py": "462c6fe4e5be932f8e999b7b3ad9cb9436e95b68b6ad908a4d8f14038b24437f",
+    "project/str/studies/wet_masonry_arch_bed_proof.py": "612508440badc947176340fca588401e0454c79963b7cdba989633c05c330593",
+    "project/str/studies/wet_masonry_arch_rise.py": "82a1caf3ec7f28ee650557be8c3631804f7243d20db9105687f3e58ef5472e78",
+    "project/str/studies/wet_masonry_arch_released.py": "51e3ebbcd4b176918f7dabc5979a26f6f9bc1341d6f1d6fd4d69f4d4f6fc9984",
+    "project/str/studies/wet_masonry_arch_native.py": "522cbea33662899c54534a47d40c01308a1b5496e8357c21c4aa9ac3b3c47e81",
+    "project/str/studies/wet_masonry_arch_comparison.py": "09f8c05f31e552cf203c14777dad386ed9911afbaa70efc462acfb321a13daba",
+    "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e"
+  },
+  "archiveSHA256": "2f9d1154d4d1e91c6db6482e17c800a7b56cfecd0d72b8bfc6c2c3b371dcc2b9",
+  "criteriaSHA256": "652e359ed97da91304326c65bde11ef34c4bdbf8fbac0a4b209ca9bdd45c12d3",
+  "criteria": {
+    "forceAbsoluteKN": 1e-05,
+    "forceRelative": 0.001,
+    "centreOfPressureAbsoluteMm": 0.1,
+    "unloadedForceKN": 1e-05,
+    "maximum52HeadComponentDifferenceKN_KNm": 0.1,
+    "maximumRawTensileResidualKN": 1e-07
+  },
+  "actualNumericalRuntime": {
+    "schema": "str-four-L-numerical-runtime/1",
+    "pythonImplementation": "CPython",
+    "pythonVersion": "3.12.14",
+    "numpyVersion": "2.3.5",
+    "scipyVersion": "1.17.0",
+    "system": "Linux",
+    "machine": "x86_64",
+    "byteorder": "little",
+    "cpuFeatures": {
+      "ASIMD": false,
+      "ASIMDDP": false,
+      "ASIMDFHM": false,
+      "ASIMDHP": false,
+      "AVX": true,
+      "AVX2": true,
+      "AVX5124FMAPS": false,
+      "AVX5124VNNIW": false,
+      "AVX512BITALG": true,
+      "AVX512BW": true,
+      "AVX512CD": true,
+      "AVX512DQ": true,
+      "AVX512ER": false,
+      "AVX512F": true,
+      "AVX512FP16": true,
+      "AVX512IFMA": true,
+      "AVX512PF": false,
+      "AVX512VBMI": true,
+      "AVX512VBMI2": true,
+      "AVX512VL": true,
+      "AVX512VNNI": true,
+      "AVX512VPOPCNTDQ": true,
+      "AVX512_CLX": true,
+      "AVX512_CNL": true,
+      "AVX512_ICL": true,
+      "AVX512_KNL": false,
+      "AVX512_KNM": false,
+      "AVX512_SKX": true,
+      "AVX512_SPR": true,
+      "F16C": true,
+      "FMA3": true,
+      "FMA4": false,
+      "FPHP": false,
+      "LSX": false,
+      "MMX": true,
+      "NEON": false,
+      "NEON_FP16": false,
+      "NEON_VFPV4": false,
+      "POPCNT": true,
+      "RVV": false,
+      "SSE": true,
+      "SSE2": true,
+      "SSE3": true,
+      "SSE41": true,
+      "SSE42": true,
+      "SSSE3": true,
+      "SVE": false,
+      "VSX": false,
+      "VSX2": false,
+      "VSX3": false,
+      "VSX4": false,
+      "VX": false,
+      "VXE": false,
+      "VXE2": false,
+      "XOP": false
+    },
+    "sharedLibrariesSHA256": {
+      "numpy.libs/libgfortran-040039e1-0352e75f.so.5.0.0": "c6090048eccc763522c12ef016f81da6b627cb3a044f55cf0479a839c41c0980",
+      "numpy.libs/libquadmath-96973f99-934c22de.so.0.0.0": "6ed5137f412781ad7863439fb543613f620b43c32b63292a0029246162f5bbc6",
+      "numpy.libs/libscipy_openblas64_-fdde5778.so": "ee2039cf13a45e1e89f04d0cea9585657d93ffaa425594e1935161013fdf4e12",
+      "numpy/core": "ba96467ae494babaf7c3458b09cc03c4200c2e10010860d80e452ffb8b01c8cd",
+      "scipy.libs/libgfortran-040039e1-0352e75f.so.5.0.0": "c6090048eccc763522c12ef016f81da6b627cb3a044f55cf0479a839c41c0980",
+      "scipy.libs/libgfortran-8f1e9814.so.5.0.0": "a95cc4ac4afad889f2d83088f46b5e6fa6cd5efd729db887e1e639147ec55b73",
+      "scipy.libs/libquadmath-828275a7.so.0.0.0": "71bdc2ec57ab2fc939360597968f73230426b1c6764048e62a2cb6c8d8c3a1fd",
+      "scipy.libs/libquadmath-96973f99-934c22de.so.0.0.0": "6ed5137f412781ad7863439fb543613f620b43c32b63292a0029246162f5bbc6",
+      "scipy.libs/libscipy_openblas-6cdc3b4a.so": "8fb864c29cac4b25f6e2c139491ea96f2724dde42d51394f84e9c4a622e34790",
+      "scipy/fblas": "0e03bbae64d3a3a947a21db865aff984afa8867fa292273faf56dfc887fa71ac",
+      "scipy/superlu": "8bc863fc723ee3bc4d603bf2cdf540fa728ce5df35302686588f0ee926dae261"
+    }
+  },
+  "actualCaptureProvenance": {
+    "bed4": {
+      "bytes": 17862511,
+      "sha256": "66b5acf69b363fa3be3556730565b279223f90bec12421d83ea3fa43e3f9dd3d"
+    },
+    "bed8": {
+      "bytes": 17926599,
+      "sha256": "ab6cfdb6ebe10db891cc99243561731bd3a670c5ad093a627a45d90e4c72318e"
+    },
+    "bed16": {
+      "bytes": 18186900,
+      "sha256": "37f27dccaff28e9c1f1415e42577673909a8c5b224d876ea22e0aabcba21c940"
+    }
+  },
+  "welded450NullPredecessorArchiveSHA256": "153e950ea2308b3015ee202b043697c6d0cdc3bb5bab8341f1f575cd25affebb",
+  "controls": {
+    "bed4": {
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -123.92158683210238,
+            -90.4524172632658,
+            239.68914099650263,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            100.7601617354446,
+            2.2885689777037608,
+            -37.28662188629483,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.724400125542608,
+            76.81726518103905,
+            -24.700852184251687,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -447.6107676808608,
+            -322.5390908705278,
+            48.43323195078776,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            265.9416192972219,
+            2.578935624080936,
+            125.57635559272059,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            1.878474033886576,
+            220.99857251514396,
+            -94.5120144659406,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -268.4957859578848,
+            -403.065388996268,
+            50.83722944026848,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            196.79066053286454,
+            5.824498198024834,
+            -76.47889432813976,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.6874382991980905,
+            242.73668118482715,
+            145.20044950789884,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -129.07761137552856,
+            -171.5135928469697,
+            -110.6412326923427,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            118.93399845414652,
+            1.7953148908139127,
+            53.717863390005164,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -0.7690342203724674,
+            79.02176272465836,
+            124.01048810394545,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            18.268118736836644,
+            39.429243778936915,
+            59.003634802409344,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            10.41291376488191,
+            57.56893895221227,
+            21.762580164265927,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -1.0628733430182271,
+            33.26706568354393,
+            50.14539887749697,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            35.679155453846235,
+            102.10536932890079,
+            112.78738464103546,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -21.391905952455723,
+            81.0607367663174,
+            45.188983367363726,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -39.328865979336946,
+            23.984787240548215,
+            79.6671456134463,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -23.88104302912718,
+            144.19670973321064,
+            97.87308089230146,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            38.65636110506392,
+            -1.0650604186051646,
+            23.752088006453164,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            52.605417317314306,
+            2.312968172513754,
+            27.841769956682718,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            58.1656318183525,
+            34.78742767378434,
+            71.56226186557801,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            118.00141611527094,
+            29.07708397176561,
+            111.67207112524862,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            114.69552362598012,
+            -19.58088918537731,
+            26.669536219260642,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            -5.373611790681744,
+            -46.24173710998434,
+            33.28867912695469,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -38.2114830450169,
+            -44.81367888447411,
+            99.1307373501429,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            77.0184242381421,
+            -1.2403660109845394,
+            41.650669676382684,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -13.586382942593737,
+            -8.0182615049922,
+            56.40668483869707,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -6.539776731480579,
+            57.35912118851475,
+            53.589350222277865,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -48.09848864513502,
+            -5.311794341408714,
+            181.81088652819494,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            7.1106065767867035,
+            56.61632409505732,
+            61.81334860277181,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -0.7234652948056841,
+            -0.943280621715036,
+            32.322375843377316,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            0.6724882734030391,
+            13.425765666857714,
+            21.396649117548474,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            31.48300426886449,
+            -6.117694700444691,
+            59.06754515943085,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            1.7679959438361592,
+            17.741427404338616,
+            43.54490348220676,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            -0.28088712383484093,
+            9.874938233986782,
+            24.747641887474245,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            11.557721952913266,
+            -16.796438509500472,
+            -22.76408506631515,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -8.882770379649044,
+            -0.6554624195124076,
+            31.775749825402734,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            3.255730476478159,
+            0.38845645075446944,
+            7.287281035214202,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            3.5985089100019003,
+            0.33617051705154566,
+            22.930082721133402,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            14.148796040115915,
+            -38.21837605154374,
+            83.87520702508763,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            5.828406332279048,
+            10.645197091940336,
+            69.5247969670582,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            36.47194670384071,
+            -44.325552126836136,
+            86.21814024368655,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            61.933859308759004,
+            63.59800898804852,
+            110.29513704027708,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -15.456961956018347,
+            16.186953235435816,
+            63.079124240235416,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            -0.018947733355296384,
+            -7.892755938584465,
+            48.648671641225484,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -25.114936067414188,
+            22.753392200463576,
+            74.97232470922603,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -6.118832584564069,
+            2.917819819629984,
+            40.78766006181867,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -3.174293224079346,
+            -4.4688977841023325,
+            27.535230578150706,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            12.81111758184263,
+            7.067594290661558,
+            26.07175157745641,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -8.66040031985094,
+            -1.7651042647413218,
+            58.68937835597856,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            17.66735761239109,
+            -37.62738648940536,
+            57.82311675393392,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "globalWrenchResidualKN_KNm": [
+        -7.696797865719418e-09,
+        -1.0645067050063517e-09,
+        1.6721060092095286e-09,
+        1.7836689949035645e-08,
+        -4.085339605808258e-08,
+        7.263425504788756e-08
+      ],
+      "archFreeBodyResidualKN_KNm": [
+        -1.3124917819240522e-14,
+        -5.63660229602192e-13,
+        1.2651268921359815e-12,
+        8.72057981382568e-12,
+        -1.9507728765688626e-12,
+        -1.1222134332911082e-12
+      ],
+      "joinedPhysicalGKN": 2963.655687222423,
+      "ringScreen": {
+        "worstPositiveCompressionCut": {
+          "id": "WET-ARCH/ring-member/5",
+          "end": 0,
+          "axialCompressionKN": 0.7254970620781848,
+          "inPlaneMomentKNmm": -180.30212404985764,
+          "outOfPlaneMomentKNmm": 0.26162151967772584,
+          "inPlaneEccentricityMm": 248.52219736546223,
+          "outOfPlaneEccentricityMm": 0.3606100332485311,
+          "grossAffineBiaxialKernRatio": 6.9509578980026205,
+          "resultantInside215By140Rectangle": false
+        },
+        "nonCompressiveCutCount": 0,
+        "resultantOutsideSectionCount": 8,
+        "fixedRecoveredActionsAdmitCompressionOnlySection": false,
+        "scope": "Necessary section-resultant bounds only. Failure rejects compression-only admission of these fixed elastic actions; does not establish arch collapse or exclude a genuinely released/contact redistribution."
+      },
+      "piers": [
+        {
+          "id": "WET-ARCH/mapped-pier/0",
+          "rectangleXYMm": [
+            2844.5,
+            8627.5,
+            2984.5,
+            9080.5
+          ],
+          "coverage": {
+            "exactBeamOnlyPartition": [
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  8627.5,
+                  -181,
+                  2942.5,
+                  8852.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post",
+                    "GRID/rear-W"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  8852.5,
+                  -181,
+                  2942.5,
+                  8949.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post",
+                    "GRID/rear-W",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  8949.5,
+                  -181,
+                  2942.5,
+                  9080.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/rear-W",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  8627.5,
+                  -181,
+                  2984.5,
+                  8852.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  8852.5,
+                  -181,
+                  2984.5,
+                  8949.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  8949.5,
+                  -181,
+                  2984.5,
+                  9080.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              }
+            ],
+            "capOrClosureCredit": false,
+            "uncoveredPieces": [],
+            "overlappingBeamBranchIsAnIdealisation": true,
+            "physicalCrossingJointQualified": false
+          },
+          "normalCompressionKN": 12.671695925159971,
+          "centreOfPressureRelativeToFootMm": [
+            -0.2373424841288923,
+            0.1942101769952044
+          ],
+          "peakSampledPressureMPa": 0.20506890781629875,
+          "normalFirstMomentsKNmm": [
+            2.4609723084547284,
+            3.00753178900343
+          ],
+          "sampledActiveFibres": 16,
+          "sampledFibreCount": 16,
+          "idealKeyRequiredFxFyKNAndMzKNmm": [
+            0.0022215763249311595,
+            0.5708228582574482,
+            -3.544406443732352
+          ],
+          "normalBoundaryResidualKN_KNmm": [
+            5.329070518200751e-15,
+            8.881784197001252e-13,
+            -1.7186252421197423e-12
+          ],
+          "actualFootNormalCoordinatesUzRxRy": [
+            -0.02064430392363043,
+            2.2213838478914788e-05,
+            -3.592349640630062e-05
+          ],
+          "actualHybridPierBaseCoordinatesMmRad": [
+            -0.017348297845674827,
+            -0.01768442034214864,
+            -0.02064430392363043,
+            2.2213838478914788e-05,
+            -3.592349640630062e-05,
+            2.441735536934242e-06
+          ],
+          "coordinateOwnership": "UX/UY/RZ are actual receiving-grid key traces; UZ/RX/RY are the separate normal-foot coordinates, not grid rotations.",
+          "maximumRigidWorkResidual": 1.8189894035458565e-12,
+          "unusedGaugeSupportWrenchKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampleReceiverIds": [
+            "GRID/rear-W/0",
+            "GRID/stair-post/3",
+            "GRID/stair-post/4",
+            "GRID/wet/0"
+          ],
+          "samplePressureMPa": [
+            0.20506890781629875,
+            0.19611356245736897,
+            0.20331177429597816,
+            0.20017982298628106,
+            0.20267214061757857,
+            0.19748979044925902,
+            0.20206663730806124,
+            0.20025544331318862,
+            0.20027537341885845,
+            0.19541167567785467,
+            0.2020142704720302,
+            0.20033106364009615,
+            0.1978786062201383,
+            0.19333356090645032,
+            0.20008653638353666,
+            0.2004066839670037
+          ],
+          "fullAreaContactEstablishedBySamples": false,
+          "contactConverged": false,
+          "materialAndKeyResistanceAccepted": false
+        },
+        {
+          "id": "WET-ARCH/mapped-pier/1",
+          "rectangleXYMm": [
+            2844.5,
+            11284.5,
+            2984.5,
+            11737.5
+          ],
+          "coverage": {
+            "exactBeamOnlyPartition": [
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  11284.5,
+                  -181,
+                  2942.5,
+                  11317.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  11317.5,
+                  -181,
+                  2942.5,
+                  11667.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  11667.5,
+                  -181,
+                  2942.5,
+                  11737.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  11284.5,
+                  -181,
+                  2984.5,
+                  11317.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  11317.5,
+                  -181,
+                  2984.5,
+                  11667.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  11667.5,
+                  -181,
+                  2984.5,
+                  11737.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              }
+            ],
+            "capOrClosureCredit": false,
+            "uncoveredPieces": [],
+            "overlappingBeamBranchIsAnIdealisation": true,
+            "physicalCrossingJointQualified": false
+          },
+          "normalCompressionKN": 6.654219191725534,
+          "centreOfPressureRelativeToFootMm": [
+            1.5980734786682054,
+            129.131530006417
+          ],
+          "peakSampledPressureMPa": 0.27837505050984673,
+          "normalFirstMomentsKNmm": [
+            859.2695052255817,
+            -10.633931211541558
+          ],
+          "sampledActiveFibres": 11,
+          "sampledFibreCount": 16,
+          "idealKeyRequiredFxFyKNAndMzKNmm": [
+            -0.0022215763249442844,
+            -0.5708228582580118,
+            -2.3583218512402406
+          ],
+          "normalBoundaryResidualKN_KNmm": [
+            -3.552713678800501e-15,
+            2.2737367544323206e-13,
+            -7.069900220812997e-13
+          ],
+          "actualFootNormalCoordinatesUzRxRy": [
+            -0.013112853244424145,
+            -7.360208506923718e-05,
+            -9.738279238249063e-05
+          ],
+          "actualHybridPierBaseCoordinatesMmRad": [
+            -0.06699588714611884,
+            -0.02849857601714124,
+            -0.013112853244424145,
+            -7.360208506923718e-05,
+            -9.738279238249063e-05,
+            1.6642979131821978e-05
+          ],
+          "coordinateOwnership": "UX/UY/RZ are actual receiving-grid key traces; UZ/RX/RY are the separate normal-foot coordinates, not grid rotations.",
+          "maximumRigidWorkResidual": 1.8189894035458565e-12,
+          "unusedGaugeSupportWrenchKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampleReceiverIds": [
+            "GRID/outer-NW/1",
+            "GRID/outer-NW/2",
+            "GRID/wet/0"
+          ],
+          "samplePressureMPa": [
+            -0.0,
+            -0.0,
+            0.12413545682070565,
+            0.27354012605478584,
+            -0.0,
+            0.0027625921784879097,
+            0.13236634050592172,
+            0.2747860234407143,
+            -0.0,
+            0.009672718548879501,
+            0.14059722419113777,
+            0.27837505050984673,
+            -0.0,
+            0.01658284491927113,
+            0.1488281078763538,
+            0.2771221536736772
+          ],
+          "fullAreaContactEstablishedBySamples": false,
+          "contactConverged": false,
+          "materialAndKeyResistanceAccepted": false
+        }
+      ],
+      "frameEnergyRelativeResidual": 7.255101521948501e-12,
+      "plateWorkRelativeResidual": 2.7345097403547844e-13,
+      "wholeHouseAccepted": false,
+      "candidateAccepted": false
+    },
+    "bed8": {
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -123.92179636272031,
+            -90.4523147976898,
+            239.6891125561972,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            100.76029388456476,
+            2.2885733145768574,
+            -37.28669532229565,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.7243867590380426,
+            76.81705128697868,
+            -24.700764319117326,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -447.6108509640561,
+            -322.53906671262655,
+            48.433145525300205,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            265.9416811940846,
+            2.57893490980059,
+            125.57638096394761,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            1.8784739871634386,
+            220.9985314271248,
+            -94.51199560635445,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -268.4947144513832,
+            -403.06457746964406,
+            50.83808289211898,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            196.79223222800226,
+            5.824524107825873,
+            -76.47943251915487,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.687133821136344,
+            242.7354233793735,
+            145.19990422574924,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -129.07800593447507,
+            -171.51321535785416,
+            -110.64124408821016,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            118.93429387747739,
+            1.7953155731858548,
+            53.71797734755781,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -0.7690234703536682,
+            79.02153020187082,
+            124.01032413294033,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            18.267879718661238,
+            39.42895385987445,
+            59.00351765077832,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            10.412994477233976,
+            57.56875976972059,
+            21.762641150804697,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -1.0629083653175035,
+            33.26665585840679,
+            50.14538123356925,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            35.67909810925425,
+            102.10599680632134,
+            112.78728855427957,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -21.39190891701683,
+            81.06071129307547,
+            45.18898733076366,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -39.32886824889252,
+            23.984737136645805,
+            79.66713672032863,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -23.881037938234087,
+            144.1966086968782,
+            97.87306825542808,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            38.656421762295935,
+            -1.0650572700011967,
+            23.752092692966933,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            52.605461023503,
+            2.3129510076741897,
+            27.841741631307066,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            58.16565934125656,
+            34.7874261683079,
+            71.56226048053072,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            118.00145084970262,
+            29.077097291763124,
+            111.67209284775653,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            114.69383424436431,
+            -19.56666730448472,
+            26.670071061118612,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            -5.375086946190221,
+            -46.24116751573516,
+            33.289419213715234,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -38.21115324673526,
+            -44.813591148973,
+            99.13095904423629,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            77.01861002716171,
+            -1.2403893435143356,
+            41.65069584543881,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -13.586818300301736,
+            -8.018605364246529,
+            56.40565668619138,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -6.5396996678942045,
+            57.35778276333605,
+            53.588422059641104,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -48.09845858174761,
+            -5.311757828378731,
+            181.81119713183935,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            7.110592378725604,
+            56.61629762566471,
+            61.81337596783946,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -0.7233717694399902,
+            -0.9432769776806114,
+            32.32241174767985,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            0.6724245600281306,
+            13.425089147973686,
+            21.396746899090385,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            31.483332729169263,
+            -6.117955056050047,
+            59.06791377300391,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            1.7680203456743584,
+            17.741439675912595,
+            43.54488289911985,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            -0.28088915038508555,
+            9.874931827529565,
+            24.74764098316399,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            11.557738594777426,
+            -16.796468640321145,
+            -22.76412704057746,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -8.88242195384432,
+            -0.6554613786328127,
+            31.775612312122036,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            3.2557982640673693,
+            0.3884635986057883,
+            7.28727467135949,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            3.598561193668637,
+            0.3361751765374632,
+            22.930087436334002,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            14.148802184029286,
+            -38.21838624877483,
+            83.87522086265264,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            5.8284106303837895,
+            10.645199249435436,
+            69.52479540343344,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            36.47194522417578,
+            -44.325546406076654,
+            86.21813758270403,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            61.93387704125659,
+            63.597996136633896,
+            110.29510986860735,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -15.457422981723635,
+            16.18376164569904,
+            63.079056353624836,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            -0.01938930908032982,
+            -7.890671964705689,
+            48.65298353148068,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -25.11422880436914,
+            22.744019651083295,
+            74.96867628373023,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -6.118785506757297,
+            2.917835368151973,
+            40.78765085543604,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -3.1743549468251517,
+            -4.468845325234539,
+            27.53525993965536,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            12.811169460221496,
+            7.0672507162638984,
+            26.071617076774185,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -8.660197575399387,
+            -1.765742003612309,
+            58.68924924947764,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            17.66735790852114,
+            -37.62738711649813,
+            57.82311646511502,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "globalWrenchResidualKN_KNm": [
+        -7.578933036711533e-09,
+        -1.0904557257163106e-09,
+        1.1400516086723655e-09,
+        1.4327466487884522e-08,
+        -3.5217031836509705e-08,
+        7.175205973908305e-08
+      ],
+      "archFreeBodyResidualKN_KNm": [
+        -1.3146601862690233e-14,
+        -6.128431095930864e-14,
+        2.7006175074006933e-14,
+        -2.7902125054879434e-12,
+        6.356026815979021e-13,
+        2.544631172440859e-13
+      ],
+      "joinedPhysicalGKN": 2963.655687222423,
+      "ringScreen": {
+        "worstPositiveCompressionCut": {
+          "id": "WET-ARCH/ring-member/5",
+          "end": 0,
+          "axialCompressionKN": 0.7267334597089107,
+          "inPlaneMomentKNmm": -180.33497522619655,
+          "outOfPlaneMomentKNmm": 0.24224044839444248,
+          "inPlaneEccentricityMm": 248.1445883865438,
+          "outOfPlaneEccentricityMm": 0.33332777672225333,
+          "grossAffineBiaxialKernRatio": 6.939250733444136,
+          "resultantInside215By140Rectangle": false
+        },
+        "nonCompressiveCutCount": 0,
+        "resultantOutsideSectionCount": 8,
+        "fixedRecoveredActionsAdmitCompressionOnlySection": false,
+        "scope": "Necessary section-resultant bounds only. Failure rejects compression-only admission of these fixed elastic actions; does not establish arch collapse or exclude a genuinely released/contact redistribution."
+      },
+      "piers": [
+        {
+          "id": "WET-ARCH/mapped-pier/0",
+          "rectangleXYMm": [
+            2844.5,
+            8627.5,
+            2984.5,
+            9080.5
+          ],
+          "coverage": {
+            "exactBeamOnlyPartition": [
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  8627.5,
+                  -181,
+                  2942.5,
+                  8852.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post",
+                    "GRID/rear-W"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  8852.5,
+                  -181,
+                  2942.5,
+                  8949.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post",
+                    "GRID/rear-W",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  8949.5,
+                  -181,
+                  2942.5,
+                  9080.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/rear-W",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  8627.5,
+                  -181,
+                  2984.5,
+                  8852.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  8852.5,
+                  -181,
+                  2984.5,
+                  8949.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  8949.5,
+                  -181,
+                  2984.5,
+                  9080.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              }
+            ],
+            "capOrClosureCredit": false,
+            "uncoveredPieces": [],
+            "overlappingBeamBranchIsAnIdealisation": true,
+            "physicalCrossingJointQualified": false
+          },
+          "normalCompressionKN": 12.677776306782118,
+          "centreOfPressureRelativeToFootMm": [
+            -0.23055343737423917,
+            -0.21550610806756176
+          ],
+          "peakSampledPressureMPa": 0.20854718039914252,
+          "normalFirstMomentsKNmm": [
+            -2.732138230825761,
+            2.922904905790304
+          ],
+          "sampledActiveFibres": 64,
+          "sampledFibreCount": 64,
+          "idealKeyRequiredFxFyKNAndMzKNmm": [
+            0.002135084595981708,
+            0.573142409831569,
+            -3.4280061436166354
+          ],
+          "normalBoundaryResidualKN_KNmm": [
+            1.5987211554602254e-14,
+            -1.8214763031210168e-10,
+            -1.0320633236915455e-12
+          ],
+          "actualFootNormalCoordinatesUzRxRy": [
+            -0.020643863214778478,
+            2.2399383154111056e-05,
+            -3.4997582995069054e-05
+          ],
+          "actualHybridPierBaseCoordinatesMmRad": [
+            -0.017347857681291046,
+            -0.017677863653589143,
+            -0.020643863214778478,
+            2.2399383154111056e-05,
+            -3.4997582995069054e-05,
+            2.4389652181045888e-06
+          ],
+          "coordinateOwnership": "UX/UY/RZ are actual receiving-grid key traces; UZ/RX/RY are the separate normal-foot coordinates, not grid rotations.",
+          "maximumRigidWorkResidual": 1.8189894035458565e-12,
+          "unusedGaugeSupportWrenchKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampleReceiverIds": [
+            "GRID/rear-W-end/0",
+            "GRID/rear-W/0",
+            "GRID/rear-W/1",
+            "GRID/stair-post/3",
+            "GRID/stair-post/4",
+            "GRID/wet/0"
+          ],
+          "samplePressureMPa": [
+            0.20854718039914252,
+            0.20294235450563458,
+            0.1932267787453851,
+            0.19915131346251636,
+            0.20507584817964764,
+            0.20291094187384565,
+            0.20105616763323597,
+            0.1969062639480131,
+            0.2074711514298212,
+            0.20194590653631758,
+            0.19909902480520203,
+            0.19808216720712232,
+            0.20361069904277504,
+            0.2026153877924566,
+            0.201090815172565,
+            0.19727111310806011,
+            0.2063951224604999,
+            0.20094945856700058,
+            0.1981821578358893,
+            0.19716256561803228,
+            0.20110296648594608,
+            0.20231983371106754,
+            0.20112546271189394,
+            0.19763596226810715,
+            0.2053190934911786,
+            0.1999530105976836,
+            0.19726529086657665,
+            0.19637685149072656,
+            0.20047721078383898,
+            0.20202427962967848,
+            0.2011601102512229,
+            0.1980008114281541,
+            0.2042430645218573,
+            0.1989565626283666,
+            0.196348423897264,
+            0.19664072685988093,
+            0.20023110988410564,
+            0.2047160646787084,
+            0.20119475779055188,
+            0.19836566058820113,
+            0.203167035552536,
+            0.19796011465904964,
+            0.19543155692795128,
+            0.19580344089057256,
+            0.19943059655370676,
+            0.20391382338573127,
+            0.2012294053298809,
+            0.19873050974824813,
+            0.20209100658321472,
+            0.19696366668973264,
+            0.1945146899586386,
+            0.19496615492126418,
+            0.1986300832233079,
+            0.20311158209275412,
+            0.20126405286920987,
+            0.19909535890829516,
+            0.2010149776138934,
+            0.19596721872041564,
+            0.19359782298932596,
+            0.19128438089767422,
+            0.19533398806236282,
+            0.20230934079977697,
+            0.20129870040853884,
+            0.1994602080683422
+          ],
+          "fullAreaContactEstablishedBySamples": false,
+          "contactConverged": false,
+          "materialAndKeyResistanceAccepted": false
+        },
+        {
+          "id": "WET-ARCH/mapped-pier/1",
+          "rectangleXYMm": [
+            2844.5,
+            11284.5,
+            2984.5,
+            11737.5
+          ],
+          "coverage": {
+            "exactBeamOnlyPartition": [
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  11284.5,
+                  -181,
+                  2942.5,
+                  11317.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  11317.5,
+                  -181,
+                  2942.5,
+                  11667.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  11667.5,
+                  -181,
+                  2942.5,
+                  11737.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  11284.5,
+                  -181,
+                  2984.5,
+                  11317.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  11317.5,
+                  -181,
+                  2984.5,
+                  11667.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  11667.5,
+                  -181,
+                  2984.5,
+                  11737.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              }
+            ],
+            "capOrClosureCredit": false,
+            "uncoveredPieces": [],
+            "overlappingBeamBranchIsAnIdealisation": true,
+            "physicalCrossingJointQualified": false
+          },
+          "normalCompressionKN": 6.654943154601986,
+          "centreOfPressureRelativeToFootMm": [
+            1.5422658194630396,
+            130.03882252564597
+          ],
+          "peakSampledPressureMPa": 0.30883643972970803,
+          "normalFirstMomentsKNmm": [
+            865.4009717995502,
+            -10.263691357812178
+          ],
+          "sampledActiveFibres": 40,
+          "sampledFibreCount": 64,
+          "idealKeyRequiredFxFyKNAndMzKNmm": [
+            -0.002135084595994855,
+            -0.5731424098316303,
+            -2.244913627625021
+          ],
+          "normalBoundaryResidualKN_KNmm": [
+            -1.7763568394002505e-15,
+            2.2737367544323206e-13,
+            -7.212008767965017e-13
+          ],
+          "actualFootNormalCoordinatesUzRxRy": [
+            -0.012967346180659096,
+            -7.035698945712655e-05,
+            -9.415404967537522e-05
+          ],
+          "actualHybridPierBaseCoordinatesMmRad": [
+            -0.06699752461133915,
+            -0.02848580928122576,
+            -0.012967346180659096,
+            -7.035698945712655e-05,
+            -9.415404967537522e-05,
+            1.6642358954671553e-05
+          ],
+          "coordinateOwnership": "UX/UY/RZ are actual receiving-grid key traces; UZ/RX/RY are the separate normal-foot coordinates, not grid rotations.",
+          "maximumRigidWorkResidual": 5.4569682106375694e-12,
+          "unusedGaugeSupportWrenchKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampleReceiverIds": [
+            "GRID/outer-NW/1",
+            "GRID/outer-NW/2",
+            "GRID/wet/0"
+          ],
+          "samplePressureMPa": [
+            -0.0,
+            -0.0,
+            -0.0,
+            0.022570133441302116,
+            0.08468399248103042,
+            0.14971864628481035,
+            0.22728587261881797,
+            0.3029344606146977,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.026755758356669695,
+            0.08919981901711604,
+            0.154564674441614,
+            0.22776601957037104,
+            0.30216330854610074,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.030941383272037305,
+            0.09371564555320167,
+            0.15941070259841766,
+            0.22814266318736634,
+            0.3027222732128505,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.035127008187404905,
+            0.09823147208928731,
+            0.16425673075522132,
+            0.23331889296488806,
+            0.3048123474321317,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.0393126331027725,
+            0.10274729862537295,
+            0.169102758912025,
+            0.23498855955302617,
+            0.3074349060422045,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.04349825801814007,
+            0.10726312516145858,
+            0.1739487870688287,
+            0.2360508885210911,
+            0.30876650008858836,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.047683882933507664,
+            0.11177895169754422,
+            0.17879481522563234,
+            0.23585156308389174,
+            0.30883643972970803,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.05186950784887528,
+            0.11629477823362984,
+            0.16116575167571756,
+            0.23441989339985275,
+            0.30767403512398794
+          ],
+          "fullAreaContactEstablishedBySamples": false,
+          "contactConverged": false,
+          "materialAndKeyResistanceAccepted": false
+        }
+      ],
+      "frameEnergyRelativeResidual": 6.643397357342422e-12,
+      "plateWorkRelativeResidual": 2.579246192172856e-13,
+      "wholeHouseAccepted": false,
+      "candidateAccepted": false
+    },
+    "bed16": {
+      "heads": [
+        {
+          "id": "P01",
+          "reactionKN_KNm": [
+            -123.92185634380306,
+            -90.4522482754169,
+            239.68911033240389,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P02",
+          "reactionKN_KNm": [
+            100.76032756489153,
+            2.2885717835850743,
+            -37.28671464604369,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P03",
+          "reactionKN_KNm": [
+            0.7243872647652094,
+            76.8170152075803,
+            -24.700744232001718,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P04",
+          "reactionKN_KNm": [
+            -447.61085844071437,
+            -322.53905558111984,
+            48.43313061751823,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P05",
+          "reactionKN_KNm": [
+            265.9416871223191,
+            2.57893470400425,
+            125.57638333203187,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P06",
+          "reactionKN_KNm": [
+            1.8784737801225404,
+            220.99852043027866,
+            -94.51199009440168,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P07",
+          "reactionKN_KNm": [
+            -268.4955417668165,
+            -403.0644869179565,
+            50.837459207673724,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P08",
+          "reactionKN_KNm": [
+            196.7910784177048,
+            5.8246300219902825,
+            -76.47916982157214,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P09",
+          "reactionKN_KNm": [
+            5.687089284563308,
+            242.73531530536692,
+            145.19985358586297,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P10",
+          "reactionKN_KNm": [
+            -129.07805222278154,
+            -171.51314953777268,
+            -110.64122059374856,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P11",
+          "reactionKN_KNm": [
+            118.93429643452856,
+            1.7953159699623882,
+            53.71798219644572,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P12",
+          "reactionKN_KNm": [
+            -0.7690243193030981,
+            79.02149138940287,
+            124.01029560450473,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P13",
+          "reactionKN_KNm": [
+            18.2678957279322,
+            39.42894303592845,
+            59.00352679917678,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P14",
+          "reactionKN_KNm": [
+            10.413005726954271,
+            57.568728427700684,
+            21.762654907159984,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P15",
+          "reactionKN_KNm": [
+            -1.0628939937036899,
+            33.26664004633628,
+            50.14538334773304,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P16",
+          "reactionKN_KNm": [
+            35.67848249500712,
+            102.10600834375958,
+            112.7869926608353,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P17",
+          "reactionKN_KNm": [
+            -21.39190931164429,
+            81.06070597120667,
+            45.18898889280972,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P18",
+          "reactionKN_KNm": [
+            -39.32886820104859,
+            23.984728200480404,
+            79.66713543459497,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P19",
+          "reactionKN_KNm": [
+            -23.881038105381293,
+            144.19659015252785,
+            97.87306648542798,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P20",
+          "reactionKN_KNm": [
+            38.65643429395385,
+            -1.0650575162033464,
+            23.752092832341035,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P21",
+          "reactionKN_KNm": [
+            52.60546915366659,
+            2.312954537789266,
+            27.8417402701484,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P22",
+          "reactionKN_KNm": [
+            58.16566259932673,
+            34.787426075344726,
+            71.56226013115159,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P23",
+          "reactionKN_KNm": [
+            118.0014544531611,
+            29.07710022517705,
+            111.6720964445837,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P24",
+          "reactionKN_KNm": [
+            114.69579250965297,
+            -19.562224393793436,
+            26.672609446008014,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P25",
+          "reactionKN_KNm": [
+            -5.374849815573823,
+            -46.24048702699069,
+            33.289177077037905,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P26",
+          "reactionKN_KNm": [
+            -38.21136402767961,
+            -44.8135897103597,
+            99.13102824848563,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P27",
+          "reactionKN_KNm": [
+            77.01859939677368,
+            -1.2403891356310872,
+            41.65069892366681,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P28",
+          "reactionKN_KNm": [
+            -13.586687236097777,
+            -8.019073851090493,
+            56.40507231819784,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P29",
+          "reactionKN_KNm": [
+            -6.539393370418286,
+            57.357809101434285,
+            53.58757550829655,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P30",
+          "reactionKN_KNm": [
+            -48.09846563920179,
+            -5.311747323141034,
+            181.81134379543136,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P31",
+          "reactionKN_KNm": [
+            7.110592396333667,
+            56.616282387339126,
+            61.8133848007638,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P32",
+          "reactionKN_KNm": [
+            -0.723237910361024,
+            -0.9433254432249991,
+            32.32234336427673,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P33",
+          "reactionKN_KNm": [
+            0.6724254320323207,
+            13.425107845196479,
+            21.39678466246773,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P34",
+          "reactionKN_KNm": [
+            31.483281492985085,
+            -6.117912089458596,
+            59.06777756224267,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P35",
+          "reactionKN_KNm": [
+            1.7680242014965921,
+            17.74143937055046,
+            43.54487972267729,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P36",
+          "reactionKN_KNm": [
+            -0.28088879601019445,
+            9.874929711099085,
+            24.74764070144039,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P37",
+          "reactionKN_KNm": [
+            11.557741000928843,
+            -16.7964700102402,
+            -22.764130577063263,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P38",
+          "reactionKN_KNm": [
+            -8.88241890068155,
+            -0.6554695314683996,
+            31.775619302430812,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P39",
+          "reactionKN_KNm": [
+            3.255809799227163,
+            0.38846258948210366,
+            7.287272896103239,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P40",
+          "reactionKN_KNm": [
+            3.598568947137368,
+            0.33617513297864665,
+            22.93008913221849,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P41",
+          "reactionKN_KNm": [
+            14.148803331936843,
+            -38.21838787300123,
+            83.87522388320791,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P42",
+          "reactionKN_KNm": [
+            5.828412008949993,
+            10.645200565824432,
+            69.52479486853896,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P43",
+          "reactionKN_KNm": [
+            36.471945247981445,
+            -44.325543613915734,
+            86.21813671304017,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P44",
+          "reactionKN_KNm": [
+            61.93387345381747,
+            63.597988780334624,
+            110.29509574893521,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P45",
+          "reactionKN_KNm": [
+            -15.457480347244616,
+            16.1841590547911,
+            63.07915759066205,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P46",
+          "reactionKN_KNm": [
+            -0.019705131155141248,
+            -7.885520255831729,
+            48.65596411729037,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P47",
+          "reactionKN_KNm": [
+            -25.113699941669996,
+            22.733613563324504,
+            74.96535555251252,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P48",
+          "reactionKN_KNm": [
+            -6.118790766359172,
+            2.9178326788939764,
+            40.787650819337955,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P49",
+          "reactionKN_KNm": [
+            -3.1743486136370866,
+            -4.468852234474698,
+            27.53525652623975,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P50",
+          "reactionKN_KNm": [
+            12.811163112378495,
+            7.067293841471442,
+            26.071633361571397,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P51",
+          "reactionKN_KNm": [
+            -8.660218823087021,
+            -1.7656642135589573,
+            58.68925281067382,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "P52",
+          "reactionKN_KNm": [
+            17.66735780064408,
+            -37.627386475019094,
+            57.8231159300061,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "globalWrenchResidualKN_KNm": [
+        -7.236224064399721e-09,
+        -1.1151257695019012e-09,
+        1.2742020771838725e-09,
+        1.720525324344635e-08,
+        -3.6090612411499026e-08,
+        6.814236985519528e-08
+      ],
+      "archFreeBodyResidualKN_KNm": [
+        2.166235940626038e-15,
+        -1.715738662255717e-12,
+        5.794531521274848e-13,
+        7.683187419615933e-12,
+        -9.773293285775253e-13,
+        -4.739542092124793e-12
+      ],
+      "joinedPhysicalGKN": 2963.655687222423,
+      "ringScreen": {
+        "worstPositiveCompressionCut": {
+          "id": "WET-ARCH/ring-member/5",
+          "end": 0,
+          "axialCompressionKN": 0.727335376869452,
+          "inPlaneMomentKNmm": -180.3313313575868,
+          "outOfPlaneMomentKNmm": 0.2543209018605803,
+          "inPlaneEccentricityMm": 247.93422277045946,
+          "outOfPlaneEccentricityMm": 0.349661119132155,
+          "grossAffineBiaxialKernRatio": 6.93408006547729,
+          "resultantInside215By140Rectangle": false
+        },
+        "nonCompressiveCutCount": 0,
+        "resultantOutsideSectionCount": 8,
+        "fixedRecoveredActionsAdmitCompressionOnlySection": false,
+        "scope": "Necessary section-resultant bounds only. Failure rejects compression-only admission of these fixed elastic actions; does not establish arch collapse or exclude a genuinely released/contact redistribution."
+      },
+      "piers": [
+        {
+          "id": "WET-ARCH/mapped-pier/0",
+          "rectangleXYMm": [
+            2844.5,
+            8627.5,
+            2984.5,
+            9080.5
+          ],
+          "coverage": {
+            "exactBeamOnlyPartition": [
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  8627.5,
+                  -181,
+                  2942.5,
+                  8852.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post",
+                    "GRID/rear-W"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  8852.5,
+                  -181,
+                  2942.5,
+                  8949.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post",
+                    "GRID/rear-W",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  8949.5,
+                  -181,
+                  2942.5,
+                  9080.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/rear-W",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  8627.5,
+                  -181,
+                  2984.5,
+                  8852.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  8852.5,
+                  -181,
+                  2984.5,
+                  8949.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/stair-post",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  8949.5,
+                  -181,
+                  2984.5,
+                  9080.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              }
+            ],
+            "capOrClosureCredit": false,
+            "uncoveredPieces": [],
+            "overlappingBeamBranchIsAnIdealisation": true,
+            "physicalCrossingJointQualified": false
+          },
+          "normalCompressionKN": 12.681072267668082,
+          "centreOfPressureRelativeToFootMm": [
+            -0.23756090622005702,
+            -0.4485213455094073
+          ],
+          "peakSampledPressureMPa": 0.21085873973544816,
+          "normalFirstMomentsKNmm": [
+            -5.687731595996519,
+            3.012527019749263
+          ],
+          "sampledActiveFibres": 256,
+          "sampledFibreCount": 256,
+          "idealKeyRequiredFxFyKNAndMzKNmm": [
+            0.0021802275326276393,
+            0.5744368848617247,
+            -3.4884480052219806
+          ],
+          "normalBoundaryResidualKN_KNmm": [
+            -2.842170943040401e-14,
+            -1.829594253877076e-10,
+            -4.68070027181966e-13
+          ],
+          "actualFootNormalCoordinatesUzRxRy": [
+            -0.020650996855603666,
+            2.251512165427388e-05,
+            -3.4897381507920844e-05
+          ],
+          "actualHybridPierBaseCoordinatesMmRad": [
+            -0.017348338264472914,
+            -0.01768011121859745,
+            -0.020650996855603666,
+            2.251512165427388e-05,
+            -3.4897381507920844e-05,
+            2.4382349132717965e-06
+          ],
+          "coordinateOwnership": "UX/UY/RZ are actual receiving-grid key traces; UZ/RX/RY are the separate normal-foot coordinates, not grid rotations.",
+          "maximumRigidWorkResidual": 2.369660023759934e-12,
+          "unusedGaugeSupportWrenchKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampleReceiverIds": [
+            "GRID/rear-W-end/0",
+            "GRID/rear-W/0",
+            "GRID/rear-W/1",
+            "GRID/stair-post/3",
+            "GRID/stair-post/4",
+            "GRID/wet/0"
+          ],
+          "samplePressureMPa": [
+            0.21085873973544816,
+            0.20738284891571965,
+            0.2045349771780764,
+            0.2023428867895521,
+            0.20083434001718095,
+            0.19500818686140844,
+            0.19798828873843816,
+            0.20096839061546787,
+            0.20394849249249755,
+            0.20692859436952724,
+            0.20302257401855853,
+            0.2026159007927061,
+            0.20161363919694325,
+            0.20003030327644594,
+            0.19788040707639015,
+            0.19517846464195174,
+            0.21031970107952772,
+            0.2068636945145672,
+            0.20403570703169202,
+            0.20186350089793578,
+            0.2003748383803326,
+            0.19459382970730635,
+            0.19747493476782285,
+            0.20035603982833938,
+            0.2032371448888559,
+            0.2061182499493724,
+            0.20284235699793238,
+            0.20251823169021943,
+            0.2015985180125961,
+            0.20009773001023828,
+            0.19803038172832194,
+            0.19541098721202307,
+            0.20978066242360732,
+            0.20634454011341483,
+            0.20353643688530765,
+            0.2013841150063194,
+            0.19991533674348427,
+            0.19421655263458898,
+            0.1969986608785923,
+            0.19978076912259563,
+            0.20256287736659895,
+            0.20229361495179324,
+            0.20266213997730617,
+            0.20242056258773275,
+            0.20158339682824888,
+            0.20016515674403063,
+            0.19818035638025377,
+            0.19564350978209444,
+            0.20924162376768685,
+            0.20582538571226242,
+            0.20303716673892325,
+            0.20090472911470306,
+            0.19945583510663595,
+            0.198718246981756,
+            0.19655967226538454,
+            0.19924278369287465,
+            0.2019258951203648,
+            0.20203085001302756,
+            0.20248192295668,
+            0.2023228934852461,
+            0.20156827564390173,
+            0.200232583477823,
+            0.19833033103218561,
+            0.1958760323521658,
+            0.20870258511176645,
+            0.20530623131111003,
+            0.20253789659253887,
+            0.20042534322308675,
+            0.19899633346978773,
+            0.1982786295996757,
+            0.19615817412283776,
+            0.19874228873381472,
+            0.20132640334479165,
+            0.20176808507426192,
+            0.20230170593605387,
+            0.20222522438275944,
+            0.20155315445955463,
+            0.20030001021161534,
+            0.19848030568411754,
+            0.19610855492223717,
+            0.20816354645584595,
+            0.2047870769099576,
+            0.20203862644615453,
+            0.1999459573314704,
+            0.1985368318329394,
+            0.19783901221759545,
+            0.1957943716455901,
+            0.19827948944005389,
+            0.2002645348953025,
+            0.20150532013549624,
+            0.20212148891542767,
+            0.20212755528027274,
+            0.20153803327520742,
+            0.2003674369454077,
+            0.19863028033604938,
+            0.19634107749230853,
+            0.20762450779992553,
+            0.20426792250880518,
+            0.20153935629977016,
+            0.19946657143985408,
+            0.19807733019609108,
+            0.19739939483551516,
+            0.19546847002827974,
+            0.19785459100623037,
+            0.19991922203839724,
+            0.20124255519673054,
+            0.20194127189480152,
+            0.20202988617778603,
+            0.2015229120908603,
+            0.20043486367920005,
+            0.19878025498798121,
+            0.19657360006237984,
+            0.2070854691440051,
+            0.20374876810765274,
+            0.20104008615338578,
+            0.19898718554823774,
+            0.19761782855924276,
+            0.1969597774534349,
+            0.19704079449784798,
+            0.19746202761422088,
+            0.1995739091814921,
+            0.20097979025796486,
+            0.2017610548741753,
+            0.20193221707529943,
+            0.20150779090651313,
+            0.20050229041299236,
+            0.19893022963991308,
+            0.1968061226324512,
+            0.20654643048808466,
+            0.2032296137065004,
+            0.20054081600700138,
+            0.1985077996566214,
+            0.19715832692239452,
+            0.19652016007135467,
+            0.19662106137053573,
+            0.1970710673986094,
+            0.19944446021443682,
+            0.20071702531919916,
+            0.20158083785354913,
+            0.20183454797281275,
+            0.20149266972216592,
+            0.2005697171467847,
+            0.19908020429184495,
+            0.19703864520252257,
+            0.2060073918321642,
+            0.20271045930534798,
+            0.20004154586061698,
+            0.19802841376500502,
+            0.1966988252855462,
+            0.19608054268927438,
+            0.1962013282432235,
+            0.19668010718299794,
+            0.1990125985433383,
+            0.20130745135849415,
+            0.2035988607327427,
+            0.20173687887032604,
+            0.20147754853781877,
+            0.20063714388057707,
+            0.1992301789437768,
+            0.1972711677725939,
+            0.20546835317624373,
+            0.20219130490419557,
+            0.19954227571423264,
+            0.1975490278733887,
+            0.19623932364869784,
+            0.1956409253071941,
+            0.19578159511591123,
+            0.19668909534188317,
+            0.19862139792367836,
+            0.20091581599618374,
+            0.20320679062778177,
+            0.20163920976783942,
+            0.2014624273534716,
+            0.20070457061436936,
+            0.19938015359570863,
+            0.1975036903426653,
+            0.2049293145203233,
+            0.20167215050304313,
+            0.19904300556784826,
+            0.1970696419817724,
+            0.19577982201184954,
+            0.19520130792511378,
+            0.195361861988599,
+            0.19628924646933898,
+            0.19823019730401845,
+            0.2005241806338733,
+            0.20281472052282087,
+            0.20154154066535274,
+            0.20144730616912446,
+            0.20077199734816173,
+            0.1995301282476405,
+            0.19773621291273666,
+            0.2043902758644029,
+            0.20115299610189075,
+            0.19854373542146392,
+            0.196590256090156,
+            0.1953203203750013,
+            0.19476169054303358,
+            0.19494212886128678,
+            0.1958893975967948,
+            0.19783899668435856,
+            0.20013254527156302,
+            0.20242265041786006,
+            0.20144387156286606,
+            0.2014321849847773,
+            0.20083942408195407,
+            0.19968010289957233,
+            0.197968735482808,
+            0.20385123720848247,
+            0.20063384170073836,
+            0.19804446527507952,
+            0.1961108701985397,
+            0.194860818738153,
+            0.1943220731609533,
+            0.19452239573397456,
+            0.19405507536141345,
+            0.19619831624694836,
+            0.1997409099092526,
+            0.20203058031289917,
+            0.20134620246037946,
+            0.20141706380043015,
+            0.2009068508157464,
+            0.19983007755150417,
+            0.1982012580528794,
+            0.20331219855256202,
+            0.20011468729958595,
+            0.19754519512869512,
+            0.19563148430692337,
+            0.19440131710130465,
+            0.193882455778873,
+            0.19410266260666234,
+            0.19301080097838874,
+            0.1950539758072747,
+            0.19934927454694218,
+            0.2016385102079383,
+            0.20124853335789275,
+            0.20140194261608294,
+            0.20097427754953875,
+            0.199980052203436,
+            0.1984337806229507,
+            0.20277315989664152,
+            0.19959553289843351,
+            0.19704592498231077,
+            0.195152098415307,
+            0.19394181546445632,
+            0.19344283839679274,
+            0.1936829294793501,
+            0.19185221558416385,
+            0.19379532435640087,
+            0.1989576391846318,
+            0.2012464401029774,
+            0.20115086425540604,
+            0.2013868214317358,
+            0.2010417042833311,
+            0.20013002685536788,
+            0.1986663031930221
+          ],
+          "fullAreaContactEstablishedBySamples": false,
+          "contactConverged": false,
+          "materialAndKeyResistanceAccepted": false
+        },
+        {
+          "id": "WET-ARCH/mapped-pier/1",
+          "rectangleXYMm": [
+            2844.5,
+            11284.5,
+            2984.5,
+            11737.5
+          ],
+          "coverage": {
+            "exactBeamOnlyPartition": [
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  11284.5,
+                  -181,
+                  2942.5,
+                  11317.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  11317.5,
+                  -181,
+                  2942.5,
+                  11667.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2844.5,
+                  11667.5,
+                  -181,
+                  2942.5,
+                  11737.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  11284.5,
+                  -181,
+                  2984.5,
+                  11317.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  11317.5,
+                  -181,
+                  2984.5,
+                  11667.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW",
+                    "GRID/wet"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              },
+              {
+                "boxXYZMm": [
+                  2942.5,
+                  11667.5,
+                  -181,
+                  2984.5,
+                  11737.5,
+                  -180
+                ],
+                "receiverIds": {
+                  "beam": [
+                    "GRID/outer-NW"
+                  ],
+                  "cap": [],
+                  "closure": []
+                },
+                "supported": true
+              }
+            ],
+            "capOrClosureCredit": false,
+            "uncoveredPieces": [],
+            "overlappingBeamBranchIsAnIdealisation": true,
+            "physicalCrossingJointQualified": false
+          },
+          "normalCompressionKN": 6.655014556522707,
+          "centreOfPressureRelativeToFootMm": [
+            1.5672189312959446,
+            130.56707089092345
+          ],
+          "peakSampledPressureMPa": 0.32387480960170095,
+          "normalFirstMomentsKNmm": [
+            868.9257573816277,
+            -10.42986480103247
+          ],
+          "sampledActiveFibres": 165,
+          "sampledFibreCount": 256,
+          "idealKeyRequiredFxFyKNAndMzKNmm": [
+            -0.002180227532625473,
+            -0.5744368848634405,
+            -2.3044165486839088
+          ],
+          "normalBoundaryResidualKN_KNmm": [
+            3.375077994860476e-14,
+            9.094947017729282e-13,
+            -6.927791673660977e-13
+          ],
+          "actualFootNormalCoordinatesUzRxRy": [
+            -0.013084693097752283,
+            -6.84604303848027e-05,
+            -9.53520048566783e-05
+          ],
+          "actualHybridPierBaseCoordinatesMmRad": [
+            -0.06699642187619943,
+            -0.028485157549367802,
+            -0.013084693097752283,
+            -6.84604303848027e-05,
+            -9.53520048566783e-05,
+            1.6642391167894392e-05
+          ],
+          "coordinateOwnership": "UX/UY/RZ are actual receiving-grid key traces; UZ/RX/RY are the separate normal-foot coordinates, not grid rotations.",
+          "maximumRigidWorkResidual": 3.637978807091713e-12,
+          "unusedGaugeSupportWrenchKN_KNmm": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sampleReceiverIds": [
+            "GRID/outer-NW/1",
+            "GRID/outer-NW/2",
+            "GRID/wet/0"
+          ],
+          "samplePressureMPa": [
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.009227455475049589,
+            0.038995510299631504,
+            0.06947199803170034,
+            0.10067143271643292,
+            0.1326083283990038,
+            0.16529719912458968,
+            0.2079243662269184,
+            0.2453677549414571,
+            0.28281114365599586,
+            0.32025453237053464,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.011174015795022817,
+            0.04102461853774426,
+            0.07158365418795262,
+            0.10286563679082468,
+            0.1348850803915351,
+            0.16765649903526056,
+            0.20788853616081293,
+            0.2450190992880006,
+            0.28214966241518835,
+            0.3192802255423761,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.013120576114996082,
+            0.04305372677585701,
+            0.07369531034420489,
+            0.10505984086521646,
+            0.1371618323840664,
+            0.1700157989459313,
+            0.20817958701480088,
+            0.24499732455463763,
+            0.2818150620944743,
+            0.31863279963431107,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.015067136434969349,
+            0.045082835013969765,
+            0.07580696650045715,
+            0.10725404493960823,
+            0.13943858437659765,
+            0.17237509885660213,
+            0.20607810242479754,
+            0.2453061935721575,
+            0.2818111055246432,
+            0.31831601747712895,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.01701369675494259,
+            0.04711194325208256,
+            0.07791862265670942,
+            0.10944824901400001,
+            0.14171533636912892,
+            0.1747343987672729,
+            0.20851995025360784,
+            0.24594946917135047,
+            0.28214155553648523,
+            0.31833364190161995,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.018960257074915835,
+            0.049141051490195306,
+            0.08003027881296168,
+            0.11164245308839178,
+            0.14399208836166022,
+            0.17709369867794367,
+            0.21096179808241808,
+            0.2469309141830087,
+            0.2828101749607924,
+            0.31868943573857617,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.020906817394889102,
+            0.05117015972830807,
+            0.08214193496921394,
+            0.11383665716278356,
+            0.1462688403541915,
+            0.17945299858861447,
+            0.2134036459112284,
+            0.24825429143792344,
+            0.2838207266283561,
+            0.31938716181878896,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.022853377714862344,
+            0.05319926796642083,
+            0.08425359112546624,
+            0.11603086123717533,
+            0.1485455923467228,
+            0.18181229849928526,
+            0.21584549374003867,
+            0.24967977525665866,
+            0.28526465187655115,
+            0.32084952849644355,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.024799938034835607,
+            0.055228376204533594,
+            0.08636524728171852,
+            0.1182250653115671,
+            0.15082234433925404,
+            0.184171598409956,
+            0.21828734156884894,
+            0.25078464992883553,
+            0.28643684343968445,
+            0.32208903695053326,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.026746498354808863,
+            0.05725748444264635,
+            0.08847690343797078,
+            0.12041926938595889,
+            0.15309909633178537,
+            0.18653089832062683,
+            0.22072918939765931,
+            0.2515649566739953,
+            0.2872844670758006,
+            0.32300397747760573,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.02869305867478212,
+            0.0592865926807591,
+            0.09058855959422303,
+            0.12261347346035066,
+            0.1553758483243166,
+            0.18889019823129757,
+            0.2162375319121268,
+            0.2520243592048884,
+            0.28781118649765003,
+            0.3235980137904116,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.0006574559329500067,
+            0.030639618994755362,
+            0.06131570091887187,
+            0.09270021575047531,
+            0.12480767753474242,
+            0.15765260031684789,
+            0.1912494981419684,
+            0.2163123770505471,
+            0.2521665212342651,
+            0.28802066541798294,
+            0.32387480960170095,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.002521468334783744,
+            0.032586179314728625,
+            0.06334480915698461,
+            0.09481187190672757,
+            0.12700188160913423,
+            0.15992935230937916,
+            0.19360879805263917,
+            0.21607364540020135,
+            0.25199510647487566,
+            0.28791656754955003,
+            0.32383802862422434,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.004385480736617491,
+            0.034532739634701895,
+            0.06537391739509739,
+            0.09692352806297985,
+            0.12919608568352597,
+            0.1622061043019105,
+            0.1795362227082092,
+            0.21552500067383992,
+            0.2515137786394706,
+            0.2875025566051014,
+            0.32349133457073215,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.00624949313845125,
+            0.03647929995467514,
+            0.06740302563321013,
+            0.0990351842192321,
+            0.13139028975791775,
+            0.1644828562944417,
+            0.1786140117276261,
+            0.21467010658421318,
+            0.2507262014408003,
+            0.28678229629738744,
+            0.3228383911539745,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            -0.0,
+            0.008113505540285008,
+            0.03842586027464838,
+            0.06943213387132291,
+            0.10114684037548437,
+            0.13358449383230953,
+            0.16675960828697303,
+            0.17738921509652805,
+            0.21351262684407155,
+            0.24963603859161498,
+            0.2857594503391584,
+            0.32188286208670197
+          ],
+          "fullAreaContactEstablishedBySamples": false,
+          "contactConverged": false,
+          "materialAndKeyResistanceAccepted": false
+        }
+      ],
+      "frameEnergyRelativeResidual": 6.24564969002058e-12,
+      "plateWorkRelativeResidual": 4.581772396327591e-13,
+      "wholeHouseAccepted": false,
+      "candidateAccepted": false
+    }
+  },
+  "unchangedControls": {
+    "bed4": {
+      "massInventoryAndPlateCellsHolesExactlyEqual": true,
+      "sourceWrenchDeltaKN_KNm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "bed8": {
+      "massInventoryAndPlateCellsHolesExactlyEqual": true,
+      "sourceWrenchDeltaKN_KNm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "bed16": {
+      "massInventoryAndPlateCellsHolesExactlyEqual": true,
+      "sourceWrenchDeltaKN_KNm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "normalQuadratureComparisons": {
+    "4to8": {
+      "maximum52HeadComponentDifferenceKN_KNm": 0.014221880892588246,
+      "headToleranceKN_KNm": 0.1,
+      "piers": [
+        {
+          "id": "WET-ARCH/mapped-pier/0",
+          "forceChangeKN": 0.0060803816221461915,
+          "forceToleranceKN": 0.012677776306782117,
+          "centreOfPressureChangeMm": 0.40971628506276614,
+          "centreToleranceMm": 0.1,
+          "peakSampledPressureChangeMPa": 0.0034782725828437777,
+          "forceAndCentroidScreenPasses": false
+        },
+        {
+          "id": "WET-ARCH/mapped-pier/1",
+          "forceChangeKN": 0.0007239628764512673,
+          "forceToleranceKN": 0.006654943154601986,
+          "centreOfPressureChangeMm": 0.9072925192289745,
+          "centreToleranceMm": 0.1,
+          "peakSampledPressureChangeMPa": 0.0304613892198613,
+          "forceAndCentroidScreenPasses": false
+        }
+      ],
+      "monitoredNumericalScreenPasses": false,
+      "exactAffinePadOracleApplicable": false,
+      "physicalBedOrMasonryAccepted": false
+    },
+    "8to16": {
+      "maximum52HeadComponentDifferenceKN_KNm": 0.010406087758791926,
+      "headToleranceKN_KNm": 0.1,
+      "piers": [
+        {
+          "id": "WET-ARCH/mapped-pier/0",
+          "forceChangeKN": 0.0032959608859641776,
+          "forceToleranceKN": 0.012681072267668082,
+          "centreOfPressureChangeMm": 0.23301523744184555,
+          "centreToleranceMm": 0.1,
+          "peakSampledPressureChangeMPa": 0.002311559336305641,
+          "forceAndCentroidScreenPasses": false
+        },
+        {
+          "id": "WET-ARCH/mapped-pier/1",
+          "forceChangeKN": 7.140192072085938e-05,
+          "forceToleranceKN": 0.006655014556522706,
+          "centreOfPressureChangeMm": 0.5282483652774772,
+          "centreToleranceMm": 0.1,
+          "peakSampledPressureChangeMPa": 0.015038369871992918,
+          "forceAndCentroidScreenPasses": false
+        }
+      ],
+      "monitoredNumericalScreenPasses": false,
+      "exactAffinePadOracleApplicable": false,
+      "physicalBedOrMasonryAccepted": false
+    }
+  },
+  "nativeSolvesExecutedByReplay": false,
+  "candidateAccepted": false,
+  "physicalMasonryBedKeysOrWholeHouseAccepted": false,
+  "scope": "Actual450-rise0.9G/Q0/null-roof comparison only, with finite normal beds and ideal centroid keys. Reuses force/centroid/head numerical criteria without the inapplicable affine lower-plane oracle. Sample pressures/contact flags and failed refinement earn no physical contact/stress convergence. Every tested case retains eight outside-section ring cuts; this declared bed is not a successful repair of the fixed elastic masonry candidate."
+}

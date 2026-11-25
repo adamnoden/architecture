@@ -629,7 +629,8 @@
         "compiler/reference-house/current-design/inlet-split-plant-room.ts",
         "compiler/reference-house/current-design/inlet-split-plant-room-choice.ts",
         "compiler/reference-house/current-design/house-vertical-profile.ts",
-        "project/had/studies/house_vertical_profile.py"
+        "project/had/studies/house_vertical_profile.py",
+        "compiler/reference-house/current-design/inlet-store-impulse.ts"
       ],
       "authoredInputs": [
         "compiler/reference-house/current-design/inlet-electrical-screen.ts",
@@ -704,7 +705,9 @@
         "node --import tsx --test compiler/reference-house/current-design-inlet-retained-services.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-split-station.test.ts",
         "node project/had/studies/plant-release-route.mjs --check",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-split-branch.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-split-branch.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-store-impulse.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-incident-stations.test.ts"
       ]
     },
     {
@@ -883,7 +886,8 @@
         "project/str/wet-masonry-arch-comparison.md",
         "project/str/wet-masonry-arch-native-development.md",
         "project/str/wet-masonry-arch-released-development.md",
-        "project/str/wet-masonry-arch-rise-development.md"
+        "project/str/wet-masonry-arch-rise-development.md",
+        "project/str/lower-masonry-bed-development.md"
       ],
       "authorRoots": [
         "project/str/studies/masonry_frame_a.py",
@@ -937,7 +941,11 @@
         "project/str/studies/wet_masonry_arch_released.py",
         "project/str/studies/wet_masonry_arch_released_proof.py",
         "project/str/studies/wet_masonry_arch_rise.py",
-        "project/str/studies/wet_masonry_arch_rise_proof.py"
+        "project/str/studies/wet_masonry_arch_rise_proof.py",
+        "compiler/reference-house/current-design/structural-lower-masonry.ts",
+        "compiler/reference-house/current-design/structural-lower-masonry-settings.ts",
+        "project/str/studies/wet_masonry_arch_bed.py",
+        "project/str/studies/wet_masonry_arch_bed_proof.py"
       ],
       "authoredInputs": [
         "project/str/studies/floor-section-cuts-inputs.json",
@@ -993,7 +1001,8 @@
         "project/str/studies/uniform-slab-contact-refinement-native-captures.tar.xz",
         "project/str/studies/wet-masonry-arch-native-captures.tar.xz",
         "project/str/studies/wet-masonry-arch-released-captures.tar.xz",
-        "project/str/studies/wet-masonry-arch-rise-captures.tar.xz"
+        "project/str/studies/wet-masonry-arch-rise-captures.tar.xz",
+        "project/str/studies/wet-masonry-arch-bed-captures.tar.xz"
       ],
       "receipts": [
         "project/str/studies/masonry-frame-a-proof.json",
@@ -1032,7 +1041,9 @@
         "project/str/studies/wet-masonry-arch-native-proof.json",
         "project/str/studies/wet-masonry-arch-released-proof.json",
         "project/str/studies/wet-masonry-arch-rise-comparison.svg",
-        "project/str/studies/wet-masonry-arch-rise-proof.json"
+        "project/str/studies/wet-masonry-arch-rise-proof.json",
+        "project/str/studies/wet-masonry-arch-bed-proof.json",
+        "project/str/studies/wet-masonry-arch-bed.svg"
       ],
       "consumers": [
         "compiler/reference-house/current-design/structural-masonry-frame.ts",
@@ -1078,7 +1089,9 @@
         "project/str/studies/wet_masonry_arch_comparison_test.py",
         "project/str/studies/wet_masonry_arch_native_test.py",
         "project/str/studies/wet_masonry_arch_released_test.py",
-        "project/str/studies/wet_masonry_arch_rise_test.py"
+        "project/str/studies/wet_masonry_arch_rise_test.py",
+        "project/str/studies/wet_masonry_arch_bed_test.py",
+        "compiler/reference-house/current-design-lower-masonry.test.ts"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
@@ -1118,7 +1131,10 @@
         "python3 -B project/str/studies/wet_masonry_arch_released_test.py",
         "python3 -B project/str/studies/wet_masonry_arch_released_proof.py --check",
         "python3 -B project/str/studies/wet_masonry_arch_rise_test.py",
-        "python3 -B project/str/studies/wet_masonry_arch_rise_proof.py --check"
+        "python3 -B project/str/studies/wet_masonry_arch_rise_proof.py --check",
+        "python3 -B project/str/studies/wet_masonry_arch_bed_test.py",
+        "python3 -B project/str/studies/wet_masonry_arch_bed_proof.py --check",
+        "node --import tsx --test compiler/reference-house/current-design-lower-masonry.test.ts"
       ],
       "historicalInputs": [
         "project/str/studies/seated-pre-nodal-history.json",
@@ -1211,8 +1227,7 @@
       ],
       "inputReceipts": [
         "project/str/studies/four-l-joint-material-audit.json",
-        "project/str/studies/fixed-normal-experiment-captures.tar.xz",
-        "project/str/studies/slab-constitutive-compiled-control.tar.xz"
+        "project/str/studies/fixed-normal-experiment-captures.tar.xz"
       ],
       "receipts": [
         "project/str/studies/fixed-normal-experiment.results.json",
@@ -1220,7 +1235,6 @@
         "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json",
         "project/str/studies/finite-joint-solid-captures/finite-joint-solid-35.json",
         "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json",
-        "project/str/studies/slab-constitutive-compiled-control.json",
         "project/str/studies/finite-floor-contour-captures/contour140.json",
         "project/str/studies/finite-floor-contour-captures/contour70.json",
         "project/str/studies/finite-floor-contour-captures/contour-comparison.json",
@@ -1245,7 +1259,9 @@
         "PINNED_PYTHON -B project/str/studies/finite_floor_contour_compare_test.py"
       ],
       "historicalInputs": [
-        "project/str/studies/finite-floor-contour-uniform-history.tar.xz"
+        "project/str/studies/finite-floor-contour-uniform-history.tar.xz",
+        "project/str/studies/slab-constitutive-compiled-control.json",
+        "project/str/studies/slab-constitutive-compiled-control.tar.xz"
       ]
     }
   ],
@@ -2249,24 +2265,6 @@
       "algorithm": "sha256"
     },
     {
-      "receipt": "project/str/studies/slab-constitutive-compiled-control.json",
-      "location": [
-        "executedFloorMethod",
-        "inputs"
-      ],
-      "format": "map",
-      "algorithm": "gitBlob"
-    },
-    {
-      "receipt": "project/str/studies/slab-constitutive-compiled-control.json",
-      "location": [
-        "comparisonOwnerSHA256"
-      ],
-      "format": "value",
-      "algorithm": "sha256",
-      "source": "project/str/studies/floor-section-proof.json"
-    },
-    {
       "receipt": "project/had/studies/inlet-cabinet-copper.results.json",
       "location": [
         "source",
@@ -2393,35 +2391,6 @@
       "source": "project/str/studies/wet-beam-end-native-captures.tar.xz"
     },
     {
-      "receipt": "project/str/studies/slab-constitutive-compiled-control.json",
-      "location": [
-        "archiveSHA256"
-      ],
-      "format": "value",
-      "algorithm": "sha256",
-      "source": "project/str/studies/slab-constitutive-compiled-control.tar.xz"
-    },
-    {
-      "receipt": "project/str/studies/slab-constitutive-compiled-control.json",
-      "location": [
-        "wetBeamEndSavedStageReplay",
-        "executedFloorMethod",
-        "inputs"
-      ],
-      "format": "map",
-      "algorithm": "gitBlob"
-    },
-    {
-      "receipt": "project/str/studies/slab-constitutive-compiled-control.json",
-      "location": [
-        "wetBeamEndSavedStageReplay",
-        "executedEndMethod",
-        "sourceSHA256"
-      ],
-      "format": "map",
-      "algorithm": "sha256"
-    },
-    {
       "receipt": "project/str/studies/uniform-slab-law-proof.json",
       "location": [
         "sourceSHA256"
@@ -2498,6 +2467,15 @@
       "format": "value",
       "algorithm": "sha256",
       "source": "project/str/studies/uniform-slab-law-end.svg"
+    },
+    {
+      "receipt": "project/str/studies/slab-constitutive-compiled-control.json",
+      "location": [
+        "archiveSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/slab-constitutive-compiled-control.tar.xz"
     }
   ],
   "gitBlobs": {
@@ -2730,7 +2708,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "2e7255d8437e28a5f18c7dcd2271689e7223101e",
+    "compiler/reference-house/current-design/engineering-document.ts": "4121ccdbe82be4338439d263e946ad3af7960558",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -2855,14 +2833,14 @@
     "project/str/studies/roof-surface-pressure.svg": "03610ad976377889fb0d27bfaaa107b9cdce2099",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "06f0551ecee655e49885d4486330db45533b12f4",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "b9f352fa94452332115915962e4066791c8de60d",
     "project/had/studies/inlet-source-envelope.ts": "b0d16578113ee164aa6507a2338db7c6ff1fa701",
     "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
-    "project/had/studies/inlet-source-envelope.results.json": "e5254dcb8fd5c6ba058f2cd7997cbbfe43602ef9",
+    "project/had/studies/inlet-source-envelope.results.json": "b3c0d44229e3ba705982f4feba0b3ab0dbd525ec",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
-    "compiler/reference-house/current-design/engineering-edit.ts": "e4aaa83eb2a7e6141e7a127bf46ecbc8ac7d71b9",
-    "project/ade/browser-editor/engineering-api.ts": "9a2946dae261ce02050df74f7de4143d57d93964",
-    "project/ade/browser-editor/engineering-editor.ts": "13a92e7d8044e18058565d0c33e3a09b31bfca04",
+    "compiler/reference-house/current-design/engineering-edit.ts": "bb8db73fe460e824f46dc08774f7da9429d1c523",
+    "project/ade/browser-editor/engineering-api.ts": "495c3b05b525425051bf5ce8609039d247ba0915",
+    "project/ade/browser-editor/engineering-editor.ts": "7436c39d641aca5c5475f7bcdedc52f791d37773",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
@@ -2875,7 +2853,7 @@
     "project/str/studies/floor_section_model.py": "f3cdbbf118b0d5d064c3f6564786de770b5ffd88",
     "project/str/studies/floor_section_successor.py": "0e86fe7778fe0a5e85dbf3bcb91e5e9a99a45fd3",
     "project/str/floor-section-result.md": "57386497f30c777bcafc8090cac8b462add8b87c",
-    "compiler/reference-house/current-design/structural-floor-section.ts": "6d3e16f8945eabebbad39effba018e1c6f14d13a",
+    "compiler/reference-house/current-design/structural-floor-section.ts": "5a70852085f913ab2a5c6560c3764bb2830695d9",
     "project/str/studies/floor_section_proof.py": "9ab873623174bd4ec52c84473527d818874d7bc0",
     "project/str/studies/floor-section-proof.json": "43d622a67d01d40e976ee605dd2528f5104eac1f",
     "project/str/studies/floor-section-250.svg": "b9743f51fd2b5eca6f8d6749c1134415f44a67c1",
@@ -2903,7 +2881,7 @@
     "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
     "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3",
     "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
-    "project/had/studies/inlet-local-pocket.results.json": "a4db1ffb02e1d515e84d74d5c59070ef077d25a8",
+    "project/had/studies/inlet-local-pocket.results.json": "c1cb394e604ade0822d5e1df9b4e37843f264a24",
     "project/had/studies/inlet-local-pocket.svg": "1b055c9299705e175d8fe523102bb991e6dbd913",
     "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
     "project/had/studies/inlet-local-pan.svg": "e3da3b38a4eb4532e8f3d3a9ab713a6d20aa2be9",
@@ -2967,7 +2945,7 @@
     "project/had/inlet-bank-carrier-rejection.md": "02e3e0c4004e7a3d636b5e56297131ff959d132d",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
-    "project/had/studies/inlet-bank-carrier.results.json": "35784066f39452de0df6399e4a01c4dffd6ef245",
+    "project/had/studies/inlet-bank-carrier.results.json": "c771dd0c30099301bb25049c9668271d20c322aa",
     "project/had/studies/inlet-bank-carrier.svg": "dc84130cc6a7fcae0130e64b6687bb2112546f13",
     "project/str/studies/wet_bearing_refinement.py": "06f8fabdfaf5ed6cc132e7a49248845dbdb08bab",
     "project/str/studies/wet-bearing-refinement-inputs.json": "42dea6fee820d552c4bb35a59258825a54eacb64",
@@ -3006,7 +2984,7 @@
     "compiler/reference-house/current-design/occupied-services.ts": "80f31158e629120a3719a8d3b26774b7f2f07da2",
     "project/str/studies/fixed_normal_experiment.py": "79f6c70e448475c1188f4c493514df75a3c77ee3",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json": "17f081768d37138ba58d91b32617d4054be863cf",
-    "project/ccr/convergence-owner-review.md": "674ace15ce957f64cc896fafc27d64a95bd8b1d3",
+    "project/ccr/convergence-owner-review.md": "fca3a180a08821a5284fa33973bad6a01b305f17",
     "project/str/studies/finite_joint_solid_run.py": "f7759a440296b38f92e3af3f29a9e1586559bc9a",
     "project/str/finite-joint-solid-development.md": "e90118a8ff01fc8ac761835903926b427263205b",
     "project/str/studies/finite_joint_solid.py": "b8451e22dda30b884166f82bbf86330aa9d13503",
@@ -3030,8 +3008,8 @@
     "project/had/inlet-retained-service-route-comparison.md": "8249a23406763f52afa82776f95089e298367f7c",
     "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
     "project/had/studies/inlet-split-plant-station.svg": "bee70b5c62401e14b44de2add9c069c262a3944f",
-    "project/had/split-isolation-station-development.md": "28b5b1b1fc442629a4da544ed4f0c1233079e515",
-    "project/ccr/studies/roof-pitch-27deg-field-section.svg": "799d7520fe0b220872e2f661df3fe2f995242ccc",
+    "project/had/split-isolation-station-development.md": "c5b72302c9c321381c5ce8eb4e1cae4928e1b1bc",
+    "project/ccr/studies/roof-pitch-27deg-field-section.svg": "28055e1811a08a7ac31b78af6e9251e17993df7a",
     "project/str/finite-floor-contour-development.md": "c2fcbda189c71d2e38341ff5561c93d2c3b5f31b",
     "project/str/studies/finite_floor_contour.py": "4f0b2ff95c6264f229407e6f7d01dd635811eee9",
     "project/str/studies/finite_floor_contour_run.py": "6d9811ad85f27aa482fe396bc8d5c1a7e7ce3eb6",
@@ -3042,20 +3020,20 @@
     "project/str/studies/finite-floor-contour-captures/contour70.json": "10c50c4b99eb58352132f3f7bda9c5d7921871a1",
     "project/str/studies/finite-floor-contour-captures/contour-comparison.json": "2128d6f4c4f8411a5fb741b5b2d5c92695c7e7cd",
     "project/had/studies/plant-release-profiles.d.mts": "a8f76cd9f2d0c87edb48308c121d191f19c15481",
-    "compiler/reference-house/current-design/inlet-split-plant-branch.ts": "208518166204aa659e44ceffe3a91142b0d84542",
+    "compiler/reference-house/current-design/inlet-split-plant-branch.ts": "70c8c988d7bef10287020ca79d5d1eac94882778",
     "project/had/studies/plant-release-route.mjs": "b84fcfafc0456eee29593bdf0b5c8076a0878368",
     "project/had/studies/inlet-split-plant-branch-candidate.json": "6afb0bbc4f5e063e16d6ff7b040ae46a129c41f6",
     "project/had/studies/plant-release-profiles.mjs": "6c140a8bb44a2ca8e36e6fd4f87303ddf2779e6a",
-    "project/had/studies/inlet-split-plant-branch.svg": "4352eb44c41c2119464a3c041caa362a38c0c690",
+    "project/had/studies/inlet-split-plant-branch.svg": "85c0272bee28e5576c9942bd5312ea9f4d5ef5b6",
     "compiler/reference-house/current-design/structural-finite-floor-contour-settings.ts": "3e6461fa8d4f00c4b6b21c0eded4fb933e5b9603",
     "project/str/studies/finite_floor_contour_ordering_control.py": "1c4f1cd1da1fea99affa0075374c48b8f7100e43",
     "project/str/studies/finite-floor-contour-captures/ordering-control.json": "5245cd1782991fd82548918f624e09d90d042b25",
     "project/str/studies/finite-floor-contour-execution-limit.json": "4482883e31721969ecac55dde4e3dca7c25294b9",
     "project/str/studies/finite-floor-contour-uniform-history.tar.xz": "291eeabcdcf04852ce766f1182f408a6c82ca0b1",
     "project/str/studies/finite-floor-contour-captures/contour50.json": "7287c4571e3be55f931c67159510fb1cceed75de",
-    "compiler/reference-house/current-design/inlet-split-plant-room.ts": "4e8ea42257afcf2201ad6b18d2dddd3dc7a674b8",
+    "compiler/reference-house/current-design/inlet-split-plant-room.ts": "d5d388a990dadd4f62d278df8fc3a221276243c1",
     "project/had/studies/inlet-split-plant-room-candidate.json": "39ee4ca1a81334e42bab110b114ad9c244d6193c",
-    "project/had/studies/inlet-split-plant-room.svg": "df46bb2f0b8adff2d9f7339f86fa96cad6dbefce",
+    "project/had/studies/inlet-split-plant-room.svg": "955fabd48d2461ca7029cc963a909f428c5d59ba",
     "project/str/studies/wet_pad_fan_recovery_proof.py": "857dac5056c5e2dc682add6acb24e56cb2b61641",
     "project/str/studies/wet-pad-fan-recovery-proof.json": "5e3b539f23029e23537dc014f75442a1d4da5275",
     "compiler/reference-house/current-design/inlet-split-plant-room-choice.ts": "a9e7a5a4bf0d1f97d2f0ff635f013af7f1cd5990",
@@ -3117,6 +3095,17 @@
     "project/str/wet-masonry-arch-native-development.md": "c7daeb2fda32c8c631c6420bf245515220398f86",
     "project/str/wet-masonry-arch-released-development.md": "e4448542cd5997481b1289f70daa236e6623e651",
     "project/str/wet-masonry-arch-rise-development.md": "2e44abb44c6e4c6fe37260e03509f79c6054fa43",
-    "project/str/studies/finite_floor_contour_compare_test.py": "4e8bf4a1994796cc48ef73c9e16d1b0714fb03af"
+    "project/str/studies/finite_floor_contour_compare_test.py": "4e8bf4a1994796cc48ef73c9e16d1b0714fb03af",
+    "compiler/reference-house/current-design/inlet-store-impulse.ts": "f378afdf23c3e4d673b33c63f3d952e6dac679fe",
+    "project/str/lower-masonry-bed-development.md": "cdc967b79e54f1cea536e191c97850a71c35cf89",
+    "compiler/reference-house/current-design/structural-lower-masonry.ts": "a8dfa746a8042264cf6958d34c53a3218a20dda8",
+    "compiler/reference-house/current-design/structural-lower-masonry-settings.ts": "a6a915a71e663b15d9a9395d1e5a951298eaa823",
+    "project/str/studies/wet_masonry_arch_bed.py": "cfae20a536f5abb4bd12125da0299e7fc430d5ae",
+    "project/str/studies/wet_masonry_arch_bed_proof.py": "984a41709ff9eee30c1d9883f99eaf20657280cd",
+    "project/str/studies/wet-masonry-arch-bed-captures.tar.xz": "5c78269bb1756650a1d422707149ed28843dfac7",
+    "project/str/studies/wet-masonry-arch-bed-proof.json": "6c9cb58edd7a1df1c6e1cf8986e9112a0e29566b",
+    "project/str/studies/wet-masonry-arch-bed.svg": "418076ce9c897b1ac580b4c7e42bf0d689f571ba",
+    "project/str/studies/wet_masonry_arch_bed_test.py": "ad8d8937ee8b6aa57d389d100f8fbb0a4c5455ce",
+    "compiler/reference-house/current-design-lower-masonry.test.ts": "2033dc8566923edb635af4a50a506940f624f562"
   }
 }
