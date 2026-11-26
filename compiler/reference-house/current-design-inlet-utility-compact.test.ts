@@ -112,7 +112,7 @@ test('explicit horizontal/vertical guides use the same kernel in actual world ax
  assert.ok(thermalUp.whollyRestrainedStraightControl.forceN>9000)
  assert.ok(Math.abs(thermalUp.whollyRestrainedStraightControl.stressMPa-79.696)<1e-7)
  const wrongAxis=compareInletRouteThermal({pathMm:[[0,0,0],[0,850,0],[530,850,0]],fixedPointMm:[0,0,0],guide:{pointMm:[0,450,0],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:40})
- assert.ok(Math.max(...wrongAxis.independentSegmentBounds.fixedForceN)>9000,'Separate straight restrained segment control: a wrong vertical guide on a horizontal straight segment retains its axial expansion challenge; this is not the new loop's response.')
+ assert.ok(Math.max(...wrongAxis.independentSegmentBounds.fixedForceN)>9000,'Separate straight restrained segment control: a wrong vertical guide on a horizontal straight segment retains its axial expansion challenge; this is not the new loop response.')
  assert.throws(()=>compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[10300,1000,966],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:40}),/actual straight route/)
  const zero=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1350],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:0})
  assert.ok(zero.independentSegmentBounds.fixedForceN.every(v=>v===0))
