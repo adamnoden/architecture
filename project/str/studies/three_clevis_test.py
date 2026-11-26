@@ -32,13 +32,19 @@ class ClevisControls(unittest.TestCase):
         self.assertAlmostEqual(r['pryingRatio'],1.,places=12)
         self.assertAlmostEqual(r['maxElasticBendingMPa'],(p*160/4)/(b*th**2/6),places=7)
 
-    def test_actual_prying_contact_force_and_work_close(self):
-        r=t.plate_strip(100000.,95.,40.,200000.,374000.,8250.,300.)
+    def test_thin_plate_prying_contact_force_and_work_close(self):
+        r=t.plate_strip(100000.,95.,20.,200000.,374000.,8250.,300.)
         self.assertGreater(r['pryingRatio'],1.)
         self.assertGreater(r['perHalfContactCompressionN'],0.)
         self.assertLess(abs(r['forceResidualN']),1e-5)
         self.assertLess(abs(r['workResidualNmm']),1e-5)
         self.assertTrue(all(y>=80 for y in r['contactNodeYmm']))
+        self.assertFalse(r['localModelQualified'])
+
+    def test_40mm_plate_has_no_assumed_prying_multiplier(self):
+        r=t.plate_strip(100000.,95.,40.,200000.,374000.,8250.,300.)
+        self.assertAlmostEqual(r['pryingRatio'],1.,places=10)
+        self.assertAlmostEqual(r['perHalfContactCompressionN'],0.,places=8)
         self.assertFalse(r['localModelQualified'])
 
     def test_n_to_kn_scaling_does_not_invent_work(self):

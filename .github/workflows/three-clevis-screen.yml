@@ -40,11 +40,14 @@ jobs:
           google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
             --screenshot="$CLEVIS_SCREEN_DIR/three-clevis-section.png" --window-size=1500,1160 \
             "file://$CLEVIS_SCREEN_DIR/three-clevis-section.svg"
+          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
+            --screenshot="$CLEVIS_SCREEN_DIR/three-clevis-plan.png" --window-size=1500,1080 \
+            "file://$CLEVIS_SCREEN_DIR/three-clevis-plan.svg"
           python - <<'PY'
           import base64,os
           from pathlib import Path
-          p=Path(os.environ['CLEVIS_SCREEN_DIR'])/'three-clevis-section.png'
-          print('RENDER_PNG '+p.name+' '+base64.b64encode(p.read_bytes()).decode())
+          for p in sorted(Path(os.environ['CLEVIS_SCREEN_DIR']).glob('*.png')):
+              print('RENDER_PNG '+p.name+' '+base64.b64encode(p.read_bytes()).decode())
           PY
       - uses: actions/upload-artifact@v6
         if: always()

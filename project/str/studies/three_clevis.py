@@ -120,7 +120,7 @@ def plate_strip(load_n,width,t,young,bolt_k,concrete_e,core,contact=True):
         'perHalfContactCompressionN':sum(compression),'forceResidualN':residual,
         'twiceEnergyNmm':twice_energy,'externalWorkNmm':work,'workResidualNmm':twice_energy-work,
         'centreDeflectionMm':u[0],'contactNodeYmm':[ys[i] for i in sorted(active)],
-        'localModelQualified':False}
+        'localModelQualified':False,'frontPlatePryingOnlyNotBackPlateConcreteBearingProof':True}
 
 def pin_screen(g,m,n,v=0.,axial=0.):
     d,b=g['pinDiameterMm'],g['pinEndBoreMm'];a=area(d)-area(b)
@@ -419,8 +419,8 @@ def drawing(c,value):
     def q(x,z):return ox+(x-150)*scale,oy-(z-3000)*scale
     def rect(x,z,w,h,fill):
         X,Y=q(x,z+h);s.rect(X,Y,w*scale,h*scale,fill)
-    rect(212.5,3000,300,750,'#d7e4ef')
-    rect(262.5,3000,200,750,'#b3c8dc')
+    rect(212.5,3000,300,540,'#d7e4ef')
+    rect(262.5,3000,200,540,'#b3c8dc')
     rect(522.5,3000,140,130,'#ded1b5')
     rect(522.5,3130,140,40,'#fff4df')
     rect(782.5,3170,350,200,'#eee8d9')
@@ -433,7 +433,7 @@ def drawing(c,value):
     s.a.append(f'<circle cx="{X}" cy="{Y}" r="{30*scale}" fill="#315c86"/>')
     rect(782.5,3175,40,190,'#626b74')
     for z in value['floorLocalMat']['normalBarCentresZMm']:rect(822.5,z-9,300,18,'#a1262f')
-    for x in (331.5,393.5):rect(x,3000,14,750,'#a1262f')
+    for x in (331.5,393.5):rect(x,3000,14,540,'#a1262f')
     rect(522.5,3438,260,12,'#626b74')
     for z,label in ((3450,'FIRST3450'),(3370,'slab3370'),(3170,'seat3170'),(3130,'local seat recess40')):
         X,Y=q(170,z);s.line(X,Y,1160,Y,'#aab2b9','stroke-dasharray="4 4"');s.text(1180,Y+4,label,'small')
@@ -449,7 +449,7 @@ def drawing(c,value):
     s.text(550,424,'Pocket interrupts gravity seat: no normal force through key','small red')
     s.text(550,448,'Plate/prying is a local beam-strip model, not3D concrete proof','small red')
     s.text(40,800,'PIN AXIS / along-wall travel and renewal','sub')
-    x0,y0,k=70,865,1.7
+    x0,y0,k=70,890,1.3
     def rr(a,b,w,h,fill):s.rect(x0+a*k,y0+b*k,w*k,h*k,fill)
     rr(30,-30,180,60,'#315c86')
     rr(55,-60,20,120,'#626b74');rr(165,-60,20,120,'#626b74')
@@ -468,17 +468,80 @@ def drawing(c,value):
     s.text(40,1105,'Do not fund a nominal frictionless full-house programme from this component screen. Resolve the listed physical boundaries first.','sub red')
     return s.finish()
 
+def plan_drawing(c,value,furniture):
+    g=c['geometry'];s=bearing.Svg(1500,1080,'Rejected clevis family: actual plan collisions and renewal pockets')
+    s.text(40,42,'Physical clevis plan — why this family is rejected','title')
+    s.text(40,73,'Prospective300 cores at SW/NW only; SE/NE remain200. All four gravity footprints are checked on the actual ground girders.','note')
+    s.text(40,99,'No normal gravity force is assigned to a key. Blue service pockets remove real floor/contact material; their perimeter framing is unfinished.','small red')
+    for label,px in (('SW',40),('NW',780)):
+        py=150;size=650;low=150;high=1850;k=size/(high-low)
+        s.text(px,133,label+(' /actualXY' if label=='SW' else ' /Y mirrored:12000−actualY'),'sub')
+        s.rect(px,py,size,size,'#faf9f5')
+        def q(x,y):return px+(x-low)*k,py+size-(y-low)*k
+        def box(r,fill,stroke='#68737e',extra=''):
+            r=bearing.intersection(r,[low,low,high,high])
+            if r:
+                x,y=q(r[0],r[3]);s.rect(x,y,(r[2]-r[0])*k,(r[3]-r[1])*k,fill,stroke,extra)
+        def seg(x,y,X,Y,color,width=1):
+            a,b=q(x,y);A,B=q(X,Y);s.line(a,b,A,B,color,f'stroke-width="{width}"')
+        for r in ([212.5,212.5,512.5,1262.5],[512.5,212.5,1262.5,512.5]):box(r,'#c8d9e7')
+        for r in ([262.5,262.5,462.5,1262.5],[462.5,262.5,1262.5,462.5]):box(r,'none','#315c86','stroke-dasharray="4 3"')
+        for r in ([522.5,522.5,662.5,1272.5],[662.5,522.5,1272.5,662.5]):box(r,'#ded1b5')
+        for key,p in value['physicalGeometry']['servicePocketRectanglesXYMm'].items():
+            if not key.startswith(label):continue
+            r=p if label=='SW' else [p[0],12000-p[3],p[2],12000-p[1]]
+            box(r,'#e0f1f5','#4f7e8b')
+        # Actual250mm face plates, slotted blade, fork, root and prospective floor bars.
+        for r in ([212.5,787.5,252.5,1037.5],[472.5,787.5,512.5,1037.5]):box(r,'#626b74')
+        box([512.5,892.5,722.5,932.5],'#b2bdc5')
+        for y in (857.5,967.5):box([562.5,y-10,782.5,y+10],'#626b74')
+        box([782.5,712.5,822.5,1112.5],'#626b74')
+        anchors=value['floorLocalMat']['normalBarPositionsAlongMm']
+        for y in anchors:seg(822.5,y,1822.5,y,'#a1262f',2)
+        if label=='SW':
+            for r in ([787.5,212.5,1037.5,252.5],[787.5,472.5,1037.5,512.5]):box(r,'#626b74')
+            box([892.5,512.5,932.5,722.5],'#b2bdc5')
+            for x in (857.5,967.5):box([x-10,562.5,x+10,782.5],'#626b74')
+            box([712.5,782.5,1112.5,822.5],'#626b74')
+            for x in anchors:seg(x,822.5,x,1822.5,'#a1262f',2)
+            box([782.5,782.5,822.5,822.5],'#e64949','#a1262f')
+            for x,y,z in value['physicalRejections']['crossingCoordinatesXYZMm']:
+                if z!=3229:continue
+                X,Y=q(x,y);s.a.append(f'<circle cx="{X}" cy="{Y}" r="3" fill="#e64949"/>')
+            old=furniture['FIRST']['bed2'];new=value['physicalGeometry']['prospectiveBedAfter200EastMm']
+            box(old,'#eeeeee','#8d9399');box(new,'none','#23714e','stroke-dasharray="5 3"')
+            s.text(px+10,py+size+27,'RED:72 cylindrical bar crossings +304000mm³ root-plate overlap.','small red')
+            s.text(px+10,py+size+50,'H16 X and H16 Y occupy identical3229/3311 levels.','small red')
+            s.text(px+10,py+size+73,'Dashed green bed: temporary200mm east move, no handling proof.','small')
+        else:
+            for name in ('rear-WC','rear-cabinet','rear-west-low-box'):
+                r=furniture['FIRST'][name];r=[r[0],12000-r[3],r[2],12000-r[1]]
+                box(r,'#eeeeee','#8d9399')
+            wc=value['physicalGeometry']['prospectiveNWToiletBoxAfter70EastMm']
+            box([wc[0],12000-wc[3],wc[2],12000-wc[1]],'none','#23714e','stroke-dasharray="5 3"')
+            s.text(px+10,py+size+27,'Grey:actual WC/cabinet/low box conflict with renewal pockets.','small red')
+            s.text(px+10,py+size+50,'Dashed green WC:70mm east comparison; services/removal OPEN.','small')
+            s.text(px+10,py+size+73,'Full160mm pin withdrawal +75mm tool envelope is required.','small')
+    s.text(40,930,'Three pin centres:SW-X(622.5,912.5), SW-Y(912.5,622.5), NW-X(622.5,11087.5); z3270.','note blue')
+    s.text(40,959,'300mm core cover comparison consumes50mm inward AND50mm outward. The110mm glass profile must move with the outside face.','note')
+    s.text(40,988,'This is a rejected finite family, not rejection of all conventional interfaces. A braced fork and one coordinated SW root/mat would be a new detail.','note red')
+    s.text(40,1032,'No native52-head solve, product approval, physical fit, all-four corner closure or owner acceptance.','sub red')
+    return s.finish()
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,required=True);args=ap.parse_args()
     c,base,h,grid,furniture,cage,floor=load();value=assess(c,base,cage,floor)
     value['physicalGeometry']=physical_geometry(c,base,h,grid,furniture)
     args.out.mkdir(parents=True,exist_ok=True);svg=drawing(c,value);ET.fromstring(svg)
     (args.out/'three-clevis-section.svg').write_text(svg)
+    plan=plan_drawing(c,value,furniture);ET.fromstring(plan)
+    (args.out/'three-clevis-plan.svg').write_text(plan)
     value['sourceSHA256']={p:digest((ROOT/p).read_bytes()) for p in list(c['sourceGitBlobs'])+['project/str/studies/three_clevis.py','project/str/studies/three-clevis-inputs.json','project/str/studies/three_clevis_test.py']}
-    value['svgSHA256']=digest(svg.encode())
+    value['svgSHA256']={'three-clevis-section.svg':digest(svg.encode()),'three-clevis-plan.svg':digest(plan.encode())}
     data=json.dumps(value,indent=2,allow_nan=False)+'\n';(args.out/'three-clevis-comparison.json').write_text(data)
     summary={k:value[k] for k in ('status','sourcePressureMinimumKN','screenNormalForceKN','placing','movement','floorLocalMat','frictionScenarioSummary','seizure','concreteEdgeActions','partialMetalMassKgPerInterface','partialThreeInterfaceMetalGKN','renewal','physicalGeometry','physicalRejections','decisions','evidence','sourceSHA256','svgSHA256')}
     print('THREE_CLEVIS_SUMMARY '+json.dumps(summary,allow_nan=False))
     print('COMPARISON_SHA256 '+digest(data.encode()))
     print('SVG_SOURCE three-clevis-section.svg '+svg.encode().hex())
+    print('SVG_SOURCE three-clevis-plan.svg '+plan.encode().hex())
 if __name__=='__main__':main()
