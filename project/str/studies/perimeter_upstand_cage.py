@@ -155,33 +155,31 @@ def transformed(path,axis):
             p['points']=[[q[1],q[0],q[2]] for q in p['points']]
         else:p['axes']=[1 if i==0 else 0 if i==1 else i for i in p['axes']]
     return out
-def closed_column_link(c,axis,z):
-    g,l=c['geometry'],c['links'];f,k=g['columnFaceRowsMm'];last=g['columnAlongStationsMm'][-1]
-    d=l['columnOutsideMm'];r=(l['columnMandrelMm']+d)/2
-    combined=(d+g['columnBarOutsideMm'])/2
-    x0,x1=f-combined,k+combined;y0,y1=f-combined,last+combined
-    cx,cy=x0+r,y0+r;tail=l['columnHookTailMm'];rise=l['columnClosureOffsetMm']
-    angle=math.acos(1-abs(rise)/(2*r));run=2*r*math.sin(angle);sgn=1 if rise<0 else -1
-    start=z+rise;mid=start+sgn*r*(1-math.cos(angle))
-    # Hook A lies one outside-diameter level away; two opposite arcs return the
-    # same bar to its body plane. No two hook arcs occupy the same cylinder.
-    first=arc([cx,start+sgn*r],r,-math.pi/2 if sgn>0 else math.pi/2,
+def closed_profile(x0,x1,y0,y1,r,tail,z,rise,diameter,nominal,identifier):
+    cx,cy=x0+r,y0+r;angle=math.acos(1-abs(rise)/(2*r));run=2*r*math.sin(angle);sgn=1 if rise<0 else -1
+    begin=z+rise
+    first=arc([cx,begin+sgn*r],r,-math.pi/2 if sgn>0 else math.pi/2,
         -math.pi/2+angle if sgn>0 else math.pi/2-angle,[0,2],y0)
-    second=arc([cx+run,start+sgn*r*(1-2*math.cos(angle))],r,
+    second=arc([cx+run,begin+sgn*r*(1-2*math.cos(angle))],r,
         math.pi/2+angle if sgn>0 else -math.pi/2-angle,
         math.pi/2 if sgn>0 else -math.pi/2,[0,2],y0)
-    a0=[cx-r/math.sqrt(2),cy+r/math.sqrt(2),start]
-    at=[a0[0]+tail/math.sqrt(2),a0[1]+tail/math.sqrt(2),start]
+    a0=[cx-r/math.sqrt(2),cy+r/math.sqrt(2),begin]
+    at=[a0[0]+tail/math.sqrt(2),a0[1]+tail/math.sqrt(2),begin]
     b0=[cx+r/math.sqrt(2),cy-r/math.sqrt(2),z]
     bt=[b0[0]+tail/math.sqrt(2),b0[1]+tail/math.sqrt(2),z]
-    primitives=[line(at,a0),arc([cx,cy],r,3*math.pi/4,1.5*math.pi,[0,1],start),
+    primitives=[line(at,a0),arc([cx,cy],r,3*math.pi/4,1.5*math.pi,[0,1],begin),
         first,second,line([cx+run,y0,z],[x1-r,y0,z]),
         arc([x1-r,y0+r],r,1.5*math.pi,2*math.pi,[0,1],z),
         line([x1,y0+r,z],[x1,y1-r,z]),arc([x1-r,y1-r],r,0,math.pi/2,[0,1],z),
         line([x1-r,y1,z],[x0+r,y1,z]),arc([x0+r,y1-r],r,math.pi/2,math.pi,[0,1],z),
         line([x0,y1-r,z],[x0,y0+r,z]),arc([cx,cy],r,math.pi,7*math.pi/4,[0,1],z),line(b0,bt)]
-    return transformed({'id':f'column-link/{axis}/{z:g}','outsideMm':d,'nominalMm':l['columnNominalMm'],
-        'primitives':primitives,'closureOffsetMm':rise},axis)
+    return {'id':identifier,'outsideMm':diameter,'nominalMm':nominal,'primitives':primitives,'closureOffsetMm':rise}
+def closed_column_link(c,axis,z):
+    g,l=c['geometry'],c['links'];f,k=g['columnFaceRowsMm'];last=g['columnAlongStationsMm'][-1]
+    d=l['columnOutsideMm'];r=(l['columnMandrelMm']+d)/2;combined=(d+g['columnBarOutsideMm'])/2
+    path=closed_profile(f-combined,k+combined,f-combined,last+combined,r,l['columnHookTailMm'],z,
+        l['columnClosureOffsetMm'],d,l['columnNominalMm'],f'column-link/{axis}/{z:g}')
+    return transformed(path,axis)
 def cross_tie(c,axis,z,along):
     g,l=c['geometry'],c['links'];f,k=g['columnFaceRowsMm'];d=l['columnOutsideMm']
     r=(l['columnMandrelMm']+d)/2;combined=(d+g['columnBarOutsideMm'])/2
@@ -227,6 +225,93 @@ def audit_path_groups(left,right,tol,limit_failures=12,matched_contacts=False):
                         if len(failures)>=limit_failures:return {'allCertified':False,'failures':failures,'pathPairs':pairs,'primitivePairs':primitive_pairs,'truncatedFailureList':True,'lockedNormalContactCertificates':contact_certificates}
     return {'allCertified':not failures,'failures':failures,'pathPairs':pairs,'primitivePairs':primitive_pairs,'truncatedFailureList':False,'lockedNormalContactCertificates':contact_certificates}
 
+def ordinary_floor_paths(c):
+    g=c['geometry'];r=(g['ordinaryFloorMandrelMm']+g['floorBarOutsideMm'])/2;out=[]
+    for axis in (0,1):
+        for layer in ('bottom','top'):
+            n=g['ordinaryFloorReturnNormalMm'][layer];z=floor_layers(c)[('X' if axis==0 else 'Y')+'-'+layer]
+            for along in g['ordinaryFloorAlongCoordinatesMm']:
+                point=lambda x,h:[x,along,h] if axis==0 else [along,x,h]
+                out.append({'id':f'ordinary-floor/{axis}/{layer}/{along:g}','nominalMm':g['floorBarNominalMm'],'outsideMm':g['floorBarOutsideMm'],
+                    'primitives':[line(point(700,z),point(n+r,z)),arc([n+r,z+r],r,1.5*math.pi,math.pi,[axis,2],along),
+                        line(point(n,z+r),point(n,g['ordinaryFloorVerticalEndZMm']))]})
+    return out
+def remap_axes(path,mapping):
+    out=copy.deepcopy(path)
+    for p in out['primitives']:
+        if p['kind']=='line':
+            transformed_points=[]
+            for q in p['points']:
+                result=[0.]*3
+                for i,j in enumerate(mapping):result[j]=q[i]
+                transformed_points.append(result)
+            p['points']=transformed_points
+        else:p['axes']=[mapping[i] for i in p['axes']]
+    return out
+def ordinary_beam_links(c):
+    g,l=c['geometry'],c['links'];d=l['beamOutsideMm'];r=(l['beamMandrelMm']+d)/2
+    combined=(d+g['beamBarOutsideMm'])/2;outward=r-(r-combined)/math.sqrt(2)
+    normals=g['beamBarNormalMm'];zs=g['beamBarZMm']
+    rows=g['ordinaryFloorAlongCoordinatesMm'];planes=[(a+b)/2 for a,b in zip(rows,rows[1:]) if (a+b)/2>1000]
+    out=[]
+    for axis in (0,1):
+        for along in planes:
+            profile=closed_profile(normals[0]-outward,normals[1]+outward,zs[0]-outward,zs[1]+outward,
+                r,l['beamHookTailMm'],along,l['beamClosureOffsetMm'],d,l['beamNominalMm'],f'beam-link/{axis}/{along:g}')
+            out.append(remap_axes(profile,[axis,2,1-axis]))
+    return out
+def audit_unique_paths(paths,tol):
+    failures=[];tested=0;locked=0
+    for i,a in enumerate(paths):
+        for b in paths[i+1:]:
+            match=(a['id'].startswith('column-link/0/3285.5') and b['id'].startswith('cross-tie/') and '/3274.5/' in b['id']) or (b['id'].startswith('column-link/0/3285.5') and a['id'].startswith('cross-tie/') and '/3274.5/' in a['id'])
+            aa,bb=paths_bounds(a),paths_bounds(b);r=(a['outsideMm']+b['outsideMm'])/2
+            zclear=max(aa[0][2]-bb[1][2],bb[0][2]-aa[1][2])
+            if match and zclear>=r-1e-9:locked+=1;continue
+            ans=audit_path_groups([a],[b],tol);tested+=ans['primitivePairs']
+            if not ans['allCertified']:
+                failures.extend(ans['failures'])
+                if len(failures)>=12:return {'allCertified':False,'failures':failures,'primitivePairs':tested,'lockedNormalContactCertificates':locked,'truncated':True}
+    return {'allCertified':not failures,'failures':failures,'primitivePairs':tested,'lockedNormalContactCertificates':locked,'truncated':False}
+
+def segment_point_distance_2d(a,b,p):
+    v=[y-x for x,y in zip(a,b)];length=sum(x*x for x in v)
+    t=max(0.,min(1.,sum((x-y)*z for x,y,z in zip(p,a,v))/length)) if length else 0.
+    return math.dist([x+t*y for x,y in zip(a,v)],p)
+def projected_point_distance(point,primitive,plane=(0,1)):
+    if primitive['kind']=='line':
+        return segment_point_distance_2d([primitive['points'][0][i] for i in plane],
+            [primitive['points'][1][i] for i in plane],point)
+    if set(primitive['axes'])==set(plane):
+        q=[point[plane.index(i)] for i in primitive['axes']]
+        a,b=sorted(primitive['anglesRad'])
+        return arc_box_distance(primitive['centre'],primitive['radiusMm'],a,b,q,0.)
+    lo,hi=primitive_bounds(primitive,0,1)
+    a=[lo[i] for i in plane];b=[hi[i] for i in plane]
+    return segment_point_distance_2d(a,b,point)
+def intended_link_main_contact_audit(c,columns,links,beam_links):
+    g=c['geometry'];bad=[];minimum=math.inf
+    for link in links:
+        for p in columns:
+            d=min(projected_point_distance(p,primitive) for primitive in link['primitives'])
+            clear=d-(link['outsideMm']+g['columnBarOutsideMm'])/2
+            minimum=min(minimum,clear)
+            if clear<-1e-7:bad.append({'linkId':link['id'],'columnPointMm':p,'nominalCylinderClearMm':clear})
+    beam_min=math.inf
+    for link in beam_links:
+        axis=int(link['id'].split('/')[1])
+        for n in g['beamBarNormalMm']:
+            for z in g['beamBarZMm']:
+                d=min(projected_point_distance([n,z],primitive,(axis,2)) for primitive in link['primitives'])
+                clear=d-(link['outsideMm']+g['beamBarOutsideMm'])/2
+                beam_min=min(beam_min,clear)
+                if clear<-1e-7:bad.append({'linkId':link['id'],'beamPointMm':[n,z],'nominalCylinderClearMm':clear})
+    return {'allNominalContactsNonpenetrating':not bad,'failures':bad,
+        'minimumColumnContactClearMm':minimum,'minimumBeamContactClearMm':beam_min,
+        'commonJigAndActualSurfaceContactConstraintsRequired':True,
+        'independentNormalMotionThroughLinkedBarNotPermitted':True,
+        'fieldPhysicalAcceptanceEarned':False}
+
 def material_bounds(c):
     g,m=c['geometry'],c['materials'];d=g['floorBarNominalMm'];f=m['reinforcementComparisonMPa']
     ab=(g['floorPitchMm']-2*g['independentBarSettingMm'])/2
@@ -237,8 +322,15 @@ def material_bounds(c):
     r=(g['ordinaryFloorMandrelMm']+g['floorBarOutsideMm'])/2
     ordinary=[]
     for name,z in layers.items():
-        tail=end-z-r;length=math.pi*r/2+max(0.,tail)
+        tail=end-z-r
+        n=g['ordinaryFloorReturnNormalMm']['bottom' if name.endswith('bottom') else 'top']
+        horizontal=max(0.,g['ordinaryBandWidthMm']-n-r)
+        angle=(2*math.pi-math.acos((g['ordinaryBandWidthMm']-n-r)/r)-math.pi) if n+r>g['ordinaryBandWidthMm'] else math.pi/2
+        arc_inside=r*angle
+        length=horizontal+arc_inside+max(0.,tail)
         ordinary.append({'layer':name,'straightAfterBendMm':tail,
+            'horizontalStraightInsideActualBandMm':horizontal,'curvedLengthInsideActualBandMm':arc_inside,
+            'basicTensionBondLengthInsideBandMm':length,'compressionAnchorageQualified':False,
             'minimumStandardBendTailMm':g['ordinaryFloorHookMinTailFactor']*d,
             'standardBendTailFits':tail>=g['ordinaryFloorHookMinTailFactor']*d,
             'poorBondNoShapeReductionStressCapMPa':length*4*m['poorBondMPa']/d,
@@ -263,6 +355,10 @@ def material_bounds(c):
         '360GeometryIsAnUnselectedComparison':True}
 def assess(c,base,full_geometry=False):
     g=c['geometry'];col=column_points(c);beam=beam_paths(c);floors=corner_floor_paths(c)
+    contact=c['links']['matchedJointContactPlanesZMm']
+    expected_cross=g['beamBarZMm'][0]+(g['beamBarOutsideMm']+c['links']['columnOutsideMm'])/2
+    if not g['commonNodeJigRequired'] or not c['links']['matchedContactsRequireLockedNormalSeparation'] or contact!={'beamBottom':g['beamBarZMm'][0],'crossTie':expected_cross,'westHoop':expected_cross+c['links']['columnOutsideMm']}:
+        raise ValueError('Exact tied-cage normal-separation constraints required; no independent-Z contact waiver')
     if base['slabZMm']!=g['slabZMm'] or base['firstFFLMm']!=g['FIRSTMm']:raise ValueError('Changed actual source levels')
     if g['comparisonCoreMm']!=300 or g['ordinaryBandWidthMm']!=300 or g['ordinaryBandDepthMm']!=350:raise ValueError('This exact unselected300x350 source family only')
     if any(c['scope'][k] is not False for k in ('nativeHouseSolved','old96DemandTransferred','wholeCagePlacingAccepted','completeResistanceAccepted','productAccepted','ownerAccepted','houseAccepted')):raise ValueError('No approval or demand injection')
@@ -283,9 +379,10 @@ def assess(c,base,full_geometry=False):
             point=[min(700,max(n,p[axis])),along] if axis==0 else [along,min(700,max(n,p[axis]))]
             floor_col.append({'floorId':bar['id'],'columnXYMm':p,
                 'adverseProjectedCylinderClearMm':distance_box_point(point,p,tol)-(bar['outsideMm']+g['columnBarOutsideMm'])/2})
+    ordinary=ordinary_floor_paths(c);beam_links=ordinary_beam_links(c)
     links,schedules=link_paths(c)
     link_beam=audit_path_groups(links,beam,tol,matched_contacts=True) if full_geometry else {'executed':False}
-    link_floor=audit_path_groups(links,floors,tol) if full_geometry else {'executed':False}
+    link_floor=audit_path_groups(links,floors+ordinary,tol) if full_geometry else {'executed':False}
     layers=floor_layers(c);inter=layers['Y-top']-layers['Y-bottom']-g['floorBarOutsideMm']-tol
     return {'schema':'str-perimeter-upstand-cage-checkpoint/1','status':'EXACT CORNER PROFILES;WHOLE CAGE/ORDINARY EDGE ANCHORAGE NOT ACCEPTED',
         'geometry':g,'columnBarCoordinatesLocalMm':col,'columnBarsNominalCount':len(col),
@@ -299,13 +396,17 @@ def assess(c,base,full_geometry=False):
         'beamPaths':beam,'cornerFloorPaths':floors,'materialBounds':material_bounds(c),
         'fullThreeDimensionalGeometryAuditExecuted':full_geometry,
         'beamFloorThreeDimensionalBoxAudit':beam_floor_audit(c,beam,floors) if full_geometry else {'executed':False},
-        'columnLinkPaths':links,'linkSchedulesZMm':schedules,
+        'columnLinkPaths':links,'linkSchedulesZMm':schedules,'ordinaryFloorPaths':ordinary,'ordinaryBeamLinkPaths':beam_links,
+        'ordinaryBeamLinksAgainstFloorAudit':audit_path_groups(beam_links,floors+ordinary,tol) if full_geometry else {'executed':False},
+        'allLinksAgainstEachOtherAudit':audit_unique_paths(links+beam_links,tol) if full_geometry else {'executed':False},
+        'intendedLinkMainContacts':intended_link_main_contact_audit(c,col,links,beam_links) if full_geometry else {'executed':False},
+        'ordinaryFloorAgainstBeamAudit':beam_floor_audit(c,beam,ordinary) if full_geometry else {'executed':False},
         'linksAgainstBeamThreeDimensionalAudit':link_beam,'linksAgainstFloorThreeDimensionalAudit':link_floor,
         'maximumColumnLinkFamilyPitchMm':max(b-a for rows in schedules.values() for a,b in zip(rows,rows[1:])),
         'sourceCornerMirrors':[{'corner':r['corner'],'originHeadXYMm':r['originXYMm'],'signXY':r['signXY'],
             'outerFaceXYMm':[r['originXYMm'][i]-70*r['signXY'][i] for i in range(2)],'localCoordinatesMeasuredInwardFromOuterFace':True} for r in base['corners']],
         'newInnerMasonrySeatUsed':False,'nativeHouseSolveExecuted':False,
-        'unclosed':['All H10/H8 link closures, cross-ties, beam laps and full cage-cylinder audit remain to be completed',
+        'unclosed':['Beam laps, bars beyond the local node window and full resistance remain unqualified; complete all listed geometry audits before placing selection',
             'The old160mandrel top tail fails5phi;140 now fits geometrically but its finite bond/bearing force capacity requires actual new edge demands',
             'No current signed whole-house force envelope, beam/column six-component resistance or floor stress-convergence proof exists for this profile',
             'Factory rib envelopes/common jig and physical installation/material acceptance unearned',
@@ -317,7 +418,7 @@ def main():
     result=assess(c,base,full_geometry=True);p.out.mkdir(parents=True,exist_ok=True)
     result['sourceSHA256']={name:source.sha((D/name).read_bytes()) for name in ('perimeter_upstand_cage.py','perimeter-upstand-cage-inputs.json','perimeter_upstand_cage_test.py')}
     data=json.dumps(result,indent=2,allow_nan=False)+'\n';(p.out/'perimeter-upstand-cage-checkpoint.json').write_text(data)
-    print('UPSTAND_CAGE_SUMMARY '+json.dumps({k:v for k,v in result.items() if k not in ('beamPaths','cornerFloorPaths','columnLinkPaths')}))
+    print('UPSTAND_CAGE_SUMMARY '+json.dumps({k:v for k,v in result.items() if k not in ('beamPaths','cornerFloorPaths','columnLinkPaths','ordinaryFloorPaths','ordinaryBeamLinkPaths')}))
     print('CHECKPOINT_SHA256 '+source.sha(data.encode()))
     print('JSON_SOURCE perimeter-upstand-cage-checkpoint.json '+data.encode().hex())
 if __name__=='__main__':main()

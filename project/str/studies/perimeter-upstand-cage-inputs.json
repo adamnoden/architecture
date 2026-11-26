@@ -70,7 +70,18 @@
       "bottom": 240,
       "top": 150
     },
-    "singleMonolithicPourRequiredForGoodBond": true
+    "singleMonolithicPourRequiredForGoodBond": true,
+    "ordinaryFloorAlongCoordinatesMm": [
+      977,
+      1050,
+      1125,
+      1200,
+      1275,
+      1350,
+      1425,
+      1500,
+      1575
+    ]
   },
   "links": {
     "columnNominalMm": 10,

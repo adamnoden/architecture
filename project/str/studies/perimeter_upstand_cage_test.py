@@ -74,8 +74,23 @@ class CageControls(unittest.TestCase):
         self.assertLess(bad['adverseSurfaceClearMm'],0)
         self.assertTrue(all(abs(v)<=2 for v in bad['relativeShiftMm']))
     def test_full_node_has_no_unclassified_bar_collisions(self):
-        for key in ('beamFloorThreeDimensionalBoxAudit','linksAgainstBeamThreeDimensionalAudit','linksAgainstFloorThreeDimensionalAudit'):
+        for key in ('beamFloorThreeDimensionalBoxAudit','linksAgainstBeamThreeDimensionalAudit','linksAgainstFloorThreeDimensionalAudit','ordinaryBeamLinksAgainstFloorAudit','allLinksAgainstEachOtherAudit','ordinaryFloorAgainstBeamAudit'):
             self.assertTrue(self.r[key]['allCertified'],str((key,self.r[key]['failures'][:2])))
+    def test_tied_contacts_still_reject_cylinder_intrusion(self):
+        r=self.r['intendedLinkMainContacts']
+        self.assertTrue(r['allNominalContactsNonpenetrating'],str(r['failures'][:2]))
+        links,levels=p.link_paths(self.c)
+        points=p.column_points(self.c);points[0]=[points[0][0]-5,points[0][1]-5]
+        bad=p.intended_link_main_contact_audit(self.c,points,links,[])
+        self.assertFalse(bad['allNominalContactsNonpenetrating'])
+    def test_locked_normal_contact_is_explicit_and_not_a_waiver(self):
+        self.assertGreater(self.r['linksAgainstBeamThreeDimensionalAudit']['lockedNormalContactCertificates'],0)
+        self.assertGreater(self.r['allLinksAgainstEachOtherAudit']['lockedNormalContactCertificates'],0)
+        for field in ('commonNodeJigRequired',):
+            c=copy.deepcopy(self.c);c['geometry'][field]=False
+            with self.assertRaises(ValueError):p.assess(c,self.base)
+        c=copy.deepcopy(self.c);c['links']['matchedJointContactPlanesZMm']['crossTie']-=1
+        with self.assertRaises(ValueError):p.assess(c,self.base)
     def test_no_complete_cage_or_demand_acceptance_injection(self):
         c=copy.deepcopy(self.c);c['scope']['wholeCagePlacingAccepted']=True
         with self.assertRaises(ValueError):p.assess(c,self.base)
