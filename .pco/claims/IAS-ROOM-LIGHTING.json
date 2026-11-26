@@ -9,8 +9,8 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T16:34:46.000Z",
-  "expiresAt": "2026-11-26T17:19:46.000Z",
+  "heartbeatAt": "2026-11-26T17:04:06.000Z",
+  "expiresAt": "2026-11-26T17:49:06.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "4c68433b source protected. Actual136/136 and strict producers/types pass;33/34 focused tests, final stale moment expectation identified. Full260mm fixture and removable clips preserved.",
-    "next": "Correct exact moment assertion and prove prerequisite withholding; integrate owning outputs and complete electrical/renewal evidence.",
-    "blocker": "Full focused suite not yet green. Product/material, articulation, physical and owner appearance acceptance remain unearned."
+    "evidence": "5fa4d076 clean tested source:35focused+7coordination/types/audit0, actual136 renewal and invalidation pass. Northview separate2de64746 proof pending. Root combined fullhealth45861260587 running.",
+    "next": "Join exact north source when earned; strict producers then required complete PR CI/publication on final head. Inspect actual derived north image.",
+    "blocker": "No product/articulation/photometric/material/physical or owner appearance approval. Full repository health and fresh canonical preflight still mandatory."
   },
   "pr": 1629
 }
