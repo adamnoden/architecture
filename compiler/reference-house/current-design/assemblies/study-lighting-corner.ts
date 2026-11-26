@@ -1,5 +1,11 @@
+import { segmentDistance, segmentBoxDistance } from '../../../../project/had/studies/service-interface-geometry.mjs'
 /** Local dead-mock-up geometry. Installed circuit, substrate/anchor and material acceptance are separate. */
+export interface LocalHomeRunChoices {
+  readonly bayWidthMm: number; readonly stationOffsetXMm: number; readonly tubeWallMm: number; readonly routeGapMm: number
+  readonly lowerPortRearInsetMm: number; readonly maximumClipSpanMm: number; readonly clipEndInsetMm: number
+}
 export interface LightingCornerDetailInput {
+  readonly homeRuns: LocalHomeRunChoices
   readonly bayPlanMm: readonly number[]
   readonly jointMm: number; readonly totalDepthMm: number; readonly fixedBoundaryMm: number; readonly decorativeFaceMm: number
   readonly bottomZMm: number; readonly topZMm: number
@@ -137,6 +143,7 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
       topology: ['Room supply interface (unconnected)', 'Three local side-entry branches; common riser/depth transitions unresolved', 'Fixed socket island and ordinary switch island', 'Factory-enclosed fixed luminaire terminals'],
       switching: 'Ordinary switch in fixed island controls arrival light; dedicated floor-lamp socket control remains manual. Fixed light and sockets must each be identified and locked dead for common service work.',
       limitation: 'Local bend/collar swept-envelope geometry only. Distinct branch depth axes are not a connected common riser; vertical trunk, junctions and depth transitions remain unresolved. Current house has no bound Study feeder/protection/cable specification; no current upstream connection, cable rating, segregation, bend/product acceptance or energisation is inferred.' },
+    localHomeRunComparison: deriveLocalHomeRuns(input),
     infill, firstRelease: { withdrawn, parked, sweepPlanMm: sweepPlan, conflictingOccupiedIds: conflicts,
       cradle: { planMm: rest, supportedModuleBottomZMm: c.cradleBottomZMm, jawClearWidthRequirementMm: width, positivelyRetainedUpright: true,
         demandKg: input.moduleMassLimitKg, capacityAndFloorSupportAccepted: false },
@@ -152,4 +159,125 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
     evidence: { prototypeGeometryOnly: true, anchorsAccepted: false, installedCircuitAccepted: false, liveReplacementPermitted: false,
       manufacturerBracketHolePatternConfirmed: false, physicalTrialComplete: false, materialAdmission: false, completeModuleMassQualified: false }, issues,
   } as const
+}
+
+/** Three conventional independent home runs eliminate the splitter and depth offset.
+ * Ports are authored interface requirements, not qualified HGS06 connections.
+ * Arc chords are checked with an outward sagitta bound; no point-only clearance pass.
+ */
+function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
+  const h = input.homeRuns, c = input.construction
+  const keys = ['bayWidthMm', 'stationOffsetXMm', 'tubeWallMm', 'routeGapMm', 'lowerPortRearInsetMm', 'maximumClipSpanMm', 'clipEndInsetMm']
+  if (!h || Object.keys(h).length !== keys.length || keys.some(k => !Object.hasOwn(h, k))
+    || !Object.entries(h).every(([key,n]) => Number.isFinite(n) && (key === 'stationOffsetXMm' || n > 0))
+    || h.tubeWallMm * 2 >= c.containmentOutsideDiameterMm) throw new TypeError('IAS_LIGHTING_HOME_RUN_INPUT_INVALID')
+  const [,,right,north] = input.bayPlanMm, left = right - h.bayWidthMm, cx = (left + right) / 2 + h.stationOffsetXMm
+  const coreY = input.bayPlanMm[1] + input.totalDepthMm, tubeR = c.containmentOutsideDiameterMm / 2
+  const collarR = c.entryCollarOutsideDiameterMm / 2, pitch = 2 * tubeR + h.routeGapMm
+  const faceBack = input.totalDepthMm - input.decorativeFaceMm
+  const carrierDepth = [faceBack - c.steelThicknessMm, faceBack] as const
+  const carrierXZ = [cx - input.moduleSizeMm[0] / 2, input.moduleCentreZMm - input.moduleSizeMm[1] / 2,
+    cx + input.moduleSizeMm[0] / 2, input.moduleCentreZMm + input.moduleSizeMm[1] / 2] as const
+  const z = [input.socketCentreZMm, 1100, input.moduleCentreZMm]
+  const boxes = z.map((centre, i) => {
+    const front = i === 2 ? carrierDepth[0] - c.steelThicknessMm : input.totalDepthMm
+    const rear = front - input.boxSizeMm[2]
+    const axis = i === 2 ? (rear + front) / 2 : rear + h.lowerPortRearInsetMm
+    return { id: `IAS/STUDY/local-home-runs/enclosure/${i}`, xMm: [cx - input.boxSizeMm[0] / 2, cx + input.boxSizeMm[0] / 2],
+      zMm: [centre - input.boxSizeMm[1] / 2, centre + input.boxSizeMm[1] / 2], depthMm: [rear, front],
+      entryAxisCoreDepthRequirementMm: axis, actualEntryCoordinatesQualified: false, ordinaryAccessoryFaceRecessMm: i === 2 ? null : 0 }
+  })
+  const routeIssues: string[] = []
+  const routes = boxes.map((box, i) => {
+    const radius = c.bendCentrelineRadiusMm + i * pitch, tangentX = box.xMm[0]! - c.entryCollarAxialLengthMm
+    const riserX = tangentX - radius, bendStartZ = z[i]! - radius, d = box.entryAxisCoreDepthRequirementMm
+    const start = [riserX, coreY - d, input.bottomZMm], bendStart = [riserX, coreY - d, bendStartZ]
+    const count = Math.ceil(Math.PI * radius / 4), angleStep = Math.PI / (2 * count)
+    const sagitta = radius * (1 - Math.cos(angleStep / 2))
+    const arc = Array.from({length: count + 1}, (_, j) => {
+      const a = j * angleStep
+      return [tangentX - radius * Math.cos(a), coreY - d, bendStartZ + radius * Math.sin(a)]
+    })
+    const end = [tangentX, coreY - d, z[i]!], entry = [box.xMm[0]!, coreY - d, z[i]!]
+    // Exact endpoints retain graph continuity despite floating point cosine(pi/2).
+    arc[0] = bendStart; arc[arc.length - 1] = end
+    const path = [start, ...arc]
+    const segments = path.slice(1).map((b, j) => ({ a: path[j]!, b, radiusMm: tubeR,
+      errorMm: j === 0 ? 0 : sagitta, kind: j === 0 ? 'straight' : 'bend' }))
+    const collar = { a: end, b: entry, radiusMm: collarR, errorMm: 0, kind: 'collar' }
+    const straightLengthMm = bendStartZ - input.bottomZMm
+    const intervals = Math.max(1, Math.ceil((straightLengthMm - 2 * h.clipEndInsetMm) / h.maximumClipSpanMm))
+    const clips = Array.from({length: intervals + 1}, (_, j) => ({ id: `IAS/STUDY/local-home-runs/${i}/clip/${j}`,
+      pointMm: [riserX, coreY - d, input.bottomZMm + h.clipEndInsetMm + j / intervals * (straightLengthMm - 2 * h.clipEndInsetMm)],
+      independentlyFixed: true, supportResistanceQualified: false }))
+    const reservesMm = { left: riserX - tubeR - left - input.jointMm,
+      rear: d - Math.max(tubeR, collarR) - input.fixedBoundaryMm - c.steelThicknessMm - input.jointMm,
+      tubeFront: faceBack - d - tubeR - input.jointMm,
+      collarFront: (i === 2 ? carrierDepth[0] : input.totalDepthMm) - d - collarR - input.jointMm,
+      portRear: d - collarR - box.depthMm[0]! - input.jointMm, portFront: box.depthMm[1]! - d - collarR - input.jointMm,
+      straightForClips: straightLengthMm - 2 * h.clipEndInsetMm,
+      finalUnsupportedArc: h.maximumClipSpanMm - h.clipEndInsetMm - Math.PI * radius / 2 - c.entryCollarAxialLengthMm }
+    const issues = Object.entries(reservesMm).filter(([,v]) => v < -1e-9).map(([key]) => `home-run-${i}-${key}-rejected`)
+    routeIssues.push(...issues)
+    return { id: `IAS/STUDY/local-home-runs/${i}`, sourceInterfaceId: `IAS/STUDY/local-home-runs/source/${i}`,
+      enclosureId: box.id, sourcePointMm: start, actualHouseSupplyConnected: false,
+      pathMm: path, segments, collar, clips, bend: { radiusMm: radius, angleDegrees: 90, startMm: bendStart, endMm: end, centreMm: [tangentX,coreY-d,bendStartZ], checkedChordCount: count,
+        startUnitTangent: [0,0,1], endUnitTangent: [1,0,0], chordSagittaBoundMm: sagitta },
+      straightLengthMm, bendLengthMm: Math.PI * radius / 2, tubeLengthMm: straightLengthMm + Math.PI * radius / 2,
+      collarLengthMm: c.entryCollarAxialLengthMm, reservesMm, issues }
+  })
+  const separations = routes.flatMap((a, i) => routes.slice(i + 1).map(b => ({ routeIds: [a.id,b.id],
+    reserveMm: Math.min(...a.segments.concat(a.collar).flatMap(sa => b.segments.concat(b.collar).map(sb =>
+      segmentDistance(sa.a,sa.b,sb.a,sb.b) - sa.radiusMm - sb.radiusMm - sa.errorMm - sb.errorMm - 2 * input.jointMm))) })))
+  for (const [i, row] of separations.entries()) if (row.reserveMm < -1e-9) routeIssues.push(`home-run-pair-${i}-rejected`)
+  const hardLands = [cx - input.moduleSizeMm[0] / 2 + c.boltEdgeMm, cx + input.moduleSizeMm[0] / 2 - c.boltEdgeMm]
+    .flatMap(x => [carrierXZ[1] + c.boltEndInsetMm, carrierXZ[3] - c.boltEndInsetMm].map(z => ({
+      id: `hard-land/${x}/${z}`, box: [x - c.railWidthMm/2, coreY - carrierDepth[1], z - c.railWidthMm/2,
+        c.railWidthMm, carrierDepth[1], c.railWidthMm] })))
+  const obstacles = [
+    { id: 'independent-carrier-reserved-volume', box: [carrierXZ[0], coreY - carrierDepth[1], carrierXZ[1],
+      carrierXZ[2]-carrierXZ[0], carrierDepth[1]-carrierDepth[0], carrierXZ[3]-carrierXZ[1]] }, ...hardLands,
+    ...boxes.map(box => ({ id: box.id, box: [box.xMm[0]!,coreY-box.depthMm[1]!,box.zMm[0]!,
+      box.xMm[1]!-box.xMm[0]!,box.depthMm[1]!-box.depthMm[0]!,box.zMm[1]!-box.zMm[0]!] })),
+  ]
+  const obstacleChecks = routes.flatMap(route => obstacles.filter(o => o.id !== route.enclosureId).map(o => ({
+    routeId: route.id, obstacleId: o.id, reserveMm: Math.min(...route.segments.concat(route.collar).map(s =>
+      segmentBoxDistance(s.a,s.b,o.box)-s.radiusMm-s.errorMm-2*input.jointMm)) })))
+  for (const row of obstacleChecks) if (row.reserveMm < -1e-9) routeIssues.push(`${row.routeId}-intersects-${row.obstacleId}`)
+  const bayPlanMm = [left,input.bayPlanMm[1],right,north]
+  const firstRestPlanMm = [left,input.firstRestPlanMm[1],right,input.firstRestPlanMm[3]]
+  const parkedBackY=input.firstRestPlanMm[3]!-c.cradleBackMarginMm
+  const parkedModulePlanMm=[carrierXZ[0],parkedBackY-input.completeProjectionMm,carrierXZ[2],parkedBackY]
+  const fieldReservesMm={ carrierLeft:carrierXZ[0]-left-input.jointMm, carrierRight:right-carrierXZ[2]-input.jointMm,
+    boxesLeft:Math.min(...boxes.map(b=>b.xMm[0]!))-left-input.jointMm, boxesRight:right-Math.max(...boxes.map(b=>b.xMm[1]!))-input.jointMm,
+    islandsLeft:cx-c.fixedIslandWidthMm/2-left-input.jointMm, islandsRight:right-cx-c.fixedIslandWidthMm/2-input.jointMm,
+    restLeft:parkedModulePlanMm[0]!-firstRestPlanMm[0]!-input.jointMm, restRight:firstRestPlanMm[2]!-parkedModulePlanMm[2]!-input.jointMm,
+    restFront:parkedModulePlanMm[1]!-firstRestPlanMm[1]!-input.jointMm, restBack:firstRestPlanMm[3]!-parkedModulePlanMm[3]!-input.jointMm }
+  for(const [key,value] of Object.entries(fieldReservesMm)) if(value < -1e-9) routeIssues.push(`home-run-field-${key}-rejected`)
+  const moduleSweepPlanMm = [carrierXZ[0], Math.min(input.firstRestPlanMm[3]-c.cradleBackMarginMm-input.completeProjectionMm,
+    input.bayPlanMm[1]-input.completeProjectionMm-input.normalDrawMm), carrierXZ[2], input.bayPlanMm[1]]
+  const occupiedConflicts = input.occupied.filter(([,b]) => overlap(moduleSweepPlanMm,b) || overlap(firstRestPlanMm,b)).map(([id])=>id)
+  if (occupiedConflicts.length) routeIssues.push('home-run-candidate-occupied-conflict')
+  const tubeLengthMm = routes.reduce((sum,r)=>sum+r.tubeLengthMm,0), collarLengthMm = routes.reduce((sum,r)=>sum+r.collarLengthMm,0)
+  const tubeMassKg = Math.PI * (tubeR**2-(tubeR-h.tubeWallMm)**2)*tubeLengthMm/1e9*c.steelDensityKgM3Comparison
+  const collarGrossStockKg = Math.PI * collarR**2 * collarLengthMm/1e9*c.steelDensityKgM3Comparison
+  return { schema:'ias-local-home-runs/1', selection:'unselected-development-direction', choices:h,
+    status:routeIssues.length?'GEOMETRY_REJECTED':'DECLARED_EXTERNAL_CONTAINMENT_CONTINUOUS', bayPlanMm, firstRestPlanMm, finishBottomZMm:input.bottomZMm-input.jointMm,
+    independentRouteSettingMm:input.jointMm, pairSettingMm:2*input.jointMm,
+    carrierXZMm:carrierXZ, carrierDepthMm:carrierDepth, parkedModulePlanMm, fieldReservesMm, moduleSweepPlanMm, occupiedConflicts, boxes,
+    routes:routes.map(({segments:_checkedSegments,pathMm:_checkedPoints,...route})=>({...route,straight:{startMm:route.sourcePointMm,endMm:route.bend.startMm}})),
+    separations, obstacleChecks, issues:routeIssues, sourceInterfaceIds:routes.map(r=>r.sourceInterfaceId),
+    topology:'Three separate conventional home runs: socket, ordinary switch and fixed light. No in-corner splitter, shared trunk, through-device route or depth transition.',
+    architecturalConsequence:{ additionalBayWidthMm:h.bayWidthMm-(input.bayPlanMm[2]!-input.bayPlanMm[0]!),
+      carrierShiftXMm:cx-(input.bayPlanMm[0]!+input.bayPlanMm[2]!)/2, accessoryRecessMm:0,
+      addedConservativeFloorTerritoryM2:(h.bayWidthMm-(input.bayPlanMm[2]!-input.bayPlanMm[0]!))*(north-input.bayPlanMm[1]!)/1e6 },
+    stock:{ authority:'Known tube and gross collar stock only; cases, rails, clips, fittings, covers and wiring excluded. Not a complete installed mass.',
+      tubeLengthMm,collarLengthMm,tubeMassKg,collarGrossStockKg,totalKnownContainmentStockKg:tubeMassKg+collarGrossStockKg,
+      clipCount:routes.reduce((sum,r)=>sum+r.clips.length,0),densityKgM3Comparison:c.steelDensityKgM3Comparison },
+    evidence:{ geometricContinuity:!routeIssues.length, actualBoxPortsQualified:false, connectorsAndToolsQualified:false,
+      actualDeviceTerminalsConnected:false, installedCircuitAccepted:false, materialAdmission:false, physicalTrialComplete:false, ownerAcceptance:false },
+    limitations:['The three source ports at the skirt top are explicit unconnected interfaces, not an invented supply or three selected circuits.',
+      'Port coordinates are authored requirements within referenced box envelopes; current HGS06 sheet does not qualify them.',
+      'Tube walls and gross collars are stock comparisons; actual unions, clips, earthing, thermal/protective design and material admission remain unqualified.',
+      'Actual connector release, tools, temporary support and whole-enclosure renewal require qualification before a trial-ready assembly claim.'] }
 }

@@ -1,3 +1,5 @@
+import {readGroundPocketSettings} from './structural-ground-pocket-settings.js'
+import {runGroundPocketComparison} from './structural-ground-pockets.js'
 import { createHash } from 'node:crypto'
 import { readdirSync, readFileSync } from 'node:fs'
 import { sha256SemanticFingerprint, stableJsonStringify } from '../../core/identity.js'
@@ -49,6 +51,7 @@ const additionalImplementationFiles = [
   'project/str/studies/vertical_rc_floor.py',
   'project/str/studies/vertical_floor_plate.py',
   'project/str/studies/vertical_floor_numerics.py',
+  'project/str/studies/service_room_ground.py',
   'project/str/studies/vertical_floor_views.py',
   'project/str/studies/vertical-floor-requirements.txt',
   'project/str/studies/distributed_floor_compatibility.py',
@@ -56,8 +59,8 @@ const additionalImplementationFiles = [
   'project/str/studies/distributed_floor_views.py',
   'project/mat/studies/ring-roof-pitch-case.py',
 ] as const
-const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit', 'studyLighting'] as const
-const sourceDatumStages = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection',
+const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection', 'groundPocketLoads', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit', 'studyLighting'] as const
+const sourceDatumStages = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection', 'groundPocketLoads',
   'retainedComponents', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope',
   'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit', 'studyLighting'] as const
 type Settings = Readonly<Record<string, unknown>>
@@ -203,6 +206,7 @@ function admitStages(value: unknown): EngineeringStages {
     ...(Object.hasOwn(value, 'joinedRcFloor') ? { joinedRcFloor: settings(value.joinedRcFloor, joinedRcFloorStageFields, 'joined RC floor') } : {}),
     ...(Object.hasOwn(value, 'verticalRcFloor') ? { verticalRcFloor: settings(value.verticalRcFloor, verticalRcFloorStageFields, 'vertical RC floor') } : {}),
     ...(Object.hasOwn(value, 'masonryFrame') ? { masonryFrame: settings(value.masonryFrame, masonryFrameStageFields, 'masonry frame') } : {}),
+    ...(Object.hasOwn(value, 'groundPocketLoads') ? { groundPocketLoads: readGroundPocketSettings(value.groundPocketLoads) } : {}),
     ...(Object.hasOwn(value, 'floorSection') ? { floorSection: settings(value.floorSection, floorSectionStageFields, 'floor section') } : {}),
     ...(Object.hasOwn(value, 'upperRoofBearing') ? { upperRoofBearing: settings(value.upperRoofBearing, upperRoofBearingStageFields, 'upper roof bearing') } : {}),
     ...(Object.hasOwn(value, 'retainedComponents') ? { retainedComponents: settings(value.retainedComponents, retainedFields, 'retained components') } : {}),
@@ -239,6 +243,7 @@ export async function compileEngineeringDocument(input: unknown) {
   const stages = admitStages(input.stages)
   if (stages.studyLighting && !stages.studyRoomKit) throw new Error('Study lighting requires the sole explicit saved studyRoomKit stage')
   if (stages.studyLighting) admitStudyLightingCase({ schema: 'ias-study-lighting-case/1', units: 'mm', ...stages.studyLighting })
+  if(stages.groundPocketLoads&&(!stages.floorSection||!stages.inletSourceEnvelope||!stages.groundSection))throw Error('Ground pocket loads require sole saved floorSection, inletSourceEnvelope and groundSection stages')
   if (stages.floorSection && (!stages.upperRoofBearing || typeof stages.floorSection.thicknessMm !== 'number' || !Number.isFinite(stages.floorSection.thicknessMm) || stages.floorSection.thicknessMm < 200 || stages.floorSection.thicknessMm > 250)) throw new Error('Floor section requires sole saved upperRoofBearing controls and explicit finite thickness 200..250 mm')
   if (stages.upperRoofBearing && !stages.masonryFrame) throw new Error('Upper roof bearing requires the sole saved masonryFrame controls and distributed floor')
   if (stages.houseVerticalProfile && !stages.groundSection) throw new Error('The house vertical profile requires the sole saved groundSection stage')
@@ -257,6 +262,7 @@ export async function compileEngineeringDocument(input: unknown) {
     masonryFrame?: Awaited<ReturnType<typeof compile.masonryFrameCase>>
     upperRoofBearing?: Awaited<ReturnType<typeof compile.upperRoofBearingCase>>
     floorSection?: Awaited<ReturnType<typeof compile.floorSectionCase>>
+    groundPocketLoads?: ReturnType<typeof runGroundPocketComparison>
     retainedComponents?: Awaited<ReturnType<typeof compile.retainedComponentCase>>
     groundSection?: Awaited<ReturnType<typeof compile.groundSectionCase>>
     houseVerticalProfile?: Awaited<ReturnType<typeof compile.houseVerticalProfileCase>>
@@ -284,6 +290,8 @@ export async function compileEngineeringDocument(input: unknown) {
       controls: object(settings) && Object.keys(settings).length ? Object.keys(settings).sort().map(key => `stages.${stage}.${key}`) : ['design'],
       dependsOn: ['design', 'bindings.disciplines', 'bindings.implementations', ...upstream] })
   }
+  let savedFloor:ReturnType<typeof savedFloorSectionCase>|undefined
+  let savedInlet:unknown
   const base = await compileCurrentDesignBundle(resolved.design)
   recordResult('plans', {}, base.plans)
   recordResult('occupiedServices', {}, base.occupiedServices)
@@ -396,7 +404,8 @@ export async function compileEngineeringDocument(input: unknown) {
   }
   if (stages.floorSection) {
     const request = await compile.readFloorSectionCase()
-    engineering.floorSection = await compile.floorSectionCase(savedFloorSectionCase(request.section, stages.floorSection, sharedUpperRoofBearing!))
+    savedFloor=savedFloorSectionCase(request.section, stages.floorSection, sharedUpperRoofBearing!)
+    engineering.floorSection = await compile.floorSectionCase(savedFloor)
     recordResult('floorSection', stages.floorSection, engineering.floorSection, ['distributedFloor', 'stages.masonryFrame', 'stages.upperRoofBearing'])
   }
   if (stages.retainedComponents) {
@@ -541,8 +550,9 @@ export async function compileEngineeringDocument(input: unknown) {
   if (stages.inletSourceEnvelope) {
     const request = await compile.readInletSourceEnvelopeCase()
     const {splitPlantRoom,...sourceSettings}=stages.inletSourceEnvelope,{splitPlantRoom:_boundCurrentPlantRoom,...baseCase}=request.sourceEnvelope
-    engineering.inletSourceEnvelope = await compile.inletSourceEnvelopeCase({ ...baseCase,
-      ...(splitPlantRoom?{splitPlantRoom:admitSplitPlantRoomChoice(splitPlantRoom)}:{}),settings: { ...request.sourceEnvelope.settings, ...sourceSettings } }, engineering.groundSection, engineering.houseVerticalProfile)
+    savedInlet={ ...baseCase,
+      ...(splitPlantRoom?{splitPlantRoom:admitSplitPlantRoomChoice(splitPlantRoom)}:{}),settings: { ...request.sourceEnvelope.settings, ...sourceSettings } }
+    engineering.inletSourceEnvelope = await compile.inletSourceEnvelopeCase(savedInlet, engineering.groundSection, engineering.houseVerticalProfile)
     recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope, [...(engineering.groundSection?['groundSection']:[]),...(engineering.houseVerticalProfile?['houseVerticalProfile']:[])])
     const reason = 'The source-envelope comparison authors boundary restrictions and a whole internal service-hub replacement. Neither the retained occupied network nor earlier inlet/cabinet outputs include that source or room; their former fault and operating claims are withheld.'
     const previousStages = new Set(['occupiedServices', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletRemovals', 'inletCovers', 'inletAssembly'])
@@ -557,6 +567,11 @@ export async function compileEngineeringDocument(input: unknown) {
     }
     coordinationDiagnostics.push({ code: 'INLET_SOURCE_AND_ROOM_REPLAN_NOT_COORDINATED', state: 'uncoordinated-comparisons',
       stages: ['inletSourceEnvelope', ...affected.map(row => row.stage)], message: reason })
+  }
+  if(stages.groundPocketLoads){
+    engineering.groundPocketLoads=runGroundPocketComparison(resolved,stages.groundPocketLoads,savedFloor!,engineering.floorSection!,savedInlet,engineering.groundSection!,engineering.houseVerticalProfile)
+    recordResult('groundPocketLoads',stages.groundPocketLoads,engineering.groundPocketLoads,['floorSection','inletSourceEnvelope','groundSection',...(engineering.houseVerticalProfile?['houseVerticalProfile']:[])])
+    coordinationDiagnostics.push(...engineering.groundPocketLoads.diagnostics.map(row=>({...row,state:'uncoordinated-comparisons' as const,stages:['groundPocketLoads','floorSection','inletSourceEnvelope']})))
   }
   if (stages.studyRoomKit) {
     engineering.studyRoomKit = await compile.studyRoomKit({ schema: 'ias-study-room-kit-case/1', units: 'mm', ...stages.studyRoomKit })

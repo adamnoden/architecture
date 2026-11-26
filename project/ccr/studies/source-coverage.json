@@ -630,7 +630,9 @@
         "compiler/reference-house/current-design/inlet-split-plant-room-choice.ts",
         "compiler/reference-house/current-design/house-vertical-profile.ts",
         "project/had/studies/house_vertical_profile.py",
-        "compiler/reference-house/current-design/inlet-store-impulse.ts"
+        "compiler/reference-house/current-design/inlet-store-impulse.ts",
+        "compiler/reference-house/current-design/inlet-known-gravity.ts",
+        "compiler/reference-house/current-design/inlet-open-closed-outfall.ts"
       ],
       "authoredInputs": [
         "compiler/reference-house/current-design/inlet-electrical-screen.ts",
@@ -675,7 +677,8 @@
         "project/had/studies/inlet-route-candidate.svg",
         "project/had/studies/inlet-split-plant-station.svg",
         "project/had/studies/inlet-split-plant-branch.svg",
-        "project/had/studies/inlet-split-plant-room.svg"
+        "project/had/studies/inlet-split-plant-room.svg",
+        "project/had/studies/inlet-open-closed-outfalls.svg"
       ],
       "consumers": [
         "compiler/reference-house/current-design/compile.ts",
@@ -684,7 +687,8 @@
         "project/ade/browser-editor/engineering-api.ts",
         "project/ade/browser-editor/engineering-editor.ts",
         "project/ade/browser-editor/engineering.html",
-        "compiler/reference-house/current-design-inlet-room-pocket.test.ts"
+        "compiler/reference-house/current-design-inlet-room-pocket.test.ts",
+        "compiler/reference-house/current-design-inlet-open-closed-outfall.test.ts"
       ],
       "producerChecks": [
         "node --import tsx --test compiler/reference-house/current-design-inlet-fixed-entry.test.ts compiler/reference-house/current-design-inlet-fixed-pipeline.test.ts",
@@ -708,7 +712,9 @@
         "node project/had/studies/plant-release-route.mjs --check",
         "node --import tsx --test compiler/reference-house/current-design-inlet-split-branch.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-store-impulse.test.ts",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-incident-stations.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-incident-stations.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-known-gravity.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-open-closed-outfall.test.ts"
       ]
     },
     {
@@ -946,7 +952,13 @@
         "compiler/reference-house/current-design/structural-lower-masonry.ts",
         "compiler/reference-house/current-design/structural-lower-masonry-settings.ts",
         "project/str/studies/wet_masonry_arch_bed.py",
-        "project/str/studies/wet_masonry_arch_bed_proof.py"
+        "project/str/studies/wet_masonry_arch_bed_proof.py",
+        "compiler/reference-house/current-design/structural-ground-pockets.ts",
+        "compiler/reference-house/current-design/structural-ground-pocket-settings.ts",
+        "project/str/studies/service_room_ground.py",
+        "project/str/studies/service_room_ground_proof.py",
+        "project/str/studies/service_room_ground_receiver_proof.py",
+        "project/str/studies/service_room_ground_receiver_replay.py"
       ],
       "authoredInputs": [
         "project/str/studies/floor-section-cuts-inputs.json",
@@ -1044,7 +1056,13 @@
         "project/str/studies/wet-masonry-arch-rise-comparison.svg",
         "project/str/studies/wet-masonry-arch-rise-proof.json",
         "project/str/studies/wet-masonry-arch-bed-proof.json",
-        "project/str/studies/wet-masonry-arch-bed.svg"
+        "project/str/studies/wet-masonry-arch-bed.svg",
+        "project/str/studies/service-room-ground-observed-two-room-20261126.json",
+        "project/str/studies/service-room-ground-observed-two-room-20261126.tar.xz",
+        "project/str/studies/service-room-ground-comparison.json",
+        "project/str/studies/service-room-ground-comparison-captures.tar.xz",
+        "project/str/studies/service-room-ground-receiver-proof.json",
+        "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz"
       ],
       "consumers": [
         "compiler/reference-house/current-design/structural-masonry-frame.ts",
@@ -1092,7 +1110,10 @@
         "project/str/studies/wet_masonry_arch_released_test.py",
         "project/str/studies/wet_masonry_arch_rise_test.py",
         "project/str/studies/wet_masonry_arch_bed_test.py",
-        "compiler/reference-house/current-design-lower-masonry.test.ts"
+        "compiler/reference-house/current-design-lower-masonry.test.ts",
+        "compiler/reference-house/current-design-ground-pockets.test.ts",
+        "project/str/studies/service_room_ground_test.py",
+        "project/str/studies/service_room_ground_receivers_test.py"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
@@ -1135,7 +1156,11 @@
         "python3 -B project/str/studies/wet_masonry_arch_rise_proof.py --check",
         "python3 -B project/str/studies/wet_masonry_arch_bed_test.py",
         "python3 -B project/str/studies/wet_masonry_arch_bed_proof.py --check",
-        "node --import tsx --test compiler/reference-house/current-design-lower-masonry.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-lower-masonry.test.ts",
+        "python3 -B project/str/studies/service_room_ground_test.py",
+        "node --import tsx --test compiler/reference-house/current-design-ground-pockets.test.ts",
+        "python3 -B project/str/studies/service_room_ground_receivers_test.py",
+        "python3 -B project/str/studies/service_room_ground_receiver_proof.py --check"
       ],
       "historicalInputs": [
         "project/str/studies/seated-pre-nodal-history.json",
@@ -1162,7 +1187,8 @@
         "compiler/reference-house/current-design/assemblies/study-lighting-views.ts",
         "project/ias/studies/adaptable-study-lighting.mjs",
         "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts",
-        "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts"
+        "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts",
+        "project/had/studies/service-interface-geometry.mjs"
       ],
       "authoredInputs": [
         "project/ias/studies/adaptable-study-lighting.json",
@@ -2710,6 +2736,48 @@
       "format": "value",
       "algorithm": "sha256",
       "source": "project/str/studies/finite_floor_contour_run.py"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "nativeSourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "replayMethodSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "captureArchiveSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "priorTwoRoomArchiveSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/service-room-ground-observed-two-room-20261126.tar.xz"
     }
   ],
   "gitBlobs": {
@@ -2942,7 +3010,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "4121ccdbe82be4338439d263e946ad3af7960558",
+    "compiler/reference-house/current-design/engineering-document.ts": "c2a0d451655c2e7a2c51db01151637e304494bcb",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -3067,14 +3135,14 @@
     "project/str/studies/roof-surface-pressure.svg": "03610ad976377889fb0d27bfaaa107b9cdce2099",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "3c787f346c4f8e408006e97e8478ad1f9b75cbce",
-    "project/had/studies/inlet-source-envelope.ts": "b0d16578113ee164aa6507a2338db7c6ff1fa701",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "60cd90bcd34f61a6f461053fdc190a7d75c64f80",
+    "project/had/studies/inlet-source-envelope.ts": "8fbbedf311dd5c4b0df0075047829cf679e7843c",
     "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
-    "project/had/studies/inlet-source-envelope.results.json": "bcb2da0ce1f414d4d4cc60ae45d0176b93b988c5",
+    "project/had/studies/inlet-source-envelope.results.json": "97c91633ef6b3b6036c62c71b0ca6437299397fa",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
-    "compiler/reference-house/current-design/engineering-edit.ts": "30b737fae8bd0c40216a9969d115288c0da0d0c8",
-    "project/ade/browser-editor/engineering-api.ts": "495c3b05b525425051bf5ce8609039d247ba0915",
-    "project/ade/browser-editor/engineering-editor.ts": "17641dd85d614b0dc73791ea5141893371818391",
+    "compiler/reference-house/current-design/engineering-edit.ts": "904a839f0f201aa081022853b46aa80f445c5c6a",
+    "project/ade/browser-editor/engineering-api.ts": "3660ede1f4281289a0bd05f330c1977a1930df00",
+    "project/ade/browser-editor/engineering-editor.ts": "7fe9e4bf7d2528d320878ba93af965e98655077f",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
@@ -3115,7 +3183,7 @@
     "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
     "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3",
     "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
-    "project/had/studies/inlet-local-pocket.results.json": "182c1c7c2d87f0424e281c95be260ebf2139db78",
+    "project/had/studies/inlet-local-pocket.results.json": "163fa6ddf582833aec99a20dcefa84dbdf78c76b",
     "project/had/studies/inlet-local-pocket.svg": "1b055c9299705e175d8fe523102bb991e6dbd913",
     "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
     "project/had/studies/inlet-local-pan.svg": "e3da3b38a4eb4532e8f3d3a9ab713a6d20aa2be9",
@@ -3135,28 +3203,28 @@
     "project/str/studies/global-mmd-mesh-cut-controls.json": "ca43d2e938f0d604abbd1bbc73e1d67cd82b6f48",
     "project/str/studies/wet-post-head-duties-proof.json": "d3060dd359727d4073fe2cb4c0a0e3566a317b08",
     "project/ias/adaptable-room-lighting-brief.md": "70f7030deee8a50c4c6491dfc20092db7b8fe8bd",
-    "project/ias/adaptable-room-lighting-result.md": "131b77cb0ee9ed06ce9f2ac207d1e309d383d34a",
-    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "33c54b6aea02f4813ce242fc3488f044f61c5631",
-    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "db9d853d8312672e42ebbf0633e81fe6848b6fb2",
-    "project/ias/studies/adaptable-study-lighting.mjs": "85cc05ec5a0d07bdb008ca10d7c2943bed8b686d",
+    "project/ias/adaptable-room-lighting-result.md": "6e2c7532c6a90338510baa64d08d852b424c4e89",
+    "compiler/reference-house/current-design/assemblies/study-lighting.ts": "870aa2df9bd72251bca86ead2eaadb1ee707bcf6",
+    "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "44a5fc56c8a9fbd9e47eeaae1d7c3520b1032b96",
+    "project/ias/studies/adaptable-study-lighting.mjs": "19064c8455b39eade6f9375c797fb3cde2c9d5a1",
     "project/ias/studies/adaptable-study-lighting.json": "63b335e82c72518bb1346c3d70e9ce3bfa02bd9d",
-    "project/ias/studies/lighting-component-references.json": "c1a14e82f4434831ca96e354f04f191f0d2b398f",
+    "project/ias/studies/lighting-component-references.json": "0d05ac831279f3c26d0a529d674d6237d95ac21e",
     "project/ias/studies/study-door-reveal.json": "58afaada3083a21bf103fe3a658db31807a75e26",
-    "project/ias/studies/adaptable-study-lighting.results.json": "106e995a7298e03b4929bbb00ee36372ed236a12",
-    "project/ias/studies/adaptable-study-lighting-comparison.svg": "bc23730697def45bcfef295a5aa0f7fb660bbb9a",
+    "project/ias/studies/adaptable-study-lighting.results.json": "55e105fc9cad387104382259149bbff2eca925fd",
+    "project/ias/studies/adaptable-study-lighting-comparison.svg": "7290f5cecf1bd68d60faadfe1f9d4be07e002618",
     "project/ias/studies/adaptable-study-lighting-corner.svg": "ca2a59a458a2cc858ebc23acf6eb6c779912f828",
-    "project/ias/studies/adaptable-study-lighting-routes.svg": "7c72f27f918f6b00005544990f7d8bc25cc51d32",
+    "project/ias/studies/adaptable-study-lighting-routes.svg": "1a6ddad4abf9dc502b965f4850e5a5bf430d0fac",
     "project/ias/studies/adaptable-kitchen-lighting.svg": "1861c38180fc9bcfec15c2e68e9c1a5f16a884c7",
     "compiler/reference-house/current-design/assemblies/study-room-kit-projection.ts": "3f1d9df2c5b279081a189b7a3e43c3c7fe6fb5a4",
-    "compiler/reference-house/current-design-study-lighting.test.ts": "dc12fe81bd19159b7e59ec4c62e41209bebd2edd",
+    "compiler/reference-house/current-design-study-lighting.test.ts": "3b26d4916ecda676c31285675fe787a436bb1b15",
     "project/had/owner-design-pack-preparation.md": "8bc611b30eb9271b099ec65d7ba577f9b17e80b1",
     "project/str/floor-interface-result.md": "69c4d381f6989a6f7ef6036c6f523bf25c4e1e8c",
     "compiler/reference-house/current-design/structural-floor-interfaces.ts": "c88bcd852b2994ab25dbf06669be6858d422a910",
     "compiler/reference-house/current-design/structural-floor-interface-adapter.ts": "1dcedb315d084683ce9f423029cc1e260e7ff34f",
     "project/str/studies/floor_interface_manifest.py": "6dfb20b7e001fe9565655ac15f59db812878ad26",
     "project/str/studies/floor-interface-proof.ts": "7fc632d6570eb8800a142825a8f55deb44a0de6a",
-    "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "7aec3642a0bd2e696c2d605a06c407ba0ef3c5fd",
-    "project/ias/studies/adaptable-study-lighting-construction.svg": "77735cfc13319b6bbab3e9510f63167510509a17",
+    "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "2321d4ede5126db02e304b970d872d2f549cd502",
+    "project/ias/studies/adaptable-study-lighting-construction.svg": "1c078fee70f8fa37530811c7eca24b051a12f6c7",
     "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
     "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
     "project/had/studies/inlet-indoor-cuts.svg": "41fcd95df7c6149712a761236e66269bac0aaa7d",
@@ -3175,11 +3243,11 @@
     "project/str/studies/monolithic-rc-translation-actions.json": "45fd6254540ff5d0f8927f3a8375e157bf330e2b",
     "compiler/reference-house/current-design/inlet-bank-receiver.ts": "27ae1b2964495559cee1bd13b3c270ab2c660744",
     "project/had/studies/inlet-bank-receiver.svg": "36daa77f163c959d9578b34783bee1e5e2806b04",
-    "project/ade/browser-editor/engineering.html": "4ceba7ab05dd90af6ebe54935e4bec932ebdfc77",
+    "project/ade/browser-editor/engineering.html": "91c5d70c5676c8d12dc0626b9515d0bc2cd6675e",
     "project/had/inlet-bank-carrier-rejection.md": "02e3e0c4004e7a3d636b5e56297131ff959d132d",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
-    "project/had/studies/inlet-bank-carrier.results.json": "5a85185b1dff250b19963723296ea6471b9b945c",
+    "project/had/studies/inlet-bank-carrier.results.json": "55523f507a56ba77b931a8b53ac064ba52265e70",
     "project/had/studies/inlet-bank-carrier.svg": "dc84130cc6a7fcae0130e64b6687bb2112546f13",
     "project/str/studies/wet_bearing_refinement.py": "06f8fabdfaf5ed6cc132e7a49248845dbdb08bab",
     "project/str/studies/wet-bearing-refinement-inputs.json": "42dea6fee820d552c4bb35a59258825a54eacb64",
@@ -3218,7 +3286,7 @@
     "compiler/reference-house/current-design/occupied-services.ts": "80f31158e629120a3719a8d3b26774b7f2f07da2",
     "project/str/studies/fixed_normal_experiment.py": "79f6c70e448475c1188f4c493514df75a3c77ee3",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json": "17f081768d37138ba58d91b32617d4054be863cf",
-    "project/ccr/convergence-owner-review.md": "8cd6e123280fdad3efe8b9d4c0e88cdf6ab8bc81",
+    "project/ccr/convergence-owner-review.md": "a4d3b4e528d36329541457b70f591d01bd368e4c",
     "project/str/studies/finite_joint_solid_run.py": "f7759a440296b38f92e3af3f29a9e1586559bc9a",
     "project/str/finite-joint-solid-development.md": "e90118a8ff01fc8ac761835903926b427263205b",
     "project/str/studies/finite_joint_solid.py": "b8451e22dda30b884166f82bbf86330aa9d13503",
@@ -3234,7 +3302,7 @@
     "project/str/studies/fixed-normal-experiment.results.json": "d70a4ee929a02d0f46a2563484b41ec98aab8b5f",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json": "a427298f215d2ad68be3885e98777c9c7f8474fa",
     "compiler/reference-house/current-design/structural-slab-constitutive.ts": "3719c065d8ebf6c7f187ad2d843706c09d54986a",
-    "project/str/floor-portal-reconciliation.md": "2b72d1e3e12fabe408179d0d3a786f4e7da33b7f",
+    "project/str/floor-portal-reconciliation.md": "d3b5cc62e5d1002efe8eba604101f6d8d2b4a2d1",
     "project/str/studies/slab-constitutive-compiled-control.json": "ca832a34e53b0474231c5c5258e75a8fd4431948",
     "project/str/studies/slab-constitutive-compiled-control.tar.xz": "742987eb64ef9a608fd841bf43e1c746eeb10210",
     "project/had/studies/inlet-route-candidate.json": "6bd208ae8dbe70564122af3d16d3d86f60dde141",
@@ -3242,8 +3310,8 @@
     "project/had/inlet-retained-service-route-comparison.md": "8249a23406763f52afa82776f95089e298367f7c",
     "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
     "project/had/studies/inlet-split-plant-station.svg": "bee70b5c62401e14b44de2add9c069c262a3944f",
-    "project/had/split-isolation-station-development.md": "87fa6dac82d7553232d2009fc61010d2b1c79f70",
-    "project/ccr/studies/roof-pitch-27deg-field-section.svg": "24e19c0c7e0bac75d2f1e3b8fa07d3aabd113216",
+    "project/had/split-isolation-station-development.md": "afaf763056896aa71525d88943151f21c021804e",
+    "project/ccr/studies/roof-pitch-27deg-field-section.svg": "9414f25bbab5b6d59650dae68b25c46c270fe9c5",
     "project/str/finite-floor-contour-development.md": "07e5508aa7133b1422e596a95bc8fe0d4ccafe31",
     "project/str/studies/finite_floor_contour.py": "1b255aa800553cd53715265fcfe79b5df44e85cf",
     "project/str/studies/finite_floor_contour_run.py": "2b4675f8d5ee3fc0d0421d8ab90de945cdac1986",
@@ -3351,6 +3419,25 @@
     "compiler/reference-house/current-design-finite-floor-contour.test.ts": "0e1b2480782ff5ef6ac89321d2bc259713ed641a",
     "project/str/studies/finite-floor-contour-35-execution.json": "d7474fc277cfa911a0039c4e562a497b64c8da59",
     "project/str/studies/finite-floor-contour-captures/contour35.json": "8c46e4acf2b66857d6df6f8cdecea39faf4bef49",
-    "compiler/reference-house/current-design-inlet-room-pocket.test.ts": "b685a7d76be8bf6c8ca39cb42e58a092b8f000c2"
+    "compiler/reference-house/current-design-inlet-room-pocket.test.ts": "b685a7d76be8bf6c8ca39cb42e58a092b8f000c2",
+    "compiler/reference-house/current-design/inlet-known-gravity.ts": "41695cf1a9393c76c4a200021e0e706f38111244",
+    "compiler/reference-house/current-design/structural-ground-pockets.ts": "3db5096c451a481fe9dd4edf10d8a6ec3abde6c3",
+    "compiler/reference-house/current-design/structural-ground-pocket-settings.ts": "1a2ee5b2065bc30c68a053c0c5f4ca2fcea1810c",
+    "project/str/studies/service_room_ground.py": "3156ac847cecc94f697e50d35cff7b2046d633e6",
+    "compiler/reference-house/current-design-ground-pockets.test.ts": "9dbfab46c03cbf478f7e37cc392815d33945bb7c",
+    "project/str/studies/service_room_ground_test.py": "198df7ede9091c82ba5675cd2920875b1de111f6",
+    "project/str/studies/service_room_ground_proof.py": "fe3ceeb0ca5e656d2078251ae3b5742df8f994f7",
+    "project/str/studies/service-room-ground-observed-two-room-20261126.json": "96dd67095ab00f4d3ee95fd7c4213fbe63023b18",
+    "project/str/studies/service-room-ground-observed-two-room-20261126.tar.xz": "9a519d97c636a80a53ed1c6016bd04f5aeeba319",
+    "project/str/studies/service-room-ground-comparison.json": "80fa32f975640b4c0cb729a059c50c491bf4294c",
+    "project/str/studies/service-room-ground-comparison-captures.tar.xz": "0c31fc9ed51e1ca7d549100d22b08ff3dd95bf7f",
+    "compiler/reference-house/current-design/inlet-open-closed-outfall.ts": "2561bc047ea2b2a0428b26e732fefe8dd9c9ffaa",
+    "compiler/reference-house/current-design-inlet-open-closed-outfall.test.ts": "a3bd891e5985278a7f0d12c7f0055ab75eeda382",
+    "project/had/studies/inlet-open-closed-outfalls.svg": "70a48b0a0c195719682d1bd1429c17536c911a64",
+    "project/str/studies/service_room_ground_receivers_test.py": "bfaba02d53038942daa121e6e305bb2512a1e275",
+    "project/str/studies/service_room_ground_receiver_proof.py": "b2553e7afffcea19291a853985871d4667d58838",
+    "project/str/studies/service_room_ground_receiver_replay.py": "1c04a3c550dd665a4a1a89999252cda7396b5567",
+    "project/str/studies/service-room-ground-receiver-proof.json": "705b0cdaa444410f2458f8a5944f03ad4ab97dda",
+    "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz": "e05b8f704d694960f63894996e8b9f7d50327b5d"
   }
 }

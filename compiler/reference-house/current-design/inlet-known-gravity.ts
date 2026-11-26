@@ -1,0 +1,93 @@
+import {sha256SemanticFingerprint} from '../../core/identity.js'
+import type {inletRoomPocket} from './inlet-room-pocket.js'
+type XYZ=readonly number[]
+type Pocket=NonNullable<ReturnType<typeof inletRoomPocket>['local']>
+export type GravityReference={id:string;force:XYZ;forceUnit:'N'|'kN';moment:XYZ;momentUnit:'Nm'|'kNm'|'kNmm';wrenchOriginXYZMm:XYZ;applicationXYZMm:XYZ;referenceCentre:boolean;massKg:number|null;gravityMps2:number|null;basis:string;datum:string;event:string}
+const xyz=(v:XYZ)=>Array.isArray(v)&&v.length===3&&v.every(Number.isFinite)
+const cross=(r:XYZ,f:XYZ)=>[r[1]*f[2]-r[2]*f[1],r[2]*f[0]-r[0]*f[2],r[0]*f[1]-r[1]*f[0]]
+
+/** One explicit gravity wrench, never a guessed support reaction. Output uses
+ * the existing STR point-load units: kN and kNmm. Nm and kNmm have equal numeric
+ * values. An orbital moment about global0 is removed before applying a force
+ * at its actual point; a kNm input is multiplied1000, never divided again.
+ */
+export function normalizeKnownGravity(row:GravityReference){
+ if(!row.id||![row.force,row.moment,row.wrenchOriginXYZMm,row.applicationXYZMm].every(xyz)||!['N','kN'].includes(row.forceUnit)||!['Nm','kNm','kNmm'].includes(row.momentUnit)||!row.basis||!row.datum||!row.event||typeof row.referenceCentre!=='boolean'||(row.massKg!==null&&(!Number.isFinite(row.massKg)||row.massKg<0))||(row.gravityMps2!==null&&(!Number.isFinite(row.gravityMps2)||row.gravityMps2<=0)))throw Error('Unsupported explicit gravity reference')
+ const forceKN=row.force.map(v=>v/(row.forceUnit==='N'?1000:1)),momentKNmm=row.moment.map(v=>v*(row.momentUnit==='kNm'?1000:1))
+ if(Math.abs(forceKN[0])+Math.abs(forceKN[1])>1e-12||forceKN[2]>0||Math.abs(momentKNmm[2])>1e-9)throw Error('Gravity normalizer cannot accept horizontal, upward or yaw source actions')
+ if(row.massKg!==null&&(row.gravityMps2===null||Math.abs(forceKN[2]+row.massKg*row.gravityMps2/1000)>1e-9*Math.max(1,Math.abs(forceKN[2]))))throw Error('Mass-derived gravity does not match its declared units and acceleration')
+ const offset=row.applicationXYZMm.map((v,k)=>v-row.wrenchOriginXYZMm[k]),orbital=cross(offset,forceKN),intrinsic=momentKNmm.map((v,k)=>v-orbital[k]),globalOrbital=cross(row.wrenchOriginXYZMm,forceKN),globalMoment=momentKNmm.map((v,k)=>v+globalOrbital[k])
+ if(row.referenceCentre&&Math.max(...intrinsic.map(Math.abs))>1e-7*Math.max(1,...momentKNmm.map(Math.abs)))throw Error('Reference-centre gravity contains a duplicated orbital moment or incompatible origin')
+ return{id:row.id,event:row.event,basis:row.basis,datum:row.datum,massKg:row.massKg,gravityMps2:row.gravityMps2,applicationXYZMm:[...row.applicationXYZMm],sourceWrenchOriginXYZMm:[...row.wrenchOriginXYZMm],forceKN,intrinsicMomentKNmm:intrinsic,globalWrenchAtZeroKN_KNm:[...forceKN,...globalMoment.map(v=>v/1000)],pointLoadKN_KNmm:[...forceKN,...intrinsic],referenceCentre:row.referenceCentre,actualInstalledMassOrCentroidQualified:false,receiverReactions:null,eligibleForNativeSTRTransfer:false}
+}
+
+type MassRow={id:string;massKg:number;massCentroidXYZMm:XYZ;originMm:XYZ;wrenchKN_KNm:Record<string,number>}
+type Suite={newGravityInventory:{metalRows:readonly{id:string;massKg:number;originMm:XYZ;forceKN:XYZ}[];grateStockTotalKg:number;grossUndisplacedGutterWaterToFloorLitres:number};lobbyPocket:{local:Pocket|null};authoredChoice:{id:string};geometry:{lobbyPlanMm:readonly number[]}}
+type FloorRoom={pan:{upperMetalStockCase:{loadOrigins:readonly MassRow[]};waterLoadOrigins:readonly MassRow[]};outfalls:readonly{bodyStockGravity:MassRow;fullWaterInventoryControl:MassRow}[];pocket:Pocket|null}
+type Inputs={source:{inletBindingDigest:string;inletCaseDigest:string;planDigest:string;groundCaseDigest:string|null};groundFflMm:number|null;coldGridTopMm:number|null;forceDensitiesKNm3:{rc:number;mineral:number}|null;utility:FloorRoom|null;plant:(FloorRoom&{bridge:{removablePieces:{pieces:readonly{id:string;startBoxMm:XYZ;sheetKg:number;hardwareBudgetKg:number}[]}}})|null;frame:{massKg:number;attachmentPointsMm:readonly XYZ[]};mainboard:{emptyReferenceKg:number;proposedBoxMm:XYZ};plantDoorLeafBudgetKg:number;plantBranch:{paths:readonly{stock:readonly{id:string;referenceCopperKg:number;referenceWaterKg:number;referenceJacketKg:number;referenceInsulationKg:number;absoluteOriginMm:XYZ;referenceGravityWrenchN_Nm:XYZ}[]}[];nominalValveGravity:{referenceOriginMm:XYZ;wrenchN_Nm:XYZ};knownValveKg:number}|null;utilityValve:{id:string;massKg:number;absoluteAxisMm:XYZ}|null;suite:Suite|null}
+
+/** Component comparisons are deliberately NOT an invented active assembly.
+ * Raw old-bank controls are not consumed. No row chooses a receiver or head.
+ */
+export function inletKnownGravityInventory(i:Inputs){
+ if(!i.source.inletBindingDigest||!i.source.inletCaseDigest||!i.source.planDigest||(i.groundFflMm!==null&&!Number.isFinite(i.groundFflMm))||(i.coldGridTopMm!==null&&!Number.isFinite(i.coldGridTopMm))||!Number.isFinite(i.frame.massKg)||i.frame.massKg<0||!i.frame.attachmentPointsMm.every(xyz)||!Number.isFinite(i.mainboard.emptyReferenceKg)||i.mainboard.emptyReferenceKg<0||!Number.isFinite(i.plantDoorLeafBudgetKg)||i.plantDoorLeafBudgetKg<0)throw Error('Current finite gravity inventory sources and datums required')
+ const structuralFloorBodies:{id:string;sourceObjectId:string;sourceObjectDigest:string;source:Inputs['source'];rcRectangleXYMm:XYZ;rcZMm:XYZ;rcUnitWeightKNPerM3:number;mineralZMm:XYZ;mineralUnitWeightKNPerM3:number;disjointContactRectanglesXYMm:readonly XYZ[];disjointContactCells:Pocket['disjointContactCells'];profile:{fflMm:number|null;coldGridTopMm:number|null;rigidZTransformApplied:boolean};independentKnownGravity:{rcGKN:number;mineralGKN:number;rcGlobalWrenchAtZeroKN_KNm:number[];mineralGlobalWrenchAtZeroKN_KNm:number[];combinedGlobalWrenchAtZeroKN_KNm:number[]};requiredUnrepresentedPlinthMm:number;materialElasticModulusMPa:null;receiverReactions:null;nativeOldStockCreditKN:null}[]=[],
+  groups:{id:string;scope:string;rows:ReturnType<typeof normalizeKnownGravity>[];unlocated:Record<string,unknown>[];receiverGeometry:unknown;unknowns:string[]}[]=[],g=9.81,
+  add=(id:string,scope:string,receiverGeometry:unknown=null)=>{const group={id,scope,rows:[] as ReturnType<typeof normalizeKnownGravity>[],unlocated:[] as Record<string,unknown>[],receiverGeometry,unknowns:[] as string[]};groups.push(group);return group},
+  mass=(group:ReturnType<typeof add>,r:MassRow,event:string)=>group.rows.push(normalizeKnownGravity({id:r.id,force:[r.wrenchKN_KNm.Fx,r.wrenchKN_KNm.Fy,r.wrenchKN_KNm.Fz],forceUnit:'kN',moment:[r.wrenchKN_KNm.Mx,r.wrenchKN_KNm.My,r.wrenchKN_KNm.Mz],momentUnit:'kNm',wrenchOriginXYZMm:r.originMm,applicationXYZMm:r.massCentroidXYZMm,referenceCentre:true,massKg:r.massKg,gravityMps2:g,basis:'geometry/material-density reference; supplier mass unqualified',datum:'absolute saved-ground XYZ',event})),
+  pocket=(name:string,p:Pocket|null)=>{
+   const group=add(name+'/local-floor-force-density','RC and contact-mineral force density; no kg conversion',{bodyMinMaxMm:p?.bodyMinMaxMm??null,coldGridTopMm:i.coldGridTopMm,contactUnionM2:p?.contactUnionM2??null,disjointContactCells:structuredClone(p?.disjointContactCells??[]),actualContactFootprints:structuredClone(p?.coldGridContact??[]),receiverReactions:null})
+   if(p&&(!i.forceDensitiesKNm3||![i.forceDensitiesKNm3.rc,i.forceDensitiesKNm3.mineral].every(n=>Number.isFinite(n)&&n>0)))throw Error('Current authored local-floor force densities required')
+   for(const r of p?.loadOrigins??[]){const [x,y,xx,yy]=r.piece.planMinMaxMm,z=r.piece.zMm,density=r.id.endsWith('/mineral-G')?i.forceDensitiesKNm3!.mineral:i.forceDensitiesKNm3!.rc,volume=(xx-x)*(yy-y)*(z[1]-z[0])/1e9
+    if(Math.abs(-r.wrenchKN_KNm.Fz-volume*density)>1e-8)throw Error('Local floor force density no longer matches actual piece geometry')
+    group.rows.push(normalizeKnownGravity({id:r.id,force:[0,0,r.wrenchKN_KNm.Fz],forceUnit:'kN',moment:[0,0,0],momentUnit:'kNm',wrenchOriginXYZMm:r.originMm,applicationXYZMm:[(x+xx)/2,(y+yy)/2,(z[0]+z[1])/2],referenceCentre:true,massKg:null,gravityMps2:null,basis:`${density}kN/m³ × ${volume}m³; already integrated force`,datum:'absolute saved-ground XYZ; cold grid stays fixed',event:'candidate-local-floor-G'}))
+   }
+   if(p){
+    const rc=p.levelBoxes.find(b=>b.id==='dryRC')!,mineral=p.levelBoxes.find(b=>b.id==='mineralCourse')!,d=i.forceDensitiesKNm3!,
+     gravity=(rect:XYZ,z:XYZ,density:number)=>{const force=-(rect[2]-rect[0])*(rect[3]-rect[1])*(z[1]-z[0])/1e9*density;return[0,0,force,(rect[1]+rect[3])/2000*force,-(rect[0]+rect[2])/2000*force,0]},
+     rcWrench=gravity(p.bodyMinMaxMm,rc.zMm,d.rc),mineralWrench=p.disjointContactCells.reduce((sum,c)=>{const row=gravity(c.rectangleMm,mineral.zMm,d.mineral);return sum.map((v,k)=>v+row[k])},[0,0,0,0,0,0]),combined=rcWrench.map((v,k)=>v+mineralWrench[k]),
+     fromRows=group.rows.reduce((sum,r)=>sum.map((v,k)=>v+r.globalWrenchAtZeroKN_KNm[k]),[0,0,0,0,0,0])
+    if(combined.some((v,k)=>Math.abs(v-fromRows[k])>1e-8*Math.max(1,Math.abs(v))))throw Error('Independent floor-body gravity and first-moment closure failed')
+    structuralFloorBodies.push({id:p.id,sourceObjectId:p.id,sourceObjectDigest:sha256SemanticFingerprint(p),source:{...i.source},rcRectangleXYMm:[...p.bodyMinMaxMm],rcZMm:[...rc.zMm],rcUnitWeightKNPerM3:d.rc,mineralZMm:[...mineral.zMm],mineralUnitWeightKNPerM3:d.mineral,disjointContactRectanglesXYMm:p.disjointContactCells.map(c=>[...c.rectangleMm]),disjointContactCells:structuredClone(p.disjointContactCells),profile:{fflMm:i.groundFflMm,coldGridTopMm:i.coldGridTopMm,rigidZTransformApplied:false},independentKnownGravity:{rcGKN:-rcWrench[2],mineralGKN:-mineralWrench[2],rcGlobalWrenchAtZeroKN_KNm:rcWrench,mineralGlobalWrenchAtZeroKN_KNm:mineralWrench,combinedGlobalWrenchAtZeroKN_KNm:combined},requiredUnrepresentedPlinthMm:p.lowerPlinthRequiredMm,materialElasticModulusMPa:null,receiverReactions:null,nativeOldStockCreditKN:null})
+   }
+   group.unknowns.push('No local plate/contact reaction distribution or resistance; native prior stock credit must be evidenced independently; glass, finish and other unrepresented stock remain unknown.')
+  },room=(name:string,r:FloorRoom|null)=>{
+   if(!r)return
+   const stock=add(name+'/pan-and-closed-copper-G','LOW-pan-setting developed reference stock; nominal and low-setting stock are alternatives')
+   r.pan.upperMetalStockCase.loadOrigins.forEach(row=>mass(stock,row,'low-setting-reference-G'));r.outfalls.forEach(o=>mass(stock,o.bodyStockGravity,'permanent-copper-reference-G'))
+   const water=add(name+'/blocked-water-control','Water to flush floor plus disjoint full exterior copper bodies; NOT actual maximum inventory')
+   r.pan.waterLoadOrigins.forEach(row=>mass(water,row,'blocked-to-FFL-reference'));r.outfalls.forEach(o=>mass(water,o.fullWaterInventoryControl,'same-blocked-reference'))
+   water.unknowns.push('Water-weight controls are alternatives to the corresponding hydrostatic metal/interface face actions, never additional to them; actual whole-fault maximum remains unknown.')
+   stock.unknowns.push('Seams, insulation, loaded seats, captures and complete installed mass unknown.');pocket(name,r.pocket)
+  }
+ room('HAD/utility',i.utility);room('HAD/plant',i.plant)
+ const frame=add('HAD/shield-frame-reference','Nominal occupiedFFL0 frame; no530 translation or active assembly inferred')
+ frame.unlocated.push({id:'HAD/inventory/shield-frame-stock',massKg:i.frame.massKg,actualInstalledMassKg:null,massBasis:'aggregate geometry/reference budget including unlocated hardware',forceKN:[0,0,-i.frame.massKg*g/1000],massCentroidXYZMm:null,attachmentPointsMm:i.frame.attachmentPointsMm,originDatum:'nominal occupiedFFL0',receiverReactions:null,reason:'Total includes4kg hardware budget and returned-cover stock with unresolved centroids. Four core envelopes are nonconcurrent resistance bounds; do not sum as reactions.'})
+ const mainboard=add('HAD/mainboard-empty-reference','Nominal empty product reference; complete contents, supplier centroid and actual support unknown')
+ mainboard.unlocated.push({id:'HAD/mainboard-empty-reference',nominalEmptyKg:i.mainboard.emptyReferenceKg,referenceForceKN:[0,0,-i.mainboard.emptyReferenceKg*g/1000],proposedEnvelopeMm:i.mainboard.proposedBoxMm,datum:'nominal occupiedFFL0; no implicit530 translation',actualLoadedMassKg:null,massCentroidXYZMm:null})
+ const door=add('HAD/plant/door-leaf-budget','Unmeasured fitted-door mass allowance, not selected installed stock')
+ door.unlocated.push({id:'HAD/plant/door-leaf-budget',massBudgetKg:i.plantDoorLeafBudgetKg,referenceForceKN:[0,0,-i.plantDoorLeafBudgetKg*g/1000],actualInstalledMassKg:null,massCentroidXYZMm:null,receiverReactions:null})
+ if(i.plant&&i.groundFflMm!==null){const group=add('HAD/plant/threshold-piece-reference','Actual cut-piece reference stock; gross unslotted bridge reference is excluded')
+  for(const p of i.plant.bridge.removablePieces.pieces){const box=p.startBoxMm,point=[box[0]+box[3]/2,box[1]+box[4]/2,box[2]+box[5]/2+i.groundFflMm],force=[0,0,-p.sheetKg*g/1000]
+   group.rows.push(normalizeKnownGravity({id:p.id,force,forceUnit:'kN',moment:[0,0,0],momentUnit:'kNmm',wrenchOriginXYZMm:point,applicationXYZMm:point,referenceCentre:true,massKg:p.sheetKg,gravityMps2:g,basis:'authored cut-plate reference stock; hardware excluded',datum:'startBox localFFL translated exactly once by saved groundFFL',event:'threshold-sheet-reference-G'}))
+   group.unlocated.push({id:p.id+'/hardware-budget',massBudgetKg:p.hardwareBudgetKg,actualMassKg:null,massCentroidXYZMm:null})
+  }
+ }
+ if(i.plantBranch){const group=add('HAD/plant/independent-branch-reference','Separate Plant branch only; rejected old bank/transfer stock excluded')
+  for(const path of i.plantBranch.paths)for(const row of path.stock){const massKg=row.referenceCopperKg+row.referenceWaterKg+row.referenceJacketKg+row.referenceInsulationKg
+   group.rows.push(normalizeKnownGravity({id:row.id,force:row.referenceGravityWrenchN_Nm.slice(0,3),forceUnit:'N',moment:row.referenceGravityWrenchN_Nm.slice(3),momentUnit:'Nm',wrenchOriginXYZMm:[0,0,0],applicationXYZMm:row.absoluteOriginMm,referenceCentre:true,massKg,gravityMps2:g,basis:'straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete',datum:'explicit absolute source-ground point; source wrench about GLOBAL0',event:'branch-normal-reference-G'}))
+  }
+  const v=i.plantBranch.nominalValveGravity;group.rows.push(normalizeKnownGravity({id:'HAD/plant/nominal-valve-reference',force:v.wrenchN_Nm.slice(0,3),forceUnit:'N',moment:v.wrenchN_Nm.slice(3),momentUnit:'Nm',wrenchOriginXYZMm:[0,0,0],applicationXYZMm:v.referenceOriginMm,referenceCentre:true,massKg:i.plantBranch.knownValveKg,gravityMps2:g,basis:'nominal product6kg at trial valve axis; actual factory centroid unknown',datum:'explicit absolute source-ground point; source wrench about GLOBAL0',event:'branch-normal-reference-G'}))
+  group.unknowns.push('Actual fitting, wrapper terminal, guide/anchor, payload and complete installed mass unknown; no valve/support reactions inferred.')
+ }
+ if(i.utilityValve){const group=add('HAD/utility/nominal-valve-reference','Utility valve alone; old two-valve bank count is not added'),v=i.utilityValve,force=[0,0,-v.massKg*g/1000]
+  group.rows.push(normalizeKnownGravity({id:v.id,force,forceUnit:'kN',moment:[0,0,0],momentUnit:'kNmm',wrenchOriginXYZMm:v.absoluteAxisMm,applicationXYZMm:v.absoluteAxisMm,referenceCentre:true,massKg:v.massKg,gravityMps2:g,basis:'nominal product mass at trial axis; actual factory centroid unknown',datum:'explicit indoor-cut groundStage absolute axis',event:'utility-valve-reference-G'}));group.unknowns.push('Complete current Utility pipe assembly/receiver not selected; rejected bank routes are not a current inventory.')
+ }
+ if(i.suite){const group=add('HAD/wet-suite/gutter-stock-delta','Independent rejected wet-suite comparison; no automatic addition to an active house'),s=i.suite
+  for(const r of s.newGravityInventory.metalRows)group.rows.push(normalizeKnownGravity({id:r.id,force:r.forceKN,forceUnit:'kN',moment:[0,0,0],momentUnit:'kNmm',wrenchOriginXYZMm:r.originMm,applicationXYZMm:r.originMm,referenceCentre:true,massKg:r.massKg,gravityMps2:g,basis:'flat copper reference before seams/laps',datum:'absolute saved-ground XYZ',event:'wet-suite-copper-reference-G'}))
+  group.unlocated.push({id:s.authoredChoice.id+'/grate-stock',referenceStockKg:s.newGravityInventory.grateStockTotalKg,actualCompleteMassKg:null,massCentroidXYZMm:null,reason:'Aggregate only; individual stock placement/receiver and captured hardware remain unqualified.'})
+  group.unknowns.push('Gutter gross water overlaps existing pan domains: no additive water row until exact union accounting. Rails, hardware, insulation and interface/jet actions unknown.');pocket('HAD/wet-suite/lobby',s.lobbyPocket.local)
+ }
+ const ids=groups.flatMap(g=>g.rows.map(r=>r.id));if(new Set(ids).size!==ids.length)throw Error('Duplicate gravity piece identity across component comparisons')
+ return{schema:'had-known-gravity-components/1',source:i.source,selected:false,datum:{savedGroundFflMm:i.groundFflMm,coldGridTopMm:i.coldGridTopMm,nominalFrameFflMm:0,rigidWholeInventoryZTransformApplied:false,gravityOnlyZShiftWrenchInvariant:true,horizontalOrPressureZShiftCredit:false},units:{force:'kN',intrinsicMoment:'kNmm',globalMoment:'kNm',length:'mm',mass:'kg',massGravityMps2:g},comparisonGravityFactorApplied:1,nativeDesignCombinationApplied:false,structuralFloorBodies,groups,activeAssemblySelected:false,combinedInstalledMassKg:null,actualMaximumRetainedWaterKg:null,combinedNativeNodalLoads:null,unrepresentedFamilies:['Actual complete store/buffer/expansion mass, supports and maximum retained/upper-network water','Actual pressure/thermal/jet, hot relief and transient load cases','Actual floor finishes/glass/insulation, gutter/threshold rails, hardware and complete installed electrical mass'],diagnostics:['HAD_GRAVITY/active-assembly-and-complete-installed-inventory-unresolved','HAD_GRAVITY/local-floor-and-core-receiver-distribution-resistance-unresolved','HAD_GRAVITY/stock-and-water-event-exclusivity-required',...(i.groundFflMm===null?['HAD_GRAVITY/saved-ground-required-for-floor-components']:[])],nativeStructuralActionsAdopted:false}
+}

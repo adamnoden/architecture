@@ -1,4 +1,5 @@
 import {readLowerMasonrySettings} from './structural-lower-masonry-settings.js'
+import {readGroundPocketSettings} from './structural-ground-pocket-settings.js'
 import {readWetBeamEndDevelopmentControls} from './structural-wet-beam-end-settings.js'
 import {readFiniteFloorContourSettings} from './structural-finite-floor-contour-settings.js'
 import { admitDesignSnapshot, type DesignSnapshot } from './snapshot.js'
@@ -116,6 +117,12 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       const choice = admitStudyLightingCase({ schema: 'ias-study-lighting-case/1', units: 'mm', ...current, serviceTotalDepthMm: operation.totalDepthMm })
       if (choice.serviceTotalDepthMm === current.serviceTotalDepthMm) return { status: 'applied', state }
       stages = { ...state.document.stages, studyLighting: { ...current, serviceTotalDepthMm: choice.serviceTotalDepthMm } }
+    } else if(record(operation)&&operation.kind==='set-ground-pocket-comparison') {
+      if(transaction.units!=='mm'||!exact(operation,['kind','assemblyId','settings'])||operation.assemblyId!=='STR/HAD/known-ground-stock'
+        ||!record(state.document.stages.floorSection)||!record(state.document.stages.groundSection)||!record(state.document.stages.inletSourceEnvelope))throw new TypeError('Existing saved floor, ground and inlet stages required')
+      const controls=readGroundPocketSettings(operation.settings)
+      if(JSON.stringify(state.document.stages.groundPocketLoads)===JSON.stringify(controls))return{status:'applied',state}
+      stages={...state.document.stages,groundPocketLoads:controls}
     } else if(record(operation)&&operation.kind==='set-floor-lower-masonry-comparison') {
       const current=state.document.stages.floorSection
       if(transaction.units!=='mm'||!exact(operation,['kind','assemblyId','settings'])||operation.assemblyId!==editableFloorSectionId

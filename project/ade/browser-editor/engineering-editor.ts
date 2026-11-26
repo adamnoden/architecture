@@ -1,4 +1,5 @@
 import {readWetBeamEndDevelopmentControls} from '../../../compiler/reference-house/current-design/structural-wet-beam-end-settings.js'
+import {readGroundPocketSettings} from '../../../compiler/reference-house/current-design/structural-ground-pocket-settings.js'
 import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableWetBeamEndId, editableInletBankId, editableInletBankFields, editablePlantRoomId, editablePlantRoomFields, plantRoomEditableNumber, editableStudyLightingId, engineeringBase,
   engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, type EngineeringEditorState, type EngineeringTicket,
 } from '../../../compiler/reference-house/current-design/engineering-edit.js'
@@ -13,6 +14,7 @@ const cageTop = element<HTMLInputElement>('cage-top-level')
 const endMandrel = element<HTMLInputElement>('beam-end-mandrel')
 const padWidth=element<HTMLInputElement>('wet-pad-width')
 const lightingDepth = element<HTMLInputElement>('lighting-depth')
+const groundPlatePitch=element<HTMLInputElement>('ground-plate-pitch'),groundContactPitch=element<HTMLInputElement>('ground-contact-pitch'),groundExecution=element<HTMLSelectElement>('ground-execution')
 const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
 const storageKey = 'ovid-current-engineering-document/1'
 let state: EngineeringEditorState
@@ -32,6 +34,9 @@ function controls() {
   pitch.disabled = false
   pitch.value = String(state.document.stages.roofPitch.pitchDeg)
   const floor = state.document.stages.floorSection
+  const ground=state.document.stages.groundPocketLoads
+  element('ground-pocket-controls').hidden=!record(ground)
+  if(record(ground)){const choice=readGroundPocketSettings(ground);groundPlatePitch.value=String(choice.settings.platePitchMm);groundContactPitch.value=String(choice.settings.contactPitchMm);groundExecution.value=choice.execution}
   const bearing=record(floor)&&record(floor.wetSupport)?floor.wetSupport:undefined
   const hasBearing=typeof bearing?.padWidthMm==='number'
   element('wet-bearing-controls').hidden=!hasBearing;padWidth.disabled=!hasBearing;padWidth.value=hasBearing?String(bearing.padWidthMm):''
@@ -68,6 +73,10 @@ function controls() {
   element('stage-scope').textContent = `Saved stages: ${Object.keys(state.document.stages).join(', ')}. All are retained and compiled.`
 }
 function draw() {
+  const ground=current?.groundPocketLoads
+  element('ground-pocket-result').textContent=ground?.status==='computed-unselected-candidate'
+    ?`Utility and Plant floor gravity: ${ground.addedPhysicalGKN.toFixed(6)} kN through ${ground.headCount} foundation heads. ${ground.receiverCutsAvailable?`Physical beam cuts recovered in ${ground.receiverMemberCount} members.`:"Physical beam cuts unavailable."} Unselected comparison; complete installed loads and receiver resistance remain unresolved.`
+    :ground?`${ground.status==='analysis-pending'?'Floor-support analysis prepared for this saved revision.':'Floor-support comparison unavailable.'} ${ground.diagnostics.map(issue=>issue.message).join(' ')}`:''
   const floor=current?.floorEvidence
   element('floor-result').textContent=floor?`Actual floor: ${floor.headCount} foundation heads; ${floor.lowerMasonryStatus?`Separate lower-masonry candidate: ${floor.lowerMasonryStatus}; no accepted replacement or joint resistance.`:''} normal-bearing analysis ${floor.contactComputed?'computed':'not applicable'}. ${floor.contourStatus==='deferred'?'Finite floor-contour analysis pending for this saved revision.':floor.contourStatus==='computed-local-comparison'?'Finite contour component computed; exterior band/chord, native insertion and joint resistance remain unavailable.':floor.contourStatus==='unsupported'?'The finite contour component does not support this saved revision or numerical runtime.':''} ${floor.slabSolidCompatibility.status==='common-modulus-ruled-out'?'The authored slab laws cannot describe one common positive 3D modulus; a solid replacement requires a declared constitutive change.':''} ${floor.jointStatus==='computed-rigid-joint-demand'?'Four rigid-joint demands computed; finite-node resistance remains unqualified.':floor.jointDiagnostics.includes('FOUR_L_JOINT/runtime-not-admitted')?'Joint demand unavailable for this numerical runtime; ordinary floor and cage remain computed.':'Joint-demand evidence unavailable for this request.'} ${floor.nominalHeadFanStatus==='computed-nominal-demand'?`Nominal post-head fan computed; necessary virtual-domain reserve ${floor.nominalHeadFanPlacementReserveMm ?? 'unavailable'} mm. Finite nodes, anchorage and tolerance remain unqualified.`:floor.nominalHeadFanStatus==='unsupported'?'This nominal post-head fan does not support the current input.':''}`:''
   for (const [name, result] of [['current', current], ['comparison', comparison]] as const) {
@@ -185,6 +194,11 @@ function changed(result: ReturnType<typeof applyEngineeringEdit>) {
   controls()
   void refresh()
 }
+element('ground-pocket-edit').addEventListener('submit',event=>{
+ event.preventDefault()
+ const choice=readGroundPocketSettings(state.document.stages.groundPocketLoads)
+ changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),operation:{kind:'set-ground-pocket-comparison',assemblyId:choice.id,settings:{...choice,execution:groundExecution.value,settings:{...choice.settings,platePitchMm:groundPlatePitch.valueAsNumber,contactPitchMm:groundContactPitch.valueAsNumber}}}}))
+})
 function edit(value: number) {
   changed(applyEngineeringEdit(state, { schema: 'current-engineering-edit/1', units: 'degrees', base: engineeringBase(state),
     operation: { kind: 'set-roof-pitch', roofId: editableRoofId, pitchDeg: value } }))

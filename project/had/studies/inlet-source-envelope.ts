@@ -1,3 +1,4 @@
+import {drawOpenClosedOutfallProfiles} from '../../../compiler/reference-house/current-design/inlet-open-closed-outfall.js'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { readCurrentDesignResolution, type CurrentDesignResolution } from '../../../compiler/reference-house/current-design/resolve.js'
 import { fileURLToPath } from 'node:url'
@@ -21,9 +22,10 @@ const unjoinedProfileControl={schema:'had-unjoined-plant-profile-control/1',inpu
 const local = { schema: 'had-local-room-pocket-receipt/1', source: localResult.source, authoredSettings: localResult.settings,
   ground: { source: ground.source, method: ground.method, authoredCase: ground.authoredCase },
   houseVerticalProfile:{source:profile.source,method:profile.method,authoredCase:profile.authoredCase,geometryOnly:true,selectedHouseAdmitted:false},unjoinedProfileControl,
-  sourceOnlyEvent: localResult.bound, branches: localResult.branches, roomCatchment: localResult.roomCatchment, indoorCuts:localResult.joinedDirection.room.indoorCuts, indoorRoutes:localResult.joinedDirection.room.indoorRoutes, bankReceiver:localResult.joinedDirection.room.bankReceiver, bankShelfCarrier:localResult.joinedDirection.room.bankShelfCarrier, splitPlantRoom:localResult.splitPlantRoom,
+  sourceOnlyEvent: localResult.bound, branches: localResult.branches, roomCatchment: localResult.roomCatchment, indoorCuts:localResult.joinedDirection.room.indoorCuts, indoorRoutes:localResult.joinedDirection.room.indoorRoutes, bankReceiver:localResult.joinedDirection.room.bankReceiver, bankShelfCarrier:localResult.joinedDirection.room.bankShelfCarrier, splitPlantRoom:localResult.splitPlantRoom,knownGravityInventory:localResult.knownGravityInventory,outfallProfiles:localResult.outfallProfiles,
   houseAdopted: false, physicalInstallationAdmitted: false }
-for (const [name, content] of [['inlet-source-envelope.results.json', JSON.stringify(result, null, 2) + '\n'],
+const outfallReview=drawOpenClosedOutfallProfiles([...(localResult.outfallProfiles.utility?[{label:'Utility · own cold-branch fault',profile:localResult.outfallProfiles.utility.sourceOnly[0]}]:[]),...(localResult.outfallProfiles.plant?[{label:'Plant · own cold-branch fault',profile:localResult.outfallProfiles.plant.sourceOnly[0]},{label:'Plant · optional combined-cold stress',profile:localResult.outfallProfiles.plant.combinedColdStress[0]}]:[])])
+for (const [name, content] of [['inlet-open-closed-outfalls.svg',outfallReview+'\n'],['inlet-source-envelope.results.json', JSON.stringify(result, null, 2) + '\n'],
   ['inlet-source-envelope.svg', reviewSvg + '\n'],
   ['inlet-indoor-cuts.svg', result.joinedDirection.room.indoorCuts.reviewSvg + '\n'],
   ['inlet-split-plant-branch.svg',(result.joinedDirection.room.indoorRoutes.splitStationComparison.branchDevelopment.comparison?.reviewSvg??'<svg xmlns="http://www.w3.org/2000/svg"><text x="20" y="30">Unsupported current Plant branch; no historical route is substituted.</text></svg>')+'\n'],

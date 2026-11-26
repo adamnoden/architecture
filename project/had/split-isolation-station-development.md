@@ -4,6 +4,24 @@
 
 The earlier4000mm-axis station,100mm/110mm bores and150mm outfall results below are retained **reference/history**, not substitutes for the current saved case. The separate station/branch JSON files retain their authored reference geometry; one saved complete Plant room choice derives their current coordinated shift.
 
+
+## Actual open-chute and downstream roof comparison —26 November2026
+
+The [coordinated sections](studies/inlet-open-closed-outfalls.svg) now use the same saved Utility and Plant pans,260mm indoor open chutes and actual eight-corner roofed copper bodies. The upstream reservoir stage is not the water depth260mm downstream. The [shared method](../../compiler/reference-house/current-design/inlet-open-closed-outfall.ts) solves a critical-entry, steep, straight rectangular free surface through the open and roofed reaches; it does not replace a failed free-surface case with pressure-flow credit. Both possible surviving outlets are checked independently, retaining one lost outlet, half surviving width,32mm deposit,15mm air and actual setting/receiver levels.
+
+| Saved steady comparison | Flow L/min | Minimum roof air reserve mm | Indoor cover reserve mm |
+|---|---:|---:|---:|
+| Utility own cold branch |92.722918|87.755|81.920|
+| Plant own cold branch |234.680939|64.193|39.706|
+| Utility optional combined-cold stress |327.403857|66.621|27.744|
+| Plant optional combined-cold stress |327.403857|56.621|20.744|
+
+These are the existing rounded source-envelope comparisons, not qualified installed maxima or actual stored-release peaks. The optional combined-cold stress is distinct from a single branch fault. Existing sufficient screens, old adverse controls, all installation holds and no-selection status are retained. High/submerged receivers and blocked outlets return no free-surface pass; changed joins or unsupported profiles return an explicit unsupported result. The result does not qualify actual mouth jets, deposited geometry, debris, ventilation, seams, walking covers, materials, source restriction or site.
+
+The [HEC energy equation](https://www.hec.usace.army.mil/confluence/rasdocs/ras1dtechref/7.0/theoretical-basis-for-one-dimensional-and-two-dimensional-hydrodynamic-calculations/1d-steady-flow-water-surface-profiles/equations-for-basic-profile-calculations) and [friction evaluation](https://www.hec.usace.army.mil/confluence/rasdocs/ras1dtechref/6.1/theoretical-basis-for-one-dimensional-and-two-dimensional-hydrodynamic-calculations/1d-steady-flow-water-surface-profiles/friction-loss-evaluation) support the standard-step relationship and mean friction slope. They do not establish our comparison values alpha1, Manning n0.015 or entrance K1.5. Declared32/64/128 refinements keep frozen0.04/0.01mm screens. Independent quadrature of dx/dy=(1−Fr²)/(S0−Sf) gives36.381891575mm at the combined-stress Plant roof, versus36.378887679mm from128 steps: an observed0.003004mm optimistic difference, not a rigorous error bound. The resulting56.62mm roof reserve remains substantial within this model.
+
+Five focused tests pass: uniform normal-flow oracle, actual physical joins and translated geometry, low roof/stored sensitivity/high/blocked cases, malformed sparse geometry, and an actual saved two-room edit. Raising only the Plant roof10mm raises its computed reserve10mm while Utility, source duty and ground remain unchanged controls; document identity changes. No rejected connected suite, lobby floor or shared gutter is imported. The ordinary producer regenerates the sections and source-bound receipts. Complete stored/backfeed releases, supported floors/covers, electrical retreat and renewal remain the next installation questions.
+
 ## Historical separate-station reference
 
 **Compare a separate Plant cut rather than preserve both cuts in the congested Utility bank.** Co-location is an engineering implementation, not an identified owner requirement. The source-bound comparison relocates the same unselected BSA6T envelope into the actual Plant room; it does not select a product, complete either independent branch, or qualify an occupied water arrangement.

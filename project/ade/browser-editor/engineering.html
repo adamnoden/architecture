@@ -48,6 +48,12 @@
       <form id="plant-room-edit"><label>Saved Plant input<select id="plant-room-field"><option value="clearWidthMm">Outfall clear width</option><option value="clearHeightMm">Outfall clear height</option><option value="fittedFrame.clearWidthMm">Effective fitted frame width</option><option value="fittedFrame.sourceOpeningDiameterMm">Plant source bore diameter</option><option value="receiverHighAdverseMm">Adverse receiver height</option><option value="bridgeLiftMm">Bridge capture lift</option><option value="bridgeHardwareBudgetEachKg">Hardware budget per piece</option></select></label>
       <label><span id="plant-room-unit">mm</span><input id="plant-room-value" type="number" step="any" required></label><button class="primary" type="submit">Compare Plant input</button></form>
       <p>Uses the complete saved Plant choice and actual saved ground. Source flow and Utility remain separate controls; failing comparisons stay visible.</p></section>
+    <section id="ground-pocket-controls" hidden aria-label="Utility and Plant floor support comparison"><h2>Utility and Plant floor support</h2>
+      <form id="ground-pocket-edit"><label>Plate mesh pitch (mm)<input id="ground-plate-pitch" type="number" min="100" max="500" step="any" required></label>
+      <label>Contact mesh pitch (mm)<input id="ground-contact-pitch" type="number" min="50" max="500" step="any" required></label>
+      <label>Analysis<select id="ground-execution"><option value="deferred">Prepare saved comparison</option><option value="compute">Compute coupled response</option></select></label><button class="primary" type="submit">Compare floor support</button></form>
+      <p>Rebuilds the two room floors from the saved house. Coupled analysis takes several minutes. Other installed loads and support resistance remain unresolved.</p></section>
+    <p id="ground-pocket-result" role="status"></p>
     <p id="lighting-result" role="status"></p><p id="lighting-diagnostics"></p>
     <p id="floor-result" role="status"></p><p id="cage-result" role="status"></p><p id="beam-end-result" role="status"></p>
     <p id="diagnostic" role="alert"></p><p id="evidence"></p>

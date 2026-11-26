@@ -245,7 +245,48 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
     + text(500, 1000, 'Cradle capacity/floor support, actual human handling and full supplied tail remain unqualified')
     + text(70, 1080, 'Ordinary infill: support → release four front screws → normal draw; fixed electrical islands and reveal remain closed.')
     + text(70, 1115, 'Never enable an opened repair enclosure. Reconnect earth/strain relief, reinstate closures and verify before energising.')
-  return page(1510, 1170, 'Study lighting carrier and first-release detail', body)
+  const h = d.localHomeRunComparison
+  const hp = (x: number,z: number) => [85+(x-h.bayPlanMm[0]!)*.5,2350-z*.5]
+  const hbox = (b: readonly number[],fill: string) => polygon([hp(b[0]!,b[1]!),hp(b[2]!,b[1]!),hp(b[2]!,b[3]!),hp(b[0]!,b[3]!)],fill)
+  body += text(35,1210,'Simplify the corner · three conventional separate home runs','title')
+    + text(35,1245,'Unselected development direction · keep ordinary flush accessories; no bespoke splitter, recessed controls or in-corner depth transition')
+    + hbox([h.bayPlanMm[0]!,h.finishBottomZMm,h.bayPlanMm[2]!,2100],'#ddceb3')
+  for (const route of h.routes) {
+    const a=hp(route.straight.startMm[0]!,route.straight.startMm[2]!), b=hp(route.bend.startMm[0]!,route.bend.startMm[2]!), e=hp(route.bend.endMm[0]!,route.bend.endMm[2]!)
+    body += `<path d="M${a.map(n).join(',')} L${b.map(n).join(',')} A${route.bend.radiusMm*.5},${route.bend.radiusMm*.5} 0 0 1 ${e.map(n).join(',')}" fill="none" stroke="#567a86" stroke-width="${d.containment.outsideDiameterRequirementMm*.5}"/>`
+      + line(hp(route.collar.a[0]!,route.collar.a[2]!),hp(route.collar.b[0]!,route.collar.b[2]!), '#a47c50',d.containment.entryCollarEnvelopeMm[0]*.5)
+    for (const clip of route.clips) { const q=hp(clip.pointMm[0]!,clip.pointMm[2]!); body+=rect(q[0]-8,q[1]-2,16,4,'#7b827b') }
+    const q=hp(route.sourcePointMm[0]!,route.sourcePointMm[2]!);body+=`<circle cx="${n(q[0])}" cy="${n(q[1])}" r="5" fill="#f2eee3" stroke="#9b4233"/>`
+  }
+  for (const box of h.boxes) body+=hbox([box.xMm[0]!,box.zMm[0]!,box.xMm[1]!,box.zMm[1]!],'#a9b8b4')
+  const cx=(h.boxes[0]!.xMm[0]!+h.boxes[0]!.xMm[1]!)/2
+  for (const z of [c.socketCentreMm[2]!,c.switchCentreMm[2]!]) body+=hbox([cx-43,z-43,cx+43,z+43],'#ede2cc')
+  body += hbox(h.carrierXZMm,'none')
+    + line(hp(c.doorRoughXMm[0]!,c.bayBottomZMm),hp(c.doorRoughXMm[0]!,2100),'#8e7860',4)
+    + hbox([c.retainedSkirtingEndXMm[0]!,0,c.retainedSkirtingEndXMm[1]!,result.commonRoom.skirtingTopMm],'#8c6d4d')
+    + text(345,1335,`${h.choices.bayWidthMm} mm local bay · ${h.architecturalConsequence.additionalBayWidthMm} mm wider to the left`)
+    + text(345,1370,`Door/reveal datum fixed; complete carrier and accessories shift ${Math.abs(h.architecturalConsequence.carrierShiftXMm)} mm left`)
+    + text(345,1405,`Local depth stays ${c.totalLiningDepthMm} mm; added floor territory ${h.architecturalConsequence.addedConservativeFloorTerritoryM2.toFixed(5)} m²`)
+    + text(345,1465,'The innermost tube ends at the socket; the next ends at the switch')
+    + text(345,1500,'The outer tube rises to the light after the lower tubes have ended')
+    + text(345,1535,'No tube crosses a continuing lower run; all three retain independent support')
+    + text(345,1595,`Bend radii ${h.routes.map(r=>r.bend.radiusMm).join(' / ')} mm; minimum pair reserve ${Math.min(...h.separations.map(r=>r.reserveMm)).toFixed(3)} mm after ${h.pairSettingMm} mm pair setting`)
+    + text(345,1630,`${h.issues.length ? 'Geometry rejected' : 'Routes clear within the declared geometry'}; current house supply remains unbound`)
+    + text(345,1690,`Tube ${h.stock.tubeLengthMm.toFixed(1)} mm + gross collars ${h.stock.collarLengthMm} mm; ${h.stock.clipCount} authored clip positions`)
+    + text(345,1725,`Known containment steel ${h.stock.totalKnownContainmentStockKg.toFixed(3)} kg; not complete installed mass`)
+    + text(345,1760,'Existing case/carrier stock is separate; never compare this subtotal with a whole assembly')
+    + text(345,1820,`${result.localHomeRunWallDisposition.length} actual north-wall pieces intersect the wider replacement bay`)
+    + text(345,1855,'Recompose their stopped decorative field; retain independent enclosure and carrier support')
+    + text(345,1915,'At the skirt top: three explicit unconnected source interfaces, not selected circuits')
+    + text(345,1950,'Ports are authored requirements within current reference box envelopes')
+    + text(345,1985,'Actual HGS06 knockouts and matched hardware remain unqualified')
+    + text(345,2045,'Threaded connections do not prove ordinary renewal; union/tool/support trials remain open')
+    + text(345,2080,'No new current feeder, cable rating, device terminal or earth connection is invented')
+    + text(345,2140,'Curved clearance uses bounded finite chords; diameter and interpolation error are charged')
+    + text(345,2175,'Carrier, hard-land reservations, other boxes, furniture and first rest are checked')
+    + text(345,2235,'The old 310 mm bay and smaller tube gaps are adverse cases, not silent defaults')
+    + text(35,2410,'Geometric design comparison only. Complete hardware, materials, protection, installed mass, physical trial and owner appearance remain unearned.','small')
+  return page(1510, 2460, 'Study lighting carrier and conventional home-run comparison', body)
 }
 
 export function drawCommonDepthCornerComparison(result: StudyLightingResult) {

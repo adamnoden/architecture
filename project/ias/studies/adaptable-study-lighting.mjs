@@ -57,7 +57,7 @@ function prepareWriteCompiler() {
     },
   };
 }
-const methods = ['compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-case.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-corner.ts', 'compiler/reference-house/current-design/assemblies/study-lighting.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-views.ts',
+const methods = ['project/had/studies/service-interface-geometry.mjs', 'compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-case.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-corner.ts', 'compiler/reference-house/current-design/assemblies/study-lighting.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-views.ts',
   'project/ias/studies/adaptable-study-lighting.mjs'];
 const methodSHA256 = Object.fromEntries(methods.map(path => [path, createHash('sha256').update(readFileSync(new URL(path, root))).digest('hex')]));
 const compile = check ? prepareCurrentDesignCompile(readGeorgianDesignSnapshot()) : prepareWriteCompiler();

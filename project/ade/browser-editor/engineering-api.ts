@@ -53,11 +53,18 @@ export async function runEditorEngineeringRequest(input: unknown) {
     typeof post.necessaryPlacementDomain?.minimumReserveMm === 'number' ? [post.necessaryPlacementDomain.minimumReserveMm] : []) ?? []
   const lighting = bundle.engineering.studyLighting
   const inlet=bundle.engineering.inletSourceEnvelope, bank=inlet?.joinedDirection.room.bankReceiver
+  const ground=bundle.engineering.groundPocketLoads
   return { ticket, documentIdentity: bundle.documentIdentity, manifest: bundle.manifest,
     coordinationDiagnostics: bundle.coordinationDiagnostics, evidence: bundle.evidence,
     floorEvidence: floor ? { headCount:floor.native.heads.length, contactComputed:floor.wetBearingContact?.status==='computed-comparison',
       lowerMasonryStatus:floor.lowerMasonryComparison?.status??null,lowerMasonryDiagnostics:floor.lowerMasonryComparison?.diagnostics??[],contourStatus:floor.contourComponent?.status??null,contourDiagnostics:floor.contourComponent?.diagnostics??[],slabSolidCompatibility:floor.slabSolidCompatibility, nominalHeadFanPlacementReserveMm:fanReserves.length?Math.min(...fanReserves):null, nominalHeadFanStatus:floor.wetPostHeadFan?.status??null, jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
     wetBeamEnd: wetBeamEndReview(floor?.wetBeamEndDevelopment),
+    groundPocketLoads:ground?{status:ground.status,controls:ground.controls,diagnostics:ground.diagnostics,
+      headCount:ground.status==='computed-unselected-candidate'?ground.native.heads.length:null,
+      addedPhysicalGKN:ground.status==='computed-unselected-candidate'?ground.comparison.addedPhysicalGKN:null,
+      receiverCutsAvailable:ground.status==='computed-unselected-candidate'&&ground.comparison.receiverCutRecovery?.physicalElementCutsAvailable===true,
+      receiverMemberCount:ground.status==='computed-unselected-candidate'&&ground.comparison.receiverCutRecovery?.physicalElementCutsAvailable===true?ground.comparison.receiverCutRecovery.memberIds.length:null,
+      candidateAccepted:false as const,completeInstalledInventory:false as const}:null,
     studyLighting: lighting ? { svg: lighting.commonDepthCornerSvg, comparison: lighting.lighting.commonDepthCornerComparison } : null,
     plantRoom: inlet?.splitPlantRoom ?? null,
     inletBank: inlet&&bank?{settings:inlet.settings,receiver:bank,carrier:inlet.joinedDirection.room.bankShelfCarrier,route:inlet.joinedDirection.room.indoorRoutes,sourceOnlyBound:inlet.bound}:null,

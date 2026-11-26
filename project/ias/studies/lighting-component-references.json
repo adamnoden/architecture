@@ -167,5 +167,15 @@
     "pipeWallMm": 1
   },
   "commonDepthGripAuthority": "Authored two-finger geometry and normal withdrawal through a fixed surround, using the unadmitted50x52x42mm plug envelope. Contact, actual grip force/plug shape, supplied lead, enclosure qualification and physical usability remain unproved; no instruction to replace a supplied plug.",
-  "commonDepthSteelStockAuthority": "Purpose case/surround/tube geometry at the retained7850kg/m3 steel density comparison. Covers and overlaps charged in full; collars charged as gross solid30mm stock. Not delivered weights or a complete installed mass; devices, unions, clips, cleats and fasteners remain to be qualified."
+  "commonDepthSteelStockAuthority": "Purpose case/surround/tube geometry at the retained7850kg/m3 steel density comparison. Covers and overlaps charged in full; collars charged as gross solid30mm stock. Not delivered weights or a complete installed mass; devices, unions, clips, cleats and fasteners remain to be qualified.",
+  "localHomeRunCandidate": {
+    "bayWidthMm": 410,
+    "tubeWallMm": 1,
+    "routeGapMm": 11,
+    "lowerPortRearInsetMm": 20,
+    "maximumClipSpanMm": 300,
+    "clipEndInsetMm": 50,
+    "stationOffsetXMm": 12
+  },
+  "localHomeRunAuthority": "Unselected conventional separate home-run comparison. Current manufacturer box envelope is reused, but each lower side port is an authored requirement20mm from the rear; actual HGS06 knockout coordinates, matched collars, internal devices, conductors and source feed remain unqualified. Three independent skirt-top interfaces do not select circuit topology. Tube wall, clip spacing and gross collar stock are project comparison requirements, not product ratings."
 }

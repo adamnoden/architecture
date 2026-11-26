@@ -61,7 +61,7 @@ The actual [Astro factory instructions, Issue 2](https://assets.astrolighting.co
 
 The earlier 300 mm-wide bay failed this complete local entry check: its tube outer edge left only 4 mm beside the field edge against the existing 5 mm setting allowance. The 310 mm candidate preserves the 50 mm door stop, moves the left edge 10 mm and the carrier/box centre 5 mm, and leaves 9 mm actual edge clearance (4 mm beyond that allowance). Its charged north floor territory becomes 0.01488 m² rather than 0.0144 m². West/side station envelopes and all dependent plans use the same changed width. The actual furniture, door and kitchen remain unchanged controls. Larger collars or reverting to the old width produce explicit geometry rejection.
 
-The local socket/switch entry axes remain at core depth 51.5 mm; the recessed light box entry is at 37 mm. These are three separate local entry branches, not a connected common riser. `IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED` identifies the missing trunk, junctions and real depth transitions. No common vertical trunk, cable support, cable bend, fitting choice or feeder is fabricated from a successful local swept-envelope calculation.
+The local socket/switch entry axes remain at core depth 51.5 mm; the recessed light box entry is at 37 mm. These remain three separate local entry branches, not a connected common riser. Their missing shared trunk, junctions and depth transitions are the earlier comparison's unresolved topology. The dedicated-home-run successor below removes that need; its actual-entry and feed limits are now returned by `IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED`. No feeder or actual product connection is fabricated from exterior containment geometry.
 
 The bound occupied source contains whole-house electrical assumptions and four local electric heaters; it has **no Study feeder/protection/cable object**. The named `IAS/STUDY/room-supply-interface` therefore remains unconnected. `IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND` is returned at the ordinary shared entry point. This is a precise current-source split to resolve with the house electrical design, not an implied existing circuit or a reason to invent a second house network.
 
@@ -69,7 +69,7 @@ The bound occupied source contains whole-house electrical assumptions and four l
 
 | Missing concrete evidence/detail | Affected decision | Existing responsible route / resolution point |
 | --- | --- | --- |
-| The local enclosure/carrier and three bend/collar entry branches are defined. Their common riser, junctions and depth transitions are unresolved; actual Study feeder/protection/cable object, connection/thermal/segregation design and qualified boundary/entry hardware are absent | Cannot issue the local station as an installable electrical assembly or claim complete connectivity to house distribution | IAS-WORKABLE-DETAILS with BCR/ADE technical detail; complete the representative dead mock-up route before its installation trial; electrical acceptance before energisation |
+| External containment has a worked separate-home-run comparison; actual box ports, matched connector release, Study feeder/protection/cable object, connection/thermal/segregation design and qualified boundary/entry hardware remain absent | Cannot issue the local station as an installable electrical assembly or claim complete connectivity to house distribution | IAS-WORKABLE-DETAILS with BCR/ADE technical detail; complete the representative dead mock-up route before its installation trial; electrical acceptance before energisation |
 | North carrier/hard-land/first-rest geometry is explicit. Actual manufacturer bracket pattern, wall-task carrier, complete fixed fitting mass, substrate/anchor resistance and retained closure need qualification | Wall-led alternative and fixed-source installation remain unqualified | IAS-WORKABLE-DETAILS/BCR; resolve geometric carrier and first release before calling the comparison trial-ready; demonstrate capacity before live installation |
 | Complete known constituent inventory, including insulation, inserts, coatings, shade binders, lamps and seals | No selected installed product or material exception | Existing MAT admission and owner exception procedure before procurement/selected detail; geometry witnesses are not purchases |
 | Actual supplied wall-task flex/exit, complete aiming sweep, source replacement, supported draw and dry first rest | No full task-light maintenance pass | Existing PHY/BCR/DEL representative service-corner trial after component-grounded detail; retain fixed ceiling fallback if it fails |
@@ -232,3 +232,113 @@ all stations to justify extra steel, recessed ordinary controls or bespoke
 unions. The local depth transition, actual matched connections, feeder,
 protective and material duties still require completion. This judgement
 selects no product, circuit, fabricated assembly or owner appearance verdict.
+
+
+## Separate conventional home runs — 26 November 2026
+
+The next development comparison removes the common-riser problem from the local
+architecture. Retain the existing310mm corner, disconnected local bends and
+bespoke common-depth cases as labelled comparisons. Prefer **three independent
+conventional metal-conduit home runs** in a **410mm-wide local bay**, with the
+ordinary flush socket/switch islands and the existing independently supported
+light carrier. This is an unselected geometric development direction, not a
+selected circuit, fabricated assembly or owner appearance verdict.
+
+The socket's inner run ends first, the switch's middle run ends next, and the
+outer run reaches the light after both lower runs have ended. Their70/101/132mm
+centreline radii retain the original70mm minimum comparison. There is no
+in-corner splitter, shared trunk, through-device containment route, bespoke
+junction or depth transition. Each finite path starts at its **own explicitly
+unconnected interface at Z155mm** and ends at its declared box side. Three
+interfaces do not imply three circuits, selected conductors or an available
+house feeder. Upstream switching, circuit/protection design and actual device
+connections remain unbound.
+
+The lower port axes are authored48mm from the masonry core,20mm from the rear
+of each current47mm-deep box envelope; the upper axis remains37mm. The collar
+fits the declared box-side depth, but the HGS06 source still does not establish
+these actual knockout coordinates. Do not describe an authored envelope as a
+qualified manufacturer connection. All terminal/earth, union and tool access,
+protective enclosure, material and electrical acceptance duties remain.
+
+The new method checks finite tube/collar bodies, all path continuity, arc
+interpolation error, other boxes, the full reserved carrier volume and its
+hard-land reservations. The curved paths use finite chords with a charged
+outward sagitta bound below0.01mm, rather than a point-only collision pass.
+An11mm nominal route gap leaves approximately **0.993mm minimum reserve after
+two independent5mm settings and the interpolation error**. Twelve explicit straight-run clip
+positions respect the authored300mm spacing/end-span comparison; their anchors,
+clip/body envelopes and loaded support are not qualified by this calculation.
+No physical renewal or installed electrical result is implied.
+
+The bay grows100mm to the left while its door-side edge and protected reveal
+stay fixed. A12mm offset of the station column within the wider bay preserves
+that joint while the wider route spacing charges both independent settings. The
+complete carrier and accessories shift38mm left; the75mm local
+depth and ordinary flush accessory faces remain. Additional conservative floor
+territory is **0.00480m²**. The wider module/first-rest envelope clears current
+furniture in the checked source. The410mm boundary lies in the actual existing
+north-wall joint and recuts **two** source faces, including their explicit
+remaining decorative rectangles. Its finish begins at the source skirting datum
+Z150mm and consumes the actual first face from151.5mm; the electrical interfaces
+remain at155mm. No3.5mm decorative sliver is retained between those datums. A420mm bay is geometrically possible but cuts
+four faces; reject that unnecessary intrusion into the adjoining panel column.
+The old310mm bay cannot contain all three runs. The410mm bay's tightest left
+reserve is4mm after the declared5mm setting; this remains an exposed fabrication
+obligation, not a claim of generous tolerance. The lower port retains its actual
+5mm rear margin after charging the5mm setting; a16mm rear inset rejects. Actual
+box ports remain unqualified despite that envelope comparison.
+
+The known stock comprises approximately **3,207.951mm of20×1mm tube** and
+**90mm of gross-solid30mm collar stock** at the retained7850kg/m³ density
+comparison: **2.002540kg** in total. This is a containment subtotal. Cases,
+carriers, clips, unions, fittings, covers, wiring and fasteners are excluded;
+it must not be compared as a complete assembly against the bespoke case
+comparison's broader steel account. No load is silently admitted to the house
+structure. Retain both accounts at their actual scope.
+
+The same optional saved lighting stage, browser/CLI compiler and ordinary batch
+producer return the candidate geometry, part/stock schedule, actual north-wall
+consequence and [coordinated construction drawing](studies/adaptable-study-lighting-construction.svg).
+A50mm socket-height edit recomputes that run and its stock while retaining the
+other runs, room and kitchen. Narrow bays, crowded routes, absent port margin,
+missing choices and invalid tube walls reject. A wider bay recomputes the actual
+additional affected wall faces. Saved source bindings invalidate when these
+inputs/methods change; the prior310mm stage is not silently adopted as the
+410mm candidate.
+
+This eliminates the need to design a bespoke local splitter/offset for the
+preferred comparison. It does **not** close IAS-ROOM-LIGHTING: actual matched
+box entries, devices/earthing, connector release and ordinary renewal, complete
+support/material inventory, house feed/protection and the representative
+trial-ready detail remain unfinished. Photometry, physical events and owner
+acceptance retain their separate routes. The completed crafted-room concept
+is unchanged; post-owner fabrication remains IAS-WORKABLE-DETAILS.
+
+
+Local verification: TypeScript checking and21 focused lighting/strict-producer tests
+pass, including exact saved-document CLI/API agreement and source invalidation.
+The ordinary lighting producer regenerates the complete candidate receipt and
+six figures. The updated construction sheet was raster-inspected; raw diagnostic
+language was replaced with readable status text and the retained door/skirting
+reference was added. Source identity audit and strict producer checks accompany
+the final local checkpoint. Full submitted-head health, publication regeneration
+and fresh canonical merge preflight remain the integrating worker's responsibility.
+
+
+The separate internal challenge found and corrected two owning defects before
+integration: a3.5mm decorative remnant caused by reusing the electrical datum,
+and a pair check that charged only one setting for independently fixed tubes.
+The final schedule separates the finish/feed datums and charges10mm total pair
+setting, with wider true route spacing and an explicit station offset. The
+former6mm gap is retained as a rejected adverse case. This internal review is
+not external assurance or physical qualification.
+
+
+The challenge also exposed an unsupported large station offset. Explicit
+carrier, box, fixed-island and complete parked-module/rest bounds now reject
+an offset that escapes the bay. Opposing route/fixed-component checks charge
+both independent5mm settings as well; the default retains approximately0.5mm
+minimum obstacle reserve. Actual fitting/support envelopes and fabrication
+remain unqualified. The input perturbation tests preserve that rejected large
+offset and the port-margin failure alongside unchanged room/kitchen controls.

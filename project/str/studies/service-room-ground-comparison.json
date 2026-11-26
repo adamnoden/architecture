@@ -1,0 +1,709 @@
+{
+  "schema": "str-service-room-ground-comparison/1",
+  "sourceSHA256": {
+    "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+    "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+    "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+    "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+    "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+    "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+    "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+    "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+    "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+    "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+    "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+    "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+    "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+    "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+    "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+    "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+    "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+    "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+    "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+    "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+    "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+    "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+    "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+    "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+    "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+    "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+    "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+    "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+    "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+    "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+    "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+    "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+    "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+    "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+    "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+    "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+    "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+    "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+    "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+    "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+    "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+    "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+    "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+    "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+    "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+    "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+    "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+    "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+    "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+    "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+    "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+    "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+    "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+    "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+    "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc",
+    "project/str/studies/service_room_ground.py": "c70c2726db6eb2f7efc123206b2f86f4e8bad2620452ce8a3e06b8551a23462d"
+  },
+  "captureArchiveSHA256": "ced7ce235c30d9d4357a06688fe26f0afc0196159b4455d9518e3b905fb82a4c",
+  "historicalHADReceiptSHA256": "182a05ef48c22ade4b58c9b62dda9d63267703b7de865b20d576ba0c3078d6d4",
+  "scope": "Explicit three-body historical wet-suite specimen, including unadopted lobby; current saved compiler regenerates two live room bodies instead. No source-ground/530-profile house adoption.",
+  "operatorOffMaximum312Difference": 0.0,
+  "controls": [
+    {
+      "id": "off",
+      "captureSHA256": "3b0279125a5a5ec0648286c1529c3296fca0c8086f887f31b8b560199c580fec",
+      "settings": {
+        "enabled": false,
+        "platePitchMm": 250,
+        "contactPitchMm": 250,
+        "plateLaw": {
+          "elasticModulusMPa": 33000,
+          "poissonRatio": 0.2,
+          "flexuralFactor": 1,
+          "shearFactor": 0.8333333333333334
+        },
+        "mineralModulusMPa": 1000,
+        "jointComplianceMmPerMPa": 0.1
+      },
+      "addedUnfactoredKnownGKN": 0.0,
+      "maximum312HeadComponentDifferenceFromOff": 0.0,
+      "nativeEnergyRelativeResidual": 4.437963705547324e-12,
+      "bodies": []
+    },
+    {
+      "id": "base",
+      "captureSHA256": "ac144eed9cd374fda35f41d6a95c78846721ec8e43a89e78b94d2757d469e4e3",
+      "settings": {
+        "enabled": true,
+        "platePitchMm": 250,
+        "contactPitchMm": 250,
+        "plateLaw": {
+          "elasticModulusMPa": 33000,
+          "poissonRatio": 0.2,
+          "flexuralFactor": 1,
+          "shearFactor": 0.8333333333333334
+        },
+        "mineralModulusMPa": 1000,
+        "jointComplianceMmPerMPa": 0.1
+      },
+      "addedUnfactoredKnownGKN": 60.409024,
+      "maximum312HeadComponentDifferenceFromOff": 17.548633469607424,
+      "nativeEnergyRelativeResidual": 5.836157464127633e-12,
+      "bodies": [
+        {
+          "id": "HAD/local-utility-service-pocket",
+          "rcAndMineralGKN": 25.00609925,
+          "plateEnergyKNmm": 0.1247638665782438,
+          "peakSampledPressureMPa": 0.1724705597696336,
+          "openSamples": 207,
+          "sampleCount": 384,
+          "maximumOpeningMm": 0.13475409887220866,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/spine/0": [
+              12.822729725408543,
+              19.014858643674636,
+              -123.99238337344413
+            ],
+            "GRID/outer-S/5": [
+              1.5745183086413244,
+              0.9449230403928928,
+              -16.372648425143424
+            ],
+            "GRID/utility-north/0": [
+              4.6119200321407074,
+              10.820855044695316,
+              -47.77122527617569
+            ],
+            "GRID/outer-S/6": [
+              7.285762741115728,
+              4.50159146704774,
+              -80.32933114972957
+            ],
+            "GRID/outer-E/0": [
+              0.7346026687345824,
+              0.6522391653936627,
+              -8.360135901799291
+            ],
+            "GRID/outer-E/1": [
+              6.728700511454201,
+              12.486681365461635,
+              -77.08716144010053
+            ]
+          }
+        },
+        {
+          "id": "HAD/local-plant-service-pocket",
+          "rcAndMineralGKN": 23.62497175,
+          "plateEnergyKNmm": 0.17606272496378456,
+          "peakSampledPressureMPa": 0.08112892386421641,
+          "openSamples": 57,
+          "sampleCount": 312,
+          "maximumOpeningMm": 0.010011704504103354,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/plant-intermediate/0": [
+              4.909496902816079,
+              19.2542822281525,
+              -52.90602990677551
+            ],
+            "GRID/spine/3": [
+              1.6704322606577326,
+              6.7611243303322075,
+              -16.070279911558224
+            ],
+            "GRID/spine/4": [
+              2.2439536965981253,
+              9.353409538401731,
+              -21.614001703270652
+            ],
+            "GRID/spine/5": [
+              10.949055425784232,
+              56.010365216498116,
+              -105.65676257221945
+            ],
+            "GRID/outer-E/4": [
+              12.120773576654617,
+              60.56502806974526,
+              -138.11862764477942
+            ]
+          }
+        },
+        {
+          "id": "HAD/local-lobby-service-pocket",
+          "rcAndMineralGKN": 11.777953,
+          "plateEnergyKNmm": 0.07889218217196013,
+          "peakSampledPressureMPa": 0.06988417538571613,
+          "openSamples": 90,
+          "sampleCount": 228,
+          "maximumOpeningMm": 0.015925435314597294,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/spine/2": [
+              4.512778795426522,
+              13.626098945424168,
+              -43.458100715710394
+            ],
+            "GRID/utility-north/0": [
+              3.5691406588285455,
+              9.911510489605398,
+              -36.06462676866733
+            ],
+            "GRID/plant-intermediate/0": [
+              3.0402264670033943,
+              10.519885045964575,
+              -32.65071029573867
+            ],
+            "GRID/outer-E/2": [
+              3.8076084248152737,
+              12.279109120741236,
+              -43.401539215305434
+            ],
+            "GRID/outer-E/3": [
+              0.9704822039298301,
+              3.3516356170238857,
+              -11.119127935687635
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact125",
+      "captureSHA256": "c95df0b2365efc301f5bee73a137590fd514b597c5ebac67151cf9ffe60d0937",
+      "settings": {
+        "enabled": true,
+        "platePitchMm": 250,
+        "contactPitchMm": 125,
+        "plateLaw": {
+          "elasticModulusMPa": 33000,
+          "poissonRatio": 0.2,
+          "flexuralFactor": 1,
+          "shearFactor": 0.8333333333333334
+        },
+        "mineralModulusMPa": 1000,
+        "jointComplianceMmPerMPa": 0.1
+      },
+      "addedUnfactoredKnownGKN": 60.409024,
+      "maximum312HeadComponentDifferenceFromOff": 17.5466747185787,
+      "nativeEnergyRelativeResidual": 4.6945022787871826e-12,
+      "bodies": [
+        {
+          "id": "HAD/local-utility-service-pocket",
+          "rcAndMineralGKN": 25.00609925,
+          "plateEnergyKNmm": 0.12487452826372594,
+          "peakSampledPressureMPa": 0.17214562286890403,
+          "openSamples": 464,
+          "sampleCount": 808,
+          "maximumOpeningMm": 0.1398272248809001,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/outer-S/5": [
+              1.5738939886376473,
+              0.9442833734226068,
+              -16.333409009534197
+            ],
+            "GRID/spine/0": [
+              12.780216234450684,
+              18.945773327034043,
+              -123.5863168534774
+            ],
+            "GRID/utility-north/0": [
+              4.704042377484423,
+              11.036875830047183,
+              -48.78110958315423
+            ],
+            "GRID/outer-S/6": [
+              7.334636551688634,
+              4.531959917650077,
+              -80.89275598300823
+            ],
+            "GRID/outer-E/0": [
+              0.7085768625032757,
+              0.6379783079923477,
+              -8.062431970032227
+            ],
+            "GRID/outer-E/1": [
+              6.656867972740458,
+              12.32427797053504,
+              -76.25686216730315
+            ]
+          }
+        },
+        {
+          "id": "HAD/local-plant-service-pocket",
+          "rcAndMineralGKN": 23.62497175,
+          "plateEnergyKNmm": 0.1761006965494249,
+          "peakSampledPressureMPa": 0.0831713504208893,
+          "openSamples": 102,
+          "sampleCount": 608,
+          "maximumOpeningMm": 0.009359528506424759,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/spine/3": [
+              1.7062795229368963,
+              6.900612680505871,
+              -16.410839107073073
+            ],
+            "GRID/plant-intermediate/0": [
+              4.720550610133649,
+              18.5189186424852,
+              -50.77911052392743
+            ],
+            "GRID/spine/4": [
+              2.234864842290289,
+              9.315516437164762,
+              -21.526765373853816
+            ],
+            "GRID/spine/5": [
+              10.943463796653992,
+              55.98587496329784,
+              -105.60312132810051
+            ],
+            "GRID/outer-E/4": [
+              12.28855309048662,
+              61.22328665963079,
+              -140.04586540554538
+            ]
+          }
+        },
+        {
+          "id": "HAD/local-lobby-service-pocket",
+          "rcAndMineralGKN": 11.777953,
+          "plateEnergyKNmm": 0.07792371648840891,
+          "peakSampledPressureMPa": 0.07302898896969047,
+          "openSamples": 252,
+          "sampleCount": 596,
+          "maximumOpeningMm": 0.016676006804811114,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/utility-north/0": [
+              3.7510919194369214,
+              10.414101177924262,
+              -37.898108404942825
+            ],
+            "GRID/spine/2": [
+              4.370653372648822,
+              13.231552983677325,
+              -42.10698677372317
+            ],
+            "GRID/plant-intermediate/0": [
+              3.2593065236661993,
+              11.286438212438837,
+              -35.134304613710455
+            ],
+            "GRID/outer-E/2": [
+              3.8112031172635286,
+              12.32068705596849,
+              -43.439571268209264
+            ],
+            "GRID/outer-E/3": [
+              0.7079816169804772,
+              2.4354597887301255,
+              -8.115133870429657
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "plate125",
+      "captureSHA256": "291147a60e54c04e38f3945f7723bbe2d9a0f3a69e646f1120c45aac320f8cb7",
+      "settings": {
+        "enabled": true,
+        "platePitchMm": 125,
+        "contactPitchMm": 250,
+        "plateLaw": {
+          "elasticModulusMPa": 33000,
+          "poissonRatio": 0.2,
+          "flexuralFactor": 1,
+          "shearFactor": 0.8333333333333334
+        },
+        "mineralModulusMPa": 1000,
+        "jointComplianceMmPerMPa": 0.1
+      },
+      "addedUnfactoredKnownGKN": 60.409024,
+      "maximum312HeadComponentDifferenceFromOff": 17.54366935349198,
+      "nativeEnergyRelativeResidual": 3.823063472056809e-12,
+      "bodies": [
+        {
+          "id": "HAD/local-utility-service-pocket",
+          "rcAndMineralGKN": 25.00609925,
+          "plateEnergyKNmm": 0.12803038601251565,
+          "peakSampledPressureMPa": 0.17201804864598105,
+          "openSamples": 205,
+          "sampleCount": 384,
+          "maximumOpeningMm": 0.1346982789934471,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/spine/0": [
+              12.822410911003365,
+              18.985880713668976,
+              -123.99218924395902
+            ],
+            "GRID/outer-S/5": [
+              1.5853597979687633,
+              0.9518991040354072,
+              -16.489022618997335
+            ],
+            "GRID/utility-north/0": [
+              4.644148086550081,
+              10.89685501717956,
+              -48.12937016502009
+            ],
+            "GRID/outer-S/6": [
+              7.2519932596148715,
+              4.481524147724596,
+              -79.95765828459406
+            ],
+            "GRID/outer-E/0": [
+              0.7346026687587446,
+              0.652239165413702,
+              -8.360135902072109
+            ],
+            "GRID/outer-E/1": [
+              6.719719263623917,
+              12.452750578671452,
+              -76.98450935203022
+            ]
+          }
+        },
+        {
+          "id": "HAD/local-plant-service-pocket",
+          "rcAndMineralGKN": 23.62497175,
+          "plateEnergyKNmm": 0.1791660259767175,
+          "peakSampledPressureMPa": 0.08072711270771234,
+          "openSamples": 55,
+          "sampleCount": 312,
+          "maximumOpeningMm": 0.010160007766644606,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/plant-intermediate/0": [
+              4.935282077192288,
+              19.355605322964582,
+              -53.15579312569484
+            ],
+            "GRID/spine/3": [
+              1.648438834636206,
+              6.672345665411838,
+              -15.859662499491037
+            ],
+            "GRID/spine/4": [
+              2.2125026937485126,
+              9.22206407085437,
+              -21.31241667589867
+            ],
+            "GRID/spine/5": [
+              10.977994450571503,
+              56.1339716646283,
+              -105.9417034593281
+            ],
+            "GRID/outer-E/4": [
+              12.119493806351793,
+              60.560222659215,
+              -138.09612597807083
+            ]
+          }
+        },
+        {
+          "id": "HAD/local-lobby-service-pocket",
+          "rcAndMineralGKN": 11.777953,
+          "plateEnergyKNmm": 0.07880155370434579,
+          "peakSampledPressureMPa": 0.06950116436564008,
+          "openSamples": 89,
+          "sampleCount": 228,
+          "maximumOpeningMm": 0.015708587463202292,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/spine/2": [
+              4.5007700757638,
+              13.59628867357193,
+              -43.34336252184323
+            ],
+            "GRID/utility-north/0": [
+              3.569553012591492,
+              9.91185742661667,
+              -36.08665422437093
+            ],
+            "GRID/plant-intermediate/0": [
+              3.0623922732410804,
+              10.597236358572303,
+              -32.862913893240425
+            ],
+            "GRID/outer-E/2": [
+              3.8135639339509795,
+              12.28829554234534,
+              -43.47135454350781
+            ],
+            "GRID/outer-E/3": [
+              0.953957254455352,
+              3.294561217650409,
+              -10.92981974813557
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "halfE",
+      "captureSHA256": "45f7e24019bc0e7d4338fd8194dd0df295c3dca537c79ada2b13d1e809a45536",
+      "settings": {
+        "enabled": true,
+        "platePitchMm": 250,
+        "contactPitchMm": 250,
+        "plateLaw": {
+          "elasticModulusMPa": 16500,
+          "poissonRatio": 0.2,
+          "flexuralFactor": 1,
+          "shearFactor": 0.8333333333333334
+        },
+        "mineralModulusMPa": 1000,
+        "jointComplianceMmPerMPa": 0.1
+      },
+      "addedUnfactoredKnownGKN": 60.409024,
+      "maximum312HeadComponentDifferenceFromOff": 17.49211727572306,
+      "nativeEnergyRelativeResidual": 3.913447489164528e-12,
+      "bodies": [
+        {
+          "id": "HAD/local-utility-service-pocket",
+          "rcAndMineralGKN": 25.00609925,
+          "plateEnergyKNmm": 0.16868276596210885,
+          "peakSampledPressureMPa": 0.17560063462961148,
+          "openSamples": 201,
+          "sampleCount": 384,
+          "maximumOpeningMm": 0.135676238909239,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/spine/0": [
+              12.629289929223695,
+              18.088222219189973,
+              -122.21682449443706
+            ],
+            "GRID/outer-S/5": [
+              1.7666458096269433,
+              1.0691374458849623,
+              -18.43280418092075
+            ],
+            "GRID/utility-north/0": [
+              5.378671866924218,
+              12.580617316557136,
+              -56.09250816064976
+            ],
+            "GRID/outer-S/6": [
+              6.72744999572442,
+              4.1846756162556735,
+              -74.11090026196068
+            ],
+            "GRID/outer-E/0": [
+              0.734602668743785,
+              0.652239165404858,
+              -8.360135901901787
+            ],
+            "GRID/outer-E/1": [
+              6.521573717256326,
+              11.846256963374712,
+              -74.69971256658
+            ]
+          }
+        },
+        {
+          "id": "HAD/local-plant-service-pocket",
+          "rcAndMineralGKN": 23.62497175,
+          "plateEnergyKNmm": 0.2321337532088082,
+          "peakSampledPressureMPa": 0.0780455304101753,
+          "openSamples": 67,
+          "sampleCount": 312,
+          "maximumOpeningMm": 0.01720603590633968,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/plant-intermediate/0": [
+              5.70048243653564,
+              22.39111885362352,
+              -60.88417362365826
+            ],
+            "GRID/spine/3": [
+              1.192306213064561,
+              4.829707666558786,
+              -11.500533879511782
+            ],
+            "GRID/spine/4": [
+              1.8084590338594546,
+              7.539032556384264,
+              -17.456265665291312
+            ],
+            "GRID/spine/5": [
+              11.19234282609702,
+              57.015903557476996,
+              -108.1975589968197
+            ],
+            "GRID/outer-E/4": [
+              12.000121352944277,
+              60.16844674903725,
+              -136.3271695732145
+            ]
+          }
+        },
+        {
+          "id": "HAD/local-lobby-service-pocket",
+          "rcAndMineralGKN": 11.777953,
+          "plateEnergyKNmm": 0.0640092225667449,
+          "peakSampledPressureMPa": 0.06443492581407478,
+          "openSamples": 90,
+          "sampleCount": 228,
+          "maximumOpeningMm": 0.01173848981068508,
+          "receiverBaseFzKN_MxMyKNm": {
+            "GRID/spine/2": [
+              3.9939102720523585,
+              12.163468104357133,
+              -38.51151730190878
+            ],
+            "GRID/utility-north/0": [
+              3.9285838463821325,
+              10.908603933260107,
+              -40.12360917908537
+            ],
+            "GRID/plant-intermediate/0": [
+              3.6544237981113272,
+              12.648895388769153,
+              -38.73770568560985
+            ],
+            "GRID/outer-E/2": [
+              3.6428106024503917,
+              11.620739881652543,
+              -41.527073384393915
+            ],
+            "GRID/outer-E/3": [
+              0.6805080310053596,
+              2.3465319107142864,
+              -7.794199380081867
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "separatePerturbations": [
+    {
+      "id": "contact125",
+      "bodies": [
+        {
+          "id": "HAD/local-utility-service-pocket",
+          "plateEnergyRelativeChange": 0.0008869690281099185,
+          "maximumReceiverBaseFzChangeKN": 0.09212234534371522,
+          "maximumReceiverBaseMxMyChangeKNm": 1.0098843069785417
+        },
+        {
+          "id": "HAD/local-plant-service-pocket",
+          "plateEnergyRelativeChange": 0.00021567078237683113,
+          "maximumReceiverBaseFzChangeKN": 0.1889462926824299,
+          "maximumReceiverBaseMxMyChangeKNm": 2.1269193828480795
+        },
+        {
+          "id": "HAD/local-lobby-service-pocket",
+          "plateEnergyRelativeChange": -0.012275813101991107,
+          "maximumReceiverBaseFzChangeKN": 0.26250058694935285,
+          "maximumReceiverBaseMxMyChangeKNm": 3.0039940652579773
+        }
+      ]
+    },
+    {
+      "id": "plate125",
+      "bodies": [
+        {
+          "id": "HAD/local-utility-service-pocket",
+          "plateEnergyRelativeChange": 0.026181614307563272,
+          "maximumReceiverBaseFzChangeKN": 0.03376948150085646,
+          "maximumReceiverBaseMxMyChangeKNm": 0.37167286513550835
+        },
+        {
+          "id": "HAD/local-plant-service-pocket",
+          "plateEnergyRelativeChange": 0.017626110317054744,
+          "maximumReceiverBaseFzChangeKN": 0.031451002849612664,
+          "maximumReceiverBaseMxMyChangeKNm": 0.30158502737198134
+        },
+        {
+          "id": "HAD/local-lobby-service-pocket",
+          "plateEnergyRelativeChange": -0.0011487636052048833,
+          "maximumReceiverBaseFzChangeKN": 0.02216580623768616,
+          "maximumReceiverBaseMxMyChangeKNm": 0.21220359750175533
+        }
+      ]
+    },
+    {
+      "id": "halfE",
+      "bodies": [
+        {
+          "id": "HAD/local-utility-service-pocket",
+          "plateEnergyRelativeChange": 0.35201617734668367,
+          "maximumReceiverBaseFzChangeKN": 0.7667518347835109,
+          "maximumReceiverBaseMxMyChangeKNm": 8.321282884474066
+        },
+        {
+          "id": "HAD/local-plant-service-pocket",
+          "plateEnergyRelativeChange": 0.3184718869741294,
+          "maximumReceiverBaseFzChangeKN": 0.790985533719561,
+          "maximumReceiverBaseMxMyChangeKNm": 7.978143716882755
+        },
+        {
+          "id": "HAD/local-lobby-service-pocket",
+          "plateEnergyRelativeChange": -0.18864935910601455,
+          "maximumReceiverBaseFzChangeKN": 0.614197331107933,
+          "maximumReceiverBaseMxMyChangeKNm": 6.086995389871184
+        }
+      ]
+    }
+  ],
+  "contactConverged": false,
+  "plateConverged": false,
+  "materialStiffnessQualified": false,
+  "fullInstalledInventoryIncluded": false,
+  "completeReceiverCutsAvailable": false,
+  "candidateAccepted": false,
+  "wholeHouseAccepted": false
+}
