@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:30.008Z",
-  "heartbeatAt": "2026-11-26T11:54:53.717Z",
-  "expiresAt": "2026-11-26T13:24:53.717Z",
+  "heartbeatAt": "2026-11-26T12:41:37.000Z",
+  "expiresAt": "2026-11-26T13:26:37.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
@@ -36,7 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "1628mergedf2ac;1629tip867e8042 protects loadedjoint/136Study/drain/95lighting. FreshrestoredW0 32active +5body/8head/3provenancecontrols pass; hosted96current pipelineactive",
-    "next": "Verifyhosted96andexacthealth/browser/PDF; completefiniteenvelope andactualrear-directbearingarchitecturalchallenge; freshthreepreflightsbeforemerge"
+    "evidence": "PR1629@867e8042 durable; actual96 signed cases PASS run45814303861. Merged1627/1628. A4/B5 changed pages inspected; fullhealth/browser running45814303876. Rear-bearing W0 observed; raw local result unretained after outage, exact source recovery underway.",
+    "next": "Recover source to protected branches; on capable executor verify exact-head CI and fresh three-lease merge-check before1629 merge. Repeat rear W0 capture before wind/strength comparison.",
+    "blocker": "Executor explicitly unavailable again; canonical local publication preflight cannot run. No whole-house, convergence, strength or arch adoption."
   }
 }
