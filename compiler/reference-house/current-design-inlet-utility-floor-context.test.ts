@@ -55,4 +55,5 @@ test('the complete route reader admits only bounded owning floor controls',()=>{
  assert.deepEqual(admitUtilityRouteChoice(choice).candidateFloorPocket,choice.candidateFloorPocket)
  assert.throws(()=>admitUtilityRouteChoice({...choice,candidateFloorPocket:{...choice.candidateFloorPocket,unownedOverride:true}}),/complete Utility candidate floor controls/)
  assert.throws(()=>admitUtilityRouteChoice({...choice,candidateFloorPocket:{...choice.candidateFloorPocket,depthMm:351}}),/complete Utility candidate floor controls/)
+ assert.throws(()=>admitUtilityRouteChoice({...choice,candidateFloorPocket:null}),/complete Utility candidate floor controls/)
 })

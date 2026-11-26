@@ -1,19 +1,20 @@
 import {sha256SemanticFingerprint} from '../../core/identity.js'
 import {inletRoomPocket} from './inlet-room-pocket.js'
+import {plantAppliancePlatform,type AppliancePlatformChoice,type AppliancePlatformSource} from './inlet-plant-appliance-platform.js'
 type B=readonly[number,number,number,number,number,number]
 type P=readonly[number,number,number,number]
 type Section=readonly[number,number,number]
 export type PlantWalkControl={
- schema:string;id:string;walkingRiseAboveHouseFflMm:number;bridgeAboveWalkingMm:number
+ appliancePlatform?:(AppliancePlatformChoice&{perimeterInsetMm:number;postColumnRelocation:{sourceColumnIndex:number;targetXMm:number};bufferFootPlanMm:readonly[number,number];loadedNodeBlockLWtMm:Section;loadedPadBlankUpperMm:number;cutEdgeRimMm:number;additionalCutPanelHardwareKg:number;railPocketSideClearanceMm:number});schema:string;id:string;walkingRiseAboveHouseFflMm:number;bridgeAboveWalkingMm:number
  material:{densityKgM3:number;elasticModulusMPa:number;allowableComparisonMPa:number;thermalExpansionPerK?:number}
  grating:{bearingBarHeightMm:number;bearingBarThicknessMm:number;bearingBarPitchMm:number;crossBarHeightMm:number;crossBarThicknessMm:number;crossBarPitchMm:number;maximumBearingSpanMm:number;maximumPanelXMm:number;maximumPanelYMm:number;rimHeightMm:number;rimThicknessMm:number;maximumCompletePanelKg:number;hardwareBudgetEachKg:number;panelJointGapMm:number;maximumRelativeSeatErrorMm?:number;locatingPinDiameterMm?:number;locatingHoleMaximumMm?:number;locatingEngagementMm?:number;maximumFactoryLocatingPositionErrorMm?:number;maximumUniformTemperatureExcursionK?:number}
  walkingFrame:{beamSectionKind?:'solid'|'rhs';maximumRemovableBeamSegmentKg?:number;headPlateLWtMm?:Section;beamSectionWHtMm:Section;minimumBeamIMm4:number;maximumBeamSpanMm:number;postSectionWHtMm:Section;footPadSideMm:number;footPadThicknessMm:number;maximumSinglePostDesignN:number}
  bridge:{thicknessMm:number;pieceCount:number;railYMm:readonly number[];railSectionWHtMm:Section;minimumRailIMm4:number;maximumRailDeflectionMm:number;crossBeamSectionWHtMm:Section;crossBeamSupportYMm:readonly[number,number];insideRailSeatXMm:number;outsideRailSeatXMm:number}
 }
-export type PlantWalkApparatus={id:string;source:{path:string;gitBlob:string;objectPath:string};homePlanMm:P;bodyBottomAbsoluteMm:number;bodyHeightMm:number;normalFilledMassUpperKg:number;requiredPanelLiftMm:number}
+export type PlantWalkApparatus={platformSource?:AppliancePlatformSource;id:string;source:{path:string;gitBlob:string;objectPath:string};homePlanMm:P;bodyBottomAbsoluteMm:number;bodyHeightMm:number;normalFilledMassUpperKg:number;requiredPanelLiftMm:number}
 export type PlantPanCompressionSupport={floorCase:ReturnType<typeof inletRoomPocket>;panCells:readonly{id:string;cornersMm:readonly(readonly number[])[]}[];panInternalStepFaces:readonly{id:string;cornersMm:readonly(readonly number[])[];normal:readonly number[]}[];panMetalMm:number;panDensityKgM3:number;design:{minimumMachinedFootThicknessMm:number;stockThicknessMm:number;compressiveWorkingFactor:number;minimumEffectiveContactFraction:number}}
 type Input={compressionSupport?:PlantPanCompressionSupport;apparatus?:readonly PlantWalkApparatus[];choice:PlantWalkControl;roomPlanMm:P;houseFflMm:number;initialWaterMm:number;maximumWaterMm:number;wheelN:number;panMinimumMm:number;panMaximumMm:number;bridgeInnerXMm:number;bridgeOuterXMm:number;bridgePlateYMm:readonly[number,number];outfallRoofMaximumMm:number;sourceRoofAtExternalBeamMm?:number;settingEachMm?:number}
-type Part={id:string;kind:string;boxMm:B;metalVolumeMm3:number;displacementOuterBoxRequired:boolean;installedAcceptance:false}
+type Part={id:string;kind:string;boxMm:B;metalVolumeMm3:number;displacementOuterBoxRequired:boolean;installedAcceptance:false;compressionDesignN?:number;planPolygonMm?:readonly(readonly[number,number])[];subtractBoxesMm?:readonly B[];subtractPlanPrisms?:readonly{polygonMm:readonly(readonly[number,number])[];zMm:number;heightMm:number}[];axisStartEndXYMm?:readonly[readonly[number,number],readonly[number,number]];unionAssemblyId?:string}
 const volume=(b:B)=>b[3]*b[4]*b[5]
 const section=(s:Section,solid=false)=>{const[w,h,t]=s;return solid?{area:w*h,I:w*h**3/12,Z:w*h**2/6}:{area:w*h-(w-2*t)*(h-2*t),I:(w*h**3-(w-2*t)*(h-2*t)**3)/12,Z:(w*h**3-(w-2*t)*(h-2*t)**3)/(6*h)}}
 const finite=(a:readonly number[])=>a.every(Number.isFinite)
@@ -55,10 +56,11 @@ export function plantTankedWalkingSurface(i:Input){
   add(id+'/complete-mass','kg',mass+g.hardwareBudgetEachKg,g.maximumCompletePanelKg)
   add(id+'/wheel-cannot-fit-between-bars','mm',pitch-g.bearingBarThicknessMm,25)
  }
- const pad=f.footPadSideMm,post=f.postSectionWHtMm,beam=f.beamSectionWHtMm,
-  xs=[r[0]+pad/2,...Array.from({length:nx-1},(_,k)=>r[0]+(k+1)*px+(k+.5)*g.panelJointGapMm),r[0]+r[2]-pad/2],
-  ys=[r[1]+pad/2,...Array.from({length:ny-1},(_,k)=>r[1]+(k+1)*py+(k+.5)*g.panelJointGapMm),r[1]+r[3]-pad/2],
+ const pad=f.footPadSideMm,post=f.postSectionWHtMm,beam=f.beamSectionWHtMm,perimeterInset=c.appliancePlatform?.perimeterInsetMm??0,
+  xs=[r[0]+pad/2+perimeterInset,...Array.from({length:nx-1},(_,k)=>r[0]+(k+1)*px+(k+.5)*g.panelJointGapMm),r[0]+r[2]-pad/2-perimeterInset],
+  ys=[r[1]+pad/2+perimeterInset,...Array.from({length:ny-1},(_,k)=>r[1]+(k+1)*py+(k+.5)*g.panelJointGapMm),r[1]+r[3]-pad/2-perimeterInset],
   fBeam=section(beam,solid),fPost=section(post),beamSegments:{id:string;boxMm:B;referenceMetalKg:number;hardwareBudgetKg:number;completeMassDesignUpperKg:number;actualCaptureAndEndRetainersAccepted:false}[]=[]
+ if(c.appliancePlatform){if(!Number.isFinite(m.thermalExpansionPerK)||!Number.isFinite(g.maximumUniformTemperatureExcursionK))throw Error('Actual authored steel expansion and temperature range required');const q=c.appliancePlatform.postColumnRelocation;if(!Number.isInteger(q.sourceColumnIndex)||q.sourceColumnIndex<=0||q.sourceColumnIndex>=xs.length-1||!Number.isFinite(q.targetXMm)||q.targetXMm<=xs[q.sourceColumnIndex-1]||q.targetXMm>=xs[q.sourceColumnIndex+1]||!Number.isFinite(perimeterInset)||perimeterInset<25)throw Error('One explicit ordered unified post-column move and real perimeter clearance required');xs[q.sourceColumnIndex]=q.targetXMm}
  if(beamBottom-cap-i.panMaximumMm<=f.footPadThicknessMm)throw Error('Pan/post/grating vertical stack has no direct bearing length')
  if(solid){const cuts=[r[0],...xs.slice(1,-1),r[0]+r[2]]
   for(let y=0;y<ys.length;y++)for(let k=1;k<cuts.length;k++){const x=cuts[k-1]+(k===1?0:g.panelJointGapMm/2),L=cuts[k]-cuts[k-1]-(k===1?0:g.panelJointGapMm/2)-(k===cuts.length-1?0:g.panelJointGapMm/2),p=make('Plant/solid-walk-segment/'+y+'/'+k,'solid-beam',[x,ys[y]-beam[0]/2,beamBottom,L,beam[0],beam[1]],fBeam.area*L),metal=p.metalVolumeMm3/1e9*m.densityKgM3
@@ -85,7 +87,7 @@ export function plantTankedWalkingSurface(i:Input){
  add('Plant/matched-panel-seat-fit','mm',locatorSpecified?fitBudget!:null,relativeSeatError)
  add('Plant/single-bar-end-bearing','MPa',minimumSeat>0?i.wheelN/(minimumSeat*g.bearingBarThicknessMm):null,m.allowableComparisonMPa)
  const bearingSpan=Math.max(maxGap(ys),Math.max(...panels.map(p=>p.planMm[3])))+two,beamSpan=maxGap(xs)+two,
-  overhang=pad/2+two,Ib=g.bearingBarThicknessMm*g.bearingBarHeightMm**3/12,barStress=1.5*i.wheelN*bearingSpan/(g.bearingBarThicknessMm*g.bearingBarHeightMm**2),
+  overhang=Math.max(xs[0]-r[0],r[0]+r[2]-xs.at(-1)!,ys[0]-r[1],r[1]+r[3]-ys.at(-1)!)+two,Ib=g.bearingBarThicknessMm*g.bearingBarHeightMm**3/12,barStress=1.5*i.wheelN*bearingSpan/(g.bearingBarThicknessMm*g.bearingBarHeightMm**2),
   barCantilever=6*i.wheelN*overhang/(g.bearingBarThicknessMm*g.bearingBarHeightMm**2),beamStress=i.wheelN*beamSpan/(4*(f.minimumBeamIMm4/(beam[1]/2))),
   beamDelta=i.wheelN*beamSpan**3/(48*m.elasticModulusMPa*f.minimumBeamIMm4),postLength=beamBottom-cap-i.panMinimumMm-f.footPadThicknessMm
  if(solid){const endSeat=head![0]/2-g.panelJointGapMm/2-two,over=Math.max(0,(head![0]-post[0])/2)+two
@@ -97,6 +99,8 @@ export function plantTankedWalkingSurface(i:Input){
  add('Plant/grate-declared-nominal-span','mm',bearingSpan-two,g.maximumBearingSpanMm)
  add('Plant/frame-declared-nominal-span','mm',beamSpan-two,f.maximumBeamSpanMm)
  add('Plant/grate-single-bearing-bar','MPa',barStress,m.allowableComparisonMPa)
+ add('Plant/frame-wall-edge-cantilever','MPa',(i.wheelN+g.hardwareBudgetEachKg*9.81)*overhang/(f.minimumBeamIMm4/(beam[1]/2)),m.allowableComparisonMPa)
+ add('Plant/frame-wall-edge-cantilever-deflection','mm',i.wheelN*overhang**3/(3*m.elasticModulusMPa*f.minimumBeamIMm4),2)
  add('Plant/grate-wall-edge-cantilever','MPa',barCantilever,m.allowableComparisonMPa)
  add('Plant/grate-single-bar-deflection','mm',i.wheelN*bearingSpan**3/(48*m.elasticModulusMPa*Ib),2)
  add('Plant/frame-minimum-I-versus-sharp-geometry','mm4',f.minimumBeamIMm4,fBeam.I)
@@ -175,7 +179,7 @@ export function plantTankedWalkingSurface(i:Input){
  // cylinder. Pedestals deliberately have a separate load budget from the walk.
  // The existing rectangular grating remains visible: intersections become REAL
  // cutout/detail failures, never unearned silent deletion of bars or beams.
- const apparatusInterfaces=(i.apparatus??[]).map(a=>{
+ const apparatusInterfaces=(c.appliancePlatform?[]:(i.apparatus??[])).map(a=>{
   const ap=a.homePlanMm
   if(!a.id||!a.source?.path||!/^[0-9a-f]{40}$/.test(a.source.gitBlob)||!a.source.objectPath||!finite([...ap,a.bodyBottomAbsoluteMm,a.bodyHeightMm,a.normalFilledMassUpperKg,a.requiredPanelLiftMm])||Math.min(ap[2],ap[3],a.bodyHeightMm,a.normalFilledMassUpperKg,a.requiredPanelLiftMm)<=0||a.bodyBottomAbsoluteMm<walk||ap[0]<r[0]||ap[1]<r[1]||ap[0]+ap[2]>r[0]+r[2]||ap[1]+ap[3]>r[1]+r[3])throw Error('Actual captured apparatus geometry, mass and absolute datum required')
   const side=f.footPadSideMm,padT=f.footPadThicknessMm,capT=30,postWHt=[30,30,3] as const,pv=section(postWHt),maxPostN=f.maximumSinglePostDesignN,
@@ -213,6 +217,35 @@ export function plantTankedWalkingSurface(i:Input){
    diagnostics:[...(frameChecks.some(p=>p.afterTwoSettingsMm<0)?['PLANT_WALK/apparatus-stand-hits-walking-frame']:[]),...(panelCutoutIntersections.length?['PLANT_WALK/actual-apparatus-pedestal-cutouts-and-bar-end-support-required']:[]),'PLANT_WALK/apparatus-factory-foot-stand-RC-and-thermal-receivers-unqualified']}
  })
  const blockedPanelIds=[...new Set(apparatusInterfaces.flatMap(a=>'liftCases'in a?(a.liftCases??[]).filter(p=>p.apparatusRemovalRequired).map(p=>p.panel):[]))],apparatusFilledMassUpperKg=(i.apparatus??[]).reduce((n,a)=>n+a.normalFilledMassUpperKg,0)
+
+ const platformSources=c.appliancePlatform?(i.apparatus??[]).map(a=>{const q=a.platformSource;if(!q||q.id!==a.id||JSON.stringify(q.homePlanMm)!==JSON.stringify(a.homePlanMm)||JSON.stringify(q.source)!==JSON.stringify(a.source)||Math.abs(q.components.reduce((n,c)=>n+c.maximumKg,0)-a.normalFilledMassUpperKg)>1e-6)throw Error('Unified mode requires actual separate source mass components; no total-mass-as-CG shortcut');return q}):[]
+ let unified=c.appliancePlatform?plantAppliancePlatform({choice:c.appliancePlatform,apparatus:platformSources,postXMm:xs,postYMm:ys,walkingMm:walk,barBottomMm:barBottom,steelDensityKgM3:m.densityKgM3,elasticModulusMPa:m.elasticModulusMPa,allowableMPa:m.allowableComparisonMPa,wheelN:i.wheelN,walkingDeadAtOneNodeN:frameDeadN+(c.appliancePlatform.loadedPadSideMm**2*c.appliancePlatform.loadedPadBlankUpperMm+volume([0,0,0,...c.appliancePlatform.loadedNodeBlockLWtMm])+volume([0,0,0,...c.appliancePlatform.loadedHeadLWtMm])+post[0]*post[1]*(beamBottom-i.panMinimumMm))/1e9*m.densityKgM3*9.81,settingEachMm:s,minimumBarSeatMm:minimumSeat,bearingBarThicknessMm:g.bearingBarThicknessMm,steelThermalMovementPerMm:(m.thermalExpansionPerK??0)*(g.maximumUniformTemperatureExcursionK??0),sourceMovementCoverXYMm:[two+(r[2]+Math.max(...platformSources.map(a=>a.homePlanMm[2])))*(m.thermalExpansionPerK??0)*(g.maximumUniformTemperatureExcursionK??0),two+(r[3]+Math.max(...platformSources.map(a=>a.homePlanMm[3])))*(m.thermalExpansionPerK??0)*(g.maximumUniformTemperatureExcursionK??0)]}):null
+ if(unified)for(const a of i.apparatus??[]){const q=unified.chassis.find(q=>q.id===a.id)!;if(Math.abs(a.bodyBottomAbsoluteMm-q.bodyBearingPlaneMm)>1e-8)throw Error('Actual source apparatus body bottom must follow its selected factory pickup or above-floor buffer cradle')}
+ const unifiedDetails=unified?applyUnifiedPlatform({platform:unified,control:c.appliancePlatform!,parts,panels,make,beamSegments,barBottomMm:barBottom,beamBottomMm:beamBottom,postSection:post,steel:m,hardwareEachPanelKg:g.hardwareBudgetEachKg,initialWaterMm:i.initialWaterMm,maximumWaterMm:i.maximumWaterMm,room:r,normalPadMm:pad,walkingRailWidthMm:beam[0],steelThermalMovementPerMm:(m.thermalExpansionPerK??0)*(g.maximumUniformTemperatureExcursionK??0),settingEachMm:s}):null
+
+ if(unified&&unifiedDetails){
+  const finalPanelMaximum=Math.max(...panels.map(p=>p.completeMassDesignUpperKg)),finalSegmentMaximum=Math.max(...beamSegments.map(p=>p.completeMassDesignUpperKg)),finalFrameDead=(4*finalPanelMaximum+finalSegmentMaximum)*9.81,kitBound=(c.appliancePlatform!.loadedPadSideMm**2*c.appliancePlatform!.loadedPadBlankUpperMm+volume([0,0,0,...c.appliancePlatform!.loadedNodeBlockLWtMm])+volume([0,0,0,...c.appliancePlatform!.loadedHeadLWtMm])+post[0]*post[1]*(beamBottom-i.panMinimumMm))/1e9*m.densityKgM3*9.81,
+   again=plantAppliancePlatform({choice:c.appliancePlatform!,apparatus:platformSources,postXMm:xs,postYMm:ys,walkingMm:walk,barBottomMm:barBottom,steelDensityKgM3:m.densityKgM3,elasticModulusMPa:m.elasticModulusMPa,allowableMPa:m.allowableComparisonMPa,wheelN:i.wheelN,walkingDeadAtOneNodeN:finalFrameDead+kitBound,settingEachMm:s,minimumBarSeatMm:minimumSeat,bearingBarThicknessMm:g.bearingBarThicknessMm,steelThermalMovementPerMm:(m.thermalExpansionPerK??0)*(g.maximumUniformTemperatureExcursionK??0),sourceMovementCoverXYMm:[two+(r[2]+Math.max(...platformSources.map(a=>a.homePlanMm[2])))*(m.thermalExpansionPerK??0)*(g.maximumUniformTemperatureExcursionK??0),two+(r[3]+Math.max(...platformSources.map(a=>a.homePlanMm[3])))*(m.thermalExpansionPerK??0)*(g.maximumUniformTemperatureExcursionK??0)]})
+  if(JSON.stringify(again.loadedNodes.map(n=>n.xyMm))!==JSON.stringify(unified.loadedNodes.map(n=>n.xyMm)))throw Error('Post-trim G refresh changed actual appliance support topology')
+  unified=again
+  unifiedDetails.finalDemandBasis={maximumCompletePhysicalPanelKg:Math.max(...unifiedDetails.physicalPanelPieces.map(p=>p.completeMassUpperKg)),maximumContainerAllPiecesKg:finalPanelMaximum,maximumCompleteRailSegmentKg:finalSegmentMaximum,frameDeadAtOneNodeN:finalFrameDead,loadedNodeKitGravityBoundN:kitBound,allDemandRecomputedAfterActualCutRimsAndStocks:true}
+  for(const n of unified.loadedNodes){const foot=parts.find(p=>p.kind==='solid-foot-pad'&&Math.abs(p.boxMm[0]+p.boxMm[3]/2-n.xyMm[0])<1e-6&&Math.abs(p.boxMm[1]+p.boxMm[4]/2-n.xyMm[1])<1e-6)!;foot.compressionDesignN=n.compressionN
+   const suffix=foot.id.slice('Plant/foot/'.length),head=CHead(),postSection=post,headChecks=unifiedDetails.componentChecks.filter(q=>q.id.startsWith('Plant/unified-node/'+suffix+'/head-strip/'))
+   for(const q of headChecks){const axis=Number(q.id.at(-1)),w=head[axis],l=head[1-axis];q.value=6*n.compressionN*((w-postSection[axis])/2+two)/(l*head[2]**2);q.necessary=q.value<=q.limit}
+   const axial=unifiedDetails.componentChecks.find(q=>q.id==='Plant/unified-node/'+suffix+'/post-axial')!;axial.value=n.compressionN/section(post).area;axial.necessary=axial.value<=axial.limit
+  }
+  unifiedDetails.necessaryNodeComponentComparisons=unifiedDetails.componentChecks.every(q=>q.necessary)
+  function CHead(){return c.appliancePlatform!.loadedHeadLWtMm}
+  const update=(id:string,value:number)=>{const q=checks.find(q=>q.id===id);if(!q)throw Error('Missing actual dead-demand check '+id);q.value=value;q.necessary=value<=q.limit+1e-8}
+  update('Plant/grate-bar-wheel-and-dead',barStress*(i.wheelN+finalPanelMaximum*9.81)/i.wheelN)
+  update('Plant/grate-edge-wheel-and-dead',barCantilever*(i.wheelN+finalPanelMaximum*9.81)/i.wheelN)
+  update('Plant/frame-wheel-and-dead',beamStress*(i.wheelN+finalFrameDead)/i.wheelN)
+  update('Plant/frame-wheel-and-dead-deflection',beamDelta*(i.wheelN+finalFrameDead)/i.wheelN)
+  update('Plant/frame-wall-edge-cantilever',(i.wheelN+finalFrameDead)*overhang/(f.minimumBeamIMm4/(beam[1]/2)))
+  for(const panel of unifiedDetails.physicalPanelPieces)add(panel.id+'/complete-actual-piece','kg',panel.completeMassUpperKg,g.maximumCompletePanelKg)
+ }
+
+ if(unified){for(const a of unified.chassis){checks.push({id:a.id+'/selected-CG-stability',quantity:'condition',value:a.necessarySelectedGravityCG?0:1,limit:0,necessary:a.necessarySelectedGravityCG});checks.push({id:a.id+'/matched-mount-fit',quantity:'mm',value:a.matchedMount.completeFitBudgetMm,limit:a.matchedMount.maximumRelativeErrorMm,necessary:a.matchedMount.necessaryMatchedFit})}for(const q of unifiedDetails?.componentChecks??[])checks.push({id:q.id,quantity:'MPa',value:q.value,limit:q.limit,necessary:q.necessary});for(const q of unifiedDetails?.footPanClearances??[])checks.push({id:q.id,quantity:'mm',value:q.requiredCoverMm,limit:q.nominalGapMm,necessary:q.afterSettingsAndSteelThermalMm>=0});for(const a of unified.chassis)for(const q of a.memberChecks)checks.push({id:a.id+'/'+q.id,quantity:q.id.includes('deflection')?'mm':q.id.includes('mass')?'kg':'MPa',value:q.value,limit:q.limit,necessary:q.necessary});if(unifiedDetails){totalJointMm3=unifiedDetails.totalJointMm3;wetJointMm3=unifiedDetails.wetJointMm3;blockedPanelIds.splice(0,blockedPanelIds.length,...unifiedDetails.apparatusBlockedPanelIds)}}
  const compressionSupport=i.compressionSupport?plantMatchedPanCompression({context:i.compressionSupport,roomPlanMm:r,parts,maximumWaterMm:i.maximumWaterMm,footDesignN:f.maximumSinglePostDesignN,steelDensityKgM3:m.densityKgM3}):null
  if(compressionSupport)for(const a of apparatusInterfaces){
   if(!('standParts'in a)||!a.standParts)continue
@@ -241,8 +274,8 @@ export function plantTankedWalkingSurface(i:Input){
   // Extra RHS metal/void is deliberately charged as SOLID for this normal
   // design mass upper. Actual fabrication/section tolerances remain unearned.
   fullEnvelopeMm3=parts.filter(p=>p.kind!=='hardware').reduce((n,p)=>n+(p.kind.includes('RHS')||p.kind==='RHS-beam'||p.kind==='RHS-post'?volume(p.boxMm):p.metalVolumeMm3),0)-totalJointMm3,
-  hardwareKg=(panels.length+bridgePieces.length+beamSegments.length)*g.hardwareBudgetEachKg+apparatusInterfaces.reduce((n,a)=>n+('standHardwareBudgetKg'in a?(a.standHardwareBudgetKg??0):0),0),hardwareVolumeUpperL=hardwareKg/m.densityKgM3*1000,waterUpperL=(bruteMm3-wetJointMm3)/1e6+hardwareVolumeUpperL
- return{...(compressionSupport?{compressionSupport,standThermalClearance}:{}),deadLoadBounds:{panelBarDeadN,frameDeadN,bridgePlateKg,bridgeRailKg,oneCrossKg,railCombinedN,crossCombinedN,footCombinedN,allDeadAtWorstPoint:true,RHSFullOuterBoxMassUpper:true},schema:'had-Plant-tanked-walking-surface/1',sourceDigest:sha256SemanticFingerprint(i),apparatusInterfaces,apparatusFilledMassUpperKg,normalMassExcludesFilledApparatus:true,parts,panels,bridgePieces,beamSegments,locators,walkingTopMm:walk,bridgeTopMm:bridgeTop,
+  hardwareKg=(unifiedDetails?.additionalCutHardwareKg??0)+(unified?.chassis.reduce((n,a)=>n+c.appliancePlatform!.hardwareEachChassisKg,0)??0)+(panels.length+bridgePieces.length+beamSegments.length)*g.hardwareBudgetEachKg+apparatusInterfaces.reduce((n,a)=>n+('standHardwareBudgetKg'in a?(a.standHardwareBudgetKg??0):0),0),hardwareVolumeUpperL=hardwareKg/m.densityKgM3*1000,waterUpperL=(bruteMm3-wetJointMm3)/1e6+hardwareVolumeUpperL
+ return{...(unified?{appliancePlatform:unified,unifiedDetails}:{}),...(compressionSupport?{compressionSupport,standThermalClearance}:{}),deadLoadBounds:{...(unifiedDetails?.finalDemandBasis?{postTrimBasis:unifiedDetails.finalDemandBasis}:{}),panelBarDeadN:unifiedDetails?.finalDemandBasis?.maximumContainerAllPiecesKg?unifiedDetails.finalDemandBasis.maximumContainerAllPiecesKg*9.81:panelBarDeadN,frameDeadN:unifiedDetails?.finalDemandBasis?.frameDeadAtOneNodeN??frameDeadN,bridgePlateKg,bridgeRailKg,oneCrossKg,railCombinedN,crossCombinedN,footCombinedN,allDeadAtWorstPoint:true,RHSFullOuterBoxMassUpper:true},schema:'had-Plant-tanked-walking-surface/1',sourceDigest:sha256SemanticFingerprint(i),apparatusInterfaces,apparatusFilledMassUpperKg,normalMassExcludesFilledApparatus:true,parts,panels,bridgePieces,beamSegments,locators,walkingTopMm:walk,bridgeTopMm:bridgeTop,
   solidsIncrementUpperL:waterUpperL,referenceMetalKg:metalMm3/1e9*m.densityKgM3,normalMassUpperKg:fullEnvelopeMm3/1e9*m.densityKgM3+hardwareKg+(compressionSupport?.normalMassUpperKg??0),
   volumeLedger:{sumFullOuterClippedMm3:bruteMm3,exactCrossBarIntersectionSubtractedMm3:wetJointMm3,joinedBridgeOrHardwareOverlapSubtracted:false,RHSVoidCountedAsSolid:true,closedDuctVoidCreditLitres:0,hardwareBelowWaterIncluded:true,apparatusGrateIntersectionsCountedTwiceConservatively:apparatusInterfaces.some(a=>'panelCutoutIntersections'in a&&!!a.panelCutoutIntersections?.length),hardwareSolidSteelVolumeUpperL:hardwareVolumeUpperL,hardwareRequirement:'Solid steel fasteners/handles only; whole mass budget counted wet. Any enclosed cavity requires a separately authored external volume bound.'},
   geometry:{panelCount:panels.length,panelSizeMm:[px,py],walkingRailSectionKind:solid?'solid':'rhs',wallParameterAppliesToWalkingRail:!solid,actualSolidSegmentFirstRestAndToolProofAccepted:false,postCentreXMm:xs,postCentreYMm:ys,panSupportLevelRangeMm:[i.panMinimumMm,i.panMaximumMm],postBoxesUseLowestPanForConservativeMass:!compressionSupport,actualPerFootPanContactNotInvented:true,...(compressionSupport?{postBoxesUseActualMatchedPanFaces:true,footContactQualificationAccepted:false}:{}),matchedPanelSeat:{relativeErrorMm:relativeSeatError,radialFitMm:radialClearance,thermalMovementMm:thermalMovement,completeFitBudgetMm:fitBudget,minimumBearingMm:minimumSeat,requiredFirstVerticalReleaseMm:requiredFirstLift,oneRoundOneLongitudinalSlotRequired:true,locatorWeldsDoNotCutRHS:true,actualHardwareGeometryToolAndSlotQualificationAccepted:false},bearingSpanWithSettingsMm:bearingSpan,beamSpanWithSettingsMm:beamSpan,bridgeRailBottomMm:railBottom,crossBeamBottomMm:crossBottom},
@@ -305,7 +338,7 @@ export function plantMatchedPanCompression(i:{context:PlantPanCompressionSupport
   }
  }
  const minimumThickness=Math.min(...bedFacets.map(f=>f.thicknessRangeMm[0])),maximumThickness=Math.max(...bedFacets.map(f=>f.thicknessRangeMm[1])),feet=i.parts.filter(p=>['solid-foot-pad','apparatus-stand-pad','bridge-pad'].includes(p.kind)).map(foot=>{
-  const b=foot.boxMm
+  const b=foot.boxMm,designN=foot.compressionDesignN??i.footDesignN
   if(d.minimumMachinedFootThicknessMm<b[5]-1e-8)throw Error('Matched foot cannot be machined thinner than the same selected complete steel pad')
   const plan=[b[0],b[1],b[0]+b[3],b[1]+b[4]]as const,hits=cells.flatMap(c=>{const p=clip(plan,c.plan);return p?[{cell:c,plan:p}]:[]}),covered=hits.reduce((n,h)=>n+area(h.plan),0)
   if(Math.abs(covered-area(plan))>1e-5)return{id:foot.id,necessaryMatchedContact:false,outsidePanReceiverRequired:true,actualReceiverAccepted:false}
@@ -318,9 +351,122 @@ export function plantMatchedPanCompression(i:{context:PlantPanCompressionSupport
   foot.boxMm=[b[0],b[1],minimum,b[3],b[4],top-minimum];foot.metalVolumeMm3=exactVolume
   post.boxMm=[oldPost[0],oldPost[1],top,oldPost[3],oldPost[4],newLength];post.metalVolumeMm3*=newLength/oldPost[5]
   const slope=Math.max(...hits.map(h=>Math.hypot(h.cell.ax,h.cell.ay))),footMass=exactVolume/1e9*i.steelDensityKgM3,
-   pressure=i.footDesignN/(area(plan)*d.minimumEffectiveContactFraction)*1000+Math.max(0,i.maximumWaterMm-minimum)*9.81/1000+c.panMetalMm/1000*c.panDensityKgM3*9.81/1000+footMass*9.81/(area(plan)/1e6)/1000+181.5*Math.max(...bedFacets.map(f=>f.thicknessRangeMm[1]))/1000*9.81/1000
-  return{id:foot.id,postId,necessaryMatchedContact:true,outsidePanReceiverRequired:false,footPlanMinMaxMm:plan,matchedFacetContacts:hits.map(h=>({panFacet:h.cell.id,planMinMaxMm:h.plan,bottomPlaneABC:[h.cell.ax,h.cell.ay,h.cell.surface(0,0)]})),steelTopMm:top,footThicknessRangeMm:[d.minimumMachinedFootThicknessMm,top-minimum],exactMetalVolumeMm3:exactVolume,metalMassChangeKg:(exactVolume-before)/1e9*i.steelDensityKgM3,actualPostLengthMm:newLength,designN:i.footDesignN,bedCompressiveMeanKPa:pressure,contactFractionRequirement:d.minimumEffectiveContactFraction,uniformPressureDistributionIsAuthoredRequirementOnly:true,actualPeakContactPressureAccepted:false,workingLimitKPa:1558/d.compressiveWorkingFactor,creepComparisonKPa:600,necessaryWorkingPressureComparison:pressure<=1558/d.compressiveWorkingFactor&&pressure<=600,slopeHorizontalDemandUpperN:i.footDesignN*slope,positiveLateralRetentionAccepted:false,fullAreaContactAndPanLocalContactAccepted:false,actualReceiverAccepted:false}
+   pressure=designN/(area(plan)*d.minimumEffectiveContactFraction)*1000+Math.max(0,i.maximumWaterMm-minimum)*9.81/1000+c.panMetalMm/1000*c.panDensityKgM3*9.81/1000+footMass*9.81/(area(plan)/1e6)/1000+181.5*Math.max(...bedFacets.map(f=>f.thicknessRangeMm[1]))/1000*9.81/1000
+  return{id:foot.id,postId,necessaryMatchedContact:true,outsidePanReceiverRequired:false,footPlanMinMaxMm:plan,matchedFacetContacts:hits.map(h=>({panFacet:h.cell.id,planMinMaxMm:h.plan,bottomPlaneABC:[h.cell.ax,h.cell.ay,h.cell.surface(0,0)]})),steelTopMm:top,footThicknessRangeMm:[d.minimumMachinedFootThicknessMm,top-minimum],exactMetalVolumeMm3:exactVolume,metalMassChangeKg:(exactVolume-before)/1e9*i.steelDensityKgM3,actualPostLengthMm:newLength,designN,bedCompressiveMeanKPa:pressure,contactFractionRequirement:d.minimumEffectiveContactFraction,uniformPressureDistributionIsAuthoredRequirementOnly:true,actualPeakContactPressureAccepted:false,workingLimitKPa:1558/d.compressiveWorkingFactor,creepComparisonKPa:600,necessaryWorkingPressureComparison:pressure<=1558/d.compressiveWorkingFactor&&pressure<=600,slopeHorizontalDemandUpperN:designN*slope,positiveLateralRetentionAccepted:false,fullAreaContactAndPanLocalContactAccepted:false,actualReceiverAccepted:false}
  })
  const mass=bedFacets.reduce((n,f)=>n+f.massUpperKg,0)
  return{schema:'had-plant-matched-pan-compression/1',floorCaseDigest:actual.plantCompression.caseDigest,sourceDigest:sha256SemanticFingerprint({context:c,roomPlanMm:p,maximumWaterMm:i.maximumWaterMm,footDesignN:i.footDesignN}),source:{pds:'https://www.foamglas.com/-/media/project/foamglas/public/shared/files/foamglas-b/foamglas-f/pds/pds-foamglas-f-uk.pdf',date:'2025-04-02',unfacedSlabOnly:true,organicFacingsOrAdhesiveAdopted:false,slabMm:[600,450],thicknessToleranceMm:2,densityUpperKgM3:181.5,characteristicCompressionKPa:1558,creepTestKPa:600,conductivityUpperWmK:.050},bedFacets,tiles,stepNotches,physicalBedGeometry:'Union of facet-bounded bed cells MINUS the actual normal-thickness internal pan-step prisms; cut each larger stock tile against that same constructive solid.',normalOriginsUseUnnotchedUpperStock:true,actualNetMachinedVolumeM3:null,feet,normalMassUpperKg:mass,bedVolumeM3IsUnnotchedConservativeUpper:true,bedVolumeM3:bedFacets.reduce((n,f)=>n+f.volumeMm3,0)/1e9,thicknessRangeMm:[minimumThickness,maximumThickness],necessaryStockEnvelope:minimumThickness>=40&&maximumThickness<=d.stockThicknessMm-2&&tiles.every(t=>t.minimumInfillMm>=150),necessaryPanFootPressureComparisons:feet.filter(f=>f.necessaryMatchedContact).every(f=>'necessaryWorkingPressureComparison'in f&&f.necessaryWorkingPressureComparison),normalOrigins:bedFacets.map(f=>({id:f.id,originMm:f.originMm,wrenchKN_KNm:f.wrenchKN_KNm})),necessarySourceCoreXYSeparation:actual.plantCompression.necessaryCoreXYSeparation,oldUniformGlassPhysicalGeometryRetired:actual.local.physicalUniformGlassAndServiceAndFinishRetired===true,rcMineralDeltaWrenchAboutGlobalZeroKN_KNm:actual.plantCompression.rcMineralDeltaWrenchAboutGlobalZeroKN_KNm,maximumPublished50YearCompressionAt600KPaMm:maximumThickness*.015,localDifferentialCompressionDrainageAndPanDentAccepted:false,gravityFitOnlyNoPressureSpreadingOrFrictionCredit:true,pressureComparisonScope:'Mean full-foot pressure with the required effective contact fraction. Actual peak stress distribution through pad/pan/F is not bounded by this mean calculation; no installed load rating.',actualPeakContactPressureDistributionAccepted:false,renewal:'Drain and remove the apparatus and steel members, capture and lift the continuous pan, then remove dry-laid machined insulation tiles. Record matched coordinates; no insulation piece is claimed independently accessible through an occupied pan.',actualBedMachiningFitContactWaterproofingAccepted:false,actualCoreProfileRCPlateAndColdGridTransferAccepted:false,actualCompleteSupportAccepted:false,diagnostics:['PLANT_COMPRESSION/actual-peak-contact-pressure-and-matched-foot-pan-contact-unqualified','PLANT_COMPRESSION/positive-lateral-retention-required','PLANT_COMPRESSION/long-term-differential-compression-and-pan-drainage-unqualified','PLANT_COMPRESSION/exterior-bridge-receivers-separate','PLANT_COMPRESSION/fresh-current-floor-contact-and-whole-house-gravity-required']}
+}
+
+function applyUnifiedPlatform(i:{platform:ReturnType<typeof plantAppliancePlatform>;control:NonNullable<PlantWalkControl['appliancePlatform']>;parts:Part[];panels:{id:string;planMm:P;parts:string[];completeMassDesignUpperKg:number;metalMassKg:number;barCount:number;crossBarCount:number;crossBarJointOverlapMm3:number;waterJointOverlapMm3:number}[];make:(id:string,kind:string,box:B,metal?:number,sealed?:boolean)=>Part;beamSegments:{id:string;boxMm:B;referenceMetalKg:number;hardwareBudgetKg:number;completeMassDesignUpperKg:number;actualCaptureAndEndRetainersAccepted:false}[];barBottomMm:number;beamBottomMm:number;postSection:Section;steel:PlantWalkControl['material'];hardwareEachPanelKg:number;initialWaterMm:number;maximumWaterMm:number;room:P;normalPadMm:number;walkingRailWidthMm:number;steelThermalMovementPerMm:number;settingEachMm:number}){
+ type Q=readonly[number,number]
+ const c=i.control,parts=i.parts,rho=i.steel.densityKgM3,block=c.loadedNodeBlockLWtMm,head=c.loadedHeadLWtMm,
+  polygon=(a:Q,b:Q,w:number):Q[]=>{const L=Math.hypot(b[0]-a[0],b[1]-a[1]),x=-(b[1]-a[1])*w/(2*L),y=(b[0]-a[0])*w/(2*L);return[[a[0]+x,a[1]+y],[a[0]-x,a[1]-y],[b[0]-x,b[1]-y],[b[0]+x,b[1]+y]]},
+  bounds=(p:readonly Q[])=>[Math.min(...p.map(q=>q[0])),Math.min(...p.map(q=>q[1])),Math.max(...p.map(q=>q[0])),Math.max(...p.map(q=>q[1]))]as const,
+  rectPoly=(b:B):Q[]=>[[b[0],b[1]],[b[0]+b[3],b[1]],[b[0]+b[3],b[1]+b[4]],[b[0],b[1]+b[4]]],
+  clip=(poly:readonly Q[],axis:number,bound:number,greater:boolean):Q[]=>{const out:Q[]=[];for(let k=0;k<poly.length;k++){const a=poly[k],b=poly[(k+1)%poly.length],inside=greater?a[axis]>=bound:a[axis]<=bound,next=greater?b[axis]>=bound:b[axis]<=bound;if(inside)out.push(a);if(inside!==next){const t=(bound-a[axis])/(b[axis]-a[axis]);out.push([a[0]+t*(b[0]-a[0]),a[1]+t*(b[1]-a[1])])}}return out},
+  clipRect=(poly:readonly Q[],r:readonly[number,number,number,number])=>clip(clip(clip(clip(poly,0,r[0],true),0,r[2],false),1,r[1],true),1,r[3],false),
+  polyArea=(p:readonly Q[])=>Math.abs(p.reduce((n,a,k)=>{const b=p[(k+1)%p.length];return n+a[0]*b[1]-b[0]*a[1]},0))/2,
+  polyPart=(id:string,kind:string,poly:readonly Q[],z:number,h:number,metal?:number)=>{const b=bounds(poly),q=i.make(id,kind,[b[0],b[1],z,b[2]-b[0],b[3]-b[1],h],metal??polyArea(poly)*h);q.planPolygonMm=poly;return q},
+  nodeBlocks:Part[]=[],pickupParts:Part[]=[],checks:{id:string;value:number;limit:number;necessary:boolean}[]=[],mates:unknown[]=[]
+ if(block[0]<180||block[1]<140||block[2]<60||head[2]<30||c.cutEdgeRimMm<6||c.loadedPadBlankUpperMm<44)throw Error('Real coped node blocks, strong flange/cut rims and complete blank bounds required')
+ for(const n of i.platform.loadedNodes){
+  const source=i.platform.chassis.find(a=>a.demand.some(q=>q.xyMm[0]===n.xyMm[0]&&q.xyMm[1]===n.xyMm[1]))!,buffer=source.supportMode==='buffer-four-gravity',footLW=buffer?c.bufferFootPlanMm:[c.loadedPadSideMm,c.loadedPadSideMm],
+   foot=parts.find(p=>p.kind==='solid-foot-pad'&&Math.abs(p.boxMm[0]+p.boxMm[3]/2-n.xyMm[0])<1e-6&&Math.abs(p.boxMm[1]+p.boxMm[4]/2-n.xyMm[1])<1e-6)
+  if(!foot)throw Error('Loaded appliance node must be one existing unified platform foot')
+  const suffix=foot.id.slice('Plant/foot/'.length),post=parts.find(p=>p.id==='Plant/post/'+suffix)!,oldHead=parts.find(p=>p.id==='Plant/head-plate/'+suffix)!,old=foot.boxMm,[x,y]=n.xyMm,blockZ=i.barBottomMm-block[2],headZ=blockZ-head[2]
+  foot.boxMm=[x-footLW[0]/2,y-footLW[1]/2,old[2],footLW[0],footLW[1],c.loadedPadMinimumThicknessMm];foot.metalVolumeMm3=footLW[0]*footLW[1]*c.loadedPadMinimumThicknessMm;foot.compressionDesignN=n.compressionN
+  const pb=post.boxMm,newH=headZ-pb[2]
+  if(newH<=0)throw Error('Unified node has no real compression post below its block/head')
+  post.boxMm=[pb[0],pb[1],pb[2],pb[3],pb[4],newH];post.metalVolumeMm3*=newH/pb[5]
+  oldHead.boxMm=[x-head[0]/2,y-head[1]/2,headZ,...head];oldHead.metalVolumeMm3=volume(oldHead.boxMm)
+  const id='Plant/unified-node/'+suffix,b=i.make(id,'unified-node-block',[x-block[0]/2,y-block[1]/2,blockZ,...block])
+  // Actual positive shelves: floor-rail ends enter60mm-deep pockets; central
+  //60mm solid web retains a direct compression path to the post head.
+  const pocketZ=i.beamBottomMm,depth=i.barBottomMm-pocketZ,pocketWidth=i.walkingRailWidthMm+2*c.railPocketSideClearanceMm
+  if(c.railPocketSideClearanceMm<25||block[1]<pocketWidth+40)throw Error('Node pockets must preserve independent rail/node settings and real side walls')
+  b.subtractBoxesMm=[[x-block[0]/2,y-pocketWidth/2,pocketZ,(block[0]-60)/2,pocketWidth,depth],[x+30,y-25,pocketZ,(block[0]-60)/2,50,depth]]
+  nodeBlocks.push(b)
+  const pickup=i.make(id+'/factory-pickup','unified-factory-pickup',[x-25,y-25,i.barBottomMm,50,50,i.platform.choice.webWHMm[1]])
+  pickupParts.push(pickup)
+  mates.push({id,postHeadTopMm:headZ+head[2],blockBottomMm:blockZ,blockTopMm:i.barBottomMm,pickupBottomMm:i.barBottomMm,bodyBearingTopMm:pickup.boxMm[2]+pickup.boxMm[5],walkingRailPocketWidthMm:pocketWidth,walkingRailWidthMm:i.walkingRailWidthMm,lateralGapEachMm:c.railPocketSideClearanceMm,lateralAfterTwoSettingsMm:c.railPocketSideClearanceMm-2*i.settingEachMm,nominalRailSeatMm:(block[0]-60)/2,seatAfterTwoSettingsMm:(block[0]-60)/2-2*i.settingEachMm,verticalCompressionGapMm:0,actualBoltsBearingCaptureAndToleranceAccepted:false})
+  for(const[axis,w,l]of[[0,head[0],head[1]],[1,head[1],head[0]]]as const){const stress=6*n.compressionN*((w-i.postSection[axis])/2+2*i.settingEachMm)/(l*head[2]**2);checks.push({id:id+'/head-strip/'+axis,value:stress,limit:i.steel.allowableComparisonMPa,necessary:stress<=i.steel.allowableComparisonMPa})}
+  checks.push({id:id+'/post-axial',value:n.compressionN/section(i.postSection).area,limit:i.steel.allowableComparisonMPa,necessary:n.compressionN/section(i.postSection).area<=i.steel.allowableComparisonMPa})
+ }
+ // Rail stocks are shortened to the central pocket faces, not left intersecting
+ // completed node blocks. The pockets are actual subtractive mating geometry.
+ for(const p of [...parts].filter(p=>p.kind==='solid-beam')){
+  let intervals:[[number,number]]|[number,number][]=[[p.boxMm[0],p.boxMm[0]+p.boxMm[3]]]
+  for(const b of nodeBlocks)if(p.boxMm[1]+p.boxMm[4]>b.boxMm[1]&&p.boxMm[1]<b.boxMm[1]+b.boxMm[4]){const centre=b.boxMm[0]+b.boxMm[3]/2,lo=centre-30,hi=centre+30;intervals=intervals.flatMap(([a,z])=>z<=lo||a>=hi?[[a,z]as[number,number]]:[...(a<lo?[[a,lo]as[number,number]]:[]),...(z>hi?[[hi,z]as[number,number]]:[])])}
+  if(intervals.length===1&&intervals[0][0]===p.boxMm[0]&&intervals[0][1]===p.boxMm[0]+p.boxMm[3])continue
+  parts.splice(parts.indexOf(p),1)
+  for(const[k,[a,z]]of intervals.entries())if(z>a)i.make(p.id+'/coped/'+k,p.kind,[a,p.boxMm[1],p.boxMm[2],z-a,p.boxMm[4],p.boxMm[5]])
+ }
+ const webs:Part[]=[...pickupParts],flanges:Part[]=[...nodeBlocks],newChassisParts:Part[]=[]
+ for(const a of i.platform.chassis)for(const e of a.edges){
+  const poly=polygon(e.startXYMm,e.endXYMm,e.webWHMm[0]),web=polyPart(e.id+'/web','unified-chassis-web',poly,e.webTopMm-e.webWHMm[1],e.webWHMm[1]);web.subtractBoxesMm=[];web.axisStartEndXYMm=[e.startXYMm,e.endXYMm]
+  // Cradle webs are ABOVE walking floor. They do not trim or partition any
+  // floor panel; pickup-only node holes are the sole active grate cutouts.
+  newChassisParts.push(web)
+ } 
+ for(const a of i.platform.chassis)for(const q of a.ledges){const p=i.make(q.id,'unified-cradle-side-ledge',q.boxMm);newChassisParts.push(p)}
+
+ const union=(rows:readonly[number,number][])=>{const out:[number,number][]=[];for(const r of [...rows].sort((a,b)=>a[0]-b[0])){const last=out.at(-1);if(last&&r[0]<=last[1])last[1]=Math.max(last[1],r[1]);else out.push([r[0],r[1]])}return out},
+  cuts:unknown[]=[],cutPanelIds=new Set<string>(),allWebPolys=webs.map(p=>p.planPolygonMm??rectPoly(p.boxMm))
+ for(const p of [...parts].filter(p=>p.kind==='grate')){
+  const b=p.boxMm,axis=b[3]>=b[4]?0:1,short=1-axis,polyRange:[number,number][]=[]
+  for(const poly of allWebPolys){const q=clip(clip(poly,short,b[short],true),short,b[short]+b[short+3],false);if(q.length>=3&&polyArea(q)>1e-9){const lo=Math.max(b[axis],Math.min(...q.map(v=>v[axis]))-.5),hi=Math.min(b[axis]+b[axis+3],Math.max(...q.map(v=>v[axis]))+.5);if(hi>lo)polyRange.push([lo,hi])}}
+  const remove=union(polyRange)
+  if(!remove.length)continue
+  const panel=i.panels.find(q=>q.parts.includes(p.id))!
+  if(!panel)throw Error('Actual grate member has no owning panel')
+  cutPanelIds.add(panel.id);parts.splice(parts.indexOf(p),1);panel.parts=panel.parts.filter(id=>id!==p.id)
+  let cursor=b[axis]
+  for(const[k,[lo,hi]]of [...remove,[b[axis]+b[axis+3],b[axis]+b[axis+3]]as[number,number]].entries()){
+   if(lo>cursor){const q=[...b]as[number,number,number,number,number,number];q[axis]=cursor;q[axis+3]=lo-cursor;const part=i.make(p.id+'/trim/'+k,p.kind,q);panel.parts.push(part.id)}
+   cursor=Math.max(cursor,hi)
+  }
+  cuts.push({part:p.id,panel:panel.id,axis,removedIntervalsMm:remove,newBarEndsDirectlyOnSameChassisSeatFlanges:true,settingAllowanceEachMm:i.settingEachMm,actualFactoryWeldedTrimmedPanelAccepted:false})
+ }
+ // Continuous factory cut-edge rims connect the cut bars into renewable panel
+ // units. Every rim is cut from the same web boundary; intersecting solid webs
+ // are explicit subtractive geometry, not an invisible double physical stock.
+ for(const panel of i.panels)if(cutPanelIds.has(panel.id)){
+  const R=[panel.planMm[0],panel.planMm[1],panel.planMm[0]+panel.planMm[2],panel.planMm[1]+panel.planMm[3]]as const
+  for(const[wi,poly]of allWebPolys.entries())for(let k=0;k<poly.length;k++){
+   const a=poly[k],z=poly[(k+1)%poly.length],dx=z[0]-a[0],dy=z[1]-a[1],L=Math.hypot(dx,dy);if(L<=1e-8)continue
+   const sign=poly.reduce((n,p,j)=>{const q=poly[(j+1)%poly.length];return n+p[0]*q[1]-q[0]*p[1]},0)>=0?1:-1,nx=sign*dy/L,ny=-sign*dx/L,gap=.5,t=c.cutEdgeRimMm,
+    edge=clipRect([[a[0]+nx*gap,a[1]+ny*gap],[z[0]+nx*gap,z[1]+ny*gap],[z[0]+nx*(gap+t),z[1]+ny*(gap+t)],[a[0]+nx*(gap+t),a[1]+ny*(gap+t)]],R)
+   if(edge.length<3||polyArea(edge)<1e-7)continue
+   const rim=polyPart(panel.id+'/cut-edge-rim/'+wi+'/'+k,'unified-grate-cut-rim',edge,i.barBottomMm,i.platform.chassis[0].edges[0].webWHMm[1]);rim.subtractPlanPrisms=webs.map(w=>({polygonMm:w.planPolygonMm??rectPoly(w.boxMm),zMm:w.boxMm[2],heightMm:w.boxMm[5]}));panel.parts.push(rim.id)
+  }
+ }
+ const intersect=(a:B,b:B):B|null=>{const p=[0,1,2].map(k=>Math.max(a[k],b[k])),q=[0,1,2].map(k=>Math.min(a[k]+a[k+3],b[k]+b[k+3]));return q.every((v,k)=>v>p[k])?[p[0],p[1],p[2],q[0]-p[0],q[1]-p[1],q[2]-p[2]]:null}
+ let totalJointMm3=0,wetJointMm3=0
+ for(const panel of i.panels){
+  const local=parts.filter(p=>panel.parts.includes(p.id)),bars=local.filter(p=>p.id.includes('/bearing/')),crosses=local.filter(p=>p.id.includes('/cross/'));let overlap=0,wet=0
+  for(const a of bars)for(const b of crosses){const q=intersect(a.boxMm,b.boxMm);if(q){overlap+=volume(q);wet+=clippedVolume(q,i.room,i.initialWaterMm,i.maximumWaterMm)}}
+  totalJointMm3+=overlap;wetJointMm3+=wet
+  panel.metalMassKg=(local.reduce((n,p)=>n+p.metalVolumeMm3,0)-overlap)/1e9*rho
+  panel.completeMassDesignUpperKg=panel.metalMassKg+i.hardwareEachPanelKg+(cutPanelIds.has(panel.id)?c.additionalCutPanelHardwareKg:0)
+  panel.crossBarJointOverlapMm3=overlap;panel.waterJointOverlapMm3=wet
+ }
+ const updated=parts.filter(p=>p.kind==='solid-beam').map(p=>({id:p.id,boxMm:p.boxMm,referenceMetalKg:p.metalVolumeMm3/1e9*rho,hardwareBudgetKg:i.hardwareEachPanelKg,completeMassDesignUpperKg:p.metalVolumeMm3/1e9*rho+i.hardwareEachPanelKg,actualCaptureAndEndRetainersAccepted:false as const}))
+ i.beamSegments.splice(0,i.beamSegments.length,...updated)
+ const removedLocatorIds:string[]=[]
+ for(const p of [...parts].filter(p=>p.kind==='hardware')){const q=rectPoly(p.boxMm);if(allWebPolys.some(web=>polyArea(clipRect(web,[p.boxMm[0],p.boxMm[1],p.boxMm[0]+p.boxMm[3],p.boxMm[1]+p.boxMm[4]]))>1e-8)&&p.boxMm[2]+p.boxMm[5]>i.barBottomMm){removedLocatorIds.push(p.id);parts.splice(parts.indexOf(p),1)}}
+
+ const physicalPanelPieces:{id:string;sourcePanel:string;partIds:string[];metalStockUpperKg:number;hardwareKg:number;completeMassUpperKg:number}[]=[]
+ for(const panel of i.panels){
+  const local=parts.filter(p=>panel.parts.includes(p.id)),remaining=new Set(local.map(p=>p.id)),components:Part[][]=[]
+  for(const part of local)if(part.planPolygonMm&&Math.abs(polyArea(part.planPolygonMm)-part.boxMm[3]*part.boxMm[4])>1e-5)throw Error('Current panel connectivity proof requires actual orthogonal pickup cutouts, not diagonal AABB connectivity')
+  const touch=(a:B,b:B)=>[0,1,2].every(k=>Math.max(a[k],b[k])<=Math.min(a[k]+a[k+3],b[k]+b[k+3])+1e-7)
+  while(remaining.size){const id=remaining.values().next().value!,start=local.find(p=>p.id===id)!,group=[start];remaining.delete(id);for(let k=0;k<group.length;k++)for(const p of local)if(remaining.has(p.id)&&touch(group[k].boxMm,p.boxMm)){group.push(p);remaining.delete(p.id)}components.push(group)}
+  for(const[k,group]of components.entries()){let overlap=0;for(const a of group.filter(p=>p.id.includes('/bearing/')))for(const b of group.filter(p=>p.id.includes('/cross/'))){const q=intersect(a.boxMm,b.boxMm);if(q)overlap+=volume(q)}const metal=(group.reduce((n,p)=>n+p.metalVolumeMm3,0)-overlap)/1e9*rho,hardware=i.hardwareEachPanelKg+(cutPanelIds.has(panel.id)?c.additionalCutPanelHardwareKg:0);physicalPanelPieces.push({id:panel.id+'/physical-piece/'+k,sourcePanel:panel.id,partIds:group.map(p=>p.id),metalStockUpperKg:metal,hardwareKg:hardware,completeMassUpperKg:metal+hardware})}
+  panel.completeMassDesignUpperKg=physicalPanelPieces.filter(p=>p.sourcePanel===panel.id).reduce((n,p)=>n+p.completeMassUpperKg,0)
+ }
+
+ const footPanClearances=parts.filter(p=>p.kind==='solid-foot-pad').flatMap(p=>{const b=p.boxMm,gaps=[b[0]-i.room[0],i.room[0]+i.room[2]-b[0]-b[3],b[1]-i.room[1],i.room[1]+i.room[3]-b[1]-b[4]],cover=[2*i.settingEachMm+2*i.room[2]*i.steelThermalMovementPerMm,2*i.settingEachMm+2*i.room[3]*i.steelThermalMovementPerMm];return gaps.map((g,k)=>({id:p.id+'/actual-pan-edge/'+k,nominalGapMm:g,requiredCoverMm:cover[k<2?0:1],afterSettingsAndSteelThermalMm:g-cover[k<2?0:1],sourcePanAndPlatformIndependentSettingsRetained:true,actualMeasuredFactoryFitAccepted:false}))})
+ const apparatusBlockedPanelIds=i.panels.filter(p=>i.platform.chassis.some(a=>{const r=a.homePlanMm;return p.planMm[0]<r[0]+r[2]&&p.planMm[0]+p.planMm[2]>r[0]&&p.planMm[1]<r[1]+r[3]&&p.planMm[1]+p.planMm[3]>r[1]})).map(p=>p.id)
+ return{schema:'had-unified-platform-details/1',footPanClearances,physicalPanelPieces,finalDemandBasis:null as null|{maximumCompletePhysicalPanelKg:number;maximumContainerAllPiecesKg:number;maximumCompleteRailSegmentKg:number;frameDeadAtOneNodeN:number;loadedNodeKitGravityBoundN:number;allDemandRecomputedAfterActualCutRimsAndStocks:boolean},retiredIndependentPedestalCount:i.platform.retiredIndependentPedestalCount,loadedNodeBlocks:nodeBlocks.map(p=>p.id),bodyPickupParts:pickupParts.map(p=>p.id),actualCompressionMates:mates,chassisPartIds:newChassisParts.map(p=>p.id),cutBars:cuts,trimmedPanelIds:[...cutPanelIds],removedObstructedLocatorIds:removedLocatorIds,apparatusBlockedPanelIds,totalJointMm3,wetJointMm3,additionalCutHardwareKg:physicalPanelPieces.reduce((n,p)=>n+p.hardwareKg,0)-i.panels.length*i.hardwareEachPanelKg,componentChecks:checks,necessaryNodeComponentComparisons:checks.every(c=>c.necessary),physicalGeometry:'Union of coped node blocks, actual shortened rail ends and swept chassis profiles. Each declared pocket/cope is removed from its owning solid. Gross joined stock remains conservative G and water-displacement upper; intersection material is never extra capacity.',actualTrimmedPanelLocatorsFactoryRimWeldsToolsAndFirstRestAccepted:false,actualBoltedNodeShelfAndPickupConnectionsAccepted:false,pressureSeizedGuideSwayAndWholePlatformHoldDownAccepted:false,actualCompleteInstallationAccepted:false,renewal:'Isolate/cool/drain and remove the one apparatus before releasing its chassis or obscured trimmed panels. Retain the other full apparatus and aisle-wheel case. Capture each member mechanically before releasing bolts; no manual handling qualification is inferred from a mass budget.'}
 }
