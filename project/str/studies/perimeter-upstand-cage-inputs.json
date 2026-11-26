@@ -1,0 +1,105 @@
+{
+  "schema": "str-perimeter-upstand-cage-inputs/1",
+  "status": "UNSELECTED PLACING AND FORCE-CAPACITY COMPARISON",
+  "sourceCommit": "890e6a65c113e4e1135cf82edd06cc8af2d15343",
+  "geometry": {
+    "sourceCoreMm": 200,
+    "comparisonCoreMm": 300,
+    "ordinaryBandWidthMm": 300,
+    "ordinaryBandDepthMm": 350,
+    "slabZMm": [
+      3170,
+      3370
+    ],
+    "FIRSTMm": 3450,
+    "columnFaceRowsMm": [
+      94,
+      206
+    ],
+    "columnAlongStationsMm": [
+      94,
+      206,
+      450,
+      690,
+      930
+    ],
+    "columnBarNominalMm": 12,
+    "columnBarOutsideMm": 14,
+    "beamBarNominalMm": 16,
+    "beamBarOutsideMm": 18,
+    "beamBarNormalMm": [
+      65.05025253169417,
+      234.94974746830584
+    ],
+    "beamBarZMm": [
+      3270,
+      3450
+    ],
+    "beamPlanRadiiMm": [
+      350,
+      89
+    ],
+    "floorBarNominalMm": 14,
+    "floorBarOutsideMm": 16,
+    "floorPitchMm": 60,
+    "floorNominalSurfaceCoverMm": 52,
+    "cornerFloorReturnNormalMm": 142,
+    "cornerFloorMandrelMm": 280,
+    "cornerFloorStraightTailMm": 1000,
+    "floorAlongCoordinatesMm": [
+      300,
+      360,
+      420,
+      480,
+      540,
+      600,
+      660,
+      720,
+      780,
+      840,
+      900
+    ],
+    "ordinaryFloorMandrelMm": 160,
+    "ordinaryFloorHookMinTailFactor": 5,
+    "ordinaryFloorVerticalEndZMm": 3460,
+    "commonNodeJigRequired": true,
+    "cageSettingMm": 5,
+    "independentBarSettingMm": 5,
+    "parallelMinimumClearMm": 21,
+    "minimumConcreteCoverMm": 40,
+    "newInnerMasonrySeatUsed": false
+  },
+  "links": {
+    "columnNominalMm": 10,
+    "columnOutsideMm": 11,
+    "columnMandrelMm": 40,
+    "columnHookTailMm": 100,
+    "columnClosureOffsetMm": 14,
+    "beamNominalMm": 8,
+    "beamOutsideMm": 9,
+    "beamMandrelMm": 32,
+    "beamHookTailMm": 80,
+    "beamClosureOffsetMm": 12,
+    "beamOrdinaryPitchMm": 100,
+    "maxColumnFamilyPitchMm": 135,
+    "closuresAndAllStirrupIntersectionsQualified": false
+  },
+  "materials": {
+    "reinforcementComparisonMPa": 400,
+    "concreteCompressionMPa": 17,
+    "poorBondMPa": 2.1,
+    "goodBondMPa": 3,
+    "shapeCoverConfinementReductionCredited": false,
+    "materialAndFabricationAccepted": false
+  },
+  "scope": {
+    "sourceOnly": true,
+    "nativeHouseSolved": false,
+    "old96DemandTransferred": false,
+    "wholeCagePlacingAccepted": false,
+    "completeResistanceAccepted": false,
+    "productAccepted": false,
+    "ownerAccepted": false,
+    "houseAccepted": false
+  }
+}

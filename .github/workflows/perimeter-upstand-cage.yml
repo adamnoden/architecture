@@ -1,0 +1,38 @@
+name: Check ordinary perimeter upstand cage profiles
+on:
+  push:
+    branches: [work/zerg-perimeter-upstand-cage-20261126]
+    paths:
+      - '.github/workflows/perimeter-upstand-cage.yml'
+      - 'project/str/studies/perimeter_upstand_cage.py'
+      - 'project/str/studies/perimeter_upstand_cage_test.py'
+      - 'project/str/studies/perimeter-upstand-cage-inputs.json'
+permissions:
+  contents: read
+concurrency:
+  group: perimeter-cage-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  profiles:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Check source-bound corner profiles and honest ordinary anchorage bounds
+        run: |
+          mkdir -p /tmp/perimeter-upstand-cage
+          python -B project/str/studies/perimeter_upstand_cage_test.py 2>&1 | tee /tmp/perimeter-upstand-cage/tests.log
+          python -B project/str/studies/perimeter_upstand_cage.py --out /tmp/perimeter-upstand-cage
+          git diff --exit-code
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: perimeter-upstand-cage-exact-checkpoint
+          path: /tmp/perimeter-upstand-cage/
+          retention-days: 90
+          if-no-files-found: error
