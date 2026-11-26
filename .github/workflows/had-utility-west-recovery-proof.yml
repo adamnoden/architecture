@@ -1,0 +1,63 @@
+name: Prove recovered Utility station geometry
+
+on:
+  push:
+    branches: [work/zerg-water-west-recovery-20261126]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: had-utility-west-recovery
+  cancel-in-progress: false
+
+jobs:
+  utility-geometry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - name: Checkout this exact development commit
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      - name: Setup repository-pinned Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Record source identity and install locked dependencies
+        run: |
+          mkdir -p "$RUNNER_TEMP/had-utility-west-proof"
+          git rev-parse HEAD | tee "$RUNNER_TEMP/had-utility-west-proof/head.txt"
+          node --version | tee "$RUNNER_TEMP/had-utility-west-proof/node.txt"
+          sha256sum .nvmrc package-lock.json compiler/reference-house/current-design/inlet-utility-route.ts compiler/reference-house/current-design-inlet-utility-route.test.ts project/had/studies/inlet-utility-north-route.json | tee "$RUNNER_TEMP/had-utility-west-proof/source-sha256.txt"
+          npm ci --no-audit --no-fund 2>&1 | tee "$RUNNER_TEMP/had-utility-west-proof/npm-ci.log"
+      - name: Typecheck recovered source
+        id: types
+        continue-on-error: true
+        run: npm run typecheck 2>&1 | tee "$RUNNER_TEMP/had-utility-west-proof/typecheck.log"
+      - name: Replay focused pure route geometry controls
+        id: geometry
+        if: always()
+        continue-on-error: true
+        run: |
+          node --import tsx --test compiler/reference-house/current-design-inlet-utility-route.test.ts compiler/reference-house/current-design-inlet-indoor-routes.test.ts compiler/reference-house/current-design-inlet-retained-services.test.ts 2>&1 | tee "$RUNNER_TEMP/had-utility-west-proof/geometry.log"
+      - name: Retain logs and source identities
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: had-utility-west-proof-${{ github.sha }}
+          path: ${{ runner.temp }}/had-utility-west-proof
+          retention-days: 90
+          if-no-files-found: error
+      - name: Preserve actual check outcomes
+        if: always()
+        env:
+          TYPES_OUTCOME: ${{ steps.types.outcome }}
+          GEOMETRY_OUTCOME: ${{ steps.geometry.outcome }}
+        run: |
+          test "$TYPES_OUTCOME" = success
+          test "$GEOMETRY_OUTCOME" = success
