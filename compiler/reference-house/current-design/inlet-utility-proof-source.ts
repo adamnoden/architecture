@@ -29,6 +29,7 @@ export function deriveUtilityCandidateFloorPocket(i:{
   ||!positive(layers)||layers.length!==4||!positive(m?.beds)||!positive(m?.courses)||!Number.isFinite(common?.serviceZoneMm)||common.serviceZoneMm<=0
   ||![c.depthMm,c.isolationGapMm,common.rcDensityKNm3,common.mineralDensityBudgetKNm3].every(Number.isFinite))
   throw Error('Actual source-derived Utility candidate floor recipe required')
+ if(layers.join(',')!=='15,65,100,200'||i.grid.girders['court-S']?.z.join(',')!=='-630,-180')throw Error('Unsupported source floor-layer or cold-grid domain; re-coordinate the actual ground producer')
  const bottom=recipe.courseBottomMm,courseHeight=[...m.beds,...m.courses].reduce((a:number,b:number)=>a+b,0),
   dryBottom=bottom+courseHeight,dryTop=dryBottom+layers[3],glassTop=dryTop+layers[2],finishBottom=glassTop+common.serviceZoneMm,ffl=finishBottom+layers[0],
   levels={mineralCourse:[bottom,dryBottom]as const,dryRC:[dryBottom,dryTop]as const,glass:[dryTop,glassTop]as const,accessibleDistribution:[glassTop,finishBottom]as const,finish:[finishBottom,ffl]as const,ffl,coldGridTop:i.grid.girders['court-S']?.z[1]}

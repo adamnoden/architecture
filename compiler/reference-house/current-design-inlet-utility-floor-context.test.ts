@@ -41,7 +41,7 @@ test('source-level changes invalidate the current occupied receiver frame rather
  const defaults=JSON.parse(JSON.stringify(input.defaults));defaults.commonSettings.serviceZoneMm=70
  assert.throws(()=>deriveUtilityCandidateFloorPocket({...input,defaults}),/occupied FFL530/)
  const layers=[...input.sourceGroundLayers];layers[3]-=5
- assert.throws(()=>deriveUtilityCandidateFloorPocket({...input,sourceGroundLayers:layers}),/occupied FFL530/)
+ assert.throws(()=>deriveUtilityCandidateFloorPocket({...input,sourceGroundLayers:layers}),/source floor-layer/)
 })
 test('restoring the old rectangular floor changes stock and identity and cannot credit the notched receiver',()=>{
  const current=source.candidateFloorPocket,rectangle=deriveUtilityCandidateFloorPocket({...input,planExclusionsMm:[]})
