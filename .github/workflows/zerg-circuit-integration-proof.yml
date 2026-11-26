@@ -1,0 +1,100 @@
+name: Prove joined lighting and current floor evidence
+on:
+  push:
+    branches: [work/zerg-circuit-integration-20261126]
+permissions:
+  contents: read
+jobs:
+  prove:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install existing pinned structural runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          python -m venv --system-site-packages "$RUNNER_TEMP/finite-runtime"
+          "$RUNNER_TEMP/finite-runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
+          echo "STR_FINITE_SOLID_PYTHON=$RUNNER_TEMP/finite-runtime/bin/python" >> "$GITHUB_ENV"
+          echo "IAS_RECOVERY_PROOF_DIR=$RUNNER_TEMP/combined-lighting-proof" >> "$GITHUB_ENV"
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Authenticate exactly the three-way combined authored sources
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';import crypto from 'node:crypto'
+          const expected={"compiler/reference-house/current-design/assemblies/study-structural-renewal.ts":"9685f289dde9d6a122d746659ffe3bfec4302320","compiler/reference-house/current-design/assemblies/study-room-kit.ts":"90863f05b741b54c20fbc6edd1e4c8cc2d2e629d","project/ias/studies/study-structural-renewal.py":"b55eca4df7e7a929dd5e7c4d716ba6c120e60e73","project/ias/studies/study-floor-handling.py":"99f909611ae0f1d1df9dcec6b7516a775b6b1b4b","compiler/reference-house/current-design/assemblies/study-lighting.ts":"61e5232df1cf6f2f5304b1aaf86c9ef2a27be8b0","compiler/reference-house/current-design/assemblies/study-lighting-corner.ts":"a736cb640e2a1859d46fb0cf0897cfab485f90c4","compiler/reference-house/current-design-study-lighting.test.ts":"0592354f9665edcc196a8afbd35905827ec56a63","compiler/reference-house/current-design/assemblies/study-furniture-motion.ts":"93aa13c887624fae405ee78aada387ff46984a12","project/ias/studies/adaptable-study-lighting.mjs":"d31032661fd7d19cac1a4f76e5d608377f355c12","compiler/reference-house/current-design/assemblies/study-lighting-views.ts":"4c5dd07be9612c8084da7fb07aa20ceb48bc5b4a","compiler/reference-house/current-design-study-lighting-circuit.test.ts":"879baf322aa4b52fb3ee6465e83e8128f6ea2c05","compiler/reference-house/current-design/assemblies/study-lighting-circuit.ts":"14f85d33277e8e6d14b57696606e432c717278f0","project/ias/studies/lighting-component-references.json":"2fe0e72ec5f755df87a461b4f9a40df338fea89a","compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts":"9f429c29f558d0870ad93dd8d34f99429399a05c","project/ccr/studies/working-house-comparison.json":"f8d474870d7bc0b50d35c900f02af78849304466","project/ias/adaptable-room-lighting-result.md":"db836929b2c5d92443006baacd7c8e05f86fbbb8"}
+          const digest=b=>crypto.createHash('sha256').update(b).digest('hex')
+          const files=Object.entries(expected).map(([path,gitBlob])=>{const bytes=fs.readFileSync(path);const observed=crypto.createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');if(observed!==gitBlob)throw Error('Unexpected combined author '+path);return{path,gitBlob,sha256:digest(bytes)}})
+          fs.writeFileSync('project/ias/studies/lighting-circuit-recovery-20261126.json',JSON.stringify({status:'WIP_COMBINED_SOURCE_NOT_VERIFIED',sourceCommit:process.env.GITHUB_SHA,sourceBase:'44bfef1393b89a1a638536e5d65b486c66778e0e',files},null,2)+'\n')
+          JS
+      - name: Regenerate and prove the real circuit and closed136 room
+        run: node --import tsx project/ias/studies/prove-zerg-circuit-integration.mjs
+      - name: Reprove actual140mm propagation and current renewal warning
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          d=json.loads(Path('project/ccr/studies/working-house-comparison.json').read_text())
+          d['stages']['floorSection']['finiteJointComparison']['execution']='deferred'
+          d['stages']['distributedFloor']['cornerWidthsMm']['SW']=140
+          Path(os.environ['IAS_RECOVERY_PROOF_DIR'],'width140.json').write_text(json.dumps(d))
+          PY
+          node --import tsx scripts/compile-current-design.ts --bundle "$IAS_RECOVERY_PROOF_DIR/width140.json" > "$IAS_RECOVERY_PROOF_DIR/width140-result.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          b=json.loads(Path(os.environ['IAS_RECOVERY_PROOF_DIR'],'width140-result.json').read_text());k=b['engineering']['studyRoomKit']['kit'];o=k['floor']['ordinaryHandling']
+          assert len(k['floor']['parts'])==144 and len(k['request']['ordinaryHandling']['protocols'])==136
+          assert o['state']=='source-withheld' and o['witnessCount']==0 and o['partCount']==144
+          assert len(b['engineering']['floorSection']['native']['heads'])==52
+          assert any(x['code']=='STUDY_RENEWAL_PLAN_INAPPLICABLE' for x in b['coordinationDiagnostics'])
+          print('PASS joined actual140/144parts/136authored/0obsoletewitnesses/52referenceheads/currentwarning')
+          PY
+      - name: Preserve only tested regenerated file blobs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';import crypto from 'node:crypto';import{execFileSync}from'node:child_process'
+          const outcome=JSON.parse(fs.readFileSync(process.env.IAS_RECOVERY_PROOF_DIR+'/outcome.json','utf8'));if(!outcome.success)throw Error('Combined owning proof failed')
+          const paths=["project/ccr/studies/source-coverage.json","project/ccr/studies/working-house-comparison.json","project/ias/studies/adaptable-study-lighting-comparison.svg","project/ias/studies/adaptable-study-lighting-corner.svg","project/ias/studies/adaptable-kitchen-lighting.svg","project/ias/studies/adaptable-study-lighting-routes.svg","project/ias/studies/adaptable-study-lighting-construction.svg","project/ias/studies/adaptable-study-lighting-common-depth.svg","project/ias/studies/adaptable-study-lighting.results.json","project/ias/studies/working-study-lighting-circuit.svg","project/ias/studies/working-study-lighting.results.json","project/ias/studies/crafted-study-eye-level-day.svg","project/ias/studies/crafted-study-eye-level-evening.svg","project/ias/studies/working-study-floor.svg","project/ias/studies/working-study-wall-kit.svg","project/ias/studies/working-study-tile-eye-level.svg"]
+          for(const path of paths){const b=fs.readFileSync(path),sha=crypto.createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex')
+          const r=await fetch('https://api.github.com/repos/adamnoden/architecture/git/blobs',{method:'POST',headers:{Authorization:'Bearer '+process.env.GITHUB_TOKEN,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'},body:JSON.stringify({content:b.toString('base64'),encoding:'base64'})});if(!r.ok)throw Error('Preserve failed '+path+':'+r.status);const v=await r.json();if(v.sha!==sha)throw Error('Blob mismatch '+path);console.log('COMBINED_IAS_BLOB '+JSON.stringify({path,sha,size:b.length,sha256:crypto.createHash('sha256').update(b).digest('hex')}))}
+          execFileSync('git',['read-tree','44bfef1393b89a1a638536e5d65b486c66778e0e']);execFileSync('git',['add','--',...paths]);console.log('COMBINED_IAS_TARGET_TREE '+execFileSync('git',['write-tree'],{encoding:'utf8'}).trim())
+          JS
+      - name: Show bounded failure diagnostics
+        if: failure()
+        run: |
+          if [ -d "$IAS_RECOVERY_PROOF_DIR" ]; then
+            for proof_log in "$IAS_RECOVERY_PROOF_DIR"/*.log; do
+              if [ -f "$proof_log" ]; then
+                echo "Diagnostic: $proof_log"
+                tail -n 70 "$proof_log"
+              fi
+            done
+          fi
+      - name: Retain actual combined source proof
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: joined-lighting-current-floor-proof
+          path: ${{ runner.temp }}/combined-lighting-proof
+          retention-days: 90
+          if-no-files-found: error
