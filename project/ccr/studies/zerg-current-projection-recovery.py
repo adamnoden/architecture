@@ -56,6 +56,7 @@ for p in TARGETS:
     target=out/p;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(Path(p).read_bytes())
 (out/'generated-manifest.json').write_text(json.dumps({p:{'oldSHA256':hashlib.sha256(old[p]).hexdigest(),'newSHA256':sha(p),'bytes':Path(p).stat().st_size} for p in TARGETS},indent=2))
 proven=[sha(p) for p in TARGETS]
+run(['node','--import','tsx','--test','compiler/reference-house/current-design-snapshot.test.ts'])
 run(['npm','run','status:update'])
 run(['npm','run','check'])
 assert [sha(p) for p in TARGETS]==proven,'Full health mutated the verified source/outputs'
