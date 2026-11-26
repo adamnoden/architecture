@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T09:09:55.437Z",
-  "expiresAt": "2026-11-26T10:39:55.437Z",
+  "heartbeatAt": "2026-11-26T09:50:26.652Z",
+  "expiresAt": "2026-11-26T11:20:26.652Z",
   "branch": "work/zerg-engineering-20261126",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
@@ -36,7 +36,7 @@
   },
   "pr": 1628,
   "checkpoint": {
-    "evidence": "PR1628 exact4165e0a2 source-bound open/closed2room hydraulic profiles and independent controls pass; publication/typography success; actual outfallSVG inspected.1627 merged838ae734.",
-    "next": "Finish exact-head browser/fullhealth and preflight/merge; develop actual source-isolated cooled store pre-removal drain route using selected MAT envelope and actual port states; retain charged hot rupture/uppernetwork holds."
+    "evidence": "1627 merged838ae734.1628 now474807d6 browserimportwaitfix, newCIpending. Actual2room source profiles/receiver cuts remain committed. Local closedcock/continuation study finds bespokefactorylowestpointdrain simpler than newSEtee; noinstallationorchargedfaultclaim.",
+    "next": "Complete4748 browser/health/preflight/merge. Finish source-bound lowestpoint/cappedcock/gravity drain with finite cargo residual and actualrenewal; supersede SEtee rather than preserve failedcomplexity."
   }
 }
