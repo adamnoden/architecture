@@ -7,6 +7,21 @@ from skfem import Basis, ElementHex1, ElementVector, MeshHex, asm
 from skfem.models.elasticity import lame_parameters, linear_elasticity
 
 
+def memory_phase(phase, **values):
+    """Opt-in execution observations only; never semantic/physical evidence."""
+    import json,os,resource,time
+    path=os.environ.get('STR_FINITE_MEMORY_TRACE')
+    if not path:return
+    rss=None
+    try:
+        with open('/proc/self/status') as stream:
+            for line in stream:
+                if line.startswith('VmRSS:'):rss=int(line.split()[1]);break
+    except OSError:pass
+    row={'phase':phase,'monotonicSeconds':time.monotonic(),'rssKiB':rss,'maximumRssKiB':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,**values}
+    with open(path,'a') as stream:stream.write(json.dumps(row,allow_nan=False)+'\n');stream.flush()
+
+
 def axis(breaks, pitch):
     points = sorted(set(float(v) for v in breaks))
     return np.concatenate([np.linspace(a, b, int(np.ceil((b-a)/pitch))+1)[:-1]
@@ -124,16 +139,33 @@ def contour_ports(mesh, basis, patch_xy, slab_z, contours, wall_origins):
     return transform,boundary,catalog
 
 
-def condense(k, transform, boundary, force=None, ordering="MMD_AT_PLUS_A"):
+def condense(k, transform, boundary, force=None, ordering="MMD_AT_PLUS_A", rhs_batch_size=16):
+    if type(rhs_batch_size) is not int or not 1<=rhs_batch_size<=128:raise ValueError('Explicit bounded direct RHS batch size required')
     interior=np.setdiff1d(np.arange(k.shape[0]),boundary)
     if ordering not in ["MMD_AT_PLUS_A", "COLAMD"]:raise ValueError("unsupported factorization ordering")
+    memory_phase('factor:start',fullDofs=k.shape[0],interiorDofs=len(interior),ports=transform.shape[1],matrixNonzeros=k.nnz)
     factor=splu(k[interior][:,interior],permc_spec=ordering)
+    memory_phase('factor:complete',factorNonzeros=int(factor.nnz))
     response=transform.toarray()
-    response[interior]=-factor.solve((k @ transform)[interior].toarray())
-    condensed=np.asarray(response.T @ (k @ response))
+    port_rhs=(k @ transform)[interior].tocsc()
+    for start in range(0,transform.shape[1],rhs_batch_size):
+        stop=min(transform.shape[1],start+rhs_batch_size)
+        rhs=port_rhs[:,start:stop].toarray(order='F')
+        solution=factor.solve(rhs);solution*=-1
+        response[interior,start:stop]=solution
+        del rhs,solution
+        memory_phase('rhs:batch',start=start,stop=stop)
+    del port_rhs
+    condensed=np.empty((transform.shape[1],transform.shape[1]))
+    for start in range(0,transform.shape[1],rhs_batch_size):
+        stop=min(transform.shape[1],start+rhs_batch_size)
+        work=k @ response[:,start:stop]
+        condensed[:,start:stop]=response.T @ work
+        del work
     force=np.zeros(k.shape[0]) if force is None else np.asarray(force)
     if force.shape!=(k.shape[0],) or not np.isfinite(force).all():raise ValueError('invalid actual distributed load')
     particular=np.zeros(k.shape[0]);particular[interior]=factor.solve(force[interior])
+    memory_phase('condensation:complete',responseBytes=response.nbytes,rhsBatchSize=rhs_batch_size)
     return {'stiffness':condensed,'response':response,'particular':particular,
             'force':response.T @ force,'energyConstant':float(-.5*force @ particular),
             'interior':interior}

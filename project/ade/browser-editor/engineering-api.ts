@@ -56,7 +56,7 @@ export async function runEditorEngineeringRequest(input: unknown) {
   return { ticket, documentIdentity: bundle.documentIdentity, manifest: bundle.manifest,
     coordinationDiagnostics: bundle.coordinationDiagnostics, evidence: bundle.evidence,
     floorEvidence: floor ? { headCount:floor.native.heads.length, contactComputed:floor.wetBearingContact?.status==='computed-comparison',
-      contourStatus:floor.contourComponent?.status??null,contourDiagnostics:floor.contourComponent?.diagnostics??[],slabSolidCompatibility:floor.slabSolidCompatibility, nominalHeadFanPlacementReserveMm:fanReserves.length?Math.min(...fanReserves):null, nominalHeadFanStatus:floor.wetPostHeadFan?.status??null, jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
+      lowerMasonryStatus:floor.lowerMasonryComparison?.status??null,lowerMasonryDiagnostics:floor.lowerMasonryComparison?.diagnostics??[],contourStatus:floor.contourComponent?.status??null,contourDiagnostics:floor.contourComponent?.diagnostics??[],slabSolidCompatibility:floor.slabSolidCompatibility, nominalHeadFanPlacementReserveMm:fanReserves.length?Math.min(...fanReserves):null, nominalHeadFanStatus:floor.wetPostHeadFan?.status??null, jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
     wetBeamEnd: wetBeamEndReview(floor?.wetBeamEndDevelopment),
     studyLighting: lighting ? { svg: lighting.commonDepthCornerSvg, comparison: lighting.lighting.commonDepthCornerComparison } : null,
     plantRoom: inlet?.splitPlantRoom ?? null,

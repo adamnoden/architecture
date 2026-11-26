@@ -44,8 +44,9 @@ jobs:
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_joint_solid_test.py
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_test.py
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_compare_test.py
-          "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_compare.py project/str/studies/finite-floor-contour-captures/contour140.json project/str/studies/finite-floor-contour-captures/contour70.json project/str/studies/finite-floor-contour-captures/contour50.json --out project/str/studies/finite-floor-contour-captures/contour-comparison.json --check
+          "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_compare.py project/str/studies/finite-floor-contour-captures/contour140.json project/str/studies/finite-floor-contour-captures/contour70.json project/str/studies/finite-floor-contour-captures/contour50.json project/str/studies/finite-floor-contour-captures/contour35.json --out project/str/studies/finite-floor-contour-captures/contour-comparison.json --check
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_ordering_control.py --root . --retained project/str/studies/finite-floor-contour-captures/contour140.json --out project/str/studies/finite-floor-contour-captures/ordering-control.json --check
+          "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_residency_control_test.py
           echo "STR_FINITE_SOLID_PYTHON=$finite_joint_runtime/bin/python" >> "$GITHUB_ENV"
 
       - name: Verify cage geometry evidence before full validation
@@ -90,8 +91,12 @@ jobs:
           python -B project/str/studies/wet_masonry_arch_released_proof.py --check
           python -B project/str/studies/wet_masonry_arch_rise_test.py
           python -B project/str/studies/wet_masonry_arch_rise_proof.py --check
+          python -B project/str/studies/wet_masonry_arch_bed_test.py
+          python -B project/str/studies/wet_masonry_arch_bed_proof.py --check
 
       - name: Prove actual finite contour adapter with pinned runtime
+        env:
+          STR_FINITE_CONTOUR_SAVED_PROBE: project/str/studies/finite-floor-contour-captures/contour35.json
         run: |
           test -n "$STR_FINITE_SOLID_PYTHON"
           node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts
@@ -107,6 +112,21 @@ jobs:
               Path(os.environ['STR_WET_BEAM_END_NATIVE']).write_bytes(archive.extractfile('south40-q64.full.json').read())
           PY
           node --import tsx --test compiler/reference-house/current-design-wet-beam-end.test.ts
+
+      - name: Prove actual lower-masonry saved-stage admission and compute
+        env:
+          STR_LOWER_MASONRY_NATIVE: ${{ runner.temp }}/lower-masonry-native.json
+        run: |
+          python -B - <<'PYTHON'
+          import os, tarfile
+          from pathlib import Path
+          with tarfile.open('project/str/studies/wet-masonry-arch-bed-captures.tar.xz','r:xz') as archive:
+              Path(os.environ['STR_LOWER_MASONRY_NATIVE']).write_bytes(archive.extractfile('bed8.full.json').read())
+          PYTHON
+          node --import tsx --test compiler/reference-house/current-design-lower-masonry.test.ts
+
+      - name: Verify fitted-room incident coordinates and unchanged storage duties
+        run: node --import tsx --test --test-name-pattern="one saved fitted-width edit" compiler/reference-house/current-design-inlet-room-edit.test.ts
 
       - name: Cache verified publication fonts
         uses: actions/cache@v6

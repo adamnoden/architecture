@@ -3,9 +3,34 @@ from pathlib import Path
 from finite_floor_contour_run import source_input, same_physics
 import numpy as np
 from skfem import LinearForm,asm
+from scipy.sparse import csc_matrix
 from finite_floor_contour import solid_boxes, contour_ports, condense, rigid_port_modes, rigid_trace, shell_trace
 
 class DistributedContourControls(unittest.TestCase):
+    def test_bounded_rhs_matches_independent_dense_schur_and_full_potential(self):
+        # Independent dense block elimination, including a nonzero physical
+        # boundary load. Neither oracle uses the production sparse solve.
+        rng=np.random.default_rng(2049);a=rng.normal(size=(37,37))
+        k=a.T @ a+np.eye(37);boundary=np.array([0,1,3,4,6,7,9,10,12,13,15,16,18,19,21,22,24,25,27,28,30,33,36])
+        interior=np.setdiff1d(np.arange(37),boundary)
+        tb=rng.normal(size=(23,19));t=np.zeros((37,19));t[boundary]=tb
+        f=rng.normal(size=37)
+        kii=k[np.ix_(interior,interior)];kib=k[np.ix_(interior,boundary)]
+        response=t.copy();response[interior]=-np.linalg.solve(kii,kib @ tb)
+        schur=tb.T @ (k[np.ix_(boundary,boundary)]-kib.T @ np.linalg.solve(kii,kib)) @ tb
+        particular=np.zeros(37);particular[interior]=np.linalg.solve(kii,f[interior])
+        for batch in [1,7,16,19,128]:
+            result=condense(csc_matrix(k),csc_matrix(t),boundary,f,rhs_batch_size=batch)
+            np.testing.assert_allclose(result['stiffness'],schur,rtol=1e-12,atol=1e-12)
+            np.testing.assert_allclose(result['response'],response,atol=1e-13)
+            np.testing.assert_allclose(result['particular'],particular,atol=1e-13)
+            np.testing.assert_allclose(result['force'],response.T @ f,atol=1e-13)
+            q=rng.normal(size=19);u=result['response'] @ q+result['particular']
+            self.assertAlmostEqual(float(.5*u @ k @ u-f @ u),float(.5*q @ schur @ q-(response.T @ f) @ q-.5*f @ particular),places=11)
+        for invalid in [0,-1,129,True,1.5,'16']:
+            with self.assertRaisesRegex(ValueError,'batch size'):
+                condense(csc_matrix(k),csc_matrix(t),boundary,f,rhs_batch_size=invalid)
+
     def model(self,scale=1,young=33e6):
         patch=np.array([0,0,.5,.6])*scale;slab=np.array([.2,.3])*scale
         # Slab plus disjoint L arms above/below, preserving the re-entrant void.

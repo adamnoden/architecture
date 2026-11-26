@@ -100,6 +100,15 @@ test('one source-bound room stage retains unchanged pressure and current global 
   assert.ok(inventory.localFloorReplacement?.physicalReceiverPath.some(s=>s.includes('mineral bond/retention')))
   assert.equal(inventory.independentMainboardCaseReference.emptyKg,26.5)
   assert.equal(inventory.frameTranslationAndMasonryLoadPathAdmitted,false)
+  const frameStock=inventory.permanentReferenceStock.find(row=>row.id==='HAD/inventory/shield-frame-stock')
+  assert.ok(frameStock&&'forceKN'in frameStock)
+  // Independent N ledger in the source frame must agree with this kN export.
+  assert.ok(Math.abs(frameStock.forceKN[2]*1000+local.joinedDirection.room.electricalScreen.supportFrame.staticComparison.totalGravityN)<1e-10)
+  const gravityKN=(row:typeof inventory.permanentReferenceStock[number])=>'forceKN'in row?-row.forceKN[2]:-row.wrenchKN_KNm.Fz
+  assert.ok(Math.abs(inventory.permanentReferenceStock.reduce((sum,row)=>sum+gravityKN(row),0)-inventory.requestedReferenceSubtotals.deadStockKg!*inventory.units.staticGravityMps2/1000)<1e-10)
+  for(const row of inventory.blockedEventWaterInventory)assert.ok(Math.abs(-row.wrenchKN_KNm.Fz-row.massKg*inventory.units.staticGravityMps2/1000)<1e-10)
+  // RC/mineral densities are already force/volume; this separate class stays kN.
+  assert.ok(Math.abs(inventory.localFloorReplacement!.replacementRcAndMineralKN-25.00609925)<1e-8)
   for(const bound of inventory.ownership.actualClosedPassageBounds)assert.equal(bound.y[1],local.roomCatchment.wetFloorPlanMm[1])
   const deep = run({ catchmentPocketDepthMm: 250 })
   assert.ok(deep.roomCatchment.state === 'whole-room-development-comparison')

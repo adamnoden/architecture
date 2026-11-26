@@ -94,7 +94,17 @@ test('one saved fitted-width edit coordinates actual inlet and station while pre
  assert.equal(pa.bridge.removablePieces.necessaryAuthoredFittedFrameFirstLiftWidthScreen,true);assert.equal(pb.bridge.removablePieces.necessaryAuthoredFittedFrameFirstLiftWidthScreen,false)
  assert.equal(pa.bridge.removablePieces.actualFrameLiftEdgeReserveMm,7.5);assert.equal(pb.bridge.removablePieces.actualFrameLiftEdgeReserveMm,-42.5)
  assert.deepEqual(a.bound,b.bound);assert.deepEqual(a.branches,b.branches);assert.deepEqual(a.roomCatchment,b.roomCatchment);assert.deepEqual(a.joinedDirection.room.indoorCuts,b.joinedDirection.room.indoorCuts)
- assert.deepEqual(pa.storedRelease,pb.storedRelease);assert.deepEqual(pa.pocket,pb.pocket);assert.equal(pa.sourceOnlyLmin,pb.sourceOnlyLmin)
+ const {actualIncidentStationInventory:incidentA,...storedA}=pa.storedRelease,{actualIncidentStationInventory:incidentB,...storedB}=pb.storedRelease
+ assert.deepEqual(storedA,storedB,'Storage duties, adverse controls and unknowns are unchanged')
+ const {stations:stationsA,...incidentFactsA}=incidentA,{stations:stationsB,...incidentFactsB}=incidentB
+ assert.deepEqual(incidentFactsA,incidentFactsB);assert.equal(stationsA.length,11)
+ const movedRoles=new Set(['source-outer-cut','source-inner-cut','valve-lower-face','valve-upper-face','common-outlet-tee'])
+ assert.equal(stationsA.filter(row=>movedRoles.has(row.role)).length,5)
+ for(const [index,row] of stationsA.entries()){
+  const delta=movedRoles.has(row.role)?25:0
+  assert.deepEqual(stationsB[index],{...row,localPointMm:row.localPointMm.map((v,k)=>v+(k===1?delta:0)),absolutePointMm:row.absolutePointMm.map((v,k)=>v+(k===1?delta:0))},'Only the five station/valve/tee Y coordinates follow the actual25mm station move')
+ }
+ assert.deepEqual(pa.pocket,pb.pocket);assert.equal(pa.sourceOnlyLmin,pb.sourceOnlyLmin)
  assert.equal(pa.completeOccupiedArrangementQualified,false);assert.equal(pb.completeOccupiedArrangementQualified,false)
  const undo=replayEngineeringEdit(editResult.state,engineeringBase(editResult.state),'undo');assert.equal(undo.status,'applied');if(undo.status==='applied')assert.equal(saveEngineeringEdit(undo.state),saveEngineeringEdit(state))
  assert.equal(edit(state,'fittedFrame.clearWidthMm',800).status,'rejected');assert.equal(edit(state,'fittedFrame.selected',1).status,'rejected')

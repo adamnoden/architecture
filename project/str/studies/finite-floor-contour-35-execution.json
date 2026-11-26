@@ -1,0 +1,2573 @@
+{
+  "schema": "ovids-house/str-finite-floor-contour-completed-execution/1",
+  "observedAt": "2026-11-26T00:05:30.377560+00:00",
+  "pitchMm": 35,
+  "captureSHA256": "59b6589bc3d910c5da22b98447c9bef4a9ad22c39be07eee2e22665aafb70987",
+  "methodSHA256": {
+    "finite_floor_contour_run.py": "74649831f7af3dc220c6c97e43eb011f7e54fc552933e7f0a1b75bd052509e17",
+    "finite_floor_contour.py": "aee74595e7c8cb857507dcfaf6286f26a63c0b86fbffc54930c3a60a42ad946f"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-fem": "12.0.2"
+  },
+  "inputs": {
+    "patchXYMm": [
+      262.5,
+      262.5,
+      2177.5,
+      2187.5
+    ],
+    "slabZMm": [
+      3170.0,
+      3370.0
+    ],
+    "boxesXYZMm": [
+      [
+        262.5,
+        262.5,
+        3170.0,
+        2177.5,
+        2187.5,
+        3370.0
+      ],
+      [
+        262.5,
+        262.5,
+        2170.0,
+        402.5,
+        1262.5,
+        3170.0
+      ],
+      [
+        402.5,
+        262.5,
+        2170.0,
+        1262.5,
+        402.5,
+        3170.0
+      ],
+      [
+        262.5,
+        262.5,
+        3370.0,
+        402.5,
+        1262.5,
+        4370.0
+      ],
+      [
+        402.5,
+        262.5,
+        3370.0,
+        1262.5,
+        402.5,
+        4370.0
+      ]
+    ],
+    "contoursMm": {
+      "east": [
+        262.5,
+        332.5,
+        402.5,
+        417.5,
+        840.0,
+        1262.5,
+        1725.0,
+        2187.5
+      ],
+      "north": [
+        262.5,
+        332.5,
+        402.5,
+        417.5,
+        462.5,
+        487.5,
+        647.5,
+        955.0,
+        1262.5,
+        1537.5,
+        1812.5,
+        2067.5,
+        2177.5
+      ]
+    },
+    "wallOriginsMm": [
+      [
+        563.6827956989247,
+        563.6827956989248,
+        2170.0
+      ],
+      [
+        563.6827956989247,
+        563.6827956989248,
+        4370.0
+      ]
+    ],
+    "slabUnitWeightKNPerM3": 27.0,
+    "wallUnitWeightKNPerM3": 25,
+    "meshControls": {
+      "contourBoundaryLayerDepthsMm": [
+        7.5,
+        15,
+        30,
+        60,
+        120
+      ],
+      "slabMaximumPitchMm": 15,
+      "factorizationOrdering": "MMD_AT_PLUS_A"
+    },
+    "authoredInput": {
+      "schema": "ovids-house/str-finite-floor-contour-input/1",
+      "id": "STR/SW/floor-contour-development",
+      "jointId": "SW",
+      "units": "mm-kN-kNm",
+      "datum": "source-ground-zero",
+      "patchXYMm": [
+        262.5,
+        262.5,
+        2177.5,
+        2187.5
+      ],
+      "wallEndZMm": [
+        2170,
+        4370
+      ],
+      "wallUnitWeightKNPerM3": 25,
+      "contourReferencePitchMm": 500,
+      "meshControls": {
+        "contourBoundaryLayerDepthsMm": [
+          7.5,
+          15,
+          30,
+          60,
+          120
+        ],
+        "slabMaximumPitchMm": 15,
+        "factorizationOrdering": "MMD_AT_PLUS_A"
+      }
+    },
+    "authoredInputSHA256": "a1da8aa213909ea510b8fbb07dc4994ef59a0074b92ff060d73ab49f276e194a",
+    "sourceAuditSHA256": "d06538867c28ff8655a0fce0013d53ed17e3f725e92618a1f024f2044ae74a8f",
+    "captureSHA256": {
+      "v500.full.json": "a9930793d0a86ef1dbf4c61e003dba088252e1107c60c49ee3bd3bbfbcc8b111",
+      "v250.full.json": "ce139fc9a3757919c1d079d879dbcd8e3fec0518ccdb3a6f7a009f31c6926818"
+    },
+    "archiveSHA256": "2ea260c237fc0abdc114c5a5f7eac46ed06f2c70afef9002dc2ac461dc9a4be2",
+    "nativeSourceSHA256": {
+      "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
+      "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
+      "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
+      "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
+      "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
+      "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
+      "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
+      "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
+      "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
+      "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
+      "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
+      "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
+      "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
+      "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
+      "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
+      "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
+      "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
+      "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+      "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+      "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
+      "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
+      "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
+      "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
+      "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
+      "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
+      "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
+      "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
+      "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
+      "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
+      "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
+      "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
+      "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
+      "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
+      "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
+      "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
+      "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
+      "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
+      "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
+      "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
+      "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
+      "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
+      "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
+      "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
+      "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
+      "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
+      "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+      "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+      "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
+      "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
+      "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
+      "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
+      "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
+      "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
+      "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
+      "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
+      "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
+      "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
+      "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
+    }
+  },
+  "processObservations": [
+    {
+      "observedAt": "2026-11-26T00:00:13.040828+00:00",
+      "VmPeakKiB": 27596,
+      "VmSizeKiB": 27596,
+      "VmHWMKiB": 88,
+      "VmRSSKiB": 88
+    },
+    {
+      "observedAt": "2026-11-26T00:00:14.041235+00:00",
+      "VmPeakKiB": 300032,
+      "VmSizeKiB": 300032,
+      "VmHWMKiB": 113496,
+      "VmRSSKiB": 113496
+    },
+    {
+      "observedAt": "2026-11-26T00:00:15.041774+00:00",
+      "VmPeakKiB": 432932,
+      "VmSizeKiB": 432932,
+      "VmHWMKiB": 256444,
+      "VmRSSKiB": 256444
+    },
+    {
+      "observedAt": "2026-11-26T00:00:16.042207+00:00",
+      "VmPeakKiB": 507004,
+      "VmSizeKiB": 311464,
+      "VmHWMKiB": 331096,
+      "VmRSSKiB": 138076
+    },
+    {
+      "observedAt": "2026-11-26T00:00:17.042681+00:00",
+      "VmPeakKiB": 1541204,
+      "VmSizeKiB": 1478944,
+      "VmHWMKiB": 670672,
+      "VmRSSKiB": 598332
+    },
+    {
+      "observedAt": "2026-11-26T00:00:18.044095+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2188652,
+      "VmHWMKiB": 791700,
+      "VmRSSKiB": 699724
+    },
+    {
+      "observedAt": "2026-11-26T00:00:19.044635+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 816276,
+      "VmRSSKiB": 773944
+    },
+    {
+      "observedAt": "2026-11-26T00:00:20.045374+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2263364,
+      "VmHWMKiB": 839024,
+      "VmRSSKiB": 839024
+    },
+    {
+      "observedAt": "2026-11-26T00:00:21.045787+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2263364,
+      "VmHWMKiB": 863600,
+      "VmRSSKiB": 863600
+    },
+    {
+      "observedAt": "2026-11-26T00:00:22.046634+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 883784,
+      "VmRSSKiB": 821048
+    },
+    {
+      "observedAt": "2026-11-26T00:00:23.047062+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 906312,
+      "VmRSSKiB": 869252
+    },
+    {
+      "observedAt": "2026-11-26T00:00:24.048395+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 930964,
+      "VmRSSKiB": 857016
+    },
+    {
+      "observedAt": "2026-11-26T00:00:25.048974+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 957588,
+      "VmRSSKiB": 924548
+    },
+    {
+      "observedAt": "2026-11-26T00:00:26.050008+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2188652,
+      "VmHWMKiB": 984096,
+      "VmRSSKiB": 894284
+    },
+    {
+      "observedAt": "2026-11-26T00:00:27.053768+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 1010720,
+      "VmRSSKiB": 973700
+    },
+    {
+      "observedAt": "2026-11-26T00:00:28.054605+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 1037344,
+      "VmRSSKiB": 1000324
+    },
+    {
+      "observedAt": "2026-11-26T00:00:29.055111+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2188652,
+      "VmHWMKiB": 1066016,
+      "VmRSSKiB": 965964
+    },
+    {
+      "observedAt": "2026-11-26T00:00:30.055883+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 1092640,
+      "VmRSSKiB": 1055620
+    },
+    {
+      "observedAt": "2026-11-26T00:00:31.056463+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 1119264,
+      "VmRSSKiB": 1082244
+    },
+    {
+      "observedAt": "2026-11-26T00:00:32.065733+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 1143840,
+      "VmRSSKiB": 1110916
+    },
+    {
+      "observedAt": "2026-11-26T00:00:33.067236+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2263364,
+      "VmHWMKiB": 1174896,
+      "VmRSSKiB": 1174896
+    },
+    {
+      "observedAt": "2026-11-26T00:00:34.067812+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2151296,
+      "VmHWMKiB": 1199136,
+      "VmRSSKiB": 1087404
+    },
+    {
+      "observedAt": "2026-11-26T00:00:35.068225+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 1223596,
+      "VmRSSKiB": 1169208
+    },
+    {
+      "observedAt": "2026-11-26T00:00:36.068620+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2263364,
+      "VmHWMKiB": 1242028,
+      "VmRSSKiB": 1219836
+    },
+    {
+      "observedAt": "2026-11-26T00:00:37.070282+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2263364,
+      "VmHWMKiB": 1273200,
+      "VmRSSKiB": 1273200
+    },
+    {
+      "observedAt": "2026-11-26T00:00:38.070959+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 1297340,
+      "VmRSSKiB": 1232696
+    },
+    {
+      "observedAt": "2026-11-26T00:00:39.074230+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2226008,
+      "VmHWMKiB": 1321916,
+      "VmRSSKiB": 1284996
+    },
+    {
+      "observedAt": "2026-11-26T00:00:40.074681+00:00",
+      "VmPeakKiB": 2263364,
+      "VmSizeKiB": 2188652,
+      "VmHWMKiB": 1348540,
+      "VmRSSKiB": 1244492
+    },
+    {
+      "observedAt": "2026-11-26T00:00:41.075063+00:00",
+      "VmPeakKiB": 2786292,
+      "VmSizeKiB": 2786292,
+      "VmHWMKiB": 1756344,
+      "VmRSSKiB": 1756344
+    },
+    {
+      "observedAt": "2026-11-26T00:00:42.075573+00:00",
+      "VmPeakKiB": 3197168,
+      "VmSizeKiB": 3197168,
+      "VmHWMKiB": 2295692,
+      "VmRSSKiB": 2295692
+    },
+    {
+      "observedAt": "2026-11-26T00:00:43.076129+00:00",
+      "VmPeakKiB": 3394964,
+      "VmSizeKiB": 903280,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 553328
+    },
+    {
+      "observedAt": "2026-11-26T00:00:44.076646+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 748836
+    },
+    {
+      "observedAt": "2026-11-26T00:00:45.077694+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 911512
+    },
+    {
+      "observedAt": "2026-11-26T00:00:46.078071+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1042932
+    },
+    {
+      "observedAt": "2026-11-26T00:00:47.078559+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1172476
+    },
+    {
+      "observedAt": "2026-11-26T00:00:48.078947+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1293736
+    },
+    {
+      "observedAt": "2026-11-26T00:00:49.079532+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1388172
+    },
+    {
+      "observedAt": "2026-11-26T00:00:50.079904+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1471620
+    },
+    {
+      "observedAt": "2026-11-26T00:00:51.081786+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1550996
+    },
+    {
+      "observedAt": "2026-11-26T00:00:52.082142+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1644084
+    },
+    {
+      "observedAt": "2026-11-26T00:00:53.083154+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1721100
+    },
+    {
+      "observedAt": "2026-11-26T00:00:54.083788+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1789388
+    },
+    {
+      "observedAt": "2026-11-26T00:00:55.084333+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1872712
+    },
+    {
+      "observedAt": "2026-11-26T00:00:56.084847+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1936384
+    },
+    {
+      "observedAt": "2026-11-26T00:00:57.085775+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 1991696
+    },
+    {
+      "observedAt": "2026-11-26T00:00:58.086179+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2041280
+    },
+    {
+      "observedAt": "2026-11-26T00:00:59.096842+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2113200
+    },
+    {
+      "observedAt": "2026-11-26T00:01:00.097326+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2163828
+    },
+    {
+      "observedAt": "2026-11-26T00:01:01.097785+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2224956
+    },
+    {
+      "observedAt": "2026-11-26T00:01:02.098193+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2268052
+    },
+    {
+      "observedAt": "2026-11-26T00:01:03.099784+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2302912
+    },
+    {
+      "observedAt": "2026-11-26T00:01:04.100177+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2348016
+    },
+    {
+      "observedAt": "2026-11-26T00:01:05.127006+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2381988
+    },
+    {
+      "observedAt": "2026-11-26T00:01:06.127506+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2418264
+    },
+    {
+      "observedAt": "2026-11-26T00:01:07.127924+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2493188,
+      "VmRSSKiB": 2464068
+    },
+    {
+      "observedAt": "2026-11-26T00:01:08.128510+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2503408,
+      "VmRSSKiB": 2503408
+    },
+    {
+      "observedAt": "2026-11-26T00:01:09.129398+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2535608,
+      "VmRSSKiB": 2535608
+    },
+    {
+      "observedAt": "2026-11-26T00:01:10.129812+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2566408,
+      "VmRSSKiB": 2566408
+    },
+    {
+      "observedAt": "2026-11-26T00:01:11.134414+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2592132,
+      "VmRSSKiB": 2592132
+    },
+    {
+      "observedAt": "2026-11-26T00:01:12.134814+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2617220,
+      "VmRSSKiB": 2617220
+    },
+    {
+      "observedAt": "2026-11-26T00:01:13.135325+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2681792,
+      "VmRSSKiB": 2681792
+    },
+    {
+      "observedAt": "2026-11-26T00:01:14.135819+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2742984,
+      "VmRSSKiB": 2742984
+    },
+    {
+      "observedAt": "2026-11-26T00:01:15.136375+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2789236,
+      "VmRSSKiB": 2789236
+    },
+    {
+      "observedAt": "2026-11-26T00:01:16.136838+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2819160,
+      "VmRSSKiB": 2819160
+    },
+    {
+      "observedAt": "2026-11-26T00:01:17.137343+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2845504,
+      "VmRSSKiB": 2845504
+    },
+    {
+      "observedAt": "2026-11-26T00:01:18.137876+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2869828,
+      "VmRSSKiB": 2869828
+    },
+    {
+      "observedAt": "2026-11-26T00:01:19.138265+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2891976,
+      "VmRSSKiB": 2891976
+    },
+    {
+      "observedAt": "2026-11-26T00:01:20.138704+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2916884,
+      "VmRSSKiB": 2916884
+    },
+    {
+      "observedAt": "2026-11-26T00:01:21.139095+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2952616,
+      "VmRSSKiB": 2952616
+    },
+    {
+      "observedAt": "2026-11-26T00:01:22.139474+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 2983712,
+      "VmRSSKiB": 2983712
+    },
+    {
+      "observedAt": "2026-11-26T00:01:23.142508+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3009748,
+      "VmRSSKiB": 3009748
+    },
+    {
+      "observedAt": "2026-11-26T00:01:24.143170+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3039068,
+      "VmRSSKiB": 3039068
+    },
+    {
+      "observedAt": "2026-11-26T00:01:25.143610+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3068656,
+      "VmRSSKiB": 3068656
+    },
+    {
+      "observedAt": "2026-11-26T00:01:26.144009+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3091888,
+      "VmRSSKiB": 3091888
+    },
+    {
+      "observedAt": "2026-11-26T00:01:27.144470+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3120400,
+      "VmRSSKiB": 3120400
+    },
+    {
+      "observedAt": "2026-11-26T00:01:28.145734+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3141348,
+      "VmRSSKiB": 3141348
+    },
+    {
+      "observedAt": "2026-11-26T00:01:29.146271+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3167864,
+      "VmRSSKiB": 3167864
+    },
+    {
+      "observedAt": "2026-11-26T00:01:30.146821+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3213012,
+      "VmRSSKiB": 3213012
+    },
+    {
+      "observedAt": "2026-11-26T00:01:31.147252+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3247808,
+      "VmRSSKiB": 3247808
+    },
+    {
+      "observedAt": "2026-11-26T00:01:32.147728+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3284652,
+      "VmRSSKiB": 3284652
+    },
+    {
+      "observedAt": "2026-11-26T00:01:33.148244+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3314052,
+      "VmRSSKiB": 3314052
+    },
+    {
+      "observedAt": "2026-11-26T00:01:34.148699+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3341164,
+      "VmRSSKiB": 3341164
+    },
+    {
+      "observedAt": "2026-11-26T00:01:35.149345+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3365852,
+      "VmRSSKiB": 3365852
+    },
+    {
+      "observedAt": "2026-11-26T00:01:36.149809+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3390752,
+      "VmRSSKiB": 3390752
+    },
+    {
+      "observedAt": "2026-11-26T00:01:37.150250+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3416104,
+      "VmRSSKiB": 3416104
+    },
+    {
+      "observedAt": "2026-11-26T00:01:38.150725+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3438704,
+      "VmRSSKiB": 3438704
+    },
+    {
+      "observedAt": "2026-11-26T00:01:39.151420+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3465280,
+      "VmRSSKiB": 3465280
+    },
+    {
+      "observedAt": "2026-11-26T00:01:40.151887+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3491352,
+      "VmRSSKiB": 3491352
+    },
+    {
+      "observedAt": "2026-11-26T00:01:41.152408+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3514304,
+      "VmRSSKiB": 3514304
+    },
+    {
+      "observedAt": "2026-11-26T00:01:42.152812+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3540348,
+      "VmRSSKiB": 3540348
+    },
+    {
+      "observedAt": "2026-11-26T00:01:43.153257+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3564108,
+      "VmRSSKiB": 3564108
+    },
+    {
+      "observedAt": "2026-11-26T00:01:44.154348+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3583828,
+      "VmRSSKiB": 3583828
+    },
+    {
+      "observedAt": "2026-11-26T00:01:45.154833+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3607816,
+      "VmRSSKiB": 3607816
+    },
+    {
+      "observedAt": "2026-11-26T00:01:46.155895+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3629572,
+      "VmRSSKiB": 3629572
+    },
+    {
+      "observedAt": "2026-11-26T00:01:47.156413+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3652636,
+      "VmRSSKiB": 3652636
+    },
+    {
+      "observedAt": "2026-11-26T00:01:48.156817+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3676664,
+      "VmRSSKiB": 3676664
+    },
+    {
+      "observedAt": "2026-11-26T00:01:49.157247+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3707080,
+      "VmRSSKiB": 3707080
+    },
+    {
+      "observedAt": "2026-11-26T00:01:50.157730+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3730980,
+      "VmRSSKiB": 3730980
+    },
+    {
+      "observedAt": "2026-11-26T00:01:51.158221+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3757704,
+      "VmRSSKiB": 3757704
+    },
+    {
+      "observedAt": "2026-11-26T00:01:52.158633+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3784032,
+      "VmRSSKiB": 3784032
+    },
+    {
+      "observedAt": "2026-11-26T00:01:53.159215+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3804716,
+      "VmRSSKiB": 3804716
+    },
+    {
+      "observedAt": "2026-11-26T00:01:54.159636+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3825220,
+      "VmRSSKiB": 3825220
+    },
+    {
+      "observedAt": "2026-11-26T00:01:55.160490+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3845696,
+      "VmRSSKiB": 3845696
+    },
+    {
+      "observedAt": "2026-11-26T00:01:56.160935+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3867128,
+      "VmRSSKiB": 3867128
+    },
+    {
+      "observedAt": "2026-11-26T00:01:57.161287+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3886124,
+      "VmRSSKiB": 3886124
+    },
+    {
+      "observedAt": "2026-11-26T00:01:58.162064+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3905244,
+      "VmRSSKiB": 3905244
+    },
+    {
+      "observedAt": "2026-11-26T00:01:59.162521+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3918524,
+      "VmRSSKiB": 3918524
+    },
+    {
+      "observedAt": "2026-11-26T00:02:00.162920+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3935396,
+      "VmRSSKiB": 3935396
+    },
+    {
+      "observedAt": "2026-11-26T00:02:01.163355+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3956488,
+      "VmRSSKiB": 3956488
+    },
+    {
+      "observedAt": "2026-11-26T00:02:02.164094+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3972688,
+      "VmRSSKiB": 3972688
+    },
+    {
+      "observedAt": "2026-11-26T00:02:03.164571+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 3989048,
+      "VmRSSKiB": 3989048
+    },
+    {
+      "observedAt": "2026-11-26T00:02:04.165017+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4004956,
+      "VmRSSKiB": 4004956
+    },
+    {
+      "observedAt": "2026-11-26T00:02:05.165413+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4021556,
+      "VmRSSKiB": 4021556
+    },
+    {
+      "observedAt": "2026-11-26T00:02:06.165964+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4040736,
+      "VmRSSKiB": 4040736
+    },
+    {
+      "observedAt": "2026-11-26T00:02:07.166411+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4054284,
+      "VmRSSKiB": 4054284
+    },
+    {
+      "observedAt": "2026-11-26T00:02:08.166854+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4074264,
+      "VmRSSKiB": 4074264
+    },
+    {
+      "observedAt": "2026-11-26T00:02:09.167247+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4090008,
+      "VmRSSKiB": 4090008
+    },
+    {
+      "observedAt": "2026-11-26T00:02:10.167788+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4106324,
+      "VmRSSKiB": 4106324
+    },
+    {
+      "observedAt": "2026-11-26T00:02:11.168233+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4120336,
+      "VmRSSKiB": 4120336
+    },
+    {
+      "observedAt": "2026-11-26T00:02:12.168689+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4134440,
+      "VmRSSKiB": 4134440
+    },
+    {
+      "observedAt": "2026-11-26T00:02:13.169196+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4152320,
+      "VmRSSKiB": 4152320
+    },
+    {
+      "observedAt": "2026-11-26T00:02:14.169687+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4169364,
+      "VmRSSKiB": 4169364
+    },
+    {
+      "observedAt": "2026-11-26T00:02:15.170122+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4186212,
+      "VmRSSKiB": 4186212
+    },
+    {
+      "observedAt": "2026-11-26T00:02:16.170639+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4199676,
+      "VmRSSKiB": 4199676
+    },
+    {
+      "observedAt": "2026-11-26T00:02:17.171058+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4216892,
+      "VmRSSKiB": 4216892
+    },
+    {
+      "observedAt": "2026-11-26T00:02:18.171528+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4235632,
+      "VmRSSKiB": 4235632
+    },
+    {
+      "observedAt": "2026-11-26T00:02:19.172059+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4249692,
+      "VmRSSKiB": 4249692
+    },
+    {
+      "observedAt": "2026-11-26T00:02:20.172439+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4263324,
+      "VmRSSKiB": 4263324
+    },
+    {
+      "observedAt": "2026-11-26T00:02:21.172830+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4280584,
+      "VmRSSKiB": 4280584
+    },
+    {
+      "observedAt": "2026-11-26T00:02:22.174381+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4293984,
+      "VmRSSKiB": 4293984
+    },
+    {
+      "observedAt": "2026-11-26T00:02:23.174721+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4311080,
+      "VmRSSKiB": 4311080
+    },
+    {
+      "observedAt": "2026-11-26T00:02:24.180384+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4323620,
+      "VmRSSKiB": 4323620
+    },
+    {
+      "observedAt": "2026-11-26T00:02:25.181879+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4337144,
+      "VmRSSKiB": 4337144
+    },
+    {
+      "observedAt": "2026-11-26T00:02:26.182427+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4350084,
+      "VmRSSKiB": 4350084
+    },
+    {
+      "observedAt": "2026-11-26T00:02:27.182918+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4364456,
+      "VmRSSKiB": 4364456
+    },
+    {
+      "observedAt": "2026-11-26T00:02:28.184551+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4382644,
+      "VmRSSKiB": 4382644
+    },
+    {
+      "observedAt": "2026-11-26T00:02:29.185571+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4391784,
+      "VmRSSKiB": 4391784
+    },
+    {
+      "observedAt": "2026-11-26T00:02:30.186689+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4407900,
+      "VmRSSKiB": 4407900
+    },
+    {
+      "observedAt": "2026-11-26T00:02:31.187125+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4421256,
+      "VmRSSKiB": 4421256
+    },
+    {
+      "observedAt": "2026-11-26T00:02:32.187548+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4438004,
+      "VmRSSKiB": 4438004
+    },
+    {
+      "observedAt": "2026-11-26T00:02:33.187998+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4451400,
+      "VmRSSKiB": 4451400
+    },
+    {
+      "observedAt": "2026-11-26T00:02:34.188423+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4468052,
+      "VmRSSKiB": 4468052
+    },
+    {
+      "observedAt": "2026-11-26T00:02:35.192063+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4476508,
+      "VmRSSKiB": 4476508
+    },
+    {
+      "observedAt": "2026-11-26T00:02:36.192485+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4492568,
+      "VmRSSKiB": 4492568
+    },
+    {
+      "observedAt": "2026-11-26T00:02:37.192861+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4504268,
+      "VmRSSKiB": 4504268
+    },
+    {
+      "observedAt": "2026-11-26T00:02:38.193277+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4525764,
+      "VmRSSKiB": 4525764
+    },
+    {
+      "observedAt": "2026-11-26T00:02:39.193926+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4542232,
+      "VmRSSKiB": 4542232
+    },
+    {
+      "observedAt": "2026-11-26T00:02:40.194442+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4558176,
+      "VmRSSKiB": 4558176
+    },
+    {
+      "observedAt": "2026-11-26T00:02:41.194876+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4574788,
+      "VmRSSKiB": 4574788
+    },
+    {
+      "observedAt": "2026-11-26T00:02:42.196026+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4594224,
+      "VmRSSKiB": 4594224
+    },
+    {
+      "observedAt": "2026-11-26T00:02:43.197008+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4607500,
+      "VmRSSKiB": 4607500
+    },
+    {
+      "observedAt": "2026-11-26T00:02:44.198222+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4622928,
+      "VmRSSKiB": 4622928
+    },
+    {
+      "observedAt": "2026-11-26T00:02:45.199124+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4637896,
+      "VmRSSKiB": 4637896
+    },
+    {
+      "observedAt": "2026-11-26T00:02:46.199642+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4653536,
+      "VmRSSKiB": 4653536
+    },
+    {
+      "observedAt": "2026-11-26T00:02:47.200101+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4670092,
+      "VmRSSKiB": 4670092
+    },
+    {
+      "observedAt": "2026-11-26T00:02:48.200546+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4685976,
+      "VmRSSKiB": 4685976
+    },
+    {
+      "observedAt": "2026-11-26T00:02:49.201587+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4698308,
+      "VmRSSKiB": 4698308
+    },
+    {
+      "observedAt": "2026-11-26T00:02:50.202039+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4716560,
+      "VmRSSKiB": 4716560
+    },
+    {
+      "observedAt": "2026-11-26T00:02:51.202477+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4731212,
+      "VmRSSKiB": 4731212
+    },
+    {
+      "observedAt": "2026-11-26T00:02:52.202898+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4746644,
+      "VmRSSKiB": 4746644
+    },
+    {
+      "observedAt": "2026-11-26T00:02:53.203663+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4759392,
+      "VmRSSKiB": 4759392
+    },
+    {
+      "observedAt": "2026-11-26T00:02:54.204204+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4777088,
+      "VmRSSKiB": 4777088
+    },
+    {
+      "observedAt": "2026-11-26T00:02:55.204646+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4793252,
+      "VmRSSKiB": 4793252
+    },
+    {
+      "observedAt": "2026-11-26T00:02:56.205074+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4807028,
+      "VmRSSKiB": 4807028
+    },
+    {
+      "observedAt": "2026-11-26T00:02:57.206168+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4821300,
+      "VmRSSKiB": 4821300
+    },
+    {
+      "observedAt": "2026-11-26T00:02:58.206626+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4836996,
+      "VmRSSKiB": 4836996
+    },
+    {
+      "observedAt": "2026-11-26T00:02:59.207067+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4852792,
+      "VmRSSKiB": 4852792
+    },
+    {
+      "observedAt": "2026-11-26T00:03:00.208003+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4864908,
+      "VmRSSKiB": 4864908
+    },
+    {
+      "observedAt": "2026-11-26T00:03:01.209039+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4876648,
+      "VmRSSKiB": 4876648
+    },
+    {
+      "observedAt": "2026-11-26T00:03:02.211149+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4888324,
+      "VmRSSKiB": 4888324
+    },
+    {
+      "observedAt": "2026-11-26T00:03:03.212967+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4896100,
+      "VmRSSKiB": 4896100
+    },
+    {
+      "observedAt": "2026-11-26T00:03:04.214004+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4908100,
+      "VmRSSKiB": 4908100
+    },
+    {
+      "observedAt": "2026-11-26T00:03:05.214495+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4923996,
+      "VmRSSKiB": 4923996
+    },
+    {
+      "observedAt": "2026-11-26T00:03:06.215396+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4941176,
+      "VmRSSKiB": 4941176
+    },
+    {
+      "observedAt": "2026-11-26T00:03:07.215870+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 4974520,
+      "VmRSSKiB": 4974520
+    },
+    {
+      "observedAt": "2026-11-26T00:03:08.228632+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5005756,
+      "VmRSSKiB": 5005756
+    },
+    {
+      "observedAt": "2026-11-26T00:03:09.229040+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5037996,
+      "VmRSSKiB": 5037996
+    },
+    {
+      "observedAt": "2026-11-26T00:03:10.229483+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5064344,
+      "VmRSSKiB": 5064344
+    },
+    {
+      "observedAt": "2026-11-26T00:03:11.229937+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5089636,
+      "VmRSSKiB": 5089636
+    },
+    {
+      "observedAt": "2026-11-26T00:03:12.230757+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5103216,
+      "VmRSSKiB": 5103216
+    },
+    {
+      "observedAt": "2026-11-26T00:03:13.231326+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5117880,
+      "VmRSSKiB": 5117880
+    },
+    {
+      "observedAt": "2026-11-26T00:03:14.231753+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5128820,
+      "VmRSSKiB": 5128820
+    },
+    {
+      "observedAt": "2026-11-26T00:03:15.232161+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5143020,
+      "VmRSSKiB": 5143020
+    },
+    {
+      "observedAt": "2026-11-26T00:03:16.232630+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5159644,
+      "VmRSSKiB": 5159644
+    },
+    {
+      "observedAt": "2026-11-26T00:03:17.233203+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5170816,
+      "VmRSSKiB": 5170816
+    },
+    {
+      "observedAt": "2026-11-26T00:03:18.233697+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5185452,
+      "VmRSSKiB": 5185452
+    },
+    {
+      "observedAt": "2026-11-26T00:03:19.234130+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5196524,
+      "VmRSSKiB": 5196524
+    },
+    {
+      "observedAt": "2026-11-26T00:03:20.234566+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5212984,
+      "VmRSSKiB": 5212984
+    },
+    {
+      "observedAt": "2026-11-26T00:03:21.235041+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5227836,
+      "VmRSSKiB": 5227836
+    },
+    {
+      "observedAt": "2026-11-26T00:03:22.235574+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5242576,
+      "VmRSSKiB": 5242576
+    },
+    {
+      "observedAt": "2026-11-26T00:03:23.236007+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5253808,
+      "VmRSSKiB": 5253808
+    },
+    {
+      "observedAt": "2026-11-26T00:03:24.236453+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5267652,
+      "VmRSSKiB": 5267652
+    },
+    {
+      "observedAt": "2026-11-26T00:03:25.236949+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5281388,
+      "VmRSSKiB": 5281388
+    },
+    {
+      "observedAt": "2026-11-26T00:03:26.237483+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5296384,
+      "VmRSSKiB": 5296384
+    },
+    {
+      "observedAt": "2026-11-26T00:03:27.237965+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5307452,
+      "VmRSSKiB": 5307452
+    },
+    {
+      "observedAt": "2026-11-26T00:03:28.238448+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5325504,
+      "VmRSSKiB": 5325504
+    },
+    {
+      "observedAt": "2026-11-26T00:03:29.238944+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5339116,
+      "VmRSSKiB": 5339116
+    },
+    {
+      "observedAt": "2026-11-26T00:03:30.239386+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5349148,
+      "VmRSSKiB": 5349148
+    },
+    {
+      "observedAt": "2026-11-26T00:03:31.239844+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5362276,
+      "VmRSSKiB": 5362276
+    },
+    {
+      "observedAt": "2026-11-26T00:03:32.240675+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5375092,
+      "VmRSSKiB": 5375092
+    },
+    {
+      "observedAt": "2026-11-26T00:03:33.241139+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5388092,
+      "VmRSSKiB": 5388092
+    },
+    {
+      "observedAt": "2026-11-26T00:03:34.241595+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5404896,
+      "VmRSSKiB": 5404896
+    },
+    {
+      "observedAt": "2026-11-26T00:03:35.242091+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5416192,
+      "VmRSSKiB": 5416192
+    },
+    {
+      "observedAt": "2026-11-26T00:03:36.242599+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5431440,
+      "VmRSSKiB": 5431440
+    },
+    {
+      "observedAt": "2026-11-26T00:03:37.243072+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5442840,
+      "VmRSSKiB": 5442840
+    },
+    {
+      "observedAt": "2026-11-26T00:03:38.243569+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5454636,
+      "VmRSSKiB": 5454636
+    },
+    {
+      "observedAt": "2026-11-26T00:03:39.244034+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5468936,
+      "VmRSSKiB": 5468936
+    },
+    {
+      "observedAt": "2026-11-26T00:03:40.244495+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5482348,
+      "VmRSSKiB": 5482348
+    },
+    {
+      "observedAt": "2026-11-26T00:03:41.245109+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5496068,
+      "VmRSSKiB": 5496068
+    },
+    {
+      "observedAt": "2026-11-26T00:03:42.245637+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5512548,
+      "VmRSSKiB": 5512548
+    },
+    {
+      "observedAt": "2026-11-26T00:03:43.246101+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5525784,
+      "VmRSSKiB": 5525784
+    },
+    {
+      "observedAt": "2026-11-26T00:03:44.246922+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5539320,
+      "VmRSSKiB": 5539320
+    },
+    {
+      "observedAt": "2026-11-26T00:03:45.247433+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5551016,
+      "VmRSSKiB": 5551016
+    },
+    {
+      "observedAt": "2026-11-26T00:03:46.247906+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5563820,
+      "VmRSSKiB": 5563820
+    },
+    {
+      "observedAt": "2026-11-26T00:03:47.248403+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5578820,
+      "VmRSSKiB": 5578820
+    },
+    {
+      "observedAt": "2026-11-26T00:03:48.248857+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5592972,
+      "VmRSSKiB": 5592972
+    },
+    {
+      "observedAt": "2026-11-26T00:03:49.249221+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5603816,
+      "VmRSSKiB": 5603816
+    },
+    {
+      "observedAt": "2026-11-26T00:03:50.249630+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5616900,
+      "VmRSSKiB": 5616900
+    },
+    {
+      "observedAt": "2026-11-26T00:03:51.250234+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5624516,
+      "VmRSSKiB": 5624516
+    },
+    {
+      "observedAt": "2026-11-26T00:03:52.250679+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5639644,
+      "VmRSSKiB": 5639644
+    },
+    {
+      "observedAt": "2026-11-26T00:03:53.251109+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5653124,
+      "VmRSSKiB": 5653124
+    },
+    {
+      "observedAt": "2026-11-26T00:03:54.251555+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5665688,
+      "VmRSSKiB": 5665688
+    },
+    {
+      "observedAt": "2026-11-26T00:03:55.251968+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5677984,
+      "VmRSSKiB": 5677984
+    },
+    {
+      "observedAt": "2026-11-26T00:03:56.252439+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5689328,
+      "VmRSSKiB": 5689328
+    },
+    {
+      "observedAt": "2026-11-26T00:03:57.252907+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5703544,
+      "VmRSSKiB": 5703544
+    },
+    {
+      "observedAt": "2026-11-26T00:03:58.253418+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5714788,
+      "VmRSSKiB": 5714788
+    },
+    {
+      "observedAt": "2026-11-26T00:03:59.253882+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5728128,
+      "VmRSSKiB": 5728128
+    },
+    {
+      "observedAt": "2026-11-26T00:04:00.254321+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5739964,
+      "VmRSSKiB": 5739964
+    },
+    {
+      "observedAt": "2026-11-26T00:04:01.254750+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5752148,
+      "VmRSSKiB": 5752148
+    },
+    {
+      "observedAt": "2026-11-26T00:04:02.255166+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5764092,
+      "VmRSSKiB": 5764092
+    },
+    {
+      "observedAt": "2026-11-26T00:04:03.255610+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5775968,
+      "VmRSSKiB": 5775968
+    },
+    {
+      "observedAt": "2026-11-26T00:04:04.256028+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5788060,
+      "VmRSSKiB": 5788060
+    },
+    {
+      "observedAt": "2026-11-26T00:04:05.256547+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5804084,
+      "VmRSSKiB": 5804084
+    },
+    {
+      "observedAt": "2026-11-26T00:04:06.256980+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5816280,
+      "VmRSSKiB": 5816280
+    },
+    {
+      "observedAt": "2026-11-26T00:04:07.257431+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5828300,
+      "VmRSSKiB": 5828300
+    },
+    {
+      "observedAt": "2026-11-26T00:04:08.257881+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5841584,
+      "VmRSSKiB": 5841584
+    },
+    {
+      "observedAt": "2026-11-26T00:04:09.258286+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5852696,
+      "VmRSSKiB": 5852696
+    },
+    {
+      "observedAt": "2026-11-26T00:04:10.258712+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5868132,
+      "VmRSSKiB": 5868132
+    },
+    {
+      "observedAt": "2026-11-26T00:04:11.259144+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5883224,
+      "VmRSSKiB": 5883224
+    },
+    {
+      "observedAt": "2026-11-26T00:04:12.259999+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5896604,
+      "VmRSSKiB": 5896604
+    },
+    {
+      "observedAt": "2026-11-26T00:04:13.260464+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5908488,
+      "VmRSSKiB": 5908488
+    },
+    {
+      "observedAt": "2026-11-26T00:04:14.260893+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5919908,
+      "VmRSSKiB": 5919908
+    },
+    {
+      "observedAt": "2026-11-26T00:04:15.261313+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5934092,
+      "VmRSSKiB": 5934092
+    },
+    {
+      "observedAt": "2026-11-26T00:04:16.261932+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5945928,
+      "VmRSSKiB": 5945928
+    },
+    {
+      "observedAt": "2026-11-26T00:04:17.262391+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5959280,
+      "VmRSSKiB": 5959280
+    },
+    {
+      "observedAt": "2026-11-26T00:04:18.262856+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5968296,
+      "VmRSSKiB": 5968296
+    },
+    {
+      "observedAt": "2026-11-26T00:04:19.263636+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5980228,
+      "VmRSSKiB": 5980228
+    },
+    {
+      "observedAt": "2026-11-26T00:04:20.264069+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 5991988,
+      "VmRSSKiB": 5991988
+    },
+    {
+      "observedAt": "2026-11-26T00:04:21.264512+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6006536,
+      "VmRSSKiB": 6006536
+    },
+    {
+      "observedAt": "2026-11-26T00:04:22.264928+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6022056,
+      "VmRSSKiB": 6022056
+    },
+    {
+      "observedAt": "2026-11-26T00:04:23.265370+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6031060,
+      "VmRSSKiB": 6031060
+    },
+    {
+      "observedAt": "2026-11-26T00:04:24.265777+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6044436,
+      "VmRSSKiB": 6044436
+    },
+    {
+      "observedAt": "2026-11-26T00:04:25.266431+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6056516,
+      "VmRSSKiB": 6056516
+    },
+    {
+      "observedAt": "2026-11-26T00:04:26.266834+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6071764,
+      "VmRSSKiB": 6071764
+    },
+    {
+      "observedAt": "2026-11-26T00:04:27.270008+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6082456,
+      "VmRSSKiB": 6082456
+    },
+    {
+      "observedAt": "2026-11-26T00:04:28.270771+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6094904,
+      "VmRSSKiB": 6094904
+    },
+    {
+      "observedAt": "2026-11-26T00:04:29.271229+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6108996,
+      "VmRSSKiB": 6108996
+    },
+    {
+      "observedAt": "2026-11-26T00:04:30.271668+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6118936,
+      "VmRSSKiB": 6118936
+    },
+    {
+      "observedAt": "2026-11-26T00:04:31.272066+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6132440,
+      "VmRSSKiB": 6132440
+    },
+    {
+      "observedAt": "2026-11-26T00:04:32.272546+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6146732,
+      "VmRSSKiB": 6146732
+    },
+    {
+      "observedAt": "2026-11-26T00:04:33.272937+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6155180,
+      "VmRSSKiB": 6155180
+    },
+    {
+      "observedAt": "2026-11-26T00:04:34.273365+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6168708,
+      "VmRSSKiB": 6168708
+    },
+    {
+      "observedAt": "2026-11-26T00:04:35.273811+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6184580,
+      "VmRSSKiB": 6184580
+    },
+    {
+      "observedAt": "2026-11-26T00:04:36.274272+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6200160,
+      "VmRSSKiB": 6200160
+    },
+    {
+      "observedAt": "2026-11-26T00:04:37.274744+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6215340,
+      "VmRSSKiB": 6215340
+    },
+    {
+      "observedAt": "2026-11-26T00:04:38.275143+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6226292,
+      "VmRSSKiB": 6226292
+    },
+    {
+      "observedAt": "2026-11-26T00:04:39.275560+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6241224,
+      "VmRSSKiB": 6241224
+    },
+    {
+      "observedAt": "2026-11-26T00:04:40.275955+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6253516,
+      "VmRSSKiB": 6253516
+    },
+    {
+      "observedAt": "2026-11-26T00:04:41.276380+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6262712,
+      "VmRSSKiB": 6262712
+    },
+    {
+      "observedAt": "2026-11-26T00:04:42.276773+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6271596,
+      "VmRSSKiB": 6271596
+    },
+    {
+      "observedAt": "2026-11-26T00:04:43.277178+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6285396,
+      "VmRSSKiB": 6285396
+    },
+    {
+      "observedAt": "2026-11-26T00:04:44.277630+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6297248,
+      "VmRSSKiB": 6297248
+    },
+    {
+      "observedAt": "2026-11-26T00:04:45.278049+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6307932,
+      "VmRSSKiB": 6307932
+    },
+    {
+      "observedAt": "2026-11-26T00:04:46.278481+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6322684,
+      "VmRSSKiB": 6322684
+    },
+    {
+      "observedAt": "2026-11-26T00:04:47.278901+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6331512,
+      "VmRSSKiB": 6331512
+    },
+    {
+      "observedAt": "2026-11-26T00:04:48.311080+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6342824,
+      "VmRSSKiB": 6342824
+    },
+    {
+      "observedAt": "2026-11-26T00:04:49.313799+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6354852,
+      "VmRSSKiB": 6354852
+    },
+    {
+      "observedAt": "2026-11-26T00:04:50.314188+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6367648,
+      "VmRSSKiB": 6367648
+    },
+    {
+      "observedAt": "2026-11-26T00:04:51.314572+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6375168,
+      "VmRSSKiB": 6375168
+    },
+    {
+      "observedAt": "2026-11-26T00:04:52.314999+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6389404,
+      "VmRSSKiB": 6389404
+    },
+    {
+      "observedAt": "2026-11-26T00:04:53.315513+00:00",
+      "VmPeakKiB": 12298188,
+      "VmSizeKiB": 12298188,
+      "VmHWMKiB": 6399324,
+      "VmRSSKiB": 6399324
+    },
+    {
+      "observedAt": "2026-11-26T00:04:54.316042+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409952,
+      "VmRSSKiB": 6409952
+    },
+    {
+      "observedAt": "2026-11-26T00:04:55.316524+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409952,
+      "VmRSSKiB": 6409952
+    },
+    {
+      "observedAt": "2026-11-26T00:04:56.317015+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409960,
+      "VmRSSKiB": 6409960
+    },
+    {
+      "observedAt": "2026-11-26T00:04:57.330741+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409960,
+      "VmRSSKiB": 6409960
+    },
+    {
+      "observedAt": "2026-11-26T00:04:58.331728+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409960,
+      "VmRSSKiB": 6409960
+    },
+    {
+      "observedAt": "2026-11-26T00:04:59.333393+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409960,
+      "VmRSSKiB": 6409960
+    },
+    {
+      "observedAt": "2026-11-26T00:05:00.333888+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409960,
+      "VmRSSKiB": 6409960
+    },
+    {
+      "observedAt": "2026-11-26T00:05:01.334391+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409960,
+      "VmRSSKiB": 6409960
+    },
+    {
+      "observedAt": "2026-11-26T00:05:02.335455+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409960,
+      "VmRSSKiB": 6409960
+    },
+    {
+      "observedAt": "2026-11-26T00:05:03.336039+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6409960,
+      "VmRSSKiB": 6409960
+    },
+    {
+      "observedAt": "2026-11-26T00:05:04.336573+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410028,
+      "VmRSSKiB": 6410028
+    },
+    {
+      "observedAt": "2026-11-26T00:05:05.337095+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410028,
+      "VmRSSKiB": 6410028
+    },
+    {
+      "observedAt": "2026-11-26T00:05:06.339794+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410028,
+      "VmRSSKiB": 6410028
+    },
+    {
+      "observedAt": "2026-11-26T00:05:07.340473+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410028,
+      "VmRSSKiB": 6410028
+    },
+    {
+      "observedAt": "2026-11-26T00:05:08.340946+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410108,
+      "VmRSSKiB": 6410108
+    },
+    {
+      "observedAt": "2026-11-26T00:05:09.341461+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410108,
+      "VmRSSKiB": 6410108
+    },
+    {
+      "observedAt": "2026-11-26T00:05:10.346049+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410108,
+      "VmRSSKiB": 6410108
+    },
+    {
+      "observedAt": "2026-11-26T00:05:11.346496+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410108,
+      "VmRSSKiB": 6410108
+    },
+    {
+      "observedAt": "2026-11-26T00:05:12.346945+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410152,
+      "VmRSSKiB": 6410152
+    },
+    {
+      "observedAt": "2026-11-26T00:05:13.347413+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410152,
+      "VmRSSKiB": 6410152
+    },
+    {
+      "observedAt": "2026-11-26T00:05:14.347833+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410152,
+      "VmRSSKiB": 6410152
+    },
+    {
+      "observedAt": "2026-11-26T00:05:15.348219+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410152,
+      "VmRSSKiB": 6410152
+    },
+    {
+      "observedAt": "2026-11-26T00:05:16.348657+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410460,
+      "VmRSSKiB": 6410460
+    },
+    {
+      "observedAt": "2026-11-26T00:05:17.349082+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410460,
+      "VmRSSKiB": 6410460
+    },
+    {
+      "observedAt": "2026-11-26T00:05:18.349571+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410460,
+      "VmRSSKiB": 6410460
+    },
+    {
+      "observedAt": "2026-11-26T00:05:19.349995+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410608,
+      "VmRSSKiB": 6410608
+    },
+    {
+      "observedAt": "2026-11-26T00:05:20.359331+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410608,
+      "VmRSSKiB": 6410608
+    },
+    {
+      "observedAt": "2026-11-26T00:05:21.370639+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410608,
+      "VmRSSKiB": 6410608
+    },
+    {
+      "observedAt": "2026-11-26T00:05:22.373824+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410608,
+      "VmRSSKiB": 6410608
+    },
+    {
+      "observedAt": "2026-11-26T00:05:23.374183+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410608,
+      "VmRSSKiB": 6410608
+    },
+    {
+      "observedAt": "2026-11-26T00:05:24.374630+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410032,
+      "VmRSSKiB": 6408148
+    },
+    {
+      "observedAt": "2026-11-26T00:05:25.375063+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410032,
+      "VmRSSKiB": 6408148
+    },
+    {
+      "observedAt": "2026-11-26T00:05:26.375516+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410032,
+      "VmRSSKiB": 6408148
+    },
+    {
+      "observedAt": "2026-11-26T00:05:27.375914+00:00",
+      "VmPeakKiB": 12313272,
+      "VmSizeKiB": 12313272,
+      "VmHWMKiB": 6410032,
+      "VmRSSKiB": 6408148
+    },
+    {
+      "observedAt": "2026-11-26T00:05:28.376424+00:00",
+      "VmPeakKiB": 12320412,
+      "VmSizeKiB": 12320412,
+      "VmHWMKiB": 6410032,
+      "VmRSSKiB": 6389184
+    },
+    {
+      "observedAt": "2026-11-26T00:05:29.376762+00:00",
+      "VmPeakKiB": 12320412,
+      "VmSizeKiB": 839460,
+      "VmHWMKiB": 6410032,
+      "VmRSSKiB": 601536
+    },
+    {
+      "observedAt": "2026-11-26T00:05:30.377560+00:00",
+      "VmPeakKiB": 12320412,
+      "VmSizeKiB": 938724,
+      "VmHWMKiB": 6410032,
+      "VmRSSKiB": 700200
+    },
+    {
+      "exitCode": 0,
+      "completedResponseAvailable": true
+    }
+  ],
+  "phaseObservations": [
+    {
+      "phase": "assembly:start",
+      "monotonicSeconds": 6579.7166753,
+      "rssKiB": 96600,
+      "maximumRssKiB": 331096,
+      "pitchMm": 35.0
+    },
+    {
+      "phase": "assembly:complete",
+      "monotonicSeconds": 6606.638932522,
+      "rssKiB": 850024,
+      "maximumRssKiB": 2493188,
+      "nodes": 75700,
+      "elements": 66404,
+      "unknowns": 227100
+    },
+    {
+      "phase": "load:complete",
+      "monotonicSeconds": 6606.968062936,
+      "rssKiB": 854216,
+      "maximumRssKiB": 2493188,
+      "unknowns": 227100,
+      "ports": 112
+    },
+    {
+      "phase": "basis:released",
+      "monotonicSeconds": 6606.991336401,
+      "rssKiB": 345348,
+      "maximumRssKiB": 2493188
+    },
+    {
+      "phase": "factor:start",
+      "monotonicSeconds": 6607.006916935,
+      "rssKiB": 345360,
+      "maximumRssKiB": 2493188,
+      "fullDofs": 227100,
+      "interiorDofs": 219750,
+      "ports": 112,
+      "matrixNonzeros": 16878546
+    },
+    {
+      "phase": "factor:complete",
+      "monotonicSeconds": 6857.44271489,
+      "rssKiB": 6133292,
+      "maximumRssKiB": 6398760,
+      "factorNonzeros": 592504098
+    },
+    {
+      "phase": "rhs:batch",
+      "monotonicSeconds": 6867.631060074,
+      "rssKiB": 6330388,
+      "maximumRssKiB": 6409332,
+      "start": 0,
+      "stop": 16
+    },
+    {
+      "phase": "rhs:batch",
+      "monotonicSeconds": 6871.668677022,
+      "rssKiB": 6330388,
+      "maximumRssKiB": 6409400,
+      "start": 16,
+      "stop": 32
+    },
+    {
+      "phase": "rhs:batch",
+      "monotonicSeconds": 6875.528945159,
+      "rssKiB": 6330388,
+      "maximumRssKiB": 6409532,
+      "start": 32,
+      "stop": 48
+    },
+    {
+      "phase": "rhs:batch",
+      "monotonicSeconds": 6879.434292723,
+      "rssKiB": 6330388,
+      "maximumRssKiB": 6409576,
+      "start": 48,
+      "stop": 64
+    },
+    {
+      "phase": "rhs:batch",
+      "monotonicSeconds": 6883.312381289,
+      "rssKiB": 6330388,
+      "maximumRssKiB": 6409884,
+      "start": 64,
+      "stop": 80
+    },
+    {
+      "phase": "rhs:batch",
+      "monotonicSeconds": 6887.6030706,
+      "rssKiB": 6330388,
+      "maximumRssKiB": 6410032,
+      "start": 80,
+      "stop": 96
+    },
+    {
+      "phase": "rhs:batch",
+      "monotonicSeconds": 6891.513272457,
+      "rssKiB": 6332436,
+      "maximumRssKiB": 6410032,
+      "start": 96,
+      "stop": 112
+    },
+    {
+      "phase": "condensation:complete",
+      "monotonicSeconds": 6892.954724284,
+      "rssKiB": 6389184,
+      "maximumRssKiB": 6410032,
+      "responseBytes": 203481600,
+      "rhsBatchSize": 16
+    }
+  ],
+  "exitCode": 0,
+  "completedResponseAvailable": true,
+  "maximumResidentKiB": 6410608,
+  "elapsedProducerSeconds": 315.2027530960004,
+  "priorInterruptionCauseEstablished": false,
+  "convergenceAcceptanceClaimed": false,
+  "nativeFloorAdmission": false,
+  "jointResistanceAvailable": false,
+  "globalReplacementAvailable": false
+}
