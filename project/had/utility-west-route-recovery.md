@@ -1,0 +1,54 @@
+# Utility route recovery after executor loss
+
+This is an **unverified WIP recovery checkpoint**, not a selected installation or a test-results receipt. It preserves the three previously uncommitted route files from recorded tool payloads after the execution environment became unavailable on 2026-11-26. Their lost-machine blob hashes were not captured; reconstruction cannot establish byte identity against that inaccessible filesystem. No runtime probe was performed during connector-only recovery.
+
+The parent is the protected SE checkpoint `87d31a69ce080b22dd5a16d35c4531604876970b`, tree `b1d341160783df9efad83d776e4b33e7bb904235` (same tree as local `7991cf8cef21171d4191130a5c60b015001ba4b3`). Its existing files remain unchanged. The current PR #1629 freeze is not retipped by this branch.
+
+## What is recovered
+
+- `compiler/reference-house/current-design/inlet-utility-route.ts`: unfinished single-Utility geometry/stock evaluator with real R112 formed-tube sweep, rigorous chord cover, exact arc length/centroid, after-forming dimensional requirements, gravity/pressure references and two independent 10 mm allowances. It is **not wired into the inlet compiler, saved document, browser, manifest, source-coverage family or publication**.
+- `compiler/reference-house/current-design-inlet-utility-route.test.ts`: the last test source, including its known failing assertion. It has deliberately not been edited to manufacture a green recovery.
+- `project/had/studies/inlet-utility-north-route.json`: the **rejected narrow north-bank route**, retained only as the recovered test fixture. It is not an active selection. There is no implemented west-station input or complete west result in this checkpoint.
+
+The final lost-machine run showed two of the three new tests passing (formed-sweep geometry/stock/domain and source/pressure/density/ground perturbation controls). The north-rejection test failed its extra assertion that ordinary-arm reserve exceeded 50 mm after solid jamb walls had been added. The intended north rejection itself remained visible. A TypeScript error treating scalar finished doorway width as jamb coordinates was corrected by deriving the jamb pair from the hinge and width. A non-finite comparison guard was added. **The corrected final typecheck was not completed before environment loss.** Do not transfer earlier typecheck success to these recovered bytes.
+
+## Rejected north topology
+
+The candidate kept the valve at 11360/2350/1270, added a long high west/north route with an east vertical at X11508 and a low reverse dogleg, and replaced the final downstream compression elbow with a real R112 sweep. A pure probe before the last guards found the real shield connection and complete maintenance-field failures after both settings: approximately -5.52 mm and -4.84 mm respectively; the unchanged valve body also had -5.5 mm to the shield cover under that same two-setting comparison. Independent review additionally found the real existing 210 mm receiver covers/tool envelopes obstructed the narrow east feed. Bare-valve or tube-only clearance was therefore insufficient. An attempted 90 mm west shift of the bank then intersected the actual low shield connection at the original valve height. These alternatives did not earn an installation pass.
+
+The formed-sweep requirement is an authored, unprocured factory design: R112 centreline, after-forming OD 27.9..28.1 mm and wall 1.02..1.5 mm. Its circular tube shape may replace only the explicitly changed physical bend; it is not a licence to shrink the old Conex fitting box. Pressure, manufacture, friction coefficients, material/constituent admission, supports and physical validation remain unevidenced.
+
+## Concrete west-station alternative for the next execution
+
+The read-only independent review produced this shorter complete-route **candidate**, not a saved executable result:
+
+| Item | Candidate local occupied-floor geometry |
+| --- | --- |
+| Utility valve | axis [10030,2050,1270], horizontal north stem |
+| Ordinary operator | [10530,2600,1450] |
+| Actual source splice | use the exact bound Utility source coordinate; do not round its Z |
+| Upstream corners | [10080,600,940], [9740,600,940], [9740,2050,940], [10030,2050,940], then actual lower face [10030,2050,1190] |
+| Downstream path | actual upper face [10030,2050,1350], [10030,2050,1600], [10030,1250,1600], [10760,1250,1600], actual terminal [10760,1250,1000] |
+| Final formed turn | R112 only at [10760,1250,1600]; centre [10648,1250,1488], tangencies [10648,1250,1600] and [10760,1250,1488] |
+| Valve tail offsets | 330 mm; preserve the actual 160 mm face separation |
+| Existing clamp comparison | rotate the full 210 mm width north–south on newly designed west-wall bearers; retain actual full insulated cover height 77 mm |
+| Clamp centres | Z approximately 1097.25833 / 1442.74167 mm |
+
+The independent geometric calculation gave about 8.242 mm between the rotated full covers and adjacent full fitting/body reservations after both settings. The original 250 mm tails fail that independent cover/fitting reservation by about 31.758 mm. These are bounded review calculations, **not an executed complete assembly receipt**. The west review script/output was not written before environment loss.
+
+Two actual architectural joins must be solved before selection:
+
+1. The compact host's left worker ends around [10255,2075]. The proposed station body/stem, fixed clamps and pipe spools obstruct that crew path. Removing only the pressure-zero valve does not remove the fixed obstruction. Design and replay either a complete accessible cold station/spool dismantling sequence with actual capture/rest/support/renewal geometry, or a revised supported host handling route. Do not exempt the collision or assume a future disconnection.
+2. Head handling must consume the new home and actual fixed global first rest. Simply translating every old 620 mm head-sweep box 80 mm west produces an approximately -18.5 mm station/head reserve. Preserving the global first rest by reducing west travel from 720 to 640 mm can retain stage-2/3 Xmin10195 and avoids that particular collision. This needs the owning head method and all phases recomputed; no old receipt is applicable automatically.
+
+The actual washer first rest is 848 mm high; the station body starts 1164 mm. Plan overlap alone does not establish physical intersection, and a false 2 m washer envelope must not replace its real handled geometry. Ordinary operator body/approach, complete arm sector, actual parked leaves and solid jambs still require their genuine all-phase checks.
+
+## Preserved authority and proof debt
+
+The protected SE work already has its recorded 7 TypeScript geometry tests, 8 small native controls and prior typecheck, with no full finite successor capture. The native corner reader's three geometry controls passed; its executed-capture test was skipped without a supplied capture. A later pure source probe before these three route files changed confirmed SE200/240 propagation, the real pan/RC notch, unchanged source bound and separate Plant result, and explicit upstream failure. None constitutes full installation or structural approval.
+
+Keep the historical source pins in `project/str/studies/service-room-ground-receiver-proof.json` untouched for `compiler/reference-house/current-design/structural-ground-pockets.ts` and `project/str/studies/service_room_ground.py`. The last pre-route global audit had exactly those two genuine contradictions; no new audit was run for this reconstructed branch, and the new files are not registered or adopted. Do not rewrite an old capture's identity or claim audit zero.
+
+The context still owns XY only: native source ground0 and saved HAD530 are not a joined vertical/force model. Keep independently labelled nominal inlet ceiling inputs until the same houseVerticalProfile transform is supplied. Do not subtract530 from raw source soffit3170 as a local height.
+
+Next executable work: reconstruct and verify the complete west station/host/head/support assembly from the same saved controls; replace the rejected active-route assumption with one selected authored system; integrate its stock and actions; thread the same structural stage context through document/CLI/browser/manifest/drawings; obtain fresh current notched-ground/contact125 captures in the coordinated heavy-model window; then use ordinary producers and strict audit/checks. No owner acceptance, material/pressure approval or physical trial is fabricated.

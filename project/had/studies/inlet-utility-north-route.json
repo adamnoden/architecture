@@ -1,0 +1,89 @@
+{
+  "schema": "had-utility-route/1",
+  "id": "HAD/utility-north-bank-separated-cold-route",
+  "upstreamVirtualCornersMm": [
+    [
+      10080,
+      600,
+      2425
+    ],
+    [
+      9740,
+      600,
+      2425
+    ],
+    [
+      9740,
+      2350,
+      2425
+    ],
+    [
+      11508,
+      2350,
+      2425
+    ],
+    [
+      11508,
+      2350,
+      810
+    ],
+    [
+      11060,
+      2350,
+      810
+    ],
+    [
+      11060,
+      2350,
+      1020
+    ],
+    [
+      11360,
+      2350,
+      1020
+    ]
+  ],
+  "downstreamVirtualCornersMm": [
+    [
+      11360,
+      2350,
+      1520
+    ],
+    [
+      11150,
+      2350,
+      1520
+    ],
+    [
+      11150,
+      2350,
+      2250
+    ],
+    [
+      10040,
+      2350,
+      2250
+    ],
+    [
+      10040,
+      1250,
+      2250
+    ],
+    [
+      10760,
+      1250,
+      2250
+    ]
+  ],
+  "formedTurn": {
+    "path": "utility/downstream",
+    "cornerIndex": 5,
+    "centrelineRadiusMm": 112,
+    "maximumAngularStepDeg": 1,
+    "maximumOuterDiameterAfterFormingMm": 28.1,
+    "minimumWallAfterFormingMm": 1.02,
+    "minimumOuterDiameterAfterFormingMm": 27.9,
+    "maximumWallAfterFormingMm": 1.5
+  },
+  "stem": "horizontal-west"
+}

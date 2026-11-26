@@ -1,0 +1,166 @@
+/** One complete Utility branch. The co-located, retired Plant bank is not a
+ * physical obstacle in this separate-room successor. No product or support is
+ * admitted by a geometric comparison. */
+import {finiteBends,exactSegmentBoxDistance} from '../../../project/had/studies/incoming-water-geometry.mjs'
+import {segmentDistance} from '../../../project/had/studies/service-interface-geometry.mjs'
+import {inletCabinetProductFacts} from './inlet-cabinet-copper.js'
+import type {IndoorRoutesInput,InletRetainedRouteServices} from './inlet-indoor-routes.js'
+import type {inletEntrySideCuts} from './inlet-indoor-cuts.js'
+type P=readonly[number,number,number]
+type B=readonly[number,number,number,number,number,number]
+export type UtilityRouteChoice={schema:'had-utility-route/1';id:string;stem:'horizontal-west'|'horizontal-north';upstreamVirtualCornersMm:readonly P[];downstreamVirtualCornersMm:readonly P[];
+ formedTurn:{path:'utility/downstream';cornerIndex:number;centrelineRadiusMm:number;maximumAngularStepDeg:number;maximumOuterDiameterAfterFormingMm:number;minimumOuterDiameterAfterFormingMm:number;minimumWallAfterFormingMm:number;maximumWallAfterFormingMm:number}}
+const tuple=(v:unknown,n:number)=>Array.isArray(v)&&v.length===n&&[...v].every(x=>typeof x==='number'&&Number.isFinite(x))
+const length=(a:P,b:P)=>Math.hypot(...a.map((v,k)=>v-b[k]))
+const direction=(a:P,b:P)=>a.map((v,k)=>(b[k]-v)/length(a,b)) as unknown as P
+const segments=(points:readonly P[])=>points.slice(1).map((b,index)=>({a:points[index],b,index,lengthMm:length(points[index],b)}))
+const dot=(a:P,b:P)=>a.reduce((n,v,k)=>n+v*b[k],0)
+const cross=(a:readonly number[],b:readonly number[])=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]
+const gap=(a:B,b:B)=>{const g=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return g.some(v=>v>0)?Math.hypot(...g.map(v=>Math.max(v,0))):Math.max(...g)}
+export function admitUtilityRouteChoice(value:unknown):UtilityRouteChoice{
+ const c=value as UtilityRouteChoice,keys=['schema','id','stem','upstreamVirtualCornersMm','downstreamVirtualCornersMm','formedTurn']
+ if(!c||Object.keys(c).sort().join(',')!==keys.sort().join(',')||c.schema!=='had-utility-route/1'||typeof c.id!=='string'||!c.id||!['horizontal-west','horizontal-north'].includes(c.stem)
+  ||![c.upstreamVirtualCornersMm,c.downstreamVirtualCornersMm].every(p=>Array.isArray(p)&&p.length>=2&&[...p].every(v=>tuple(v,3)))||!c.formedTurn)throw Error('Unsupported complete Utility route choice')
+ const f=c.formedTurn
+ if(Object.keys(f).sort().join(',')!=='centrelineRadiusMm,cornerIndex,maximumAngularStepDeg,maximumOuterDiameterAfterFormingMm,maximumWallAfterFormingMm,minimumOuterDiameterAfterFormingMm,minimumWallAfterFormingMm,path'
+  ||f.path!=='utility/downstream'||!Number.isInteger(f.cornerIndex)||f.cornerIndex<0||f.cornerIndex>=c.downstreamVirtualCornersMm.length
+  ||![f.centrelineRadiusMm,f.maximumAngularStepDeg,f.maximumOuterDiameterAfterFormingMm,f.minimumOuterDiameterAfterFormingMm,f.minimumWallAfterFormingMm,f.maximumWallAfterFormingMm].every(Number.isFinite)
+  ||f.centrelineRadiusMm<4*28||f.centrelineRadiusMm>200||f.maximumAngularStepDeg<=0||f.maximumAngularStepDeg>1
+  ||f.maximumOuterDiameterAfterFormingMm!==28.1||f.minimumOuterDiameterAfterFormingMm!==27.9||f.minimumWallAfterFormingMm!==1.02||f.maximumWallAfterFormingMm!==1.5)throw Error('Unsupported authored formed copper domain')
+ return structuredClone(c)
+}
+
+export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoutesInput;cuts:ReturnType<typeof inletEntrySideCuts>;retained:InletRetainedRouteServices}){
+ const c=admitUtilityRouteChoice(i.choice),s=i.input,cuts=i.cuts,facts=inletCabinetProductFacts,source=s.utilitySourcePathMm[2],terminal=s.utilitySourcePathMm[6],
+  sourceValve=cuts.valves.find(v=>v.branch==='utility'),
+  valve=sourceValve?{...sourceValve,stem:c.stem,stemWheelEnvelopeMm:(c.stem==='horizontal-north'?[sourceValve.axisMm[0]-62.5,sourceValve.axisMm[1],sourceValve.axisMm[2]-62.5,125,217,125]:sourceValve.stemWheelEnvelopeMm) as B}:undefined
+ if(!valve||!tuple(source,3)||!tuple(terminal,3)||!tuple(s.roomPlanMm,4)||!Number.isFinite(s.groundFflMm)||s.utilityLmin<=0||s.maximumGaugeBar<=0||s.maximumGaugeBar>12)throw Error('Actual Utility source, valve and datum required')
+ const [x,y,z]=valve.axisMm,[west,south,width,depth]=s.roomPlanMm,east=west+width,north=south+depth,
+  radius=facts.pipe.maximumOuterDiameterIncludingOvalityMm/2+26,setting=10,fittingR=facts.coupling.spannerMm/(2*Math.cos(Math.PI/6))+26,takeoff=facts.elbow.portToVirtualCornerMm,
+  pathInputs=[{id:'utility/upstream',points:[source,...c.upstreamVirtualCornersMm,[x,y,z-80] as P]},
+   {id:'utility/downstream',points:[[x,y,z+80] as P,...c.downstreamVirtualCornersMm,terminal]}]
+ if(JSON.stringify(c.upstreamVirtualCornersMm.at(-1))!==JSON.stringify([x,y,z-s.tailOffsetMm])
+  ||JSON.stringify(c.downstreamVirtualCornersMm[0])!==JSON.stringify([x,y,z+s.tailOffsetMm]))throw Error('Changed actual Utility flange tail connection')
+ const paths=pathInputs.map(p=>{
+  const original=segments(p.points)
+  if(original.some(v=>v.lengthMm<=0))throw Error('Zero Utility leg')
+  const corners=p.points.slice(1,-1).map((point,k)=>{
+   const before=direction(p.points[k],point),after=direction(point,p.points[k+2])
+   if(Math.abs(dot(before,after))>1e-10)throw Error('Utility route requires orthogonal noncollinear corners')
+   const formed=p.id===c.formedTurn.path&&k===c.formedTurn.cornerIndex,
+    bend=formed?finiteBends([p.points[k],point,p.points[k+2]],c.formedTurn.centrelineRadiusMm,c.formedTurn.maximumAngularStepDeg):null,
+    arc=formed?(bend!.path as P[]).slice(1,-1):null,
+    ports=arc??[point,point.map((v,j)=>v-takeoff*before[j]) as unknown as P,point.map((v,j)=>v+takeoff*after[j]) as unknown as P],
+    cover=formed?radius+bend!.hausdorffError:fittingR,
+    lo=point.map((_v,j)=>Math.min(...ports.map(p=>p[j]))-cover),hi=point.map((_v,j)=>Math.max(...ports.map(p=>p[j]))+cover),
+    box=[...lo,...hi.map((v,k)=>v-lo[k])] as unknown as B,
+    centroid=formed?point.map((v,j)=>v+(-1+2/Math.PI)*c.formedTurn.centrelineRadiusMm*before[j]+(1-2/Math.PI)*c.formedTurn.centrelineRadiusMm*after[j]) as unknown as P:point
+   return{id:'HAD/utility-route/'+p.id+'/corner/'+k,index:k,pointMm:point,before,after,kind:formed?'factory-formed-copper-sweep':'boxed-compression-elbow',boxMm:box,
+    arcMm:arc,arcCoverMm:formed?bend!.hausdorffError:0,centroidMm:centroid,
+    arcLengthMm:formed?c.formedTurn.centrelineRadiusMm*Math.PI/2:0,
+    tangentMm:formed?c.formedTurn.centrelineRadiusMm:0,
+    pressureOriginAbsoluteMm:point.map((v,j)=>v+(j===2?s.groundFflMm:0)),
+    fullGaugeFluidOnCornerForceN:before.map((v,j)=>s.maximumGaugeBar*1e5*Math.PI/4*((28.1-2*1.02)/1000)**2*(v-after[j])),
+    pressureAndFormingQualified:false}
+  }),straight=original.map(leg=>{const prior=corners[leg.index-1],next=corners[leg.index],
+   a=prior?.arcMm?prior.arcMm.at(-1)!:leg.a,b=next?.arcMm?next.arcMm[0]:leg.b
+   if(dot(direction(leg.a,leg.b),direction(a,b))<1-1e-10||length(a,b)<=0)throw Error('Formed turn consumes actual Utility leg')
+   return{...leg,a,b,lengthMm:length(a,b)}
+  })
+  return{id:p.id,virtualPointsMm:p.points,straight,corners,physicalPolylineMm:[straight[0].a,...straight.flatMap((leg,k)=>[leg.b,...(corners[k]?.arcMm?.slice(1)??[])])],
+   centrelineLengthMm:straight.reduce((n,v)=>n+v.lengthMm,0)+corners.reduce((n,v)=>n+v.arcLengthMm,0)}
+ }),allCorners=paths.flatMap(p=>p.corners.map(c=>({...c,path:p.id}))),
+  cornerSegment=(c:typeof allCorners[number],a:P,b:P)=>c.arcMm?Math.min(...segments(c.arcMm).map(v=>segmentDistance(a,b,v.a,v.b)))-radius-c.arcCoverMm:exactSegmentBoxDistance(a,b,c.boxMm),
+  cornerBox=(c:typeof allCorners[number],b:B)=>c.arcMm?Math.min(...segments(c.arcMm).map(v=>exactSegmentBoxDistance(v.a,v.b,b)))-radius-c.arcCoverMm:gap(c.boxMm,b),
+  cornerCorner=(a:typeof allCorners[number],b:typeof allCorners[number])=>a.arcMm?Math.min(...segments(a.arcMm).map(v=>cornerSegment(b,v.a,v.b)))-radius-a.arcCoverMm:b.arcMm?Math.min(...segments(b.arcMm).map(v=>exactSegmentBoxDistance(v.a,v.b,a.boxMm)))-radius-b.arcCoverMm:gap(a.boxMm,b.boxMm),
+  checks:{id:string;kind:string;reserveMm:number}[]=[],add=(id:string,kind:string,reserveMm:number)=>checks.push({id,kind,reserveMm}),
+  settings=2*setting,allStraight=paths.flatMap(p=>p.straight.map(v=>({...v,path:p.id}))),
+  obstacles=[...s.obstacles,...i.retained.boxes],
+  absolute=(p:P)=>p.map((v,k)=>v+(k===2?s.groundFflMm:0)) as unknown as P
+ for(const [part,box] of [['body',valve.insulatedValveBodyEnvelopeMm],['stem',valve.stemWheelEnvelopeMm]] as const){
+  for(const o of obstacles)add('utility/valve-'+part+'/'+o.id,'valve-obstacle',gap(box,o.boxMm)-settings)
+  for(const o of i.retained.paths)for(const t of segments(o.pointsMm))add('utility/valve-'+part+'/'+o.id+'/'+t.index,'valve-service',exactSegmentBoxDistance(t.a,t.b,box)-o.radiusWithSupportsMm-settings)
+  add('utility/valve-'+part+'/room','valve-room',Math.min(box[0]-west,east-box[0]-box[3],box[1]-south,north-box[1]-box[4],box[2],s.ceilingMm-box[2]-box[5])-setting)
+ }
+ for(const p of paths){
+  for(const leg of p.straight){
+   for(const o of obstacles)add(p.id+'/leg/'+leg.index+'/'+o.id,'pipe-obstacle',exactSegmentBoxDistance(leg.a,leg.b,o.boxMm)-radius-settings)
+   for(const o of i.retained.paths)for(const t of segments(o.pointsMm))add(p.id+'/leg/'+leg.index+'/'+o.id+'/'+t.index,'pipe-service',segmentDistance(leg.a,leg.b,t.a,t.b)-radius-o.radiusWithSupportsMm-settings)
+   for(const point of [leg.a,leg.b])add(p.id+'/leg/'+leg.index+'/room','pipe-room',Math.min(point[0]-west,east-point[0],point[1]-south,north-point[1],point[2],s.ceilingMm-point[2])-radius-setting)
+  }
+ }
+ for(const a of allStraight)for(const b of allStraight){if(a.path>b.path||a.path===b.path&&a.index+2>b.index)continue
+  if(a.path===b.path&&a.index>=b.index)continue
+  add(a.path+'/'+a.index+'/'+b.path+'/'+b.index,'pipe-pair',segmentDistance(a.a,a.b,b.a,b.b)-2*radius-settings)
+ }
+ for(const c of allCorners){
+  for(const o of obstacles)add(c.id+'/'+o.id,'corner-obstacle',cornerBox(c,o.boxMm)-settings)
+  for(const o of i.retained.paths)for(const t of segments(o.pointsMm))add(c.id+'/'+o.id+'/'+t.index,'corner-service',cornerSegment(c,t.a,t.b)-o.radiusWithSupportsMm-settings)
+  add(c.id+'/room','corner-room',Math.min(c.boxMm[0]-west,east-c.boxMm[0]-c.boxMm[3],c.boxMm[1]-south,north-c.boxMm[1]-c.boxMm[4],c.boxMm[2],s.ceilingMm-c.boxMm[2]-c.boxMm[5])-setting)
+  for(const leg of allStraight){if(c.path===leg.path&&(leg.index===c.index||leg.index===c.index+1))continue
+   add(c.id+'/'+leg.path+'/'+leg.index,'corner-pipe',cornerSegment(c,leg.a,leg.b)-radius-settings)
+  }
+ }
+ for(let a=0;a<allCorners.length;a++)for(let b=a+1;b<allCorners.length;b++)add(allCorners[a].id+'/'+allCorners[b].id,'corner-pair',cornerCorner(allCorners[a],allCorners[b])-settings)
+ // Exact connected axial ends only. Returning legs are never trimmed.
+ for(const p of paths)for(const leg of p.straight){
+  const upstream=p.id.endsWith('/upstream'),connected=upstream?leg.index===p.straight.length-1:leg.index===0,
+   limit=upstream?valve.insulatedValveBodyEnvelopeMm[2]-radius-settings:valve.insulatedValveBodyEnvelopeMm[2]+valve.insulatedValveBodyEnvelopeMm[5]+radius+settings,
+   a=connected&&!upstream?[x,y,limit] as P:leg.a,b=connected&&upstream?[x,y,limit] as P:leg.b
+  if(connected&&(upstream?b[2]<a[2]:a[2]>b[2]))throw Error('Insufficient actual Utility connected axial tail')
+  for(const [kind,box] of [['body',valve.insulatedValveBodyEnvelopeMm],['stem',valve.stemWheelEnvelopeMm]] as const)add(p.id+'/'+leg.index+'/valve-'+kind,'valve-pipe',exactSegmentBoxDistance(a,b,box)-radius-settings)
+ }
+ for(const corner of allCorners)for(const [kind,box] of [['body',valve.insulatedValveBodyEnvelopeMm],['stem',valve.stemWheelEnvelopeMm]] as const)add(corner.id+'/valve-'+kind,'valve-corner',cornerBox(corner,box)-settings)
+ // Continuous ordinary sector:1degree ×2mm samples plus rigorous endpoint
+ // displacement cover. This includes both pipe settings and the full40mm arm.
+ const shoulder=cuts.ordinaryOperator.shoulderMm as P,inboard=cuts.authoredChoices.wheelInboardMm,inboardSteps=Math.max(1,Math.ceil(inboard/2)),
+  cover=62.5*Math.PI/180/2+inboard/inboardSteps/2,
+  grips=Array.from({length:31},(_,a)=>-15+a).flatMap(deg=>Array.from({length:inboardSteps+1},(_,k)=>(c.stem==='horizontal-north'?[x+62.5*Math.sin(deg*Math.PI/180),y+217-k*inboard/inboardSteps,z+62.5*Math.cos(deg*Math.PI/180)]:[x-217+k*inboard/inboardSteps,y+62.5*Math.sin(deg*Math.PI/180),z+62.5*Math.cos(deg*Math.PI/180)]) as P))
+ const jamb=[cuts.door.hingeMm[0],cuts.door.hingeMm[0]+cuts.door.finishedOpeningMm],lobbyFace=cuts.door.hingeMm[1]-cuts.door.hingeNorthOfWallMm,
+  walls:B[]=[[west,north,0,jamb[0]-west,lobbyFace-north,s.ceilingMm],[jamb[1],north,0,east-jamb[1],lobbyFace-north,s.ceilingMm]],
+  bodyObstacles=[...walls,...cuts.door.allParkedOpenLeavesMm,...s.obstacles.filter(o=>o.id==='occupied-washer-rest').map(o=>[o.boxMm[0],o.boxMm[1],0,o.boxMm[3],o.boxMm[4],2000] as B)]
+ for(const a of segments(cuts.ordinaryOperator.approachMm))for(const b of bodyObstacles)add('utility/connected-ordinary-approach','ordinary-approach',exactSegmentBoxDistance(a.a,a.b,b)-cuts.ordinaryOperator.bodyRadiusMm-settings)
+ let minimumArmReserveMm=Infinity
+ for(const grip of grips){
+  add('utility/ordinary-reach','ordinary-reach',cuts.ordinaryOperator.reachLimitMm-length(shoulder,grip)-cover)
+  for(const wall of walls)minimumArmReserveMm=Math.min(minimumArmReserveMm,exactSegmentBoxDistance(shoulder,grip,wall)-cuts.ordinaryOperator.armRadiusMm-settings-cover)
+  for(const leg of allStraight)minimumArmReserveMm=Math.min(minimumArmReserveMm,segmentDistance(shoulder,grip,leg.a,leg.b)-radius-cuts.ordinaryOperator.armRadiusMm-settings-cover)
+  for(const corner of allCorners)minimumArmReserveMm=Math.min(minimumArmReserveMm,cornerSegment(corner,shoulder,grip)-cuts.ordinaryOperator.armRadiusMm-settings-cover)
+ }
+ add('utility/continuous-ordinary-arm','ordinary-arm',minimumArmReserveMm)
+ const od=28.1,maxWall=facts.pipe.maximumWallMm,bore=od-2*facts.pipe.minimumWallMm,
+  copperArea=Math.PI/4*(od**2-(od-2*maxWall)**2)/1e6,waterArea=Math.PI/4*bore**2/1e6,
+  jacketArea=Math.PI/4*((od+52)**2-(od+50)**2)/1e6,insulationArea=Math.PI/4*((od+50)**2-od**2)/1e6,
+  stock=paths.flatMap(p=>[...p.straight.map(v=>({id:'HAD/utility-route/'+p.id+'/straight/'+v.index,lengthMm:v.lengthMm,centroidMm:v.a.map((n,k)=>(n+v.b[k])/2) as unknown as P})),
+   ...p.corners.filter(c=>c.arcMm).map(c=>({id:c.id+'/formed-stock',lengthMm:c.arcLengthMm,centroidMm:c.centroidMm}))].map(row=>{
+    const rowCopperArea=row.id.endsWith('/formed-stock')?Math.PI/4*(od**2-(od-2*c.formedTurn.maximumWallAfterFormingMm)**2)/1e6:copperArea,
+     copperKg=row.lengthMm/1000*rowCopperArea*8960,waterKg=row.lengthMm/1000*waterArea*1000,jacketKg=row.lengthMm/1000*jacketArea*s.comparison.jacketDensityKgM3,insulationKg=row.lengthMm/1000*insulationArea*s.comparison.insulationDensityKgM3,
+     origin=absolute(row.centroidMm),force=[0,0,-(copperKg+waterKg+jacketKg+insulationKg)*9.81/1000]
+    return{...row,absoluteOriginMm:origin,copperKg,waterKg,jacketDensityReferenceKg:jacketKg,insulationDensityReferenceKg:insulationKg,
+     referenceMassKg:copperKg+waterKg+jacketKg+insulationKg,referenceGravityWrenchKN_KNm:[...force,...cross(origin.map(v=>v/1000),force)]}
+   })),totalLengthMm=paths.reduce((n,p)=>n+p.centrelineLengthMm,0),
+  hydraulicBoreMm=Math.min(facts.pipe.minimumOuterDiameterIncludingOvalityMm-2*maxWall,c.formedTurn.minimumOuterDiameterAfterFormingMm-2*c.formedTurn.maximumWallAfterFormingMm),velocity=s.utilityLmin/60000/(Math.PI/4*(hydraulicBoreMm/1000)**2),
+  straightLossBar=s.comparison.frictionFactor*totalLengthMm/hydraulicBoreMm*1000*velocity**2/2/1e5,
+  cornerLossBar=allCorners.length*s.comparison.cornerK*1000*velocity**2/2/1e5,valveLossBar=(s.utilityLmin*.06/12)**2,riseBar=Math.max(terminal[2]-source[2],0)*9.81e-5,
+  allowanceReserveBar=s.networkAllowancesBar[0]-straightLossBar-cornerLossBar-valveLossBar-riseBar
+ if(allowanceReserveBar<0)add('utility/network-allowance','hydraulics',allowanceReserveBar)
+ if(checks.some(v=>!Number.isFinite(v.reserveMm)))throw Error('Non-finite actual Utility geometry comparison')
+ checks.sort((a,b)=>a.reserveMm-b.reserveMm)
+ const failures=checks.filter(c=>c.reserveMm< -1e-7),pressureCorners=allCorners.map(c=>({id:c.id,absoluteOriginMm:c.pressureOriginAbsoluteMm,
+  fullGaugeWrenchN_Nm:[...c.fullGaugeFluidOnCornerForceN,...cross(c.pressureOriginAbsoluteMm.map(v=>v/1000),c.fullGaugeFluidOnCornerForceN)]}))
+ return{schema:'had-utility-route-assembly/1',choice:c,valve,ordinaryShoulderMm:shoulder,state:'authored-separate-room-utility-development',paths,stock,pressureCorners,
+  datum:{groundFflMm:s.groundFflMm,localCeilingComparisonMm:s.ceilingMm,ceilingJoinedToNativeForceModel:false},
+  geometry:{jacketRadiusMm:radius,twoIndependentSettingsMm:settings,compressionFittingRadiusMm:fittingR,formedMaximumChordCoverMm:Math.max(...allCorners.map(v=>v.arcCoverMm)),
+   minimumReserveMm:checks[0].reserveMm,minimumByKind:[...new Set(checks.map(v=>v.kind))].map(kind=>checks.find(v=>v.kind===kind)!),failures,checks,
+   necessaryActualUtilityGeometry:failures.length===0,continuousArmCoverMm:cover},
+  quantities:{centrelineLengthMm:totalLengthMm,referenceCopperKg:stock.reduce((n,r)=>n+r.copperKg,0),referenceWaterKg:stock.reduce((n,r)=>n+r.waterKg,0),referenceMassKg:stock.reduce((n,r)=>n+r.referenceMassKg,0),
+   gravityWrenchKN_KNm:stock.reduce((a,r)=>a.map((v,k)=>v+r.referenceGravityWrenchKN_KNm[k]),[0,0,0,0,0,0]),
+   scope:'Exact straight and formed-sweep cylindrical reference stock. Compression bodies, insertion overlap, tools, clips and actual wrapping/complete installed mass remain unqualified.'},
+  hydraulics:{minimumAuthoredBoreMm:hydraulicBoreMm,velocityMps:velocity,straightLossBar,cornerLossBar,valveLossBar,riseBar,allowanceReserveBar,
+   formedBendLossCoefficientQualified:false,actualMinimumHydraulicBoreAfterFormingQualified:false,wholeInstalledNetworkQualified:false},
+  topology:{sameActualSourceSplice:true,sameActualValveFacesAndTerminal:true,sharedHeader:false,permanentBypass:false,oldCoLocatedPlantBankRetired:true,separatePlantBranchUnchanged:true},
+  procurement:{formedSweepIsAuthoredFactoryRequirement:true,cataloguePartSelected:false,wallAndOvalityMeasuredAfterForming:false,pressureAndMaterialQualification:false},
+  renewal:{existingBankAndFlangeReleaseMethodPreserved:true,allNewRouteAndSupportRenewalQualified:false},
+  support:{referenceGravityAndPressureExported:true,actualIndependentGuidesAndAnchorsDesigned:false,thermalFlexibilityAndNativeReceiverTransferAccepted:false},
+  completeInstallationAccepted:false,selected:false}
+}
