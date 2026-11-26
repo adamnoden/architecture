@@ -27,6 +27,25 @@ type Suite={newGravityInventory:{metalRows:readonly{id:string;massKg:number;orig
 type FloorRoom={pan:{upperMetalStockCase:{loadOrigins:readonly MassRow[]};waterLoadOrigins:readonly MassRow[]};outfalls:readonly{bodyStockGravity:MassRow;fullWaterInventoryControl:MassRow}[];pocket:Pocket|null}
 type Inputs={source:{inletBindingDigest:string;inletCaseDigest:string;planDigest:string;groundCaseDigest:string|null};groundFflMm:number|null;coldGridTopMm:number|null;forceDensitiesKNm3:{rc:number;mineral:number}|null;utility:FloorRoom|null;plant:(FloorRoom&{bridge:{removablePieces:{pieces:readonly{id:string;startBoxMm:XYZ;sheetKg:number;hardwareBudgetKg:number}[]}}})|null;frame:{massKg:number;attachmentPointsMm:readonly XYZ[]};mainboard:{emptyReferenceKg:number;proposedBoxMm:XYZ};plantDoorLeafBudgetKg:number;plantBranch:{paths:readonly{stock:readonly{id:string;referenceCopperKg:number;referenceWaterKg:number;referenceJacketKg:number;referenceInsulationKg:number;absoluteOriginMm:XYZ;referenceGravityWrenchN_Nm:XYZ}[]}[];nominalValveGravity:{referenceOriginMm:XYZ;wrenchN_Nm:XYZ};knownValveKg:number}|null;utilityValve:{id:string;massKg:number;absoluteAxisMm:XYZ}|null;suite:Suite|null;storeDrain?:ReturnType<typeof inletStoreDrain>|null}
 
+/** Exact pure RC/contact-mineral stock construction shared by the admitted
+ * inventory and explicitly unadmitted proposed-input native comparisons.
+ * Caller provenance is data; this function does not create a discipline binding. */
+export function inletKnownFloorBody<Source extends Record<string,unknown>>(p:Pocket,i:{source:Source;groundFflMm:number|null;coldGridTopMm:number|null;forceDensitiesKNm3:{rc:number;mineral:number}|null}){
+ if(!i.forceDensitiesKNm3||![i.forceDensitiesKNm3.rc,i.forceDensitiesKNm3.mineral].every(n=>Number.isFinite(n)&&n>0))throw Error('Current authored local-floor force densities required')
+ const rows:ReturnType<typeof normalizeKnownGravity>[]=[]
+   for(const r of p.loadOrigins){const [x,y,xx,yy]=r.piece.planMinMaxMm,z=r.piece.zMm,density=r.id.endsWith('/mineral-G')?i.forceDensitiesKNm3!.mineral:i.forceDensitiesKNm3!.rc,volume=(xx-x)*(yy-y)*(z[1]-z[0])/1e9
+    if(Math.abs(-r.wrenchKN_KNm.Fz-volume*density)>1e-8)throw Error('Local floor force density no longer matches actual piece geometry')
+    rows.push(normalizeKnownGravity({id:r.id,force:[0,0,r.wrenchKN_KNm.Fz],forceUnit:'kN',moment:[0,0,0],momentUnit:'kNm',wrenchOriginXYZMm:r.originMm,applicationXYZMm:[(x+xx)/2,(y+yy)/2,(z[0]+z[1])/2],referenceCentre:true,massKg:null,gravityMps2:null,basis:`${density}kN/m³ × ${volume}m³; already integrated force`,datum:'absolute saved-ground XYZ; cold grid stays fixed',event:'candidate-local-floor-G'}))
+   }
+    const rc=p.levelBoxes.find(b=>b.id==='dryRC')!,mineral=p.levelBoxes.find(b=>b.id==='mineralCourse')!,d=i.forceDensitiesKNm3!,
+     gravity=(rect:XYZ,z:XYZ,density:number)=>{const force=-(rect[2]-rect[0])*(rect[3]-rect[1])*(z[1]-z[0])/1e9*density;return[0,0,force,(rect[1]+rect[3])/2000*force,-(rect[0]+rect[2])/2000*force,0]},
+     rcWrench=gravity(p.bodyMinMaxMm,rc.zMm,d.rc),mineralWrench=p.disjointContactCells.reduce((sum,c)=>{const row=gravity(c.rectangleMm,mineral.zMm,d.mineral);return sum.map((v,k)=>v+row[k])},[0,0,0,0,0,0]),combined=rcWrench.map((v,k)=>v+mineralWrench[k]),
+     fromRows=rows.reduce((sum,r)=>sum.map((v,k)=>v+r.globalWrenchAtZeroKN_KNm[k]),[0,0,0,0,0,0])
+    if(combined.some((v,k)=>Math.abs(v-fromRows[k])>1e-8*Math.max(1,Math.abs(v))))throw Error('Independent floor-body gravity and first-moment closure failed')
+    const body={id:p.id,sourceObjectId:p.id,sourceObjectDigest:sha256SemanticFingerprint(p),source:{...i.source},rcRectangleXYMm:[...p.bodyMinMaxMm],rcZMm:[...rc.zMm],rcUnitWeightKNPerM3:d.rc,mineralZMm:[...mineral.zMm],mineralUnitWeightKNPerM3:d.mineral,disjointContactRectanglesXYMm:p.disjointContactCells.map(c=>[...c.rectangleMm]),disjointContactCells:structuredClone(p.disjointContactCells),profile:{fflMm:i.groundFflMm,coldGridTopMm:i.coldGridTopMm,rigidZTransformApplied:false},independentKnownGravity:{rcGKN:-rcWrench[2],mineralGKN:-mineralWrench[2],rcGlobalWrenchAtZeroKN_KNm:rcWrench,mineralGlobalWrenchAtZeroKN_KNm:mineralWrench,combinedGlobalWrenchAtZeroKN_KNm:combined},requiredUnrepresentedPlinthMm:p.lowerPlinthRequiredMm,materialElasticModulusMPa:null,receiverReactions:null,nativeOldStockCreditKN:null}
+ return{rows,body}
+}
+
 /** Component comparisons are deliberately NOT an invented active assembly.
  * Raw old-bank controls are not consumed. No row chooses a receiver or head.
  */
@@ -38,19 +57,7 @@ export function inletKnownGravityInventory(i:Inputs){
   mass=(group:ReturnType<typeof add>,r:MassRow,event:string)=>group.rows.push(normalizeKnownGravity({id:r.id,force:[r.wrenchKN_KNm.Fx,r.wrenchKN_KNm.Fy,r.wrenchKN_KNm.Fz],forceUnit:'kN',moment:[r.wrenchKN_KNm.Mx,r.wrenchKN_KNm.My,r.wrenchKN_KNm.Mz],momentUnit:'kNm',wrenchOriginXYZMm:r.originMm,applicationXYZMm:r.massCentroidXYZMm,referenceCentre:true,massKg:r.massKg,gravityMps2:g,basis:'geometry/material-density reference; supplier mass unqualified',datum:'absolute saved-ground XYZ',event})),
   pocket=(name:string,p:Pocket|null)=>{
    const group=add(name+'/local-floor-force-density','RC and contact-mineral force density; no kg conversion',{bodyMinMaxMm:p?.bodyMinMaxMm??null,coldGridTopMm:i.coldGridTopMm,contactUnionM2:p?.contactUnionM2??null,disjointContactCells:structuredClone(p?.disjointContactCells??[]),actualContactFootprints:structuredClone(p?.coldGridContact??[]),receiverReactions:null})
-   if(p&&(!i.forceDensitiesKNm3||![i.forceDensitiesKNm3.rc,i.forceDensitiesKNm3.mineral].every(n=>Number.isFinite(n)&&n>0)))throw Error('Current authored local-floor force densities required')
-   for(const r of p?.loadOrigins??[]){const [x,y,xx,yy]=r.piece.planMinMaxMm,z=r.piece.zMm,density=r.id.endsWith('/mineral-G')?i.forceDensitiesKNm3!.mineral:i.forceDensitiesKNm3!.rc,volume=(xx-x)*(yy-y)*(z[1]-z[0])/1e9
-    if(Math.abs(-r.wrenchKN_KNm.Fz-volume*density)>1e-8)throw Error('Local floor force density no longer matches actual piece geometry')
-    group.rows.push(normalizeKnownGravity({id:r.id,force:[0,0,r.wrenchKN_KNm.Fz],forceUnit:'kN',moment:[0,0,0],momentUnit:'kNm',wrenchOriginXYZMm:r.originMm,applicationXYZMm:[(x+xx)/2,(y+yy)/2,(z[0]+z[1])/2],referenceCentre:true,massKg:null,gravityMps2:null,basis:`${density}kN/m³ × ${volume}m³; already integrated force`,datum:'absolute saved-ground XYZ; cold grid stays fixed',event:'candidate-local-floor-G'}))
-   }
-   if(p){
-    const rc=p.levelBoxes.find(b=>b.id==='dryRC')!,mineral=p.levelBoxes.find(b=>b.id==='mineralCourse')!,d=i.forceDensitiesKNm3!,
-     gravity=(rect:XYZ,z:XYZ,density:number)=>{const force=-(rect[2]-rect[0])*(rect[3]-rect[1])*(z[1]-z[0])/1e9*density;return[0,0,force,(rect[1]+rect[3])/2000*force,-(rect[0]+rect[2])/2000*force,0]},
-     rcWrench=gravity(p.bodyMinMaxMm,rc.zMm,d.rc),mineralWrench=p.disjointContactCells.reduce((sum,c)=>{const row=gravity(c.rectangleMm,mineral.zMm,d.mineral);return sum.map((v,k)=>v+row[k])},[0,0,0,0,0,0]),combined=rcWrench.map((v,k)=>v+mineralWrench[k]),
-     fromRows=group.rows.reduce((sum,r)=>sum.map((v,k)=>v+r.globalWrenchAtZeroKN_KNm[k]),[0,0,0,0,0,0])
-    if(combined.some((v,k)=>Math.abs(v-fromRows[k])>1e-8*Math.max(1,Math.abs(v))))throw Error('Independent floor-body gravity and first-moment closure failed')
-    structuralFloorBodies.push({id:p.id,sourceObjectId:p.id,sourceObjectDigest:sha256SemanticFingerprint(p),source:{...i.source},rcRectangleXYMm:[...p.bodyMinMaxMm],rcZMm:[...rc.zMm],rcUnitWeightKNPerM3:d.rc,mineralZMm:[...mineral.zMm],mineralUnitWeightKNPerM3:d.mineral,disjointContactRectanglesXYMm:p.disjointContactCells.map(c=>[...c.rectangleMm]),disjointContactCells:structuredClone(p.disjointContactCells),profile:{fflMm:i.groundFflMm,coldGridTopMm:i.coldGridTopMm,rigidZTransformApplied:false},independentKnownGravity:{rcGKN:-rcWrench[2],mineralGKN:-mineralWrench[2],rcGlobalWrenchAtZeroKN_KNm:rcWrench,mineralGlobalWrenchAtZeroKN_KNm:mineralWrench,combinedGlobalWrenchAtZeroKN_KNm:combined},requiredUnrepresentedPlinthMm:p.lowerPlinthRequiredMm,materialElasticModulusMPa:null,receiverReactions:null,nativeOldStockCreditKN:null})
-   }
+   if(p){const floor=inletKnownFloorBody(p,i);group.rows.push(...floor.rows);structuralFloorBodies.push(floor.body)}
    group.unknowns.push('No local plate/contact reaction distribution or resistance; native prior stock credit must be evidenced independently; glass, finish and other unrepresented stock remain unknown.')
   },room=(name:string,r:FloorRoom|null)=>{
    if(!r)return
