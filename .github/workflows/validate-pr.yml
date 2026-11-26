@@ -139,6 +139,7 @@ jobs:
           python -B project/str/studies/service_room_ground_receivers_test.py
           python -B project/str/studies/grid_origin_recovery_test.py
           python -B project/str/studies/service_room_ground_proof.py --check
+          python -B project/str/studies/service_room_ground_receiver_proof.py --check
           node --import tsx --test compiler/reference-house/current-design-ground-pockets.test.ts
           python - <<'PY'
           import json, os

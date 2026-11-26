@@ -956,7 +956,9 @@
         "compiler/reference-house/current-design/structural-ground-pockets.ts",
         "compiler/reference-house/current-design/structural-ground-pocket-settings.ts",
         "project/str/studies/service_room_ground.py",
-        "project/str/studies/service_room_ground_proof.py"
+        "project/str/studies/service_room_ground_proof.py",
+        "project/str/studies/service_room_ground_receiver_proof.py",
+        "project/str/studies/service_room_ground_receiver_replay.py"
       ],
       "authoredInputs": [
         "project/str/studies/floor-section-cuts-inputs.json",
@@ -1058,7 +1060,9 @@
         "project/str/studies/service-room-ground-observed-two-room-20261126.json",
         "project/str/studies/service-room-ground-observed-two-room-20261126.tar.xz",
         "project/str/studies/service-room-ground-comparison.json",
-        "project/str/studies/service-room-ground-comparison-captures.tar.xz"
+        "project/str/studies/service-room-ground-comparison-captures.tar.xz",
+        "project/str/studies/service-room-ground-receiver-proof.json",
+        "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz"
       ],
       "consumers": [
         "compiler/reference-house/current-design/structural-masonry-frame.ts",
@@ -1155,7 +1159,8 @@
         "node --import tsx --test compiler/reference-house/current-design-lower-masonry.test.ts",
         "python3 -B project/str/studies/service_room_ground_test.py",
         "node --import tsx --test compiler/reference-house/current-design-ground-pockets.test.ts",
-        "python3 -B project/str/studies/service_room_ground_receivers_test.py"
+        "python3 -B project/str/studies/service_room_ground_receivers_test.py",
+        "python3 -B project/str/studies/service_room_ground_receiver_proof.py --check"
       ],
       "historicalInputs": [
         "project/str/studies/seated-pre-nodal-history.json",
@@ -2731,6 +2736,48 @@
       "format": "value",
       "algorithm": "sha256",
       "source": "project/str/studies/finite_floor_contour_run.py"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "sourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "nativeSourceSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "replayMethodSHA256"
+      ],
+      "format": "map",
+      "algorithm": "sha256"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "captureArchiveSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz"
+    },
+    {
+      "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+      "location": [
+        "priorTwoRoomArchiveSHA256"
+      ],
+      "format": "value",
+      "algorithm": "sha256",
+      "source": "project/str/studies/service-room-ground-observed-two-room-20261126.tar.xz"
     }
   ],
   "gitBlobs": {
@@ -3239,7 +3286,7 @@
     "compiler/reference-house/current-design/occupied-services.ts": "80f31158e629120a3719a8d3b26774b7f2f07da2",
     "project/str/studies/fixed_normal_experiment.py": "79f6c70e448475c1188f4c493514df75a3c77ee3",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json": "17f081768d37138ba58d91b32617d4054be863cf",
-    "project/ccr/convergence-owner-review.md": "ab045fd29497854be902f22bac61f7196855e406",
+    "project/ccr/convergence-owner-review.md": "a4d3b4e528d36329541457b70f591d01bd368e4c",
     "project/str/studies/finite_joint_solid_run.py": "f7759a440296b38f92e3af3f29a9e1586559bc9a",
     "project/str/finite-joint-solid-development.md": "e90118a8ff01fc8ac761835903926b427263205b",
     "project/str/studies/finite_joint_solid.py": "b8451e22dda30b884166f82bbf86330aa9d13503",
@@ -3255,7 +3302,7 @@
     "project/str/studies/fixed-normal-experiment.results.json": "d70a4ee929a02d0f46a2563484b41ec98aab8b5f",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json": "a427298f215d2ad68be3885e98777c9c7f8474fa",
     "compiler/reference-house/current-design/structural-slab-constitutive.ts": "3719c065d8ebf6c7f187ad2d843706c09d54986a",
-    "project/str/floor-portal-reconciliation.md": "bfcce477bdb364c5169362179062db6559345537",
+    "project/str/floor-portal-reconciliation.md": "d3b5cc62e5d1002efe8eba604101f6d8d2b4a2d1",
     "project/str/studies/slab-constitutive-compiled-control.json": "ca832a34e53b0474231c5c5258e75a8fd4431948",
     "project/str/studies/slab-constitutive-compiled-control.tar.xz": "742987eb64ef9a608fd841bf43e1c746eeb10210",
     "project/had/studies/inlet-route-candidate.json": "6bd208ae8dbe70564122af3d16d3d86f60dde141",
@@ -3264,7 +3311,7 @@
     "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
     "project/had/studies/inlet-split-plant-station.svg": "bee70b5c62401e14b44de2add9c069c262a3944f",
     "project/had/split-isolation-station-development.md": "afaf763056896aa71525d88943151f21c021804e",
-    "project/ccr/studies/roof-pitch-27deg-field-section.svg": "42b6bab3e335fbb6a5a84d7439e61073e4c74379",
+    "project/ccr/studies/roof-pitch-27deg-field-section.svg": "9414f25bbab5b6d59650dae68b25c46c270fe9c5",
     "project/str/finite-floor-contour-development.md": "07e5508aa7133b1422e596a95bc8fe0d4ccafe31",
     "project/str/studies/finite_floor_contour.py": "1b255aa800553cd53715265fcfe79b5df44e85cf",
     "project/str/studies/finite_floor_contour_run.py": "2b4675f8d5ee3fc0d0421d8ab90de945cdac1986",
@@ -3387,6 +3434,10 @@
     "compiler/reference-house/current-design/inlet-open-closed-outfall.ts": "2561bc047ea2b2a0428b26e732fefe8dd9c9ffaa",
     "compiler/reference-house/current-design-inlet-open-closed-outfall.test.ts": "a3bd891e5985278a7f0d12c7f0055ab75eeda382",
     "project/had/studies/inlet-open-closed-outfalls.svg": "70a48b0a0c195719682d1bd1429c17536c911a64",
-    "project/str/studies/service_room_ground_receivers_test.py": "bfaba02d53038942daa121e6e305bb2512a1e275"
+    "project/str/studies/service_room_ground_receivers_test.py": "bfaba02d53038942daa121e6e305bb2512a1e275",
+    "project/str/studies/service_room_ground_receiver_proof.py": "b2553e7afffcea19291a853985871d4667d58838",
+    "project/str/studies/service_room_ground_receiver_replay.py": "1c04a3c550dd665a4a1a89999252cda7396b5567",
+    "project/str/studies/service-room-ground-receiver-proof.json": "705b0cdaa444410f2458f8a5944f03ad4ab97dda",
+    "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz": "e05b8f704d694960f63894996e8b9f7d50327b5d"
   }
 }

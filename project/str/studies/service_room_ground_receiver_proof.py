@@ -65,6 +65,7 @@ def produce():
     if max(changes.values())<1e-5:raise ValueError('Contact perturbation did not recompute local demand')
     return {'schema':'str-current-room-receiver-proof/1','scope':'Exact saved two-room known-gravity comparison and same-source contact edit; no whole raised house or complete installed inventory.',
         'sourceSHA256':source,'nativeSourceSHA256':request['nativeCase']['sourceSHA256'],'captureArchiveSHA256':sha(ARCHIVE.read_bytes()),
+        'replayMethodSHA256':{p:sha((ROOT/p).read_bytes()) for p in ['project/str/studies/service_room_ground_receiver_proof.py','project/str/studies/service_room_ground_receiver_replay.py']},
         'priorTwoRoomArchiveSHA256':sha(OLD.read_bytes()),'priorMaximum312HeadComponentDifferenceKN_KNm':maximum,
         'controls':controls,'contactEditMaximumPhysicalEndChanges':changes,'contactConverged':False,'completeSignedDemandEnvelopeAvailable':False,
         'completeInstalledInventory':False,'jointOrReceiverResistanceAccepted':False,'candidateAccepted':False,'wholeHouseAccepted':False}
