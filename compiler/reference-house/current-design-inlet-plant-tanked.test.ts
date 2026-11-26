@@ -159,10 +159,17 @@ test('actual Plant frame, door and bridge keep the same raised walking datum and
  console.info('PLANT_ACTUAL_RAISED_ROOM_JOIN '+JSON.stringify({frame:f.exactOuterArchGeometry,sourceY:f.sourceAxisYMm,normal:r.normalInstallation.geometryFailures,door:{minima:r.roomCoordination.fittedDoor.minima,diagnostics:r.roomCoordination.fittedDoor.diagnostics,goods:r.roomCoordination.fittedDoor.goodsChecks},bridge:{box:r.roomCoordination.bridge?.boxMm,railCentres:r.roomCoordination.bridge?.railCentresYMm,verticalReserve:r.roomCoordination.bridge?.railAboveOutfallPackageReserveMm,pieces:r.roomCoordination.bridge?.removablePieces.pieces.map(p=>({id:p.id,kg:p.completeBudgetKg,frame:p.minimumAuthoredFrameReserveMm,obstacle:p.minimumHomeObstacleReserveMm,pipes:p.minimumActualPipeReserveMm,obstacleFailures:p.obstacleFailures,pipeFailures:p.pipeFailures,fittingFailures:p.fittingFailures})),diagnostics:r.roomCoordination.diagnostics},normalAuthority:r.normalInstallation.regulator.regulatorAuthorityReserveBar}))
 })
 
-test('bridge turning position changes actual source-pipe clashes and invalidates the old capture result',()=>{
+test('actual exterior turning deck and the rejected interior quarter-turn invalidate dependent capture',()=>{
  const i=roomRequest(),r=inletPlantTankedRoom(i),bad=structuredClone(i)
- bad.choice.bridge.externalTurnCentreXYMm=[13430,4450]
+ assert.equal(r.roomCoordination.fittedDoor.requiredExteriorDeckAbsoluteZMm,r.levels.walkingMm)
+ assert.deepEqual(r.roomCoordination.fittedDoor.requiredClearExternalWorkDeckPlanMm,r.choice.externalDeckPlanMm)
+ bad.choice.bridge.externalTurnCentreXYMm=[12300,4600]
  const b=inletPlantTankedRoom(bad)
- assert.ok(b.roomCoordination.bridge!.removablePieces.pieces.some(p=>p.minimumActualPipeReserveMm<0))
+ assert.ok(b.roomCoordination.bridge!.removablePieces.pieces.some(p=>typeof p.externalTurnDeckReserveMm==='number'&&p.externalTurnDeckReserveMm<0))
  assert.notEqual(b.source.caseDigest,r.source.caseDigest)
+ const unsupported=structuredClone(i);unsupported.choice.bridge.externalTurnCentreXYMm=[13430,4450]
+ assert.throws(()=>inletPlantTankedRoom(unsupported),/Actual external bridge turning station/)
+ const interior=structuredClone(r.roomCoordination.resolvedInput);delete interior.bridgeRenewal
+ const failed=inletSplitPlantRoom(interior)
+ assert.ok(failed.bridge!.removablePieces.pieces.some(p=>p.minimumActualPipeReserveMm<0),'The former interior turn collides with the same current fixed P source, not a historical fixture.')
 })
