@@ -1,7 +1,7 @@
 import copy
 import math
 import unittest
-from rear_bearing_signed_demands import ACTIONS,cut_record,seat_records,case_demands,envelope
+from rear_bearing_signed_demands import ACTIONS,cut_record,seat_records,case_demands,envelope,support_face_cuts
 
 class SimultaneousDemandsControls(unittest.TestCase):
     def geometry(self):
@@ -26,6 +26,29 @@ class SimultaneousDemandsControls(unittest.TestCase):
                     {**self.cut(None,1125.),'fraction':.5,'cutSide':'left'},
                     {**self.cut(None,1125.),'fraction':.5,'cutSide':'right'}],
                 'bearingBodies':rows,'retainedCrossWallSeatRectanglesXYMm':rectangles[2:]}}}
+    def test_actual_support_face_recovery_uses_full_saved_distributed_and_point_loads_on_both_sides(self):
+        member={'a':'a','b':'b','physicalStartMm':[100.,0.,3220.],'physicalEndMm':[100.,2250.,3220.],
+            'breadthMm':200.,'depthMm':300.,'kind':'seated-wet-beam','yAxisGlobal':[1,0,0]}
+        name='REAR-LINTEL/member/0'
+        model={'frame':{'nodes':{'a':[100.,0.,3220.],'b':[100.,2250.,3220.]}},
+            'members':{name:member},'rearDirectBearing':{'memberRecoveryMultipliers':{'loaded':1.}},
+            'memberEquivalentLoads':{},'memberDistributedLoads':{'loaded':{name:[{'s0Mm':0.,'s1Mm':2250.,
+                'forceDensityKNPerMm':[0.,0.,-.01],'momentDensityKNmmPerMm':[0.,0.,0.]}]}},
+            'memberPointLoads':{'loaded':{name:[{'pointXYZMm':[100.,200.,3220.],
+                'forceKN':[0.,0.,5.],'momentKNmm':[0.,0.,0.]}]}}}
+        checkpoint={'postprocessingModel':model,'rawResponse':{'memberEndWrenchesKN_KNmm':{name:[0.,-10.,20.,1000.,2000.,3000.,*([0.]*6)]}}}
+        geometry={**self.geometry(),'rawOpeningYMm':[200.,2050.]}
+        rows=support_face_cuts(checkpoint,7,geometry,self.choices())
+        south=[r for r in rows if r['physicalPointMm'][1]==200.]
+        left=next(r for r in south if r['cutSide']=='left')['leftResultantKN_KNm']
+        right=next(r for r in south if r['cutSide']=='right')['leftResultantKN_KNm']
+        self.assertEqual(len(rows),4)
+        self.assertAlmostEqual(left[2],-18.);self.assertAlmostEqual(right[2],-23.)
+        self.assertAlmostEqual(left[4],-2.8);self.assertAlmostEqual(right[4],-2.8)
+        bad=copy.deepcopy(checkpoint);bad['postprocessingModel']['memberPointLoads']['loaded'][name]=[]
+        omitted=support_face_cuts(bad,7,geometry,self.choices())
+        self.assertNotEqual(omitted[1]['leftResultantKN_KNm'],rows[1]['leftResultantKN_KNm'])
+
     def test_end1_outward_wrench_normalizes_to_same_left_resultant_without_refipping_N(self):
         a=self.cut();b=self.cut(1,2250.)
         for k in ACTIONS[1:]:b[k]=-a[k]
