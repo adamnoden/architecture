@@ -88,6 +88,7 @@ test('actual floor, outlet and inventory perturbations invalidate dependent desi
 
  const revised=structuredClone(i);revised.choice.walkingRiseAboveHouseFflMm=100
  revised.choice.frame.clearHeightMm=2350
+ revised.choice.normalAssembly.prvAxisHouseLocalZMm=1260
  revised.choice.outfalls.clearWidthMm=600;revised.choice.outfalls.clearHeightMm=134
  revised.choice.outfalls.metalMm=5;revised.choice.outfalls.invertRiseAboveExistingMm=5
  revised.choice.outfalls.receiverClearWidthMm=650;revised.choice.externalRampRunMm=1200
@@ -99,7 +100,7 @@ test('actual floor, outlet and inventory perturbations invalidate dependent desi
  assert.notEqual(b.source.caseDigest,r.source.caseDigest)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
  if(dir)writeFileSync(join(dir,'Plant-tanked-rejected-tight-100mm600mm-comparison.json'),JSON.stringify(b,null,2))
- console.info('PLANT_TANK_COMPLETE_ALTERNATIVE '+JSON.stringify({choice:{rise:100,clearWidth:600,metal:5},levels:b.levels,inventory:b.inventory.fullInstantPressureNetworkDesignReleaseL,containment:b.containment,steelKg:b.walking.normalMassUpperKg,frame:b.fittedFrame}))
+ console.info('PLANT_TANK_COMPLETE_ALTERNATIVE '+JSON.stringify({choice:{rise:100,clearWidth:600,metal:5},levels:b.levels,inventory:b.inventory.fullInstantPressureNetworkDesignReleaseL,containment:b.containment,steelKg:b.walking.normalMassUpperKg,frame:b.fittedFrame,normalGeometry:b.normalInstallation.geometryFailures}))
 
 })
 
@@ -134,4 +135,18 @@ test('same Plant normal assembly controls inventory, source authority, route and
  assert.equal(failed.normalHeatedInventory.necessaryRegulatorAuthorityComparison,false)
  assert.notEqual(failed.source.caseDigest,r.source.caseDigest)
  console.info('PLANT_SAME_ASSEMBLY '+JSON.stringify({inventory:r.inventory.fullInstantPressureNetworkDesignReleaseL,inline:r.inventory.inlineRegulatorNetAddedOuterWaterUpperL,reserve:r.containment.reserveL,normalGeometry:r.normalInstallation.geometryFailures,unions:r.normalInstallation.unionRenewal.tasks.map(p=>({id:p.id,necessary:p.necessaryExternalTwoToolGeometry,failures:p.rows.filter(v=>Math.min(v.minimumRoomMm,v.minimumObjectMm,v.minimumShaftPipeMm,v.minimumHeadOtherPipeMm,v.minimumOwnBodyMm,v.minimumArmMm)<0||v.reachWithSettingsMm>600)}))}))
+})
+
+test('actual Plant frame, door and bridge keep the same raised walking datum and technical cassettes',()=>{
+ const r=inletPlantTankedRoom(roomRequest()),f=r.normalInstallation.branch.fittedFrame
+ assert.equal(f.outerFrameWidthMm,1300);assert.equal(f.effectiveOpenWidthMm,1000)
+ assert.deepEqual(f.infills.map(p=>p.widthMm),[150,150])
+ assert.equal(f.sourceAxisYMm,4025)
+ assert.ok(f.exactOuterArchGeometry?.necessaryExactRectangleFit)
+ assert.equal(r.roomCoordination.fittedDoor.parkedLeafBoxMm[2],150)
+ assert.equal(r.roomCoordination.fittedDoor.hingeMm[2],150)
+ assert.ok(r.roomCoordination.fittedDoor.poses.every(p=>p.shoulderMm[2]===f.choice.operatorShoulderHeightMm+150))
+ assert.ok(!r.roomCoordination.fittedDoor.diagnostics.includes('PLANT_FITTED_DOOR/frame-header-raw-arch'))
+ assert.equal(r.walking.bridgePieces[0].boxMm[4],950)
+ console.info('PLANT_ACTUAL_RAISED_ROOM_JOIN '+JSON.stringify({frame:f.exactOuterArchGeometry,sourceY:f.sourceAxisYMm,normal:r.normalInstallation.geometryFailures,door:r.roomCoordination.fittedDoor,bridge:r.roomCoordination.bridge,normalAuthority:r.normalInstallation.regulator.regulatorAuthorityReserveBar}))
 })

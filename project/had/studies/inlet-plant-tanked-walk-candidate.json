@@ -41,9 +41,9 @@
     "thicknessMm": 36,
     "pieceCount": 13,
     "railYMm": [
-      4110,
+      4155,
       4600,
-      5090
+      5045
     ],
     "railSectionWHtMm": [
       60,
@@ -63,7 +63,11 @@
       5350
     ],
     "insideRailSeatXMm": 11400,
-    "outsideRailSeatXMm": 12130
+    "outsideRailSeatXMm": 12130,
+    "plateWidthYMm": [
+      4125,
+      5075
+    ]
   },
   "grating": {
     "bearingBarHeightMm": 60,
@@ -115,10 +119,11 @@
     ]
   },
   "frame": {
-    "clearWidthMm": 1100,
+    "clearWidthMm": 1000,
     "clearHeightMm": 2300,
     "headerDepthMm": 100,
-    "sourceInfillPortDiameterMm": 125
+    "sourceInfillPortDiameterMm": 125,
+    "outerWidthMm": 1300
   },
   "ramp": {
     "maximumSlopeRatio": 12,
@@ -161,16 +166,16 @@
     "mode": "two75mm rises with one intermediate tread; no Plant-floor lip",
     "firstRiseFraction": 0.5,
     "treadPlanMm": [
-      10190,
+      10220,
       3303,
-      660,
+      650,
       494
     ],
     "riseAtYMm": [
       3303,
       3797
     ],
-    "operatorCentreXMm": 10520,
+    "operatorCentreXMm": 10545,
     "parkedSourceLeafEastXMm": 10159
   },
   "externalDeckPlanMm": [

@@ -63,7 +63,7 @@ export function inletSplitPlantRoom(i:SplitPlantRoomInput){
  const [west,south,width,depth]=i.branch.roomPlanMm,east=west+width,
   raw=i.rawEastOpeningYMm,cargo=i.cargoClearYMm,actualFrame=i.branch.fittedFrame,fitted=actualFrame.effectiveClearYMm,wall=i.eastOuterXMm-east,
   outerWidth=c.clearWidthMm+2*(c.insulationMm+c.metalMm),outerHeight=c.clearHeightMm+2*(c.insulationMm+c.metalMm),length=c.insideRunMm+wall+c.outsideRunMm,
-  maximumInfillClearWidthMm=Math.min(fitted[0]-raw[0],raw[1]-fitted[1])-2*(c.insulationMm+c.metalMm+c.settingMm),
+  maximumInfillClearWidthMm=Math.min(...actualFrame.infills.map(f=>f.widthMm))-2*(c.insulationMm+c.metalMm+c.settingMm),
   maximumPocketClearHeightMm=c.localPocketDepthMm-2*(c.insulationMm+c.metalMm+c.settingMm),
   oldInfillScreen=maximumInfillClearWidthMm>0&&maximumPocketClearHeightMm>47?rectangularCatchmentScreen(i.sourceMaximumPlantLmin,maximumInfillClearWidthMm,maximumPocketClearHeightMm,length,c.outfallSlopeRatio):null,
   hydraulic=rectangularCatchmentScreen(i.sourceMaximumPlantLmin,c.clearWidthMm,c.clearHeightMm,length,c.outfallSlopeRatio),
@@ -84,7 +84,7 @@ export function inletSplitPlantRoom(i:SplitPlantRoomInput){
   rawArchVerticalReservation,branchIdentity:i.branch.id,branchPrerequisites:{sameCurrentSource:i.branch.sourceBindingDigest,connections:i.branch.connections,geometryDiagnostics:i.branch.diagnostics,fullBranchArrangementComplete:i.branch.fullBranchArrangementComplete,pressureAndGravityReferenceOnly:true},resolvedInput:i,roomPlanMm:i.branch.roomPlanMm,rawEastOpeningYMm:raw,retainedCargoClearYMm:cargo,actualFittedFrame:actualFrame,fittedDoor:door,masonryOpeningChanged:false,
   sourceOnlyLmin:i.sourceMaximumPlantLmin,storedInventoryUsedAsFlowLimit:false,manualResponseCredited:false,sourceRestrictionQualificationTransferred:false,
   rejectedInfillOnly:{maximumClearWidthMm:maximumInfillClearWidthMm,maximumClearHeightMm:maximumPocketClearHeightMm,screen:oldInfillScreen,requiredClearWidthAtSameHeightMm:requiredClearWidthMm,rejected:infillGeometryRejected,
-   interpretation:'Generous upper envelope: both200mm side infills and a245mm floor are each fully available, before actual source pipe, seals, support or bridge stock. Failure rules out this infill-only open-channel comparison.'},
+   interpretation:'Generous upper envelope: actual fitted technical side cassettes ('+actualFrame.infills.map(f=>f.widthMm).join('/')+'mm) and the actual floor pocket are fully available, before source pipe, seals, support or bridge stock. Failure rules out this infill-only open-channel comparison.'},
   thresholdRoute:{kind:'two-independent-closed-outfalls-under-removable-threshold',lengthMm:length,wallDepthMm:wall,outerPackageMm:[outerWidth,outerHeight],laneChecks,centralGapMm,centreRailReserveMm,hydraulic,
    retained1000mmCargoWidth:i.cargoClearYMm[1]-i.cargoClearYMm[0],noCargoWidthReduction:true,old120mmBridgeProofApplicable:false,independentOutfallReceiversRequired:true,
    upperAndLowerClearancesRequireActualGround:true,actualReceiverAndBridgeResistanceQualified:false},storedRelease:{...i.stored,coordinateDatum:'Retained D2 point is local occupiedFFL; actual gravity receiver remains uncoordinated.',absoluteD2OutfallReferenceMm:i.stored.d2OutfallMm.map((v,k)=>v+(k===2?i.branch.groundFflMm:0)),catalogueOrMinimumUsedAsMaximum:false,houseSideReleaseBoundedByLodge:false,maximumReleaseLmin:null,
@@ -117,7 +117,7 @@ export function inletSplitPlantRoom(i:SplitPlantRoomInput){
    oldThresholdPlateReused:false,ordinaryHandRemovalClaimed:false,positiveLoadedCaptureRequired:true,referenceWheelActionIsActualLoadedMaximum:false,referenceStockPropertiesQualified:false,railSectionsSeatsAndActualColdGridTransferQualified:false,
    supportDuty:'Three longitudinal independent supports outside the two water bodies; actual rail sections, end seats, exterior support, bridge edge/catch, captured lifting and reinstatement remain to be designed. No pan/pipe support or cantilever is credited.'},
   pieces=(()=>{
-   const frameObstacles=[...actualFrame.infills.map(f=>({id:f.id,boxMm:f.fullReservedBoxMm.map((v,k)=>v-(k===2?g.ffl:0))})),{id:actualFrame.id+'/header',boxMm:[east,fitted[0],c.fittedFrame.clearHeightMm,wall,actualFrame.effectiveOpenWidthMm,c.fittedFrame.headerDepthMm]},{id:actualFrame.id+'/parked-leaf',boxMm:door.parkedLeafBoxMm}],
+   const frameObstacles=[...actualFrame.infills.map(f=>({id:f.id,boxMm:f.fullReservedBoxMm.map((v,k)=>v-(k===2?g.ffl:0))})),{id:actualFrame.id+'/header',boxMm:[east,fitted[0],c.fittedFrame.clearHeightMm+(actualFrame.resolvedInput.floorRiseMm??0),wall,actualFrame.effectiveOpenWidthMm,c.fittedFrame.headerDepthMm]},{id:actualFrame.id+'/parked-leaf',boxMm:door.parkedLeafBoxMm}],
     length=bridgeBox[3],spanY=bridgeBox[4],pieceWidth=(length-c.bridgeJointGapMm*(c.bridgePieceCount-1))/c.bridgePieceCount,rest=c.bridgeFirstRestBoxMm,
     centre:[number,number]=[rest[0]+rest[3]/2,rest[1]+rest[4]/2],top=rest[2]+rest[5],liftBottom=bridgeBox[2]-g.ffl+c.bridgeLiftMm,
     gap=(a:readonly number[],b:readonly number[])=>{const d=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return d.some(v=>v>0)?Math.hypot(...d.map(v=>Math.max(v,0))):Math.max(...d)},
@@ -212,10 +212,10 @@ export function drawInletSplitPlantRoom(r:ReturnType<typeof inletSplitPlantRoom>
 /** Exact rectangular leaf/pipe distance at every sampled pose, with continuous
  * Lipschitz coverage. This does not make a classified door or force/thermal pass. */
 export function comparePlantFittedDoor(i:SplitPlantRoomInput){
- const f=i.branch.fittedFrame,c=f.choice,s=2*i.choice.settingMm,L=f.leafSpanMm,t=c.leafThicknessMm,h=c.clearHeightMm,half=t/2,step=Math.PI/1800,
+ const f=i.branch.fittedFrame,c=f.choice,rise=f.resolvedInput.floorRiseMm??0,s=2*i.choice.settingMm,L=f.leafSpanMm,t=c.leafThicknessMm,h=c.clearHeightMm,half=t/2,step=Math.PI/1800,
   hinge=f.hingeMm,localLeaf=[0,-half,0,L,t,h] as const,
-  toWorld=(u:number,v:number,z:number,a:number):Point=>[hinge[0]+u*Math.sin(a)+v*Math.cos(a),hinge[1]-u*Math.cos(a)+v*Math.sin(a),z],
-  toLocal=(p:readonly number[],a:number):Point=>[(p[0]-hinge[0])*Math.sin(a)-(p[1]-hinge[1])*Math.cos(a),(p[0]-hinge[0])*Math.cos(a)+(p[1]-hinge[1])*Math.sin(a),p[2]],
+  toWorld=(u:number,v:number,z:number,a:number):Point=>[hinge[0]+u*Math.sin(a)+v*Math.cos(a),hinge[1]-u*Math.cos(a)+v*Math.sin(a),z+rise],
+  toLocal=(p:readonly number[],a:number):Point=>[(p[0]-hinge[0])*Math.sin(a)-(p[1]-hinge[1])*Math.cos(a),(p[0]-hinge[0])*Math.cos(a)+(p[1]-hinge[1])*Math.sin(a),p[2]-rise],
   pairGap=(a:readonly number[],b:readonly number[])=>{const d=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return d.some(v=>v>0)?Math.hypot(...d.map(v=>Math.max(v,0))):Math.max(...d)},
   localBodySpeed=Math.hypot(2*c.operatorBulgeMm,Math.abs(c.operatorNormalEndMm-c.operatorNormalStartMm)/(Math.PI/2)),
   worldBodySpeed=Math.hypot(L+c.operatorEndOffsetMm+c.operatorBulgeMm,Math.max(Math.abs(c.operatorNormalStartMm),Math.abs(c.operatorNormalEndMm)))+localBodySpeed,
@@ -225,12 +225,12 @@ export function comparePlantFittedDoor(i:SplitPlantRoomInput){
   witness={} as Record<string,unknown>,poses=[] as {angleDeg:number;shoulderMm:Point;gripMm:Point;bodyPlanMm:readonly[number,number]}[]
  let maxReach=0
  const accept=(key:keyof typeof minima,value:number,detail:unknown)=>{if(value<minima[key]){minima[key]=value;witness[key]=detail}}
- const exteriorObstacles=i.exteriorPlanObstacles.map(o=>({id:o.id,boxMm:[o.planMm[0],o.planMm[1],0,o.planMm[2],o.planMm[3],Math.max(2300,c.clearHeightMm)] as const})),fixed=[...i.bridgeHomeObstacles,...exteriorObstacles],deck=c.externalWorkDeckPlanMm
+ const exteriorObstacles=i.exteriorPlanObstacles.map(o=>({id:o.id,boxMm:[o.planMm[0],o.planMm[1],0,o.planMm[2],o.planMm[3],Math.max(2300,c.clearHeightMm+rise)] as const})),fixed=[...i.bridgeHomeObstacles,...exteriorObstacles],deck=c.externalWorkDeckPlanMm
  for(const o of exteriorObstacles)accept('deckFixed',pairGap([deck[0],deck[1],0,deck[2],deck[3],1],o.boxMm)-s,{obstacle:o.id})
  for(let k=0;k<=900;k++){
   const a=k*step,deg=k/10,U=L+c.operatorEndOffsetMm+c.operatorBulgeMm*Math.sin(2*a),V=c.operatorNormalStartMm+(c.operatorNormalEndMm-c.operatorNormalStartMm)*k/900,
-   shoulder=toWorld(U,V,c.operatorShoulderHeightMm,a),grip=toWorld(L-c.handleOffsetFromFreeEndMm,c.handleProjectionMm,c.handleHeightMm,a),axisA:Point=[shoulder[0],shoulder[1],0],axisB:Point=[shoulder[0],shoulder[1],2000],
-   leafCorners=[[0,-half],[0,half],[L,-half],[L,half]].map(([u,v])=>toWorld(u,v,0,a)),lo=[0,1].map(j=>Math.min(...leafCorners.map(p=>p[j]))),hi=[0,1].map(j=>Math.max(...leafCorners.map(p=>p[j]))),leafBox=[lo[0],lo[1],0,hi[0]-lo[0],hi[1]-lo[1],h],
+   shoulder=toWorld(U,V,c.operatorShoulderHeightMm,a),grip=toWorld(L-c.handleOffsetFromFreeEndMm,c.handleProjectionMm,c.handleHeightMm,a),axisA:Point=[shoulder[0],shoulder[1],rise],axisB:Point=[shoulder[0],shoulder[1],2000+rise],
+   leafCorners=[[0,-half],[0,half],[L,-half],[L,half]].map(([u,v])=>toWorld(u,v,0,a)),lo=[0,1].map(j=>Math.min(...leafCorners.map(p=>p[j]))),hi=[0,1].map(j=>Math.max(...leafCorners.map(p=>p[j]))),leafBox=[lo[0],lo[1],rise,hi[0]-lo[0],hi[1]-lo[1],h],
    deck=c.externalWorkDeckPlanMm,bodyR=300,armR=40,
    deckReserve=Math.min(shoulder[0]-deck[0],deck[0]+deck[2]-shoulder[0],shoulder[1]-deck[1],deck[1]+deck[3]-shoulder[1])-bodyR-s-c.deckGuardIntrusionMm-cover.bodyWorldMm,
    bodyLeaf=segmentBoxDistance([U,V,0],[U,V,2000],localLeaf)-bodyR-s-cover.bodyRelativeLeafMm,
@@ -249,10 +249,10 @@ export function comparePlantFittedDoor(i:SplitPlantRoomInput){
   }
   if(k%90===0||k===900)poses.push({angleDeg:deg,shoulderMm:shoulder,gripMm:grip,bodyPlanMm:[shoulder[0],shoulder[1]]})
  }
- const parked= [hinge[0],hinge[1]-half,0,L,t,h] as const,
-  goodsChecks=i.branch.goods.map(g=>{const boxes=g.pathMm.slice(1).map((b:readonly number[],k:number)=>{const a=g.pathMm[k];return[Math.min(a[0],b[0])-g.completeRadiusMm,Math.min(a[1],b[1])-g.completeRadiusMm,0,Math.abs(a[0]-b[0])+2*g.completeRadiusMm,Math.abs(a[1]-b[1])+2*g.completeRadiusMm,g.maximumCompleteHeightMm]});return{id:g.id,parkedLeafReserveMm:Math.min(...boxes.map((b:readonly number[])=>pairGap(parked,b)))-s}}),
+ const parked= [hinge[0],hinge[1]-half,rise,L,t,h] as const,
+  goodsChecks=i.branch.goods.map(g=>{const boxes=g.pathMm.slice(1).map((b:readonly number[],k:number)=>{const a=g.pathMm[k];return[Math.min(a[0],b[0])-g.completeRadiusMm,Math.min(a[1],b[1])-g.completeRadiusMm,rise,Math.abs(a[0]-b[0])+2*g.completeRadiusMm,Math.abs(a[1]-b[1])+2*g.completeRadiusMm,g.maximumCompleteHeightMm]});return{id:g.id,parkedLeafReserveMm:Math.min(...boxes.map((b:readonly number[])=>pairGap(parked,b)))-s}}),
   gravity=(angle:number)=>{const centre=toWorld(L/2,0,h/2,angle),absolute=centre.map((v,k)=>v+(k===2?i.branch.groundFflMm:0)),Fz=-c.leafMassBudgetKg*9.81;return{referenceCentreMm:absolute,forceMomentN_Nm:[0,0,Fz,absolute[1]/1000*Fz,-absolute[0]/1000*Fz,0],hingeGravityMomentReferenceNm:c.leafMassBudgetKg*9.81*L/2000}},
-  diagnostics=[...Object.entries(minima).filter(([,v])=>v<0).map(([k])=>'PLANT_FITTED_DOOR/'+k),...(maxReach+cover.bodyRelativeLeafMm>650?['PLANT_FITTED_DOOR/reach']:[]),...(goodsChecks.some(g=>g.parkedLeafReserveMm<0)?['PLANT_FITTED_DOOR/parked-leaf-goods']:[]),...(f.sourceBoreSideReserveMm<0?['PLANT_FITTED_DOOR/source-infill-port-side-land']:[]),...(f.headerToRawSpringReserveMm===null?['PLANT_FITTED_DOOR/raised-arch-profile-not-joined']:f.headerToRawSpringReserveMm<0?['PLANT_FITTED_DOOR/frame-header-raw-arch']:[])]
+  diagnostics=[...Object.entries(minima).filter(([,v])=>v<0).map(([k])=>'PLANT_FITTED_DOOR/'+k),...(maxReach+cover.bodyRelativeLeafMm>650?['PLANT_FITTED_DOOR/reach']:[]),...(goodsChecks.some(g=>g.parkedLeafReserveMm<0)?['PLANT_FITTED_DOOR/parked-leaf-goods']:[]),...(f.sourceBoreSideReserveMm<0?['PLANT_FITTED_DOOR/source-infill-port-side-land']:[]),...(f.exactOuterArchGeometry?(f.exactOuterArchGeometry.necessaryExactRectangleFit?[]:['PLANT_FITTED_DOOR/outer-frame-curved-arch-fit']):f.headerToRawSpringReserveMm===null?['PLANT_FITTED_DOOR/raised-arch-profile-not-joined']:f.headerToRawSpringReserveMm<0?['PLANT_FITTED_DOOR/frame-header-raw-arch']:[])]
  return{schema:'had-plant-fitted-door-comparison/1',fittedFrameId:f.id,datum:'Local occupied groundFFL for geometry; leaf budget origins additionally translate by saved groundFFL.',effectiveOpenClearWidthMm:f.effectiveOpenWidthMm,minimumCargoWidthMm:f.minimumCargoMm[0],parkedLeafBoxMm:parked,
   hingeMm:hinge,leafSpanMm:L,leafThicknessMm:t,exactNorthLeafSweptMinimumYMm:f.exactNorthLeafSweptMinimumYMm,sourceOnlyYSeparationAfterTwoSettingsMm:f.exactNorthLeafSweptMinimumYMm-f.sourceAxisYMm-i.branch.resolvedInput.envelope.backboneRadiusMm-s,
   continuous:{stepDeg:.1,executedPoses:901,coverMm:cover,method:'Exact segment-to-rectangular-leaf distances at all poses; speed/Hausdorff bounds cover intervening leaf and body/arm states. No blanket22mmY expansion near the closed tip.'},minima,witness,sampledMaxReachMm:maxReach,maxReachMm:maxReach+cover.bodyRelativeLeafMm,reachLimitMm:650,bodyRadiusMm:300,armRadiusMm:40,twoIndependentSettingsMm:s,poses,goodsChecks,

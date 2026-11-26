@@ -212,11 +212,11 @@ export function drawInletSplitPlantBranch(r:ReturnType<typeof inletSplitPlantBra
 
 /** One fitted frame inside the unchanged masonry arch. Clear width is effective
  * at90degrees INCLUDING the parked44mm leaf, not merely a jamb-axis distance. */
-export function derivePlantFittedFrame(i:{floorRiseMm?:number;choice:import('./inlet-split-plant-room-choice.js').PlantFittedFrameChoice;rawOpeningYMm:readonly[number,number];rawSpringMm:number;rawHeadMm:number;groundFflMm:number;openingShiftMm:number|null;minimumCargoMm:readonly[number,number];wallInnerXMm:number;wallOuterXMm:number;settingEachMm:number}){
- if(!i||!keys(i,['choice','rawOpeningYMm','rawSpringMm','rawHeadMm','groundFflMm','openingShiftMm','minimumCargoMm','wallInnerXMm','wallOuterXMm','settingEachMm',...(Object.hasOwn(i,'floorRiseMm')?['floorRiseMm']:[])]))throw Error('Unsupported fitted Plant frame inputs')
- const c=admitPlantFittedFrameChoice(i.choice),r=i.rawOpeningYMm,min=i.minimumCargoMm,rise=i.floorRiseMm??0
- if(!Number.isFinite(rise)||rise<0||rise>150||!c||!tuple(r,2)||!tuple(min,2)||![i.rawSpringMm,i.rawHeadMm,i.groundFflMm,i.wallInnerXMm,i.wallOuterXMm,i.settingEachMm].every(Number.isFinite)||(i.openingShiftMm!==null&&(!Number.isFinite(i.openingShiftMm)||i.openingShiftMm!==i.groundFflMm))||r[1]<=r[0]||i.wallOuterXMm<=i.wallInnerXMm||c.clearWidthMm<min[0]||c.clearHeightMm<min[1]||c.clearWidthMm>=r[1]-r[0]||i.settingEachMm<10)throw Error('Unsupported fitted Plant frame and actual arch')
- const centre=(r[0]+r[1])/2,clearYMm=[centre-c.clearWidthMm/2,centre+c.clearWidthMm/2] as const,infillsYMm=[[r[0],clearYMm[0]],[clearYMm[1],r[1]]] as const,
+export function derivePlantFittedFrame(i:{floorRiseMm?:number;outerFrameWidthMm?:number;choice:import('./inlet-split-plant-room-choice.js').PlantFittedFrameChoice;rawOpeningYMm:readonly[number,number];rawSpringMm:number;rawHeadMm:number;groundFflMm:number;openingShiftMm:number|null;minimumCargoMm:readonly[number,number];wallInnerXMm:number;wallOuterXMm:number;settingEachMm:number}){
+ if(!i||!keys(i,['choice','rawOpeningYMm','rawSpringMm','rawHeadMm','groundFflMm','openingShiftMm','minimumCargoMm','wallInnerXMm','wallOuterXMm','settingEachMm',...(Object.hasOwn(i,'floorRiseMm')?['floorRiseMm']:[]),...(Object.hasOwn(i,'outerFrameWidthMm')?['outerFrameWidthMm']:[])]))throw Error('Unsupported fitted Plant frame inputs')
+ const c=admitPlantFittedFrameChoice(i.choice),r=i.rawOpeningYMm,min=i.minimumCargoMm,rise=i.floorRiseMm??0,outer=i.outerFrameWidthMm
+ if(!Number.isFinite(rise)||rise<0||rise>150||(outer!==undefined&&(!Number.isFinite(outer)||outer<=c.clearWidthMm||outer>=r[1]-r[0]))||!c||!tuple(r,2)||!tuple(min,2)||![i.rawSpringMm,i.rawHeadMm,i.groundFflMm,i.wallInnerXMm,i.wallOuterXMm,i.settingEachMm].every(Number.isFinite)||(i.openingShiftMm!==null&&(!Number.isFinite(i.openingShiftMm)||i.openingShiftMm!==i.groundFflMm))||r[1]<=r[0]||i.wallOuterXMm<=i.wallInnerXMm||c.clearWidthMm<min[0]||c.clearHeightMm<min[1]||c.clearWidthMm>=r[1]-r[0]||i.settingEachMm<10)throw Error('Unsupported fitted Plant frame and actual arch')
+ const centre=(r[0]+r[1])/2,clearYMm=[centre-c.clearWidthMm/2,centre+c.clearWidthMm/2] as const,outerYMm=[centre-(outer??(r[1]-r[0]))/2,centre+(outer??(r[1]-r[0]))/2] as const,infillsYMm=[[outer===undefined?r[0]:outerYMm[0],clearYMm[0]],[clearYMm[1],outer===undefined?r[1]:outerYMm[1]]] as const,
   sourceAxisYMm=(infillsYMm[0][0]+infillsYMm[0][1])/2,leafHalf=c.leafThicknessMm/2,
   hingeMm=[i.wallOuterXMm+leafHalf,clearYMm[1]+leafHalf,rise] as const,leafSpanMm=c.clearWidthMm+leafHalf,
   // North hinge lies half a leaf inside its own infill. Closed leaf is wholly
@@ -226,7 +226,7 @@ export function derivePlantFittedFrame(i:{floorRiseMm?:number;choice:import('./i
   sourceFixedHeaderToHeadReserveMm=i.rawHeadMm-i.groundFflMm-rise-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm,
   headerToRawSpringReserveMm=i.openingShiftMm===null?null:i.rawSpringMm+i.openingShiftMm-i.groundFflMm-rise-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm,
   headerToRawHeadReserveMm=i.openingShiftMm===null?null:i.rawHeadMm+i.openingShiftMm-i.groundFflMm-rise-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm
- return{schema:'had-plant-fitted-frame-result/1',id:c.id,resolvedInput:structuredClone({...i,choice:c}),choice:c,rawOpeningYMm:r,rawSpringMm:i.rawSpringMm,rawHeadMm:i.rawHeadMm,minimumCargoMm:min,effectiveClearYMm:clearYMm,effectiveOpenWidthMm:c.clearWidthMm,clearHeightMm:c.clearHeightMm,
+ return{...(outer!==undefined?{outerFrameWidthMm:outer,outerFrameYMm:outerYMm,siteSideGapYMm:[[r[0],outerYMm[0]],[outerYMm[1],r[1]]],exactOuterArchGeometry:comparePlantOuterFrameArch({rawOpeningYMm:r,rawSpringMm:i.rawSpringMm,rawHeadMm:i.rawHeadMm,openingShiftMm:i.openingShiftMm,frameOuterWidthMm:outer,frameBottomAbsoluteMm:i.groundFflMm+rise,clearHeightMm:c.clearHeightMm,headerDepthMm:c.headerDepthMm,settingEachMm:i.settingEachMm})}:{}),schema:'had-plant-fitted-frame-result/1',id:c.id,resolvedInput:structuredClone({...i,choice:c}),choice:c,rawOpeningYMm:r,rawSpringMm:i.rawSpringMm,rawHeadMm:i.rawHeadMm,minimumCargoMm:min,effectiveClearYMm:clearYMm,effectiveOpenWidthMm:c.clearWidthMm,clearHeightMm:c.clearHeightMm,
   infills:infillsYMm.map((v,k)=>({id:c.id+(k?'/north-infill':'/south-infill'),intervalYMm:v,widthMm:v[1]-v[0],fullReservedBoxMm:[i.wallInnerXMm,v[0],i.openingShiftMm??0,i.wallOuterXMm-i.wallInnerXMm,v[1]-v[0],i.rawSpringMm] as Box})),
   sourceAxisYMm,sourceOpeningDiameterMm:c.sourceOpeningDiameterMm,sourceBoreSideReserveMm,headerToRawSpringReserveMm,headerToRawHeadReserveMm,sourceFixedCountercase:{headerToSpringReserveMm:sourceFixedHeaderToSpringReserveMm,headerToHeadReserveMm:sourceFixedHeaderToHeadReserveMm},
   verticalDatum:{rawArchDatum:'source-groundFFL0',openingTranslationMm:i.openingShiftMm,joinedProfileGeometryOnly:true,frameBottomAbsoluteMm:i.groundFflMm+rise,frameClearHeadAbsoluteMm:i.groundFflMm+rise+c.clearHeightMm,frameHeaderTopAbsoluteMm:i.groundFflMm+rise+c.clearHeightMm+c.headerDepthMm,rawSpringAbsoluteMm:i.rawSpringMm,rawHeadAbsoluteMm:i.rawHeadMm,twoIndependentSettingsMm:2*i.settingEachMm},hingeMm,leafSpanMm,leafHalfMm:leafHalf,parkedInboardFaceYMm:hingeMm[1]-leafHalf,
@@ -252,4 +252,23 @@ export function coordinatePlantFrameBranch(frame:ReturnType<typeof derivePlantFi
   choice:SplitPlantBranchChoice={...branch,sourceEntryMm:shift(branch.sourceEntryMm),insideEntryMm:shift(branch.insideEntryMm),upstreamPathMm:branch.upstreamPathMm.map(shift),outletStemMm:branch.outletStemMm.map(shift),storeFixedPathMm:shiftPrefix(branch.storeFixedPathMm,2),treeFixedPathMm:shiftPrefix(branch.treeFixedPathMm,2),sourceEntryOpeningDiameterMm:frame.sourceOpeningDiameterMm},
   stationChoice={...station,axisMm:shift(station.axisMm)}
  return{frame,choice,stationChoice,referenceAxisYMm:old,stationShiftYMm:dy,authoredReferenceFileChanged:false,sourceEntryGeometryChanged:dy!==0,retainedStoreAndTreeInterfacesMoved:false}
+}
+
+/** Rectangle versus the actual translated segmental opening. The whole
+ * expanded header is checked; "below spring" is only a sufficient old control.
+ * No force, leaf-sweep, weather or material acceptance follows from this fit. */
+export function comparePlantOuterFrameArch(i:{rawOpeningYMm:readonly[number,number];rawSpringMm:number;rawHeadMm:number;openingShiftMm:number|null;frameOuterWidthMm:number;frameBottomAbsoluteMm:number;clearHeightMm:number;headerDepthMm:number;settingEachMm:number}){
+ const w=i.rawOpeningYMm[1]-i.rawOpeningYMm[0],h=i.rawHeadMm-i.rawSpringMm
+ if(![...i.rawOpeningYMm,i.rawSpringMm,i.rawHeadMm,i.frameOuterWidthMm,i.frameBottomAbsoluteMm,i.clearHeightMm,i.headerDepthMm,i.settingEachMm].every(Number.isFinite)||Math.min(w,h,i.frameOuterWidthMm,i.clearHeightMm,i.headerDepthMm)<=0||h>w/2||i.settingEachMm<10||(i.openingShiftMm!==null&&!Number.isFinite(i.openingShiftMm)))throw Error('Actual segmental Plant arch and complete outer frame required')
+ if(i.openingShiftMm===null)return{schema:'had-Plant-outer-frame-arch/1',state:'unjoined-house-opening-profile' as const,necessaryExactRectangleFit:false,actualForceWeatherLeafAndMaterialsAccepted:false}
+ const half=w/2,R=half*half/(2*h)+h/2,two=2*i.settingEachMm,centreZ=i.rawHeadMm+i.openingShiftMm-R,centreY=(i.rawOpeningYMm[0]+i.rawOpeningYMm[1])/2,
+  spring=i.rawSpringMm+i.openingShiftMm,head=i.rawHeadMm+i.openingShiftMm,frameTop=i.frameBottomAbsoluteMm+i.clearHeightMm+i.headerDepthMm,
+  outerHalfWithErrors=i.frameOuterWidthMm/2+two,topWithErrors=frameTop+two,belowBase=i.frameBottomAbsoluteMm-two-i.openingShiftMm,
+  availableHalf=topWithErrors<=spring?half:topWithErrors<=head?Math.sqrt(Math.max(0,R*R-(topWithErrors-centreZ)**2)):0,
+  jambReserve=half-outerHalfWithErrors,horizontalReserve=availableHalf-outerHalfWithErrors,radialReserve=R-Math.hypot(outerHalfWithErrors,topWithErrors-centreZ)
+ return{schema:'had-Plant-outer-frame-arch/1',state:'source-bound-exact-rectangle-comparison' as const,rawRadiusMm:R,rawCentreAbsoluteYZMm:[centreY,centreZ],rawSpringAbsoluteMm:spring,rawHeadAbsoluteMm:head,
+  outerFrameWidthMm:i.frameOuterWidthMm,frameTopAbsoluteMm:frameTop,twoIndependentSettingsEachCoordinateMm:two,expandedTopCornersAbsoluteYZMm:[[centreY-outerHalfWithErrors,topWithErrors],[centreY+outerHalfWithErrors,topWithErrors]],
+  availableArchWidthAtExpandedTopMm:2*availableHalf,minimumHorizontalCornerReserveMm:horizontalReserve,radialCornerReserveMm:radialReserve,jambHorizontalReserveMm:jambReserve,bottomAboveOpeningBaseReserveMm:belowBase,
+  sufficientBelowSpringReserveMm:spring-topWithErrors,necessaryExactRectangleFit:jambReserve>=0&&horizontalReserve>=0&&belowBase>=0&&topWithErrors<=head,
+  actualForceWeatherLeafAndMaterialsAccepted:false}
 }
