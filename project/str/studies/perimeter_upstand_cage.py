@@ -555,13 +555,13 @@ def draw(c,result):
         clip=elem('clipPath',id=clip_id);ET.SubElement(clip,'{'+ns+'}rect',{'x':str(xbase),'y':str(ybase+35),'width':'515','height':str(370 if ordinary else 435)})
         selected=result['ordinaryFloorPaths'] if ordinary else result['cornerFloorPaths']
         for layer in ('bottom','top'):
-            bar=next(b for b in selected if '/0/'+layer+'/' in b['id'])
+            bar=next(b for b in selected if '/0/'+layer+'/' in b['id'] and not b.get('straightBarWithFiniteBondCapacityOnly',False))
             path([project(q) for q in paths_points(bar)],'#287a47',3).set('clip-path','url(#'+clip_id+')')
         if not ordinary:
             text(xbase,ybase+490,'Tails continue beyond clipped view: 1000 mm into lower/upper L300.',15)
         else:
             text(xbase,ybase+490,'Ordinary 140 mm mandrel: minimum 72 mm straight after bend.',15)
-            text(xbase,ybase+514,'Finite bond/bearing capacities are bounds, not full-demand proof.',15)
+            text(xbase,ybase+514,'Top row955 is straight: 240 mm finite bond; fresh demands still required.',15)
     section('Corner section · opposed vertical returns',725,105,False)
     section('Ordinary perimeter section · hooks within 350 depth',725,655,True)
     text(35,1210,'SOURCE-OWNED COMPARISON · no native solve · no transferred old96 loads · no physical/product/owner/house acceptance',17)
