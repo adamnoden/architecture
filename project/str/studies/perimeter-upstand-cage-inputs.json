@@ -105,7 +105,72 @@
       "crossTie": 3274.5,
       "westHoop": 3285.5
     },
-    "matchedContactsRequireLockedNormalSeparation": true
+    "matchedContactsRequireLockedNormalSeparation": true,
+    "columnFamilySchedulesZMm": {
+      "west": [
+        1965,
+        2115,
+        2265,
+        2415,
+        2565,
+        2715,
+        2865,
+        3015,
+        3150,
+        3285.5,
+        3390,
+        3516,
+        3665,
+        3815,
+        3965,
+        4115,
+        4265,
+        4415,
+        4565
+      ],
+      "south": [
+        2015,
+        2165,
+        2315,
+        2465,
+        2615,
+        2765,
+        2915,
+        3065,
+        3208,
+        3335,
+        3480,
+        3565,
+        3715,
+        3865,
+        4015,
+        4165,
+        4315,
+        4465,
+        4615
+      ],
+      "cross": [
+        1990,
+        2140,
+        2290,
+        2440,
+        2590,
+        2740,
+        2890,
+        3040,
+        3175,
+        3274.5,
+        3362,
+        3540,
+        3690,
+        3840,
+        3990,
+        4140,
+        4290,
+        4440,
+        4590
+      ]
+    }
   },
   "materials": {
     "reinforcementComparisonMPa": 400,
@@ -113,7 +178,8 @@
     "poorBondMPa": 2.1,
     "goodBondMPa": 3,
     "shapeCoverConfinementReductionCredited": false,
-    "materialAndFabricationAccepted": false
+    "materialAndFabricationAccepted": false,
+    "maximumAggregateMm": 16
   },
   "scope": {
     "sourceOnly": true,

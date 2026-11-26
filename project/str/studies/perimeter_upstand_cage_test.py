@@ -66,6 +66,7 @@ class CageControls(unittest.TestCase):
                 self.assertLess(math.dist(p.sample_primitive(a)[-1],p.sample_primitive(b)[0]),1e-7,link['id'])
         self.assertLessEqual(self.r['maximumColumnLinkFamilyPitchMm'],180)
         self.assertGreaterEqual(self.c['links']['columnHookTailMm'],50)
+        self.assertLessEqual(self.r['maximumOrdinaryBeamStirrupPitchMm'],self.c['links']['beamOrdinaryPitchMm'])
     def test_parameter_box_certifier_keeps_real_adverse_witnesses(self):
         a=p.line([0,0,0],[10,0,0]);b=p.line([0,3,0],[10,3,0])
         self.assertEqual(p.certify_primitive_pair(a,b,2,0)['state'],'clear')
@@ -116,6 +117,9 @@ class CageControls(unittest.TestCase):
         bad=p.corner_floor_surface_cover_audit(c,p.corner_floor_paths(c))
         self.assertFalse(bad['allCertified'])
         self.assertTrue(any(x['state']=='insufficient-cover' for x in bad['failures']))
+    def test_aggregate_assumption_is_explicit_and_larger_stock_rejects(self):
+        c=copy.deepcopy(self.c);c['materials']['maximumAggregateMm']=20
+        with self.assertRaisesRegex(ValueError,'aggregate'):p.assess(c,self.base)
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')

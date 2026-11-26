@@ -192,9 +192,8 @@ def cross_tie(c,axis,z,along):
             arc([k,cy],r,math.pi/2,-math.pi/4,[0,1],z),line(ea,et)]},axis)
 def link_paths(c):
     # Fixed family schedules, not a model/section parameter sweep.
-    west=[x for x in range(1965,3016,150)]+[3150,3285.5,3390,3516]+[x for x in range(3665,4566,150)]
-    south=[x for x in range(2015,3066,150)]+[3208,3335,3480,3565]+[x for x in range(3715,4616,150)]
-    cross=[x for x in range(1990,3041,150)]+[3175,3274.5,3362,3540]+[x for x in range(3690,4591,150)]
+    schedules=c['links']['columnFamilySchedulesZMm']
+    west,south,cross=(schedules[k] for k in ('west','south','cross'))
     out=[closed_column_link(c,0,z) for z in west]+[closed_column_link(c,1,z) for z in south]
     for z in cross:
         for axis in (0,1):
@@ -411,6 +410,7 @@ def material_bounds(c):
         '360GeometryIsAnUnselectedComparison':True}
 def assess(c,base,full_geometry=False):
     g=c['geometry'];col=column_points(c);beam=beam_paths(c);floors=corner_floor_paths(c)
+    if c['materials']['maximumAggregateMm']+5>g['parallelMinimumClearMm']:raise ValueError('Declared aggregate exceeds inherited21mm minimum-clear comparison')
     contact=c['links']['matchedJointContactPlanesZMm']
     expected_cross=g['beamBarZMm'][0]+(g['beamBarOutsideMm']+c['links']['columnOutsideMm'])/2
     if not g['commonNodeJigRequired'] or not c['links']['matchedContactsRequireLockedNormalSeparation'] or contact!={'beamBottom':g['beamBarZMm'][0],'crossTie':expected_cross,'westHoop':expected_cross+c['links']['columnOutsideMm']}:
@@ -460,6 +460,7 @@ def assess(c,base,full_geometry=False):
         'externalConcreteCoverAudit':external_cover_audit(c,col,links,beam_links),
         'ordinaryFloorAgainstBeamAudit':beam_floor_audit(c,beam,ordinary) if full_geometry else {'executed':False},
         'linksAgainstBeamThreeDimensionalAudit':link_beam,'linksAgainstFloorThreeDimensionalAudit':link_floor,
+        'maximumOrdinaryBeamStirrupPitchMm':max(b-a for a,b in zip(sorted({float(x['id'].split('/')[-1]) for x in beam_links}),sorted({float(x['id'].split('/')[-1]) for x in beam_links})[1:])),
         'maximumColumnLinkFamilyPitchMm':max(b-a for rows in schedules.values() for a,b in zip(rows,rows[1:])),
         'sourceCornerMirrors':[{'corner':r['corner'],'originHeadXYMm':r['originXYMm'],'signXY':r['signXY'],
             'outerFaceXYMm':[r['originXYMm'][i]-70*r['signXY'][i] for i in range(2)],'localCoordinatesMeasuredInwardFromOuterFace':True} for r in base['corners']],
