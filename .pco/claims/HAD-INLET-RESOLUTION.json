@@ -9,9 +9,9 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T07:52:58.053Z",
-  "expiresAt": "2026-11-26T08:37:58.053Z",
-  "branch": "work/zerg-engineering-20261126",
+  "heartbeatAt": "2026-11-26T07:53:53.232Z",
+  "expiresAt": "2026-11-26T08:38:53.232Z",
+  "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
     "generation": 64,
@@ -33,5 +33,10 @@
       "next": "On executor recovery validate0d20523d exacthead, canonical preflight/merge; complete90077632 saved/replay checks. Redesign deck without cantilevers.",
       "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
     }
+  },
+  "pr": 1627,
+  "checkpoint": {
+    "evidence": "PR1627 exact head0d20523d numerical proofs passed; hosted validation stopped at released predecessor leases.",
+    "next": "Rebind both current lease declarations, rerun exact-head health and publication preflight; merge only on success."
   }
 }
