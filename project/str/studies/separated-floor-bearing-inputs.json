@@ -1,0 +1,55 @@
+{
+  "schema": "str-separated-floor-bearing-inputs/1",
+  "status": "UNCALCULATED OWNER COMPARISON",
+  "sourceCommit": "5ab92bc0cf8e88a0f5ea700ba065c2552348c4f3",
+  "sourceGitBlobs": {
+    "project/ccr/studies/working-house-comparison.json": "0ff5c76ff639562ee93fec1df8a3859d77a8fcf2",
+    "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+    "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
+    "project/str/studies/floor-portal-monolithic-drag.json": "9a8cf79026419f3b9f05cee4b573b6dd1f3a04e6",
+    "project/str/studies/current-house-roof-bracing.py": "1fa8729ed65a62767ce12e0da81dae11e288513d",
+    "project/str/studies/distributed_floor_compatibility.py": "45c0d9e082dec58edf2040064d7a14c50dcbb1d4",
+    "compiler/reference-house/current-design/assemblies/study-structural-context.ts": "fcadc653e3c92e5d9efe3f4a74e0591be4233c15"
+  },
+  "proposal": {
+    "masonryWidthMm": 140,
+    "isolationGapMm": 10,
+    "extraLeafEndGapMm": 10,
+    "wallFinishMm": 27,
+    "lowerBodyComparisonUnitWeightKNPerM3": 20,
+    "interfaceAlongFromOuterCornerMm": 650,
+    "horizontalConstraints": [
+      {
+        "id": "SW-X",
+        "corner": "SW",
+        "face": "west",
+        "normalAxis": "x"
+      },
+      {
+        "id": "SW-Y",
+        "corner": "SW",
+        "face": "south",
+        "normalAxis": "y"
+      },
+      {
+        "id": "NW-X",
+        "corner": "NW",
+        "face": "west",
+        "normalAxis": "x"
+      }
+    ],
+    "thermalIllustration": {
+      "expansionPerK": 0.00001,
+      "temperatureChangeK": 30
+    },
+    "seat": "Whole140mm new masonry top; unilateral normal contact only, mineral bearing constituents/thickness unselected",
+    "diaphragmInterface": "Three actual horizontal constraints only; ordinary all-metal opposed bearing/pinned connection, vertical slip at all, along-wall slip at NW. Capacity, gap/reversal, friction/lockup, rotation and RC/slab anchorage unfinished; no product or ideal restraint admitted.",
+    "noCantilever": true,
+    "noFrictionCredit": true,
+    "plasticExceptionApproved": false,
+    "houseSolveExecuted": false,
+    "resistanceAccepted": false,
+    "ownerAccepted": false,
+    "additionalSteelChordEAKN": 0
+  }
+}

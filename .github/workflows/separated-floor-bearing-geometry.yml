@@ -1,0 +1,55 @@
+name: Draw separated masonry floor bearing comparison
+on:
+  push:
+    branches: [work/zerg-separated-floor-bearing-20261126]
+    paths:
+      - '.github/workflows/separated-floor-bearing-geometry.yml'
+      - 'project/str/studies/separated_floor_bearing.py'
+      - 'project/str/studies/separated_floor_bearing_test.py'
+      - 'project/str/studies/separated-floor-bearing-inputs.json'
+permissions:
+  contents: read
+concurrency:
+  group: separated-bearing-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  geometry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      BEARING_GEOMETRY_DIR: /tmp/separated-bearing-geometry
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Check actual geometry, pressure-only statics and explicit failures
+        run: |
+          mkdir -p "$BEARING_GEOMETRY_DIR"
+          python -B project/str/studies/separated_floor_bearing_test.py > "$BEARING_GEOMETRY_DIR/tests.log" 2>&1
+          cat "$BEARING_GEOMETRY_DIR/tests.log"
+          python -B project/str/studies/separated_floor_bearing.py --out "$BEARING_GEOMETRY_DIR"
+          git diff --exit-code
+      - name: Render the exact two generated owner SVGs
+        run: |
+          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
+            --screenshot="$BEARING_GEOMETRY_DIR/separated-floor-bearing-plan.png" --window-size=1500,1130 \
+            "file://$BEARING_GEOMETRY_DIR/separated-floor-bearing-plan.svg"
+          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
+            --screenshot="$BEARING_GEOMETRY_DIR/separated-floor-bearing-section.png" --window-size=1500,1090 \
+            "file://$BEARING_GEOMETRY_DIR/separated-floor-bearing-section.svg"
+          python - <<'PY'
+          import base64,os
+          from pathlib import Path
+          for path in sorted(Path(os.environ['BEARING_GEOMETRY_DIR']).glob('*.png')):
+              print('RENDER_PNG '+path.name+' '+base64.b64encode(path.read_bytes()).decode())
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: separated-floor-bearing-owner-comparison
+          path: /tmp/separated-bearing-geometry/
+          retention-days: 90
+          if-no-files-found: error
