@@ -458,18 +458,18 @@ export function drawStudyLightingCircuit(r:StudyLightingResult){
  out+=text(60,1310,'Isolate/prove dead; support retained circuits. Cut spent MI for scrap; progressively feed/form each new continuous length. No installed splice.')
  out+=text(60,1345,'CU water exposure, fault energy, supplied revision, port/tool/physical proof, materials and owner acceptance remain open.')
  const a=c.applianceLead,AX=(x:number)=>80+(x-h.bayPlanMm[0]!)*.6,AZ=(z:number)=>1450+(2100-z)*.35
- out+=text(60,1410,'Factory-plugged fitting and visible full-length lead — conditional installation envelope','heading')
+ out+=text(60,1410,'Short-flex cassette — conditional installation and ordinary unplugged renewal','heading')
  out+=rect(AX(h.bayPlanMm[0]!),AZ(2100),(h.bayPlanMm[2]!-h.bayPlanMm[0]!)*.6,(2100-h.finishBottomZMm)*.35,'#e9dec9')
  out+=`<polyline points="${a.pathMm.map(p=>[AX(p[0]!),AZ(p[2]!)].map(n).join(',')).join(' ')}" fill="none" stroke="#343a38" stroke-width="3"/>`
  const outlet=h.boxes[2]!,ox=(outlet.xMm[0]!+outlet.xMm[1]!)/2,oz=(outlet.zMm[0]!+outlet.zMm[1]!)/2
  out+=rect(AX(ox-43),AZ(oz+43),86*.6,86*.35,'#ab996d')
  for(const vol of a.nominalFixedVolumes.filter(v=>v.id.includes('switch')||v.id.includes('plug'))){const b=vol.xyzxyzMm;out+=rect(AX(b[0]!),AZ(b[5]!),(b[3]!-b[0]!)*.6,(b[5]!-b[2]!)*.35,'#a6aaa1')}
- out+=text(450,1480,'Type75 Mini:130mm shade /150mm shade height /230mm maximum reach')
- out+=text(450,1520,'ClassII factory fitting; fixed MI/metalwork/outlet retain their own protective earth')
+ out+=text(450,1480,'Type80W1:145mm shade /160mm shade height /260mm maximum reach')
+ out+=text(450,1520,'ClassII fitting; fixed MI/metalwork/outlet retain their own protective earth')
  out+=text(450,1560,'B6 lighting-only outlet at1500mm; B16 general socket stays separate')
- out+=text(450,1600,`All ${n(a.lengthMm)}mm cord retained; open guides; no hidden coil`)
- out+=text(450,1640,'Switch250..300mm from fitting; generous project body and plug envelopes charged')
- out+=text(450,1680,'Long visible U is unselected: architectural review or evidenced plug-end shortening needed')
+ out+=text(450,1600,`${n(a.lengthMm)}mm short flex; ordinary3A plug; no hidden coil`)
+ out+=text(450,1640,'Manufacturer-supported grommet/strain relief; integrated shade switch')
+ out+=text(450,1680,'Support plug/flex on carrier before draw/rest; stock2.5m lead rejected')
  out+=text(450,1720,'Factory fit, supplied revision, guide loads and physical renewal remain unqualified')
  out+=text(450,1760,'No diffuse-light equivalence, material admission or owner appearance acceptance')
  out+=text(450,1800,'Elevation schematic uses different horizontal/vertical scales; not product CAD','small')

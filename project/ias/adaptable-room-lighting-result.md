@@ -544,45 +544,51 @@ actualHager RCBO over the full fault range, unknown factory leads, earth tails,
 or actual supplied sleeve temperatures; their gates stay false.
 
 
-## Ordinary consumed-cable and plugged-fitting development —26November2026
+## Short-flex cassette and consumed-cable renewal —26November2026
 
-Spent MI is consumable: after isolation, lockout and proof dead, support retained
-circuits and cut the retired cable into supported scrap sections. Install each
-new continuous length progressively through accessible planned sleeves before
-forming and supporting its bends. This adds no installed splice. Actual new-coil
-working access remains to earn; local intact-body screens never proved intact
-whole-house extraction. Reusable boxes, rails and covers retain separate checks.
+Spent MI is consumable. After isolation, lockout and proof dead, support retained
+circuits and cut the retired cable into supported scrap sections. Progressively
+feed each new continuous length through accessible planned sleeves before
+forming and supporting its bends. No installed splice is added. New-coil feed
+and form access remains a concrete unfinished installation duty. Reusable boxes,
+rails and covers retain separate checks; local intact-body screens never proved
+intact whole-house cable extraction.
 
-Prefer the complete factory-plugged Anglepoise Type75 Mini wall-light family over
-an invented direct2.5mm² ceramic luminaire. The current manufacturer publishes a
-130mm shade,150mm shade height,75mm wall plate and230mm maximum projection:
-https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/
-The existing180mm envelope is retained only as a comparison; the additional50mm
-must propagate through actual carrier draw and parking. Diffuse illumination,
-glare, appearance and owner acceptance are not inherited from the former Astro.
+Choose the Anglepoise Type80W1 manufacturer-supported external cable/plug
+configuration. Its V5 instructions explicitly provide the optional grommet100141
+and mandatory strain-relief101892, with external cable to the supplied Wago
+connectors. Prepare a400mm external two-core0.75mm² flex and ordinary SN1382
+3A fused BS1363-1 plug in the workshop; reserve100mm initial cutback/end allowance,
+not a hidden coil inside either enclosure. Ordinary cassette replacement unplugs
+this prepared assembly without opening fitting terminals or disturbing fixed MI.
+Fixed metalwork and outlet retain protective earth; the ClassII fitting receives
+L/N only. Its integrated shade switch removes the inline switch and its location
+problem. B6 lighting and B16 general sockets remain separate.
 
-A plug hidden behind the carrier fails: upper box front65mm to carrier82.5mm
-leaves17.5mm before settings, less than even the20mm project plug witness. Instead
-place an accessible lighting-only outlet at1500mm, below the1800mm carrier. Reuse
-the existing47mm box and16mm stock extension with its independent fixed island;
-the factory plug and lead remain room-side. B6 lighting and B16 general sockets
-remain separate. The fixed2.5mm² conductors terminate at the conventional socket,
-not unknown lamp terminals. No field plug, fuse, tail or certified fitting is
-altered. Actual supplied UK plug/fuse, lead parking/withdrawal, outlet entry/tool
-fit and complete support still require proof. Plastic cable/plug, paint, switch,
-lampholder and all constituents remain unadmitted. This source checkpoint is WIP
-until fresh shared-producer/geometry/136renewal tests and drawings are earned.
+The published145mm shade,160mm height,90mm wall plate and260mm maximum reach
+propagate through actual carrier/draw/parking geometry. A generous60×70×60mm
+installed plug envelope, short flex bow and two open guides enter the same saved
+Study136renewal validator. Plug withdrawal and an actual source-derived standing
+field retain R300,600mm reach and25mm furniture clearance; these do not change
+the distinct5mm low-floor criteria. Supplied plug/flex fit, grommet/connector and
+strain-relief detail, guide/anchor loads, loaded handling and illuminated-object
+minimum200mm remain unqualified. No photometric, material, physical or owner
+acceptance is inferred. Existing eye-level room sheets omit lighting; the actual
+circuit sheet shows this conditional interface and earns no room beauty verdict.
 
+Reject the concealed plug behind the old carrier: box front65mm to carrier82.5mm
+leaves17.5mm before settings, less than the former20mm plug witness. Put the fixed
+lighting-only outlet at1500mm, below the1800mm carrier, reusing the actual47mm box
+and16mm stock extension/profile. Reject preserving Type75Mini's stock2.5m lead
+as a large visible U solely because it can be drawn. No permission to shorten
+that different product was established. Direct fixed2.5mm² termination in an
+unspecified supplied connector remains unproved; a generic Wago name does not
+supply the exact reference, conductor capacity or backplate/gland working space.
+The supported short-flex option avoids that adapter assumption and is the one
+active development direction. Colour/appearance remain unaccepted.
 
-The official UKV1 sheet identifies this plugged fitting as ClassII and gives the
-inline switch250..300mm from the fitting;0.55kg is packaged, not installed mass.
-The source now carries the full2500mm lead as one visible U with independent open
-guides. It charges generous authored60×70×60mm plug and40×80×30mm switch envelopes,
-the full published switch-position range, and20mm guide bodies to the shared
-136renewal validator. These are conditional installation limits, not invented
-supplied dimensions. The long visible U remains unselected architecturally;
-ordinary plug-end shortening requires evidence of suitable construction and
-manufacturer permission before it may replace the full-length comparison. No
-permission is inferred from another lamp's repair instructions. Existing room
-eye-level views omit lighting fittings: they do not depict the newfamily or
-its lead/outlet and earn no new lighting appearance claim.
+Primary sources: [Type80W1 V5 instructions](https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf),
+[current manufacturer product](https://www.anglepoise.com/product/type-80-wall-light-matte-black/),
+and [manufacturer-created SN1382 sheet,22May2025](https://www.electrical2go.co.uk/mwdownloads/download/link/id/30680).
+This source checkpoint remains WIP until fresh shared producer/type/geometry/
+renewal tests, regenerated drawings and integration checks are earned.

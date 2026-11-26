@@ -70,26 +70,24 @@
   },
   "wallLamp": {
     "manufacturer": "Anglepoise",
-    "reference": "Type75 Mini Wall Light with Cable, UK; colour unselected",
-    "url": "https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/",
-    "shadeWidthMm": 130,
-    "shadeHeightMm": 150,
-    "reservedCompleteProjectionMm": 230,
-    "wallPlateDiameterMm": 75,
-    "leadLengthMm": 2500,
-    "maximumLampW": 10,
-    "projectionAuthority": "Manufacturer published maximum reach230mm, not a claim that an arbitrary supplied plug fits a closed cavity.",
-    "sourceType": "Factory complete UK BS1363 plug-in E27 fitting, ClassII double insulated, IP20; inline switch250..300mm from fitting; no conversion or internal alteration.",
-    "materialAdmission": "NOT_ADMITTED: paint, cable, plug, fuse, lampholder, switch, supplied lamp and all constituents remain unresolved.",
+    "reference": "Type80W1, manufacturer-supported external cable/plug configuration; colour unselected",
+    "url": "https://www.anglepoise.com/product/type-80-wall-light-matte-black/",
+    "instructions": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf",
+    "shadeWidthMm": 145,
+    "shadeHeightMm": 160,
+    "reservedCompleteProjectionMm": 260,
+    "wallPlateDiameterMm": 90,
+    "leadLengthMm": 400,
+    "leadLengthAuthority": "Authored external flex length, not factory stock length. Workshop preparation follows manufacturer optional cable/plug configuration.",
+    "sourceType": "ClassII, integrated shade switch, max10W LED E27. Manufacturer V5 explicitly permits external cable/plug using grommet100141 and strain relief101892 at provided Wago connectors.",
+    "externalPlugConfigurationSupported": true,
+    "materialAdmission": "NOT_ADMITTED: paint, flex, plug, fuse, lampholder, switch, supplied lamp and all constituents remain unresolved.",
+    "projectionAuthority": "Current official product maximum260mm reach; actual aiming and illuminated-object minimum200mm still require coordinated use.",
     "terminalGeometryEvidence": {
-      "source": "https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/",
+      "source": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf",
       "checkedDate": "2026-11-26",
-      "finding": "Complete plug-in family replaces direct fixed2.5mm2 termination into unknown factory lamp terminals. Actual UK plug/fuse/lead geometry and independent support/parking remain unqualified."
-    },
-    "datasheet": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-75-mini/4-technical-datasheets/1-uk/type-75-mini-wall-light-with-cable-technical-data-uk.pdf",
-    "cordAlterationPermitted": false,
-    "packagedWeightKgWitness": 0.55,
-    "installedMassQualified": false
+      "finding": "Explicit external cable/plug option; grommet100141 and eyelet101892 mandatory. Exact supplied connector reference/CSA and backplate CAD not published here; no direct fixed2.5mm2 terminal-fit assumption."
+    }
   },
   "projectRequirements": {
     "fixedBoundaryDepthMm": 7.5,
@@ -425,6 +423,18 @@
         "url": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-75-mini/4-technical-datasheets/1-uk/type-75-mini-wall-light-with-cable-technical-data-uk.pdf",
         "finding": "Official UKV1: ClassII, BS1363 UK plug,2500mm cable, inline switch250..300mm from fitting, max10WLED.0.55kg is PACKAGED weight. Plug/switch/guide envelopes are generous project limits, not measured supplied dimensions; no permission to shorten or replace factoryplug inferred.",
         "retrieval": "Official manufacturer-hosted UKtechnicalPDF opened26Nov2026; current product geometry crosschecked."
+      },
+      {
+        "id": "Type80W1-approved-configuration",
+        "url": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf",
+        "finding": "OfficialW1V5 §§7–8 explicitly permit external cable/plug wiring at provided Wago connectors, with grommet100141 and strain-relief101892. Integrated shade switch removes inline switch. Author400mm external2core0.75mm2 flex +100mm cutback/order allowance and conventional3A fused plug; actual complete fit/material/physical qualification remain open.",
+        "retrieval": "Official manufacturer PDF and currentW1 product opened26Nov2026;260reach/145shade/160height/90plate. No Type75 shortening permission is inferred."
+      },
+      {
+        "id": "three-amp-rewirable-plug",
+        "url": "https://www.electrical2go.co.uk/mwdownloads/download/link/id/30680",
+        "finding": "Manufacturer-createdSN1382 sheet22May2025:3A fused screw-cord-grip BS1363-1 plug,50x52x42mm/20mm projection, polypropylene. Use generous60x70x60mm installed envelope. This is a selected conventional external assembly, not a material exception.",
+        "retrieval": "Manufacturer-authored dated datasheet hosted by distributor; current MLA manufacturer catalogue independently listsSN1382 with3A fuse."
       }
     ],
     "deviceTerminalLimitsMm2": {
@@ -434,29 +444,24 @@
     },
     "applianceLead": {
       "bendRadiusMm": 25,
-      "guideRightInsetMm": 20,
-      "guideSpacingMm": 70,
       "standOffMm": 25,
-      "diameterRequirementMm": 8,
+      "diameterRequirementMm": 6.3,
       "plugEnvelopeMm": [
         60,
         70,
         60
       ],
-      "inlineSwitchEnvelopeMm": [
-        40,
-        80,
-        30
-      ],
-      "inlineSwitchDistanceMm": [
-        250,
-        300
-      ],
       "guideBodyEnvelopeMm": [
         20,
         20,
         20
-      ]
+      ],
+      "plugDrawMm": 60,
+      "operatorRadiusMm": 300,
+      "operatorStandBackMm": 600,
+      "reachLimitMm": 600,
+      "flexAreaMm2": 0.75,
+      "cutbackAllowanceMm": 100
     }
   }
 }

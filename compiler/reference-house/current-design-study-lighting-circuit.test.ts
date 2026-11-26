@@ -126,37 +126,40 @@ test('closed volume projection is retained for workers and board placement despi
 })
 
 
-test('factory-plugged lamp changes actual projection while preserving separate fixed ways and source floor',()=>{
+test('manufacturer-supported plugged cassette changes actual projection while preserving separate fixed ways and source floor',()=>{
  const current=run(),old=structuredClone(components)
  old.wallLamp.reservedCompleteProjectionMm=180
  const prior=run(old)
- assert.equal(current.corner.module.completeProjectionMm,230)
+ assert.equal(current.corner.module.completeProjectionMm,260)
  assert.equal(prior.corner.module.completeProjectionMm,180)
- assert.equal(prior.corner.completeModuleDrawPlanMm[1]-current.corner.completeModuleDrawPlanMm[1],50)
+ assert.equal(prior.corner.completeModuleDrawPlanMm[1]-current.corner.completeModuleDrawPlanMm[1],80)
  assert.notEqual(current.circuit.designDigest,prior.circuit.designDigest)
  assert.deepEqual(current.commonRoom,prior.commonRoom)
  assert.deepEqual(current.circuit.feeders.map(f=>f.ratedA),[16,6])
  assert.equal(current.construction.localHomeRunComparison.boxes[2]!.zMm[0],1464)
  assert.equal(current.construction.localHomeRunComparison.boxes[2]!.extensionDepthMm,16)
- assert.equal(current.circuit.lightingOutlet.factoryPlugDimensionsQualified,false)
- assert.equal(current.circuit.lightingOutlet.factoryFuseIdentityQualified,false)
+ assert.equal(current.circuit.lightingOutlet.selectedPlugEnvelopeQualified,false)
+ assert.equal(current.circuit.lightingOutlet.selectedThreeAmpFuseSuppliedIdentityQualified,false)
  assert.equal(current.circuit.consumedCableRenewal.newInstalledIntermediateJoints,0)
  assert.equal(current.circuit.consumedCableRenewal.retiredCableRecoveryRequired,false)
  assert.equal(current.circuit.consumedCableRenewal.newCoilFeedAndFormAccessQualified,false)
 })
 
 
-test('complete stock lead and bounded switch position join the actual fixed bay without hidden storage',()=>{
+test('short prepared flex uses the manufacturer-supported interface and rejects the long stock cord',()=>{
  const r=run(),a=r.circuit.applianceLead
- assert.ok(Math.abs(a.lengthMm-2500)<.001)
- assert.ok(a.bottomZMm>150&&a.bottomZMm<1500)
- assert.deepEqual(a.inlineSwitchDistanceMm,[250,300])
- assert.ok(a.nominalFixedVolumes.some(v=>v.id.includes('inline-switch')))
- assert.ok(a.nominalFixedVolumes.some(v=>v.id.includes('plug-space')))
+ assert.ok(Math.abs(a.lengthMm-400)<.001)
+ assert.equal(a.preparation.manufacturerConfigurationSupported,true)
+ assert.equal(a.preparation.fittingClass,'II')
+ assert.equal(a.preparation.minimumInitialCutMm,500)
+ assert.equal(a.operation.bodySquareContained,true)
+ assert.equal(a.operation.parking.containedByActualCarrier,true)
+ assert.ok(a.operation.plugWithdrawalChecks.every(p=>p.reserveMm>=5))
+ assert.ok(a.operation.furnitureChecks.every(p=>p.reserveMm>=25))
  assert.equal(a.completeFactoryAssemblyGeometryQualified,false)
- const short=structuredClone(components);short.wallLamp.leadLengthMm=50
- assert.ok(run(short).circuit.issues.includes('appliance-lead-length-outside-visible-U-domain'))
- const bad=structuredClone(components);bad.circuitDesign.applianceLead.guideRightInsetMm=1
- assert.ok(run(bad).circuit.issues.includes('appliance-lead-bay-edge-rejected'))
- assert.deepEqual(run(bad).commonRoom,r.commonRoom)
+ const stock=structuredClone(components);stock.wallLamp.leadLengthMm=2500
+ assert.ok(run(stock).circuit.issues.includes('appliance-lead-length-outside-short-flex-domain'))
+ const far=structuredClone(components);far.circuitDesign.applianceLead.operatorStandBackMm=601
+ assert.ok(run(far).circuit.issues.includes('appliance-plug-reach-rejected'))
+ assert.deepEqual(run(far).commonRoom,r.commonRoom)
 })

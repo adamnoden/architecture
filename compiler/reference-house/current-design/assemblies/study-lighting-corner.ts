@@ -154,7 +154,7 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
       stages: [
         'Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.',
         'Support the complete fitting/carrier before releasing its manufacturer mounting screws; never pull on its factory lead.',
-        'Unplug the complete fitting from its accessible fixed lighting-only outlet after safe isolation; release and retain its factory lead separately. Do not open factory-enclosed terminals or replace its supplied plug. Actual grip/lead parking remains unqualified.',
+        'Unplug the prepared fitting from its accessible fixed lighting-only outlet after safe isolation; retain its short flex and fused plug together. Ordinary cassette renewal does not open fitting terminals. Actual grip/lead parking remains unqualified.',
         'The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.',
         'Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.',
         'Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.',
@@ -384,8 +384,9 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
       ownConnectionRelease:'Own mating collar is excluded only from normal draw after qualified release; that release interface remains unqualified, so this is not an installed renewal pass.',sourceConnectionsQualified:false,completeMassAndRestCapacityQualified:false,
       operation:'Unplug corner portable loads; isolate/prove dead; park supported fitting/module first; qualified joints must release before normal case draw. Place separate small cradle only after the module is parked; lower the case in its clear withdrawal plane. Remove case cradle before refitting module.'}
   })
-  const enclosureCarrierChecks=boxes.filter(b=>b.closedCoverDepthMm).flatMap(b=>carrierStripsXZMm.map((r,i)=>({boxId:b.id,carrierStrip:i,
-    reserveMm:carrierDepth[0]-b.closedCoverDepthMm![1]!-2*input.jointMm})))
+  const enclosureCarrierChecks=boxes.flatMap(b=>carrierStripsXZMm.map((r,i)=>({boxId:b.id,carrierStrip:i,
+    reserveMm:boxDistance([b.xMm[0]!-7,coreY-(b.closedCoverDepthMm?.[1]??totalDepthMm),b.zMm[0]!-7,86,(b.closedCoverDepthMm?.[1]??totalDepthMm)-b.depthMm[0]!,86],
+      [r[0]!,coreY-carrierDepth[1]!,r[1]!,r[2]!-r[0]!,carrierDepth[1]!-carrierDepth[0]!,r[3]!-r[1]!])-2*input.jointMm})))
   if(enclosureCarrierChecks.some(r=>r.reserveMm<h.minimumResidualMm-1e-9))routeIssues.push('home-run-closed-cover-carrier-reserve-rejected')
   const extensionStockRows=boxes.filter(b=>b.extensionDepthMm>0).map(b=>{
     const wall=c.steelThicknessMm,w=support.boxExtension.baseWidthMm,height=support.boxExtension.baseHeightMm
