@@ -1,7 +1,7 @@
 import { segmentDistance, segmentBoxDistance } from '../../../../project/had/studies/service-interface-geometry.mjs'
 /** Local dead-mock-up geometry. Installed circuit, substrate/anchor and material acceptance are separate. */
 export interface LocalHomeRunChoices {
-  readonly bayWidthMm: number; readonly stationOffsetXMm: number; readonly tubeWallMm: number; readonly routeGapMm: number
+  readonly sourceRiseMm:number;readonly bayWidthMm: number; readonly stationOffsetXMm: number; readonly tubeWallMm: number; readonly routeGapMm: number
   readonly lowerPortRearInsetMm: number; readonly maximumClipSpanMm: number; readonly clipEndInsetMm: number
   readonly carrierCentrePlateOffsetXMm: number; readonly minimumResidualMm: number; readonly upperBendClipFraction: number
   readonly additionalCornerDepthMm:number; readonly accessoryExtensionMm:number; readonly upperBoxBacksetMm:number; readonly upperPortRearInsetMm:number; readonly mainRestSouthShiftMm:number; readonly caseRestSizeMm:number;readonly fixedIslandHeightMm:number
@@ -171,9 +171,9 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
  */
 function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   const h = input.homeRuns, c = input.construction
-  const keys = ['bayWidthMm', 'stationOffsetXMm', 'tubeWallMm', 'routeGapMm', 'lowerPortRearInsetMm', 'maximumClipSpanMm', 'clipEndInsetMm', 'carrierCentrePlateOffsetXMm', 'minimumResidualMm', 'upperBendClipFraction', 'additionalCornerDepthMm', 'accessoryExtensionMm', 'upperBoxBacksetMm', 'upperPortRearInsetMm', 'mainRestSouthShiftMm', 'caseRestSizeMm', 'fixedIslandHeightMm']
+  const keys = ['sourceRiseMm','bayWidthMm', 'stationOffsetXMm', 'tubeWallMm', 'routeGapMm', 'lowerPortRearInsetMm', 'maximumClipSpanMm', 'clipEndInsetMm', 'carrierCentrePlateOffsetXMm', 'minimumResidualMm', 'upperBendClipFraction', 'additionalCornerDepthMm', 'accessoryExtensionMm', 'upperBoxBacksetMm', 'upperPortRearInsetMm', 'mainRestSouthShiftMm', 'caseRestSizeMm', 'fixedIslandHeightMm']
   if (!h || Object.keys(h).length !== keys.length || keys.some(k => !Object.hasOwn(h, k))
-    || !Object.entries(h).every(([key,n]) => Number.isFinite(n) && ((['stationOffsetXMm','carrierCentrePlateOffsetXMm'].includes(key)||(['upperBendClipFraction','additionalCornerDepthMm','accessoryExtensionMm','upperBoxBacksetMm','mainRestSouthShiftMm'].includes(key)&&n>=0)) || n > 0))
+    || !Object.entries(h).every(([key,n]) => Number.isFinite(n) && ((['stationOffsetXMm','carrierCentrePlateOffsetXMm'].includes(key)||(['sourceRiseMm','upperBendClipFraction','additionalCornerDepthMm','accessoryExtensionMm','upperBoxBacksetMm','mainRestSouthShiftMm'].includes(key)&&n>=0)) || n > 0))
     || h.tubeWallMm * 2 >= c.containmentOutsideDiameterMm || h.upperBendClipFraction < 0 || h.upperBendClipFraction >= 1) throw new TypeError('IAS_LIGHTING_HOME_RUN_INPUT_INVALID')
   if(!Array.isArray(input.floorBandsMm)||!input.floorBandsMm.length||input.floorBandsMm.some(b=>b.length!==4||!b.every(Number.isFinite))) throw new TypeError('IAS_LIGHTING_ROOM_FLOOR_REFERENCE_INVALID')
   const floorGeometryValid=!input.floorBandsMm.some((b,i)=>b[2]!<=b[0]!||b[3]!<=b[1]!||input.floorBandsMm.slice(i+1).some(other=>overlap(b,other)))
@@ -216,7 +216,8 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   const routes = boxes.map((box, i) => {
     const radius = c.bendCentrelineRadiusMm + i * pitch, tangentX = box.xMm[0]! - c.entryCollarAxialLengthMm
     const riserX = tangentX - radius, bendStartZ = z[i]! - radius, d = box.entryAxisCoreDepthRequirementMm
-    const start = [riserX, coreY - d, input.bottomZMm], bendStart = [riserX, coreY - d, bendStartZ]
+    const bottomZMm=input.bottomZMm+h.sourceRiseMm
+    const start = [riserX, coreY - d, bottomZMm], bendStart = [riserX, coreY - d, bendStartZ]
     const count = Math.ceil(Math.PI * radius / 4), angleStep = Math.PI / (2 * count)
     const sagitta = radius * (1 - Math.cos(angleStep / 2))
     const arc = Array.from({length: count + 1}, (_, j) => {
@@ -230,10 +231,10 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
     const segments = path.slice(1).map((b, j) => ({ a: path[j]!, b, radiusMm: tubeR,
       errorMm: j === 0 ? 0 : sagitta, kind: j === 0 ? 'straight' : 'bend' }))
     const collar = { a: end, b: entry, radiusMm: collarR, errorMm: 0, kind: 'collar' }
-    const straightLengthMm = bendStartZ - input.bottomZMm
+    const straightLengthMm = bendStartZ - bottomZMm
     const intervals = Math.max(1, Math.ceil((straightLengthMm - 2 * h.clipEndInsetMm) / h.maximumClipSpanMm))
     const clips = Array.from({length: intervals + 1}, (_, j) => ({ id: `IAS/STUDY/local-home-runs/${i}/clip/${j}`,
-      pointMm: [riserX, coreY - d, input.bottomZMm + h.clipEndInsetMm + j / intervals * (straightLengthMm - 2 * h.clipEndInsetMm)],
+      pointMm: [riserX, coreY - d, bottomZMm + h.clipEndInsetMm + j / intervals * (straightLengthMm - 2 * h.clipEndInsetMm)],
       independentlyFixed: true, supportResistanceQualified: false }))
     const bendClipFraction=i===2?h.upperBendClipFraction:0
     const bendClipAngle=bendClipFraction*Math.PI/2
@@ -400,7 +401,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   const collarGrossStockKg = Math.PI * collarR**2 * collarLengthMm/1e9*c.steelDensityKgM3Comparison
   return { schema:'ias-local-home-runs/2', selection:'unselected-development-direction', choices:h,
     status:routeIssues.length?'GEOMETRY_REJECTED':'DECLARED_EXTERNAL_CONTAINMENT_CONTINUOUS', bayPlanMm, firstRestPlanMm, finishBottomZMm:input.bottomZMm-input.jointMm,
-    totalDepthMm,frontYMm:frontY,independentRouteSettingMm:input.jointMm, pairSettingMm:2*input.jointMm,
+    totalDepthMm,conduitInsideDiameterMm:c.containmentOutsideDiameterMm-2*h.tubeWallMm,frontYMm:frontY,independentRouteSettingMm:input.jointMm, pairSettingMm:2*input.jointMm,
     carrierXZMm:carrierXZ, carrierDepthMm:carrierDepth,carrierStripsXZMm,cableOpening,carrierStock,saddle,caseRestPlanMm,caseRenewal,enclosureCarrierChecks, parkedModulePlanMm, fieldReservesMm, moduleSweepPlanMm, occupiedConflicts, boxes,
     routes:routes.map(({segments:_checkedSegments,pathMm:_checkedPoints,...route})=>({...route,straight:{startMm:route.sourcePointMm,endMm:route.bend.startMm}})),
     separations, obstacleChecks, issues:routeIssues, sourceInterfaceIds:routes.map(r=>r.sourceInterfaceId),
@@ -417,7 +418,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
       tubeCollarReceiverAndExtensionStockKgComparison:tubeMassKg+collarGrossStockKg+(saddle?.receiverSteelStockKg??0)+extensionStockKg },
     evidence:{ geometricContinuity:!routeIssues.length, actualBoxPortsQualified:false, connectorsAndToolsQualified:false,
       actualDeviceTerminalsConnected:false, installedCircuitAccepted:false, materialAdmission:false, physicalTrialComplete:false, ownerAcceptance:false },
-    limitations:['The three source ports at the skirt top are explicit unconnected interfaces, not an invented supply or three selected circuits.',
+    limitations:['Standalone containment geometry; the integrated circuit binds specified sourcebox/nets. Actual installed connections remain unearned.',
       'Port coordinates are authored requirements within the nominalBarton base/extension envelopes; the catalogue does not qualify actual port coordinates or assembled connections.',
       'Tube walls and gross collars are stock comparisons; actual unions, clips, earthing, thermal/protective design and material admission remain unqualified.',
       'Actual connector release, tools, temporary support and whole-enclosure renewal require qualification before a trial-ready assembly claim.'] }

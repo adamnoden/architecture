@@ -175,7 +175,7 @@
     "lowerPortRearInsetMm": 20,
     "maximumClipSpanMm": 300,
     "clipEndInsetMm": 50,
-    "stationOffsetXMm": 33,
+    "stationOffsetXMm": 49,
     "carrierCentrePlateOffsetXMm": 0,
     "minimumResidualMm": 5,
     "upperBendClipFraction": 0.5,
@@ -185,9 +185,10 @@
     "upperPortRearInsetMm": 20,
     "mainRestSouthShiftMm": 60,
     "caseRestSizeMm": 120,
-    "fixedIslandHeightMm": 120
+    "fixedIslandHeightMm": 120,
+    "sourceRiseMm": 220
   },
-  "localHomeRunAuthority": "Unselected conventional separate home runs with full95mm local station, nominalBarton47mm steel bases and16mm extension frames. Authored20mm port rear insets have no qualified manufacturer hole coordinates. Exact mating hardware, internal device/earth paths and house supply remain unqualified; three source interfaces do not select circuit topology. Complete86x86x23mm socket device shadow is referenced; switch/junction hardware shadows remain authored requirements, not inherited product qualification.",
+  "localHomeRunAuthority": "Unselected conventional95mm station; sourcebox and two radial nets specified by shared circuit method.375mm tube origins clear source gland transitions; field boundary remains150mm. Supplied entries, device/earth CAD, physical installation and material admission remain unearned.",
   "localHomeRunSupportReference": {
     "schema": "ias-lighting-support-reference/1",
     "checkedDate": "2026-11-26",
@@ -226,5 +227,172 @@
       "material": "Pre-coated galvanised steel catalogue description; complete constituents and installed qualification unadmitted.",
       "qualification": "Nominal envelopes only; actual side-entry coordinates, mating hardware, complete supplied mass, device/earth connections and complete assembly protection remain unqualified."
     }
+  },
+  "circuitDesign": {
+    "schema": "ias-study-circuit-design/1",
+    "phase": "L3",
+    "nominalVoltageV": 230,
+    "cmin": 0.95,
+    "bendRadiusMm": 45,
+    "pitchMm": 40,
+    "highLevelMm": 2925,
+    "corridorYMm": 3475,
+    "spineYMm": 2350,
+    "wcXMm": 9100,
+    "studyXMm": 1000,
+    "riserXMm": 1220,
+    "boxSizeMm": [
+      225,
+      100,
+      75
+    ],
+    "boxRearMm": 8,
+    "boxBottomMm": 175,
+    "toolDiameterMm": 49,
+    "tailOrderAllowanceMm": 150,
+    "clearanceMm": 5,
+    "settingMm": 5,
+    "combinedRatingFactor": 0.6,
+    "maximumFillFraction": 0.4,
+    "socket": {
+      "way": "DB-UTILITY/L3/STUDY-SOCKETS",
+      "article": "HagerADB916R",
+      "ratedA": 16,
+      "cable": "Pyrotenax2L2.5",
+      "dropFraction": 0.05
+    },
+    "lighting": {
+      "way": "DB-UTILITY/L3/STUDY-LIGHTING",
+      "article": "HagerADB906R",
+      "ratedA": 6,
+      "cable": "Pyrotenax2L1.5",
+      "dropFraction": 0.03
+    },
+    "cables": {
+      "Pyrotenax2L2.5": {
+        "diameterMm": 6.6,
+        "areaMm2": 2.5,
+        "exposedRatingA": 30,
+        "mVPerAM": 17,
+        "r1OhmKm": 7.41,
+        "r2OhmKm": 2.53,
+        "sheathMm2": 8.2,
+        "kgKm": 187
+      },
+      "Pyrotenax2L1.5": {
+        "diameterMm": 5.7,
+        "areaMm2": 1.5,
+        "exposedRatingA": 22.5,
+        "mVPerAM": 28,
+        "r1OhmKm": 12.1,
+        "r2OhmKm": 3.35,
+        "sheathMm2": 6.3,
+        "kgKm": 136
+      }
+    },
+    "gland": {
+      "threadMm": 20,
+      "projectionMm": 21,
+      "potMm": 16.7,
+      "potDiameterMm": 14.8,
+      "locknutCornersMm": 27.7
+    },
+    "terminal": {
+      "reference": "Wago221-413, separately retained labelled cells; holder/tool CAD unqualified",
+      "maximumMm2": 4,
+      "ratedA": 32,
+      "ratedV": 450,
+      "reservationMm": [
+        25,
+        25,
+        20
+      ]
+    },
+    "evidence": [
+      {
+        "id": "bare-MI",
+        "url": "https://www.chemelex.com/en-gb/pyrotenax/products/bare-fire-survival-mi-wiring-cable",
+        "finding": "Current copper/MgO light-duty500V family. No fire-survival or installed circuit claim.",
+        "retrieval": "Official page opened26Nov2026."
+      },
+      {
+        "id": "MI-sizing",
+        "url": "https://www.nvent.com/sites/default/files/acquiadam/assets/PYROTENAX-SB-H80127-MICC-EN.pdf",
+        "finding": "Manufacturer2018table: bare2L1.5 diameter5.7mm/22.5A/28mV/A/m/136kg/km;2L2.5 diameter6.6mm/30A/17mV/A/m/187kg/km. Exposed-touch70C/30C basis.",
+        "retrieval": "Official indexed manufacturer text recovered; directPDF40426Nov2026. Current supplied revision unqualified."
+      },
+      {
+        "id": "MI-resistance",
+        "url": "https://www.nvent.com/sites/default/files/acquiadam/assets/Pyrotenax-DS-CDE0935-PyroMIInfoSheet-EN.pdf",
+        "finding": "Table8:2L1.5R1/R2=12.1/3.35ohm/km,sheath6.3mm2;2L2.5=7.41/2.53ohm/km,sheath8.2mm2.1.21factor at70C.",
+        "retrieval": "Official indexed table recovered; directPDF40426Nov2026; supplied revision unresolved."
+      },
+      {
+        "id": "MI-bend",
+        "url": "https://www.nvent.com/sites/default/files/acquiadam/assets/Pyrotenax-IM-CDE0937-MI-EN.pdf",
+        "finding": "Ordinary6diameter bend conservatively measured at cable inside surface. Independent support, matched sealed ends; no repeated flex or multibend pull-through.",
+        "retrieval": "Official indexed text and prior MATmanufacturer inspection; directPDF404atcheck."
+      },
+      {
+        "id": "MI-ends",
+        "url": "https://www.nvent.com/sites/default/files/acquiadam_assets/2021-01/PYROTENAX-IM-CDE0923-MiFireSurvivalCable-EN.pdf",
+        "finding": "Size20RGM11mm thread/~21mm projection;27.7mm locknut corners;14.8\u00d716.7mm sealpot. RPSL earthtail, PVC sleeves/closures and compound remain unadmitted.",
+        "retrieval": "Manufacturer-authored2018/2020manual retained in owning MATresult; current revision/assembly unqualified."
+      },
+      {
+        "id": "sourcebox",
+        "url": "https://barton-engineering.co.uk/bs-adaptable-box/",
+        "finding": "Plain galvanised steel225\u00d7100\u00d775 box and M5\u00d78 lid listed. New entry pattern is designed setout, not a fictitious stock knockout.",
+        "retrieval": "Official page opened26Nov2026."
+      },
+      {
+        "id": "B16",
+        "url": "https://hager.com/uk/products/h/adb916r-rcbo-1m-1p-n-6ka-b-16a-30ma-a",
+        "finding": "B16,30mA TypeA,6kA switched-neutral reference. Board compatibility/energy/supply actuals remain open.",
+        "retrieval": "Official product opened26Nov2026."
+      },
+      {
+        "id": "B6",
+        "url": "https://hager.com/uk/products/h/adb906r-rcbo-1m-1p-n-6ka-b-6a-30ma-a",
+        "finding": "B6,30mA TypeA,6kA;1..16mm2 rigid terminals;85\u00d717.7\u00d770mm. No board/installed acceptance.",
+        "retrieval": "Official product opened26Nov2026."
+      },
+      {
+        "id": "RCBO-IOM",
+        "url": "https://assets.hager.com/step-content/P/HA_76743820/Document/std.lang.all/ID1_DD_RCBO_6LE007687A.pdf",
+        "finding": "Switched-neutral device; no shared downstream neutral. Locking accessoryMZN175 and actual testing instructions retained. DIN fit alone is insufficient.",
+        "retrieval": "Official2025PDF opened and inspected26Nov2026."
+      },
+      {
+        "id": "terminal",
+        "url": "https://www.wago.com/gb/products/electrical-interconnections/splicing-connectors-221",
+        "finding": "221series solid/stranded0.2..4mm2, up to32A/450V.25\u00d725\u00d720 is an authored holder/tool reservation, not productCAD or constituent admission.",
+        "retrieval": "Official page opened26Nov2026."
+      },
+      {
+        "id": "switch",
+        "url": "https://forbesandlomax.com/uk/wp-content/uploads/sites/2/2024/08/The-Rocker-Switch.pdf",
+        "finding": "20A1gang2way can be used1way,86mm plate,47mm recommended box;1.5mm2 within published capacity. Actual COM/L1setout and hidden materials remain unqualified.",
+        "retrieval": "Official2024PDF opened26Nov2026."
+      },
+      {
+        "id": "TN-loop",
+        "url": "https://electrical.theiet.org/wiring-matters/years/2024/100-may-2024/why-are-the-values-of-maximum-earth-fault-loop-impedance-different/",
+        "finding": "0.95minimum-voltage/hot design method; do not silently multiply hot design by0.8field-test factor. Exact Ia and actual upstream Ze PLUS joints remain conditions.",
+        "retrieval": "Official IETarticle opened26Nov2026."
+      },
+      {
+        "id": "fault-energy",
+        "url": "https://electrical.theiet.org/wiring-matters/years/2026/111-october-2026/the-adiabatic-equation-in-regulation-54313-of-bs-76712018plusa42026/",
+        "finding": "Actual fault range and device letthrough must join applicable conductor/sheath/termination withstand. Icn/class3 alone is not an adiabatic pass.",
+        "retrieval": "Official current IETarticle opened26Nov2026."
+      },
+      {
+        "id": "counterhold",
+        "url": "https://www.bahco.com/sea_en/22-mm-x-24-mm-double-open-end-wrench-with-chrome-finish-240-mm-6m-22-24.html",
+        "finding": "6M-22-24 fits22AFgland/24AFlocknut;240mm length,49mm maximum head,7.4mm thickness. Full head used for source rear AND side checks. Handle/counterhold/human motion remains unqualified.",
+        "retrieval": "Official manufacturer table opened26Nov2026."
+      }
+    ]
   }
 }

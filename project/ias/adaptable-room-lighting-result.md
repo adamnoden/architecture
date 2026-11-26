@@ -437,3 +437,61 @@ perturbation receipts retain all issues and governing minimum witnesses, with
 full detail reproducible from the same recorded compiler inputs. Full combined
 head health, new actual-room integration and publication preflight remain the
 integrating worker's responsibility; no installed or owner acceptance is claimed.
+
+## Source-bound electrical development
+
+The actual saved200mm Study corner now carries an explicit conventional circuit
+specification: named separate L3 B16 socket and B6 manual-lighting ways, bare
+2L2.5/2L1.5 MI, five uninterrupted lengths and ten matched ends. The accessible
+sourcebox has socket L/N and lighting L/N/switched-live cells, separate downstream
+neutrals, and a protective bar/RPSL tails for retained metalwork. The source-to-box
+route derives from the actual Utility consumer station and current walls/arches.
+Six planned side-spandrel sleeves are bounded straight crossings, with no
+longitudinal chase or borrowed closing doorway/fanlight. Actual masonry,
+fire/air/acoustic seals, full wet/heat/PV sections, supports and constituents
+remain unqualified; the CU's catastrophic water exposure remains unresolved.
+
+A stock225×100×75 sourcebox sits at175..275mm above the removable150mm skirt.
+The fixed steel back/perimeter seal replaces only its board patch, independently
+of trim. This is an explicit225×100 opening within the410mm service bay. Station
+axes move16mm east and tube origins rise to375mm; the decorative field remains
+at150mm. Real opposed MI bends bridge the source entries. Complete containment,
+retained-case/carrier withdrawal, sourcebox sweep/rest and actual floor cradle
+checks are recomputed. The closed sourcebox still needs comparison with every
+136-piece floor-renewal trajectory; its cradle fit alone is not that proof.
+
+Reject a low25..125mm box because it creates an untested floor obstruction.
+Reject the eight-ended unbroken socket pass-through because it captures a closed
+stock sourcebox on the whole board-to-socket length. Two extra conventional
+terminations buy local enclosure renewal. Their seals, PVC tails/closures,
+compound, Wago housing and all other constituents remain charged and unadmitted.
+A metal exterior grants no exception and no certified internals are altered.
+
+The [actual circuit sheet](studies/working-study-lighting-circuit.svg) and
+[canonical receipt](studies/working-study-lighting.results.json) consume the
+saved `working-house-comparison.json` design/stages through the shared compiler.
+The old reference arrangement remains a comparison. The receipt fingerprints
+controlling design/stage inputs, methods and non-self source identities. It
+never embeds its own receipt-dependent family digest or a full-document SHA
+containing that digest. The producer still strictly checks the complete current
+saved bindings after owning regeneration; an explicit binding refresh is required.
+
+Cable bends, fill, conditional rating/drop, hot cable-loop impedance and phase
+budget are computed. The TN remainder is **upstream Ze plus unmodelled joints**,
+not a measured Ze. The0.6 combined thermal/group/installation factor is an authored
+minimum condition. Actual supply/earth/PFC, exact protective-device Ia/energy,
+conductor/sheath/termination withstand, supplied ports, terminal/holder/tool CAD,
+matched board, full physical renewal and owner acceptance remain open. Class3 or
+6kA Icn alone cannot qualify the1.5mm2 lighting circuit's fault thermal duty.
+Current primary Hager/Barton/Wago/IET evidence is recorded; older official MI
+sizing tables are recoverable as indexed manufacturer text while direct PDF
+endpoints404, so current supplied-revision reconciliation remains unearned.
+
+The netlist reaches socket L/N/E, the ordinary rocker COM/L1/E and ClassI lamp
+L/N/E. Functional connectivity is not manufactured terminal fit or installed
+acceptance. Desk/side/south task, other lighting arrangements and remaining
+whole-house circuits remain separately identifiable unwired duties.
+
+The source counterhold uses the actual22/24mm Bahco tool with a49mm head, not a22mm-only spanner. Its full head is charged at both the rear and side; remaining reserves are checked after setting. Complete handle/hand and simultaneous counterhold remain physical qualification duties.
+
+Source-port pitch is derived from the actual counterhold head, neighbouring nut and both setting allowances (54mm in this case). Ordinary opposed MI bends transition to the41mm conduit pitch;375mm tube origins preserve straight release room. Neighbouring hardware stays in the head-clearance check.
