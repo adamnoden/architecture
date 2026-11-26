@@ -5,10 +5,10 @@
   "basePanRoomChoice": "project/had/studies/inlet-split-plant-room-candidate.json",
   "vesselChoice": "project/had/studies/inlet-store-vessel-candidate.json",
   "selectedForDevelopment": true,
-  "walkingRiseAboveHouseFflMm": 75,
-  "maximumBulkWaterRelativeWalkingMm": 0,
-  "upstandAboveWalkingMm": 20,
-  "bridgeAboveWalkingMm": 20,
+  "walkingRiseAboveHouseFflMm": 100,
+  "maximumBulkWaterRelativeWalkingMm": -20,
+  "upstandAboveWalkingMm": 0,
+  "bridgeAboveWalkingMm": 0,
   "legacyFinishUndersideProtectedMm": 505,
   "legacyContinuousFinishRetainedInPlant": false,
   "closedDuctStorageCreditLitres": 0,
@@ -94,7 +94,7 @@
     "bridgeRiseFromWalkingMm": 20,
     "minimumInternalRunMm": 240,
     "minimumExteriorRunMm": 240,
-    "minimumDryLobbyRiseRunMm": 1140
+    "minimumDryLobbyRiseRunMm": 1440
   },
   "inventory": {
     "trunkMaximumBareOuterDiameterMm": 22.1,
@@ -117,7 +117,36 @@
         "nutAFMm": 39
       }
     },
-    "actualReservoirAirGapsAndRiserJoinsAccepted": false
+    "actualReservoirAirGapsAndRiserJoinsAccepted": false,
+    "maximumCompletePressureDeviceBodyMm": [
+      80,
+      80,
+      300
+    ],
+    "maximumTerminalAddedDevelopedFactorOfWorkTerritory": 2
   },
-  "state": "Current internal design candidate: real flooring/services/threshold consequences and fresh force proof still required; no installed, professional or aesthetic acceptance"
+  "state": "Current internal design candidate:100mm raised open walk, bulk water20mm below walk; source-based full outer-envelope inventory, actual flooring/service/ramp geometry and fresh force proof mandatory.",
+  "internalAccess": {
+    "mode": "two50mm rises with one intermediate tread; no Plant-floor lip",
+    "firstRiseFraction": 0.5,
+    "treadPlanMm": [
+      10190,
+      3303,
+      660,
+      494
+    ],
+    "riseAtYMm": [
+      3303,
+      3797
+    ],
+    "operatorCentreXMm": 10520,
+    "parkedSourceLeafEastXMm": 10159
+  },
+  "externalDeckPlanMm": [
+    12130,
+    3350,
+    2600,
+    2100
+  ],
+  "externalRampRunMm": 1200
 }

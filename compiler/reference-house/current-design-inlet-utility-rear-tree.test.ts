@@ -1,35 +1,11 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import {readFileSync} from 'node:fs'
-import {sha256SemanticFingerprint} from '../core/identity.js'
+import {mkdirSync,writeFileSync} from 'node:fs'
+import {join} from 'node:path'
+import {readUtilityCurrentGeometrySource} from './current-design/inlet-utility-proof-source.js'
+import {inletUtilityWetAssembly} from './current-design/inlet-utility-wet-assembly.js'
 import {inletUtilityRearTree,admitUtilityRearTreeChoice,type UtilityRearTreeContext} from './current-design/inlet-utility-rear-tree.js'
-const json=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
-const choice=json('project/had/studies/inlet-utility-compact-route.json'),services=json('project/had/studies/current-house-services.json'),ias=json('project/ias/studies/utility-host-revised-route.json'),wide=json('project/had/studies/utility-wide-capture.json'),water=json('project/had/studies/water-replan.json').model
-type B=readonly[number,number,number,number,number,number]
-const sourceShift=services.utility.sink[0]-choice.coldDistribution.prefabSinkHead.topPlanMm[0]
-const frames=Object.entries(ias.geometry.frame).map(([id,value])=>{
- const b=[...(value as number[])];b[0]-=sourceShift
- if(id==='temporary carry bar')b[0]+=5*Math.ceil(Math.max(0,services.utility.washerReservation[0]+services.utility.washerReservation[2]+30-b[0])/5)
- return{id:'IAS/frame/'+id,boxMm:b as unknown as B,presence:(id==='temporary carry bar'?'carry-bar-after-park':id==='EW rail at y1350 / z135'?'front-lower-rail':'always') as 'always'|'front-lower-rail'|'carry-bar-after-park'}
-})
-const north=water.groundWalls.find((w:{id:string})=>w.id==='utility-north'),plant=water.groundWalls.find((w:{id:string})=>w.id==='plant-intermediate-arch'),west=services.utility.electricalStation[0],east=12000-429.5,finish=water.internalArchControls.actualRadialFinish
-const context:UtilityRearTreeContext={
- bindingDigest:sha256SemanticFingerprint({frame:ias.geometry.frame,sourceShift,services:services.utility,hot:wide.hot,north,plant}),
- maximumGaugeBar:9.2,settingEachMm:10,jacketRadialMm:26,floorMm:0,ceilingMm:3100,mainOnlyInventoryUpperLitres:12.00639465,
- obstacles:[...frames,
-  {id:'source-washer-home',boxMm:[services.utility.washer[0],services.utility.washer[1],0,services.utility.washer[2],services.utility.washer[3],json('project/ias/studies/utility-first-release.json').native.height],presence:'always'},
-  //489.5 is the declared source rear-face fixture; no native force/height join.
-  {id:'source-rear-finished-face',boxMm:[west,0,0,east-west,489.5,3100],presence:'always'},
-  {id:'source-east-face',boxMm:[east,0,0,500,4000,3100],presence:'always'},
-  {id:'source-utility-north-west-jamb',boxMm:[west,north.finishedFaces[0],0,north.holes[0][0]+finish-west,north.finishedFaces[1]-north.finishedFaces[0],3100],presence:'always'},
-  {id:'source-utility-north-east-jamb',boxMm:[north.holes[0][1]-finish,north.finishedFaces[0],0,east-north.holes[0][1]+finish,north.finishedFaces[1]-north.finishedFaces[0],3100],presence:'always'},
-  {id:'source-Plant-south-face',boxMm:[west,plant.finishedFaces[0],0,east-west,194,3100],presence:'always'}],
- // Actual old terminal retains its25mm source cover; new hot spool is owned
- // separately and must be injected after its owning current method executes.
- retainedPaths:[{id:'retained-H0-hot-terminal',pointsMm:wide.hot.terminal,radiusWithSupportsMm:25},{id:'retained-H0-hot-backbone',pointsMm:wide.hot.backbone,radiusWithSupportsMm:37}],
- evidence:{lodgeUAndMainZero:false,sourceDrainVerified:false,washerClosedHoseOnPositiveRest:false,headHotH0AndColdZeroHeadRemoved:false,lowPocketCapturedAndCapped:false,matchedUnionReleaseVerified:false,frontRailRemoved:false,carryBarTimingVerified:false,independentLoadedCaptureAndParkRestVerified:false},
- support:{normalWheelCoupleNm:10,coldMaintenanceToolCoupleNm:60,handlingDynamicFactor:1.5,declaredSlideTravelMm:null,actualReactionLawImplemented:false}
-}
+const current=readUtilityCurrentGeometrySource(),choice=JSON.parse(JSON.stringify(current.choice)),context=current.rearTreeContext
 const run=(c:unknown=choice,x:UtilityRearTreeContext=context)=>inletUtilityRearTree({choice:c,context:x})
 const near=(a:number,b:number,e=1e-7)=>assert.ok(Math.abs(a-b)<e,String(a)+' != '+String(b))
 test('current source is one shared rear header, complete oriented stops and factory reducing turn',()=>{
@@ -82,7 +58,7 @@ test('whole controlled receiver includes main, tree and retained closed washer s
  assert.ok(r.inventory.treeWaterGeometricUpperLitres>0)
  assert.ok(r.inventory.treeWaterGeometricUpperLitres<4)
  near(r.inventory.retainedClosedWasherStopBodyWaterUpperLitres,.882)
- near(r.inventory.mainPlusTreeAndRetainedStopUpperLitres,context.mainOnlyInventoryUpperLitres+r.inventory.treeWaterGeometricUpperLitres+.882)
+ near(r.inventory.mainPlusTreeAndRetainedStopUpperLitres,current.service.inventory.isolatedBranchConservativeCeilingL+r.inventory.treeWaterGeometricUpperLitres+.882)
  assert.ok(r.inventory.receiverReserveLitres>0)
  assert.equal(r.inventory.source740DrainEmptiesWholeTree,false)
  assert.equal(r.inventory.lowestSinkPathMm,300)
@@ -99,7 +75,7 @@ test('normal pressure/wheel torque and zero-pressure60Nm tools are distinct from
  near(r.pressure.normalStopLossBar.washer,.1296);near(r.pressure.normalStopLossBar.sink,.09)
  assert.ok(r.pressure.pipeEndThrustN.washer>290);assert.ok(r.pressure.pipeEndThrustN.sink>130)
  assert.equal(r.pressure.normalWheelCoupleNm,10);assert.equal(r.pressure.coldZeroToolCoupleNm,60)
- near(r.thermalAndSupport.freeHeaderXMovementMm,.204)
+ near(r.thermalAndSupport.freeHeaderXMovementMm,.1836)
  near(r.thermalAndSupport.fullySeizedStraightStressMPa,74.8)
  assert.ok(r.thermalAndSupport.fullySeizedStraightAxialUpperN.washer>6000)
  assert.ok(r.thermalAndSupport.fullySeizedStraightAxialUpperN.sink>3000)
@@ -117,4 +93,61 @@ test('missing/mixed header, stopped-module endpoint fiction and unsupported sett
  assert.throws(()=>run(choice,{...context,settingEachMm:0}),/Unsupported/)
  run();assert.equal(JSON.stringify({choice,context}),before)
 })
-console.info('UTILITY_REAR_TREE_OBSERVER '+JSON.stringify({scope:'Source-read pure frame/hot fixture. No native force case, assembled-tree ordinary renewal or actual support acceptance.',summary:{normal:run().geometry.normalNecessary,strip:run().geometry.stripNecessary,water:run().inventory,stock:run().stock},failures:run().geometry.failures}))
+
+const wet=inletUtilityWetAssembly({source:current})
+test('shared source adapter computes main inventory and joins current cold, actual H0 hot body and formed hot head',()=>{
+ assert.equal(context.mainOnlyInventoryUpperLitres,current.service.inventory.isolatedBranchConservativeCeilingL)
+ assert.equal(current.currentSavedDocumentAdmitted,false)
+ assert.equal(wet.normal.necessaryKnownGeometry,true,JSON.stringify(wet.normal))
+ assert.equal(wet.cold.geometry.normalNecessary,true)
+ assert.equal(wet.hot.geometry.necessarySpecifiedGeometry,true)
+ assert.ok(wet.normal.coldHotMinimum.reserveMm>17)
+ assert.equal(wet.completeInstallationAccepted,false)
+ assert.equal(wet.renewal.wholeColdTreeRemovalRequired,false)
+ assert.equal(wet.renewal.actualIndependentWaterSupportsAndMemberToolsQualified,false)
+})
+test('new normal west washer/up spindle avoids the actual bowl and H0 arm; previous direct washer route is rejected',()=>{
+ const r=run(),d=choice.coldDistribution
+ assert.deepEqual(d.washer.stop.axisMm,[10800,1000,730])
+ assert.equal(d.washer.stop.stemAboveAxisMm,130);assert.equal(d.washer.stop.stemWestMm,undefined)
+ near(r.operation.tasks.find(v=>v.id==='washer')!.maximumGripReachMm,589.0358493534471)
+ const old=structuredClone(choice)
+ old.coldDistribution.washer.pathToStopMm=[[10980,600,950],[10980,600,730],[10980,910,730]]
+ old.coldDistribution.washer.stop.axisMm=[10980,1000,730];delete old.coldDistribution.washer.stop.stemAboveAxisMm;old.coldDistribution.washer.stop.stemWestMm=130
+ old.coldDistribution.washer.floorOperatorXYMm=[10800,1725];old.coldDistribution.washer.ordinaryShoulderMm=[10800,1500,1050]
+ assert.equal(run(old).geometry.normalNecessary,false)
+ assert.ok(run(old).geometry.failures.some(q=>q.phase==='normal'&&q.id.includes('source-prefab-bowl')))
+})
+test('full80mm hot union falsifies old11170 cold stop; thirty-west current geometry restores an actual diagonal reserve',()=>{
+ const prior=structuredClone(choice),d=prior.coldDistribution
+ d.commonPathMm.at(-1)[0]=11170;d.sinkTeeMm[0]=11170
+ for(const p of d.sink.pathToStopMm)p[0]=11170
+ d.sink.stop.axisMm[0]=11170
+ for(const p of d.sink.pathFromStopToHeadMm)p[0]=p[0]===11140?11170:11055
+ d.prefabSinkHead.coldPortMm[0]=11055;d.prefabSinkHead.pillarHandleMm[0][0]=11055;d.prefabSinkHead.spoutOutletsMm[0][0]=11055
+ const rejected=inletUtilityWetAssembly({source:current,choice:prior})
+ assert.equal(rejected.normal.necessaryKnownGeometry,false)
+ assert.ok(rejected.normal.coldHotMinimum.reserveMm<0)
+ assert.ok(wet.normal.coldHotMinimum.reserveMm>10)
+ assert.equal(wet.hot.headFirstRelease.opposedAxialFacesNotReleasedBySpoolTranslationAlone,true)
+})
+test('formed hot spool has finite localH0 inventory and a separately bounded shallow receiver, not a store bound',()=>{
+ assert.deepEqual(wet.hot.retained.terminal.at(-1),[11300,1275,595])
+ assert.deepEqual(wet.choice.coldDistribution.prefabSinkHead.hotPortMm,[11300,1260,850])
+ assert.ok(wet.hot.inventory.isolatedH0LowerBranchUpperL>7.5)
+ assert.ok(wet.hot.inventory.isolatedH0LowerBranchUpperL<12)
+ assert.equal(wet.hot.inventory.domesticStoreOrUpperNetworkIncluded,false)
+ assert.equal(wet.hot.inventory.actualH0ClosureAndZeroPressureQualified,false)
+ assert.equal(wet.hot.receiver.maximumPartialBatchL,5)
+ assert.equal(wet.hot.receiver.actualNetCapacityAndHandlingQualified,false)
+ assert.ok(wet.hot.receiver.innerGrossCeilingL>12)
+ assert.equal(wet.hot.actualToolReactionAndHeadPickupAccepted,false)
+ assert.ok(wet.hot.renewalGeometry.frontUpperRailStillPresentControl.some(q=>q.reserveMm<0))
+ assert.equal(wet.hot.renewalGeometry.headFullRemovalToolAndTemporaryStabilityProofAccepted,false)
+ assert.equal(wet.hot.renewalGeometry.necessaryConditionalSpoolSweeps,true,JSON.stringify(wet.hot.renewalGeometry.failures))
+ const shallow=structuredClone(choice);shallow.coldDistribution.hotService.receiverUsableMinimumL=5
+ assert.equal(inletUtilityWetAssembly({source:current,choice:shallow}).hot.geometry.necessarySpecifiedGeometry,false)
+})
+const proofDir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
+if(proofDir){mkdirSync(proofDir,{recursive:true});writeFileSync(join(proofDir,'current-utility-wet-assembly.json'),JSON.stringify(wet,null,2))}
+console.info('UTILITY_WET_CURRENT '+JSON.stringify({scope:current.scope,currentSavedDocumentAdmitted:false,normal:wet.normal,coldInventory:wet.cold.inventory,stock:wet.cold.stock,hotInventory:wet.hot.inventory,hotReceiver:wet.hot.receiver,remaining:wet.renewal}))

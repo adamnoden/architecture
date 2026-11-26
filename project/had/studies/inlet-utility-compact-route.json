@@ -187,7 +187,7 @@
       ]
     },
     "sinkTeeMm": [
-      11170,
+      11140,
       600,
       950
     ],
@@ -212,7 +212,12 @@
           730
         ],
         [
-          10980,
+          10800,
+          600,
+          730
+        ],
+        [
+          10800,
           910,
           730
         ]
@@ -220,7 +225,7 @@
       "stop": {
         "id": "U/local-washer-stop",
         "axisMm": [
-          10980,
+          10800,
           1000,
           730
         ],
@@ -238,18 +243,18 @@
         "outletThread": "G3/4 male",
         "sourceBareValveFaceMm": 85,
         "completeModuleIncludes": "both actual BSP-to22mm adapters and17mm-clear G3/4 outlet; no85mm valve-only module claimed",
-        "stemWestMm": 130
+        "stemAboveAxisMm": 130
       },
       "ordinaryShoulderMm": [
-        10800,
-        1500,
-        1050
+        10680,
+        1530,
+        1150
       ],
       "availableAfterFirstPull": false,
       "minimumTubeODMm": 21.9,
       "maximumWallMm": 1.3,
       "floorOperatorXYMm": [
-        10800,
+        10700,
         1725
       ]
     },
@@ -259,22 +264,22 @@
       "minimumWallMm": 0.7,
       "pathToStopMm": [
         [
-          11170,
+          11140,
           600,
           950
         ],
         [
-          11170,
+          11140,
           600,
           600
         ],
         [
-          11170,
+          11140,
           1260,
           600
         ],
         [
-          11170,
+          11140,
           1260,
           530
         ]
@@ -282,7 +287,7 @@
       "stop": {
         "id": "U/local-sink-cold-stop",
         "axisMm": [
-          11170,
+          11140,
           1260,
           450
         ],
@@ -302,28 +307,28 @@
       },
       "pathFromStopToHeadMm": [
         [
-          11170,
+          11140,
           1260,
           370
         ],
         [
-          11170,
+          11140,
           1260,
           300
         ],
         [
-          11055,
+          11025,
           1260,
           300
         ],
         [
-          11055,
+          11025,
           1260,
           850
         ]
       ],
       "ordinaryShoulderMm": [
-        11170,
+        11140,
         1550,
         850
       ],
@@ -350,7 +355,7 @@
       ],
       "floodRimMm": 900,
       "coldPortMm": [
-        11055,
+        11025,
         1260,
         850
       ],
@@ -361,7 +366,7 @@
       ],
       "pillarHandleMm": [
         [
-          11055,
+          11025,
           1260,
           1000
         ],
@@ -373,7 +378,7 @@
       ],
       "spoutOutletsMm": [
         [
-          11055,
+          11025,
           1100,
           1040
         ],
@@ -429,7 +434,7 @@
         950
       ],
       [
-        11170,
+        11140,
         600,
         950
       ]
@@ -479,6 +484,61 @@
       "waterSupportIndependentOfDryFrameRequired": true,
       "positiveTemporarySupportBeforeMemberReleaseRequired": true,
       "actualMemberToolAccessStabilityAndLoadProofAccepted": false
+    },
+    "hotService": {
+      "schema": "had-utility-hot-head/1",
+      "sourceCutId": "P/Utility-H0-hot-cut",
+      "virtualSpoolMm": [
+        [
+          11300,
+          1275,
+          595
+        ],
+        [
+          11300,
+          1275,
+          670
+        ],
+        [
+          11300,
+          1260,
+          775
+        ],
+        [
+          11300,
+          1260,
+          850
+        ]
+      ],
+      "centrelineRadiusMm": 75,
+      "tubeMaximumODMm": 15.1,
+      "tubeMinimumWallMm": 0.7,
+      "jacketRadialMm": 26,
+      "sourceUnionBareDiameterMm": 80,
+      "sourceUnionHalfLengthMm": 30,
+      "headUnionAFMm": 24,
+      "headUnionHalfLengthMm": 32,
+      "headInitialLiftMm": 35,
+      "spoolReleaseUpMm": 10,
+      "spoolNorthToRestMm": 150,
+      "maximumColdMaintenanceC": 40,
+      "maximumPartialBatchL": 5,
+      "receiverOuterMm": [
+        11020,
+        950,
+        0,
+        380,
+        400,
+        90
+      ],
+      "receiverUsableMinimumL": 12,
+      "receiverMaximumWallMm": 2,
+      "actualProductsPressureMaterialSupportAndHandlingAccepted": false,
+      "frontUpperRailId": "IAS/frame/EW rail at y1350 / z850",
+      "frontUpperRailRemovedBeforeSpoolNorth": true,
+      "headFullyRemovedBeforeFrontRailReleaseRequired": true,
+      "minimumRequiredGaugeRatingBar": 9.2,
+      "normalWaterDesignTemperatureC": 60
     }
   },
   "terminalLocalMm": [
