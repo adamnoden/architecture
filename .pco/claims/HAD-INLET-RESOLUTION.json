@@ -9,9 +9,9 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T08:47:23.896Z",
-  "expiresAt": "2026-11-26T10:17:23.896Z",
-  "branch": "work/convergence-bed-water-20261125",
+  "heartbeatAt": "2026-11-26T08:58:59.527Z",
+  "expiresAt": "2026-11-26T10:28:59.527Z",
+  "branch": "work/zerg-engineering-20261126",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
     "generation": 64,
@@ -34,9 +34,9 @@
       "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
     }
   },
-  "pr": 1627,
+  "pr": 1628,
   "checkpoint": {
-    "evidence": "1627 exact0d20523d full health running, publication/native green. Remote work/zerg-engineering-20261126@ca4575ca preserves source-bound separate-room outfalls, known floorG and conventional lighting integration;29 combined focused tests pass. No stored-release or complete installation admission.",
-    "next": "Merge1627 only with full health and fresh dualpreflight; finish actual saved receiver proof/current source archive, reconcile main and submit combined exact-head CI."
+    "evidence": "1627 merged838ae734. Combined1628 head4165e0a2/treeaa654321 carries actual separate-room outfall profiles, source-bound known-floor load/cuts and conventional lighting, regenerated sources/figures/ownerreview.29 focused plus native4/4 current receiver proofs pass. Actual stored/backfeed release and installation remain unqualified.",
+    "next": "Observe exact-head1628 full native/browser/health/publication checks; resolve failures, fresh3packet preflight and verified merge before handoff/release. No packet closure yet."
   }
 }
