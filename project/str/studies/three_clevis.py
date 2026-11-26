@@ -144,12 +144,13 @@ def movement(g,v):
     keep=(g['pinLengthMm']-(g['cheekInsideGapMm']+2*g['cheekThicknessMm']))/2
     # Pin MUST slide axially to retain NW along-wall freedom; keepers are another end stop.
     keeper=keep-setting-v['guideSlipMm']-g['bladeHeightMm']/2*math.sin(tilt)
-    extraction=g['pinExtractionMm']-(g['pinLengthMm']/2+(g['cheekInsideGapMm']+2*g['cheekThicknessMm'])/2)
+    extraction=v['pinExtractionMm']-(g['pinLengthMm']/2+(g['cheekInsideGapMm']+2*g['cheekThicknessMm'])/2)
     return {'verticalReserveMm':vertical,'guideReserveMm':guide,'matchedAxisReserveMm':axis,
         'keeperTravelReserveMm':keeper,'pinExtractionReserveMm':extraction,
         'unmatchedIndependent10MmAxisWouldFit':width-projected-2*setting>=0,
         'allSpecifiedTravelGeometricallyPossible':min(vertical,guide,axis,keeper,extraction)>0,
         'pinAxisRotationRad':v['pinAxisRotationRad'],'otherRotationRad':tilt,
+        'normalReversalBacklashAtLeastMm':width-diam,
         'zeroRotationalStiffnessProven':False,'slotEndIsVerticalTieWhenTravelExhausted':True}
 
 def placing(c,cage,floor):
@@ -188,7 +189,8 @@ def placing(c,cage,floor):
         'additional300CoreTransverseConfinementAndHookPathsQualified':False,
         'singleInterfaceFieldCrossingsUseCoupledNonpenetratingStack':True,
         'twoIndependentSWNormalAnchorGroupsShareLayersAndFail':True,
-        'supplierRibEnvelopeMeasured':False,'completeCageQualified':False}
+        'supplierRibEnvelopeMeasured':False,'hoopSetFromMaximumRibSurfaceRatherThanNominalAxisRequired':True,
+        'source16H12ArrangementIsAnUnselectedPriorTrial':True,'completeCageQualified':False}
 
 def assess(c,base,cage,floor):
     admit(c);g,m,v=c['geometry'],c['material'],c['movement']
@@ -202,13 +204,14 @@ def assess(c,base,cage,floor):
     root=g['floorRootNearXMm']+g['floorRootThicknessMm'];pinx=262.5+200+(g['comparisonCoreMm']-200)/2+g['pinFromComparisonInnerFaceMm']
     floor_arm=root-pinx;wall_arm=g['pinFromComparisonInnerFaceMm']
     asface=g['floorAnchorCountPerFace']*area(g['floorAnchorNominalDiameterMm'])
+    adverse_lever=xt-xb-2*floor['independentBarToleranceMm']
     rows=[]
     for mu in m['frictionScenarioCoefficients']:
         # Coulomb disk sampled in actual simultaneous directions, NOT mixed maxima.
         for theta in [k*math.pi/12 for k in range(24)] if mu else [0.]:
             vertical=mu*n*math.cos(theta);along=mu*n*math.sin(theta)
             p=pin_screen(g,m,n,vertical,along)
-            bar=max(abs(n/(2*asface)+s*vertical*floor_arm/((xt-xb)*asface)) for s in (-1,1))
+            bar=max(abs(n/(2*asface)+s*vertical*floor_arm/(adverse_lever*asface)) for s in (-1,1))
             floor_shear=abs(vertical)/(2*asface)
             steel_vm=math.sqrt(bar*bar+3*floor_shear*floor_shear)
             rod_z=max(g['southRodZMm']);ecc=abs((sum(g['southRodZMm'])/2)-(lo+hi)/2)+abs(vertical/n)*wall_arm
@@ -294,6 +297,7 @@ def assess(c,base,cage,floor):
         'threeInterfacePointsXYMm':[[pinx,912.5],[912.5,pinx],[pinx,11087.5]],
         'placing':pl,'movement':travel,
         'floorLocalMat':{'normalBarCentresZMm':[xb,xt],'transverseBarCentresZMm':[yb,yt],
+            'adverseNormalAnchorLeverMm':adverse_lever,
             'adverseInterMatParallelClearMm':inter,'barCountsEachFace':g['floorAnchorCountPerFace'],
             'normalBarPositionsAlongMm':[912.5+(i-(g['floorAnchorCountPerFace']-1)/2)*g['floorAnchorPitchMm'] for i in range(g['floorAnchorCountPerFace'])],
             'transverseAreaMm2PerM':area(g['transverseMatNominalDiameterMm'])*1000/g['transverseMatPitchMm'],
@@ -313,7 +317,7 @@ def assess(c,base,cage,floor):
             'wallStrutSplittingEdgeAndExistingCageConfinementQualified':False},
         'partialMetalMassKgPerInterface':mass,'partialThreeInterfaceMetalGKN':sum(mass.values())*3*9.81/1000,
         'partialMassExcludesRodsNutsKeepersCoversRebarAndConcreteReplacement':True,
-        'renewal':{'pinMustBeUnloadedWithTemporaryRatedHorizontalBrace':True,'pinExtractionMm':g['pinExtractionMm'],
+        'renewal':{'pinMustBeUnloadedWithTemporaryRatedHorizontalBrace':True,'pinExtractionMm':v['pinExtractionMm'],
             'normalPinCentreSWMm':pinx,'floorRootBarStartSWMm':root,
             'NWServicePocketXmm':[522.5,g['floorRootNearXMm']],
             'NWExistingWCLeftMm':729.5,'proposedNWTemporaryWCEastShiftMm':v['temporaryNWToiletEastShiftMm'],
@@ -340,6 +344,70 @@ def assess(c,base,cage,floor):
             'stiffenedForkAndCoordinatedCrossRootAndMatHaveNotBeenAuthored':True},
         'evidence':copy.deepcopy(c['evidence']),
         'scope':'Necessary source-bound sizing, actual clash/cover/travel and exploratory elastic plate/prying model. No actual house redistribution, full six-wrench interface demand, product, physical, owner or complete RC resistance acceptance.'}
+
+def physical_geometry(c,base,h,grid,furniture):
+    """Actual controlling footprints with selected prospective core/seat/hardware changes.
+    These are material geometry and access tests, not invented reactions.
+    """
+    g=c['geometry'];v=c['movement'];delta=(g['comparisonCoreMm']-200)/2
+    corner_rows=[]
+    for row in base['corners']:
+        o=row['originXYMm'];sx,sy=row['signXY']
+        grow=delta if row['corner'] in ('SW','NW') else 0.
+        low=-70.;end=930.;inner=130.+grow;outer=low-grow;seat=inner+10;last=end+10
+        rc=[[outer,outer,inner,end],[inner,outer,end,inner]]
+        masonry=[[seat,seat,seat+140,last],[seat+140,seat,last,seat+140]]
+        world=lambda r:bearing.transform(r,o,sx,sy)
+        supports=[]
+        for name in row['groundGirderIds']:
+            girder=grid['girders'][name];a,b=girder['extent'];d=girder['datum'];half=girder['width']/2
+            supports.append([a,d-half,b,d+half] if girder['axis']=='x' else [d-half,a,d+half,b])
+        real=list(map(world,masonry));missing=bearing.uncovered_area(real,supports)
+        notches=2 if row['corner']=='SW' else 1 if row['corner']=='NW' else 0
+        lost=notches*140*200
+        corner_rows.append({'corner':row['corner'],'comparisonCoreWidthMm':200+2*grow,
+            'continuousRCFootprintXYMm':list(map(world,rc)),'new140MasonryFootprintXYMm':real,
+            'actualGroundGirders':row['groundGirderIds'],'uncoveredNewGravityAreaMm2':missing,
+            'masonryTopAreaBeforeNotchesMm2':bearing.union_area(real),
+            'local40DeepSeatRecessesCount':notches,'floorSeatContactRemovedByHardwareMm2':lost,
+            'remainingMasonryFloorSeatMm2':bearing.union_area(real)-lost,
+            'addedRCGrossAreaMm2':bearing.union_area(list(map(world,rc)))-360000,
+            'addedRCEnvelopeKNPerVerticalMAtSource25KNM3':(bearing.union_area(list(map(world,rc)))-360000)*25/1e6,
+            'outsideGlass110ProfileMoveMm':grow,'netMassReplacementCompleted':False})
+    pockets={'SW-X':[522.5,562.5,g['floorRootNearXMm'],1112.5],
+        'SW-Y':[712.5,522.5,1252.5,g['floorRootNearXMm']],
+        'NW-X':[522.5,10720.,g['floorRootNearXMm'],11300.]}
+    conflicts={}
+    for key,pocket in pockets.items():
+        found=[]
+        for name,r in furniture['FIRST'].items():
+            x=bearing.intersection(r,pocket)
+            if x:found.append({'id':name,'actualBoxXYMm':r,'pocketConflictMm2':bearing.area(x)})
+        conflicts[key]=found
+    wc=copy.deepcopy(furniture['FIRST']['rear-WC'])
+    wc[0]+=v['temporaryNWToiletEastShiftMm'];wc[2]+=v['temporaryNWToiletEastShiftMm']
+    bed=copy.deepcopy(furniture['FIRST']['bed2'])
+    bed[0]+=v['temporaryBedEastShiftMm'];bed[2]+=v['temporaryBedEastShiftMm']
+    pin=g['pinFromComparisonInnerFaceMm']+512.5
+    cheek_min=pin-g['cheekAlongNormalHalfDepthAtPinMm']
+    nut_max=512.5+g['rodNutAndWasherProjectionMm']
+    cover_min=3450-g['coverThicknessMm']-2*v['wallFloorIndependentSettingEachMm']-v['verticalSlipMm']
+    plate_top=g['facePlateBottomZMm']+g['facePlateHeightMm']
+    moving_low=g['bladeBottomZMm']-2*v['wallFloorIndependentSettingEachMm']-v['verticalSlipMm']-g['pinFromComparisonInnerFaceMm']*math.sin(v['pinAxisRotationRad'])
+    return {'allFourCornerFootprints':corner_rows,'fullNew140GravityFootprintsOnActualGrid':all(x['uncoveredNewGravityAreaMm2']<1e-6 for x in corner_rows),
+        'newSWAndNWNormalGroundGirderNominalMarginMm':20.,
+        'servicePocketRectanglesXYMm':pockets,'servicePocketsAreRealFloorMaterialRemoval':True,
+        'SWTwoServicePocketsUnionAreaMm2':bearing.union_area([pockets['SW-X'],pockets['SW-Y']]),
+        'SWTwoServicePocketsOverlapMm2':bearing.intersect_area([pockets['SW-X']],pockets['SW-Y']),
+        'actualFIRSTFurniturePocketConflicts':conflicts,
+        'prospectiveNWToiletBoxAfter70EastMm':wc,'NWToiletToPocketNominalGapMm':wc[0]-pockets['NW-X'][2],
+        'prospectiveBedAfter200EastMm':bed,
+        'rodNutToMovingCheekAdverseNormalGapMm':cheek_min-nut_max-2*v['wallFloorIndependentSettingEachMm'],
+        'coverToWallPlateAdverseVerticalGapMm':cover_min-plate_top,
+        'movingBladeToNotchedSeatVerticalReserveMm':moving_low-(3170-g['servicePocketSeatRecessMm']),
+        'pinSouthExtractionSweptYmm':[912.5-v['pinExtractionMm']-g['pinLengthMm']/2-v['toolAxialMm'],912.5+g['pinLengthMm']/2+v['toolAxialMm']],
+        'floorPocketPerimeterFrameAndCoverSupportsQualified':False,
+        'allServiceAndBodyRenewalSweepsQualified':False}
 
 def drawing(c,value):
     g=c['geometry'];s=bearing.Svg(1500,1160,'Three ordinary clevis interfaces: physical development comparison')
@@ -403,12 +471,13 @@ def drawing(c,value):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,required=True);args=ap.parse_args()
     c,base,h,grid,furniture,cage,floor=load();value=assess(c,base,cage,floor)
+    value['physicalGeometry']=physical_geometry(c,base,h,grid,furniture)
     args.out.mkdir(parents=True,exist_ok=True);svg=drawing(c,value);ET.fromstring(svg)
     (args.out/'three-clevis-section.svg').write_text(svg)
     value['sourceSHA256']={p:digest((ROOT/p).read_bytes()) for p in list(c['sourceGitBlobs'])+['project/str/studies/three_clevis.py','project/str/studies/three-clevis-inputs.json','project/str/studies/three_clevis_test.py']}
     value['svgSHA256']=digest(svg.encode())
     data=json.dumps(value,indent=2,allow_nan=False)+'\n';(args.out/'three-clevis-comparison.json').write_text(data)
-    summary={k:value[k] for k in ('status','sourcePressureMinimumKN','screenNormalForceKN','placing','movement','floorLocalMat','frictionScenarioSummary','seizure','concreteEdgeActions','partialMetalMassKgPerInterface','partialThreeInterfaceMetalGKN','renewal','physicalRejections','decisions','evidence','sourceSHA256','svgSHA256')}
+    summary={k:value[k] for k in ('status','sourcePressureMinimumKN','screenNormalForceKN','placing','movement','floorLocalMat','frictionScenarioSummary','seizure','concreteEdgeActions','partialMetalMassKgPerInterface','partialThreeInterfaceMetalGKN','renewal','physicalGeometry','physicalRejections','decisions','evidence','sourceSHA256','svgSHA256')}
     print('THREE_CLEVIS_SUMMARY '+json.dumps(summary,allow_nan=False))
     print('COMPARISON_SHA256 '+digest(data.encode()))
     print('SVG_SOURCE three-clevis-section.svg '+svg.encode().hex())

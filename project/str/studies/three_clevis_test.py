@@ -114,6 +114,17 @@ class ClevisControls(unittest.TestCase):
         self.assertTrue(self.r['decisions']['currentUnbracedFlatCheekFamilyRejectedAtMu06EvenEqualShare'])
         self.assertTrue(self.r['decisions']['currentSWTwoIndependentFloorAnchorDetailsRejected'])
 
+    def test_actual_three_pockets_and_all_four_ground_footprints(self):
+        p=t.physical_geometry(self.c,self.base,self.h,self.grid,self.furniture)
+        self.assertTrue(p['fullNew140GravityFootprintsOnActualGrid'])
+        self.assertEqual([r['comparisonCoreWidthMm'] for r in p['allFourCornerFootprints']],[300,200,300,200])
+        self.assertGreater(p['SWTwoServicePocketsOverlapMm2'],0)
+        self.assertGreater(p['rodNutToMovingCheekAdverseNormalGapMm'],0)
+        self.assertGreater(p['coverToWallPlateAdverseVerticalGapMm'],0)
+        self.assertGreater(p['movingBladeToNotchedSeatVerticalReserveMm'],0)
+        self.assertEqual(p['NWToiletToPocketNominalGapMm'],17.)
+        self.assertFalse(p['allServiceAndBodyRenewalSweepsQualified'])
+
     def test_no_nan_or_acceptance_injection(self):
         for kind in ('nan','approval'):
             c=copy.deepcopy(self.c)
