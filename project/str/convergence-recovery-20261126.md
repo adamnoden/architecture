@@ -56,7 +56,7 @@ Rejected connected-suite duty remains327.403857L/min conservative summed envelop
 
 New additive actual-route observer distinguishes open mouth from roofed wall domain260mm downstream. Genuine outputs regenerated, sourceaudit0, tsc and3purecontrols pass. Actual roof-air reference reserves56.621112mm East and66.621112mm South;64/128change0.005812mm. Unlocated summed/hot sensitivity fails South roof−19.458469mm; adverse high/submerged receives no outlet credit. Fourth saved-stage test and canonical replay were RUNNING at executor loss, completion UNKNOWN. No occupied arrangement acceptance.
 
-Walking-floor alternative remains read-only design, no new implementation: retain2outside rails and use25–26mm S460N cut bars with official thickness-band reference440MPa, include deflection in hydraulic clearance; actual dry-foot eccentric/uplift/thermal/RCreceiver and below-threshold chase duties unresolved. No new strength-only pass or selected support.
+Walking-floor alternative remains an unsupported read-only support hypothesis, no new implementation: retain2outside rails and use25–26mm S460N cut bars with official thickness-band reference440MPa, include deflection in hydraulic clearance; actual dry-foot eccentric/uplift/thermal/RCreceiver and below-threshold chase duties unresolved. No new strength-only pass or selected support.
 
 ## Uniform-law global refinement interrupted
 
