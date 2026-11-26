@@ -1,0 +1,208 @@
+name: Replay recovered L200 node evidence
+
+on:
+  push:
+    branches: [work/zerg-l200-node-recovery-20261126]
+    paths:
+      - '.github/workflows/current-l200-recovery-proof.yml'
+      - 'project/str/studies/current_l200_node.py'
+      - 'project/str/studies/current_l200_node_test.py'
+      - 'project/str/current-l200-node-development.md'
+      - 'project/str/current-l200-node-recovery.md'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: l200-recovery-proof-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+          cache: pip
+          cache-dependency-path: project/str/studies/*requirements.txt
+      - name: Install the original pinned numerical runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          python -m venv --system-site-packages "$RUNNER_TEMP/l200-runtime"
+          "$RUNNER_TEMP/l200-runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
+          echo "STR_FINITE_SOLID_PYTHON=$RUNNER_TEMP/l200-runtime/bin/python" >> "$GITHUB_ENV"
+          echo "L200_EVIDENCE_DIR=$RUNNER_TEMP/l200-evidence" >> "$GITHUB_ENV"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/project/str/studies" >> "$GITHUB_ENV"
+      - name: Recover only the exact retained summary and actual W0 capture
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          "$STR_FINITE_SOLID_PYTHON" -B - <<'PY'
+          import gzip,hashlib,io,json,os,urllib.error,urllib.request,zipfile
+          from pathlib import Path
+          folder=Path(os.environ['L200_EVIDENCE_DIR']);folder.mkdir(parents=True,exist_ok=True)
+          api=os.environ['GITHUB_API_URL'];repo=os.environ['GITHUB_REPOSITORY']
+          expected_run=45814303861
+          expected_head='867e8042e131a35407c4fe3be21807cdb6d23778'
+          def sha(data):return hashlib.sha256(data).hexdigest()
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          def request(url):return urllib.request.Request(url,headers=headers)
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+          records=[]
+          def exact_artifact(identifier,name,filename):
+              url=f'{api}/repos/{repo}/actions/artifacts/{identifier}'
+              with urllib.request.urlopen(request(url),timeout=60) as response:metadata=json.load(response)
+              if metadata['name']!=name or metadata['expired'] or metadata['workflow_run']['id']!=expected_run or metadata['workflow_run']['head_sha']!=expected_head:
+                  raise ValueError('Actual retained artifact/run/head identity differs')
+              opener=urllib.request.build_opener(NoRedirect())
+              try:
+                  with opener.open(request(url+'/zip'),timeout=60) as response:archive=response.read()
+              except urllib.error.HTTPError as response:
+                  if response.code not in (301,302,303,307,308):raise
+                  location=response.headers['Location']
+                  if not location.startswith('https://'):raise ValueError('HTTPS artifact redirect required')
+                  # GitHub credentials are never forwarded to the storage host.
+                  with urllib.request.urlopen(location,timeout=120) as body:archive=body.read()
+              with zipfile.ZipFile(io.BytesIO(archive)) as zipped:
+                  members=[n for n in zipped.namelist() if Path(n).name==filename and not n.endswith('/')]
+                  if len(members)!=1:raise ValueError('Exactly one requested physical artifact member required')
+                  data=zipped.read(members[0])
+              (folder/filename).write_bytes(data)
+              records.append({'artifactId':identifier,'name':name,'runId':expected_run,'headSHA':expected_head,
+                              'archiveSHA256':sha(archive),'member':members[0],'memberSHA256':sha(data),'memberBytes':len(data)})
+              return data
+          summary_data=exact_artifact(15116237950,'finite-signed-summary','finite-signed-summary.json')
+          if len(summary_data)!=115551 or sha(summary_data)!='bfeae934f0e3c16a522250dc7e835a7374a6627673ffbe25d1311358981ee7bf':
+              raise ValueError('Exact original96 summary bytes required; no reconstruction')
+          summary=json.loads(summary_data)
+          zipped=exact_artifact(15115737897,'finite-signed-shard-0','case-00.json.gz')
+          raw=gzip.decompress(zipped);identity=summary['captureIdentities']['0']
+          if sha(zipped)!=identity['gzipSHA256'] or sha(raw)!=identity['rawSHA256']:
+              raise ValueError('Full actual W0 raw/gzip hashes differ')
+          capture=json.loads(raw)
+          if capture['windIndex']!=0:raise ValueError('Actual source W0 required')
+          (folder/'input-artifact-admission.json').write_text(json.dumps({'summarySHA256':sha(summary_data),'summaryBytes':len(summary_data),
+              'W0RawSHA256':sha(raw),'W0GzipSHA256':sha(zipped),'sourceCommit':expected_head,'artifacts':records},indent=2)+'\n')
+          print('PASS original96 summary bytes and full actual W0 raw/gzip identities')
+          PY
+      - name: Verify unchanged source methods and the exact bound native case
+        run: |
+          "$STR_FINITE_SOLID_PYTHON" -B - <<'PY'
+          import gzip,hashlib,json,os
+          from pathlib import Path
+          from current_finite_rc_joint import runtime_versions,uniform_concrete_case
+          from current_l200_node import digest
+          folder=Path(os.environ['L200_EVIDENCE_DIR'])
+          summary=json.loads((folder/'finite-signed-summary.json').read_text())
+          capture=json.loads(gzip.decompress((folder/'case-00.json.gz').read_bytes()));result=capture['result']
+          for name in ('sourceSHA256','methodSHA256'):
+              if result[name]!=summary[name]:raise ValueError('Capture/proof source or finite methods differ')
+              for path,expected in summary[name].items():
+                  if hashlib.sha256(Path(path).read_bytes()).hexdigest()!=expected:raise ValueError('A physical source/method changed: '+path)
+          if runtime_versions()!=summary['runtime'] or result['runtime']!=summary['runtime']:raise ValueError('Original exact numerical runtime required')
+          if summary['sourceCommit']!='867e8042e131a35407c4fe3be21807cdb6d23778' or summary['caseCount']!=96 or summary['headCount']!=52 or summary['portCount']!=153 or summary['normalContactCount']!=32:
+              raise ValueError('Actual parent proof scope differs')
+          native=result['authoredNativeCase'];floor=native['bearingCase']['masonryCase']['verticalCase']['monolithicCase']['houseCase']['joinedCase']['floor']
+          if floor['boundaryCase']['windIndex']!=0 or digest(native)!=capture['derivedNativeCaseSHA256']:raise ValueError('Derived actual W0 request differs')
+          if result['executedConventionalCase']!=uniform_concrete_case(native,result['settings']['youngMPa']) or result['native']['request']!=result['executedConventionalCase']:
+              raise ValueError('Actual executed conventional source request differs')
+          if any(result.get(k) is not False for k in ('candidateAccepted','completeHouseProof','resistanceAccepted')):raise ValueError('No acceptance injection')
+          expected_blobs={
+              'project/str/studies/current_l200_node.py':'8193f312fba3ee0d9833f8930daa93f1156add32',
+              'project/str/studies/current_l200_node_test.py':'bb84c8b720335cf76a9ea987563a5b7477dd0238',
+              'project/str/current-l200-node-development.md':'90996137efeb78acbffcebc051cfb5d17b93c0df'}
+          checked={}
+          for path,expected in expected_blobs.items():
+              data=Path(path).read_bytes();blob=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+              if blob!=expected:raise ValueError('Exact recovered source/report blob changed: '+path)
+              checked[path]={'gitBlob':blob,'sha256':hashlib.sha256(data).hexdigest()}
+          (folder/'source-case-admission.json').write_text(json.dumps({'recoveryHead':os.environ['GITHUB_SHA'],'originalPhysicalProofHead':summary['sourceCommit'],
+              'runtime':runtime_versions(),'sourceCount':len(summary['sourceSHA256']),'finiteMethodCount':len(summary['methodSHA256']),
+              'derivedNativeCaseSHA256':capture['derivedNativeCaseSHA256'],'exactRecoveredFiles':checked,'freshHouseSolvePerformed':False},indent=2)+'\n')
+          print('PASS current58 sources,6 finite methods, exact runtime, source W0 and recovered source/report blobs')
+          PY
+      - name: Replay all192 original physical cuts through recovered consumer
+        run: |
+          "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/current_l200_node.py \
+            --summary "$L200_EVIDENCE_DIR/finite-signed-summary.json" \
+            --capture "$L200_EVIDENCE_DIR/case-00.json.gz" \
+            --out "$L200_EVIDENCE_DIR/current-l200-node-proof.json" \
+            --svg "$L200_EVIDENCE_DIR/current-l200-node.svg"
+      - name: Run the recovered twelve tests against actual retained inputs
+        run: |
+          STR_L200_SUMMARY="$L200_EVIDENCE_DIR/finite-signed-summary.json" \
+          STR_L200_CAPTURE="$L200_EVIDENCE_DIR/case-00.json.gz" \
+          "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/current_l200_node_test.py > "$L200_EVIDENCE_DIR/l200-tests.log" 2>&1
+          cat "$L200_EVIDENCE_DIR/l200-tests.log"
+      - name: Check regenerated evidence against owning report and reject trials
+        run: |
+          "$STR_FINITE_SOLID_PYTHON" -B - <<'PY'
+          import hashlib,json,os,shutil,xml.etree.ElementTree as ET
+          from pathlib import Path
+          folder=Path(os.environ['L200_EVIDENCE_DIR']);r=json.loads((folder/'current-l200-node-proof.json').read_text())
+          test_text=(folder/'l200-tests.log').read_text()
+          if 'Ran 12 tests' not in test_text or '\nOK\n' not in test_text:raise ValueError('Twelve actual recovered tests must pass; no silent skip')
+          if r['caseCount']!=96 or r['physicalCutCount']!=192 or r['geometry']['barCount']!=16 or not r['allBiaxialCompatibleSectionWitnessesExist']:
+              raise ValueError('Actual all192 section comparison differs')
+          def close(got,expected,tolerance):
+              if abs(got-expected)>tolerance:raise ValueError(f'Report comparison differs: {got} versus {expected}')
+          section=r['governingCompatibleSectionStress'];combined=r['governingSixComponentReservation']
+          if (section['windIndex'],section['cut'])!=(58,'upper'):raise ValueError('Governing actual section identity differs')
+          close(section['section']['maximumAbsoluteBarStressMPa'],128.527,.005)
+          close(section['section']['maximumConcreteCompressionStrain'],.000162275,.000000005)
+          close(combined['largestSectionStressPlusReservationMPa'],193.111,.005)
+          close(r['governingLinkFlow']['singleLegFlowRatio'],.523,.001)
+          close(r['geometry']['steelAreaMm2'],1809.5573684677208,.000001)
+          couple=r['governingNodeCouple']
+          if couple['windIndex']!=72:raise ValueError('Governing actual node couple identity differs')
+          close(max(abs(v) for v in couple['wrenchAboutActualSlabMidplaneKN_KNm'][3:5]),79.547200,.000001)
+          expected={(12.,100.):(49.172,915.108,134.),(12.,55.):(80.450,503.309,134.),
+                    (14.,75.):(77.874,603.114,133.),(16.,80.):(86.833,577.464,132.)}
+          for row in r['floorTrials']:
+              capacity,development,run=expected[(row['barDiameterMm'],row['pitchMm'])]
+              close(row['necessaryZeroAxialStrip']['strainCompatibleCapacityKNmPerM'],capacity,.001)
+              close(row['straightDevelopmentAtChordStressMm'],development,.001);close(row['actualStraightWallWidthAvailableMm'],run,.000001)
+              if row['straightFreeEdgeAnchoragePasses']:raise ValueError('Rejected straight edge was silently accepted')
+          tail=r['verticalTailTrial']
+          if not tail['allTailBondLengthsSufficient'] or tail['parallelPairsBelow21Mm']<=0 or tail['candidateAccepted']:raise ValueError('Actual rejected vertical-tail witness differs')
+          close(tail['minimumTailWallEndAdverseCoverMm'],4.,.000001)
+          if tail['necessaryFullYieldBendMandrelMm']>=200:raise ValueError('Recorded necessary bend comparison differs')
+          if any(r[k] is not False for k in ('candidateAccepted','resistanceAccepted','reinforcementAccepted','anchorageAccepted','completeHouseProof')):
+              raise ValueError('No engineering acceptance')
+          ET.parse(folder/'current-l200-node.svg')
+          report=Path('project/str/current-l200-node-development.md').read_text()
+          if not all(word in report for word in ('128.527','193.111','79.547200','621.118','Twelve tests passed')):raise ValueError('Owning observed report was not retained')
+          for path in ('project/str/current-l200-node-development.md','project/str/current-l200-node-recovery.md'):shutil.copy2(path,folder/Path(path).name)
+          verdict={'status':'actual-recovered-consumer-and12-tests-pass','recoveryHead':os.environ['GITHUB_SHA'],
+                   'originalPhysicalProofHead':r['sourceCommit'],'caseCount':96,'physicalCutCount':192,
+                   'newHouseSolvePerformed':False,'generatedSVGXMLValidated':True,'humanVisualInspectionPerformed':False,
+                   'proofSHA256':hashlib.sha256((folder/'current-l200-node-proof.json').read_bytes()).hexdigest(),
+                   'svgSHA256':hashlib.sha256((folder/'current-l200-node.svg').read_bytes()).hexdigest(),
+                   'candidateAccepted':False,'resistanceAccepted':False,'directBearingAlternativeExecuted':False}
+          (folder/'replay-validation.json').write_text(json.dumps(verdict,indent=2)+'\n')
+          (folder/'README.txt').write_text('Actual retained parent artifacts; freshly regenerated node comparison and twelve tests. No house solve, physical-method change, direct-bearing calculation or engineering acceptance. SVG XML validated; no human visual inspection claimed.\n')
+          print('L200_RECOVERED_CONSUMER_PASS '+json.dumps(verdict,separators=(',',':')))
+          PY
+          git diff --exit-code
+      - name: Preserve exact parent inputs and freshly regenerated node evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: l200-node-recovery-${{ github.sha }}
+          path: ${{ runner.temp }}/l200-evidence
+          if-no-files-found: error
+          retention-days: 90
