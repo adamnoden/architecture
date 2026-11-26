@@ -57,7 +57,6 @@ def main(folder):
     maximum_f=max(abs(a-b) for a,b in zip(python['condensedForceKN'],sparse['condensedForceKN']))
     magnitude=max(1.,max(abs(v) for r in python['condensedStiffnessKNPerMm'] for v in r))
     if maximum_k/magnitude>1e-8 or maximum_f>1e-6:raise ValueError('Existing backends fail bounded same-operator equivalence')
-    if max(abs(v) for v in sp_diag['actualCompleteWrenchResidualKN_KNm'])>1e-5:raise ValueError('Existing sparse operator still fails original guard on exact captured physical displacement')
     write(folder/'exact-python-component.json',python);write(folder/'exact-sparse-component.json',sparse)
     summary={'schema':'str-rear-exact-membrane-backend-comparison/1','capturedArtifactId':15124951816,'capturedArchiveSHA256':ARTIFACT_SHA,
         'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
@@ -65,9 +64,10 @@ def main(folder):
         'pythonPolicy':python['numericalCondensation'],'sparsePolicy':sparse['numericalCondensation'],
         'python':py_diag,'sparseOnCapturedDisplacement':sp_diag,'maximumKDifferenceKNPerMm':maximum_k,'relativeMaximumKDifference':maximum_k/magnitude,'maximumForceDifferenceKN':maximum_f,
         'sourceSHA256':packet['sourceSHA256'],'methodSHA256':packet['methodSHA256'],'runtime':packet['runtime'],
-        'noGlobalSolvePerformed':True,'freshSparseHouseStillRequired':True,
+        'sparseMeetsOriginalGuard':max(abs(v) for v in sp_diag['actualCompleteWrenchResidualKN_KNm'])<=1e-5,'noGlobalSolvePerformed':True,'freshSparseHouseStillRequired':True,
         'sourceAccountMigrationRequired':True,'candidateAccepted':False,'strengthAccepted':False,'ownerAccepted':False}
     write(folder/'exact-backend-summary.json',summary)
     print('REAR_EXACT_BACKEND_SUMMARY '+json.dumps(summary,allow_nan=False),flush=True)
+    if not summary['sparseMeetsOriginalGuard']:raise ValueError('Existing sparse operator still fails original guard; complete matrices/metrics retained')
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--folder',type=Path,required=True);main(p.parse_args().folder)

@@ -44,6 +44,7 @@ jobs:
           "$STR_FINITE_SOLID_PYTHON" -B -m py_compile project/str/studies/rear_bearing_membrane_backend.py
           "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/rear_bearing_membrane_backend.py --folder "$RUNNER_TEMP/rear-exact-backend" > "$RUNNER_TEMP/rear-exact-backend/comparison.log" 2>&1
       - name: Independent existing dense sparse passivity work and singularity controls
+        if: always()
         run: |
           "$STR_FINITE_SOLID_PYTHON" -B -m unittest discover -s project/str/studies -p perforated_floor_sparse_test.py -v > "$RUNNER_TEMP/rear-exact-backend/backend-tests.log" 2>&1
       - name: Show actual component evidence
