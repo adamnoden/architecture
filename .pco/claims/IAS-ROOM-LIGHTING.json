@@ -9,8 +9,8 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T13:00:52.000Z",
-  "expiresAt": "2026-11-26T13:45:52.000Z",
+  "heartbeatAt": "2026-11-26T13:23:48.000Z",
+  "expiresAt": "2026-11-26T14:08:48.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Exact40f66plan+16authoredfiles protected b5f825f0; boundedcircuitproducerproofpreparing. Rootbacac04d fixes140stale136plan; currenthosttypes/audit/unchanged200 pass, actual144CLIactive.",
-    "next": "Finishroot144invalidationproof+1629CI/preflight. Finishclosedbay136/circuit owningregeneration/full29 via boundedrunner; no acceptance inferred.",
-    "blocker": "Executorunavailable. Laterclosedcircuitjoinoutputs/bindingspending, electrical/material/physical/ownerholdsopen."
+    "evidence": "1629@5ab92bc0 fixedactualpart-planinvalidation, fiveviewsunchanged; fullCIactive. Lightingb5/22b sourceandfull29/type/audit/136min10PASS45825263728 artifact15119877731.",
+    "next": "Preservetestedgeneratedblobs+targettree; integratecircuit/closedroomwithrootcurrentchangesandrerunowningchecks. Completeinternalprotection/servicebandduties; noowner/physicalacceptance.",
+    "blocker": "Executorunavailable; generatedtreecurrentlyartifact-only, preservationjobactive. Electrical/materialqualificationopen."
   },
   "pr": 1629
 }
