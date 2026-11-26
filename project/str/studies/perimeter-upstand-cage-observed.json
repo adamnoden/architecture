@@ -1,0 +1,105 @@
+{
+  "schema": "str-perimeter-upstand-cage-observed/1",
+  "status": "SOURCE-BOUND LOCAL PROFILE PROOF; NO HOUSE OR RESISTANCE ACCEPTANCE",
+  "sourceCommit": "9f52b14a16370f628fa59a696a8db5184d6e4339",
+  "sourceTree": "d6f63debd9e29932578fa09dd6f1954fc6d74a8e",
+  "baselineCommit": "890e6a65c113e4e1135cf82edd06cc8af2d15343",
+  "workflowRun": 45878156786,
+  "workflowJob": 140110803345,
+  "workflowConclusion": "success",
+  "testsObserved": 30,
+  "testsDurationSeconds": 2.591,
+  "sourceSHA256": {
+    "perimeter_upstand_cage.py": "6c08cd2108ad53554793d180f251b261ac1e88f48a304942d39a3e82c6297f3f",
+    "perimeter-upstand-cage-inputs.json": "4115efdca41ee59483698e53ebd9bb24bcc4580aadc2885a54d739c42544f0b3",
+    "perimeter_upstand_cage_test.py": "a25c686082ba8ca9e68c28636cb43d6f6c3ad9ce354e24f80f7474a557d09863"
+  },
+  "sourceGitBlobs": {
+    ".github/workflows/perimeter-upstand-cage.yml": "d34e630f9756c8505c022c3cff068a23084f4039",
+    "project/str/rear-arch-slab-tie-api-checkpoint.md": "260b2dcdd20cbbf9be61bb575f39b56ac949d00f",
+    "project/str/studies/perimeter-upstand-cage-inputs.json": "3d8d851606d4fb36ee04fe95ee808253eee4b133",
+    "project/str/studies/perimeter_upstand_cage.py": "2fb40229c7a8498efa5978e409914970527d0e32",
+    "project/str/studies/perimeter_upstand_cage_test.py": "daa17a5971a83fde79c3efa63e4d55bb8dea10cd"
+  },
+  "onlyAddedFilesRelativeToBaseline": true,
+  "allInheritedSourceBytesUnchanged": true,
+  "output": {
+    "path": "project/str/studies/perimeter-upstand-cage-checkpoint.json",
+    "bytes": 398851,
+    "SHA256ReportedByProducer": "bfe31da08da4be5e4bac085ea01a374fbfe0d9e32f6ab721bec30d34cd53a92e",
+    "retainedExactlyFromJobLogHex": true
+  },
+  "drawing": {
+    "path": "project/str/drawings/perimeter-upstand-cage.svg",
+    "bytes": 71690,
+    "retainedExactlyFromJobLogHex": true,
+    "chromiumRenderInspected": true,
+    "renderPx": [
+      1500,
+      1240
+    ]
+  },
+  "artifact": {
+    "id": 15146756154,
+    "name": "perimeter-upstand-cage-exact-checkpoint",
+    "size_in_bytes": 178308,
+    "url": "https://api.github.com/repos/adamnoden/architecture/actions/artifacts/15146756154",
+    "archive_download_url": "https://api.github.com/repos/adamnoden/architecture/actions/artifacts/15146756154/zip",
+    "expired": false,
+    "created_at": "2026-11-26T18:45:16Z",
+    "expires_at": "2027-02-24T18:43:15Z",
+    "updated_at": "2026-11-26T18:45:16Z",
+    "digest": "sha256:8e3f8b6f6f79372211c86c6acaa106cf4d08ec89a29fb673c643e60b73e96231",
+    "workflow_run": {
+      "id": 45878156786,
+      "repository_id": 1400806405,
+      "head_repository_id": 1400806405,
+      "head_branch": "work/zerg-perimeter-upstand-cage-20261126",
+      "head_sha": "9f52b14a16370f628fa59a696a8db5184d6e4339"
+    }
+  },
+  "proofBoundary": {
+    "independentBarRelativeBoxMm": 10,
+    "commonPlusIndependentExternalCoverDeductionMm": 10,
+    "sameBarRelativeFormingBoxMm": 2,
+    "minimumExternalCoverMm": 40,
+    "minimumParallelFloorClearMm": 30,
+    "interMatClearMm": 22,
+    "wireTiedContactNormalConstraintsRequired": true,
+    "allPrimitiveBoxPrunesAreClearanceCertificates": true,
+    "partialLocalBarWindowsOnly": true,
+    "spanLapsDeepBandsAndAssemblySequenceQualified": false
+  },
+  "scope": {
+    "sourceOnly": true,
+    "nativeHouseSolved": false,
+    "old96DemandTransferred": false,
+    "wholeCagePlacingAccepted": false,
+    "completeResistanceAccepted": false,
+    "productAccepted": false,
+    "ownerAccepted": false,
+    "houseAccepted": false,
+    "physicalAccepted": false
+  },
+  "priorIncompleteProofs": [
+    {
+      "sourceCommit": "69455f8e3da6c2b1f436421d0d230b7e5ea76f18",
+      "run": 45875366338,
+      "observedTests": 24,
+      "limitation": "No same-bar self-intersection control; not a complete placing proof"
+    },
+    {
+      "sourceCommit": "70fa309c5a533c9ad526303a0a163e699994bb1c",
+      "run": 45875727468,
+      "observedTests": 27,
+      "limitation": "No same-bar self-intersection control; not a complete placing proof"
+    },
+    {
+      "sourceCommit": "f93674b355e2e99beee89c0c1a961bd2567c81ba",
+      "run": 45876646256,
+      "observedTests": 29,
+      "conclusion": "failure",
+      "limitation": "Actual column near-hook plane transition intersects its own135 return"
+    }
+  ]
+}
