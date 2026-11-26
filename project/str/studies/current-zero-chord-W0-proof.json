@@ -1,0 +1,144 @@
+{
+  "schema": "str-zero-extra-chord-W0-observed-receipt/1",
+  "scope": "Exact aggregate facts emitted by the successful paired workflow; full matrices, head deltas, port movements and native inputs remain in the referenced actual raw artifact.",
+  "execution": {
+    "runId": 45831879777,
+    "jobId": 139950466551,
+    "head": "a8decb9845498fdb864121ee57d0caba16b98002",
+    "url": "https://github.com/adamnoden/architecture/actions/runs/45831879777",
+    "status": "success",
+    "lightweightTestsPassed": 11,
+    "newWholeHouseSolves": 2
+  },
+  "parent": {
+    "runId": 45814303861,
+    "head": "867e8042e131a35407c4fe3be21807cdb6d23778",
+    "summaryRawSHA256": "bfeae934f0e3c16a522250dc7e835a7374a6627673ffbe25d1311358981ee7bf",
+    "summaryBytes": 115551,
+    "summaryArtifactId": 15116237950,
+    "W0ArtifactId": 15115737897
+  },
+  "rawArtifact": {
+    "id": 15121319810,
+    "name": "zero-chord-W0-a8decb9845498fdb864121ee57d0caba16b98002",
+    "bytes": 6122123,
+    "sha256": "sha256:d08a3c1872120980d1b820cfc30b37a79bf824aa5f2770eb4905fdd666b74e67",
+    "createdAt": "2026-11-26T13:46:16Z",
+    "expiresAt": "2027-02-24T13:43:13Z",
+    "url": "https://github.com/adamnoden/architecture/actions/runs/45831879777/artifacts/15121319810"
+  },
+  "result": {
+    "schema": "str-zero-extra-chord-W0-comparison/1",
+    "status": "fresh-positive-and-exact-zero-W0-computed-unselected",
+    "runtime": {
+      "numpy": "2.3.5",
+      "python": "3.12.16",
+      "scikit-fem": "12.0.2",
+      "scipy": "1.17.0"
+    },
+    "sourceChanges": [
+      {
+        "newSHA256": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+        "oldSHA256": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "path": "project/str/studies/distributed_floor_compatibility.py",
+        "scope": "Finite exact-zero additional axial-chord admission"
+      },
+      {
+        "newSHA256": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
+        "oldSHA256": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "path": "project/str/studies/perforated_floor_condensation.py",
+        "scope": "Finite exact-zero extra-chord admission and eliminated-column bookkeeping repair; pivot/fill/force formulas/order/tolerances unchanged"
+      }
+    ],
+    "inputPacketSHA256": "e65d428e689301516199e32e3577ca6306e9aca07fed11bc0fee7562adcf528e",
+    "historicalPositiveControlMaximumHeadDeltaKN_KNm": 0,
+    "maximumHeadDeltaKN_KNm": 0.3275435660519861,
+    "samePhysicalAppliedWrenchResidualKN_KNm": [
+      -3.375077994860476e-13,
+      5.684341886080802e-14,
+      0,
+      -1.0913936421275139e-11,
+      -3.2741809263825417e-11,
+      5.6843418860808015e-11
+    ],
+    "finiteChordRemovalMinimumRelativeEigenvalue": -3.1297550687525836e-15,
+    "scope": "Two freshly assembled actual200mm W0 houses. One finiteSW joint and three rigid corner controls; G/Q and physical geometry unchanged. Exact zero removes additional axial chord only. No96 zero-chord envelope or monotonic/conservative demand claim.",
+    "currentSavedEngineeringDocumentAdmitted": false,
+    "integrationDebt": "Exploratory branch only. Owning source-account/current-model identities and applicable consumers require legitimate migration before adoption.",
+    "candidateAccepted": false,
+    "resistanceAccepted": false,
+    "completeHouseProof": false,
+    "reinforcementAccepted": false,
+    "ownerAccepted": false,
+    "cases": {
+      "positive": {
+        "additionalAxialChordEAKN": 180955.73684677208,
+        "concreteBandEAKN": 231000,
+        "minimumHeadFzKN": -60.71260343247721,
+        "maximumHeadFzKN": 237.701222267108,
+        "tensileHeadCount": 4,
+        "maximumFrameTranslationMm": 16.157871976745174,
+        "maximumRoofRingTranslationMm": 16.300461842360995,
+        "maximumFloorInterfaceTranslationMm": 6.915296680537457,
+        "activeContactCount": 32,
+        "topCompressionKN": 7.57969734157645,
+        "maximumBodyEquilibriumResidualKN": 3.4778846469407654e-11,
+        "jointStrainEnergyKNm": 0.043490854723536844,
+        "actualWallCutActionsKN_KNm": {
+          "lower": [
+            11.90467927761041,
+            -30.945852662404047,
+            73.20956041325098,
+            15.045623722059839,
+            13.12334058450201,
+            0.2820141825362026
+          ],
+          "upper": [
+            -8.315531109162121,
+            19.77708033836926,
+            -45.18240594265531,
+            -26.02183304012159,
+            -21.13104072558401,
+            -1.0374857630736536
+          ]
+        },
+        "maximumHouseWrenchResidualKN_KNm": 7.349626685027033e-9,
+        "maximumJointWrenchResidualKN_KNm": 5.0316373290115735e-9
+      },
+      "zero": {
+        "additionalAxialChordEAKN": 0,
+        "concreteBandEAKN": 231000,
+        "minimumHeadFzKN": -60.51882839150433,
+        "maximumHeadFzKN": 237.722720638154,
+        "tensileHeadCount": 4,
+        "maximumFrameTranslationMm": 16.15392043917153,
+        "maximumRoofRingTranslationMm": 16.299464456077768,
+        "maximumFloorInterfaceTranslationMm": 6.924975040396694,
+        "activeContactCount": 32,
+        "topCompressionKN": 7.577411983634482,
+        "maximumBodyEquilibriumResidualKN": 4.450884799611643e-11,
+        "jointStrainEnergyKNm": 0.043406201147795836,
+        "actualWallCutActionsKN_KNm": {
+          "lower": [
+            11.882533390947355,
+            -31.12929830523021,
+            73.22474381096862,
+            14.61614255068273,
+            13.146361462254164,
+            0.2868090398161345
+          ],
+          "upper": [
+            -8.330159237499661,
+            19.62154142182584,
+            -45.19273783785906,
+            -25.719926156706066,
+            -21.12806930243759,
+            -1.0218210708795008
+          ]
+        },
+        "maximumHouseWrenchResidualKN_KNm": 4.922640073345974e-9,
+        "maximumJointWrenchResidualKN_KNm": 4.589509217112209e-9
+      }
+    }
+  }
+}
