@@ -59,10 +59,13 @@ export function deriveUtilityHotHead({choice,sourceHotVertices,head,obstacles=[]
    &&[...captureChecks,...gravityChecks].every(q=>typeof q.reserveMm==='number'&&Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7)
    &&capturePhase.fullHeadDynamicN>0&&capturePhase.eachEyeAndHoistMinimumVerticalDemandN>=capturePhase.fullHeadDynamicN
    &&capturePhase.referenceBeamStressMPa<=capturePhase.referenceAllowableMPa,
+  headReleaseAndRestChecks=capturePhase?.headReleaseAndRestChecks??[],
+  computedHeadAtIndependentRest=computedCapture&&headReleaseAndRestChecks.length>0&&headReleaseAndRestChecks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7),
   historicalFullHeadRemoved=c.headCapturedBeforeFrontRailReleaseRequired!==true&&c.headFullyRemovedBeforeFrontRailReleaseRequired===true;
  if(!frontRail||c.frontUpperRailRemovedBeforeSpoolNorth!==true||(!computedCapture&&!historicalFullHeadRemoved))renewalChecks.push({id:'hot/source-bound-positive-head-capture-required',kind:'required-phase',reserveMm:-1});
+ if(c.headCapturedBeforeFrontRailReleaseRequired===true&&!computedHeadAtIndependentRest)renewalChecks.push({id:'hot/source-bound-complete-head-rest-required',kind:'required-phase',reserveMm:-1});
  checks.sort((a,b)=>a.reserveMm-b.reserveMm);
- return {schema:'had-utility-current-hot-head/1',retained:r,choice:c,formedSpool:bends,normalPermanentEnvelopes:normal,capturePhase:{computedNecessaryGravityCapture:computedCapture,sourceDigest:capturePhase?.sourceDigest??null,historicalFullHeadRemovedControl:historicalFullHeadRemoved,physicalHandlingAndFloorAdmitted:false},
+ return {schema:'had-utility-current-hot-head/1',retained:r,choice:c,formedSpool:bends,normalPermanentEnvelopes:normal,capturePhase:{computedNecessaryGravityCapture:computedCapture,computedHeadAtIndependentRest,sourceDigest:capturePhase?.sourceDigest??null,historicalFullHeadRemovedControl:historicalFullHeadRemoved,physicalHandlingAndFloorAdmitted:false},
   inventory:{sourceH0FullExternalBodyL:sourceBodyOuterL,downstreamBackboneFull74mmCoverL:backboneOuterL,lowerTerminalFull50mmCoverL:terminalOuterL,newSpoolMaximumWaterL:spoolWaterL,sourceUnionFullExternalBoxL:sourceUnionOuterL,headUnionFullExternalBoxL:headUnionOuterL,drainFullExternalBoxL:drainOuterL,isolatedH0LowerBranchUpperL:localWaterUpperL,metalAndInsulationDeliberatelyIncluded:true,domesticStoreOrUpperNetworkIncluded:false,actualH0ClosureAndZeroPressureQualified:false},
   receiver:{outerMm:bin,innerGrossCeilingL:innerGrossL,requiredVerifiedNetL:c.receiverUsableMinimumL,spoutMm:spout,maximumPartialBatchL:c.maximumPartialBatchL,closeDrainBeforeEmptying:true,actualNetCapacityAndHandlingQualified:false},
   headFirstRelease:{headFirstUpMm:headLift,thenCapturedSpoolUpMm:up,thenSpoolNorthMm:c.spoolNorthToRestMm,fixedSourceUnionBareMm:fixedSourceBare,movingSourceHalfBareMm:sourceBare,movingHeadHalfBareMm:headBare,capsFitOnlyAfterSpoolWithdrawn:true,opposedAxialFacesNotReleasedBySpoolTranslationAlone:true},

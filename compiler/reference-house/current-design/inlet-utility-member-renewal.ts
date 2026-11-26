@@ -233,6 +233,7 @@ export function inletUtilityOrdinaryCapture(i:{source:Source;wet:Wet}){
   sourceBoundCapturePhase:{schema:'had-utility-head-capture-phase/1' as const,sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,context:source.rearTreeContext,frame:source.host.geometry.frame,activePaths:source.route.paths,choice:wet.choice,controls:c,joints:j}),
    headHotPortMm:bowl.hotPortMm,headColdPortMm:bowl.coldPortMm,frontUpperRailId:'IAS/frame/EW rail at y1350 / z850',
    captureGeometryChecks:rows.filter(q=>q.id.startsWith('capture/')),gravityChecks:rows.filter(q=>q.phase==='gravity'),
+   headReleaseAndRestChecks:[...rows.filter(q=>q.phase.startsWith('head-')),...earliestToolChecks,{id:'rear-upper-rail-captured-with-seats-withdrawal-and-park-incomplete',reserveMm:-1}],
    fullHeadDynamicN:W,eachEyeAndHoistMinimumVerticalDemandN:W,referenceBeamStressMPa:gravityBeamMoment*s/2/c.minimumSectionIMm4,referenceAllowableMPa:200/1.5,
    actualPhysicalHandlingFloorAndInstalledAcceptance:false as const},
   ordinaryRenewalAccepted:false,

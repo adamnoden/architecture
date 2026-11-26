@@ -157,7 +157,7 @@ test('formed hot spool has finite localH0 inventory and a separately bounded sha
  assert.equal(wet.hot.actualToolReactionAndHeadPickupAccepted,false)
  assert.ok(wet.hot.renewalGeometry.frontUpperRailStillPresentControl.some(q=>q.reserveMm<0))
  assert.equal(wet.hot.renewalGeometry.headFullRemovalToolAndTemporaryStabilityProofAccepted,false)
- assert.equal(wet.hot.renewalGeometry.necessaryConditionalSpoolSweeps,wet.hot.capturePhase.computedNecessaryGravityCapture,JSON.stringify(wet.hot.renewalGeometry.failures))
+ assert.equal(wet.hot.renewalGeometry.necessaryConditionalSpoolSweeps,wet.hot.capturePhase.computedHeadAtIndependentRest,JSON.stringify(wet.hot.renewalGeometry.failures))
  const shallow=structuredClone(choice);shallow.coldDistribution.hotService.receiverUsableMinimumL=5
  assert.equal(inletUtilityWetAssembly({source:current,choice:shallow}).hot.geometry.necessarySpecifiedGeometry,false)
 })
@@ -246,6 +246,8 @@ test('current hot rail guard consumes computed capture rows and digest; a naked 
  assert.ok(missing.renewalGeometry.failures.some(q=>q.id==='hot/source-bound-positive-head-capture-required'))
  assert.equal(historical.capturePhase.historicalFullHeadRemovedControl,true)
  assert.equal(wet.hot.capturePhase.historicalFullHeadRemovedControl,false)
+ assert.equal(wet.hot.capturePhase.computedHeadAtIndependentRest,false)
+ assert.ok(wet.hot.renewalGeometry.failures.some(q=>q.id==='hot/source-bound-complete-head-rest-required'))
  assert.equal(wet.hot.capturePhase.sourceDigest,phase.sourceDigest)
  const blocked=structuredClone(current)
  blocked.rearTreeContext.obstacles=[...blocked.rearTreeContext.obstacles,{id:'explicit-blocked-capture-foot',boxMm:[9920,680,0,60,60,200],presence:'always'}]
