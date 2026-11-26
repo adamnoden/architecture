@@ -1,3 +1,5 @@
+import {readRearBearingSettings} from '../../../compiler/reference-house/current-design/structural-rear-bearing.js'
+import {sha256SemanticFingerprint} from '../../../compiler/core/identity.js'
 import {readWetBeamEndDevelopmentControls} from '../../../compiler/reference-house/current-design/structural-wet-beam-end-settings.js'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { compileEngineeringDocument, readEngineeringDocument } from '../../../compiler/reference-house/current-design/engineering-document.js'
@@ -34,6 +36,43 @@ export function wetBeamEndReview(value: unknown) {
     compatibleCurvedBarForceAvailable:false as const,beamEndDRegionAccepted:false as const,bondAndAnchorageAccepted:false as const,
   }}
 }
+/** Present only the actual proposal emitted for this saved rear comparison. */
+export function rearBearingReview(value: unknown) {
+  if(value===null||value===undefined)return null
+  const record=(v:unknown):v is Record<string,any>=>!!v&&typeof v==='object'&&!Array.isArray(v)
+  const finite=(v:unknown):v is number=>typeof v==='number'&&Number.isFinite(v)
+  const pair=(v:unknown)=>Array.isArray(v)&&v.length===2&&v.every(finite)
+  if(!record(value)||!['analysis-pending','computed-unselected-comparison','unsupported'].includes(value.status)
+    ||!record(value.request)||typeof value.requestDigest!=='string'||sha256SemanticFingerprint(value.request)!==value.requestDigest
+    ||['candidateAccepted','wholeHouseAccepted','strengthAccepted','ownerAccepted'].some(k=>value[k]!==false))throw new TypeError('Rear comparison lost its saved request or unselected scope')
+  const controls=readRearBearingSettings(value.request.choices)
+  const diagnostics=(Array.isArray(value.diagnostics)?value.diagnostics:[]).map((d:unknown)=>{
+    if(!record(d)||typeof d.code!=='string'||typeof d.message!=='string')throw new TypeError('Invalid rear bearing diagnostic')
+    return{code:d.code,message:d.message}
+  })
+  const result=record(value.result)?value.result:null
+  const geometry=result?(value.status==='computed-unselected-comparison'?result.actualReplacement?.geometry:result.geometry):null
+  let proposal=null
+  if(geometry!==null&&geometry!==undefined){
+    const g=geometry
+    if(!record(g)||g.schema!=='str-rear-direct-bearing-plan/1'||!pair(g.rawOpeningYMm)||!pair(g.finishedOpeningYMm)
+      ||!finite(g.finishedClearWidthMm)||!finite(g.axisXMm)||!finite(g.lintelBottomZMm)||!finite(g.southCrossPassageMm)
+      ||typeof g.planPass!=='boolean'||typeof g.sourceGeometryDigest!=='string'
+      ||sha256SemanticFingerprint(g.choices)!==sha256SemanticFingerprint(controls)||JSON.stringify(g.rawOpeningYMm)!==JSON.stringify(controls.openingYMm)
+      ||!record(result?.drawings)||typeof result.drawings['rear-bearing-plan.svg']!=='string'||typeof result.drawings['rear-bearing-section.svg']!=='string'
+      ||['candidateAccepted','appearanceAccepted','physicalHandlingAccepted'].some(k=>g[k]!==false)
+      ||(value.status==='analysis-pending'&&!g.planPass))throw new TypeError('Rear comparison lost current geometry, drawings or proof limits')
+    proposal={rawOpeningYMm:g.rawOpeningYMm as [number,number],finishedOpeningYMm:g.finishedOpeningYMm as [number,number],
+      finishedClearWidthMm:g.finishedClearWidthMm as number,axisXMm:g.axisXMm as number,lintelBottomZMm:g.lintelBottomZMm as number,
+      southCrossPassageMm:g.southCrossPassageMm as number,planPass:g.planPass as boolean,sourceGeometryDigest:g.sourceGeometryDigest as string,
+      planSvg:result!.drawings['rear-bearing-plan.svg'] as string,sectionSvg:result!.drawings['rear-bearing-section.svg'] as string}
+  }else if(value.status!=='unsupported')throw new TypeError('Rear comparison has no actual proposal')
+  const heads=value.status==='computed-unselected-comparison'?result?.finiteHouseResult?.native?.nativeVertical?.native?.heads:undefined
+  if(value.status==='computed-unselected-comparison'&&(!Array.isArray(heads)||heads.length!==52))throw new TypeError('Rear comparison lost its actual full-house result')
+  return{status:value.status as 'analysis-pending'|'computed-unselected-comparison'|'unsupported',controls,requestDigest:value.requestDigest as string,
+    diagnostics,proposal,nativeHeadCount:Array.isArray(heads)?heads.length:null,
+    candidateAccepted:false as const,wholeHouseAccepted:false as const,strengthAccepted:false as const,ownerAccepted:false as const}
+}
 export async function readEditorEngineeringDocument() {
   const document = await readEngineeringDocument(readGeorgianDesignSnapshot())
   // Explicit initial scope, not a fallback or silent stage deletion on import.
@@ -60,6 +99,7 @@ export async function runEditorEngineeringRequest(input: unknown) {
     floorEvidence: floor ? { headCount:floor.native.heads.length, contactComputed:floor.wetBearingContact?.status==='computed-comparison',
       finiteJointStatus:floor.finiteJointComparison?.status??null,finiteJointDiagnostics:floor.finiteJointComparison?.diagnostics??[],lowerMasonryStatus:floor.lowerMasonryComparison?.status??null,lowerMasonryDiagnostics:floor.lowerMasonryComparison?.diagnostics??[],contourStatus:floor.contourComponent?.status??null,contourDiagnostics:floor.contourComponent?.diagnostics??[],slabSolidCompatibility:floor.slabSolidCompatibility, nominalHeadFanPlacementReserveMm:fanReserves.length?Math.min(...fanReserves):null, nominalHeadFanStatus:floor.wetPostHeadFan?.status??null, jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
     wetBeamEnd: wetBeamEndReview(floor?.wetBeamEndDevelopment),
+    rearBearing: rearBearingReview(floor?.rearBearingComparison),
     groundPocketLoads:ground?{status:ground.status,controls:ground.controls,diagnostics:ground.diagnostics,
       headCount:ground.status==='computed-unselected-candidate'?ground.native.heads.length:null,
       addedPhysicalGKN:ground.status==='computed-unselected-candidate'?ground.comparison.addedPhysicalGKN:null,

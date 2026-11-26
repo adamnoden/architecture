@@ -1,3 +1,4 @@
+import {readRearBearingSettings} from './structural-rear-bearing.js'
 import {readCurrentFiniteJointSettings} from './structural-current-finite-joint-settings.js'
 import {admitStoreDrainChoice} from './inlet-store-drain.js'
 import {readLowerMasonrySettings} from './structural-lower-masonry-settings.js'
@@ -44,6 +45,7 @@ export const editableInletBankId='HAD/indoor-isolation-bank'
 export const editableInletBankFields=['indoorBankXMm','indoorUtilityAxisZMm','indoorTailOffsetMm','indoorUtilityReturnXMm','indoorWesternReturnXMm','pipeJacketDensityComparisonKgM3','pipeInsulationDensityComparisonKgM3'] as const
 export const editableRoofId = 'MAT/ring-roof-field'
 export const editableFloorSectionId = 'STR/current-floor-section'
+export const editableRearBearingId = 'STR/rear-direct-bearing-comparison'
 export const editableDistributedFloorId = 'STR/current-distributed-floor'
 export const editableWetSupportId = 'STR/wet-wall-support'
 export const editableWetCageId = 'STR/wet-wall-support/reinforcement'
@@ -141,6 +143,19 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
         ||typeof operation.widthMm!=='number'||!Number.isFinite(operation.widthMm)||operation.widthMm<140||operation.widthMm>240)throw new TypeError('Existing distributed floor and explicit southwest core width140..240mm required')
       if(current.cornerWidthsMm.SW===operation.widthMm)return{status:'applied',state}
       stages={...state.document.stages,distributedFloor:{...current,cornerWidthsMm:{...current.cornerWidthsMm,SW:operation.widthMm}}}
+    } else if(record(operation)&&operation.kind==='set-floor-rear-bearing-comparison') {
+      const current=state.document.stages.floorSection
+      if(transaction.units!=='mm'||!exact(operation,['kind','assemblyId','openingWidthMm','execution'])||operation.assemblyId!==editableRearBearingId
+        ||!record(current)||current.thicknessMm!==200||!record(current.wetSupport)||!Object.hasOwn(current,'rearBearingComparison')
+        ||typeof operation.openingWidthMm!=='number'||!Number.isFinite(operation.openingWidthMm)||operation.openingWidthMm<=0
+        ||!['deferred','compute'].includes(String(operation.execution)))throw new TypeError('An existing explicit rear bearing comparison on the saved RC200 house is required')
+      const finite=readCurrentFiniteJointSettings(current.finiteJointComparison)
+      if(!finite.enabled)throw new TypeError('Rear bearing comparison retains explicitly enabled finite house controls')
+      const before=readRearBearingSettings(current.rearBearingComparison)
+      const opening=before.openingYMm as number[],centre=(opening[0]!+opening[1]!)/2
+      const choice=readRearBearingSettings({...before,openingYMm:[centre-operation.openingWidthMm/2,centre+operation.openingWidthMm/2],execution:operation.execution})
+      if(JSON.stringify(before)===JSON.stringify(choice))return{status:'applied',state}
+      stages={...state.document.stages,floorSection:{...current,rearBearingComparison:choice}}
     } else if(record(operation)&&operation.kind==='set-floor-finite-joint-comparison') {
       const current=state.document.stages.floorSection
       if(transaction.units!=='mm'||!exact(operation,['kind','assemblyId','settings'])||operation.assemblyId!==editableFloorSectionId
@@ -167,7 +182,7 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'thicknessMm'])
         || operation.assemblyId !== editableFloorSectionId || typeof operation.thicknessMm !== 'number'
         || !Number.isFinite(operation.thicknessMm) || operation.thicknessMm < 200 || operation.thicknessMm > 250
-        || !record(current) || Object.keys(current).some(key => !['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison', 'contourComponent', 'beamEndDevelopment', 'lowerMasonryComparison', 'finiteJointComparison'].includes(key)) || typeof current.thicknessMm !== 'number'
+        || !record(current) || Object.keys(current).some(key => !['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison', 'contourComponent', 'beamEndDevelopment', 'lowerMasonryComparison', 'finiteJointComparison', 'rearBearingComparison'].includes(key)) || typeof current.thicknessMm !== 'number'
         || (current.wetSupport !== undefined && current.wetSupport !== null && operation.thicknessMm !== 200)
         || (Object.hasOwn(current, 'beamEndDevelopment') && operation.thicknessMm !== 200)) {
         throw new TypeError('An existing explicit STR/current-floor-section with supported thickness 200..250 mm is required')
