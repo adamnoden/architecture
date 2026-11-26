@@ -1044,7 +1044,7 @@
         "maximumCapturedWetHeadKg": 36,
         "normalFrontEdgePointComparisonN": 2000,
         "normalHorizontalComparisonN": 200,
-        "normalForceHeightMm": 1105,
+        "normalForceHeightMm": 1138,
         "frontUpperAndLowerTiesIncluded": false,
         "actualDeliveredMaterialWeldAndJointProofAccepted": false,
         "actualFloorBearingAndBallastSupportAccepted": false,
@@ -1154,15 +1154,26 @@
           "leftCornerBandDepthMm": 35,
           "referenceSteelProofMPa": 200,
           "toolSocketMaximumDiameterMm": 24,
-          "toolExtensionMm": 214,
+          "toolExtensionMm": 239,
           "toolTorqueNm": 25,
           "actualDeliveredFastenerThreadWeldSheetAndLoadTransferQualified": false,
           "rearDowelCollarClearBoreMm": 14,
           "deckPlugToolDrive": "captive-metal-plug-internal-hex-6mm",
-          "deckPlugMaximumTorqueNm": 5
+          "deckPlugMaximumTorqueNm": 5,
+          "socketLowerFaceAbovePedestalMm": 0.5,
+          "minimumSocketHeadEngagementMm": 6,
+          "ratchetHandleLengthMm": 150,
+          "ratchetSteadyGripMm": 70,
+          "ratchetMaximumDiameterMm": 16,
+          "ratchetWorkingSectorDegrees": [
+            -10,
+            10
+          ],
+          "ratchetSweepIntervals": 16,
+          "ratchetDirection": "inward-left-east-right-west"
         },
         "maximumHeadFactoryWeldMassKg": 0.15,
-        "normalForceHeightMeaning": "maximum authored head or top-drive-tool metal/hand height before capture lift; include both10mm settings in actions"
+        "normalForceHeightMeaning": "maximum authored head or complete inward ratchet metal/hand height before lift; both10mm settings remain additional"
       }
     },
     "hotService": {

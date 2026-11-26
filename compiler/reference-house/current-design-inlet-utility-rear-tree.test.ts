@@ -383,6 +383,7 @@ test('old11160 NS fork physically strikes the actual strainer;11110 clears witho
  hc.maximumCapturedWetHeadKg=30;hc.headCGPlanDesignMm=[11125,1005,65,85];hc.headTrackYMm=[860,1120];hc.liftingEyesMm=hc.liftingEyesMm.map((q:readonly[number,number,number])=>q[1]===1140?[q[0],1120,q[2]]:q)
  Object.assign(hc.fork,{maximumCapturedWetHeadKg:30,minimumIMM4:45000,minimumTorsionalJMm4:65000,minimumClosedWallMm:4,meanClosedAreaMm2:676,minimumAreaMM2:400})
  const oldReference=inletUtilityWetAssembly({source:current,choice:prior}).ordinaryCapture
+ near(oldReference.forkReference.torsionalMomentNmm,44145)
  near(oldReference.sourceBoundCapturePhase.captureGeometryChecks.find(q=>q.id==='capture/fork/11110/waste/head-underflange')!.reserveMm,4.425243005181347,1e-6)
 })
 
@@ -468,8 +469,8 @@ test('all factory side ribs, clips, steel sheet and retained head water fit the 
 })
 
 test('normal and raised-head stability use the actual highest head part and both settings',()=>{
- near(portal.demandedInterfaces.normalHeightAfterTwoSettingsMm,1125)
- near(portal.demandedInterfaces.requiredFloorMomentNmm,225000)
+ near(portal.demandedInterfaces.normalHeightAfterTwoSettingsMm,1158)
+ near(portal.demandedInterfaces.requiredFloorMomentNmm,231600)
  near(portal.demandedInterfaces.capturedHeadHeightAfterTwoSettingsMm,1460)
  near(portal.demandedInterfaces.capturedHeadHorizontalMomentNmm,292000)
  const capped=structuredClone(choice);capped.coldDistribution.frameRenewal.portalDesign.normalForceHeightMm=870
@@ -487,7 +488,7 @@ test('actual bounded head stock determines CG and exposes pressure-body water se
  assert.ok(b.minimumModeledHeadSteelKg>13)
  assert.deepEqual(wet.ordinaryCapture.controls.headCGPlanDesignMm,[11125,1000,65,110])
  assert.ok(wet.ordinaryCapture.controls.liftingEyesMm.some(p=>p[0]===11220))
- near(wet.ordinaryCapture.forkReference.torsionalMomentNmm,44145)
+ near(wet.ordinaryCapture.forkReference.torsionalMomentNmm,52974)
  assert.ok(wet.ordinaryCapture.forkReference.totalElasticEnvelopeCoverMm>5.5&&wet.ordinaryCapture.forkReference.totalElasticEnvelopeCoverMm<6)
  assert.ok(wet.ordinaryCapture.sourceBoundCapturePhase.referenceBeamStressMPa>96&&wet.ordinaryCapture.sourceBoundCapturePhase.referenceBeamStressMPa<97)
 })
@@ -607,4 +608,18 @@ test('finite diagonal sweeps use actual covered capsules; filled bays remain rej
  assert.equal(portal.normalBearing.contactDatum.threadBlockToHeadBossVoidMm,6)
  assert.equal(portal.normalBearing.contactDatum.boltCompressionColumnCredited,false)
  assert.equal(portal.normalBearing.contactDatum.localBeamWallCaptiveBlockWeldAndThreadQualified,false)
+})
+
+test('flat socket has6.5mm head engagement; inward two-hand ratchet clears the actual retained H0 vertical',()=>{
+ const a=portal.headRelease
+ assert.equal(a.socketRepresentation,'flat-ended')
+ assert.equal(a.toolRepresentation,'inward-ratchet')
+ for(const q of a.toolTasks){near(q.socketHeadEngagementMm,6.5);assert.equal(q.mainGripsMm.length,16);assert.equal(q.steadyGripsMm.length,16)}
+ assert.deepEqual(a.toolFailures,[],JSON.stringify(a.toolFailures))
+ const capsule=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture,headSocketRepresentation:'capsule-control'})
+ assert.ok(capsule.headRelease.toolFailures.some(q=>q.id.includes('/socket/head/load-pedestal/')&&q.reserveMm< -5))
+ const axis=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture,headToolRepresentation:'bare-axis-arm-control'})
+ assert.ok(axis.headRelease.toolFailures.some(q=>q.id.includes('retained-H0-hot-backbone/4')&&q.reserveMm< -9))
+ assert.notEqual(axis.sourceDigest,portal.sourceDigest)
+ assert.notEqual(capsule.sourceDigest,portal.sourceDigest)
 })
