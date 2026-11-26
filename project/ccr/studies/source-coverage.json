@@ -1217,7 +1217,9 @@
         "project/ias/studies/study-floor-handling.py",
         "compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts",
         "compiler/reference-house/current-design/assemblies/study-furniture-motion.ts",
-        "project/ias/studies/study-furniture-motion.py"
+        "project/ias/studies/study-furniture-motion.py",
+        "compiler/reference-house/current-design/assemblies/study-room-perspective.ts",
+        "project/ias/studies/crafted-study-eye-level.mjs"
       ],
       "authoredInputs": [
         "project/ias/studies/adaptable-study-lighting.json",
@@ -1360,9 +1362,20 @@
         "compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts",
         "project/ias/studies/study-floor-handling.py",
         "compiler/reference-house/current-design/assemblies/study-furniture-motion.ts",
-        "project/ias/studies/study-furniture-motion.py"
+        "project/ias/studies/study-furniture-motion.py",
+        "compiler/reference-house/current-design/assemblies/study-lighting-case.ts",
+        "compiler/reference-house/current-design/assemblies/study-lighting.ts",
+        "compiler/reference-house/current-design/assemblies/study-lighting-views.ts",
+        "project/ias/studies/adaptable-study-lighting.mjs",
+        "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts",
+        "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts",
+        "project/had/studies/service-interface-geometry.mjs",
+        "compiler/reference-house/current-design/assemblies/study-lighting-circuit.ts"
       ],
-      "authoredInputs": [],
+      "authoredInputs": [
+        "project/ias/studies/adaptable-study-lighting.json",
+        "project/ias/studies/lighting-component-references.json"
+      ],
       "inputReceipts": [
         "project/ias/studies/workable-study-floor.json",
         "project/ias/studies/workable-study-release.json",
@@ -1374,7 +1387,8 @@
         "project/ias/studies/crafted-study-eye-level-evening.svg",
         "project/ias/studies/working-study-floor.svg",
         "project/ias/studies/working-study-wall-kit.svg",
-        "project/ias/studies/working-study-tile-eye-level.svg"
+        "project/ias/studies/working-study-tile-eye-level.svg",
+        "project/ias/studies/working-study-north-lighting.svg"
       ],
       "consumers": [
         "compiler/reference-house/current-design/assemblies/study-room-kit-projection.ts",
@@ -3292,7 +3306,7 @@
     "project/str/studies/global-mmd-mesh-cut-controls.json": "ca43d2e938f0d604abbd1bbc73e1d67cd82b6f48",
     "project/str/studies/wet-post-head-duties-proof.json": "d3060dd359727d4073fe2cb4c0a0e3566a317b08",
     "project/ias/adaptable-room-lighting-brief.md": "70f7030deee8a50c4c6491dfc20092db7b8fe8bd",
-    "project/ias/adaptable-room-lighting-result.md": "72c64936173df56c868f6fed197c74bf38e93c95",
+    "project/ias/adaptable-room-lighting-result.md": "ad12f6668e5c78136bb508e16b602260b3010217",
     "compiler/reference-house/current-design/assemblies/study-lighting.ts": "d44c852a7c5d71f80c47b0e5bfa2e682376b4610",
     "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "a38d59a52350d2addda35407200ddf407b1c28bf",
     "project/ias/studies/adaptable-study-lighting.mjs": "d31032661fd7d19cac1a4f76e5d608377f355c12",
@@ -3528,14 +3542,14 @@
     "project/str/studies/service_room_ground_receiver_replay.py": "1c04a3c550dd665a4a1a89999252cda7396b5567",
     "project/str/studies/service-room-ground-receiver-proof.json": "705b0cdaa444410f2458f8a5944f03ad4ab97dda",
     "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz": "e05b8f704d694960f63894996e8b9f7d50327b5d",
-    "compiler/reference-house/current-design-study-room-perspective.test.ts": "4419e9fb5551621e2509ed4fb721677cacd7d680",
-    "compiler/reference-house/current-design/assemblies/study-room-perspective.ts": "f6a0910885bb4ad609a9c446c6b1c8134a58206e",
+    "compiler/reference-house/current-design-study-room-perspective.test.ts": "2e6a3b49ba2000f4dc5d829400de587b7f27a292",
+    "compiler/reference-house/current-design/assemblies/study-room-perspective.ts": "f51b56556974ab1fb8c8fb25996c3a53360b889b",
     "project/ade/browser-editor/engineering_browser_test.py": "c1a2350d11860e13d4f13503a6aaca0c3cd0d221",
     "project/ias/crafted-room-kit-brief.md": "ea20d6f091ee901213d6f8ed0e841cd828164e07",
     "project/ias/crafted-room-kit-result.md": "c1802c692898eddf469d151433769a30cd30c1d1",
     "project/ias/studies/crafted-study-eye-level-day.svg": "7fa1d900aad07915cd13f24f07a21b8213cbf17f",
     "project/ias/studies/crafted-study-eye-level-evening.svg": "85c638a00e527a8ed30548fd204c51703174bf4d",
-    "project/ias/studies/crafted-study-eye-level.mjs": "e7d78b8d5a75b25ba388d1a3c7b98f83306f94d8",
+    "project/ias/studies/crafted-study-eye-level.mjs": "33db3ae634c8e61daf6248b671fec1035c9fdbf3",
     "compiler/reference-house/current-design/assemblies/study-room-kit.ts": "90863f05b741b54c20fbc6edd1e4c8cc2d2e629d",
     "compiler/reference-house/current-design/assemblies/study-room-assembly.ts": "0effdc2011f17e1c2a2c9c245514f5d815faa7ff",
     "compiler/reference-house/current-design/assemblies/study-structural-context.ts": "fcadc653e3c92e5d9efe3f4a74e0591be4233c15",
@@ -3574,6 +3588,7 @@
     "project/ias/studies/working-study-lighting.results.json": "515c184c4640e6c17195464a68804a6bbd58bded",
     "project/ias/studies/study-floor-handling.py": "99f909611ae0f1d1df9dcec6b7516a775b6b1b4b",
     "compiler/reference-house/current-design/assemblies/study-furniture-motion.ts": "93aa13c887624fae405ee78aada387ff46984a12",
-    "project/ias/studies/study-furniture-motion.py": "76ec30124e3a955ae551cc6e4a2bdf2dddb7e409"
+    "project/ias/studies/study-furniture-motion.py": "76ec30124e3a955ae551cc6e4a2bdf2dddb7e409",
+    "project/ias/studies/working-study-north-lighting.svg": "4b379bfca351295e31d0294144b0496299b21257"
   }
 }
