@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:30.008Z",
-  "heartbeatAt": "2026-11-26T08:58:59.607Z",
-  "expiresAt": "2026-11-26T10:28:59.607Z",
+  "heartbeatAt": "2026-11-26T09:09:15.925Z",
+  "expiresAt": "2026-11-26T10:39:15.925Z",
   "branch": "work/zerg-engineering-20261126",
   "predecessor": {
     "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
@@ -36,7 +36,7 @@
   },
   "pr": 1628,
   "checkpoint": {
-    "evidence": "1627 merged838ae734 after allchecks/fresh dualpreflight. Combined1628 exact4165e0a2 treeaa654321 matches tested local84cb0642. Current saved13-member receiver proof4/4 no skips616.72s, pairedcontact/archive/opposite-end controls pass; all312 heads unchanged0. Fullnewhead native/browser/health/publication CI now running.",
-    "next": "Inspect1628 exact-head CI and genuine ground browser proof; reconcile any failure/currentmain, run all3 publication preflights, merge verified head and close leases/hygiene. Corner joint and signed resistance remain open."
+    "evidence": "PR1628 exact4165e0a2 publication and typography success; current13member receiver proof and saved native4/4; actual A4 pages106/107 visually inspected. PR1627 merged838ae734.",
+    "next": "Finish exact-head native/browser/fullhealth and merge after fresh3packet preflight; develop complete loaded SW joint with honest contour/constitutive replacement under root lease."
   }
 }
