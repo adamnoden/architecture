@@ -21,10 +21,12 @@ for iteration in range(4):
     account=json.loads(Path(ACCOUNT).read_text())
     for p in BASE_TARGETS:
         data=Path(p).read_bytes()
-        account['gitBlobs'][p]=hashlib.sha1(b'blob '+str(len(data)).encode()+bytes([0])+data).hexdigest()
+        if p in account_before['gitBlobs']:
+            account['gitBlobs'][p]=hashlib.sha1(b'blob '+str(len(data)).encode()+bytes([0])+data).hexdigest()
         target=out/p;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
     other=copy.deepcopy(account)
-    for p in BASE_TARGETS:other['gitBlobs'][p]=account_before['gitBlobs'][p]
+    for p in BASE_TARGETS:
+        if p in account_before['gitBlobs']:other['gitBlobs'][p]=account_before['gitBlobs'][p]
     if other!=account_before:raise ValueError('Non-witness account authority changed')
     Path(ACCOUNT).write_text(json.dumps(account,indent=2)+'\n')
     script="import{readFileSync,writeFileSync}from'node:fs';import{readEngineeringDocument}from'./compiler/reference-house/current-design/engineering-document.ts';const p=process.argv[1],d=JSON.parse(readFileSync(p,'utf8')),r=await readEngineeringDocument(d.design);writeFileSync(p,JSON.stringify({...d,bindings:r.bindings},null,2)+'\\n')"
