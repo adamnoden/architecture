@@ -152,5 +152,7 @@ test('actual Plant frame, door and bridge keep the same raised walking datum and
  assert.deepEqual(r.roomCoordination.bridge?.railCentresYMm,r.choice.bridge.railYMm)
  assert.ok(r.roomCoordination.bridge?.railAboveOutfallPackageReserveMm!==null)
  assert.ok(r.roomCoordination.bridge!.removablePieces.pieces.every(p=>p.startBoxMm[2]===114))
+ assert.ok(r.roomCoordination.bridge!.removablePieces.pieces.every(p=>p.phases.some(q=>q.id==='quarter-turn-on-exterior-deck')))
+ assert.ok(r.roomCoordination.bridge!.removablePieces.pieces.every(p=>p.externalTurnDeckReserveMm!==undefined&&p.externalTurnDeckReserveMm>0))
  console.info('PLANT_ACTUAL_RAISED_ROOM_JOIN '+JSON.stringify({frame:f.exactOuterArchGeometry,sourceY:f.sourceAxisYMm,normal:r.normalInstallation.geometryFailures,door:{minima:r.roomCoordination.fittedDoor.minima,diagnostics:r.roomCoordination.fittedDoor.diagnostics,goods:r.roomCoordination.fittedDoor.goodsChecks},bridge:{box:r.roomCoordination.bridge?.boxMm,railCentres:r.roomCoordination.bridge?.railCentresYMm,verticalReserve:r.roomCoordination.bridge?.railAboveOutfallPackageReserveMm,pieces:r.roomCoordination.bridge?.removablePieces.pieces.map(p=>({id:p.id,kg:p.completeBudgetKg,frame:p.minimumAuthoredFrameReserveMm,obstacle:p.minimumHomeObstacleReserveMm,pipes:p.minimumActualPipeReserveMm,obstacleFailures:p.obstacleFailures,pipeFailures:p.pipeFailures,fittingFailures:p.fittingFailures})),diagnostics:r.roomCoordination.diagnostics},normalAuthority:r.normalInstallation.regulator.regulatorAuthorityReserveBar}))
 })

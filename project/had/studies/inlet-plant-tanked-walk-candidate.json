@@ -67,6 +67,10 @@
     "plateWidthYMm": [
       4125,
       5075
+    ],
+    "externalTurnCentreXYMm": [
+      13430,
+      4600
     ]
   },
   "grating": {
