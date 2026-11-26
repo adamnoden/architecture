@@ -1,0 +1,110 @@
+name: Retain observed full native archives and floor consequences as Git objects
+
+on:
+  push:
+    branches: [work/current-positive-source-regeneration-20261126]
+    paths:
+      - '.github/workflows/current-positive-native-archive-gitblobs.yml'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: current-positive-native-archive-gitblobs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  original-archive-blobs-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Authenticate original observed archives and create only exact Git blob objects
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -B - <<'PY'
+          import base64,hashlib,io,json,os,re,subprocess,tarfile,urllib.error,urllib.request,zipfile
+          from pathlib import Path
+          folder=Path(os.environ['RUNNER_TEMP'])/'current-native-archive-gitblobs';folder.mkdir(parents=True,exist_ok=True)
+          api=os.environ['GITHUB_API_URL'];repo=os.environ['GITHUB_REPOSITORY']
+          if repo!='adamnoden/architecture':raise ValueError('Exact repository required')
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          spec={'id':15131581607,'name':'current-positive-native-archives-1c28d8a63620f4dcf0517cdc6b843b123ebc6823','bytes':59916711,'sha256':'a8e673862f13b7c4035578b23235ac0c06c11048390720f9cbbc549318b3aef9','run':45845607201,'head':'1c28d8a63620f4dcf0517cdc6b843b123ebc6823'}
+          expected={"project/str/studies/captures/current-positive-floor-full-captures-20261126.tar.gz":{"member":"archives/project/str/studies/captures/current-positive-floor-full-captures-20261126.tar.gz","bytes":22919280,"sha256":"22f9ab985d0bc528dc6fb8d6092dbb59c8f204d0486d1ccef42c08491e0e0ae0","gitBlob":"492d44fc358cde25871f0400f61a6c36417032a4","manifestMember":"floor-eleven-native-capture-manifest.json","producerArtifact":{"id":15129932488,"name":"current-positive-floor-eleven-28049604aeea0052a06a19dc9393596a7e8739dc","bytes":24673517,"sha256":"631cc12a1c6bd436dcb4d1295448859a3adc01f2f839a1d66ff4443b9173c6d7","run":45842321684,"head":"28049604aeea0052a06a19dc9393596a7e8739dc"}},"project/str/studies/captures/current-positive-wet-bearing-full-captures-20261126.tar.gz":{"member":"archives/project/str/studies/captures/current-positive-wet-bearing-full-captures-20261126.tar.gz","bytes":22021116,"sha256":"cfd2f8e2180b5ab4c28a7d407487c7fba2eb39f3d9d5343bf8bd146ebdc1c5dd","gitBlob":"7c0cc130cc4a07750c1ed9ec6cd1c640586b00fd","manifestMember":"current-native-capture-manifest.json"},"project/str/studies/captures/current-positive-wet-pad-width120-20261126.tar.gz":{"member":"archives/project/str/studies/captures/current-positive-wet-pad-width120-20261126.tar.gz","bytes":5977631,"sha256":"1dc03bceb70008cfad826bf23584d5cf6841f4a46786a2d9b33525c9dae247a4","gitBlob":"200b608bb53ac6a8ef39846c5758ad82998770c6","manifestMember":"checkpoint-manifest.json"},"project/str/studies/captures/current-positive-wet-pad-alternatives-20261126.tar.xz":{"member":"archives/project/str/studies/captures/current-positive-wet-pad-alternatives-20261126.tar.xz","bytes":4282284,"sha256":"291b811f6eb15ca3fe426adc8c9baa9d4d734d653e2769b00e7803f3a7f54f43","gitBlob":"8065bc6c3f404e96b55854fdbb845b4f3dac05d1","manifestMember":"durable-capture-manifest.json"},"project/str/studies/wet-beam-end-native-captures.tar.xz":{"member":"archives/project/str/studies/wet-beam-end-native-captures.tar.xz","bytes":3863276,"sha256":"8523c4b3ee0e279d93a3bf9bfc2bc3eec98566bbf623fcc32540bb3882e0008b","gitBlob":"910d84ac5d0bc77f65031f13cc4eb43e3c64ba18","manifestMember":"archive-manifest.json"},"project/str/studies/floor-section-proof.json":{"member":"generated/project/str/studies/floor-section-proof.json","bytes":8068952,"sha256":"c2e1e7aec00dcf5769a71c800e7533b364fa2ed851ebabfb04b5547809ee8b74","gitBlob":"ff34a52e0b089db21f43048c546d3b3b06ef76b4","producerArtifact":{"id":15129932488,"name":"current-positive-floor-eleven-28049604aeea0052a06a19dc9393596a7e8739dc","bytes":24673517,"sha256":"631cc12a1c6bd436dcb4d1295448859a3adc01f2f839a1d66ff4443b9173c6d7","run":45842321684,"head":"28049604aeea0052a06a19dc9393596a7e8739dc"}},"project/str/studies/floor-section-250.svg":{"member":"generated/project/str/studies/floor-section-250.svg","bytes":294334,"sha256":"32b654414bbd4ae3f2b7ff71f250521a2857ef597a7f26d21ba663dda06ea2c3","gitBlob":"b9743f51fd2b5eca6f8d6749c1134415f44a67c1","producerArtifact":{"id":15129932488,"name":"current-positive-floor-eleven-28049604aeea0052a06a19dc9393596a7e8739dc","bytes":24673517,"sha256":"631cc12a1c6bd436dcb4d1295448859a3adc01f2f839a1d66ff4443b9173c6d7","run":45842321684,"head":"28049604aeea0052a06a19dc9393596a7e8739dc"}},"project/str/studies/seated-wet-support-floor.svg":{"member":"generated/project/str/studies/seated-wet-support-floor.svg","bytes":305566,"sha256":"aea180ee40b33994eba3833a6c1d3b20309e7438e1b365ffb9e82beb87c6a240","gitBlob":"8d6fa5285ee3e12584fd336a2abbeee32b0feac8","producerArtifact":{"id":15129932488,"name":"current-positive-floor-eleven-28049604aeea0052a06a19dc9393596a7e8739dc","bytes":24673517,"sha256":"631cc12a1c6bd436dcb4d1295448859a3adc01f2f839a1d66ff4443b9173c6d7","run":45842321684,"head":"28049604aeea0052a06a19dc9393596a7e8739dc"}},"project/str/studies/wet-support-cage-comparison-proof.json":{"member":"generated/project/str/studies/wet-support-cage-comparison-proof.json","bytes":1103195,"sha256":"4ce93cee1ec650c2ee4fd971e67312ea0af8e7d00cce9fdd137dbca96dcde92a","gitBlob":"d391fb9202c21e321eeda03a918428d40be5def8","producerArtifact":{"id":15129932488,"name":"current-positive-floor-eleven-28049604aeea0052a06a19dc9393596a7e8739dc","bytes":24673517,"sha256":"631cc12a1c6bd436dcb4d1295448859a3adc01f2f839a1d66ff4443b9173c6d7","run":45842321684,"head":"28049604aeea0052a06a19dc9393596a7e8739dc"}},"project/had/studies/house-vertical-profile.results.json":{"member":"generated/project/had/studies/house-vertical-profile.results.json","bytes":84289,"sha256":"669a08189b36e381f8fdc2c14c2ad87fc417e9bef505823c55b56fbf3729c1c0","gitBlob":"5571356cbf02c158a3d4b7be6beb64e0dbb4c582","producerArtifact":{"id":15129932488,"name":"current-positive-floor-eleven-28049604aeea0052a06a19dc9393596a7e8739dc","bytes":24673517,"sha256":"631cc12a1c6bd436dcb4d1295448859a3adc01f2f839a1d66ff4443b9173c6d7","run":45842321684,"head":"28049604aeea0052a06a19dc9393596a7e8739dc"}},"project/had/studies/house-vertical-profile.svg":{"member":"generated/project/had/studies/house-vertical-profile.svg","bytes":12921,"sha256":"e2a055a0b3140b7990484f8f404a02cd1efd004ef65ca016434a1d9a179b575e","gitBlob":"81b531f37b5a23ca96cf69d74242e1709a4ada4f","producerArtifact":{"id":15129932488,"name":"current-positive-floor-eleven-28049604aeea0052a06a19dc9393596a7e8739dc","bytes":24673517,"sha256":"631cc12a1c6bd436dcb4d1295448859a3adc01f2f839a1d66ff4443b9173c6d7","run":45842321684,"head":"28049604aeea0052a06a19dc9393596a7e8739dc"}},"project/str/studies/captures/current-positive-floor-full-captures-20261126.manifest.json":{"member":"generated/project/str/studies/captures/current-positive-floor-full-captures-20261126.manifest.json","bytes":16896,"sha256":"e52d3a5126f9e56c97736e375584daa8ef68279c6490c617f731b0c7fc28f86a","gitBlob":"16ed2f92a4bd910362f6c3385af585eff60a6f41","producerArtifact":{"id":15129932488,"name":"current-positive-floor-eleven-28049604aeea0052a06a19dc9393596a7e8739dc","bytes":24673517,"sha256":"631cc12a1c6bd436dcb4d1295448859a3adc01f2f839a1d66ff4443b9173c6d7","run":45842321684,"head":"28049604aeea0052a06a19dc9393596a7e8739dc"}}}
+          sha=lambda data:hashlib.sha256(data).hexdigest()
+          blob=lambda data:hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+          def get(url):
+           with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=60) as response:return json.load(response)
+          def post_blob(data):
+           request=urllib.request.Request(f'{api}/repos/{repo}/git/blobs',data=json.dumps({'content':base64.b64encode(data).decode(),'encoding':'base64'}).encode(),headers={**headers,'Content-Type':'application/json'},method='POST')
+           with urllib.request.urlopen(request,timeout=120) as response:value=json.load(response)
+           if value.get('sha')!=blob(data):raise ValueError('Git object does not bind exact observed original bytes')
+           return value['sha']
+          if subprocess.check_output(['git','status','--porcelain'],text=True):raise ValueError('Clean exact-source checkout required')
+          run=get(f'{api}/repos/{repo}/actions/runs/{spec["run"]}')
+          if run['head_sha']!=spec['head'] or run['status']!='completed' or run['conclusion']!='success':raise ValueError('Actual exact archive assembly must have succeeded')
+          metadata=get(f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}')
+          if metadata['name']!=spec['name'] or metadata['expired'] or metadata['size_in_bytes']!=spec['bytes'] or metadata['digest']!='sha256:'+spec['sha256'] or metadata['workflow_run']['id']!=spec['run'] or metadata['workflow_run']['head_sha']!=spec['head']:raise ValueError('Observed assembly artifact changed')
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+           def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+          url=f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}/zip'
+          try:
+           with urllib.request.build_opener(NoRedirect()).open(urllib.request.Request(url,headers=headers),timeout=60) as response:raw=response.read()
+          except urllib.error.HTTPError as response:
+           if response.code not in (301,302,303,307,308):raise
+           location=response.headers['Location']
+           if not location.startswith('https://'):raise ValueError('HTTPS artifact storage required')
+           with urllib.request.urlopen(location,timeout=120) as response:raw=response.read()
+          if len(raw)!=spec['bytes'] or sha(raw)!=spec['sha256']:raise ValueError('Original assembly ZIP bytes changed')
+          outputs={}
+          with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+           names=archive.namelist()
+           if len(names)!=len(set(names)) or any(name.startswith('/') or '..' in name.split('/') or '\\' in name for name in names):raise ValueError('Unsafe assembly artifact members')
+           report_bytes=archive.read('archive-assembly-manifest.json');report=json.loads(report_bytes);before=json.loads(archive.read('source-before.json'));sources=before['native58SHA256']
+           if report['schema']!='str-current-positive-wet-native-archive-assembly/1' or report['assemblySourceCommit']!=spec['head'] or before['sourceCommit']!=spec['head'] or report['nativeSourceSHA256']!=sources or len(sources)!=58 or report['source58Unchanged'] is not True or report['nativeSolvesExecutedByAssembly']!=0 or report['candidateAccepted'] is not False or report['observedSouth40q32FullSHA256']!='ed5439632702f32a3b96edaa5c0b097c3affde49ebe7dac149b785b4912de097':raise ValueError('Exact actual assembly/current58 scope lost')
+           if set(report['archives'])|set(report['generatedOutputs'])!=set(expected):raise ValueError('Exact retained output scope changed')
+           for name,digest in before['trackedSHA256'].items():
+            if sha(Path(name).read_bytes())!=digest:raise ValueError('Protected assembly input/source changed: '+name)
+           for name,digest in sources.items():
+            if not re.fullmatch(r'project/[A-Za-z0-9/_.-]+',name) or '..' in name.split('/') or sha(Path(name).read_bytes())!=digest:raise ValueError('Current native58 changed')
+           for path,identity in expected.items():
+            actual=(report['archives'] if path in report['archives'] else report['generatedOutputs'])[path]
+            if any(actual[k]!=identity[k] for k in ('member','bytes','sha256','gitBlob')):raise ValueError('Observed output identity differs: '+path)
+            data=archive.read(identity['member'])
+            if len(data)!=identity['bytes'] or sha(data)!=identity['sha256'] or blob(data)!=identity['gitBlob']:raise ValueError('Exact actual output bytes changed: '+path)
+            if path in report['archives']:
+             manifest=actual['manifest'];inner_sources=manifest.get('sourceSHA256',manifest.get('nativeSourceSHA256'))
+             if inner_sources!=sources or manifest['candidateAccepted'] is not False:raise ValueError('Captured native archive is not source-current')
+             with tarfile.open(fileobj=io.BytesIO(data),mode='r:*') as tar:
+              members=tar.getmembers();files=[m for m in members if m.isfile()];file_names=[m.name for m in files]
+              if len(file_names)!=len(set(file_names)) or set(file_names)!=set(manifest['files'])|{actual['manifestMember']} or any(m.issym() or m.islnk() or m.name.startswith('/') or '..' in m.name.split('/') for m in members):raise ValueError('Actual native archive file set changed')
+              if json.loads(tar.extractfile(actual['manifestMember']).read())!=manifest:raise ValueError('Original native archive manifest differs')
+              for name,record in manifest['files'].items():
+               value=tar.extractfile(name).read()
+               if len(value)!=record['bytes'] or sha(value)!=record['sha256']:raise ValueError('Actual complete native archive member changed')
+            outputs[path]=data
+           outputs['project/str/studies/current-positive-native-archive-retention.json']=report_bytes
+          # Original raw bytes for every output are fully authenticated before any write.
+          retained={}
+          for name,data in outputs.items():retained[name]={'gitBlob':post_blob(data),'bytes':len(data),'sha256':sha(data)}
+          value={'schema':'str-current-native-archive-gitblob-retention/1','collectorSourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'sourceArtifact':spec,'native58SHA256':sources,'observedSouth40q32FullSHA256':report['observedSouth40q32FullSHA256'],'outputs':retained,'onlyGitBlobObjectsCreated':True,'commitTreeRefAccountCanonicalWrites':False,'candidateAccepted':False}
+          (folder/'gitblob-manifest.json').write_text(json.dumps(value,indent=2)+'\n')
+          if subprocess.check_output(['git','status','--porcelain'],text=True):raise ValueError('Collector mutated its checkout')
+          print('ACTUAL_NATIVE_ARCHIVE_GITBLOBS '+json.dumps(value,separators=(',',':')),flush=True)
+          
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-native-archive-gitblobs-${{ github.sha }}
+          path: ${{ runner.temp }}/current-native-archive-gitblobs/
+          if-no-files-found: error
+          retention-days: 90
