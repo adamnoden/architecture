@@ -9,8 +9,8 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T15:27:49.000Z",
-  "expiresAt": "2026-11-26T16:12:49.000Z",
+  "heartbeatAt": "2026-11-26T16:03:27.000Z",
+  "expiresAt": "2026-11-26T16:48:27.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "1629b198 closed circuit/136min10 source verified; native96/ADE/PDF green, witness recovery active. Superior Type80W1 short-flex follow-on c3b58ba9 proof45848224211 running; full260 reach/plug parking modelled.",
-    "next": "Finish current integration health/preflight/merge. Verify Type80 complete short-flex/plug/renewal and136 witnesses; retain rejection of long stock lead.",
-    "blocker": "No new product/material/physical/owner acceptance. Native58 frozen; exact soffit support remains to be joined without duplicate geometry."
+    "evidence": "2de0e008 Type80 short-flex WIP; explicit lamp/clip removal to actual desk tray, then existing furniture stages. Numeric body/reach screens pass; full136/types/owningproof running. Root1629 fullsuite recovery separate.",
+    "next": "Prove complete appliance preparation, fixed/parked bodies and136renewals; integrate actual producer outputs with root sourceaccount after current merge.",
+    "blocker": "No product/material/physical/owner appearance acceptance. Preserve all clearances, installed electrical duties and current native58 freeze."
   },
   "pr": 1629
 }
