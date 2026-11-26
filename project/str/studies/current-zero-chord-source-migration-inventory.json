@@ -1,0 +1,2036 @@
+{
+  "schema": "str-current-zero-chord-source-migration-inventory/1",
+  "observation": {
+    "runId": 45833815789,
+    "jobId": 139957251564,
+    "conclusion": "success",
+    "sourceCommit": "f2cba0be1c9f4d7033801ae1a1684b169da51930",
+    "artifactId": 15124360889,
+    "artifactSizeBytes": 46154,
+    "artifactSHA256": "b41bd04ac8c4599c205a7538452083ba02cf8a24332ea0513da67a2be84b190c",
+    "artifactExpiresAt": "2027-02-24T13:55:12Z",
+    "accountRestoredExactly": true
+  },
+  "inventory": {
+    "authority": "Read-only migration inventory; workcopy account bindings only; no receipt replay or design admission",
+    "sourceCommit": "f2cba0be1c9f4d7033801ae1a1684b169da51930",
+    "auditMethodGitBlob": "a733595b7b256ab0507dd0ae9cef4d71a04f29b0",
+    "accountGitBlobBefore": "766942ba380d2c3a14d2d6dbe330d1b0ca9db8e6",
+    "accountSHA256Before": "e7a0654007b5705fb15366e36439abf2dfa5d16f504c5c6d60b2916709f94bea",
+    "accountSHA256DuringWorkcopy": "8ba4fa80875f6760c192acadf3d7c96e4c021fca8387c19f77b4684eb4906a49",
+    "changedBindings": [
+      {
+        "path": "project/str/studies/distributed_floor_compatibility.py",
+        "before": "45c0d9e082dec58edf2040064d7a14c50dcbb1d4",
+        "after": "7a8eb302813e8a509a1fac16ee29e7359d2c0bf9"
+      },
+      {
+        "path": "project/str/studies/perforated_floor_condensation.py",
+        "before": "b297a5f9d22a4890b2921ff2460d746f0cb4c4fe",
+        "after": "fbdea8993c4c00d863f2105c0a83f6ac0bf78c03"
+      }
+    ],
+    "receiptEdgesChanged": false,
+    "historicalReceiptsChanged": false,
+    "baselineFindings": [
+      {
+        "kind": "changed-file",
+        "path": "project/str/studies/perforated_floor_condensation.py",
+        "expected": "b297a5f9d22a4890b2921ff2460d746f0cb4c4fe",
+        "observed": "fbdea8993c4c00d863f2105c0a83f6ac0bf78c03"
+      },
+      {
+        "kind": "changed-file",
+        "path": "project/str/studies/distributed_floor_compatibility.py",
+        "expected": "45c0d9e082dec58edf2040064d7a14c50dcbb1d4",
+        "observed": "7a8eb302813e8a509a1fac16ee29e7359d2c0bf9"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/had/studies/house-vertical-profile.results.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/had/studies/house-vertical-profile.results.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/had/studies/house-vertical-profile.results.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/had/studies/house-vertical-profile.results.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/vertical-rc-floor-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/vertical-rc-floor-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/masonry-frame-a-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/masonry-frame-a-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/upper-roof-bearing-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/upper-roof-bearing-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/floor-section-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/floor-section-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/floor-section-cuts-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/floor-section-cuts-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-native96-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-native96-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-replay.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-replay.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-translation-replay.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-translation-replay.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-translation-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-translation-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-bearing-refinement-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-bearing-refinement-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/four-l-joint-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/four-l-joint-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/four-l-joint-material-audit.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/four-l-joint-material-audit.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-pad-fan-recovery-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-pad-fan-recovery-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-beam-end-development-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-beam-end-development-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/uniform-slab-law-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/uniform-slab-law-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/uniform-slab-law-end-consequence.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/uniform-slab-law-end-consequence.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      }
+    ],
+    "findings": [
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/had/studies/house-vertical-profile.results.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/had/studies/house-vertical-profile.results.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/had/studies/house-vertical-profile.results.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/had/studies/house-vertical-profile.results.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/vertical-rc-floor-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/vertical-rc-floor-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/masonry-frame-a-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/masonry-frame-a-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/upper-roof-bearing-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/upper-roof-bearing-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/floor-section-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/floor-section-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/floor-section-cuts-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/floor-section-cuts-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-native96-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-native96-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-replay.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-replay.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-translation-replay.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-translation-replay.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-translation-actions.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/monolithic-rc-translation-actions.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-bearing-refinement-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-bearing-refinement-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/four-l-joint-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/four-l-joint-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/four-l-joint-material-audit.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/four-l-joint-material-audit.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-pad-fan-recovery-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-pad-fan-recovery-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-beam-end-development-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/wet-beam-end-development-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/uniform-slab-law-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/uniform-slab-law-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/uniform-slab-law-end-consequence.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/uniform-slab-law-end-consequence.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+        "source": "project/str/studies/distributed_floor_compatibility.py",
+        "algorithm": "sha256",
+        "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+        "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+      },
+      {
+        "kind": "source-contradiction",
+        "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+        "source": "project/str/studies/perforated_floor_condensation.py",
+        "algorithm": "sha256",
+        "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+      }
+    ],
+    "byReceipt": {
+      "project/str/studies/distributed-floor-compatibility-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/had/studies/house-vertical-profile.results.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/had/studies/house-vertical-profile.results.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/had/studies/house-vertical-profile.results.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/had/studies/house-vertical-profile.results.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/had/studies/house-vertical-profile.results.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/vertical-rc-floor-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/vertical-rc-floor-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/vertical-rc-floor-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/masonry-frame-a-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/masonry-frame-a-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/masonry-frame-a-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/upper-roof-bearing-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/upper-roof-bearing-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/upper-roof-bearing-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/floor-section-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/floor-section-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/floor-section-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/floor-section-cuts-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/floor-section-cuts-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/floor-section-cuts-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/wet-support-cage-comparison-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/monolithic-rc-native96-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-native96-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-native96-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/monolithic-rc-governing-replay.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-replay.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-replay.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/monolithic-rc-governing-actions.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/monolithic-rc-translation-replay.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-translation-replay.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-translation-replay.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/monolithic-rc-translation-actions.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-translation-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-translation-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/wet-bearing-refinement-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-bearing-refinement-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-bearing-refinement-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/four-l-joint-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/four-l-joint-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/four-l-joint-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/four-l-joint-material-audit.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/four-l-joint-material-audit.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/four-l-joint-material-audit.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/fixed-normal-experiment.results.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/finite-floor-contour-captures/contour140.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/finite-floor-contour-captures/contour70.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/finite-floor-contour-captures/contour50.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/wet-pad-fan-recovery-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-pad-fan-recovery-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-pad-fan-recovery-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/wet-beam-end-development-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-beam-end-development-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-beam-end-development-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/uniform-slab-law-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/uniform-slab-law-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/uniform-slab-law-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/uniform-slab-law-end-consequence.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/uniform-slab-law-end-consequence.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/uniform-slab-law-end-consequence.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/finite-floor-contour-captures/contour35.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ],
+      "project/str/studies/service-room-ground-receiver-proof.json": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ]
+    },
+    "bySource": {
+      "project/str/studies/distributed_floor_compatibility.py": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/had/studies/house-vertical-profile.results.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/had/studies/house-vertical-profile.results.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/vertical-rc-floor-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/masonry-frame-a-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/upper-roof-bearing-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/floor-section-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/floor-section-cuts-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-native96-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-replay.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-translation-replay.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-translation-actions.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-bearing-refinement-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/four-l-joint-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/four-l-joint-material-audit.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-pad-fan-recovery-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-beam-end-development-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/uniform-slab-law-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/uniform-slab-law-end-consequence.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+          "source": "project/str/studies/distributed_floor_compatibility.py",
+          "algorithm": "sha256",
+          "expected": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "observed": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d"
+        }
+      ],
+      "project/str/studies/perforated_floor_condensation.py": [
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/distributed-floor-compatibility-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/had/studies/house-vertical-profile.results.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/had/studies/house-vertical-profile.results.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/vertical-rc-floor-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/masonry-frame-a-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/upper-roof-bearing-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/floor-section-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/floor-section-cuts-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-support-cage-comparison-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-native96-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-replay.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-governing-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-translation-replay.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/monolithic-rc-translation-actions.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-bearing-refinement-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/four-l-joint-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/four-l-joint-material-audit.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/fixed-normal-experiment.results.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour140.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour70.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour50.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-pad-fan-recovery-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/wet-beam-end-development-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/uniform-slab-law-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/uniform-slab-law-end-consequence.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/finite-floor-contour-captures/contour35.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        },
+        {
+          "kind": "source-contradiction",
+          "receipt": "project/str/studies/service-room-ground-receiver-proof.json",
+          "source": "project/str/studies/perforated_floor_condensation.py",
+          "algorithm": "sha256",
+          "expected": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "observed": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6"
+        }
+      ]
+    },
+    "kindCounts": {
+      "source-contradiction": 60
+    },
+    "fullAuditFile": "source-coverage-workcopy-audit.json"
+  }
+}
