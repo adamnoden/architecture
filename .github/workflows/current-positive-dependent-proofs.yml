@@ -1,0 +1,709 @@
+name: Complete source-current wet, uniform, joint and mesh dependants
+
+on:
+  push:
+    branches: [work/current-positive-source-regeneration-20261126]
+    paths:
+      - '.github/workflows/current-positive-dependent-proofs.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: current-positive-dependent-proofs-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+
+jobs:
+  wet-replays:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install existing Node compiler runtime
+        run: npm ci --no-audit --no-fund
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+          cache: pip
+          cache-dependency-path: project/str/studies/*requirements.txt
+      - name: Install existing pinned numerical runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          echo "REGEN_DIR=$RUNNER_TEMP/current-positive-source-evidence" >> "$GITHUB_ENV"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/project/str/studies" >> "$GITHUB_ENV"
+      - name: Protect exact production sources and record actual native58 identities
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);folder.mkdir(parents=True,exist_ok=True)
+          expected={"project/str/studies/distributed_floor_compatibility.py":"7a8eb302813e8a509a1fac16ee29e7359d2c0bf9","project/str/studies/perforated_floor_condensation.py":"fbdea8993c4c00d863f2105c0a83f6ac0bf78c03","project/str/studies/current_zero_chord_control.py":"abff63ca41c5bfa01082a3443ed0900412e893f4","project/str/studies/current_zero_chord_control_test.py":"d09edced886fe556f4e0768def8a29301fb847f8","project/str/studies/wet_pad_fan_recovery_proof.py":"f3d6a3b4646ef6f41ad3f4ab48d2b7be542ba3e4","project/str/studies/uniform_slab_law_proof.py":"746cb407265b7d2e395d94d259bc8d73e423aec8","project/str/studies/uniform-slab-law-inputs.json":"1cc9682b87e12b967290e93e28d95736721bf337","project/str/studies/floor-section-cuts.ts":"f5e058d4cc5ea964ff06cd1713e47f464860fb8b"}
+          def sha(data):return hashlib.sha256(data).hexdigest()
+          for name,digest in expected.items():
+           data=Path(name).read_bytes();actual=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+           if actual!=digest:raise ValueError('Unreviewed source blob: '+name)
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          identities=load_source(Path('.'))['identities']
+          if len(identities)!=58:raise ValueError('Exact current58-source native inventory required')
+          files=subprocess.check_output(['git','ls-files'],text=True).splitlines()
+          snapshot={name:sha(Path(name).read_bytes()) for name in files}
+          (folder/'source-before.json').write_text(json.dumps({'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'exactProductionBlobs':expected,'native58SHA256':identities,'trackedSHA256':snapshot,'currentSavedEngineeringDocumentAdmitted':False},indent=2)+'\n')
+          for name in ["project/str/studies/wet-bearing-refinement-proof.json","project/str/studies/wet-pad-fan-recovery-proof.json","project/str/studies/wet-beam-end-development-proof.json","project/str/studies/wet-beam-rectangular-return.svg"]:
+           p=Path(name)
+           if p.exists():
+            q=folder/'before'/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(p.read_bytes())
+          print('PASS exact reviewed protected blobs and actual58-source inventory; canonical/account untouched',flush=True)
+          PY
+      - name: Restore original actual wet9 native bytes
+        run: |
+          python -B - <<'PY'
+          import hashlib,io,json,os,tarfile
+          from pathlib import Path
+          from floor_section_model import load_source
+          source=load_source(Path('.'));folder=Path(os.environ['REGEN_DIR'])/'wet9';folder.mkdir(parents=True,exist_ok=True)
+          archive_path=Path('project/str/studies/captures/current-positive-wet-bearing-full-captures-20261126.tar.gz');raw=archive_path.read_bytes()
+          if hashlib.sha256(raw).hexdigest()!='cfd2f8e2180b5ab4c28a7d407487c7fba2eb39f3d9d5343bf8bd146ebdc1c5dd':raise ValueError('Exact observed fresh wet9 archive required')
+          with tarfile.open(fileobj=io.BytesIO(raw),mode='r:gz') as archive:
+           manifest=json.load(archive.extractfile('current-native-capture-manifest.json'))
+           if manifest['nativeSourceSHA256']!=source['identities'] or manifest['completeVerifiedCaseCount']!=9 or manifest['candidateAccepted'] is not False:raise ValueError('Current wet9 source/scope differs')
+           for name,identity in manifest['files'].items():
+            if Path(name).name!=name:raise ValueError('Only exact local capture filenames admitted')
+            data=archive.extractfile(name).read()
+            if len(data)!=identity['bytes'] or hashlib.sha256(data).hexdigest()!=identity['sha256']:raise ValueError('Full actual wet9 member changed')
+            (folder/name).write_bytes(data)
+          print('PASS exact fresh current58 wet9 directory restored; no oldforces or native solve',flush=True)
+          PY
+      - name: Recompute actual current wet bearing, pad fan and rectangular end evidence
+        run: |
+          python -B project/str/studies/wet_bearing_refinement_proof.py --write --captures "$REGEN_DIR/wet9" > "$REGEN_DIR/wet-bearing-write.log" 2>&1
+          python -B project/str/studies/wet_bearing_refinement_proof.py --check --captures "$REGEN_DIR/wet9" > "$REGEN_DIR/wet-bearing-check.log" 2>&1
+          python -B project/str/studies/wet_pad_fan_recovery_proof.py --write --width120-archive project/str/studies/captures/current-positive-wet-pad-width120-20261126.tar.gz --alternatives-archive project/str/studies/captures/current-positive-wet-pad-alternatives-20261126.tar.xz > "$REGEN_DIR/pad-fan-write.log" 2>&1
+          python -B project/str/studies/wet_pad_fan_recovery_proof.py --check > "$REGEN_DIR/pad-fan-check.log" 2>&1
+          python -B project/str/studies/wet_beam_end_development_proof.py --write > "$REGEN_DIR/beam-end-write.log" 2>&1
+          python -B project/str/studies/wet_beam_end_development_proof.py --check > "$REGEN_DIR/beam-end-check.log" 2>&1
+          python -B project/str/studies/wet_bearing_refinement_test.py > "$REGEN_DIR/wet-bearing-controls.log" 2>&1
+          python -B project/str/studies/wet_bearing_refinement_proof_test.py > "$REGEN_DIR/wet-binding-controls.log" 2>&1
+          python -B project/str/studies/wet_post_head_fan_test.py > "$REGEN_DIR/fan-controls.log" 2>&1
+          python -B project/str/studies/wet_beam_rectangular_return_test.py > "$REGEN_DIR/end-controls.log" 2>&1
+      - name: Protect all source bytes and retain actual outputs
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,shutil,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);before=json.loads((folder/'source-before.json').read_text())
+          allow=["project/str/studies/wet-bearing-refinement-proof.json","project/str/studies/wet-pad-fan-recovery-proof.json","project/str/studies/wet-beam-end-development-proof.json","project/str/studies/wet-beam-rectangular-return.svg"]
+          sha=lambda data:hashlib.sha256(data).hexdigest()
+          actual={name:sha(Path(name).read_bytes()) for name in before['trackedSHA256']}
+          changed=[name for name,value in actual.items() if value!=before['trackedSHA256'][name]]
+          if set(changed)-set(allow):raise ValueError('Unexpected tracked source/request change: '+str(changed))
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          if load_source(Path('.'))['identities']!=before['native58SHA256']:raise ValueError('Actual native58 source changed during proof')
+          outputs={}
+          for name in allow:
+           p=Path(name)
+           if not p.is_file():raise ValueError('Missing actual generated output: '+name)
+           q=folder/'generated'/p;q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,q)
+           outputs[name]={'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())}
+           if p.suffix=='.json':
+            value=json.loads(p.read_text())
+            def verify_sources(node):
+             if isinstance(node,dict):
+              sources=node.get('sourceSHA256')
+              if isinstance(sources,dict):
+               for path,identity in sources.items():
+                if not Path(path).is_file() or sha(Path(path).read_bytes())!=identity:raise ValueError('Generated result contains stale native source: '+path)
+              for child in node.values():verify_sources(child)
+             elif isinstance(node,list):
+              for child in node:verify_sources(child)
+            verify_sources(value)
+            key={'floor-section-proof.json':None}.get(p.name)
+            if key:
+             previous=json.loads((folder/'before'/p).read_text())
+             def authored(node):
+              if isinstance(node,dict):return{k:authored(v) for k,v in node.items() if k!='sourceSHA256'}
+              if isinstance(node,list):return[authored(v) for v in node]
+              return node
+             if authored(previous[key])!=authored(value[key]):raise ValueError('Positive reference authored inputs changed: '+key)
+             outputs[name]['authoredInputsUnchangedExceptFreshIdentities']=True
+            previous=json.loads((folder/'before'/p).read_text())
+            def without_identities(node):
+             if isinstance(node,dict):return{k:without_identities(v) for k,v in node.items() if k!='sourceSHA256'}
+             if isinstance(node,list):return[without_identities(v) for v in node]
+             return node
+            for catalogue in ('cases','controls'):
+             rows=value.get(catalogue)
+             if not isinstance(rows,list):continue
+             before_rows=previous.get(catalogue)
+             if not isinstance(before_rows,list) or len(rows)!=len(before_rows):raise ValueError('Changed authored control count: '+catalogue)
+             for old_row,new_row in zip(before_rows,rows):
+              if old_row.get('caseId')!=new_row.get('caseId'):raise ValueError('Changed actual control ID')
+              for request_key in ('executedRequest','request'):
+               if request_key in old_row or request_key in new_row:
+                if request_key not in old_row or request_key not in new_row or without_identities(old_row[request_key])!=without_identities(new_row[request_key]):raise ValueError('Authored parent comparison changed beyond fresh identities')
+            outputs[name]['allAuthoredControlInputsUnchangedExceptFreshIdentities']=True
+          (folder/'source-after.json').write_text(json.dumps({'sourceCommit':before['sourceCommit'],'changedTrackedPaths':changed,'allowedGeneratedPaths':allow,'outputs':outputs,'native58UnchangedDuringExecution':True,'allOtherTrackedSourcesUnchanged':True,'accountAndCanonicalUnchanged':True,'candidateAccepted':False},indent=2)+'\n')
+          print('PASS generated outputs only; all native methods, requests, source account and canonical input protected',flush=True)
+          PY
+      - name: Preserve exact current-source execution logs
+        if: always()
+        run: |
+          python -B - <<'PY'
+          import os
+          from pathlib import Path
+          for p in sorted(Path(os.environ['REGEN_DIR']).glob('*.log')):
+           print('CURRENT_DEPENDENT_PROOF_LOG '+p.name,flush=True);print(p.read_text(errors='replace')[-40000:],flush=True)
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-positive-wet-replays-${{ github.sha }}
+          path: ${{ runner.temp }}/current-positive-source-evidence/
+          if-no-files-found: error
+          retention-days: 90
+
+  uniform-native-and-end:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install existing Node compiler runtime
+        run: npm ci --no-audit --no-fund
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+          cache: pip
+          cache-dependency-path: project/str/studies/*requirements.txt
+      - name: Install existing pinned numerical runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          echo "REGEN_DIR=$RUNNER_TEMP/current-positive-source-evidence" >> "$GITHUB_ENV"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/project/str/studies" >> "$GITHUB_ENV"
+      - name: Protect exact production sources and record actual native58 identities
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);folder.mkdir(parents=True,exist_ok=True)
+          expected={"project/str/studies/distributed_floor_compatibility.py":"7a8eb302813e8a509a1fac16ee29e7359d2c0bf9","project/str/studies/perforated_floor_condensation.py":"fbdea8993c4c00d863f2105c0a83f6ac0bf78c03","project/str/studies/current_zero_chord_control.py":"abff63ca41c5bfa01082a3443ed0900412e893f4","project/str/studies/current_zero_chord_control_test.py":"d09edced886fe556f4e0768def8a29301fb847f8","project/str/studies/wet_pad_fan_recovery_proof.py":"f3d6a3b4646ef6f41ad3f4ab48d2b7be542ba3e4","project/str/studies/uniform_slab_law_proof.py":"746cb407265b7d2e395d94d259bc8d73e423aec8","project/str/studies/uniform-slab-law-inputs.json":"1cc9682b87e12b967290e93e28d95736721bf337","project/str/studies/floor-section-cuts.ts":"f5e058d4cc5ea964ff06cd1713e47f464860fb8b"}
+          def sha(data):return hashlib.sha256(data).hexdigest()
+          for name,digest in expected.items():
+           data=Path(name).read_bytes();actual=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+           if actual!=digest:raise ValueError('Unreviewed source blob: '+name)
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          identities=load_source(Path('.'))['identities']
+          if len(identities)!=58:raise ValueError('Exact current58-source native inventory required')
+          files=subprocess.check_output(['git','ls-files'],text=True).splitlines()
+          snapshot={name:sha(Path(name).read_bytes()) for name in files}
+          (folder/'source-before.json').write_text(json.dumps({'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'exactProductionBlobs':expected,'native58SHA256':identities,'trackedSHA256':snapshot,'currentSavedEngineeringDocumentAdmitted':False},indent=2)+'\n')
+          for name in ["project/str/studies/uniform-slab-law-native-captures.tar.xz","project/str/studies/uniform-slab-law-proof.json","project/str/studies/uniform-slab-law-end-consequence.json","project/str/studies/uniform-slab-law-end.svg"]:
+           p=Path(name)
+           if p.exists():
+            q=folder/'before'/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(p.read_bytes())
+          print('PASS exact reviewed protected blobs and actual58-source inventory; canonical/account untouched',flush=True)
+          PY
+      - name: Execute one genuinely new current-source uniform8250 native case
+        run: |
+          python -B project/str/studies/uniform_slab_law_proof.py --capture-to "$REGEN_DIR/uniform-fresh" > "$REGEN_DIR/uniform-native.log" 2>&1
+      - name: Preserve exact fresh control and new changed native archive
+        run: |
+          python -B - > "$REGEN_DIR/uniform-archive.log" 2>&1 <<'PY'
+          import hashlib,io,json,os,tarfile
+          from pathlib import Path
+          from floor_section_model import load_source
+          from uniform_slab_law_proof import read_controls,expected_control,changed_request
+          from floor_section_proof import validate_full
+          source=load_source(Path('.'));controls=read_controls();folder=Path(os.environ['REGEN_DIR']);fresh=folder/'uniform-fresh';files={}
+          raw=Path('project/str/studies/wet-beam-end-native-captures.tar.xz').read_bytes()
+          if hashlib.sha256(raw).hexdigest()!='8523c4b3ee0e279d93a3bf9bfc2bc3eec98566bbf623fcc32540bb3882e0008b':raise ValueError('Actual current beam control archive changed')
+          with tarfile.open(fileobj=io.BytesIO(raw),mode='r:xz') as archive:
+           manifest=json.load(archive.extractfile('archive-manifest.json'))
+           for suffix in ('request','full','capture'):
+            name='south40-q32.'+suffix+'.json';data=archive.extractfile(name).read();identity=manifest['files'][name]
+            if len(data)!=identity['bytes'] or hashlib.sha256(data).hexdigest()!=identity['sha256']:raise ValueError('Original fresh south40 control bytes changed')
+            files['control.'+suffix+'.json']=data
+          for suffix in ('request','full','capture'):files['uniform200.'+suffix+'.json']=(fresh/('uniform200.'+suffix+'.json')).read_bytes()
+          for stem,request,name in [('control',expected_control(source,controls),controls['control']['nativeCaseId']),('uniform200',changed_request(expected_control(source,controls),controls),controls['changedNativeCaseId'])]:
+           result=json.loads(files[stem+'.full.json']);receipt=json.loads(files[stem+'.capture.json']);summary=validate_full(result,request,source,name)
+           if json.loads(files[stem+'.request.json'])!=request or receipt['request']!=request or receipt['summary']!=summary or receipt['nativeCaseId']!=name or receipt['sourceSHA256']!=source['identities'] or receipt['fullResultSHA256']!=hashlib.sha256(files[stem+'.full.json']).hexdigest():raise ValueError('Fresh uniform native source/request/full join failed')
+          if hashlib.sha256(files['control.full.json']).hexdigest()!=controls['control']['fullNativeSHA256']:raise ValueError('Only actual observed ed543 control is admitted')
+          manifest={'schema':'str-uniform-slab-law-native-archive/1','nativeCases':[controls['control']['nativeCaseId'],controls['changedNativeCaseId']],'nativeSolveExecutedForChangedCase':True,'candidateAccepted':False,'nativeSourceSHA256':source['identities'],'files':{name:{'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()} for name,data in files.items()},'originalNativeControlProvenance':{'repository':'adamnoden/architecture','immutableRef':'026b677544246c0c6669f23fad33c3b3b73ada95','actualCaptureSourceCommit':'8c1607f3f108fc8da90e7f8a74b0ed87d930006e','actualCaptureRun':45843306053,'sourceArchive':'project/str/studies/wet-beam-end-native-captures.tar.xz','sourceArchiveSHA256':hashlib.sha256(raw).hexdigest(),'nativeCaseId':controls['control']['nativeCaseId'],'fullNativeSHA256':controls['control']['fullNativeSHA256'],'fullBytesReusedUnchanged':True}}
+          path=Path('project/str/studies/uniform-slab-law-native-captures.tar.xz')
+          with tarfile.open(path,'w:xz',preset=1) as archive:
+           for name,data in [*files.items(),('archive-manifest.json',(json.dumps(manifest,indent=2)+'\n').encode())]:
+            member=tarfile.TarInfo(name);member.size=len(data);archive.addfile(member,io.BytesIO(data))
+          record={'sourceSHA256':source['identities'],'archiveSHA256':hashlib.sha256(path.read_bytes()).hexdigest(),'archiveBytes':path.stat().st_size,'observedUniform200FullSHA256':hashlib.sha256(files['uniform200.full.json']).hexdigest(),'actualControlFullSHA256':controls['control']['fullNativeSHA256'],'nativeSolvesExecutedInThisJob':1,'candidateAccepted':False}
+          (folder/'uniform-native-retention.json').write_text(json.dumps(record,indent=2)+'\n')
+          print('ACTUAL_UNIFORM_CURRENT_CAPTURE '+json.dumps(record,separators=(',',':')),flush=True)
+          PY
+      - name: Recompute current uniform-law and same-case end consequences
+        run: |
+          python -B project/str/studies/uniform_slab_law_proof.py --write > "$REGEN_DIR/uniform-law-write.log" 2>&1
+          python -B project/str/studies/uniform_slab_law_proof.py --check > "$REGEN_DIR/uniform-law-check.log" 2>&1
+          python -B project/str/studies/uniform_slab_end_consequence.py --write > "$REGEN_DIR/uniform-end-write.log" 2>&1
+          python -B project/str/studies/uniform_slab_end_consequence.py --check > "$REGEN_DIR/uniform-end-check.log" 2>&1
+          python -B project/str/studies/uniform_slab_law_test.py > "$REGEN_DIR/uniform-controls.log" 2>&1
+          python -B project/str/studies/uniform_slab_end_consequence_test.py > "$REGEN_DIR/uniform-end-controls.log" 2>&1
+      - name: Protect all source bytes and retain actual outputs
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,shutil,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);before=json.loads((folder/'source-before.json').read_text())
+          allow=["project/str/studies/uniform-slab-law-native-captures.tar.xz","project/str/studies/uniform-slab-law-proof.json","project/str/studies/uniform-slab-law-end-consequence.json","project/str/studies/uniform-slab-law-end.svg"]
+          sha=lambda data:hashlib.sha256(data).hexdigest()
+          actual={name:sha(Path(name).read_bytes()) for name in before['trackedSHA256']}
+          changed=[name for name,value in actual.items() if value!=before['trackedSHA256'][name]]
+          if set(changed)-set(allow):raise ValueError('Unexpected tracked source/request change: '+str(changed))
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          if load_source(Path('.'))['identities']!=before['native58SHA256']:raise ValueError('Actual native58 source changed during proof')
+          outputs={}
+          for name in allow:
+           p=Path(name)
+           if not p.is_file():raise ValueError('Missing actual generated output: '+name)
+           q=folder/'generated'/p;q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,q)
+           outputs[name]={'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())}
+           if p.suffix=='.json':
+            value=json.loads(p.read_text())
+            def verify_sources(node):
+             if isinstance(node,dict):
+              sources=node.get('sourceSHA256')
+              if isinstance(sources,dict):
+               for path,identity in sources.items():
+                if not Path(path).is_file() or sha(Path(path).read_bytes())!=identity:raise ValueError('Generated result contains stale native source: '+path)
+              for child in node.values():verify_sources(child)
+             elif isinstance(node,list):
+              for child in node:verify_sources(child)
+            verify_sources(value)
+            key={'floor-section-proof.json':None}.get(p.name)
+            if key:
+             previous=json.loads((folder/'before'/p).read_text())
+             def authored(node):
+              if isinstance(node,dict):return{k:authored(v) for k,v in node.items() if k!='sourceSHA256'}
+              if isinstance(node,list):return[authored(v) for v in node]
+              return node
+             if authored(previous[key])!=authored(value[key]):raise ValueError('Positive reference authored inputs changed: '+key)
+             outputs[name]['authoredInputsUnchangedExceptFreshIdentities']=True
+            previous=json.loads((folder/'before'/p).read_text())
+            def without_identities(node):
+             if isinstance(node,dict):return{k:without_identities(v) for k,v in node.items() if k!='sourceSHA256'}
+             if isinstance(node,list):return[without_identities(v) for v in node]
+             return node
+            for catalogue in ('cases','controls'):
+             rows=value.get(catalogue)
+             if not isinstance(rows,list):continue
+             before_rows=previous.get(catalogue)
+             if not isinstance(before_rows,list) or len(rows)!=len(before_rows):raise ValueError('Changed authored control count: '+catalogue)
+             for old_row,new_row in zip(before_rows,rows):
+              if old_row.get('caseId')!=new_row.get('caseId'):raise ValueError('Changed actual control ID')
+              for request_key in ('executedRequest','request'):
+               if request_key in old_row or request_key in new_row:
+                if request_key not in old_row or request_key not in new_row or without_identities(old_row[request_key])!=without_identities(new_row[request_key]):raise ValueError('Authored parent comparison changed beyond fresh identities')
+            outputs[name]['allAuthoredControlInputsUnchangedExceptFreshIdentities']=True
+          (folder/'source-after.json').write_text(json.dumps({'sourceCommit':before['sourceCommit'],'changedTrackedPaths':changed,'allowedGeneratedPaths':allow,'outputs':outputs,'native58UnchangedDuringExecution':True,'allOtherTrackedSourcesUnchanged':True,'accountAndCanonicalUnchanged':True,'candidateAccepted':False},indent=2)+'\n')
+          print('PASS generated outputs only; all native methods, requests, source account and canonical input protected',flush=True)
+          PY
+      - name: Preserve exact current-source execution logs
+        if: always()
+        run: |
+          python -B - <<'PY'
+          import os
+          from pathlib import Path
+          for p in sorted(Path(os.environ['REGEN_DIR']).glob('*.log')):
+           print('CURRENT_DEPENDENT_PROOF_LOG '+p.name,flush=True);print(p.read_text(errors='replace')[-40000:],flush=True)
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-positive-uniform-native-and-end-${{ github.sha }}
+          path: ${{ runner.temp }}/current-positive-source-evidence/
+          if-no-files-found: error
+          retention-days: 90
+
+  four-l-current-passivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install existing Node compiler runtime
+        run: npm ci --no-audit --no-fund
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+          cache: pip
+          cache-dependency-path: project/str/studies/*requirements.txt
+      - name: Install existing pinned numerical runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          echo "REGEN_DIR=$RUNNER_TEMP/current-positive-source-evidence" >> "$GITHUB_ENV"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/project/str/studies" >> "$GITHUB_ENV"
+      - name: Protect exact production sources and record actual native58 identities
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);folder.mkdir(parents=True,exist_ok=True)
+          expected={"project/str/studies/distributed_floor_compatibility.py":"7a8eb302813e8a509a1fac16ee29e7359d2c0bf9","project/str/studies/perforated_floor_condensation.py":"fbdea8993c4c00d863f2105c0a83f6ac0bf78c03","project/str/studies/current_zero_chord_control.py":"abff63ca41c5bfa01082a3443ed0900412e893f4","project/str/studies/current_zero_chord_control_test.py":"d09edced886fe556f4e0768def8a29301fb847f8","project/str/studies/wet_pad_fan_recovery_proof.py":"f3d6a3b4646ef6f41ad3f4ab48d2b7be542ba3e4","project/str/studies/uniform_slab_law_proof.py":"746cb407265b7d2e395d94d259bc8d73e423aec8","project/str/studies/uniform-slab-law-inputs.json":"1cc9682b87e12b967290e93e28d95736721bf337","project/str/studies/floor-section-cuts.ts":"f5e058d4cc5ea964ff06cd1713e47f464860fb8b"}
+          def sha(data):return hashlib.sha256(data).hexdigest()
+          for name,digest in expected.items():
+           data=Path(name).read_bytes();actual=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+           if actual!=digest:raise ValueError('Unreviewed source blob: '+name)
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          identities=load_source(Path('.'))['identities']
+          if len(identities)!=58:raise ValueError('Exact current58-source native inventory required')
+          files=subprocess.check_output(['git','ls-files'],text=True).splitlines()
+          snapshot={name:sha(Path(name).read_bytes()) for name in files}
+          (folder/'source-before.json').write_text(json.dumps({'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'exactProductionBlobs':expected,'native58SHA256':identities,'trackedSHA256':snapshot,'currentSavedEngineeringDocumentAdmitted':False},indent=2)+'\n')
+          for name in ["project/str/studies/four-l-joint-proof.json","project/str/studies/four-l-joint-material-audit.json"]:
+           p=Path(name)
+           if p.exists():
+            q=folder/'before'/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(p.read_bytes())
+          print('PASS exact reviewed protected blobs and actual58-source inventory; canonical/account untouched',flush=True)
+          PY
+      - name: Execute actual ordinary and passive observed native states at the same current q8 input
+        run: |
+          python -B - > "$REGEN_DIR/four-l-native.log" 2>&1 <<'PY'
+          import hashlib,json,os,subprocess,sys
+          from pathlib import Path
+          from floor_section_model import load_source
+          from floor_section_proof import cases,validate_full
+          folder=Path(os.environ['REGEN_DIR']);source=load_source(Path('.'));case=dict(cases(source))['wet-aligned-quadrature8']
+          previous=json.loads(Path('project/str/studies/four-l-joint-proof.json').read_text())
+          def inputs(x):
+           if isinstance(x,dict):return{k:inputs(v) for k,v in x.items() if k!='sourceSHA256'}
+           if isinstance(x,list):return[inputs(v) for v in x]
+           return x
+          if inputs(case)!=inputs(previous['witness']['executedRequest']):raise ValueError('Current owning q8 input differs physically from declared legacy release; no silent substitution')
+          name=previous['ordinaryControl']['caseId'];packet={'case':case,'caseId':name}
+          (folder/'four-l.input.json').write_text(json.dumps(packet,indent=2)+'\n')
+          for role,args,output in [('ordinary',['--ordinary'],'ordinary-control.json'),('observed',['--return-native'],'observed-envelope.json')]:
+           full=folder/(role+'.full.json')
+           completed=subprocess.run([sys.executable,'-B','project/str/studies/four_l_joint_observer.py',*args,'--capture-full',str(full)],input=json.dumps(packet),text=True,capture_output=True)
+           (folder/(role+'.stderr.log')).write_text(completed.stderr)
+           (folder/output).write_text(completed.stdout)
+           if completed.returncode:raise ValueError('Actual '+role+' native execution failed: '+completed.stderr[-6000:])
+           if load_source(Path('.'))['identities']!=source['identities']:raise ValueError('Source changed during actual native execution')
+          ordinary=json.loads((folder/'ordinary.full.json').read_text());control=json.loads((folder/'ordinary-control.json').read_text())
+          summary=validate_full(ordinary,case,source,name)
+          sha=lambda data:hashlib.sha256(data).hexdigest()
+          manifest={'schema':'str-full-native-control-capture/1','nativeCaseId':name,'sourceSHA256':source['identities'],'request':case,'fullResultSHA256':sha((folder/'ordinary.full.json').read_bytes()),'summary':summary,'drawings':ordinary['drawings'],'numericalRuntime':control['numericalRuntime']}
+          (folder/'ordinary.capture.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          if (folder/'ordinary.full.json').read_bytes()!=(folder/'observed.full.json').read_bytes():raise ValueError('Actual complete ordinary/observed native bytes differ; strict passivity failed')
+          print('PASS two genuinely fresh native executions have exact complete-byte equality and actual runtime',flush=True)
+          PY
+      - name: Admit exact actual native bytes and independently reconstructed joint free bodies through Node
+        run: |
+          node --import tsx --input-type=module - "$REGEN_DIR" > "$REGEN_DIR/four-l-node.log" 2>&1 <<'JS'
+          import{readFileSync,writeFileSync}from'node:fs';import{createHash}from'node:crypto';import{resolve}from'node:path';import{pathToFileURL}from'node:url';import assert from'node:assert/strict';
+          const folder=process.argv[2],read=name=>JSON.parse(readFileSync(resolve(folder,name),'utf8'));
+          const a=await import(pathToFileURL(resolve('compiler/reference-house/current-design/structural-four-l-joint-adapter.ts')).href);
+          const packet=read('four-l.input.json'),ordinary=read('ordinary.full.json'),envelope=read('observed-envelope.json');
+          const methods=Object.fromEntries(a.fourLJointMethodPaths.map(path=>[path,createHash('sha256').update(readFileSync(path)).digest('hex')]));
+          const result=a.admitFourLJointEnvelope(envelope,packet.case,packet.caseId,methods,a.fourLJointObservationFingerprint(envelope.observation),a.fourLNativeCutFingerprint(ordinary),a.fourLNativeSemanticFingerprint(ordinary));
+          assert.deepEqual(result.nativeResult.nativeVertical.native.heads,ordinary.nativeVertical.native.heads);assert.equal(ordinary.nativeVertical.native.heads.length,52);
+          writeFileSync(resolve(folder,'actual-node-admission.json'),JSON.stringify({actualNodeAdmissionPassing:true,physicalHeadCount:52,methodSourceSHA256:methods,nativeResultSHA256:envelope.observation.fullNativeResultSHA256,jointDemands:result.jointDemands},null,2)+'\n');
+          console.log('PASS actual Node source/native/cut/traction/free-body admission against fresh ordinary control; no resistance accepted');
+          JS
+      - name: Write current passivity and material attribution proof from actual new full captures
+        run: |
+          python -B project/str/studies/four_l_joint_proof.py --write --ordinary-full "$REGEN_DIR/ordinary.full.json" --ordinary-manifest "$REGEN_DIR/ordinary.capture.json" --observed-full "$REGEN_DIR/observed.full.json" --observed-envelope "$REGEN_DIR/observed-envelope.json" --node-admission "$REGEN_DIR/actual-node-admission.json" > "$REGEN_DIR/four-l-proof-write.log" 2>&1
+          python -B project/str/studies/four_l_joint_proof.py --check > "$REGEN_DIR/four-l-proof-check.log" 2>&1
+          python -B project/str/studies/four_l_joint_material_audit.py "$REGEN_DIR/observed.full.json" "$REGEN_DIR/observed-envelope.json" > project/str/studies/four-l-joint-material-audit.json
+          python -B project/str/studies/four_l_joint_proof_test.py > "$REGEN_DIR/four-l-proof-controls.log" 2>&1
+          python -B project/str/studies/four_l_joint_recovery_test.py > "$REGEN_DIR/four-l-recovery-controls.log" 2>&1
+          python -B project/str/studies/four_l_joint_material_audit_test.py > "$REGEN_DIR/four-l-material-controls.log" 2>&1
+          node --import tsx --test compiler/reference-house/current-design-four-l-joint.test.ts > "$REGEN_DIR/four-l-node-controls.log" 2>&1
+      - name: Retain both actual native executions, runtime and Node admission
+        run: |
+          python -B - > "$REGEN_DIR/four-l-full-retention.log" 2>&1 <<'PY'
+          import hashlib,json,os,tarfile
+          from pathlib import Path
+          from floor_section_model import load_source
+          folder=Path(os.environ['REGEN_DIR']);names=['four-l.input.json','ordinary.full.json','ordinary.capture.json','ordinary-control.json','observed.full.json','observed-envelope.json','actual-node-admission.json']
+          manifest={'schema':'str-current-positive-four-l-full-passivity-captures/1','sourceCommit':json.loads((folder/'source-before.json').read_text())['sourceCommit'],'sourceSHA256':load_source(Path('.'))['identities'],'nativeSolvesExecuted':2,'fullNativeBytesEqual':(folder/'ordinary.full.json').read_bytes()==(folder/'observed.full.json').read_bytes(),'files':{name:{'bytes':(folder/name).stat().st_size,'sha256':hashlib.sha256((folder/name).read_bytes()).hexdigest()} for name in names},'candidateAccepted':False}
+          path=folder/'four-l-native-capture-manifest.json';path.write_text(json.dumps(manifest,indent=2)+'\n')
+          target=folder/'current-positive-four-l-passivity-20261126.tar.gz'
+          with tarfile.open(target,'w:gz',compresslevel=1) as archive:
+           for name in names:archive.add(folder/name,arcname=name)
+           archive.add(path,arcname=path.name)
+          print('ACTUAL_FOUR_L_FULL_ARCHIVE '+json.dumps({'bytes':target.stat().st_size,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'nativeSolvesExecuted':2,'candidateAccepted':False}),flush=True)
+          PY
+      - name: Protect all source bytes and retain actual outputs
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,shutil,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);before=json.loads((folder/'source-before.json').read_text())
+          allow=["project/str/studies/four-l-joint-proof.json","project/str/studies/four-l-joint-material-audit.json"]
+          sha=lambda data:hashlib.sha256(data).hexdigest()
+          actual={name:sha(Path(name).read_bytes()) for name in before['trackedSHA256']}
+          changed=[name for name,value in actual.items() if value!=before['trackedSHA256'][name]]
+          if set(changed)-set(allow):raise ValueError('Unexpected tracked source/request change: '+str(changed))
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          if load_source(Path('.'))['identities']!=before['native58SHA256']:raise ValueError('Actual native58 source changed during proof')
+          outputs={}
+          for name in allow:
+           p=Path(name)
+           if not p.is_file():raise ValueError('Missing actual generated output: '+name)
+           q=folder/'generated'/p;q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,q)
+           outputs[name]={'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())}
+           if p.suffix=='.json':
+            value=json.loads(p.read_text())
+            def verify_sources(node):
+             if isinstance(node,dict):
+              sources=node.get('sourceSHA256')
+              if isinstance(sources,dict):
+               for path,identity in sources.items():
+                if not Path(path).is_file() or sha(Path(path).read_bytes())!=identity:raise ValueError('Generated result contains stale native source: '+path)
+              for child in node.values():verify_sources(child)
+             elif isinstance(node,list):
+              for child in node:verify_sources(child)
+            verify_sources(value)
+            key={'floor-section-proof.json':None}.get(p.name)
+            if key:
+             previous=json.loads((folder/'before'/p).read_text())
+             def authored(node):
+              if isinstance(node,dict):return{k:authored(v) for k,v in node.items() if k!='sourceSHA256'}
+              if isinstance(node,list):return[authored(v) for v in node]
+              return node
+             if authored(previous[key])!=authored(value[key]):raise ValueError('Positive reference authored inputs changed: '+key)
+             outputs[name]['authoredInputsUnchangedExceptFreshIdentities']=True
+            previous=json.loads((folder/'before'/p).read_text())
+            def without_identities(node):
+             if isinstance(node,dict):return{k:without_identities(v) for k,v in node.items() if k!='sourceSHA256'}
+             if isinstance(node,list):return[without_identities(v) for v in node]
+             return node
+            for catalogue in ('cases','controls'):
+             rows=value.get(catalogue)
+             if not isinstance(rows,list):continue
+             before_rows=previous.get(catalogue)
+             if not isinstance(before_rows,list) or len(rows)!=len(before_rows):raise ValueError('Changed authored control count: '+catalogue)
+             for old_row,new_row in zip(before_rows,rows):
+              if old_row.get('caseId')!=new_row.get('caseId'):raise ValueError('Changed actual control ID')
+              for request_key in ('executedRequest','request'):
+               if request_key in old_row or request_key in new_row:
+                if request_key not in old_row or request_key not in new_row or without_identities(old_row[request_key])!=without_identities(new_row[request_key]):raise ValueError('Authored parent comparison changed beyond fresh identities')
+            outputs[name]['allAuthoredControlInputsUnchangedExceptFreshIdentities']=True
+          (folder/'source-after.json').write_text(json.dumps({'sourceCommit':before['sourceCommit'],'changedTrackedPaths':changed,'allowedGeneratedPaths':allow,'outputs':outputs,'native58UnchangedDuringExecution':True,'allOtherTrackedSourcesUnchanged':True,'accountAndCanonicalUnchanged':True,'candidateAccepted':False},indent=2)+'\n')
+          print('PASS generated outputs only; all native methods, requests, source account and canonical input protected',flush=True)
+          PY
+      - name: Preserve exact current-source execution logs
+        if: always()
+        run: |
+          python -B - <<'PY'
+          import os
+          from pathlib import Path
+          for p in sorted(Path(os.environ['REGEN_DIR']).glob('*.log')):
+           print('CURRENT_DEPENDENT_PROOF_LOG '+p.name,flush=True);print(p.read_text(errors='replace')[-40000:],flush=True)
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-positive-four-l-current-passivity-${{ github.sha }}
+          path: ${{ runner.temp }}/current-positive-source-evidence/
+          if-no-files-found: error
+          retention-days: 90
+
+  five-mesh-captures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [coarse, refined, mixed]
+    env:
+      MESH_GROUP: ${{ matrix.group }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install existing Node compiler runtime
+        run: npm ci --no-audit --no-fund
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+          cache: pip
+          cache-dependency-path: project/str/studies/*requirements.txt
+      - name: Install existing pinned numerical runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          echo "REGEN_DIR=$RUNNER_TEMP/current-positive-source-evidence" >> "$GITHUB_ENV"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/project/str/studies" >> "$GITHUB_ENV"
+      - name: Protect exact production sources and record actual native58 identities
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);folder.mkdir(parents=True,exist_ok=True)
+          expected={"project/str/studies/distributed_floor_compatibility.py":"7a8eb302813e8a509a1fac16ee29e7359d2c0bf9","project/str/studies/perforated_floor_condensation.py":"fbdea8993c4c00d863f2105c0a83f6ac0bf78c03","project/str/studies/current_zero_chord_control.py":"abff63ca41c5bfa01082a3443ed0900412e893f4","project/str/studies/current_zero_chord_control_test.py":"d09edced886fe556f4e0768def8a29301fb847f8","project/str/studies/wet_pad_fan_recovery_proof.py":"f3d6a3b4646ef6f41ad3f4ab48d2b7be542ba3e4","project/str/studies/uniform_slab_law_proof.py":"746cb407265b7d2e395d94d259bc8d73e423aec8","project/str/studies/uniform-slab-law-inputs.json":"1cc9682b87e12b967290e93e28d95736721bf337","project/str/studies/floor-section-cuts.ts":"f5e058d4cc5ea964ff06cd1713e47f464860fb8b"}
+          def sha(data):return hashlib.sha256(data).hexdigest()
+          for name,digest in expected.items():
+           data=Path(name).read_bytes();actual=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+           if actual!=digest:raise ValueError('Unreviewed source blob: '+name)
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          identities=load_source(Path('.'))['identities']
+          if len(identities)!=58:raise ValueError('Exact current58-source native inventory required')
+          files=subprocess.check_output(['git','ls-files'],text=True).splitlines()
+          snapshot={name:sha(Path(name).read_bytes()) for name in files}
+          (folder/'source-before.json').write_text(json.dumps({'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'exactProductionBlobs':expected,'native58SHA256':identities,'trackedSHA256':snapshot,'currentSavedEngineeringDocumentAdmitted':False},indent=2)+'\n')
+          for name in []:
+           p=Path(name)
+           if p.exists():
+            q=folder/'before'/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(p.read_bytes())
+          print('PASS exact reviewed protected blobs and actual58-source inventory; canonical/account untouched',flush=True)
+          PY
+      - name: Execute exact existing mesh inputs exported by the sole owning cut producer
+        run: |
+          python -B - > "$REGEN_DIR/mesh-native.log" 2>&1 <<'PY'
+          import hashlib,json,os,subprocess,sys
+          from pathlib import Path
+          from floor_section_model import load_source
+          from floor_section_proof import validate_full
+          folder=Path(os.environ['REGEN_DIR']);source=load_source(Path('.'));group=os.environ['MESH_GROUP']
+          groups={'coarse':['wet-floor-mesh-700','wet-floor-mesh-500'],'refined':['wet-floor-mesh-250'],'mixed':['wet-floor-mixed-m250-v500','wet-floor-mixed-m500-v250']}
+          if group not in groups:raise ValueError('Explicit three-group mesh capture scope required')
+          raw=subprocess.check_output(['node','--import','tsx','project/str/studies/floor-section-cuts.ts','--read-cases'],text=True)
+          packet=json.loads(raw);catalogue=dict(packet['cases'])
+          before=json.loads(Path('project/str/studies/floor-section-cuts-proof.json').read_text())
+          def without_identities(x):
+           if isinstance(x,dict):return{k:without_identities(v) for k,v in x.items() if k!='sourceSHA256'}
+           if isinstance(x,list):return[without_identities(v) for v in x]
+           return x
+          if len(packet['cases'])!=16 or len(before['controls'])!=16:raise ValueError('Exact existing16 source-owned case catalogue required')
+          for (name,request),old in zip(packet['cases'],before['controls']):
+           if name!=old['caseId'] or without_identities(request)!=without_identities(old['executedRequest']):raise ValueError('Read-only export changed authored mesh/floor inputs')
+          sha=lambda data:hashlib.sha256(data).hexdigest()
+          mesh_id=sha(json.dumps(packet['cases'][0][1]['sourceSHA256'],separators=(',',':')).encode())
+          directory=folder/'mesh'/mesh_id;directory.mkdir(parents=True,exist_ok=True);records={}
+          (folder/'exact-owning-cases.json').write_text(raw)
+          for name in groups[group]:
+           request=catalogue[name];p=directory/(name+'.request.json');full=directory/(name+'.full.json');capture=directory/(name+'.capture.json')
+           if request['sourceSHA256']!=source['identities']:raise ValueError('Mesh request is not actual native58')
+           p.write_text(json.dumps(request,allow_nan=False)+'\n')
+           subprocess.run([sys.executable,'-B','project/str/studies/floor_section_proof.py','--capture',name,str(p),str(full),str(capture)],check=True)
+           native=json.loads(full.read_text());receipt=json.loads(capture.read_text());summary=validate_full(native,request,source,name)
+           if receipt['request']!=request or receipt['nativeCaseId']!=name or receipt['sourceSHA256']!=source['identities'] or receipt['fullResultSHA256']!=sha(full.read_bytes()) or receipt['summary']!=summary:raise ValueError('Current full mesh capture join failed')
+           records[name]={'nativeCaseId':name,'fullSHA256':sha(full.read_bytes()),'files':{str(q.relative_to(folder)):{'bytes':q.stat().st_size,'sha256':sha(q.read_bytes())} for q in (p,full,capture)}}
+           (folder/'mesh-capture-manifest.json').write_text(json.dumps({'schema':'str-current-positive-floor-mesh-captures/1','sourceCommit':json.loads((folder/'source-before.json').read_text())['sourceCommit'],'sourceSHA256':source['identities'],'owningCaseCatalogueSHA256':sha(raw.encode()),'meshDirectoryId':mesh_id,'group':group,'expectedCaseIds':groups[group],'completeVerifiedCaseCount':len(records),'controls':records,'nativeSolvesExecuted':len(records),'candidateAccepted':False},indent=2)+'\n')
+           print('ACTUAL_CURRENT_MESH_CAPTURE '+json.dumps({'caseId':name,'fullSHA256':records[name]['fullSHA256'],'physicalHeads':len(summary['heads']),'maximumHeadBalanceResidual':max(map(abs,summary['independent52HeadBalanceResidualKN_KNm']))}),flush=True)
+           del native
+          if load_source(Path('.'))['identities']!=source['identities']:raise ValueError('Native58 changed')
+          print('PASS exact existing source-owned mesh group '+group,flush=True)
+          PY
+      - name: Protect all source bytes and retain actual outputs
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,shutil,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);before=json.loads((folder/'source-before.json').read_text())
+          allow=[]
+          sha=lambda data:hashlib.sha256(data).hexdigest()
+          actual={name:sha(Path(name).read_bytes()) for name in before['trackedSHA256']}
+          changed=[name for name,value in actual.items() if value!=before['trackedSHA256'][name]]
+          if set(changed)-set(allow):raise ValueError('Unexpected tracked source/request change: '+str(changed))
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          if load_source(Path('.'))['identities']!=before['native58SHA256']:raise ValueError('Actual native58 source changed during proof')
+          outputs={}
+          for name in allow:
+           p=Path(name)
+           if not p.is_file():raise ValueError('Missing actual generated output: '+name)
+           q=folder/'generated'/p;q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,q)
+           outputs[name]={'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())}
+           if p.suffix=='.json':
+            value=json.loads(p.read_text())
+            def verify_sources(node):
+             if isinstance(node,dict):
+              sources=node.get('sourceSHA256')
+              if isinstance(sources,dict):
+               for path,identity in sources.items():
+                if not Path(path).is_file() or sha(Path(path).read_bytes())!=identity:raise ValueError('Generated result contains stale native source: '+path)
+              for child in node.values():verify_sources(child)
+             elif isinstance(node,list):
+              for child in node:verify_sources(child)
+            verify_sources(value)
+            key={'floor-section-proof.json':None}.get(p.name)
+            if key:
+             previous=json.loads((folder/'before'/p).read_text())
+             def authored(node):
+              if isinstance(node,dict):return{k:authored(v) for k,v in node.items() if k!='sourceSHA256'}
+              if isinstance(node,list):return[authored(v) for v in node]
+              return node
+             if authored(previous[key])!=authored(value[key]):raise ValueError('Positive reference authored inputs changed: '+key)
+             outputs[name]['authoredInputsUnchangedExceptFreshIdentities']=True
+            previous=json.loads((folder/'before'/p).read_text())
+            def without_identities(node):
+             if isinstance(node,dict):return{k:without_identities(v) for k,v in node.items() if k!='sourceSHA256'}
+             if isinstance(node,list):return[without_identities(v) for v in node]
+             return node
+            for catalogue in ('cases','controls'):
+             rows=value.get(catalogue)
+             if not isinstance(rows,list):continue
+             before_rows=previous.get(catalogue)
+             if not isinstance(before_rows,list) or len(rows)!=len(before_rows):raise ValueError('Changed authored control count: '+catalogue)
+             for old_row,new_row in zip(before_rows,rows):
+              if old_row.get('caseId')!=new_row.get('caseId'):raise ValueError('Changed actual control ID')
+              for request_key in ('executedRequest','request'):
+               if request_key in old_row or request_key in new_row:
+                if request_key not in old_row or request_key not in new_row or without_identities(old_row[request_key])!=without_identities(new_row[request_key]):raise ValueError('Authored parent comparison changed beyond fresh identities')
+            outputs[name]['allAuthoredControlInputsUnchangedExceptFreshIdentities']=True
+          (folder/'source-after.json').write_text(json.dumps({'sourceCommit':before['sourceCommit'],'changedTrackedPaths':changed,'allowedGeneratedPaths':allow,'outputs':outputs,'native58UnchangedDuringExecution':True,'allOtherTrackedSourcesUnchanged':True,'accountAndCanonicalUnchanged':True,'candidateAccepted':False},indent=2)+'\n')
+          print('PASS generated outputs only; all native methods, requests, source account and canonical input protected',flush=True)
+          PY
+      - name: Preserve exact current-source execution logs
+        if: always()
+        run: |
+          python -B - <<'PY'
+          import os
+          from pathlib import Path
+          for p in sorted(Path(os.environ['REGEN_DIR']).glob('*.log')):
+           print('CURRENT_DEPENDENT_PROOF_LOG '+p.name,flush=True);print(p.read_text(errors='replace')[-40000:],flush=True)
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-positive-five-mesh-${{ matrix.group }}-${{ github.sha }}
+          path: ${{ runner.temp }}/current-positive-source-evidence/
+          if-no-files-found: error
+          retention-days: 90
+
