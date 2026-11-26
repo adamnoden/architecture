@@ -9,8 +9,8 @@
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-26T01:31:50.000Z",
-  "expiresAt": "2026-11-26T02:16:50.000Z",
+  "heartbeatAt": "2026-11-26T02:00:21.000Z",
+  "expiresAt": "2026-11-26T02:45:21.000Z",
   "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
@@ -36,8 +36,8 @@
   },
   "pr": 1627,
   "checkpoint": {
-    "evidence": "1627 dcfc8d63 pending CI; raw90077632 exact83a94f9b checkpoint: 3 pure tests/tsc/audit0; saved fourth test/replay completion unknown. e473bdef normalizer verified. No walking code.",
-    "next": "Finish1627 fresh dual runner preflight/merge; recover90077632 and complete saved checks.",
-    "blocker": "Executor unavailable. Walking/S460N comparison is read-only proposal; stored release, support/material/site holds remain."
+    "evidence": "1626 merged83f8cb65.1627 now0d20523d test-only5incident-XY contract fix, CI unverified; dcfc failed obsolete equality. Raw90077632 actual-route partialchecks/e473 normalizer preserved.",
+    "next": "On executor recovery validate0d20523d exacthead, canonical preflight/merge; complete90077632 saved/replay checks. Redesign deck without cantilevers.",
+    "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
   }
 }
