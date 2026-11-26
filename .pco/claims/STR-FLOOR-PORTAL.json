@@ -9,9 +9,9 @@
     "label": "convergence-20261125"
   },
   "claimedAt": "2026-11-25T22:18:56.729Z",
-  "heartbeatAt": "2026-11-25T23:49:09.168Z",
-  "expiresAt": "2026-11-26T00:34:09.168Z",
-  "branch": "work/convergence-structure-20261125",
+  "heartbeatAt": "2026-11-26T00:30:10.350Z",
+  "expiresAt": "2026-11-26T01:15:10.350Z",
+  "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
     "generation": 59,
@@ -34,10 +34,10 @@
       "blocker": "Executor explicitly unavailable. Latest local assembly and unpublished bearing-bed files cannot be inspected; no bearing-bed native result exists."
     }
   },
-  "pr": 1626,
+  "pr": 1627,
   "checkpoint": {
-    "evidence": "RecoveryPR1626 head243593e528807ca544ea5fdcc19a0826268841ca: bothactual browserproofs and publicationproofsgreen; healthpending. Followup2d861dae5c6856b09453121a1fa60c38daf1ba02 saved: actualnormalbed andstoreincident/material boundaries. Contourmethod/controlcheckpoint ee4a0ffebe29e9ed89365f6e1d012e7de7735c40 has fresh140/70/50 sameoperator checks and retainedoriginalhistory; no35response orphysicaladmission.",
-    "next": "Merge recoveryafterexacthealth andfreshbothleasepreflights; submitjoinedfollowup aftercurrent-source/witnessreconciliation. Resume35onlywithrecoverablecheckpoints.",
-    "blocker": "Canonicalhealth stillrunning; actualcurvedbar transfer, masonry/contact andwholewaterroom remainunqualified."
+    "evidence": "PR1626 merged83f8cb6509df7768e2777ece378f1bca3e2f43fc after7exact-headgreenworkflows andbothfreshpreflights. PR1627 head dcfc8d631bbe1670359bd82db5ca18c30edb6c5d contains actual35completed315.20s,9.77752percent50to35sensitivity, finitebedfailure, currentfaultstations/materialboundaries, andcorrectedgravityunit. Strictaudit0 andcurrentinletproducerreplaypass. Rawwet-suite5c46a9fef5eb193f57eec96fbc0c0ff7414d62dd remainsseparateunselectedcheckpoint.",
+    "next": "Finishactualsaved35CLIprobe andexact-headCIfor1627, mergeafterfreshbothleasepreflights. DevelopadditiveknownRC/mineralgroundpocketloadoperatorwithoutchanging58kernels; actualbaselineoldgroundstockisnotcredited.",
+    "blocker": "No slab/arch/raised-house/wateradmission. Actualglobalcorner, curvedbartransfer, supports/resistance andwholefaultnetworkstillopen."
   }
 }
