@@ -13,11 +13,11 @@
     ],
     "FIRSTMm": 3450,
     "columnFaceRowsMm": [
-      65,
+      70,
       230
     ],
     "columnAlongStationsMm": [
-      65,
+      70,
       230,
       580,
       930
@@ -27,7 +27,7 @@
     "beamBarNominalMm": 16,
     "beamBarOutsideMm": 18,
     "beamBarNormalMm": [
-      100,
+      105,
       198
     ],
     "beamBarZMm": [
@@ -46,7 +46,7 @@
     "cornerFloorMandrelMm": 280,
     "cornerFloorStraightTailMm": 1000,
     "floorAlongCoordinatesMm": [
-      320,
+      325,
       390,
       465,
       535,

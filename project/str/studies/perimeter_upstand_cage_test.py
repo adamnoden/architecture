@@ -102,6 +102,14 @@ class CageControls(unittest.TestCase):
         self.assertFalse(bad['allCertified'])
         self.assertEqual(bad['lockedNormalContactCertificates'],0)
         self.assertTrue(any(x['state']=='collision' for x in bad['failures']))
+    def test_cover_deducts_both_setting_allowances_and_rejects_old_65mm_row(self):
+        self.assertTrue(self.r['externalConcreteCoverAudit']['allCheckedProfilesMeetMinimum'],str(self.r['externalConcreteCoverAudit']))
+        self.assertAlmostEqual(self.r['externalConcreteCoverAudit']['worst']['adverseExternalConcreteCoverMm'],40)
+        c=copy.deepcopy(self.c);c['geometry']['columnFaceRowsMm'][0]=65;c['geometry']['columnAlongStationsMm'][0]=65
+        links,_=p.link_paths(c)
+        bad=p.external_cover_audit(c,p.column_points(c),links,p.ordinary_beam_links(c))
+        self.assertFalse(bad['allCheckedProfilesMeetMinimum'])
+        self.assertAlmostEqual(bad['worst']['adverseExternalConcreteCoverMm'],35)
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')

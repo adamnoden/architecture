@@ -312,6 +312,28 @@ def intended_link_main_contact_audit(c,columns,links,beam_links):
         'independentNormalMotionThroughLinkedBarNotPermitted':True,
         'fieldPhysicalAcceptanceEarned':False}
 
+
+def external_cover_audit(c,columns,links,beam_links):
+    g=c['geometry'];tol=g['cageSettingMm']+g['independentBarSettingMm'];items=[]
+    def check(identifier,lo,hi,r,kind):
+        if kind=='L':
+            distances=[lo[0],lo[1],1000-hi[0],1000-hi[1]]
+            if hi[1]>300:distances.append(300-hi[0])
+            if hi[0]>300:distances.append(300-hi[1])
+        else:
+            distances=[lo[0],300-hi[0],lo[2]-3170,3520-hi[2]]
+        items.append({'id':identifier,'adverseExternalConcreteCoverMm':min(distances)-r-tol})
+    for k,p in enumerate(columns):check('column-main/'+str(k),p+[0],p+[0],g['columnBarOutsideMm']/2,'L')
+    for link in links:
+        lo,hi=paths_bounds(link);check(link['id'],lo,hi,link['outsideMm']/2,'L')
+    for link in beam_links:
+        lo,hi=paths_bounds(link);axis=int(link['id'].split('/')[1])
+        check(link['id'],[lo[axis],0,lo[2]],[hi[axis],0,hi[2]],link['outsideMm']/2,'beam')
+    return {'minimumRequiredMm':g['minimumConcreteCoverMm'],'fullCommonAndIndependentSettingDeductedMm':tol,
+        'allCheckedProfilesMeetMinimum':all(x['adverseExternalConcreteCoverMm']>=g['minimumConcreteCoverMm']-1e-8 for x in items),
+        'worst':min(items,key=lambda x:x['adverseExternalConcreteCoverMm']),
+        'checkedProfileCount':len(items),'floorArcsAtSlabCoreUnionNeedSeparateSurfaceWitness':True}
+
 def material_bounds(c):
     g,m=c['geometry'],c['materials'];d=g['floorBarNominalMm'];f=m['reinforcementComparisonMPa']
     ab=(g['floorPitchMm']-2*g['independentBarSettingMm'])/2
@@ -400,6 +422,7 @@ def assess(c,base,full_geometry=False):
         'ordinaryBeamLinksAgainstFloorAudit':audit_path_groups(beam_links,floors+ordinary,tol) if full_geometry else {'executed':False},
         'allLinksAgainstEachOtherAudit':audit_unique_paths(links+beam_links,tol) if full_geometry else {'executed':False},
         'intendedLinkMainContacts':intended_link_main_contact_audit(c,col,links,beam_links) if full_geometry else {'executed':False},
+        'externalConcreteCoverAudit':external_cover_audit(c,col,links,beam_links),
         'ordinaryFloorAgainstBeamAudit':beam_floor_audit(c,beam,ordinary) if full_geometry else {'executed':False},
         'linksAgainstBeamThreeDimensionalAudit':link_beam,'linksAgainstFloorThreeDimensionalAudit':link_floor,
         'maximumColumnLinkFamilyPitchMm':max(b-a for rows in schedules.values() for a,b in zip(rows,rows[1:])),
