@@ -1,0 +1,226 @@
+name: Assemble authenticated current wet and floor native evidence
+
+on:
+  push:
+    branches: [work/current-positive-source-regeneration-20261126]
+    paths:
+      - '.github/workflows/current-positive-native-archive-assembly.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: current-positive-native-archive-assembly-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+
+jobs:
+  exact-archive-assembly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+          cache: pip
+          cache-dependency-path: project/str/studies/*requirements.txt
+      - name: Install existing pinned numerical runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          echo "REGEN_DIR=$RUNNER_TEMP/current-positive-source-evidence" >> "$GITHUB_ENV"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/project/str/studies" >> "$GITHUB_ENV"
+      - name: Protect exact production sources and record actual native58 identities
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);folder.mkdir(parents=True,exist_ok=True)
+          expected={"project/str/studies/distributed_floor_compatibility.py":"7a8eb302813e8a509a1fac16ee29e7359d2c0bf9","project/str/studies/perforated_floor_condensation.py":"fbdea8993c4c00d863f2105c0a83f6ac0bf78c03","project/str/studies/current_zero_chord_control.py":"abff63ca41c5bfa01082a3443ed0900412e893f4","project/str/studies/current_zero_chord_control_test.py":"d09edced886fe556f4e0768def8a29301fb847f8"}
+          def sha(data):return hashlib.sha256(data).hexdigest()
+          for name,digest in expected.items():
+           data=Path(name).read_bytes();actual=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+           if actual!=digest:raise ValueError('Unreviewed source blob: '+name)
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          identities=load_source(Path('.'))['identities']
+          if len(identities)!=58:raise ValueError('Exact current58-source native inventory required')
+          files=subprocess.check_output(['git','ls-files'],text=True).splitlines()
+          snapshot={name:sha(Path(name).read_bytes()) for name in files}
+          (folder/'source-before.json').write_text(json.dumps({'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'exactProductionBlobs':expected,'native58SHA256':identities,'trackedSHA256':snapshot,'currentSavedEngineeringDocumentAdmitted':False},indent=2)+'\n')
+          for name in []:
+           p=Path(name)
+           if p.exists():
+            q=folder/'before'/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(p.read_bytes())
+          print('PASS exact four protected blobs and actual58-source inventory; canonical/account untouched',flush=True)
+          PY
+      - name: Authenticate all14 real native captures and actual floor11 outputs before archival
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -B - > "$REGEN_DIR/archive-assembly.log" 2>&1 <<'PY'
+          import hashlib,io,json,os,re,subprocess,tarfile,urllib.error,urllib.request,zipfile
+          from pathlib import Path
+          from floor_section_model import load_source
+          from floor_section_proof import validate_full
+          from wet_bearing_refinement_proof import expected_native_request
+          from wet_pad_fan_recovery_proof import expected as pad_expected
+          from wet_beam_end_development_proof import expected_case as end_expected,read_controls as end_controls
+          from wet_support_cage_comparison import assess,comparison_settings
+          from vertical_floor_numerics import runtime_versions
+          folder=Path(os.environ['REGEN_DIR']);folder.mkdir(parents=True,exist_ok=True);native=load_source(Path('.'));identities=native['identities']
+          api=os.environ['GITHUB_API_URL'];repo=os.environ['GITHUB_REPOSITORY']
+          if repo!='adamnoden/architecture':raise ValueError('Exact repository required')
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          specs=[{"id":15130660162,"name":"current-positive-wet-captures-wet25-8c1607f3f108fc8da90e7f8a74b0ed87d930006e","bytes":6375359,"sha256":"09232c58b0eb47da3190d20b80127777c782bdcaecfaa635e980e680cb2bbd1e","group":"wet25","keys":["wet-aligned-quadrature16","wet-aligned-quadrature32","wet-aligned-quadrature64"]},{"id":15130900211,"name":"current-positive-wet-captures-wet27-8c1607f3f108fc8da90e7f8a74b0ed87d930006e","bytes":6378399,"sha256":"6d1caea0bb50e9721e1a994439f57218242a634645378de81e0cb3015d37d9cf","group":"wet27","keys":["wet-aligned-concrete27-quadrature16","wet-aligned-concrete27-quadrature32","wet-aligned-concrete27-quadrature64"]},{"id":15129946938,"name":"current-positive-wet-captures-zero-restored-8c1607f3f108fc8da90e7f8a74b0ed87d930006e","bytes":5670681,"sha256":"77b1812ccd098ffcfb140a3cf94936c77b3a054f8b42fe6ce0582b45bed167b3","group":"zero-restored","keys":["wet-zeroG-roof-suction-quadrature32","wet-zeroG-roof-suction-quadrature64","wet-aligned-quadrature8-restored"]},{"id":15130196609,"name":"current-positive-wet-captures-pads-8c1607f3f108fc8da90e7f8a74b0ed87d930006e","bytes":7033508,"sha256":"56f00658800e5e472d4e6923b1b3db340eef5d762d8c0290eeb73a965483bfac","group":"pads","keys":["width120-q32","width120-q64","width140-q64"]},{"id":15128873194,"name":"current-positive-wet-captures-south40-8c1607f3f108fc8da90e7f8a74b0ed87d930006e","bytes":4578534,"sha256":"b9384383d83e7249093e00bfc5fe7262b3f4467c66ba90f548541d53820c27cf","group":"south40","keys":["south40-q32","south40-q64"]}]
+          expected_head='8c1607f3f108fc8da90e7f8a74b0ed87d930006e';expected_run=45843306053
+          sha=lambda data:hashlib.sha256(data).hexdigest()
+          blob=lambda data:hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+          encode=lambda value:(json.dumps(value,indent=2,allow_nan=False)+'\n').encode()
+          def get(url):
+           with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=60) as response:return json.load(response)
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+           def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+          run=get(f'{api}/repos/{repo}/actions/runs/{expected_run}')
+          if run['head_sha']!=expected_head or run['status']!='completed' or run['conclusion']!='success':raise ValueError('Exact actual14 native producer run must succeed')
+          controls={};artifact_provenance=[]
+          for spec in specs:
+           metadata=get(f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}')
+           if metadata['name']!=spec['name'] or metadata['expired'] or metadata['size_in_bytes']!=spec['bytes'] or metadata['digest']!='sha256:'+spec['sha256'] or metadata['workflow_run']['id']!=expected_run or metadata['workflow_run']['head_sha']!=expected_head:raise ValueError('Observed native artifact identity changed')
+           url=f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}/zip';opener=urllib.request.build_opener(NoRedirect())
+           try:
+            with opener.open(urllib.request.Request(url,headers=headers),timeout=60) as response:archive=response.read()
+           except urllib.error.HTTPError as response:
+            if response.code not in (301,302,303,307,308):raise
+            location=response.headers['Location']
+            if not location.startswith('https://'):raise ValueError('HTTPS storage required')
+            with urllib.request.urlopen(location,timeout=120) as response:archive=response.read()
+           if len(archive)!=spec['bytes'] or sha(archive)!=spec['sha256']:raise ValueError('Exact observed native ZIP bytes changed')
+           with zipfile.ZipFile(io.BytesIO(archive)) as zipped:
+            names=zipped.namelist()
+            if len(names)!=len(set(names)) or any(name.startswith('/') or '..' in name.split('/') or '\\' in name for name in names):raise ValueError('Unsafe or nonunique artifact member')
+            before=json.loads(zipped.read('source-before.json'));after=json.loads(zipped.read('source-after.json'));capture=json.loads(zipped.read('capture-group-manifest.json'))
+            if before['sourceCommit']!=expected_head or after['sourceCommit']!=expected_head or before['native58SHA256']!=identities or set(after['changedTrackedPaths']) or after['outputs'] or any(after.get(k) is not True for k in ('native58UnchangedDuringExecution','allOtherTrackedSourcesUnchanged','accountAndCanonicalUnchanged')):raise ValueError('Native producer source protection failed')
+            for name,digest in before['trackedSHA256'].items():
+             if sha(Path(name).read_bytes())!=digest:raise ValueError('Protected capture producer source changed: '+name)
+            if capture['sourceCommit']!=expected_head or capture['sourceSHA256']!=identities or capture['group']!=spec['group'] or capture['completeVerifiedCaseCount']!=len(spec['keys']) or capture['expectedCaseKeys']!=spec['keys'] or set(capture['controls'])!=set(spec['keys']) or capture['onlyFreshNativeSolves'] is not True or capture['candidateAccepted'] is not False:raise ValueError('Incomplete or altered actual native group')
+            for key,entry in capture['controls'].items():
+             if key in controls:raise ValueError('Duplicate native capture key')
+             files={name:zipped.read(name) for name in entry['files']}
+             for name,data in files.items():
+              identity=entry['files'][name]
+              if len(data)!=identity['bytes'] or sha(data)!=identity['sha256']:raise ValueError('Actual native capture member changed')
+             request_bytes=next(data for name,data in files.items() if name.endswith('.request.json'));full=next(data for name,data in files.items() if name.endswith('.full.json'));receipt=next(data for name,data in files.items() if name.endswith('.capture.json'))
+             request=json.loads(request_bytes);result=json.loads(full);manifest=json.loads(receipt);name=entry['nativeCaseId']
+             if spec['group'] in ('wet25','wet27','zero-restored'):expected=expected_native_request(key,native)
+             elif spec['group']=='pads':expected=pad_expected(key,native)
+             else:expected=end_expected(native,end_controls(),{'south40-q32':32,'south40-q64':64}[key])
+             summary=validate_full(result,expected,native,name)
+             if request!=expected or manifest['request']!=expected or manifest['nativeCaseId']!=name or manifest['sourceSHA256']!=identities or manifest['fullResultSHA256']!=sha(full) or manifest['summary']!=summary:raise ValueError('Full source/request/native-name/summary join failed')
+             controls[key]={'request':request_bytes,'full':full,'capture':receipt,'nativeCaseId':name,'producerArtifactId':spec['id']}
+           artifact_provenance.append({**spec,'runId':expected_run,'headSHA':expected_head})
+          if len(controls)!=14 or load_source(Path('.'))['identities']!=identities:raise ValueError('Complete14 current-source native set required')
+          def triple(key,stem):
+           item=controls[key]
+           return{stem+'.'+suffix+'.json':item[suffix] for suffix in ('request','full','capture')}
+          def package(repository_path,files,manifest_name,extra,mode='w:gz'):
+           manifest={'schema':'str-current-positive-native-capture-archive/1','nativeCaptureSourceCommit':expected_head,'assemblySourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'nativeSourceSHA256':identities,'actualNativeProducerRun':expected_run,'files':{name:{'bytes':len(data),'sha256':sha(data)} for name,data in files.items()},'nativeSolveExecutedByAssembly':False,'candidateAccepted':False,**extra}
+           body=encode(manifest);target=folder/'archives'/repository_path;target.parent.mkdir(parents=True,exist_ok=True)
+           options={'compresslevel':1} if mode=='w:gz' else {'preset':1}
+           with tarfile.open(target,mode,**options) as archive:
+            for name,data in [*files.items(),(manifest_name,body)]:
+             member=tarfile.TarInfo(name);member.size=len(data);archive.addfile(member,io.BytesIO(data))
+           return{'member':str(target.relative_to(folder)),'bytes':target.stat().st_size,'sha256':sha(target.read_bytes()),'gitBlob':blob(target.read_bytes()),'files':manifest['files'],'manifest':manifest,'manifestMember':manifest_name}
+          archives={};generated_outputs={}
+          floor_spec={'id':15129932488,'name':'current-positive-floor-eleven-28049604aeea0052a06a19dc9393596a7e8739dc','bytes':24673517,'sha256':'631cc12a1c6bd436dcb4d1295448859a3adc01f2f839a1d66ff4443b9173c6d7','run':45842321684,'head':'28049604aeea0052a06a19dc9393596a7e8739dc'}
+          floor_run=get(f'{api}/repos/{repo}/actions/runs/{floor_spec["run"]}')
+          if floor_run['head_sha']!=floor_spec['head'] or floor_run['status']!='completed' or floor_run['conclusion']!='success':raise ValueError('Exact real floor11/cage/profile run must pass')
+          metadata=get(f'{api}/repos/{repo}/actions/artifacts/{floor_spec["id"]}')
+          if metadata['name']!=floor_spec['name'] or metadata['expired'] or metadata['size_in_bytes']!=floor_spec['bytes'] or metadata['digest']!='sha256:'+floor_spec['sha256'] or metadata['workflow_run']['id']!=floor_spec['run'] or metadata['workflow_run']['head_sha']!=floor_spec['head']:raise ValueError('Observed floor artifact identity changed')
+          url=f'{api}/repos/{repo}/actions/artifacts/{floor_spec["id"]}/zip'
+          try:
+           with urllib.request.build_opener(NoRedirect()).open(urllib.request.Request(url,headers=headers),timeout=60) as response:floor_zip=response.read()
+          except urllib.error.HTTPError as response:
+           if response.code not in (301,302,303,307,308):raise
+           location=response.headers['Location']
+           if not location.startswith('https://'):raise ValueError('HTTPS storage required')
+           with urllib.request.urlopen(location,timeout=120) as response:floor_zip=response.read()
+          if len(floor_zip)!=floor_spec['bytes'] or sha(floor_zip)!=floor_spec['sha256']:raise ValueError('Exact observed floor ZIP bytes differ')
+          floor_paths=["project/str/studies/floor-section-proof.json","project/str/studies/floor-section-250.svg","project/str/studies/seated-wet-support-floor.svg","project/str/studies/wet-support-cage-comparison-proof.json","project/had/studies/house-vertical-profile.results.json","project/had/studies/house-vertical-profile.svg"]
+          with zipfile.ZipFile(io.BytesIO(floor_zip)) as zipped:
+           names=zipped.namelist()
+           if len(names)!=len(set(names)) or any(name.startswith('/') or '..' in name.split('/') or '\\' in name for name in names):raise ValueError('Unsafe floor artifact member')
+           before=json.loads(zipped.read('source-before.json'));after=json.loads(zipped.read('source-after.json'))
+           if before['sourceCommit']!=floor_spec['head'] or after['sourceCommit']!=floor_spec['head'] or before['native58SHA256']!=identities or set(after['outputs'])!=set(floor_paths) or set(after['allowedGeneratedPaths'])!=set(floor_paths) or set(after['changedTrackedPaths'])-set(floor_paths) or any(after.get(k) is not True for k in ('native58UnchangedDuringExecution','allOtherTrackedSourcesUnchanged','accountAndCanonicalUnchanged')):raise ValueError('Floor producer source/scope protection failed')
+           for name,digest in before['trackedSHA256'].items():
+            if sha(Path(name).read_bytes())!=digest:raise ValueError('Frozen floor producer input changed: '+name)
+           for name in floor_paths:
+            data=zipped.read('generated/'+name);record=after['outputs'][name]
+            if len(data)!=record['bytes'] or sha(data)!=record['sha256']:raise ValueError('Actual generated floor output changed: '+name)
+            target=folder/'generated'/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+            generated_outputs[name]={'member':str(target.relative_to(folder)),'bytes':len(data),'sha256':sha(data),'gitBlob':blob(data),'producerArtifact':floor_spec}
+           floor_archive=zipped.read('floor-eleven-actual-full-captures.tar.gz');floor_manifest_bytes=zipped.read('floor-eleven-native-capture-manifest.json');floor_manifest=json.loads(floor_manifest_bytes)
+           if len(floor_archive)!=22919280 or sha(floor_archive)!='22f9ab985d0bc528dc6fb8d6092dbb59c8f204d0486d1ccef42c08491e0e0ae0':raise ValueError('Exact observed11 full native archive changed')
+           if floor_manifest['schema']!='str-current-positive-floor-full-captures/1' or floor_manifest['sourceCommit']!=floor_spec['head'] or floor_manifest['sourceSHA256']!=identities or floor_manifest['completeVerifiedControlCount']!=11 or floor_manifest['candidateAccepted'] is not False or floor_manifest['proofSHA256']!=after['outputs']['project/str/studies/floor-section-proof.json']['sha256']:raise ValueError('Current11 source/request/proof manifest differs')
+           with tarfile.open(fileobj=io.BytesIO(floor_archive),mode='r:gz') as archive:
+            members=archive.getmembers();files=[m for m in members if m.isfile()]
+            if len(files)!=len(set(m.name for m in files)) or set(m.name for m in files)!=set(floor_manifest['files'])|{'floor-eleven-native-capture-manifest.json'} or any(m.issym() or m.islnk() or m.name.startswith('/') or '..' in m.name.split('/') for m in members):raise ValueError('Complete floor native archive member set changed')
+            if archive.extractfile('floor-eleven-native-capture-manifest.json').read()!=floor_manifest_bytes:raise ValueError('Exact inner floor manifest differs')
+            for name,record in floor_manifest['files'].items():
+             data=archive.extractfile(name).read()
+             if len(data)!=record['bytes'] or sha(data)!=record['sha256']:raise ValueError('Complete native floor member changed: '+name)
+           floor_archive_path='project/str/studies/captures/current-positive-floor-full-captures-20261126.tar.gz'
+           target=folder/'archives'/floor_archive_path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(floor_archive)
+           archives[floor_archive_path]={'member':str(target.relative_to(folder)),'bytes':len(floor_archive),'sha256':sha(floor_archive),'gitBlob':blob(floor_archive),'files':floor_manifest['files'],'manifest':floor_manifest,'manifestMember':'floor-eleven-native-capture-manifest.json','producerArtifact':floor_spec}
+           name='project/str/studies/captures/current-positive-floor-full-captures-20261126.manifest.json';target=folder/'generated'/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(floor_manifest_bytes)
+           generated_outputs[name]={'member':str(target.relative_to(folder)),'bytes':len(floor_manifest_bytes),'sha256':sha(floor_manifest_bytes),'gitBlob':blob(floor_manifest_bytes),'producerArtifact':floor_spec}
+          wet_keys=[key for g in specs[:3] for key in g['keys']]
+          files={}
+          for key in wet_keys:files.update(triple(key,key))
+          archives['project/str/studies/captures/current-positive-wet-bearing-full-captures-20261126.tar.gz']=package('project/str/studies/captures/current-positive-wet-bearing-full-captures-20261126.tar.gz',files,'current-native-capture-manifest.json',{'completeVerifiedCaseCount':9,'role':'Actual complete wet9 native capture directory; freshfloor11 remains a separate parity reference'})
+          files={**triple('width120-q32','width120-q32'),**triple('width120-q64','width120-q64')}
+          settings=comparison_settings();settings['postTopLevelRaiseMm']=10.
+          grid=json.loads(Path('project/str/studies/current-house-grid.json').read_text());fresh=json.loads(controls['width120-q64']['full'])
+          cage=assess(fresh,grid,settings,with_collisions=True);cage['rawGridIdentityVerified']=True
+          if cage['settings']!=settings or cage['nativeSourceSHA256']!=identities or cage['nativeCaseId']!=controls['width120-q64']['nativeCaseId']:raise ValueError('Fresh cage settings/source/native join failed')
+          files['width120-q64.cage.json']=encode(cage)
+          archives['project/str/studies/captures/current-positive-wet-pad-width120-20261126.tar.gz']=package('project/str/studies/captures/current-positive-wet-pad-width120-20261126.tar.gz',files,'checkpoint-manifest.json',{'completeVerifiedCaseCount':2,'postTopLevelRaiseMm':10,'prefix':''})
+          files={**triple('width140-q64','width140'),**triple('wet-aligned-concrete27-quadrature64','width220')}
+          if json.loads(controls['wet-aligned-concrete27-quadrature64']['request'])!=pad_expected('width220-q64',native):raise ValueError('Pad220 reuse must be exact same actual native input')
+          archives['project/str/studies/captures/current-positive-wet-pad-alternatives-20261126.tar.xz']=package('project/str/studies/captures/current-positive-wet-pad-alternatives-20261126.tar.xz',files,'durable-capture-manifest.json',{'completeVerifiedCaseCount':2,'width220UsesExactFreshWet27q64Bytes':True,'prefix':''},'w:xz')
+          files={**triple('south40-q32','south40-q32'),**triple('south40-q64','south40-q64')}
+          archives['project/str/studies/wet-beam-end-native-captures.tar.xz']=package('project/str/studies/wet-beam-end-native-captures.tar.xz',files,'archive-manifest.json',{'completeVerifiedCaseCount':2,'nativeCageMassFeedbackApplied':False,'nativeFrameOrContactResistanceAccepted':False},'w:xz')
+          report={'schema':'str-current-positive-wet-native-archive-assembly/1','assemblySourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'nativeSourceSHA256':identities,'producerArtifacts':artifact_provenance,'archives':archives,'generatedOutputs':generated_outputs,'observedSouth40q32FullSHA256':sha(controls['south40-q32']['full']),'observedSouth40q32NativeCaseId':controls['south40-q32']['nativeCaseId'],'source58Unchanged':load_source(Path('.'))['identities']==identities,'assemblyRuntime':runtime_versions(),'nativeSolvesExecutedByAssembly':0,'candidateAccepted':False}
+          (folder/'archive-assembly-manifest.json').write_bytes(encode(report))
+          print('ACTUAL_CURRENT_ARCHIVE_PINS '+json.dumps({'sourceCommit':report['assemblySourceCommit'],'archives':{path:{k:v for k,v in record.items() if k not in ('files','manifest')} for path,record in archives.items()},'generatedOutputs':generated_outputs,'observedSouth40q32FullSHA256':report['observedSouth40q32FullSHA256'],'nativeSolvesExecutedByAssembly':0},separators=(',',':')),flush=True)
+          if subprocess.check_output(['git','status','--porcelain'],text=True):raise ValueError('Readonly assembly mutated source checkout')
+          
+          PY
+      - name: Show observed archive identities without changing any source or receipt
+        if: always()
+        run: |
+          python -B - <<'PY'
+          import os
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR'])
+          for p in sorted(folder.glob('*.log')):
+           print('ACTUAL_CURRENT_ARCHIVE_LOG '+p.name,flush=True);print(p.read_text(errors='replace')[-40000:],flush=True)
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-positive-native-archives-${{ github.sha }}
+          path: ${{ runner.temp }}/current-positive-source-evidence/
+          if-no-files-found: error
+          retention-days: 90
