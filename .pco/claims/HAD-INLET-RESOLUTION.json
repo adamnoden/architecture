@@ -9,8 +9,8 @@
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-26T01:05:42.667Z",
-  "expiresAt": "2026-11-26T01:50:42.667Z",
+  "heartbeatAt": "2026-11-26T01:31:50.000Z",
+  "expiresAt": "2026-11-26T02:16:50.000Z",
   "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
@@ -36,8 +36,8 @@
   },
   "pr": 1627,
   "checkpoint": {
-    "evidence": "First1626 merged83f8cb. Actual1627 dcfc8d631bbe1670359bd82db5ca18c30edb6c5d is the separate current bed/water branch without wet suite. Verified complete LOCALd8b92e7b known-gravity normalizer and rejected two-rail suite are preserved on separate UNMERGED remote work/convergence-wet-service-suite-20261125@e473bdef40423ef6294ad703472fc0710eade1a8 exacttree092f8685b75aca1a371aa53c16c26b358790b6fa. Four new tests, CLI equivalence, typecheck, strictaudit0 and canonicalproducercheck pass. No native receiver reactions or active assembly inferred.",
-    "next": "Root integrates scoped no-suite normalizer/derived RC-mineral bodies. Develop actual-coordinate open-chute-to-closed-roof steep-flow domain check and defensible walking-floor support/stock comparison; preserve old sufficient-screen negatives and stored/submerged holds.",
-    "blocker": "Actual store/upper release, material/foot/anchor/thermal qualification and complete occupied arrangement remain unresolved. No forward local hydraulic result supplies whole-arrangement acceptance."
+    "evidence": "1627 dcfc8d63 pending CI; raw90077632 exact83a94f9b checkpoint: 3 pure tests/tsc/audit0; saved fourth test/replay completion unknown. e473bdef normalizer verified. No walking code.",
+    "next": "Finish1627 fresh dual runner preflight/merge; recover90077632 and complete saved checks.",
+    "blocker": "Executor unavailable. Walking/S460N comparison is read-only proposal; stored release, support/material/site holds remain."
   }
 }
