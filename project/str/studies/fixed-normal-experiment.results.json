@@ -23,8 +23,8 @@
     "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
     "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
     "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+    "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
     "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -65,7 +65,7 @@
     "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
     "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc",
     "project/str/studies/fixed_normal_experiment.py": "1c93c7fa0be3c4aad78b8681caf5158a785ad3639d769a2465f3be4f2100c24a",
-    "project/str/studies/fixed-normal-experiment-inputs.json": "73afb77d2bf98d259a6c0a1a5536aee85cd112dfe8888fc31a7a32c09b496dbd",
+    "project/str/studies/fixed-normal-experiment-inputs.json": "7f0d04fd4552abca8aabb1d72deae6ff6a75fbc7e04dbda507f26d41878f51e3",
     "project/str/studies/four_l_joint_observer.py": "adb94b4ae63e83e409f5323b01d252a914591eb61bdd12b3af2ec27b6586304b",
     "compiler/reference-house/current-design/structural-floor-cuts.ts": "07da46f924013115ad45741443732aed3b6a6db9ccd0b9e38d1f427b7a9d4b85",
     "project/str/studies/floor-section-cuts-inputs.json": "9c767245298e51e98aeebe9c7841ce945ba6c24f31005371ce47b1a84a0678da"
@@ -73,14 +73,14 @@
   "captures": [
     {
       "file": "v500.full.json",
-      "fullSHA256": "a9930793d0a86ef1dbf4c61e003dba088252e1107c60c49ee3bd3bbfbcc8b111"
+      "fullSHA256": "e9effb2eef951bcbde518ecf263c7e05443f92a4ad6bc5e5721aac067b06c7de"
     },
     {
       "file": "v250.full.json",
-      "fullSHA256": "ce139fc9a3757919c1d079d879dbcd8e3fec0518ccdb3a6f7a009f31c6926818"
+      "fullSHA256": "c469fb6f2be513bbb4760c862d773d6ceef30c66fba1ecff991239385dc2870e"
     }
   ],
-  "fixedNormalLedgerSHA256": "c1887df5cd13c38611b4a3530f2c7a4b641e61c8f915392275f1ef7d250f0ab0",
+  "fixedNormalLedgerSHA256": "7bdd8940c0fda5b0f64997bcac1cfecc675103c7bce225b242ddf21702d6d901",
   "physicalBodyLedgerSHA256": "6a1448e5faa0c48e3182be31adb4a0fbf35abdb42d08f346310aff2d182e0826",
   "controls": [
     {
@@ -4222,38 +4222,38 @@
     "stripResistanceAccepted": false
   },
   "retainedOrdinary500ToCommonStation500": {
-    "maximumHeadComponentDifferenceKN_KNm": 0.029913178820265784,
+    "maximumHeadComponentDifferenceKN_KNm": 0.029913179704919912,
     "governingHeadChange": {
       "id": "P10",
       "component": 0,
-      "coarse": -155.0614166328476,
+      "coarse": -155.06141663196294,
       "fine": -155.09132981166786,
-      "difference": 0.029913178820265784
+      "difference": 0.029913179704919912
     },
     "relativeCutIntegralChanges": [
       {
         "id": "STR/SW/normal-y-450",
-        "signedNormalMomentKNm": 8.457498353583297e-7,
-        "signedTwistingMomentKNm": 0.00000129702778615203,
-        "absoluteBendingPlusTwistingKNm": 8.442352201339578e-7
+        "signedNormalMomentKNm": 8.457541656510361e-7,
+        "signedTwistingMomentKNm": 0.000001297035116681168,
+        "absoluteBendingPlusTwistingKNm": 8.442393733576336e-7
       },
       {
         "id": "STR/SW/normal-y-650",
-        "signedNormalMomentKNm": 8.48162418206812e-7,
-        "signedTwistingMomentKNm": 0.0000012960744382279126,
-        "absoluteBendingPlusTwistingKNm": 8.497934519408263e-7
+        "signedNormalMomentKNm": 8.481667749152962e-7,
+        "signedTwistingMomentKNm": 0.0000012960817566748153,
+        "absoluteBendingPlusTwistingKNm": 8.497975991547131e-7
       },
       {
         "id": "STR/SW/normal-y-1300",
-        "signedNormalMomentKNm": 0.000001623207339933196,
-        "signedTwistingMomentKNm": 9.593188636489539e-7,
-        "absoluteBendingPlusTwistingKNm": 0.0000013509690208824164
+        "signedNormalMomentKNm": 0.0000016232143798526172,
+        "signedTwistingMomentKNm": 9.593263512183321e-7,
+        "absoluteBendingPlusTwistingKNm": 0.0000013509750570643003
       },
       {
         "id": "STR/SW/normal-x-1450",
-        "signedNormalMomentKNm": 6.20102041224232e-7,
-        "signedTwistingMomentKNm": 6.716554332350236e-7,
-        "absoluteBendingPlusTwistingKNm": 7.513590746664193e-7
+        "signedNormalMomentKNm": 6.201061831484147e-7,
+        "signedTwistingMomentKNm": 6.716602525384661e-7,
+        "absoluteBendingPlusTwistingKNm": 7.51363514501634e-7
       }
     ],
     "declaredScreenPasses": true,
