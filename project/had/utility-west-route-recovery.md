@@ -145,3 +145,13 @@ Hosted run45856903914/job140037557623 passed repository typecheck and37/37 focus
 Full union accounting showed that a moving vertical stub at1100 would need about285mm drop to pass the existing upper rail, despite header950 needing less. The current source therefore extends the fixed rear main to950, turns east and ends at an ordinary horizontal union10870/600/950. The moving tree starts there. The complete112mm wrapped union now sets its1006mm top; lowering210 places it at796, leaving14mm below the actual830mm upper-rail underside after two independent10mm settings. This arithmetic is a design condition until the complete injected phase-geometry test passes; it does not admit a fabricated support, clamp or pressure product.
 
 The source/header/occupied graph and source-derived SVG now use this same horizontal face; no after-the-fact cut is inserted into a previously generated tree. The late release of the closed local stops is not a licence to open a charged appliance or hot network: actual boundary/source-zero and retained downstream support remain explicit obligations.
+
+### Rear main cold-service migration
+
+The same main service observer now derives both halves of the selected horizontal rear union and its actual metal blank. It removes the old750 continuation from normal current shapes and inventory, uses the source-defined axial release then210mm captured lowering, and keeps the old front method only when a caller explicitly supplies the retired front fixture.
+
+The current method closes actual LodgeU and both local cold stops, keeps internalU open, verifies zero pressure, opens high vent and drains740 into the20L receiver BEFORE releasing the950 source joint. It explicitly retains below-tee and low-tail water. Only after pressure isolation and separation is a blank fitted. No fixture/hot/store inventory is silently included in the main-only ceiling; complete local strip/retained-stop support remains a separate actual phase proof.
+
+New actual tests are pending for this adapter; no physical ratings, coupling release qualification or installation acceptance is earned by this migration.
+
+The adapter reports its inventory as MAIN COMPONENTS ONLY and explicitly requires the actual connected rear-tree inventory before whole-U receiver acceptance. A passing20L main-only component screen is not a proof for the complete installed closed-U branch.
