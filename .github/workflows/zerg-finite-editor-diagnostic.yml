@@ -1,28 +1,22 @@
-name: Diagnose actual saved finite corner edit
+name: Prove actual saved finite corner edit
 on:
   push:
     branches: [work/zerg-finite-editor-diagnostic-20261126]
 permissions:
   contents: read
-  actions: read
 jobs:
-  diagnose:
+  prove:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
+    permissions:
+      contents: write
     env:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v5
-      - name: Retrieve observed failed browser server log
-        uses: actions/download-artifact@v7
         with:
-          name: finite-house-room-saved-proof
-          run-id: 45814303876
-          github-token: ${{ github.token }}
-          path: ${{ runner.temp }}/failed-finite
-      - name: Inspect original failed transport log
-        run: cat "$RUNNER_TEMP/failed-finite/finite-joint-server.log"
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
@@ -37,7 +31,55 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --no-audit --no-fund
-      - name: Replay the actual failed saved width in the ordinary CLI
+      - name: Refresh only changed owning source identities and explicit saved bindings
+        run: |
+          node --import tsx --input-type=module <<'JS'
+          import fs from 'node:fs'
+          import crypto from 'node:crypto'
+          import { readEngineeringDocument } from './compiler/reference-house/current-design/engineering-document.ts'
+          const accountPath="project/ccr/studies/source-coverage.json",documentPath="project/ccr/studies/working-house-comparison.json"
+          const account=JSON.parse(fs.readFileSync(accountPath,'utf8'))
+          const sourcePaths=["compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts","compiler/reference-house/current-design/assemblies/study-room-kit.ts","compiler/reference-house/current-design-study-plan-applicability.test.ts"]
+          const blob=p=>{const bytes=fs.readFileSync(p);return crypto.createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex')}
+          const family=account.families.find(f=>f.id==='ias-study-room-perspective')
+          if(!family)throw Error('Missing owning Study family')
+          for(const p of sourcePaths){account.gitBlobs[p]=blob(p)}
+          for(const p of [sourcePaths[0]])if(!family.authorRoots.includes(p))family.authorRoots.push(p)
+          if(!family.consumers.includes(sourcePaths[2]))family.consumers.push(sourcePaths[2])
+          const check='node --import tsx --test '+sourcePaths[2]
+          if(!family.producerChecks.includes(check))family.producerChecks.push(check)
+          fs.writeFileSync(accountPath,JSON.stringify(account,null,2)+'\n')
+          const doc=JSON.parse(fs.readFileSync(documentPath,'utf8'))
+          doc.bindings=(await readEngineeringDocument(doc.design)).bindings
+          fs.writeFileSync(documentPath,JSON.stringify(doc,null,2)+'\n')
+          JS
+      - name: Regenerate the actual unchanged200 Study with the owning producer
+        run: node --import tsx project/ias/studies/crafted-study-eye-level.mjs
+      - name: Bind freshly generated views and verify source account
+        run: |
+          node --import tsx --input-type=module <<'JS'
+          import fs from 'node:fs'
+          import crypto from 'node:crypto'
+          import { readEngineeringDocument } from './compiler/reference-house/current-design/engineering-document.ts'
+          import { auditSourceCoverage } from './project/ccr/studies/source-coverage.ts'
+          const accountPath="project/ccr/studies/source-coverage.json",documentPath="project/ccr/studies/working-house-comparison.json"
+          const a=JSON.parse(fs.readFileSync(accountPath,'utf8'))
+          for(const p of ["project/ias/studies/crafted-study-eye-level-day.svg","project/ias/studies/crafted-study-eye-level-evening.svg","project/ias/studies/working-study-floor.svg","project/ias/studies/working-study-wall-kit.svg","project/ias/studies/working-study-tile-eye-level.svg"]){const b=fs.readFileSync(p);a.gitBlobs[p]=crypto.createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex')}
+          fs.writeFileSync(accountPath,JSON.stringify(a,null,2)+'\n')
+          const doc=JSON.parse(fs.readFileSync(documentPath,'utf8'))
+          doc.bindings=(await readEngineeringDocument(doc.design)).bindings
+          fs.writeFileSync(documentPath,JSON.stringify(doc,null,2)+'\n')
+          const findings=auditSourceCoverage().findings
+          if(findings.length)throw Error(JSON.stringify(findings))
+          console.log('PASS current source audit',findings.length)
+          JS
+      - name: Verify current outputs, types and plan identity controls
+        run: |
+          node --import tsx project/ias/studies/crafted-study-eye-level.mjs --check
+          npx tsc --noEmit
+          node --import tsx --test compiler/reference-house/current-design-study-plan-applicability.test.ts
+          node --import tsx --test compiler/reference-house/current-design-study-structural-consequence.test.ts
+      - name: Prove actual144-part edit and invalidated former136-part renewal
         run: |
           python - <<'PY'
           import json,os
@@ -51,18 +93,46 @@ jobs:
           python - <<'PY'
           import json,os
           from pathlib import Path
-          d=json.loads(Path(os.environ['RUNNER_TEMP'],'finite-width140-result.json').read_text())
-          e=d['engineering']
-          print(json.dumps({'documentIdentity':d['documentIdentity'],'parts':len(e['studyRoomKit']['kit']['floor']['parts']),'finiteStatus':e['floorSection']['finiteJointComparison']['status']}))
+          b=json.loads(Path(os.environ['RUNNER_TEMP'],'finite-width140-result.json').read_text());e=b['engineering'];k=e['studyRoomKit']['kit'];o=k['floor']['ordinaryHandling']
+          assert len(k['floor']['parts'])==144
+          assert len(k['request']['ordinaryHandling']['protocols'])==136
+          assert o['state']=='source-withheld' and o['partCount']==144 and o['witnessCount']==0
+          assert o['diagnostics'][0]['code']=='IAS_ORDINARY_RENEWAL_REQUIRES_CURRENT_PART_PLAN'
+          assert e['floorSection']['finiteJointComparison']['status']=='analysis-pending'
+          assert len(e['floorSection']['native']['heads'])==52
+          print('PASS actual width140:144 current parts,136 authored protocols retained, obsolete renewal witnesses withheld,52 actual heads')
           PY
-      - name: Retain the actual diagnostic
+      - name: Preserve only tested source and legitimately regenerated file blobs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs'
+          import crypto from 'node:crypto'
+          import {execFileSync} from 'node:child_process'
+          const paths=["compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts","compiler/reference-house/current-design/assemblies/study-room-kit.ts","compiler/reference-house/current-design-study-plan-applicability.test.ts","project/ccr/studies/source-coverage.json","project/ccr/studies/working-house-comparison.json","project/ias/studies/crafted-study-eye-level-day.svg","project/ias/studies/crafted-study-eye-level-evening.svg","project/ias/studies/working-study-floor.svg","project/ias/studies/working-study-wall-kit.svg","project/ias/studies/working-study-tile-eye-level.svg"]
+          const expected=new Set(paths)
+          for(const p of execFileSync('git',['diff','--name-only'],{encoding:'utf8'}).trim().split('\n').filter(Boolean))if(!expected.has(p))throw Error('Unexpected generated mutation:'+p)
+          for(const path of paths){
+           const data=fs.readFileSync(path),sha=crypto.createHash('sha1').update('blob '+data.length+'\0').update(data).digest('hex')
+           const response=await fetch('https://api.github.com/repos/adamnoden/architecture/git/blobs',{method:'POST',headers:{Authorization:'Bearer '+process.env.GITHUB_TOKEN,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','Content-Type':'application/json'},body:JSON.stringify({content:data.toString('base64'),encoding:'base64'})})
+           if(!response.ok)throw Error('Blob preservation failed '+path+':'+response.status)
+           const result=await response.json();if(result.sha!==sha)throw Error('Git blob mismatch '+path)
+           console.log('GENERATED_BLOB '+JSON.stringify({path,sha,size:data.length,sha256:crypto.createHash('sha256').update(data).digest('hex')}))
+          }
+          execFileSync('git',['read-tree','867e8042e131a35407c4fe3be21807cdb6d23778'])
+          execFileSync('git',['add','--',...paths])
+          console.log('GENERATED_TARGET_TREE '+execFileSync('git',['write-tree'],{encoding:'utf8'}).trim())
+          JS
+      - name: Retain the actual proof
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: finite-editor-width140-diagnostic
+          name: finite-editor-width140-proof
           path: |
             ${{ runner.temp }}/finite-width140.json
             ${{ runner.temp }}/finite-width140-result.json
-            ${{ runner.temp }}/failed-finite/finite-joint-server.log
+            project/ccr/studies/working-house-comparison.json
+            project/ccr/studies/source-coverage.json
           retention-days: 90
           if-no-files-found: error
