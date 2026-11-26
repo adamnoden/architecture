@@ -146,7 +146,7 @@ test('full80mm hot union falsifies old11170 cold stop; thirty-west current geome
 })
 test('formed hot spool has finite localH0 inventory and a separately bounded shallow receiver, not a store bound',()=>{
  assert.deepEqual(wet.hot.retained.terminal.at(-1),[11300,1275,595])
- assert.deepEqual(wet.choice.coldDistribution.prefabSinkHead.hotPortMm,[11300,1260,850])
+ assert.deepEqual(wet.choice.coldDistribution.prefabSinkHead.hotPortMm,[11300,1260,820])
  assert.ok(wet.hot.inventory.isolatedH0LowerBranchUpperL>7.5)
  assert.ok(wet.hot.inventory.isolatedH0LowerBranchUpperL<12)
  assert.equal(wet.hot.inventory.domesticStoreOrUpperNetworkIncluded,false)
@@ -233,7 +233,7 @@ test('one source owns four floor-seated head captures, sixteen bolted ends and f
  assert.equal(a.demand.unbalancedHorizontalDemandWithoutPositiveFloorReceiverN,200)
  assert.equal(a.ordinaryRenewalAccepted,false)
  assert.equal(a.exactMemberWebsToolSocketsSpannerArcsAndExtractionQualified,false)
- assert.ok(a.earliestTools.failures.some(q=>q.id.includes('/866/')&&q.id.includes('source-solid-board')))
+ assert.ok(a.earliestTools.checks.filter(q=>q.id.includes('source-solid-board')).every(q=>q.reserveMm>=11-1e-7))
 })
 test('current hot rail guard consumes computed capture rows and digest; a naked boolean or unrelated digest cannot qualify it',()=>{
  const controls=choice.coldDistribution.hotService,head=choice.coldDistribution.prefabSinkHead,
@@ -255,4 +255,19 @@ test('current hot rail guard consumes computed capture rows and digest; a naked 
  assert.equal(rejected.hot.capturePhase.computedNecessaryGravityCapture,false)
  assert.ok(rejected.ordinaryCapture.geometryFailures.some(q=>q.id.includes('explicit-blocked-capture-foot')))
  assert.notEqual(rejected.ordinaryCapture.sourceDigest,wet.ordinaryCapture.sourceDigest)
+})
+
+test('lower820mm factory head unions clear actual board; full75mm S tails retain both half-unions and two settings',()=>{
+ const d=choice.coldDistribution
+ assert.deepEqual(d.prefabSinkHead.coldPortMm,[11025,1260,820])
+ assert.deepEqual(d.sink.pathFromStopToHeadMm.at(-1),d.prefabSinkHead.coldPortMm)
+ assert.deepEqual(d.hotService.virtualSpoolMm,[[11300,1275,595],[11300,1275,670],[11300,1260,745],[11300,1260,820]])
+ const tail=wet.hot.geometry.checks.find(q=>q.id==='hot/head-straight-after-last-bend')!
+ assert.ok(tail.reserveMm>15)
+ const prior=structuredClone(choice),p=prior.coldDistribution
+ p.prefabSinkHead.coldPortMm[2]=850;p.prefabSinkHead.hotPortMm[2]=850;p.sink.pathFromStopToHeadMm.at(-1)[2]=850;p.hotService.virtualSpoolMm[2][2]=775;p.hotService.virtualSpoolMm[3][2]=850
+ const rejected=inletUtilityWetAssembly({source:current,choice:prior})
+ assert.ok(rejected.ordinaryCapture.earliestTools.failures.some(q=>q.id.includes('/866/')&&q.id.includes('source-solid-board')&&q.reserveMm<=-19+1e-7))
+ const short=structuredClone(choice);short.coldDistribution.hotService.virtualSpoolMm[2][2]=775
+ assert.ok(inletUtilityWetAssembly({source:current,choice:short}).hot.geometry.failures.some(q=>q.id==='hot/head-straight-after-last-bend'&&q.reserveMm< -12))
 })

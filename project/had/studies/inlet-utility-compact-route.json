@@ -324,7 +324,7 @@
         [
           11025,
           1260,
-          850
+          820
         ]
       ],
       "ordinaryShoulderMm": [
@@ -357,12 +357,12 @@
       "coldPortMm": [
         11025,
         1260,
-        850
+        820
       ],
       "hotPortMm": [
         11300,
         1260,
-        850
+        820
       ],
       "pillarHandleMm": [
         [
@@ -600,7 +600,19 @@
         "jointJacketsStrippedLengthMm": 100,
         "restInstalledOnlyAfterRearRailParkRequired": true,
         "headCaptureBeforeFrontUpperRailReleaseRequired": true,
-        "frontUpperRailReleasedBeforeUnionToolAccess": true
+        "frontUpperRailReleasedBeforeUnionToolAccess": true,
+        "unionToolFlatOffsetMm": 16,
+        "unionWrenchHeadMm": [
+          55,
+          65,
+          6
+        ],
+        "unionWrenchHandleMm": [
+          16,
+          135,
+          6
+        ],
+        "actualToolProductQualified": false
       },
       "memberJointDesign": {
         "schema": "had-utility-bolted-member-end/1",
@@ -660,12 +672,12 @@
         [
           11300,
           1260,
-          775
+          745
         ],
         [
           11300,
           1260,
-          850
+          820
         ]
       ],
       "centrelineRadiusMm": 75,

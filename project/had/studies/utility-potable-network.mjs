@@ -49,7 +49,7 @@ export function deriveUtilityPotableNetwork(base,choice,plantBranch,plantStation
  edge('P/internal-cut','P/cut-in','P/cut-out',[pIn,pOut],'P/internal-cut')
  edge('P/cut-to-house-tree','P/cut-out','P/retained-cold-tree',[...plantBranch.outletStemMm,...plantBranch.treeFixedPathMm.slice(1)])
  edge('P/possible-stored-upper-backfeed','P/retained-cold-tree','P/store-and-upper-energy',null,null,'Deliberately conservative retained communicating domain; unknown stored/hot/upper inventory and checks are not qualified.')
- edge('P/retained-hot-to-Utility','P/store-and-upper-energy','P/utility-hot-port',null,null,'Existing H0/upper hot system retained. Actual terminal595-to-head850 spool/stop/release remains geometrically unjoined; no acceptance inferred.')
+ edge('P/retained-hot-to-Utility','P/store-and-upper-energy','P/utility-hot-port',null,null,'Existing H0/upper hot system retained. Current source terminal-to-head spool/stop/release is checked by the shared wet assembly; this topology alone does not grant geometry or installation acceptance.')
  edge('P/sink-hot-pillar','P/utility-hot-port','P/hot-spout',null,'P/sink-pillar-hot','Separate physical pillar; open-bowl mixing only.')
  for(const f of p){node(f.id+'/cold',null,'retained fixture boundary');edge('P/retained/'+f.id,'P/retained-cold-tree',f.id+'/cold',null,null,'Actual source consumer ID retained; no new physical upper-riser/endpoint closure is claimed.')}
  // Counterfactual source edits create real hazardous possibilities; neither a
