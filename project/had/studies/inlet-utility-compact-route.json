@@ -340,7 +340,7 @@
       "maximumWallMm": 1
     },
     "prefabSinkHead": {
-      "sourceOfGeometry": "authored new factory head with one60x60NW service corner, complete820 unions and bounded body/tools; not purchased Franke/tap approval",
+      "sourceOfGeometry": "authored factory head with side stiffeners, one60x60NW corner, complete820 unions and30kg captured ceiling; pressure/material/weld/product proof false",
       "topPlanMm": [
         10855,
         740,
@@ -562,7 +562,7 @@
             700
           ],
           [
-            11200,
+            11220,
             860,
             700
           ],
@@ -572,17 +572,17 @@
             700
           ],
           [
-            11200,
+            11220,
             1120,
             700
           ]
         ],
-        "maximumCapturedWetHeadKg": 20,
+        "maximumCapturedWetHeadKg": 30,
         "headCGPlanDesignMm": [
-          11115,
-          980,
-          60,
-          80
+          11125,
+          1005,
+          65,
+          85
         ],
         "maximumPillarAndSpoutCrossMm": 40,
         "maximumHandleCrossMm": 60,
@@ -802,12 +802,20 @@
           "strokeMm": 400,
           "liftColumnTopMm": 1100,
           "baseTopMm": 80,
-          "maximumCapturedWetHeadKg": 20,
+          "maximumCapturedWetHeadKg": 30,
           "gravityDynamicFactor": 1.5,
           "frontFootYMm": 1450,
           "baseRearYMm": 840,
-          "maximumReferenceDeflectionMm": 4,
-          "minimumRemainingClearanceAfterDeflectionMm": 0
+          "maximumReferenceDeflectionMm": 6,
+          "minimumRemainingClearanceAfterDeflectionMm": 0,
+          "crossbearerXExtentMm": [
+            10955,
+            11240
+          ],
+          "minimumTorsionalJMm4": 65000,
+          "minimumClosedWallMm": 4,
+          "meanClosedAreaMm2": 676,
+          "poissonRatio": 0.3
         },
         "rollingOperator": {
           "floorStartXYMm": [
@@ -970,7 +978,88 @@
         "actualPinSleeveHSSWallAndFloorResistanceAccepted": false
       },
       "headCapturedAboveFrameBeforeOtherMemberReleaseRequired": true,
-      "onlyOneDryMemberReleasedAtATime": true
+      "onlyOneDryMemberReleasedAtATime": true,
+      "portalDesign": {
+        "schema": "had-utility-two-side-portals/1",
+        "selectedForCompleteDevelopment": true,
+        "sideAxisFromBoardEdgeMm": 35,
+        "beamRearFromBoardMm": 20,
+        "beamFrontFromBoardMm": 60,
+        "rearLegFromBoardMm": 60,
+        "frontLegFromBoardMm": 100,
+        "sideRibCrossMm": [
+          30,
+          20
+        ],
+        "sideRibWallMm": 3,
+        "sideRibRearFromBoardMm": 20,
+        "sideRibFrontFromBoardMm": 80,
+        "framePostCrossMm": [
+          40,
+          40
+        ],
+        "framePostWallMm": 3,
+        "frameBeamCrossMm": [
+          30,
+          40
+        ],
+        "frameBeamWallMm": 3,
+        "lowerRearCrossMm": [
+          30,
+          30
+        ],
+        "lowerRearWallMm": 3,
+        "lowerRearAxisZMm": 120,
+        "braceCrossMm": 20,
+        "braceWallMm": 2,
+        "rearBraceAxisYOffsetsMm": [
+          -20,
+          20
+        ],
+        "rearBraceLowZMm": 150,
+        "rearBraceHighZMm": 650,
+        "sideBraceAxisXOffsetsMm": [
+          -15,
+          15
+        ],
+        "sideBraceLowZMm": 550,
+        "sideBraceHighZMm": 650,
+        "soleCrossMm": 40,
+        "soleThicknessMm": 6,
+        "headClipPlateMm": [
+          4,
+          60,
+          50
+        ],
+        "headClipAxisZMm": 835,
+        "headClipRearFromBoardMm": 80,
+        "headClipFrontFromBoardMm": 120,
+        "headMountBoltDiameterMm": 8,
+        "headMountBoltMaximumLengthMm": 60,
+        "minimumHeadSheetMm": 2,
+        "maximumHeadSheetMm": 3,
+        "maximumHeadDryAccessoriesKg": 4,
+        "minimumSteelDensityKgM3": 7700,
+        "maximumSteelDensityKgM3": 8000,
+        "matchedOneHeadFabricationBoundMm": 0.5,
+        "maximumCapturedWetHeadKg": 30,
+        "normalFrontEdgePointComparisonN": 2000,
+        "normalHorizontalComparisonN": 200,
+        "normalForceHeightMm": 1060,
+        "frontUpperAndLowerTiesIncluded": false,
+        "actualDeliveredMaterialWeldAndJointProofAccepted": false,
+        "actualFloorBearingAndBallastSupportAccepted": false,
+        "oldIASGeometryRole": "rejected comparator only; no legacy frame acceptance or mass receipt transfers",
+        "ordinaryRenewalArchitecture": "two independently replaceable side portals and three bolted rear members; actual finite paths and temporary positive capture still to be proved",
+        "maximumFrameJointAndWeldMassKg": 2,
+        "maximumEachHeadPressureAssemblyKg": 2,
+        "underBowlPadMm": [
+          40,
+          40,
+          6
+        ],
+        "headCGScope": "derived from bounded steel stock, each<=2kg pressure assembly and actual outer-box residual envelopes; not measured product CG"
+      }
     },
     "hotService": {
       "schema": "had-utility-hot-head/1",
@@ -1226,7 +1315,7 @@
       "maintenanceMaximumC": 40,
       "designFaultWaterC": 99,
       "actualFactoryTrapSealStrainerBlankTubeToolsMaterialAndRetainedCapMatchQualified": false,
-      "bowlWallMm": 2,
+      "bowlWallMm": 3,
       "headFixingCount": 3,
       "headFixingDiameterMm": 6,
       "maximumHeadFixingTorqueNm": 6,
