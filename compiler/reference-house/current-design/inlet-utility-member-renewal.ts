@@ -113,7 +113,7 @@ type CaptureControls={ schema:string;method:string;wholeHeadWestParkRequiredForO
  restPlanMm:readonly[number,number,number,number];restTopMm:number;restTopDepthMm:number;restPostsXYMm:readonly(readonly[number,number])[];restPostCrossMm:number;
  maximumSectionAreaMm2:number;minimumSectionAreaMm2:number;minimumSectionIMm4:number;maximumSteelDensityKgM3:number;minimumSteelDensityKgM3:number;normalWorkingFloorXYMm:readonly[number,number];normalWorkingShoulderMm:P;externalHorizontalComparisonN:number;frictionResistanceCredited:false;actualProductsFloorHorizontalReactionAndPhysicalHandlingAccepted:false
 }
-type JointControls={schema:string;connectionMethod:string;maximumSocketRadiusMm:number;minimumSocketExtensionMm:number;lowerSocketExtensionMm:number;memberEndGapMm:number;seatTravelsWithCapturedRail:boolean;gravitySeatLengthMm:number;gravitySeatWidthMm:number;gravitySeatThicknessMm:number;boltEdgeMm:number;boltDiameterMm:number;boltPitchMm:number;boltFirstFromCutMm:number;boltHeadAFMm:number;boltHeadHeightMm:number;captiveBossDiameterMm:number;captiveBossHeightMm:number;minimumThreadEngagementMm:number;actualReceiverWeldBoltMaterialAndLocalHSSProofAccepted:false}
+type JointControls={schema:string;connectionMethod:string;ratchetHandleNorthMm:number;steadyHandNorthMm:number;ratchetWorkingSectorDegrees:readonly[number,number];frontToolShoulderMm:P;frontToolBodyFloorXYMm:readonly[number,number];maximumSocketRadiusMm:number;minimumSocketExtensionMm:number;lowerSocketExtensionMm:number;memberEndGapMm:number;seatTravelsWithCapturedRail:boolean;gravitySeatLengthMm:number;gravitySeatWidthMm:number;gravitySeatThicknessMm:number;boltEdgeMm:number;boltDiameterMm:number;boltPitchMm:number;boltFirstFromCutMm:number;boltHeadAFMm:number;boltHeadHeightMm:number;captiveBossDiameterMm:number;captiveBossHeightMm:number;minimumThreadEngagementMm:number;actualReceiverWeldBoltMaterialAndLocalHSSProofAccepted:false}
 /** Positive vertical capture and finite body/member geometry. Horizontal floor
  * reaction is deliberately a separate unsatisfied action without friction or a
  * real locating receiver. A geometric gravity path cannot approve that action. */
@@ -336,19 +336,33 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
  add('head-required-positive-capture-before-rear-rail','gravity',(i.mode==='fork'?c.firstLiftMm>=wet.hot.headFirstRelease.thenCapturedSpoolUpMm+two:c.rearUpperRailReleasedOnlyAfterPositiveCaptureAndFirstLift&&c.firstLiftMm>=35)&&c.jointJacketsStrippedLengthMm>=100?0:-1)
 
 
- const frontRailTools:{id:string;reserveMm:number}[]=[]
- for(const end of interfaces.filter(p=>p.railId==='IAS/frame/EW rail at y1350 / z850'))for(const p of end.boltCentresMm){
-  const grip:P=[p[0],p[1],p[2]-j.minimumSocketExtensionMm],shoulder:P=[11155,1700,1100],shaftMm:readonly[P,P]=[p,grip]
-  frontRailTools.push({id:end.id+'/socket-reach/'+p[0],reserveMm:600-Math.hypot(...grip.map((v,k)=>v-shoulder[k]))})
-  for(const q of[...fixed,...cold,...hot])if(![end.railId,end.legId].includes(q.id)){
-   frontRailTools.push({id:end.id+'/arm/'+q.id+'/'+p[0],reserveMm:exactSegmentBoxDistance(shoulder,grip,q.boxMm)-40-two})
-   frontRailTools.push({id:end.id+'/socket/'+q.id+'/'+p[0],reserveMm:exactSegmentBoxDistance(...shaftMm,q.boxMm)-j.maximumSocketRadiusMm-two})
+ const waste=inletUtilityHeadWaste({source,wet})
+ const frontRailTools:{id:string;reserveMm:number}[]=[],frontRailToolTasks:{id:string;shoulderMm:P;workingGripMm:P;steadyGripMm:P;socketMm:readonly[P,P];ratchetMm:readonly[P,P]}[]=[]
+ for(const end of interfaces.filter(p=>p.railId==='IAS/frame/EW rail at y1350 / z850'))for(const p of end.boltCentresMm)for(let sectorIndex=0;sectorIndex<=16;sectorIndex++){
+  const theta=(j.ratchetWorkingSectorDegrees[0]+(j.ratchetWorkingSectorDegrees[1]-j.ratchetWorkingSectorDegrees[0])*sectorIndex/16)*Math.PI/180,
+   sectorCoverMm=j.ratchetHandleNorthMm*(1-Math.cos(Math.abs(j.ratchetWorkingSectorDegrees[1]-j.ratchetWorkingSectorDegrees[0])*Math.PI/180/32)),
+   root:P=[p[0],p[1],p[2]-j.minimumSocketExtensionMm],grip:P=[p[0]+j.ratchetHandleNorthMm*Math.sin(theta),p[1]+j.ratchetHandleNorthMm*Math.cos(theta),root[2]],
+   steady:P=[p[0]+j.steadyHandNorthMm*Math.sin(theta),p[1]+j.steadyHandNorthMm*Math.cos(theta),root[2]],shoulder=j.frontToolShoulderMm,segments:readonly(readonly[P,P])[]=[[p,root],[root,grip]],
+   target=end.id+'/'+p[0]+'/sector/'+sectorIndex
+  frontRailToolTasks.push({id:target,shoulderMm:shoulder,workingGripMm:grip,steadyGripMm:steady,socketMm:segments[0],ratchetMm:segments[1]})
+  for(const[hand,g]of[['working',grip],['steady',steady]] as const)frontRailTools.push({id:target+'/'+hand+'-reach',reserveMm:600-Math.hypot(...g.map((v,k)=>v-shoulder[k]))})
+  const foreign=[...fixed,...cold,...hot,...waste.parts.map(q=>({id:q.id,boxMm:q.boxMm})),...hardware.filter(q=>!q.afterFrameKnockdown&&!q.id.startsWith(end.id+'/'))]
+  for(const q of foreign)if(![end.railId,end.legId].includes(q.id)){
+   for(const[hand,g]of[['working',grip],['steady',steady]] as const)frontRailTools.push({id:target+'/'+hand+'-arm/'+q.id,reserveMm:exactSegmentBoxDistance(shoulder,g,q.boxMm)-40-sectorCoverMm-two})
+   for(const[part,seg]of segments.entries())frontRailTools.push({id:target+'/socket-ratchet/'+part+'/'+q.id,reserveMm:exactSegmentBoxDistance(...seg,q.boxMm)-j.maximumSocketRadiusMm-sectorCoverMm-two})
   }
   for(const q of source.rearTreeContext.retainedPaths)for(let k=1;k<q.pointsMm.length;k++){
-   frontRailTools.push({id:end.id+'/arm/'+q.id+'/'+p[0]+'/'+k,reserveMm:segmentDistance(shoulder,grip,q.pointsMm[k-1],q.pointsMm[k])-40-q.radiusWithSupportsMm-two})
-   frontRailTools.push({id:end.id+'/socket/'+q.id+'/'+p[0]+'/'+k,reserveMm:segmentDistance(...shaftMm,q.pointsMm[k-1],q.pointsMm[k])-j.maximumSocketRadiusMm-q.radiusWithSupportsMm-two})
+   for(const[hand,g]of[['working',grip],['steady',steady]] as const)frontRailTools.push({id:target+'/'+hand+'-arm/'+q.id+'/'+k,reserveMm:segmentDistance(shoulder,g,q.pointsMm[k-1],q.pointsMm[k])-40-q.radiusWithSupportsMm-sectorCoverMm-two})
+   for(const[part,seg]of segments.entries())frontRailTools.push({id:target+'/socket-ratchet/'+part+'/'+q.id+'/'+k,reserveMm:segmentDistance(...seg,q.pointsMm[k-1],q.pointsMm[k])-j.maximumSocketRadiusMm-q.radiusWithSupportsMm-sectorCoverMm-two})
+  }
+  for(const br of braceSource.members){
+   for(const[hand,g]of[['working',grip],['steady',steady]] as const)frontRailTools.push({id:target+'/'+hand+'-arm/'+br.id,reserveMm:segmentDistance(shoulder,g,...br.endsMm)-40-braceSource.crossMm/2-sectorCoverMm-two})
+   for(const[part,seg]of segments.entries())frontRailTools.push({id:target+'/socket-ratchet/'+part+'/'+br.id,reserveMm:segmentDistance(...seg,...br.endsMm)-j.maximumSocketRadiusMm-braceSource.crossMm/2-sectorCoverMm-two})
   }
  }
+ const toolFloor=j.frontToolBodyFloorXYMm,bodyA:P=[toolFloor[0],toolFloor[1],0],bodyB:P=[toolFloor[0],toolFloor[1],2000]
+ frontRailTools.push({id:'front-upper-rail/shoulder-within-actual-body',reserveMm:300-Math.hypot(j.frontToolShoulderMm[0]-toolFloor[0],j.frontToolShoulderMm[1]-toolFloor[1])})
+ for(const q of [...fixed,...cold,...hot,...waste.parts.map(q=>({id:q.id,boxMm:q.boxMm})),...hardware.filter(q=>!q.afterFrameKnockdown)])frontRailTools.push({id:'front-upper-rail/body/'+q.id,reserveMm:exactSegmentBoxDistance(bodyA,bodyB,q.boxMm)-300-two})
  frontRailTools.push({id:'front-upper-rail/real-upward-captive-boss-requirement',reserveMm:j.connectionMethod==='gravity-seat-upward-M8-into-reinforced-captive-rail-boss'?0:-1})
 
  const outletSource=(d.prefabSinkHead as unknown as{maximumOutletBoreMm:readonly[number,number];mixing:string}),
@@ -357,7 +371,7 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
   independentHeadPressureComponents=[{id:'U/head-cold-pillar',inletMm:d.prefabSinkHead.coldPortMm,outletMm:d.prefabSinkHead.spoutOutletsMm[0]},{id:'P/head-hot-pillar',inletMm:d.prefabSinkHead.hotPortMm,outletMm:d.prefabSinkHead.spoutOutletsMm[1]}]
  airGapChecks.push({id:'head/no-mixer-bridge-independent-spout-bodies',phase:'normal-head-airgap',reserveMm:outletSource.mixing==='only in open bowl'?separation:-1})
  normalHeadChecks.push(...airGapChecks)
- const waste=inletUtilityHeadWaste({source,wet}),raisedHeadClearanceChecks:{id:string;reserveMm:number}[]=[]
+ const raisedHeadClearanceChecks:{id:string;reserveMm:number}[]=[]
  for(const p of headParts)for(const q of hot.filter(v=>v.id!=='U/hot/source-fixed-union')){
   const up=wet.hot.headFirstRelease.thenCapturedSpoolUpMm,north=wet.hot.headFirstRelease.thenSpoolNorthMm,
    moved:B=[q.boxMm[0],q.boxMm[1],q.boxMm[2]+up,q.boxMm[3],q.boxMm[4]+north,q.boxMm[5]],
@@ -386,7 +400,7 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
   massUpperKg=steelLengthMm*c.maximumSectionAreaMm2/1e9*c.maximumSteelDensityKgM3,
   geometryFailures=rows.filter(q=>q.phase!=='gravity'&&q.reserveMm< -1e-7),gravityFailures=rows.filter(q=>q.phase==='gravity'&&q.reserveMm< -1e-7)
  return{schema:'had-utility-ordinary-head-capture/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,context:source.rearTreeContext,frame:source.host.geometry.frame,activePaths:source.route.paths,choice:wet.choice,controls:c,joints:j}),
-  controls:c,waste,airGap:{checks:airGapChecks,netLipToFloodRimMm:d.prefabSinkHead.spoutOutletsMm.map(p=>p[2]-d.prefabSinkHead.floodRimMm-two),requiredTwoOutletBoresMm:outletSource.maximumOutletBoreMm.map(v=>2*v),independentHeadPressureComponents,sinkReservoirBackfeedGeometricallyExcluded:airGapChecks.every(q=>q.reserveMm>=0),actualProductBoresAndPhysicalBackfeedQualification:false},raisedHeadClearanceChecks,frontUpperRailTools:{checks:frontRailTools,failures:frontRailTools.filter(q=>q.reserveMm<0),actualBoltSleeveWeldAndLoadedRemovalQualified:false},rejectedWholeHeadMotion:{role:'historical stress only; ordinary work keeps head captured on original plan',checks:rejectedWholeHeadMotionChecks,failures:rejectedWholeHeadMotionChecks.filter(q=>q.reserveMm<0)},normalHeadChecks,normalHeadFailures:normalHeadChecks.filter(q=>q.reserveMm< -1e-7),normalCompleteHeadNecessary:normalHeadChecks.every(q=>q.reserveMm>=-1e-7),mode:i.mode,temporaryBracing:{source:braceSource,checks:braceChecks,failures:braceChecks.filter(q=>q.reserveMm<0),demands:braceDemands,actualPinSleeveHSSWallAndFloorResistanceQualified:false},rollingOperator:{checks:rollingChecks,failures:rollingChecks.filter(q=>q.reserveMm<0),actualHumanForceAndCasterRollingQualified:false},movingFrameBlockedControl,forkReference:{maximumOneForkDynamicN:c.maximumCapturedWetHeadKg*9.81*1.5,deflectionMm:forkDeflectionMm,actualSectionAndGuideCapacityQualified:false},earliestTools:{checks:earliestToolChecks,failures:earliestToolChecks.filter(q=>q.reserveMm<0),frontRailRemovedBeforeNorthToolsRequired:true,headToolAperturesOrActualJawFlatDatumsAuthored:true},slings:{checks:slingChecks,active:i.mode==='gantry',minimumEachResultantN:Math.hypot(W,W*c.southClearanceMm/(z-c.liftingEyesMm[0][2]-c.liftMm)),actualHoistGuidesAndSideShiftMechanismQualified:false},phase:'washer-first-rest; LodgeU/H0/localcutsverifiedzero; source740andH0365drained; matchedheadunionjacketsstripped',
+  controls:c,waste,airGap:{checks:airGapChecks,netLipToFloodRimMm:d.prefabSinkHead.spoutOutletsMm.map(p=>p[2]-d.prefabSinkHead.floodRimMm-two),requiredTwoOutletBoresMm:outletSource.maximumOutletBoreMm.map(v=>2*v),independentHeadPressureComponents,sinkReservoirBackfeedGeometricallyExcluded:airGapChecks.every(q=>q.reserveMm>=0),actualProductBoresAndPhysicalBackfeedQualification:false},raisedHeadClearanceChecks,frontUpperRailTools:{tasks:frontRailToolTasks,checks:frontRailTools,failures:frontRailTools.filter(q=>q.reserveMm<0),actualBoltSleeveWeldAndLoadedRemovalQualified:false},rejectedWholeHeadMotion:{role:'historical stress only; ordinary work keeps head captured on original plan',checks:rejectedWholeHeadMotionChecks,failures:rejectedWholeHeadMotionChecks.filter(q=>q.reserveMm<0)},normalHeadChecks,normalHeadFailures:normalHeadChecks.filter(q=>q.reserveMm< -1e-7),normalCompleteHeadNecessary:normalHeadChecks.every(q=>q.reserveMm>=-1e-7),mode:i.mode,temporaryBracing:{source:braceSource,checks:braceChecks,failures:braceChecks.filter(q=>q.reserveMm<0),demands:braceDemands,actualPinSleeveHSSWallAndFloorResistanceQualified:false},rollingOperator:{checks:rollingChecks,failures:rollingChecks.filter(q=>q.reserveMm<0),actualHumanForceAndCasterRollingQualified:false},movingFrameBlockedControl,forkReference:{maximumOneForkDynamicN:c.maximumCapturedWetHeadKg*9.81*1.5,deflectionMm:forkDeflectionMm,actualSectionAndGuideCapacityQualified:false},earliestTools:{checks:earliestToolChecks,failures:earliestToolChecks.filter(q=>q.reserveMm<0),frontRailRemovedBeforeNorthToolsRequired:true,headToolAperturesOrActualJawFlatDatumsAuthored:true},slings:{checks:slingChecks,active:i.mode==='gantry',minimumEachResultantN:Math.hypot(W,W*c.southClearanceMm/(z-c.liftingEyesMm[0][2]-c.liftMm)),actualHoistGuidesAndSideShiftMechanismQualified:false},phase:'washer-first-rest; LodgeU/H0/localcutsverifiedzero; source740andH0365drained; matchedheadunionjacketsstripped',
   hardware,interfaces,candidateFrame,retiredCentrelineSeatControl:{role:'rejected original centreline-length stock; candidate bolted rails use explicit finite cuts',checks:retiredCentrelineSeatChecks,failures:retiredCentrelineSeatChecks.filter(q=>q.reserveMm<0)},headParts,checks:rows,geometryFailures,gravityFailures,necessaryGravityGeometry:geometryFailures.length===0&&gravityFailures.length===0,
   sequence:i.mode==='fork'?[
    'Close actual LodgeU/H0/local source cuts, cool, verify zero pressure and drain through the source-derived1550 high vent/740 controlled cold drain and365 hot drain. Neither head union nor a later blank establishes isolation.',
@@ -493,6 +507,7 @@ export function inletUtilityHeadWaste(i:{source:Source;wet:Wet}){
   inventory=parts.reduce((n,p)=>n+p.waterUpperL,0)+w.maximumBowlResidualBeforeWasteCutL
  add('waste/finite-water-versus-verified-bin','inventory',w.minimumVerifiedUsableL-inventory);add('waste/claimed-bin-versus-physical-inner-ceiling','inventory',gross-w.minimumVerifiedUsableL)
  for(const q of fixed)add('waste/bin-before-fork/'+q.id,'drain-before-capture',gap(bin,q.boxMm)-two)
+ for(const[id,b]of Object.entries(source.host.geometry.frame))if(id!=='temporary carry bar')add('waste/bin-before-fork/raw-host-frame/'+id,'drain-before-capture',gap(bin,b as B)-two)
  const tip=w.drainPathMm.at(-1)!
  add('waste/drain-airgap','drain-before-capture',tip[2]-bin[2]-bin[5]-two)
  const tools:{id:string;shoulderMm:P;gripMm:P;shaftMm:readonly[P,P];minimumAngleDegrees:number}[]=[]

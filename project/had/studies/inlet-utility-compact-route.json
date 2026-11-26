@@ -864,7 +864,25 @@
         "lowerSocketExtensionMm": 35,
         "seatFixedToLegAndRailLiftedClearAfterBoltsRemoved": true,
         "actualCutFrameReplacesCentrelineRailEnds": true,
-        "sourceIASStockIsHistoricalComparatorOnly": true
+        "sourceIASStockIsHistoricalComparatorOnly": true,
+        "ratchetHandleNorthMm": 180,
+        "steadyHandNorthMm": 140,
+        "frontToolShoulderMm": [
+          11155,
+          1700,
+          1100
+        ],
+        "frontToolBodyFloorXYMm": [
+          11025,
+          1900
+        ],
+        "maximumBoltInstallationTorqueNm": 25,
+        "actualToolProductAndCaptiveBossThreadQualified": false,
+        "ratchetWorkingSectorDegrees": [
+          0,
+          15
+        ],
+        "maximumSelectedToolIndexDegrees": 15
       },
       "headRemovedBeforeOtherFrameWork": false,
       "firstRailReleaseAfterPositiveHeadCapture": "IAS/frame/EW rail at y1350 / z850",

@@ -168,8 +168,8 @@ if(proofDir){mkdirSync(proofDir,{recursive:true});writeFileSync(join(proofDir,'c
 console.info('UTILITY_WET_CURRENT '+JSON.stringify({scope:current.scope,currentSavedDocumentAdmitted:false,normal:wet.normal,coldInventory:wet.cold.inventory,stock:wet.cold.stock,hotInventory:wet.hot.inventory,hotReceiver:wet.hot.receiver,remaining:wet.renewal}))
 
 const member=inletUtilityMemberRenewal({source:current,wet})
-test('ordinary member renewal derives510/560mm cuts from actual40mm leg faces and preserves made water',()=>{
- assert.deepEqual([...new Set(member.members.map(v=>v.cutLengthMm))].sort(),[510,560])
+test('ordinary member renewal derives460/510mm bolted cuts from actual40mm leg faces and preserves made water',()=>{
+ assert.deepEqual([...new Set(member.members.map(v=>v.cutLengthMm))].sort(),[460,510])
  assert.equal(member.members.length,8)
  assert.equal(member.wholeAssembledFrameWithdrawalRequired,false)
  assert.equal(member.coldTreeOrSourceUnionOpenedForDryMemberRenewal,false)
@@ -404,4 +404,22 @@ test('actual permanent frame joints bound the shallow waste receiver and every r
  const old=structuredClone(choice);old.coldDistribution.wasteService.receiverOuterMm=[11040,1200,0,360,340,90]
  const rejected=inletUtilityWetAssembly({source:current,choice:old}).ordinaryCapture
  assert.ok(rejected.geometryFailures.some(q=>q.phase==='drain-before-capture-actual-frame-joints'&&q.reserveMm<0))
+})
+
+test('first front-upper release uses full upward socket and north ratchet with both hands clear of retained hot and cold',()=>{
+ const t=wet.ordinaryCapture.frontUpperRailTools
+ assert.equal(t.tasks.length,68)
+ assert.ok(t.tasks.every(q=>q.workingGripMm[1]>=1523&&q.steadyGripMm[1]>=1485))
+ assert.ok(t.tasks.every(q=>q.socketMm[0][0]===q.socketMm[1][0]&&q.socketMm[0][1]===q.socketMm[1][1]))
+ assert.deepEqual(t.failures,[])
+ assert.ok(wet.ordinaryCapture.waste.checks.some(q=>q.id.startsWith('waste/bin-before-fork/raw-host-frame/leg ')))
+ const clearComparison=member.members.map(q=>q.cutLengthMm+2*choice.coldDistribution.frameRenewal.memberJointDesign.memberEndGapMm)
+ assert.deepEqual([...new Set(clearComparison)].sort(),[510,560])
+})
+
+test('a west ratchet swing is a real rejected control against the still-present waste dry rod',()=>{
+ const west=structuredClone(choice);west.coldDistribution.frameRenewal.memberJointDesign.ratchetWorkingSectorDegrees=[-15,0]
+ const r=inletUtilityWetAssembly({source:current,choice:west}).ordinaryCapture
+ assert.ok(r.frontUpperRailTools.failures.some(q=>q.id.includes('/waste/drain-dry-extension/')))
+ assert.notEqual(r.sourceDigest,wet.ordinaryCapture.sourceDigest)
 })
