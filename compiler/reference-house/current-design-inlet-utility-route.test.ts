@@ -18,7 +18,7 @@ test('complete joined geometry rejects the narrow north feed after both settings
  assert.ok(a.geometry.failures.some(v=>v.kind==='valve-obstacle'&&v.id.includes('shield-connection-1')&&Math.abs(v.reserveMm+5.5)<1e-8))
  assert.ok(a.geometry.failures.some(v=>v.kind==='corner-obstacle'&&v.id.includes('complete-shifted-utility-maintenance')))
  assert.equal(a.geometry.twoIndependentSettingsMm,20)
- assert.ok(a.geometry.minimumByKind.find(v=>v.kind==='ordinary-arm')!.reserveMm>50)
+ assert.ok(Math.abs(a.geometry.minimumByKind.find(v=>v.kind==='ordinary-arm')!.reserveMm-4.86037309068564)<1e-7,'Complete solid-jamb/route arm envelope, not the earlier pipe-only50mm expectation')
  assert.equal(a.completeInstallationAccepted,false)
 })
 test('the formed final sweep uses its real circular tube, exact length/centroid and after-forming material bounds',()=>{

@@ -1,0 +1,54 @@
+{
+  "schema": "had-utility-route/1",
+  "id": "HAD/utility-west-jamb-north-stem-route",
+  "stem": "horizontal-north",
+  "upstreamVirtualCornersMm": [
+    [
+      10080,
+      600,
+      940
+    ],
+    [
+      9740,
+      600,
+      940
+    ],
+    [
+      9740,
+      2050,
+      940
+    ],
+    [
+      10030,
+      2050,
+      940
+    ]
+  ],
+  "downstreamVirtualCornersMm": [
+    [
+      10030,
+      2050,
+      1600
+    ],
+    [
+      10030,
+      1250,
+      1600
+    ],
+    [
+      10760,
+      1250,
+      1600
+    ]
+  ],
+  "formedTurn": {
+    "path": "utility/downstream",
+    "cornerIndex": 2,
+    "centrelineRadiusMm": 112,
+    "maximumAngularStepDeg": 1,
+    "maximumOuterDiameterAfterFormingMm": 28.1,
+    "minimumOuterDiameterAfterFormingMm": 27.9,
+    "minimumWallAfterFormingMm": 1.02,
+    "maximumWallAfterFormingMm": 1.5
+  }
+}
