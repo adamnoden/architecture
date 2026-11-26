@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1020" viewBox="0 0 1500 1020" role="img"><title>Boxed clevis versus conventional monolithic upstand</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto-start-reverse"><path d="M0 0 L6 3 L0 6" fill="#23714e"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,sans-serif;fill:#252b30}.title{font-size:27px;font-weight:700}.sub{font-size:18px;font-weight:700}.note{font-size:15px}.small{font-size:12px}.red{fill:#a1262f}.blue{fill:#315c86}.gold{fill:#896a20}</style>
+<text x="40.000" y="42.000" class="title" >One boxed clevis comparison — then stop and compare the house</text>
+<text x="40.000" y="73.000" class="note red" >Same source pressure minimum94.581kN; development141.8715kN. No complete resistance, product, physical or house acceptance.</text>
+<text x="40.000" y="115.000" class="sub" >Closed cheek section:190high×100outward</text>
+<rect x="100.000" y="190.000" width="200.000" height="380.000" fill="#626b74" stroke="#87929c" />
+<rect x="180.000" y="210.000" width="100.000" height="340.000" fill="white" stroke="#87929c" />
+<line x1="140.000" y1="380.000" x2="300.000" y2="380.000" stroke="#315c86" stroke-dasharray="4 3"/>
+<text x="330.000" y="220.000" class="note" >40mm inner face /10mm other plates</text>
+<text x="330.000" y="249.000" class="note blue" >Genuine closed-section bending +torsion</text>
+<text x="330.000" y="278.000" class="note" >Inner bearing faces support D60 pin at130mm centres</text>
+<text x="330.000" y="307.000" class="note red" >Pin surface axial friction adds an eccentric bending couple</text>
+<text x="330.000" y="336.000" class="note" >Outer access port90mm;220mm pin;270mm withdrawal</text>
+<text x="330.000" y="365.000" class="note" >Slot gap stays90mm: no box flange crosses the moving blade</text>
+<text x="330.000" y="394.000" class="note" >SW one fabricated cross-root;X16/Y14bars at separate levels</text>
+<text x="330.000" y="423.000" class="note" >No duplicated plates;9centred anchors each face, coordinated gaps</text>
+<text x="330.000" y="452.000" class="small red" >Closed boxes still require a300core and through-plate concrete proof</text>
+<text x="40.000" y="620.000" class="note" >μ=0: boxVM28.4; pinVM229.1;Ybar51.2MPa</text>
+<text x="40.000" y="647.000" class="note" >μ=0.3: boxVM73.1; pinVM311.2;Ybar204.8MPa</text>
+<text x="40.000" y="674.000" class="note" >μ=0.6: boxVM119.8; pinVM394.7;Ybar358.4MPa</text>
+<text x="40.000" y="701.000" class="note" >μ=1: boxVM182.6; pinVM514.3;Ybar563.2MPa</text>
+<text x="40.000" y="765.000" class="note red" >No pin-only pass: boxed cheeks solve one failure; the connector remains unqualified.</text>
+<text x="930.000" y="115.000" class="sub" >Ordinary monolithic comparison</text>
+<rect x="1008.750" y="285.000" width="210.000" height="455.000" fill="#c8d9e7" stroke="#87929c" />
+<rect x="1218.750" y="446.000" width="154.000" height="140.000" fill="#eee8d9" stroke="#87929c" />
+<rect x="1008.750" y="341.000" width="140.000" height="245.000" fill="#94afc5" stroke="#87929c" />
+<rect x="1008.750" y="285.000" width="98.000" height="56.000" fill="#ded1b5" stroke="#87929c" />
+<line x1="1000.000" y1="341.000" x2="1410.000" y2="341.000" stroke="#9aa6af" stroke-dasharray="3 4"/>
+<text x="1420.000" y="336.000" class="small" >upstand3520</text>
+<line x1="1000.000" y1="390.000" x2="1410.000" y2="390.000" stroke="#9aa6af" stroke-dasharray="3 4"/>
+<text x="1420.000" y="385.000" class="small" >FIRST3450</text>
+<line x1="1000.000" y1="446.000" x2="1410.000" y2="446.000" stroke="#9aa6af" stroke-dasharray="3 4"/>
+<text x="1420.000" y="441.000" class="small" >slab3370</text>
+<line x1="1000.000" y1="586.000" x2="1410.000" y2="586.000" stroke="#9aa6af" stroke-dasharray="3 4"/>
+<text x="1420.000" y="581.000" class="small" >soffit3170</text>
+<line x1="1000.000" y1="659.500" x2="1410.000" y2="659.500" stroke="#9aa6af" stroke-dasharray="3 4"/>
+<text x="1420.000" y="654.500" class="small" >arch ring3065</text>
+<line x1="1000.000" y1="691.000" x2="1410.000" y2="691.000" stroke="#9aa6af" stroke-dasharray="3 4"/>
+<text x="1420.000" y="686.000" class="small" >downstand3020</text>
+<text x="930.000" y="800.000" class="note blue" >200×350 upstand; floor and FIRST unchanged</text>
+<text x="930.000" y="826.000" class="note" >70mm high×60mm roomward first-floor plinth</text>
+<text x="930.000" y="852.000" class="small" >300cores grow100mm inward; no outward glass move</text>
+<text x="930.000" y="878.000" class="small red" >Same350 downstand would overlap actual arch rings45mm</text>
+<text x="40.000" y="940.000" class="sub" >PREFERRED NEXT: develop a normal beam/column/slab cage and join the real plinth/rooms before any new full signed programme.</text>
+<text x="40.000" y="978.000" class="note red" >No additional native physics edits or new house solves. Existing650/750 northern upstands and all52 supports/roof origins must be retained.</text>
+</svg>

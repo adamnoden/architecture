@@ -1,0 +1,74 @@
+{
+  "schema": "str-three-clevis-observed/1",
+  "sourceParentCommit": "0cb9232d416a76e75b9f08f2537c081782abfd4e",
+  "sourceHead": "b052bf98fb693933cb7bd1ed245c0d62214fb6da",
+  "sourceTree": "5652eaec80e9312a36381c36cfa8888f1310cef4",
+  "run": {
+    "id": 45859116347,
+    "jobId": 140045182325,
+    "url": "https://github.com/adamnoden/architecture/actions/runs/45859116347",
+    "flatControlsPassed": 19,
+    "boxedControlsPassed": 11,
+    "nativeHouseSolves": 0
+  },
+  "artifact": {
+    "id": 15137536691,
+    "name": "three-clevis-source-bound-minimum-screen",
+    "size_in_bytes": 460898,
+    "url": "https://api.github.com/repos/adamnoden/architecture/actions/artifacts/15137536691",
+    "archive_download_url": "https://api.github.com/repos/adamnoden/architecture/actions/artifacts/15137536691/zip",
+    "expired": false,
+    "created_at": "2026-11-26T16:30:20Z",
+    "expires_at": "2027-02-24T16:28:37Z",
+    "updated_at": "2026-11-26T16:30:20Z",
+    "digest": "sha256:f08374c90b3b9e7d0b885046dd8b06ff857ac97f562c7a80f777194ceef58b30",
+    "workflow_run": {
+      "id": 45859116347,
+      "repository_id": 1400806405,
+      "head_repository_id": 1400806405,
+      "head_branch": "work/zerg-three-clevis-20261126",
+      "head_sha": "b052bf98fb693933cb7bd1ed245c0d62214fb6da"
+    }
+  },
+  "rawFiles": {
+    "three-clevis-comparison.json": {
+      "bytes": 297451,
+      "sha256": "d884b74be5ad837f74341a5c22fe2782f033eeeccbb2153b0f37e95bdb69a1cb"
+    },
+    "three-clevis-box-comparison.json": {
+      "bytes": 133857,
+      "sha256": "e692c588e7305cf4abe52770ee447883018dad58a0fc15732586015a34e2b0f9"
+    }
+  },
+  "flatSourceSHA256": {
+    "project/ccr/studies/working-house-comparison.json": "478ba1db1ab8ad34cc04d5ddc9a8fef0ca8f5e5bc12256f8dcc6d5a2d58bb139",
+    "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
+    "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
+    "project/str/studies/separated_floor_bearing.py": "2c60cb91326b64915ac96ba5e12250c18bd91dd91ae1e7e62363dded33b4fc39",
+    "project/str/studies/separated-floor-bearing-inputs.json": "203b6bf5a9da01025e8075b2b2f7fe9e08be1cd6dc1e12e913015784ebf5ff72",
+    "project/str/studies/separated-floor-bearing-observed.json": "452b79aca74c8dcf65171580591610bb08822f0639a35bdbe7711cecec881089",
+    "project/str/studies/three_clevis.py": "388969fbdbbe54b169fac05085f52dd077c89754e1ec0c8ce8b036e2a9f82389",
+    "project/str/studies/three-clevis-inputs.json": "5c7fc4ca6b6123e52828d29748aca25a0aaf3c10f5f5d30c8d626e11376c3d28",
+    "project/str/studies/three_clevis_test.py": "21322079fb6bfb51b80ac2bb73f19db5e6f21757ed0d515e6316e73649d76c1d"
+  },
+  "boxSourceSHA256": {
+    "three_clevis_box.py": "130ae82fcf5f04f3cdb167c4ed915bbb02151422c0b973a942ca14507db45c0e",
+    "three-clevis-box-inputs.json": "ee78acdeb4044b2b67f8d2d67e271e50c269f5f61c8799d2731c1d2343e9889f",
+    "three_clevis_box_test.py": "0ddee33877d54f8f6a5bc6f97b605ec5bf062477b3c7eab8d5bc5138b5e407b3",
+    "three_clevis.py": "388969fbdbbe54b169fac05085f52dd077c89754e1ec0c8ce8b036e2a9f82389",
+    "three-clevis-inputs.json": "5c7fc4ca6b6123e52828d29748aca25a0aaf3c10f5f5d30c8d626e11376c3d28"
+  },
+  "svgSHA256": {
+    "three-clevis-section.svg": "1debdf0aab13cffbd00fe3d6087129d1bc71cf51f8d990c9f42989e02b08362f",
+    "three-clevis-plan.svg": "77c01468a564a40c453e4f8e867c95683118c4f4063ef9405e27ffcd619df08f",
+    "three-clevis-box-v-monolithic.svg": "130e346ced89e57c5bf096af1467b8dd238abb03d0687d255cf1087776b01bc5"
+  },
+  "supersededPreliminaryPinNumbers": {
+    "sourceHead": "3e033833636c4d9a2065fa49f54d31c59ae167f8",
+    "run": 45856809598,
+    "reason": "Centroid-only pin friction omitted eccentric bending, torsion and bearing redistribution; family was already rejected. Preserve its historical receipt unchanged."
+  },
+  "scope": "Exact hosted consumer-only capture. Material certificates, product/physical/owner/house acceptance and full-house redistribution are absent.",
+  "allAcceptanceFlagsRemainFalse": true,
+  "native58Finite6And4010MethodsChanged": false
+}

@@ -1,0 +1,3677 @@
+{
+  "schema": "str-three-clevis-box-screen/1",
+  "status": "ONE BOXED COMPARISON;NO COMPLETE CONNECTOR PASS",
+  "pressureOnlyMinimumKN": 94.581,
+  "componentScreenKN": 141.8715,
+  "boxSection": {
+    "areaMm2": 10500,
+    "centroidFromInnerFaceMm": 37.857142857142854,
+    "IweakMm4": 10601785.714285715,
+    "IstrongMm4": 36687500.0,
+    "medianEnclosedAreaMm2": 13500.0,
+    "weakExtremeDistanceMm": 62.142857142857146,
+    "heightMm": 190
+  },
+  "matGeometry": {
+    "XLayerZMm": [
+      3229.0,
+      3311.0
+    ],
+    "YLayerZMm": [
+      3246.0,
+      3294.0
+    ],
+    "anchorAlongCoordinatesMm": [
+      662.5,
+      712.5,
+      812.5,
+      862.5,
+      912.5,
+      962.5,
+      1012.5,
+      1112.5,
+      1162.5
+    ],
+    "adverseXLeverMm": 72.0,
+    "adverseYLeverMm": 38.0,
+    "adverseIndependentParallelClearMm": 22.0,
+    "adverseInterMatParallelClearMm": 22.0,
+    "adverseAnchorToCompanionRootPlateGapMm": 11.0,
+    "nominalTiedCrossingSurfaceGapMm": 0.0,
+    "tiedCrossingsRequireOneStackFixture": true,
+    "independentCrossingLayerTranslationsAllowed": false,
+    "allHookWeldBondAndFloorPerimeterConfinementQualified": false
+  },
+  "frictionScenarioSummary": [
+    {
+      "mu": 0,
+      "boxVMMaxMPa": 28.361327799032697,
+      "innerFaceBendingMaxMPa": 0.0,
+      "pinVMIncludingSurfaceFrictionMaxMPa": 229.06315391727165,
+      "retainerAxialMaxMPa": 0.0,
+      "retainerWasherStripMaxMPa": 0.0,
+      "XAnchorNecessaryStressMaxMPa": 39.20060852232957,
+      "YAnchorNecessaryStressMaxMPa": 51.200794804675354
+    },
+    {
+      "mu": 0.3,
+      "boxVMMaxMPa": 73.12720136417897,
+      "innerFaceBendingMaxMPa": 113.05385156249999,
+      "pinVMIncludingSurfaceFrictionMaxMPa": 311.15380053675455,
+      "retainerAxialMaxMPa": 120.57067988668554,
+      "retainerWasherStripMaxMPa": 140.687968555216,
+      "XAnchorNecessaryStressMaxMPa": 101.26823868268471,
+      "YAnchorNecessaryStressMaxMPa": 204.8031792187014
+    },
+    {
+      "mu": 0.6,
+      "boxVMMaxMPa": 119.84582614119536,
+      "innerFaceBendingMaxMPa": 226.10770312499997,
+      "pinVMIncludingSurfaceFrictionMaxMPa": 394.73960864153935,
+      "retainerAxialMaxMPa": 241.14135977337108,
+      "retainerWasherStripMaxMPa": 281.375937110432,
+      "XAnchorNecessaryStressMaxMPa": 163.33586884303986,
+      "YAnchorNecessaryStressMaxMPa": 358.4055636327274
+    },
+    {
+      "mu": 1,
+      "boxVMMaxMPa": 182.5934698693455,
+      "innerFaceBendingMaxMPa": 376.846171875,
+      "pinVMIncludingSurfaceFrictionMaxMPa": 514.3335654486177,
+      "retainerAxialMaxMPa": 401.90226628895186,
+      "retainerWasherStripMaxMPa": 468.9598951840534,
+      "XAnchorNecessaryStressMaxMPa": 246.09270905684673,
+      "YAnchorNecessaryStressMaxMPa": 563.208742851429
+    }
+  ],
+  "simultaneousComponentScenarios": [
+    {
+      "mu": 0,
+      "slipDirectionRad": 0.0,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "boxedRootSectionVMMPa": 28.361327799032697,
+      "innerFaceLocalPlateBendingMPa": 0.0,
+      "pin": {
+        "resultantTransverseN": 141871.5,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 223.14522639968663,
+        "doubleShearMPa": 29.867130302727286,
+        "axialStressMPa": 0.0,
+        "eccentricAxialFrictionBendingNmm": 0.0,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          70935.75,
+          70935.75
+        ],
+        "verticalContactFrictionTorsionNmm": 0.0,
+        "torsionalShearMPa": 0.0,
+        "combinedDirectAndTorsionalShearMPa": 29.867130302727286,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 229.06315391727165,
+        "yieldUtilization": 0.7635438463909054
+      },
+      "keeperM24AxialMPa": 0.0,
+      "keeperAnnularRadialStripMPa": 0.0,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 39.20060852232957,
+          "straightDevelopmentMm": 74.66782575681823
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 51.200794804675354,
+          "straightDevelopmentMm": 85.33465800779227
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 0.0,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        0.0,
+        42561.45,
+        0.0,
+        -1276843.5,
+        0.0
+      ],
+      "boxedRootSectionVMMPa": 52.16004485887028,
+      "innerFaceLocalPlateBendingMPa": 0.0,
+      "pin": {
+        "resultantTransverseN": 148118.19448789032,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 232.9704559612967,
+        "doubleShearMPa": 31.182199490204322,
+        "axialStressMPa": 0.0,
+        "eccentricAxialFrictionBendingNmm": 0.0,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          70935.75,
+          70935.75
+        ],
+        "verticalContactFrictionTorsionNmm": 1276843.5,
+        "torsionalShearMPa": 30.89703134764892,
+        "combinedDirectAndTorsionalShearMPa": 62.079230837853245,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 256.5866833159369,
+        "yieldUtilization": 0.8552889443864564
+      },
+      "keeperM24AxialMPa": 0.0,
+      "keeperAnnularRadialStripMPa": 0.0,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 101.26823868268471,
+          "straightDevelopmentMm": 192.89188320511377
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 204.8031792187014,
+          "straightDevelopmentMm": 341.338632031169
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 0.2617993877991494,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        11015.71384717868,
+        41111.20375931086,
+        0.0,
+        -1233336.1127793258,
+        330471.4154153604
+      ],
+      "boxedRootSectionVMMPa": 60.11753111539278,
+      "innerFaceLocalPlateBendingMPa": 29.260489906568367,
+      "pin": {
+        "resultantTransverseN": 147708.0010926611,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 248.31875595324237,
+        "doubleShearMPa": 33.157278100367186,
+        "axialStressMPa": 4.638109286942662,
+        "eccentricAxialFrictionBendingNmm": 330471.4154153604,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          65851.57437822522,
+          76019.92562177478
+        ],
+        "verticalContactFrictionTorsionNmm": 1233336.1127793258,
+        "torsionalShearMPa": 29.844240534357024,
+        "combinedDirectAndTorsionalShearMPa": 63.001518634724206,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 275.49001746521714,
+        "yieldUtilization": 0.9183000582173905
+      },
+      "keeperM24AxialMPa": 31.205988235633654,
+      "keeperAnnularRadialStripMPa": 36.412725678874466,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 99.1533354707749,
+          "straightDevelopmentMm": 188.86349613480937
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 199.56930488976457,
+          "straightDevelopmentMm": 332.61550814960765
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 0.5235987755982988,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        21280.724999999995,
+        36859.296921901194,
+        0.0,
+        -1105778.9076570359,
+        638421.7499999999
+      ],
+      "boxedRootSectionVMMPa": 66.63041046205626,
+      "innerFaceLocalPlateBendingMPa": 56.526925781249986,
+      "pin": {
+        "resultantTransverseN": 146581.48000967543,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 261.4504373718339,
+        "doubleShearMPa": 34.87676097045676,
+        "axialStressMPa": 8.960139090818183,
+        "eccentricAxialFrictionBendingNmm": 638421.7499999999,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          61113.876923076925,
+          80757.62307692308
+        ],
+        "verticalContactFrictionTorsionNmm": 1105778.9076570359,
+        "torsionalShearMPa": 26.757614048588113,
+        "combinedDirectAndTorsionalShearMPa": 61.63437501904487,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 290.7202580055759,
+        "yieldUtilization": 0.969067526685253
+      },
+      "keeperM24AxialMPa": 60.28533994334276,
+      "keeperAnnularRadialStripMPa": 70.34398427760799,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 92.95275299389434,
+          "straightDevelopmentMm": 177.05286284551306
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 184.22436178908484,
+          "straightDevelopmentMm": 307.0406029818081
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 0.7853981633974483,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        30095.48991213218,
+        30095.489912132183,
+        0.0,
+        -902864.6973639654,
+        902864.6973639654
+      ],
+      "boxedRootSectionVMMPa": 71.10071115626934,
+      "innerFaceLocalPlateBendingMPa": 79.9411450791011,
+      "pin": {
+        "resultantTransverseN": 145028.48349652303,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 271.8057473546238,
+        "doubleShearMPa": 36.273154093483285,
+        "axialStressMPa": 12.671550222984411,
+        "eccentricAxialFrictionBendingNmm": 902864.6973639654,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          57045.52388670822,
+          84825.97611329178
+        ],
+        "verticalContactFrictionTorsionNmm": 902864.6973639654,
+        "torsionalShearMPa": 21.847500384455884,
+        "combinedDirectAndTorsionalShearMPa": 58.12065447793917,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 301.76375572273594,
+        "yieldUtilization": 1.0058791857424532
+      },
+      "keeperM24AxialMPa": 85.25634536014782,
+      "keeperAnnularRadialStripMPa": 99.48141659675298,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 83.08905070089537,
+          "straightDevelopmentMm": 158.26485847789598
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 159.81408243025604,
+          "straightDevelopmentMm": 266.3568040504268
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 1.0471975511965976,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        36859.296921901194,
+        21280.725000000002,
+        0.0,
+        -638421.7500000001,
+        1105778.9076570359
+      ],
+      "boxedRootSectionVMMPa": 73.12720136417897,
+      "innerFaceLocalPlateBendingMPa": 97.90750744880003,
+      "pin": {
+        "resultantTransverseN": 143458.67617113865,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 279.1568740458556,
+        "doubleShearMPa": 37.299963985575545,
+        "axialStressMPa": 15.519416148181104,
+        "eccentricAxialFrictionBendingNmm": 1105778.9076570359,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          53923.76680527638,
+          87947.73319472362
+        ],
+        "verticalContactFrictionTorsionNmm": 638421.7500000001,
+        "torsionalShearMPa": 15.448515673824463,
+        "combinedDirectAndTorsionalShearMPa": 52.748479659400004,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 308.5147035744886,
+        "yieldUtilization": 1.0283823452482952
+      },
+      "keeperM24AxialMPa": 104.41727173343115,
+      "keeperAnnularRadialStripMPa": 121.83935477564333,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 70.23442360250715,
+          "straightDevelopmentMm": 133.779854480966
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 128.0019870116884,
+          "straightDevelopmentMm": 213.3366450194807
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 1.3089969389957472,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        41111.20375931086,
+        11015.71384717868,
+        0.0,
+        -330471.4154153604,
+        1233336.1127793258
+      ],
+      "boxedRootSectionVMMPa": 72.51187886231116,
+      "innerFaceLocalPlateBendingMPa": 109.20163498566947,
+      "pin": {
+        "resultantTransverseN": 142298.51883913943,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 283.5053519885242,
+        "doubleShearMPa": 37.92716954738345,
+        "axialStressMPa": 17.309659509927073,
+        "eccentricAxialFrictionBendingNmm": 1233336.1127793258,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51961.34826493345,
+          89910.15173506655
+        ],
+        "verticalContactFrictionTorsionNmm": 330471.4154153604,
+        "torsionalShearMPa": 7.996740149901142,
+        "combinedDirectAndTorsionalShearMPa": 45.92390969728459,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 311.15380053675455,
+        "yieldUtilization": 1.0371793351225151
+      },
+      "keeperM24AxialMPa": 116.46233359578147,
+      "keeperAnnularRadialStripMPa": 135.89414227562747,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 55.2648932922091,
+          "straightDevelopmentMm": 105.26646341373164
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 90.95601726418388,
+          "straightDevelopmentMm": 151.59336210697316
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 1.5707963267948966,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        42561.45,
+        2.6061371754785054e-12,
+        0.0,
+        -7.818411526435516e-11,
+        1276843.5
+      ],
+      "boxedRootSectionVMMPa": 69.26378517288587,
+      "innerFaceLocalPlateBendingMPa": 113.05385156249999,
+      "pin": {
+        "resultantTransverseN": 141871.5,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 284.9392890949845,
+        "doubleShearMPa": 38.13802792502099,
+        "axialStressMPa": 17.92027818163637,
+        "eccentricAxialFrictionBendingNmm": 1276843.5,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51292.00384615385,
+          90579.49615384615
+        ],
+        "verticalContactFrictionTorsionNmm": 7.818411526435516e-11,
+        "torsionalShearMPa": 1.8918975271526838e-15,
+        "combinedDirectAndTorsionalShearMPa": 38.13802792502099,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 309.97974935955267,
+        "yieldUtilization": 1.033265831198509
+      },
+      "keeperM24AxialMPa": 120.57067988668554,
+      "keeperAnnularRadialStripMPa": 140.687968555216,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 39.200608522329574,
+          "straightDevelopmentMm": 74.66782575681825
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 51.20079480467536,
+          "straightDevelopmentMm": 85.33465800779229
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 1.832595714594046,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        41111.20375931086,
+        -11015.713847178677,
+        0.0,
+        330471.4154153603,
+        1233336.1127793258
+      ],
+      "boxedRootSectionVMMPa": 72.51187886231116,
+      "innerFaceLocalPlateBendingMPa": 109.20163498566947,
+      "pin": {
+        "resultantTransverseN": 142298.51883913943,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 283.5053519885242,
+        "doubleShearMPa": 37.92716954738345,
+        "axialStressMPa": 17.309659509927073,
+        "eccentricAxialFrictionBendingNmm": 1233336.1127793258,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51961.34826493345,
+          89910.15173506655
+        ],
+        "verticalContactFrictionTorsionNmm": 330471.4154153603,
+        "torsionalShearMPa": 7.9967401499011395,
+        "combinedDirectAndTorsionalShearMPa": 45.923909697284586,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 311.15380053675455,
+        "yieldUtilization": 1.0371793351225151
+      },
+      "keeperM24AxialMPa": 116.46233359578147,
+      "keeperAnnularRadialStripMPa": 135.89414227562747,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 55.264893292209095,
+          "straightDevelopmentMm": 105.26646341373163
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 90.95601726418388,
+          "straightDevelopmentMm": 151.59336210697316
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 2.0943951023931953,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        36859.296921901194,
+        -21280.724999999988,
+        0.0,
+        638421.7499999997,
+        1105778.9076570359
+      ],
+      "boxedRootSectionVMMPa": 73.12720136417896,
+      "innerFaceLocalPlateBendingMPa": 97.90750744880003,
+      "pin": {
+        "resultantTransverseN": 143458.67617113865,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 279.1568740458556,
+        "doubleShearMPa": 37.299963985575545,
+        "axialStressMPa": 15.519416148181104,
+        "eccentricAxialFrictionBendingNmm": 1105778.9076570359,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          53923.76680527638,
+          87947.73319472362
+        ],
+        "verticalContactFrictionTorsionNmm": 638421.7499999997,
+        "torsionalShearMPa": 15.448515673824451,
+        "combinedDirectAndTorsionalShearMPa": 52.7484796594,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 308.5147035744886,
+        "yieldUtilization": 1.0283823452482952
+      },
+      "keeperM24AxialMPa": 104.41727173343115,
+      "keeperAnnularRadialStripMPa": 121.83935477564333,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 70.23442360250712,
+          "straightDevelopmentMm": 133.77985448096598
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 128.00198701168836,
+          "straightDevelopmentMm": 213.33664501948064
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 2.356194490192345,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        30095.489912132183,
+        -30095.48991213218,
+        0.0,
+        902864.6973639654,
+        902864.6973639654
+      ],
+      "boxedRootSectionVMMPa": 71.10071115626934,
+      "innerFaceLocalPlateBendingMPa": 79.94114507910112,
+      "pin": {
+        "resultantTransverseN": 145028.48349652303,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 271.8057473546238,
+        "doubleShearMPa": 36.273154093483285,
+        "axialStressMPa": 12.671550222984411,
+        "eccentricAxialFrictionBendingNmm": 902864.6973639654,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          57045.52388670822,
+          84825.97611329178
+        ],
+        "verticalContactFrictionTorsionNmm": 902864.6973639654,
+        "torsionalShearMPa": 21.847500384455884,
+        "combinedDirectAndTorsionalShearMPa": 58.12065447793917,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 301.76375572273594,
+        "yieldUtilization": 1.0058791857424532
+      },
+      "keeperM24AxialMPa": 85.25634536014783,
+      "keeperAnnularRadialStripMPa": 99.48141659675301,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 83.08905070089537,
+          "straightDevelopmentMm": 158.26485847789598
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 159.814082430256,
+          "straightDevelopmentMm": 266.3568040504268
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 2.6179938779914944,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        21280.724999999995,
+        -36859.296921901194,
+        0.0,
+        1105778.9076570359,
+        638421.7499999999
+      ],
+      "boxedRootSectionVMMPa": 66.63041046205626,
+      "innerFaceLocalPlateBendingMPa": 56.526925781249986,
+      "pin": {
+        "resultantTransverseN": 146581.48000967543,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 261.4504373718339,
+        "doubleShearMPa": 34.87676097045676,
+        "axialStressMPa": 8.960139090818183,
+        "eccentricAxialFrictionBendingNmm": 638421.7499999999,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          61113.876923076925,
+          80757.62307692308
+        ],
+        "verticalContactFrictionTorsionNmm": 1105778.9076570359,
+        "torsionalShearMPa": 26.757614048588113,
+        "combinedDirectAndTorsionalShearMPa": 61.63437501904487,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 290.7202580055759,
+        "yieldUtilization": 0.969067526685253
+      },
+      "keeperM24AxialMPa": 60.28533994334276,
+      "keeperAnnularRadialStripMPa": 70.34398427760799,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 92.95275299389434,
+          "straightDevelopmentMm": 177.05286284551306
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 184.22436178908484,
+          "straightDevelopmentMm": 307.0406029818081
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 2.8797932657906435,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        11015.713847178693,
+        -41111.20375931086,
+        0.0,
+        1233336.1127793258,
+        330471.41541536077
+      ],
+      "boxedRootSectionVMMPa": 60.117531115392794,
+      "innerFaceLocalPlateBendingMPa": 29.260489906568402,
+      "pin": {
+        "resultantTransverseN": 147708.0010926611,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 248.31875595324237,
+        "doubleShearMPa": 33.157278100367186,
+        "axialStressMPa": 4.638109286942667,
+        "eccentricAxialFrictionBendingNmm": 330471.41541536077,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          65851.57437822522,
+          76019.92562177478
+        ],
+        "verticalContactFrictionTorsionNmm": 1233336.1127793258,
+        "torsionalShearMPa": 29.844240534357024,
+        "combinedDirectAndTorsionalShearMPa": 63.001518634724206,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 275.49001746521714,
+        "yieldUtilization": 0.9183000582173905
+      },
+      "keeperM24AxialMPa": 31.20598823563369,
+      "keeperAnnularRadialStripMPa": 36.41272567887451,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 99.1533354707749,
+          "straightDevelopmentMm": 188.86349613480937
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 199.56930488976457,
+          "straightDevelopmentMm": 332.61550814960765
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 3.141592653589793,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        5.212274350957011e-12,
+        -42561.45,
+        0.0,
+        1276843.5,
+        1.5636823052871032e-10
+      ],
+      "boxedRootSectionVMMPa": 52.160044858870286,
+      "innerFaceLocalPlateBendingMPa": 1.384510374472956e-14,
+      "pin": {
+        "resultantTransverseN": 148118.19448789032,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 232.9704559612967,
+        "doubleShearMPa": 31.182199490204322,
+        "axialStressMPa": 2.1946011314971132e-15,
+        "eccentricAxialFrictionBendingNmm": 1.5636823052871032e-10,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          70935.75,
+          70935.75
+        ],
+        "verticalContactFrictionTorsionNmm": 1276843.5,
+        "torsionalShearMPa": 30.89703134764892,
+        "combinedDirectAndTorsionalShearMPa": 62.079230837853245,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 256.5866833159369,
+        "yieldUtilization": 0.8552889443864564
+      },
+      "keeperM24AxialMPa": 1.476564971942496e-14,
+      "keeperAnnularRadialStripMPa": 1.7229307036968876e-14,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 101.26823868268471,
+          "straightDevelopmentMm": 192.89188320511377
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 204.8031792187014,
+          "straightDevelopmentMm": 341.338632031169
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 3.4033920413889427,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -11015.713847178682,
+        -41111.20375931086,
+        0.0,
+        1233336.1127793258,
+        -330471.4154153605
+      ],
+      "boxedRootSectionVMMPa": 60.11753111539278,
+      "innerFaceLocalPlateBendingMPa": 29.260489906568374,
+      "pin": {
+        "resultantTransverseN": 147708.0010926611,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 248.31875595324237,
+        "doubleShearMPa": 33.157278100367186,
+        "axialStressMPa": 4.638109286942663,
+        "eccentricAxialFrictionBendingNmm": 330471.4154153605,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          65851.57437822522,
+          76019.92562177478
+        ],
+        "verticalContactFrictionTorsionNmm": 1233336.1127793258,
+        "torsionalShearMPa": 29.844240534357024,
+        "combinedDirectAndTorsionalShearMPa": 63.001518634724206,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 275.49001746521714,
+        "yieldUtilization": 0.9183000582173905
+      },
+      "keeperM24AxialMPa": 31.20598823563366,
+      "keeperAnnularRadialStripMPa": 36.41272567887447,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 99.1533354707749,
+          "straightDevelopmentMm": 188.86349613480937
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 199.56930488976457,
+          "straightDevelopmentMm": 332.61550814960765
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 3.665191429188092,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -21280.724999999988,
+        -36859.2969219012,
+        0.0,
+        1105778.907657036,
+        -638421.7499999997
+      ],
+      "boxedRootSectionVMMPa": 66.63041046205625,
+      "innerFaceLocalPlateBendingMPa": 56.526925781249965,
+      "pin": {
+        "resultantTransverseN": 146581.48000967543,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 261.4504373718339,
+        "doubleShearMPa": 34.87676097045676,
+        "axialStressMPa": 8.960139090818181,
+        "eccentricAxialFrictionBendingNmm": 638421.7499999997,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          61113.876923076925,
+          80757.62307692308
+        ],
+        "verticalContactFrictionTorsionNmm": 1105778.907657036,
+        "torsionalShearMPa": 26.75761404858812,
+        "combinedDirectAndTorsionalShearMPa": 61.63437501904488,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 290.7202580055759,
+        "yieldUtilization": 0.969067526685253
+      },
+      "keeperM24AxialMPa": 60.28533994334274,
+      "keeperAnnularRadialStripMPa": 70.34398427760796,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 92.95275299389434,
+          "straightDevelopmentMm": 177.05286284551306
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 184.22436178908487,
+          "straightDevelopmentMm": 307.04060298180815
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 3.926990816987241,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -30095.489912132165,
+        -30095.489912132198,
+        0.0,
+        902864.6973639659,
+        -902864.697363965
+      ],
+      "boxedRootSectionVMMPa": 71.10071115626934,
+      "innerFaceLocalPlateBendingMPa": 79.94114507910106,
+      "pin": {
+        "resultantTransverseN": 145028.48349652303,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 271.8057473546238,
+        "doubleShearMPa": 36.273154093483285,
+        "axialStressMPa": 12.671550222984404,
+        "eccentricAxialFrictionBendingNmm": 902864.697363965,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          57045.52388670823,
+          84825.97611329176
+        ],
+        "verticalContactFrictionTorsionNmm": 902864.6973639659,
+        "torsionalShearMPa": 21.847500384455895,
+        "combinedDirectAndTorsionalShearMPa": 58.12065447793918,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 301.76375572273594,
+        "yieldUtilization": 1.0058791857424532
+      },
+      "keeperM24AxialMPa": 85.25634536014778,
+      "keeperAnnularRadialStripMPa": 99.48141659675294,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 83.0890507008954,
+          "straightDevelopmentMm": 158.264858477896
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 159.8140824302561,
+          "straightDevelopmentMm": 266.3568040504269
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 4.1887902047863905,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -36859.29692190118,
+        -21280.725000000017,
+        0.0,
+        638421.7500000005,
+        -1105778.9076570354
+      ],
+      "boxedRootSectionVMMPa": 73.12720136417896,
+      "innerFaceLocalPlateBendingMPa": 97.9075074488,
+      "pin": {
+        "resultantTransverseN": 143458.67617113865,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 279.1568740458556,
+        "doubleShearMPa": 37.299963985575545,
+        "axialStressMPa": 15.519416148181097,
+        "eccentricAxialFrictionBendingNmm": 1105778.9076570354,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          53923.76680527638,
+          87947.73319472362
+        ],
+        "verticalContactFrictionTorsionNmm": 638421.7500000005,
+        "torsionalShearMPa": 15.448515673824472,
+        "combinedDirectAndTorsionalShearMPa": 52.74847965940002,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 308.5147035744886,
+        "yieldUtilization": 1.0283823452482952
+      },
+      "keeperM24AxialMPa": 104.41727173343111,
+      "keeperAnnularRadialStripMPa": 121.83935477564329,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 70.23442360250716,
+          "straightDevelopmentMm": 133.77985448096604
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 128.00198701168844,
+          "straightDevelopmentMm": 213.33664501948076
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 4.4505895925855405,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -41111.20375931086,
+        -11015.713847178677,
+        0.0,
+        330471.4154153603,
+        -1233336.1127793258
+      ],
+      "boxedRootSectionVMMPa": 72.51187886231116,
+      "innerFaceLocalPlateBendingMPa": 109.20163498566947,
+      "pin": {
+        "resultantTransverseN": 142298.51883913943,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 283.5053519885242,
+        "doubleShearMPa": 37.92716954738345,
+        "axialStressMPa": 17.309659509927073,
+        "eccentricAxialFrictionBendingNmm": 1233336.1127793258,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51961.34826493345,
+          89910.15173506655
+        ],
+        "verticalContactFrictionTorsionNmm": 330471.4154153603,
+        "torsionalShearMPa": 7.9967401499011395,
+        "combinedDirectAndTorsionalShearMPa": 45.923909697284586,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 311.15380053675455,
+        "yieldUtilization": 1.0371793351225151
+      },
+      "keeperM24AxialMPa": 116.46233359578147,
+      "keeperAnnularRadialStripMPa": 135.89414227562747,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 55.264893292209095,
+          "straightDevelopmentMm": 105.26646341373163
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 90.95601726418388,
+          "straightDevelopmentMm": 151.59336210697316
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 4.71238898038469,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -42561.45,
+        -7.818411526435517e-12,
+        0.0,
+        2.345523457930655e-10,
+        -1276843.5
+      ],
+      "boxedRootSectionVMMPa": 69.26378517288587,
+      "innerFaceLocalPlateBendingMPa": 113.05385156249999,
+      "pin": {
+        "resultantTransverseN": 141871.5,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 284.9392890949845,
+        "doubleShearMPa": 38.13802792502099,
+        "axialStressMPa": 17.92027818163637,
+        "eccentricAxialFrictionBendingNmm": 1276843.5,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51292.00384615385,
+          90579.49615384615
+        ],
+        "verticalContactFrictionTorsionNmm": 2.345523457930655e-10,
+        "torsionalShearMPa": 5.675692581458052e-15,
+        "combinedDirectAndTorsionalShearMPa": 38.138027925021,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 309.97974935955267,
+        "yieldUtilization": 1.033265831198509
+      },
+      "keeperM24AxialMPa": 120.57067988668554,
+      "keeperAnnularRadialStripMPa": 140.687968555216,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 39.20060852232958,
+          "straightDevelopmentMm": 74.66782575681826
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 51.20079480467538,
+          "straightDevelopmentMm": 85.33465800779231
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 4.974188368183839,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -41111.20375931087,
+        11015.713847178662,
+        0.0,
+        -330471.41541535984,
+        -1233336.112779326
+      ],
+      "boxedRootSectionVMMPa": 72.51187886231115,
+      "innerFaceLocalPlateBendingMPa": 109.2016349856695,
+      "pin": {
+        "resultantTransverseN": 142298.51883913943,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 283.5053519885242,
+        "doubleShearMPa": 37.92716954738345,
+        "axialStressMPa": 17.309659509927076,
+        "eccentricAxialFrictionBendingNmm": 1233336.112779326,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51961.34826493345,
+          89910.15173506655
+        ],
+        "verticalContactFrictionTorsionNmm": 330471.41541535984,
+        "torsionalShearMPa": 7.996740149901129,
+        "combinedDirectAndTorsionalShearMPa": 45.92390969728458,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 311.15380053675455,
+        "yieldUtilization": 1.0371793351225151
+      },
+      "keeperM24AxialMPa": 116.4623335957815,
+      "keeperAnnularRadialStripMPa": 135.8941422756275,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 55.264893292209074,
+          "straightDevelopmentMm": 105.26646341373159
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 90.95601726418383,
+          "straightDevelopmentMm": 151.59336210697307
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 5.235987755982989,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -36859.296921901194,
+        21280.725000000002,
+        0.0,
+        -638421.7500000001,
+        -1105778.9076570359
+      ],
+      "boxedRootSectionVMMPa": 73.12720136417897,
+      "innerFaceLocalPlateBendingMPa": 97.90750744880003,
+      "pin": {
+        "resultantTransverseN": 143458.67617113865,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 279.1568740458556,
+        "doubleShearMPa": 37.299963985575545,
+        "axialStressMPa": 15.519416148181104,
+        "eccentricAxialFrictionBendingNmm": 1105778.9076570359,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          53923.76680527638,
+          87947.73319472362
+        ],
+        "verticalContactFrictionTorsionNmm": 638421.7500000001,
+        "torsionalShearMPa": 15.448515673824463,
+        "combinedDirectAndTorsionalShearMPa": 52.748479659400004,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 308.5147035744886,
+        "yieldUtilization": 1.0283823452482952
+      },
+      "keeperM24AxialMPa": 104.41727173343115,
+      "keeperAnnularRadialStripMPa": 121.83935477564333,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 70.23442360250715,
+          "straightDevelopmentMm": 133.779854480966
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 128.0019870116884,
+          "straightDevelopmentMm": 213.3366450194807
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 5.497787143782138,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -30095.489912132187,
+        30095.489912132172,
+        0.0,
+        -902864.6973639652,
+        -902864.6973639656
+      ],
+      "boxedRootSectionVMMPa": 71.10071115626934,
+      "innerFaceLocalPlateBendingMPa": 79.94114507910112,
+      "pin": {
+        "resultantTransverseN": 145028.48349652303,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 271.8057473546238,
+        "doubleShearMPa": 36.273154093483285,
+        "axialStressMPa": 12.671550222984413,
+        "eccentricAxialFrictionBendingNmm": 902864.6973639656,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          57045.52388670822,
+          84825.97611329178
+        ],
+        "verticalContactFrictionTorsionNmm": 902864.6973639652,
+        "torsionalShearMPa": 21.847500384455877,
+        "combinedDirectAndTorsionalShearMPa": 58.12065447793916,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 301.7637557227359,
+        "yieldUtilization": 1.005879185742453
+      },
+      "keeperM24AxialMPa": 85.25634536014783,
+      "keeperAnnularRadialStripMPa": 99.48141659675302,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 83.08905070089536,
+          "straightDevelopmentMm": 158.26485847789596
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 159.814082430256,
+          "straightDevelopmentMm": 266.3568040504268
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 5.759586531581287,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -21280.725000000017,
+        36859.29692190118,
+        0.0,
+        -1105778.9076570354,
+        -638421.7500000005
+      ],
+      "boxedRootSectionVMMPa": 66.63041046205626,
+      "innerFaceLocalPlateBendingMPa": 56.52692578125004,
+      "pin": {
+        "resultantTransverseN": 146581.4800096754,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 261.4504373718339,
+        "doubleShearMPa": 34.876760970456765,
+        "axialStressMPa": 8.960139090818194,
+        "eccentricAxialFrictionBendingNmm": 638421.7500000005,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          61113.87692307692,
+          80757.62307692309
+        ],
+        "verticalContactFrictionTorsionNmm": 1105778.9076570354,
+        "torsionalShearMPa": 26.757614048588103,
+        "combinedDirectAndTorsionalShearMPa": 61.63437501904487,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 290.7202580055759,
+        "yieldUtilization": 0.969067526685253
+      },
+      "keeperM24AxialMPa": 60.28533994334283,
+      "keeperAnnularRadialStripMPa": 70.34398427760806,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 92.95275299389431,
+          "straightDevelopmentMm": 177.052862845513
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 184.22436178908478,
+          "straightDevelopmentMm": 307.04060298180804
+        }
+      }
+    },
+    {
+      "mu": 0.3,
+      "slipDirectionRad": 6.021385919380436,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -11015.713847178717,
+        41111.203759310854,
+        0.0,
+        -1233336.1127793256,
+        -330471.4154153615
+      ],
+      "boxedRootSectionVMMPa": 60.1175311153928,
+      "innerFaceLocalPlateBendingMPa": 29.260489906568466,
+      "pin": {
+        "resultantTransverseN": 147708.0010926611,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 248.31875595324243,
+        "doubleShearMPa": 33.157278100367186,
+        "axialStressMPa": 4.638109286942678,
+        "eccentricAxialFrictionBendingNmm": 330471.4154153615,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          65851.57437822521,
+          76019.92562177479
+        ],
+        "verticalContactFrictionTorsionNmm": 1233336.1127793256,
+        "torsionalShearMPa": 29.844240534357017,
+        "combinedDirectAndTorsionalShearMPa": 63.001518634724206,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 275.4900174652172,
+        "yieldUtilization": 0.9183000582173907
+      },
+      "keeperM24AxialMPa": 31.205988235633757,
+      "keeperAnnularRadialStripMPa": 36.41272567887459,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 99.15333547077489,
+          "straightDevelopmentMm": 188.86349613480934
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 199.56930488976454,
+          "straightDevelopmentMm": 332.61550814960765
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 0.0,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        0.0,
+        85122.9,
+        0.0,
+        -2553687.0,
+        0.0
+      ],
+      "boxedRootSectionVMMPa": 81.2044415566177,
+      "innerFaceLocalPlateBendingMPa": 0.0,
+      "pin": {
+        "resultantTransverseN": 165449.178349909,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 260.2298161401872,
+        "doubleShearMPa": 34.83076000645583,
+        "axialStressMPa": 0.0,
+        "eccentricAxialFrictionBendingNmm": 0.0,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          70935.75,
+          70935.75
+        ],
+        "verticalContactFrictionTorsionNmm": 2553687.0,
+        "torsionalShearMPa": 61.79406269529784,
+        "combinedDirectAndTorsionalShearMPa": 96.62482270175367,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 309.40043034034653,
+        "yieldUtilization": 1.031334767801155
+      },
+      "keeperM24AxialMPa": 0.0,
+      "keeperAnnularRadialStripMPa": 0.0,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 163.33586884303986,
+          "straightDevelopmentMm": 311.1159406534093
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 358.4055636327274,
+          "straightDevelopmentMm": 597.3426060545457
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 0.2617993877991494,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        22031.42769435736,
+        82222.40751862172,
+        0.0,
+        -2466672.2255586516,
+        660942.8308307208
+      ],
+      "boxedRootSectionVMMPa": 95.56722471109073,
+      "innerFaceLocalPlateBendingMPa": 58.520979813136734,
+      "pin": {
+        "resultantTransverseN": 163975.7506779838,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 289.8992686325588,
+        "doubleShearMPa": 38.285007066100114,
+        "axialStressMPa": 9.276218573885323,
+        "eccentricAxialFrictionBendingNmm": 660942.8308307208,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          60767.39875645045,
+          81104.10124354955
+        ],
+        "verticalContactFrictionTorsionNmm": 2466672.2255586516,
+        "torsionalShearMPa": 59.68848106871405,
+        "combinedDirectAndTorsionalShearMPa": 97.97348813481416,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 343.9511379209566,
+        "yieldUtilization": 1.1465037930698554
+      },
+      "keeperM24AxialMPa": 62.41197647126731,
+      "keeperAnnularRadialStripMPa": 72.82545135774893,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 159.10606241922025,
+          "straightDevelopmentMm": 303.0591665128005
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 347.9378149748538,
+          "straightDevelopmentMm": 579.8963582914231
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 0.5235987755982988,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        42561.44999999999,
+        73718.59384380239,
+        0.0,
+        -2211557.8153140717,
+        1276843.4999999998
+      ],
+      "boxedRootSectionVMMPa": 107.69654369295445,
+      "innerFaceLocalPlateBendingMPa": 113.05385156249997,
+      "pin": {
+        "resultantTransverseN": 159881.0607625478,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 313.2659615677337,
+        "doubleShearMPa": 41.17476717104914,
+        "axialStressMPa": 17.920278181636366,
+        "eccentricAxialFrictionBendingNmm": 1276843.4999999998,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51292.00384615385,
+          90579.49615384615
+        ],
+        "verticalContactFrictionTorsionNmm": 2211557.8153140717,
+        "torsionalShearMPa": 53.51522809717623,
+        "combinedDirectAndTorsionalShearMPa": 94.68999526822537,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 369.57125295539004,
+        "yieldUtilization": 1.2319041765179668
+      },
+      "keeperM24AxialMPa": 120.57067988668553,
+      "keeperAnnularRadialStripMPa": 140.68796855521597,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 146.7048974654591,
+          "straightDevelopmentMm": 279.4378999342079
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 317.2479287734943,
+          "straightDevelopmentMm": 528.746547955824
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 0.7853981633974483,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        60190.97982426436,
+        60190.97982426437,
+        0.0,
+        -1805729.394727931,
+        1805729.394727931
+      ],
+      "boxedRootSectionVMMPa": 116.10407901565426,
+      "innerFaceLocalPlateBendingMPa": 159.8822901582022,
+      "pin": {
+        "resultantTransverseN": 154111.89624573113,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 329.7877627417206,
+        "doubleShearMPa": 43.452615378873894,
+        "axialStressMPa": 25.343100445968822,
+        "eccentricAxialFrictionBendingNmm": 1805729.394727931,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          43155.297773416445,
+          98716.20222658355
+        ],
+        "verticalContactFrictionTorsionNmm": 1805729.394727931,
+        "torsionalShearMPa": 43.69500076891177,
+        "combinedDirectAndTorsionalShearMPa": 87.14761614778567,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 385.878285200345,
+        "yieldUtilization": 1.2862609506678166
+      },
+      "keeperM24AxialMPa": 170.51269072029564,
+      "keeperAnnularRadialStripMPa": 198.96283319350596,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 126.97749287946118,
+          "straightDevelopmentMm": 241.86189119897372
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 268.4273700558367,
+          "straightDevelopmentMm": 447.3789500930613
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 1.0471975511965976,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        73718.59384380239,
+        42561.450000000004,
+        0.0,
+        -1276843.5000000002,
+        2211557.8153140717
+      ],
+      "boxedRootSectionVMMPa": 119.84582614119536,
+      "innerFaceLocalPlateBendingMPa": 195.81501489760007,
+      "pin": {
+        "resultantTransverseN": 148118.19448789032,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 340.00091215564913,
+        "doubleShearMPa": 45.09193743466202,
+        "axialStressMPa": 31.03883229636221,
+        "eccentricAxialFrictionBendingNmm": 2211557.8153140717,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          36911.783610552746,
+          104959.71638944725
+        ],
+        "verticalContactFrictionTorsionNmm": 1276843.5000000002,
+        "torsionalShearMPa": 30.897031347648927,
+        "combinedDirectAndTorsionalShearMPa": 75.98896878231095,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 393.6920904625987,
+        "yieldUtilization": 1.3123069682086623
+      },
+      "keeperM24AxialMPa": 208.8345434668623,
+      "keeperAnnularRadialStripMPa": 243.67870955128666,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 101.26823868268472,
+          "straightDevelopmentMm": 192.8918832051138
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 204.80317921870144,
+          "straightDevelopmentMm": 341.33863203116914
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 1.3089969389957472,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        82222.40751862172,
+        22031.42769435736,
+        0.0,
+        -660942.8308307208,
+        2466672.2255586516
+      ],
+      "boxedRootSectionVMMPa": 118.46000797735125,
+      "innerFaceLocalPlateBendingMPa": 218.40326997133894,
+      "pin": {
+        "resultantTransverseN": 143571.95519495336,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 345.1967811047579,
+        "doubleShearMPa": 46.07929611790035,
+        "axialStressMPa": 34.619319019854146,
+        "eccentricAxialFrictionBendingNmm": 2466672.2255586516,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          32986.946529866895,
+          108884.5534701331
+        ],
+        "verticalContactFrictionTorsionNmm": 660942.8308307208,
+        "torsionalShearMPa": 15.993480299802284,
+        "combinedDirectAndTorsionalShearMPa": 62.072776417702634,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 394.7396086415393,
+        "yieldUtilization": 1.3157986954717977
+      },
+      "keeperM24AxialMPa": 232.92466719156295,
+      "keeperAnnularRadialStripMPa": 271.78828455125495,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 71.32917806208863,
+          "straightDevelopmentMm": 135.86510107064504
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 130.71123972369242,
+          "straightDevelopmentMm": 217.85206620615406
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 1.5707963267948966,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        85122.9,
+        5.212274350957011e-12,
+        0.0,
+        -1.5636823052871032e-10,
+        2553687.0
+      ],
+      "boxedRootSectionVMMPa": 111.9442370829926,
+      "innerFaceLocalPlateBendingMPa": 226.10770312499997,
+      "pin": {
+        "resultantTransverseN": 141871.5,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 346.7333517902823,
+        "doubleShearMPa": 46.4089255473147,
+        "axialStressMPa": 35.84055636327274,
+        "eccentricAxialFrictionBendingNmm": 2553687.0,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          31648.257692307692,
+          110223.2423076923
+        ],
+        "verticalContactFrictionTorsionNmm": 1.5636823052871032e-10,
+        "torsionalShearMPa": 3.7837950543053675e-15,
+        "combinedDirectAndTorsionalShearMPa": 46.40892554731471,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 390.92730821887255,
+        "yieldUtilization": 1.303091027396242
+      },
+      "keeperM24AxialMPa": 241.14135977337108,
+      "keeperAnnularRadialStripMPa": 281.375937110432,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 39.200608522329574,
+          "straightDevelopmentMm": 74.66782575681825
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 51.200794804675375,
+          "straightDevelopmentMm": 85.33465800779231
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 1.832595714594046,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        82222.40751862172,
+        -22031.427694357353,
+        0.0,
+        660942.8308307206,
+        2466672.2255586516
+      ],
+      "boxedRootSectionVMMPa": 118.46000797735124,
+      "innerFaceLocalPlateBendingMPa": 218.40326997133894,
+      "pin": {
+        "resultantTransverseN": 143571.95519495336,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 345.1967811047579,
+        "doubleShearMPa": 46.07929611790035,
+        "axialStressMPa": 34.619319019854146,
+        "eccentricAxialFrictionBendingNmm": 2466672.2255586516,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          32986.946529866895,
+          108884.5534701331
+        ],
+        "verticalContactFrictionTorsionNmm": 660942.8308307206,
+        "torsionalShearMPa": 15.993480299802279,
+        "combinedDirectAndTorsionalShearMPa": 62.07277641770263,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 394.7396086415393,
+        "yieldUtilization": 1.3157986954717977
+      },
+      "keeperM24AxialMPa": 232.92466719156295,
+      "keeperAnnularRadialStripMPa": 271.78828455125495,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 71.32917806208863,
+          "straightDevelopmentMm": 135.86510107064504
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 130.71123972369242,
+          "straightDevelopmentMm": 217.85206620615406
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 2.0943951023931953,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        73718.59384380239,
+        -42561.449999999975,
+        0.0,
+        1276843.4999999993,
+        2211557.8153140717
+      ],
+      "boxedRootSectionVMMPa": 119.84582614119535,
+      "innerFaceLocalPlateBendingMPa": 195.81501489760007,
+      "pin": {
+        "resultantTransverseN": 148118.19448789032,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 340.00091215564913,
+        "doubleShearMPa": 45.09193743466202,
+        "axialStressMPa": 31.03883229636221,
+        "eccentricAxialFrictionBendingNmm": 2211557.8153140717,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          36911.783610552746,
+          104959.71638944725
+        ],
+        "verticalContactFrictionTorsionNmm": 1276843.4999999993,
+        "torsionalShearMPa": 30.897031347648902,
+        "combinedDirectAndTorsionalShearMPa": 75.98896878231092,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 393.6920904625986,
+        "yieldUtilization": 1.312306968208662
+      },
+      "keeperM24AxialMPa": 208.8345434668623,
+      "keeperAnnularRadialStripMPa": 243.67870955128666,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 101.26823868268468,
+          "straightDevelopmentMm": 192.89188320511371
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 204.80317921870133,
+          "straightDevelopmentMm": 341.3386320311689
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 2.356194490192345,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        60190.97982426437,
+        -60190.97982426436,
+        0.0,
+        1805729.394727931,
+        1805729.394727931
+      ],
+      "boxedRootSectionVMMPa": 116.10407901565426,
+      "innerFaceLocalPlateBendingMPa": 159.88229015820224,
+      "pin": {
+        "resultantTransverseN": 154111.89624573113,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 329.7877627417206,
+        "doubleShearMPa": 43.452615378873894,
+        "axialStressMPa": 25.343100445968822,
+        "eccentricAxialFrictionBendingNmm": 1805729.394727931,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          43155.297773416445,
+          98716.20222658355
+        ],
+        "verticalContactFrictionTorsionNmm": 1805729.394727931,
+        "torsionalShearMPa": 43.69500076891177,
+        "combinedDirectAndTorsionalShearMPa": 87.14761614778567,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 385.878285200345,
+        "yieldUtilization": 1.2862609506678166
+      },
+      "keeperM24AxialMPa": 170.51269072029567,
+      "keeperAnnularRadialStripMPa": 198.96283319350601,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 126.97749287946115,
+          "straightDevelopmentMm": 241.86189119897367
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 268.4273700558367,
+          "straightDevelopmentMm": 447.3789500930613
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 2.6179938779914944,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        42561.44999999999,
+        -73718.59384380239,
+        0.0,
+        2211557.8153140717,
+        1276843.4999999998
+      ],
+      "boxedRootSectionVMMPa": 107.69654369295445,
+      "innerFaceLocalPlateBendingMPa": 113.05385156249997,
+      "pin": {
+        "resultantTransverseN": 159881.0607625478,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 313.2659615677337,
+        "doubleShearMPa": 41.17476717104914,
+        "axialStressMPa": 17.920278181636366,
+        "eccentricAxialFrictionBendingNmm": 1276843.4999999998,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51292.00384615385,
+          90579.49615384615
+        ],
+        "verticalContactFrictionTorsionNmm": 2211557.8153140717,
+        "torsionalShearMPa": 53.51522809717623,
+        "combinedDirectAndTorsionalShearMPa": 94.68999526822537,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 369.57125295539004,
+        "yieldUtilization": 1.2319041765179668
+      },
+      "keeperM24AxialMPa": 120.57067988668553,
+      "keeperAnnularRadialStripMPa": 140.68796855521597,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 146.7048974654591,
+          "straightDevelopmentMm": 279.4378999342079
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 317.2479287734943,
+          "straightDevelopmentMm": 528.746547955824
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 2.8797932657906435,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        22031.427694357386,
+        -82222.40751862172,
+        0.0,
+        2466672.2255586516,
+        660942.8308307215
+      ],
+      "boxedRootSectionVMMPa": 95.56722471109074,
+      "innerFaceLocalPlateBendingMPa": 58.520979813136805,
+      "pin": {
+        "resultantTransverseN": 163975.7506779838,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 289.8992686325588,
+        "doubleShearMPa": 38.28500706610012,
+        "axialStressMPa": 9.276218573885334,
+        "eccentricAxialFrictionBendingNmm": 660942.8308307215,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          60767.398756450435,
+          81104.10124354956
+        ],
+        "verticalContactFrictionTorsionNmm": 2466672.2255586516,
+        "torsionalShearMPa": 59.68848106871405,
+        "combinedDirectAndTorsionalShearMPa": 97.97348813481418,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 343.9511379209567,
+        "yieldUtilization": 1.1465037930698556
+      },
+      "keeperM24AxialMPa": 62.41197647126738,
+      "keeperAnnularRadialStripMPa": 72.82545135774902,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 159.10606241922025,
+          "straightDevelopmentMm": 303.0591665128005
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 347.9378149748538,
+          "straightDevelopmentMm": 579.8963582914231
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 3.141592653589793,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        1.0424548701914022e-11,
+        -85122.9,
+        0.0,
+        2553687.0,
+        3.1273646105742065e-10
+      ],
+      "boxedRootSectionVMMPa": 81.20444155661771,
+      "innerFaceLocalPlateBendingMPa": 2.769020748945912e-14,
+      "pin": {
+        "resultantTransverseN": 165449.178349909,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 260.2298161401872,
+        "doubleShearMPa": 34.83076000645583,
+        "axialStressMPa": 4.3892022629942265e-15,
+        "eccentricAxialFrictionBendingNmm": 3.1273646105742065e-10,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          70935.75,
+          70935.75
+        ],
+        "verticalContactFrictionTorsionNmm": 2553687.0,
+        "torsionalShearMPa": 61.79406269529784,
+        "combinedDirectAndTorsionalShearMPa": 96.62482270175367,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 309.40043034034653,
+        "yieldUtilization": 1.031334767801155
+      },
+      "keeperM24AxialMPa": 2.953129943884992e-14,
+      "keeperAnnularRadialStripMPa": 3.445861407393775e-14,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 163.33586884303986,
+          "straightDevelopmentMm": 311.1159406534093
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 358.4055636327274,
+          "straightDevelopmentMm": 597.3426060545457
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 3.4033920413889427,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -22031.427694357364,
+        -82222.40751862172,
+        0.0,
+        2466672.2255586516,
+        -660942.830830721
+      ],
+      "boxedRootSectionVMMPa": 95.56722471109073,
+      "innerFaceLocalPlateBendingMPa": 58.52097981313675,
+      "pin": {
+        "resultantTransverseN": 163975.7506779838,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 289.8992686325588,
+        "doubleShearMPa": 38.285007066100114,
+        "axialStressMPa": 9.276218573885325,
+        "eccentricAxialFrictionBendingNmm": 660942.830830721,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          60767.39875645045,
+          81104.10124354955
+        ],
+        "verticalContactFrictionTorsionNmm": 2466672.2255586516,
+        "torsionalShearMPa": 59.68848106871405,
+        "combinedDirectAndTorsionalShearMPa": 97.97348813481416,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 343.9511379209566,
+        "yieldUtilization": 1.1465037930698554
+      },
+      "keeperM24AxialMPa": 62.41197647126732,
+      "keeperAnnularRadialStripMPa": 72.82545135774895,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 159.10606241922025,
+          "straightDevelopmentMm": 303.0591665128005
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 347.9378149748538,
+          "straightDevelopmentMm": 579.8963582914231
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 3.665191429188092,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -42561.449999999975,
+        -73718.5938438024,
+        0.0,
+        2211557.815314072,
+        -1276843.4999999993
+      ],
+      "boxedRootSectionVMMPa": 107.69654369295445,
+      "innerFaceLocalPlateBendingMPa": 113.05385156249993,
+      "pin": {
+        "resultantTransverseN": 159881.0607625478,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 313.26596156773365,
+        "doubleShearMPa": 41.17476717104914,
+        "axialStressMPa": 17.920278181636363,
+        "eccentricAxialFrictionBendingNmm": 1276843.4999999993,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51292.00384615386,
+          90579.49615384615
+        ],
+        "verticalContactFrictionTorsionNmm": 2211557.815314072,
+        "torsionalShearMPa": 53.51522809717624,
+        "combinedDirectAndTorsionalShearMPa": 94.68999526822537,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 369.57125295539,
+        "yieldUtilization": 1.2319041765179666
+      },
+      "keeperM24AxialMPa": 120.57067988668548,
+      "keeperAnnularRadialStripMPa": 140.68796855521592,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 146.7048974654591,
+          "straightDevelopmentMm": 279.4378999342079
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 317.2479287734944,
+          "straightDevelopmentMm": 528.746547955824
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 3.926990816987241,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -60190.97982426433,
+        -60190.979824264396,
+        0.0,
+        1805729.3947279318,
+        -1805729.39472793
+      ],
+      "boxedRootSectionVMMPa": 116.10407901565424,
+      "innerFaceLocalPlateBendingMPa": 159.88229015820212,
+      "pin": {
+        "resultantTransverseN": 154111.89624573116,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 329.7877627417206,
+        "doubleShearMPa": 43.452615378873894,
+        "axialStressMPa": 25.34310044596881,
+        "eccentricAxialFrictionBendingNmm": 1805729.39472793,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          43155.29777341646,
+          98716.20222658354
+        ],
+        "verticalContactFrictionTorsionNmm": 1805729.3947279318,
+        "torsionalShearMPa": 43.69500076891179,
+        "combinedDirectAndTorsionalShearMPa": 87.14761614778568,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 385.8782852003449,
+        "yieldUtilization": 1.2862609506678164
+      },
+      "keeperM24AxialMPa": 170.51269072029555,
+      "keeperAnnularRadialStripMPa": 198.96283319350587,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 126.97749287946121,
+          "straightDevelopmentMm": 241.86189119897378
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 268.42737005583683,
+          "straightDevelopmentMm": 447.37895009306146
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 4.1887902047863905,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -73718.59384380236,
+        -42561.45000000003,
+        0.0,
+        1276843.500000001,
+        -2211557.815314071
+      ],
+      "boxedRootSectionVMMPa": 119.84582614119535,
+      "innerFaceLocalPlateBendingMPa": 195.8150148976,
+      "pin": {
+        "resultantTransverseN": 148118.19448789032,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 340.00091215564913,
+        "doubleShearMPa": 45.09193743466202,
+        "axialStressMPa": 31.038832296362195,
+        "eccentricAxialFrictionBendingNmm": 2211557.815314071,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          36911.78361055276,
+          104959.71638944725
+        ],
+        "verticalContactFrictionTorsionNmm": 1276843.500000001,
+        "torsionalShearMPa": 30.897031347648944,
+        "combinedDirectAndTorsionalShearMPa": 75.98896878231096,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 393.6920904625987,
+        "yieldUtilization": 1.3123069682086623
+      },
+      "keeperM24AxialMPa": 208.83454346686221,
+      "keeperAnnularRadialStripMPa": 243.67870955128657,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 101.26823868268477,
+          "straightDevelopmentMm": 192.89188320511388
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 204.80317921870153,
+          "straightDevelopmentMm": 341.33863203116925
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 4.4505895925855405,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -82222.40751862172,
+        -22031.427694357353,
+        0.0,
+        660942.8308307206,
+        -2466672.2255586516
+      ],
+      "boxedRootSectionVMMPa": 118.46000797735124,
+      "innerFaceLocalPlateBendingMPa": 218.40326997133894,
+      "pin": {
+        "resultantTransverseN": 143571.95519495336,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 345.1967811047579,
+        "doubleShearMPa": 46.07929611790035,
+        "axialStressMPa": 34.619319019854146,
+        "eccentricAxialFrictionBendingNmm": 2466672.2255586516,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          32986.946529866895,
+          108884.5534701331
+        ],
+        "verticalContactFrictionTorsionNmm": 660942.8308307206,
+        "torsionalShearMPa": 15.993480299802279,
+        "combinedDirectAndTorsionalShearMPa": 62.07277641770263,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 394.7396086415393,
+        "yieldUtilization": 1.3157986954717977
+      },
+      "keeperM24AxialMPa": 232.92466719156295,
+      "keeperAnnularRadialStripMPa": 271.78828455125495,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 71.32917806208863,
+          "straightDevelopmentMm": 135.86510107064504
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 130.71123972369242,
+          "straightDevelopmentMm": 217.85206620615406
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 4.71238898038469,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -85122.9,
+        -1.5636823052871034e-11,
+        0.0,
+        4.69104691586131e-10,
+        -2553687.0
+      ],
+      "boxedRootSectionVMMPa": 111.9442370829926,
+      "innerFaceLocalPlateBendingMPa": 226.10770312499997,
+      "pin": {
+        "resultantTransverseN": 141871.5,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 346.7333517902823,
+        "doubleShearMPa": 46.4089255473147,
+        "axialStressMPa": 35.84055636327274,
+        "eccentricAxialFrictionBendingNmm": 2553687.0,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          31648.257692307692,
+          110223.2423076923
+        ],
+        "verticalContactFrictionTorsionNmm": 4.69104691586131e-10,
+        "torsionalShearMPa": 1.1351385162916103e-14,
+        "combinedDirectAndTorsionalShearMPa": 46.408925547314716,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 390.92730821887255,
+        "yieldUtilization": 1.303091027396242
+      },
+      "keeperM24AxialMPa": 241.14135977337108,
+      "keeperAnnularRadialStripMPa": 281.375937110432,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 39.20060852232959,
+          "straightDevelopmentMm": 74.66782575681827
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 51.20079480467541,
+          "straightDevelopmentMm": 85.33465800779237
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 4.974188368183839,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -82222.40751862174,
+        22031.427694357324,
+        0.0,
+        -660942.8308307197,
+        -2466672.225558652
+      ],
+      "boxedRootSectionVMMPa": 118.46000797735125,
+      "innerFaceLocalPlateBendingMPa": 218.403269971339,
+      "pin": {
+        "resultantTransverseN": 143571.95519495336,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 345.1967811047579,
+        "doubleShearMPa": 46.07929611790035,
+        "axialStressMPa": 34.61931901985415,
+        "eccentricAxialFrictionBendingNmm": 2466672.225558652,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          32986.946529866895,
+          108884.5534701331
+        ],
+        "verticalContactFrictionTorsionNmm": 660942.8308307197,
+        "torsionalShearMPa": 15.993480299802258,
+        "combinedDirectAndTorsionalShearMPa": 62.072776417702606,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 394.73960864153935,
+        "yieldUtilization": 1.3157986954717977
+      },
+      "keeperM24AxialMPa": 232.924667191563,
+      "keeperAnnularRadialStripMPa": 271.788284551255,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 71.32917806208857,
+          "straightDevelopmentMm": 135.86510107064493
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 130.7112397236923,
+          "straightDevelopmentMm": 217.85206620615386
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 5.235987755982989,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -73718.59384380239,
+        42561.450000000004,
+        0.0,
+        -1276843.5000000002,
+        -2211557.8153140717
+      ],
+      "boxedRootSectionVMMPa": 119.84582614119536,
+      "innerFaceLocalPlateBendingMPa": 195.81501489760007,
+      "pin": {
+        "resultantTransverseN": 148118.19448789032,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 340.00091215564913,
+        "doubleShearMPa": 45.09193743466202,
+        "axialStressMPa": 31.03883229636221,
+        "eccentricAxialFrictionBendingNmm": 2211557.8153140717,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          36911.783610552746,
+          104959.71638944725
+        ],
+        "verticalContactFrictionTorsionNmm": 1276843.5000000002,
+        "torsionalShearMPa": 30.897031347648927,
+        "combinedDirectAndTorsionalShearMPa": 75.98896878231095,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 393.6920904625987,
+        "yieldUtilization": 1.3123069682086623
+      },
+      "keeperM24AxialMPa": 208.8345434668623,
+      "keeperAnnularRadialStripMPa": 243.67870955128666,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 101.26823868268472,
+          "straightDevelopmentMm": 192.8918832051138
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 204.80317921870144,
+          "straightDevelopmentMm": 341.33863203116914
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 5.497787143782138,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -60190.979824264374,
+        60190.979824264345,
+        0.0,
+        -1805729.3947279304,
+        -1805729.3947279311
+      ],
+      "boxedRootSectionVMMPa": 116.10407901565426,
+      "innerFaceLocalPlateBendingMPa": 159.88229015820224,
+      "pin": {
+        "resultantTransverseN": 154111.89624573113,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 329.78776274172066,
+        "doubleShearMPa": 43.452615378873894,
+        "axialStressMPa": 25.343100445968826,
+        "eccentricAxialFrictionBendingNmm": 1805729.3947279311,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          43155.297773416445,
+          98716.20222658355
+        ],
+        "verticalContactFrictionTorsionNmm": 1805729.3947279304,
+        "torsionalShearMPa": 43.695000768911754,
+        "combinedDirectAndTorsionalShearMPa": 87.14761614778564,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 385.87828520034503,
+        "yieldUtilization": 1.2862609506678169
+      },
+      "keeperM24AxialMPa": 170.51269072029567,
+      "keeperAnnularRadialStripMPa": 198.96283319350604,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 126.97749287946115,
+          "straightDevelopmentMm": 241.86189119897367
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 268.42737005583666,
+          "straightDevelopmentMm": 447.3789500930612
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 5.759586531581287,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -42561.45000000003,
+        73718.59384380236,
+        0.0,
+        -2211557.815314071,
+        -1276843.500000001
+      ],
+      "boxedRootSectionVMMPa": 107.69654369295448,
+      "innerFaceLocalPlateBendingMPa": 113.05385156250009,
+      "pin": {
+        "resultantTransverseN": 159881.06076254777,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 313.2659615677337,
+        "doubleShearMPa": 41.17476717104914,
+        "axialStressMPa": 17.920278181636387,
+        "eccentricAxialFrictionBendingNmm": 1276843.500000001,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          51292.003846153835,
+          90579.49615384616
+        ],
+        "verticalContactFrictionTorsionNmm": 2211557.815314071,
+        "torsionalShearMPa": 53.515228097176205,
+        "combinedDirectAndTorsionalShearMPa": 94.68999526822535,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 369.57125295539004,
+        "yieldUtilization": 1.2319041765179668
+      },
+      "keeperM24AxialMPa": 120.57067988668565,
+      "keeperAnnularRadialStripMPa": 140.68796855521612,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 146.70489746545906,
+          "straightDevelopmentMm": 279.4378999342078
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 317.2479287734942,
+          "straightDevelopmentMm": 528.7465479558238
+        }
+      }
+    },
+    {
+      "mu": 0.6,
+      "slipDirectionRad": 6.021385919380436,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -22031.427694357433,
+        82222.40751862171,
+        0.0,
+        -2466672.225558651,
+        -660942.830830723
+      ],
+      "boxedRootSectionVMMPa": 95.56722471109077,
+      "innerFaceLocalPlateBendingMPa": 58.52097981313693,
+      "pin": {
+        "resultantTransverseN": 163975.75067798377,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 289.89926863255886,
+        "doubleShearMPa": 38.28500706610012,
+        "axialStressMPa": 9.276218573885355,
+        "eccentricAxialFrictionBendingNmm": 660942.830830723,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          60767.39875645041,
+          81104.10124354958
+        ],
+        "verticalContactFrictionTorsionNmm": 2466672.225558651,
+        "torsionalShearMPa": 59.68848106871403,
+        "combinedDirectAndTorsionalShearMPa": 97.97348813481415,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 343.9511379209567,
+        "yieldUtilization": 1.1465037930698556
+      },
+      "keeperM24AxialMPa": 62.411976471267515,
+      "keeperAnnularRadialStripMPa": 72.82545135774917,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 159.10606241922022,
+          "straightDevelopmentMm": 303.05916651280046
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 347.9378149748537,
+          "straightDevelopmentMm": 579.896358291423
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 0.0,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        0.0,
+        141871.5,
+        0.0,
+        -4256145.0,
+        0.0
+      ],
+      "boxedRootSectionVMMPa": 121.66892423222359,
+      "innerFaceLocalPlateBendingMPa": 0.0,
+      "pin": {
+        "resultantTransverseN": 200636.59941421455,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 315.57500555325163,
+        "doubleShearMPa": 42.23850074328137,
+        "axialStressMPa": 0.0,
+        "eccentricAxialFrictionBendingNmm": 0.0,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          70935.75,
+          70935.75
+        ],
+        "verticalContactFrictionTorsionNmm": 4256145.0,
+        "torsionalShearMPa": 102.99010449216307,
+        "combinedDirectAndTorsionalShearMPa": 145.22860523544443,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 403.56118181241425,
+        "yieldUtilization": 1.3452039393747142
+      },
+      "keeperM24AxialMPa": 0.0,
+      "keeperAnnularRadialStripMPa": 0.0,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 246.09270905684673,
+          "straightDevelopmentMm": 468.74801725113673
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 563.208742851429,
+          "straightDevelopmentMm": 938.6812380857151
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 0.2617993877991494,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        36719.04615726227,
+        137037.34586436956,
+        0.0,
+        -4111120.375931087,
+        1101571.3847178682
+      ],
+      "boxedRootSectionVMMPa": 143.8960706247679,
+      "innerFaceLocalPlateBendingMPa": 97.53496635522791,
+      "pin": {
+        "resultantTransverseN": 197247.95733746103,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 363.55671786173735,
+        "doubleShearMPa": 46.92002034914123,
+        "axialStressMPa": 15.460364289808876,
+        "eccentricAxialFrictionBendingNmm": 1101571.3847178682,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          53988.49792741741,
+          87883.00207258259
+        ],
+        "verticalContactFrictionTorsionNmm": 4111120.375931087,
+        "torsionalShearMPa": 99.48080178119011,
+        "combinedDirectAndTorsionalShearMPa": 146.40082213033133,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 456.0192438088361,
+        "yieldUtilization": 1.5200641460294537
+      },
+      "keeperM24AxialMPa": 104.01996078544553,
+      "keeperAnnularRadialStripMPa": 121.37575226291492,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 239.04303168381406,
+          "straightDevelopmentMm": 455.3200603501221
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 545.7624950883062,
+          "straightDevelopmentMm": 909.6041584805105
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 0.5235987755982988,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        70935.74999999999,
+        122864.323073004,
+        0.0,
+        -3685929.69219012,
+        2128072.4999999995
+      ],
+      "boxedRootSectionVMMPa": 163.17194005402553,
+      "innerFaceLocalPlateBendingMPa": 188.42308593749996,
+      "pin": {
+        "resultantTransverseN": 187678.35356385005,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 398.183492144551,
+        "doubleShearMPa": 50.73980378068301,
+        "axialStressMPa": 29.86713030272728,
+        "eccentricAxialFrictionBendingNmm": 2128072.4999999995,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          38196.173076923085,
+          103675.32692307691
+        ],
+        "verticalContactFrictionTorsionNmm": 3685929.69219012,
+        "torsionalShearMPa": 89.19204682862706,
+        "combinedDirectAndTorsionalShearMPa": 139.93185060931006,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 491.90456779983367,
+        "yieldUtilization": 1.6396818926661123
+      },
+      "keeperM24AxialMPa": 200.95113314447588,
+      "keeperAnnularRadialStripMPa": 234.47994759202663,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 218.37442342754545,
+          "straightDevelopmentMm": 415.95128271913427
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 494.61268475270697,
+          "straightDevelopmentMm": 824.3544745878451
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 0.7853981633974483,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        100318.29970710728,
+        100318.29970710729,
+        0.0,
+        -3009548.991213219,
+        3009548.9912132183
+      ],
+      "boxedRootSectionVMMPa": 176.65225238958223,
+      "innerFaceLocalPlateBendingMPa": 266.4704835970037,
+      "pin": {
+        "resultantTransverseN": 173756.39202163182,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 418.94597417157047,
+        "doubleShearMPa": 53.68996462608271,
+        "axialStressMPa": 42.23850074328137,
+        "eccentricAxialFrictionBendingNmm": 3009548.9912132183,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          24634.99628902741,
+          117236.50371097258
+        ],
+        "verticalContactFrictionTorsionNmm": 3009548.991213219,
+        "torsionalShearMPa": 72.82500128151963,
+        "combinedDirectAndTorsionalShearMPa": 126.51496590760235,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 510.5969346738119,
+        "yieldUtilization": 1.7019897822460397
+      },
+      "keeperM24AxialMPa": 284.1878178671594,
+      "keeperAnnularRadialStripMPa": 331.60472198917665,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 185.4954157842156,
+          "straightDevelopmentMm": 353.32460149374407
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 413.24508688994433,
+          "straightDevelopmentMm": 688.7418114832408
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 1.0471975511965976,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        122864.32307300398,
+        70935.75000000001,
+        0.0,
+        -2128072.5000000005,
+        3685929.6921901195
+      ],
+      "boxedRootSectionVMMPa": 182.5934698693455,
+      "innerFaceLocalPlateBendingMPa": 326.35835816266683,
+      "pin": {
+        "resultantTransverseN": 158617.15903493072,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 427.86804119939404,
+        "doubleShearMPa": 55.779369781183014,
+        "axialStressMPa": 51.73138716060368,
+        "eccentricAxialFrictionBendingNmm": 3685929.6921901195,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          14229.139350921236,
+          127642.36064907876
+        ],
+        "verticalContactFrictionTorsionNmm": 2128072.5000000005,
+        "torsionalShearMPa": 51.49505224608154,
+        "combinedDirectAndTorsionalShearMPa": 107.27442202726456,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 514.3335654486177,
+        "yieldUtilization": 1.714445218162059
+      },
+      "keeperM24AxialMPa": 348.05757244477047,
+      "keeperAnnularRadialStripMPa": 406.1311825854778,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 142.64665878958817,
+          "straightDevelopmentMm": 271.7079215039775
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 307.2047688280522,
+          "straightDevelopmentMm": 512.0079480467537
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 1.3089969389957472,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        137037.34586436956,
+        36719.04615726227,
+        0.0,
+        -1101571.3847178682,
+        4111120.375931087
+      ],
+      "boxedRootSectionVMMPa": 180.1509484069875,
+      "innerFaceLocalPlateBendingMPa": 364.0054499522317,
+      "pin": {
+        "resultantTransverseN": 146546.275500093,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 429.45963751915866,
+        "doubleShearMPa": 57.02375976096142,
+        "axialStressMPa": 57.69886503309026,
+        "eccentricAxialFrictionBendingNmm": 4111120.375931087,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          7687.744216444815,
+          134183.75578355519
+        ],
+        "verticalContactFrictionTorsionNmm": 1101571.3847178682,
+        "torsionalShearMPa": 26.655800499670477,
+        "combinedDirectAndTorsionalShearMPa": 83.67956026063189,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 508.2619531552482,
+        "yieldUtilization": 1.694206510517494
+      },
+      "keeperM24AxialMPa": 388.207778652605,
+      "keeperAnnularRadialStripMPa": 452.98047425209165,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 92.74822442192803,
+          "straightDevelopmentMm": 176.66328461319628
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 183.71820300303716,
+          "straightDevelopmentMm": 306.197005005062
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 1.5707963267948966,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        141871.5,
+        8.687123918261686e-12,
+        0.0,
+        -2.606137175478506e-10,
+        4256145.0
+      ],
+      "boxedRootSectionVMMPa": 169.3009020477298,
+      "innerFaceLocalPlateBendingMPa": 376.846171875,
+      "pin": {
+        "resultantTransverseN": 141871.5,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 429.12543538401275,
+        "doubleShearMPa": 57.43678904370632,
+        "axialStressMPa": 59.73426060545457,
+        "eccentricAxialFrictionBendingNmm": 4256145.0,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          5456.596153846156,
+          136414.90384615384
+        ],
+        "verticalContactFrictionTorsionNmm": 2.606137175478506e-10,
+        "torsionalShearMPa": 6.306325090508947e-15,
+        "combinedDirectAndTorsionalShearMPa": 57.43678904370633,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 498.8795010519755,
+        "yieldUtilization": 1.6629316701732517
+      },
+      "keeperM24AxialMPa": 401.90226628895186,
+      "keeperAnnularRadialStripMPa": 468.9598951840534,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 39.20060852232958,
+          "straightDevelopmentMm": 74.66782575681826
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 51.20079480467538,
+          "straightDevelopmentMm": 85.33465800779231
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 1.832595714594046,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        137037.34586436956,
+        -36719.04615726226,
+        0.0,
+        1101571.3847178677,
+        4111120.375931087
+      ],
+      "boxedRootSectionVMMPa": 180.1509484069875,
+      "innerFaceLocalPlateBendingMPa": 364.0054499522317,
+      "pin": {
+        "resultantTransverseN": 146546.275500093,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 429.45963751915866,
+        "doubleShearMPa": 57.02375976096142,
+        "axialStressMPa": 57.69886503309026,
+        "eccentricAxialFrictionBendingNmm": 4111120.375931087,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          7687.744216444815,
+          134183.75578355519
+        ],
+        "verticalContactFrictionTorsionNmm": 1101571.3847178677,
+        "torsionalShearMPa": 26.65580049967047,
+        "combinedDirectAndTorsionalShearMPa": 83.67956026063189,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 508.2619531552482,
+        "yieldUtilization": 1.694206510517494
+      },
+      "keeperM24AxialMPa": 388.207778652605,
+      "keeperAnnularRadialStripMPa": 452.98047425209165,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 92.748224421928,
+          "straightDevelopmentMm": 176.66328461319623
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 183.7182030030371,
+          "straightDevelopmentMm": 306.1970050050619
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 2.0943951023931953,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        122864.323073004,
+        -70935.74999999997,
+        0.0,
+        2128072.499999999,
+        3685929.69219012
+      ],
+      "boxedRootSectionVMMPa": 182.5934698693455,
+      "innerFaceLocalPlateBendingMPa": 326.35835816266683,
+      "pin": {
+        "resultantTransverseN": 158617.1590349307,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 427.86804119939404,
+        "doubleShearMPa": 55.779369781183014,
+        "axialStressMPa": 51.73138716060369,
+        "eccentricAxialFrictionBendingNmm": 3685929.69219012,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          14229.139350921228,
+          127642.36064907876
+        ],
+        "verticalContactFrictionTorsionNmm": 2128072.499999999,
+        "torsionalShearMPa": 51.49505224608151,
+        "combinedDirectAndTorsionalShearMPa": 107.27442202726452,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 514.3335654486177,
+        "yieldUtilization": 1.714445218162059
+      },
+      "keeperM24AxialMPa": 348.0575724447705,
+      "keeperAnnularRadialStripMPa": 406.1311825854778,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 142.64665878958812,
+          "straightDevelopmentMm": 271.7079215039774
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 307.204768828052,
+          "straightDevelopmentMm": 512.0079480467535
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 2.356194490192345,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        100318.29970710729,
+        -100318.29970710728,
+        0.0,
+        3009548.9912132183,
+        3009548.991213219
+      ],
+      "boxedRootSectionVMMPa": 176.6522523895822,
+      "innerFaceLocalPlateBendingMPa": 266.47048359700375,
+      "pin": {
+        "resultantTransverseN": 173756.39202163182,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 418.94597417157047,
+        "doubleShearMPa": 53.68996462608272,
+        "axialStressMPa": 42.23850074328138,
+        "eccentricAxialFrictionBendingNmm": 3009548.991213219,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          24634.996289027404,
+          117236.5037109726
+        ],
+        "verticalContactFrictionTorsionNmm": 3009548.9912132183,
+        "torsionalShearMPa": 72.82500128151962,
+        "combinedDirectAndTorsionalShearMPa": 126.51496590760235,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 510.596934673812,
+        "yieldUtilization": 1.70198978224604
+      },
+      "keeperM24AxialMPa": 284.1878178671595,
+      "keeperAnnularRadialStripMPa": 331.6047219891767,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 185.49541578421557,
+          "straightDevelopmentMm": 353.324601493744
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 413.2450868899443,
+          "straightDevelopmentMm": 688.7418114832407
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 2.6179938779914944,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        70935.74999999999,
+        -122864.323073004,
+        0.0,
+        3685929.69219012,
+        2128072.4999999995
+      ],
+      "boxedRootSectionVMMPa": 163.17194005402553,
+      "innerFaceLocalPlateBendingMPa": 188.42308593749996,
+      "pin": {
+        "resultantTransverseN": 187678.35356385005,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 398.183492144551,
+        "doubleShearMPa": 50.73980378068301,
+        "axialStressMPa": 29.86713030272728,
+        "eccentricAxialFrictionBendingNmm": 2128072.4999999995,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          38196.173076923085,
+          103675.32692307691
+        ],
+        "verticalContactFrictionTorsionNmm": 3685929.69219012,
+        "torsionalShearMPa": 89.19204682862706,
+        "combinedDirectAndTorsionalShearMPa": 139.93185060931006,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 491.90456779983367,
+        "yieldUtilization": 1.6396818926661123
+      },
+      "keeperM24AxialMPa": 200.95113314447588,
+      "keeperAnnularRadialStripMPa": 234.47994759202663,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 218.37442342754545,
+          "straightDevelopmentMm": 415.95128271913427
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 494.61268475270697,
+          "straightDevelopmentMm": 824.3544745878451
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 2.8797932657906435,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        36719.04615726231,
+        -137037.34586436953,
+        0.0,
+        4111120.375931086,
+        1101571.3847178693
+      ],
+      "boxedRootSectionVMMPa": 143.89607062476793,
+      "innerFaceLocalPlateBendingMPa": 97.53496635522801,
+      "pin": {
+        "resultantTransverseN": 197247.957337461,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 363.5567178617374,
+        "doubleShearMPa": 46.92002034914123,
+        "axialStressMPa": 15.460364289808892,
+        "eccentricAxialFrictionBendingNmm": 1101571.3847178693,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          53988.4979274174,
+          87883.0020725826
+        ],
+        "verticalContactFrictionTorsionNmm": 4111120.375931086,
+        "torsionalShearMPa": 99.48080178119008,
+        "combinedDirectAndTorsionalShearMPa": 146.4008221303313,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 456.0192438088361,
+        "yieldUtilization": 1.5200641460294537
+      },
+      "keeperM24AxialMPa": 104.01996078544563,
+      "keeperAnnularRadialStripMPa": 121.37575226291503,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 239.043031683814,
+          "straightDevelopmentMm": 455.320060350122
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 545.762495088306,
+          "straightDevelopmentMm": 909.6041584805101
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 3.141592653589793,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        1.7374247836523372e-11,
+        -141871.5,
+        0.0,
+        4256145.0,
+        5.212274350957012e-10
+      ],
+      "boxedRootSectionVMMPa": 121.6689242322236,
+      "innerFaceLocalPlateBendingMPa": 4.615034581576521e-14,
+      "pin": {
+        "resultantTransverseN": 200636.59941421455,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 315.5750055532517,
+        "doubleShearMPa": 42.23850074328138,
+        "axialStressMPa": 7.315337104990377e-15,
+        "eccentricAxialFrictionBendingNmm": 5.212274350957012e-10,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          70935.74999999999,
+          70935.75000000001
+        ],
+        "verticalContactFrictionTorsionNmm": 4256145.0,
+        "torsionalShearMPa": 102.99010449216307,
+        "combinedDirectAndTorsionalShearMPa": 145.22860523544443,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 403.5611818124143,
+        "yieldUtilization": 1.3452039393747144
+      },
+      "keeperM24AxialMPa": 4.9218832398083206e-14,
+      "keeperAnnularRadialStripMPa": 5.743102345656292e-14,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 246.09270905684673,
+          "straightDevelopmentMm": 468.74801725113673
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 563.208742851429,
+          "straightDevelopmentMm": 938.6812380857151
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 3.4033920413889427,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -36719.04615726228,
+        -137037.34586436956,
+        0.0,
+        4111120.375931087,
+        -1101571.3847178684
+      ],
+      "boxedRootSectionVMMPa": 143.89607062476793,
+      "innerFaceLocalPlateBendingMPa": 97.53496635522794,
+      "pin": {
+        "resultantTransverseN": 197247.95733746103,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 363.5567178617374,
+        "doubleShearMPa": 46.92002034914123,
+        "axialStressMPa": 15.46036428980888,
+        "eccentricAxialFrictionBendingNmm": 1101571.3847178684,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          53988.49792741741,
+          87883.00207258259
+        ],
+        "verticalContactFrictionTorsionNmm": 4111120.375931087,
+        "torsionalShearMPa": 99.48080178119011,
+        "combinedDirectAndTorsionalShearMPa": 146.40082213033133,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 456.01924380883617,
+        "yieldUtilization": 1.520064146029454
+      },
+      "keeperM24AxialMPa": 104.01996078544555,
+      "keeperAnnularRadialStripMPa": 121.37575226291494,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 239.04303168381406,
+          "straightDevelopmentMm": 455.3200603501221
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 545.7624950883062,
+          "straightDevelopmentMm": 909.6041584805105
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 3.665191429188092,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -70935.74999999996,
+        -122864.32307300401,
+        0.0,
+        3685929.6921901205,
+        -2128072.4999999986
+      ],
+      "boxedRootSectionVMMPa": 163.1719400540255,
+      "innerFaceLocalPlateBendingMPa": 188.42308593749988,
+      "pin": {
+        "resultantTransverseN": 187678.35356385005,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 398.183492144551,
+        "doubleShearMPa": 50.73980378068301,
+        "axialStressMPa": 29.86713030272727,
+        "eccentricAxialFrictionBendingNmm": 2128072.4999999986,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          38196.1730769231,
+          103675.32692307691
+        ],
+        "verticalContactFrictionTorsionNmm": 3685929.6921901205,
+        "torsionalShearMPa": 89.19204682862707,
+        "combinedDirectAndTorsionalShearMPa": 139.9318506093101,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 491.90456779983367,
+        "yieldUtilization": 1.6396818926661123
+      },
+      "keeperM24AxialMPa": 200.9511331444758,
+      "keeperAnnularRadialStripMPa": 234.47994759202655,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 218.37442342754548,
+          "straightDevelopmentMm": 415.9512827191343
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 494.6126847527071,
+          "straightDevelopmentMm": 824.3544745878453
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 3.926990816987241,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -100318.29970710722,
+        -100318.29970710733,
+        0.0,
+        3009548.99121322,
+        -3009548.9912132164
+      ],
+      "boxedRootSectionVMMPa": 176.65225238958217,
+      "innerFaceLocalPlateBendingMPa": 266.4704835970036,
+      "pin": {
+        "resultantTransverseN": 173756.39202163185,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 418.94597417157047,
+        "doubleShearMPa": 53.689964626082705,
+        "axialStressMPa": 42.23850074328135,
+        "eccentricAxialFrictionBendingNmm": 3009548.9912132164,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          24634.99628902744,
+          117236.50371097255
+        ],
+        "verticalContactFrictionTorsionNmm": 3009548.99121322,
+        "torsionalShearMPa": 72.82500128151966,
+        "combinedDirectAndTorsionalShearMPa": 126.51496590760237,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 510.5969346738119,
+        "yieldUtilization": 1.7019897822460397
+      },
+      "keeperM24AxialMPa": 284.18781786715925,
+      "keeperAnnularRadialStripMPa": 331.6047219891765,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 185.49541578421565,
+          "straightDevelopmentMm": 353.3246014937442
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 413.2450868899445,
+          "straightDevelopmentMm": 688.7418114832409
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 4.1887902047863905,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -122864.32307300395,
+        -70935.75000000006,
+        0.0,
+        2128072.500000002,
+        -3685929.6921901186
+      ],
+      "boxedRootSectionVMMPa": 182.5934698693455,
+      "innerFaceLocalPlateBendingMPa": 326.3583581626667,
+      "pin": {
+        "resultantTransverseN": 158617.15903493072,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 427.86804119939404,
+        "doubleShearMPa": 55.779369781183014,
+        "axialStressMPa": 51.73138716060367,
+        "eccentricAxialFrictionBendingNmm": 3685929.6921901186,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          14229.13935092125,
+          127642.36064907875
+        ],
+        "verticalContactFrictionTorsionNmm": 2128072.500000002,
+        "torsionalShearMPa": 51.495052246081585,
+        "combinedDirectAndTorsionalShearMPa": 107.27442202726459,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 514.3335654486177,
+        "yieldUtilization": 1.714445218162059
+      },
+      "keeperM24AxialMPa": 348.0575724447704,
+      "keeperAnnularRadialStripMPa": 406.13118258547775,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 142.64665878958823,
+          "straightDevelopmentMm": 271.7079215039776
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 307.20476882805235,
+          "straightDevelopmentMm": 512.007948046754
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 4.4505895925855405,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -137037.34586436956,
+        -36719.04615726226,
+        0.0,
+        1101571.3847178677,
+        -4111120.375931087
+      ],
+      "boxedRootSectionVMMPa": 180.1509484069875,
+      "innerFaceLocalPlateBendingMPa": 364.0054499522317,
+      "pin": {
+        "resultantTransverseN": 146546.275500093,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 429.45963751915866,
+        "doubleShearMPa": 57.02375976096142,
+        "axialStressMPa": 57.69886503309026,
+        "eccentricAxialFrictionBendingNmm": 4111120.375931087,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          7687.744216444815,
+          134183.75578355519
+        ],
+        "verticalContactFrictionTorsionNmm": 1101571.3847178677,
+        "torsionalShearMPa": 26.65580049967047,
+        "combinedDirectAndTorsionalShearMPa": 83.67956026063189,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 508.2619531552482,
+        "yieldUtilization": 1.694206510517494
+      },
+      "keeperM24AxialMPa": 388.207778652605,
+      "keeperAnnularRadialStripMPa": 452.98047425209165,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 92.748224421928,
+          "straightDevelopmentMm": 176.66328461319623
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 183.7182030030371,
+          "straightDevelopmentMm": 306.1970050050619
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 4.71238898038469,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -141871.5,
+        -2.6061371754785056e-11,
+        0.0,
+        7.818411526435517e-10,
+        -4256145.0
+      ],
+      "boxedRootSectionVMMPa": 169.3009020477298,
+      "innerFaceLocalPlateBendingMPa": 376.846171875,
+      "pin": {
+        "resultantTransverseN": 141871.5,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 429.12543538401275,
+        "doubleShearMPa": 57.43678904370632,
+        "axialStressMPa": 59.73426060545457,
+        "eccentricAxialFrictionBendingNmm": 4256145.0,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          5456.596153846156,
+          136414.90384615384
+        ],
+        "verticalContactFrictionTorsionNmm": 7.818411526435517e-10,
+        "torsionalShearMPa": 1.891897527152684e-14,
+        "combinedDirectAndTorsionalShearMPa": 57.43678904370634,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 498.8795010519755,
+        "yieldUtilization": 1.6629316701732517
+      },
+      "keeperM24AxialMPa": 401.90226628895186,
+      "keeperAnnularRadialStripMPa": 468.9598951840534,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 39.2006085223296,
+          "straightDevelopmentMm": 74.6678257568183
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 51.200794804675446,
+          "straightDevelopmentMm": 85.33465800779241
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 4.974188368183839,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -137037.34586436956,
+        36719.04615726221,
+        0.0,
+        -1101571.3847178663,
+        -4111120.375931087
+      ],
+      "boxedRootSectionVMMPa": 180.15094840698745,
+      "innerFaceLocalPlateBendingMPa": 364.0054499522317,
+      "pin": {
+        "resultantTransverseN": 146546.27550009298,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 429.45963751915866,
+        "doubleShearMPa": 57.02375976096142,
+        "axialStressMPa": 57.69886503309026,
+        "eccentricAxialFrictionBendingNmm": 4111120.375931087,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          7687.744216444815,
+          134183.75578355519
+        ],
+        "verticalContactFrictionTorsionNmm": 1101571.3847178663,
+        "torsionalShearMPa": 26.65580049967043,
+        "combinedDirectAndTorsionalShearMPa": 83.67956026063185,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 508.26195315524814,
+        "yieldUtilization": 1.6942065105174937
+      },
+      "keeperM24AxialMPa": 388.207778652605,
+      "keeperAnnularRadialStripMPa": 452.98047425209165,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 92.74822442192793,
+          "straightDevelopmentMm": 176.66328461319608
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 183.71820300303693,
+          "straightDevelopmentMm": 306.1970050050616
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 5.235987755982989,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -122864.32307300398,
+        70935.75000000001,
+        0.0,
+        -2128072.5000000005,
+        -3685929.6921901195
+      ],
+      "boxedRootSectionVMMPa": 182.5934698693455,
+      "innerFaceLocalPlateBendingMPa": 326.35835816266683,
+      "pin": {
+        "resultantTransverseN": 158617.15903493072,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 427.86804119939404,
+        "doubleShearMPa": 55.779369781183014,
+        "axialStressMPa": 51.73138716060368,
+        "eccentricAxialFrictionBendingNmm": 3685929.6921901195,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          14229.139350921236,
+          127642.36064907876
+        ],
+        "verticalContactFrictionTorsionNmm": 2128072.5000000005,
+        "torsionalShearMPa": 51.49505224608154,
+        "combinedDirectAndTorsionalShearMPa": 107.27442202726456,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 514.3335654486177,
+        "yieldUtilization": 1.714445218162059
+      },
+      "keeperM24AxialMPa": 348.05757244477047,
+      "keeperAnnularRadialStripMPa": 406.1311825854778,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 142.64665878958817,
+          "straightDevelopmentMm": 271.7079215039775
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 307.2047688280522,
+          "straightDevelopmentMm": 512.0079480467537
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 5.497787143782138,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -100318.2997071073,
+        100318.29970710725,
+        0.0,
+        -3009548.9912132174,
+        -3009548.9912132192
+      ],
+      "boxedRootSectionVMMPa": 176.6522523895822,
+      "innerFaceLocalPlateBendingMPa": 266.4704835970038,
+      "pin": {
+        "resultantTransverseN": 173756.39202163182,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 418.94597417157047,
+        "doubleShearMPa": 53.68996462608272,
+        "axialStressMPa": 42.238500743281385,
+        "eccentricAxialFrictionBendingNmm": 3009548.9912132192,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          24634.996289027396,
+          117236.50371097261
+        ],
+        "verticalContactFrictionTorsionNmm": 3009548.9912132174,
+        "torsionalShearMPa": 72.82500128151959,
+        "combinedDirectAndTorsionalShearMPa": 126.51496590760232,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 510.5969346738119,
+        "yieldUtilization": 1.7019897822460397
+      },
+      "keeperM24AxialMPa": 284.1878178671595,
+      "keeperAnnularRadialStripMPa": 331.60472198917677,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 185.49541578421554,
+          "straightDevelopmentMm": 353.32460149374396
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 413.2450868899442,
+          "straightDevelopmentMm": 688.7418114832406
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 5.759586531581287,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -70935.75000000006,
+        122864.32307300395,
+        0.0,
+        -3685929.6921901186,
+        -2128072.500000002
+      ],
+      "boxedRootSectionVMMPa": 163.17194005402555,
+      "innerFaceLocalPlateBendingMPa": 188.42308593750013,
+      "pin": {
+        "resultantTransverseN": 187678.35356385002,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 398.18349214455105,
+        "doubleShearMPa": 50.73980378068301,
+        "axialStressMPa": 29.86713030272731,
+        "eccentricAxialFrictionBendingNmm": 2128072.500000002,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          38196.17307692305,
+          103675.32692307695
+        ],
+        "verticalContactFrictionTorsionNmm": 3685929.6921901186,
+        "torsionalShearMPa": 89.19204682862703,
+        "combinedDirectAndTorsionalShearMPa": 139.93185060931003,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 491.9045677998338,
+        "yieldUtilization": 1.6396818926661125
+      },
+      "keeperM24AxialMPa": 200.95113314447607,
+      "keeperAnnularRadialStripMPa": 234.47994759202686,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 218.3744234275454,
+          "straightDevelopmentMm": 415.95128271913416
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 494.61268475270685,
+          "straightDevelopmentMm": 824.354474587845
+        }
+      }
+    },
+    {
+      "mu": 1,
+      "slipDirectionRad": 6.021385919380436,
+      "localAppliedWrenchAtPinN_Nmm": [
+        141871.5,
+        -36719.04615726239,
+        137037.34586436953,
+        0.0,
+        -4111120.375931086,
+        -1101571.3847178717
+      ],
+      "boxedRootSectionVMMPa": 143.896070624768,
+      "innerFaceLocalPlateBendingMPa": 97.53496635522824,
+      "pin": {
+        "resultantTransverseN": 197247.957337461,
+        "spanMm": 130,
+        "annularAreaMm2": 2375.0440461138837,
+        "sectionModulusMm3": 20662.883201190787,
+        "bendingStressMPa": 363.5567178617375,
+        "doubleShearMPa": 46.92002034914125,
+        "axialStressMPa": 15.460364289808926,
+        "eccentricAxialFrictionBendingNmm": 1101571.3847178717,
+        "normalReactionPairForOneSidedAxialSlipN": [
+          53988.49792741736,
+          87883.00207258263
+        ],
+        "verticalContactFrictionTorsionNmm": 4111120.375931086,
+        "torsionalShearMPa": 99.48080178119008,
+        "combinedDirectAndTorsionalShearMPa": 146.40082213033133,
+        "combinedStressIsConservativeComponentBound": true,
+        "oneSidedAxialSlipHasCompressionOnlyNormalReactions": true,
+        "vonMisesMPa": 456.0192438088363,
+        "yieldUtilization": 1.5200641460294542
+      },
+      "keeperM24AxialMPa": 104.01996078544586,
+      "keeperAnnularRadialStripMPa": 121.3757522629153,
+      "oneInterfaceAnchorNecessaryChecks": {
+        "X": {
+          "necessaryLongitudinalStressMPa": 239.043031683814,
+          "straightDevelopmentMm": 455.320060350122
+        },
+        "Y": {
+          "necessaryLongitudinalStressMPa": 545.762495088306,
+          "straightDevelopmentMm": 909.6041584805101
+        }
+      }
+    }
+  ],
+  "placing": {
+    "SWOrthogonalBoxCylinderEnvelopeAdverseGapMm": 15.0,
+    "accessPortToInsideFrontClosureNominalGapMm": 5.0,
+    "pinKeeperToCheekNominalGapMm": 25.0,
+    "completePinExtractionBeyondBoxReserveMm": 15.0,
+    "commonRootIsOneDisjointSteelUnionNotTwoOverlappingSolids": true,
+    "sharedRootSteelEnvelopeVolumeMm3": 8056000,
+    "oneBoxGrossEnvelopeMassKgBeforeAccessHoleDeduction": 14.742,
+    "closedBoxSourceSectionAtRootOmitsFrontAccessHoleButLocalAccessPanelQualified": false,
+    "SWPinRenewalMustPointNorthAndEastToAvoidContinuousPerpendicularCore": true,
+    "SWNorthExtractionAndToolMaxYmm": 1367.5,
+    "SWPinSouthExtractionWouldHitPerpendicular300Core": true,
+    "NWPinSouthExtractionAndToolMinYmm": 10632.5
+  },
+  "monolithicAlternative": {
+    "perimeterSectionWidthDepthMm": [
+      200,
+      350
+    ],
+    "perimeterOrdinaryBeamZMm": [
+      3170,
+      3520
+    ],
+    "unchangedFloorZMm": [
+      3170,
+      3370
+    ],
+    "unchangedFIRSTMm": 3450,
+    "upstandAboveFinishedFloorMm": 70,
+    "newBeamOutsideFaceSWMm": 262.5,
+    "newBeamRoomFaceSWMm": 462.5,
+    "roomwardPlinthProjectionBeyondActual140WallMm": 60,
+    "upstandDoesNotLowerOrdinaryGroundSoffit": true,
+    "existing110GlassOutsideFaceUnchangedForOrdinaryBeam": true,
+    "existingCourt650Garden750UpstandsRetained": true,
+    "minimumActualFirstOuterWindowSillAboveFFLMm": 750,
+    "actualFirstOuterOpeningsAreAllWindows": true,
+    "upperOuterMasonryStartMustMoveToOrdinaryBeamTopMm": 3520,
+    "groundOuterArchRingTopWitnessesMm": [
+      [
+        "south-window-0",
+        3065
+      ],
+      [
+        "south-window-1",
+        3065
+      ],
+      [
+        "front-door",
+        3065
+      ],
+      [
+        "south-window-3",
+        3065
+      ],
+      [
+        "south-window-4",
+        3065
+      ],
+      [
+        "east-window-0",
+        3065
+      ],
+      [
+        "plant-replacement",
+        3065
+      ],
+      [
+        "east-window-3",
+        3065
+      ],
+      [
+        "west-window-0",
+        3065
+      ],
+      [
+        "west-window-1",
+        2965
+      ],
+      [
+        "west-window-2",
+        3065
+      ],
+      [
+        "west-window-3",
+        3065
+      ],
+      [
+        "north-window-0",
+        3065
+      ],
+      [
+        "north-window-1",
+        3065
+      ],
+      [
+        "north-window-3",
+        3065
+      ],
+      [
+        "north-window-4",
+        3065
+      ],
+      [
+        "east-outdoor-water-portal",
+        3065
+      ]
+    ],
+    "sameDepthDownstandBottomMm": 3020,
+    "maximumActualRingCollisionMm": 45,
+    "credibleCornerCoreWidthMm": 300,
+    "cornerCoreOutsideFaceSWMm": 262.5,
+    "cornerCoreRoomFaceSWMm": 562.5,
+    "cornerCoreAdditionalRoomProjectionMm": 100,
+    "ordinaryGirderFullSectionCoreAndBeamCageQualified": false,
+    "otherThreeCornerJointsClosed": false,
+    "implementation": [
+      "Retain actual52 head/grid geometry, roof loads, G/Q/pressure origins and complete house openings",
+      "Replace ordinary140x200 edge-band physical section with200x350 upstand, actual concrete/upper-wall replacement unions and new selfG; retain existing650/750 north upstands",
+      "Develop all-four300 inward RC corners and ordinary continuous column/beam/slab cage; no substitute portal cage or guessed tail capacity",
+      "Keep monolithic floor/core coupling and actual lower masonry compression supports; no new pin, vertical tie release or imaginary extra restraint",
+      "Explicit60mm\u00d770mm first-floor wall plinth,100mm extra inward corner footprint, furniture/radiator/services, finishes and maintenance joins",
+      "New local350-deep joint proof plus fresh52-head coupled W0/W31, source-wrench/mass/work controls, then signed programme only after viable ordinary placing"
+    ],
+    "nativeHouseResponseStrengthAndOwnerSelectionCalculated": false
+  },
+  "decision": {
+    "flatCheekRejectionPreserved": true,
+    "closedBoxCarriesSideFrictionInSectionAction": true,
+    "sameD60PinFailsDevelopmentMu06WhenRealSurfaceFrictionCoupleIncluded": true,
+    "boxedFamilyEarnsNewHouseSolve": false,
+    "preferredNextComparison": "Monolithic200x350 perimeter upstand and inward300 corner cores, subject to actual placing and first-floor plinth/room joins",
+    "why": "Boxed cheeks remove the weak plate failure, but retain custom pin access, friction/lockup, through-plate300-core confinement,9+9 two-level shared anchorage and large seat/floor pockets. A new full-house solve is premature."
+  },
+  "unclosed": [
+    "Actual material certificates/welds/wear pair and finite pin/slot/backlash/rotation/friction law",
+    "Full six-component simultaneous shared SW anchorage and3D concrete dowel/bearing/splitting/confinement",
+    "Root/box access-hole local shell and prying, thread/keeper actual manufacture, fixture/tool lifting and replacement",
+    "No six-wrench complete separated house demand exists;94.581 is only the source pressure minimum screen",
+    "All-four monolithic joint cages, existing RC base splice and site/foundation capacities remain unqualified"
+  ],
+  "evidence": {
+    "completeResistanceAccepted": false,
+    "productAccepted": false,
+    "physicalAccepted": false,
+    "ownerAccepted": false,
+    "houseAccepted": false,
+    "houseSolveExecuted": false
+  },
+  "sourceSHA256": {
+    "three_clevis_box.py": "130ae82fcf5f04f3cdb167c4ed915bbb02151422c0b973a942ca14507db45c0e",
+    "three-clevis-box-inputs.json": "ee78acdeb4044b2b67f8d2d67e271e50c269f5f61c8799d2731c1d2343e9889f",
+    "three_clevis_box_test.py": "0ddee33877d54f8f6a5bc6f97b605ec5bf062477b3c7eab8d5bc5138b5e407b3",
+    "three_clevis.py": "388969fbdbbe54b169fac05085f52dd077c89754e1ec0c8ce8b036e2a9f82389",
+    "three-clevis-inputs.json": "5c7fc4ca6b6123e52828d29748aca25a0aaf3c10f5f5d30c8d626e11376c3d28"
+  },
+  "svgSHA256": "130e346ced89e57c5bf096af1467b8dd238abb03d0687d255cf1087776b01bc5"
+}

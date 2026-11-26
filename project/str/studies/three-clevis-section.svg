@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1160" viewBox="0 0 1500 1160" role="img"><title>Three ordinary clevis interfaces: physical development comparison</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto-start-reverse"><path d="M0 0 L6 3 L0 6" fill="#23714e"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,sans-serif;fill:#252b30}.title{font-size:27px;font-weight:700}.sub{font-size:18px;font-weight:700}.note{font-size:15px}.small{font-size:12px}.red{fill:#a1262f}.blue{fill:#315c86}.gold{fill:#896a20}</style>
+<text x="40.000" y="42.000" class="title" >Three clevis interfaces — physical minimum screen</text>
+<text x="40.000" y="72.000" class="sub red" >UNCALCULATED HOUSE / NO PRODUCT OR PHYSICAL ACCEPTANCE /200mm recessed-plate route REJECTED</text>
+<text x="40.000" y="101.000" class="note" >Actual floor3170–3370; FIRST3450. Pressure-only minimum94.581kN; component screen141.8715kN.</text>
+<text x="40.000" y="135.000" class="sub" >SW WEST SECTION /300mm local-core alternative</text>
+<rect x="118.125" y="281.000" width="255.000" height="459.000" fill="#d7e4ef" stroke="#87929c" />
+<rect x="160.625" y="281.000" width="170.000" height="459.000" fill="#b3c8dc" stroke="#87929c" />
+<rect x="381.625" y="629.500" width="119.000" height="110.500" fill="#ded1b5" stroke="#87929c" />
+<rect x="381.625" y="595.500" width="119.000" height="34.000" fill="#fff4df" stroke="#87929c" />
+<rect x="602.625" y="425.500" width="297.500" height="170.000" fill="#eee8d9" stroke="#87929c" />
+<rect x="118.125" y="395.750" width="34.000" height="212.500" fill="#626b74" stroke="#87929c" />
+<rect x="339.125" y="395.750" width="34.000" height="212.500" fill="#626b74" stroke="#87929c" />
+<rect x="92.625" y="548.750" width="306.000" height="25.500" fill="#8c969e" stroke="#87929c" />
+<rect x="92.625" y="429.750" width="306.000" height="25.500" fill="#8c969e" stroke="#87929c" />
+<rect x="373.125" y="429.750" width="178.500" height="161.500" fill="#b6c1c9" stroke="#87929c" />
+<rect x="439.425" y="466.3" width="54.4" height="88.39999999999999" rx="27.2" fill="#fff" stroke="#6b737b"/>
+<circle cx="466.625" cy="510.5" r="25.5" fill="#315c86"/>
+<rect x="602.625" y="429.750" width="34.000" height="161.500" fill="#626b74" stroke="#87929c" />
+<rect x="636.625" y="537.700" width="255.000" height="15.300" fill="#a1262f" stroke="#87929c" />
+<rect x="636.625" y="468.000" width="255.000" height="15.300" fill="#a1262f" stroke="#87929c" />
+<rect x="219.275" y="281.000" width="11.900" height="459.000" fill="#a1262f" stroke="#87929c" />
+<rect x="271.975" y="281.000" width="11.900" height="459.000" fill="#a1262f" stroke="#87929c" />
+<rect x="381.625" y="357.500" width="221.000" height="10.200" fill="#626b74" stroke="#87929c" />
+<line x1="82.000" y1="357.500" x2="980.000" y2="357.500" stroke="#aab2b9" stroke-dasharray="4 4"/>
+<text x="895.000" y="352.500" class="small" >FIRST3450</text>
+<line x1="82.000" y1="425.500" x2="980.000" y2="425.500" stroke="#aab2b9" stroke-dasharray="4 4"/>
+<text x="895.000" y="420.500" class="small" >slab3370</text>
+<line x1="82.000" y1="595.500" x2="980.000" y2="595.500" stroke="#aab2b9" stroke-dasharray="4 4"/>
+<text x="895.000" y="590.500" class="small" >seat3170</text>
+<line x1="82.000" y1="629.500" x2="980.000" y2="629.500" stroke="#aab2b9" stroke-dasharray="4 4"/>
+<text x="895.000" y="624.500" class="small" >local seat recess40</text>
+<text x="65.000" y="175.000" class="note blue" >Original200 continuity+cage retained inside prospective300 concrete.</text>
+<text x="65.000" y="199.000" class="note blue" >50mm added each face;40mm recessed plates retain50mm adverse cover.</text>
+<text x="65.000" y="223.000" class="small red" >Core change, outside110mm glass profile, footing/room/bodyG require actual redesign.</text>
+<text x="1000.000" y="280.000" class="note blue" >D60 pin /24mm end bores</text>
+<text x="1000.000" y="304.000" class="note" >40blade;64×104vertical slot</text>
+<text x="1000.000" y="328.000" class="note" >2×20cheeks /90inside gap</text>
+<text x="1000.000" y="352.000" class="note" >4M30 through-rods /250×250×40plates</text>
+<text x="1000.000" y="376.000" class="note" >16H16 local floor anchor bars:1000straight</text>
+<text x="1000.000" y="400.000" class="note" >H14/56 transverse mat replaces local H16 field</text>
+<text x="1000.000" y="424.000" class="small red" >Pocket interrupts gravity seat: no normal force through key</text>
+<text x="1000.000" y="448.000" class="small red" >Plate/prying is a local beam-strip model, not3D concrete proof</text>
+<text x="40.000" y="800.000" class="sub" >PIN AXIS / along-wall travel and renewal</text>
+<rect x="109.000" y="851.000" width="234.000" height="78.000" fill="#315c86" stroke="#87929c" />
+<rect x="141.500" y="812.000" width="26.000" height="156.000" fill="#626b74" stroke="#87929c" />
+<rect x="284.500" y="812.000" width="26.000" height="156.000" fill="#626b74" stroke="#87929c" />
+<rect x="200.000" y="812.000" width="52.000" height="156.000" fill="#c5cdd4" stroke="#87929c" />
+<rect x="88.200" y="825.000" width="20.800" height="130.000" fill="#87929c" stroke="#87929c" />
+<rect x="343.000" y="825.000" width="20.800" height="130.000" fill="#87929c" stroke="#87929c" />
+<text x="70.000" y="995.000" class="small" >Keepers clamp PIN ENDS;25mm nominal gap to cheeks.</text>
+<text x="70.000" y="1017.000" class="small red" >160mm withdrawal +75mm tool; temporary lateral brace first.</text>
+<text x="70.000" y="1039.000" class="small red" >NW cabinet +low box removal and70mm WC move; SW bed200mm east.</text>
+<text x="630.000" y="805.000" class="sub red" >NON-CLAMPING DOES NOT MEAN FRICTIONLESS</text>
+<text x="630.000" y="838.000" class="note" >μ=0: pinVM195.8; rodVM83.1; plate147.2MPa</text>
+<text x="630.000" y="866.000" class="note" >μ=0.3: pinVM278.7; rodVM178.6; plate214.4MPa</text>
+<text x="630.000" y="894.000" class="note" >μ=0.6: pinVM363.0; rodVM307.1; plate281.6MPa</text>
+<text x="630.000" y="922.000" class="note" >μ=1: pinVM481.6; rodVM485.6; plate371.2MPa</text>
+<text x="630.000" y="955.000" class="small red" >Flat-cheek weak-axis friction and SW root/mat clashes REJECT family.</text>
+<text x="630.000" y="979.000" class="small red" >Dry stainless μ and galling are unqualified; μ0/.3/.6/1 are scenarios.</text>
+<text x="630.000" y="1003.000" class="small red" >Seizure/slot ends can restore vertical force and finite frame moments.</text>
+<text x="630.000" y="1027.000" class="small red" >Concrete splitting, complete links/hooks, root weld and pocket framing OPEN.</text>
+<text x="40.000" y="1105.000" class="sub red" >Do not fund a nominal frictionless full-house programme from this component screen. Resolve the listed physical boundaries first.</text>
+</svg>

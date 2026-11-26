@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1080" viewBox="0 0 1500 1080" role="img"><title>Rejected clevis family: actual plan collisions and renewal pockets</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto-start-reverse"><path d="M0 0 L6 3 L0 6" fill="#23714e"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,sans-serif;fill:#252b30}.title{font-size:27px;font-weight:700}.sub{font-size:18px;font-weight:700}.note{font-size:15px}.small{font-size:12px}.red{fill:#a1262f}.blue{fill:#315c86}.gold{fill:#896a20}</style>
+<text x="40.000" y="42.000" class="title" >Physical clevis plan — why this family is rejected</text>
+<text x="40.000" y="73.000" class="note" >Prospective300 cores at SW/NW only; SE/NE remain200. All four gravity footprints are checked on the actual ground girders.</text>
+<text x="40.000" y="99.000" class="small red" >No normal gravity force is assigned to a key. Blue service pockets remove real floor/contact material; their perimeter framing is unfinished.</text>
+<text x="40.000" y="133.000" class="sub" >SW /actualXY</text>
+<rect x="40.000" y="150.000" width="650.000" height="650.000" fill="#faf9f5" stroke="#87929c" />
+<rect x="63.897" y="374.632" width="114.706" height="401.471" fill="#c8d9e7" stroke="#68737e" />
+<rect x="178.603" y="661.397" width="286.765" height="114.706" fill="#c8d9e7" stroke="#68737e" />
+<rect x="83.015" y="374.632" width="76.471" height="382.353" fill="none" stroke="#315c86" stroke-dasharray="4 3"/>
+<rect x="159.485" y="680.515" width="305.882" height="76.471" fill="none" stroke="#315c86" stroke-dasharray="4 3"/>
+<rect x="182.426" y="370.809" width="53.529" height="286.765" fill="#ded1b5" stroke="#68737e" />
+<rect x="235.956" y="604.044" width="233.235" height="53.529" fill="#ded1b5" stroke="#68737e" />
+<rect x="182.426" y="431.985" width="99.412" height="210.294" fill="#e0f1f5" stroke="#4f7e8b" />
+<rect x="255.074" y="558.162" width="206.471" height="99.412" fill="#e0f1f5" stroke="#4f7e8b" />
+<rect x="63.897" y="460.662" width="15.294" height="95.588" fill="#626b74" stroke="#68737e" />
+<rect x="163.309" y="460.662" width="15.294" height="95.588" fill="#626b74" stroke="#68737e" />
+<rect x="178.603" y="500.809" width="80.294" height="15.294" fill="#b2bdc5" stroke="#68737e" />
+<rect x="197.721" y="525.662" width="84.118" height="7.647" fill="#626b74" stroke="#68737e" />
+<rect x="197.721" y="483.603" width="84.118" height="7.647" fill="#626b74" stroke="#68737e" />
+<rect x="281.838" y="431.985" width="15.294" height="152.941" fill="#626b74" stroke="#68737e" />
+<line x1="297.132" y1="575.368" x2="679.485" y2="575.368" stroke="#a1262f" stroke-width="2"/>
+<line x1="297.132" y1="556.250" x2="679.485" y2="556.250" stroke="#a1262f" stroke-width="2"/>
+<line x1="297.132" y1="537.132" x2="679.485" y2="537.132" stroke="#a1262f" stroke-width="2"/>
+<line x1="297.132" y1="518.015" x2="679.485" y2="518.015" stroke="#a1262f" stroke-width="2"/>
+<line x1="297.132" y1="498.897" x2="679.485" y2="498.897" stroke="#a1262f" stroke-width="2"/>
+<line x1="297.132" y1="479.779" x2="679.485" y2="479.779" stroke="#a1262f" stroke-width="2"/>
+<line x1="297.132" y1="460.662" x2="679.485" y2="460.662" stroke="#a1262f" stroke-width="2"/>
+<line x1="297.132" y1="441.544" x2="679.485" y2="441.544" stroke="#a1262f" stroke-width="2"/>
+<rect x="283.750" y="760.809" width="95.588" height="15.294" fill="#626b74" stroke="#68737e" />
+<rect x="283.750" y="661.397" width="95.588" height="15.294" fill="#626b74" stroke="#68737e" />
+<rect x="323.897" y="581.103" width="15.294" height="80.294" fill="#b2bdc5" stroke="#68737e" />
+<rect x="306.691" y="558.162" width="7.647" height="84.118" fill="#626b74" stroke="#68737e" />
+<rect x="348.750" y="558.162" width="7.647" height="84.118" fill="#626b74" stroke="#68737e" />
+<rect x="255.074" y="542.868" width="152.941" height="15.294" fill="#626b74" stroke="#68737e" />
+<line x1="264.632" y1="542.868" x2="264.632" y2="160.515" stroke="#a1262f" stroke-width="2"/>
+<line x1="283.750" y1="542.868" x2="283.750" y2="160.515" stroke="#a1262f" stroke-width="2"/>
+<line x1="302.868" y1="542.868" x2="302.868" y2="160.515" stroke="#a1262f" stroke-width="2"/>
+<line x1="321.985" y1="542.868" x2="321.985" y2="160.515" stroke="#a1262f" stroke-width="2"/>
+<line x1="341.103" y1="542.868" x2="341.103" y2="160.515" stroke="#a1262f" stroke-width="2"/>
+<line x1="360.221" y1="542.868" x2="360.221" y2="160.515" stroke="#a1262f" stroke-width="2"/>
+<line x1="379.338" y1="542.868" x2="379.338" y2="160.515" stroke="#a1262f" stroke-width="2"/>
+<line x1="398.456" y1="542.868" x2="398.456" y2="160.515" stroke="#a1262f" stroke-width="2"/>
+<rect x="281.838" y="542.868" width="15.294" height="15.294" fill="#e64949" stroke="#a1262f" />
+<circle cx="302.86764705882354" cy="537.1323529411765" r="3" fill="#e64949"/>
+<circle cx="302.86764705882354" cy="518.0147058823529" r="3" fill="#e64949"/>
+<circle cx="302.86764705882354" cy="498.89705882352945" r="3" fill="#e64949"/>
+<circle cx="302.86764705882354" cy="479.7794117647059" r="3" fill="#e64949"/>
+<circle cx="302.86764705882354" cy="460.6617647058824" r="3" fill="#e64949"/>
+<circle cx="302.86764705882354" cy="441.54411764705884" r="3" fill="#e64949"/>
+<circle cx="321.985294117647" cy="537.1323529411765" r="3" fill="#e64949"/>
+<circle cx="321.985294117647" cy="518.0147058823529" r="3" fill="#e64949"/>
+<circle cx="321.985294117647" cy="498.89705882352945" r="3" fill="#e64949"/>
+<circle cx="321.985294117647" cy="479.7794117647059" r="3" fill="#e64949"/>
+<circle cx="321.985294117647" cy="460.6617647058824" r="3" fill="#e64949"/>
+<circle cx="321.985294117647" cy="441.54411764705884" r="3" fill="#e64949"/>
+<circle cx="341.10294117647055" cy="537.1323529411765" r="3" fill="#e64949"/>
+<circle cx="341.10294117647055" cy="518.0147058823529" r="3" fill="#e64949"/>
+<circle cx="341.10294117647055" cy="498.89705882352945" r="3" fill="#e64949"/>
+<circle cx="341.10294117647055" cy="479.7794117647059" r="3" fill="#e64949"/>
+<circle cx="341.10294117647055" cy="460.6617647058824" r="3" fill="#e64949"/>
+<circle cx="341.10294117647055" cy="441.54411764705884" r="3" fill="#e64949"/>
+<circle cx="360.2205882352941" cy="537.1323529411765" r="3" fill="#e64949"/>
+<circle cx="360.2205882352941" cy="518.0147058823529" r="3" fill="#e64949"/>
+<circle cx="360.2205882352941" cy="498.89705882352945" r="3" fill="#e64949"/>
+<circle cx="360.2205882352941" cy="479.7794117647059" r="3" fill="#e64949"/>
+<circle cx="360.2205882352941" cy="460.6617647058824" r="3" fill="#e64949"/>
+<circle cx="360.2205882352941" cy="441.54411764705884" r="3" fill="#e64949"/>
+<circle cx="379.3382352941176" cy="537.1323529411765" r="3" fill="#e64949"/>
+<circle cx="379.3382352941176" cy="518.0147058823529" r="3" fill="#e64949"/>
+<circle cx="379.3382352941176" cy="498.89705882352945" r="3" fill="#e64949"/>
+<circle cx="379.3382352941176" cy="479.7794117647059" r="3" fill="#e64949"/>
+<circle cx="379.3382352941176" cy="460.6617647058824" r="3" fill="#e64949"/>
+<circle cx="379.3382352941176" cy="441.54411764705884" r="3" fill="#e64949"/>
+<circle cx="398.45588235294116" cy="537.1323529411765" r="3" fill="#e64949"/>
+<circle cx="398.45588235294116" cy="518.0147058823529" r="3" fill="#e64949"/>
+<circle cx="398.45588235294116" cy="498.89705882352945" r="3" fill="#e64949"/>
+<circle cx="398.45588235294116" cy="479.7794117647059" r="3" fill="#e64949"/>
+<circle cx="398.45588235294116" cy="460.6617647058824" r="3" fill="#e64949"/>
+<circle cx="398.45588235294116" cy="441.54411764705884" r="3" fill="#e64949"/>
+<rect x="403.235" y="150.000" width="286.765" height="299.956" fill="#eeeeee" stroke="#8d9399" />
+<rect x="479.706" y="150.000" width="210.294" height="299.956" fill="none" stroke="#23714e" stroke-dasharray="5 3"/>
+<text x="50.000" y="827.000" class="small red" >RED:72 cylindrical bar crossings +304000mm³ root-plate overlap.</text>
+<text x="50.000" y="850.000" class="small red" >H16 X and H16 Y occupy identical3229/3311 levels.</text>
+<text x="50.000" y="873.000" class="small" >Dashed green bed: temporary200mm east move, no handling proof.</text>
+<text x="780.000" y="133.000" class="sub" >NW /Y mirrored:12000−actualY</text>
+<rect x="780.000" y="150.000" width="650.000" height="650.000" fill="#faf9f5" stroke="#87929c" />
+<rect x="803.897" y="374.632" width="114.706" height="401.471" fill="#c8d9e7" stroke="#68737e" />
+<rect x="918.603" y="661.397" width="286.765" height="114.706" fill="#c8d9e7" stroke="#68737e" />
+<rect x="823.015" y="374.632" width="76.471" height="382.353" fill="none" stroke="#315c86" stroke-dasharray="4 3"/>
+<rect x="899.485" y="680.515" width="305.882" height="76.471" fill="none" stroke="#315c86" stroke-dasharray="4 3"/>
+<rect x="922.426" y="370.809" width="53.529" height="286.765" fill="#ded1b5" stroke="#68737e" />
+<rect x="975.956" y="604.044" width="233.235" height="53.529" fill="#ded1b5" stroke="#68737e" />
+<rect x="922.426" y="367.941" width="99.412" height="221.765" fill="#e0f1f5" stroke="#4f7e8b" />
+<rect x="803.897" y="460.662" width="15.294" height="95.588" fill="#626b74" stroke="#68737e" />
+<rect x="903.309" y="460.662" width="15.294" height="95.588" fill="#626b74" stroke="#68737e" />
+<rect x="918.603" y="500.809" width="80.294" height="15.294" fill="#b2bdc5" stroke="#68737e" />
+<rect x="937.721" y="525.662" width="84.118" height="7.647" fill="#626b74" stroke="#68737e" />
+<rect x="937.721" y="483.603" width="84.118" height="7.647" fill="#626b74" stroke="#68737e" />
+<rect x="1021.838" y="431.985" width="15.294" height="152.941" fill="#626b74" stroke="#68737e" />
+<line x1="1037.132" y1="575.368" x2="1419.485" y2="575.368" stroke="#a1262f" stroke-width="2"/>
+<line x1="1037.132" y1="556.250" x2="1419.485" y2="556.250" stroke="#a1262f" stroke-width="2"/>
+<line x1="1037.132" y1="537.132" x2="1419.485" y2="537.132" stroke="#a1262f" stroke-width="2"/>
+<line x1="1037.132" y1="518.015" x2="1419.485" y2="518.015" stroke="#a1262f" stroke-width="2"/>
+<line x1="1037.132" y1="498.897" x2="1419.485" y2="498.897" stroke="#a1262f" stroke-width="2"/>
+<line x1="1037.132" y1="479.779" x2="1419.485" y2="479.779" stroke="#a1262f" stroke-width="2"/>
+<line x1="1037.132" y1="460.662" x2="1419.485" y2="460.662" stroke="#a1262f" stroke-width="2"/>
+<line x1="1037.132" y1="441.544" x2="1419.485" y2="441.544" stroke="#a1262f" stroke-width="2"/>
+<rect x="1001.574" y="475.000" width="214.118" height="135.735" fill="#eeeeee" stroke="#8d9399" />
+<rect x="886.868" y="398.529" width="114.706" height="286.765" fill="#eeeeee" stroke="#8d9399" />
+<rect x="886.868" y="150.000" width="57.353" height="248.529" fill="#eeeeee" stroke="#8d9399" />
+<rect x="1028.338" y="475.000" width="214.118" height="135.735" fill="none" stroke="#23714e" stroke-dasharray="5 3"/>
+<text x="790.000" y="827.000" class="small red" >Grey:actual WC/cabinet/low box conflict with renewal pockets.</text>
+<text x="790.000" y="850.000" class="small" >Dashed green WC:70mm east comparison; services/removal OPEN.</text>
+<text x="790.000" y="873.000" class="small" >Full160mm pin withdrawal +75mm tool envelope is required.</text>
+<text x="40.000" y="930.000" class="note blue" >Three pin centres:SW-X(622.5,912.5), SW-Y(912.5,622.5), NW-X(622.5,11087.5); z3270.</text>
+<text x="40.000" y="959.000" class="note" >300mm core cover comparison consumes50mm inward AND50mm outward. The110mm glass profile must move with the outside face.</text>
+<text x="40.000" y="988.000" class="note red" >This is a rejected finite family, not rejection of all conventional interfaces. A braced fork and one coordinated SW root/mat would be a new detail.</text>
+<text x="40.000" y="1032.000" class="sub red" >No native52-head solve, product approval, physical fit, all-four corner closure or owner acceptance.</text>
+</svg>
