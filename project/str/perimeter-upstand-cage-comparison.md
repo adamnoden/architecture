@@ -54,7 +54,7 @@ Ordinary short returns cannot be credited at 400 MPa. Actual authored neighbour 
 
 The straight transition row is bounded at 144/205.714 MPa for poor/good bond. Compression anchorage is unqualified. Good bond is conditional on the stated monolithic slab/band pour and actual bar placement; poor bounds remain visible. The ordinary 140 mm mandrel leaves at least 72 mm straight after the bend against the selected 5φ=70 mm structural comparison. The old 160 mm bend leaves 62 mm and fails that comparison.
 
-Nominal H14/75 area is 2052.507 mm²/m, versus legacy H16/80 at 2513.274 mm²/m. Local pitches are deliberately nonuniform and include 90 mm gaps. Neither this nominal field area nor the bar reduction is strength-selected from actual new plate/cut demands.
+Nominal H14/75 area is 2052.507 mm²/m, versus legacy H16/80 at 2513.274 mm²/m. Local pitches are deliberately nonuniform and include 95 mm gaps. Neither this nominal field area nor the bar reduction is strength-selected from actual new plate/cut demands.
 
 The primary detailing reference is [JRC's 2011 EC2 workshop, Arrieta](https://eurocodes.jrc.ec.europa.eu/sites/default/files/2022-06/05_EC2WS_Arrieta_Detailing.pdf), used as a declared analytical comparison, not a current UK compliance certificate. The 100 mm column hook tail is a conservative 10φ fabrication comparison rather than relying on the shorter structural hook minimum. [Hy-Ten](https://hy-ten.co.uk/concrete/bar-reinforcement/) lists 14 mm bar and describes cut/bent supply and dimensioned shape-99 schedules. This is evidence of a plausible supply route, not a project quotation, verified outside rib diameter, approved bend schedule or product acceptance.
 
