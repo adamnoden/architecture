@@ -6,10 +6,11 @@ import {plantTankedWalkingSurface,type PlantWalkControl,type PlantWalkApparatus}
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../project/had/studies/'+p,import.meta.url),'utf8'))
 const raw=read('inlet-plant-tanked-walk-candidate.json'),services=read('current-house-services.json').plant,v=read('inlet-store-vessel-candidate.json')
 const near=(a:number,b:number,t=1e-5)=>assert.ok(Math.abs(a-b)<t,a+' != '+b)
-// The selected geometry is owned by the same input as the whole-room producer.
-// Only the immutable comparison pan below remains an explicit unit fixture.
+// The same source controls the apparatus platform. This isolated control freezes
+// the superseded bridge; the whole Plant test owns the active bridge and pan.
 const control={...raw.appliancePlatform,loadedPadBlankUpperMm:raw.panCompression.footBlank.maximumMeasuredThicknessMm}
-const choice={...raw,appliancePlatform:control} as PlantWalkControl
+const {topology:_activeTopology,postRow:_activePostRow,...legacyBridgeFields}=raw.bridge
+const choice={...raw,bridge:{...legacyBridgeFields,thicknessMm:36,pieceCount:13},appliancePlatform:control} as PlantWalkControl
 const source=(objectPath:string)=>({path:'project/had/studies/current-house-services.json',gitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',objectPath})
 const C=services.cylinder,B=services.primaryBuffer,axis=C.centre as [number,number],dryCG=raw.appliancePlatform.storeFactoryDryCGHalfExtentsMm as [number,number],ba=[B.body[0]+B.body[2]/2,B.body[1]+B.body[3]/2]as const,
  box=(r:readonly number[])=>[r[0],r[1],r[0]+r[2],r[1]+r[3]]as const,

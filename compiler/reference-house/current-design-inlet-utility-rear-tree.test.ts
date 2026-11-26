@@ -623,3 +623,14 @@ test('flat socket has6.5mm head engagement; inward two-hand ratchet clears the a
  assert.notEqual(axis.sourceDigest,portal.sourceDigest)
  assert.notEqual(capsule.sourceDigest,portal.sourceDigest)
 })
+
+test('rear members move west below the cold feed before raising; the old high route is a real collision control',()=>{
+ assert.equal(portalFinite.rearRouteOrder,'west-before-up')
+ assert.equal(portalFinite.geometryFailures.some(q=>q.componentId.startsWith('portal/rear/')&&q.obstacleId==='cold/sink/feed/tube/1'),false,JSON.stringify(portalFinite.geometryFailures.filter(q=>q.componentId.startsWith('portal/rear/')&&q.obstacleId==='cold/sink/feed/tube/1')))
+ const previous=structuredClone(choice)
+ Object.assign(previous.coldDistribution.frameRenewal.portalDesign.finiteRenewal,{rearRotationCentreXMm:10730,rearRotationCentreZMm:1100,rearParkLevelsMm:[1050,1150,1250]})
+ const high=inletUtilityPortalFiniteRenewal({source:current,wet:{...wet,choice:previous},capture:wet.ordinaryCapture,portal,rearRouteOrder:'old-up-before-west-control'})
+ assert.ok(high.geometryFailures.some(q=>q.componentId==='portal/rear/lower-tie'&&q.phase==='rear-member-up-before-west-control'&&q.obstacleId==='cold/sink/feed/tube/1'&&q.reserveMm< -150))
+ assert.notEqual(high.sourceDigest,portalFinite.sourceDigest)
+ assert.equal(portalFinite.ordinaryRenewalAccepted,false)
+})

@@ -1,7 +1,7 @@
 {
   "schema": "had-plant-tanked-walk/1",
   "id": "HAD/Plant-open-metal-walk-and-full-store-containment",
-  "revision": 3,
+  "revision": 4,
   "basePanRoomChoice": "project/had/studies/inlet-split-plant-room-candidate.json",
   "vesselChoice": "project/had/studies/inlet-store-vessel-candidate.json",
   "selectedForDevelopment": true,
@@ -38,8 +38,8 @@
     "receiverMetalMm": 3
   },
   "bridge": {
-    "thicknessMm": 36,
-    "pieceCount": 13,
+    "thicknessMm": 40,
+    "pieceCount": 15,
     "railYMm": [
       4155,
       4600,
@@ -71,7 +71,49 @@
     "externalTurnCentreXYMm": [
       13430,
       4600
-    ]
+    ],
+    "topology": "outer-grid-post-row",
+    "postRow": {
+      "innerGirderXMm": 11490,
+      "outerGirderXMm": 12080,
+      "plankInnerXMm": 11440,
+      "plankOuterXMm": 12130,
+      "sharedPostColumnIndex": 6,
+      "sharedPostYMm": [
+        4080,
+        4363.5,
+        4647,
+        4930.5,
+        5214
+      ],
+      "innerGirderEndYMm": [
+        4080,
+        5214
+      ],
+      "innerSeatPackerMm": 30,
+      "girderSectionWHtMm": [
+        100,
+        100,
+        8
+      ],
+      "maximumGirderWallMm": 8.5,
+      "capThicknessMm": 35,
+      "capWidthYMm": 80,
+      "railCorbelLXtMm": [
+        50,
+        30
+      ],
+      "matchedSeatErrorMm": 3,
+      "sharedPostDesignCeilingN": 9000,
+      "maximumMechanicallyCapturedGirderKg": 60,
+      "grateToBridgeGapMm": 6,
+      "perimeterGapMm": 35,
+      "postSectionWHtMm": [
+        60,
+        60,
+        5
+      ]
+    }
   },
   "grating": {
     "bearingBarHeightMm": 70,

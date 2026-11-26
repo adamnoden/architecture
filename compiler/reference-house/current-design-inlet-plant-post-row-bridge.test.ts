@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {derivePostRowGridAxes} from './current-design/inlet-plant-post-row-bridge.js'
-import {plantTankedWalkingSurface,type PlantWalkControl,type PlantWalkApparatus} from './current-design/inlet-plant-tanked-walk.js'
+import {plantTankedWalkingSurface,plantGrateRimOutsideExclusions,type PlantWalkControl,type PlantWalkApparatus} from './current-design/inlet-plant-tanked-walk.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../project/had/studies/'+p,import.meta.url),'utf8'))
 const raw=read('inlet-plant-tanked-walk-candidate.json'),services=read('current-house-services.json').plant,v=read('inlet-store-vessel-candidate.json')
 const near=(a:number,b:number,t=1e-5)=>assert.ok(Math.abs(a-b)<t,a+' != '+b)
@@ -24,7 +24,8 @@ const overlap=(a:readonly number[],b:readonly number[])=>[0,1,2].every(k=>Math.m
 test('segmented full-seat bridge uses five existing posts and removes conflicting inside supports and coplanar grates',()=>{
  const r=run(),p=r.postRowBridge!,d=r.bridgeIntegration!
  assert.ok(p&&d)
- const summary={sourceDigest:r.sourceDigest,bridge:p,railCuts:d.railCuts,remainingPerimeterTailChecks:d.remainingPerimeterTailChecks,normalMassUpperKg:r.normalMassUpperKg,solidsIncrementUpperL:r.solidsIncrementUpperL,finalDemand:r.unifiedDetails!.finalDemandBasis,failedChecks:r.memberChecks.filter(q=>!q.necessary),physicalAcceptance:false}
+ const bridgeGrateCollisions=r.parts.filter(q=>q.kind==='grate'||q.kind==='unified-grate-cut-rim').flatMap(a=>p.planks.filter(b=>overlap(a.boxMm,b.boxMm)).map(b=>({grate:a.id,grateBoxMm:a.boxMm,plank:b.id,plankBoxMm:b.boxMm,overlapMm3:[0,1,2].reduce((n,k)=>n*(Math.min(a.boxMm[k]+a.boxMm[k+3],b.boxMm[k]+b.boxMm[k+3])-Math.max(a.boxMm[k],b.boxMm[k])),1)})))
+ const summary={sourceDigest:r.sourceDigest,bridge:p,bridgeGrateCollisions,railCuts:d.railCuts,remainingPerimeterTailChecks:d.remainingPerimeterTailChecks,normalMassUpperKg:r.normalMassUpperKg,solidsIncrementUpperL:r.solidsIncrementUpperL,finalDemand:r.unifiedDetails!.finalDemandBasis,failedChecks:r.memberChecks.filter(q=>!q.necessary),physicalAcceptance:false}
  console.log('PLANT_POST_ROW_BRIDGE '+JSON.stringify(summary))
  if(process.env.RUNNER_TEMP){const dir=join(process.env.RUNNER_TEMP,'had-utility-west-proof');mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'plant-post-row-bridge-current-case.json'),JSON.stringify(summary,null,2))}
  assert.equal(p.girderSegments.length,4)
@@ -41,7 +42,7 @@ test('segmented full-seat bridge uses five existing posts and removes conflictin
  for(const q of p.sharedPostUpdates){const post=r.parts.find(b=>b.id===q.postId)!;near(post.boxMm[2]+post.boxMm[5],q.postTopMm);assert.ok(!r.parts.some(b=>b.id===q.headId))}
  const girder=r.parts.filter(q=>q.kind==='post-row-bridge-girder'),rails=r.parts.filter(q=>q.kind==='solid-beam')
  assert.ok(!girder.some(a=>rails.some(b=>overlap(a.boxMm,b.boxMm))),'Actual shortened rails cannot occupy the same steel as the lower girders')
- assert.ok(!r.parts.filter(q=>q.kind==='grate'||q.kind==='unified-grate-cut-rim').some(a=>p.planks.some(b=>overlap(a.boxMm,b.boxMm))),'Actual cut grate solids cannot overlap the bridge planks')
+ assert.deepEqual(bridgeGrateCollisions,[],'Actual cut grate solids cannot overlap the bridge planks')
  assert.ok(p.necessaryMemberComparisons,JSON.stringify(p.memberChecks.filter(q=>!q.necessary)))
  assert.ok(p.oneSharedPostDemandUpperN<9000)
  assert.equal(p.normalReactionBounds.oneFactoredWheelN,3708.18)
@@ -81,4 +82,20 @@ test('new bridge is optional and legacy geometry remains a scoped rejected histo
  assert.equal(legacy.parts.filter(p=>p.id.startsWith('Plant/bridge-X-rail/')).length,3)
  assert.equal(legacy.parts.filter(p=>p.kind==='bridge-pad').length,4)
  assert.notEqual(legacy.sourceDigest,run().sourceDigest)
+})
+
+test('actual eastern perimeter-rim regression witness is removed as real stock, retaining the full six millimetre gap',()=>{
+ const formerRim=[11529.5,4080.5,610,6,282.5,70]as const,plank=[11440,4125,640,690,62.4,40]as const
+ assert.ok(overlap(formerRim,plank))
+ const intersection=[0,1,2].reduce((n,k)=>n*(Math.min(formerRim[k]+formerRim[k+3],plank[k]+plank[k+3])-Math.max(formerRim[k],plank[k])),1)
+ near(intersection,14976)
+ const plans=plantGrateRimOutsideExclusions({planMinMaxMm:[11529.5,4080.5,11535.5,4363],excludedPlanMinMaxMm:[[11434.5,4119.5,12135.5,5080.5]],clearanceMm:.5})
+ assert.deepEqual(plans,[[11529.5,4080.5,11535.5,4119]])
+ const r=run(),actual=r.parts.find(p=>p.id==='Plant/grate/5/1/cut-edge-rim/9/3/piece/0')
+ assert.ok(actual,'Source-derived perimeter rim must exist as the correctly shortened physical stock')
+ assert.deepEqual(actual.boxMm,[11529.5,4080.5,610,6,38.5,70])
+ assert.equal(actual.subtractPlanPrisms,undefined,'Rim correction is actual cut stock rather than a bounding-box waiver')
+ assert.equal(actual.boxMm[1]+actual.boxMm[4],plank[1]-6)
+ assert.ok(!overlap(actual.boxMm,plank))
+ console.log('PLANT_BRIDGE_RIM_REGRESSION '+JSON.stringify({formerRimId:'Plant/grate/5/1/cut-edge-rim/9/3',formerRimBoxMm:formerRim,plankId:'Plant/bridge-piece/0',plankBoxMm:plank,formerIntersectionMm3:intersection,actualRimId:actual.id,actualRimBoxMm:actual.boxMm,actualIntersection:false}))
 })

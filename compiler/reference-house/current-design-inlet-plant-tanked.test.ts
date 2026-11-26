@@ -44,6 +44,7 @@ test('complete source-design potable inventory uses external tubes/full fitting 
  assert.throws(()=>plantPotableInventory(mat,tooLarge),/exceeds source work territory/)
 })
 
+const legacyBridge=()=>{const {topology:_topology,postRow:_postRow,...b}=choice.bridge;return{...b,thicknessMm:36,pieceCount:13}}
 const roomRequest=()=>({choice,plant:p,vesselChoice:read('project/had/studies/inlet-store-vessel-candidate.json'),mat:read('project/mat/studies/whole-house-service-baseline.json'),maximumSourceApertureMm:10.5,services:read('project/had/studies/current-house-services.json'),servicesGitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',waterReplan:read('project/had/studies/water-replan.json'),waterReplanGitBlob:'089f0dac2f2e89272dc2ea85a10c2208f2fd797d',sourceSettings:read('project/had/studies/inlet-plant-tanked-supply-candidate.json').settings})
 test('one actual Plant pan feeds room, outfalls, occupied steel and complete communicating pressure-network volume',()=>{
  const r=inletPlantTankedRoom(roomRequest())
@@ -91,7 +92,7 @@ test('actual floor, outlet and inventory perturbations invalidate dependent desi
  assert.throws(()=>inletPlantTankedRoom(mixed),/Mixed or modified/)
  assert.throws(()=>inletPlantTankedRoom({...i,maximumSourceApertureMm:10.4}),/source aperture/)
 
- const revised=structuredClone(i);revised.choice.walkingRiseAboveHouseFflMm=100
+ const revised=structuredClone(i);revised.choice.bridge=legacyBridge();revised.choice.walkingRiseAboveHouseFflMm=100
  revised.choice.frame.clearHeightMm=2350
  revised.choice.normalAssembly.prvAxisHouseLocalZMm=1260
  revised.choice.outfalls.clearWidthMm=600;revised.choice.outfalls.clearHeightMm=134
@@ -152,30 +153,42 @@ test('actual Plant frame, door and bridge keep the same raised walking datum and
  assert.equal(r.roomCoordination.fittedDoor.hingeMm[2],150)
  assert.ok(r.roomCoordination.fittedDoor.poses.every(p=>p.shoulderMm[2]===f.choice.operatorShoulderHeightMm+150))
  assert.ok(!r.roomCoordination.fittedDoor.diagnostics.includes('PLANT_FITTED_DOOR/frame-header-raw-arch'))
- assert.equal(r.walking.bridgePieces[0].boxMm[4],950)
- assert.equal(r.roomCoordination.bridge?.boxMm[2],r.walking.bridgePieces[0].boxMm[2])
- assert.deepEqual(r.roomCoordination.bridge?.railCentresYMm,r.choice.bridge.railYMm)
- assert.ok(r.roomCoordination.bridge?.railAboveOutfallPackageReserveMm!==null)
- assert.ok(r.roomCoordination.bridge!.removablePieces.pieces.every(p=>p.startBoxMm[2]===114))
- assert.ok(r.roomCoordination.bridge!.removablePieces.pieces.every(p=>p.minimumAuthoredFrameReserveMm>0&&p.minimumHomeObstacleReserveMm>0&&p.minimumActualPipeReserveMm>0))
- assert.ok(r.roomCoordination.bridge!.removablePieces.pieces.every(p=>p.phases.some(q=>q.id==='quarter-turn-on-exterior-deck')))
- assert.ok(r.roomCoordination.bridge!.removablePieces.pieces.every(p=>typeof p.externalTurnDeckReserveMm==='number'&&p.externalTurnDeckReserveMm>0))
- console.info('PLANT_ACTUAL_RAISED_ROOM_JOIN '+JSON.stringify({frame:f.exactOuterArchGeometry,sourceY:f.sourceAxisYMm,normal:r.normalInstallation.geometryFailures,door:{minima:r.roomCoordination.fittedDoor.minima,diagnostics:r.roomCoordination.fittedDoor.diagnostics,goods:r.roomCoordination.fittedDoor.goodsChecks},bridge:{box:r.roomCoordination.bridge?.boxMm,railCentres:r.roomCoordination.bridge?.railCentresYMm,verticalReserve:r.roomCoordination.bridge?.railAboveOutfallPackageReserveMm,pieces:r.roomCoordination.bridge?.removablePieces.pieces.map(p=>({id:p.id,kg:p.completeBudgetKg,frame:p.minimumAuthoredFrameReserveMm,obstacle:p.minimumHomeObstacleReserveMm,pipes:p.minimumActualPipeReserveMm,obstacleFailures:p.obstacleFailures,pipeFailures:p.pipeFailures,fittingFailures:p.fittingFailures})),diagnostics:r.roomCoordination.diagnostics},normalAuthority:r.normalInstallation.regulator.regulatorAuthorityReserveBar}))
+ const b=r.roomCoordination.activePostRowBridge!
+ assert.ok(b)
+ assert.equal(r.roomCoordination.bridge.currentApplicability,false)
+ assert.equal(b.planks.length,15)
+ assert.equal(b.planks[0].boxMm[3],690)
+ assert.equal(b.bridgeTopMm,r.levels.walkingMm)
+ assert.equal(b.plateBottomMm,r.walking.bridgePieces[0].boxMm[2])
+ assert.ok(b.necessaryMemberComparisons,JSON.stringify(b.memberChecks.filter(q=>!q.necessary)))
+ assert.ok(b.necessaryRenewalGeometry,JSON.stringify(b.renewal.filter(q=>!q.necessaryGeometricSweeps)))
+ assert.ok(b.renewal.every(q=>q.sweeps.some(s=>s.phase==='straight-X-to-external-first-rest')&&!q.sweeps.some(s=>s.phase.includes('turn'))))
+ assert.ok(r.roomCoordination.actualBridgeRenewalContext!.obstacles.some(q=>q.id.startsWith('actual-pipe/')))
+ assert.ok(r.roomCoordination.actualBridgeRenewalContext!.obstacles.some(q=>q.id==='actual-common-PRV'))
+ assert.ok(r.roomCoordination.actualBridgeRenewalContext!.obstacles.some(q=>q.id.startsWith('actual-fitted-frame/')))
+ assert.equal(b.actualExternalReceiversLateralTiesBoltToolContactAndWholeHouseAccepted,false)
+ console.info('PLANT_ACTUAL_RAISED_ROOM_JOIN '+JSON.stringify({frame:f.exactOuterArchGeometry,normal:r.normalInstallation.geometryFailures,door:{minima:r.roomCoordination.fittedDoor.minima,diagnostics:r.roomCoordination.fittedDoor.diagnostics},bridge:b,legacyThreeRailCurrentApplicable:r.roomCoordination.bridge.currentApplicability,sourceRenewalObstacles:r.roomCoordination.actualBridgeRenewalContext!.obstacles}))
+
 })
 
-test('actual exterior turning deck and the rejected interior quarter-turn invalidate dependent capture',()=>{
+test('actual straight bridge first-rest and retired quarter-turn controls have distinct applicability',()=>{
  const i=roomRequest(),r=inletPlantTankedRoom(i),bad=structuredClone(i)
  assert.equal(r.roomCoordination.fittedDoor.requiredExteriorDeckAbsoluteZMm,r.levels.walkingMm)
  assert.deepEqual(r.roomCoordination.fittedDoor.requiredClearExternalWorkDeckPlanMm,r.choice.externalDeckPlanMm)
- bad.choice.bridge.externalTurnCentreXYMm=[12300,4600]
+ bad.choice.externalDeckPlanMm=[12130,3350,500,2100]
  const b=inletPlantTankedRoom(bad)
- assert.ok(b.roomCoordination.bridge!.removablePieces.pieces.some(p=>typeof p.externalTurnDeckReserveMm==='number'&&p.externalTurnDeckReserveMm<0))
+ assert.equal(b.roomCoordination.activePostRowBridge!.necessaryRenewalGeometry,false)
+ assert.ok(b.roomCoordination.activePostRowBridge!.renewal.some(p=>p.externalRestReserveMm<0))
  assert.notEqual(b.source.caseDigest,r.source.caseDigest)
- const unsupported=structuredClone(i);unsupported.choice.bridge.externalTurnCentreXYMm=[13430,4450]
- assert.throws(()=>inletPlantTankedRoom(unsupported),/Actual external bridge turning station/)
- const interior=structuredClone(r.roomCoordination.resolvedInput);delete interior.bridgeRenewal
+ const obsolete=structuredClone(i);obsolete.choice.bridge.externalTurnCentreXYMm=[12300,4450]
+ const unchanged=inletPlantTankedRoom(obsolete)
+ assert.deepEqual(unchanged.roomCoordination.activePostRowBridge!.parts,r.roomCoordination.activePostRowBridge!.parts)
+ assert.equal(unchanged.roomCoordination.activePostRowBridge!.necessaryRenewalGeometry,r.roomCoordination.activePostRowBridge!.necessaryRenewalGeometry)
+ // Preserve the old mechanism as a same-source, explicitly unselected control.
+ const old=structuredClone(i);old.choice.bridge=legacyBridge()
+ const history=inletPlantTankedRoom(old),interior=structuredClone(history.roomCoordination.resolvedInput);delete interior.bridgeRenewal
  const failed=inletSplitPlantRoom(interior)
- assert.ok(failed.bridge!.removablePieces.pieces.some(p=>p.minimumActualPipeReserveMm<0),'The former interior turn collides with the same current fixed P source, not a historical fixture.')
+ assert.ok(failed.bridge!.removablePieces.pieces.some(p=>p.minimumActualPipeReserveMm<0),'The superseded interior turn strikes the same current source; it is not current bridge authority.')
 })
 
 test('actual selected Plant pan and source walls own the same full RC, tapered F bed and matched feet',()=>{

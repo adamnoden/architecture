@@ -186,7 +186,7 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[];planExclusio
     loadOrigins:sheetLoads,
     upperMetalStockCase:{id:'pan-bed-low-fixed-crest',faces:lowerSettingFaces,loadOrigins:upperStockLoads,
       summedWrenchKN_KNm:sumWrenches(upperStockLoads),concurrentWithNominalStock:false},hydrostaticCases,
-    sheetStockModel:'Uniform2mm developed prisms outside their flow faces; actual bends, seam/corner intersections, tolerances and fabricated centroids remain unqualified.',
+    sheetStockModel:'Uniform'+input.metalMm+'mm developed prisms outside their flow faces; actual bends, seam/corner intersections, tolerances and fabricated centroids remain unqualified.',
     staticGravityMps2:inletStaticGravityMps2,nominalPanMetalAndReturnsAdmitted:false,metalBendsSeamsSeatsFrameInsulationAndFloorStockKg:null,
     waterLoadOrigins: water, independentWaterWeightControlNotAdditionalToHydrostaticMetalLoads:true,
     wholeFaultMaximumLoadKg: null, supportAnd52HeadTransferQualified: false,

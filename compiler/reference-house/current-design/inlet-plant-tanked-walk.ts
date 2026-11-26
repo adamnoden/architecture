@@ -22,6 +22,28 @@ const finite=(a:readonly number[])=>a.every(Number.isFinite)
 const between=(a:number,b:number,z:number,h:number)=>Math.max(0,Math.min(b,z+h)-Math.max(a,z))
 const clippedVolume=(b:B,r:P,a:number,z:number)=>Math.max(0,Math.min(b[0]+b[3],r[0]+r[2])-Math.max(b[0],r[0]))*Math.max(0,Math.min(b[1]+b[4],r[1]+r[3])-Math.max(b[1],r[1]))*between(a,z,b[2],b[5])
 const maxGap=(s:readonly number[])=>Math.max(...s.slice(1).map((v,k)=>v-s[k]))
+/** Exact rectangular cut stock, after applying the same fabrication clearance
+ * to EVERY excluded pickup/deck/perimeter region. No filled polygon bounding
+ * box is accepted as a substitute for a nonrectangular exclusion. */
+export function plantGrateRimOutsideExclusions(i:{planMinMaxMm:readonly[number,number,number,number];excludedPlanMinMaxMm:readonly(readonly[number,number,number,number])[];clearanceMm:number}){
+ type R=readonly[number,number,number,number]
+ const valid=(p:R)=>p.every(Number.isFinite)&&p[2]>p[0]&&p[3]>p[1]
+ if(!valid(i.planMinMaxMm)||!Number.isFinite(i.clearanceMm)||i.clearanceMm<0||i.excludedPlanMinMaxMm.some(p=>!valid(p)))throw Error('Actual positive rectangular rim and true excluded plans required')
+ let pieces:R[]=[i.planMinMaxMm]
+ for(const q of i.excludedPlanMinMaxMm){
+  const e=[q[0]-i.clearanceMm,q[1]-i.clearanceMm,q[2]+i.clearanceMm,q[3]+i.clearanceMm]as const,next:R[]=[]
+  for(const p of pieces){
+   const a=Math.max(p[0],e[0]),b=Math.max(p[1],e[1]),z=Math.min(p[2],e[2]),w=Math.min(p[3],e[3])
+   if(z<=a||w<=b){next.push(p);continue}
+   if(p[1]<b)next.push([p[0],p[1],p[2],b])
+   if(w<p[3])next.push([p[0],w,p[2],p[3]])
+   if(p[0]<a)next.push([p[0],b,a,w])
+   if(z<p[2])next.push([z,b,p[2],w])
+  }
+  pieces=next
+ }
+ return pieces
+}
 /** Actual proposed steel geometry and conservative water displacement.
  * RHS outer boxes count their entire sealed void as displaced water. Overlap
  * of cross/bearing bars is subtracted exactly; joined hardware/bridge overlaps
@@ -487,7 +509,13 @@ function applyUnifiedPlatform(i:{platform:ReturnType<typeof plantAppliancePlatfo
    const sign=poly.reduce((n,p,j)=>{const q=poly[(j+1)%poly.length];return n+p[0]*q[1]-q[0]*p[1]},0)>=0?1:-1,nx=sign*dy/L,ny=-sign*dx/L,gap=.5,t=c.cutEdgeRimMm,
     edge=clipRect([[a[0]+nx*gap,a[1]+ny*gap],[z[0]+nx*gap,z[1]+ny*gap],[z[0]+nx*(gap+t),z[1]+ny*(gap+t)],[a[0]+nx*(gap+t),a[1]+ny*(gap+t)]],R)
    if(edge.length<3||polyArea(edge)<1e-7)continue
-   const rim=polyPart(panel.id+'/cut-edge-rim/'+wi+'/'+k,'unified-grate-cut-rim',edge,i.barBottomMm,(i.walkingMm-i.barBottomMm));rim.subtractPlanPrisms=webs.map(w=>({polygonMm:w.planPolygonMm??rectPoly(w.boxMm),zMm:w.boxMm[2],heightMm:w.boxMm[5]}));panel.parts.push(rim.id)
+   if(i.bridgeCutoutMm||i.perimeterGapMm){
+    const trueRect=(p:readonly Q[])=>{const r=bounds(p);if(new Set(p.map(q=>q[0]+','+q[1])).size!==4||Math.abs(polyArea(p)-(r[2]-r[0])*(r[3]-r[1]))>1e-6||p.some(q=>q[0]!==r[0]&&q[0]!==r[2]||q[1]!==r[1]&&q[1]!==r[3]))throw Error('Current rim splitting requires actual rectangular polygons, never filled polygon bounding boxes');return r},
+     plans=plantGrateRimOutsideExclusions({planMinMaxMm:trueRect(edge),excludedPlanMinMaxMm:allWebPolys.map(trueRect),clearanceMm:gap})
+    for(const[j,p]of plans.entries()){const rim=polyPart(panel.id+'/cut-edge-rim/'+wi+'/'+k+'/piece/'+j,'unified-grate-cut-rim',rectPoly([p[0],p[1],i.barBottomMm,p[2]-p[0],p[3]-p[1],i.walkingMm-i.barBottomMm]),i.barBottomMm,i.walkingMm-i.barBottomMm);panel.parts.push(rim.id)}
+   }else{
+    const rim=polyPart(panel.id+'/cut-edge-rim/'+wi+'/'+k,'unified-grate-cut-rim',edge,i.barBottomMm,(i.walkingMm-i.barBottomMm));rim.subtractPlanPrisms=webs.map(w=>({polygonMm:w.planPolygonMm??rectPoly(w.boxMm),zMm:w.boxMm[2],heightMm:w.boxMm[5]}));panel.parts.push(rim.id)
+   }
   }
  }
  const intersect=(a:B,b:B):B|null=>{const p=[0,1,2].map(k=>Math.max(a[k],b[k])),q=[0,1,2].map(k=>Math.min(a[k]+a[k+3],b[k]+b[k+3]));return q.every((v,k)=>v>p[k])?[p[0],p[1],p[2],q[0]-p[0],q[1]-p[1],q[2]-p[2]]:null}

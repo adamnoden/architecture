@@ -4,8 +4,10 @@ import {readFileSync} from 'node:fs'
 import {plantTankedWalkingSurface,type PlantWalkControl} from './current-design/inlet-plant-tanked-walk.js'
 const raw=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-plant-tanked-walk-candidate.json',import.meta.url),'utf8'))
 // Freeze this historical standalone100mm bar/bridge control independently of the selected whole-room platform.
-const {appliancePlatform:_selectedPlatform,...legacy}=raw
-const choice={...legacy,walkingRiseAboveHouseFflMm:100,walkingFrame:{...raw.walkingFrame,minimumBeamIMm4:120000,footPadSideMm:120,footPadThicknessMm:8},grating:{...raw.grating,bearingBarThicknessMm:5,maximumUniformTemperatureExcursionK:40,bearingBarHeightMm:60,rimHeightMm:60,maximumCompletePanelKg:15},bridge:{...raw.bridge,railYMm:[4110,4600,5090]}} as PlantWalkControl
+const {appliancePlatform:_selectedPlatform,bridge:_selectedBridge,...legacyFloor}=raw
+const {topology:_selectedTopology,postRow:_selectedPostRow,...legacyRailFields}=_selectedBridge
+const legacy={...legacyFloor,bridge:{...legacyRailFields,thicknessMm:36,pieceCount:13}}
+const choice={...legacy,walkingRiseAboveHouseFflMm:100,walkingFrame:{...raw.walkingFrame,minimumBeamIMm4:120000,footPadSideMm:120,footPadThicknessMm:8},grating:{...raw.grating,bearingBarThicknessMm:5,maximumUniformTemperatureExcursionK:40,bearingBarHeightMm:60,rimHeightMm:60,maximumCompletePanelKg:15},bridge:{...legacy.bridge,railYMm:[4110,4600,5090]}} as PlantWalkControl
 // Source-geometry comparison only. Parent complete-room producer supplies its
 // actual pan/input profile, source-stage and receivers; no native force result
 // or current flooring replacement is inferred from this standalone fixture.

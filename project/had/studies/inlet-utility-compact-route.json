@@ -1068,12 +1068,12 @@
           "portalLiftMm": 40,
           "portalNorthMm": 120,
           "rearParkAxisYMm": 700,
-          "rearRotationCentreXMm": 10730,
-          "rearRotationCentreZMm": 1100,
+          "rearRotationCentreXMm": 10250,
+          "rearRotationCentreZMm": 400,
           "rearParkLevelsMm": [
-            1050,
-            1150,
-            1250
+            120,
+            250,
+            350
           ],
           "normalReceiverInwardOffsetMm": 60,
           "receiverPostCrossMm": 40,
@@ -1104,7 +1104,8 @@
           "maximumSidePortalWithTemporaryClampsKg": 12,
           "maximumRearMemberWithTemporaryClampsKg": 2,
           "steelDensityUpperKgM3": 8000,
-          "actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified": false
+          "actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified": false,
+          "rearTranslationOrder": "west-before-up"
         },
         "headRelease": {
           "schema": "had-utility-front-head-fastening/1",

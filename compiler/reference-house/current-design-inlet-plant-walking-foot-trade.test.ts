@@ -4,7 +4,9 @@ import {readFileSync} from 'node:fs'
 import {plantTankedWalkingSurface,type PlantWalkControl} from './current-design/inlet-plant-tanked-walk.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../project/had/studies/'+p,import.meta.url),'utf8'))
 const raw=read('inlet-plant-tanked-walk-candidate.json'),source=read('current-house-services.json').plant,vessel=read('inlet-store-vessel-candidate.json')
-const {appliancePlatform:_futureSelectedPlatform,...legacy}=raw
+const {appliancePlatform:_futureSelectedPlatform,bridge:_activeBridge,...legacyFloor}=raw
+const {topology:_activeTopology,postRow:_activePostRow,...legacyBridgeFields}=_activeBridge
+const legacy={...legacyFloor,bridge:{...legacyBridgeFields,thicknessMm:36,pieceCount:13}}
 const make=(side:number,t:number,H:number,maxX=400)=>({...legacy,walkingRiseAboveHouseFflMm:150,walkingFrame:{...raw.walkingFrame,footPadSideMm:side,footPadThicknessMm:t},grating:{...raw.grating,bearingBarThicknessMm:5,bearingBarHeightMm:H,rimHeightMm:H,maximumPanelXMm:maxX,maximumCompletePanelKg:15}}as PlantWalkControl)
 const apparatus=[{id:'Plant/cylinder',source:{path:'project/had/studies/current-house-services.json',gitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',objectPath:'plant.cylinder'},homePlanMm:source.cylinder.body,bodyBottomAbsoluteMm:680,bodyHeightMm:source.cylinder.height,normalFilledMassUpperKg:vessel.handling.maximumCompleteDryCargoKg+vessel.maximumBodyAndPortsLitres,requiredPanelLiftMm:12},{id:'Plant/buffer',source:{path:'project/had/studies/current-house-services.json',gitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',objectPath:'plant.primaryBuffer'},homePlanMm:source.primaryBuffer.station,bodyBottomAbsoluteMm:680,bodyHeightMm:source.primaryBuffer.height,normalFilledMassUpperKg:source.primaryBuffer.dryFullKg[0]+raw.apparatusDesign.maximumBufferRetainedAncillaryDryKg+Math.PI/4*source.primaryBuffer.body[2]**2*source.primaryBuffer.height/1e6*raw.apparatusDesign.maximumPrimaryFluidDensityKgM3/1000,requiredPanelLiftMm:12}]
 // Bounded dry steel/stand comparison on captured source plans. The selected
