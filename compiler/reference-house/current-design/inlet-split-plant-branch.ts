@@ -12,7 +12,7 @@ type Path=readonly Point[]
 export type SplitPlantBranchChoice={schema:'had-split-plant-branch/1';id:string;units:'mm';datum:'occupied-ground-FFL';
  sourceEntryMm:Point;insideEntryMm:Point;upstreamPathMm:Path;outletStemMm:Path;storeFixedPathMm:Path;treeFixedPathMm:Path;storeRemovableDropMm:Path;storeTerminalMm:Path;
  storePortTrialMm:Point;coldTreeInterfaceMm:Point;sourceEntryOpeningDiameterMm:number;storeDropBendRadiusMm:number;storeTerminalBendRadiusMm:number}
-export type SplitPlantBranchInputs={choice:SplitPlantBranchChoice;sourceBindingDigest:string;groundFflMm:number;roomPlanMm:readonly[number,number,number,number];ceilingMm:number;fittedFrame:ReturnType<typeof derivePlantFittedFrame>;
+export type SplitPlantBranchInputs={floorRiseMm?:number;choice:SplitPlantBranchChoice;sourceBindingDigest:string;groundFflMm:number;roomPlanMm:readonly[number,number,number,number];ceilingMm:number;fittedFrame:ReturnType<typeof derivePlantFittedFrame>;
  valve:{axisMm:Point;bodyMm:Box;stemMm:Box;knownKg:number};ordinaryShoulderMm:Point;
  envelope:{backboneRadiusMm:number;terminalRadiusMm:number;settingsEachMm:number;insulationRadialThicknessMm:number;jacketThicknessMm:number};operating:{plantDutyLmin:number;temperatureChangeK:number;maximumGaugeBar:number};
  obstacles:readonly{id:string;boxMm:Box}[];goods:readonly{id:string;pathMm:readonly(readonly[number,number])[];completeRadiusMm:number;maximumCompleteHeightMm:number}[];
@@ -29,7 +29,8 @@ const direction=(a:Point,b:Point)=>{const l=length(a,b);return a.map((v,k)=>(b[k
 const cross=(p:Point,f:Point)=>[p[1]*f[2]-p[2]*f[1],p[2]*f[0]-p[0]*f[2],p[0]*f[1]-p[1]*f[0]]
 const gap=(a:Box,b:Box)=>{const d=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return d.some(v=>v>0)?Math.hypot(...d.map(v=>Math.max(0,v))):Math.max(...d)}
 export function inletSplitPlantBranch(i:SplitPlantBranchInputs){
- const q=i?.choice
+ const q=i?.choice,rise=i?.floorRiseMm??0
+ if(!Number.isFinite(rise)||rise<0||rise>150||(i?.floorRiseMm!==undefined&&(i.fittedFrame?.resolvedInput.floorRiseMm??0)!==rise))throw Error('Unsupported Plant walking-floor datum join')
  if(!i||!q||!i.envelope||!i.operating||!i.valve||!keys(i.operating,['plantDutyLmin','temperatureChangeK','maximumGaugeBar'])||!keys(i.envelope,['backboneRadiusMm','terminalRadiusMm','settingsEachMm','insulationRadialThicknessMm','jacketThicknessMm'])||!keys(i.comparison,['frictionFactor','cornerK','jacketDensityKgM3','insulationDensityKgM3'])||Object.keys(q).sort().join(',')!==choiceKeys.join(',')||typeof i.sourceBindingDigest!=='string'||!i.sourceBindingDigest||!i.fittedFrame||i.fittedFrame.sourceAxisYMm!==q.sourceEntryMm[1]||i.fittedFrame.sourceOpeningDiameterMm!==q.sourceEntryOpeningDiameterMm)throw Error('Unsupported independent Plant branch input ownership')
  admitResolvedPlantFittedFrame(i.fittedFrame)
  if(i.fittedFrame.resolvedInput.groundFflMm!==i.groundFflMm||!same(i.fittedFrame.infills[0].intervalYMm,i.sourceEntryInfillYMm)||i.fittedFrame.effectiveClearYMm[0]!==i.sourceEntryCargoSouthYMm||i.fittedFrame.resolvedInput.wallInnerXMm!==i.roomPlanMm[0]+i.roomPlanMm[2])throw Error('Unsupported fitted Plant frame ground join')
@@ -96,9 +97,9 @@ export function inletSplitPlantBranch(i:SplitPlantBranchInputs){
   ])),
   roomBoundaryChecks=rows.flatMap(r=>{
    const insidePoints=r.id==='plant/upstream'?[q.insideEntryMm.map((v,k)=>v-(k===0?r.radiusMm+i.envelope.settingsEachMm:0)) as unknown as Point,...r.points.slice(1)]:r.formedGeometry?.path??r.points,
-    reserve=(p:Point,radius:number)=>Math.min(p[0]-i.roomPlanMm[0],i.roomPlanMm[0]+i.roomPlanMm[2]-p[0],p[1]-i.roomPlanMm[1],i.roomPlanMm[1]+i.roomPlanMm[3]-p[1],p[2],i.ceilingMm-p[2])-radius-i.envelope.settingsEachMm-(r.formedGeometry?.hausdorffError??0),
+    reserve=(p:Point,radius:number)=>Math.min(p[0]-i.roomPlanMm[0],i.roomPlanMm[0]+i.roomPlanMm[2]-p[0],p[1]-i.roomPlanMm[1],i.roomPlanMm[1]+i.roomPlanMm[3]-p[1],p[2]-rise,i.ceilingMm-p[2])-radius-i.envelope.settingsEachMm-(r.formedGeometry?.hausdorffError??0),
     pipeRows=insidePoints.map((p,k)=>({path:r.id,part:'pipe',index:k,reserveMm:reserve(p,r.radiusMm)})),
-    cornerRows=r.removable?[]:r.corners.map(c=>({path:r.id,part:'fitting-box',index:c.index,reserveMm:Math.min(c.boxMm[0]-i.roomPlanMm[0],i.roomPlanMm[0]+i.roomPlanMm[2]-c.boxMm[0]-c.boxMm[3],c.boxMm[1]-i.roomPlanMm[1],i.roomPlanMm[1]+i.roomPlanMm[3]-c.boxMm[1]-c.boxMm[4],c.boxMm[2],i.ceilingMm-c.boxMm[2]-c.boxMm[5])-i.envelope.settingsEachMm}))
+    cornerRows=r.removable?[]:r.corners.map(c=>({path:r.id,part:'fitting-box',index:c.index,reserveMm:Math.min(c.boxMm[0]-i.roomPlanMm[0],i.roomPlanMm[0]+i.roomPlanMm[2]-c.boxMm[0]-c.boxMm[3],c.boxMm[1]-i.roomPlanMm[1],i.roomPlanMm[1]+i.roomPlanMm[3]-c.boxMm[1]-c.boxMm[4],c.boxMm[2]-rise,i.ceilingMm-c.boxMm[2]-c.boxMm[5])-i.envelope.settingsEachMm}))
    return[...pipeRows,...cornerRows]
   }),
   valveChecks=rows.flatMap(r=>r.segments.flatMap(s=>{
@@ -110,7 +111,7 @@ export function inletSplitPlantBranch(i:SplitPlantBranchInputs){
    ...r.segments.map(s=>({path:r.id,part:'pipe',segment:s.index,obstacle:o.id,reserveMm:segmentBoxDistance(s.a,s.b,o.boxMm)-r.radiusMm-setting})),
    ...r.corners.map(c=>({path:r.id,part:'fitting-box',corner:c.index,obstacle:o.id,reserveMm:gap(c.boxMm,o.boxMm)-setting}))])),
   goodsChecks=fixed.flatMap(r=>i.goods.flatMap(g=>{
-    const boxes=g.pathMm.slice(1).map((b,k)=>{const a=g.pathMm[k];return[Math.min(a[0],b[0])-g.completeRadiusMm,Math.min(a[1],b[1])-g.completeRadiusMm,0,Math.abs(a[0]-b[0])+2*g.completeRadiusMm,Math.abs(a[1]-b[1])+2*g.completeRadiusMm,g.maximumCompleteHeightMm] as Box})
+    const boxes=g.pathMm.slice(1).map((b,k)=>{const a=g.pathMm[k];return[Math.min(a[0],b[0])-g.completeRadiusMm,Math.min(a[1],b[1])-g.completeRadiusMm,rise,Math.abs(a[0]-b[0])+2*g.completeRadiusMm,Math.abs(a[1]-b[1])+2*g.completeRadiusMm,g.maximumCompleteHeightMm] as Box})
     return[...r.segments.map(s=>({path:r.id,goods:g.id,part:'pipe',segment:s.index,reserveMm:Math.min(...boxes.map(b=>segmentBoxDistance(s.a,s.b,b)))-r.radiusMm-setting})),
      ...r.corners.map(c=>({path:r.id,goods:g.id,part:'fitting-box',corner:c.index,reserveMm:Math.min(...boxes.map(b=>gap(c.boxMm,b)))-setting}))]})),
   selfChecks=fixed.flatMap(r=>r.corners.flatMap((c,k)=>[
@@ -121,7 +122,7 @@ export function inletSplitPlantBranch(i:SplitPlantBranchInputs){
     for(const c of r.corners){const reserveMm=segmentBoxDistance(i.ordinaryShoulderMm,grip,c.boxMm)-40-setting-cover;if(reserveMm<worst.reserveMm)worst={path:r.id,reserveMm}}
    }return[worst]}),
   cylinder=i.cylindricalStore,drop=rows.find(r=>r.id==='plant/store-removable-drop')!,
-  dropStoreReserveMm=Math.min(...segments(drop.formedGeometry!.path).map(s=>segmentDistance(s.a,s.b,[...cylinder.centreXYMm,0],[...cylinder.centreXYMm,cylinder.heightMm])))-cylinder.radiusMm-i.envelope.backboneRadiusMm-setting-drop.formedGeometry!.hausdorffError,
+  dropStoreReserveMm=Math.min(...segments(drop.formedGeometry!.path).map(s=>segmentDistance(s.a,s.b,[...cylinder.centreXYMm,rise],[...cylinder.centreXYMm,rise+cylinder.heightMm])))-cylinder.radiusMm-i.envelope.backboneRadiusMm-setting-drop.formedGeometry!.hausdorffError,
   ingressBorePipePositionReserveMm=q.sourceEntryOpeningDiameterMm/2-i.envelope.backboneRadiusMm-i.envelope.settingsEachMm,
   ingressBoreAfterTwoIndependentSettingsMm=ingressBorePipePositionReserveMm-i.fittedFrame.resolvedInput.settingEachMm,
   ingressBorePerCoordinatePositionAdverseMm=q.sourceEntryOpeningDiameterMm/2-i.envelope.backboneRadiusMm-Math.SQRT2*(i.envelope.settingsEachMm+i.fittedFrame.resolvedInput.settingEachMm),
@@ -153,9 +154,9 @@ export function inletSplitPlantBranch(i:SplitPlantBranchInputs){
    {role:'store-factory-port',kind:'actual-factory-port-trial',point:q.storePortTrialMm},
    {role:'cold-tree-interface',kind:'connected-current-cold-tree-boundary',point:q.coldTreeInterfaceMm}],
   incidentStations={schema:'had-plant-incident-stations/1',coordinateDatum:'Local occupied groundFFL; absolute XYZ adds the same saved groundFFL to Z.',
-   storeOuterEnvelopeTopLocalMm:i.cylindricalStore.heightMm,storeOuterEnvelopeTopAbsoluteMm:i.cylindricalStore.heightMm+i.groundFflMm,actualLiquidLevelKnown:false,
+   storeOuterEnvelopeTopLocalMm:i.cylindricalStore.heightMm+rise,storeOuterEnvelopeTopAbsoluteMm:i.cylindricalStore.heightMm+rise+i.groundFflMm,actualLiquidLevelKnown:false,
    stations:incidentCuts.map(n=>({id:q.id+'/incident/'+n.role,role:n.role,kind:n.kind,localPointMm:[...n.point],absolutePointMm:n.point.map((v,k)=>v+(k===2?i.groundFflMm:0)),
-    outerTopMinusStationSignedMm:i.cylindricalStore.heightMm-n.point[2],nonnegativeOuterTopGravityHeadComparisonMm:Math.max(0,i.cylindricalStore.heightMm-n.point[2]),
+    outerTopMinusStationSignedMm:i.cylindricalStore.heightMm+rise-n.point[2],nonnegativeOuterTopGravityHeadComparisonMm:Math.max(0,i.cylindricalStore.heightMm+rise-n.point[2]),
     sourceStoreAndColdTreePotentiallyConnectedWithAllCutsOpen:true,actualValveNonreturnAirAdmissionAndPressureStateKnown:false,actualMaximumReleaseLmin:null,actualDrainableInventoryLitres:null})),
    interpretation:'Geometric outer-top-to-cut comparisons only. Zero positive gravity head at a high cut does not exclude pressure release, siphon or upper-network backfeed. Actual pressure, air paths and liquid inventory must be solved at each real station.',
    pressureAndGravityCombinedAtActualStation:false,allFaultLocationsCovered:false,
@@ -165,7 +166,7 @@ export function inletSplitPlantBranch(i:SplitPlantBranchInputs){
    ...(selfChecks.some(v=>v.reserveMm<0)?['SPLIT_PLANT_BRANCH/self-fitting-territory']:[]),...(arms.some(v=>v.reserveMm<0)?['SPLIT_PLANT_BRANCH/ordinary-arm']:[]),
    ...(dropStoreReserveMm<25?['SPLIT_PLANT_BRANCH/full-backbone-drop-cylinder-clearance']:[]),...(ingressBoreAfterTwoIndependentSettingsMm<0?['SPLIT_PLANT_BRANCH/service-infill-port-pipe-position-envelope']:[]),...(ingressInfillSideReserveMm<0?['SPLIT_PLANT_BRANCH/service-infill-port-side-land']:[]),...(ingressCargoJambReserveMm<0?['SPLIT_PLANT_BRANCH/entry-cargo-jamb']:[]),
    'SPLIT_PLANT_BRANCH/east-service-infill-frame-weather-frost-unsupported','SPLIT_PLANT_BRANCH/tee-and-fixed-receivers-unsupported','SPLIT_PLANT_BRANCH/stored-backfeed-containment-relief-unsupported','SPLIT_PLANT_BRANCH/material-product-renewal-unsupported','SPLIT_PLANT_BRANCH/terminal-wrapper-and-fitting-stock-unsupported']
- return{schema:'had-split-plant-branch-result/1',id:q.id,state:'explicit-connected-branch-development-with-rejected-interfaces',choice:q,
+ return{...(i.floorRiseMm!==undefined?{floorRiseMm:rise}:{}),schema:'had-split-plant-branch-result/1',id:q.id,state:'explicit-connected-branch-development-with-rejected-interfaces',choice:q,
   sourceBindingDigest:i.sourceBindingDigest,resolvedInput:i,fittedFrame:i.fittedFrame,sourceIndependent:true,entryKind:'south-service-infill-within-existing-raw-arch',sourceEntryInfillYMm:i.sourceEntryInfillYMm,newMasonryHoleCredited:false,actualInfillFrameAndIndependentSupportQualified:false,noUtilityColdHeaderOrPlantTransferThroughUtility:true,roomPlanMm:i.roomPlanMm,ceilingMm:i.ceilingMm,groundFflMm:i.groundFflMm,obstacles:i.obstacles,goods:i.goods,referenceValve:i.valve,ordinaryShoulderMm:i.ordinaryShoulderMm,connections:connections.map(([id,a])=>({id,pointMm:a})),paths:rows,
   lengthInterpretation:'Full virtual-corner polyline stock reference, not manufactured tube cuts; formed paths and their chord error are returned separately. Real fittings/tee and full installed stock remain unqualified.',massInterpretation:'Separate adverse pipe tolerance/density reference; terminal contains copper/water only. Terminal wrapper, fittings, tee, receiver, capture and actual materials remain unqualified; this is not complete installed mass.',knownValveKg:i.valve.knownKg,referenceStraightStockKg:rows.flatMap(r=>r.stock).reduce((n,s)=>n+s.referenceCopperKg+s.referenceWaterKg+s.referenceJacketKg+s.referenceInsulationKg,0),
   incidentStations,pressureNodalWrenches,pressureNetworkEquilibriumResidualN_Nm,referenceGravityResultantWrenchN_Nm,nominalValveGravity:{referenceOriginMm:valveOrigin,wrenchN_Nm:nominalValveGravityWrenchN_Nm,actualFactoryCentroidKnown:false},
@@ -211,24 +212,24 @@ export function drawInletSplitPlantBranch(r:ReturnType<typeof inletSplitPlantBra
 
 /** One fitted frame inside the unchanged masonry arch. Clear width is effective
  * at90degrees INCLUDING the parked44mm leaf, not merely a jamb-axis distance. */
-export function derivePlantFittedFrame(i:{choice:import('./inlet-split-plant-room-choice.js').PlantFittedFrameChoice;rawOpeningYMm:readonly[number,number];rawSpringMm:number;rawHeadMm:number;groundFflMm:number;openingShiftMm:number|null;minimumCargoMm:readonly[number,number];wallInnerXMm:number;wallOuterXMm:number;settingEachMm:number}){
- if(!i||!keys(i,['choice','rawOpeningYMm','rawSpringMm','rawHeadMm','groundFflMm','openingShiftMm','minimumCargoMm','wallInnerXMm','wallOuterXMm','settingEachMm']))throw Error('Unsupported fitted Plant frame inputs')
- const c=admitPlantFittedFrameChoice(i.choice),r=i.rawOpeningYMm,min=i.minimumCargoMm
- if(!c||!tuple(r,2)||!tuple(min,2)||![i.rawSpringMm,i.rawHeadMm,i.groundFflMm,i.wallInnerXMm,i.wallOuterXMm,i.settingEachMm].every(Number.isFinite)||(i.openingShiftMm!==null&&(!Number.isFinite(i.openingShiftMm)||i.openingShiftMm!==i.groundFflMm))||r[1]<=r[0]||i.wallOuterXMm<=i.wallInnerXMm||c.clearWidthMm<min[0]||c.clearHeightMm<min[1]||c.clearWidthMm>=r[1]-r[0]||i.settingEachMm<10)throw Error('Unsupported fitted Plant frame and actual arch')
+export function derivePlantFittedFrame(i:{floorRiseMm?:number;choice:import('./inlet-split-plant-room-choice.js').PlantFittedFrameChoice;rawOpeningYMm:readonly[number,number];rawSpringMm:number;rawHeadMm:number;groundFflMm:number;openingShiftMm:number|null;minimumCargoMm:readonly[number,number];wallInnerXMm:number;wallOuterXMm:number;settingEachMm:number}){
+ if(!i||!keys(i,['choice','rawOpeningYMm','rawSpringMm','rawHeadMm','groundFflMm','openingShiftMm','minimumCargoMm','wallInnerXMm','wallOuterXMm','settingEachMm',...(Object.hasOwn(i,'floorRiseMm')?['floorRiseMm']:[])]))throw Error('Unsupported fitted Plant frame inputs')
+ const c=admitPlantFittedFrameChoice(i.choice),r=i.rawOpeningYMm,min=i.minimumCargoMm,rise=i.floorRiseMm??0
+ if(!Number.isFinite(rise)||rise<0||rise>150||!c||!tuple(r,2)||!tuple(min,2)||![i.rawSpringMm,i.rawHeadMm,i.groundFflMm,i.wallInnerXMm,i.wallOuterXMm,i.settingEachMm].every(Number.isFinite)||(i.openingShiftMm!==null&&(!Number.isFinite(i.openingShiftMm)||i.openingShiftMm!==i.groundFflMm))||r[1]<=r[0]||i.wallOuterXMm<=i.wallInnerXMm||c.clearWidthMm<min[0]||c.clearHeightMm<min[1]||c.clearWidthMm>=r[1]-r[0]||i.settingEachMm<10)throw Error('Unsupported fitted Plant frame and actual arch')
  const centre=(r[0]+r[1])/2,clearYMm=[centre-c.clearWidthMm/2,centre+c.clearWidthMm/2] as const,infillsYMm=[[r[0],clearYMm[0]],[clearYMm[1],r[1]]] as const,
   sourceAxisYMm=(infillsYMm[0][0]+infillsYMm[0][1])/2,leafHalf=c.leafThicknessMm/2,
-  hingeMm=[i.wallOuterXMm+leafHalf,clearYMm[1]+leafHalf,0] as const,leafSpanMm=c.clearWidthMm+leafHalf,
+  hingeMm=[i.wallOuterXMm+leafHalf,clearYMm[1]+leafHalf,rise] as const,leafSpanMm=c.clearWidthMm+leafHalf,
   // North hinge lies half a leaf inside its own infill. Closed leaf is wholly
   // outboard of the wall face; parked inboard skin equals effective clear north.
   sourceBoreSideReserveMm=Math.min(sourceAxisYMm-r[0],clearYMm[0]-sourceAxisYMm)-c.sourceOpeningDiameterMm/2-i.settingEachMm,
-  sourceFixedHeaderToSpringReserveMm=i.rawSpringMm-i.groundFflMm-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm,
-  sourceFixedHeaderToHeadReserveMm=i.rawHeadMm-i.groundFflMm-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm,
-  headerToRawSpringReserveMm=i.openingShiftMm===null?null:i.rawSpringMm+i.openingShiftMm-i.groundFflMm-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm,
-  headerToRawHeadReserveMm=i.openingShiftMm===null?null:i.rawHeadMm+i.openingShiftMm-i.groundFflMm-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm
+  sourceFixedHeaderToSpringReserveMm=i.rawSpringMm-i.groundFflMm-rise-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm,
+  sourceFixedHeaderToHeadReserveMm=i.rawHeadMm-i.groundFflMm-rise-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm,
+  headerToRawSpringReserveMm=i.openingShiftMm===null?null:i.rawSpringMm+i.openingShiftMm-i.groundFflMm-rise-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm,
+  headerToRawHeadReserveMm=i.openingShiftMm===null?null:i.rawHeadMm+i.openingShiftMm-i.groundFflMm-rise-c.clearHeightMm-c.headerDepthMm-2*i.settingEachMm
  return{schema:'had-plant-fitted-frame-result/1',id:c.id,resolvedInput:structuredClone({...i,choice:c}),choice:c,rawOpeningYMm:r,rawSpringMm:i.rawSpringMm,rawHeadMm:i.rawHeadMm,minimumCargoMm:min,effectiveClearYMm:clearYMm,effectiveOpenWidthMm:c.clearWidthMm,clearHeightMm:c.clearHeightMm,
   infills:infillsYMm.map((v,k)=>({id:c.id+(k?'/north-infill':'/south-infill'),intervalYMm:v,widthMm:v[1]-v[0],fullReservedBoxMm:[i.wallInnerXMm,v[0],i.openingShiftMm??0,i.wallOuterXMm-i.wallInnerXMm,v[1]-v[0],i.rawSpringMm] as Box})),
   sourceAxisYMm,sourceOpeningDiameterMm:c.sourceOpeningDiameterMm,sourceBoreSideReserveMm,headerToRawSpringReserveMm,headerToRawHeadReserveMm,sourceFixedCountercase:{headerToSpringReserveMm:sourceFixedHeaderToSpringReserveMm,headerToHeadReserveMm:sourceFixedHeaderToHeadReserveMm},
-  verticalDatum:{rawArchDatum:'source-groundFFL0',openingTranslationMm:i.openingShiftMm,joinedProfileGeometryOnly:true,frameBottomAbsoluteMm:i.groundFflMm,frameClearHeadAbsoluteMm:i.groundFflMm+c.clearHeightMm,frameHeaderTopAbsoluteMm:i.groundFflMm+c.clearHeightMm+c.headerDepthMm,rawSpringAbsoluteMm:i.rawSpringMm,rawHeadAbsoluteMm:i.rawHeadMm,twoIndependentSettingsMm:2*i.settingEachMm},hingeMm,leafSpanMm,leafHalfMm:leafHalf,parkedInboardFaceYMm:hingeMm[1]-leafHalf,
+  verticalDatum:{rawArchDatum:'source-groundFFL0',openingTranslationMm:i.openingShiftMm,joinedProfileGeometryOnly:true,frameBottomAbsoluteMm:i.groundFflMm+rise,frameClearHeadAbsoluteMm:i.groundFflMm+rise+c.clearHeightMm,frameHeaderTopAbsoluteMm:i.groundFflMm+rise+c.clearHeightMm+c.headerDepthMm,rawSpringAbsoluteMm:i.rawSpringMm,rawHeadAbsoluteMm:i.rawHeadMm,twoIndependentSettingsMm:2*i.settingEachMm},hingeMm,leafSpanMm,leafHalfMm:leafHalf,parkedInboardFaceYMm:hingeMm[1]-leafHalf,
   exactNorthLeafSweptMinimumYMm:hingeMm[1]-Math.hypot(leafSpanMm,leafHalf),hingeOutboardOffsetMm:leafHalf,hingeIntoNorthInfillMm:leafHalf,
   frameLeafInterfaces:'Purpose-designed north hinge; closed leaf skin touches outer wall face, parked leaf skin defines effective clear north. Matched rebate/seals/hardware and actual hinge receivers are unqualified.',
   newMasonryOpening:false,selected:false,actualFrameMaterialThermalWeatherFireSupportAndHardwareQualified:false,ordinarySourceFaultResponseCredited:false}
