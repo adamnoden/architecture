@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:30.008Z",
-  "heartbeatAt": "2026-11-26T14:32:17.000Z",
-  "expiresAt": "2026-11-26T15:17:17.000Z",
+  "heartbeatAt": "2026-11-26T14:51:40.000Z",
+  "expiresAt": "2026-11-26T15:36:40.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
@@ -36,8 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "1629b198 joins actual finite200/140 browser PASS and closedcircuit/136min10 proof45833413952. NewCIactive. ZeroW0 PASS9e62; distributed96 regenerated45838637856; rearW31 invalid artificial Gauss nodes being removed.",
-    "next": "Finish b198 fullCI/native96 and freshpreflight; merge. Regenerate current native receipts; prove real rear trace and zeroEA saved case.",
-    "blocker": "All4 finite joints, routedRC200 resistance, rearwind and completehouse remain open. Executor unavailable; hosted producers active."
+    "evidence": "1629b198 full96 PASS45838742766 plus bothADEmodes/publication. RearzeroW31 ordinarypoint solve PASS86508d62, raw retained; adverse messagefix replaypending. Currentnative26receipt regeneration advances floor11 and14wetcaptures.",
+    "next": "Finish b198 health+fresh3leasepreflight; merge. Finish current-source migration and rear96, implement separatebearing/continuouscorecandidate.",
+    "blocker": "No4joint/strength/houseacceptance. Newkey/roomreplans and completecurrentnativebindings remainopen; hosted execution only."
   }
 }
