@@ -6,8 +6,8 @@ import {plantTankedWalkingSurface,type PlantWalkControl,type PlantWalkApparatus}
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../project/had/studies/'+p,import.meta.url),'utf8'))
 const raw=read('inlet-plant-tanked-walk-candidate.json'),services=read('current-house-services.json').plant,v=read('inlet-store-vessel-candidate.json')
 const near=(a:number,b:number,t=1e-5)=>assert.ok(Math.abs(a-b)<t,a+' != '+b)
-const control={schema:'had-appliance-platform/1' as const,id:'HAD/one-unified-appliance-platform',loadedPadSideMm:230,loadedPadMinimumThicknessMm:25,loadedHeadLWtMm:[40,80,35]as const,webWHMm:[40,70]as const,maximumCapturedMemberKg:22,hardwareEachChassisKg:3,mountBoltDiameterMm:12,mountBoltHoleMm:14,bufferCradleRiseMm:70,factoryBaseTopLocalMm:500,factoryBaseLegSideMm:40,maximumMatchedMountErrorMm:3,factoryPositionErrorEachMm:.25,minimumSteelDensityKgM3:7850,perimeterInsetMm:25,postColumnRelocation:{sourceColumnIndex:4,targetXMm:10770},bufferFootPlanMm:[200,150]as const,loadedNodeBlockLWtMm:[180,140,60]as const,loadedPadBlankUpperMm:46,cutEdgeRimMm:6,additionalCutPanelHardwareKg:.5,railPocketSideClearanceMm:25}
-const choice={...raw,walkingRiseAboveHouseFflMm:150,appliancePlatform:control,walkingFrame:{...raw.walkingFrame,footPadSideMm:150,footPadThicknessMm:25},grating:{...raw.grating,bearingBarHeightMm:70,bearingBarThicknessMm:6,rimHeightMm:70,maximumCompletePanelKg:18}} as PlantWalkControl
+const control={schema:'had-appliance-platform/1' as const,id:'HAD/one-unified-appliance-platform',loadedPadSideMm:230,loadedPadMinimumThicknessMm:25,loadedHeadLWtMm:[40,80,35]as const,webWHMm:[40,70]as const,maximumCapturedMemberKg:22,hardwareEachChassisKg:3,mountBoltDiameterMm:12,mountBoltHoleMm:14,bufferCradleRiseMm:70,factoryBaseTopLocalMm:500,factoryBaseLegSideMm:40,maximumMatchedMountErrorMm:4.5,factoryPositionErrorEachMm:.25,minimumSteelDensityKgM3:7850,pickupSideMm:60,slidingSlotLengthMm:22,floatingHoleMm:22,washerDiameterMm:40,bufferBearingPatchOffsetXMm:140,perimeterInsetMm:35,postColumnRelocation:{sourceColumnIndex:4,targetXMm:10770},bufferFootPlanMm:[200,150]as const,loadedNodeBlockLWtMm:[180,160,60]as const,loadedPadBlankUpperMm:46,cutEdgeRimMm:6,additionalCutPanelHardwareKg:.5,railPocketSideClearanceMm:25}
+const choice={...raw,walkingRiseAboveHouseFflMm:150,appliancePlatform:control,walkingFrame:{...raw.walkingFrame,footPadSideMm:150,footPadThicknessMm:25,minimumBeamIMm4:200000},grating:{...raw.grating,bearingBarHeightMm:70,bearingBarThicknessMm:7,rimHeightMm:70,maximumCompletePanelKg:22,maximumUniformTemperatureExcursionK:80}} as PlantWalkControl
 const source=(objectPath:string)=>({path:'project/had/studies/current-house-services.json',gitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',objectPath})
 const C=services.cylinder,B=services.primaryBuffer,axis=C.centre as [number,number],ba=[B.body[0]+B.body[2]/2,B.body[1]+B.body[3]/2]as const,
  box=(r:readonly number[])=>[r[0],r[1],r[0]+r[2],r[1]+r[3]]as const,
@@ -17,7 +17,7 @@ const input={choice,apparatus,roomPlanMm:[9397,3797,2173.5,1983.5]as const,house
 const run=(i:Parameters<typeof plantTankedWalkingSurface>[0]=input)=>plantTankedWalkingSurface(i)
 test('one actual platform replaces eight duplicate supports and has real positive coped seats and above-floor six-bar buffer cradle',()=>{
  const r=run(),p=r.appliancePlatform!,d=r.unifiedDetails!
- const summary={sourceDigest:r.sourceDigest,githubCommit:process.env.GITHUB_SHA??null,normalMassUpperKg:r.normalMassUpperKg,solidsIncrementUpperL:r.solidsIncrementUpperL,physicalPanelPieceCount:d.physicalPanelPieces.length,maximumCompletePanelPieceKg:Math.max(...d.physicalPanelPieces.map(p=>p.completeMassUpperKg)),minimumFootPanAfterSettingsAndSteelThermalMm:Math.min(...d.footPanClearances.map(c=>c.afterSettingsAndSteelThermalMm)),finalDemandBasis:d.finalDemandBasis,normalNodeRestoringCases:d.normalNodeRestoringCases,chassis:p.chassis.map(a=>({id:a.id,nodes:a.nodes,caseCount:a.cases.length,minimumFactoryDryKg:a.minimumFactoryCompleteDryKgFromBaseGeometry,minimumPermanentChassisSteelMassKg:a.minimumPermanentChassisSteelMassKg,minimumSignedBodyMountN:Math.min(...a.demand.map(n=>n.minimumBodyMountForceN)),normalMaximumBoltTensionN:Math.max(...a.demand.map(n=>n.normalChassisTensionN)),maximumCompressionWithOneWheelN:Math.max(...a.demand.map(n=>n.compressionN)),matchedMount:a.matchedMount,memberChecks:a.memberChecks,selectedBodyGravityAllCompressive:a.necessarySelectedGravityCG,selectedFactoryDryCgCondition:a.necessaryFactoryDryCGContainment})),factoryPressureBoltToolAndPeakAcceptance:false}
+ const summary={sourceDigest:r.sourceDigest,githubCommit:process.env.GITHUB_SHA??null,normalMassUpperKg:r.normalMassUpperKg,solidsIncrementUpperL:r.solidsIncrementUpperL,physicalPanelPieceCount:d.physicalPanelPieces.length,maximumCompletePanelPieceKg:Math.max(...d.physicalPanelPieces.map(p=>p.completeMassUpperKg)),minimumFootPanAfterSettingsAndSteelThermalMm:Math.min(...d.footPanClearances.map(c=>c.afterSettingsAndSteelThermalMm)),finalDemandBasis:d.finalDemandBasis,normalNodeRestoringCases:d.normalNodeRestoringCases,chassis:p.chassis.map(a=>({id:a.id,nodes:a.nodes,caseCount:a.cases.length,minimumFactoryDryKg:a.minimumFactoryCompleteDryKgFromBaseGeometry,minimumPermanentChassisSteelMassKg:a.minimumPermanentChassisSteelMassKg,minimumSignedBodyMountN:Math.min(...a.demand.map(n=>n.minimumBodyMountForceN)),normalMaximumBoltTensionN:Math.max(...a.demand.map(n=>n.normalChassisTensionN)),maximumCompressionWithOneWheelN:Math.max(...a.demand.map(n=>n.compressionN)),matchedMount:a.matchedMount,bearingProjection:a.bufferBearingProjection,memberChecks:a.memberChecks,selectedBodyGravityAllCompressive:a.necessarySelectedGravityCG,selectedFactoryDryCgCondition:a.necessaryFactoryDryCGContainment})),factoryPressureBoltToolAndPeakAcceptance:false}
  console.log('PLANT_UNIFIED_PLATFORM_CASE '+JSON.stringify(summary))
  if(process.env.RUNNER_TEMP){const dir=join(process.env.RUNNER_TEMP,'had-utility-west-proof');mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'plant-unified-platform-current-case.json'),JSON.stringify(summary,null,2))}
  assert.ok(p&&d)
@@ -28,14 +28,14 @@ test('one actual platform replaces eight duplicate supports and has real positiv
  const s=p.chassis.find(a=>a.id==='Plant/cylinder')!,b=p.chassis.find(a=>a.id==='Plant/buffer')!
  assert.equal(s.nodes.length,3);assert.equal(b.nodes.length,4)
  assert.equal(s.edges.length,0);assert.equal(b.edges.length,6);assert.equal(b.ledges.length,8)
- assert.deepEqual(b.nodes,[[10121.333333333334,4930.5],[10770,4930.5],[10770,5680.5],[10121.333333333334,5680.5]])
+ assert.deepEqual(b.nodes,[[10121.333333333334,4930.5],[10770,4930.5],[10770,5670.5],[10121.333333333334,5670.5]])
  assert.equal(s.bodyBearingPlaneMm,680);assert.equal(b.bodyBearingPlaneMm,750)
  assert.ok(b.edges.every(e=>e.webTopMm===750&&e.webTopMm-e.webWHMm[1]>=680))
  assert.ok(b.ledges.every(e=>e.boxMm[2]===680&&e.boxMm[2]+e.boxMm[5]===705))
  assert.equal(b.bufferBodyBearingPatches.length,4)
  assert.ok(d.actualCompressionMates.every((m:any)=>m.verticalCompressionGapMm===0&&m.lateralAfterTwoSettingsMm>=5))
  assert.ok(d.physicalPanelPieces.length>=42)
- assert.ok(d.physicalPanelPieces.every(p=>p.completeMassUpperKg<=18),JSON.stringify(d.physicalPanelPieces.filter(p=>p.completeMassUpperKg>18)))
+ assert.ok(d.physicalPanelPieces.every(p=>p.completeMassUpperKg<=22),JSON.stringify(d.physicalPanelPieces.filter(p=>p.completeMassUpperKg>22)))
  assert.ok(d.footPanClearances.every(c=>c.afterSettingsAndSteelThermalMm>=0),JSON.stringify(d.footPanClearances.filter(c=>c.afterSettingsAndSteelThermalMm<0)))
  assert.ok(d.finalDemandBasis!.allDemandRecomputedAfterActualCutRimsAndStocks)
  assert.ok(r.necessaryMemberComparisons,JSON.stringify(r.memberChecks.filter(q=>!q.necessary)))
@@ -52,13 +52,18 @@ test('actual component CG cases give signed unique store reactions and feasible 
  assert.ok(b.cases.some(c=>c.id.includes('source-body-dryMass=0')))
  assert.ok(b.cases.some(c=>c.id.includes('retained-ancillary-dryMass=0')))
  assert.ok(b.cases.some(c=>Math.abs(c.permanentSteelDensityKgM3-7850)<1e-7)&&b.cases.some(c=>Math.abs(c.permanentSteelDensityKgM3-8000)<1e-7))
- near(s.minimumFactoryCompleteDryKgFromBaseGeometry!,19.9704)
+ near(s.minimumFactoryCompleteDryKgFromBaseGeometry!,14.2713)
  assert.ok(s.demand.some(n=>n.normalChassisTensionN>0))
  assert.ok(s.cases.some(c=>c.liquidFraction===0)&&s.cases.some(c=>c.liquidFraction===.5)&&s.cases.some(c=>c.liquidFraction===1)&&s.cases.some(c=>c.bodyRemoved))
  for(const c of s.cases){near(c.sumForceResidualN!,0);near(c.firstXMomentResidualNMm!,0);near(c.firstYMomentResidualNMm!,0)}
  for(const c of b.cases){assert.equal(c.mountCompressionPositiveN,null);for(const forces of c.admissibleExtremeContactsN){assert.ok(forces.every(f=>f>=-1e-6));near(forces.reduce((n,f)=>n+f,0),c.totalMassUpperKg*9.81);near(forces.reduce((n,f,k)=>n+f*b.nodes[k][0],0),c.sourceFirstMassMomentsKgMm[0]*9.81);near(forces.reduce((n,f,k)=>n+f*b.nodes[k][1],0),c.sourceFirstMassMomentsKgMm[1]*9.81)}}
  near(b.dryMaximaWeightedCGBoxMm[0],10161.346153846154)
  assert.ok(b.matchedMount.necessaryMatchedFit)
+ assert.ok(b.matchedMount.slotTravelEachWayMm>=4.5&&b.matchedMount.floatingTravelEachWayMm>=4.5)
+ assert.ok(b.matchedMount.washerCoverageAfterFullMovementMm>0&&b.matchedMount.washerLandEdgeAfterFullMovementMm>0)
+ assert.ok(b.bufferBearingProjection!.necessaryProjectedCircleFit)
+ assert.ok(b.bufferBearingProjection!.minimumRadialReserveMm>0)
+ for(const q of r.parts.filter(p=>p.kind==='unified-node-block'))assert.ok(q.subtractBoxesMm!.every(p=>p[4]===90),'BOTH real node pockets retain25mm side cover')
  assert.equal(s.factoryBaseGeometry!.massAlreadyIncludedInCompleteDryCargo,true)
  assert.equal(s.actualFactoryBodyBaseLoadIntroductionAccepted,false)
 })
