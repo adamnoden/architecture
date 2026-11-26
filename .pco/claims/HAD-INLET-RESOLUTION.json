@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T07:53:53.232Z",
-  "expiresAt": "2026-11-26T08:38:53.232Z",
+  "heartbeatAt": "2026-11-26T08:11:31.181Z",
+  "expiresAt": "2026-11-26T09:41:31.181Z",
   "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
@@ -36,7 +36,7 @@
   },
   "pr": 1627,
   "checkpoint": {
-    "evidence": "PR1627 exact head0d20523d numerical proofs passed; hosted validation stopped at released predecessor leases.",
-    "next": "Rebind both current lease declarations, rerun exact-head health and publication preflight; merge only on success."
+    "evidence": "Recovered1627 exacthead0d20523d: full health running after native and publication success. Separate root water continuation recovers actual straight open-chute/roof profiles; pure and two-room saved geometry5/5 tests pass. Current room floor gravity native4/4 passes603.6s.",
+    "next": "Fresh dualpreflight and merge1627 when earned; publish regenerated separate-room water/ground/lighting continuation with exact-head native/browser proof."
   }
 }
