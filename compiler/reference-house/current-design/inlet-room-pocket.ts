@@ -120,7 +120,7 @@ export function inletRoomPocket(input:Parameters<typeof deriveRoomPocket>[0]){
  const {plantCompression:_context,...referenceInput}=input,reference=deriveRoomPocket(referenceInput)
  if(reference.state!=='local-room-pocket-reservation'||!reference.local)throw Error('Actual legacy floor replacement reference required')
  const r=actual.local.bodyMinMaxMm,planGap=(a:Rectangle,b:Rectangle)=>{const dx=Math.max(a[0]-b[2],b[0]-a[2]),dy=Math.max(a[1]-b[3],b[1]-a[3]);return dx>0||dy>0?Math.hypot(Math.max(0,dx),Math.max(0,dy)):Math.max(dx,dy)},
-  coreChecks=context.sourceCorePlans.map(c=>({id:c.id,rectangleMm:c.rectangleMm,nominalGapMm:planGap(r,c.rectangleMm),afterTwoSettingsMm:planGap(r,c.rectangleMm)-2*context.settingEachMm})),
+  coreChecks=context.sourceCorePlans.map(c=>({id:c.id,rectangleMm:c.rectangleMm,nominalGapMm:planGap(r,c.rectangleMm),afterTwoSettingsMm:planGap(expandPlan(r,context.settingEachMm),expandPlan(c.rectangleMm,context.settingEachMm))})),
   resultant=(rows:typeof actual.local.loadOrigins)=>rows.reduce((sum,row)=>{const f=row.wrenchKN_KNm,o=row.originMm,local=[f.Fx,f.Fy,f.Fz,f.Mx+o[1]/1000*f.Fz-o[2]/1000*f.Fy,f.My+o[2]/1000*f.Fx-o[0]/1000*f.Fz,f.Mz+o[0]/1000*f.Fy-o[1]/1000*f.Fx];return sum.map((v,k)=>v+local[k])},[0,0,0,0,0,0]),
   oldW=resultant(reference.local.loadOrigins),newW=resultant(actual.local.loadOrigins)
  return{...actual,plantCompression:{schema:'had-plant-pan-compression-result/1',resolvedInput:input,caseDigest:sha256SemanticFingerprint(input),sourceCoreChecks:coreChecks,necessaryCoreXYSeparation:coreChecks.every(c=>c.afterTwoSettingsMm>=0),actualSourceProfileZAndCoreInterfaceAccepted:false,

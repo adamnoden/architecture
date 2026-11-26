@@ -13,7 +13,7 @@ const cells=(offset=0)=>{
  return[face('pan/west',9397,10500,0),face('pan/east',10500,11570.5,5)]
 }
 const parts=()=>[{id:'Plant/foot/0/0',kind:'solid-foot-pad',boxMm:[9397,3797,312.8,120,120,8]as const,metalVolumeMm3:115200,displacementOuterBoxRequired:true,installedAcceptance:false as const},{id:'Plant/post/0/0',kind:'RHS-post-bound',boxMm:[9442,3842,320.8,30,30,259.2]as const,metalVolumeMm3:324*259.2,displacementOuterBoxRequired:true,installedAcceptance:false as const},{id:'Plant/bridge-foot/exterior',kind:'bridge-pad',boxMm:[12070,3840,312.8,120,120,8]as const,metalVolumeMm3:115200,displacementOuterBoxRequired:true,installedAcceptance:false as const}]
-const context=()=>({floorCase:floor(),panCells:cells(),panMetalMm:4,panDensityKgM3:8960,design:{minimumMachinedFootThicknessMm:8,stockThicknessMm:180,compressiveWorkingFactor:3,minimumEffectiveContactFraction:.95}})
+const context=()=>({floorCase:floor(),panCells:cells(),panInternalStepFaces:[{id:'pan/real-step',normal:[1,0,0],cornersMm:[[10500,3797,326.03],[10500,5780.5,335.9475],[10500,5780.5,340.9475],[10500,3797,331.03]]}],panMetalMm:4,panDensityKgM3:8960,design:{minimumMachinedFootThicknessMm:8,stockThicknessMm:180,compressiveWorkingFactor:3,minimumEffectiveContactFraction:.95}})
 const run=(c=context())=>{const p=parts();return{result:plantMatchedPanCompression({context:c,roomPlanMm:room,parts:p,maximumWaterMm:660,footDesignN:7000,steelDensityKgM3:8000}),parts:p}}
 const near=(a:number,b:number)=>assert.ok(Math.abs(a-b)<1e-7,a+' != '+b)
 test('optional floor physically replaces the inset RC and uniform upper stack, preserving omitted legacy shapes',()=>{
@@ -52,6 +52,11 @@ test('same-pan machined feet have exact wedge volume and changed post lengths, w
  assert.ok(r.necessaryStockEnvelope)
  assert.ok(r.tiles.every(t=>t.minimumInfillMm>=150&&t.stockBlankMassUpperKg<9))
  assert.ok(r.tiles.some(t=>t.facets.length>1))
+ assert.equal(r.stepNotches.length,1)
+ assert.deepEqual(r.stepNotches[0].planMinMaxMm,[10500,3797,10504,5780.5])
+ assert.ok(r.tiles.some(t=>t.subtractNormalSheetPrismIds.length>0))
+ assert.equal(r.bedVolumeM3IsUnnotchedConservativeUpper,true)
+ assert.equal(r.actualNetMachinedVolumeM3,null)
  near(r.bedFacets.reduce((n,f)=>n+f.massUpperKg,0),r.normalMassUpperKg)
  near(r.normalOrigins.reduce((n,f)=>n+f.wrenchKN_KNm.Fz,0),-r.normalMassUpperKg*9.81/1000)
  assert.equal(r.oldUniformGlassPhysicalGeometryRetired,true)
@@ -75,4 +80,9 @@ test('mixed floor output, old inset body, duplicate pan facets and missing RC co
  const bad=inletRoomPocket(hit)
  assert.ok('plantCompression'in bad&&!bad.plantCompression!.necessaryCoreXYSeparation)
  assert.equal(bad.local!.constructionAdmitted,false)
+ const diagonal=inletRoomPocket({...floorInput,plantCompression:{...floorInput.plantCompression,sourceCorePlans:[{id:'diagonal-corner',rectangleMm:[11585.5,5795.5,11600,5810]as const}]}})
+ assert.ok('plantCompression'in diagonal)
+ assert.ok(diagonal.plantCompression!.sourceCoreChecks[0].nominalGapMm>20)
+ assert.equal(diagonal.plantCompression!.necessaryCoreXYSeparation,false)
+ assert.ok(diagonal.plantCompression!.sourceCoreChecks[0].afterTwoSettingsMm<0)
 })

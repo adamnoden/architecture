@@ -24,7 +24,7 @@ export function comparePlantRawArchReservation(i:{rawSpringMm:number;rawHeadMm:n
   necessaryJoinedProfileBelowSpringReservation:profileComparison?profileComparison.belowSpringReserveMm>=0:null,curvedCrownNotRectangularClearance:true,actualFittedClearanceQualified:false,minimumCargoIsActualFrame:false,
   diagnostics:profileComparison?(profileComparison.belowSpringReserveMm<0?['SPLIT_PLANT_ROOM/minimum-cargo-conflicts-joined-profile-arch']:[]):i.groundFflMm!==0?['SPLIT_PLANT_ROOM/raised-ground-arch-profile-not-joined']:[]}
 }
-export type SplitPlantRoomInput={choice:SplitPlantRoomChoice;branch:ReturnType<typeof inletSplitPlantBranch>;
+export type SplitPlantRoomInput={plantCompression?:Parameters<typeof inletRoomPocket>[0]['plantCompression'];choice:SplitPlantRoomChoice;branch:ReturnType<typeof inletSplitPlantBranch>;
  bridgeRenewal?:{mode:'external-quarter-turn';turnCentreXYMm:readonly[number,number];workDeckPlanMm:readonly[number,number,number,number]};bridgeRailCentresYMm?:readonly[number,number,number];bridgeRailSectionWHtMm?:readonly[number,number,number];sourceMaximumPlantLmin:number;sourceMaximumAbsoluteBar:number;exteriorPlanObstacles:readonly{id:string;planMm:readonly[number,number,number,number]}[];rawArchVerticalInput?:Parameters<typeof comparePlantRawArchReservation>[0];bridgeHomeObstacles:readonly{id:string;boxMm:readonly[number,number,number,number,number,number]}[];rawEastOpeningYMm:Pair;cargoClearYMm:Pair;eastOuterXMm:number;
  ground?:{ffl:number;mineralCourse:Pair;dryRC:Pair;glass:Pair;accessibleDistribution:Pair;finish:Pair;coldGridTop:number;exteriorGrade:number;rcDensityKNm3:number;mineralDensityKNm3:number};
  grid:Parameters<typeof inletRoomPocket>[0]['grid'];threshold:{plateWidthYMm:Pair;outerEdgeXMm:number;wheelActionIncludingDynamicN:number;wheelBandMm:number;elasticModulusMPa:number;steelDensityKgM3:number;proofComparisonMPa:number};
@@ -99,7 +99,7 @@ export function inletSplitPlantRoom(i:SplitPlantRoomInput){
  const g=i.ground
  const groundKeys=['ffl','mineralCourse','dryRC','glass','accessibleDistribution','finish','coldGridTop','exteriorGrade','rcDensityKNm3','mineralDensityKNm3'].sort()
  if(Object.keys(g).sort().join(',')!==groundKeys.join(',')||!Object.values(g).flat().every(Number.isFinite)||g.ffl!==i.branch.groundFflMm||g.finish[1]!==g.ffl||g.finish[0]!==g.accessibleDistribution[1])throw Error('Unsupported mismatched Plant ground datum')
- const pocket=inletRoomPocket({levels:g,roomPlanMm:i.branch.roomPlanMm,depthMm:c.localPocketDepthMm,isolationGapMm:c.isolationGapMm,grid:i.grid,rcDensityKNm3:g.rcDensityKNm3,mineralDensityKNm3:g.mineralDensityKNm3,roomId:'plant'}),
+ const pocket=inletRoomPocket({...(i.plantCompression?{plantCompression:i.plantCompression}:{}),levels:g,roomPlanMm:i.branch.roomPlanMm,depthMm:c.localPocketDepthMm,isolationGapMm:c.isolationGapMm,grid:i.grid,rcDensityKNm3:g.rcDensityKNm3,mineralDensityKNm3:g.mineralDensityKNm3,roomId:'plant'}),
   distribution=pocket.levels.accessibleDistribution,invert=distribution[0]+c.invertAboveDistributionMm,wallInvert=invert-c.insideRunMm/c.outfallSlopeRatio,terminalInvert=invert-length/c.outfallSlopeRatio,
   receiver=(rise:number)=>{const crest=g.exteriorGrade+c.receiverCrestAboveGradeMm+32+rise,head=1000*(i.sourceMaximumPlantLmin/60000/(1.7*c.receiverWidthMm/1000))**(2/3),water=crest+head;
    return{crestMm:crest,waterMm:water,freeDropReserveMm:terminalInvert-water-25-c.settingMm,submergedTerminal:water>=terminalInvert,coefficientComparison:1.7,coefficientAndSiteQualified:false}},

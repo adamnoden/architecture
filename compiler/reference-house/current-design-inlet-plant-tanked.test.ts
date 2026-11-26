@@ -44,7 +44,7 @@ test('complete source-design potable inventory uses external tubes/full fitting 
  assert.throws(()=>plantPotableInventory(mat,tooLarge),/exceeds source work territory/)
 })
 
-const roomRequest=()=>({choice,plant:p,vesselChoice:read('project/had/studies/inlet-store-vessel-candidate.json'),mat:read('project/mat/studies/whole-house-service-baseline.json'),maximumSourceApertureMm:10.5,services:read('project/had/studies/current-house-services.json'),servicesGitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',sourceSettings:read('project/had/studies/inlet-plant-tanked-supply-candidate.json').settings})
+const roomRequest=()=>({choice,plant:p,vesselChoice:read('project/had/studies/inlet-store-vessel-candidate.json'),mat:read('project/mat/studies/whole-house-service-baseline.json'),maximumSourceApertureMm:10.5,services:read('project/had/studies/current-house-services.json'),servicesGitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',waterReplan:read('project/had/studies/water-replan.json'),waterReplanGitBlob:'089f0dac2f2e89272dc2ea85a10c2208f2fd797d',sourceSettings:read('project/had/studies/inlet-plant-tanked-supply-candidate.json').settings})
 test('one actual Plant pan feeds room, outfalls, occupied steel and complete communicating pressure-network volume',()=>{
  const r=inletPlantTankedRoom(roomRequest())
  assert.equal(r.levels.houseFflMm,530)
@@ -172,4 +172,26 @@ test('actual exterior turning deck and the rejected interior quarter-turn invali
  const interior=structuredClone(r.roomCoordination.resolvedInput);delete interior.bridgeRenewal
  const failed=inletSplitPlantRoom(interior)
  assert.ok(failed.bridge!.removablePieces.pieces.some(p=>p.minimumActualPipeReserveMm<0),'The former interior turn collides with the same current fixed P source, not a historical fixture.')
+})
+
+test('actual selected Plant pan and source walls own the same full RC, tapered F bed and matched feet',()=>{
+ const r=inletPlantTankedRoom(roomRequest()),f=r.floorReplan.actualPocket,bed=r.walking.compressionSupport!
+ assert.equal(f.local!.quantityBounds.glassM3,0)
+ assert.deepEqual(f.local!.levelBoxes.map(b=>b.id),['mineralCourse','dryRC'])
+ assert.deepEqual(f.local!.bodyMinMaxMm,[r.roomPlanMm[0],r.roomPlanMm[1],r.roomPlanMm[0]+r.roomPlanMm[2],r.roomPlanMm[1]+r.roomPlanMm[3]])
+ assert.equal(bed.oldUniformGlassPhysicalGeometryRetired,true)
+ assert.equal(bed.actualPeakContactPressureDistributionAccepted,false)
+ assert.ok(bed.necessarySourceCoreXYSeparation)
+ assert.ok(bed.necessaryStockEnvelope,JSON.stringify({thickness:bed.thicknessRangeMm,tiles:bed.tiles.map(t=>t.minimumInfillMm)}))
+ assert.ok(bed.necessaryPanFootPressureComparisons,JSON.stringify(bed.feet.filter(f=>'necessaryWorkingPressureComparison'in f&&!f.necessaryWorkingPressureComparison)))
+ assert.equal(bed.actualCompleteSupportAccepted,false)
+ assert.ok(bed.normalMassUpperKg>100)
+ assert.ok(bed.normalOrigins.length>0)
+ assert.ok(bed.stepNotches.length>0)
+ assert.equal(r.floorReplan.bedMassAlreadyIncludedInWalkingNormalUpperKg,true)
+ const i=roomRequest(),changed=structuredClone(i),wall=changed.waterReplan.model.groundWalls.find((w:any)=>w.id==='plant-north');wall.structuralCore[0]=r.roomPlanMm[1]+r.roomPlanMm[3]-1
+ const failed=inletPlantTankedRoom(changed)
+ assert.equal(failed.walking.compressionSupport!.necessarySourceCoreXYSeparation,false)
+ assert.notEqual(failed.source.caseDigest,r.source.caseDigest)
+ console.info('PLANT_ACTUAL_COMPRESSION '+JSON.stringify({stockKg:r.walking.normalMassUpperKg,bedKg:bed.normalMassUpperKg,range:bed.thicknessRangeMm,tiles:bed.tiles.length,meanContact:bed.feet.filter(f=>'bedCompressiveMeanKPa'in f).map(f=>({id:f.id,kPa:f.bedCompressiveMeanKPa})),rcDelta:bed.rcMineralDeltaWrenchAboutGlobalZeroKN_KNm,core:f.plantCompression?.sourceCoreChecks,containment:r.containment}))
 })

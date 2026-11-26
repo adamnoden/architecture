@@ -85,12 +85,13 @@ export function inletUtilityMemberRenewal(i:{source:Source;wet:Wet;tools?:readon
  }
  const longestUpper=Math.max(...members.filter(v=>v.drawnBoxMm[2]===830).map(v=>v.cutLengthMm)),
   railMoment=r.upperRailComparisonPointLoadN*longestUpper/4,
-  headerFree=d.commonPathMm.at(-1)![0]-d.commonPathMm[0][0]
+  headerFree=d.commonPathMm.at(-1)![0]-d.commonPathMm[0][0],ordinaryCapture=inletUtilityOrdinaryCapture({source,wet})
  return{schema:'had-utility-independent-member-observer/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,choice:wet.choice,boundary:source.boundary,requirements:r,tools}),
   currentSavedDocumentAdmitted:false,requirements:r,wholeAssembledFrameWithdrawalRequired:false,coldTreeOrSourceUnionOpenedForDryMemberRenewal:false,
-  members,ordinaryCapture:inletUtilityOrdinaryCapture({source,wet}),drawnRailEndsNeedActualBoltedJointRedesign:false,actualBoltedRailJointResistanceQualified:false,normalIndependentWaterBeamCandidate:{beams,checks,failures:checks.filter(q=>q.reserveMm< -1e-7),demands,
+  members,ordinaryCapture,drawnRailEndsNeedActualBoltedJointRedesign:false,actualBoltedRailJointResistanceQualified:false,normalIndependentWaterBeamCandidate:{beams,checks,failures:checks.filter(q=>q.reserveMm< -1e-7),demands,
    fullClampForkSlidesAndWallAnchorGeometryIncluded:false,actualWallElevationAndMaterialRead:false,permanentWallSteelExcludedFromMoving20kgTree:true,
    steelSectionDemandWithinAuthoredComparison:demands.every(v=>Math.max(v.normalExtremeFibreMPa,v.coldZeroExtremeFibreMPa)<=r.referenceAllowableMPa)},
+  retiredClearSpanComparison:{role:'old no-end-gap clear span; not current bolted-member force result',longestClearSpanMm:longestUpper+2*memberEndGap,extremeFibreMPa:r.upperRailComparisonPointLoadN*(longestUpper+2*memberEndGap)/4*r.upperRailDepthMm/2/r.upperRailMinimumIMM4},
   railComparison:{longestClearSpanMm:longestUpper,pointLoadN:r.upperRailComparisonPointLoadN,extremeFibreMPa:railMoment*r.upperRailDepthMm/2/r.upperRailMinimumIMM4,
    deflectionMm:r.upperRailComparisonPointLoadN*longestUpper**3/(48*r.elasticModulusMPa*r.upperRailMinimumIMM4),sectionJointAndLoadPathQualified:false},
   stability:{deadweightRestoringCreditN:0,horizontalComparisonN:r.comparisonHorizontalMaintenanceN,heightMm:870,
@@ -100,10 +101,11 @@ export function inletUtilityMemberRenewal(i:{source:Source;wet:Wet;tools?:readon
    slidePositiveGravityAndAntiRotationRequired:true,frictionCredited:false,actualBranchedTubeReactionLawImplemented:false,
    seizedGuideAndWhollyRestrainedStraightAdverseCaseRetained:true},
   tools:{tasks:tools,checks:toolChecks,failures:toolChecks.filter(v=>v.reserveMm< -1e-7),requiredRailEndInterfaces:members.length*2,
-   authoredAndProvedRailEndInterfaces:0,actualSocketCounterholdBodyAndWithdrawalProofAccepted:false},
+   authoredJointGeometryInterfaces:ordinaryCapture.interfaces.length,geometricallyClearJointInterfaces:ordinaryCapture.geometryFailures.some(q=>!q.id.startsWith('capture/'))?0:ordinaryCapture.interfaces.length,
+   firstFrontUpperRailToolCases:ordinaryCapture.frontUpperRailTools.tasks.length,authoredAndProvedRailEndInterfaces:0,allMemberToolAndExtractionInterfacesRequiredForThisCount:true,actualSocketCounterholdBodyAndWithdrawalProofAccepted:false},
   head:{fullCapturedHeadOrIndividualBowlPillarAndBoardRemovalProved:false,headRemovedBeforeAnyLoadedFrameReleaseRequired:false,positiveHeadCaptureBeforeFirstRailReleaseRequired:true},
   actualIndependentWaterSupportAccepted:false,ordinaryMemberRenewalAccepted:false,
-  diagnostics:['UTILITY_MEMBER/actual-bolted-end-joints-tools-and-withdrawal-not-yet-authored','UTILITY_MEMBER/full-head-capture-and-positive-rest-not-proved',
+  diagnostics:['UTILITY_MEMBER/all-member-extraction-and-tools-unproved','UTILITY_MEMBER/static-head-capture-floor-and-hardware-capacity-unqualified',
    'UTILITY_MEMBER/permanent-water-clamp-slide-fork-and-wall-anchorage-incomplete','UTILITY_MEMBER/temporary-frame-bracing-and-positive-hold-down-required',
    ...(checks.some(v=>v.reserveMm<0)?['UTILITY_MEMBER/proposed-independent-beam-geometry-conflicts']:[])]}
 }

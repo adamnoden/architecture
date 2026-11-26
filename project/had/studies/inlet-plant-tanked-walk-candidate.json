@@ -255,5 +255,15 @@
     "unionSwingDeg": 25,
     "unionMinimumEffectiveLeverMm": 250,
     "unionServiceWindowMm": 75
+  },
+  "panCompression": {
+    "schema": "had-plant-selected-pan-compression/1",
+    "selectedForDevelopment": true,
+    "design": {
+      "minimumMachinedFootThicknessMm": 8,
+      "stockThicknessMm": 180,
+      "compressiveWorkingFactor": 3,
+      "minimumEffectiveContactFraction": 0.95
+    }
   }
 }
