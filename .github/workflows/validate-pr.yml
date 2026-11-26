@@ -7,6 +7,10 @@ on:
 permissions:
   contents: read
 
+env:
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+
 concurrency:
   group: validate-pr-${{ github.event.pull_request.number }}
   cancel-in-progress: true
@@ -68,6 +72,11 @@ jobs:
 
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
+
+      - name: Validate packet and lease declaration
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node --import tsx scripts/control-operations.ts packet-check
 
       - name: Replay recovered wet-beam and masonry comparisons on current sources
         env:
@@ -234,11 +243,6 @@ jobs:
           path: node_modules/.cache/ovids-house/publication-fonts
           key: ${{ runner.os }}-publication-fonts-v1-${{ hashFiles('publication/fonts.ts') }}
           restore-keys: ${{ runner.os }}-publication-fonts-v1-
-
-      - name: Validate packet and lease declaration
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: node --import tsx scripts/control-operations.ts packet-check
 
       - name: Render project-control projections for validation
         run: npm run status:update
