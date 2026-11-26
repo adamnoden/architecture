@@ -193,5 +193,5 @@ test('actual selected Plant pan and source walls own the same full RC, tapered F
  const failed=inletPlantTankedRoom(changed)
  assert.equal(failed.walking.compressionSupport!.necessarySourceCoreXYSeparation,false)
  assert.notEqual(failed.source.caseDigest,r.source.caseDigest)
- console.info('PLANT_ACTUAL_COMPRESSION '+JSON.stringify({stockKg:r.walking.normalMassUpperKg,bedKg:bed.normalMassUpperKg,range:bed.thicknessRangeMm,tiles:bed.tiles.length,meanContact:bed.feet.filter(f=>'bedCompressiveMeanKPa'in f).map(f=>({id:f.id,kPa:f.bedCompressiveMeanKPa})),rcDelta:bed.rcMineralDeltaWrenchAboutGlobalZeroKN_KNm,core:f.plantCompression?.sourceCoreChecks,containment:r.containment}))
+ console.info('PLANT_ACTUAL_COMPRESSION '+JSON.stringify({stockKg:r.walking.normalMassUpperKg,bedKg:bed.normalMassUpperKg,range:bed.thicknessRangeMm,tiles:bed.tiles.length,meanContact:bed.feet.filter(f=>'bedCompressiveMeanKPa'in f).map(f=>({id:f.id,kPa:f.bedCompressiveMeanKPa})),rcDelta:bed.rcMineralDeltaWrenchAboutGlobalZeroKN_KNm,core:'plantCompression'in f?f.plantCompression?.sourceCoreChecks:[],containment:r.containment}))
 })

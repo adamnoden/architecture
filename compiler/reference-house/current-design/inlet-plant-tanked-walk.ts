@@ -268,7 +268,7 @@ export function plantMatchedPanCompression(i:{context:PlantPanCompressionSupport
    return{id:q.id,plan,ax,ay,surface,offset}
   })
  if(!Array.isArray(c.panInternalStepFaces))throw Error('Actual pan internal step faces are required for physical bed cutouts')
- const stepNotches=c.panInternalStepFaces.map(f=>{
+ const stepNotches=c.panInternalStepFaces.map((f:PlantPanCompressionSupport['panInternalStepFaces'][number])=>{
   if(!f.id||f.cornersMm.length!==4||f.cornersMm.some(p=>p.length!==3||!finite(p))||f.normal.length!==3||!finite(f.normal)||f.normal[2]!==0||Math.abs(f.normal[0])+Math.abs(f.normal[1])!==1)throw Error('Actual orthogonal vertical pan step normal prism required')
   const axis=f.normal[0]!==0?0:1,datum=f.cornersMm[0][axis]
   if(f.cornersMm.some(p=>Math.abs(p[axis]-datum)>1e-8))throw Error('Pan step must lie in its actual vertical normal plane')
