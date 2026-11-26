@@ -1,0 +1,68 @@
+name: Diagnose actual saved finite corner edit
+on:
+  push:
+    branches: [work/zerg-finite-editor-diagnostic-20261126]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v5
+      - name: Retrieve observed failed browser server log
+        uses: actions/download-artifact@v7
+        with:
+          name: finite-house-room-saved-proof
+          run-id: 45814303876
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/failed-finite
+      - name: Inspect original failed transport log
+        run: cat "$RUNNER_TEMP/failed-finite/finite-joint-server.log"
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install existing pinned numerical runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          python -m venv --system-site-packages "$RUNNER_TEMP/finite-runtime"
+          "$RUNNER_TEMP/finite-runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
+          echo "STR_FINITE_SOLID_PYTHON=$RUNNER_TEMP/finite-runtime/bin/python" >> "$GITHUB_ENV"
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Replay the actual failed saved width in the ordinary CLI
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          d=json.loads(Path('project/ccr/studies/working-house-comparison.json').read_text())
+          d['stages']['floorSection']['finiteJointComparison']['execution']='deferred'
+          d['stages']['distributedFloor']['cornerWidthsMm']['SW']=140
+          Path(os.environ['RUNNER_TEMP'],'finite-width140.json').write_text(json.dumps(d))
+          PY
+          node --import tsx scripts/compile-current-design.ts --bundle "$RUNNER_TEMP/finite-width140.json" > "$RUNNER_TEMP/finite-width140-result.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          d=json.loads(Path(os.environ['RUNNER_TEMP'],'finite-width140-result.json').read_text())
+          e=d['engineering']
+          print(json.dumps({'documentIdentity':d['documentIdentity'],'parts':len(e['studyRoomKit']['kit']['floor']['parts']),'finiteStatus':e['floorSection']['finiteJointComparison']['status']}))
+          PY
+      - name: Retain the actual diagnostic
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: finite-editor-width140-diagnostic
+          path: |
+            ${{ runner.temp }}/finite-width140.json
+            ${{ runner.temp }}/finite-width140-result.json
+            ${{ runner.temp }}/failed-finite/finite-joint-server.log
+          retention-days: 90
+          if-no-files-found: error
