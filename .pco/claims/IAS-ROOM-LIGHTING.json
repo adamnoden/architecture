@@ -9,11 +9,11 @@
     "label": "zerg-owner-takeover-20261126"
   },
   "claimedAt": "2026-11-26T20:03:12.723Z",
-  "heartbeatAt": "2026-11-26T20:09:44.564Z",
-  "expiresAt": "2026-11-26T22:09:44.564Z",
+  "heartbeatAt": "2026-11-26T21:08:24.149Z",
+  "expiresAt": "2026-11-26T23:08:24.149Z",
   "checkpoint": {
-    "evidence": "PR1630@1042876 contains full5fa lighting continuation; repaired schedule targeted regression1/1 and source assertions4/4 pass. Exact typography and physical profile CI now green; whole validation pending.",
-    "next": "Verify full exact-head room/browser/publication health; fresh canonical preflight and merge, then coordinate north-view continuation."
+    "evidence": "PR1630 publication and browser passed, current finite-room editor passed,96signed programmes passed; full health pending. Native+lighting ordinary fullCLI52heads58maps passed. Actual day room and drybaseSVG inspected without appearance acceptance.",
+    "next": "Merge1630 after exact fullgreen and fresh3leasepreflight; carry room/lighting source through native/profile integration, no stale force/physical/owner claims."
   },
   "branch": "work/zerg-takeover-integration-20261126",
   "predecessor": {
