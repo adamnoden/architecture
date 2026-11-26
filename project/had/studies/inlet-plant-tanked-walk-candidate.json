@@ -1,7 +1,7 @@
 {
   "schema": "had-plant-tanked-walk/1",
   "id": "HAD/Plant-open-metal-walk-and-full-store-containment",
-  "revision": 1,
+  "revision": 3,
   "basePanRoomChoice": "project/had/studies/inlet-split-plant-room-candidate.json",
   "vesselChoice": "project/had/studies/inlet-store-vessel-candidate.json",
   "selectedForDevelopment": true,
@@ -75,7 +75,7 @@
   },
   "grating": {
     "bearingBarHeightMm": 70,
-    "bearingBarThicknessMm": 5,
+    "bearingBarThicknessMm": 7,
     "bearingBarPitchMm": 25,
     "crossBarHeightMm": 10,
     "crossBarThicknessMm": 5,
@@ -85,14 +85,14 @@
     "maximumPanelYMm": 300,
     "rimHeightMm": 70,
     "rimThicknessMm": 3,
-    "maximumCompletePanelKg": 16,
+    "maximumCompletePanelKg": 22,
     "hardwareBudgetEachKg": 0.5,
     "panelJointGapMm": 1,
     "maximumRelativeSeatErrorMm": 2,
     "locatingPinDiameterMm": 8,
     "locatingHoleMaximumMm": 10,
     "locatingEngagementMm": 10,
-    "maximumUniformTemperatureExcursionK": 40,
+    "maximumUniformTemperatureExcursionK": 80,
     "maximumFactoryLocatingPositionErrorMm": 0.25
   },
   "walkingFrame": {
@@ -101,7 +101,7 @@
       40,
       5
     ],
-    "minimumBeamIMm4": 120000,
+    "minimumBeamIMm4": 200000,
     "maximumBeamSpanMm": 500,
     "postSectionWHtMm": [
       30,
@@ -165,7 +165,7 @@
     ],
     "maximumTerminalAddedDevelopedFactorOfWorkTerritory": 2
   },
-  "state": "Selected for internal development:150mm Plant-only raised open walk,42 robust70mm grating panels with authored16kg complete-piece ceiling,common150mm square machined steel feet (25mm minimum remaining),full-pan RC/unfaced F compression bed,2300mm cargo head and450mm all-metal outfalls. Actual pressure/contact/thermal/transient/site/native acceptance remains unearned.",
+  "state": "Development-selected one platform; complete factory base, pressure/thermal, renewal, house/native and installed acceptance remain unearned.",
   "internalAccess": {
     "mode": "two75mm rises with one intermediate tread; no Plant-floor lip",
     "firstRiseFraction": 0.5,
@@ -266,10 +266,66 @@
       "minimumEffectiveContactFraction": 0.95
     },
     "footBlank": {
-      "nominalThicknessMm": 45,
-      "minimumMeasuredThicknessMm": 44,
+      "nominalThicknessMm": 60,
+      "minimumMeasuredThicknessMm": 59,
+      "maximumMeasuredThicknessMm": 61,
       "machiningReserveMm": 2,
-      "maximumBlankKg": 9
+      "maximumBlankKg": 28
     }
+  },
+  "appliancePlatform": {
+    "schema": "had-appliance-platform/1",
+    "id": "HAD/one-unified-appliance-platform",
+    "loadedPadSideMm": 230,
+    "loadedPadMinimumThicknessMm": 25,
+    "loadedHeadLWtMm": [
+      40,
+      80,
+      35
+    ],
+    "webWHMm": [
+      40,
+      70
+    ],
+    "maximumCapturedMemberKg": 22,
+    "hardwareEachChassisKg": 3,
+    "mountBoltDiameterMm": 12,
+    "mountBoltHoleMm": 14,
+    "bufferCradleRiseMm": 70,
+    "factoryBaseTopLocalMm": 500,
+    "factoryBaseLegSideMm": 40,
+    "maximumMatchedMountErrorMm": 4.5,
+    "factoryPositionErrorEachMm": 0.25,
+    "minimumSteelDensityKgM3": 7850,
+    "pickupSideMm": 60,
+    "slidingSlotLengthMm": 22,
+    "floatingHoleMm": 22,
+    "washerDiameterMm": 40,
+    "bufferBearingPatchOffsetXMm": 140,
+    "perimeterInsetMm": 35,
+    "postColumnRelocation": {
+      "sourceColumnIndex": 4,
+      "targetXMm": 10770
+    },
+    "bufferFootPlanMm": [
+      200,
+      150
+    ],
+    "loadedNodeBlockLWtMm": [
+      180,
+      160,
+      60
+    ],
+    "cutEdgeRimMm": 6,
+    "additionalCutPanelHardwareKg": 0.5,
+    "railPocketSideClearanceMm": 25,
+    "storeFactoryDryCGHalfExtentsMm": [
+      30,
+      30
+    ],
+    "normalMetalTemperatureDesignC": [
+      0,
+      80
+    ]
   }
 }

@@ -63,13 +63,19 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
  assert.ok(r.outfalls.profiles.every(p=>p.convergence.necessary&&p.convergence.fineChangeMm!==null&&p.convergence.fineChangeMm<=.01))
  assert.ok(r.walking.necessaryMemberComparisons,JSON.stringify(r.walking.memberChecks.filter(p=>!p.necessary)))
  assert.equal(r.normalHeatedInventory.necessaryThermalInventory,true,JSON.stringify(r.normalHeatedInventory))
- assert.ok(r.walking.apparatusInterfaces.length===2)
+ assert.equal(r.walking.apparatusInterfaces.length,0)
+ assert.equal(r.walking.appliancePlatform!.chassis.length,2)
+ assert.equal(r.walking.appliancePlatform!.retiredIndependentPedestalCount,8)
+ assert.equal(r.bufferNormal.installedBodyBottomAbsoluteMm,r.levels.walkingMm+r.choice.appliancePlatform!.bufferCradleRiseMm)
+ assert.equal(r.normalMetalTemperature.necessarySourceDutyCoverage,true)
  assert.equal(r.walking.renewal.everyPanelIndependentOfApparatusRemoval,false)
  assert.ok(r.walking.renewal.apparatusRemovalBeforePanelIds.length>0)
  assert.ok(r.vessel.expansion.necessaryNormalThermalComparison)
  assert.equal(r.vessel.geometry.groundFflMm,680)
  assert.equal(r.vessel.connections.hot.upperTreeJoinLocalMm[2]+r.vessel.geometry.groundFflMm,2945+530)
- assert.ok(r.containment.reserveL>150,JSON.stringify(r.containment))
+ assert.ok(r.containment.necessaryClosedPressureNetworkVolumeScreen,JSON.stringify(r.containment))
+ assert.ok(r.containment.reserveL>0)
+ assert.ok(Math.abs(r.containment.availableIncrementalRoomLowerL-r.inventory.fullInstantPressureNetworkDesignReleaseL-r.containment.reserveL)<1e-7)
  assert.equal(r.inventory.vesselMaximumDesignL,330)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
  if(dir){writeFileSync(join(dir,'Plant-tanked-current-source-comparison.json'),JSON.stringify(r,null,2));writeFileSync(join(dir,'Plant-tanked-owner-plan-section.svg'),drawInletPlantTankedRoom(r))}
@@ -80,9 +86,7 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
 test('actual floor, outlet and inventory perturbations invalidate dependent design evidence',()=>{
  const i=roomRequest(),r=inletPlantTankedRoom(i),low=structuredClone(i)
  low.choice.walkingRiseAboveHouseFflMm=0
- const failed=inletPlantTankedRoom(low)
- assert.equal(failed.containment.necessaryClosedPressureNetworkVolumeScreen,false)
- assert.notEqual(failed.source.caseDigest,r.source.caseDigest)
+ assert.throws(()=>inletPlantTankedRoom(low),/vertical stack|compression post|direct bearing length|actual stack/i,'The actual lower floor cannot contain the same unaltered platform; obsolete evidence must not survive an impossible geometry.')
  const mixed=structuredClone(i);mixed.plant.resolvedInput.branch.paths[0].points[0][0]+=1
  assert.throws(()=>inletPlantTankedRoom(mixed),/Mixed or modified/)
  assert.throws(()=>inletPlantTankedRoom({...i,maximumSourceApertureMm:10.4}),/source aperture/)
@@ -196,37 +200,40 @@ test('actual selected Plant pan and source walls own the same full RC, tapered F
  console.info('PLANT_ACTUAL_COMPRESSION '+JSON.stringify({stockKg:r.walking.normalMassUpperKg,bedKg:bed.normalMassUpperKg,range:bed.thicknessRangeMm,tiles:bed.tiles.length,meanContact:bed.feet.filter(f=>'bedCompressiveMeanKPa'in f).map(f=>({id:f.id,kPa:f.bedCompressiveMeanKPa})),rcDelta:bed.rcMineralDeltaWrenchAboutGlobalZeroKN_KNm,core:'plantCompression'in f?f.plantCompression?.sourceCoreChecks:[],containment:r.containment}))
 })
 
-test('complete selected150mm feet and70mm bars keep42 panels under an explicit16kg design ceiling',()=>{
- const r=inletPlantTankedRoom(roomRequest()),bed=r.walking.compressionSupport!,panelCeiling=r.choice.grating.maximumCompletePanelKg
- assert.equal(r.walking.panels.length,42);assert.equal(panelCeiling,16)
- assert.ok(r.floorReplan.steelFootBlank.necessaryGeometricStockAndMachiningComparison)
- assert.equal(r.floorReplan.steelFootBlank.choice.nominalThicknessMm,45)
- assert.ok(r.walking.panels.every(p=>p.completeMassDesignUpperKg<=panelCeiling))
- assert.ok(r.walking.panels.some(p=>p.completeMassDesignUpperKg>15),'Former15kg target is explicitly superseded; no human lifting approval follows from16kg.')
- assert.ok(r.walking.apparatusInterfaces.every(a=>a.necessarySeparateStandGeometry))
- assert.ok(r.walking.necessaryMemberComparisons,JSON.stringify(r.walking.memberChecks.filter(c=>!c.necessary)))
- assert.ok(bed.feet.filter(f=>'bedCompressiveMeanKPa'in f).every(f=>f.bedCompressiveMeanKPa!<350))
- assert.ok(bed.feet.filter(f=>'footThicknessRangeMm'in f).every(f=>f.footThicknessRangeMm![0]===25))
+test('the selected complete platform carries every actual foot blank and refreshed source load',()=>{
+ const r=inletPlantTankedRoom(roomRequest()),w=r.walking,bed=w.compressionSupport!,stock=r.floorReplan.steelFootBlank
+ assert.equal(w.apparatusInterfaces.length,0)
+ assert.equal(w.appliancePlatform!.retiredIndependentPedestalCount,8)
+ assert.ok(w.unifiedDetails!.physicalPanelPieces.every(p=>p.completeMassUpperKg<=r.choice.grating.maximumCompletePanelKg))
+ assert.ok(stock.necessaryGeometricStockAndMachiningComparison,JSON.stringify(stock))
+ assert.equal(stock.everyActualFootprintIncluded,true)
+ assert.ok(stock.stockRows.some(p=>p.planLWMM[0]===230&&p.planLWMM[1]===230&&p.fullFactoryBlankUpperKg>20))
+ assert.ok(stock.stockRows.every(p=>p.fullFactoryBlankUpperKg<=stock.choice.maximumBlankKg))
+ assert.equal(w.appliancePlatform!.choice.loadedPadBlankUpperMm,stock.choice.maximumMeasuredThicknessMm)
+ assert.ok(w.necessaryMemberComparisons,JSON.stringify(w.memberChecks.filter(c=>!c.necessary)))
+ assert.ok(bed.necessaryPanFootPressureComparisons)
  assert.equal(bed.actualPeakContactPressureDistributionAccepted,false)
- const old=structuredClone(roomRequest());old.choice.walkingFrame.footPadSideMm=120;old.choice.walkingFrame.footPadThicknessMm=8;old.choice.grating.bearingBarHeightMm=60;old.choice.grating.rimHeightMm=60;old.choice.grating.maximumCompletePanelKg=15;old.choice.panCompression.design.minimumMachinedFootThicknessMm=8
- const p=inletPlantTankedRoom(old)
- assert.ok(p.walking.compressionSupport!.feet.some(f=>'bedCompressiveMeanKPa'in f&&f.bedCompressiveMeanKPa!>516))
- assert.ok(p.walking.normalMassUpperKg<r.walking.normalMassUpperKg)
- const mid=structuredClone(roomRequest());mid.choice.walkingFrame.footPadSideMm=140;mid.choice.grating.bearingBarHeightMm=65;mid.choice.grating.rimHeightMm=65;mid.choice.grating.maximumCompletePanelKg=15
- const m=inletPlantTankedRoom(mid)
- assert.ok(m.walking.panels.every(p=>p.completeMassDesignUpperKg<15))
- assert.ok(m.walking.apparatusInterfaces.every(p=>p.necessarySeparateStandGeometry))
- console.info('PLANT_COMPLETE_FOOT_SELECTION '+JSON.stringify({panels:r.walking.panels.length,panelMaxKg:Math.max(...r.walking.panels.map(p=>p.completeMassDesignUpperKg)),stockKg:r.walking.normalMassUpperKg,maximumMachinedFootMm:Math.max(...bed.feet.flatMap(f=>'footThicknessRangeMm'in f?f.footThicknessRangeMm!:[])),maxActualFootKg:Math.max(...r.walking.parts.filter(p=>['solid-foot-pad','bridge-pad','apparatus-stand-pad'].includes(p.kind)).map(p=>p.metalVolumeMm3/1e9*r.choice.material.densityKgM3)),maximumMeanKPa:Math.max(...bed.feet.flatMap(f=>'bedCompressiveMeanKPa'in f?[f.bedCompressiveMeanKPa!]:[])),reserve:r.containment.reserveL,mid140:{stockKg:m.walking.normalMassUpperKg,reserve:m.containment.reserveL},old120:{stockKg:p.walking.normalMassUpperKg,reserve:p.containment.reserveL}}))
+ assert.equal(r.bufferNormal.actualBodyCaptureLiftAndLowerToSourceCarrierAccepted,false)
+ const thin=structuredClone(roomRequest());thin.choice.panCompression.footBlank.minimumMeasuredThicknessMm=26
+ const failed=inletPlantTankedRoom(thin)
+ assert.equal(failed.floorReplan.steelFootBlank.necessaryGeometricStockAndMachiningComparison,false)
+ assert.notEqual(failed.source.caseDigest,r.source.caseDigest)
+ const narrow=structuredClone(roomRequest());narrow.choice.appliancePlatform.bufferFootPlanMm=[100,100]
+ const overloaded=inletPlantTankedRoom(narrow)
+ assert.equal(overloaded.walking.compressionSupport!.necessaryPanFootPressureComparisons,false)
+ console.info('PLANT_COMPLETE_PLATFORM_SELECTION '+JSON.stringify({case:r.source.caseDigest,stock,platform:w.appliancePlatform!.chassis.map(a=>({id:a.id,nodes:a.nodes,mounts:a.mounts,bodyPlane:a.bodyBearingPlaneMm})),physicalPieces:w.unifiedDetails!.physicalPanelPieces.length,panelMaximumKg:Math.max(...w.unifiedDetails!.physicalPanelPieces.map(p=>p.completeMassUpperKg)),massUpperKg:w.normalMassUpperKg,volume:r.containment,meanFootPressure:bed.feet.filter(f=>'bedCompressiveMeanKPa'in f).map(f=>({id:f.id,kPa:f.bedCompressiveMeanKPa}))}))
 })
-
-test('same selected steel excursion propagates through the tight apparatus-stand clearances',()=>{
+test('normal source temperature and actual matched platform movement invalidate dependent evidence',()=>{
  const i=roomRequest(),r=inletPlantTankedRoom(i),hot=structuredClone(i)
- assert.ok(r.walking.standThermalClearance?.every(p=>p.necessaryConditionalSteelThermalSeparation),JSON.stringify(r.walking.standThermalClearance))
- assert.ok(r.walking.standThermalClearance!.some(p=>p.minimumAfterSettingsAndSteelThermalMm<1))
+ assert.equal(r.choice.grating.maximumUniformTemperatureExcursionK,80)
+ assert.ok(r.walking.unifiedDetails!.footPanClearances.every(p=>p.afterSettingsAndSteelThermalMm>=0))
  hot.choice.grating.maximumUniformTemperatureExcursionK=100
  const failed=inletPlantTankedRoom(hot)
- assert.ok(failed.walking.standThermalClearance!.some(p=>!p.necessaryConditionalSteelThermalSeparation))
- assert.ok(failed.diagnostics.includes('PLANT_TANK/conditional-steel-stand-thermal-clearance-fails'))
+ assert.ok(failed.walking.appliancePlatform!.chassis.some(p=>!p.matchedMount.necessaryMatchedFit))
+ assert.ok(failed.diagnostics.includes('PLANT_TANK/selected-platform-member-capture-or-fit-comparison-fails'))
  assert.notEqual(failed.source.caseDigest,r.source.caseDigest)
- console.info('PLANT_ACTUAL_STEEL_THERMAL '+JSON.stringify(r.walking.standThermalClearance))
+ const duty=structuredClone(i);duty.services.plant.heatPump.primary[0]=90
+ const invalid=inletPlantTankedRoom(duty)
+ assert.equal(invalid.normalMetalTemperature.necessarySourceDutyCoverage,false)
+ assert.ok(invalid.diagnostics.includes('PLANT_TANK/normal-metal-temperature-design-range-does-not-cover-source-duty'))
 })
