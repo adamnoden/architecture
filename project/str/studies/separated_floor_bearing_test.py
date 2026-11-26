@@ -21,7 +21,7 @@ class SeparatedBearingControls(unittest.TestCase):
         self.assertEqual(v['newGroundFinishedFaceSWMm'],649.5)
         self.assertEqual(v['newFinishedToeSWMm'],1309.5)
         self.assertNotEqual(v['newLowerBodyEnvelopeComparisonGKN'],self.value['newLowerBodyEnvelopeComparisonGKN'])
-        svg=section_svg(v,h,g);self.assertIn('649.5',svg);self.assertIn('1309.5',svg);self.assertIn('−',svg)
+        svg=section_svg(v,h,g);self.assertIn('649.5',svg);self.assertIn('1309.5',svg);self.assertNotIn('new masonry472.5..612.5',svg)
     def test_actual_three_constraint_statics_and_unclosed_six_wrench_are_distinct(self):
         v=self.value
         self.assertEqual(len(v['sourceFloorPressureOnlyStatics']),96)

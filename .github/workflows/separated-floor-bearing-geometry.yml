@@ -28,7 +28,10 @@ jobs:
       - name: Check actual geometry, pressure-only statics and explicit failures
         run: |
           mkdir -p "$BEARING_GEOMETRY_DIR"
-          python -B project/str/studies/separated_floor_bearing_test.py > "$BEARING_GEOMETRY_DIR/tests.log" 2>&1
+          if ! python -B project/str/studies/separated_floor_bearing_test.py > "$BEARING_GEOMETRY_DIR/tests.log" 2>&1; then
+            cat "$BEARING_GEOMETRY_DIR/tests.log"
+            exit 1
+          fi
           cat "$BEARING_GEOMETRY_DIR/tests.log"
           python -B project/str/studies/separated_floor_bearing.py --out "$BEARING_GEOMETRY_DIR"
           git diff --exit-code
