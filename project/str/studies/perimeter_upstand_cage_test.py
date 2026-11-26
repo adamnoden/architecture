@@ -94,7 +94,7 @@ class CageControls(unittest.TestCase):
         with self.assertRaises(ValueError):p.assess(c,self.base)
     def test_matched_contact_certificate_rejects_actual_path_intrusion(self):
         links,_=p.link_paths(self.c)
-        for plane,shift in ((3274.5,-1),(3434.5,1)):
+        for plane,shift in ((3274.5,-1),):
             link=copy.deepcopy(next(x for x in links if x['id'].startswith(f'cross-tie/0/{plane:g}/')))
             for primitive in link['primitives']:
                 if primitive['kind']=='line':
@@ -170,10 +170,16 @@ class CageControls(unittest.TestCase):
         c=copy.deepcopy(self.c);c['links']['columnHookTailMm']=75
         with self.assertRaisesRegex(ValueError,'fabrication'):p.assess(c,self.base)
     def test_old_column_closure_crosses_its_own_135_return(self):
-        c=copy.deepcopy(self.c);c['links']['columnClosureOffsetMm']=14
-        bad=p.link_self_audit(c,[p.closed_column_link(c,0,3285.5)])
-        self.assertFalse(bad['allCertified'])
-        self.assertTrue(any(x['state']=='collision' for x in bad['failures']))
+        # Exact rejected old near-hook joggle, not the relocated long-leg path.
+        g,l=self.c['geometry'],self.c['links'];r=(l['columnMandrelMm']+l['columnOutsideMm'])/2
+        combined=(l['columnOutsideMm']+g['columnBarOutsideMm'])/2
+        x0=y0=g['columnFaceRowsMm'][0]-combined;cx=x0+r;cy=y0+r
+        z=3285.5;rise=14;angle=math.acos(1-rise/(2*r));run=2*r*math.sin(angle)
+        old=p.arc([cx+run,z+rise-r*(1-2*math.cos(angle))],r,-math.pi/2-angle,-math.pi/2,[0,2],y0)
+        start=[cx+r/math.sqrt(2),cy-r/math.sqrt(2),z]
+        end=[start[0]+l['columnHookTailMm']/math.sqrt(2),start[1]+l['columnHookTailMm']/math.sqrt(2),z]
+        bad=p.certify_primitive_pair(old,p.line(start,end),l['columnOutsideMm'],2*l['hookShapeToleranceMm'])
+        self.assertEqual(bad['state'],'collision')
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')

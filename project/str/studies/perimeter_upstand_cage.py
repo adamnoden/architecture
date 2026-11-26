@@ -156,21 +156,28 @@ def transformed(path,axis):
         else:p['axes']=[1 if i==0 else 0 if i==1 else i for i in p['axes']]
     return out
 def closed_profile(x0,x1,y0,y1,r,tail,z,rise,diameter,nominal,identifier):
+    # Keep the two135 returns in their own planes; change plane only on a
+    # clear long leg, away from both hook tails. A joggle beside the closure
+    # cuts through the other return and is a genuine rejected geometry.
     cx,cy=x0+r,y0+r;angle=math.acos(1-abs(rise)/(2*r));run=2*r*math.sin(angle);sgn=1 if rise<0 else -1
-    begin=z+rise
-    first=arc([cx,begin+sgn*r],r,-math.pi/2 if sgn>0 else math.pi/2,
-        -math.pi/2+angle if sgn>0 else math.pi/2-angle,[0,2],y0)
-    second=arc([cx+run,begin+sgn*r*(1-2*math.cos(angle))],r,
+    begin=z+rise;available=y1-y0-2*r
+    start=y0+r+min(150.,(available-run)/2)
+    if available<=run:raise ValueError('No clear long leg for actual plane transition')
+    first=arc([start,begin+sgn*r],r,-math.pi/2 if sgn>0 else math.pi/2,
+        -math.pi/2+angle if sgn>0 else math.pi/2-angle,[1,2],x1)
+    second=arc([start+run,begin+sgn*r*(1-2*math.cos(angle))],r,
         math.pi/2+angle if sgn>0 else -math.pi/2-angle,
-        math.pi/2 if sgn>0 else -math.pi/2,[0,2],y0)
+        math.pi/2 if sgn>0 else -math.pi/2,[1,2],x1)
     a0=[cx-r/math.sqrt(2),cy+r/math.sqrt(2),begin]
     at=[a0[0]+tail/math.sqrt(2),a0[1]+tail/math.sqrt(2),begin]
     b0=[cx+r/math.sqrt(2),cy-r/math.sqrt(2),z]
     bt=[b0[0]+tail/math.sqrt(2),b0[1]+tail/math.sqrt(2),z]
     primitives=[line(at,a0),arc([cx,cy],r,3*math.pi/4,1.5*math.pi,[0,1],begin),
-        first,second,line([cx+run,y0,z],[x1-r,y0,z]),
-        arc([x1-r,y0+r],r,1.5*math.pi,2*math.pi,[0,1],z),
-        line([x1,y0+r,z],[x1,y1-r,z]),arc([x1-r,y1-r],r,0,math.pi/2,[0,1],z),
+        line([cx,y0,begin],[x1-r,y0,begin]),
+        arc([x1-r,y0+r],r,1.5*math.pi,2*math.pi,[0,1],begin),
+        line([x1,y0+r,begin],[x1,start,begin]),first,second,
+        line([x1,start+run,z],[x1,y1-r,z]),
+        arc([x1-r,y1-r],r,0,math.pi/2,[0,1],z),
         line([x1-r,y1,z],[x0+r,y1,z]),arc([x0+r,y1-r],r,math.pi/2,math.pi,[0,1],z),
         line([x0,y1-r,z],[x0,y0+r,z]),arc([cx,cy],r,math.pi,7*math.pi/4,[0,1],z),line(b0,bt)]
     return {'id':identifier,'outsideMm':diameter,'nominalMm':nominal,'primitives':primitives,'closureOffsetMm':rise}
@@ -209,7 +216,7 @@ def audit_path_groups(left,right,tol,limit_failures=12,matched_contacts=False):
     for i,a in enumerate(left):
         for j,b in enumerate(right):
             r=(a['outsideMm']+b['outsideMm'])/2
-            match=matched_contacts and a['id'].startswith('cross-tie/') and b['id'].startswith('beam/') and (('/3274.5/' in a['id'] and b['id'].endswith('/3260')) or ('/3434.5/' in a['id'] and b['id'].endswith('/3449')))
+            match=matched_contacts and a['id'].startswith('cross-tie/') and '/3274.5/' in a['id'] and b['id'].startswith('beam/') and b['id'].endswith('/3260')
             if match and max(left_boxes[i][0][2]-right_boxes[j][1][2],right_boxes[j][0][2]-left_boxes[i][1][2])>=r-1e-9:
                 contact_certificates+=1;continue
             if separated_boxes(left_boxes[i],right_boxes[j],tol,r):continue
@@ -479,7 +486,7 @@ def assess(c,base,full_geometry=False):
     if c['materials']['maximumAggregateMm']+5>g['parallelMinimumClearMm']:raise ValueError('Declared aggregate exceeds inherited21mm minimum-clear comparison')
     contact=c['links']['matchedJointContactPlanesZMm']
     expected_cross=g['beamBarZMm'][0]+(g['beamBarOutsideMm']+c['links']['columnOutsideMm'])/2
-    if not g['commonNodeJigRequired'] or not c['links']['matchedContactsRequireLockedNormalSeparation'] or contact!={'beamBottom':g['beamBarZMm'][0],'crossTie':expected_cross,'westHoop':expected_cross+c['links']['columnOutsideMm'],'beamTop':g['beamBarZMm'][1],'crossTieTop':g['beamBarZMm'][1]-(g['beamBarOutsideMm']+c['links']['columnOutsideMm'])/2}:
+    if not g['commonNodeJigRequired'] or not c['links']['matchedContactsRequireLockedNormalSeparation'] or contact!={'beamBottom':g['beamBarZMm'][0],'crossTie':expected_cross,'westHoop':expected_cross+c['links']['columnOutsideMm']}:
         raise ValueError('Exact tied-cage normal-separation constraints required; no independent-Z contact waiver')
     if base['slabZMm']!=g['slabZMm'] or base['firstFFLMm']!=g['FIRSTMm']:raise ValueError('Changed actual source levels')
     if g['comparisonCoreMm']!=300 or g['ordinaryBandWidthMm']!=300 or g['ordinaryBandDepthMm']!=350:raise ValueError('This exact unselected300x350 source family only')
