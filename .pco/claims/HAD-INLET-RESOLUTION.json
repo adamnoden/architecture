@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T13:23:42.000Z",
-  "expiresAt": "2026-11-26T14:08:42.000Z",
+  "heartbeatAt": "2026-11-26T13:55:24.000Z",
+  "expiresAt": "2026-11-26T14:40:24.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
@@ -36,8 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "1629@5ab92bc0 unmerged; verifieddrain/bridge retained. SE87d protected. Westcompactroute45825253523 types/14testsPASS,5.1235m vs13.7895m. Furthercompactwestwallvalve maydeletebank/carriage; completeinstallationnotyetproved.",
-    "next": "Finishcompactwallvalvegeometry/operation/coldstrip/thermal/passivefault/backfeed. RetainexplicitKv/materialconditions; freshnotchedgroundcapturesbeforeforces. Merge1629onlyafterfullCI/preflight.",
-    "blocker": "CatalogueKv/massnotproven; fullUtilityjoin+historicalforcepinsopen. Localexecutorunavailable, boundedhostproofactive."
+    "evidence": "1629@5ab92bc0 drain/bridgeawaitsfullCI. Westcompactd5a62b3 geometry16testsPASS(typefixturefixpending),4.8635m route; removesbankcarriageproposal. Clearancebudgetsretain2x10settings; sourcehostjoinpending.",
+    "next": "Completecompactstationactualsupport/thermal/coldcut-drain/hatch/backfeed+crew/headjoin; explicitKv2.5/massconditionsarenotproductproof. Freshgroundcaptureaftercompletegeometry.",
+    "blocker": "WholeUtilityinstall/material/flowand2historicalforcepinsopen. Localexecutorunavailable; read-onlysource/hostedgeometryprogressactive."
   }
 }
