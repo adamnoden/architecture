@@ -18,7 +18,7 @@ const run = (change = {}) => deriveStudyLighting({ ...choices, ...change }, basi
 test('four actual furnished-room comparisons and central kitchen share source geometry without invented performance', () => {
   const result = run()
   assert.equal(result.status, 'DEVELOPMENT_COMPARISON')
-  assert.deepEqual(result.diagnostics.map(row => row.code), ['IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED'])
+  assert.deepEqual(result.diagnostics.map(row => row.code), ['IAS_LIGHTING_SUPPLY_INSTALLATION_UNQUALIFIED', 'IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED'])
   assert.deepEqual(result.arrangements.map(row => row.id), ['portable', 'lamps-with-wall', 'wall-led', 'ceiling-with-lamps'])
   assert.equal(new Set(result.arrangements.map(row => row.commonGeometryDigest)).size, 1)
   assert.deepEqual(result.commonRoom.occupied, kit.kit.occupied)
@@ -438,7 +438,7 @@ test('conventional independent home runs have finite continuous routes, bounded 
   assert.deepEqual(h.routes.map(route=>route.bend.radiusMm),[70,111,152])
   assert.deepEqual(h.boxes.map(box=>box.entryAxisCoreDepthRequirementMm),[52,52,38])
   assert.equal(h.architecturalConsequence.additionalBayWidthMm,100)
-  assert.equal(h.architecturalConsequence.carrierShiftXMm,-17)
+  assert.equal(h.architecturalConsequence.carrierShiftXMm,-1)
   assert.equal(h.architecturalConsequence.addedConservativeFloorTerritoryM2,.013000000000000001)
   assert.equal(h.architecturalConsequence.accessoryRecessMm,0)
   assert.equal(h.independentRouteSettingMm,5)
@@ -463,8 +463,8 @@ test('conventional independent home runs have finite continuous routes, bounded 
     const spans=route.clips.slice(1).map((clip,i)=>clip.pointMm[2]!-route.clips[i]!.pointMm[2]!)
     assert.ok(spans.every(span=>span<=h.choices.maximumClipSpanMm))
   }
-  assert.equal(h.stock.clipCount,13)
-  const exactTubeLength=3*(Math.PI/2)*111+(600-70-155)+(1100-111-155)+(1800-152-155)
+  assert.equal(h.stock.clipCount,11)
+  const exactTubeLength=3*(Math.PI/2)*111+(600-70-375)+(1100-111-375)+(1800-152-375)
   assert.ok(Math.abs(h.stock.tubeLengthMm-exactTubeLength)<1e-9)
   const independentTubeMass=Math.PI*(10*10-9*9)*exactTubeLength*7850/1e9
   const independentCollarMass=Math.PI*15*15*90*7850/1e9
@@ -528,7 +528,7 @@ test('ordinary deeper boxes and fixed extension frames clear the complete lining
   assert.equal(h.caseRestPlanMm[1]!-h.firstRestPlanMm[3]!,17)
   assert.equal(h.stock.extensionStockKgComparison,.14067200000000002)
   assert.equal(h.stock.separateKnownSaddleReceiverStockKg,.0785)
-  assert.ok(Math.abs(h.stock.tubeCollarReceiverAndExtensionStockKgComparison-2.2297362030030534)<1e-12)
+  assert.ok(Math.abs(h.stock.tubeCollarReceiverAndExtensionStockKgComparison-(2.2297362030030534-3*220*Math.PI*(10**2-9**2)*7850/1e9))<1e-12)
   const old=structuredClone(components);old.localHomeRunCandidate={...old.localHomeRunCandidate,additionalCornerDepthMm:0,accessoryExtensionMm:0,upperBoxBacksetMm:0,upperPortRearInsetMm:23.5}
   const rejected=deriveStudyLighting(choices,basis,old).construction.localHomeRunComparison
   assert.equal(rejected.status,'GEOMETRY_REJECTED')

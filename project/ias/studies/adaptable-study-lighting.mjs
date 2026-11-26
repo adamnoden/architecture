@@ -1,3 +1,7 @@
+import {readEngineeringDocument} from '../../../compiler/reference-house/current-design/engineering-document.js';
+import {readEngineeringEditDocument} from '../../../compiler/reference-house/current-design/engineering-edit.js';
+import {stableJsonStringify} from '../../../compiler/core/identity.js';
+import {readStudyStructuralGeometry} from '../../../compiler/reference-house/current-design/assemblies/study-structural-context.js';
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { prepareCurrentDesignCompile } from '../../../compiler/reference-house/current-design/compile.js';
@@ -5,7 +9,7 @@ import { readGeorgianDesignSnapshot, requireGeorgianDesignBasis } from '../../..
 import { compileStudyLighting, readStudyLightingReferenceCase } from '../../../compiler/reference-house/current-design/assemblies/study-lighting.js';
 import { readStudyRoomKitReferenceCase } from '../../../compiler/reference-house/current-design/assemblies/study-room-kit.js';
 import { compileStudyRoomKitProjection } from '../../../compiler/reference-house/current-design/assemblies/study-room-kit-projection.js';
-import { drawStudyLightingComparison, drawStudyLightingServiceCorner, drawKitchenLightingCheck, drawStudyLightingRoutes, drawStudyLightingConstruction, drawCommonDepthCornerComparison } from '../../../compiler/reference-house/current-design/assemblies/study-lighting-views.js';
+import { drawStudyLightingComparison, drawStudyLightingServiceCorner, drawKitchenLightingCheck, drawStudyLightingRoutes, drawStudyLightingConstruction, drawCommonDepthCornerComparison,drawStudyLightingCircuit } from '../../../compiler/reference-house/current-design/assemblies/study-lighting-views.js';
 import { auditSourceCoverage } from '../../ccr/studies/source-coverage.js';
 import { sha256SemanticFingerprint } from '../../../compiler/core/identity.js';
 
@@ -22,7 +26,8 @@ const figures = {
   'adaptable-study-lighting-construction.svg': 'constructionSvg',
   'adaptable-study-lighting-common-depth.svg': 'commonDepthCornerSvg',
 };
-const ownedOutputs = new Set([...Object.keys(figures), resultName].map(name => 'project/ias/studies/' + name));
+const currentNames=['working-study-lighting-circuit.svg','working-study-lighting.results.json'];
+const ownedOutputs = new Set([...Object.keys(figures), resultName,...currentNames].map(name => 'project/ias/studies/' + name));
 function requireProducerSourceAudit() {
   const audit = auditSourceCoverage();
   const family = audit.families.find(family => family.id === 'ias-study-lighting');
@@ -37,18 +42,18 @@ function requireProducerSourceAudit() {
   if (blockers.length) throw new Error('Lighting producer refuses non-owned stale source: ' + JSON.stringify(blockers));
   return audit;
 }
-function prepareWriteCompiler() {
+function prepareWriteCompiler(designInput=readGeorgianDesignSnapshot()) {
   // The producer may replace only its own derived files. Authoring and every
   // other family still pass the ordinary audit; no stale receipt is an input.
   const audit = requireProducerSourceAudit();
-  const design = requireGeorgianDesignBasis(readGeorgianDesignSnapshot());
+  const design = requireGeorgianDesignBasis(designInput);
   const planDigest = sha256SemanticFingerprint(design);
   const applicability = { sourceId: design.source.id, planDigest,
     shellMm: [design.envelope.widthMm, design.envelope.depthMm], scope: 'exact accepted Georgian plan basis only' };
   const resolved = { schema: 'current-design-resolution/1', design,
     disciplineBindings: audit.bindings.map(binding => ({ ...binding, applicability })) };
   return {
-    studyRoomKit: async input => ({ source: { id: design.source.id, planDigest }, ...compileStudyRoomKitProjection(resolved, input) }),
+    studyRoomKit: async (input,distributedFloor) => ({ source: { id: design.source.id, planDigest }, ...compileStudyRoomKitProjection(resolved, input,readStudyStructuralGeometry(resolved,distributedFloor)) }),
     studyLighting: async (input, kit) => {
       const lighting = compileStudyLighting(resolved, input, kit);
       return { lighting, comparisonSvg: drawStudyLightingComparison(lighting), serviceCornerSvg: drawStudyLightingServiceCorner(lighting),
@@ -57,7 +62,7 @@ function prepareWriteCompiler() {
     },
   };
 }
-const methods = ['project/had/studies/service-interface-geometry.mjs', 'compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-case.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-corner.ts', 'compiler/reference-house/current-design/assemblies/study-lighting.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-views.ts',
+const methods = ['compiler/reference-house/current-design/assemblies/study-structural-renewal.ts','compiler/reference-house/current-design/assemblies/study-room-kit.ts','project/ias/studies/study-structural-renewal.py','project/ias/studies/study-floor-handling.py','compiler/reference-house/current-design/assemblies/study-lighting-circuit.ts','project/had/studies/service-interface-geometry.mjs', 'compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-case.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-corner.ts', 'compiler/reference-house/current-design/assemblies/study-lighting.ts', 'compiler/reference-house/current-design/assemblies/study-lighting-views.ts',
   'project/ias/studies/adaptable-study-lighting.mjs'];
 const methodSHA256 = Object.fromEntries(methods.map(path => [path, createHash('sha256').update(readFileSync(new URL(path, root))).digest('hex')]));
 const compile = check ? prepareCurrentDesignCompile(readGeorgianDesignSnapshot()) : prepareWriteCompiler();
@@ -90,7 +95,17 @@ for (const [id, change] of Object.entries({ shallow: { serviceTotalDepthMm: 27 }
     unchangedRoomGeometry: JSON.stringify(lighting.commonRoom) === JSON.stringify(baseline.lighting.commonRoom),
     unchangedKitchen: JSON.stringify(lighting.kitchen) === JSON.stringify(baseline.lighting.kitchen), evidence: lighting.evidence };
 }
+const working=readEngineeringEditDocument(JSON.parse(readFileSync(new URL('project/ccr/studies/working-house-comparison.json',root),'utf8')));
+if(!working.stages.studyRoomKit||!working.stages.distributedFloor||!working.stages.studyLighting)throw new Error('Canonical lighting requires saved room, structural floor and lighting controls');
+const workingCompile=check?prepareCurrentDesignCompile(working.design):prepareWriteCompiler(working.design);
+const workingKit=await workingCompile.studyRoomKit({schema:'ias-study-room-kit-case/1',units:'mm',...working.stages.studyRoomKit},working.stages.distributedFloor);
+const current=await workingCompile.studyLighting({schema:'ias-study-lighting-case/1',units:'mm',...working.stages.studyLighting},workingKit);
+// Family bindings include derived receipts. Never embed this receipt's own
+// family digest or a document SHA containing that digest: it creates a cycle.
+const controlling={design:working.design,stages:working.stages};
 const outputs = [
+ [currentNames[0],drawStudyLightingCircuit(current.lighting)],
+ [currentNames[1],JSON.stringify({schema:'ias-working-study-lighting/1',documentPath:'project/ccr/studies/working-house-comparison.json',controllingInputsSHA256:createHash('sha256').update(stableJsonStringify(controlling)).digest('hex'),controlling,methodSHA256,lighting:current.lighting,acceptance:'Actual saved Study/corner development; no installed, material, physical or owner acceptance.'},null,2)+'\n'],
   ...Object.entries(figures).map(([name, field]) => [name, baseline[field]]),
   [resultName, JSON.stringify({ schema: 'ias-study-lighting-review/1', methodSHA256,
     reference: baseline.lighting, probes, acceptance: 'Unselected geometry and operational comparison; no photometry, product/material admission, installed capacity, physical trial or owner acceptance.' }, null, 2) + '\n'],
@@ -117,3 +132,6 @@ if (!check) {
   const audit = auditSourceCoverage();
   if (audit.findings.length) throw new Error('New lighting evidence left a source contradiction: ' + JSON.stringify(audit.findings));
 }
+
+const observed=await readEngineeringDocument(working.design);
+if(stableJsonStringify(observed.bindings)!==stableJsonStringify(working.bindings))throw new Error('Stale canonical working-house bindings; explicitly review/refresh after owning regeneration before accepting current lighting evidence');

@@ -1813,14 +1813,6 @@
             "padTurnDeg": 0
           },
           {
-            "id": "long-narrow",
-            "sizeMm": [
-              400,
-              150
-            ],
-            "padTurnDeg": 90
-          },
-          {
             "id": "square330",
             "sizeMm": [
               330,
@@ -1835,10 +1827,18 @@
               400
             ],
             "padTurnDeg": 0
+          },
+          {
+            "id": "small-square",
+            "sizeMm": [
+              180,
+              180
+            ],
+            "padTurnDeg": 0
           }
         ],
         "pickupClearanceMm": 5,
-        "maximumTravelMm": 1200,
+        "maximumTravelMm": 1450,
         "protocols": [
           {
             "partId": "GROUND/G-STUDY/room-kit/floor/800/800",
@@ -3983,7 +3983,7 @@
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
               3800,
-              439
+              444
             ],
             "workerPathXYMm": [
               [
@@ -3998,7 +3998,7 @@
             "panelPathWaypointDeltasMm": [
               [
                 0,
-                -286.75
+                -281.75
               ]
             ],
             "padBearingPartIds": [
@@ -4033,11 +4033,11 @@
               "boardGripsXYMm": [
                 [
                   3812.5,
-                  629
+                  634
                 ],
                 [
                   3812.5,
-                  729
+                  734
                 ]
               ]
             }
@@ -4181,7 +4181,7 @@
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
               4100,
-              439
+              444
             ],
             "workerPathXYMm": [
               [
@@ -4196,7 +4196,7 @@
             "panelPathWaypointDeltasMm": [
               [
                 0,
-                -286.75
+                -281.75
               ]
             ],
             "padBearingPartIds": [
@@ -4231,11 +4231,11 @@
               "boardGripsXYMm": [
                 [
                   4112.5,
-                  629
+                  634
                 ],
                 [
                   4112.5,
-                  729
+                  734
                 ]
               ]
             }
@@ -4443,7 +4443,7 @@
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
               4325.75,
-              439
+              444
             ],
             "workerPathXYMm": [
               [
@@ -4458,7 +4458,7 @@
             "panelPathWaypointDeltasMm": [
               [
                 0,
-                -286.75
+                -281.75
               ]
             ],
             "padBearingPartIds": [
@@ -4493,11 +4493,11 @@
               "boardGripsXYMm": [
                 [
                   4338.25,
-                  629
+                  634
                 ],
                 [
                   4338.25,
-                  729
+                  734
                 ]
               ]
             }
@@ -4571,33 +4571,33 @@
           {
             "partId": "GROUND/G-STUDY/room-kit/floor/4551.5/429.5",
             "stage": "occupied",
-            "boardId": "retained-narrow",
+            "boardId": "small-square",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              4532.5,
-              505
+              4495,
+              895
             ],
             "workerPathXYMm": [
               [
-                4218,
+                4213,
                 766.25
               ],
               [
-                4218,
+                4170.75,
                 766.25
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                -6,
-                185.25
+                -42.25,
+                525.25
               ]
             ],
             "padBearingPartIds": [
-              "GROUND/G-STUDY/room-kit/floor/4551.5/500",
-              "GROUND/G-STUDY/room-kit/floor/4551.5/500",
-              "GROUND/G-STUDY/room-kit/floor/4551.5/500",
-              "GROUND/G-STUDY/room-kit/floor/4551.5/500"
+              "GROUND/G-STUDY/room-kit/floor/4400/800",
+              "GROUND/G-STUDY/room-kit/floor/4400/951.5",
+              "GROUND/G-STUDY/room-kit/floor/4551.5/800",
+              "GROUND/G-STUDY/room-kit/floor/4551.5/951.5"
             ],
             "trimReleases": [
               "outer-S",
@@ -4619,18 +4619,18 @@
                   780
                 ],
                 [
-                  4218,
+                  4213,
                   766.25
                 ]
               ],
               "boardGripsXYMm": [
                 [
-                  4545,
-                  716.25
+                  4507.5,
+                  905
                 ],
                 [
-                  4545,
-                  816.25
+                  4507.5,
+                  1005
                 ]
               ]
             }
@@ -4707,8 +4707,8 @@
             "boardId": "retained-narrow",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              4530.5,
-              454.5
+              4500.5,
+              459.5
             ],
             "workerPathXYMm": [
               [
@@ -4722,13 +4722,13 @@
             ],
             "panelPathWaypointDeltasMm": [
               [
-                -14.25,
-                -256.25
+                -44.25,
+                -251.25
               ]
             ],
             "padBearingPartIds": [
-              "GROUND/G-STUDY/room-kit/floor/4551.5/500",
-              "GROUND/G-STUDY/room-kit/floor/4551.5/500",
+              "GROUND/G-STUDY/room-kit/floor/4400/500",
+              "GROUND/G-STUDY/room-kit/floor/4400/500",
               "GROUND/G-STUDY/room-kit/floor/4551.5/500",
               "GROUND/G-STUDY/room-kit/floor/4551.5/500"
             ],
@@ -4757,12 +4757,12 @@
               ],
               "boardGripsXYMm": [
                 [
-                  4543,
-                  674.5
+                  4513,
+                  679.5
                 ],
                 [
-                  4543,
-                  774.5
+                  4513,
+                  779.5
                 ]
               ]
             }
@@ -4773,7 +4773,7 @@
             "boardId": "retained-narrow",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              4530.5,
+              4500.5,
               485
             ],
             "workerPathXYMm": [
@@ -4782,19 +4782,19 @@
                 766.25
               ],
               [
-                4176.572282338437,
+                4146.572282338437,
                 766.25
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                -14.25,
+                -44.25,
                 -377.25
               ]
             ],
             "padBearingPartIds": [
-              "GROUND/G-STUDY/room-kit/floor/4551.5/500",
-              "GROUND/G-STUDY/room-kit/floor/4551.5/500",
+              "GROUND/G-STUDY/room-kit/floor/4400/500",
+              "GROUND/G-STUDY/room-kit/floor/4400/500",
               "GROUND/G-STUDY/room-kit/floor/4551.5/500",
               "GROUND/G-STUDY/room-kit/floor/4551.5/500"
             ],
@@ -4824,11 +4824,11 @@
               ],
               "boardGripsXYMm": [
                 [
-                  4543,
+                  4513,
                   705
                 ],
                 [
-                  4543,
+                  4513,
                   805
                 ]
               ]
@@ -5060,8 +5060,12 @@
                   2800
                 ],
                 [
+                  1800,
+                  2750
+                ],
+                [
                   1144.25,
-                  2800
+                  2750
                 ],
                 [
                   1144.25,
@@ -5368,8 +5372,12 @@
                   2800
                 ],
                 [
+                  1800,
+                  2750
+                ],
+                [
                   1055.75,
-                  2800
+                  2750
                 ],
                 [
                   1055.75,
@@ -5570,8 +5578,12 @@
                   2800
                 ],
                 [
+                  1800,
+                  2750
+                ],
+                [
                   1047.196376612414,
-                  2800
+                  2750
                 ],
                 [
                   1047.196376612414,
@@ -7485,11 +7497,11 @@
             "workerPathXYMm": [
               [
                 980,
-                2810
+                2770
               ],
               [
                 980,
-                2810
+                2770
               ]
             ],
             "panelPathWaypointDeltasMm": [
@@ -7515,8 +7527,12 @@
                   2800
                 ],
                 [
+                  1800,
+                  2750
+                ],
+                [
                   980,
-                  2810
+                  2770
                 ]
               ],
               "boardGripsXYMm": [
@@ -7538,20 +7554,20 @@
             "boardTurnDeg": 90,
             "boardOriginXYMm": [
               1100,
-              2219
+              2169
             ],
             "workerPathXYMm": [
               [
                 835,
-                2825
+                2775
               ],
               [
                 1463.2,
-                2825
+                2775
               ],
               [
                 1555,
-                2825
+                2775
               ]
             ],
             "panelPathWaypointDeltasMm": [
@@ -7561,13 +7577,13 @@
               ],
               [
                 785.25,
-                -631
+                -681
               ]
             ],
             "padBearingPartIds": [
+              "GROUND/G-STUDY/room-kit/floor/1100/2000",
               "GROUND/G-STUDY/room-kit/floor/1100/2300",
-              "GROUND/G-STUDY/room-kit/floor/1100/2300",
-              "GROUND/G-STUDY/room-kit/floor/1100/2300",
+              "GROUND/G-STUDY/room-kit/floor/1100/2000",
               "GROUND/G-STUDY/room-kit/floor/1100/2300"
             ],
             "trimReleases": [
@@ -7593,11 +7609,11 @@
               "boardGripsXYMm": [
                 [
                   1387.5,
-                  2319
+                  2269
                 ],
                 [
                   1387.5,
-                  2419
+                  2369
                 ]
               ],
               "afterPlacementPathXYMm": [
@@ -7607,11 +7623,11 @@
                 ],
                 [
                   1705,
-                  2825
+                  2775
                 ],
                 [
                   835,
-                  2825
+                  2775
                 ]
               ]
             }
@@ -7734,54 +7750,84 @@
             "boardId": "square",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              500,
-              2560
+              1400,
+              2600
             ],
             "workerPathXYMm": [
               [
-                1134,
-                2826
+                940,
+                2568
               ],
               [
-                1134,
-                2826
+                940,
+                2285
+              ],
+              [
+                1840,
+                2285
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
                 0,
-                -340
+                -283
+              ],
+              [
+                900,
+                -300
               ]
             ],
             "padBearingPartIds": [
-              "GROUND/G-STUDY/room-kit/floor/500/2553",
-              "GROUND/G-STUDY/room-kit/floor/500/2726.5",
-              "GROUND/G-STUDY/room-kit/floor/500/2553",
-              "GROUND/G-STUDY/room-kit/floor/500/2726.5"
+              "GROUND/G-STUDY/room-kit/floor/1400/2553",
+              "GROUND/G-STUDY/room-kit/floor/1400/2726.5",
+              "GROUND/G-STUDY/room-kit/floor/1400/2553",
+              "GROUND/G-STUDY/room-kit/floor/1400/2726.5"
             ],
             "trimReleases": [
               "wall:study-L-north:0"
             ],
             "staging": {
-              "mode": "carry-then-place-from-pickup-stance",
+              "mode": "carry-then-place-before-approaching-pickup",
               "arrivalPathXYMm": [
                 [
                   2275,
                   2800
                 ],
                 [
-                  1134,
-                  2826
+                  2005,
+                  2750
                 ]
               ],
               "boardGripsXYMm": [
                 [
-                  785,
-                  2745
+                  1687.5,
+                  2700
                 ],
                 [
-                  785,
-                  2845
+                  1687.5,
+                  2800
+                ]
+              ],
+              "afterPlacementPathXYMm": [
+                [
+                  2005,
+                  2750
+                ],
+                [
+                  2005,
+                  2285
+                ],
+                [
+                  940,
+                  2285
+                ],
+                [
+                  940,
+                  2500
+                ],
+                [
+                  940,
+                  2568
                 ]
               ]
             }
@@ -7844,26 +7890,26 @@
           },
           {
             "partId": "GROUND/G-STUDY/room-kit/floor/800/2726.5",
-            "stage": "occupied",
+            "stage": "chair-parked",
             "boardId": "square",
             "boardTurnDeg": 90,
             "boardOriginXYMm": [
-              439,
+              444,
               2663.25
             ],
             "workerPathXYMm": [
               [
-                1431.8451625314851,
-                2634.125
+                1300.5,
+                2430
               ],
               [
-                1070.8451625314851,
-                2634.125
+                944.5,
+                2430
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                -361,
+                -356,
                 0
               ]
             ],
@@ -7884,28 +7930,32 @@
                   2800
                 ],
                 [
-                  1044,
-                  2813.25
+                  1800,
+                  2750
+                ],
+                [
+                  1050,
+                  2635
                 ]
               ],
               "boardGripsXYMm": [
                 [
-                  726.5,
-                  2763.25
+                  731.5,
+                  2673.25
                 ],
                 [
-                  726.5,
-                  2863.25
+                  731.5,
+                  2773.25
                 ]
               ],
               "afterPlacementPathXYMm": [
                 [
-                  1044,
-                  2813.25
+                  1050,
+                  2635
                 ],
                 [
-                  1431.8451625314851,
-                  2634.125
+                  1300.5,
+                  2430
                 ]
               ]
             }
@@ -7916,7 +7966,7 @@
             "boardId": "square",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              455.75,
+              460.75,
               2839
             ],
             "workerPathXYMm": [
@@ -7925,13 +7975,13 @@
                 2673.125
               ],
               [
-                1003.1604734984367,
+                1008.1604734984367,
                 2636.875
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                -344.25,
+                -339.25,
                 -36.25
               ]
             ],
@@ -7958,11 +8008,11 @@
               ],
               "boardGripsXYMm": [
                 [
-                  743.25,
+                  748.25,
                   2849
                 ],
                 [
-                  743.25,
+                  748.25,
                   2949
                 ]
               ],
@@ -8078,8 +8128,12 @@
                   2800
                 ],
                 [
+                  1800,
+                  2750
+                ],
+                [
                   1344,
-                  2813.25
+                  2770
                 ]
               ],
               "boardGripsXYMm": [
@@ -8095,7 +8149,7 @@
               "afterPlacementPathXYMm": [
                 [
                   1344,
-                  2813.25
+                  2770
                 ],
                 [
                   1731.8451625314851,
@@ -8108,56 +8162,66 @@
             "partId": "GROUND/G-STUDY/room-kit/floor/1100/2900",
             "stage": "chair-parked",
             "boardId": "square",
-            "boardTurnDeg": 90,
+            "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              796.5,
-              2845.5
+              888,
+              2550
             ],
             "workerPathXYMm": [
               [
-                1098,
-                2538
+                1725,
+                2810
               ],
               [
-                1098,
-                2538
+                1513,
+                2460
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                -304,
-                -5
+                -212,
+                -350
               ]
             ],
             "padBearingPartIds": [
-              "GROUND/G-STUDY/room-kit/floor/800/2900",
-              "GROUND/G-STUDY/room-kit/floor/800/2900",
-              "GROUND/G-STUDY/room-kit/floor/800/2900",
-              "GROUND/G-STUDY/room-kit/floor/800/2900"
+              "GROUND/G-STUDY/room-kit/floor/800/2553",
+              "GROUND/G-STUDY/room-kit/floor/800/2726.5",
+              "GROUND/G-STUDY/room-kit/floor/800/2553",
+              "GROUND/G-STUDY/room-kit/floor/800/2726.5"
             ],
             "trimReleases": [
               "wall:study-L-north:0"
             ],
             "staging": {
-              "mode": "carry-then-place-from-pickup-stance",
+              "mode": "carry-then-place-before-approaching-pickup",
               "arrivalPathXYMm": [
                 [
                   2275,
                   2800
                 ],
                 [
-                  1098,
-                  2538
+                  1493,
+                  2700
                 ]
               ],
               "boardGripsXYMm": [
                 [
-                  1084,
-                  2855.5
+                  1175.5,
+                  2650
                 ],
                 [
-                  1084,
-                  2955.5
+                  1175.5,
+                  2750
+                ]
+              ],
+              "afterPlacementPathXYMm": [
+                [
+                  1493,
+                  2700
+                ],
+                [
+                  1725,
+                  2810
                 ]
               ]
             }
@@ -9009,7 +9073,7 @@
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
               2511.5,
-              2239
+              2209
             ],
             "workerPathXYMm": [
               [
@@ -9018,19 +9082,19 @@
               ],
               [
                 2240.4485833059075,
-                2698.5
+                2668.5
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
                 1.25,
-                -636.25
+                -666.25
               ]
             ],
             "padBearingPartIds": [
+              "GROUND/G-STUDY/room-kit/floor/2600/2000",
               "GROUND/G-STUDY/room-kit/floor/2600/2300",
-              "GROUND/G-STUDY/room-kit/floor/2600/2300",
-              "GROUND/G-STUDY/room-kit/floor/2600/2300",
+              "GROUND/G-STUDY/room-kit/floor/2600/2000",
               "GROUND/G-STUDY/room-kit/floor/2600/2300"
             ],
             "trimReleases": [
@@ -9056,11 +9120,11 @@
               "boardGripsXYMm": [
                 [
                   2524,
-                  2339
+                  2309
                 ],
                 [
                   2524,
-                  2439
+                  2409
                 ]
               ],
               "afterPlacementPathXYMm": [
@@ -9142,7 +9206,7 @@
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
               640,
-              955
+              950
             ],
             "workerPathXYMm": [
               [
@@ -9157,7 +9221,7 @@
             "panelPathWaypointDeltasMm": [
               [
                 5,
-                -280
+                -285
               ]
             ],
             "padBearingPartIds": [
@@ -9182,11 +9246,11 @@
               "boardGripsXYMm": [
                 [
                   790,
-                  1040
+                  1035
                 ],
                 [
                   790,
-                  1140
+                  1135
                 ]
               ],
               "preParkingPathXYMm": [
@@ -9431,22 +9495,22 @@
             "boardId": "square330",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              491,
+              501,
               810
             ],
             "workerPathXYMm": [
               [
-                1135,
+                1145,
                 825
               ],
               [
-                1135,
+                1145,
                 825
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                0,
+                10,
                 320
               ]
             ],
@@ -9468,17 +9532,17 @@
                   805
                 ],
                 [
-                  1135,
+                  1145,
                   825
                 ]
               ],
               "boardGripsXYMm": [
                 [
-                  806,
+                  816,
                   825
                 ],
                 [
-                  806,
+                  816,
                   925
                 ]
               ],
@@ -9500,7 +9564,7 @@
             "boardId": "retained-narrow",
             "boardTurnDeg": 90,
             "boardOriginXYMm": [
-              491,
+              501,
               955
             ],
             "workerPathXYMm": [
@@ -9509,13 +9573,13 @@
                 875.75
               ],
               [
-                1135,
+                1145,
                 875.75
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                0,
+                10,
                 155
               ]
             ],
@@ -9542,11 +9606,11 @@
               ],
               "boardGripsXYMm": [
                 [
-                  806,
+                  816,
                   970
                 ],
                 [
-                  806,
+                  816,
                   1070
                 ]
               ],
@@ -9568,7 +9632,7 @@
             "boardId": "retained-narrow",
             "boardTurnDeg": 90,
             "boardOriginXYMm": [
-              491,
+              501,
               780
             ],
             "workerPathXYMm": [
@@ -9577,13 +9641,13 @@
                 1027.25
               ],
               [
-                1135,
+                1145,
                 1027.25
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                0,
+                10,
                 -165
               ]
             ],
@@ -9610,11 +9674,11 @@
               ],
               "boardGripsXYMm": [
                 [
-                  806,
+                  816,
                   830
                 ],
                 [
-                  806,
+                  816,
                   930
                 ]
               ],
@@ -9773,22 +9837,22 @@
             "boardId": "square330",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              491,
+              501,
               769.5
             ],
             "workerPathXYMm": [
               [
-                1135,
-                1010
+                1136,
+                1060
               ],
               [
-                1135,
+                1145,
                 1010
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                0,
+                10,
                 -330
               ]
             ],
@@ -9809,17 +9873,17 @@
                   805
                 ],
                 [
-                  1135,
-                  1010
+                  1136,
+                  1060
                 ]
               ],
               "boardGripsXYMm": [
                 [
-                  806,
+                  816,
                   960
                 ],
                 [
-                  806,
+                  816,
                   1060
                 ]
               ],
@@ -9967,7 +10031,7 @@
             "boardId": "square",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              2260.75,
+              2270.75,
               500
             ],
             "workerPathXYMm": [
@@ -9982,7 +10046,7 @@
             ],
             "panelPathWaypointDeltasMm": [
               [
-                -339.25,
+                -329.25,
                 0
               ]
             ],
@@ -10011,11 +10075,11 @@
               ],
               "boardGripsXYMm": [
                 [
-                  2548.25,
+                  2558.25,
                   690
                 ],
                 [
-                  2548.25,
+                  2558.25,
                   790
                 ]
               ]
@@ -10313,34 +10377,41 @@
             "boardId": "square",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              4401.5,
-              802.5
+              2988,
+              1100
             ],
             "workerPathXYMm": [
               [
                 3766,
-                766.25
+                754
               ],
               [
-                4067.5,
-                766.25
+                2670.5,
+                754
+              ],
+              [
+                2654,
+                1049.5
               ]
             ],
             "panelPathWaypointDeltasMm": [
               [
-                301.5,
-                302.5
+                -1095.5,
+                304.5
+              ],
+              [
+                -1112,
+                600
               ]
             ],
             "padBearingPartIds": [
-              "GROUND/G-STUDY/room-kit/floor/4400/800",
-              "GROUND/G-STUDY/room-kit/floor/4400/951.5",
-              "GROUND/G-STUDY/room-kit/floor/4551.5/800",
-              "GROUND/G-STUDY/room-kit/floor/4551.5/951.5"
+              "GROUND/G-STUDY/room-kit/floor/2900/1103",
+              "GROUND/G-STUDY/room-kit/floor/2900/1103",
+              "GROUND/G-STUDY/room-kit/floor/2900/1103",
+              "GROUND/G-STUDY/room-kit/floor/2900/1103"
             ],
             "trimReleases": [
-              "wall:cloak-south:0",
-              "wall:study-east:0"
+              "wall:cloak-west:0"
             ],
             "staging": {
               "mode": "carry-then-place-before-approaching-pickup",
@@ -10354,32 +10425,32 @@
                   1390
                 ],
                 [
-                  2565,
-                  780
-                ],
-                [
-                  4096.5,
-                  766.25
+                  2683,
+                  1250
                 ]
               ],
               "boardGripsXYMm": [
                 [
-                  4414,
-                  812.5
+                  3000.5,
+                  1200
                 ],
                 [
-                  4414,
-                  912.5
+                  3000.5,
+                  1300
                 ]
               ],
               "afterPlacementPathXYMm": [
                 [
-                  4096.5,
-                  766.25
+                  2683,
+                  1250
+                ],
+                [
+                  2683,
+                  754
                 ],
                 [
                   3766,
-                  766.25
+                  754
                 ]
               ]
             }
@@ -10390,7 +10461,7 @@
             "boardId": "square",
             "boardTurnDeg": 0,
             "boardOriginXYMm": [
-              2260.75,
+              2270.75,
               1101.5
             ],
             "workerPathXYMm": [
@@ -10405,7 +10476,7 @@
             ],
             "panelPathWaypointDeltasMm": [
               [
-                -339.25,
+                -329.25,
                 0
               ]
             ],
@@ -10434,17 +10505,18 @@
               ],
               "boardGripsXYMm": [
                 [
-                  2548.25,
+                  2558.25,
                   1111.5
                 ],
                 [
-                  2548.25,
+                  2558.25,
                   1211.5
                 ]
               ]
             }
           }
-        ]
+        ],
+        "minimumBoardFixedClearanceMm": 10
       },
       "oakComposition": {
         "schema": "ias-study-oak-composition/1",

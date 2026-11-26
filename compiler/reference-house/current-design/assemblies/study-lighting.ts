@@ -1,3 +1,5 @@
+import {compileStudyStructuralRenewal,studyPanelTransferProfile} from './study-structural-renewal.js'
+import {deriveStudyLightingCircuit} from './study-lighting-circuit.js'
 import { deriveCommonDepthCorner, type CommonDepthCornerChoices } from './study-lighting-common-depth.js'
 import { deriveLightingCornerDetail, type LightingCornerDetailInput } from './study-lighting-corner.js'
 import { createHash } from 'node:crypto'
@@ -23,7 +25,7 @@ export function readLightingComponents() {
   const data = JSON.parse(read(studyLightingComponentsPath).toString('utf8'))
   if (data.schema !== 'ias-lighting-component-references/1') throw new TypeError('Unsupported lighting component reference schema')
   return data as {
-    cornerConstruction: LightingCornerDetailInput['construction'], localHomeRunCandidate: LightingCornerDetailInput['homeRuns'], localHomeRunSupportReference: LightingCornerDetailInput['support'], commonDepthCornerCandidate: CommonDepthCornerChoices,
+    circuitDesign: Parameters<typeof deriveStudyLightingCircuit>[2], cornerConstruction: LightingCornerDetailInput['construction'], localHomeRunCandidate: LightingCornerDetailInput['homeRuns'], localHomeRunSupportReference: LightingCornerDetailInput['support'], commonDepthCornerCandidate: CommonDepthCornerChoices,
     socket: { plateWidthMm: number; plateHeightMm: number; recommendedBoxDepthMm: number; bodyDepthMm: number },
     backBox: { widthMm: number; heightMm: number; depthMm: number }, plug: { widthMm: number; heightMm: number; depthMm: number; insertedProjectionMm: number },
     deskLamp: { baseDiameterMm: number; leadLengthMm: number }, floorLamp: { baseDiameterMm: number; leadLengthMm: number },
@@ -45,7 +47,7 @@ export function lightingBasis(resolved: CurrentDesignResolution, projection: Pro
   const { kit, wallTransition, roomAssembly } = projection
   if (wallTransition.status !== 'DEVELOPMENT_COMPARISON' || kit.source.currentPlanBasis !== resolved.design.source.id
     || kit.source.bindingDigest !== binding.digest) throw new Error('IAS_LIGHTING_STALE_ROOM_INTERFACE')
-  const model = house.model as unknown as { groundFurniture: Record<string, number[]>; kitchenOccurrence: {
+  const model = house.model as unknown as { groundWalls:{id:string;a:number[];b:number[];t:number;holes?:number[][];structuralCore?:number[]}[];internalArchControls:{head:number;spring:number;radialRing:number};architecturalServices:{electrical:{phaseHotA:number[];nominalAperPhase:number};otherServiceDuties:{id:string;path:number[][]}[]};groundFurniture: Record<string, number[]>; kitchenOccurrence: {
     station: number[]; cooking: { footprint: number[]; top: number } } }
   const furniture = model.groundFurniture
   const table = furniture['dining-table1200x800'], worker = furniture['dining-chair-west-south']
@@ -68,6 +70,7 @@ export function lightingBasis(resolved: CurrentDesignResolution, projection: Pro
       southModuleXZMm: wallTransition.field.moduleXZMm, grilleXZMm: kit.grilleKeepOut.box,
       skirtingTopMm: roomAssembly.design.bottomMm, settingMm: roomAssembly.design.settingMm,
       retainedSkirtingEndXMm: skirting[0], retainedSkirtingDrawMm: wallTransition.field.retainedSkirtingFirstDrawMm },
+    electrical:{consumerStationXYWHMm:furniture['service-utility-electricalStation'],incoming:model.architecturalServices.otherServiceDuties.find(r=>r.id==='power-incoming'),dryDistribution:model.architecturalServices.otherServiceDuties.find(r=>r.id==='power-distribution'),phaseLoadA:model.architecturalServices.electrical.phaseHotA,nominalAperPhase:model.architecturalServices.electrical.nominalAperPhase,walls:model.groundWalls,arch:model.internalArchControls,serviceRoutes:model.architecturalServices.otherServiceDuties.filter(r=>r.path?.length)},
     kitchen: { tableXYWHMm: table as number[], workerXYWHMm: worker as number[], sinkXYWHMm: kitchen.station as number[],
       cookingXYWHMm: kitchen.cooking.footprint as number[], cookingTopMm: kitchen.cooking.top as number },
   }
@@ -229,14 +232,16 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     parkedModule: construction.firstRelease.parked, floorBandsMm: room.bands,
     occupiedPlanMm: [...room.occupied, ['reserved-floor-lamp', [floorBase[0] - floorLampRadius, floorBase[1] - floorLampRadius, floorBase[0] + floorLampRadius, floorBase[1] + floorLampRadius]]],
   }, components.commonDepthCornerCandidate)
-  fail('IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.', ['IAS/STUDY/room-supply-interface'])
-  fail('IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED', 'Three independent source-to-enclosure containment paths replace the unresolved shared-riser topology as an unselected development direction. Actual box ports, hardware and device connections remain unqualified; the three skirt-top source interfaces have no bound house feed.', construction.localHomeRunComparison.sourceInterfaceIds)
+  const circuit=deriveStudyLightingCircuit(basis,construction.localHomeRunComparison,components.circuitDesign)
+  for(const issue of circuit.issues)fail('IAS_LIGHTING_CIRCUIT_REJECTED',issue)
+  fail('IAS_LIGHTING_SUPPLY_INSTALLATION_UNQUALIFIED','Named source-bound socket/manual-lighting ways, cables and terminal nets are specified. Actual CU water exposure, supply/earth, board compatibility, fault energy and installed verification remain unearned.',circuit.feeders.map(r=>r.way))
+  fail('IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED', 'Three independent source-to-enclosure containment paths replace the unresolved shared-riser topology as an unselected development direction. Actual box ports, hardware and device connections remain unqualified; the source interfaces have specified design nets, with actual installed connections unearned.', construction.localHomeRunComparison.sourceInterfaceIds)
   if(construction.localHomeRunComparison.residualGeometryWarnings.some(w=>w.boundary==='tubeFront')) fail('IAS_LIGHTING_FRONT_LINING_MARGIN_UNQUALIFIED','The authored corner retains a failed or small full-lining reserve after both independent settings. Actual box-port/hardware and complete lining detail remain unresolved; improved steel clearance is not whole-installation acceptance.',construction.localHomeRunComparison.routes.slice(0,2).map(r=>r.id))
   for (const issue of construction.localHomeRunComparison.issues) fail('IAS_LIGHTING_HOME_RUN_COMPARISON_REJECTED', issue)
   for (const issue of construction.issues) fail('IAS_LIGHTING_CONSTRUCTION_REJECTED', issue)
   return {
     schema: studyLightingMethod, status: diagnostics.some(d => /REJECTED|MISSING/.test(d.code)) ? 'GEOMETRY_REJECTED' : 'DEVELOPMENT_COMPARISON', request, source: basis.source,
-    caseDigest: sha256SemanticFingerprint({ request, basis, components }), localHomeRunWallDisposition, commonRoom: room, arrangements, selectedArrangement: selected.id, corner, serviceStations, fixedInterfaces, construction, commonDepthCornerComparison,
+    caseDigest: sha256SemanticFingerprint({ request, basis, components }), circuit, localHomeRunWallDisposition, commonRoom: room, arrangements, selectedArrangement: selected.id, corner, serviceStations, fixedInterfaces, construction, commonDepthCornerComparison,
     leads: { desk: { pathMm: deskLead, routedMm: length(deskLead), suppliedMm: components.deskLamp.leadLengthMm }, floor: { pathMm: floorLead, routedMm: length(floorLead), suppliedMm: components.floorLamp.leadLengthMm },
       side: { pathMm: sideLead, routedMm: length(sideLead), suppliedMm: components.deskLamp.leadLengthMm }, authoredSlackMm: 200 },
     controls: { automationConnected: request.automationConnected, automationRequired: false, ordinaryArrivalWorking: !!selected.roles[0].liveSourceIds.length,
@@ -250,6 +255,21 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
   } as const
 }
 export function compileStudyLighting(resolved: CurrentDesignResolution, input: unknown, kit: Projection) {
-  return deriveStudyLighting(input, lightingBasis(resolved, kit), readLightingComponents())
+  const lighting=deriveStudyLighting(input, lightingBasis(resolved, kit), readLightingComponents())
+  const room=kit.kit,context=room.structuralConsequence,plan=room.request.ordinaryHandling
+  if(!context||!plan)return lighting
+  const [x,y,z,w,d,h]=lighting.circuit.sourceBox.boxMm
+  const bay=lighting.construction.localHomeRunComparison
+  const closedSourceFloorRenewal=compileStudyStructuralRenewal(context,room.floor.parts,room.floor.emitterPlinth,plan,room.floor.installedInlet,{
+    volumes:[{id:lighting.circuit.sourceBox.id,xyzxyzMm:[x!,y!,z!,x!+w!,y!+d!,z!+h!]},{id:'IAS/STUDY/closed-local-bay',xyzxyzMm:[bay.bayPlanMm[0]!,bay.frontYMm,bay.finishBottomZMm,bay.bayPlanMm[2]!,bay.bayPlanMm[3]!,bay.finishTopZMm]}],
+    panelTransfer:studyPanelTransferProfile(room.floor.wearingFaceMm+room.floor.beddingMm),
+  })
+  const closedClear=closedSourceFloorRenewal.status==='computed-geometry-witnesses'
+  return{...lighting,status:closedClear?lighting.status:'GEOMETRY_REJECTED' as const,
+    diagnostics:[...lighting.diagnostics,...(closedClear?[]:[{code:'IAS_LIGHTING_CLOSED_ROOM_RENEWAL_REJECTED',
+      message:'Actual retained local bay/sourcebox conflicts with current floor or furniture renewal.',objectIds:[lighting.circuit.sourceBox.id]}])],
+    circuit:{...lighting.circuit,closedSourceFloorRenewal,remaining:lighting.circuit.remaining.filter(row=>!row.startsWith('Complete sourcebox closed pose')).concat(closedClear?[]:['Actual retained sourcebox/bay conflicts with current floor or furniture renewal.']),status:closedClear?lighting.circuit.status:'DESIGN_REJECTED' as const,
+      issues:[...lighting.circuit.issues,...(closedClear?[]:['closed-source-floor-renewal-rejected'])]}}
+
 }
-export type StudyLightingResult = ReturnType<typeof deriveStudyLighting>
+export type StudyLightingResult = ReturnType<typeof deriveStudyLighting> & {readonly circuit:ReturnType<typeof deriveStudyLighting>['circuit'] & {readonly closedSourceFloorRenewal?:ReturnType<typeof compileStudyStructuralRenewal>}}
