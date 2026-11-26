@@ -1,0 +1,79 @@
+{
+  "schema": "had-utility-route/2",
+  "id": "HAD/compact-west-wall-Utility-main",
+  "stem": "vertical-up",
+  "upstreamVirtualCornersMm": [
+    [
+      10080,
+      600,
+      1100
+    ],
+    [
+      9550,
+      600,
+      1100
+    ]
+  ],
+  "downstreamVirtualCornersMm": [
+    [
+      9550,
+      1900,
+      1100
+    ],
+    [
+      9550,
+      1900,
+      1500
+    ],
+    [
+      9550,
+      1250,
+      1500
+    ],
+    [
+      10760,
+      1250,
+      1500
+    ]
+  ],
+  "formedTurn": {
+    "path": "utility/downstream",
+    "cornerIndex": 3,
+    "centrelineRadiusMm": 112,
+    "maximumAngularStepDeg": 1,
+    "maximumOuterDiameterAfterFormingMm": 28.1,
+    "minimumOuterDiameterAfterFormingMm": 27.9,
+    "minimumWallAfterFormingMm": 1.02,
+    "maximumWallAfterFormingMm": 1.5
+  },
+  "ordinaryApproachWaypointsMm": [
+    [
+      10600,
+      2890,
+      1450
+    ],
+    [
+      10600,
+      2100,
+      1450
+    ],
+    [
+      9950,
+      2100,
+      1450
+    ]
+  ],
+  "valveDesign": {
+    "referenceModel": "SANT SBM-14 DN20",
+    "maximumBareModuleMm": [
+      90,
+      300,
+      90
+    ],
+    "connectionHalfSpanMm": 150,
+    "maximumOpenStemAboveAxisMm": 160,
+    "handwheelDiameterMm": 80,
+    "maximumDryModuleKg": 4,
+    "minimumFullOpenKvM3h": 2.5
+  }
+}

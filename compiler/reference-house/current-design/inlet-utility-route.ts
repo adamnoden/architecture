@@ -8,7 +8,8 @@ import type {IndoorRoutesInput,InletRetainedRouteServices} from './inlet-indoor-
 import type {inletEntrySideCuts} from './inlet-indoor-cuts.js'
 type P=readonly[number,number,number]
 type B=readonly[number,number,number,number,number,number]
-export type UtilityRouteChoice={schema:'had-utility-route/1';id:string;stem:'horizontal-west'|'horizontal-north';upstreamVirtualCornersMm:readonly P[];downstreamVirtualCornersMm:readonly P[];
+type CompactValveDesign={referenceModel:'SANT SBM-14 DN20';maximumBareModuleMm:readonly[number,number,number];connectionHalfSpanMm:number;maximumOpenStemAboveAxisMm:number;handwheelDiameterMm:number;maximumDryModuleKg:number;minimumFullOpenKvM3h:number}
+export type UtilityRouteChoice={schema:'had-utility-route/1'|'had-utility-route/2';id:string;stem:'horizontal-west'|'horizontal-north'|'vertical-up';valveDesign?:CompactValveDesign;ordinaryApproachWaypointsMm?:readonly P[];upstreamVirtualCornersMm:readonly P[];downstreamVirtualCornersMm:readonly P[];
  formedTurn:{path:'utility/downstream';cornerIndex:number;centrelineRadiusMm:number;maximumAngularStepDeg:number;maximumOuterDiameterAfterFormingMm:number;minimumOuterDiameterAfterFormingMm:number;minimumWallAfterFormingMm:number;maximumWallAfterFormingMm:number}}
 const tuple=(v:unknown,n:number)=>Array.isArray(v)&&v.length===n&&[...v].every(x=>typeof x==='number'&&Number.isFinite(x))
 const length=(a:P,b:P)=>Math.hypot(...a.map((v,k)=>v-b[k]))
@@ -18,9 +19,19 @@ const dot=(a:P,b:P)=>a.reduce((n,v,k)=>n+v*b[k],0)
 const cross=(a:readonly number[],b:readonly number[])=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]
 const gap=(a:B,b:B)=>{const g=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return g.some(v=>v>0)?Math.hypot(...g.map(v=>Math.max(v,0))):Math.max(...g)}
 export function admitUtilityRouteChoice(value:unknown):UtilityRouteChoice{
- const c=value as UtilityRouteChoice,keys=['schema','id','stem','upstreamVirtualCornersMm','downstreamVirtualCornersMm','formedTurn']
- if(!c||Object.keys(c).sort().join(',')!==keys.sort().join(',')||c.schema!=='had-utility-route/1'||typeof c.id!=='string'||!c.id||!['horizontal-west','horizontal-north'].includes(c.stem)
+ const c=value as UtilityRouteChoice,compact=c?.schema==='had-utility-route/2',keys=['schema','id','stem','upstreamVirtualCornersMm','downstreamVirtualCornersMm','formedTurn',...(compact?['valveDesign','ordinaryApproachWaypointsMm']:[])]
+ if(!c||Object.keys(c).sort().join(',')!==keys.sort().join(',')||!['had-utility-route/1','had-utility-route/2'].includes(c.schema)||typeof c.id!=='string'||!c.id||!(compact?['vertical-up']:['horizontal-west','horizontal-north']).includes(c.stem)
   ||![c.upstreamVirtualCornersMm,c.downstreamVirtualCornersMm].every(p=>Array.isArray(p)&&p.length>=2&&[...p].every(v=>tuple(v,3)))||!c.formedTurn)throw Error('Unsupported complete Utility route choice')
+ if(compact){const d=c.valveDesign
+  if(!d||Object.keys(d).sort().join(',')!=='connectionHalfSpanMm,handwheelDiameterMm,maximumBareModuleMm,maximumDryModuleKg,maximumOpenStemAboveAxisMm,minimumFullOpenKvM3h,referenceModel'
+   ||d.referenceModel!=='SANT SBM-14 DN20'||!tuple(d.maximumBareModuleMm,3)||d.maximumBareModuleMm.some(v=>v<=0)
+   ||![d.connectionHalfSpanMm,d.maximumOpenStemAboveAxisMm,d.handwheelDiameterMm,d.maximumDryModuleKg,d.minimumFullOpenKvM3h].every(Number.isFinite)
+   ||d.maximumBareModuleMm[0]<70||d.maximumBareModuleMm[0]>160||d.maximumBareModuleMm[2]<70||d.maximumBareModuleMm[2]>160
+   ||d.maximumBareModuleMm[1]!==2*d.connectionHalfSpanMm||d.connectionHalfSpanMm<100||d.connectionHalfSpanMm>250
+   ||d.maximumOpenStemAboveAxisMm<130||d.maximumOpenStemAboveAxisMm>250||d.handwheelDiameterMm<70||d.handwheelDiameterMm>125
+   ||d.maximumDryModuleKg<2||d.maximumDryModuleKg>12||d.minimumFullOpenKvM3h<1||d.minimumFullOpenKvM3h>12
+   ||!Array.isArray(c.ordinaryApproachWaypointsMm)||c.ordinaryApproachWaypointsMm.length<2||c.ordinaryApproachWaypointsMm.some(p=>!tuple(p,3)))throw Error('Complete compact valve design conditions and real approach required')
+ }
  const f=c.formedTurn
  if(Object.keys(f).sort().join(',')!=='centrelineRadiusMm,cornerIndex,maximumAngularStepDeg,maximumOuterDiameterAfterFormingMm,maximumWallAfterFormingMm,minimumOuterDiameterAfterFormingMm,minimumWallAfterFormingMm,path'
   ||f.path!=='utility/downstream'||!Number.isInteger(f.cornerIndex)||f.cornerIndex<0||f.cornerIndex>=c.downstreamVirtualCornersMm.length
@@ -52,17 +63,37 @@ function orientedUtilityValve(source:ReturnType<typeof inletEntrySideCuts>['valv
   actualProductAndFactoryTailsSelected:false}
 }
 
+function compactUtilityValve(d:CompactValveDesign,cuts:ReturnType<typeof inletEntrySideCuts>){
+ const source=cuts.valves.find(v=>v.branch==='utility')!
+ const [x,y,z]=source.axisMm,[w,l,h]=d.maximumBareModuleMm,rr=d.handwheelDiameterMm/2,
+  body:B=[x-w/2-26,y-l/2-26,z-h/2-26,w+52,l+52,h+52],
+  wheel:B=[x-rr,y-rr,z+h/2,2*rr,2*rr,d.maximumOpenStemAboveAxisMm-h/2],
+  grips=[-15,0,15].map(deg=>({pointMm:[x+rr*Math.cos(deg*Math.PI/180),y+rr*Math.sin(deg*Math.PI/180),z+d.maximumOpenStemAboveAxisMm-10] as P,
+   regripAngleDeg:deg,inboardMm:0}))
+ return{id:'HAD/utility/compact-west-wall-main',branch:'utility',axisMm:source.axisMm,flowAxis:'north-south',stem:'vertical-up',
+  insulatedValveBodyEnvelopeMm:body,stemWheelEnvelopeMm:wheel,grips,maximumGripReachMm:Math.max(...grips.map(g=>length(cuts.ordinaryOperator.shoulderMm as P,g.pointMm))),
+  tailElbowVirtualCornersMm:[] as number[][],nominalValveKg:null,maximumDryModuleKg:d.maximumDryModuleKg,knownGravityN:null,designGravityUpperN:d.maximumDryModuleKg*9.81,
+  pressureCutClearBoreComparisonN:source.pressureCutClearBoreComparisonN,actualCompletedPayloadKg:null,actualFactoryFlowArrowAndSpindleOrientationQualified:false,
+  replacement:{releaseEachFlangeMm:null,plannedColdCutsRequired:true,interfaceUnionsSelected:false,firstTranslationMm:[100,0,0],wholeValveSweepMm:[body[0],body[1],body[2],body[3]+100,body[4],body[5]] as B,firstRestAxisMm:[x+100,y,z],
+   actualCaptureAndRestCapacityQualified:false,actualTailReleaseToolsAndReinstatementQualified:false},
+  actualProductAndFactoryTailsSelected:false}
+}
+
 export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoutesInput;cuts:ReturnType<typeof inletEntrySideCuts>;retained:InletRetainedRouteServices}){
  const c=admitUtilityRouteChoice(i.choice),s=i.input,cuts=i.cuts,facts=inletCabinetProductFacts,source=s.utilitySourcePathMm[2],terminal=s.utilitySourcePathMm[6],
   sourceValve=cuts.valves.find(v=>v.branch==='utility'),
-  valve=sourceValve?orientedUtilityValve(sourceValve,c.stem,cuts):undefined
+  compact=c.schema==='had-utility-route/2',
+  valve=sourceValve?(compact?compactUtilityValve(c.valveDesign!,cuts):orientedUtilityValve(sourceValve,c.stem,cuts)):undefined
  if(!valve||!tuple(source,3)||!tuple(terminal,3)||!tuple(s.roomPlanMm,4)||!Number.isFinite(s.groundFflMm)||s.utilityLmin<=0||s.maximumGaugeBar<=0||s.maximumGaugeBar>12)throw Error('Actual Utility source, valve and datum required')
- const [x,y,z]=valve.axisMm,[west,south,width,depth]=s.roomPlanMm,east=west+width,north=south+depth,
+ const [x,y,z]=valve.axisMm,flowIndex=compact?1:2,halfSpan=compact?c.valveDesign!.connectionHalfSpanMm:80,
+  upstreamFace=valve.axisMm.map((v,k)=>v-(k===flowIndex?halfSpan:0)) as unknown as P,downstreamFace=valve.axisMm.map((v,k)=>v+(k===flowIndex?halfSpan:0)) as unknown as P,
+  [west,south,width,depth]=s.roomPlanMm,east=west+width,north=south+depth,
   radius=facts.pipe.maximumOuterDiameterIncludingOvalityMm/2+26,setting=10,fittingR=facts.coupling.spannerMm/(2*Math.cos(Math.PI/6))+26,takeoff=facts.elbow.portToVirtualCornerMm,
-  pathInputs=[{id:'utility/upstream',points:[source,...c.upstreamVirtualCornersMm,[x,y,z-80] as P]},
-   {id:'utility/downstream',points:[[x,y,z+80] as P,...c.downstreamVirtualCornersMm,terminal]}]
- if(JSON.stringify(c.upstreamVirtualCornersMm.at(-1))!==JSON.stringify([x,y,z-s.tailOffsetMm])
-  ||JSON.stringify(c.downstreamVirtualCornersMm[0])!==JSON.stringify([x,y,z+s.tailOffsetMm]))throw Error('Changed actual Utility flange tail connection')
+  pathInputs=[{id:'utility/upstream',points:[source,...c.upstreamVirtualCornersMm,upstreamFace]},
+   {id:'utility/downstream',points:[downstreamFace,...c.downstreamVirtualCornersMm,terminal]}]
+ if(!compact&&(JSON.stringify(c.upstreamVirtualCornersMm.at(-1))!==JSON.stringify([x,y,z-s.tailOffsetMm])
+  ||JSON.stringify(c.downstreamVirtualCornersMm[0])!==JSON.stringify([x,y,z+s.tailOffsetMm])))throw Error('Changed actual Utility flange tail connection')
+ if(compact){const a=direction(c.upstreamVirtualCornersMm.at(-1)!,upstreamFace),b=direction(downstreamFace,c.downstreamVirtualCornersMm[0]);if(a.some((v,k)=>Math.abs(v-(k===flowIndex?1:0))>1e-10)||b.some((v,k)=>Math.abs(v-(k===flowIndex?1:0))>1e-10))throw Error('Changed actual compact module port direction')}
  const paths=pathInputs.map(p=>{
   const original=segments(p.points)
   if(original.some(v=>v.lengthMm<=0))throw Error('Zero Utility leg')
@@ -127,21 +158,37 @@ export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoute
  // Exact connected axial ends only. Returning legs are never trimmed.
  for(const p of paths)for(const leg of p.straight){
   const upstream=p.id.endsWith('/upstream'),connected=upstream?leg.index===p.straight.length-1:leg.index===0,
-   limit=upstream?valve.insulatedValveBodyEnvelopeMm[2]-radius-settings:valve.insulatedValveBodyEnvelopeMm[2]+valve.insulatedValveBodyEnvelopeMm[5]+radius+settings,
-   a=connected&&!upstream?[x,y,limit] as P:leg.a,b=connected&&upstream?[x,y,limit] as P:leg.b
-  if(connected&&(upstream?b[2]<a[2]:a[2]>b[2]))throw Error('Insufficient actual Utility connected axial tail')
+   limit=upstream?valve.insulatedValveBodyEnvelopeMm[flowIndex]-radius-settings:valve.insulatedValveBodyEnvelopeMm[flowIndex]+valve.insulatedValveBodyEnvelopeMm[flowIndex+3]+radius+settings,
+   a=connected&&!upstream?valve.axisMm.map((v,k)=>k===flowIndex?limit:v) as unknown as P:leg.a,b=connected&&upstream?valve.axisMm.map((v,k)=>k===flowIndex?limit:v) as unknown as P:leg.b
+  if(connected&&(upstream?b[flowIndex]<a[flowIndex]:a[flowIndex]>b[flowIndex]))throw Error('Insufficient actual Utility connected axial tail')
   for(const [kind,box] of [['body',valve.insulatedValveBodyEnvelopeMm],['stem',valve.stemWheelEnvelopeMm]] as const)add(p.id+'/'+leg.index+'/valve-'+kind,'valve-pipe',exactSegmentBoxDistance(a,b,box)-radius-settings)
  }
  for(const corner of allCorners)for(const [kind,box] of [['body',valve.insulatedValveBodyEnvelopeMm],['stem',valve.stemWheelEnvelopeMm]] as const)add(corner.id+'/valve-'+kind,'valve-corner',cornerBox(corner,box)-settings)
  // Continuous ordinary sector:1degree ×2mm samples plus rigorous endpoint
  // displacement cover. This includes both pipe settings and the full40mm arm.
- const shoulder=cuts.ordinaryOperator.shoulderMm as P,inboard=cuts.authoredChoices.wheelInboardMm,inboardSteps=Math.max(1,Math.ceil(inboard/2)),
-  cover=62.5*Math.PI/180/2+inboard/inboardSteps/2,
-  grips=Array.from({length:31},(_,a)=>-15+a).flatMap(deg=>Array.from({length:inboardSteps+1},(_,k)=>(c.stem==='horizontal-north'?[x+62.5*Math.sin(deg*Math.PI/180),y+217-k*inboard/inboardSteps,z+62.5*Math.cos(deg*Math.PI/180)]:[x-217+k*inboard/inboardSteps,y+62.5*Math.sin(deg*Math.PI/180),z+62.5*Math.cos(deg*Math.PI/180)]) as P))
+ const shoulder=cuts.ordinaryOperator.shoulderMm as P,inboard=compact?0:cuts.authoredChoices.wheelInboardMm,inboardSteps=Math.max(1,Math.ceil(inboard/2)),
+  cover=(compact?c.valveDesign!.handwheelDiameterMm/2:62.5)*Math.PI/180/2+inboard/inboardSteps/2,
+  grips=Array.from({length:31},(_,a)=>-15+a).flatMap(deg=>Array.from({length:inboardSteps+1},(_,k)=>(compact?[x+c.valveDesign!.handwheelDiameterMm/2*Math.cos(deg*Math.PI/180),y+c.valveDesign!.handwheelDiameterMm/2*Math.sin(deg*Math.PI/180),z+c.valveDesign!.maximumOpenStemAboveAxisMm-10]:c.stem==='horizontal-north'?[x+62.5*Math.sin(deg*Math.PI/180),y+217-k*inboard/inboardSteps,z+62.5*Math.cos(deg*Math.PI/180)]:[x-217+k*inboard/inboardSteps,y+62.5*Math.sin(deg*Math.PI/180),z+62.5*Math.cos(deg*Math.PI/180)]) as P))
  const jamb=[cuts.door.hingeMm[0],cuts.door.hingeMm[0]+cuts.door.finishedOpeningMm],lobbyFace=cuts.door.hingeMm[1]-cuts.door.hingeNorthOfWallMm,
   walls:B[]=[[west,north,0,jamb[0]-west,lobbyFace-north,s.ceilingMm],[jamb[1],north,0,east-jamb[1],lobbyFace-north,s.ceilingMm]],
-  bodyObstacles=[...walls,...cuts.door.allParkedOpenLeavesMm,...s.obstacles.filter(o=>o.id==='occupied-washer-rest').map(o=>[o.boxMm[0],o.boxMm[1],0,o.boxMm[3],o.boxMm[4],2000] as B)]
- for(const a of segments(cuts.ordinaryOperator.approachMm))for(const b of bodyObstacles)add('utility/connected-ordinary-approach','ordinary-approach',exactSegmentBoxDistance(a.a,a.b,b)-cuts.ordinaryOperator.bodyRadiusMm-settings)
+  bodyObstacles=[...walls,...cuts.door.allParkedOpenLeavesMm,...s.obstacles.filter(o=>compact?o.id==='retained-washer':o.id==='occupied-washer-rest').map(o=>[o.boxMm[0],o.boxMm[1],0,o.boxMm[3],o.boxMm[4],2000] as B)]
+ const actualApproach=compact?[cuts.door.afterOpenPathMm[0],...c.ordinaryApproachWaypointsMm!,shoulder]:cuts.ordinaryOperator.approachMm
+ if(JSON.stringify(actualApproach.at(-1))!==JSON.stringify(shoulder))throw Error('Actual compact approach must reach the controlling operator')
+ for(const a of segments(actualApproach))for(const b of bodyObstacles)add('utility/connected-ordinary-approach','ordinary-approach',exactSegmentBoxDistance(a.a,a.b,b)-cuts.ordinaryOperator.bodyRadiusMm-settings)
+ let occupiedFirstRestBodyReserveMm=Infinity
+ for(const leg of segments(actualApproach))for(const o of s.obstacles.filter(o=>o.id==='occupied-washer-rest')){
+  const b=[o.boxMm[0],o.boxMm[1],0,o.boxMm[3],o.boxMm[4],2000] as B
+  occupiedFirstRestBodyReserveMm=Math.min(occupiedFirstRestBodyReserveMm,exactSegmentBoxDistance(leg.a,leg.b,b)-cuts.ordinaryOperator.bodyRadiusMm-settings)
+ }
+ if(compact){
+  for(const leg of segments(actualApproach))for(const o of s.obstacles.filter(o=>!o.id.startsWith('ordinary-operator')&&!o.id.startsWith('wet-door-complete-moving')&&!['occupied-washer-rest','complete-shifted-utility-maintenance'].includes(o.id))){
+   const b=o.id==='retained-washer'?[o.boxMm[0],o.boxMm[1],0,o.boxMm[3],o.boxMm[4],2000] as B:o.boxMm
+   add('utility/ordinary-fixed/'+o.id,'ordinary-fixed-furniture',exactSegmentBoxDistance(leg.a,leg.b,b)-cuts.ordinaryOperator.bodyRadiusMm-settings)
+  }
+  for(const [key,reserve] of Object.entries(cuts.door.continuousBoundsMm))add('utility/actual-door-opening/'+key,'door-opening',key==='maximumReachMm'?650-reserve:reserve)
+  add('utility/actual-door-before','door-opening',cuts.door.connectedBeforeMm)
+  if(cuts.door.connectedPhaseChangeMm!==null)add('utility/actual-door-phase-change','door-opening',cuts.door.connectedPhaseChangeMm)
+ }
  let minimumArmReserveMm=Infinity
  for(const grip of grips){
   add('utility/ordinary-reach','ordinary-reach',cuts.ordinaryOperator.reachLimitMm-length(shoulder,grip)-cover)
@@ -163,14 +210,14 @@ export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoute
    })),totalLengthMm=paths.reduce((n,p)=>n+p.centrelineLengthMm,0),
   hydraulicBoreMm=Math.min(facts.pipe.minimumOuterDiameterIncludingOvalityMm-2*maxWall,c.formedTurn.minimumOuterDiameterAfterFormingMm-2*c.formedTurn.maximumWallAfterFormingMm),velocity=s.utilityLmin/60000/(Math.PI/4*(hydraulicBoreMm/1000)**2),
   straightLossBar=s.comparison.frictionFactor*totalLengthMm/hydraulicBoreMm*1000*velocity**2/2/1e5,
-  cornerLossBar=allCorners.length*s.comparison.cornerK*1000*velocity**2/2/1e5,valveLossBar=(s.utilityLmin*.06/12)**2,riseBar=Math.max(terminal[2]-source[2],0)*9.81e-5,
+  cornerLossBar=allCorners.length*s.comparison.cornerK*1000*velocity**2/2/1e5,valveLossBar=(s.utilityLmin*.06/(compact?c.valveDesign!.minimumFullOpenKvM3h:12))**2,riseBar=Math.max(terminal[2]-source[2],0)*9.81e-5,
   allowanceReserveBar=s.networkAllowancesBar[0]-straightLossBar-cornerLossBar-valveLossBar-riseBar
  if(allowanceReserveBar<0)add('utility/network-allowance','hydraulics',allowanceReserveBar)
  if(checks.some(v=>!Number.isFinite(v.reserveMm)))throw Error('Non-finite actual Utility geometry comparison')
  checks.sort((a,b)=>a.reserveMm-b.reserveMm)
  const failures=checks.filter(c=>c.reserveMm< -1e-7),pressureCorners=allCorners.map(c=>({id:c.id,absoluteOriginMm:c.pressureOriginAbsoluteMm,
   fullGaugeWrenchN_Nm:[...c.fullGaugeFluidOnCornerForceN,...cross(c.pressureOriginAbsoluteMm.map(v=>v/1000),c.fullGaugeFluidOnCornerForceN)]}))
- return{schema:'had-utility-route-assembly/1',choice:c,valve,ordinaryShoulderMm:shoulder,state:'authored-separate-room-utility-development',paths,stock,pressureCorners,
+ return{schema:'had-utility-route-assembly/1',choice:c,valve,ordinaryShoulderMm:shoulder,ordinaryApproachMm:actualApproach,ordinaryAccess:{washerState:compact?'home-before-first-pull':'occupied-first-rest',sourceOpeningContinuousBoundsMm:cuts.door.continuousBoundsMm,sourceDoorConnectedBeforeMm:cuts.door.connectedBeforeMm,legacyDoorAfterPathNotInherited:compact,occupiedFirstRestBodyReserveMm,availableWhileWasherAtFirstRest:occupiedFirstRestBodyReserveMm>=0,actualLodgeBackupQualified:false,localWasherStopAndOtherUsersLiveDutyQualified:false,doorHardwareAndForceQualified:false},state:'authored-separate-room-utility-development',paths,stock,pressureCorners,
   datum:{groundFflMm:s.groundFflMm,localCeilingComparisonMm:s.ceilingMm,ceilingJoinedToNativeForceModel:false},
   geometry:{jacketRadiusMm:radius,twoIndependentSettingsMm:settings,compressionFittingRadiusMm:fittingR,formedMaximumChordCoverMm:Math.max(...allCorners.map(v=>v.arcCoverMm)),
    minimumReserveMm:checks[0].reserveMm,minimumByKind:[...new Set(checks.map(v=>v.kind))].map(kind=>checks.find(v=>v.kind===kind)!),failures,checks,
@@ -178,11 +225,12 @@ export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoute
   quantities:{centrelineLengthMm:totalLengthMm,referenceCopperKg:stock.reduce((n,r)=>n+r.copperKg,0),referenceWaterKg:stock.reduce((n,r)=>n+r.waterKg,0),referenceMassKg:stock.reduce((n,r)=>n+r.referenceMassKg,0),
    gravityWrenchKN_KNm:stock.reduce((a,r)=>a.map((v,k)=>v+r.referenceGravityWrenchKN_KNm[k]),[0,0,0,0,0,0]),
    scope:'Exact straight and formed-sweep cylindrical reference stock. Compression bodies, insertion overlap, tools, clips and actual wrapping/complete installed mass remain unqualified.'},
-  hydraulics:{minimumAuthoredBoreMm:hydraulicBoreMm,velocityMps:velocity,straightLossBar,cornerLossBar,valveLossBar,riseBar,allowanceReserveBar,
+  hydraulics:{minimumValveKvRequiredByExistingBudget:s.networkAllowancesBar[0]>straightLossBar+cornerLossBar+riseBar?s.utilityLmin*.06/Math.sqrt(s.networkAllowancesBar[0]-straightLossBar-cornerLossBar-riseBar):null,
+   valveKvInterpretation:compact?'Authored minimum procurement requirement; no manufacturer coefficient, tested performance or complete pressure/material qualification is represented.':'Existing BSA6T published Kv comparison; actual complete installed connection performance unqualified.',minimumAuthoredBoreMm:hydraulicBoreMm,velocityMps:velocity,straightLossBar,cornerLossBar,valveLossBar,riseBar,allowanceReserveBar,
    formedBendLossCoefficientQualified:false,actualMinimumHydraulicBoreAfterFormingQualified:false,wholeInstalledNetworkQualified:false},
   topology:{sameActualSourceSplice:true,sameActualValveFacesAndTerminal:true,sharedHeader:false,permanentBypass:false,oldCoLocatedPlantBankRetired:true,separatePlantBranchUnchanged:true},
-  procurement:{formedSweepIsAuthoredFactoryRequirement:true,cataloguePartSelected:false,wallAndOvalityMeasuredAfterForming:false,pressureAndMaterialQualification:false},
-  renewal:{existingBankAndFlangeReleaseMethodPreserved:true,allNewRouteAndSupportRenewalQualified:false},
+  procurement:{compactValveDesignConditions:compact?c.valveDesign:null,actualCompactManufacturerKvAndMassKnown:false,formedSweepIsAuthoredFactoryRequirement:true,cataloguePartSelected:false,wallAndOvalityMeasuredAfterForming:false,pressureAndMaterialQualification:false},
+  renewal:{ordinaryUsePhase:compact?'Washer and service head home; isolate before first pull. Occupied first rest is not an ordinary access claim.':'Doorway control includes occupied washer first-rest approach.',existingBankAndFlangeReleaseMethodPreserved:!compact,allNewRouteAndSupportRenewalQualified:false},
   support:{referenceGravityAndPressureExported:true,actualIndependentGuidesAndAnchorsDesigned:false,thermalFlexibilityAndNativeReceiverTransferAccepted:false},
   completeInstallationAccepted:false,selected:false}
 }
