@@ -35,7 +35,7 @@
       3449
     ],
     "beamPlanRadiiMm": [
-      89,
+      179,
       190
     ],
     "floorBarNominalMm": 14,
@@ -97,7 +97,8 @@
     },
     "ordinaryStraightTopRowMm": 955,
     "ordinaryStraightBarOuterEndMm": 60,
-    "crossedMatsRequireTiedNormalContact": true
+    "crossedMatsRequireTiedNormalContact": true,
+    "independentBarAllowanceIncludesShapeError": true
   },
   "links": {
     "columnNominalMm": 10,

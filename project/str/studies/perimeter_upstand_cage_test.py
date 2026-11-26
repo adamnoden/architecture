@@ -130,6 +130,14 @@ class CageControls(unittest.TestCase):
         self.assertGreater(self.r['allFloorProfilesAgainstEachOtherAudit']['lockedMatContactCertificates'],0)
         c=copy.deepcopy(self.c);c['geometry']['crossedMatsRequireTiedNormalContact']=False
         with self.assertRaises(ValueError):p.floor_floor_audit(c,p.corner_floor_paths(c))
+    def test_continuous_ring_bends_have_explicit_concrete_bearing_bounds(self):
+        bounds=self.r['materialBounds']['continuousRingCornerBendBearingBounds']
+        self.assertTrue(all(x['noCrossBarExemptionBearingStressCapMPa']>=400 for x in bounds))
+        c=copy.deepcopy(self.c);c['geometry']['beamPlanRadiiMm'][0]=89
+        self.assertLess(p.material_bounds(c)['continuousRingCornerBendBearingBounds'][0]['noCrossBarExemptionBearingStressCapMPa'],400)
+    def test_shape_error_is_within_total_independent_allowance(self):
+        c=copy.deepcopy(self.c);c['links']['hookShapeToleranceMm']=6
+        with self.assertRaisesRegex(ValueError,'Forming'):p.assess(c,self.base)
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')

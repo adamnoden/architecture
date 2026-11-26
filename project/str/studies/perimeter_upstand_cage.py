@@ -404,6 +404,10 @@ def material_bounds(c):
     ab=(g['floorPitchMm']-2*g['independentBarSettingMm'])/2
     corner_pitch=min(b-a for a,b in zip(g['floorAlongCoordinatesMm'],g['floorAlongCoordinatesMm'][1:]));corner_ab=(corner_pitch-2*g['independentBarSettingMm'])/2
     ft=area(d)*f;dm=ft/m['concreteCompressionMPa']*(1/corner_ab+1/(2*d))
+    beam_ab=(g['beamBarNormalMm'][1]-g['beamBarNormalMm'][0]-2*g['independentBarSettingMm'])/2
+    beam_bends=[{'id':label,'actualMandrelMm':2*radius-g['beamBarOutsideMm'],
+        'noCrossBarExemptionBearingStressCapMPa':(2*radius-g['beamBarOutsideMm'])*m['concreteCompressionMPa']/(area(g['beamBarNominalMm'])*(1/beam_ab+1/(2*g['beamBarNominalMm']))),
+        'actualNewCombinedForceDemandAccepted':False} for label,radius in zip(('outer','inner'),g['beamPlanRadiiMm'])]
     layers=floor_layers(c);top=g['slabZMm'][0]+g['ordinaryBandDepthMm']
     end=top-g['floorNominalSurfaceCoverMm']-g['floorBarOutsideMm']/2
     r=(g['ordinaryFloorMandrelMm']+g['floorBarOutsideMm'])/2
@@ -426,7 +430,8 @@ def material_bounds(c):
             'completeAnchorageOrForceDemandAccepted':False})
     legacy_radius=(g['alternateLegacyOrdinaryMandrelMm']+g['floorBarOutsideMm'])/2
     legacy_tail=min(end-z-legacy_radius for z in layers.values())
-    return {'legacy160MandrelMinimumStraightTailMm':legacy_tail,
+    return {'continuousRingCornerBendBearingBounds':beam_bends,
+        'legacy160MandrelMinimumStraightTailMm':legacy_tail,
         'legacy160MandrelFitsChosen5Phi':legacy_tail>=g['ordinaryFloorHookMinTailFactor']*d,
         'current140MandrelMinimumStraightTailMm':min(x['straightAfterBendMm'] for x in ordinary),
         'current140FitsChosen5Phi':all(x['standardBendTailFits'] for x in ordinary),
@@ -445,6 +450,7 @@ def material_bounds(c):
         '360GeometryIsAnUnselectedComparison':True}
 def assess(c,base,full_geometry=False):
     g=c['geometry'];col=column_points(c);beam=beam_paths(c);floors=corner_floor_paths(c)
+    if not g['independentBarAllowanceIncludesShapeError'] or c['links']['hookShapeToleranceMm']>g['independentBarSettingMm']:raise ValueError('Forming deviations must fit within the declared total independent bar allowance')
     if c['materials']['maximumAggregateMm']+5>g['parallelMinimumClearMm']:raise ValueError('Declared aggregate exceeds inherited21mm minimum-clear comparison')
     contact=c['links']['matchedJointContactPlanesZMm']
     expected_cross=g['beamBarZMm'][0]+(g['beamBarOutsideMm']+c['links']['columnOutsideMm'])/2
