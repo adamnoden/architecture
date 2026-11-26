@@ -13,6 +13,7 @@ const json=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.ur
  run=(i=input,ch=choice)=>inletUtilityRoute({choice:ch,input:i,cuts,retained:r.retainedServiceComparison.services})
 test('complete joined geometry rejects the narrow north feed after both settings, despite its bare pipe fit',()=>{
  const a=run()
+ console.info('REJECTED_NORTH_ROUTE_ACTUAL_CHECKS '+JSON.stringify({minima:a.geometry.minimumByKind,failures:a.geometry.failures}))
  assert.equal(a.geometry.necessaryActualUtilityGeometry,false)
  assert.ok(a.geometry.failures.some(v=>v.kind==='valve-obstacle'&&v.id.includes('shield-connection-1')&&Math.abs(v.reserveMm+5.5)<1e-8))
  assert.ok(a.geometry.failures.some(v=>v.kind==='corner-obstacle'&&v.id.includes('complete-shifted-utility-maintenance')))
