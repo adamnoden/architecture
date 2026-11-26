@@ -1,0 +1,911 @@
+{
+  "schema": "str-rear-bearing-recovered-W0-receipt/1",
+  "status": "fresh-native-W0-and-independent-adverse-replay-complete",
+  "sourceCommit": "401ab9d5158589f94de2b805c767925e0c947c0a",
+  "sourceTree": "88d47753199f760a49dcc4d20cfef2338c092716",
+  "baseCommit": "867e8042e131a35407c4fe3be21807cdb6d23778",
+  "runId": 45824731406,
+  "runURL": "https://github.com/adamnoden/architecture/actions/runs/45824731406",
+  "artifact": {
+    "id": 15119573147,
+    "name": "rear-bearing-recovered-W0-401ab9d5158589f94de2b805c767925e0c947c0a",
+    "sizeBytes": 19911334,
+    "sha256": "7865ce5dc0a6031404515119b556c5ff26870c11317ff86d2cb44fa91b2f99e6",
+    "url": "https://github.com/adamnoden/architecture/actions/runs/45824731406/artifacts/15119573147",
+    "expiresAt": "2027-02-24T12:59:06Z",
+    "contents": "Actual saved W0 document/bundle/reference, rear request/full response/raw checkpoint, pure replay, all test logs, matched SVGs and hashed recovery manifest. Raw archive must be durably retained before GitHub expiry."
+  },
+  "sourceSHA256": {
+    "project/str/studies/rear_direct_bearing.py": "7bb3dbf3ab6e4f6b05110be01c27968af9607202641a1fa5425fa868e6f34cc1",
+    "project/str/studies/rear_bearing_plan.py": "a005206e76ac1f778bb248f9b9e56c62cab9f2fd318d1cf2c402cc0ea68f6446",
+    "project/str/studies/rear_bearing_plan_test.py": "55c091d4f88aff1587a32a6888654ce1adf4d3d99e1ef71c7c7d6889a0cc803b"
+  },
+  "parentPerturbation": {
+    "semanticChoice": "stages.distributedFloor.boundaryCase.windIndex:31→0",
+    "bindingRefresh": "Existing readEngineeringDocument adds only the reviewed new structural-rear-bearing.ts implementation blob b9cdfabc01ddf0f26fa081a9fc7ee02ca4ff9c64; canonical bytes unchanged",
+    "canonicalDocumentSHA256": "733ede220ef8a7607f5277c0a0e4482c611fea4536dfa6e3e0949ec43b2a8057"
+  },
+  "checks": {
+    "planPythonTests": 7,
+    "physicalAndJointPythonTests": 10,
+    "actualCandidateReplayTests": 7,
+    "actualParentReplayTests": 8,
+    "typescriptTests": 1,
+    "typecheck": "passed"
+  },
+  "proof": {
+    "schema": "str-rear-direct-bearing-replay/1",
+    "actualHeadCount": 52,
+    "actualBearingContactCount": 64,
+    "activeBearingContactCount": 64,
+    "topCompressionKN": 9.873892887049056,
+    "baseCompressionKN": 14.89861313705619,
+    "actualGridMemberCount": 7,
+    "actualGridOriginCount": 5418,
+    "actualDirectJointOriginCount": 38,
+    "directJointTotals": {
+      "P47": {
+        "physicalOriginWrenchKN_KNmm": [
+          0,
+          0,
+          -0.3457702844859635,
+          2.589265789226312,
+          -8.550147722649731,
+          0
+        ],
+        "actualNodalWrenchKN_KNmm": [
+          0,
+          0,
+          -0.3457702844859635,
+          2.589265789226312,
+          -8.550147722649731,
+          0
+        ],
+        "originCount": 38,
+        "sixComponentWorkClosureKN_KNmm": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "finiteHouseReplay": {
+      "wallCutActionsAboutActualCutKN_KNm": {
+        "lower": [
+          11.784787484344175,
+          -30.999193248242502,
+          73.03886939800503,
+          14.971887602006761,
+          13.162647962962572,
+          0.29694209974099084
+        ],
+        "upper": [
+          -8.24549988764863,
+          19.807611452519733,
+          -45.140039766104735,
+          -26.020447080491802,
+          -21.060936263819592,
+          -1.061157635396892
+        ]
+      },
+      "portCount": 153,
+      "constitutiveResidualKN_KNm": 3.552713678800501e-15,
+      "independentJointWrenchResidualKN_KNm": [
+        2.9194779926910996e-10,
+        1.0343796930101234e-9,
+        -1.1553424883459229e-10,
+        -4.2169290281890426e-9,
+        1.2293099871385493e-9,
+        -1.481765821154113e-10
+      ],
+      "replayedHouseWrenchResidualKN_KNm": [
+        5.865441465857657e-9,
+        9.905022579914657e-9,
+        -2.955857780762017e-10,
+        -3.40660335496068e-8,
+        2.0289007807150483e-8,
+        -2.6225279725622386e-8
+      ],
+      "outsideOnSolidPortGroupsKN_KNm": {
+        "band/east": [
+          -1.2592863991085175,
+          -0.3605880005437915,
+          0,
+          1.179122761778198,
+          -4.117866525084852,
+          -0.35354910532586087
+        ],
+        "band/north": [
+          0.22023413813499093,
+          -1.227930725287479,
+          0,
+          4.015333471690056,
+          0.7201656317014203,
+          -0.989475499623889
+        ],
+        "shell": [
+          -2.5002353354300713,
+          -5.354280727411584,
+          25.327535751880983,
+          97.33908281675428,
+          -36.22993995470303,
+          -7.209662634079873
+        ],
+        "wall/lower": [
+          11.784787484344175,
+          -30.999193248242502,
+          73.03886939800503,
+          155.94678022193565,
+          7.81297426533345,
+          -24.719802189729823
+        ],
+        "wall/upper": [
+          -8.24549988764863,
+          19.807611452519733,
+          -45.140039766104735,
+          -138.97409349123927,
+          -30.69938640960787,
+          15.342119967673774
+        ],
+        "normal": [
+          0,
+          0,
+          7.587808741103191,
+          19.586658910645472,
+          -2.5249491764098235,
+          0
+        ]
+      },
+      "externalWrenchKN_KNm": [
+        0,
+        18.13438125,
+        -60.81417412500001,
+        -139.09288469578127,
+        65.03900217,
+        17.930369460937502
+      ],
+      "jointWorkResidualKNm": 1.5568796252196648e-12,
+      "actualNormalCount": 32,
+      "activeActualNormalCount": 32
+    },
+    "candidateAccepted": false,
+    "strengthAccepted": false,
+    "ownerAccepted": false,
+    "matchedHouseComparison": {
+      "schema": "str-rear-bearing-matched-house-comparison/1",
+      "headCount": 52,
+      "sameActualHeadPositions": true,
+      "headReactionDifferencesKN_KNm": [
+        {
+          "id": "P01",
+          "differenceKN_KNm": [
+            0.49736363276442574,
+            0.08753388876630197,
+            -0.5651404913299842,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P02",
+          "differenceKN_KNm": [
+            -0.4251187477135616,
+            0.002867503088902268,
+            0.290171415558925,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P03",
+          "differenceKN_KNm": [
+            -0.01394518106921172,
+            -0.09965719130116213,
+            0.07235326340551751,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P04",
+          "differenceKN_KNm": [
+            0.49265861735095484,
+            -0.4054278619102547,
+            0.8059268631058387,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P05",
+          "differenceKN_KNm": [
+            -0.4124672892840664,
+            0.012355224459906111,
+            -0.2347199758448042,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P06",
+          "differenceKN_KNm": [
+            0.001337380934964827,
+            0.37755239772047844,
+            -0.2907003664897161,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P07",
+          "differenceKN_KNm": [
+            2.5209290213642532,
+            0.369018379654392,
+            4.210061125633359,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P08",
+          "differenceKN_KNm": [
+            -0.8247774082227153,
+            -0.0020361401793893563,
+            1.12007731478203,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P09",
+          "differenceKN_KNm": [
+            0.07248345278476664,
+            -0.6659256943301983,
+            -0.35697368845617206,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P10",
+          "differenceKN_KNm": [
+            1.2374660401116273,
+            -1.2032336262588217,
+            0.10618571758976714,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P11",
+          "differenceKN_KNm": [
+            -1.0315293341041922,
+            0.003809872322136698,
+            -0.5040284587082908,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P12",
+          "differenceKN_KNm": [
+            -0.010752958308115623,
+            0.9786717757502856,
+            0.7665175947420693,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P13",
+          "differenceKN_KNm": [
+            0.02583693363862949,
+            -0.04924628349958482,
+            0.014658358520875936,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P14",
+          "differenceKN_KNm": [
+            0.11853232688776671,
+            -0.02604439490196908,
+            -0.018366462868215194,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P15",
+          "differenceKN_KNm": [
+            -0.022822231447239494,
+            -0.16662625174682688,
+            -0.07233597724699337,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P16",
+          "differenceKN_KNm": [
+            4.111917248747822,
+            0.08313974665215795,
+            1.8791282330091548,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P17",
+          "differenceKN_KNm": [
+            0.027098368306724296,
+            0.15247543270805863,
+            -0.06879803239189641,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P18",
+          "differenceKN_KNm": [
+            0.009395643825321542,
+            0.05929164644552998,
+            0.015997919068169608,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P19",
+          "differenceKN_KNm": [
+            -0.03821854740275654,
+            0.3136936870384588,
+            0.13153817293974157,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P20",
+          "differenceKN_KNm": [
+            -0.12607822961828852,
+            0.0020439765770472462,
+            0.04106909394938185,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P21",
+          "differenceKN_KNm": [
+            -0.037913561623847514,
+            0.0008855418988531483,
+            0.011497702958685352,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P22",
+          "differenceKN_KNm": [
+            -0.03610040687089944,
+            0.003927971640514727,
+            0.0027237494859519984,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P23",
+          "differenceKN_KNm": [
+            -0.1323277372765279,
+            -0.06095410671492374,
+            -0.12348271730682825,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P24",
+          "differenceKN_KNm": [
+            -1.0932965749233503,
+            0.14987921473981025,
+            -12.497780909934221,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P25",
+          "differenceKN_KNm": [
+            0.21688917525420237,
+            -0.6149595753765666,
+            6.0353597604654965,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P26",
+          "differenceKN_KNm": [
+            0.30135901399205745,
+            0.01470474548072076,
+            -1.4412766027893724,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P27",
+          "differenceKN_KNm": [
+            -0.6284146933403107,
+            -0.005216149085122801,
+            -0.20102050696277018,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P28",
+          "differenceKN_KNm": [
+            0.5029407177340026,
+            0.7500697887412713,
+            4.085918189340077,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P29",
+          "differenceKN_KNm": [
+            -0.3547754639260816,
+            -0.29681323480488686,
+            5.235118924429386,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P30",
+          "differenceKN_KNm": [
+            0.16400208133527983,
+            -0.13807979222234934,
+            -1.4082247252872548,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P31",
+          "differenceKN_KNm": [
+            -0.01959544358815357,
+            0.05405126150517958,
+            -0.20529206239493192,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P32",
+          "differenceKN_KNm": [
+            0.03834057615791231,
+            -0.06389639902295663,
+            -0.1265125045270139,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P33",
+          "differenceKN_KNm": [
+            -0.03222850926486043,
+            0.02226225595559761,
+            -0.3287768667528681,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P34",
+          "differenceKN_KNm": [
+            -0.2314546685913843,
+            0.0936830460054221,
+            0.6121621406258981,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P35",
+          "differenceKN_KNm": [
+            0.005734032310090953,
+            -0.007696146530873804,
+            -0.00522961265804156,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P36",
+          "differenceKN_KNm": [
+            0.0020975117808101906,
+            -0.032021000827569424,
+            -0.016779291611467073,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P37",
+          "differenceKN_KNm": [
+            -0.09394675752056436,
+            0.13726664252412135,
+            0.2682878849311052,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P38",
+          "differenceKN_KNm": [
+            0.03770990031394561,
+            0.0011834576094424953,
+            -0.07967917081047915,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P39",
+          "differenceKN_KNm": [
+            -0.014729132288276325,
+            -0.000542458066153495,
+            0.0055939490178591456,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P40",
+          "differenceKN_KNm": [
+            -0.006937712687896003,
+            -0.001017996267954402,
+            -0.004672002875622638,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P41",
+          "differenceKN_KNm": [
+            -0.06060181664182984,
+            0.08177713075021131,
+            -0.09840426832860771,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P42",
+          "differenceKN_KNm": [
+            -0.011148643665270797,
+            -0.0029177726074003374,
+            0.006437267558368376,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P43",
+          "differenceKN_KNm": [
+            0.00901590872564384,
+            -0.024825826676746487,
+            -0.005826941169971178,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P44",
+          "differenceKN_KNm": [
+            -0.13925655737738651,
+            0.020967618367421892,
+            0.048940086860511656,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P45",
+          "differenceKN_KNm": [
+            -0.18756207228734922,
+            -0.7196337813002369,
+            -0.21356610571376677,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P46",
+          "differenceKN_KNm": [
+            -0.01768705728325437,
+            1.6359560694387767,
+            2.6634558616701725,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P47",
+          "differenceKN_KNm": [
+            -4.361534047201367,
+            -0.7937376366133062,
+            -18.18973231084243,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P48",
+          "differenceKN_KNm": [
+            -0.0007249387221666126,
+            -0.004120464673181168,
+            -0.01836910476916387,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P49",
+          "differenceKN_KNm": [
+            0.01454464999108751,
+            0.0025310031425131996,
+            -0.02622976902812013,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P50",
+          "differenceKN_KNm": [
+            0.0016639960549813537,
+            0.027771425336453603,
+            0.06757769018867066,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P51",
+          "differenceKN_KNm": [
+            -0.043749804851323404,
+            -0.05228653848914,
+            0.1315432511613892,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "P52",
+          "differenceKN_KNm": [
+            0.00037930261122554043,
+            -0.0024543695769239093,
+            0.008371521185750908,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "physicalGKN": {
+        "seatedControl": 3002.2559183494473,
+        "directBearing": 2995.9853658494712,
+        "difference": -6.27055249997602
+      },
+      "actualAppliedWrenchDifferenceKN_KNm": [
+        1.3496759265763103e-11,
+        -3.581135388230905e-10,
+        8.465245875021537,
+        82.70356287504183,
+        -24.40800841205055,
+        -9.792984201340005e-10
+      ],
+      "seatedControl": {
+        "rcPostCount": 2,
+        "rcBeamPhysicalGKN": 6.4640625,
+        "rcPostPhysicalGKN": 18.6615,
+        "padPhysicalGKN": 0.03454,
+        "beamLengthMm": 2955,
+        "bearingAxisSpanMm": 2660,
+        "beamCutPeaks": {
+          "axialCompressionKN": 13.29155494391307,
+          "shearYKN": 4.031276379641911,
+          "shearZKN": 25.29850879406382,
+          "torsionKNm": 0.8836980637005944,
+          "bendingYKNm": 3.5302454501443954,
+          "bendingZKNm": 0.28010897710847915
+        },
+        "stairPlanIntersectionRectanglesXYMm": [
+          [
+            2772.5,
+            8627.5,
+            2817.5,
+            8767.5
+          ]
+        ]
+      },
+      "directBearing": {
+        "rcPostCount": 0,
+        "lintelLengthMm": 2250,
+        "bearingAxisSpanMm": 2050,
+        "lintelCutPeaks": {
+          "axialCompressionKN": 5.977486038585994,
+          "shearYKN": 1.0334575971523345,
+          "shearZKN": 4.28848066039333,
+          "torsionKNm": 0.367415848855263,
+          "bendingYKNm": 1.908055484076908,
+          "bendingZKNm": 0.09436530062896782
+        },
+        "actualBearingContactCount": 64,
+        "activeBearingContactCount": 64,
+        "fullHeightTailContactCount": 640,
+        "activeFullHeightTailContactCount": 640,
+        "fullHeightTailTopCompressionKN": 16.981654919627147,
+        "stairFinishedPlaneIntrusionMm": 0
+      },
+      "transferEliminated": false,
+      "genuineArchPreferenceMet": false,
+      "candidateAccepted": false,
+      "scope": "A complete independent response for this one matched signed/G/Q case. Two RC posts are eliminated and the supported transfer is shortened; the ground girder, shorter lintel, contact/material/cage and complete signed programme remain explicit duties."
+    },
+    "independentMaterialAndLoadDifference": {
+      "schema": "str-rear-bearing-independent-material-and-load-difference/1",
+      "physicalMaterialDifferenceWrenchesKN_KNm": {
+        "ordinaryMasonryUnion": [
+          0,
+          0,
+          -10.227550000000065,
+          -107.75551793750037,
+          29.749663274999875,
+          0
+        ],
+        "rcBeam": [
+          0,
+          0,
+          3.0890625,
+          32.48690625,
+          -8.925503906249999,
+          0
+        ],
+        "masonryBearingBodiesMinusRcPosts": [
+          0,
+          0,
+          14.945219999999999,
+          152.8624476,
+          -43.33390569000001,
+          0
+        ],
+        "mineralBeddingMinusSteelPads": [
+          0,
+          0,
+          0.02307,
+          0.23701751249999997,
+          -0.066823035,
+          0
+        ],
+        "restoredPlate": [
+          0,
+          0,
+          -1.5592499999999632,
+          -16.568955000000187,
+          4.496563124999284,
+          0
+        ]
+      },
+      "totalPhysicalMaterialDifferenceKN_KNm": [
+        0,
+        0,
+        6.270552499999971,
+        61.26189842499944,
+        -18.08000623125085,
+        0
+      ],
+      "actualHousePhysicalGChangeKN": -6.27055249997602,
+      "sameOccupiedQWrenchDifferenceKN_KNm": [
+        0,
+        0,
+        0,
+        2.2737367544323206e-13,
+        -2.2737367544323206e-13,
+        0
+      ],
+      "expectedAppliedWrenchDifferenceKN_KNm": [
+        0,
+        0,
+        8.465245874999962,
+        82.70356287374948,
+        -24.408008412188874,
+        0
+      ],
+      "actualAppliedWrenchDifferenceKN_KNm": [
+        1.3496759265763103e-11,
+        -3.581135388230905e-10,
+        8.465245875021537,
+        82.70356287504183,
+        -24.40800841205055,
+        -9.792984201340005e-10
+      ],
+      "independentAppliedWrenchResidualKN_KNm": [
+        1.3496759265763103e-11,
+        -3.581135388230905e-10,
+        2.1575630171355442e-11,
+        1.2923493386551854e-9,
+        1.383249070840975e-10,
+        -9.792984201340005e-10
+      ],
+      "candidateAccepted": false
+    },
+    "replayMethodSHA256": "fea08c857bb74f804334aa278b82a81abef4b59a632c64e78af6f5f23d0574d1"
+  },
+  "previousRawW0Lost": true,
+  "newRearSigned96Complete": false,
+  "sharedRearStageIntegrated": false,
+  "candidateAccepted": false,
+  "strengthAccepted": false,
+  "ownerAccepted": false
+}

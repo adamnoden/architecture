@@ -1,8 +1,10 @@
 # Rear direct bearing — recovered development comparison
 
-**WIP / reconstructed source / fresh hosted proof pending — 26 November 2026.**
+**Fresh matched W0 house/replay complete; unselected development comparison — 26 November 2026.**
 
-The execution environment disappeared after a successful observed W0 response and pure replay, before the new raw response, checkpoint or archive was remotely retained. Those arrays are **lost/unretained**. Observed numerical results below are a recovery record, not a recoverable current proof or an adoption claim.
+The recovered physical producer has now been independently executed on a fresh hosted runner, together with its actual saved-parent W0 reference, raw-checkpoint replay and all adverse controls. [Run45824731406](https://github.com/adamnoden/architecture/actions/runs/45824731406) passed at source401ab9d5158589f94de2b805c767925e0c947c0a. The [permanent proof receipt](studies/rear-direct-bearing-recovered-W0-proof.json) records all32 Python tests, the TypeScript control, full typecheck, actual responses and exact source/archive identities. The complete raw data, matched SVGs and logs are retained in [artifact15119573147](https://github.com/adamnoden/architecture/actions/runs/45824731406/artifacts/15119573147), SHA2567865ce5dc0a6031404515119b556c5ff26870c11317ff86d2cb44fa91b2f99e6. It expires24February2027; retain the archive durably before that date.
+
+An earlier local W0 response was lost when the execution environment disappeared. It is not substituted for this fresh retained response. The actual structural model is still a one-case, unselected comparison; no resistance or owner acceptance follows.
 
 The proposed replacement is a source-derived 140 mm rear masonry wall with a 1850 mm raw opening (1796 mm finished), a 200 × 300 mm RC lintel and 200 mm end bearings. It removes the two old 260 × 450 mm RC posts, retains the actual protected stair plane at X2817.5, and preserves 128 mm overlap with the unchanged upper wall. The lintel remains a transfer; a straight RC head does **not** meet the owner's genuine masonry-arch preference. No decorative arch substitutes for that preference.
 
@@ -30,7 +32,7 @@ The gravity installation is conventional in intent: full-height masonry tails us
 
 The actual 40 mm GRID/rear-W/1 zone has both endpoints on P47. Its unchanged work maps coalesce onto DIRECT-JOINT/P47. Complete source/solved origins and six-component work closure are recorded; no invented interior beam cuts or joint resistance claim replaces them.
 
-## Observed before the outage — raw arrays no longer retained
+## Fresh retained matched W0 result
 
 | Quantity | Seated control | Rear comparison |
 | --- | ---: | ---: |
@@ -41,16 +43,16 @@ The actual 40 mm GRID/rear-W/1 zone has both endpoints on P47. Its unchanged wor
 | Peak beam bendingY in W0, kNm | 3.53024545 | 1.90805548 |
 | Peak beam shearZ in W0, kN | 25.29850879 | 4.28848066 |
 
-The observed comparison engaged all 640 new full-height-tail contacts (16.98165492 kN top compression) and all 64 lintel-bearing contacts (9.87389289 kN top compression). It retained 52 actual heads and 32 active SW contacts. Seven actual receiving grid members had 5418 physical origins, 14 endpoint and 566 interior cuts; local equilibrium residual was 1.53e-13. DIRECT-JOINT/P47 had 38 origins and 1.78e-15 six-component work closure. Independent head and finite-joint wrench residuals were 3.52e-8 and 4.63e-9.
+The fresh comparison engaged all 640 new full-height-tail contacts (16.9816549196 kN top compression) and all 64 lintel-bearing contacts (9.8738928870 kN top compression). It retained 52 actual heads and 32 active SW contacts. Seven actual receiving grid members had 5418 physical origins, 14 endpoint and 566 interior cuts; local equilibrium residual was 1.53e-13. DIRECT-JOINT/P47 had 38 origins and 1.78e-15 six-component work closure. Fresh independent head and finite-joint wrench residuals were 3.41e-8 and 4.22e-9.
 
-A separate material-union calculation charged ordinary masonry +10.22755 kN, beam −3.0890625, bearing masonry minus old RC posts −14.94522, bedding minus steel pads −0.02307 and restored plate +1.55925. Their net −6.2705525 kN matched whole-house G. All six applied wrench differences matched factored material differences and unchanged occupied Q to 1.285e-9.
+A separate material-union calculation charged ordinary masonry +10.22755 kN, beam −3.0890625, bearing masonry minus old RC posts −14.94522, bedding minus steel pads −0.02307 and restored plate +1.55925. Their net −6.2705525 kN matched whole-house G. All six applied wrench differences matched factored material differences and unchanged occupied Q to 1.293e-9.
 
 These are one-case observations. The largest head force change was −18.1897 kN at P47. The source signed programme must be rerun for this changed layout; the completed 96-case seated reference does not become a new rear-wall envelope.
 
 ## Validation and next concrete action
 
-Before loss, seven plan controls, ten physical/joint controls and one TypeScript admission control passed. The pure raw-checkpoint replay and independent material/load replay passed. Seven additional actual-capture adverse controls were launched, but their completion was **unobserved**. No pass is recorded for them.
+Before loss, seven plan controls, ten physical/joint controls and one TypeScript admission control passed. The pure raw-checkpoint replay and independent material/load replay passed. Seven additional actual-capture controls were launched locally but their completion was unobserved. The fresh hosted run has now executed and passed all seven, including changed head forces, changed bearing force, omitted original G, changed direct-joint nodal load, changed interior grid cut and double-applied Q/material area. It also passed all eight parent replay controls. This supersedes the earlier missing completion observation.
 
 Three interrupted attempts remain part of the development record: an unsupported ordinary beam-cut representation for the coincident P47 master; a new scalar node outside the existing LOWER-CORE/body-top namespace; and missing adapter metadata in a new postprocessor. The final recovered producer contains the fixes and saves an explicitly unvalidated raw checkpoint before new postprocessing.
 
-Next: run the exact recovered source on a bounded hosted runner, compile the sole current saved parent, change only its admitted wind index to W0, execute this replacement, retain the full raw response/checkpoint, and replay all adverse controls. Only then integrate the optional shared stage and assess complete signed demands, masonry/bedding, lintel reinforcement, ordinary joints and foundations. No strength, professional, physical, architectural or owner acceptance is claimed.
+Next: integrate the optional shared floor stage, test the actual current wind31 and governing cases, then execute every signed source programme through the new complete-house producer. Reuse authenticated reference inputs, never reference forces. Assess complete signed demands, masonry/bedding, lintel reinforcement, ordinary joints and foundations. A genuine arch remains a distinct structural/architectural obligation; the new RC lintel is an explicit exception comparison. No strength, professional, physical, architectural or owner acceptance is claimed.
