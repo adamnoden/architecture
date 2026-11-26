@@ -9,9 +9,9 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:30.008Z",
-  "heartbeatAt": "2026-11-26T10:54:00.223Z",
-  "expiresAt": "2026-11-26T12:24:00.223Z",
-  "branch": "work/zerg-engineering-20261126",
+  "heartbeatAt": "2026-11-26T11:10:46.331Z",
+  "expiresAt": "2026-11-26T12:40:46.331Z",
+  "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
     "generation": 60,
@@ -34,9 +34,9 @@
       "blocker": "Executor explicitly unavailable. Guardedcapture/witness, water4th test anduniform250 completionunknown. No secondmerge or house/slabadoption."
     }
   },
-  "pr": 1628,
+  "pr": 1629,
   "checkpoint": {
-    "evidence": "Exact474 PR native/browser pass; uniform200 full-house W0 control closes; final136-piece Study incorporated locally",
-    "next": "Finish hosted health and merge1628, then uniform200 96-case and exact joined source integration"
+    "evidence": "1628 mergedf2acb9e7 afterexactheadfullhealth/browser/publication/preflights.1629d3d11e71 protects currentfinite200/136Study/drain/95lighting; freshcanonicalfullCLI completed",
+    "next": "Verifyactualfinitebundle andsigned96, exact1629CI/browser/PDF thenfreshthreeleasepreflight andmerge"
   }
 }
