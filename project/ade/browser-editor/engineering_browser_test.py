@@ -27,6 +27,9 @@ def check_ground_pockets(page, args):
     with page.expect_file_chooser() as chooser:
         page.get_by_role('button',name='Import JSON').click()
     chooser.value.set_files({'name':'ground-support.json','mimeType':'application/json','buffer':json.dumps(source).encode()})
+    # Import keeps the previous revision0 visible until the shared compiler has
+    # admitted the new document.  Its old ready label cannot prove import done.
+    expect(page.locator('#stage-scope')).to_contain_text('groundPocketLoads',timeout=360000)
     ready(page,0,360000)
     expect(page.locator('#ground-pocket-controls')).to_be_visible()
     expect(page.locator('#ground-pocket-result')).to_contain_text('analysis prepared for this saved revision')
