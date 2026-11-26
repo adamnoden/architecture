@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:30.008Z",
-  "heartbeatAt": "2026-11-26T13:23:43.000Z",
-  "expiresAt": "2026-11-26T14:08:43.000Z",
+  "heartbeatAt": "2026-11-26T13:55:32.000Z",
+  "expiresAt": "2026-11-26T14:40:32.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
@@ -36,8 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "1629@5ab92bc0 fixesactual144/136planfailure; sourceproof45825989559 PASS, fullCI/96active. Rear39566665 freshW0/32Python+TS/types and materialledger PASS45824731406. Node192cuts/12tests PASS45824674801.",
-    "next": "Finish1629exactCI+freshpreflight/merge. Wireexistingrearstage/W31/96. TestzeroadditionalsteelEA200case before250; nohistoric sourcehashrewrite.",
-    "blocker": "Localexecutorunavailable; boundedhostrunnersactive. Strategicstrength/convergence/otherthreejointsholdsremain."
+    "evidence": "1629@5ab92bc0 fullCIactive/publicationgreen. ActualzeroadditionalEA200 W0 PASS45831879777; positive312headsEXACTsame, floorΔ.00968mm; protected9e62bc5d/raw15121319810. RearW0passed, W31membraneguardfailureunderdiagnosis.",
+    "next": "Finish1629CI/preflight/merge. FreshzeroEAseated+rearW31 source-specificpair; migrateexact2nativefiles/3fixes withoutoldreceipt relabel, thenusefulcandidate96/routedsteel.",
+    "blocker": "Localexecutorunavailable; hostedproofsactive. RearW31notaccepted; current-sourcelegacyedgesneedhonestmigration; noSTRgateclosure."
   }
 }
