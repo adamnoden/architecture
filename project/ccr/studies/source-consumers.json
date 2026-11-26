@@ -68,7 +68,8 @@
         "project/ias/studies/crafted-study-wall-transition.mjs",
         "project/ias/studies/study-furniture-motion.py",
         "project/ias/studies/crafted-study-convergence.mjs",
-        "project/ias/studies/study-floor-handling.py"
+        "project/ias/studies/study-floor-handling.py",
+        "project/ias/studies/crafted-study-eye-level.mjs"
       ],
       "boundary": "Compile the whole timber/tiled Study, local wall releases, shaped floor handling and furniture staging from the same current-design case and editable authored operation plan. Current views and schedules consume those results. The owner verdict, qualified floor course, loaded release and retained protective boundaries remain open."
     },

@@ -277,12 +277,18 @@ def main():
         expect(page.locator('#lighting-result')).to_contain_text('owner acceptance remain unqualified')
         expect(page.locator('#lighting-diagnostics')).to_contain_text('without dimensioned axes')
         initial_lighting, lighting_roof = lighting_svg(page), roof_svg(page)
+        expect(page.locator('#study-eye-level-views')).to_be_visible()
+        initial_room_day = page.locator('#current-study-day').evaluate("img => decodeURIComponent(img.src.split(',')[1])")
+        initial_room_evening = page.locator('#current-study-evening').evaluate("img => decodeURIComponent(img.src.split(',')[1])")
+        assert 'south window at X2100 mm' in initial_room_day
+        assert 'Evening palette only' in initial_room_evening
         depth.fill('85'); depth.press('Enter')
         ready(page, 1)
         expect(page.locator('#lighting-result')).to_contain_text('common axis 47 mm')
         changed_lighting = lighting_svg(page)
         assert changed_lighting != initial_lighting
         assert roof_svg(page) == lighting_roof
+        assert page.locator('#current-study-day').evaluate("img => decodeURIComponent(img.src.split(',')[1])") == initial_room_day
         with page.expect_download() as download:
             page.get_by_role('button', name='Export JSON').click()
         lighting_saved = json.loads(Path(download.value.path()).read_text())
@@ -293,6 +299,8 @@ def main():
             ['node', '--import', 'tsx', 'scripts/compile-current-design.ts', '--bundle', '-'],
             input=json.dumps(lighting_saved), text=True, capture_output=True, check=True).stdout)
         assert cli_lighting['engineering']['studyLighting']['commonDepthCornerSvg'] == changed_lighting
+        assert cli_lighting['engineering']['studyRoomKit']['eyeLevel']['day']['svg'] == initial_room_day
+        assert cli_lighting['engineering']['studyRoomKit']['eyeLevel']['evening']['svg'] == initial_room_evening
         page.get_by_role('button', name='Undo', exact=True).click()
         ready(page, 2)
         assert lighting_svg(page) == initial_lighting

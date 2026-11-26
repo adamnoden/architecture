@@ -85,7 +85,7 @@ test('the browser width operation changes the actual occupied aperture and can b
   assert.deepEqual(unrelated(facade.scene), unrelated(native))
   const cli = execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--study-draft-room-kit', '-'], {
     cwd: new URL('../../', import.meta.url),
-    input: JSON.stringify({ schema: 'ias-study-draft-request/1', design: accepted, draftCase }), encoding: 'utf8',
+    input: JSON.stringify({ schema: 'ias-study-draft-request/1', design: accepted, draftCase }), encoding: 'utf8', maxBuffer: 16 * 1024 * 1024,
   })
   assert.equal(cli, JSON.stringify(result) + '\n')
 })

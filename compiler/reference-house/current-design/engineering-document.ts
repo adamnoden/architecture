@@ -52,6 +52,10 @@ const additionalImplementationFiles = [
   'project/str/studies/vertical_floor_plate.py',
   'project/str/studies/vertical_floor_numerics.py',
   'project/str/studies/service_room_ground.py',
+  'project/str/studies/current_finite_rc_joint.py',
+  'project/str/studies/finite_joint_membrane_trace.py',
+  'project/str/studies/finite_rc_joint_solid.py',
+  'project/str/studies/finite_joint_contact_trace.py',
   'project/str/studies/vertical_floor_views.py',
   'project/str/studies/vertical-floor-requirements.txt',
   'project/str/studies/distributed_floor_compatibility.py',
@@ -601,6 +605,7 @@ export async function compileEngineeringDocument(input: unknown) {
       stages: ['floorSection'], message: 'STR/wet-wall-support: '+engineering.floorSection.wetBeamCutRecovery.scope })
     if (engineering.floorSection.wetGridCutRecovery) coordinationDiagnostics.push({ code: 'WET_GRID_COMPLETE_ENVELOPE_UNAVAILABLE', state: 'uncoordinated-comparisons',
       stages: ['floorSection'], message: 'STR/wet-wall-support/grid: '+engineering.floorSection.wetGridCutRecovery.scope })
+    if (engineering.floorSection.finiteJointComparison) coordinationDiagnostics.push(...engineering.floorSection.finiteJointComparison.diagnostics.map(row=>({...row,state:'uncoordinated-comparisons' as const,stages:['floorSection']})))
     if (engineering.floorSection.lowerMasonryComparison) coordinationDiagnostics.push(...engineering.floorSection.lowerMasonryComparison.diagnostics.map(row=>({...row,state:'uncoordinated-comparisons' as const,stages:['floorSection']})))
     if (engineering.floorSection.cageComparison) coordinationDiagnostics.push(...engineering.floorSection.cageComparison.diagnostics.map(row => ({
       ...row, stages: ['floorSection'],

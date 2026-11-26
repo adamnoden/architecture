@@ -1,3 +1,4 @@
+import {readCurrentFiniteJointSettings} from './structural-current-finite-joint-settings.js'
 import {readLowerMasonrySettings} from './structural-lower-masonry-settings.js'
 import {readGroundPocketSettings} from './structural-ground-pocket-settings.js'
 import {readWetBeamEndDevelopmentControls} from './structural-wet-beam-end-settings.js'
@@ -123,6 +124,13 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       const controls=readGroundPocketSettings(operation.settings)
       if(JSON.stringify(state.document.stages.groundPocketLoads)===JSON.stringify(controls))return{status:'applied',state}
       stages={...state.document.stages,groundPocketLoads:controls}
+    } else if(record(operation)&&operation.kind==='set-floor-finite-joint-comparison') {
+      const current=state.document.stages.floorSection
+      if(transaction.units!=='mm'||!exact(operation,['kind','assemblyId','settings'])||operation.assemblyId!==editableFloorSectionId
+        ||!record(current))throw new TypeError('Existing saved floor section and explicit whole-house finite joint controls required')
+      const controls=readCurrentFiniteJointSettings(operation.settings)
+      if(JSON.stringify(current.finiteJointComparison)===JSON.stringify(controls))return{status:'applied',state}
+      stages={...state.document.stages,floorSection:{...current,finiteJointComparison:controls}}
     } else if(record(operation)&&operation.kind==='set-floor-lower-masonry-comparison') {
       const current=state.document.stages.floorSection
       if(transaction.units!=='mm'||!exact(operation,['kind','assemblyId','settings'])||operation.assemblyId!==editableFloorSectionId
@@ -142,7 +150,7 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       if (transaction.units !== 'mm' || !exact(operation, ['kind', 'assemblyId', 'thicknessMm'])
         || operation.assemblyId !== editableFloorSectionId || typeof operation.thicknessMm !== 'number'
         || !Number.isFinite(operation.thicknessMm) || operation.thicknessMm < 200 || operation.thicknessMm > 250
-        || !record(current) || Object.keys(current).some(key => !['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison', 'contourComponent', 'beamEndDevelopment', 'lowerMasonryComparison'].includes(key)) || typeof current.thicknessMm !== 'number'
+        || !record(current) || Object.keys(current).some(key => !['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison', 'contourComponent', 'beamEndDevelopment', 'lowerMasonryComparison', 'finiteJointComparison'].includes(key)) || typeof current.thicknessMm !== 'number'
         || (current.wetSupport !== undefined && current.wetSupport !== null && operation.thicknessMm !== 200)
         || (Object.hasOwn(current, 'beamEndDevelopment') && operation.thicknessMm !== 200)) {
         throw new TypeError('An existing explicit STR/current-floor-section with supported thickness 200..250 mm is required')

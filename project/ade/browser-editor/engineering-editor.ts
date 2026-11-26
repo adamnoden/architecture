@@ -88,6 +88,12 @@ function draw() {
     else lightingImage.removeAttribute('src')
   }
   const lighting = current?.studyLighting?.comparison
+  element('study-eye-level-views').hidden = !current?.studyRoom
+  for (const tone of ['day', 'evening'] as const) {
+    const image = element<HTMLImageElement>(`current-study-${tone}`), view = current?.studyRoom?.[tone]
+    if (view) image.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(view.svg)
+    else image.removeAttribute('src')
+  }
   element('lighting-views').hidden = !lighting
   element('lighting-result').textContent = lighting
     ? `Unselected comparison: common axis ${lighting.commonAxisCoreDepthMm} mm from the masonry core; accessory recess ${lighting.accessoryFaceRecessMm} mm. Local enclosure geometry ${lighting.evidence.localGeometryPassing ? 'within declared checks' : 'REJECTED'}. Actual device connections, protective qualification, materials, loaded renewal and owner acceptance remain unqualified.`

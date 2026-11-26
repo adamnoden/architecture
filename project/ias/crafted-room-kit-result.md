@@ -7,6 +7,8 @@
 | Output | Purpose |
 | --- | --- |
 | [Matched furnished fixed and timber rooms](studies/crafted-study-comparison.svg) | The existing architectural appearance comparison, with the same openings and furniture. Its candidate wall fields and local mouldings now come from the same current room-assembly set-out as the technical sheets; the fixed comparison retains the same room and furniture. |
+| [Matched eye-level day views](studies/crafted-study-eye-level-day.svg) | A source-bound inhabited view from the actual occupied Study, comparing fixed joinery with the individually hung timber faces and seated oak field. |
+| [Matched eye-level evening colours](studies/crafted-study-eye-level-evening.svg) | The same eye point and geometry with an evening palette. This is a colour study, not a daylight or electric-light calculation. |
 | [Furnished tile comparison](studies/crafted-study-tile.svg) | A comparable dry-room material character. It grants no wet-room performance. |
 | [All eight timber wall faces](studies/crafted-study-whole-timber.svg) | Source-bound whole-room stock and independent release territory. Protected openings are reserved rectangles; these are technical set-outs rather than final decorative elevations. |
 | [All eight tiled wall faces](studies/crafted-study-whole-tile.svg) | The same boundaries with smaller, separately retained tiled trays. |
@@ -21,6 +23,14 @@
 | [Floor key seats](studies/crafted-study-floor-keys.svg) | Existing full-size trial key geometry. Complete fixing and load tests remain open. |
 
 The [owner brief](crafted-room-kit-brief.md) and its sourced precedent decisions still govern. Borrow a fixed level gravity rail, independent hard bearing, accessible positive stops and ordinary screws. Keep the permanent protective plane, wet returns, services and ceiling support independent of decorative release. Reject room-wide interlocks, spring catches, bespoke lifting bridges and a dependency on removing the entire row above a panel.
+
+### See the architecture at eye level
+
+The matched perspectives use the same current compiler result as the stock and renewal sheets: all eight stepped room boundaries, the actual wear-face polygons of all 144 floor pieces, 99 wall faces, independent local moulding territories, retained G1 service cover and occupied furniture footprints. The occupied south window remains at X2100 mm; the nominal-plan X1800 mm opening is not substituted. A 1550 mm eye point is inside the actual room, rather than outside a removed wall. The fixed comparison uses a contrasting lower wainscot, mineral upper wall and continuous strip-floor impression within the same source room, openings and furniture.
+
+The pale green timber and warmer oak are proposed finish colours; glazing bars, local inset moulding impressions and the inherited furniture-height convention are presentation choices, not fabricated component profiles or selected furniture dimensions. The evening sheet changes colours only and earns no lamp output, circuit, illuminance or glare result. The north doorway's bound plan has no admitted head height, so these window-corner views do not invent a complete doorset. The complete room, including its doorway, still needs the owner's architectural verdict.
+
+The ordinary `crafted-study-eye-level.mjs` producer, public room-kit API, saved-document CLI and browser display consume the same current result. Moving the bound south opening recuts the visible south field and invalidates its appearance while retaining the west wall and floor. A wall-width change redraws the actual faces without changing the windows, floor or eye point. Missing window springs and mixed room identities reject rather than drawing historical geometry.
 
 ## A wall kit that can release locally
 

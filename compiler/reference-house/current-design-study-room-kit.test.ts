@@ -472,7 +472,7 @@ test('room kit refuses malformed and out-of-scope geometry and can be replayed t
   await assert.rejects(current.studyRoomKit({ ...initial, pitchMm: 374 }), /outside the native IAS comparison/)
   const draft = { ...initial, opening }
   const cli = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/compile-current-design.ts', '--study-room-kit', '-'], {
-    cwd: new URL('../../', import.meta.url), input: JSON.stringify({ schema: 'ias-study-room-kit-request/1', design, kit: draft }), encoding: 'utf8',
+    cwd: new URL('../../', import.meta.url), input: JSON.stringify({ schema: 'ias-study-room-kit-request/1', design, kit: draft }), encoding: 'utf8', maxBuffer: 16 * 1024 * 1024,
   }))
   assert.deepEqual(cli, await current.studyRoomKit(draft))
 })
