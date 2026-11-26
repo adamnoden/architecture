@@ -9,9 +9,9 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T07:53:16.080Z",
-  "expiresAt": "2026-11-26T08:38:16.080Z",
-  "branch": "work/zerg-lighting-local-riser-20261126",
+  "heartbeatAt": "2026-11-26T08:18:44.079Z",
+  "expiresAt": "2026-11-26T09:48:44.079Z",
+  "branch": "work/zerg-engineering-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
     "generation": 9,
@@ -33,5 +33,9 @@
       "next": "Finish exact-head CI and canonical preflight, then merge1625 if earned. Circuit, protection/material qualification and owner appearance/print approval remain open.",
       "blocker": "Execution environment unavailable; local review files and current process state cannot be inspected. Published PR/checkpoints remain recovery authority."
     }
+  },
+  "checkpoint": {
+    "evidence": "Published combined checkpoint work/zerg-engineering-20261126 at7e5fb56a3bd4c2b45929a4b65ea7737b26d0c786; exact treebfd57ab4ed5fbef27c18416186778f0f2bcaa9b1 matches local merge16b1b735; IAS21tests/typecheck/producer/source audit and inspected drawing passed.",
+    "next": "Finish combined water/projection/publication, exact-head CI/preflight"
   }
 }
