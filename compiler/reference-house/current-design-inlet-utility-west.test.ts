@@ -18,7 +18,7 @@ const receipt=read('project/had/studies/inlet-source-envelope.results.json'),old
  boundary=utilityCornerBoundary(context,old.wetUtilityPlanMm,water.internalArchControls.actualRadialFinish),
  host=runUtilityCornerHost(context,water.internalArchControls.actualRadialFinish,source.branches.find((v:any)=>v.id==='utility').coordinates.at(-1)),
  station={bankXMm:10030,bankYMm:2050,utilityAxisZMm:1270,plantAxisZMm:receipt.settings.indoorPlantAxisZMm,
-  operatorXYZMm:[10530,2600,1450] as P,tailOffsetMm:330},body=station.operatorXYZMm,
+  operatorXYZMm:[10530,2570,1450] as P,tailOffsetMm:330},body=station.operatorXYZMm,
  plantWall=water.groundWalls.find((v:any)=>v.id==='plant-intermediate-arch'),
  frameCovers=rawRoutes.checkedObstacles.filter((v:any)=>v.id.includes('shield-connection')).map((v:any)=>v.boxMm as B),
  retainedFurniture=Object.fromEntries(Object.entries(old.retainedFurniture).filter(([id])=>id!=='service-utility-valveBay').map(([id,p])=>[id,id==='service-utility-sink'?host.revisedUtility.sink:id==='service-utility-rearServiceChase'?host.revisedUtility.rearServiceChase:p])),
@@ -57,7 +57,10 @@ test('fresh west result exposes rather than conceals inherited output or unjoine
  console.info('WEST_STATION_PENDING_JOINS '+JSON.stringify({inheritedWestGrips,receiverAndHostSequenceJoined:false,hostCrewFinal:host.states.crew.map((p:number[][])=>p.at(-1)),receiverRequirement:{rotation:'north-south',widthMm:receipt.settings.indoorClampWidthMm,coverHeightMm:receipt.settings.indoorClampHeightMm+52,tailOffsetMm:station.tailOffsetMm},completeInstallationAccepted:result.completeInstallationAccepted}))
  assert.equal(result.renewal.allNewRouteAndSupportRenewalQualified,false)
  assert.equal(result.support.actualIndependentGuidesAndAnchorsDesigned,false)
- // A recovered WIP output still exposes the inherited west-grip list. This is
- // an observed defect to correct, never a passed north-wheel assembly claim.
- assert.equal(inheritedWestGrips,true)
+ // Run45825253523 exposed stale west grips in a north-oriented output. The
+ // actual source output must now match its executed north-wheel geometry.
+ assert.equal(inheritedWestGrips,false)
+ assert.ok(result.valve.grips.every(g=>g.pointMm[1]>=station.bankYMm+177&&Math.abs(g.pointMm[0]-station.bankXMm)<17))
+ assert.ok(result.geometry.minimumByKind.find(v=>v.kind==='ordinary-reach')!.reserveMm>15)
+ assert.deepEqual(result.valve.replacement.wholeValveSweepMm,[9671.5,1966.5,1164,442,300.5,212])
 })

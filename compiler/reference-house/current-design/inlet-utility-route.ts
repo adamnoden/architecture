@@ -30,10 +30,32 @@ export function admitUtilityRouteChoice(value:unknown):UtilityRouteChoice{
  return structuredClone(c)
 }
 
+function orientedUtilityValve(source:ReturnType<typeof inletEntrySideCuts>['valves'][number],stem:UtilityRouteChoice['stem'],cuts:ReturnType<typeof inletEntrySideCuts>){
+ const [x,y,z]=source.axisMm,shoulder=cuts.ordinaryOperator.shoulderMm as P,room=cuts.exactRoomPlanMm,
+  jamb=[cuts.door.hingeMm[0],cuts.door.hingeMm[0]+cuts.door.finishedOpeningMm],north=room[1]+room[3],
+  lobby=cuts.door.hingeMm[1]-cuts.door.hingeNorthOfWallMm,east=room[0]+room[2],
+  walls:B[]=[[room[0],north,0,jamb[0]-room[0],lobby-north,3100],[jamb[1],north,0,east-jamb[1],lobby-north,3100]],
+  grips=source.grips.map(g=>{
+   const a=g.regripAngleDeg*Math.PI/180,p=(stem==='horizontal-north'?[x+62.5*Math.sin(a),y+217-g.inboardMm,z+62.5*Math.cos(a)]:[x-217+g.inboardMm,y+62.5*Math.sin(a),z+62.5*Math.cos(a)]) as P
+   return{pointMm:p,inboardMm:g.inboardMm,regripAngleDeg:g.regripAngleDeg,reachMm:length(shoulder,p),
+    wallAfterArmAndTwoSettingsMm:Math.min(...walls.map(w=>exactSegmentBoxDistance(shoulder,p,w)))-cuts.ordinaryOperator.armRadiusMm-20}
+  }),
+  body=source.insulatedValveBodyEnvelopeMm,stemBox=(stem==='horizontal-north'?[x-62.5,y,z-62.5,125,217,125]:source.stemWheelEnvelopeMm) as B,
+  lo=body.map((_v,k)=>k<3?Math.min(body[k],stemBox[k]):0),hi=[0,1,2].map(k=>Math.max(body[k]+body[k+3],stemBox[k]+stemBox[k+3])),
+  westDrawMm=275,sweep=[lo[0]-westDrawMm,lo[1],lo[2],hi[0]-lo[0]+westDrawMm,hi[1]-lo[1],hi[2]-lo[2]] as B
+ return{id:source.id,branch:source.branch,axisMm:source.axisMm,flowAxis:'vertical',stem,
+  insulatedValveBodyEnvelopeMm:body,stemWheelEnvelopeMm:stemBox,grips,maximumGripReachMm:Math.max(...grips.map(g=>g.reachMm)),
+  tailElbowVirtualCornersMm:source.tailElbowVirtualCornersMm,nominalValveKg:source.nominalValveKg,knownGravityN:source.knownGravityN,
+  pressureCutClearBoreComparisonN:source.pressureCutClearBoreComparisonN,actualCompletedPayloadKg:null,actualFactoryFlowArrowAndSpindleOrientationQualified:false,
+  replacement:{releaseEachFlangeMm:10,firstTranslationMm:[-westDrawMm,0,0],wholeValveSweepMm:sweep,firstRestAxisMm:[x-westDrawMm,y,z],
+   actualCaptureAndRestCapacityQualified:false,actualTailReleaseToolsAndReinstatementQualified:false},
+  actualProductAndFactoryTailsSelected:false}
+}
+
 export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoutesInput;cuts:ReturnType<typeof inletEntrySideCuts>;retained:InletRetainedRouteServices}){
  const c=admitUtilityRouteChoice(i.choice),s=i.input,cuts=i.cuts,facts=inletCabinetProductFacts,source=s.utilitySourcePathMm[2],terminal=s.utilitySourcePathMm[6],
   sourceValve=cuts.valves.find(v=>v.branch==='utility'),
-  valve=sourceValve?{...sourceValve,stem:c.stem,stemWheelEnvelopeMm:(c.stem==='horizontal-north'?[sourceValve.axisMm[0]-62.5,sourceValve.axisMm[1],sourceValve.axisMm[2]-62.5,125,217,125]:sourceValve.stemWheelEnvelopeMm) as B}:undefined
+  valve=sourceValve?orientedUtilityValve(sourceValve,c.stem,cuts):undefined
  if(!valve||!tuple(source,3)||!tuple(terminal,3)||!tuple(s.roomPlanMm,4)||!Number.isFinite(s.groundFflMm)||s.utilityLmin<=0||s.maximumGaugeBar<=0||s.maximumGaugeBar>12)throw Error('Actual Utility source, valve and datum required')
  const [x,y,z]=valve.axisMm,[west,south,width,depth]=s.roomPlanMm,east=west+width,north=south+depth,
   radius=facts.pipe.maximumOuterDiameterIncludingOvalityMm/2+26,setting=10,fittingR=facts.coupling.spannerMm/(2*Math.cos(Math.PI/6))+26,takeoff=facts.elbow.portToVirtualCornerMm,
