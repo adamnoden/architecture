@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {deriveCurrentHouse,scheduleText} from './current-house.mjs';
 import {inletEnvelopeWitness,selectedKitchenTail,segmentLengthInsideBox} from './selected-water-duties.mjs';
+import {verifyUtilityHostQualificationWithdrawal} from './utility-host-boundary.mjs';
 import {deriveInternalLeakStudy,pathIsOpen,retainedVolume,verifyPreFixBoundary} from '../../mra/studies/internal-leak-study.mjs';
 
 const root=new URL('../../../',import.meta.url);
@@ -58,7 +59,11 @@ test('pre-fix main bytes and captured house identities constrain the correction 
   const boundary=verifyPreFixBoundary(house);
   assert.equal(boundary.unchanged,true);
   assert.equal(boundary.normalizedObserved.scheduleBlob,boundary.preFix.scheduleBlob);
-  assert.equal(boundary.observed.scheduleBlob,boundary.sourceRefresh.scheduleBlob);
+  assert.equal(boundary.observed.scheduleBlob,boundary.qualificationWithdrawal.afterScheduleBlob);
+  assert.equal(boundary.qualificationRestoredObserved.scheduleBlob,boundary.sourceRefresh.scheduleBlob);
+  assert.equal(boundary.qualificationWithdrawal.actualDrawnPostMechanicalScreen,false);
+  assert.equal(boundary.qualificationWithdrawal.appliesToDrawnPost,false);
+  assert.equal(boundary.qualificationWithdrawal.remainingCompleteHostSemanticsUnchanged,true);
   assert.equal(boundary.joinedObserved.scheduleBlob,boundary.sourceIdentityReconciliation.scheduleBlob);
   assert.equal(Object.keys(boundary.sourceRefresh.houseInputs).length,4);
   assert.equal(Object.keys(boundary.sourceRefresh.receiverInputs).length,2);
@@ -119,4 +124,28 @@ test('the selected occurrence inventory includes process water and preserves alr
   assert.equal(study.washerMaintenance.dryRestElectricalOverlapMM2,209300);
   assert(study.cases.every(c=>['OBLIGATION','REWIND'].includes(c.status)));
   assert(study.cases.some(c=>c.status==='REWIND'&&c.occurrence.includes('Incoming')));
+});
+
+
+test('exact IAS qualification withdrawal cannot hide changed geometry or revive post capacity',()=>{
+ const host=read('project/ias/studies/utility-host-revised-route.json'),guard=verifyUtilityHostQualificationWithdrawal(host);
+ assert.deepEqual(guard.retainedComparisonSectionMm,[40,40,3]);
+ assert.equal(guard.retainedComparisonIMm4,75000);
+ assert.deepEqual(host.postComparison.actualDrawnSectionMm,[20,20]);
+ assert.equal(host.postComparison.actualDrawnWallMm,null);
+ const before=JSON.stringify(host);verifyUtilityHostQualificationWithdrawal(host);assert.equal(JSON.stringify(host),before);
+ for(const key of ['appliesToDrawnPost','actualDrawnPostMechanicalScreen']){
+  const revived=structuredClone(host);revived.postComparison[key]=true;
+  assert.throws(()=>verifyUtilityHostQualificationWithdrawal(revived),/qualification withdrawal changed/);
+ }
+ const omitted=structuredClone(host);delete omitted.postComparison.actualDrawnWallMm;
+ assert.throws(()=>verifyUtilityHostQualificationWithdrawal(omitted),/qualification withdrawal changed/);
+ const frame=structuredClone(host);frame.geometry.frame['leg 1'][0]+=1;
+ assert.throws(()=>verifyUtilityHostQualificationWithdrawal(frame),/outside the exact declared/);
+ const comparison=structuredClone(host);comparison.postComparison.requiredI_mm4=75001;
+ assert.throws(()=>verifyUtilityHostQualificationWithdrawal(comparison),/outside the exact declared/);
+ const extra=structuredClone(host);extra.newAcceptance=true;
+ assert.throws(()=>verifyUtilityHostQualificationWithdrawal(extra),/outside the exact declared/);
+ const changed=structuredClone(house);changed.inputs['project/ias/studies/utility-host-revised-route.json']='0'.repeat(40);
+ assert.throws(()=>verifyPreFixBoundary(changed),/Expected corrected host input identity/);
 });

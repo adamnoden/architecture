@@ -37,6 +37,12 @@ They retain first wetting, declaration, isolation, receiving/drying, repair,
 maintenance, workmanship, evidence and owner fields. Roof/rainwater design,
 real-site acceptance and whole-house vapour assurance remain with their owners.
 
+## Exact post qualification withdrawal
+
+The later IAS host correction keeps the historical40×40×3mm/I75000 numerical comparison but explicitly denies its application to the drawn20×20mm post, whose wall thickness is unspecified. The current post mechanical screen is false. The [bounded host guard](../had/studies/utility-host-boundary.mjs) requires every exact non-applicability field, then removes only those six newly declared fields to recover the independently retained complete before-host semantic hash. A changed frame, altered numerical comparison, omitted denial or renewed positive qualification fails.
+
+The regenerated compact schedule changes only that host source identity (`69e6b0aa…`→`6573da78…`; schedule `e649805e…`→`a6bd1664…`). The complete current house has no separately exported post qualification field. The guard therefore restores this one proven input identity before applying the preserved historical MRA source bridges. Every other house field, exterior port, selected interface and weather face remains covered by the original hashes; this is not a general identity normalisation or a claim that all host qualification stayed unchanged. Current incoming-water and first-rest cases expose the false mechanical qualification. First-rest geometry still does not accept its actual temporary support.
+
 ## Two source consequences
 
 ### Correct the kitchen duty to its already-authored branch

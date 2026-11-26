@@ -5,6 +5,7 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {deriveCurrentHouse,scheduleText} from './current-house.mjs';
 import {inletEnvelopeWitness} from './selected-water-duties.mjs';
+import {verifyUtilityHostQualificationWithdrawal} from './utility-host-boundary.mjs';
 import {pathSeparation,segmentBodyDistance} from './service-interface-geometry.mjs';
 import {finiteBends,exactSegmentBoxDistance as segmentBoxDistance} from './incoming-water-geometry.mjs';
 import {utilityTerminalStudy} from './incoming-water-terminal.mjs';
@@ -157,14 +158,15 @@ export function deriveIncomingWaterStudy(){
   const house=deriveCurrentHouse(),base=read('project/mat/studies/whole-house-service-baseline.json'),host=read('project/ias/studies/utility-host-revised-route.json');
   assert.equal(scheduleText(house),readFileSync(new URL('project/had/studies/current-house-services.json',root),'utf8'));
   const sourcePaths=['project/had/studies/current-house.mjs','project/had/studies/current-house-services.json','project/had/studies/selected-water-duties.mjs',
-    'project/had/studies/incoming-water.mjs','project/had/studies/incoming-water-geometry.mjs','project/had/studies/incoming-water-terminal.mjs','project/had/studies/incoming-water-station.mjs','project/had/studies/incoming-water-station-handling.mjs','project/had/studies/service-interface-geometry.mjs',
+    'project/had/studies/incoming-water.mjs','project/had/studies/utility-host-boundary.mjs','project/had/studies/incoming-water-geometry.mjs','project/had/studies/incoming-water-terminal.mjs','project/had/studies/incoming-water-station.mjs','project/had/studies/incoming-water-station-handling.mjs','project/had/studies/service-interface-geometry.mjs',
     'project/mat/studies/whole-house-service-baseline.json','project/mat/studies/service-material-offer.json','project/mat/studies/plant-inlet-route.py',
     'project/mat/studies/east-water-plant.json','project/ias/studies/utility-first-release.json','project/ias/studies/utility-host-revised-route.json',
     'project/ias/studies/utility-bench-release.py','project/ias/ias-03-utility-factory-head.md'];
   return {packet:'HAD-INLET-RESOLUTION',status:'REWIND_NOT_ADOPTED',baselineMain:'003f61bacebd4cb3294280059b64f1bb5fc87f88',selection:house.id,
+    hostQualification:verifyUtilityHostQualificationWithdrawal(host),actualUtilityPostMechanicalScreen:false,
     sourceBlobs:Object.fromEntries(sourcePaths.map(p=>[p,blob(p)])),inputs:house.inputs,
     unchangedSelectedGeometry:{fullCurrentHouseSHA256:digest(house),exteriorPortsSHA256:digest(house.model.exteriorPortGeometry),weatherFacesSHA256:digest(house.selectedServiceInterfaces.weatherFaces),
-      scope:'The joined rewrite updates selected inlet duty metadata only. The rejected inherited path remains an adverse witness; the compact service schedule, ports and weather faces are unaffected.'},
+      scope:'The original inlet rewrite updates selected duty metadata; the later exact IAS post qualification withdrawal is recorded separately in hostQualification. The current schedule binds that corrected host source. The rejected path, complete ports/weather faces and numerical inlet geometry remain adverse/unchanged; actual post mechanical qualification remains false.'},
     inheritedInlet:inletEnvelopeWitness(house.model),utility:utilityComparison(house.model,base,host),terminal:terminalComparison(host),
     utilitySuccessor:utilityTerminalStudy(house.model,host),station:stationStudy(house.model,base,read('project/str/studies/current-house-grid.json')),
     bridge:bridgeComparison(house.model,base),

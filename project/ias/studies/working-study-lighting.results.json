@@ -10323,7 +10323,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
+        "bindingDigest": "8a0cf41e059ebec1c7869ee94cdd7436c6163bb4a732a808153f9e026ef0481b",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -10335,25 +10335,25 @@
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e",
         "structuralConsequenceDigest": "b933b2d892cc512b799cb5774c71da4cd2833d1a6cbef9a3deb0ac91c13695b3"
       },
-      "roomKitCaseDigest": "201f194b5ca2be2b65e40480dc880553ec79941c17042351f821827b0eb03915",
+      "roomKitCaseDigest": "9ca4d63094b2863d4fece636872cceceda0cfc88562a85f053e78fc79cea1936",
       "wallTransitionDigest": "6c11ef7c4ea9de265ce3f79c380ccddcfdfe315dec07e9fe42cfa3bfeb98a275",
-      "occupiedBindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
+      "occupiedBindingDigest": "8a0cf41e059ebec1c7869ee94cdd7436c6163bb4a732a808153f9e026ef0481b",
       "inputsSHA256": {
         "project/ias/studies/adaptable-study-lighting.json": "02fb40391ab20ff76f90aef1074b82fca711f6b46bb8d6dd66a36fb5778f2302",
         "project/ias/studies/lighting-component-references.json": "bd2735566aa0c9155c8ad7613a92920b552212a1b8bd5e90659cd8e31f39b6ae"
       }
     },
-    "caseDigest": "989a1639cecfa81b757910e0bff0d528ec6438cc94f17852b52d9b7e49de857b",
+    "caseDigest": "9c71a94024566e2d5e9ecd6b0ae1be047766b4e6993cb93b0811d46f346cb094",
     "circuit": {
       "schema": "ias-study-circuit/1",
       "status": "SPECIFIED_DEVELOPMENT",
-      "designDigest": "80c493b544a38c9bc3ec5acc27c96d009289ba2cfdef897d068b99a589bf3f76",
+      "designDigest": "abad721c0d058db2e6695b50e597d2d6a1ee5baa8fc7f77fa11b9480c73ce76f",
       "source": {
         "room": {
           "currentPlanBasis": "RH-LAYOUT-REVISION-02",
           "occupiedHouse": "HAD-SERVICES-02",
           "roomId": "GROUND/G-STUDY",
-          "bindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
+          "bindingDigest": "8a0cf41e059ebec1c7869ee94cdd7436c6163bb4a732a808153f9e026ef0481b",
           "floor": {
             "path": "project/ias/studies/workable-study-floor.json",
             "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -10365,9 +10365,9 @@
           "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e",
           "structuralConsequenceDigest": "b933b2d892cc512b799cb5774c71da4cd2833d1a6cbef9a3deb0ac91c13695b3"
         },
-        "roomKitCaseDigest": "201f194b5ca2be2b65e40480dc880553ec79941c17042351f821827b0eb03915",
+        "roomKitCaseDigest": "9ca4d63094b2863d4fece636872cceceda0cfc88562a85f053e78fc79cea1936",
         "wallTransitionDigest": "6c11ef7c4ea9de265ce3f79c380ccddcfdfe315dec07e9fe42cfa3bfeb98a275",
-        "occupiedBindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
+        "occupiedBindingDigest": "8a0cf41e059ebec1c7869ee94cdd7436c6163bb4a732a808153f9e026ef0481b",
         "inputsSHA256": {
           "project/ias/studies/adaptable-study-lighting.json": "02fb40391ab20ff76f90aef1074b82fca711f6b46bb8d6dd66a36fb5778f2302",
           "project/ias/studies/lighting-component-references.json": "bd2735566aa0c9155c8ad7613a92920b552212a1b8bd5e90659cd8e31f39b6ae"

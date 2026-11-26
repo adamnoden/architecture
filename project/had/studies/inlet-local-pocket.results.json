@@ -2,12 +2,12 @@
   "schema": "had-local-room-pocket-receipt/1",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
+    "bindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
     "inputs": {
-      "project/had/studies/south-inlet-under-sill.json": "bb2def187df67e2d9660a607e38f2f1a31d3f7ec",
-      "project/had/studies/south-inlet-wet-box.json": "4f76d728857f170bed4be0b2c5b6308f3f2f88aa",
-      "project/had/studies/south-inlet-relief.json": "a46275c05e24559a9ab1552c124d4b191315e94e",
-      "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f",
+      "project/had/studies/south-inlet-under-sill.json": "42d8c81826b036a68e8a03aa6e3e1e7f33a1deb9",
+      "project/had/studies/south-inlet-wet-box.json": "0fd78b5fd807351913fdb1333f6ecb4d667025e2",
+      "project/had/studies/south-inlet-relief.json": "ac660745da4eb1272c26b1a7de9bf17f42383eb8",
+      "project/had/studies/south-utility-inlet.json": "4577b705131feaf2e895bb981238a85e835e2a5d",
       "project/had/studies/current-house-services.json": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
       "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
       "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
@@ -305,12 +305,12 @@
     "inputChange": "Omit only the recomputed houseVerticalProfile; same530ground, source settings and complete Plant choice.",
     "source": {
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-      "bindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
+      "bindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
       "inputs": {
-        "project/had/studies/south-inlet-under-sill.json": "bb2def187df67e2d9660a607e38f2f1a31d3f7ec",
-        "project/had/studies/south-inlet-wet-box.json": "4f76d728857f170bed4be0b2c5b6308f3f2f88aa",
-        "project/had/studies/south-inlet-relief.json": "a46275c05e24559a9ab1552c124d4b191315e94e",
-        "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f",
+        "project/had/studies/south-inlet-under-sill.json": "42d8c81826b036a68e8a03aa6e3e1e7f33a1deb9",
+        "project/had/studies/south-inlet-wet-box.json": "0fd78b5fd807351913fdb1333f6ecb4d667025e2",
+        "project/had/studies/south-inlet-relief.json": "ac660745da4eb1272c26b1a7de9bf17f42383eb8",
+        "project/had/studies/south-utility-inlet.json": "4577b705131feaf2e895bb981238a85e835e2a5d",
         "project/had/studies/current-house-services.json": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
         "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
         "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
@@ -25652,7 +25652,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
+          "sourceBindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -25790,7 +25790,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
+            "sourceBindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
             "groundFflMm": 530,
             "roomPlanMm": [
               9397,
@@ -36612,7 +36612,7 @@
           "deckGuardIntrusionMm": 50
         }
       },
-      "sourceBindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
+      "sourceBindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
       "groundFflMm": 530,
       "selected": false,
       "rawArchVerticalReservation": {
@@ -36648,7 +36648,7 @@
       },
       "branchIdentity": "HAD/plant-independent-east-entry-development",
       "branchPrerequisites": {
-        "sameCurrentSource": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
+        "sameCurrentSource": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
         "connections": [
           {
             "id": "source-entry",
@@ -36949,7 +36949,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
+          "sourceBindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -37087,7 +37087,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
+            "sourceBindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
             "groundFflMm": 530,
             "roomPlanMm": [
               9397,
@@ -62000,7 +62000,7 @@
         "supportOtherMassBudgetKg": 4
       },
       "source": {
-        "branchBinding": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
+        "branchBinding": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
         "branchId": "HAD/plant-independent-east-entry-development",
         "plantRoomId": "HAD/plant-wet-floor-threshold-successor",
         "groundFflMm": 530,
@@ -139955,8 +139955,8 @@
   "knownGravityInventory": {
     "schema": "had-known-gravity-components/1",
     "source": {
-      "inletBindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
-      "inletCaseDigest": "55d123b05fdca2d66d62cee92f483cef6fd983ca0a4b083e38791136b53ab768",
+      "inletBindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
+      "inletCaseDigest": "d7bc41695c8f1bd68c891251dace338b9c7d5603a0ff892bb7933cb589eaa91d",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
       "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
     },
@@ -139985,8 +139985,8 @@
         "sourceObjectId": "HAD/local-utility-service-pocket",
         "sourceObjectDigest": "f233772f5af534684fe22d226fe43eb9d206907c6a0cbf086eecdb67f4b52f8c",
         "source": {
-          "inletBindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
-          "inletCaseDigest": "55d123b05fdca2d66d62cee92f483cef6fd983ca0a4b083e38791136b53ab768",
+          "inletBindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
+          "inletCaseDigest": "d7bc41695c8f1bd68c891251dace338b9c7d5603a0ff892bb7933cb589eaa91d",
           "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
           "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
         },
@@ -140534,8 +140534,8 @@
         "sourceObjectId": "HAD/local-plant-service-pocket",
         "sourceObjectDigest": "328c823f4acbcdde4e148fe49b86f17aea87d3a8fe35d565e23e6521410c7453",
         "source": {
-          "inletBindingDigest": "16e942c3f52e6a16a0109baf0d16f66726bd284da1bf040bbe570bb88854fccb",
-          "inletCaseDigest": "55d123b05fdca2d66d62cee92f483cef6fd983ca0a4b083e38791136b53ab768",
+          "inletBindingDigest": "7f32489d1e0a040dea717b8d8f3e911be06b0c0838c47af55ab87c2543c9ee1e",
+          "inletCaseDigest": "d7bc41695c8f1bd68c891251dace338b9c7d5603a0ff892bb7933cb589eaa91d",
           "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
           "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
         },

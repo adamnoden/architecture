@@ -7,6 +7,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {verifyUtilityHostQualificationWithdrawal,utilityHostQualificationWithdrawal} from './utility-host-boundary.mjs';
 import {exactSegmentBoxDistance,finiteBends} from './incoming-water-geometry.mjs';
 
 const root=new URL('../../../',import.meta.url);
@@ -14,7 +15,7 @@ const read=path=>readFileSync(new URL(path,root));
 const blob=buf=>createHash('sha1').update('blob '+buf.length+'\0').update(buf).digest('hex');
 const hostPath='project/ias/studies/utility-host-revised-route.json';
 const housePath='project/had/studies/water-replan.json';
-const HOST_BLOB='69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b';
+const HOST_BLOB=utilityHostQualificationWithdrawal.afterBlob;
 
 const moved=(box,shift)=>[...box.slice(0,3).map((n,i)=>n+shift[i]),...box.slice(3)];
 const swept=(box,a,b)=>[...box.slice(0,3).map((n,i)=>n+Math.min(a[i],b[i])),
@@ -39,6 +40,7 @@ export function utilityFirstRestPreflight(){
   const hostBytes=read(hostPath);
   assert.equal(blob(hostBytes),HOST_BLOB,'IAS host geometry changed: rebase the utility first-rest candidate');
   const host=JSON.parse(hostBytes);
+  const hostQualification=verifyUtilityHostQualificationWithdrawal(host);
   const h=JSON.parse(read(housePath)).model;
   assert.equal(h.shell,12000);assert.equal(h.envelope,429.5);
   assert.deepEqual(host.geometry.frame['leg 1'],[10955,730,6,40,40,864]);
@@ -152,6 +154,7 @@ export function utilityFirstRestPreflight(){
 
   return {
     status:'BOUNDED UTILITY FIRST-REST COMPARATOR; NOT SOURCE ADOPTION',
+    hostQualification,actualDrawnPostMechanicalScreen:false,actualFirstRestSupportAccepted:false,
     inputs:{IASHostBlob:HOST_BLOB,hostPath,housePath,
       frameTravelNorthMM:285,frameVerticalLiftMM:35,pipeRadiusMM:25,
       bentPipeArcBoundMM:routes.coldSink.hausdorffError},

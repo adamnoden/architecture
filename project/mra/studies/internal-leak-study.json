@@ -16,7 +16,7 @@
     "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
     "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
     "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
-    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/ias/studies/utility-host-revised-route.json": "6573da78a943647c900ae876d6b0701dbe2ca0cb",
     "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69",
     "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
     "project/str/studies/house-corner-rewind.json": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640"
@@ -25,6 +25,7 @@
     "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
     "project/had/studies/current-house-service-outputs.mjs": "ed9b9796099e5b8736d11a1d90bb93a566bfe12d",
     "project/had/studies/selected-water-duties.mjs": "332755d589080661042af6491d0f23d7947829bf",
+    "project/had/studies/utility-host-boundary.mjs": "4fe7a1c69aed4297f484160483b23a0cd5a11ed1",
     "project/had/studies/inhabited-service-compose.mjs": "632421d4b4b4dcdc028590694e877d290d768485",
     "project/had/studies/fitted-house-services.mjs": "a22e08e94dc1d8fc2ae84b5fed5a71eaf97e3dd5",
     "project/had/studies/selected-service-interfaces.mjs": "712065e8dfefc0c2d357e232ca17bbed5a376ea2",
@@ -38,7 +39,7 @@
     "project/mat/interiors-whole-house-assembly-schedule.md": "fbee773fba1c46cd7c403e08dfc99de7f3154649",
     "project/mat/interiors-b-wetroom-assembly.md": "bd3fca8006fd8d4d63256fb2809645904cbc5850",
     "project/mra/mra-00-moisture-constitution-threat-model.md": "40129a2e1149142769d34dfc10709ca73968c682",
-    "project/mra/studies/internal-leak-study.mjs": "4d549e972d7c3dea28941b63058720eff156ec14"
+    "project/mra/studies/internal-leak-study.mjs": "13b386c13babd955150969cee325d30c9c441cb5"
   },
   "sourceCorrection": {
     "preFix": {
@@ -114,7 +115,46 @@
         }
       }
     },
+    "qualificationWithdrawal": {
+      "sourcePath": "project/ias/studies/utility-host-revised-route.json",
+      "beforeBlob": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+      "afterBlob": "6573da78a943647c900ae876d6b0701dbe2ca0cb",
+      "beforeSemanticSHA256": "21a28518dcb453826ce48fd2e5a80e39fa3511653834d9ee0f5311b8bd85e531",
+      "afterSemanticSHA256": "75c7062120609841d3bfd584f35261c210117c337dded76398a345cfbadc76c4",
+      "beforeScheduleBlob": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "afterScheduleBlob": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
+      "declaredPostCorrection": {
+        "appliesToDrawnPost": false,
+        "actualDrawnSectionMm": [
+          20,
+          20
+        ],
+        "actualDrawnWallMm": null,
+        "actualDrawnPostMechanicalScreen": false,
+        "diagnostics": [
+          "IAS_HOST_POST_SECTION_MISMATCH"
+        ],
+        "nonApplicability": "The drawn carrier post is 20 x 20 mm with unspecified wall; the retained 40 x 40 x 3 mm / I75000 comparison does not establish its mechanical capacity."
+      },
+      "retainedComparisonSectionMm": [
+        40,
+        40,
+        3
+      ],
+      "retainedComparisonIMm4": 75000,
+      "actualDrawnPostMechanicalScreen": false,
+      "appliesToDrawnPost": false,
+      "remainingCompleteHostSemanticsUnchanged": true,
+      "scope": "Preserve the old40x40x3/I75000 numerical comparison as historical non-applicable evidence. Explicitly deny its application to the actual20x20post with unknown wall. Every other complete host field is checked against the independently retained before-source semantic hash; no geometry or other qualification exclusion."
+    },
     "observed": {
+      "scheduleBlob": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
+      "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
+      "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
+      "selectedInterfacesSHA256": "aefbf9f05d1dd275b0aebd6393a3c7fe09b31c6220ee0303424aff46bbb9deaa",
+      "houseExceptDeclaredChangesSHA256": "7682a6d11e253facaf266015236ac5ccda91afdcd6774b6fe4df50ae63db964f"
+    },
+    "qualificationRestoredObserved": {
       "scheduleBlob": "e649805e78244527fe6498b516fa5f23734ac5ea",
       "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
       "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
@@ -139,9 +179,10 @@
     "declaredChanges": [
       "Both foul-kitchen duties: superseded downstream reservation corrected; upstream branch stays with IAS.",
       "Both incoming-water duties: rejected status, current witness and adoption duty added; path geometry retained.",
-      "model.currentAdoptionBlockers: explicit incoming-water duty replaces the empty list."
+      "model.currentAdoptionBlockers: explicit incoming-water duty replaces the empty list.",
+      "IAS host post: explicitly withdraw applicability/mechanical qualification of the retained40x40x3comparison for the actual20x20wall-unspecified post; preserve every other complete host field."
     ],
-    "scope": "The independently replayed 0b producer and current regenerated producer differ only at the four named house-input identities and two named receiver-input identities. That exact refresh first returns the original joined schedule and unaffected-house hashes; the preserved f794 bridge then returns the original a060 observation. Current, joined and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no blanket provenance normalization or other geometry exclusion is applied. No whole-house structural or moisture acceptance is claimed."
+    "scope": "The later IAS source adds the exact guarded post non-applicability correction, with false applicability and actual mechanical qualification. Its complete other host semantics are unchanged; the compact schedule changes only that named source identity. Restoring this proved correction first returns the preserved e649 schedule and complete unaffected-house hashes. The independently replayed 0b and e649 producers then differ only at the four named house-input identities and two named receiver-input identities. That exact refresh first returns the original joined schedule and unaffected-house hashes; the preserved f794 bridge then returns the original a060 observation. Current, joined and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no blanket provenance normalization or other geometry exclusion is applied. No whole-house structural or moisture acceptance is claimed."
   },
   "stressBasis": {
     "inheritedFlowsLmin": [

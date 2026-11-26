@@ -3,11 +3,45 @@
   "status": "REWIND_NOT_ADOPTED",
   "baselineMain": "003f61bacebd4cb3294280059b64f1bb5fc87f88",
   "selection": "HAD-SERVICES-02",
+  "hostQualification": {
+    "sourcePath": "project/ias/studies/utility-host-revised-route.json",
+    "beforeBlob": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "afterBlob": "6573da78a943647c900ae876d6b0701dbe2ca0cb",
+    "beforeSemanticSHA256": "21a28518dcb453826ce48fd2e5a80e39fa3511653834d9ee0f5311b8bd85e531",
+    "afterSemanticSHA256": "75c7062120609841d3bfd584f35261c210117c337dded76398a345cfbadc76c4",
+    "beforeScheduleBlob": "e649805e78244527fe6498b516fa5f23734ac5ea",
+    "afterScheduleBlob": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
+    "declaredPostCorrection": {
+      "appliesToDrawnPost": false,
+      "actualDrawnSectionMm": [
+        20,
+        20
+      ],
+      "actualDrawnWallMm": null,
+      "actualDrawnPostMechanicalScreen": false,
+      "diagnostics": [
+        "IAS_HOST_POST_SECTION_MISMATCH"
+      ],
+      "nonApplicability": "The drawn carrier post is 20 x 20 mm with unspecified wall; the retained 40 x 40 x 3 mm / I75000 comparison does not establish its mechanical capacity."
+    },
+    "retainedComparisonSectionMm": [
+      40,
+      40,
+      3
+    ],
+    "retainedComparisonIMm4": 75000,
+    "actualDrawnPostMechanicalScreen": false,
+    "appliesToDrawnPost": false,
+    "remainingCompleteHostSemanticsUnchanged": true,
+    "scope": "Preserve the old40x40x3/I75000 numerical comparison as historical non-applicable evidence. Explicitly deny its application to the actual20x20post with unknown wall. Every other complete host field is checked against the independently retained before-source semantic hash; no geometry or other qualification exclusion."
+  },
+  "actualUtilityPostMechanicalScreen": false,
   "sourceBlobs": {
     "project/had/studies/current-house.mjs": "58bf1a6248af8268de70d838cce23f249ce30b91",
-    "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+    "project/had/studies/current-house-services.json": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
     "project/had/studies/selected-water-duties.mjs": "332755d589080661042af6491d0f23d7947829bf",
-    "project/had/studies/incoming-water.mjs": "90af438144296ff78349939bfb95d5bdb9769a44",
+    "project/had/studies/incoming-water.mjs": "cf7ac8e90a3fa52d3be5942d7a8c01b587ee320e",
+    "project/had/studies/utility-host-boundary.mjs": "4fe7a1c69aed4297f484160483b23a0cd5a11ed1",
     "project/had/studies/incoming-water-geometry.mjs": "ed658b7df0edf5d8e6d1826d32730a14b00199c7",
     "project/had/studies/incoming-water-terminal.mjs": "8ca8d805567fb1ba2710e2f08e34623899857959",
     "project/had/studies/incoming-water-station.mjs": "30fc6ac41ae4c3ccb69e99ad34b317ab69d17f12",
@@ -18,7 +52,7 @@
     "project/mat/studies/plant-inlet-route.py": "97b86cb80f4a689a279b99543d04652866d0123e",
     "project/mat/studies/east-water-plant.json": "a79242dbe0118d393d906a7d01df9061fb2cdb5b",
     "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
-    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/ias/studies/utility-host-revised-route.json": "6573da78a943647c900ae876d6b0701dbe2ca0cb",
     "project/ias/studies/utility-bench-release.py": "e95efaf52faf7cdc157eaab2d8524fb86c04e616",
     "project/ias/ias-03-utility-factory-head.md": "29fe6cedce70f447e5156c8e235c464b9a1befab"
   },
@@ -36,16 +70,16 @@
     "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
     "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
     "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
-    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/ias/studies/utility-host-revised-route.json": "6573da78a943647c900ae876d6b0701dbe2ca0cb",
     "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69",
     "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
     "project/str/studies/house-corner-rewind.json": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640"
   },
   "unchangedSelectedGeometry": {
-    "fullCurrentHouseSHA256": "825a565b504586926e03f741243aa8efd082bf85db1868f7763a19144bae2b59",
+    "fullCurrentHouseSHA256": "5fac8976f70c8f2e89d3e11fe04a887afdfd67b804cfcdd07c81c34890c459ed",
     "exteriorPortsSHA256": "9d16691683c6255acad78736c3f6a77ac3c27d01e5f6d7ab908fab1e8fdffabb",
     "weatherFacesSHA256": "1155d413b399a8ea93c4097f402e2089ded7131a68177b93a37d881216d7986f",
-    "scope": "The joined rewrite updates selected inlet duty metadata only. The rejected inherited path remains an adverse witness; the compact service schedule, ports and weather faces are unaffected."
+    "scope": "The original inlet rewrite updates selected duty metadata; the later exact IAS post qualification withdrawal is recorded separately in hostQualification. The current schedule binds that corrected host source. The rejected path, complete ports/weather faces and numerical inlet geometry remain adverse/unchanged; actual post mechanical qualification remains false."
   },
   "inheritedInlet": {
     "radiator": "plant-N",
