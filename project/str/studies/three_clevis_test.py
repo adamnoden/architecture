@@ -83,6 +83,13 @@ class ClevisControls(unittest.TestCase):
         self.assertAlmostEqual(r['bendingStressMPa']*r['sectionModulusMm3'],recovered,places=6)
         self.assertGreater(r['eccentricAxialFrictionBendingNmm'],0)
 
+    def test_vertical_contact_friction_has_torsion_and_unequal_shear(self):
+        r=t.pin_screen(self.c['geometry'],self.c['material'],100000.,30000.,20000.)
+        self.assertGreater(r['torsionalShearMPa'],0)
+        self.assertGreater(r['combinedDirectAndTorsionalShearMPa'],r['doubleShearMPa'])
+        self.assertEqual(r['verticalContactFrictionTorsionNmm'],900000.)
+        self.assertGreater(max(r['normalReactionPairForOneSidedAxialSlipN']),50000.)
+
     def test_shoulder_and_matched_axis_are_real_requirements(self):
         g,v=self.c['geometry'],copy.deepcopy(self.c['movement'])
         self.assertTrue(t.movement(g,v)['allSpecifiedTravelGeometricallyPossible'])

@@ -92,7 +92,7 @@ def assess(c,a,base,h,cage,fc):
         for k in range(24) if mu else [0]:
             angle=k*math.pi/12;v=mu*n*math.cos(angle);along=mu*n*math.sin(angle)
             # Full simultaneous vector into ONE box is conservative, no equal-share strength credit.
-            mz=abs(along)*arm+n*e;my=abs(v)*arm
+            mz=abs(along)*(arm+g['pinDiameterMm']/2)+n*e;my=abs(v)*(arm+g['pinDiameterMm']/2)
             sigma=n/sec['areaMm2']+mz*sec['weakExtremeDistanceMm']/sec['IweakMm4']+my*(b['heightMm']/2)/sec['IstrongMm4']
             torque=abs(v)*e
             shear=math.hypot(v,along)/(2*b['outerFaceMm']*(b['heightMm']-2*b['topBottomMm']))
@@ -183,7 +183,7 @@ def svg(c,value):
         s.text(40,620+27*i,f'μ={row["mu"]:g}: boxVM{row["boxVMMaxMPa"]:.1f}; pinVM{row["pinVMIncludingSurfaceFrictionMaxMPa"]:.1f};Ybar{row["YAnchorNecessaryStressMaxMPa"]:.1f}MPa','note')
     s.text(40,765,'No pin-only pass: boxed cheeks solve one failure; the connector remains unqualified.','note red')
     s.text(930,115,'Ordinary monolithic comparison','sub')
-    ox,oy,scale=970,740,1.
+    ox,oy,scale=1000,740,.7
     def q(x,z):return ox+(x-250)*scale,oy-(z-2950)*scale
     def r(x,z,w,h,color):
         X,Y=q(x,z+h);s.rect(X,Y,w*scale,h*scale,color)
@@ -192,7 +192,7 @@ def svg(c,value):
     r(262.5,3170,200,350,'#94afc5')
     r(262.5,3520,140,80,'#ded1b5')
     for z,label in ((3520,'upstand3520'),(3450,'FIRST3450'),(3370,'slab3370'),(3170,'soffit3170'),(3065,'arch ring3065'),(3020,'downstand3020')):
-        X,Y=q(250,z);s.line(X,Y,1450,Y,'#9aa6af','stroke-dasharray="3 4"');s.text(1260,Y-5,label,'small')
+        X,Y=q(250,z);s.line(X,Y,1410,Y,'#9aa6af','stroke-dasharray="3 4"');s.text(1420,Y-5,label,'small')
     s.text(930,800,'200×350 upstand; floor and FIRST unchanged','note blue')
     s.text(930,826,'70mm high×60mm roomward first-floor plinth','note')
     s.text(930,852,'300cores grow100mm inward; no outward glass move','small')

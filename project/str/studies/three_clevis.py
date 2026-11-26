@@ -133,12 +133,20 @@ def pin_screen(g,m,n,v=0.,axial=0.):
     eccentric=abs(axial)*d/2
     moment=resultant*span/4+eccentric
     # Full24mm axial bore at every section is conservative against two36mm end bores.
-    bending=moment/z;normal=abs(axial)/a;shear=resultant/(2*a)
-    vm=math.sqrt((bending+normal)**2+3*shear**2)
+    bending=moment/z;normal=abs(axial)/a
+    shear=math.hypot(n/2+abs(axial)*d/span,v/2)/a
+    polar=math.pi*(d**4-b**4)/32
+    torsion=abs(v)*d/2
+    torsional_shear=torsion*(d/2)/polar
+    # Bounding sum at a common outside fibre; no free-rotation/friction exemption.
+    combined_shear=shear+torsional_shear
+    vm=math.sqrt((bending+normal)**2+3*combined_shear**2)
     return {'resultantTransverseN':resultant,'spanMm':span,'annularAreaMm2':a,'sectionModulusMm3':z,
         'bendingStressMPa':bending,'doubleShearMPa':shear,'axialStressMPa':normal,
         'eccentricAxialFrictionBendingNmm':eccentric,
         'normalReactionPairForOneSidedAxialSlipN':[n/2-abs(axial)*d/span,n/2+abs(axial)*d/span],
+        'verticalContactFrictionTorsionNmm':torsion,'torsionalShearMPa':torsional_shear,
+        'combinedDirectAndTorsionalShearMPa':combined_shear,'combinedStressIsConservativeComponentBound':True,
         'oneSidedAxialSlipHasCompressionOnlyNormalReactions':n/2>=abs(axial)*d/span,
         'vonMisesMPa':vm,'yieldUtilization':vm/m['comparisonYieldMPa']}
 
@@ -210,7 +218,7 @@ def assess(c,base,cage,floor):
     lo,hi=base['slabZMm'];a=g['floorAnchorExternalEnvelopeMm'];b=g['transverseMatExternalEnvelopeMm']
     cover=floor['mainBarNominalCoverMm'];xb=lo+cover+a/2;xt=hi-cover-a/2;yb=lo+cover+a+b/2;yt=hi-cover-a-b/2
     root=g['floorRootNearXMm']+g['floorRootThicknessMm'];pinx=262.5+200+(g['comparisonCoreMm']-200)/2+g['pinFromComparisonInnerFaceMm']
-    floor_arm=root-pinx;wall_arm=g['pinFromComparisonInnerFaceMm']
+    floor_arm=root-pinx+g['pinDiameterMm']/2;wall_arm=g['pinFromComparisonInnerFaceMm']+g['pinDiameterMm']/2
     asface=g['floorAnchorCountPerFace']*area(g['floorAnchorNominalDiameterMm'])
     adverse_lever=xt-xb-2*floor['independentBarToleranceMm']
     rows=[]
@@ -253,6 +261,8 @@ def assess(c,base,cage,floor):
             weak_best=weak_full/2
             rows.append({'mu':mu,'slipDirectionRad':theta,'forceOnFloorN':[n,along,vertical],
                 'floorRootMomentNmm':moment_floor,'wallRodGroupMomentNmm':abs(vertical)*wall_arm,
+                'momentArmsIncludeAdversePinSurfaceFrictionRadius':True,
+                'contactFrictionCoupleBoundAtPinNmm':[0.,abs(vertical)*g['pinDiameterMm']/2,abs(along)*g['pinDiameterMm']/2],
                 'pin':p,'bladeNetStressMPa':math.hypot(n,vertical)/blade_net,
                 'bladeBearingMPa':blade_bearing,'bladeFreeEndTearoutMPa':math.hypot(n,vertical)/(2*g['bladeThicknessMm']*(g['bladePastPinMm']-g['slotWidthMm']/2)),
                 'slotVerticalStopShearYieldN':slot_stop,
