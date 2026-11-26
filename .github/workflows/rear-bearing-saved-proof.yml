@@ -91,6 +91,7 @@ jobs:
           retention-days: 90
 
   signed:
+    if: contains(github.event.head_commit.message, '[rear-signed-96]')
     needs: prepare
     runs-on: ubuntu-latest
     timeout-minutes: 60
@@ -134,7 +135,7 @@ jobs:
 
   aggregate:
     needs: [prepare, signed]
-    if: always() && needs.prepare.result == 'success'
+    if: always() && needs.prepare.result == 'success' && needs.signed.result != 'skipped'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
