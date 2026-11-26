@@ -1,0 +1,149 @@
+{
+  "schema": "str-three-clevis-inputs/1",
+  "status": "SOURCE-ONLY MINIMUM-SCREEN DEVELOPMENT",
+  "parentSourceCommit": "0cb9232d416a76e75b9f08f2537c081782abfd4e",
+  "sourceGitBlobs": {
+    "project/ccr/studies/working-house-comparison.json": "0ff5c76ff639562ee93fec1df8a3859d77a8fcf2",
+    "project/str/studies/continuous_rc_cage.py": "da4ea91d9096ed3442a9dd4a3b6db73f35de862d",
+    "project/str/studies/floor_reinforcement.py": "ec871a32f8a8fa5939677ff99d51a195f37c7aff",
+    "project/str/studies/separated_floor_bearing.py": "28ff41eadf2759fb21ba3d2ef5156763c529948c",
+    "project/str/studies/separated-floor-bearing-inputs.json": "acf7648ddc1b1cb6d966d30baf6c997c3de9a18a",
+    "project/str/studies/separated-floor-bearing-observed.json": "8f2c6c131c8e11365c869f041c332e0c583e1d13"
+  },
+  "material": {
+    "grade": "Specified duplex1.4462; certificates, weld procedure, wear pair and product qualification absent",
+    "minimumProofMPa": 450,
+    "minimumUltimateMPa": 640,
+    "comparisonYieldMPa": 300,
+    "comparisonNetFractureMPa": 400,
+    "elasticModulusMPa": 200000,
+    "poissonRatio": 0.3,
+    "densityKgPerM3": 7800,
+    "weldComparisonShearMPa": 150,
+    "concreteSpringMPa": [
+      8250,
+      33000
+    ],
+    "sourceURLs": [
+      "https://www.outokumpu.com/sv-se/products/product-ranges/-/media/files/products/forta/outokumpu-forta-range-datasheet.pdf?modified=20251117111938&revision=a7abe2a9-7ebb-45aa-88bf-ce0e9d4aca12",
+      "https://bssa.org.uk/bssa_articles/frictional-properties-of-stainless-steels/",
+      "https://bssa.org.uk/wp-content/uploads/2021/02/SSAS5.60-Galling-and-Galling-Resistance-of-Stainless-Steels.pdf"
+    ],
+    "productFormsCaveat": "Manufacturer plate min460/640 and bar450/650 support specified450/640 screen; no fastener/weld/product properties earned",
+    "frictionScenarioCoefficients": [
+      0,
+      0.3,
+      0.6,
+      1
+    ],
+    "frictionIsVerifiedUpperBound": false
+  },
+  "demand": {
+    "minimumPressureOnlyForceKN": 94.581,
+    "developmentReserve": 1.5,
+    "fullHouseDemandAvailable": false
+  },
+  "geometry": {
+    "currentCoreMm": 200,
+    "comparisonCoreMm": 300,
+    "comparisonCoreExpansionEachFaceMm": 50,
+    "facePlateWidthMm": 250,
+    "facePlateHeightMm": 250,
+    "facePlateThicknessMm": 40,
+    "facePlateBottomZMm": 3155,
+    "bladeThicknessMm": 40,
+    "bladeHeightMm": 190,
+    "bladeBottomZMm": 3175,
+    "pinFromComparisonInnerFaceMm": 110,
+    "bladePastPinMm": 100,
+    "slotWidthMm": 64,
+    "slotHeightMm": 104,
+    "slotMachiningToleranceMm": 0.2,
+    "pinDiameterMm": 60,
+    "pinDiameterToleranceMm": 0.2,
+    "pinLengthMm": 180,
+    "pinEndBoreMm": 24,
+    "pinBoreDepthMm": 36,
+    "cheekThicknessMm": 20,
+    "cheekInsideGapMm": 90,
+    "cheekAlongNormalHalfDepthAtPinMm": 60,
+    "pinKeeperODMm": 100,
+    "pinKeeperThicknessMm": 16,
+    "pinRetainerStressAreaMm2": 353,
+    "pinRetainerGripMm": 36,
+    "throughRodDiameterMm": 30,
+    "throughRodExternalEnvelopeMm": 32,
+    "throughRodStressAreaMm2": 561,
+    "throughRodHoleMm": 35,
+    "throughRodAlongHalfPitchMm": 80,
+    "throughRodRowPitchMm": 140,
+    "westRodZMm": [
+      3210,
+      3350
+    ],
+    "southRodZMm": [
+      3222,
+      3362
+    ],
+    "rodWasherODMm": 56,
+    "rodNutAndWasherProjectionMm": 30,
+    "floorRootNearXMm": 782.5,
+    "floorRootThicknessMm": 40,
+    "floorRootWidthMm": 400,
+    "floorRootHeightMm": 190,
+    "weldThroatMm": 10,
+    "floorAnchorNominalDiameterMm": 16,
+    "floorAnchorExternalEnvelopeMm": 18,
+    "floorAnchorCountPerFace": 8,
+    "floorAnchorPitchMm": 50,
+    "floorAnchorStraightLengthMm": 1000,
+    "transverseMatNominalDiameterMm": 14,
+    "transverseMatExternalEnvelopeMm": 16,
+    "transverseMatPitchMm": 56,
+    "mainBarExternalEnvelopeMm": 14,
+    "linkExternalEnvelopeMm": 9,
+    "westOldLinkZMm": [
+      3168,
+      3243,
+      3308,
+      3383
+    ],
+    "southOldLinkZMm": [
+      3190,
+      3265,
+      3330,
+      3405
+    ],
+    "coverThicknessMm": 12,
+    "coverPointLoadKN": 5,
+    "coverEffectiveStripWidthMm": 100,
+    "coverClearSpanMm": 260,
+    "servicePocketSeatRecessMm": 40
+  },
+  "movement": {
+    "wallFloorIndependentSettingEachMm": 5,
+    "commonPinAxisAlignmentMm": 0.25,
+    "verticalSlipMm": 8,
+    "guideSlipMm": 10,
+    "pinAxisRotationRad": 0.03,
+    "otherRotationRad": 0.02,
+    "pinExtractionMm": 160,
+    "toolODMm": 70,
+    "toolAxialMm": 75,
+    "temporaryBedEastShiftMm": 200,
+    "temporaryNWToiletEastShiftMm": 70,
+    "matchedPinCastInJigRequired": true,
+    "shoulderPinClampsCheeks": false,
+    "temporaryHorizontalBraceBeforeRenewalRequired": true
+  },
+  "evidence": {
+    "productAccepted": false,
+    "physicalAccepted": false,
+    "ownerAccepted": false,
+    "houseAccepted": false,
+    "nativeHouseSolved": false,
+    "concreteSplittingQualified": false,
+    "completeCageQualified": false,
+    "completeFloorAnchorageQualified": false
+  }
+}

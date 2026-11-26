@@ -1,0 +1,55 @@
+name: Check three-clevis physical minimum screen
+on:
+  push:
+    branches: [work/zerg-three-clevis-20261126]
+    paths:
+      - '.github/workflows/three-clevis-screen.yml'
+      - 'project/str/studies/three_clevis.py'
+      - 'project/str/studies/three_clevis_test.py'
+      - 'project/str/studies/three-clevis-inputs.json'
+permissions:
+  contents: read
+concurrency:
+  group: three-clevis-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  components:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      CLEVIS_SCREEN_DIR: /tmp/three-clevis-screen
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Source-bound analytical and adverse controls
+        run: |
+          mkdir -p "$CLEVIS_SCREEN_DIR"
+          if ! python -B project/str/studies/three_clevis_test.py > "$CLEVIS_SCREEN_DIR/tests.log" 2>&1; then
+            cat "$CLEVIS_SCREEN_DIR/tests.log"
+            exit 1
+          fi
+          cat "$CLEVIS_SCREEN_DIR/tests.log"
+          python -B project/str/studies/three_clevis.py --out "$CLEVIS_SCREEN_DIR"
+          git diff --exit-code
+      - name: Render the exact physical comparison
+        run: |
+          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
+            --screenshot="$CLEVIS_SCREEN_DIR/three-clevis-section.png" --window-size=1500,1160 \
+            "file://$CLEVIS_SCREEN_DIR/three-clevis-section.svg"
+          python - <<'PY'
+          import base64,os
+          from pathlib import Path
+          p=Path(os.environ['CLEVIS_SCREEN_DIR'])/'three-clevis-section.png'
+          print('RENDER_PNG '+p.name+' '+base64.b64encode(p.read_bytes()).decode())
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: three-clevis-source-bound-minimum-screen
+          path: /tmp/three-clevis-screen/
+          retention-days: 90
+          if-no-files-found: error
