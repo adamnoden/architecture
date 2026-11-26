@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 64,
-  "state": "released",
-  "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
+  "generation": 65,
+  "state": "claimed",
+  "leaseId": "66ded366-e333-4c85-bfa1-d9882125e59e",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-had-recovery-20261125"
+    "label": "zerg-engineering-20261126"
   },
-  "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-26T02:02:17.000Z",
-  "expiresAt": "2026-11-26T02:02:17.000Z",
-  "branch": "work/convergence-bed-water-20261125",
+  "claimedAt": "2026-11-26T07:52:58.053Z",
+  "heartbeatAt": "2026-11-26T07:52:58.053Z",
+  "expiresAt": "2026-11-26T08:37:58.053Z",
+  "branch": "work/zerg-engineering-20261126",
   "predecessor": {
-    "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
-    "generation": 63,
-    "branch": "work/convergence-lighting-20261125",
-    "pr": 1625,
+    "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
+    "generation": 64,
+    "branch": "work/convergence-bed-water-20261125",
+    "pr": 1627,
     "checkpoint": {
-      "evidence": "PR1625@5526b838 has corrected unsupported-ground/choice controls; latest Plant125/frame1100/profile source is published7c228220; coherent prior root account5d8e12e0. No complete occupied arrangement.",
-      "next": "Recover7c228220 onto5d8e12e0 plus merged1625; genuinely regenerate source account/outputs and saved-profile controls; run current-source browser and full checks.",
-      "blocker": "Executor unavailable. Latest root combined source account and added real-browser frame test were not pushed; native loads, stored release and physical interfaces remain unqualified."
+      "evidence": "1626 merged83f8cb65.1627 now0d20523d test-only5incident-XY contract fix, CI unverified; dcfc failed obsolete equality. Raw90077632 actual-route partialchecks/e473 normalizer preserved.",
+      "next": "On executor recovery validate0d20523d exacthead, canonical preflight/merge; complete90077632 saved/replay checks. Redesign deck without cantilevers.",
+      "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
     }
   },
   "recoverySource": {
-    "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
-    "generation": 63,
-    "branch": "work/convergence-lighting-20261125",
-    "pr": 1625,
+    "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
+    "generation": 64,
+    "branch": "work/convergence-bed-water-20261125",
+    "pr": 1627,
     "checkpoint": {
-      "evidence": "PR1625@5526b838 has corrected unsupported-ground/choice controls; latest Plant125/frame1100/profile source is published7c228220; coherent prior root account5d8e12e0. No complete occupied arrangement.",
-      "next": "Recover7c228220 onto5d8e12e0 plus merged1625; genuinely regenerate source account/outputs and saved-profile controls; run current-source browser and full checks.",
-      "blocker": "Executor unavailable. Latest root combined source account and added real-browser frame test were not pushed; native loads, stored release and physical interfaces remain unqualified."
+      "evidence": "1626 merged83f8cb65.1627 now0d20523d test-only5incident-XY contract fix, CI unverified; dcfc failed obsolete equality. Raw90077632 actual-route partialchecks/e473 normalizer preserved.",
+      "next": "On executor recovery validate0d20523d exacthead, canonical preflight/merge; complete90077632 saved/replay checks. Redesign deck without cantilevers.",
+      "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
     }
-  },
-  "pr": 1627,
-  "checkpoint": {
-    "evidence": "1626 merged83f8cb65.1627 now0d20523d test-only5incident-XY contract fix, CI unverified; dcfc failed obsolete equality. Raw90077632 actual-route partialchecks/e473 normalizer preserved.",
-    "next": "On executor recovery validate0d20523d exacthead, canonical preflight/merge; complete90077632 saved/replay checks. Redesign deck without cantilevers.",
-    "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
-  },
-  "releasedAt": "2026-11-26T02:02:17.000Z",
-  "releaseReason": "handoff"
+  }
 }
