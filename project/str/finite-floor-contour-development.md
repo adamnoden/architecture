@@ -38,10 +38,10 @@ independent virtual work, six rigid motions, exact full potential with consisten
 G condensation, separate local floor-load changes, modulus doubling, unchanged
 control and rejected material overlap/invalid contour/orphan data. The source
 reader validates native byte identities and complete executed capture receipts.
-The retained uniform140/70/35 history and the current graded140/70/50 controls preserve six free rigid modes and106 positive relative modes. Each receipt records its actual residuals; a killed process contributes no response or convergence value. The isolated pinned scikit-fem runtime remains separate from the
+The retained uniform140/70/35 history and the current graded140/70/50/35 controls preserve six free rigid modes and106 positive relative modes. Each receipt records its actual residuals; a killed process contributes no response or convergence value. The isolated pinned scikit-fem runtime remains separate from the
 ordinary native runtime.
 
-## Current graded-contour comparison — 25 November2026
+## Current graded-contour comparison — 26 November2026
 
 The original uniform140/70/35 trial is retained in
 `studies/finite-floor-contour-uniform-history.tar.xz`, with its original method
@@ -62,10 +62,10 @@ Sparse condensation uses the explicitly recorded MMD_AT_PLUS_A ordering.
 |140mm|10464|8754|n/a|
 |70mm|22485|19116|12.05566%|
 |50mm|44250|38596|13.80010%|
-|35mm|Unavailable|Unavailable|No completed response; execution records below|
+|35mm|75700|66404|9.77752%|
 
 The comparison fixes the lower wall-end six coordinates only to quotient the
-same six global rigid motions. Both the12.05566%140→70 and13.80010%70→50 changes remain material. The latter is larger; a falling nominal maximum pitch is not evidence of a monotone convergence rate. Its governing relative eigenvector is concentrated in in-plane east-contour `u/v` at Y262.5–417.5mm; this observation does not establish a physical house demand or element-locking diagnosis.
+same six global rigid motions. The12.05566%140→70,13.80010%70→50 and9.77752%50→35 changes remain material. The sequence does not establish a monotone convergence rate or complete mesh convergence. The70→50 governing relative eigenvector is concentrated in in-plane east-contour `u/v` at Y262.5–417.5mm; this observation does not establish a physical house demand or element-locking diagnosis.
 Fixed authored contour-layer and slab-depth positions plus changing global pitch are **not complete mesh convergence** or a far-field-only test. Actual tangential subdivisions can change beside those fixed positions. Separate near-field/depth and component-domain sensitivity checks remain necessary. No convergence acceptance follows.
 The largest current rigid-mode residual is below7.0e−14; the independently
 integrated complete-G wrench residual is below1.12e−11kN/kNm.
@@ -75,7 +75,7 @@ The predecessor-method graded35 process was killed before emitting a complete re
 exact inputs, methods and runtime. The shell's kill observation establishes an
 execution failure; its underlying cause is unknown. The old uniform35 capture
 was removed from the current family after the producer correctly rejected its
-incompatible inputs. It remains available only in labelled history. The predecessor literal50mm intermediate control completed in204.02s; it is reported as50 and is not substituted for the missing35 response.
+incompatible inputs. It remains available only in labelled history. The predecessor literal50mm intermediate control completed in204.02s; it remains a separately named50 comparison. The new35 receipt is an independently completed execution, not a reconstruction of the killed run.
 
 A passive actual140 numerical-order observer retains the unchanged assembled
 solid matrix, contour trace, boundary and consistent load from the ordinary
@@ -99,7 +99,7 @@ slab laws. A solid insertion would be a declared constitutive candidate change,
 requiring whole-system comparison and exact operator/G replacement. No slab
 thickness is selected.
 
-## Bounded direct-solve residency — 25 November2026
+## Bounded direct-solve residency — 26 November2026
 
 The same current component now releases the assembly basis after constructing its complete contour trace and body load, then solves the112 port right-hand sides in batches of16. Condensed energy columns are likewise multiplied in bounded batches. The full response, all112 ports, all106 relative motions, consistent load, particular displacement and potential remain present. The physical matrix, trace, boundary, material and loads are unchanged; the direct sparse method retains MMD_AT_PLUS_A. No iterative approximation, projected mode, repaired symmetry or new numerical acceptance threshold is introduced.
 
@@ -107,7 +107,9 @@ The [source-bound residency control](studies/finite-floor-contour-captures/resid
 
 The fifth analytical control compares independent dense block elimination against batches1/7/16/19/128, with19 distributed ports, noncontiguous boundary coordinates, interior and boundary loads, exact potential and rejected batch controls. Two separate receipt controls replay the actual comparisons and reject altered scalar metrics, full predecessor condensation, the independent140mm fingerprint join, capture/method identity, nonfinite values and acceptance flags. A separate full-array guard checks symmetry and all six rigid-null identities before quotienting, so upper-triangle or excluded-wall-row tampering cannot hide behind a lower-triangle eigenvalue call. It retains the producer’s1e−9 rigid/rank screens and uses1e−9 for numerical symmetry; no array is repaired. The70/50 assembled fingerprints are captured execution observations, not independently reconstructed matrix bytes. The1e−7 numerical reproducibility screen is the existing ordering screen, not physical convergence. The execution observer remains byte-frozen; the stricter replay guard is a separate current method.
 
-An attempted current-method35 execution assembled75700 nodes/66404 bricks and reached factorisation after releasing the basis. The environment then restarted; there is no completed response or observed process exit code. The [partial execution observation](studies/finite-floor-contour-residency-interruption.json) retains the actual recorded phases, with underlying cause unknown. It supplies no35 convergence value. Memory measurements are execution observations, not structural evidence or promises about another machine.
+An earlier current-method35 attempt reached factorisation before an environment restart. Its [partial observation](studies/finite-floor-contour-residency-interruption.json) retains the actual phases, no exit code and unknown underlying cause. After checkpointing all verified work, a single-worker rerun completed with exit0 in315.20s:75700 nodes,66404 bricks,112 ports,106 relative modes and six free rigid modes. Its rigid residual is6.91e−14 and independent complete-G wrench residual5.70e−12kN/kNm. The [completed execution observation](studies/finite-floor-contour-35-execution.json) retains the response hash and process/phase observations, including peak resident6410032KiB. This supplies the actual9.77752%50→35 sensitivity, not physical convergence. It does not establish why the prior environment restarted. Memory measurements are execution observations, not structural evidence or promises about another machine.
+
+The saved adapter now allows a bounded600s component execution because the measured35 run exceeded its former300s limit. Runtime absence, deadline expiry or incompatible current inputs still return explicit unsupported evidence. The existing saved-document CLI is exercised separately beside the ordinary52-head floor, with the same saved revision and no retained-response fallback.
 
 ## Shared saved-document, CLI and browser route
 

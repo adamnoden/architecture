@@ -58,7 +58,7 @@ export function runFiniteFloorContourComponent(resolved:CurrentDesignResolution,
   const python=process.env.STR_FINITE_SOLID_PYTHON??'python3'
   const response=JSON.parse(execFileSync(python,['-B',fileURLToPath(new URL('project/str/studies/finite_floor_contour_run.py',root)),'--root',fileURLToPath(root),'--adapter'],{
    input:JSON.stringify({schema:'str-finite-floor-contour-execute/1',comparison,settings}),encoding:'utf8',maxBuffer:16*1024*1024,
-   env:{...process.env,OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'},timeout:300000,stdio:'pipe'}))
+   env:{...process.env,OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'},timeout:600000,stdio:'pipe'}))
   const result=response.result
   if(response.schema!=='str-finite-floor-contour-response/1'||response.status!=='computed-local-comparison'||!record(result)
    ||result.schema!=='ovids-house/str-finite-floor-contour-experiment/1'||Object.keys(limits).some(k=>result[k]!==false)

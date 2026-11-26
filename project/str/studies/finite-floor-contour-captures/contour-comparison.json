@@ -14,12 +14,20 @@
       "maximumRelativeEnergySensitivity": 0.13800096408544804,
       "minimumRelativeEnergyChange": 0.00021871424072306134,
       "maximumRelativeEnergyChange": 0.13800096408544804
+    },
+    {
+      "fromPitchMm": 50,
+      "toPitchMm": 35.0,
+      "maximumRelativeEnergySensitivity": 0.09777518208056124,
+      "minimumRelativeEnergyChange": 2.438242666147339e-05,
+      "maximumRelativeEnergyChange": 0.09777518208056124
     }
   ],
   "captureSHA256": {
     "contour140.json": "c8ccb0a0986a8e17a68ec737b671504796c11fc330ccfff1b36c5a666b6b7c86",
     "contour70.json": "c0ebab8ed14574e79e61304283fa9a54aed513ca46d2f8d14cc618fa43e1e223",
-    "contour50.json": "4501c0df2e24c124e548eebefa11ea8c86e067d3ac2bedd0bd2cb88d669ad5ec"
+    "contour50.json": "4501c0df2e24c124e548eebefa11ea8c86e067d3ac2bedd0bd2cb88d669ad5ec",
+    "contour35.json": "59b6589bc3d910c5da22b98447c9bef4a9ad22c39be07eee2e22665aafb70987"
   },
   "processingMethodSHA256": "8d12feed4f7abead2679098c2bfe7a58d4670823e7d9b8ab85234c31279b0125",
   "fixedAuthoredContourLayersAndDepthGlobalPitchSensitivityOnly": true,

@@ -32,10 +32,20 @@ def check(root,path):
     receipt=json.loads(path.read_bytes())
     if [r['pitchMm'] for r in receipt['comparisons']]!=[140,70,50]:
         raise ValueError('all three explicit current comparisons required')
+    baseline=None
     for row in receipt['comparisons']:
         current=json.loads((root/f"project/str/studies/finite-floor-contour-captures/contour{row['pitchMm']}.json").read_bytes())
+        if baseline is None:baseline=current
         check_arrays(row['predecessorCondensation'],current['ports'],current['distributedLoadWrenchKN_KNM'])
         check_arrays({k:current[k] for k in ['condensedStiffness','consistentLoad','loadPotentialConstantKNM']},current['ports'],current['distributedLoadWrenchKN_KNM'])
+    # There is no completed predecessor35 response. Validate the genuinely
+    # executed current35 against the same source/material/port domain instead.
+    fine=json.loads((root/'project/str/studies/finite-floor-contour-captures/contour35.json').read_bytes())
+    for field in ['schema','inputs','ports','runtime','meshControls','methodSHA256','youngKNPerM2','poisson','floorLiveKPa','volumeM3','distributedLoadWrenchKN_KNM','scope']:
+        if fine[field]!=baseline[field]:raise ValueError('changed current35 physical domain: '+field)
+    if fine['pitchMm']!=35 or fine['freeRigidModes']!=6 or fine['positiveRelativeModes']!=len(fine['ports'])-6 or any(fine[k] is not False for k in ['nativeFloorAdmission','globalReplacementAvailable','jointResistanceAvailable','nativeConstitutiveEquivalence','outerBandAndChordInterfaceAvailable']):
+        raise ValueError('unsupported current35 component or acceptance')
+    check_arrays({k:fine[k] for k in ['condensedStiffness','consistentLoad','loadPotentialConstantKNM']},fine['ports'],fine['distributedLoadWrenchKN_KNM'])
     return check_execution(root,path)
 
 if __name__=='__main__':

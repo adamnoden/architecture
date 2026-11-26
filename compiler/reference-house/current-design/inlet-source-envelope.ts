@@ -298,7 +298,7 @@ function inletVerticalInventory(c:Extract<ReturnType<typeof runInletRoomCatchmen
     frameMass=frame.quantities.totalReferenceKg,
     frameStock={id:'HAD/inventory/shield-frame-stock',event:'permanent-reference-stock',massKg:frameMass,
       massCentroidXYZMm:null,coordinateDatum:'Existing nominal occupied groundFFL0 frame geometry; no ground-candidate translation/adoption executed.',
-      forceKN:[0,0,-frameMass*inletStaticGravityMps2],fullGravityMomentKNm:null,
+      forceKN:[0,0,-frameMass*inletStaticGravityMps2/1000],fullGravityMomentKNm:null,
       sourceGeometry:'joinedDirection.room.electricalScreen.supportFrame:members,panelSeats,panelRetainers; electricalScreen.panels',
       actualConnectionOriginsMm:frame.structuralHandoff.attachmentPointsMm,
       missing:'Actual4kg nut/washer/bolt budget distribution and returned-cover developed-stock centroids; weld/unknown hardware mass. Use actual member/sheet pieces and existing nonconcurrent core-interface envelopes, not a fabricated aggregate centroid or four summed envelopes.'},
