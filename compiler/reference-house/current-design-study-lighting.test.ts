@@ -588,8 +588,8 @@ test('larger fitting gets an honestly larger rest while the former300mm rest rej
  const r=run(),h=r.construction.localHomeRunComparison
  assert.equal(h.firstRestPlanMm[3]!-h.firstRestPlanMm[1]!,350)
  assert.ok(h.fieldReservesMm.restFront>=30)
- const old=structuredClone(components);old.localHomeRunCandidate.moduleRestFrontExtensionMm=0
+ const old=structuredClone(components);old.localHomeRunCandidate={...old.localHomeRunCandidate,moduleRestFrontExtensionMm:0}
  assert.ok(deriveStudyLighting(choices,basis,old).construction.localHomeRunComparison.issues.includes('home-run-field-restFront-rejected'))
- const ordinary=structuredClone(components);ordinary.localHomeRunSupportReference.driver.maximumDiameterMm=100
+ const ordinary=structuredClone(components);ordinary.localHomeRunSupportReference={...ordinary.localHomeRunSupportReference,driver:{...ordinary.localHomeRunSupportReference.driver,maximumDiameterMm:100}}
  assert.ok(deriveStudyLighting(choices,basis,ordinary).construction.localHomeRunComparison.saddle!.toolChecks.every(p=>p.reserveMm>=5))
 })

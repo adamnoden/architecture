@@ -83,6 +83,7 @@ test('actual closed source enclosure participates in every136 floor, preparation
  assert.ok(replay.ordinaryHandling.parts.every(p=>(p.boardFixedPlanClearanceMm??-Infinity)>=10-1e-7))
  assert.deepEqual(replay.preparation?.conflictingPhaseIds,[])
  assert.deepEqual(replay.furniture?.conflictingPhaseIds,[])
+ assert.ok('appliancePreparedForFloor'in result.lighting.circuit&&result.lighting.circuit.appliancePreparedForFloor?.allDeskStagesContained)
  assert.equal(replay.physicalAcceptance,false)
  assert.equal(replay.ownerAcceptance,false)
  assert.ok('closedFixedVolumes' in replay&&replay.closedFixedVolumes)
@@ -177,12 +178,12 @@ test('ordinary floor preparation removes the appliance explicitly and retains th
  assert.ok(p.unplugReach3DMm<=600)
  assert.equal(p.tabletopMeasured,false)
  assert.equal(p.physicalAcceptance,false)
- assert.ok(r.circuit.appliancePreparedForFloor?.allDeskStagesContained)
+ assert.equal(p.trayContained,true)
  const collision=structuredClone(components)
- collision.circuitDesign.appliancePreparation.carryOffsetMm=350
+ collision.circuitDesign={...collision.circuitDesign,appliancePreparation:{...collision.circuitDesign.appliancePreparation,carryOffsetMm:350}}
  assert.ok(run(collision).circuit.issues.includes('appliance-preparation-complete-carry-rejected'))
  const badRest=structuredClone(components)
- badRest.circuitDesign.appliancePreparation.trayOffsetFromDeskMm=[1500,390]
+ badRest.circuitDesign={...badRest.circuitDesign,appliancePreparation:{...badRest.circuitDesign.appliancePreparation,trayOffsetFromDeskMm:[1500,390]}}
  assert.ok(run(badRest).circuit.issues.includes('appliance-preparation-desk-rest-rejected'))
  assert.deepEqual(run(collision).commonRoom,r.commonRoom)
 })
@@ -198,6 +199,6 @@ test('retaining the complete plugged appliance keeps genuine floor conflicts vis
  assert.equal(retained.status,'computed-geometry-conflicts')
  assert.ok(retained.ordinaryHandling!.witnessCount<136)
  const tooLow=structuredClone(components)
- tooLow.circuitDesign.appliancePreparation.carriedBottomMm=900
+ tooLow.circuitDesign={...tooLow.circuitDesign,appliancePreparation:{...tooLow.circuitDesign.appliancePreparation,carriedBottomMm:900}}
  assert.ok(run(tooLow).circuit.issues.includes('appliance-preparation-desk-rest-rejected'))
 })

@@ -630,3 +630,11 @@ energised coil is proposed. Supplied grommet/plug packing, mount/clip tool work,
 loaded handling/tabletop/desk movement and physical qualification remain open.
 The current eye-level room impressions omit this new family; they confer no
 appearance or photometric acceptance.
+
+Two ordinary removable flex clips/spacers use retained30×2mm flat steel tabs
+on the existing carrier rail; their setout, enclosure clearances, actual tool
+envelopes and stock burden are returned by the same circuit calculation.
+No fixing is chased into permanent fabric or supported by decoration.
+Actual anchors, threads, complete clip components and material admission
+remain unqualified. The authored carry has been adjusted by5mm to give a
+larger component/body reserve while preserving the full furniture criterion.

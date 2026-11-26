@@ -101,7 +101,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
   const floorWest=boundaryAt('floor-fill',floorLampY,'y','min'),sideEast=boundaryAt('IAS/STUDY/side-socket',1900,'y','max')
   const intrusion = request.serviceTotalDepthMm - room.generalDepthMm
   const right = room.door.rough[0] - p.doorStopMm, left = right - p.bayWidthMm, front = north - intrusion, centre = (left + right) / 2
-  const bay: Box = [left, front, right, north], parking: Box = [left, north - p.parkingSquareMm - 150, right, north - 150]
+  const bay: Box = [left, front, right, north], parking: Box = [left, north - p.parkingSquareMm - 150 - components.localHomeRunCandidate.moduleRestFrontExtensionMm, right, north - 150]
   const use: Box = [left, front - components.plug.insertedProjectionMm - p.socketGripNormalMm, right, front]
   const draw: Box = [left, front - p.panelRoomwardDrawMm, right, front]
   const moduleDraw: Box = [left, front - components.wallLamp.reservedCompleteProjectionMm - p.panelRoomwardDrawMm, right, front]

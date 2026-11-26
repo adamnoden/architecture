@@ -278,7 +278,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   for (const row of obstacleChecks) if (row.reserveMm < h.minimumResidualMm-1e-9) routeIssues.push(`${row.routeId}-intersects-${row.obstacleId}`)
   if(cableOpening.minimumPlateEdgeReserveMm<h.minimumResidualMm-1e-9) routeIssues.push('home-run-carrier-cable-edge-reserve-rejected')
   const bayPlanMm = [left,frontY,right,north]
-  const firstRestPlanMm = [left,input.firstRestPlanMm[1]!-h.mainRestSouthShiftMm-h.moduleRestFrontExtensionMm,right,input.firstRestPlanMm[3]!-h.mainRestSouthShiftMm]
+  const firstRestPlanMm = [left,input.firstRestPlanMm[1]!-h.mainRestSouthShiftMm,right,input.firstRestPlanMm[3]!-h.mainRestSouthShiftMm]
   const moduleHandlingXZMm=[carrierXZ[0]!-h.moduleHandlingSideAllowanceMm,carrierXZ[1]!-h.moduleHandlingBelowAllowanceMm,carrierXZ[2]!+h.moduleHandlingSideAllowanceMm,carrierXZ[3]!] as const
   const parkedBackY=firstRestPlanMm[3]!-c.cradleBackMarginMm
   const parkedModulePlanMm=[moduleHandlingXZMm[0],parkedBackY-input.completeProjectionMm,moduleHandlingXZMm[2],parkedBackY]
