@@ -71,3 +71,7 @@ Executor ccarenv_b64_Y2NhcmVudl82YWE1YWQ5NDE5MTA4MTkxODc1MTIwNzhjMjZkNzVhNQ expl
 First finish1627 on exact-headCI plus fresh canonical dual preflight. Existing gateway1089 supports renew/release only; it does not provide merge-check. A small disposable push-trigger Actions helper can run the existing canonical CLI on the exact validated head; no new main control protocol is authorized or needed. Otherwise retain PR unmerged and hand off both leases through canonical gateway. Record observed outcomes rather than assuming a command comment executed.
 
 Then recover ground continuation, last local source-account/witness updates and water900776, rebase/reconcile against freshmain, re-execute affected evidence and submit bounded integrated changes. Preserve original recovery parents/refs and raw historical cases. No final cleanup deletion has been performed while provenance or active handoffs depend on them.
+
+## Canonical occupancy checkpoint after executor loss
+
+Root STR60 renewal through the existing#1089 gateway was observed on runtime/claims: blob5a3b825d55d10227aa2786b2b14cdfcd884b2dc0, expiry02:10:16UTC26November. It retains actual1627 branch binding and this recovery source. HAD64 renewal request7179734528 is separately owned by water worker; verify its correlated outcome and live record. Neither a command comment nor this note is lease authority. A disposable runner is being prepared solely for existing canonical publication preflights after all7exact-head workflows pass; no preflight result or second merge is claimed here.
