@@ -15,12 +15,13 @@ class SeparatedBearingControls(unittest.TestCase):
     def test_widening_to_off_girder_gravity_arm_rejects(self):
         s=copy.deepcopy(self.settings);s['proposal']['masonryWidthMm']=230.
         with self.assertRaisesRegex(ValueError,'ground girder|complete girder'):derive(s,self.raw)
-    def test_geometry_edit_propagates_to_seat_finish_weight_and_svg(self):
+    def test_geometry_translation_propagates_seat_finish_svg_and_preserves_weight(self):
         s=copy.deepcopy(self.settings);s['proposal']['isolationGapMm']=20.;s['proposal']['extraLeafEndGapMm']=20.
         v,h,g,f=derive(s,self.raw)
         self.assertEqual(v['newGroundFinishedFaceSWMm'],649.5)
         self.assertEqual(v['newFinishedToeSWMm'],1309.5)
-        self.assertNotEqual(v['newLowerBodyEnvelopeComparisonGKN'],self.value['newLowerBodyEnvelopeComparisonGKN'])
+        self.assertEqual(v['newLowerBodyEnvelopeComparisonGKN'],self.value['newLowerBodyEnvelopeComparisonGKN'])
+        self.assertNotEqual(v['corners'][0]['masonrySeatRectanglesXYMm'],self.value['corners'][0]['masonrySeatRectanglesXYMm'])
         svg=section_svg(v,h,g);self.assertIn('649.5',svg);self.assertIn('1309.5',svg);self.assertNotIn('new masonry472.5..612.5',svg)
     def test_actual_three_constraint_statics_and_unclosed_six_wrench_are_distinct(self):
         v=self.value
