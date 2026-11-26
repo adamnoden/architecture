@@ -71,6 +71,7 @@ def derive(settings,raw):
     h=json.loads(raw['project/had/studies/water-replan.json'])['model']
     grid=json.loads(raw['project/str/studies/current-house-grid.json'])
     collector=json.loads(raw['project/str/studies/floor-portal-monolithic-drag.json'])['geometry']
+    lateral=json.loads(raw['project/str/studies/current-house-lateral.json'])
     widths=working['stages']['distributedFloor']['cornerWidthsMm']
     if set(widths)!=set(x[0] for x in CORNERS) or set(widths.values())!={200} or working['stages']['floorSection']['thicknessMm']!=200:
         raise ValueError('This comparison requires the actual saved all-four L200 and RC200 floor')
@@ -161,7 +162,7 @@ def derive(settings,raw):
             'newLowerBodyEnvelopeComparisonGKN':new_area*(bottom-base)/1e9*proposal['lowerBodyComparisonUnitWeightKNPerM3'],
             'addedGroundFinishedAreaLossM2':(intersect_area(new,room)-intersect_area(old,room))/1e6,
             'groundCurrentFurnitureConflicts':ground_conflicts,'firstExisting200Conflicts':upper_existing,
-            'nearestRawOuterOpenings':opening_edges,'newFirstGravityWallAdded':False,'upperRCLateralWallRemainsAligned':True})
+            'nearestRawOuterOpenings':opening_edges,'newFirstGravityWallAdded':False,'upper RCLateralWallRemainsAligned':True})
     fixed_x=next(r for r in rows if r['corner']=='SW')['originXYMm'][0]+inner
     fixed_y=next(r for r in rows if r['corner']=='SW')['originXYMm'][1]+inner
     along=proposal['interfaceAlongFromOuterCornerMm']
@@ -193,6 +194,7 @@ def derive(settings,raw):
     thermal_constraints=[strain*(point_a[0]-fixed_x),strain*(point_b[1]-fixed_y),strain*(point_c[0]-fixed_x)]
     return {'schema':'str-separated-floor-bearing-comparison/1','status':'UNCALCULATED OWNER COMPARISON',
         'sourceCommit':settings['sourceCommit'],'sourceGitBlobs':settings['sourceGitBlobs'],'proposal':proposal,
+        'existingRCBaseSpliceZMm':lateral['capillarySplice']['plateZ'],'existingRCBaseSplicePhysicalAdmission':lateral['capillarySplice']['physicalAdmission'],
         'slabZMm':[bottom,top],'groundSeatZMm':base,'firstFFLMm':h['sections']['firstFFL'],
         'newGroundFinishedFaceSWMm':rows[0]['originXYMm'][0]+seat_low+thickness+finish,
         'oldFinishedFaceSWMm':rows[0]['originXYMm'][0]+inner+finish,
@@ -232,11 +234,11 @@ class Svg:
 def plan_svg(value,h,grid,floors):
     s=Svg(1500,1130,'Actual all-four-corner separated bearing comparison')
     s.text(45,40,'Separate floor bearing from continuous RC lateral walls','title')
-    s.text(45,69,'UNCALCULATED OWNER COMPARISON · same saved house coordinates · source5ab92bc0','sub red')
+    s.text(45,69,'UNCALCULATED OWNER COMPARISON · same saved house coordinates · source 5ab92bc0','sub red')
     scale=.044;origins={'GROUND':(65,118),'FIRST':(805,118)}
     clashes=[]
     for level,(ox,oy) in origins.items():
-        s.text(ox,oy-17,level+' — '+('new inner masonry seats; current furniture shown' if level=='GROUND' else 'continuous200RC; no new140wall above slab'),'sub')
+        s.text(ox,oy-17,level+' — '+('new inner masonry seats; current furniture shown' if level=='GROUND' else 'continuous 200 mm RC; no new 140 mm wall above slab'),'sub')
         point=lambda x,y:(ox+x*scale,oy+(12000-y)*scale)
         def box(r,fill,stroke='#a6adb3',extra=''):
             x,y=point(r[0],r[3]);s.rect(x,y,(r[2]-r[0])*scale,(r[3]-r[1])*scale,fill,stroke,extra)
@@ -269,21 +271,21 @@ def plan_svg(value,h,grid,floors):
             for index,p in enumerate(value['horizontalConstraintPointsXYMm']):
                 x,y=point(*p)
                 s.line(x-17 if index!=1 else x,y if index!=1 else y+17,x+17 if index!=1 else x,y if index!=1 else y-17,'#23714e','stroke-width="3" marker-end="url(#arrow)"')
-            for name,label in [('SW','A: X + Y'),('NW','B: X only'),('SE','inplane free'),('NE','inplane free')]:
+            for name,label in [('SW','A: X + Y'),('NW','B: X only'),('SE','in-plane free'),('NE','in-plane free')]:
                 c=next(c for c in value['corners'] if c['corner']==name);x,y=point(*c['originXYMm'])
                 s.text(x+15 if c['signXY'][0]>0 else x-115,y+40 if c['signXY'][1]<0 else y-38,label,'small')
         s.text(ox,682,'12,000mm source envelope · solid outlines are actual source wall/furniture context','small')
     s.rect(48,710,1400,1,'#c0c7cc','#c0c7cc')
     s.text(50,746,'Space and interfaces that the new topology costs','sub')
-    s.text(50,775,'Blue: continuousRC200   Gold: separate140masonry bearing   Dashed: actual ground grid / new finished reserve','note')
+    s.text(50,775,'Blue: continuous RC200   Gold: separate 140 mm masonry bearing   Dashed: actual ground grid / new finished reserve','note')
     s.text(50,802,f'Ground finished face{value["oldFinishedFaceSWMm"]:g} → {value["newGroundFinishedFaceSWMm"]:g}mm: +{value["newGroundFinishedFaceSWMm"]-value["oldFinishedFaceSWMm"]:g}mm projection; +{value["addedGroundFinishedAreaLossM2"]:.4f}m² ground area lost.','note')
     s.text(50,829,f'New lower-body envelopeG +{value["newLowerBodyEnvelopeComparisonGKN"]:.4f}kN at{value["proposal"]["lowerBodyComparisonUnitWeightKNPerM3"]:g}kN/m³; floor/gap/bed replacement ledger still required.','note')
-    s.text(50,859,'Red numbered items need an actual room/service replan; * already conflicts with the source200RC reserve.','note red')
+    s.text(50,859,'Red numbered items need an actual room/service replan; * already conflicts with the source RC200 reserve.','note red')
     for i,(number,name,old) in enumerate(clashes):
         col=i%2;row=i//2
         s.text(50+col*710,889+row*25,f'{number}. {name}'+(' *' if old else ''),'note red')
-    s.text(50,1030,'FIRST: unchanged upperRC footprint is not a room pass. Existing rear cabinet conflict remains visible.','note red')
-    s.text(50,1057,'No permanent service is chased, buried or silently deleted. Floor finish and all136-piece renewal witnesses must regenerate.','note')
+    s.text(50,1030,'FIRST: unchanged upper RC footprint is not a room pass. Existing upper furniture/service conflicts remain visible.','note red')
+    s.text(50,1057,'No permanent service is chased, buried or silently deleted. Floor finish and all 136-piece renewal witnesses must regenerate.','note')
     s.text(50,1084,'All four new local interfaces, whole-house redistribution, physical shear details and owner appearance remain OPEN.','sub red')
     return s.finish()
 
@@ -314,20 +316,20 @@ def section_svg(value,h,grid):
     for r in c['proposedGroundFinishedReserveXYMm']:planbox(r,'none','#896a20','stroke-dasharray="3 3"')
     for i,key in enumerate(value['horizontalConstraintPointsXYMm'][:2]):
         x,y=p(*key);s.rect(x-5,y-5,10,10,'#fff','#a1262f','stroke-width="2"')
-    x,y=p(1250,raw_open);s.text(x-130,y-10,f'Raw window starts{raw_open:g}','small')
+    x,y=p(1250,raw_open);s.text(x-130,y-10,f'Raw window starts {raw_open:g}','small')
     x,y=p(1250,value['newFinishedToeSWMm']);s.line(x,y,x+40,y,'#a1262f','stroke-width="2"')
     s.text(50,680,f'RC{rc_low:g}..{rc_inner:g} | nominal gap{gap:g} | new masonry{seat_low:g}..{seat_inner:g}','note')
-    s.text(50,707,f'Ground face with{finish:g}finish:{new_face:g}; new finished toe{toe:g}','note')
-    s.text(50,734,f'Only{raw_open-toe:g}mm nominal to first raw window: reveal/tolerance replan OPEN.','note red')
-    s.text(50,761,f'Both full{wall_width:g}mm arms sit on the real{beam["width"]:g}mm ground girders.','note')
-    s.text(50,788,f'Minimum transverse edge margin{min(c["completeArmGroundEdgeMarginsMm"]):g}mm; no new pile or floating cap.','note')
-    s.text(50,815,'Ground load is distributed onto the beams, not assigned wholly toP01.','note')
+    s.text(50,707,f'Ground face with {finish:g} mm finish: {new_face:g}; finished toe {toe:g}','note')
+    s.text(50,734,f'Only {raw_open-toe:g} mm nominal to first raw window: reveal/tolerance replan OPEN.','note red')
+    s.text(50,761,f'Both full{wall_width:g}mm arms sit on the real {beam["width"]:g} mm ground girders.','note')
+    s.text(50,788,f'Minimum transverse edge margin {min(c["completeArmGroundEdgeMarginsMm"]):g} mm; no new pile or floating cap.','note')
+    s.text(50,815,'Ground load is distributed onto the beams, not assigned wholly to P01.','note')
     s.text(50,856,'Three horizontal constraints, using two real western cores:','sub')
     s.text(50,884,'A / SW: X + Y.   B / NW: X only; allow Y movement.','note')
-    s.text(50,911,'SE / NE: inplane free. All interfaces permit vertical slip and rotation.','note')
+    s.text(50,911,'SE / NE: in-plane free. All interfaces permit vertical slip and rotation.','note')
     s.text(50,938,'Wind reversal needs captive opposed faces; actual gaps and engagement OPEN.','note red')
     s.text(50,965,f'Uniform thermal origin{value["thermalIllustration"]["fixedExpansionOriginXYMm"]}; four tight keys avoided.','note')
-    s.text(50,992,'No plasticPTFE, resin anchorage or friction resistance is admitted.','note')
+    s.text(50,992,'No plastic/PTFE, resin anchorage or friction resistance is admitted.','note')
     # Section uses explicit independent scales so long ground-to-floor height and
     # narrow wall/seat can both be read. All dimensions are labelled; NTS.
     ox,oy=800,135;sx,sz=.63,.139
@@ -341,12 +343,16 @@ def section_svg(value,h,grid):
     secbox(seat_inner,ground_top,new_face,floor_bottom,'#f2e6c2','#896a20')
     secbox(rc_inner,floor_top,old_face,4400,'#dce6ef','#315c86')
     secbox(200,beam_bottom,beam_far,ground_top,'#d5dadd','#6b7680')
+    dpc_low,dpc_high=value['existingRCBaseSpliceZMm']
+    secbox(rc_low,dpc_low,rc_inner,dpc_high,'#5b6470','#343d48')
+    secbox(seat_low,dpc_low,seat_inner,dpc_high,'#fff','#a1262f')
     # Existing beam extends to -17.5; clipped viewport is explicitly labelled.
-    for z,label in [(value['firstFFLMm'],'FIRST'+str(value['firstFFLMm'])),(floor_top,'RC top'+str(floor_top)),(floor_bottom,'seat / soffit'+str(floor_bottom)),(ground_top,'grid top'+str(ground_top)),(beam_bottom,'beam bottom'+str(beam_bottom))]:
-        x,y=q(200,z);s.line(x,y,1450,y,'#a3adb5','stroke-dasharray="3 4"');s.text(1220,y-5,label,'small')
+    for z,label in [(value['firstFFLMm'],'FIRST '+str(value['firstFFLMm'])),(floor_top,'RC top'+str(floor_top)),(floor_bottom,'seat / soffit'+str(floor_bottom)),(ground_top,'grid top'+str(ground_top)),(beam_bottom,'beam bottom'+str(beam_bottom))]:
+        x,y=q(200,z);s.line(x,y,1450,y,'#a3adb5','stroke-dasharray="3 4"');s.text(1220,y-(18 if z==value['firstFFLMm'] else 4),label,'small')
     x,y=q(750,(floor_bottom+floor_top)/2);X,Y=q(rc_inner,(floor_bottom+floor_top)/2)
     s.line(x,y,X,Y,'#a1262f','stroke-width="3" marker-end="url(#arrow)"')
     s.text(1035,240,'H only — physical connection OPEN','small red')
+    s.text(1035,260,'Vertical slip; no gravity tie here','small red')
     s.line(1065,247,1050,y,'#a1262f')
     x,y=q((seat_low+seat_inner)/2,3050);X,Y=q((seat_low+seat_inner)/2,2500)
     s.line(x,y,X,Y,'#23714e','stroke-width="4" marker-end="url(#arrow)"')
@@ -357,10 +363,10 @@ def section_svg(value,h,grid):
     s.line(x,y,X,Y,'#23714e','stroke-width="3" marker-end="url(#arrow)"')
     s.text(800,95,'','small')
     s.text(800,865,'Continuous200RC to roof; ordinary vertical anchorage has storey height.','note blue')
-    s.text(800,892,'No new140wall above floor; upperRC remains directly aligned to ground.','note')
+    s.text(800,892,'No new 140 mm wall above floor; upper RC remains directly aligned to ground.','note')
     s.text(800,919,'Dry mineral seat / full-height DPC / finishes: constituents and rotation OPEN.','note red')
-    s.text(800,946,'Close floor bearing, restraint, edge anchorage and all52-head demands next.','note')
-    s.text(800,973,f'Slab stays{floor_top-floor_bottom:g}: top{floor_top:g} leaves{value["firstFFLMm"]-floor_top:g}mm to FIRST{value["firstFFLMm"]:g}.','note')
+    s.text(800,946,'Existing20mm RC base splice remains unqualified; new mineral DPC join OPEN.','note red')
+    s.text(800,973,f'Slab stays {floor_top-floor_bottom:g}: top {floor_top:g}, {value["firstFFLMm"]-floor_top:g} mm to FIRST {value["firstFFLMm"]:g}.','note')
     s.text(800,1000,'The schematic horizontal arrow is a requirement, not a hidden rigid connection.','note red')
     s.text(50,1050,'No new coupled solve or strength claim. All four finite corner replacements and room replans remain unaccepted.','sub red')
     return s.finish()

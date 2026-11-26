@@ -9,7 +9,8 @@
     "project/str/studies/floor-portal-monolithic-drag.json": "9a8cf79026419f3b9f05cee4b573b6dd1f3a04e6",
     "project/str/studies/current-house-roof-bracing.py": "1fa8729ed65a62767ce12e0da81dae11e288513d",
     "project/str/studies/distributed_floor_compatibility.py": "45c0d9e082dec58edf2040064d7a14c50dcbb1d4",
-    "compiler/reference-house/current-design/assemblies/study-structural-context.ts": "fcadc653e3c92e5d9efe3f4a74e0591be4233c15"
+    "compiler/reference-house/current-design/assemblies/study-structural-context.ts": "fcadc653e3c92e5d9efe3f4a74e0591be4233c15",
+    "project/str/studies/current-house-lateral.json": "a3a4ae8393c14e04e874de02beebf901a4b87227"
   },
   "proposal": {
     "masonryWidthMm": 140,
