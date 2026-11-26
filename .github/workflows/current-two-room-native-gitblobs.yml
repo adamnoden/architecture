@@ -1,0 +1,110 @@
+name: Retain exact observed current two-room native archives and independent proof
+on:
+  push:
+    branches: [work/current-two-room-native-retention-20261126]
+    paths: ['.github/workflows/current-two-room-native-gitblobs.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  exact-observed-blobs-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Authenticate exact run artifact request method and raw native bytes then retain blobs only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -B - <<'PY'
+          import base64,hashlib,io,json,os,re,subprocess,tarfile,urllib.error,urllib.request,zipfile
+          from pathlib import Path
+          folder=Path(os.environ['RUNNER_TEMP'])/'current-positive-dependent-gitblobs';folder.mkdir(parents=True,exist_ok=True)
+          api=os.environ['GITHUB_API_URL'];repo=os.environ['GITHUB_REPOSITORY']
+          if repo!='adamnoden/architecture':raise ValueError('Exact repository required')
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          specs=[{"id":15135161625,"name":"current-two-room-actual-native-36d6b62cb7071a7a975a9d5cfb00e64fdcf564d1","bytes":5754528,"sha256":"569bb1d5f37e54e025503dcbd993f402369081bb90bb88aa68acfb7b2c4d397e","run":45853187076,"head":"36d6b62cb7071a7a975a9d5cfb00e64fdcf564d1","job":140024615833}]
+          sha=lambda b:hashlib.sha256(b).hexdigest()
+          blob=lambda b:hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
+          def get(url):
+           with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=60) as r:return json.load(r)
+          def fetch(spec):
+           run=get(f'{api}/repos/{repo}/actions/runs/{spec["run"]}')
+           job=get(f'{api}/repos/{repo}/actions/jobs/{spec["job"]}')
+           if run['head_sha']!=spec['head'] or run['status']!='completed' or job['run_id']!=spec['run'] or job['status']!='completed' or job['conclusion']!='success':raise ValueError('Exact selected producer job must have actually passed; failed siblings are not credited')
+           metadata=get(f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}')
+           if metadata['name']!=spec['name'] or metadata['expired'] or metadata['size_in_bytes']!=spec['bytes'] or metadata['digest']!='sha256:'+spec['sha256'] or metadata['workflow_run']['id']!=spec['run'] or metadata['workflow_run']['head_sha']!=spec['head']:raise ValueError('Observed artifact metadata changed')
+           class NoRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+           try:
+            with urllib.request.build_opener(NoRedirect()).open(urllib.request.Request(f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}/zip',headers=headers),timeout=60) as r:raw=r.read()
+           except urllib.error.HTTPError as r:
+            if r.code not in (301,302,303,307,308):raise
+            location=r.headers['Location']
+            if not location.startswith('https://'):raise ValueError('HTTPS artifact required')
+            with urllib.request.urlopen(location,timeout=120) as response:raw=response.read()
+           if len(raw)!=spec['bytes'] or sha(raw)!=spec['sha256']:raise ValueError('Original observed ZIP changed')
+           return raw
+          def put(data):
+           request=urllib.request.Request(f'{api}/repos/{repo}/git/blobs',data=json.dumps({'content':base64.b64encode(data).decode(),'encoding':'base64'}).encode(),headers={**headers,'Content-Type':'application/json'},method='POST')
+           with urllib.request.urlopen(request,timeout=120) as r:value=json.load(r)
+           if value['sha']!=blob(data):raise ValueError('Git object differs from exact original bytes')
+           return value['sha']
+          if subprocess.check_output(['git','status','--porcelain'],text=True):raise ValueError('Clean source checkout required')
+          
+          spec=specs[0];raw=fetch(spec);outputs={}
+          expected={"project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz":{"bytes":1402932,"sha256":"3d5990ef9dc9e0abf46cb35a13accfecfae0a0abb9555a96b0b0636388255e23"},"project/str/studies/service-room-ground-observed-two-room-20261126.tar.xz":{"bytes":880952,"sha256":"689fe5568cde6e92559d44842526b30e7078287fee3b4daab4aa4fe5893bd3cf"},"project/str/studies/service-room-ground-receiver-proof.json":{"bytes":36049,"sha256":"55c8cf1387ff7e83a4c1dcbd323129e86e80b04e2311a7a5a7f643cb67eb4814"}}
+          with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+           names=archive.namelist()
+           if len(names)!=len(set(names)) or any(n.startswith('/') or '..' in n.split('/') or '\\' in n for n in names):raise ValueError('Unsafe original artifact members')
+           m=json.loads(archive.read('actual-two-room-capture-manifest.json'));generated=json.loads(archive.read('actual-generated-manifest.json'))
+           if m['sourceCommit']!=spec['head'] or generated['sourceCommit']!=spec['head'] or m['nativeSolvesExecuted']!=3 or m['currentSavedDocumentAdmitted'] is not False or generated['currentSavedDocumentAdmitted'] is not False or m['allResponseIdentityGuardsPassed'] is not True or m['candidateAccepted'] is not False or m['wholeHouseAccepted'] is not False or m['independentCurrentVsBaselineMaximum312HeadDifferenceKN_KNm']!=0:raise ValueError('Actual three-solve proposed-input scope lost')
+           if generated['outputs']!=expected:raise ValueError('Observed actual output extent/identity changed')
+           sources=m['request']['nativeCase']['sourceSHA256']
+           if len(sources)!=58:raise ValueError('Exact actual current58 tuple required')
+           for p,h in {**sources,**m['source']['actualSourceSHA256'],**m['method']['sourceSHA256']}.items():
+            if not re.fullmatch(r'[A-Za-z0-9/_.-]+',p) or '..' in p.split('/') or sha(Path(p).read_bytes())!=h:raise ValueError('Actual native/body/method source changed: '+p)
+           for p,h in m['source']['currentHouseInputGitBlobs'].items():
+            if blob(Path(p).read_bytes())!=h:raise ValueError('Current pure HAD source input changed')
+           for r in m['controls']:
+            if r['physicalHeads']!=52 or r['currentSavedDocumentAdmitted'] is not False or r['candidateAccepted'] is not False:raise ValueError('Actual capture catalogue/scope changed')
+            data=archive.read(r['label']+'.full.json')
+            if len(data)!=r['fullBytes'] or sha(data)!=r['fullSHA256'] or sha(archive.read(r['label']+'.request.json'))!=r['requestSHA256']:raise ValueError('Original complete request/response bytes changed')
+           for path,identity in expected.items():
+            data=archive.read('generated/'+path)
+            if len(data)!=identity['bytes'] or sha(data)!=identity['sha256']:raise ValueError('Original observed output bytes changed')
+            if path.endswith('.tar.xz'):
+             with tarfile.open(fileobj=io.BytesIO(data),mode='r:xz') as tar:
+              manifest=json.load(tar.extractfile('archive-manifest.json'))
+              if manifest['sourceCommit']!=spec['head'] or manifest['currentSavedDocumentAdmitted'] is not False or manifest['nativeSourceSHA256']!=sources or manifest['candidateAccepted'] is not False:raise ValueError('Native archive loses actual source/unadmitted boundary')
+              members=tar.getmembers()
+              if set(q.name for q in members if q.isfile())!=set(manifest['files'])|{'archive-manifest.json'} or any(q.issym() or q.islnk() or q.name.startswith('/') or '..' in q.name.split('/') for q in members):raise ValueError('Actual complete native archive extent changed')
+              for name,r in manifest['files'].items():
+               value=tar.extractfile(name).read()
+               if len(value)!=r['bytes'] or sha(value)!=r['sha256']:raise ValueError('Original archived executed bytes changed')
+            else:
+             proof=json.loads(data)
+             if proof['currentSavedDocumentAdmitted'] is not False or proof['nativeSourceSHA256']!=sources or proof['sourceAuditFindings']!=m['sourceAuditFindings'] or proof['candidateAccepted'] is not False or proof['wholeHouseAccepted'] is not False:raise ValueError('Owning receiver proof loses exact proposed/current boundary')
+             for p,h in proof['replayMethodSHA256'].items():
+              if sha(Path(p).read_bytes())!=h:raise ValueError('Owning receiver replay method changed')
+            outputs[path]=data
+          retained={p:{'gitBlob':put(data),'bytes':len(data),'sha256':sha(data)} for p,data in outputs.items()}
+          record={'schema':'str-current-two-room-gitblob-retention/1','collectorSourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'sourceArtifact':spec,'native58SHA256':sources,'actualThreeCaptureProgramme':m,'outputs':retained,'onlyGitBlobObjectsCreated':True,'commitTreeRefAccountCanonicalWrites':False,'currentSavedDocumentAdmitted':False,'candidateAccepted':False}
+          (folder/'gitblob-manifest.json').write_text(json.dumps(record,indent=2)+'\n')
+          if subprocess.check_output(['git','status','--porcelain'],text=True):raise ValueError('Collector mutated checkout')
+          print('ACTUAL_CURRENT_TWO_ROOM_GITBLOBS '+json.dumps(record,separators=(',',':')),flush=True)
+          
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-two-room-native-gitblobs-${{ github.sha }}
+          path: ${{ runner.temp }}/current-positive-dependent-gitblobs/
+          if-no-files-found: error
+          retention-days: 90
