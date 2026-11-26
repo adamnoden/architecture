@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import {mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {readUtilityCurrentGeometrySource} from './current-design/inlet-utility-proof-source.js'
+import {deriveUtilityHotHead} from '../../project/had/studies/utility-hot-head.mjs'
 import {inletUtilityMemberRenewal} from './current-design/inlet-utility-member-renewal.js'
 import {inletUtilityWetAssembly} from './current-design/inlet-utility-wet-assembly.js'
 import {inletUtilityRearTree,admitUtilityRearTreeChoice,type UtilityRearTreeContext} from './current-design/inlet-utility-rear-tree.js'
@@ -156,7 +157,7 @@ test('formed hot spool has finite localH0 inventory and a separately bounded sha
  assert.equal(wet.hot.actualToolReactionAndHeadPickupAccepted,false)
  assert.ok(wet.hot.renewalGeometry.frontUpperRailStillPresentControl.some(q=>q.reserveMm<0))
  assert.equal(wet.hot.renewalGeometry.headFullRemovalToolAndTemporaryStabilityProofAccepted,false)
- assert.equal(wet.hot.renewalGeometry.necessaryConditionalSpoolSweeps,true,JSON.stringify(wet.hot.renewalGeometry.failures))
+ assert.equal(wet.hot.renewalGeometry.necessaryConditionalSpoolSweeps,wet.hot.capturePhase.computedNecessaryGravityCapture,JSON.stringify(wet.hot.renewalGeometry.failures))
  const shallow=structuredClone(choice);shallow.coldDistribution.hotService.receiverUsableMinimumL=5
  assert.equal(inletUtilityWetAssembly({source:current,choice:shallow}).hot.geometry.necessarySpecifiedGeometry,false)
 })
@@ -212,4 +213,44 @@ test('actual H0 body falsifies an injected member tool task; empty tool list nev
  assert.equal(member.stability.actualBraceAnchorAndRemainingMemberProofAccepted,false)
 })
 if(proofDir)writeFileSync(join(proofDir,'current-utility-member-renewal.json'),JSON.stringify(member,null,2))
-console.info('UTILITY_MEMBER_CURRENT '+JSON.stringify(member))
+console.info('UTILITY_MEMBER_CURRENT '+JSON.stringify({sourceDigest:member.sourceDigest,ordinaryRenewalAccepted:member.ordinaryMemberRenewalAccepted,interfaces:member.ordinaryCapture.interfaces.length,captureGeometryFailures:member.ordinaryCapture.geometryFailures,earliestToolFailures:member.ordinaryCapture.earliestTools.failures}))
+
+test('one source owns four floor-seated head captures, sixteen bolted ends and finite staged movement',()=>{
+ const a=wet.ordinaryCapture
+ assert.equal(a.hardware.filter(q=>q.id.startsWith('capture/leg/')).length,4)
+ assert.equal(a.interfaces.length,16)
+ assert.ok(a.interfaces.every(q=>q.boltsPerInterface===2&&q.seatTravelsWithCapturedRail))
+ assert.deepEqual([...new Set(a.interfaces.map(q=>Math.max(q.proposedMemberCutBoxMm[3],q.proposedMemberCutBoxMm[4])))].sort(),[460,510])
+ assert.equal(a.controls.firstLiftMm,35);assert.equal(a.controls.southClearanceMm,60)
+ assert.equal(a.controls.liftMm,360);assert.equal(a.controls.westTransferMm,800)
+ assert.equal(a.controls.restTopMm,1060)
+ assert.equal(a.sourceDigest,member.ordinaryCapture.sourceDigest)
+ assert.equal(a.sourceBoundCapturePhase.sourceDigest,a.sourceDigest)
+ assert.ok(a.sourceBoundCapturePhase.captureGeometryChecks.length>0)
+ assert.ok(a.sourceBoundCapturePhase.gravityChecks.length>0)
+ near(a.demand.fullHeadDynamicN,294.3)
+ assert.equal(a.demand.frictionHorizontalResistanceCreditedN,0)
+ assert.equal(a.demand.unbalancedHorizontalDemandWithoutPositiveFloorReceiverN,200)
+ assert.equal(a.ordinaryRenewalAccepted,false)
+ assert.equal(a.exactMemberWebsToolSocketsSpannerArcsAndExtractionQualified,false)
+ assert.ok(a.earliestTools.failures.some(q=>q.id.includes('/866/')&&q.id.includes('source-solid-board')))
+})
+test('current hot rail guard consumes computed capture rows and digest; a naked boolean or unrelated digest cannot qualify it',()=>{
+ const controls=choice.coldDistribution.hotService,head=choice.coldDistribution.prefabSinkHead,
+  input={choice:controls,sourceHotVertices:current.actualHot.backbone,head,obstacles:context.obstacles,settingEachMm:10},
+  missing=deriveUtilityHotHead(input),phase=wet.ordinaryCapture.sourceBoundCapturePhase,
+  mismatched=deriveUtilityHotHead({...input,capturePhase:phase,captureBindingDigest:'unrelated-source'}),
+  historical=deriveUtilityHotHead({...input,choice:{...controls,headCapturedBeforeFrontRailReleaseRequired:undefined,headFullyRemovedBeforeFrontRailReleaseRequired:true}})
+ assert.equal(missing.capturePhase.computedNecessaryGravityCapture,false)
+ assert.equal(mismatched.capturePhase.computedNecessaryGravityCapture,false)
+ assert.ok(missing.renewalGeometry.failures.some(q=>q.id==='hot/source-bound-positive-head-capture-required'))
+ assert.equal(historical.capturePhase.historicalFullHeadRemovedControl,true)
+ assert.equal(wet.hot.capturePhase.historicalFullHeadRemovedControl,false)
+ assert.equal(wet.hot.capturePhase.sourceDigest,phase.sourceDigest)
+ const blocked=structuredClone(current)
+ blocked.rearTreeContext.obstacles=[...blocked.rearTreeContext.obstacles,{id:'explicit-blocked-capture-foot',boxMm:[9920,680,0,60,60,200],presence:'always'}]
+ const rejected=inletUtilityWetAssembly({source:blocked})
+ assert.equal(rejected.hot.capturePhase.computedNecessaryGravityCapture,false)
+ assert.ok(rejected.ordinaryCapture.geometryFailures.some(q=>q.id.includes('explicit-blocked-capture-foot')))
+ assert.notEqual(rejected.ordinaryCapture.sourceDigest,wet.ordinaryCapture.sourceDigest)
+})

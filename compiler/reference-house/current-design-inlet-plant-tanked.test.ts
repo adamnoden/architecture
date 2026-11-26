@@ -4,7 +4,7 @@ import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {plantPotableInventory} from './current-design/inlet-plant-potable-inventory.js'
 import {readInletSourceEnvelopeSettings} from './current-design/inlet-source-envelope.js'
-import {inletPlantTankedRoom} from './current-design/inlet-plant-tanked.js'
+import {inletPlantTankedRoom,drawInletPlantTankedRoom} from './current-design/inlet-plant-tanked.js'
 import {inletSplitPlantRoom} from './current-design/inlet-split-plant-room.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
 const receipt=read('project/had/studies/inlet-local-pocket.results.json'),p=receipt.splitPlantRoom?.comparison,choice=read('project/had/studies/inlet-plant-tanked-walk-candidate.json')
@@ -71,7 +71,8 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
  assert.ok(r.containment.reserveL>150,JSON.stringify(r.containment))
  assert.equal(r.inventory.vesselMaximumDesignL,330)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
- if(dir)writeFileSync(join(dir,'Plant-tanked-current-source-comparison.json'),JSON.stringify(r,null,2))
+ if(dir){writeFileSync(join(dir,'Plant-tanked-current-source-comparison.json'),JSON.stringify(r,null,2));writeFileSync(join(dir,'Plant-tanked-owner-plan-section.svg'),drawInletPlantTankedRoom(r))}
+ const svg=drawInletPlantTankedRoom(r);assert.ok(svg.includes(r.source.caseDigest));assert.ok(svg.includes('No thermal/nonreturn seal'));console.info('PLANT_OWNER_REVIEW_SVG '+JSON.stringify(svg))
  console.info('PLANT_TANK_COMPLETE_STATIC '+JSON.stringify({levels:r.levels,sourceProfiles:r.outfalls.profiles.map(p=>({id:p.id,pool:p.initialSourcePoolMm,freeDrop:p.freeDropReserveMm,necessary:p.necessaryFreeSourceProfile,refinements:p.refinements.map(r=>r.state)})),inventory:r.inventory.fullInstantPressureNetworkDesignReleaseL,containment:r.containment,hotNetwork:r.inventory.normalHotAndReturnNetworkDesignUpperL,normalHeated:r.normalHeatedInventory,apparatus:r.walking.apparatusInterfaces.map(a=>({id:a.id,geometry:a.necessarySeparateStandGeometry,loadN:'designOnePostN'in a?a.designOnePostN:null,cutouts:'panelCutoutIntersections'in a?a.panelCutoutIntersections?.length:null})),steelKg:r.walking.normalMassUpperKg,walkingFailures:r.walking.memberChecks.filter(p=>!p.necessary),frame:r.fittedFrame}))
 })
 test('actual floor, outlet and inventory perturbations invalidate dependent design evidence',()=>{

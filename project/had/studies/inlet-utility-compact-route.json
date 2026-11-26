@@ -478,12 +478,170 @@
     "frameRenewal": {
       "schema": "had-utility-independent-bolted-members/1",
       "selectedForDevelopment": true,
-      "headRemovedBeforeFrameWork": true,
+      "headRemovedBeforeFrameWork": false,
       "wholeAssembledFrameWithdrawalRequired": false,
       "coldTreeRemovalRequiredForFrameRenewal": false,
       "waterSupportIndependentOfDryFrameRequired": true,
       "positiveTemporarySupportBeforeMemberReleaseRequired": true,
-      "actualMemberToolAccessStabilityAndLoadProofAccepted": false
+      "actualMemberToolAccessStabilityAndLoadProofAccepted": false,
+      "headCapturedBeforeAnyRailReleaseRequired": true,
+      "headCapture": {
+        "schema": "had-utility-floor-head-capture/1",
+        "method": "temporary-floor-seated-four-leg-gantry",
+        "postsXYMm": [
+          [
+            9950,
+            710
+          ],
+          [
+            9950,
+            1510
+          ],
+          [
+            11515,
+            710
+          ],
+          [
+            11515,
+            1510
+          ]
+        ],
+        "topAxisZMm": 1530,
+        "memberCrossMm": 50,
+        "soleCrossMm": 50,
+        "soleThicknessMm": 6,
+        "headTrackYMm": [
+          760,
+          1100
+        ],
+        "liftingEyesMm": [
+          [
+            10910,
+            760,
+            930
+          ],
+          [
+            11395,
+            760,
+            930
+          ],
+          [
+            10910,
+            1100,
+            930
+          ],
+          [
+            11395,
+            1100,
+            930
+          ]
+        ],
+        "maximumCapturedWetHeadKg": 20,
+        "headCGPlanDesignMm": [
+          11115,
+          980,
+          75,
+          80
+        ],
+        "maximumPillarAndSpoutCrossMm": 40,
+        "maximumHandleCrossMm": 60,
+        "maximumHeadZMm": 1060,
+        "liftMm": 360,
+        "westTransferMm": 800,
+        "minimumHoistClosedHeightMm": 180,
+        "restPlanMm": [
+          10055,
+          680,
+          600,
+          600
+        ],
+        "restTopMm": 1060,
+        "restTopDepthMm": 20,
+        "restPostsXYMm": [
+          [
+            10075,
+            700
+          ],
+          [
+            10635,
+            700
+          ],
+          [
+            10075,
+            1400
+          ],
+          [
+            10635,
+            1400
+          ]
+        ],
+        "restPostCrossMm": 20,
+        "maximumSectionAreaMm2": 600,
+        "minimumSectionAreaMm2": 500,
+        "minimumSectionIMm4": 190000,
+        "maximumSteelDensityKgM3": 8000,
+        "minimumSteelDensityKgM3": 7700,
+        "normalWorkingFloorXYMm": [
+          11025,
+          1900
+        ],
+        "normalWorkingShoulderMm": [
+          11140,
+          1700,
+          1150
+        ],
+        "externalHorizontalComparisonN": 200,
+        "frictionResistanceCredited": false,
+        "actualProductsFloorHorizontalReactionAndPhysicalHandlingAccepted": false,
+        "maximumSpoutCrossMm": 20,
+        "firstLiftMm": 35,
+        "southClearanceMm": 60,
+        "rearUpperRailReleasedOnlyAfterPositiveCaptureAndFirstLift": true,
+        "jointJacketsStrippedLengthMm": 100,
+        "restInstalledOnlyAfterRearRailParkRequired": true,
+        "headCaptureBeforeFrontUpperRailReleaseRequired": true,
+        "frontUpperRailReleasedBeforeUnionToolAccess": true
+      },
+      "memberJointDesign": {
+        "schema": "had-utility-bolted-member-end/1",
+        "gravitySeatLengthMm": 40,
+        "gravitySeatWidthMm": 30,
+        "gravitySeatThicknessMm": 12,
+        "receiverWidthMm": 24,
+        "receiverThicknessMm": 8,
+        "boltEdgeMm": 24,
+        "boltDiameterMm": 8,
+        "boltPitchMm": 30,
+        "upperBoltZMm": {
+          "EW": [
+            680,
+            710
+          ],
+          "NS": [
+            550,
+            580
+          ]
+        },
+        "lowerBoltZMm": {
+          "EW": [
+            70,
+            100
+          ],
+          "NS": [
+            55,
+            85
+          ]
+        },
+        "northProjectionMm": {
+          "EW": 25,
+          "NS": 65
+        },
+        "actualReceiverWeldBoltMaterialAndLocalHSSProofAccepted": false,
+        "memberEndGapMm": 25,
+        "seatTravelsWithCapturedRail": true
+      },
+      "headRemovedBeforeOtherFrameWork": true,
+      "firstRailReleaseAfterPositiveHeadCapture": "IAS/frame/EW rail at y750 / z850"
     },
     "hotService": {
       "schema": "had-utility-hot-head/1",
@@ -536,9 +694,10 @@
       "actualProductsPressureMaterialSupportAndHandlingAccepted": false,
       "frontUpperRailId": "IAS/frame/EW rail at y1350 / z850",
       "frontUpperRailRemovedBeforeSpoolNorth": true,
-      "headFullyRemovedBeforeFrontRailReleaseRequired": true,
+      "headFullyRemovedBeforeFrontRailReleaseRequired": false,
       "minimumRequiredGaugeRatingBar": 9.2,
-      "normalWaterDesignTemperatureC": 60
+      "normalWaterDesignTemperatureC": 60,
+      "headCapturedBeforeFrontRailReleaseRequired": true
     }
   },
   "terminalLocalMm": [
