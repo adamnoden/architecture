@@ -48,7 +48,7 @@ def assess(packet,capture):
     # floor steel, mechanical stiffness, G, material choices or the saved account.
     main_bar=12.;link=6.;mandrel=28.;link_cover=45.
     face=link_cover+link/2+(mandrel+link)/2
-    stations=[face,200-face,375.,655.,1000-face]
+    stations=[face,200-face,392.5,672.5,917.5]
     mains=sorted(({(x,y) for x in stations for y in (face,200-face)}|
                   {(x,y) for y in stations for x in (face,200-face)})-{(200-face,200-face)})
     paths=[]
@@ -60,12 +60,13 @@ def assess(packet,capture):
                 paths.append({'id':direction+'/'+name+'/'+str(i),'direction':direction,'face':name,
                     'alongMm':along,'startZMm':z,'turn':turn,'stemMm':100.,'insideMandrelMm':300.,
                     'radiusMm':(300.+bar)/2,'straightTailMm':650.})
-    comparisons=[]
+    comparisons=[];parallel=[]
     for p in paths:
         for index,main in enumerate(mains):
             c=arc_column_clear(p['stemMm'],p['radiusMm'],p['alongMm'],p['direction'],main,bar,main_bar,
                                2*f['independentBarToleranceMm'])
             comparisons.append({'path':p['id'],'mainIndex':index,**c})
+            parallel.append({'path':p['id'],'mainIndex':index,**arc_column_clear(p['stemMm'],0.,p['alongMm'],p['direction'],main,bar,main_bar,2*f['independentBarToleranceMm'])})
     failures=[c for c in comparisons if c['adverseCylinderClearLowerMm']<0]
     nominal=[c for c in comparisons if c['nominalCylinderClearMm']<0]
     worst=min(comparisons,key=lambda c:c['adverseCylinderClearLowerMm'])
@@ -84,19 +85,24 @@ def assess(packet,capture):
         'actualSlabZMm':slab,'actualLRectanglesXYMm':rects,
         'originalRejectedH12TopBottomBendCrossing':original,
         'prospectiveChanges':{'localTailPitchMm':70.,'floorBarDiameterMm':bar,'insideMandrelMm':300.,'straightTailMm':650.,
-            'topBottomStationOffsetMm':35.,'columnBarCount':len(mains),'columnBarDiameterMm':main_bar,
+            'topBottomStationOffsetMm':35.,'mainBarContinuityZMm':[slab[0]-1000.,g['upperEndZMm']+1000.],'columnBarCount':len(mains),'columnBarDiameterMm':main_bar,
             'columnBarsRelativeXYMm':mains,'linkDiameterMm':link,'linkMandrelMm':mandrel,'linkSurfaceCoverMm':link_cover,
-            'jointHoopPlanesMm':hoop_z,'commonCageCoordinationAssumption':'Common floor/link cage cancels separate whole-cage translation; each bar retains its actual5mm independent box tolerance. This coordination is prospective, not physically demonstrated.'},
+            'jointHoopPlanesMm':hoop_z,'armHoopFarCentrelineMm':917.5+(mandrel+link)/2,'commonCageCoordinationAssumption':'Common floor/link cage cancels separate whole-cage translation; each bar retains its actual5mm independent box tolerance. This coordination is prospective, not physically demonstrated.'},
         'baselineFloorMatLayerCentresMm':layers,'prospectivePaths':paths,
         'specificChecks':{'skewTopBottomArcCylinderClearLowerMm':skew_clear,
             'coordinatedIntermatHoopClearLowerMm':intermat,'independentHoopPlaneClearLowerMm':hoop_pair,
             'mainBarAdverseCoverMm':face-main_bar/2-tol,'linkAdverseCoverMm':link_cover-f['cageSettingToleranceMm'],
             'tailWallEndAdverseCoverMm':1000.-max(p['alongMm'] for p in paths)-bar/2-tol,
+            'fullYieldTailDevelopmentRequiredMm':bar*f['steelYieldMPa']/(4*f['bondMPa']),
+            'bendPlusStraightTailMm':math.pi*(300.+bar)/4+650.,
+            'necessaryFullYieldMandrelMm':math.pi*bar**2/4*f['steelYieldMPa']*(1/(f['minimumCoverMm']+bar/2)+1/(2*bar))/f['concreteCompressionMPa'],
+            'minimumAdverseParallelTailMainClearMm':min(c['adverseCylinderClearLowerMm'] for c in parallel),
+            'parallelTailMainPairsBelowActualMinimumClear':sum(c['adverseCylinderClearLowerMm']<f['minimumIndependentClearMm'] for c in parallel),
             'arcColumnNominalInterpenetrationCount':len(nominal),'arcColumnAdverseInterpenetrationCount':len(failures),
             'worstArcColumnPair':worst},
         'arcColumnComparisons':comparisons,
         'candidatePlacingAccepted':False,'newSignedEnvelopeAvailable':False,'resistanceAccepted':False,'nativeSolveExecuted':False,
-        'decision':'REJECT this one coordinated ordinary family: staggered opposite-face bends remove their mutual crossing but physically intersect longitudinal column bars. Passing the intermat screen does not make the complete cage buildable.',
+        'decision':'REJECT this one coordinated ordinary family: staggered opposite-face bends remove their mutual crossing but actual independent bar-setting boxes permit physical interpenetration with longitudinal column bars. Passing the intermat screen does not make the complete cage buildable.',
         'scope':'Removing the shared inner bar to form15 longitudinal bars, H6 links and new local floor stations are not strength-admitted or installed. No old96 force envelope is transferred, no finite-solid D-region or complete path-pair/cover/anchorage proof is claimed.'}
 
 def main():
@@ -105,5 +111,5 @@ def main():
     value=assess(packet,capture);value['inputFileSHA256']=hashlib.sha256(a.inputs.read_bytes()).hexdigest()
     value['zeroCaptureGzipSHA256']=hashlib.sha256(a.zero.read_bytes()).hexdigest()
     a.out.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n')
-    print('L200_PLACING_SUMMARY '+json.dumps({k:value[k] for k in ('originalRejectedH12TopBottomBendCrossing','specificChecks','decision','candidatePlacingAccepted')}))
+    print('L200_PLACING_SUMMARY '+json.dumps({k:value[k] for k in ('actualFloorReinforcement','originalRejectedH12TopBottomBendCrossing','specificChecks','decision','candidatePlacingAccepted')}))
 if __name__=='__main__':main()
