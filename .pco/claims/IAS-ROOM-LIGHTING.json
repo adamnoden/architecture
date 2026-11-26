@@ -9,8 +9,8 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T14:25:31.000Z",
-  "expiresAt": "2026-11-26T15:10:31.000Z",
+  "heartbeatAt": "2026-11-26T14:51:35.000Z",
+  "expiresAt": "2026-11-26T15:36:35.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "Verifiedcombined63cd treec97e proof45833413952 passes29+7/types/audit0/136closedmin10 plus140→144/0oldwitnesses. All16generatedblobsprotected. Integrated1629b198 withpermanentCIbudgets; fullCIactive.",
-    "next": "Finishb198 health/publication/native96/preflight thenmerge. Followonnewbranchfrom63cd: sacrificialspentMIrenewal, ordinarydirect2.5holder, actualsharednative-soffitsupport. Keepverifiedbranchfrozen.",
-    "blocker": "Physical/material/electricalqualification/owneracceptanceopen. No duplicatefloorholesmap orcompleteintact15mcablewithdrawal credit."
+    "evidence": "1629b198 integrated exact63cd circuit+136min10 receipts; full96/bothADE/publication green. Current actualdaySVG rendered/reviewed45842086452 artifact15128232530. Owning29+7/types/audit0 PASS45833413952.",
+    "next": "Finish b198 fullhealth/freshpreflight/merge. Next sacrificeconsumedMIrenewal, actualsoffitsupport and conventionaldetachablefitting; avoidnative58churn.",
+    "blocker": "No completeelectrical/material/physical/ownerappearanceacceptance. IASfollowonawaitscriticalpathresources; verifiedsourcefrozen."
   },
   "pr": 1629
 }
