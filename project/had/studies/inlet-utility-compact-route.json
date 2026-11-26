@@ -1171,7 +1171,17 @@
             10
           ],
           "ratchetSweepIntervals": 16,
-          "ratchetDirection": "inward-left-east-right-west"
+          "ratchetDirection": "inward-left-east-right-west",
+          "operatorBodyFloorXYMm": [
+            11025,
+            1900
+          ],
+          "operatorShoulderMm": [
+            11140,
+            1680,
+            1350
+          ],
+          "operatorPoseScope": "standing top-bolt tools only; low pressure-union posture remains in headCapture controls"
         },
         "maximumHeadFactoryWeldMassKg": 0.15,
         "normalForceHeightMeaning": "maximum authored head or complete inward ratchet metal/hand height before lift; both10mm settings remain additional"

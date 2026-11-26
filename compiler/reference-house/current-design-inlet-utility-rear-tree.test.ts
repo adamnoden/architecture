@@ -384,6 +384,7 @@ test('old11160 NS fork physically strikes the actual strainer;11110 clears witho
  Object.assign(hc.fork,{maximumCapturedWetHeadKg:30,minimumIMM4:45000,minimumTorsionalJMm4:65000,minimumClosedWallMm:4,meanClosedAreaMm2:676,minimumAreaMM2:400})
  const oldReference=inletUtilityWetAssembly({source:current,choice:prior}).ordinaryCapture
  near(oldReference.forkReference.torsionalMomentNmm,44145)
+ assert.ok(oldReference.sourceBoundCapturePhase.referenceBeamStressMPa>96&&oldReference.sourceBoundCapturePhase.referenceBeamStressMPa<97)
  near(oldReference.sourceBoundCapturePhase.captureGeometryChecks.find(q=>q.id==='capture/fork/11110/waste/head-underflange')!.reserveMm,4.425243005181347,1e-6)
 })
 
@@ -490,7 +491,9 @@ test('actual bounded head stock determines CG and exposes pressure-body water se
  assert.ok(wet.ordinaryCapture.controls.liftingEyesMm.some(p=>p[0]===11220))
  near(wet.ordinaryCapture.forkReference.torsionalMomentNmm,52974)
  assert.ok(wet.ordinaryCapture.forkReference.totalElasticEnvelopeCoverMm>5.5&&wet.ordinaryCapture.forkReference.totalElasticEnvelopeCoverMm<6)
- assert.ok(wet.ordinaryCapture.sourceBoundCapturePhase.referenceBeamStressMPa>96&&wet.ordinaryCapture.sourceBoundCapturePhase.referenceBeamStressMPa<97)
+ const a=wet.ordinaryCapture,q=a.controls.fork!
+ near(a.sourceBoundCapturePhase.referenceBeamStressMPa,Math.hypot(a.demand.fullHeadDynamicN*(q.rootYMm-q.rearTipYMm)*q.depthMm/(2*q.minimumIMM4),Math.sqrt(3)*a.forkReference.torsionalShearMPa))
+ assert.ok(a.sourceBoundCapturePhase.referenceBeamStressMPa<a.sourceBoundCapturePhase.referenceAllowableMPa)
 })
 
 test('exact steel brace members leave actual cold paths clear; filled-bay boxes remain a rejected calculation control',()=>{
@@ -618,7 +621,7 @@ test('flat socket has6.5mm head engagement; inward two-hand ratchet clears the a
  assert.deepEqual(a.toolFailures,[],JSON.stringify(a.toolFailures))
  const capsule=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture,headSocketRepresentation:'capsule-control'})
  assert.ok(capsule.headRelease.toolFailures.some(q=>q.id.includes('/socket/head/load-pedestal/')&&q.reserveMm< -5))
- const axis=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture,headToolRepresentation:'bare-axis-arm-control'})
+ const axis=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture,headToolRepresentation:'bare-axis-arm-control',headShoulderRepresentation:'old-low-shoulder-control'})
  assert.ok(axis.headRelease.toolFailures.some(q=>q.id.includes('retained-H0-hot-backbone/4')&&q.reserveMm< -9))
  assert.notEqual(axis.sourceDigest,portal.sourceDigest)
  assert.notEqual(capsule.sourceDigest,portal.sourceDigest)
@@ -633,4 +636,13 @@ test('rear members move west below the cold feed before raising; the old high ro
  assert.ok(high.geometryFailures.some(q=>q.componentId==='portal/rear/lower-tie'&&q.phase==='rear-member-up-before-west-control'&&q.obstacleId==='cold/sink/feed/tube/1'&&q.reserveMm< -150))
  assert.notEqual(high.sourceDigest,portalFinite.sourceDigest)
  assert.equal(portalFinite.ordinaryRenewalAccepted,false)
+})
+
+test('standing bolt-tool arms clear the retained supporting column; low union posture remains a failed bolt control',()=>{
+ assert.deepEqual(portal.headRelease.operatorShoulderMm,[11140,1680,1350])
+ assert.deepEqual(wet.ordinaryCapture.controls.normalWorkingShoulderMm,[11140,1690,1150])
+ assert.deepEqual(portal.headRelease.toolFailures,[],JSON.stringify(portal.headRelease.toolFailures))
+ const low=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture,headShoulderRepresentation:'old-low-shoulder-control'})
+ assert.ok(low.headRelease.toolFailures.some(q=>q.id.includes('capture/lift-column/11110')&&q.reserveMm< -13))
+ assert.notEqual(low.sourceDigest,portal.sourceDigest)
 })
