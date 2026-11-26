@@ -2,7 +2,7 @@
   "schema": "ias-study-lighting-review/1",
   "methodSHA256": {
     "compiler/reference-house/current-design/assemblies/study-structural-renewal.ts": "abb1ed93eeaef7afb34c4fb881a4bec91868c0c0963d286f59ce99a4fad6b676",
-    "compiler/reference-house/current-design/assemblies/study-room-kit.ts": "26b2608a23a754b9e627d625c92bf0d4eb07e30c8ecc3c888903f9643d9147ca",
+    "compiler/reference-house/current-design/assemblies/study-room-kit.ts": "0c6e4fb27babcf1a2ca898438ed3087eb7bc332c9c634a83d908027dc305b974",
     "project/ias/studies/study-structural-renewal.py": "8d1ba4401464dad6e5f8f8e53399620cf089a99d603c265093982f720ee40980",
     "project/ias/studies/study-floor-handling.py": "4672ae114b1eff5a2317a7f805ed3eb3b3811ccedbee4b547226bcfb6cad7b18",
     "compiler/reference-house/current-design/assemblies/study-lighting-circuit.ts": "6543a4dc3d665413ebede272fe77bc778edec477203ca76fee35851887c2cc7c",

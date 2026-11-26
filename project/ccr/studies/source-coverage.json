@@ -3299,7 +3299,7 @@
     "project/ias/studies/adaptable-study-lighting.json": "63b335e82c72518bb1346c3d70e9ce3bfa02bd9d",
     "project/ias/studies/lighting-component-references.json": "2fe0e72ec5f755df87a461b4f9a40df338fea89a",
     "project/ias/studies/study-door-reveal.json": "58afaada3083a21bf103fe3a658db31807a75e26",
-    "project/ias/studies/adaptable-study-lighting.results.json": "dee5e9e59d1bfe003fb777ffb6b79ed5a704e836",
+    "project/ias/studies/adaptable-study-lighting.results.json": "d2e373b387857bdcc9ef2b1147677a58950684c1",
     "project/ias/studies/adaptable-study-lighting-comparison.svg": "0a55927ec4836390023560843f5e7ce22bdd504d",
     "project/ias/studies/adaptable-study-lighting-corner.svg": "ca2a59a458a2cc858ebc23acf6eb6c779912f828",
     "project/ias/studies/adaptable-study-lighting-routes.svg": "b40fc4601b053d2bb2b6ce8f5644d49ab0702ed3",
@@ -3571,7 +3571,7 @@
     "compiler/reference-house/current-design/assemblies/study-lighting-circuit.ts": "14f85d33277e8e6d14b57696606e432c717278f0",
     "compiler/reference-house/current-design-study-lighting-circuit.test.ts": "879baf322aa4b52fb3ee6465e83e8128f6ea2c05",
     "project/ias/studies/working-study-lighting-circuit.svg": "bc221b6a47aa9e6b1edf37066193005db97df89e",
-    "project/ias/studies/working-study-lighting.results.json": "0759fcdb02db9ba38263afa3eae898fb548d61bc",
+    "project/ias/studies/working-study-lighting.results.json": "fbc0fb9d08b3448371952c1f21e51ae97f723fc1",
     "project/ias/studies/study-floor-handling.py": "99f909611ae0f1d1df9dcec6b7516a775b6b1b4b",
     "compiler/reference-house/current-design/assemblies/study-furniture-motion.ts": "93aa13c887624fae405ee78aada387ff46984a12",
     "project/ias/studies/study-furniture-motion.py": "76ec30124e3a955ae551cc6e4a2bdf2dddb7e409"
