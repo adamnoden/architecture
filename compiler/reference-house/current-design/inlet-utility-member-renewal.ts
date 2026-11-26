@@ -775,7 +775,7 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
   return{method:mountMode,reference,toolTasks,toolChecks,toolFailures:toolChecks.filter(q=>q.reserveMm< -1e-7),necessaryTools:mountMode==='front-top-bolts'&&toolTasks.length===4&&toolChecks.every(q=>q.reserveMm>=-1e-7),oldCrossBoltReaches,rearDowelClearanceAfterFirstLiftMm:capture.controls.firstLiftMm-(f.rearDowelTopMm-ribBottom)-two,sequence:['pressure/waste isolated and bounded; positive head fork bearing established','remove four metal plugs and four front top-driven bolts from north','pressure/waste unions released under actual capture guard','head first65UP releases plain rear locating dowels; then static380UP'],fullyRemovedHeadOrRearOperatorRequired:false,actualPhysicalFastenerSheetWeldAndSupportQualified:false}
  })()
  return{schema:'had-utility-two-side-portal-observer/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,choice:wet.choice,portal:p,braceObstacleRepresentation,mountMode}),braceObstacleRepresentation,headMountRepresentation:mountMode,headRelease,parts,checks,geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),candidateColdNormal:candidateCold.geometry.normalNecessary,candidateColdFailures:candidateCold.geometry.failures.filter(q=>['normal','operation','nonmate-metal','fitting-legs'].includes(q.phase)),
-  normalBearing:{factoryBoardToSideRibsToNSBeamsToFourLegsToFloor:true,bearingChecks,reactionChecks,unilateralReactionCases,unilateralCornerReactionBoundsN,conditionalBilinearReactionCases:reactionCases,reactionAssumption:'Bilinear values are a conditional stiffness comparator; the unilateral t interval bounds equilibrium without equal-stiffness credit.',actualIndividualLegReactionsQualified:false,dynamicHeadN:W,minimumHorizontalOverlapMm:Math.min(p.sideRibCrossMm[0],p.frameBeamCrossMm[0])-two,minimumLongitudinalOverlapMm:Math.min(ribB,beamB)-Math.max(ribA,beamA)-two,necessary:bearingChecks.every(q=>q.reserveMm>=0)&&reactionChecks.every(q=>q.reserveN>=-1e-7),actualFactoryHeadSheetBowlWeldAndMatchedBoltsQualified:false},
+  normalBearing:{factoryBoardToSideRibsToNSBeamsToFourLegsToFloor:true,contactDatum:{headRibBottomMm:ribBottom,NSBeamTopMm:beamBottom+p.frameBeamCrossMm[1],threadBlockTopMm:f.frameThreadBlockBottomMm+f.frameThreadBlockMm[2],threadBlockToHeadBossVoidMm:f.headLoadBossBottomMm-f.frameThreadBlockBottomMm-f.frameThreadBlockMm[2],compressionThroughRibAndBeamFaces:true,boltCompressionColumnCredited:false,localBeamWallCaptiveBlockWeldAndThreadQualified:false},bearingChecks,reactionChecks,unilateralReactionCases,unilateralCornerReactionBoundsN,conditionalBilinearReactionCases:reactionCases,reactionAssumption:'Bilinear values are a conditional stiffness comparator; the unilateral t interval bounds equilibrium without equal-stiffness credit.',actualIndividualLegReactionsQualified:false,dynamicHeadN:W,minimumHorizontalOverlapMm:Math.min(p.sideRibCrossMm[0],p.frameBeamCrossMm[0])-two,minimumLongitudinalOverlapMm:Math.min(ribB,beamB)-Math.max(ribA,beamA)-two,necessary:bearingChecks.every(q=>q.reserveMm>=0)&&reactionChecks.every(q=>q.reserveN>=-1e-7),actualFactoryHeadSheetBowlWeldAndMatchedBoltsQualified:false},
   mass,legacyCage:{role:'explicit stock and bearing control only; not normal support acceptance',upperRails:oldFrame},
   demandedInterfaces:{normalFrontEdgePointN:p.normalFrontEdgePointComparisonN,frontEdgeRearPairUpliftBeforeDeadWeightN:p.normalFrontEdgePointComparisonN*(plan[1]+plan[3]-yf)/(yf-yr),horizontalActionN:p.normalHorizontalComparisonN,actualForceHeightMm:p.normalForceHeightMm,normalHeightAfterTwoSettingsMm:p.normalForceHeightMm+two,requiredFloorMomentNmm:p.normalHorizontalComparisonN*(p.normalForceHeightMm+two),capturedHeadHeightAfterTwoSettingsMm:capture.controls.maximumHeadZMm+capture.controls.liftMm+two,capturedHeadHorizontalMomentNmm:p.normalHorizontalComparisonN*(capture.controls.maximumHeadZMm+capture.controls.liftMm+two),frictionCreditedN:0},
   actualFloorBallastMemberCaptureToolsAndFiniteRenewalQualified:false,normalGravityCapacityAccepted:false,ordinaryRenewalAccepted:false}
@@ -784,7 +784,7 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
 type PortalFiniteControls={schema:string;portalKeyDepthMm:number;portalLiftMm:number;portalNorthMm:number;rearParkAxisYMm:number;rearRotationCentreXMm:number;rearRotationCentreZMm:number;rearParkLevelsMm:readonly number[];normalReceiverInwardOffsetMm:number;receiverPostCrossMm:number;receiverPostWallMm:number;receiverBasePlanMm:readonly[number,number];receiverTopPlanMm:readonly[number,number];receiverPlateMm:number;receiverAnchorDiameterMm:number;receiverAnchorEmbedMm:number;receiverAnchorHeadDiameterMm:number;receiverAnchorHeadHeightMm:number;minimumRCCoverMm:number;receiverFloorKeyDiameterMm:number;receiverReferenceE_MPa:number;receiverReferenceSteelProofMPa:number;receiverSocketAFMm:number;receiverSocketMaximumODMm:number;receiverBoltMinimumThreadMm:number;receiverBoltTorqueNm:number;temporaryCaptureToolMaximumDryKg:number;temporaryCaptureToolPayloadKg:number;maximumSidePortalWithTemporaryClampsKg:number;maximumRearMemberWithTemporaryClampsKg:number;steelDensityUpperKgM3:number;actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified:false}
 /** Same selected portal case: finite member sweeps and actual source-pocket
  * receivers. Unmodelled positive holding/tool interfaces remain named gates. */
-export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;portal:ReturnType<typeof inletUtilityPortalCandidate>}){
+export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;portal:ReturnType<typeof inletUtilityPortalCandidate>;movingBraceRepresentation?:'exact-sampled-capsules'|'filled-bay-control'}){
  const {source,wet,capture,portal}=i,d=wet.choice.coldDistribution,
   r=(d as unknown as{frameRenewal:{portalDesign:{finiteRenewal:PortalFiniteControls}}}).frameRenewal.portalDesign.finiteRenewal,
   floor=(source as unknown as{candidateFloorPocket:{schema:string;bindingDigest:string;occupiedFflAbsoluteMm:number;currentSavedDocumentAdmitted:false;nativeFloorOrForceApprovalTransferred:false;pocket:{levels:{ffl:number};local:{levelBoxes:readonly{id:string;planMinMaxMm:PlanRectangle;planRectanglesXYMm?:readonly PlanRectangle[];zMm:readonly[number,number]}[]}|null}}}).candidateFloorPocket,
@@ -801,22 +801,36 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   raisedHead=[...capture.headParts,...parts.filter(q=>q.group==='factory-head')].map(q=>({id:'raised/'+q.id,boxMm:shift(q.boxMm,[0,0,capture.controls.liftMm])})),
   fixture=capture.hardware.filter(q=>q.id.startsWith('capture/')&&!q.afterFrameKnockdown).map(q=>({id:q.id,boxMm:shift(q.boxMm,[0,0,q.id.startsWith('capture/fork/')?capture.controls.liftMm:0])})),
   fixed=[...foreignBase,{id:'actual-washer-first-rest',boxMm:[rest[0],rest[1],0,rest[2],rest[3],washerH] as B},...pressure,...raisedHead,...fixture],
-  checks:{componentId:string;phase:string;obstacleId:string;reserveMm:number}[]=[],components:{id:string;sourcePartIds:string[];stockUpperKg:number;phases:string[]}[]=[],
+  checks:{componentId:string;phase:string;movingPrimitiveId?:string;obstacleId:string;reserveMm:number}[]=[],components:{id:string;sourcePartIds:string[];stockUpperKg:number;phases:string[]}[]=[],
   removedOriginalIds:string[]=[],parked:{id:string;boxMm:B;segmentMm?:readonly[P,P];radiusMm?:number}[]=[],phaseState:{componentId:string;removedOriginalIds:string[];parkedObstacleIds:string[]}[]=[],
-  compare=(id:string,phase:string,b:B,exclude:readonly string[],cover=0)=>{
-   for(const q of fixed)checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:gap(b,q.boxMm as B)-two-cover})
-   for(const q of parked)checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:q.segmentMm?exactSegmentBoxDistance(...q.segmentMm,b)-q.radiusMm!-two-cover:gap(b,q.boxMm)-two-cover})
+  checkIndex=new Map<string,number>(),record=(...rows:typeof checks)=>{for(const q of rows){const key=JSON.stringify([q.componentId,q.phase,q.movingPrimitiveId,q.obstacleId]),k=checkIndex.get(key);if(k===undefined){checkIndex.set(key,checks.length);checks.push(q)}else if(q.reserveMm<checks[k].reserveMm)checks[k]=q}},
+  compare=(id:string,phase:string,b:B,exclude:readonly string[],cover=0,moving?:{segment:readonly[P,P];radiusMm:number;primitiveId?:string})=>{
+   const db=(box:B)=>moving?exactSegmentBoxDistance(...moving.segment,box)-moving.radiusMm:gap(b,box),ds=(segment:readonly[P,P],radius:number)=>moving?segmentDistance(...moving.segment,...segment)-moving.radiusMm-radius:exactSegmentBoxDistance(...segment,b)-radius
+   const push=(...rows:typeof checks)=>record(...rows.map(q=>({...q,movingPrimitiveId:moving?.primitiveId})))
+   for(const q of fixed)push({componentId:id,phase,obstacleId:q.id,reserveMm:db(q.boxMm as B)-two-cover})
+   for(const q of parked)push({componentId:id,phase,obstacleId:q.id,reserveMm:q.segmentMm?ds(q.segmentMm,q.radiusMm!)-two-cover:db(q.boxMm)-two-cover})
    for(const q of parts.filter(q=>q.group==='frame'&&!exclude.includes(q.id)&&!removedOriginalIds.includes(q.id))){
-    if(q.segmentMm)checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:exactSegmentBoxDistance(...q.segmentMm,b)-q.radiusMm!-two-cover})
-    else checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:gap(b,q.boxMm)-two-cover})
+    if(q.segmentMm)push({componentId:id,phase,obstacleId:q.id,reserveMm:ds(q.segmentMm,q.radiusMm!)-two-cover})
+    else push({componentId:id,phase,obstacleId:q.id,reserveMm:db(q.boxMm)-two-cover})
    }
-   for(const q of source.rearTreeContext.retainedPaths)for(let k=1;k<q.pointsMm.length;k++)checks.push({componentId:id,phase,obstacleId:q.id+'/'+k,reserveMm:exactSegmentBoxDistance(q.pointsMm[k-1],q.pointsMm[k],b)-q.radiusWithSupportsMm-two-cover})
+   for(const q of source.rearTreeContext.retainedPaths)for(let k=1;k<q.pointsMm.length;k++)push({componentId:id,phase,obstacleId:q.id+'/'+k,reserveMm:ds([q.pointsMm[k-1],q.pointsMm[k]],q.radiusWithSupportsMm)-two-cover})
    for(const path of source.route.paths){
-    for(const q of path.straight)checks.push({componentId:id,phase,obstacleId:path.id+'/'+q.index,reserveMm:exactSegmentBoxDistance(q.a,q.b,b)-source.route.geometry.jacketRadiusMm-two-cover})
-    for(const q of path.corners)if(q.kind==='boxed-compression-elbow')checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:gap(b,q.boxMm)-two-cover})
-    else if(q.arcMm)for(let k=1;k<q.arcMm.length;k++)checks.push({componentId:id,phase,obstacleId:q.id+'/'+k,reserveMm:exactSegmentBoxDistance(q.arcMm[k-1],q.arcMm[k],b)-source.route.geometry.jacketRadiusMm-q.arcCoverMm-two-cover})
+    for(const q of path.straight)push({componentId:id,phase,obstacleId:path.id+'/'+q.index,reserveMm:ds([q.a,q.b],source.route.geometry.jacketRadiusMm)-two-cover})
+    for(const q of path.corners)if(q.kind==='boxed-compression-elbow')push({componentId:id,phase,obstacleId:q.id,reserveMm:db(q.boxMm)-two-cover})
+    else if(q.arcMm)for(let k=1;k<q.arcMm.length;k++)push({componentId:id,phase,obstacleId:q.id+'/'+k,reserveMm:ds([q.arcMm[k-1],q.arcMm[k]],source.route.geometry.jacketRadiusMm+q.arcCoverMm)-two-cover})
    }
-   checks.push({componentId:id,phase,obstacleId:'room-west',reserveMm:b[0]-room[0]-two-cover},{componentId:id,phase,obstacleId:'room-east',reserveMm:room[0]+room[2]-b[0]-b[3]-two-cover})
+   push({componentId:id,phase,obstacleId:'room-west',reserveMm:b[0]-room[0]-two-cover},{componentId:id,phase,obstacleId:'room-east',reserveMm:room[0]+room[2]-b[0]-b[3]-two-cover})
+  },
+  representation=i.movingBraceRepresentation??'exact-sampled-capsules',
+  samplingProofs:{componentId:string;primitiveId:string;phase:string;sampleCount:number;chordCoverMm:number;maximumStepMm:number}[]=[],
+  sampleMove=(id:string,primitiveId:string,phase:string,a0:P,b0:P,a1:P,b1:P,radius:number,exclude:readonly string[])=>{
+   const travel=Math.max(Math.hypot(...a1.map((v,k)=>v-a0[k])),Math.hypot(...b1.map((v,k)=>v-b0[k]))),N=Math.max(1,Math.ceil(travel/5)),cover=travel/(2*N)
+   samplingProofs.push({componentId:id,primitiveId,phase,sampleCount:N,chordCoverMm:cover,maximumStepMm:travel/N})
+   for(let k=0;k<N;k++){
+    const u=(k+.5)/N,a=a0.map((v,j)=>v+(a1[j]-v)*u) as unknown as P,b=b0.map((v,j)=>v+(b1[j]-v)*u) as unknown as P,
+     box:B=[...a.map((v,j)=>Math.min(v,b[j])-radius),...a.map((v,j)=>Math.abs(v-b[j])+2*radius)] as unknown as B
+    compare(id,phase,box,exclude,cover,{segment:[a,b],radiusMm:radius,primitiveId})
+   }
   },
   rear=parts.filter(q=>q.id.startsWith('portal/rear/')),
   rearIds=rear.map(q=>q.id)
@@ -827,24 +841,43 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
    s=q.segmentMm?2*q.radiusMm!/Math.SQRT2:Math.min(b[4],b[5]),angle=q.segmentMm?Math.atan2(q.segmentMm[1][2]-q.segmentMm[0][2],q.segmentMm[1][0]-q.segmentMm[0][0]):0,
    prism=(centre:P,a:number):B=>{const dx=Math.abs(L*Math.cos(a))/2+Math.abs(s*Math.sin(a))/2,dz=Math.abs(L*Math.sin(a))/2+Math.abs(s*Math.cos(a))/2;return[centre[0]-dx,centre[1]-s/2,centre[2]-dz,2*dx,s,2*dz]},
    p0=prism(c,angle),c1:P=[c[0],end[1],c[2]],c2:P=[c[0],end[1],end[2]],phases=['captured-rear-member-to-south-plane','rear-member-up','rear-member-west','rear-member-rotate-flat','rear-member-positive-park']
-  compare(q.id,phases[0],sweep(p0,prism(c1,angle)),[q.id])
-  compare(q.id,phases[1],sweep(prism(c1,angle),prism(c2,angle)),[q.id])
-  compare(q.id,phases[2],sweep(prism(c2,angle),prism(end,angle)),[q.id])
-  for(let n=0;n<64;n++){
-   const a=angle*(1-n/64),z=angle*(1-(n+1)/64),cover=Math.hypot(L/2,s/2)*(1-Math.cos(Math.abs(z-a)/2))
-   compare(q.id,phases[3],sweep(prism(end,a),prism(end,z)),[q.id],cover)
-  }
-  compare(q.id,phases[4],sweep(prism(end,0),prism([end[0],end[1],r.rearParkLevelsMm[which]],0)),[q.id])
+  const ends=(centre:P,a:number):readonly[P,P]=>[[centre[0]-L/2*Math.cos(a),centre[1],centre[2]-L/2*Math.sin(a)],[centre[0]+L/2*Math.cos(a),centre[1],centre[2]+L/2*Math.sin(a)]],
+   move=(phase:string,from:P,to:P,a0:number,a1:number)=>{
+    if(q.segmentMm&&representation==='exact-sampled-capsules'){
+     if(a0===a1)sampleMove(q.id,q.id,phase,...ends(from,a0),...ends(to,a1),q.radiusMm!,[q.id])
+     else for(let n=0;n<64;n++){
+      const a=a0+(a1-a0)*n/64,z=a0+(a1-a0)*(n+1)/64,e0=ends(from,a),e1=ends(to,z),
+       mid=ends(from,(a+z)/2),arcCover=L/2*(1-Math.cos(Math.abs(z-a)/2)),
+       box:B=[...mid[0].map((v,k)=>Math.min(v,mid[1][k])-q.radiusMm!),...mid[0].map((v,k)=>Math.abs(v-mid[1][k])+2*q.radiusMm!)] as unknown as B,
+       cover=Math.max(Math.hypot(...e1[0].map((v,k)=>v-e0[0][k])),Math.hypot(...e1[1].map((v,k)=>v-e0[1][k])))/2+arcCover
+      samplingProofs.push({componentId:q.id,primitiveId:q.id,phase,sampleCount:1,chordCoverMm:cover,maximumStepMm:2*cover})
+      compare(q.id,phase,box,[q.id],cover,{segment:mid,radiusMm:q.radiusMm!,primitiveId:q.id})
+     }
+    }else compare(q.id,phase,sweep(prism(from,a0),prism(to,a1)),[q.id],a0===a1?0:Math.hypot(L/2,s/2)*(1-Math.cos(Math.abs(a1-a0)/2)))
+   }
+  void p0
+  move(phases[0],c,c1,angle,angle)
+  move(phases[1],c1,c2,angle,angle)
+  move(phases[2],c2,end,angle,angle)
+  if(q.segmentMm&&representation==='exact-sampled-capsules')move(phases[3],end,end,angle,0)
+  else for(let n=0;n<64;n++)move(phases[3],end,end,angle*(1-n/64),angle*(1-(n+1)/64))
+  move(phases[4],end,[end[0],end[1],r.rearParkLevelsMm[which]],0,0)
   components.push({id:q.id,sourcePartIds:[q.id],stockUpperKg:q.massUpperKg,phases})
   removedOriginalIds.push(q.id)
-  parked.push({id:'parked/'+q.id,boxMm:prism([end[0],end[1],r.rearParkLevelsMm[which]],0)})
+  parked.push({id:'parked/'+q.id,boxMm:prism([end[0],end[1],r.rearParkLevelsMm[which]],0),...(q.segmentMm&&representation==='exact-sampled-capsules'?{segmentMm:ends([end[0],end[1],r.rearParkLevelsMm[which]],0),radiusMm:q.radiusMm}:{})})
  }
  for(const side of[0,1]){
   const group=parts.filter(q=>q.id.startsWith('portal/'+side+'/')),exclude=[...rearIds,...group.map(q=>q.id)],id='portal/side-unit/'+side
   phaseState.push({componentId:id,removedOriginalIds:[...removedOriginalIds],parkedObstacleIds:parked.map(q=>q.id)})
   for(const q of group){
-   compare(id,'side-unit-up-to-release-positive-floor-key',sweep(q.boxMm,shift(q.boxMm,[0,0,r.portalLiftMm])),exclude)
-   compare(id,'side-unit-captured-north-park',sweep(shift(q.boxMm,[0,0,r.portalLiftMm]),shift(q.boxMm,[0,r.portalNorthMm,r.portalLiftMm])),exclude)
+   if(q.segmentMm&&representation==='exact-sampled-capsules'){
+    const up=q.segmentMm.map(p=>[p[0],p[1],p[2]+r.portalLiftMm]) as unknown as readonly[P,P],north=up.map(p=>[p[0],p[1]+r.portalNorthMm,p[2]]) as unknown as readonly[P,P]
+    sampleMove(id,q.id,'side-unit-up-to-release-positive-floor-key',...q.segmentMm,...up,q.radiusMm!,exclude)
+    sampleMove(id,q.id,'side-unit-captured-north-park',...up,...north,q.radiusMm!,exclude)
+   }else{
+    compare(id,'side-unit-up-to-release-positive-floor-key',sweep(q.boxMm,shift(q.boxMm,[0,0,r.portalLiftMm])),exclude)
+    compare(id,'side-unit-captured-north-park',sweep(shift(q.boxMm,[0,0,r.portalLiftMm]),shift(q.boxMm,[0,r.portalNorthMm,r.portalLiftMm])),exclude)
+   }
   }
   components.push({id,sourcePartIds:group.map(q=>q.id),stockUpperKg:group.reduce((n,q)=>n+q.massUpperKg,0),phases:['side-unit-up-to-release-positive-floor-key','side-unit-captured-north-park']})
   for(const q of group){removedOriginalIds.push(q.id);parked.push({id:'parked/'+q.id,boxMm:shift(q.boxMm,[0,r.portalNorthMm,r.portalLiftMm]),...(q.segmentMm?{segmentMm:q.segmentMm.map(p=>[p[0],p[1]+r.portalNorthMm,p[2]+r.portalLiftMm]) as unknown as readonly[P,P],radiusMm:q.radiusMm}:{})})}
@@ -884,7 +917,7 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   receiverDemands.push({id,axialUpperN:N,upliftUpperN:U,shearUpperN:normalF,referenceMomentAtRCNmm:M,referenceSteelExtremeMPa:M*S/2/I+N/A,referenceAnchorTensionEachN:anchor,referenceAnchorMPa:anchor/84.3})
  }
  const fixtureIds=components.map(q=>q.id),toolChecks=portal.headRelease.toolChecks
- return{schema:'had-utility-portal-finite-renewal/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,portal:portal.sourceDigest,floor,controls:r}),components,phaseState,finalParkedParts:parked,checks,necessaryFiniteGeometry:checks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7),geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),
+ return{schema:'had-utility-portal-finite-renewal/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,portal:portal.sourceDigest,floor,controls:r,representation}),movingBraceRepresentation:representation,samplingProofs,components,phaseState,finalParkedParts:parked,checks,necessaryFiniteGeometry:checks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7),geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),
   receiver:{sourceContextDigest:floor.bindingDigest,occupiedFflAbsoluteMm:source.groundFflMm,rcLocalMm:[rcBottom,rcTop],actualRCPlans:rcPlans,parts:receiverParts,checks:receiverChecks,footprintChecks:receiverFootprintChecks,geometryFailures:[...receiverChecks.filter(q=>q.reserveMm<0),...receiverFootprintChecks.filter(q=>!q.contained)],demands:receiverDemands,referenceNecessarySteel:receiverDemands.every(q=>Math.max(q.referenceSteelExtremeMPa,q.referenceAnchorMPa)<=r.receiverReferenceSteelProofMPa/1.5),frictionResistanceCreditedN:0,actualRCBreakoutRebarWeldWaterproofAirAndPointThermalJoinAccepted:false},
   toolChecks,toolFailures:toolChecks.filter(q=>q.reserveMm< -1e-7),memberIds:fixtureIds,
   positiveCaptureRequirement:{headGravityRemainsOnIndependentFloorFork:true,oneCapturedRearMemberOrSidePortalAtATime:true,allThreeRearMembersPositivelyParkedBeforeSidePortalRelease:true,maximumSidePortalWithClampsKg:r.maximumSidePortalWithTemporaryClampsKg,maximumRearMemberWithClampsKg:r.maximumRearMemberWithTemporaryClampsKg,temporaryPositiveCaptureFixtureGeometryQualified:false},

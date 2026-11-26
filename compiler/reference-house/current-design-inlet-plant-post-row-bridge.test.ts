@@ -10,7 +10,7 @@ const near=(a:number,b:number,t=1e-5)=>assert.ok(Math.abs(a-b)<t,a+' != '+b)
 // The selected geometry is owned by the same input as the whole-room producer.
 // Only the immutable comparison pan below remains an explicit unit fixture.
 const control={...raw.appliancePlatform,loadedPadBlankUpperMm:raw.panCompression.footBlank.maximumMeasuredThicknessMm}
-const bridge={...raw.bridge,topology:'outer-grid-post-row' as const,thicknessMm:40,pieceCount:15,postRow:{innerGirderXMm:11490,outerGirderXMm:12080,plankInnerXMm:11440,plankOuterXMm:12130,sharedPostColumnIndex:6,sharedPostYMm:[4080,4363.5,4647,4930.5,5214],innerGirderEndYMm:[4080,5214]as const,innerSeatPackerMm:30,girderSectionWHtMm:[100,100,8]as const,maximumGirderWallMm:8.5,capThicknessMm:35,capWidthYMm:80,railCorbelLXtMm:[50,30]as const,matchedSeatErrorMm:3,sharedPostDesignCeilingN:9000,maximumMechanicallyCapturedGirderKg:60}}
+const bridge={...raw.bridge,topology:'outer-grid-post-row' as const,thicknessMm:40,pieceCount:15,postRow:{innerGirderXMm:11490,outerGirderXMm:12080,plankInnerXMm:11440,plankOuterXMm:12130,sharedPostColumnIndex:6,sharedPostYMm:[4080,4363.5,4647,4930.5,5214],innerGirderEndYMm:[4080,5214]as const,innerSeatPackerMm:30,girderSectionWHtMm:[100,100,8]as const,maximumGirderWallMm:8.5,capThicknessMm:35,capWidthYMm:80,railCorbelLXtMm:[50,30]as const,matchedSeatErrorMm:3,grateToBridgeGapMm:6,perimeterGapMm:35,postSectionWHtMm:[60,60,5]as const,sharedPostDesignCeilingN:9000,maximumMechanicallyCapturedGirderKg:60}}
 const choice={...raw,bridge,appliancePlatform:control} as PlantWalkControl
 const source=(objectPath:string)=>({path:'project/had/studies/current-house-services.json',gitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',objectPath})
 const C=services.cylinder,B=services.primaryBuffer,axis=C.centre as [number,number],dryCG=raw.appliancePlatform.storeFactoryDryCGHalfExtentsMm as [number,number],ba=[B.body[0]+B.body[2]/2,B.body[1]+B.body[3]/2]as const,
@@ -28,6 +28,9 @@ test('segmented full-seat bridge uses five existing posts and removes conflictin
  console.log('PLANT_POST_ROW_BRIDGE '+JSON.stringify(summary))
  if(process.env.RUNNER_TEMP){const dir=join(process.env.RUNNER_TEMP,'had-utility-west-proof');mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'plant-post-row-bridge-current-case.json'),JSON.stringify(summary,null,2))}
  assert.equal(p.girderSegments.length,4)
+ assert.equal(p.grateToBridgeFit.nominalGapMm,6);assert.equal(p.grateToBridgeFit.netMm,1)
+ for(const q of [...p.sharedPostUpdates,...p.externalPostUpdates]){const foot=r.parts.find(f=>f.id===q.footId)!,post=r.parts.find(f=>f.id===q.postId)!;near(foot.compressionDesignN!,p.oneSharedPostDemandUpperN);assert.ok(foot.compressionMomentBoundsNm);assert.equal(post.boxMm[3],60);assert.equal(post.boxMm[4],60)}
+ assert.ok(p.normalFootWrenchBounds.every(q=>q.MxBoundsNm[0]<0&&q.MyBoundsNm[0]<0&&!q.actual95PercentFootContactPeakAndNoAnchorAccepted))
  assert.equal(p.sharedPostUpdates.length,5)
  assert.equal(r.parts.filter(q=>q.id.startsWith('Plant/bridge-X-rail/')).length,0)
  assert.equal(r.parts.filter(q=>q.id.startsWith('Plant/bridge-post/11400/')||q.id.startsWith('Plant/bridge-foot/11400/')).length,0)
@@ -46,10 +49,13 @@ test('segmented full-seat bridge uses five existing posts and removes conflictin
  assert.equal(p.normalReactionBounds.segmentedSimplySupportedInnerSpans,true)
  assert.equal(p.retired.quarterTurnRenewal,true)
  assert.equal(p.actualExternalReceiversLateralTiesBoltToolContactAndWholeHouseAccepted,false)
- // Honest integration boundary: east rail tails still reach nominal pan edge.
- assert.equal(d.remainingPerimeterTailChecks.length,2)
- assert.ok(d.remainingPerimeterTailChecks.every(q=>q.nominalGapMm===0&&!q.necessary))
- assert.equal(r.necessaryMemberComparisons,false)
+ // The explicit35mm shadowgap removes the nominal-edge tails. It remains
+ // outside any claim of a qualified cargo-wheel or personnel walking surface.
+ assert.equal(d.remainingPerimeterTailChecks.length,0);assert.equal(d.eastTailParts.length,0)
+ assert.equal(d.perimeterGapMm,35);assert.ok(d.perimeterChecks.every(q=>q.necessary))
+ assert.equal(r.renewal.actualCargoWheelRoutesAndPersonnelAtPerimeterAccepted,false)
+ assert.ok(r.necessaryMemberComparisons,JSON.stringify(r.memberChecks.filter(q=>!q.necessary)))
+ for(const q of r.parts.filter(p=>p.kind==='grate'||p.kind==='unified-grate-cut-rim')){assert.ok(q.boxMm[0]>=9397+35-1e-7&&q.boxMm[1]>=3797+35-1e-7);assert.ok(q.boxMm[0]+q.boxMm[3]<=11570.5-35+1e-7&&q.boxMm[1]+q.boxMm[4]<=5780.5-35+1e-7)}
 })
 test('same source grid, actual straight-X phase obstacles and finite roof envelope invalidate new bridge evidence',()=>{
  const r=run(),p=r.postRowBridge!
@@ -66,6 +72,8 @@ test('same source grid, actual straight-X phase obstacles and finite roof envelo
  assert.deepEqual(axes.xMm,r.geometry.postCentreXMm);assert.deepEqual(axes.yMm,r.geometry.postCentreYMm)
  assert.throws(()=>run({...input,choice:{...choice,bridge:{...bridge,postRow:{...bridge.postRow,sharedPostYMm:[4363.5,4647,4930.5]}}}}),/five-post/)
  assert.throws(()=>run({...input,bridgeRenewalContext:undefined}),/renewal context/)
+ assert.throws(()=>run({...input,choice:{...choice,bridge:{...bridge,postRow:{...bridge.postRow,grateToBridgeGapMm:4}}}}),/five-post/)
+ assert.throws(()=>run({...input,choice:{...choice,bridge:{...bridge,postRow:{...bridge.postRow,perimeterGapMm:28}}}}),/five-post/)
 })
 test('new bridge is optional and legacy geometry remains a scoped rejected historical comparison',()=>{
  const legacy=run({...input,choice:{...choice,bridge:{...raw.bridge,topology:undefined,postRow:undefined}},bridgeRenewalContext:undefined})

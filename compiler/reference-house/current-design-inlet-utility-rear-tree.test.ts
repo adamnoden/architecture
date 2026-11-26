@@ -590,3 +590,21 @@ test('front top-driven bolts release the captured head without a rear operator o
  assert.equal(old.headRelease.necessaryTools,false)
  assert.notEqual(old.sourceDigest,portal.sourceDigest)
 })
+
+test('finite diagonal sweeps use actual covered capsules; filled bays remain rejected calculation controls',()=>{
+ assert.equal(portalFinite.movingBraceRepresentation,'exact-sampled-capsules')
+ assert.ok(portalFinite.samplingProofs.length>0)
+ assert.ok(portalFinite.samplingProofs.every(q=>q.chordCoverMm>=0&&q.maximumStepMm<=5+1e-7),JSON.stringify(portalFinite.samplingProofs.filter(q=>q.maximumStepMm>5+1e-7)))
+ assert.ok(portalFinite.checks.some(q=>q.movingPrimitiveId==='portal/0/side-brace/0'))
+ const filled=inletUtilityPortalFiniteRenewal({source:current,wet,capture:wet.ordinaryCapture,portal,movingBraceRepresentation:'filled-bay-control'})
+ const isRearFeed=(q:{componentId:string;phase:string;obstacleId:string})=>q.componentId==='portal/rear/diagonal/0'&&q.phase==='captured-rear-member-to-south-plane'&&q.obstacleId==='cold/sink/feed/tube/1'
+ assert.ok(filled.geometryFailures.some(q=>isRearFeed(q)&&q.reserveMm< -100))
+ assert.equal(portalFinite.geometryFailures.some(isRearFeed),false,JSON.stringify(portalFinite.geometryFailures.filter(isRearFeed)))
+ assert.notEqual(filled.sourceDigest,portalFinite.sourceDigest)
+ // Head compression has a real face contact, independent of the captive-block void.
+ assert.equal(portal.normalBearing.contactDatum.headRibBottomMm,850)
+ assert.equal(portal.normalBearing.contactDatum.NSBeamTopMm,850)
+ assert.equal(portal.normalBearing.contactDatum.threadBlockToHeadBossVoidMm,6)
+ assert.equal(portal.normalBearing.contactDatum.boltCompressionColumnCredited,false)
+ assert.equal(portal.normalBearing.contactDatum.localBeamWallCaptiveBlockWeldAndThreadQualified,false)
+})
