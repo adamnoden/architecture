@@ -1,0 +1,102 @@
+name: Recover exact simultaneous rear lintel and seat demands
+on:
+  push:
+    branches: [work/zerg-rear-bearing-recovery-20261126]
+    paths:
+      - '.github/workflows/rear-bearing-demand-proof.yml'
+      - 'project/str/studies/rear_bearing_signed_demands.py'
+      - 'project/str/studies/rear_bearing_signed_demands_test.py'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: rear-bearing-demand-proof
+  cancel-in-progress: true
+env:
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+jobs:
+  demands:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Independent cut-sign, simultaneous-action and seat adverse controls
+        run: python -B -m unittest discover -s project/str/studies -p rear_bearing_signed_demands_test.py -v
+      - name: Install exact pinned authenticated programme runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          python -m venv --system-site-packages "$RUNNER_TEMP/finite-runtime"
+          "$RUNNER_TEMP/finite-runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
+          echo "STR_FINITE_SOLID_PYTHON=$RUNNER_TEMP/finite-runtime/bin/python" >> "$GITHUB_ENV"
+      - name: Authenticate only immutable4010 actual96 run and extract its signed response bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import hashlib,json,os,re,subprocess,time,zipfile
+          from pathlib import Path
+          repo='adamnoden/architecture';run=45847171536
+          def api(path):return json.loads(subprocess.check_output(['gh','api',path],text=True))
+          for attempt in range(30):
+              status=api(f'repos/{repo}/actions/runs/{run}')
+              if status['head_sha']!='4010bd9b3f86e3a41d65323a12d76bc0ed790038':raise ValueError('Executed physical source tree changed')
+              if status['status']=='completed':break
+              if attempt==29:raise ValueError('Actual96 aggregate still pending; no demand qualification inferred')
+              time.sleep(20)
+          if status['conclusion']!='success':raise ValueError('Actual96 aggregate did not pass')
+          artifacts=api(f'repos/{repo}/actions/runs/{run}/artifacts?per_page=100')['artifacts']
+          expected={'rear-development-input','rear-development96-summary',*[f'rear-development-shard-{i}' for i in range(12)]}
+          selected=[a for a in artifacts if a['name'] in expected]
+          if len(selected)!=14 or {a['name'] for a in selected}!=expected:raise ValueError('Exact original14 programme artifacts required')
+          out=Path(os.environ['RUNNER_TEMP'])/'rear-demands';out.mkdir()
+          manifest=[]
+          for artifact in selected:
+              target=out/'temporary-source.zip'
+              with target.open('wb') as f:subprocess.run(['gh','api',f"repos/{repo}/actions/artifacts/{artifact['id']}/zip"],stdout=f,check=True)
+              actual='sha256:'+hashlib.sha256(target.read_bytes()).hexdigest()
+              if actual!=artifact['digest']:raise ValueError('Actual workflow artifact checksum differs')
+              folder=out/artifact['name'];folder.mkdir()
+              names=[]
+              with zipfile.ZipFile(target) as z:
+                  for entry in z.infolist():
+                      name=Path(entry.filename).name
+                      allowed=(artifact['name']=='rear-development-input' and not entry.is_dir()
+                          or artifact['name']=='rear-development96-summary' and name=='rear-development-summary.json'
+                          or artifact['name'].startswith('rear-development-shard-') and re.fullmatch(r'case-\d\d.json.gz',name))
+                      if allowed:
+                          if (folder/name).exists():raise ValueError('Duplicate actual response filename')
+                          (folder/name).write_bytes(z.read(entry));names.append(name)
+              manifest.append({'id':artifact['id'],'name':artifact['name'],'digest':actual,'extracted':names,'expiresAt':artifact['expires_at']})
+              target.unlink()
+          (out/'artifact-identities.json').write_text(json.dumps({'run':run,'physicalSourceCommit':status['head_sha'],'artifacts':manifest},sort_keys=True))
+          PY
+      - name: Revalidate source packet and consume every authenticated simultaneous vector
+        run: |
+          "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/rear_bearing_signed_development.py restore --input "$RUNNER_TEMP/rear-demands/rear-development-input/finite-signed-input.json"
+          "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/rear_bearing_signed_demands.py --proof "$RUNNER_TEMP/rear-demands/rear-development96-summary/rear-development-summary.json" --input "$RUNNER_TEMP/rear-demands/rear-development-input/finite-signed-input.json" --captures "$RUNNER_TEMP/rear-demands" --out "$RUNNER_TEMP/rear-demands/simultaneous-rear-demands.json" > "$RUNNER_TEMP/rear-demands/demands.log" 2>&1
+      - name: Show actual simultaneous governing records
+        if: always()
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          p=Path(os.environ['RUNNER_TEMP'])/'rear-demands/demands.log'
+          if p.exists():print(p.read_text()[-60000:],flush=True)
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: rear-bearing-simultaneous-demands
+          path: |
+            ${{ runner.temp }}/rear-demands/artifact-identities.json
+            ${{ runner.temp }}/rear-demands/simultaneous-rear-demands.json
+            ${{ runner.temp }}/rear-demands/demands.log
+            ${{ runner.temp }}/rear-demands/rear-development96-summary/rear-development-summary.json
+          if-no-files-found: warn
+          retention-days: 90

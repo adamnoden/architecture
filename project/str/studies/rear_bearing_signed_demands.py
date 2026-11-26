@@ -1,0 +1,160 @@
+"""Read-only simultaneous rear lintel/seat demands from authenticated actual96 captures.
+
+No section actions are combined across source cases. This consumer does not
+change geometry, solve, select a material grade or qualify resistance.
+"""
+import argparse
+import gzip
+import hashlib
+import json
+import math
+from pathlib import Path
+
+ACTIONS=('axialCompressionKN','shearYKN','shearZKN','torsionKNm','bendingYKNm','bendingZKNm')
+
+def sha(data):return hashlib.sha256(data).hexdigest()
+def canonical(value):return json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False).encode()
+def number(value):
+    if type(value) not in (int,float) or not math.isfinite(value):raise ValueError('Finite signed action or physical coordinate required')
+    return value
+def near(a,b,tol=1e-7):
+    if abs(number(a)-number(b))>tol:raise ValueError('Actual lintel geometry or bearing integration differs')
+
+def cut_record(row,index,geometry,choices):
+    if not row['memberId'].startswith('REAR-LINTEL/') or row['kind']!='seated-wet-beam':raise ValueError('Actual source lintel member required')
+    end=row['end']
+    if end is not None and (type(end) is not int or end not in (0,1)):raise ValueError('Native endpoint sign convention differs')
+    if end is None and (row.get('cutSide') not in ('left','right') or not 0<number(row['fraction'])<1):raise ValueError('Native interior side/fraction required')
+    near(row['breadthMm'],choices['lintelWidthMm']);near(row['depthMm'],choices['lintelDepthMm'])
+    p=row['physicalPointMm']
+    if len(p)!=3:raise ValueError('Actual three-dimensional cut required')
+    x,y,z=map(number,p);near(x,geometry['axisXMm'])
+    near(z,(geometry['lintelTopZMm']+geometry['lintelBottomZMm'])/2)
+    rectangle=geometry['lintelRectangleXYMm']
+    if not rectangle[1]-1e-7<=y<=rectangle[3]+1e-7:raise ValueError('Cut outside actual lintel')
+    vector=[number(row[k]) for k in ACTIONS]
+    # Native end0 and interior report the left resultant. At end1 only N was
+    # already sign-flipped by _physical_cut_rows; the other5 are outward actions.
+    if end==1:vector=[vector[0],*[-v for v in vector[1:]]]
+    return {'windIndex':index,'memberId':row['memberId'],'end':end,
+        'cutSide':row.get('cutSide'),'fraction':row.get('fraction'),'physicalPointMm':list(p),
+        'leftResultantKN_KNm':vector,'nativeCut':row}
+
+def seat_records(rows,index,geometry,choices,retained):
+    rectangles=[*geometry['bearingRectanglesXYMm'],*retained]
+    order=choices['bearingQuadratureOrder'];expected={f'REAR-BEARING/{s}/{i}' for s in range(len(rectangles)) for i in range(order*order)}
+    if len(rows)!=len(expected) or {r['id'] for r in rows}!=expected:raise ValueError('Exact physical seat fibre catalogue required')
+    result=[]
+    for side,rectangle in enumerate(rectangles):
+        fibres=sorted((r for r in rows if r['id'].split('/')[1]==str(side)),key=lambda r:r['id'])
+        area=(rectangle[2]-rectangle[0])*(rectangle[3]-rectangle[1])
+        near(math.fsum(number(r['areaMm2']) for r in fibres),area,1e-5)
+        for r in fibres:
+            x,y=map(number,r['xyMm'])
+            if not rectangle[0]<x<rectangle[2] or not rectangle[1]<y<rectangle[3] or number(r['areaMm2'])<=0:raise ValueError('Actual bearing point/area outside physical seat')
+            if type(r['topActive']) is not bool:raise ValueError('Actual unilateral contact state required')
+            near(number(r['baseCompressionKN'])-number(r['topCompressionKN'])-number(r['bodyOwnFactoredGKN'])-number(r['beddingOwnFactoredGKN'])/2,0.)
+            if r['topCompressionKN'] < -1e-7 or r['baseCompressionKN'] < -1e-7:raise ValueError('Compression-only seat developed tension')
+        top=math.fsum(r['topCompressionKN'] for r in fibres);base=math.fsum(r['baseCompressionKN'] for r in fibres)
+        centre=[(rectangle[0]+rectangle[2])/2,(rectangle[1]+rectangle[3])/2]
+        def resultant(key):
+            force=math.fsum(r[key] for r in fibres)
+            mx=math.fsum((r['xyMm'][1]-centre[1])*r[key]/1000 for r in fibres)
+            my=-math.fsum((r['xyMm'][0]-centre[0])*r[key]/1000 for r in fibres)
+            centroid=None if abs(force)<1e-10 else [math.fsum(r['xyMm'][j]*r[key] for r in fibres)/force for j in (0,1)]
+            return {'upwardOnLintelKN':force,'momentAboutPatchCentreKNm':[mx,my,0.],
+                'compressionCentroidXYMm':centroid,'maximumFibrePressureMPa':max(r[key]*1000/r['areaMm2'] for r in fibres)}
+        result.append({'windIndex':index,'seatId':str(side),'kind':'primary-seat' if side<2 else 'retained-cross-wall-seat',
+            'rectangleXYMm':rectangle,'areaMm2':area,'activeTopAreaMm2':math.fsum(r['areaMm2'] for r in fibres if r['topActive']),
+            'centroidXYMm':centre,'top':resultant('topCompressionKN'),'base':resultant('baseCompressionKN'),
+            'fullSignedFibreRows':fibres})
+    return result
+
+def case_demands(capture,index):
+    if capture['windIndex']!=index:raise ValueError('Captured source case differs')
+    result=capture['result'];actual=result['actualReplacement'];geometry=actual['geometry'];choices=result['choices']
+    if choices['lintelWidthMm']!=200 or choices['lintelDepthMm']!=300:raise ValueError('This consumer owns actual200x300 comparison only')
+    ends=actual['lintelMemberCuts'];interior=actual['lintelInteriorMemberCuts'];members={}
+    for row in ends:
+        member=members.setdefault(row['memberId'],{})
+        if row['end'] in member:raise ValueError('Duplicate lintel endpoint')
+        member[row['end']]=row
+    if not members or any(set(v)!={0,1} for v in members.values()):raise ValueError('Both actual ends of every lintel segment required')
+    stations=[]
+    for name,ends_by_id in members.items():
+        a=ends_by_id[0]['physicalPointMm'];b=ends_by_id[1]['physicalPointMm']
+        if b[1]<=a[1] or a[0]!=b[0] or a[2]!=b[2]:raise ValueError('Actual positive-Y lintel local basis differs')
+        stations.append((a[1],b[1]))
+    ordered=sorted(stations)
+    near(ordered[0][0],geometry['lintelRectangleXYMm'][1]);near(ordered[-1][1],geometry['lintelRectangleXYMm'][3])
+    for a,b in zip(ordered,ordered[1:]):near(a[1],b[0])
+    cuts=[];seen=set()
+    for row in [*ends,*interior]:
+        if row['memberId'] not in members:raise ValueError('Interior cut on uncatalogued member')
+        record=cut_record(row,index,geometry,choices)
+        key=(record['memberId'],record['end'],record['cutSide'],tuple(record['physicalPointMm']))
+        if key in seen:raise ValueError('Duplicate physical lintel cut')
+        seen.add(key);cuts.append(record)
+    seats=seat_records(actual['bearingBodies'],index,geometry,choices,actual['retainedCrossWallSeatRectanglesXYMm'])
+    return {'windIndex':index,'catalogueRow':capture['catalogueRow'],'cuts':cuts,'seats':seats,
+        'geometry':geometry,'choices':choices}
+
+def envelope(records,vector_key,labels):
+    if not records:raise ValueError('Actual simultaneous records required')
+    output={}
+    for axis,label in enumerate(labels):
+        for sign,title in ((1,'maximum'),(-1,'minimum')):
+            row=max(records,key=lambda r:sign*r[vector_key][axis])
+            output[label+'/'+title]={'componentValue':row[vector_key][axis],'fullSimultaneousRecord':row}
+    return output
+
+def collect(proof_path,packet_path,captures,out):
+    from current_finite_joint_signed_proof import admit_packet,make_case,digest
+    proof_bytes=Path(proof_path).read_bytes();proof=json.loads(proof_bytes);packet=json.loads(Path(packet_path).read_bytes())
+    admit_packet(packet)
+    if (proof['status']!='all96-current-source-programmes-replayed' or proof['caseCount']!=96 or proof['parentInputSHA256']!=digest(packet)
+        or proof['sourceCommit']!=packet['sourceCommit'] or set(proof['captureIdentities'])!={str(i) for i in range(96)}):
+        raise ValueError('Complete authenticated actual96 proof required')
+    cases=[];geometry=None;choices=None
+    for index in range(96):
+        paths=list(Path(captures).rglob(f'case-{index:02}.json.gz'))
+        if len(paths)!=1:raise ValueError('Exactly one actual physical case required')
+        compressed=paths[0].read_bytes();data=gzip.decompress(compressed);identity=proof['captureIdentities'][str(index)]
+        if sha(compressed)!=identity['gzipSHA256'] or sha(data)!=identity['rawSHA256']:raise ValueError('Actual signed response bytes changed')
+        capture=json.loads(data);result=capture['result']
+        if (capture['parentInputSHA256']!=proof['parentInputSHA256'] or capture['derivedNativeCaseSHA256']!=digest(make_case(packet,index))
+            or capture['catalogueRow']!=packet['catalogue'][index] or result['rawCheckpointSHA256']!=identity['checkpointSHA256']
+            or result['sourceSHA256']!=proof['sourceSHA256'] or result['methodSHA256']!=proof['rearMethodSHA256']):
+            raise ValueError('Physical source/geometry/action authority differs')
+        current=case_demands(capture,index)
+        if geometry is None:geometry=current['geometry'];choices=current['choices']
+        if current['geometry']!=geometry or current['choices']!=choices:raise ValueError('A changed seat/section cannot reuse this demand envelope')
+        cases.append(current)
+    cuts=[r for c in cases for r in c['cuts']];seats=[r for c in cases for r in c['seats']]
+    seat_envelope={}
+    for side in range(4):
+        local=[r for r in seats if r['seatId']==str(side)]
+        for location in ('top','base'):
+            for key in ('upwardOnLintelKN','maximumFibrePressureMPa'):
+                row=max(local,key=lambda r:r[location][key])
+                seat_envelope[f'{side}/{location}/{key}']={'value':row[location][key],'fullSimultaneousRecord':row}
+    output={'schema':'str-rear-bearing-simultaneous-demands/1','sourceCommit':proof['sourceCommit'],
+        'proofSHA256':sha(proof_bytes),'parentInputSHA256':proof['parentInputSHA256'],
+        'consumerSHA256':sha(Path(__file__).read_bytes()),'sourceSHA256':proof['sourceSHA256'],
+        'rearMethodSHA256':proof['rearMethodSHA256'],'geometry':geometry,'choices':choices,
+        'actionOrder':list(ACTIONS),'localBasis':{'axisGlobal':[0,1,0],'yGlobal':[1,0,0],'zGlobal':[0,0,-1]},
+        'caseCount':96,'cutCount':len(cuts),'seatCount':len(seats),'cases':cases,
+        'signedCutReviewIndex':envelope(cuts,'leftResultantKN_KNm',ACTIONS),'seatReviewIndex':seat_envelope,
+        'scope':'Every simultaneous physical section vector retained. Review extrema are indices, never a synthetic combined load. Normal springs transmit no horizontal force/torsion through seats. This is not a resistance or altered-geometry demand proof.',
+        'resistanceAccepted':False,'currentSavedEngineeringDocumentAdmitted':proof.get('currentSavedEngineeringDocumentAdmitted',True),
+        'candidateAccepted':False,'ownerAccepted':False}
+    admit_packet(packet)
+    Path(out).parent.mkdir(parents=True,exist_ok=True);Path(out).write_bytes(canonical(output))
+    print('REAR_DEMAND_SUMMARY '+json.dumps({'caseCount':96,'cutCount':len(cuts),'seatCount':len(seats),
+        'signedCutReviewIndex':output['signedCutReviewIndex'],'seatReviewIndex':seat_envelope},separators=(',',':'),allow_nan=False),flush=True)
+    return output
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    for field in ('proof','input','captures','out'):parser.add_argument('--'+field,required=True)
+    args=parser.parse_args();collect(args.proof,args.input,args.captures,args.out)
