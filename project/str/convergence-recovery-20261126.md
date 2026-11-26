@@ -87,3 +87,13 @@ Current submitted head **0d20523d8a50e14c2ed75ea7866293085179444c**, treee25fa5b
 Stop category: execution-limit. Selected executor remains explicitly unavailable; final guarded ground recapture, current projection regeneration, water4th saved test and uniform250 completion remain unobserved. Both workers are recording bounded remote checkpoints and canonical handoff releases through gateway1089, then verifying actual runtime records. Read those records for observed release outcome; this note is not a lease. No eligible-frontier exhaustion or permission requirement is asserted.
 
 Resume: freshmain/occupancy, acquire appropriate recovery generations, inspect0d20523d exact-head results, correct PR declarations to the actual leases, obtain fresh all-packet publication preflight and merge1627 when earned. Recover the retained ground/water work and local-only followups described above. Do not reuse a green result or preflight from dcfc or firstPR1626 as validation for0d20523d.
+
+## Verified final handoff
+
+At02:02:42UTC main remains83f8cb6509df7768e2777ece378f1bca3e2f43fc and1627 remains OPEN/unmerged at0d20523d8a50e14c2ed75ea7866293085179444c. Session observation span22:18:50.254Z25November→02:02:42.247Z26November is224minutes rounded, including CI/waits; no parallel labour-hours estimate.
+
+Canonical STR60 release request7180376019→bot7180384603 and runtime blob83e90bff3bcfbbcda88a3783bd446368a671db11 show released/handoff at02:01:35UTC. HAD64 release7180388949 and runtime blobd86d006aaafbe5b7fa66cf48c8dbd8d9e7d926e0 show released/handoff at02:02:17UTC. No live lease is intentionally retained by these workers. Fresh recovery acquisition and declaration reconciliation are required; no future background merge is promised.
+
+Source graph unchanged:147/186done(79.03%),6ready,31blocked,2held,0active,0cancelled before→after;0packet closures,0added/reopened scope,1substantive PR merged,0administrative packet completions. Roof/rainwater and whole-house gates remain blocked; no newly ready canonical node is claimed. Live availability outside these two released records was not re-dispatched after executor loss.
+
+Cleanup residue intentionally retained: merged-first branch work/convergence-structure-20261125; open1627 work/convergence-bed-water-20261125; contour recovery work/convergence-contour-residency-20261125; ground code/handoff work/convergence-ground-pockets-20261126; raw water work/convergence-wet-service-suite-20261125 and original recovery refs. No branch deletion or clean-worktree claim after outage. Local-only final guards/account/witness changes and uniform500 capture require inspection/reexecution as detailed above. This is an execution-limit handoff with useful remaining work, not an exhausted frontier or selected house.
