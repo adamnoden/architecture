@@ -136,6 +136,8 @@ jobs:
           OMP_NUM_THREADS: '1'
         run: |
           python -B project/str/studies/service_room_ground_test.py
+          python -B project/str/studies/service_room_ground_receivers_test.py
+          python -B project/str/studies/grid_origin_recovery_test.py
           python -B project/str/studies/service_room_ground_proof.py --check
           node --import tsx --test compiler/reference-house/current-design-ground-pockets.test.ts
           python - <<'PY'

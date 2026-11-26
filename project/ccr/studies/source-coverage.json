@@ -1108,7 +1108,8 @@
         "project/str/studies/wet_masonry_arch_bed_test.py",
         "compiler/reference-house/current-design-lower-masonry.test.ts",
         "compiler/reference-house/current-design-ground-pockets.test.ts",
-        "project/str/studies/service_room_ground_test.py"
+        "project/str/studies/service_room_ground_test.py",
+        "project/str/studies/service_room_ground_receivers_test.py"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
@@ -1153,7 +1154,8 @@
         "python3 -B project/str/studies/wet_masonry_arch_bed_proof.py --check",
         "node --import tsx --test compiler/reference-house/current-design-lower-masonry.test.ts",
         "python3 -B project/str/studies/service_room_ground_test.py",
-        "node --import tsx --test compiler/reference-house/current-design-ground-pockets.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-ground-pockets.test.ts",
+        "python3 -B project/str/studies/service_room_ground_receivers_test.py"
       ],
       "historicalInputs": [
         "project/str/studies/seated-pre-nodal-history.json",
@@ -3092,8 +3094,8 @@
     "project/had/studies/inlet-source-envelope.results.json": "97c91633ef6b3b6036c62c71b0ca6437299397fa",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
     "compiler/reference-house/current-design/engineering-edit.ts": "904a839f0f201aa081022853b46aa80f445c5c6a",
-    "project/ade/browser-editor/engineering-api.ts": "f188be9b16cac18601b220d356403d8aa8cfaae6",
-    "project/ade/browser-editor/engineering-editor.ts": "4d046cdeed07b4178689ccd1c87e822fd3c7c609",
+    "project/ade/browser-editor/engineering-api.ts": "3660ede1f4281289a0bd05f330c1977a1930df00",
+    "project/ade/browser-editor/engineering-editor.ts": "7fe9e4bf7d2528d320878ba93af965e98655077f",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
     "project/str/studies/named_plate_load.py": "bb85eb7836d4ff1bccff91729a31112ac1f961cb",
     "project/str/studies/roof_bearing_trace.py": "09aa8236bfedee0289dcdf0a5a275b9e1ec646ef",
@@ -3374,16 +3376,17 @@
     "compiler/reference-house/current-design/inlet-known-gravity.ts": "41695cf1a9393c76c4a200021e0e706f38111244",
     "compiler/reference-house/current-design/structural-ground-pockets.ts": "3db5096c451a481fe9dd4edf10d8a6ec3abde6c3",
     "compiler/reference-house/current-design/structural-ground-pocket-settings.ts": "1a2ee5b2065bc30c68a053c0c5f4ca2fcea1810c",
-    "project/str/studies/service_room_ground.py": "8d473543a435f4735cf99d7591c92a4f7d68fa7a",
-    "compiler/reference-house/current-design-ground-pockets.test.ts": "9690bbc1b27fd5a7e7892799ddfa18b65b0fbd02",
+    "project/str/studies/service_room_ground.py": "3156ac847cecc94f697e50d35cff7b2046d633e6",
+    "compiler/reference-house/current-design-ground-pockets.test.ts": "9dbfab46c03cbf478f7e37cc392815d33945bb7c",
     "project/str/studies/service_room_ground_test.py": "198df7ede9091c82ba5675cd2920875b1de111f6",
-    "project/str/studies/service_room_ground_proof.py": "e8b42097207997b5c39176054fb8c2d7e0307c65",
+    "project/str/studies/service_room_ground_proof.py": "fe3ceeb0ca5e656d2078251ae3b5742df8f994f7",
     "project/str/studies/service-room-ground-observed-two-room-20261126.json": "96dd67095ab00f4d3ee95fd7c4213fbe63023b18",
     "project/str/studies/service-room-ground-observed-two-room-20261126.tar.xz": "9a519d97c636a80a53ed1c6016bd04f5aeeba319",
     "project/str/studies/service-room-ground-comparison.json": "80fa32f975640b4c0cb729a059c50c491bf4294c",
     "project/str/studies/service-room-ground-comparison-captures.tar.xz": "0c31fc9ed51e1ca7d549100d22b08ff3dd95bf7f",
     "compiler/reference-house/current-design/inlet-open-closed-outfall.ts": "2561bc047ea2b2a0428b26e732fefe8dd9c9ffaa",
     "compiler/reference-house/current-design-inlet-open-closed-outfall.test.ts": "a3bd891e5985278a7f0d12c7f0055ab75eeda382",
-    "project/had/studies/inlet-open-closed-outfalls.svg": "70a48b0a0c195719682d1bd1429c17536c911a64"
+    "project/had/studies/inlet-open-closed-outfalls.svg": "70a48b0a0c195719682d1bd1429c17536c911a64",
+    "project/str/studies/service_room_ground_receivers_test.py": "bfaba02d53038942daa121e6e305bb2512a1e275"
   }
 }

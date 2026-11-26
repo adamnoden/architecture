@@ -110,17 +110,76 @@ def plate_trace(points,cells,x,y):
             return [(points[p],[0,0,v,0,0,0]) for p,v in zip([(a,b),(c,b),(c,d),(a,d)],n) if v]
     raise ValueError('No physical plate at mineral top contact')
 
-def install(model,bodies,choice):
-    choice=settings(choice)
-    if not choice['enabled']:return {'enabled':False,'removedNativeGKN':0,'bodies':[]}
-    if not isinstance(bodies,list) or not 1<=len(bodies)<=3:raise ValueError('Explicit nonempty bounded physical body set required')
-    bodies=distinct_bodies(bodies)
-    frame=model['model'];members=grid_member_geometry(model);beams=[]
+def beam_footprints(members):
+    beams=[]
     for row in members.values():
         a,b=row['physicalStartMm'],row['physicalEndMm'];half=row['widthMm']/2
         if a[0]==b[0]:beams.append([a[0]-half,min(a[1],b[1]),a[0]+half,max(a[1],b[1])])
         elif a[1]==b[1]:beams.append([min(a[0],b[0]),a[1]-half,max(a[0],b[0]),a[1]+half])
         else:raise ValueError('Only actual axis-aligned ground receivers supported')
+    return beams
+
+def contact_specifications(model,body,members,choice):
+    """One physical partition and work-map route for preparation and assembly."""
+    beams=beam_footprints(members)
+    for ci,contact in enumerate(body['disjointContactRectanglesXYMm']):
+        for si,cell in enumerate(partition_contact(contact,beams,choice['contactPitchMm'])):
+            a,b,c,d=cell;area=(c-a)*(d-b)/4
+            for ii,xi in enumerate(GAUSS):
+                for jj,eta in enumerate(GAUSS):
+                    x=(a+c)/2+xi*(c-a)/2;y=(b+d)/2+eta*(d-b)/2
+                    route=grid_vertical_point_terms(model,members,[x,y,-180.])
+                    if not route or 'routeKind'in route or route['memberId'] not in members or abs(route['topZMm']+180)>1e-7:raise ValueError('Actual beam-only mineral receiver at−180 required')
+                    yield {'key':f'{ci}/{si}/{ii}/{jj}','xyMm':[x,y],'areaMm2':area,'route':route}
+
+def prepare_receiver_origins(model,bodies,choice):
+    """Declare all service receivers before old core/foundation G is applied."""
+    from grid_origin_recovery import initialise_grid_origins
+    if model.get('lowerCoreBodies') is not None or model.get('foundationWeight') is not None or model.get('wetGridOrigins',{}).get('adapters'):
+        raise ValueError('Ground receivers must be declared before source gravity adapters complete')
+    members=grid_member_geometry(model)
+    ids=sorted({s['route']['memberId'] for body in bodies for s in contact_specifications(model,body,members,choice)})
+    if not ids:raise ValueError('Actual nonempty service receiver set required')
+    temporary={};initialise_grid_origins(temporary,members,ids)
+    if 'wetGridOrigins' not in model:initialise_grid_origins(model,members,ids)
+    else:model['wetGridOrigins']['members'].update(temporary['wetGridOrigins']['members'])
+    model['serviceRoomGroundReceiverIds']=ids
+
+def recover_receiver_cuts(model,raw,installed,post_responses,g_factor):
+    """Postprocess real body forces once; never reapply them to the solve."""
+    from grid_origin_recovery import _validate_adapter,recover_wet_receiving_grid
+    from rc_floor_house_loads import consistent_member_point_load
+    if not installed['enabled']:return None
+    ids=model.get('serviceRoomGroundReceiverIds')
+    fibres=[f for body in installed['bodies'] for f in body['fibres']]
+    if not ids or sorted({f['receiverId'] for f in fibres})!=ids or len({f['id'] for f in fibres})!=len(fibres):raise ValueError('Actual service receiver/fibre catalogue differs from preparation')
+    ledger=copy.deepcopy(model['wetGridOrigins']);expected=[{'id':f['id']+'/base-G','memberId':f['receiverId'],'centroidXYMm':f['xyMm'],'physicalDownKN':f['serialLaw']['bodyPhysicalGKN']/2} for f in fibres]
+    adapter='ground-pocket/mineral-base-G'
+    if _validate_adapter(ledger,adapter,expected)!=ledger['adapters'].get(adapter):raise ValueError('Service base-half gravity capture changed')
+    actual_service=[s['id'] for s in model['model'].springs if s['id'].startswith('STR/HAD/GROUND/') and '/mineral/' in s['id']]
+    expected_service={f['id']+'/'+end for f in fibres for end in ('body','top')}
+    reported_service=[s['id'] for s in raw['springs'] if s['id'].startswith('STR/HAD/GROUND/') and '/mineral/' in s['id']]
+    if len(actual_service)!=len(set(actual_service)) or set(actual_service)!=expected_service or len(reported_service)!=len(expected_service) or set(reported_service)!=expected_service:raise ValueError('Missing or duplicate actual service spring')
+    states={r['id']:r for r in raw['springs']}
+    for f in fibres:
+        spring=states[f['id']+'/body'];row=ledger['members'][f['receiverId']];point=[*f['xyMm'],-180.]
+        context={'model':model['model'],'request':{'frameLaw':model['request']['gridLaw']}}
+        unit=consistent_member_point_load(context,row,point,[0,0,1.]);terms={n:v for n,v in spring['terms']};declared={n:v for n,v in f['receiverTerms']}
+        if any(abs(a+b)>1e-8 or abs(a-c)>1e-8 for k,n in enumerate((row['a'],row['b'])) for a,b,c in zip(unit[6*k:6*k+6],terms.get(n,[0.]*6),declared.get(n,[0.]*6))):raise ValueError('Service body lower work trace changed')
+        ledger['points'].append({'id':'solved/'+f['id']+'/body','adapter':'ground-pocket/solved-body','memberId':f['receiverId'],'pointXYZMm':point,'forceKN':[0,0,spring['forceKN']],'momentKNmm':[0,0,0],'family':'solved-interface'})
+    shadow={**model,'wetGridOrigins':ledger}
+    if 'seatedWetSupport' not in shadow:shadow['seatedWetSupport']={'posts':[]}
+    result=recover_wet_receiving_grid(shadow,raw,post_responses,g_factor)
+    result.update(serviceReceiverIds=ids,actualServiceBodyOriginIds=['solved/'+f['id']+'/body' for f in fibres],
+        scope='Actual declared service and wet-post receiver members, discrete normal/body contacts, captured old core/foundation G and executed simultaneous case. No complete signed envelope, reinforcement, joint, ground or installation resistance is accepted.')
+    return result
+
+def install(model,bodies,choice):
+    choice=settings(choice)
+    if not choice['enabled']:return {'enabled':False,'removedNativeGKN':0,'bodies':[]}
+    if not isinstance(bodies,list) or not 1<=len(bodies)<=3:raise ValueError('Explicit nonempty bounded physical body set required')
+    bodies=distinct_bodies(bodies)
+    frame=model['model'];members=grid_member_geometry(model)
     added={};output=[];expected=[0.]*6
     for body in bodies:
         identifier='STR/HAD/GROUND/'+body['id'];r=body['rcRectangleXYMm'];cells,_=plate_cells([r],[],choice['platePitchMm'])
@@ -137,33 +196,34 @@ def install(model,bodies,choice):
             for node,value in zip(nodes,unit[::3]):_add(added,node,[0,0,value*pressure,0,0,0])
             elements.append({'rectangleXYMm':cell,'nodes':nodes,'physicalK':k,'unitPressureLoadMm2':unit,'energyReconstructionRelativeError':error})
         fibres=[]
-        for ci,contact in enumerate(body['disjointContactRectanglesXYMm']):
-            for si,cell in enumerate(partition_contact(contact,beams,choice['contactPitchMm'])):
-                a,b,c,d=cell;area=(c-a)*(d-b)/4
-                for ii,xi in enumerate(GAUSS):
-                    for jj,eta in enumerate(GAUSS):
-                        x=(a+c)/2+xi*(c-a)/2;y=(b+d)/2+eta*(d-b)/2
-                        route=grid_vertical_point_terms(model,members,[x,y,-180.])
-                        if not route or 'routeKind'in route or route['memberId'] not in members or abs(route['topZMm']+180)>1e-7:raise ValueError('Actual beam-only mineral receiver at−180 required')
-                        name=identifier+f'/mineral/{ci}/{si}/{ii}/{jj}'
-                        weight=area*150/1e9*body['mineralUnitWeightKNPerM3'];serial=serial_body_law(area,150,choice['mineralModulusMPa'],choice['jointComplianceMmPerMPa'],weight)
-                        # This is the existing lower serial-body scalar class,
-                        # including its five absent-axis gauges and reversible
-                        # kb+kc coordinate scaling. Preserve even tiny exact
-                        # contact cells; neither physical stiffness nor G is
-                        # scaled in the model/independent source ledger.
-                        node=frame.node('LOWER-CORE/body-top/'+name,[x,y,-30.]);upper=[(node,[0,0,1,0,0,0])]
-                        for axis in (0,1,3,4,5):frame.fixed[node,axis]=0.;gauges.append((node,axis))
-                        if not hasattr(frame,'internalScalarCoordinateScales'):frame.internalScalarCoordinateScales={}
-                        coordinate_scale=1/math.sqrt(serial['bodyAxialStiffnessKNPerMm']+serial['topContactStiffnessKNPerMm'])
-                        frame.internalScalarCoordinateScales[node]=coordinate_scale
-                        frame.springs.append({'id':name+'/body','terms':combine([upper,route['terms']],[1.,-1.]),'stiffness':serial['bodyAxialStiffnessKNPerMm'],'mode':'bilateral','gap':0.})
-                        frame.springs.append({'id':name+'/top','terms':combine([plate_trace(points,cells,x,y),upper],[1.,-1.]),'stiffness':serial['topContactStiffnessKNPerMm'],'mode':'compression','gap':0.})
-                        _add(added,node,[0,0,-weight/2,0,0,0])
-                        for target,row in route['terms']:_add(added,target,[-weight/2*v for v in row])
-                        fibres.append({'id':name,'bodyNode':node,'xyMm':[x,y],'areaMm2':area,'receiverId':route['memberId'],'receiverTerms':route['terms'],'serialLaw':serial,'reversibleBodyScalarCoordinateScale':coordinate_scale})
+        for spec in contact_specifications(model,body,members,choice):
+            x,y=spec['xyMm'];area=spec['areaMm2'];route=spec['route']
+            name=identifier+'/mineral/'+spec['key']
+            weight=area*150/1e9*body['mineralUnitWeightKNPerM3'];serial=serial_body_law(area,150,choice['mineralModulusMPa'],choice['jointComplianceMmPerMPa'],weight)
+            # This is the existing lower serial-body scalar class,
+            # including its five absent-axis gauges and reversible
+            # kb+kc coordinate scaling. Preserve even tiny exact
+            # contact cells; neither physical stiffness nor G is
+            # scaled in the model/independent source ledger.
+            node=frame.node('LOWER-CORE/body-top/'+name,[x,y,-30.]);upper=[(node,[0,0,1,0,0,0])]
+            for axis in (0,1,3,4,5):frame.fixed[node,axis]=0.;gauges.append((node,axis))
+            if not hasattr(frame,'internalScalarCoordinateScales'):frame.internalScalarCoordinateScales={}
+            coordinate_scale=1/math.sqrt(serial['bodyAxialStiffnessKNPerMm']+serial['topContactStiffnessKNPerMm'])
+            frame.internalScalarCoordinateScales[node]=coordinate_scale
+            frame.springs.append({'id':name+'/body','terms':combine([upper,route['terms']],[1.,-1.]),'stiffness':serial['bodyAxialStiffnessKNPerMm'],'mode':'bilateral','gap':0.})
+            frame.springs.append({'id':name+'/top','terms':combine([plate_trace(points,cells,x,y),upper],[1.,-1.]),'stiffness':serial['topContactStiffnessKNPerMm'],'mode':'compression','gap':0.})
+            _add(added,node,[0,0,-weight/2,0,0,0])
+            for target,row in route['terms']:_add(added,target,[-weight/2*v for v in row])
+            fibres.append({'id':name,'bodyNode':node,'xyMm':[x,y],'areaMm2':area,'receiverId':route['memberId'],'receiverTerms':route['terms'],'serialLaw':serial,'reversibleBodyScalarCoordinateScale':coordinate_scale})
+            if 'serviceRoomGroundReceiverIds' in model:
+                from grid_origin_recovery import record_grid_gravity
+                record_grid_gravity(model,'ground-pocket/mineral-base-G',route['memberId'],[x,y],-weight/2,route['terms'],name+'/base-G')
         ledger,wrench=stock_wrench(body);expected=[a+b for a,b in zip(expected,wrench)]
         output.append({'id':body['id'],'geometry':body,'plateLaw':law,'elements':elements,'fibres':fibres,'gauges':gauges,'physicalStock':ledger,'unfactoredGlobalWrenchKN_KNm':wrench})
+    if 'serviceRoomGroundReceiverIds' in model:
+        from grid_origin_recovery import finish_grid_gravity_adapter
+        expected_origins=[{'id':f['id']+'/base-G','memberId':f['receiverId'],'centroidXYMm':f['xyMm'],'physicalDownKN':f['serialLaw']['bodyPhysicalGKN']/2} for body in output for f in body['fibres']]
+        finish_grid_gravity_adapter(model,'ground-pocket/mineral-base-G',expected_origins)
     actual=_family_wrench(model,added);residual=[a-b for a,b in zip(actual,expected)]
     if max(map(abs,residual))>1e-7:raise ValueError('Added physical stock loses independent six-wrench ledger')
     for node,row in added.items():_add(model['families']['physical-G'],node,row)
@@ -226,6 +286,13 @@ def run(request,root=None):
     if old['creditedWeightKN']!=0:raise ValueError('Native already credits ground-floor stock; explicit replacement reconciliation required')
     before=hashlib.sha256((root/METHOD).read_bytes()).hexdigest();captured={};build=native._build_base;solve=native.solve_vertical_frame
     def wrapped_build(*args,**kwargs):
+        if choice['enabled']:
+            previous=kwargs.get('additional_receiver_builder')
+            def prepare(model):
+                receivers=previous(model) if previous is not None else []
+                prepare_receiver_origins(model,bodies,choice)
+                return receivers
+            kwargs['additional_receiver_builder']=prepare
         model=build(*args,**kwargs);model['serviceRoomGround']=install(model,bodies,choice);captured['model']=model;return model
     def wrapped_solve(frame,data):
         raw=solve(frame,data);captured['raw']=raw;return raw
@@ -235,13 +302,14 @@ def run(request,root=None):
     finally:native._build_base=build;native.solve_vertical_frame=solve
     if hashlib.sha256((root/METHOD).read_bytes()).hexdigest()!=before or source['identities']!=native.load_source(root)['identities']:raise ValueError('Ground comparison source changed during execution')
     model=captured['model'];factor=model['houseLoadCase']['boundary']['physicalGFactor'];comparison=finish(model['serviceRoomGround'],captured['raw'],factor)
+    comparison['receiverCutRecovery']=recover_receiver_cuts(model,captured['raw'],model['serviceRoomGround'],output.get('seatedWetSupport',{}).get('posts',[]),factor)
     return {'schema':'str-service-room-ground-response/1','experimentalRequest':copy.deepcopy(request),'sourceSHA256':source['identities'],
         'experimentalMethodSHA256':{METHOD:before},'baselineNativeGroundStockEvidence':old,'removedNativeGKN':0,
         'comparison':comparison,'native':output['nativeVertical']['native'],'mass':output['mass'],'baselineFloorSection':output['floorSection'],
         'candidateAccepted':False,'wholeHouseAccepted':False,'raisedHouseForceReplayAvailable':False,
         'diagnostics':['Only supplied known RC/contact-mineral gravity and explicitly unqualified vertical plate/contact stiffness added. No glass/finish/pan/frame/valve/store/pressure/hydrostatic or complete installed envelope is included.',
             'Actual cold grid remains−180. This is not a530mm translation or an adopted floor/roof/frame/stair revision.',
-            'New east-grid interior load origins are not a complete receiver-cut/resistance proof. Existing wet-grid recovery concerns different receiver members.']}
+            ('Physical end/interior cuts are available on the declared wet/service receivers for this executed discrete case; complete signed demand envelopes and reinforcement/joint/ground resistance remain unqualified.' if comparison.get('receiverCutRecovery') and comparison['receiverCutRecovery']['physicalElementCutsAvailable'] else 'Physical receiver cuts are unavailable for this comparison; no reaction total substitutes for local demand or resistance.')]}
 
 if __name__=='__main__':
     import argparse

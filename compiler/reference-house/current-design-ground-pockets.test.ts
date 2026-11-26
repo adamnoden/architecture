@@ -45,6 +45,7 @@ test('actual saved room geometry feeds pending and computed known ground stock w
  const result=await compileEngineeringDocument(computed),r=result.engineering.groundPocketLoads!
  assert.equal(r.status,'computed-unselected-candidate',JSON.stringify(r.diagnostics));if(r.status!=='computed-unselected-candidate')return
  assert.equal(r.native.heads.length,52);assert.ok(Math.abs(r.comparison.addedPhysicalGKN-48.631071)<1e-8);assert.equal(r.candidateAccepted,false)
+ assert.equal(r.comparison.receiverCutRecovery.physicalElementCutsAvailable,true);assert.equal(r.comparison.receiverCutRecovery.memberIds.length,13);assert.equal(r.comparison.receiverCutRecovery.serviceReceiverIds.length,11);assert.equal(r.comparison.receiverCutRecovery.actualServiceBodyOriginIds.length,696);assert.ok(r.comparison.receiverCutRecovery.memberLoadEquilibrium.maximumResidualKN_KNm<1e-6)
  assert.deepEqual(r.request.nativeCase,p.request.nativeCase);assert.deepEqual(r.request.structuralFloorBodies,p.request.structuralFloorBodies)
  assert.deepEqual(result.engineering.floorSection,pending.engineering.floorSection,'Ordinary frame remains separately identified unchanged control')
  if(process.env.STR_GROUND_POCKET_SAVED_CAPTURE)writeFileSync(process.env.STR_GROUND_POCKET_SAVED_CAPTURE,JSON.stringify({document:computed,groundPocketLoads:r},null,2)+'\n',{flag:'wx'})

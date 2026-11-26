@@ -24,10 +24,14 @@ def receivers(body):
 
 def produce():
     root=D.parents[2];source=load_source(root);current_case=dict(cases(source))['wet-aligned-quadrature8']
-    method='project/str/studies/service_room_ground.py';method_sha=digest((root/method).read_bytes())
+    method='project/str/studies/service_room_ground.py'
     with tarfile.open(ARCHIVE) as archive:
         data={m.name:archive.extractfile(m).read() for m in archive.getmembers() if m.isfile()}
-    if digest(data['source-service_room_ground.py'])!=method_sha:raise ValueError('Archived executed method differs from current comparison')
+    # These five executions are immutable historical three-body specimens.
+    # New two-room receiver recovery is verified by fresh current saved runs;
+    # it must not rewrite old captures as if their new cut fields had existed.
+    method_sha=digest(data['source-service_room_ground.py'])
+    if method_sha!='c70c2726db6eb2f7efc123206b2f86f4e8bad2620452ce8a3e06b8551a23462d':raise ValueError('Historical executed method bytes changed')
     historical=json.loads(data['observed-HAD-local-receipt.json']);historical_sha=digest(data['observed-HAD-local-receipt.json'])
     if historical_sha!='182a05ef48c22ade4b58c9b62dda9d63267703b7de865b20d576ba0c3078d6d4':raise ValueError('Explicit historical HAD source changed')
     captured={name:json.loads(data[name+'.json']) for name in ['off','base','contact125','plate125','halfE']}
@@ -79,4 +83,4 @@ if __name__=='__main__':
     if '--check' in sys.argv:
         if PROOF.read_text()!=content:raise ValueError('Stale known ground comparison')
     else:PROOF.write_text(content)
-    print('Known floor G reaches actual grid; separate contact/plate sensitivity remains unqualified. Current saved route uses fresh HAD bodies.')
+    print('Historical three-body gravity replay retained; current two-room receiver cuts require their fresh saved-source proof.')

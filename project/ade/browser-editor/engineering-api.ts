@@ -62,6 +62,8 @@ export async function runEditorEngineeringRequest(input: unknown) {
     groundPocketLoads:ground?{status:ground.status,controls:ground.controls,diagnostics:ground.diagnostics,
       headCount:ground.status==='computed-unselected-candidate'?ground.native.heads.length:null,
       addedPhysicalGKN:ground.status==='computed-unselected-candidate'?ground.comparison.addedPhysicalGKN:null,
+      receiverCutsAvailable:ground.status==='computed-unselected-candidate'&&ground.comparison.receiverCutRecovery?.physicalElementCutsAvailable===true,
+      receiverMemberCount:ground.status==='computed-unselected-candidate'&&ground.comparison.receiverCutRecovery?.physicalElementCutsAvailable===true?ground.comparison.receiverCutRecovery.memberIds.length:null,
       candidateAccepted:false as const,completeInstalledInventory:false as const}:null,
     studyLighting: lighting ? { svg: lighting.commonDepthCornerSvg, comparison: lighting.lighting.commonDepthCornerComparison } : null,
     plantRoom: inlet?.splitPlantRoom ?? null,
