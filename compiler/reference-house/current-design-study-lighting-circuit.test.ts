@@ -148,12 +148,14 @@ test('manufacturer-supported plugged cassette changes actual projection while pr
 
 test('short prepared flex uses the manufacturer-supported interface and rejects the long stock cord',()=>{
  const r=run(),a=r.circuit.applianceLead
- assert.ok(Math.abs(a.lengthMm-400)<.001)
+ assert.ok(Math.abs(a.lengthMm-425)<.001)
  assert.equal(a.preparation.manufacturerConfigurationSupported,true)
  assert.equal(a.preparation.fittingClass,'II')
- assert.equal(a.preparation.minimumInitialCutMm,500)
+ assert.equal(a.preparation.minimumInitialCutMm,525)
  assert.equal(a.operation.bodySquareContained,true)
- assert.equal(a.operation.parking.containedByActualCarrier,true)
+ assert.equal(a.operation.parking.containedByCarrierHandlingEnvelope,true)
+ assert.ok(a.insideBendMm>=a.requiredBendMm)
+ assert.equal(r.construction.localHomeRunComparison.moduleHandlingXZMm[1],r.construction.localHomeRunComparison.carrierXZMm[1]!-75)
  assert.ok(a.operation.plugWithdrawalChecks.every(p=>p.reserveMm>=5))
  assert.ok(a.operation.furnitureChecks.every(p=>p.reserveMm>=25))
  assert.equal(a.completeFactoryAssemblyGeometryQualified,false)

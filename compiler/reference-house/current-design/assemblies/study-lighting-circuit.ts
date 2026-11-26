@@ -13,7 +13,7 @@ export interface StudyCircuitDesign{
  readonly cables:Readonly<Record<string,{diameterMm:number;areaMm2:number;exposedRatingA:number;mVPerAM:number;r1OhmKm:number;r2OhmKm:number;sheathMm2:number;kgKm:number}>>
  readonly gland:{threadMm:number;projectionMm:number;potMm:number;potDiameterMm:number;locknutCornersMm:number}
  readonly deviceTerminalLimitsMm2:Readonly<Record<'socket'|'switch'|'lamp',number|null>>
- readonly applianceLead:{bendRadiusMm:number;standOffMm:number;diameterRequirementMm:number;plugEnvelopeMm:readonly number[];guideBodyEnvelopeMm:readonly number[];plugDrawMm:number;operatorRadiusMm:number;operatorLeftOfBayMm:number;operatorStandBackMm:number;reachLimitMm:number;flexAreaMm2:number;cutbackAllowanceMm:number}
+ readonly applianceLead:{bendRadiusMm:number;standOffMm:number;diameterRequirementMm:number;plugEnvelopeMm:readonly number[];unpluggedPlugEnvelopeMm:readonly number[];guideBodyEnvelopeMm:readonly number[];plugDrawMm:number;operatorRadiusMm:number;operatorLeftOfBayMm:number;operatorStandBackMm:number;reachLimitMm:number;flexAreaMm2:number;cutbackAllowanceMm:number}
  readonly terminal:{reference:string;maximumMm2:number;ratedA:number;ratedV:number;reservationMm:P}
  readonly evidence:readonly {id:string;url:string;finding:string;retrieval:string}[]
 }
@@ -126,8 +126,8 @@ export function deriveStudyLightingCircuit(b:LightingBasis,h:H,s:StudyCircuitDes
  if(!a||a.flexAreaMm2!==0.75||!fitting||![...Object.values(a).flat(),fitting.leadLengthMm,fitting.projectionMm,...fitting.plugSpaceWitnessMm].every(n=>Number.isFinite(n)&&n>0)||a.plugEnvelopeMm.length!==3||a.guideBodyEnvelopeMm.length!==3)throw TypeError('IAS_APPLIANCE_LEAD_SOURCE_INVALID')
  const outlet=h.boxes[2]!,outletX=(outlet.xMm[0]!+outlet.xMm[1]!)/2,outletZ=(outlet.zMm[0]!+outlet.zMm[1]!)/2
  const fixtureX=h.cableOpening.centreXMm,fixtureZ=h.cableOpening.centreZMm,cordY=h.frontYMm-a.standOffMm
- const leadVertices=(bow:number)=>[[fixtureX,cordY,fixtureZ],[fixtureX+bow,cordY,fixtureZ],[fixtureX+bow,cordY,outletZ],[outletX,cordY,outletZ]]
- let low=a.bendRadiusMm,high=h.bayPlanMm[2]!-fixtureX-a.diameterRequirementMm/2-s.settingMm
+ const leadVertices=(bow:number)=>[[fixtureX,cordY,fixtureZ],[fixtureX,cordY,fixtureZ-a.bendRadiusMm],[fixtureX+bow,cordY,fixtureZ-a.bendRadiusMm],[fixtureX+bow,cordY,outletZ+a.bendRadiusMm],[outletX,cordY,outletZ+a.bendRadiusMm],[outletX,cordY,outletZ]]
+ let low=2*a.bendRadiusMm,high=h.bayPlanMm[2]!-fixtureX-a.diameterRequirementMm/2-s.settingMm
  if(high<low)issues.push('appliance-lead-bay-edge-rejected')
  const minLength=round(leadVertices(low),a.bendRadiusMm).lengthMm,maxLength=round(leadVertices(high),a.bendRadiusMm).lengthMm
  if(fitting.leadLengthMm<minLength||fitting.leadLengthMm>maxLength)issues.push('appliance-lead-length-outside-short-flex-domain')
@@ -137,7 +137,7 @@ export function deriveStudyLightingCircuit(b:LightingBasis,h:H,s:StudyCircuitDes
  const wireVolumes=vertices.slice(1).map((p,i)=>({id:'IAS/STUDY/appliance-lead/'+i,xyzxyzMm:[...p.map((n,j)=>Math.min(n,vertices[i]![j]!)-wireR),...p.map((n,j)=>Math.max(n,vertices[i]![j]!)+wireR)]}))
  const [pw,ph,pd]=a.plugEnvelopeMm
  const plugVolume={id:'IAS/STUDY/lighting-outlet-plug-space-witness',xyzxyzMm:[outletX-pw!/2,h.frontYMm-pd!,outletZ-ph!/2,outletX+pw!/2,h.frontYMm,outletZ+ph!/2]}
- const clips=[vertices[1]!,vertices[2]!].map((p,i)=>({id:'IAS/STUDY/lead-guide/'+i,pointMm:p}))
+ const clips=[vertices[2]!,vertices[3]!].map((p,i)=>({id:'IAS/STUDY/lead-guide/'+i,pointMm:p}))
  const guideVolumes=clips.map(g=>({id:g.id,xyzxyzMm:[...g.pointMm.map((n,i)=>n-a.guideBodyEnvelopeMm[i]!/2),...g.pointMm.map((n,i)=>n+a.guideBodyEnvelopeMm[i]!/2)]}))
  const operator=[h.bayPlanMm[0]!-a.operatorLeftOfBayMm,h.frontYMm-a.operatorStandBackMm],R=a.operatorRadiusMm
  const area=b.room.bands.reduce((n,p)=>n+Math.max(0,Math.min(p[2]!,operator[0]!+R)-Math.max(p[0]!,operator[0]!-R))*Math.max(0,Math.min(p[3]!,operator[1]!+R)-Math.max(p[1]!,operator[1]!-R)),0)
@@ -150,24 +150,25 @@ export function deriveStudyLightingCircuit(b:LightingBasis,h:H,s:StudyCircuitDes
  const operatorFittingReserveMm=Math.hypot(Math.max(fixtureX-fitting.shadeWidthMm/2-operator[0]!,operator[0]!-fixtureX-fitting.shadeWidthMm/2,0),Math.max(h.frontYMm-fitting.projectionMm-operator[1]!,operator[1]!-h.frontYMm,0))-R-2*s.settingMm
  if(Math.min(operatorBayReserveMm,operatorFittingReserveMm)<s.clearanceMm)issues.push('appliance-operator-fixed-body-rejected')
  const unplugSweepXYZMm=[outletX-pw!/2,h.frontYMm-pd!-a.plugDrawMm,outletZ-ph!/2,outletX+pw!/2,h.frontYMm,outletZ+ph!/2]
- const parkedPlugZ=h.carrierXZMm[1]!+100,parkedPlugX=fixtureX
- const parkedVertices=(bottom:number)=>[[fixtureX,cordY,fixtureZ],[fixtureX+30,cordY,fixtureZ],[fixtureX+30,cordY,bottom],[fixtureX+100,cordY,bottom],[fixtureX+100,cordY,parkedPlugZ],[parkedPlugX,h.frontYMm-pd!/2-s.clearanceMm,parkedPlugZ]]
- let pLow=h.carrierXZMm[1]!+wireR+2*s.settingMm+s.clearanceMm,pHigh=Math.min(fixtureZ,parkedPlugZ)-2*a.bendRadiusMm
+ const parkedPlugZ=h.carrierXZMm[1]!+60,parkedPlugX=fixtureX+100,[ppw,pph,ppd]=a.unpluggedPlugEnvelopeMm
+ const parkedVertices=(bottom:number)=>[[fixtureX,cordY,fixtureZ],[fixtureX,cordY,bottom],[parkedPlugX,cordY,bottom],[parkedPlugX,cordY,parkedPlugZ]]
+ let pLow=h.moduleHandlingXZMm[1]!+wireR+s.settingMm,pHigh=Math.min(fixtureZ,parkedPlugZ)-a.bendRadiusMm
  for(let i=0;i<40;i++){const mid=(pLow+pHigh)/2;if(round(parkedVertices(mid),a.bendRadiusMm).lengthMm>fitting.leadLengthMm)pLow=mid;else pHigh=mid}
  const parkedLead=round(parkedVertices((pLow+pHigh)/2),a.bendRadiusMm)
- const parkingContained=parkedLead.pathMm.every(p=>p[0]!-wireR>=h.carrierXZMm[0]!+s.settingMm&&p[0]!+wireR<=h.carrierXZMm[2]!-s.settingMm&&p[2]!-wireR>=h.carrierXZMm[1]!+s.settingMm&&p[2]!+wireR<=h.carrierXZMm[3]!-s.settingMm)&&Math.abs(parkedLead.lengthMm-fitting.leadLengthMm)<.001&&parkedLead.issues.length===0
- if(parkedPlugX-pw!/2<h.carrierXZMm[0]!+s.settingMm||parkedPlugX+pw!/2>h.carrierXZMm[2]!-s.settingMm||parkedPlugZ-ph!/2<h.carrierXZMm[1]!+s.settingMm||parkedPlugZ+ph!/2>h.carrierXZMm[3]!-s.settingMm)issues.push('appliance-parked-plug-envelope-rejected')
+ const parkingContained=parkedLead.pathMm.every(p=>p[0]!-wireR>=h.moduleHandlingXZMm[0]!+s.settingMm&&p[0]!+wireR<=h.moduleHandlingXZMm[2]!-s.settingMm&&p[2]!-wireR>=h.moduleHandlingXZMm[1]!+s.settingMm&&p[2]!+wireR<=h.moduleHandlingXZMm[3]!-s.settingMm)&&Math.abs(parkedLead.lengthMm-fitting.leadLengthMm)<.001&&parkedLead.issues.length===0
+ if(parkedPlugX-ppw!/2<h.moduleHandlingXZMm[0]!+s.settingMm||parkedPlugX+ppw!/2>h.moduleHandlingXZMm[2]!-s.settingMm||parkedPlugZ-pph!/2<h.moduleHandlingXZMm[1]!+s.settingMm||parkedPlugZ+pph!/2>h.moduleHandlingXZMm[3]!-s.settingMm)issues.push('appliance-parked-plug-envelope-rejected')
  if(!parkingContained)issues.push('appliance-unplugged-carrier-parking-rejected')
+ if(a.bendRadiusMm-a.diameterRequirementMm/2<6*a.diameterRequirementMm)issues.push('appliance-flex-bend-rejected')
  const plugSweepBox=[unplugSweepXYZMm[0]!,unplugSweepXYZMm[1]!,unplugSweepXYZMm[2]!,unplugSweepXYZMm[3]!-unplugSweepXYZMm[0]!,unplugSweepXYZMm[4]!-unplugSweepXYZMm[1]!,unplugSweepXYZMm[5]!-unplugSweepXYZMm[2]!]
  const plugRetained=[...h.carrierStripsXZMm.map((p,i)=>({id:'carrier/'+i,box:[p[0]!,coreY-h.carrierDepthMm[1]!,p[1]!,p[2]!-p[0]!,h.carrierDepthMm[1]!-h.carrierDepthMm[0]!,p[3]!-p[1]!]})),...h.boxes.slice(0,2).map(p=>({id:p.id,box:[p.xMm[0]!-7,coreY-h.totalDepthMm,p.zMm[0]!-7,86,h.totalDepthMm-p.depthMm[0]!,86]}))]
  const plugWithdrawalChecks=plugRetained.map(p=>({id:p.id,reserveMm:boxGap(plugSweepBox,p.box)-2*s.settingMm}))
  if(plugWithdrawalChecks.some(p=>p.reserveMm<s.clearanceMm))issues.push('appliance-plug-withdrawal-rejected')
- const applianceLead={fitting,planeYMm:cordY,...lead,diameterRequirementMm:a.diameterRequirementMm,
+ const applianceLead={fitting,planeYMm:cordY,...lead,diameterRequirementMm:a.diameterRequirementMm,insideBendMm:a.bendRadiusMm-a.diameterRequirementMm/2,requiredBendMm:6*a.diameterRequirementMm,
   guides:clips,nominalFixedVolumes:[...wireVolumes,plugVolume,...guideVolumes].map(v=>{if(v.xyzxyzMm.length!==6||!v.xyzxyzMm.every(Number.isFinite))throw TypeError('IAS_APPLIANCE_VOLUME_INVALID');return{...v,xyzxyzMm:v.xyzxyzMm as unknown as Closed6}}),
   plugEnvelopeMm:a.plugEnvelopeMm,plugSpaceAuthority:'Generous authored60x70mm face/30mm installed projection bounds selectedSN1382 3A plug: manufacturer20mm installed projection plus10mm envelope allowance. Actual supplied assembly fit remains unqualified.',
   topology:'One short visible flex bow; no inline switch, hidden coil or cavity storage. Prepared plug/flex/fitting stay together during unplugged cassette renewal.',
-  preparation:{externalLengthMm:fitting.leadLengthMm,cutbackOrderAllowanceMm:a.cutbackAllowanceMm,minimumInitialCutMm:fitting.leadLengthMm+a.cutbackAllowanceMm,flex:'H03VV-F2x0.75 round copper/PVC',conductorMm2:a.flexAreaMm2,plug:'SN1382 BS1363-1,3A fuse, screw cord grip',fittingClass:'II',earth:'No PE connection to ClassII fitting; fixed outlet, boxes, carrier and MI retain their own protective earth',grommet:'100141',strainRelief:'101892',manufacturerConfigurationSupported:true,workshopContinuityInsulationPolarityAndStrainTestsQualified:false},
-  operation:{operatorCentreXYMm:operator,bodyRadiusMm:R,bodySquareContained:operatorSquareContained,furnitureChecks:furniture,furnitureMinimumMm:25,reachLimitMm:a.reachLimitMm,operatorReachMm,operatorBayReserveMm,operatorFittingReserveMm,unplugSweepXYZMm,plugWithdrawalChecks,parking:{path:parkedLead,plugCentreMm:[parkedPlugX,cordY,parkedPlugZ],containedByActualCarrier:parkingContained,sequence:'Isolate/unplug, release open fixed guides, support short flex/plug on the carrier hooks before its ordinary normal draw and first rest. No hidden coil, factory-terminal work or floor-dangling plug.'},handToolAndLoadedHandlingQualified:false},
+  preparation:{externalLengthMm:fitting.leadLengthMm,cutbackOrderAllowanceMm:a.cutbackAllowanceMm,minimumInitialCutMm:fitting.leadLengthMm+a.cutbackAllowanceMm,flex:'Nexans018065107 H03VV-F2x0.75 round copper/PVC',conductorMm2:a.flexAreaMm2,plug:'SN1382 BS1363-1,3A fuse, screw cord grip',fittingClass:'II',earth:'No PE connection to ClassII fitting; fixed outlet, boxes, carrier and MI retain their own protective earth',grommet:'100141',strainRelief:'101892',manufacturerConfigurationSupported:true,workshopContinuityInsulationPolarityAndStrainTestsQualified:false},
+  operation:{operatorCentreXYMm:operator,bodyRadiusMm:R,bodySquareContained:operatorSquareContained,furnitureChecks:furniture,furnitureMinimumMm:25,reachLimitMm:a.reachLimitMm,operatorReachMm,operatorBayReserveMm,operatorFittingReserveMm,unplugSweepXYZMm,plugWithdrawalChecks,parking:{path:parkedLead,plugCentreMm:[parkedPlugX,cordY,parkedPlugZ],containedByCarrierHandlingEnvelope:parkingContained,sequence:'Isolate/unplug, release open fixed guides, support short flex/plug on the carrier hooks before its ordinary normal draw and first rest. No hidden coil, factory-terminal work or floor-dangling plug.'},handToolAndLoadedHandlingQualified:false},
   conditionalCompleteEnvelopeComputed:true,completeFactoryAssemblyGeometryQualified:false,guideCapacityQualified:false,cordReleaseAndLoadedHandlingQualified:false,
   scope:'Conditional complete plug/flex/guide installation envelope. Standard manufacturer-supported workshop cable/plug preparation, not stock-cord shortening. Actual grommet/connector/strain relief, supplied plug/flex and loaded cassette handling remain unqualified.'}
  const phaseAfterA=e.phaseLoadA.map((n,i)=>n+(i===2?s.socket.ratedA+s.lighting.ratedA:0));if(phaseAfterA.some(n=>n>e.nominalAperPhase))issues.push('phase-budget-rejected')

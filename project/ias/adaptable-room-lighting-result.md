@@ -557,7 +557,7 @@ intact whole-house cable extraction.
 Choose the Anglepoise Type80W1 manufacturer-supported external cable/plug
 configuration. Its V5 instructions explicitly provide the optional grommet100141
 and mandatory strain-relief101892, with external cable to the supplied Wago
-connectors. Prepare a400mm external two-core0.75mm² flex and ordinary SN1382
+connectors. Prepare a425mm external two-core0.75mm² flex and ordinary SN1382
 3A fused BS1363-1 plug in the workshop; reserve100mm initial cutback/end allowance,
 not a hidden coil inside either enclosure. Ordinary cassette replacement unplugs
 this prepared assembly without opening fitting terminals or disturbing fixed MI.
@@ -593,3 +593,17 @@ Primary sources: [Type80W1 V5 instructions](https://anglepoise.s3.eu-west-1.amaz
 and [manufacturer-created SN1382 sheet,22May2025](https://www.electrical2go.co.uk/mwdownloads/download/link/id/30680).
 This source checkpoint remains WIP until fresh shared producer/type/geometry/
 renewal tests, regenerated drawings and integration checks are earned.
+
+
+The selected Nexans018065107 flex has max6.3mm diameter and recommends6diameter
+bends. Both live and parked routes use50mm centreline radius: inside46.85mm
+against37.8mm. The four-bend external route needs at least414.16mm, hence425mm
+prepared length and525mm initial cut/order allowance. The frame remains260×450;
+a separate handling envelope adds10mm each side and75mm below for the loose
+short flex and full unplugged52mm-depth plug envelope (manufacturer42mm plus
+10mm allowance). Frame support remains100mm above floor; the declared handling
+envelope starts25mm above it. No metal frame or false floor depth is added.
+The larger260mm fitting gets a350mm-deep temporary rest, extending its front50mm.
+The current actual chair/emitter require a northwest service stance rather than
+standing centrally in the chair field; body, reach and fixed-fitting checks use
+the same source room. These remain conditional geometry, not loaded human proof.

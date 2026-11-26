@@ -119,7 +119,7 @@ try{
  save('candidate-geometry.json',{status:diagnosticResult.lighting.status,issues:diagnosticResult.lighting.circuit.issues,homeRuns:diagnosticResult.lighting.construction.localHomeRunComparison,corner:diagnosticResult.lighting.corner})
  const dr=diagnosticResult.lighting,cr=dr.circuit.closedSourceFloorRenewal
  save('candidate-closed-room.json',cr)
- console.log('CANDIDATE_GEOMETRY '+JSON.stringify({status:dr.status,issues:dr.circuit.issues,local:dr.construction.localHomeRunComparison.issues,rest:dr.construction.localHomeRunComparison.fieldReservesMm,operation:dr.circuit.applianceLead.operation,witnessCount:cr?.ordinaryHandling?.witnessCount,preparation:cr?.preparation,furniture:cr?.furniture,failedParts:cr?.ordinaryHandling?.parts.filter(p=>p.state!=='joined-geometry-witness').slice(0,6)}))
+ console.log('CANDIDATE_GEOMETRY '+JSON.stringify({status:dr.status,issues:dr.circuit.issues,local:dr.construction.localHomeRunComparison.issues,rest:dr.construction.localHomeRunComparison.fieldReservesMm,operation:dr.circuit.applianceLead.operation,witnessCount:cr?.ordinaryHandling?.witnessCount,preparation:cr?.preparation,furniture:cr?.furniture,failedParts:cr?.ordinaryHandling?.parts.filter(p=>p.state!=='joined-geometry-witness').slice(0,10)}))
  if(dr.circuit.issues.length||dr.construction.localHomeRunComparison.issues.length||cr?.status!=='computed-geometry-witnesses')throw Error('Actual candidate geometry rejected; inspect named witnesses before broader tests')
 
 

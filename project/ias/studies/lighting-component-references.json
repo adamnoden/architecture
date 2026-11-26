@@ -77,7 +77,7 @@
     "shadeHeightMm": 160,
     "reservedCompleteProjectionMm": 260,
     "wallPlateDiameterMm": 90,
-    "leadLengthMm": 400,
+    "leadLengthMm": 425,
     "leadLengthAuthority": "Authored external flex length, not factory stock length. Workshop preparation follows manufacturer optional cable/plug configuration.",
     "sourceType": "ClassII, integrated shade switch, max10W LED E27. Manufacturer V5 explicitly permits external cable/plug using grommet100141 and strain relief101892 at provided Wago connectors.",
     "externalPlugConfigurationSupported": true,
@@ -188,7 +188,9 @@
     "sourceRiseMm": 220,
     "upperAccessoryExtensionMm": 16,
     "upperCentreOffsetZMm": -300,
-    "moduleRestFrontExtensionMm": 50
+    "moduleRestFrontExtensionMm": 50,
+    "moduleHandlingSideAllowanceMm": 10,
+    "moduleHandlingBelowAllowanceMm": 75
   },
   "localHomeRunAuthority": "Unselected conventional95mm station; sourcebox and two radial nets specified by shared circuit method.375mm tube origins clear source gland transitions; field boundary remains150mm. Supplied entries, device/earth CAD, physical installation and material admission remain unearned.",
   "localHomeRunSupportReference": {
@@ -428,14 +430,20 @@
       {
         "id": "Type80W1-approved-configuration",
         "url": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf",
-        "finding": "OfficialW1V5 §§7–8 explicitly permit external cable/plug wiring at provided Wago connectors, with grommet100141 and strain-relief101892. Integrated shade switch removes inline switch. Author400mm external2core0.75mm2 flex +100mm cutback/order allowance and conventional3A fused plug; actual complete fit/material/physical qualification remain open.",
+        "finding": "OfficialW1V5 §§7–8 explicitly permit external cable/plug wiring at provided Wago connectors, with grommet100141 and strain-relief101892. Integrated shade switch removes inline switch. Author425mm external2core0.75mm2 flex +100mm cutback/order allowance and conventional3A fused plug; actual complete fit/material/physical qualification remain open.",
         "retrieval": "Official manufacturer PDF and currentW1 product opened26Nov2026;260reach/145shade/160height/90plate. No Type75 shortening permission is inferred."
       },
       {
         "id": "three-amp-rewirable-plug",
         "url": "https://www.electrical2go.co.uk/mwdownloads/download/link/id/30680",
-        "finding": "Manufacturer-createdSN1382 sheet22May2025:3A fused screw-cord-grip BS1363-1 plug,50x52x42mm/20mm projection, polypropylene. Use generous60x70x60mm installed envelope. This is a selected conventional external assembly, not a material exception.",
+        "finding": "Manufacturer-createdSN1382 sheet22May2025:3A fused screw-cord-grip BS1363-1 plug,50x52x42mm/20mm projection, polypropylene. Use generous60x70x30mm installed envelope. This is a selected conventional external assembly, not a material exception.",
         "retrieval": "Manufacturer-authored dated datasheet hosted by distributor; current MLA manufacturer catalogue independently listsSN1382 with3A fuse."
+      },
+      {
+        "id": "selected-appliance-flex",
+        "url": "https://latrivenetacavi.nexans.com/en/products/residential-and-commercial/residential-commercial-Eca-class/H03VV-F38484/",
+        "finding": "Nexans018065107 H03VV-F2x0.75: maxOD6.3mm,6A at30C,26ohm/km, recommended6diameter bend. Use50mm centreline, inside46.85mm against37.8mm, including both installed and parked425mm flex. Cut100mm extra for workshop preparation; no continuous-flex or supplied grommet fit claim.",
+        "retrieval": "Official manufacturer catalogue opened26Nov2026; assembly/material/physical acceptance remains unearned."
       }
     ],
     "deviceTerminalLimitsMm2": {
@@ -444,7 +452,7 @@
       "lamp": 4
     },
     "applianceLead": {
-      "bendRadiusMm": 25,
+      "bendRadiusMm": 50,
       "standOffMm": 25,
       "diameterRequirementMm": 6.3,
       "plugEnvelopeMm": [
@@ -463,7 +471,12 @@
       "reachLimitMm": 600,
       "flexAreaMm2": 0.75,
       "cutbackAllowanceMm": 100,
-      "operatorLeftOfBayMm": 140
+      "operatorLeftOfBayMm": 140,
+      "unpluggedPlugEnvelopeMm": [
+        60,
+        70,
+        52
+      ]
     }
   }
 }

@@ -4,7 +4,7 @@ export interface LocalHomeRunChoices {
   readonly sourceRiseMm:number;readonly bayWidthMm: number; readonly stationOffsetXMm: number; readonly tubeWallMm: number; readonly routeGapMm: number
   readonly lowerPortRearInsetMm: number; readonly maximumClipSpanMm: number; readonly clipEndInsetMm: number
   readonly carrierCentrePlateOffsetXMm: number; readonly minimumResidualMm: number; readonly upperBendClipFraction: number
-  readonly additionalCornerDepthMm:number; readonly accessoryExtensionMm:number; readonly upperAccessoryExtensionMm:number;readonly upperCentreOffsetZMm:number;readonly upperBoxBacksetMm:number; readonly upperPortRearInsetMm:number; readonly moduleRestFrontExtensionMm:number;readonly mainRestSouthShiftMm:number; readonly caseRestSizeMm:number;readonly fixedIslandHeightMm:number
+  readonly additionalCornerDepthMm:number; readonly accessoryExtensionMm:number; readonly upperAccessoryExtensionMm:number;readonly upperCentreOffsetZMm:number;readonly upperBoxBacksetMm:number; readonly upperPortRearInsetMm:number; readonly moduleHandlingSideAllowanceMm:number;readonly moduleHandlingBelowAllowanceMm:number;readonly moduleRestFrontExtensionMm:number;readonly mainRestSouthShiftMm:number; readonly caseRestSizeMm:number;readonly fixedIslandHeightMm:number
 }
 export interface LightingCornerDetailInput {
   readonly homeRuns: LocalHomeRunChoices
@@ -171,9 +171,9 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
  */
 function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   const h = input.homeRuns, c = input.construction
-  const keys = ['sourceRiseMm','bayWidthMm', 'stationOffsetXMm', 'tubeWallMm', 'routeGapMm', 'lowerPortRearInsetMm', 'maximumClipSpanMm', 'clipEndInsetMm', 'carrierCentrePlateOffsetXMm', 'minimumResidualMm', 'upperBendClipFraction', 'additionalCornerDepthMm', 'accessoryExtensionMm', 'upperBoxBacksetMm', 'upperAccessoryExtensionMm', 'upperCentreOffsetZMm', 'upperPortRearInsetMm', 'mainRestSouthShiftMm', 'moduleRestFrontExtensionMm', 'caseRestSizeMm', 'fixedIslandHeightMm']
+  const keys = ['sourceRiseMm','bayWidthMm', 'stationOffsetXMm', 'tubeWallMm', 'routeGapMm', 'lowerPortRearInsetMm', 'maximumClipSpanMm', 'clipEndInsetMm', 'carrierCentrePlateOffsetXMm', 'minimumResidualMm', 'upperBendClipFraction', 'additionalCornerDepthMm', 'accessoryExtensionMm', 'upperBoxBacksetMm', 'upperAccessoryExtensionMm', 'upperCentreOffsetZMm', 'upperPortRearInsetMm', 'mainRestSouthShiftMm', 'moduleRestFrontExtensionMm', 'moduleHandlingSideAllowanceMm', 'moduleHandlingBelowAllowanceMm', 'caseRestSizeMm', 'fixedIslandHeightMm']
   if (!h || Object.keys(h).length !== keys.length || keys.some(k => !Object.hasOwn(h, k))
-    || !Object.entries(h).every(([key,n]) => Number.isFinite(n) && ((['stationOffsetXMm','carrierCentrePlateOffsetXMm','upperCentreOffsetZMm'].includes(key)||(['sourceRiseMm','upperBendClipFraction','additionalCornerDepthMm','accessoryExtensionMm','upperAccessoryExtensionMm','upperBoxBacksetMm','mainRestSouthShiftMm','moduleRestFrontExtensionMm'].includes(key)&&n>=0)) || n > 0))
+    || !Object.entries(h).every(([key,n]) => Number.isFinite(n) && ((['stationOffsetXMm','carrierCentrePlateOffsetXMm','upperCentreOffsetZMm'].includes(key)||(['sourceRiseMm','upperBendClipFraction','additionalCornerDepthMm','accessoryExtensionMm','upperAccessoryExtensionMm','upperBoxBacksetMm','mainRestSouthShiftMm','moduleRestFrontExtensionMm','moduleHandlingSideAllowanceMm','moduleHandlingBelowAllowanceMm'].includes(key)&&n>=0)) || n > 0))
     || h.tubeWallMm * 2 >= c.containmentOutsideDiameterMm || h.upperBendClipFraction < 0 || h.upperBendClipFraction >= 1) throw new TypeError('IAS_LIGHTING_HOME_RUN_INPUT_INVALID')
   if(!Array.isArray(input.floorBandsMm)||!input.floorBandsMm.length||input.floorBandsMm.some(b=>b.length!==4||!b.every(Number.isFinite))) throw new TypeError('IAS_LIGHTING_ROOM_FLOOR_REFERENCE_INVALID')
   const floorGeometryValid=!input.floorBandsMm.some((b,i)=>b[2]!<=b[0]!||b[3]!<=b[1]!||input.floorBandsMm.slice(i+1).some(other=>overlap(b,other)))
@@ -279,16 +279,17 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   if(cableOpening.minimumPlateEdgeReserveMm<h.minimumResidualMm-1e-9) routeIssues.push('home-run-carrier-cable-edge-reserve-rejected')
   const bayPlanMm = [left,frontY,right,north]
   const firstRestPlanMm = [left,input.firstRestPlanMm[1]!-h.mainRestSouthShiftMm-h.moduleRestFrontExtensionMm,right,input.firstRestPlanMm[3]!-h.mainRestSouthShiftMm]
+  const moduleHandlingXZMm=[carrierXZ[0]!-h.moduleHandlingSideAllowanceMm,carrierXZ[1]!-h.moduleHandlingBelowAllowanceMm,carrierXZ[2]!+h.moduleHandlingSideAllowanceMm,carrierXZ[3]!] as const
   const parkedBackY=firstRestPlanMm[3]!-c.cradleBackMarginMm
-  const parkedModulePlanMm=[carrierXZ[0],parkedBackY-input.completeProjectionMm,carrierXZ[2],parkedBackY]
+  const parkedModulePlanMm=[moduleHandlingXZMm[0],parkedBackY-input.completeProjectionMm,moduleHandlingXZMm[2],parkedBackY]
   const fieldReservesMm={ carrierLeft:carrierXZ[0]-left-input.jointMm, carrierRight:right-carrierXZ[2]-input.jointMm,
     boxesLeft:Math.min(...boxes.map(b=>b.xMm[0]!))-left-input.jointMm, boxesRight:right-Math.max(...boxes.map(b=>b.xMm[1]!))-input.jointMm,
     islandsLeft:cx-c.fixedIslandWidthMm/2-left-input.jointMm, islandsRight:right-cx-c.fixedIslandWidthMm/2-input.jointMm,
     restLeft:parkedModulePlanMm[0]!-firstRestPlanMm[0]!-input.jointMm, restRight:firstRestPlanMm[2]!-parkedModulePlanMm[2]!-input.jointMm,
     restFront:parkedModulePlanMm[1]!-firstRestPlanMm[1]!-input.jointMm, restBack:firstRestPlanMm[3]!-parkedModulePlanMm[3]!-input.jointMm }
   for(const [key,value] of Object.entries(fieldReservesMm)) if(value < h.minimumResidualMm-1e-9) routeIssues.push(`home-run-field-${key}-rejected`)
-  const moduleSweepPlanMm = [carrierXZ[0], Math.min(parkedBackY-input.completeProjectionMm,
-    frontY-input.completeProjectionMm-input.normalDrawMm),carrierXZ[2],frontY]
+  const moduleSweepPlanMm = [moduleHandlingXZMm[0], Math.min(parkedBackY-input.completeProjectionMm,
+    frontY-input.completeProjectionMm-input.normalDrawMm),moduleHandlingXZMm[2],frontY]
   const occupiedConflicts = input.occupied.filter(([,b]) => overlap(moduleSweepPlanMm,b) || overlap(firstRestPlanMm,b)).map(([id])=>id)
   if (occupiedConflicts.length) routeIssues.push('home-run-candidate-occupied-conflict')
   const upper=routes[2]!, p=upper.bendClip?.pointMm
@@ -302,7 +303,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
     const tip=[p[0]!,coreY-baseDepth,p[2]!], toolEnd=[p[0]!,coreY-baseDepth-support.driver.lengthMm,p[2]!]
     const boxDistance=(a:readonly number[],b:readonly number[])=>Math.hypot(...[0,1,2].map(i=>Math.max(a[i]!-(b[i]!+b[i+3]!),b[i]!-(a[i]!+a[i+3]!),0)))
     const occupiedObstacles=[...obstacles,...input.occupied.map(([id,b])=>({id:`occupied/${id}`,box:[b[0],b[1],0,b[2]-b[0],b[3]-b[1],input.ceilingZMm]})),
-      {id:'parked-complete-module',box:[parkedModulePlanMm[0]!,parkedModulePlanMm[1]!,c.cradleBottomZMm,parkedModulePlanMm[2]!-parkedModulePlanMm[0]!,parkedModulePlanMm[3]!-parkedModulePlanMm[1]!,input.moduleSizeMm[1]!]}]
+      {id:'parked-complete-module',box:[parkedModulePlanMm[0]!,parkedModulePlanMm[1]!,c.cradleBottomZMm-h.moduleHandlingBelowAllowanceMm,parkedModulePlanMm[2]!-parkedModulePlanMm[0]!,parkedModulePlanMm[3]!-parkedModulePlanMm[1]!,input.moduleSizeMm[1]!+h.moduleHandlingBelowAllowanceMm]}]
     const bodyChecks=occupiedObstacles.map(o=>({obstacleId:o.id,reserveMm:boxDistance(bodyBox,o.box)-2*input.jointMm}))
     const receiverChecks=occupiedObstacles.map(o=>({obstacleId:o.id,reserveMm:boxDistance(receiverBox,o.box)-2*input.jointMm}))
     const toolChecks=occupiedObstacles.map(o=>({obstacleId:o.id,reserveMm:segmentBoxDistance(tip,toolEnd,o.box)-support.driver.maximumDiameterMm/2-2*input.jointMm}))
@@ -359,7 +360,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
     const retained=[...hardLands,...boxes.filter(b=>b.id!==box.id).map(b=>({id:b.id,box:[b.xMm[0]!-7,coreY-(b.closedCoverDepthMm?.[1]??totalDepthMm),b.zMm[0]!-7,86,(b.closedCoverDepthMm?.[1]??totalDepthMm)-b.depthMm[0]!,86]})),
       ...input.occupied.map(([id,b])=>({id:`occupied/${id}`,box:[b[0],b[1],0,b[2]-b[0],b[3]-b[1],input.ceilingZMm]})),
       {id:'module-first-rest',box:[firstRestPlanMm[0]!,firstRestPlanMm[1]!,0,firstRestPlanMm[2]!-firstRestPlanMm[0]!,firstRestPlanMm[3]!-firstRestPlanMm[1]!,c.cradleBottomZMm]},
-      {id:'parked-module',box:[parkedModulePlanMm[0]!,parkedModulePlanMm[1]!,c.cradleBottomZMm,parkedModulePlanMm[2]!-parkedModulePlanMm[0]!,parkedModulePlanMm[3]!-parkedModulePlanMm[1]!,input.moduleSizeMm[1]!]}]
+      {id:'parked-module',box:[parkedModulePlanMm[0]!,parkedModulePlanMm[1]!,c.cradleBottomZMm-h.moduleHandlingBelowAllowanceMm,parkedModulePlanMm[2]!-parkedModulePlanMm[0]!,parkedModulePlanMm[3]!-parkedModulePlanMm[1]!,input.moduleSizeMm[1]!+h.moduleHandlingBelowAllowanceMm]}]
     // The86mm face does not occupy the whole47mm box depth. Keep the
     // actual72mm base/extension and the full86x86x23mm device shadow separate;
     // otherwise a coarse overall prism invents a collision with the own tube.
@@ -403,7 +404,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   return { schema:'ias-local-home-runs/2', selection:'unselected-development-direction', choices:h,
     status:routeIssues.length?'GEOMETRY_REJECTED':'DECLARED_EXTERNAL_CONTAINMENT_CONTINUOUS', bayPlanMm, firstRestPlanMm, finishBottomZMm:input.bottomZMm-input.jointMm,finishTopZMm:input.topZMm,
     totalDepthMm,conduitInsideDiameterMm:c.containmentOutsideDiameterMm-2*h.tubeWallMm,frontYMm:frontY,independentRouteSettingMm:input.jointMm, pairSettingMm:2*input.jointMm,
-    carrierXZMm:carrierXZ, carrierDepthMm:carrierDepth,carrierStripsXZMm,cableOpening,carrierStock,saddle,caseRestPlanMm,caseRenewal,enclosureCarrierChecks, parkedModulePlanMm, fieldReservesMm, moduleSweepPlanMm, occupiedConflicts, boxes,
+    moduleHandlingXZMm,carrierXZMm:carrierXZ, carrierDepthMm:carrierDepth,carrierStripsXZMm,cableOpening,carrierStock,saddle,caseRestPlanMm,caseRenewal,enclosureCarrierChecks, parkedModulePlanMm, fieldReservesMm, moduleSweepPlanMm, occupiedConflicts, boxes,
     routes:routes.map(({segments:_checkedSegments,pathMm:_checkedPoints,...route})=>({...route,straight:{startMm:route.sourcePointMm,endMm:route.bend.startMm}})),
     separations, obstacleChecks, issues:routeIssues, sourceInterfaceIds:routes.map(r=>r.sourceInterfaceId),
     residualGeometryWarnings:routes.flatMap(r=>Object.entries(r.reservesMm).filter(([k,v])=>['left','rear','collarFront','tubeFront','portRear','portFront'].includes(k)&&v<h.minimumResidualMm).map(([boundary,reserveMm])=>({routeId:r.id,boundary,reserveMm,status:'UNQUALIFIED_COMPONENT_OR_LINING_INTERFACE'}))),
