@@ -1,43 +1,41 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 65,
+  "generation": 66,
   "state": "claimed",
-  "leaseId": "66ded366-e333-4c85-bfa1-d9882125e59e",
+  "leaseId": "5ccd08ee-a447-44b6-a616-6cdf99f1eabe",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-engineering-20261126"
+    "label": "zerg-owner-takeover-20261126"
   },
-  "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T17:04:05.000Z",
-  "expiresAt": "2026-11-26T17:49:05.000Z",
-  "branch": "work/zerg-loaded-joint-room-20261126",
+  "claimedAt": "2026-11-26T20:02:36.250Z",
+  "heartbeatAt": "2026-11-26T20:02:36.250Z",
+  "expiresAt": "2026-11-26T20:47:36.250Z",
+  "checkpoint": {
+    "evidence": "Owner takeover; preserved1629 and water d616aff6.",
+    "next": "Verify incoming-water integrated evidence and recover full Utility/Plant redesign after current integration."
+  },
+  "branch": "work/zerg-takeover-integration-20261126",
   "predecessor": {
-    "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
-    "generation": 64,
-    "branch": "work/convergence-bed-water-20261125",
-    "pr": 1627,
+    "leaseId": "66ded366-e333-4c85-bfa1-d9882125e59e",
+    "generation": 65,
+    "branch": "work/zerg-loaded-joint-room-20261126",
+    "pr": 1629,
     "checkpoint": {
-      "evidence": "1626 merged83f8cb65.1627 now0d20523d test-only5incident-XY contract fix, CI unverified; dcfc failed obsolete equality. Raw90077632 actual-route partialchecks/e473 normalizer preserved.",
-      "next": "On executor recovery validate0d20523d exacthead, canonical preflight/merge; complete90077632 saved/replay checks. Redesign deck without cantilevers.",
-      "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
+      "evidence": "d616aff6 protects actual collision/type repairs. Full U normal case exposes and repairs washer/bowl/H0 clash; child owns U member/hot proof. Parent now authors Plant330L+actual connected inventory/grated containment.",
+      "next": "Finish whole Utility positive installation and replaceable-member proof; execute complete Plant stored-water rupture/backfeed/occupied-storage case.",
+      "blocker": "No complete U/P installation closure. Keep505mm cap until actual floor replan; minimum pipe bores do not bound maximum stored volume."
     }
   },
   "recoverySource": {
-    "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
-    "generation": 64,
-    "branch": "work/convergence-bed-water-20261125",
-    "pr": 1627,
+    "leaseId": "66ded366-e333-4c85-bfa1-d9882125e59e",
+    "generation": 65,
+    "branch": "work/zerg-loaded-joint-room-20261126",
+    "pr": 1629,
     "checkpoint": {
-      "evidence": "1626 merged83f8cb65.1627 now0d20523d test-only5incident-XY contract fix, CI unverified; dcfc failed obsolete equality. Raw90077632 actual-route partialchecks/e473 normalizer preserved.",
-      "next": "On executor recovery validate0d20523d exacthead, canonical preflight/merge; complete90077632 saved/replay checks. Redesign deck without cantilevers.",
-      "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
+      "evidence": "d616aff6 protects actual collision/type repairs. Full U normal case exposes and repairs washer/bowl/H0 clash; child owns U member/hot proof. Parent now authors Plant330L+actual connected inventory/grated containment.",
+      "next": "Finish whole Utility positive installation and replaceable-member proof; execute complete Plant stored-water rupture/backfeed/occupied-storage case.",
+      "blocker": "No complete U/P installation closure. Keep505mm cap until actual floor replan; minimum pipe bores do not bound maximum stored volume."
     }
-  },
-  "pr": 1629,
-  "checkpoint": {
-    "evidence": "d616aff6 protects actual collision/type repairs. Full U normal case exposes and repairs washer/bowl/H0 clash; child owns U member/hot proof. Parent now authors Plant330L+actual connected inventory/grated containment.",
-    "next": "Finish whole Utility positive installation and replaceable-member proof; execute complete Plant stored-water rupture/backfeed/occupied-storage case.",
-    "blocker": "No complete U/P installation closure. Keep505mm cap until actual floor replan; minimum pipe bores do not bound maximum stored volume."
   }
 }
