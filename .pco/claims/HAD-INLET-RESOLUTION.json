@@ -9,9 +9,9 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T10:54:42.247Z",
-  "expiresAt": "2026-11-26T12:24:42.247Z",
-  "branch": "work/zerg-engineering-20261126",
+  "heartbeatAt": "2026-11-26T11:11:43.737Z",
+  "expiresAt": "2026-11-26T12:41:43.737Z",
+  "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
     "generation": 64,
@@ -34,9 +34,9 @@
       "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
     }
   },
-  "pr": 1628,
+  "pr": 1629,
   "checkpoint": {
-    "evidence": "Factory front store drain and252kg cargo ground bridge merged locally; exact474 native/browser passes, health pending; SE200 actual room remake active",
-    "next": "Merge1628 after health; integrate actual SE200 sink/pan/support/replacement geometry and final drain with finite-house dependency"
+    "evidence": "1628mergedf2acb9e7 afterexactheadchecks;1629d3d11e71 preserves finalc1drain/31bridge and currentfinitehouse; actualcanonicalfullCLI52head136room PASS",
+    "next": "Finish SE200XYactualnotchedpan/stock/renewal/upstreampipe comparisons, keep source0/HAD530 vertical frames explicit; merge1629afterexactchecks"
   }
 }
