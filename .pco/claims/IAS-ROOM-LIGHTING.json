@@ -9,8 +9,8 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T12:44:38.000Z",
-  "expiresAt": "2026-11-26T13:29:38.000Z",
+  "heartbeatAt": "2026-11-26T13:00:52.000Z",
+  "expiresAt": "2026-11-26T13:45:52.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "1629@867e protects136Study/oak/95lighting; PDF/typography pass. Circuit e0e52b8 protected. Later closedbay136/136+reverse/min10mm observed;40f66 exactplan recovery active.",
-    "next": "Protect exactplan/helper; finish producer/bindings/full29 after runtime restoration. Verify exacthead CI and fresh threelease preflight before1629merge.",
-    "blocker": "Executor unavailable; later circuit/floor join not integrated. Electrical, material, physical and owner acceptance remain open."
+    "evidence": "Exact40f66plan+16authoredfiles protected b5f825f0; boundedcircuitproducerproofpreparing. Rootbacac04d fixes140stale136plan; currenthosttypes/audit/unchanged200 pass, actual144CLIactive.",
+    "next": "Finishroot144invalidationproof+1629CI/preflight. Finishclosedbay136/circuit owningregeneration/full29 via boundedrunner; no acceptance inferred.",
+    "blocker": "Executorunavailable. Laterclosedcircuitjoinoutputs/bindingspending, electrical/material/physical/ownerholdsopen."
   },
   "pr": 1629
 }
