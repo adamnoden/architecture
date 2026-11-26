@@ -789,7 +789,7 @@
         "rejectedGantryIsHistoricalControlOnly": true,
         "fork": {
           "axisXMm": [
-            11160
+            11110
           ],
           "rearTipYMm": 800,
           "rootYMm": 1450,

@@ -342,7 +342,10 @@ test('static head work owns visible waste isolation, finite inventory, actual ca
  const a=wet.ordinaryCapture,w=a.waste
  assert.equal(a.controls.method,'static-floor-seated-head-capture')
  assert.equal(a.controls.wholeHeadWestParkRequiredForOrdinaryRenewal,false)
- assert.deepEqual(a.controls.fork!.axisXMm,[11160])
+ assert.deepEqual(a.controls.fork!.axisXMm,[11110])
+ const forkWaste=a.sourceBoundCapturePhase.captureGeometryChecks.filter(q=>q.id.startsWith('capture/fork/')&&q.id.includes('/waste/'))
+ assert.ok(forkWaste.length>0)
+ assert.ok(forkWaste.every(q=>q.reserveMm>=0),JSON.stringify(forkWaste.filter(q=>q.reserveMm<0)))
  assert.ok(a.rejectedWholeHeadMotion.failures.length>0)
  assert.deepEqual(w.actualCapAxisMm,[10795,1295,125])
  assert.ok(w.parts.some(q=>q.id==='waste/complete-backfeed-cut'))
@@ -361,4 +364,12 @@ test('actual1040 spout lips and900 rim meet the two-bore screen; false50nom/30ne
  assert.ok(rejected.ordinaryCapture.airGap.checks.some(q=>q.reserveMm<0))
  assert.equal(rejected.ordinaryCapture.airGap.sinkReservoirBackfeedGeometricallyExcluded,false)
  assert.equal(rejected.normal.necessaryKnownGeometry,false)
+})
+
+test('old11160 NS fork physically strikes the actual strainer;11110 clears without moving waste',()=>{
+ const old=structuredClone(choice);old.coldDistribution.frameRenewal.headCapture.fork.axisXMm=[11160]
+ const r=inletUtilityWetAssembly({source:current,choice:old}).ordinaryCapture
+ assert.ok(r.geometryFailures.some(q=>q.id==='capture/fork/11160/waste/head-underflange'&&q.reserveMm< -33))
+ const selected=wet.ordinaryCapture.sourceBoundCapturePhase.captureGeometryChecks.find(q=>q.id==='capture/fork/11110/waste/head-underflange')!
+ near(selected.reserveMm,6.898018134715025,1e-6)
 })
