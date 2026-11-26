@@ -68,7 +68,7 @@ jobs:
           python -B project/str/studies/finite_floor_contour_test.py > "$REGEN_DIR/contour-geometry-and-dense-oracle.log" 2>&1
           python -B project/str/studies/finite_floor_contour_compare_test.py > "$REGEN_DIR/contour-comparison-adverse.log" 2>&1
           python -B project/str/studies/finite_floor_contour_residency_control_test.py > "$REGEN_DIR/contour-full-array-forgery.log" 2>&1
-          STR_FINITE_SOLID_PYTHON=1 node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts > "$REGEN_DIR/contour-real-adapter-input-perturbations.log" 2>&1
+          STR_FINITE_SOLID_PYTHON="$pythonLocation/bin/python" node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts > "$REGEN_DIR/contour-real-adapter-input-perturbations.log" 2>&1
           npm run typecheck > "$REGEN_DIR/typecheck.log" 2>&1
       - name: Expose exact small regenerated comparison bytes for durable source retention
         run: |
