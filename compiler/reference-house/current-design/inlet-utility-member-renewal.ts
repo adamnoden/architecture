@@ -162,7 +162,7 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
  }
  const candidateFrame=frame.map(q=>{
   if(!q.id.includes(' rail '))return q
-  const b=q.boxMm,EW=b[3]>b[4],axis=EW?0:1
+  const b=q.boxMm,EW=b[3]>b[4]
   return{...q,boxMm:(EW?[b[0]+20+j.memberEndGapMm,b[1],b[2],b[3]-40-2*j.memberEndGapMm,b[4],b[5]]:[b[0],b[1]+20+j.memberEndGapMm,b[2],b[3],b[4]-40-2*j.memberEndGapMm,b[5]]) as B}
  }),candidateById=new Map(candidateFrame.map(q=>[q.id,q])),
  interfaces=rails.flatMap(q=>{
@@ -365,10 +365,12 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
   raisedHeadClearanceChecks.push({id:p.id+'/'+q.id,reserveMm:gap(raised,moved)-two})
  }
  normalHeadChecks.push(...waste.checks.filter(q=>q.phase==='normal-waste'))
- for(const q of hardware.filter(p=>p.id.startsWith('capture/')&&!p.afterFrameKnockdown))for(const p of waste.parts){
+ for(const q of hardware.filter(p=>!p.afterFrameKnockdown))for(const p of waste.parts){
   const reserve=p.segmentMm?exactSegmentBoxDistance(p.segmentMm[0],p.segmentMm[1],q.boxMm)-p.radiusMm!-two:gap(q.boxMm,p.boxMm)-two
-  rows.push({id:q.id+'/'+p.id,phase:'static-capture-versus-waste',reserveMm:reserve-(q.id.startsWith('capture/fork/')?forkDeflectionMm:0)})
+  rows.push({id:q.id+'/'+p.id,phase:q.id.startsWith('capture/')?'static-capture-versus-waste':'permanent-joint-versus-waste',reserveMm:reserve-(q.id.startsWith('capture/fork/')?forkDeflectionMm:0)})
  }
+ const jointVsReceiverChecks=hardware.filter(p=>!p.id.startsWith('capture/')&&!p.afterFrameKnockdown).map(q=>({id:q.id+'/controlled-waste-receiver',phase:'drain-before-capture-actual-frame-joints',reserveMm:gap(q.boxMm,(d as unknown as{wasteService:WasteControls}).wasteService.receiverOuterMm)-two}))
+ rows.push(...jointVsReceiverChecks)
  const retainedWasteParts=waste.parts.filter(p=>!p.id.startsWith('waste/drain-dry-extension/')),
   spoolVsWasteChecks:{id:string;reserveMm:number}[]=[]
  for(const q of hot.filter(p=>p.id!=='U/hot/source-fixed-union')){
@@ -407,7 +409,7 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
   sourceBoundCapturePhase:{schema:'had-utility-head-capture-phase/1' as const,sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,context:source.rearTreeContext,frame:source.host.geometry.frame,activePaths:source.route.paths,choice:wet.choice,controls:c,joints:j}),
    headHotPortMm:bowl.hotPortMm,headColdPortMm:bowl.coldPortMm,frontUpperRailId:'IAS/frame/EW rail at y1350 / z850',
    captureGeometryChecks:[...rows.filter(q=>q.id.startsWith('capture/')&&(q.phase==='temporary-and-end-hardware'||q.phase==='static-capture-versus-waste')),...braceChecks],gravityChecks:rows.filter(q=>q.phase==='gravity'),
-   headReleaseAndRestChecks:i.mode==='gantry'?[...rows.filter(q=>q.phase.startsWith('head-'))]:[],raisedHeadClearanceChecks:[...frontRailTools,...rows.filter(q=>q.phase==='head-first-lift'||q.phase==='head-raised-static'),...raisedHeadClearanceChecks],isolationAndDrainChecks:[...waste.isolationAndDrainChecks,...waste.checks.filter(q=>q.phase==='normal-waste')],
+   headReleaseAndRestChecks:i.mode==='gantry'?[...rows.filter(q=>q.phase.startsWith('head-'))]:[],raisedHeadClearanceChecks:[...frontRailTools,...rows.filter(q=>q.phase==='head-first-lift'||q.phase==='head-raised-static'),...raisedHeadClearanceChecks],isolationAndDrainChecks:[...waste.isolationAndDrainChecks,...waste.checks.filter(q=>q.phase==='normal-waste'),...jointVsReceiverChecks],
    fullHeadDynamicN:W,eachEyeAndHoistMinimumVerticalDemandN:W,referenceBeamStressMPa:gravityBeamMoment*referenceDepth/2/referenceI,referenceAllowableMPa:200/1.5,
    actualPhysicalHandlingFloorAndInstalledAcceptance:false as const},
   ordinaryRenewalAccepted:false,

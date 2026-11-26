@@ -1165,12 +1165,12 @@
         }
       },
       "receiverOuterMm": [
-        11040,
-        1200,
+        11000,
+        1140,
         0,
-        360,
-        340,
-        90
+        400,
+        400,
+        70
       ],
       "maximumReceiverWallMm": 2,
       "minimumVerifiedUsableL": 10,

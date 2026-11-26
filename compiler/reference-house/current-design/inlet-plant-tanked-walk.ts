@@ -1,4 +1,5 @@
 import {sha256SemanticFingerprint} from '../../core/identity.js'
+import {inletRoomPocket} from './inlet-room-pocket.js'
 type B=readonly[number,number,number,number,number,number]
 type P=readonly[number,number,number,number]
 type Section=readonly[number,number,number]
@@ -10,7 +11,8 @@ export type PlantWalkControl={
  bridge:{thicknessMm:number;pieceCount:number;railYMm:readonly number[];railSectionWHtMm:Section;minimumRailIMm4:number;maximumRailDeflectionMm:number;crossBeamSectionWHtMm:Section;crossBeamSupportYMm:readonly[number,number];insideRailSeatXMm:number;outsideRailSeatXMm:number}
 }
 export type PlantWalkApparatus={id:string;source:{path:string;gitBlob:string;objectPath:string};homePlanMm:P;bodyBottomAbsoluteMm:number;bodyHeightMm:number;normalFilledMassUpperKg:number;requiredPanelLiftMm:number}
-type Input={apparatus?:readonly PlantWalkApparatus[];choice:PlantWalkControl;roomPlanMm:P;houseFflMm:number;initialWaterMm:number;maximumWaterMm:number;wheelN:number;panMinimumMm:number;panMaximumMm:number;bridgeInnerXMm:number;bridgeOuterXMm:number;bridgePlateYMm:readonly[number,number];outfallRoofMaximumMm:number;sourceRoofAtExternalBeamMm?:number;settingEachMm?:number}
+export type PlantPanCompressionSupport={floorCase:ReturnType<typeof inletRoomPocket>;panCells:readonly{id:string;cornersMm:readonly(readonly number[])[]}[];panMetalMm:number;panDensityKgM3:number;design:{minimumMachinedFootThicknessMm:number;stockThicknessMm:number;compressiveWorkingFactor:number;minimumEffectiveContactFraction:number}}
+type Input={compressionSupport?:PlantPanCompressionSupport;apparatus?:readonly PlantWalkApparatus[];choice:PlantWalkControl;roomPlanMm:P;houseFflMm:number;initialWaterMm:number;maximumWaterMm:number;wheelN:number;panMinimumMm:number;panMaximumMm:number;bridgeInnerXMm:number;bridgeOuterXMm:number;bridgePlateYMm:readonly[number,number];outfallRoofMaximumMm:number;sourceRoofAtExternalBeamMm?:number;settingEachMm?:number}
 type Part={id:string;kind:string;boxMm:B;metalVolumeMm3:number;displacementOuterBoxRequired:boolean;installedAcceptance:false}
 const volume=(b:B)=>b[3]*b[4]*b[5]
 const section=(s:Section,solid=false)=>{const[w,h,t]=s;return solid?{area:w*h,I:w*h**3/12,Z:w*h**2/6}:{area:w*h-(w-2*t)*(h-2*t),I:(w*h**3-(w-2*t)*(h-2*t)**3)/12,Z:(w*h**3-(w-2*t)*(h-2*t)**3)/(6*h)}}
@@ -210,17 +212,96 @@ export function plantTankedWalkingSurface(i:Input){
    diagnostics:[...(frameChecks.some(p=>p.afterTwoSettingsMm<0)?['PLANT_WALK/apparatus-stand-hits-walking-frame']:[]),...(panelCutoutIntersections.length?['PLANT_WALK/actual-apparatus-pedestal-cutouts-and-bar-end-support-required']:[]),'PLANT_WALK/apparatus-factory-foot-stand-RC-and-thermal-receivers-unqualified']}
  })
  const blockedPanelIds=[...new Set(apparatusInterfaces.flatMap(a=>'liftCases'in a?(a.liftCases??[]).filter(p=>p.apparatusRemovalRequired).map(p=>p.panel):[]))],apparatusFilledMassUpperKg=(i.apparatus??[]).reduce((n,a)=>n+a.normalFilledMassUpperKg,0)
+ const compressionSupport=i.compressionSupport?plantMatchedPanCompression({context:i.compressionSupport,roomPlanMm:r,parts,maximumWaterMm:i.maximumWaterMm,footDesignN:f.maximumSinglePostDesignN,steelDensityKgM3:m.densityKgM3}):null
+ if(compressionSupport)for(const a of apparatusInterfaces){
+  if(!('standParts'in a)||!a.standParts)continue
+  const members=parts.filter(p=>a.standParts!.includes(p.id)),existing=parts.filter(p=>!a.standParts!.includes(p.id)&&p.kind!=='grate'&&p.kind!=='hardware'),gap=(a:B,b:B)=>{const ds=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return ds.some(v=>v>0)?Math.hypot(...ds.map(v=>Math.max(0,v))):Math.max(...ds)}
+  a.frameChecks=members.flatMap(p=>existing.map(q=>({part:p.id,existing:q.id,afterTwoSettingsMm:gap(p.boxMm,q.boxMm)-two})))
+  a.necessarySeparateStandGeometry=a.frameChecks.every(q=>q.afterTwoSettingsMm>=0)
+  a.panelCutoutIntersections=panels.flatMap(p=>{const hits=members.filter(q=>p.parts.some(id=>gap(q.boxMm,parts.find(b=>b.id===id)!.boxMm)<two));return hits.length?[{panel:p.id,standParts:hits.map(q=>q.id),memberEndsAndWheelCapacityAfterCutoutAccepted:false as const}]:[]})
+  a.standFullSolidMassUpperKg=members.reduce((n,p)=>n+volume(p.boxMm)/1e9*m.densityKgM3,0)+(a.standHardwareBudgetKg??0)
+  a.designOnePostN=(a.normalFilledMassUpperKg!+a.standFullSolidMassUpperKg)*9.81
+  const demand=checks.find(q=>q.id===a.id+'/independent-post-demand')
+  if(demand){demand.value=a.designOnePostN;demand.necessary=a.designOnePostN<=demand.limit}
+  a.standFeetAbsoluteMm=members.filter(p=>p.kind==='apparatus-stand-pad').map(p=>[p.boxMm[0]+p.boxMm[3]/2,p.boxMm[1]+p.boxMm[4]/2,p.boxMm[2]])
+  a.diagnostics=a.diagnostics.filter(d=>d!=='PLANT_WALK/apparatus-stand-hits-walking-frame')
+  if(!a.necessarySeparateStandGeometry)a.diagnostics.push('PLANT_WALK/apparatus-stand-hits-walking-frame')
+ }
+ if(compressionSupport){const actualFootKg=Math.max(...parts.filter(p=>p.kind==='bridge-pad').map(p=>p.metalVolumeMm3/1e9*m.densityKgM3));add('Plant/bridge-matched-foot-wheel-and-dead','N',footCombinedN+Math.max(0,actualFootKg-oneBridgeFootKg)*9.81,f.maximumSinglePostDesignN)}
  const bruteMm3=parts.filter(p=>p.kind!=='hardware').reduce((n,p)=>n+clippedVolume(p.boxMm,r,i.initialWaterMm,i.maximumWaterMm),0),metalMm3=parts.reduce((n,p)=>n+p.metalVolumeMm3,0)-totalJointMm3,
   // Extra RHS metal/void is deliberately charged as SOLID for this normal
   // design mass upper. Actual fabrication/section tolerances remain unearned.
   fullEnvelopeMm3=parts.filter(p=>p.kind!=='hardware').reduce((n,p)=>n+(p.kind.includes('RHS')||p.kind==='RHS-beam'||p.kind==='RHS-post'?volume(p.boxMm):p.metalVolumeMm3),0)-totalJointMm3,
   hardwareKg=(panels.length+bridgePieces.length+beamSegments.length)*g.hardwareBudgetEachKg+apparatusInterfaces.reduce((n,a)=>n+('standHardwareBudgetKg'in a?(a.standHardwareBudgetKg??0):0),0),hardwareVolumeUpperL=hardwareKg/m.densityKgM3*1000,waterUpperL=(bruteMm3-wetJointMm3)/1e6+hardwareVolumeUpperL
- return{deadLoadBounds:{panelBarDeadN,frameDeadN,bridgePlateKg,bridgeRailKg,oneCrossKg,railCombinedN,crossCombinedN,footCombinedN,allDeadAtWorstPoint:true,RHSFullOuterBoxMassUpper:true},schema:'had-Plant-tanked-walking-surface/1',sourceDigest:sha256SemanticFingerprint(i),apparatusInterfaces,apparatusFilledMassUpperKg,normalMassExcludesFilledApparatus:true,parts,panels,bridgePieces,beamSegments,locators,walkingTopMm:walk,bridgeTopMm:bridgeTop,
-  solidsIncrementUpperL:waterUpperL,referenceMetalKg:metalMm3/1e9*m.densityKgM3,normalMassUpperKg:fullEnvelopeMm3/1e9*m.densityKgM3+hardwareKg,
+ return{...(compressionSupport?{compressionSupport}:{}),deadLoadBounds:{panelBarDeadN,frameDeadN,bridgePlateKg,bridgeRailKg,oneCrossKg,railCombinedN,crossCombinedN,footCombinedN,allDeadAtWorstPoint:true,RHSFullOuterBoxMassUpper:true},schema:'had-Plant-tanked-walking-surface/1',sourceDigest:sha256SemanticFingerprint(i),apparatusInterfaces,apparatusFilledMassUpperKg,normalMassExcludesFilledApparatus:true,parts,panels,bridgePieces,beamSegments,locators,walkingTopMm:walk,bridgeTopMm:bridgeTop,
+  solidsIncrementUpperL:waterUpperL,referenceMetalKg:metalMm3/1e9*m.densityKgM3,normalMassUpperKg:fullEnvelopeMm3/1e9*m.densityKgM3+hardwareKg+(compressionSupport?.normalMassUpperKg??0),
   volumeLedger:{sumFullOuterClippedMm3:bruteMm3,exactCrossBarIntersectionSubtractedMm3:wetJointMm3,joinedBridgeOrHardwareOverlapSubtracted:false,RHSVoidCountedAsSolid:true,closedDuctVoidCreditLitres:0,hardwareBelowWaterIncluded:true,apparatusGrateIntersectionsCountedTwiceConservatively:apparatusInterfaces.some(a=>'panelCutoutIntersections'in a&&!!a.panelCutoutIntersections?.length),hardwareSolidSteelVolumeUpperL:hardwareVolumeUpperL,hardwareRequirement:'Solid steel fasteners/handles only; whole mass budget counted wet. Any enclosed cavity requires a separately authored external volume bound.'},
-  geometry:{panelCount:panels.length,panelSizeMm:[px,py],walkingRailSectionKind:solid?'solid':'rhs',wallParameterAppliesToWalkingRail:!solid,actualSolidSegmentFirstRestAndToolProofAccepted:false,postCentreXMm:xs,postCentreYMm:ys,panSupportLevelRangeMm:[i.panMinimumMm,i.panMaximumMm],postBoxesUseLowestPanForConservativeMass:true,actualPerFootPanContactNotInvented:true,matchedPanelSeat:{relativeErrorMm:relativeSeatError,radialFitMm:radialClearance,thermalMovementMm:thermalMovement,completeFitBudgetMm:fitBudget,minimumBearingMm:minimumSeat,requiredFirstVerticalReleaseMm:requiredFirstLift,oneRoundOneLongitudinalSlotRequired:true,locatorWeldsDoNotCutRHS:true,actualHardwareGeometryToolAndSlotQualificationAccepted:false},bearingSpanWithSettingsMm:bearingSpan,beamSpanWithSettingsMm:beamSpan,bridgeRailBottomMm:railBottom,crossBeamBottomMm:crossBottom},
+  geometry:{panelCount:panels.length,panelSizeMm:[px,py],walkingRailSectionKind:solid?'solid':'rhs',wallParameterAppliesToWalkingRail:!solid,actualSolidSegmentFirstRestAndToolProofAccepted:false,postCentreXMm:xs,postCentreYMm:ys,panSupportLevelRangeMm:[i.panMinimumMm,i.panMaximumMm],postBoxesUseLowestPanForConservativeMass:!compressionSupport,actualPerFootPanContactNotInvented:true,...(compressionSupport?{postBoxesUseActualMatchedPanFaces:true,footContactQualificationAccepted:false}:{}),matchedPanelSeat:{relativeErrorMm:relativeSeatError,radialFitMm:radialClearance,thermalMovementMm:thermalMovement,completeFitBudgetMm:fitBudget,minimumBearingMm:minimumSeat,requiredFirstVerticalReleaseMm:requiredFirstLift,oneRoundOneLongitudinalSlotRequired:true,locatorWeldsDoNotCutRHS:true,actualHardwareGeometryToolAndSlotQualificationAccepted:false},bearingSpanWithSettingsMm:bearingSpan,beamSpanWithSettingsMm:beamSpan,bridgeRailBottomMm:railBottom,crossBeamBottomMm:crossBottom},
   memberChecks:checks,necessaryMemberComparisons:checks.every(p=>p.necessary),memberScope:'Bars/beams, axial posts, head caps and conservative one-dimensional local-face strips. Face-strip law requires a full contact patch with pressure bounded by2x its mean; actual contact/certificates are not supplied by a global I.',actualRHSLocalFaceAndBearingLawAccepted:false,loadPaths:{wheelDesignN:i.wheelN,allWheelOnOneBarAndBeam:true,footDesignN:f.maximumSinglePostDesignN,footPressureUpperMPa:f.maximumSinglePostDesignN/pad**2,normalLoadPath:'Grating bars directly bear on actual selected steel rails; posts and aligned below-pan solids carry compression THROUGH a continuous pan. Pan bending and finish capacity are not credited.',requiredLateralAndUpliftConnections:'Positive bolted/welded retention and actual sway/rail connections must be sized; no friction or unspecified anchors are credited.'},
   renewal:{eachPanelHasIndependentGravitySupport:true,everyPanelIndependentOfApparatusRemoval:blockedPanelIds.length===0,apparatusRemovalBeforePanelIds:blockedPanelIds,actualApparatusStandCutoutAndRenewalAccepted:false,matchedLocatorsRequiredBeforeRelativeSettingCredit:true,panelsRequirePositiveCaptureBeforeRetainersRelease:true,bridgePiecesRequireSameSourceAndStoredEnergyIsolation:true,actualToolAccessQuarterTurnAndFirstRestAccepted:false,actualLateralStabilityDuringPieceRemovalAccepted:false,massLimitIsComparisonNotHumanQualification:true},
   actualRCPanSandwichBearingAndThermalBridgeAccepted:false,actualFabricationAndMaterialTemperaturePropertiesAccepted:false,actualCompleteInstallationAccepted:false,
   diagnostics:[...apparatusInterfaces.flatMap(a=>a.diagnostics),...checks.filter(q=>!q.necessary).map(q=>'PLANT_WALK/member-screen/'+q.id),'PLANT_WALK/actual-per-foot-pan-and-RC-contact-required','PLANT_WALK/RHS-local-face-web-and-contact-law-not-admitted','PLANT_WALK/actual-joints-and-lateral-stability-required','PLANT_WALK/round-slot-locators-and-12mm-capture-first-lift-required','PLANT_WALK/solid-steel-hardware-no-enclosed-void-requirement','PLANT_WALK/actual-piece-tools-and-renewal-sweeps-required','PLANT_WALK/fresh-whole-house-gravity-and-water-actions-required']}
+}
+
+/** Same-case full-plan RC -> unfaced, machined F -> continuous metal pan ->
+ * individually matched steel feet. No pressure spreading or pan bending is
+ * credited. Product test values screen an authored working requirement only. */
+export function plantMatchedPanCompression(i:{context:PlantPanCompressionSupport;roomPlanMm:P;parts:Part[];maximumWaterMm:number;footDesignN:number;steelDensityKgM3:number}){
+ const c=i.context,actual=c.floorCase,d=c.design
+ if(!actual.local||!('plantCompression'in actual)||!actual.plantCompression)throw Error('Actual optional full-Plant floor producer required')
+ const replay=inletRoomPocket(actual.plantCompression.resolvedInput)
+ if(sha256SemanticFingerprint(replay)!==sha256SemanticFingerprint(actual))throw Error('Compression floor result is not its actual same-source replay')
+ if(!finite([c.panMetalMm,c.panDensityKgM3,...Object.values(d)])||c.panMetalMm<=0||c.panDensityKgM3<=0||d.minimumMachinedFootThicknessMm<8||d.stockThicknessMm<40||d.stockThicknessMm>180||d.compressiveWorkingFactor<3||d.minimumEffectiveContactFraction<.95||d.minimumEffectiveContactFraction>1)throw Error('Matched F bed, minimum foot and conservative working/contact requirements required')
+ const p=i.roomPlanMm,r=[p[0],p[1],p[0]+p[2],p[1]+p[3]] as const,rc=actual.local.levelBoxes.find(b=>b.id==='dryRC')!
+ if(JSON.stringify(actual.local.roomMinMaxMm)!==JSON.stringify(r))throw Error('Bed and optional floor must describe the same actual Plant room')
+ type R=readonly[number,number,number,number]
+ const area=(r:R)=>(r[2]-r[0])*(r[3]-r[1]),clip=(a:R,b:R):R|null=>{const r=[Math.max(a[0],b[0]),Math.max(a[1],b[1]),Math.min(a[2],b[2]),Math.min(a[3],b[3])]as const;return r[2]>r[0]&&r[3]>r[1]?r:null},
+  corners=(r:R)=>[[r[0],r[1]],[r[2],r[1]],[r[2],r[3]],[r[0],r[3]]],
+  rcPlans=rc.planRectanglesXYMm??[rc.planMinMaxMm],
+  cells=c.panCells.map(q=>{
+   if(!q.id||q.cornersMm.length!==4||q.cornersMm.some(p=>p.length!==3||!finite(p)))throw Error('Actual four-corner rectangular pan facets required')
+   const pts=q.cornersMm,[a,b,e]=pts,u=b.map((v,k)=>v-a[k]),v=e.map((z,k)=>z-a[k]),det=u[0]*v[1]-u[1]*v[0]
+   if(Math.abs(det)<1e-8)throw Error('Degenerate pan facet')
+   const ax=(u[2]*v[1]-v[2]*u[1])/det,ay=(u[0]*v[2]-v[0]*u[2])/det,cc=a[2]-ax*a[0]-ay*a[1],plan=[Math.min(...pts.map(p=>p[0])),Math.min(...pts.map(p=>p[1])),Math.max(...pts.map(p=>p[0])),Math.max(...pts.map(p=>p[1]))] as const,
+    surface=(x:number,y:number)=>ax*x+ay*y+cc,offset=c.panMetalMm*Math.sqrt(1+ax*ax+ay*ay)
+   if(pts.some(p=>Math.abs(p[2]-surface(p[0],p[1]))>1e-7)||corners(plan).some(p=>!pts.some(q=>q[0]===p[0]&&q[1]===p[1])))throw Error('Nonplanar or nonrectangular pan facet not supported')
+   return{id:q.id,plan,ax,ay,surface,offset}
+  })
+ if(!cells.length||cells.some(c=>area(clip(c.plan,r)??[0,0,0,0])<area(c.plan)-1e-6))throw Error('Actual pan facets must remain within Plant')
+ for(let a=0;a<cells.length;a++)for(let b=a+1;b<cells.length;b++)if(clip(cells[a].plan,cells[b].plan))throw Error('Overlapping pan facets cannot be counted twice')
+ const panArea=cells.reduce((n,c)=>n+area(c.plan),0),roomArea=area(r)
+ if(Math.abs(panArea-roomArea)>1e-5)throw Error('Continuous pan coverage including real exclusions required')
+ const bedFacets=cells.map(c=>{
+  const a=area(c.plan),mid=[(c.plan[0]+c.plan[2])/2,(c.plan[1]+c.plan[3])/2],thickness=c.surface(mid[0],mid[1])-c.offset-rc.zMm[1],depths=corners(c.plan).map(p=>c.surface(p[0],p[1])-c.offset-rc.zMm[1]),covered=rcPlans.reduce((n,p)=>n+area(clip(c.plan,p)??[0,0,0,0]),0),volume=a*thickness,
+   mass=volume/1e9*181.5,x=mid[0]+c.ax*(c.plan[2]-c.plan[0])**2/(12*thickness),y=mid[1]+c.ay*(c.plan[3]-c.plan[1])**2/(12*thickness)
+  if(thickness<=0||Math.abs(covered-a)>1e-5)throw Error('Every F bed facet requires real RC beneath its whole footprint')
+  return{id:c.id+'/unfaced-F',planMinMaxMm:c.plan,bottomMm:rc.zMm[1],topPlaneABC:[c.ax,c.ay,c.surface(0,0)-c.offset],thicknessRangeMm:[Math.min(...depths),Math.max(...depths)],volumeMm3:volume,massUpperKg:mass,originMm:[x,y,rc.zMm[1]],wrenchKN_KNm:{Fx:0,Fy:0,Fz:-mass*9.81/1000,Mx:0,My:0,Mz:0},wholeFacetDirectRCCoverage:true}
+ })
+ // Larger stock pieces carry a machined, piecewise planar upper face. Thin
+ // hydraulic facet strips are not misrepresented as sub-150mm insulation tiles.
+ const rows=Math.ceil(p[3]/450),rowH=p[3]/rows,cols=Math.ceil(p[2]/600),colW=p[2]/cols,tiles=[]
+ for(let row=0;row<rows;row++){
+  const cuts=[r[0],...Array.from({length:cols+(row%2)},(_,k)=>r[0]+(row%2?(k+.5):k+1)*colW).filter(x=>x>r[0]&&x<r[2]),r[2]]
+  for(let k=1;k<cuts.length;k++){
+   const plan=[cuts[k-1],r[1]+row*rowH,cuts[k],r[1]+(row+1)*rowH]as const,facets=cells.flatMap(c=>{const q=clip(plan,c.plan);return q?[{panFacet:c.id,planMinMaxMm:q,topPlaneABC:[c.ax,c.ay,c.surface(0,0)-c.offset]}]:[]})
+   tiles.push({id:'Plant/unfaced-F-tile/'+row+'/'+k,planMinMaxMm:plan,stockBlankMm:[600,450,d.stockThicknessMm],minimumInfillMm:Math.min(plan[2]-plan[0],rowH),stockBlankMassUpperKg:600*450*d.stockThicknessMm/1e9*181.5,facets,eachFacetIsMachinedIntoThisLargerPiece:true,matchedSurveyAndFabricationAccepted:false})
+  }
+ }
+ const minimumThickness=Math.min(...bedFacets.map(f=>f.thicknessRangeMm[0])),maximumThickness=Math.max(...bedFacets.map(f=>f.thicknessRangeMm[1])),feet=i.parts.filter(p=>['solid-foot-pad','apparatus-stand-pad','bridge-pad'].includes(p.kind)).map(foot=>{
+  const b=foot.boxMm,plan=[b[0],b[1],b[0]+b[3],b[1]+b[4]]as const,hits=cells.flatMap(c=>{const p=clip(plan,c.plan);return p?[{cell:c,plan:p}]:[]}),covered=hits.reduce((n,h)=>n+area(h.plan),0)
+  if(Math.abs(covered-area(plan))>1e-5)return{id:foot.id,necessaryMatchedContact:false,outsidePanReceiverRequired:true,actualReceiverAccepted:false}
+  const maximum=Math.max(...hits.flatMap(h=>corners(h.plan).map(p=>h.cell.surface(p[0],p[1])))),minimum=Math.min(...hits.flatMap(h=>corners(h.plan).map(p=>h.cell.surface(p[0],p[1])))),top=maximum+d.minimumMachinedFootThicknessMm,
+   before=foot.metalVolumeMm3,exactVolume=hits.reduce((n,h)=>n+area(h.plan)*(top-h.cell.surface((h.plan[0]+h.plan[2])/2,(h.plan[1]+h.plan[3])/2)),0),
+   postId=foot.id.includes('/bridge-foot/')?foot.id.replace('/bridge-foot/','/bridge-post/'):foot.id.includes('/foot/')?foot.id.replace('/foot/','/post/'):foot.id.replace(/\/foot$/,'/post'),post=i.parts.find(p=>p.id===postId)
+  if(!post)throw Error('Matched foot has no actual same-assembly post')
+  const oldPost=post.boxMm,postTop=oldPost[2]+oldPost[5],newLength=postTop-top
+  if(newLength<=0)throw Error('Actual matched pan has no positive post length')
+  foot.boxMm=[b[0],b[1],minimum,b[3],b[4],top-minimum];foot.metalVolumeMm3=exactVolume
+  post.boxMm=[oldPost[0],oldPost[1],top,oldPost[3],oldPost[4],newLength];post.metalVolumeMm3*=newLength/oldPost[5]
+  const slope=Math.max(...hits.map(h=>Math.hypot(h.cell.ax,h.cell.ay))),footMass=exactVolume/1e9*i.steelDensityKgM3,
+   pressure=i.footDesignN/(area(plan)*d.minimumEffectiveContactFraction)*1000+Math.max(0,i.maximumWaterMm-minimum)*9.81/1000+c.panMetalMm/1000*c.panDensityKgM3*9.81/1000+footMass*9.81/(area(plan)/1e6)/1000+181.5*Math.max(...bedFacets.map(f=>f.thicknessRangeMm[1]))/1000*9.81/1000
+  return{id:foot.id,postId,necessaryMatchedContact:true,outsidePanReceiverRequired:false,footPlanMinMaxMm:plan,matchedFacetContacts:hits.map(h=>({panFacet:h.cell.id,planMinMaxMm:h.plan,bottomPlaneABC:[h.cell.ax,h.cell.ay,h.cell.surface(0,0)]})),steelTopMm:top,footThicknessRangeMm:[d.minimumMachinedFootThicknessMm,top-minimum],exactMetalVolumeMm3:exactVolume,metalMassChangeKg:(exactVolume-before)/1e9*i.steelDensityKgM3,actualPostLengthMm:newLength,designN:i.footDesignN,bedCompressiveMeanKPa:pressure,contactFractionRequirement:d.minimumEffectiveContactFraction,uniformPressureDistributionIsAuthoredRequirementOnly:true,actualPeakContactPressureAccepted:false,workingLimitKPa:1558/d.compressiveWorkingFactor,creepComparisonKPa:600,necessaryWorkingPressureComparison:pressure<=1558/d.compressiveWorkingFactor&&pressure<=600,slopeHorizontalDemandUpperN:i.footDesignN*slope,positiveLateralRetentionAccepted:false,fullAreaContactAndPanLocalContactAccepted:false,actualReceiverAccepted:false}
+ })
+ const mass=bedFacets.reduce((n,f)=>n+f.massUpperKg,0)
+ return{schema:'had-plant-matched-pan-compression/1',floorCaseDigest:actual.plantCompression.caseDigest,sourceDigest:sha256SemanticFingerprint({context:c,roomPlanMm:p,maximumWaterMm:i.maximumWaterMm,footDesignN:i.footDesignN}),source:{pds:'https://www.foamglas.com/-/media/project/foamglas/public/shared/files/foamglas-b/foamglas-f/pds/pds-foamglas-f-uk.pdf',date:'2025-04-02',unfacedSlabOnly:true,organicFacingsOrAdhesiveAdopted:false,slabMm:[600,450],thicknessToleranceMm:2,densityUpperKgM3:181.5,characteristicCompressionKPa:1558,creepTestKPa:600,conductivityUpperWmK:.050},bedFacets,tiles,feet,normalMassUpperKg:mass,bedVolumeM3:bedFacets.reduce((n,f)=>n+f.volumeMm3,0)/1e9,thicknessRangeMm:[minimumThickness,maximumThickness],necessaryStockEnvelope:minimumThickness>=40&&maximumThickness<=d.stockThicknessMm-2&&tiles.every(t=>t.minimumInfillMm>=150),necessaryPanFootPressureComparisons:feet.filter(f=>f.necessaryMatchedContact).every(f=>'necessaryWorkingPressureComparison'in f&&f.necessaryWorkingPressureComparison),normalOrigins:bedFacets.map(f=>({id:f.id,originMm:f.originMm,wrenchKN_KNm:f.wrenchKN_KNm})),necessarySourceCoreXYSeparation:actual.plantCompression.necessaryCoreXYSeparation,oldUniformGlassPhysicalGeometryRetired:actual.local.physicalUniformGlassAndServiceAndFinishRetired===true,rcMineralDeltaWrenchAboutGlobalZeroKN_KNm:actual.plantCompression.rcMineralDeltaWrenchAboutGlobalZeroKN_KNm,maximumPublished50YearCompressionAt600KPaMm:maximumThickness*.015,localDifferentialCompressionDrainageAndPanDentAccepted:false,gravityFitOnlyNoPressureSpreadingOrFrictionCredit:true,pressureComparisonScope:'Mean full-foot pressure with the required effective contact fraction. Actual peak stress distribution through pad/pan/F is not bounded by this mean calculation; no installed load rating.',actualPeakContactPressureDistributionAccepted:false,renewal:'Drain and remove the apparatus and steel members, capture and lift the continuous pan, then remove dry-laid machined insulation tiles. Record matched coordinates; no insulation piece is claimed independently accessible through an occupied pan.',actualBedMachiningFitContactWaterproofingAccepted:false,actualCoreProfileRCPlateAndColdGridTransferAccepted:false,actualCompleteSupportAccepted:false,diagnostics:['PLANT_COMPRESSION/actual-peak-contact-pressure-and-matched-foot-pan-contact-unqualified','PLANT_COMPRESSION/positive-lateral-retention-required','PLANT_COMPRESSION/long-term-differential-compression-and-pan-drainage-unqualified','PLANT_COMPRESSION/exterior-bridge-receivers-separate','PLANT_COMPRESSION/fresh-current-floor-contact-and-whole-house-gravity-required']}
 }

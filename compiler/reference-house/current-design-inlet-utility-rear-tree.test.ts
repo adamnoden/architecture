@@ -393,3 +393,15 @@ test('sixteen actual gravity seats replace hanging plates and physically clear t
  assert.equal(a.jointReference.actualWeldHSSLocalWallAndBoltResistanceAccepted,false)
  assert.equal(a.ordinaryRenewalAccepted,false)
 })
+
+test('actual permanent frame joints bound the shallow waste receiver and every retained formed waste part',()=>{
+ const a=wet.ordinaryCapture
+ assert.deepEqual(choice.coldDistribution.wasteService.receiverOuterMm,[11000,1140,0,400,400,70])
+ near(a.waste.inventory.receiverInnerGrossCeilingL,10.349856)
+ const joined=a.checks.filter(q=>q.phase==='permanent-joint-versus-waste'||q.phase==='drain-before-capture-actual-frame-joints')
+ assert.ok(joined.length>0)
+ assert.ok(joined.every(q=>q.reserveMm>=0),JSON.stringify(joined.filter(q=>q.reserveMm<0)))
+ const old=structuredClone(choice);old.coldDistribution.wasteService.receiverOuterMm=[11040,1200,0,360,340,90]
+ const rejected=inletUtilityWetAssembly({source:current,choice:old}).ordinaryCapture
+ assert.ok(rejected.geometryFailures.some(q=>q.phase==='drain-before-capture-actual-frame-joints'&&q.reserveMm<0))
+})

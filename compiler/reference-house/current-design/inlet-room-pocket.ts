@@ -1,4 +1,5 @@
-import {subtractPlan,expandPlan,planArea,type PlanRectangle} from './inlet-orthogonal-plan.js'
+import {sha256SemanticFingerprint} from '../../core/identity.js'
+import {subtractPlan,expandPlan,planArea,validPlanRectangle,type PlanRectangle} from './inlet-orthogonal-plan.js'
 type Pair = readonly [number, number]
 type Rectangle = readonly [number, number, number, number]
 type Grid = {
@@ -18,18 +19,20 @@ const intersect = (a: Rectangle, b: Rectangle): Rectangle | null => {
  * wall DPC remain separate. Contact union is partitioned once, including caps.
  * No plate, masonry, soil, thermal or waterproof resistance is inferred.
  */
-export function inletRoomPocket(input: {
+export type PlantPanCompressionContext={schema:'had-plant-pan-compression/1';settingEachMm:number;sourceCorePlans:readonly{id:string;rectangleMm:PlanRectangle}[]}
+function deriveRoomPocket(input: { plantCompression?:PlantPanCompressionContext;
   levels: Levels; roomPlanMm: readonly number[];planExclusionsMm?:readonly PlanRectangle[]; depthMm: number; isolationGapMm: number; grid: Grid
   rcDensityKNm3: number; mineralDensityKNm3: number; roomId?: 'utility' | 'plant'
 }) {
-  const { levels: g, depthMm, isolationGapMm: gap, grid } = input,roomId=input.roomId??'utility'
+  const { levels: g, depthMm, isolationGapMm: gap, grid } = input,roomId=input.roomId??'utility',compression=input.plantCompression
   if(!['utility','plant'].includes(roomId))throw new Error('Unsupported local pocket identity')
   if (![depthMm, gap, input.rcDensityKNm3, input.mineralDensityKNm3, ...input.roomPlanMm,
     ...Object.values(g).flat()].every(Number.isFinite) || depthMm < 0 || depthMm > 350 || gap < 25 || gap > 100
     || input.roomPlanMm.length !== 4 || Math.min(...input.roomPlanMm.slice(2)) <= 2 * gap
     || input.rcDensityKNm3 <= 0 || input.mineralDensityKNm3 <= 0) throw new Error('Unsupported local service pocket geometry')
+  if(compression&&(roomId!=='plant'||compression.schema!=='had-plant-pan-compression/1'||!Number.isFinite(compression.settingEachMm)||compression.settingEachMm<10||!compression.sourceCorePlans.length||compression.sourceCorePlans.some(c=>!c.id||!validPlanRectangle(c.rectangleMm))))throw Error('Actual Plant compression footprint and source wall/core plans required')
   const [x, y, w, d] = input.roomPlanMm, room = [x, y, x + w, y + d] as const,
-    inner = [x + gap, y + gap, x + w - gap, y + d - gap] as const,
+    inner = (compression?room:[x + gap, y + gap, x + w - gap, y + d - gap]) as Rectangle,
     drop = depthMm - (g.accessibleDistribution[1] - g.accessibleDistribution[0]),
     shift = (p: Pair): Pair => [p[0] - drop, p[1] - drop],
     local = { mineralCourse: shift(g.mineralCourse), dryRC: shift(g.dryRC), glass: shift(g.glass),
@@ -85,19 +88,19 @@ export function inletRoomPocket(input: {
     action: 'unfactored-gravity-only', transferToReceivers: 'unresolved-plate/contact-distribution' })
   return { state: 'local-room-pocket-reservation' as const, levels: local, local: {
     id: `HAD/local-${roomId}-service-pocket`, selected: false as const, groundDatum: 'Same absolute datum as saved groundSection; no translation of house, roof or retained walls',
-    roomMinMaxMm:room,bodyMinMaxMm:inner,...(notched?{bodyPlanRectanglesXYMm:bodyPlans,bodyMinMaxIsEnvelopeOnly:true,actualBodyPlanAreaMm2:bodyArea,cornerReturnSeparationApplied:true}:{}),depthMm, loweringMm: drop, isolationGapMm: gap,
-    levelBoxes: Object.entries(local).filter((row): row is [string, Pair] => Array.isArray(row[1])).map(([id, z]) => ({id,planMinMaxMm:inner,...(notched?{planRectanglesXYMm:bodyPlans,planMinMaxIsEnvelopeOnly:true}:{}),zMm:z})),
+    roomMinMaxMm:room,bodyMinMaxMm:inner,...(notched?{bodyPlanRectanglesXYMm:bodyPlans,bodyMinMaxIsEnvelopeOnly:true,actualBodyPlanAreaMm2:bodyArea,cornerReturnSeparationApplied:true}:{}),depthMm, loweringMm: drop, isolationGapMm: compression?0:gap,...(compression?{legacyIsolationGapParameterMm:gap,isolationGapParameterApplies:false,physicalUniformGlassAndServiceAndFinishRetired:true,retainedLevelsAreHydraulicReferenceOnly:true}:{}),
+    levelBoxes: Object.entries(local).filter((row): row is [string, Pair] => Array.isArray(row[1])&&(!compression||row[0]==='mineralCourse'||row[0]==='dryRC')).map(([id, z]) => ({id,planMinMaxMm:inner,...(notched?{planRectanglesXYMm:bodyPlans,planMinMaxIsEnvelopeOnly:true}:{}),zMm:z})),
     retainedGlobal: g, wallAndExteriorDpcMm: g.mineralCourse,
     floorStep: { northEdgeYmm: room[3], thresholdOpeningSupport: `Independent flush bridge over${gap}mm perimeter separation; exact metal, fixings, removal and foot loads unqualified`,
-      clearanceClaim: 'No RC or mineral bridges the declared perimeter gap. Upstand and gap infill cannot be credited as structural or waterproof support.' },
-    thermalReservation: { horizontalGlassMm: local.glass, verticalSeparationGapMm: gap,
+      clearanceClaim: compression?'Full pan-room RC compression footprint replaces the old inset. Source core XY separation is checked separately; exact Z/junction, lateral retention and seals remain unqualified.':'No RC or mineral bridges the declared perimeter gap. Upstand and gap infill cannot be credited as structural or waterproof support.' },
+    thermalReservation: { horizontalGlassMm: compression?null:local.glass, verticalSeparationGapMm: compression?null:gap,
       minimumJunctionTemperatureOrPsi: null, requirement: 'Continuous load-compatible insulation across slab edge and lower mineral/cold-grid contact; complete2D/3D thermal and moisture path not established.' },
     lowerPlinthRequiredMm: plinth, coldGridContact: contact, disjointContactCells: cells,
     contactUnionM2: contactM2, supportPresentAtSides: sides,
     unsupportedCentralSlabAreaM2: bodyArea / 1e6 - contactM2,
     loadOrigins: [...(notched?bodyPlans.map((r,k)=>load(`HAD/local-${roomId}-dry-rc/part-${k}-G`,area(r)/1e6*(local.dryRC[1]-local.dryRC[0])/1000*input.rcDensityKNm3,r,local.dryRC)):[load(`HAD/local-${roomId}-dry-rc-G`,slabVolume*input.rcDensityKNm3,inner,local.dryRC)]),
       ...cells.map(c => load(c.id + '/mineral-G', area(c.rectangleMm) / 1e6 * (local.mineralCourse[1] - local.mineralCourse[0]) / 1000 * input.mineralDensityKNm3, c.rectangleMm, local.mineralCourse))],
-    quantityBounds: { dryRcM3: slabVolume, mineralOnContactOnlyM3: mineralVolume, glassM3: bodyArea / 1e6 * (local.glass[1] - local.glass[0]) / 1000,
+    quantityBounds: { dryRcM3: slabVolume, mineralOnContactOnlyM3: mineralVolume, glassM3: compression?0:bodyArea / 1e6 * (local.glass[1] - local.glass[0]) / 1000,
       slabAndMineralWeightKN: slabVolume * input.rcDensityKNm3 + mineralVolume * input.mineralDensityKNm3,
       glassLinerCoversFramesFixturesAndUnknownPlinthWeightKN: null, floorCoverAndEquipmentTemporaryReactionsKN: null },
     structuralJoin: { originMm: origin, reactionsAtColdGridAnd52Heads: null,
@@ -105,6 +108,29 @@ export function inletRoomPocket(input: {
     necessaryGeometryScreen: plinth >= 0 && Object.values(sides).every(Boolean),
     constructionAdmitted: false as const, diagnostics,
   } }
+}
+
+/** Selected context produces actual full-footprint RC/mineral and explicitly
+ * retires the uniform upper stack. The matching tapered insulation is supplied
+ * by the pan/walking producer; these old level datums do not add another glass. */
+export function inletRoomPocket(input:Parameters<typeof deriveRoomPocket>[0]){
+ const actual=deriveRoomPocket(input),context=input.plantCompression
+ if(!context)return actual
+ if(actual.state!=='local-room-pocket-reservation'||!actual.local)throw Error('A real lowered Plant RC body is required for full compression')
+ const {plantCompression:_context,...referenceInput}=input,reference=deriveRoomPocket(referenceInput)
+ if(reference.state!=='local-room-pocket-reservation'||!reference.local)throw Error('Actual legacy floor replacement reference required')
+ const r=actual.local.bodyMinMaxMm,planGap=(a:Rectangle,b:Rectangle)=>{const dx=Math.max(a[0]-b[2],b[0]-a[2]),dy=Math.max(a[1]-b[3],b[1]-a[3]);return dx>0||dy>0?Math.hypot(Math.max(0,dx),Math.max(0,dy)):Math.max(dx,dy)},
+  coreChecks=context.sourceCorePlans.map(c=>({id:c.id,rectangleMm:c.rectangleMm,nominalGapMm:planGap(r,c.rectangleMm),afterTwoSettingsMm:planGap(r,c.rectangleMm)-2*context.settingEachMm})),
+  resultant=(rows:typeof actual.local.loadOrigins)=>rows.reduce((sum,row)=>{const f=row.wrenchKN_KNm,o=row.originMm,local=[f.Fx,f.Fy,f.Fz,f.Mx+o[1]/1000*f.Fz-o[2]/1000*f.Fy,f.My+o[2]/1000*f.Fx-o[0]/1000*f.Fz,f.Mz+o[0]/1000*f.Fy-o[1]/1000*f.Fx];return sum.map((v,k)=>v+local[k])},[0,0,0,0,0,0]),
+  oldW=resultant(reference.local.loadOrigins),newW=resultant(actual.local.loadOrigins)
+ return{...actual,plantCompression:{schema:'had-plant-pan-compression-result/1',resolvedInput:input,caseDigest:sha256SemanticFingerprint(input),sourceCoreChecks:coreChecks,necessaryCoreXYSeparation:coreChecks.every(c=>c.afterTwoSettingsMm>=0),actualSourceProfileZAndCoreInterfaceAccepted:false,
+  fullRcPlanMm:r,rcLevelMm:actual.local.levelBoxes.find(b=>b.id==='dryRC')!.zMm,
+  removedPhysicalUniformLayers:reference.local.levelBoxes.filter(b=>['glass','accessibleDistribution','finish'].includes(b.id)),
+  removedUniformGlassM3:reference.local.quantityBounds.glassM3,
+  referenceRcMineralOrigins:reference.local.loadOrigins,replacementRcMineralOrigins:actual.local.loadOrigins,
+  rcMineralDeltaWrenchAboutGlobalZeroKN_KNm:newW.map((v,k)=>v-oldW[k]),
+  referenceRcM3:reference.local.quantityBounds.dryRcM3,replacementRcM3:actual.local.quantityBounds.dryRcM3,
+  actualMatchedPanBedAndFootContactAccepted:false}}
 }
 
 export function drawInletRoomPocket(p: NonNullable<ReturnType<typeof inletRoomPocket>['local']>) {
@@ -115,6 +141,22 @@ export function drawInletRoomPocket(p: NonNullable<ReturnType<typeof inletRoomPo
     layer = (xa: number, w: number, z: Pair, colour: string) => `<rect x="${xa}" y="${Z(z[1])}" width="${w}" height="${(z[1] - z[0]) * .5}" fill="${colour}" stroke="#665e4c"/>`,
     text = (a: number, b: number, t: string, size = 15) => `<text x="${a}" y="${b}" font-size="${size}">${t}</text>`,
     colours = ['#c5b08a', '#afbfb7', '#e5cc8a', '#d9e7ea', '#c09a77']
+  if('physicalUniformGlassAndServiceAndFinishRetired'in p&&p.physicalUniformGlassAndServiceAndFinishRetired){
+    const rc=p.levelBoxes.find(b=>b.id==='dryRC')!,mineral=p.levelBoxes.find(b=>b.id==='mineralCourse')!
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="780" viewBox="0 0 1280 780"><rect width="1280" height="780" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#29271f">
+${text(40,42,'Plant · full pan-plan compression floor replacement',25)}
+${text(40,78,'Actual local RC/mineral bodies. The uniform glass, service layer and continuous finish are retired.')}
+${rect(p.roomMinMaxMm,'#dce6df')}${p.disjointContactCells.map(c=>rect(c.rectangleMm,'#c5b08a')).join('')}
+${p.levelBoxes.map((b,k)=>layer(760,300,b.zMm,colours[k])).join('')}
+${text(600,190,'Physical mineral '+mineral.zMm.join('..')+'mm; RC '+rc.zMm.join('..')+'mm.')}
+${text(600,235,'Tapered unfaced F bed: generated from the SAME pan/walk case, not an overlapping uniform layer.')}
+${text(600,280,'RC '+p.quantityBounds.dryRcM3.toFixed(4)+'m3; contact-only mineral '+p.quantityBounds.mineralOnContactOnlyM3.toFixed(4)+'m3.')}
+${text(600,325,'Uniform glass stock in this producer: '+p.quantityBounds.glassM3+'m3.')}
+${text(40,650,'Core/profile Z, local slab/contact resistance, matched bearing, waterproofing and thermal bridges remain unqualified.')}
+${text(40,700,'Actual F bed thickness, tile mass and per-foot matching are produced by the walking-surface method.')}
+${text(40,745,'Source geometry '+sha256SemanticFingerprint({plan:p.bodyMinMaxMm,levels:p.levelBoxes,contacts:p.disjointContactCells}),12)}
+</g></svg>`
+  }
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="950" viewBox="0 0 1280 950"><rect width="1280" height="950" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#29271f">
 ${text(40,42,`Local Utility${p.depthMm} · retained global${p.retainedGlobal.ffl}/${p.retainedGlobal.accessibleDistribution[1]-p.retainedGlobal.accessibleDistribution[0]} · geometry reservation`,26)}
 ${text(40,76,'Same saved ground datum. No wall/roof/frame rise; no structural, thermal or waterproof admission.')}
