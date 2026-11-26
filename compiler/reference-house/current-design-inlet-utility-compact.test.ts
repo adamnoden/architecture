@@ -2,9 +2,12 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
+import {execFileSync} from 'node:child_process'
+import {fileURLToPath} from 'node:url'
+import {compareInletRouteThermal} from './current-design/inlet-fixed-thermal.js'
 import {sha256SemanticFingerprint} from '../core/identity.js'
 import {inletEntrySideCuts} from './current-design/inlet-indoor-cuts.js'
-import {inletUtilityRoute,type UtilityRouteChoice} from './current-design/inlet-utility-route.js'
+import {inletUtilityRoute,inletUtilityFixedEnvelopes,type UtilityRouteChoice} from './current-design/inlet-utility-route.js'
 import {readInletCornerContext,utilityCornerBoundary,runUtilityCornerHost} from './current-design/inlet-utility-corner.js'
 import type {IndoorRoutesInput} from './current-design/inlet-indoor-routes.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
@@ -40,6 +43,7 @@ const receipt=read('project/had/studies/inlet-source-envelope.results.json'),old
  result=inletUtilityRoute({choice,input,cuts,retained:rawRoutes.retainedServiceComparison.services})
 const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
 if(dir){mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'compact-route-geometry.json'),JSON.stringify({scope:'Fresh source-geometry fixture; not full saved-document compiler, global source audit, support or installation acceptance.',savedDistributedFloor:stage,context,boundary,host,station,cuts,result},null,2))}
+console.info('COMPACT_EXISTING_PURGE_DUTY '+JSON.stringify(old.purge))
 console.info('COMPACT_WEST_WALL_ACTUAL_CHECKS '+JSON.stringify({station,minima:result.geometry.minimumByKind,failures:result.geometry.failures,quantity:result.quantities,hydraulics:result.hydraulics}))
 test('compact west-wall main keeps internal isolation with an actual unobstructed ordinary path before washer pull',()=>{
  assert.equal(stage.cornerWidthsMm.SE,200)
@@ -68,10 +72,44 @@ test('unprocured Kv and mass are explicit design conditions; adverse valve duty 
  assert.ok(bad.geometry.failures.some(v=>v.kind==='hydraulics'))
  const heavier=structuredClone(choice);heavier.valveDesign!.maximumDryModuleKg=8
  const heavy=inletUtilityRoute({choice:heavier,input,cuts,retained:rawRoutes.retainedServiceComparison.services})
+ assert.ok('designGravityUpperN' in heavy.valve&&'designGravityUpperN' in result.valve)
  assert.equal(heavy.valve.designGravityUpperN,2*result.valve.designGravityUpperN!)
  assert.equal(heavy.quantities.centrelineLengthMm,result.quantities.centrelineLengthMm)
  const wide=structuredClone(choice);wide.valveDesign!.maximumBareModuleMm=[160,300,90]
  const blocked=inletUtilityRoute({choice:wide,input,cuts,retained:rawRoutes.retainedServiceComparison.services})
  assert.equal(blocked.geometry.necessaryActualUtilityGeometry,false)
  assert.ok(blocked.geometry.failures.some(v=>v.kind==='valve-obstacle'))
+})
+
+const hostWithMain=JSON.parse(execFileSync('python3',['-B',fileURLToPath(new URL('../../project/had/studies/utility-corner-host.py',import.meta.url))],{
+ input:JSON.stringify({geometry:context.geometry,liningThicknessMm:27,waterTerminalLocalMm:[10760,1250,1000],utilityMainEnvelopes:inletUtilityFixedEnvelopes(result)}),encoding:'utf8',maxBuffer:4*1024*1024})),
+ up=result.paths.find(p=>p.id==='utility/upstream')!.physicalPolylineMm.slice().reverse() as P[],
+ down=result.paths.find(p=>p.id==='utility/downstream')!.physicalPolylineMm as P[],
+ pipe={outerDiameterMm:28.1,wallMm:1.38,elasticModulusMpa:117200,poissonRatio:.34,expansionMmMK:.017},
+ thermalUp=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,1100],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:receipt.settings.pipeTemperatureChangeK}),
+ thermalDown=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1300],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:receipt.settings.pipeTemperatureChangeK})
+console.info('COMPACT_IAS_HOST_JOIN '+JSON.stringify(hostWithMain.independentUtilityMainJoin))
+console.info('COMPACT_THERMAL_COMPARISONS '+JSON.stringify({upstream:thermalUp,downstream:thermalDown}))
+if(dir){writeFileSync(join(dir,'compact-host-main-join.json'),JSON.stringify(hostWithMain,null,2));writeFileSync(join(dir,'compact-thermal-comparisons.json'),JSON.stringify({upstream:thermalUp,downstream:thermalDown},null,2))}
+test('same actual permanent compact main and covered pipes preserve existing IAS frame/carrier/crew geometry criteria',()=>{
+ const joined=hostWithMain.independentUtilityMainJoin
+ assert.equal(joined.necessaryKnownNominalGeometry,true,JSON.stringify(joined))
+ assert.ok(joined.minimumNominalGapMm>=25)
+ assert.ok(joined.afterTwoIndependent10mmSettingsMm>=0)
+ assert.equal(joined.actualConnectionsAndCompleteInstalledHandlingAccepted,false)
+})
+test('explicit horizontal/vertical guides use the same kernel in actual world axes and retain the seized straight challenge',()=>{
+ assert.ok(Math.max(...thermalUp.independentSegmentBounds.fixedForceN)<30)
+ assert.ok(Math.max(...thermalDown.independentSegmentBounds.fixedForceN)<30)
+ assert.ok(Math.max(...thermalUp.independentSegmentBounds.guideForceN)<30)
+ assert.ok(Math.max(...thermalDown.independentSegmentBounds.guideForceN)<30)
+ assert.ok(thermalUp.whollyRestrainedStraightControl.forceN>9000)
+ assert.ok(Math.abs(thermalUp.whollyRestrainedStraightControl.stressMPa-79.696)<1e-7)
+ const wrongAxis=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,1100],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:40})
+ assert.ok(Math.max(...wrongAxis.independentSegmentBounds.fixedForceN)>9000,'A vertical-guide shortcut on the horizontal pipe must not hide its restrained axial expansion.')
+ assert.throws(()=>compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,1101],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:40}),/actual straight route/)
+ const zero=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1300],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:0})
+ assert.ok(zero.independentSegmentBounds.fixedForceN.every(v=>v===0))
+ assert.equal(thermalDown.actualJointGuideNetworkStiffnessAndFrictionQualified,false)
+ assert.equal(thermalDown.guideFreeTravelIncludingBendingSolved,false)
 })

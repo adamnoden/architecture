@@ -221,3 +221,51 @@ export function compareFixedInletThermalWithReceiver(input:ThermalInput,receiver
     outerTerminalWrench:{pointMm:lower.restraints[0].point,forceComponentBoundsN:Array.from({length:3},(_,i)=>r(responses.reduce((n,v)=>n+Math.abs(v[uCount+i])*input.temperatureExcursionK,0))),momentComponentBoundsNmm:Array.from({length:3},(_,i)=>r(responses.reduce((n,v)=>n+Math.abs(v[uCount+3+i])*input.temperatureExcursionK,0)))},
     rigidReceiverControl:legacy,actualTerminalClampFittingAndFloorStiffnessQualified:false,completeInstalledThermalAcceptance:false}
 }
+
+
+export type InletExplicitThermalRoute={pathMm:readonly Point[];fixedPointMm:Point;guide?:{pointMm:Point;freeAxisMm:Point};pipe:ThermalInput['pipe'];temperatureExcursionK:number}
+/** Same existing flexibility kernel, with an actual fixed station and optional
+ * straight sliding guide in any cardinal direction. This is a comparison law,
+ * never a declaration that the remaining network has those restraints. */
+export function compareInletRouteThermal(i:InletExplicitThermalRoute){
+ const finite=(p:readonly number[])=>p.length===3&&p.every(Number.isFinite),pipe=i.pipe
+ if(!Array.isArray(i.pathMm)||i.pathMm.length<3||i.pathMm.some(p=>!finite(p))||!finite(i.fixedPointMm)||Math.hypot(...sub(i.pathMm[0],i.fixedPointMm))>1e-8
+  ||!pipe||!Object.values(pipe).every(Number.isFinite)||pipe.wallMm<=0||pipe.outerDiameterMm<=2*pipe.wallMm||pipe.elasticModulusMpa<=0||pipe.poissonRatio<0||pipe.poissonRatio>=.5||pipe.expansionMmMK<=0
+  ||!Number.isFinite(i.temperatureExcursionK)||i.temperatureExcursionK<0||i.temperatureExcursionK>80)throw Error('Actual explicit thermal route and positive pipe properties required')
+ const path=i.pathMm.map(p=>[...p] as Point)
+ if(path.slice(1).some((p,k)=>Math.hypot(...sub(p,path[k]))<1e-8))throw Error('Duplicate thermal route station')
+ let Q:readonly Point[]=basis,guideIndex=-1
+ if(i.guide){
+  const axis=i.guide.freeAxisMm,p=i.guide.pointMm
+  if(!finite(p)||!finite(axis)||axis.filter(v=>Math.abs(v)===1).length!==1||axis.some(v=>v!==0&&Math.abs(v)!==1))throw Error('Actual cardinal sliding guide axis required')
+  const first=Math.abs(dot(axis,basis[0]))<.5?basis[0]:basis[1],second=cross(axis,first)
+  Q=[first,second,axis]
+  const leg=path.slice(1).findIndex((b,k)=>{const delta=sub(b,path[k]),l=Math.hypot(...delta),t=dot(sub(p,path[k]),delta)/(l*l);return t>=-1e-10&&t<=1+1e-10&&Math.hypot(...sub(add(path[k],scale(delta,t)),p))<1e-7})
+  if(leg<0)throw Error('Sliding guide must lie on the actual straight route')
+  guideIndex=path.findIndex(v=>Math.hypot(...sub(v,p))<1e-7)
+  if(guideIndex<0){path.splice(leg+1,0,[...p]);guideIndex=leg+1}
+  if(guideIndex===0||guideIndex===path.length-1)throw Error('Guide cannot replace either fixed endpoint')
+ }
+ const local=(p:Point)=>Q.map(row=>dot(row,sub(p,i.fixedPointMm))) as unknown as Point,
+  world=(v:readonly number[])=>basis.map((_,j)=>Q.reduce((n,row,k)=>n+row[j]*(v[k]??0),0)),
+  bound=(v:readonly number[])=>basis.map((_,j)=>Q.reduce((n,row,k)=>n+Math.abs(row[j])*(v[k]??0),0)),
+  vertices=path.map(local),guide=guideIndex>=0?vertices[guideIndex]:null,
+  input:ThermalInput={pathMm:vertices,fixedPointZMm:0,guideZMm:guide?.[2]??1,temperatureExcursionK:i.temperatureExcursionK,pipe},
+  result=routeFlexibility(vertices,guide,input),u=result.uniformTemperature,b=result.independentSegmentTemperatureBound,
+  area=Math.PI/4*(pipe.outerDiameterMm**2-(pipe.outerDiameterMm-2*pipe.wallMm)**2),
+  alpha=pipe.expansionMmMK/1000
+ return{schema:'had-explicit-station-thermal-comparison/1',sourceContext:i,localBasisRows:Q,
+  fixedPointMm:i.fixedPointMm,guide:i.guide??null,terminalPointMm:path.at(-1)!,
+  uniform:{freeTerminalTranslationMm:world(u.freeTerminalTranslationMm),fixedForceN:world(u.fixedPointForceN),fixedMomentNmm:world(u.fixedPointMomentNmm),
+   terminalForceN:world(u.terminalForceN),terminalMomentNmm:world(u.terminalMomentNmm),guideForceN:world([...u.guideLateralForceN,0]),elasticExtremeFibreStressMPa:u.elasticExtremeFibreStressMpa},
+  independentSegmentBounds:{fixedForceN:bound(b.fixedPointComponentBoundsN),fixedMomentNmm:bound(b.fixedPointMomentComponentBoundsNmm),
+   terminalForceN:bound(b.terminalForceComponentBoundsN),terminalMomentNmm:bound(b.terminalMomentComponentBoundsNmm),guideForceN:bound([...b.guideLateralComponentBoundsN,0]),
+   differentComponentMaximaNeedNotBeSimultaneous:true},
+  whollyRestrainedStraightControl:{forceN:pipe.elasticModulusMpa*area*alpha*i.temperatureExcursionK,stressMPa:pipe.elasticModulusMpa*alpha*i.temperatureExcursionK,
+   interpretation:'Separate straight-segment/seized restraint challenge; not substituted by the flexible-route result.'},
+  sourceKernel:{schema:result.schema,vertices:result.sourceRouteVertices,method:result.method},
+  actualJointGuideNetworkStiffnessAndFrictionQualified:false,actualPressureGravityAndToolActionsIncluded:false,
+  actualBendOvalisationAndStressIntensificationIncluded:false,guideFreeTravelIncludingBendingSolved:false,
+  allComponentAndReceiverResistanceAccepted:false,nativeStructuralActionsAdopted:false,
+  interpretation:'Six-DOF fixed endpoint comparison, rigid tube/fitting beam joints and zero-friction axial guide. Both force AND moment envelopes preserved in actual world axes. Existing simple-riser guide travel shortcut is deliberately not used for this arbitrary route.'}
+}

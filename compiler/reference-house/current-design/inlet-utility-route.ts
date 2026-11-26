@@ -234,3 +234,19 @@ export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoute
   support:{referenceGravityAndPressureExported:true,actualIndependentGuidesAndAnchorsDesigned:false,thermalFlexibilityAndNativeReceiverTransferAccepted:false},
   completeInstallationAccepted:false,selected:false}
 }
+
+
+/** Conservative boxes of the same executed physical shapes for the existing
+ * IAS sweep/crew method. A box rejection is not a refined curved-shape proof. */
+export function inletUtilityFixedEnvelopes(r:ReturnType<typeof inletUtilityRoute>){
+ const radius=r.geometry.jacketRadiusMm,
+  box=(a:P,b:P,cover:number)=>[...a.map((v,k)=>Math.min(v,b[k])-cover),...a.map((v,k)=>Math.abs(v-b[k])+2*cover)] as unknown as B
+ return[
+  {id:r.valve.id+'/body',boxMm:r.valve.insulatedValveBodyEnvelopeMm},
+  {id:r.valve.id+'/stem-wheel',boxMm:r.valve.stemWheelEnvelopeMm},
+  ...r.paths.flatMap(p=>[
+   ...p.straight.map(s=>({id:p.id+'/actual-straight/'+s.index,boxMm:box(s.a,s.b,radius)})),
+   ...p.corners.flatMap(c=>c.arcMm?segments(c.arcMm).map((v,k)=>({id:c.id+'/covered-arc/'+k,boxMm:box(v.a,v.b,radius+c.arcCoverMm)})):[{id:c.id,boxMm:c.boxMm}])
+  ])
+ ]
+}

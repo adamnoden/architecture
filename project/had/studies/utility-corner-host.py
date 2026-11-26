@@ -53,7 +53,24 @@ def calculate(request):
     branch=[10050,south+20.5,east-20.5-10050,1400-south-20.5];chase=[branch[0],branch[1],branch[2],700-branch[1]]
     internal_carrier_gap=host.box_gap(carrier['compact carrier post'],carrier['water fitting and cap domain']);terminal_in_cap=all(pipes['retained upper water and cap domain'][i]<=terminal[i]<=pipes['retained upper water and cap domain'][i]+pipes['retained upper water and cap domain'][i+3] for i in (0,1,2))
     good=internal_carrier_gap>=25 and terminal_in_cap and min(carrier_check['clearance'],frame_check['clearance'],pad_check[0],cap_check['clearance'])>=25 and pad_approach['clearance']>=5 and min(min(c['stationaryClearance'][0],c['relativeFrameClearance'][0]) for c in crew)>=25 and max(*grip_reach,carrier_grip)<650 and supported and no_receiver_interpenetration and seat_core_reserve>=0
-    return {'schema':'had-utility-corner-host-result/1','sourceSHA256':sources,'nativeCornerGeometry':native,'sinkShiftWestMm':shift,'carryBarAdditionalEastMm':bar_extra,'fixedExistingFirstRestPreserved':True,'westDrawMm':west,
+    utility_join=None
+    if 'utilityMainEnvelopes' in request:
+        members=request['utilityMainEnvelopes']
+        if not isinstance(members,list) or not members or len(members)>512:raise ValueError('Actual finite Utility main member envelopes required')
+        main={}
+        for row in members:
+            if not isinstance(row,dict) or set(row)!=set(('id','boxMm')) or not isinstance(row['id'],str) or not row['id'] or row['id'] in main:raise ValueError('Actual unique Utility main member identity required')
+            box=row['boxMm']
+            if not isinstance(box,list) or len(box)!=6 or any(type(v) not in (int,float) or not math.isfinite(v) for v in box) or any(v<=0 for v in box[3:]):raise ValueError('Actual Utility main envelope required')
+            main[row['id']]=box
+        main_frame=host.minimum_sweep(frame,frame_states,main);main_carrier=host.minimum_sweep(carrier,carrier_states,main);main_crew=host.crew_checks(crew_paths,frame,main)
+        nominal=min(main_frame['clearance'],main_carrier['clearance'],*(min(c['stationaryClearance'][0],c['relativeFrameClearance'][0]) for c in main_crew))
+        utility_join={'actualMainEnvelopes':members,'frame':main_frame,'carrier':main_carrier,'crew':main_crew,
+                      'minimumNominalGapMm':nominal,'afterTwoIndependent10mmSettingsMm':nominal-20,'afterExistingIAS25mmProjectGapMm':nominal-25,
+                      'necessaryKnownNominalGeometry':nominal>=25 and nominal>=20,
+                      'basis':'Same existing IAS box/sweep/person methods; full pipe jackets and chord covers supplied by the executed Utility route.25mm is the existing IAS project gap, not a new universal rule.',
+                      'actualConnectionsAndCompleteInstalledHandlingAccepted':False}
+    return {'schema':'had-utility-corner-host-result/1','independentUtilityMainJoin':utility_join,'sourceSHA256':sources,'nativeCornerGeometry':native,'sinkShiftWestMm':shift,'carryBarAdditionalEastMm':bar_extra,'fixedExistingFirstRestPreserved':True,'westDrawMm':west,
             'geometry':{'frame':frame,'carrier':carrier,'parkedCarrier':parked,'temporarySupport':temporary,'retainedPipes':pipes,'firstRestPads':pads,'smallPartsReceiverDomain':stored,'retainedObstacles':foreign},'states':{'carrier':carrier_states,'frame':frame_states,'crew':crew_paths},
             'checks':{'carrier':carrier_check,'frame':frame_check,'wasteCap':cap_check,'padApproach':pad_approach,'pads':pad_check,'carrierContinuouslySupported':supported,'receiverInterpenetrationAbsent':no_receiver_interpenetration,'crew':crew,'maxShoulderToFrameGrip':grip_reach,'maxShoulderToCarrierGrip':carrier_grip,'seatCoreReserveAfterTwoSettingsMm':seat_core_reserve,'internalCarrierBodyGapMm':internal_carrier_gap,'actualUtilityTerminalInRetainedCapDomain':terminal_in_cap},
             'revisedUtility':{'sink':[*sink[:2],*sink[3:5]],'seatPlan':seat_plans,'rearServiceChase':chase,'acquiredBranchFloor':branch,'actualUtilityTerminalLocalMm':terminal,'waterConnectionAxis':[10800-water_shift,1250,750],'retainedWasteCap':pipes['retained accessible waste cap domain'],'localWasherStopRetired':True,'ordinaryIsolation':'Use the actual independently operable Utility house cut; verify cold source/upper energy isolation before washer or host work. No live-sibling credit.','wholeRoomEnvelopeChanged':False},
