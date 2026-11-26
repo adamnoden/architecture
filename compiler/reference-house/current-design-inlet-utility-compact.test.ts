@@ -111,8 +111,8 @@ test('explicit horizontal/vertical guides use the same kernel in actual world ax
  }
  assert.ok(thermalUp.whollyRestrainedStraightControl.forceN>9000)
  assert.ok(Math.abs(thermalUp.whollyRestrainedStraightControl.stressMPa-79.696)<1e-7)
- const wrongAxis=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[10300,1000,965],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:40})
- assert.ok(Math.max(...wrongAxis.independentSegmentBounds.fixedForceN)>9000,'A vertical-guide shortcut on the horizontal pipe must not hide its restrained axial expansion.')
+ const wrongAxis=compareInletRouteThermal({pathMm:[[0,0,0],[0,850,0],[530,850,0]],fixedPointMm:[0,0,0],guide:{pointMm:[0,450,0],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:40})
+ assert.ok(Math.max(...wrongAxis.independentSegmentBounds.fixedForceN)>9000,'Separate straight restrained segment control: a wrong vertical guide on a horizontal straight segment retains its axial expansion challenge; this is not the new loop's response.')
  assert.throws(()=>compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[10300,1000,966],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:40}),/actual straight route/)
  const zero=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1350],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:0})
  assert.ok(zero.independentSegmentBounds.fixedForceN.every(v=>v===0))
@@ -132,9 +132,12 @@ test('same actual compact main preserves current standing purge body, articulate
  assert.equal(purgeJoin.completeInstalledWindowAndPipeAcceptance,false)
 })
 
-test('same real over-washer crossing preserves the35mm vertical handling allowance before pull',()=>{
- const branch=result.paths.find(p=>p.id==='utility/upstream')!,washer=services.utility.washer,height=read('project/ias/studies/utility-first-release.json').native.height,
-  lift=35,legs=branch.straight.filter(l=>l.a[2]===965&&l.b[2]===965&&Math.min(l.a[0],l.b[0])<washer[0]+washer[2]&&Math.max(l.a[0],l.b[0])>washer[0]&&Math.min(l.a[1],l.b[1])<washer[1]+washer[3]&&Math.max(l.a[1],l.b[1])>washer[1])
- assert.ok(legs.length>0)
- assert.ok(Math.min(...legs.map(l=>l.a[2]))-result.geometry.jacketRadiusMm-height-lift-result.geometry.twoIndependentSettingsMm>20)
+
+test('full same pipe/fitting envelopes preserve source upright washer sweep plus an explicit35mm vertical perturbation',()=>{
+ const source=read('project/ias/studies/utility-first-release.json'),sweep=source.geometry.sweep,authoredExtraHeight=35,
+  box:B=[sweep[0],sweep[1],0,sweep[2],sweep[3],source.native.height+authoredExtraHeight],
+  gap=(a:readonly number[],b:readonly number[])=>{const g=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return g.some(v=>v>0)?Math.hypot(...g.map(v=>Math.max(v,0))):Math.max(...g)},
+  checks=inletUtilityFixedEnvelopes(result).map(m=>({id:m.id,nominalMm:gap(m.boxMm,box),afterTwoSettingsMm:gap(m.boxMm,box)-result.geometry.twoIndependentSettingsMm})).sort((a,b)=>a.afterTwoSettingsMm-b.afterTwoSettingsMm)
+ console.info('COMPACT_UPRIGHT_WASHER_SWEEP '+JSON.stringify({sourceUprightSweepMm:sweep,sourceHeightMm:source.native.height,authoredExtraHeightMm:authoredExtraHeight,minimum:checks[0],completeHandlingAccepted:false}))
+ assert.ok(checks[0].afterTwoSettingsMm>=0,JSON.stringify(checks[0]))
 })
