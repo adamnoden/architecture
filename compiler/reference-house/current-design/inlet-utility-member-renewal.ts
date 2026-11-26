@@ -709,9 +709,11 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   fixture=capture.hardware.filter(q=>q.id.startsWith('capture/')&&!q.afterFrameKnockdown).map(q=>({id:q.id,boxMm:shift(q.boxMm,[0,0,q.id.startsWith('capture/fork/')?capture.controls.liftMm:0])})),
   fixed=[...foreignBase,{id:'actual-washer-first-rest',boxMm:[rest[0],rest[1],0,rest[2],rest[3],washerH] as B},...pressure,...raisedHead,...fixture],
   checks:{componentId:string;phase:string;obstacleId:string;reserveMm:number}[]=[],components:{id:string;sourcePartIds:string[];stockUpperKg:number;phases:string[]}[]=[],
+  removedOriginalIds:string[]=[],parked:{id:string;boxMm:B;segmentMm?:readonly[P,P];radiusMm?:number}[]=[],phaseState:{componentId:string;removedOriginalIds:string[];parkedObstacleIds:string[]}[]=[],
   compare=(id:string,phase:string,b:B,exclude:readonly string[],cover=0)=>{
    for(const q of fixed)checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:gap(b,q.boxMm as B)-two-cover})
-   for(const q of parts.filter(q=>q.group==='frame'&&!exclude.includes(q.id))){
+   for(const q of parked)checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:q.segmentMm?exactSegmentBoxDistance(...q.segmentMm,b)-q.radiusMm!-two-cover:gap(b,q.boxMm)-two-cover})
+   for(const q of parts.filter(q=>q.group==='frame'&&!exclude.includes(q.id)&&!removedOriginalIds.includes(q.id))){
     if(q.segmentMm)checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:exactSegmentBoxDistance(...q.segmentMm,b)-q.radiusMm!-two-cover})
     else checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:gap(b,q.boxMm)-two-cover})
    }
@@ -726,6 +728,7 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   rear=parts.filter(q=>q.id.startsWith('portal/rear/')),
   rearIds=rear.map(q=>q.id)
  for(const[which,q]of rear.entries()){
+  phaseState.push({componentId:q.id,removedOriginalIds:[...removedOriginalIds],parkedObstacleIds:parked.map(q=>q.id)})
   const b=q.boxMm,c:P=q.segmentMm?[(q.segmentMm[0][0]+q.segmentMm[1][0])/2,(q.segmentMm[0][1]+q.segmentMm[1][1])/2,(q.segmentMm[0][2]+q.segmentMm[1][2])/2]:[b[0]+b[3]/2,b[1]+b[4]/2,b[2]+b[5]/2],
    end:P=[r.rearRotationCentreXMm,r.rearParkAxisYMm,r.rearRotationCentreZMm],L=q.segmentMm?Math.hypot(...q.segmentMm[1].map((v,k)=>v-q.segmentMm![0][k])):b[3],
    s=q.segmentMm?2*q.radiusMm!/Math.SQRT2:Math.min(b[4],b[5]),angle=q.segmentMm?Math.atan2(q.segmentMm[1][2]-q.segmentMm[0][2],q.segmentMm[1][0]-q.segmentMm[0][0]):0,
@@ -740,17 +743,20 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   }
   compare(q.id,phases[4],sweep(prism(end,0),prism([end[0],end[1],r.rearParkLevelsMm[which]],0)),[q.id])
   components.push({id:q.id,sourcePartIds:[q.id],stockUpperKg:q.massUpperKg,phases})
+  removedOriginalIds.push(q.id)
+  parked.push({id:'parked/'+q.id,boxMm:prism([end[0],end[1],r.rearParkLevelsMm[which]],0)})
  }
  for(const side of[0,1]){
   const group=parts.filter(q=>q.id.startsWith('portal/'+side+'/')),exclude=[...rearIds,...group.map(q=>q.id)],id='portal/side-unit/'+side
+  phaseState.push({componentId:id,removedOriginalIds:[...removedOriginalIds],parkedObstacleIds:parked.map(q=>q.id)})
   for(const q of group){
    compare(id,'side-unit-up-to-release-positive-floor-key',sweep(q.boxMm,shift(q.boxMm,[0,0,r.portalLiftMm])),exclude)
    compare(id,'side-unit-captured-north-park',sweep(shift(q.boxMm,[0,0,r.portalLiftMm]),shift(q.boxMm,[0,r.portalNorthMm,r.portalLiftMm])),exclude)
   }
   components.push({id,sourcePartIds:group.map(q=>q.id),stockUpperKg:group.reduce((n,q)=>n+q.massUpperKg,0),phases:['side-unit-up-to-release-positive-floor-key','side-unit-captured-north-park']})
+  for(const q of group){removedOriginalIds.push(q.id);parked.push({id:'parked/'+q.id,boxMm:shift(q.boxMm,[0,r.portalNorthMm,r.portalLiftMm]),...(q.segmentMm?{segmentMm:q.segmentMm.map(p=>[p[0],p[1]+r.portalNorthMm,p[2]+r.portalLiftMm]) as unknown as readonly[P,P],radiusMm:q.radiusMm}:{})})}
  }
  const receiverParts:{id:string;boxMm:B;role:string}[]=[],receiverChecks:{id:string;reserveMm:number}[]=[],receiverDemands:{id:string;axialUpperN:number;upliftUpperN:number;shearUpperN:number;referenceMomentAtRCNmm:number;referenceSteelExtremeMPa:number;referenceAnchorTensionEachN:number;referenceAnchorMPa:number}[]=[],
-  rect=(x:number,y:number,w:number,h:number):PlanRectangle=>[x-w/2,y-h/2,x+w/2,y+h/2],
   put=(id:string,b:B,role:string)=>receiverParts.push({id,boxMm:b,role}),
   contain=(id:string,b:B)=>receiverChecks.push({id:id+'/same-notched-RC-plan-after-two-settings',reserveMm:subtractPlan(expandPlan([b[0],b[1],b[0]+b[3],b[1]+b[4]],two),rcPlans).reduce((n,q)=>n+planArea(q),0)<=1e-7?0:-1}),
   S=r.receiverPostCrossMm,t=r.receiverPostWallMm,A=S*S-(S-2*t)**2,I=(S**4-(S-2*t)**4)/12,
@@ -780,7 +786,7 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   const p:P=[q.boxMm[0]+q.boxMm[3]/2,q.boxMm[1]+q.boxMm[4]/2,q.boxMm[2]+q.boxMm[5]/2],s=capture.controls.normalWorkingShoulderMm
   return{id:'actual-current-head-mount/'+q.id,reachReserveMm:600-Math.hypot(...p.map((v,k)=>v-s[k]))}
  })
- return{schema:'had-utility-portal-finite-renewal/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,portal:portal.sourceDigest,floor,controls:r}),components,checks,necessaryFiniteGeometry:checks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7),geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),
+ return{schema:'had-utility-portal-finite-renewal/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,portal:portal.sourceDigest,floor,controls:r}),components,phaseState,finalParkedParts:parked,checks,necessaryFiniteGeometry:checks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7),geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),
   receiver:{sourceContextDigest:floor.bindingDigest,occupiedFflAbsoluteMm:source.groundFflMm,rcLocalMm:[rcBottom,rcTop],actualRCPlans:rcPlans,parts:receiverParts,checks:receiverChecks,geometryFailures:receiverChecks.filter(q=>q.reserveMm<0),demands:receiverDemands,referenceNecessarySteel:receiverDemands.every(q=>Math.max(q.referenceSteelExtremeMPa,q.referenceAnchorMPa)<=r.receiverReferenceSteelProofMPa/1.5),frictionResistanceCreditedN:0,actualRCBreakoutRebarWeldWaterproofAirAndPointThermalJoinAccepted:false},
   toolChecks,toolFailures:toolChecks.filter(q=>q.reachReserveMm<0),memberIds:fixtureIds,
   positiveCaptureRequirement:{headGravityRemainsOnIndependentFloorFork:true,oneCapturedRearMemberOrSidePortalAtATime:true,allThreeRearMembersPositivelyParkedBeforeSidePortalRelease:true,maximumSidePortalWithClampsKg:r.maximumSidePortalWithTemporaryClampsKg,maximumRearMemberWithClampsKg:r.maximumRearMemberWithTemporaryClampsKg,temporaryPositiveCaptureFixtureGeometryQualified:false},

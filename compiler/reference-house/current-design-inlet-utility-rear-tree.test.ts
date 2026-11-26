@@ -532,3 +532,14 @@ test('same portal case owns five finite components and the actual source notched
  assert.ok(portalFinite.toolFailures.some(q=>q.id.includes('/0/')))
  assert.ok(portalFinite.specificOpenGates.length>0)
 })
+
+test('finite phase ledger replaces detached originals by actual parked steel before the next release',()=>{
+ assert.equal(portalFinite.phaseState.length,5)
+ assert.deepEqual(portalFinite.phaseState[0].removedOriginalIds,[])
+ for(const q of portalFinite.phaseState.filter(q=>q.componentId.startsWith('portal/side-unit/'))){
+  assert.ok(q.removedOriginalIds.includes('portal/rear/lower-tie'))
+  assert.equal(q.parkedObstacleIds.filter(id=>id.startsWith('parked/portal/rear/')).length,3)
+ }
+ assert.ok(portalFinite.phaseState[4].parkedObstacleIds.some(id=>id.startsWith('parked/portal/0/')))
+ for(const q of portalFinite.finalParkedParts)assert.ok(portalFinite.checks.some(c=>c.obstacleId===q.id)||q.id.startsWith('parked/portal/1/'))
+})
