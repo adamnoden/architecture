@@ -3,7 +3,8 @@ import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {plantTankedWalkingSurface,type PlantWalkControl} from './current-design/inlet-plant-tanked-walk.js'
 const raw=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-plant-tanked-walk-candidate.json',import.meta.url),'utf8'))
-const choice=raw as PlantWalkControl
+// Preserve the explicit100mm unchanged fixture when the selected source walk moves.
+const choice={...raw,walkingRiseAboveHouseFflMm:100} as PlantWalkControl
 // Source-geometry comparison only. Parent complete-room producer supplies its
 // actual pan/input profile, source-stage and receivers; no native force result
 // or current flooring replacement is inferred from this standalone fixture.
@@ -115,5 +116,42 @@ test('room and load perturbations propagate, while unchanged bridge geometry rem
  assert.throws(()=>run({...input,panMaximumMm:450}),/Actual bounded/)
  assert.throws(()=>run({...input,settingEachMm:0}),/Actual bounded/)
  assert.throws(()=>run({...input,sourceRoofAtExternalBeamMm:NaN}),/Actual bounded/)
+})
+test('actual source apparatus touch walking level but block hidden panel lift; stands have independent compression budgets',()=>{
+ const source={path:'project/had/studies/current-house-services.json',gitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',objectPath:'plant.cylinder'}
+ const apparatus=[{id:'Plant/domestic-vessel',source,homePlanMm:[9450,3870,760,760] as const,bodyBottomAbsoluteMm:630,bodyHeightMm:1650,normalFilledMassUpperKg:600,requiredPanelLiftMm:12},
+  {id:'Plant/primary-buffer',source:{...source,objectPath:'plant.primaryBuffer'},homePlanMm:[10125,5000,650,650] as const,bodyBottomAbsoluteMm:630,bodyHeightMm:1975,normalFilledMassUpperKg:335,requiredPanelLiftMm:12}]
+ const base=run(),r=run({...input,apparatus})
+ assert.equal(r.apparatusInterfaces.length,2)
+ assert.equal(r.renewal.everyPanelIndependentOfApparatusRemoval,false)
+ assert.equal(r.renewal.apparatusRemovalBeforePanelIds.length,15)
+ assert.equal(r.apparatusFilledMassUpperKg,935)
+ assert.ok(r.normalMassUpperKg>base.normalMassUpperKg,'Independent stand mass is added; apparatus mass remains separately identified.')
+ assert.ok(r.solidsIncrementUpperL>base.solidsIncrementUpperL,'Wet stand solids cannot be omitted from the room capacity.')
+ assert.ok(r.necessaryMemberComparisons,JSON.stringify(r.memberChecks.filter(p=>!p.necessary)))
+ for(const a of r.apparatusInterfaces){
+  assert.equal(a.necessarySeparateStandGeometry,true)
+  assert.equal(a.actualCompleteSupportAccepted,false)
+  assert.ok(a.liftCases!.every(p=>!p.necessaryInitialLiftClear&&p.apparatusRemovalRequired))
+  assert.ok(a.panelCutoutIntersections!.length>0,'Full grating bars are still present, so real pedestal cutouts/member supports remain explicit.')
+  assert.ok(a.frameChecks!.every(p=>p.afterTwoSettingsMm>=0))
+  assert.ok(a.standFeetAbsoluteMm!.every(p=>p[2]===input.panMinimumMm))
+  assert.ok(a.designOnePostN!<=a.maximumPostDesignN!)
+ }
+ assert.ok(r.diagnostics.includes('PLANT_WALK/actual-apparatus-pedestal-cutouts-and-bar-end-support-required'))
+ const raised=run({...input,choice:{...choice,walkingRiseAboveHouseFflMm:150},maximumWaterMm:660,apparatus:apparatus.map(a=>({...a,bodyBottomAbsoluteMm:680}))})
+ assert.equal(raised.apparatusInterfaces[0].bodyTopAbsoluteMm,2330)
+ assert.equal(raised.renewal.apparatusRemovalBeforePanelIds.length,15)
+ const overloaded=run({...input,apparatus:[{...apparatus[0],normalFilledMassUpperKg:1000}]})
+ assert.equal(overloaded.memberChecks.find(p=>p.id==='Plant/domestic-vessel/independent-post-demand')!.necessary,false)
+ assert.throws(()=>run({...input,apparatus:[{...apparatus[0],bodyBottomAbsoluteMm:100}]}),/actual captured/i)
+})
+test('selected walking rise propagates from actual controller independently of the100mm unchanged control',()=>{
+ const selected=raw as PlantWalkControl,walk=input.houseFflMm+selected.walkingRiseAboveHouseFflMm
+ const r=run({...input,choice:selected,maximumWaterMm:walk-20})
+ assert.equal(r.walkingTopMm,walk)
+ assert.equal(r.bridgeTopMm,walk+selected.bridgeAboveWalkingMm)
+ assert.ok(r.necessaryMemberComparisons,JSON.stringify(r.memberChecks.filter(p=>!p.necessary)))
+ assert.equal(r.actualCompleteInstallationAccepted,false)
 })
 console.info('PLANT_GRADED_WALK_SOURCE_COMPARISON '+JSON.stringify({scope:'Pure proposed steel/volume/member comparison; actual supports, tools, fabrication, currentsourcehouse integration and owner acceptance remain unearned.',result:{volumeUpperL:run().solidsIncrementUpperL,referenceMetalKg:run().referenceMetalKg,normalMassUpperKg:run().normalMassUpperKg,panelCount:run().panels.length,maxPanelKg:Math.max(...run().panels.map(p=>p.completeMassDesignUpperKg)),maxBridgePieceKg:Math.max(...run().bridgePieces.map(p=>p.completeMassDesignUpperKg)),memberFailures:run().memberChecks.filter(p=>!p.necessary)}}))

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {plantPotableInventory} from './current-design/inlet-plant-potable-inventory.js'
+import {readInletSourceEnvelopeSettings} from './current-design/inlet-source-envelope.js'
 import {inletPlantTankedRoom} from './current-design/inlet-plant-tanked.js'
 import {inletSplitPlantRoom} from './current-design/inlet-split-plant-room.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
@@ -15,7 +16,7 @@ test('source Plant pan fixture is explicitly530 geometry, never a new native for
  assert.deepEqual(JSON.parse(JSON.stringify(replay.pan)),p.pan,'JSON control normalises signed zero; no source or numerical receipt is edited.')
  assert.equal(choice.closedDuctStorageCreditLitres,0)
  assert.equal(choice.legacyFinishUndersideProtectedMm,505)
- assert.equal(choice.walkingRiseAboveHouseFflMm,100)
+ assert.equal(choice.walkingRiseAboveHouseFflMm,150)
  const rows={scope:'Exact existing source-geometry fixture only. New grated surface and body translations are not yet active; source-native force/evidence identity is not adopted.',keys:Object.keys(p),inputKeys:Object.keys(p.resolvedInput),ground:p.ground,pocket:p.pocket,pan:p.pan,bridge:p.bridge,room:p.branchRoomMm??p.resolvedInput.branch.roomPlanMm,sourceQ:p.sourceOnlyLmin,threshold:p.resolvedInput.threshold,goods:p.resolvedInput.branch.goods,sourceServiceGeometry:p.resolvedInput.branch.resolvedInput,grid:p.resolvedInput.grid}
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
  if(dir){mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'Plant-actual-tanked-geometry-source.json'),JSON.stringify(rows,null,2))}
@@ -43,12 +44,12 @@ test('complete source-design potable inventory uses external tubes/full fitting 
  assert.throws(()=>plantPotableInventory(mat,tooLarge),/exceeds source work territory/)
 })
 
-const roomRequest=()=>({choice,plant:p,vesselChoice:read('project/had/studies/inlet-store-vessel-candidate.json'),mat:read('project/mat/studies/whole-house-service-baseline.json'),maximumSourceApertureMm:10.5})
+const roomRequest=()=>({choice,plant:p,vesselChoice:read('project/had/studies/inlet-store-vessel-candidate.json'),mat:read('project/mat/studies/whole-house-service-baseline.json'),maximumSourceApertureMm:10.5,services:read('project/had/studies/current-house-services.json'),servicesGitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',sourceSettings:readInletSourceEnvelopeSettings()})
 test('one actual Plant pan feeds room, outfalls, occupied steel and complete communicating pressure-network volume',()=>{
  const r=inletPlantTankedRoom(roomRequest())
  assert.equal(r.levels.houseFflMm,530)
- assert.equal(r.levels.walkingMm,630)
- assert.equal(r.levels.maximumBulkWaterMm,610)
+ assert.equal(r.levels.walkingMm,680)
+ assert.equal(r.levels.maximumBulkWaterMm,660)
  assert.equal(r.outfalls.storageCreditL,0)
  assert.equal(r.containment.wholeInstallationCatastrophicApproval,false)
  assert.equal(r.containment.actualOutflowAirAndContinuingMainsTransientAccepted,false)
@@ -60,11 +61,18 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
  assert.equal(r.serviceGeometry.actualFactoryPortAndServiceRenewalJoinsAccepted,false)
  assert.ok(r.outfalls.hydrostaticPlateNecessary)
  assert.ok(r.walking.necessaryMemberComparisons,JSON.stringify(r.walking.memberChecks.filter(p=>!p.necessary)))
- assert.ok(r.containment.reserveL>0,JSON.stringify(r.containment))
+ assert.equal(r.normalHeatedInventory.necessaryThermalInventory,true,JSON.stringify(r.normalHeatedInventory))
+ assert.ok(r.walking.apparatusInterfaces.length===2)
+ assert.equal(r.walking.renewal.everyPanelIndependentOfApparatusRemoval,false)
+ assert.ok(r.walking.renewal.apparatusRemovalBeforePanelIds.length>0)
+ assert.ok(r.vessel.expansion.necessaryNormalThermalComparison)
+ assert.equal(r.vessel.geometry.groundFflMm,680)
+ assert.equal(r.vessel.connections.hot.upperTreeJoinLocalMm[2]+r.vessel.geometry.groundFflMm,2945+530)
+ assert.ok(r.containment.reserveL>150,JSON.stringify(r.containment))
  assert.equal(r.inventory.vesselMaximumDesignL,330)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
  if(dir)writeFileSync(join(dir,'Plant-tanked-current-source-comparison.json'),JSON.stringify(r,null,2))
- console.info('PLANT_TANK_COMPLETE_STATIC '+JSON.stringify({levels:r.levels,sourceProfiles:r.outfalls.profiles.map(p=>({id:p.id,pool:p.initialSourcePoolMm,freeDrop:p.freeDropReserveMm,necessary:p.necessaryFreeSourceProfile,refinements:p.refinements.map(r=>r.state)})),inventory:r.inventory.fullInstantPressureNetworkDesignReleaseL,containment:r.containment,hotNetwork:r.inventory.normalHotAndReturnNetworkDesignUpperL,steelKg:r.walking.normalMassUpperKg,walkingFailures:r.walking.memberChecks.filter(p=>!p.necessary),frame:r.fittedFrame}))
+ console.info('PLANT_TANK_COMPLETE_STATIC '+JSON.stringify({levels:r.levels,sourceProfiles:r.outfalls.profiles.map(p=>({id:p.id,pool:p.initialSourcePoolMm,freeDrop:p.freeDropReserveMm,necessary:p.necessaryFreeSourceProfile,refinements:p.refinements.map(r=>r.state)})),inventory:r.inventory.fullInstantPressureNetworkDesignReleaseL,containment:r.containment,hotNetwork:r.inventory.normalHotAndReturnNetworkDesignUpperL,normalHeated:r.normalHeatedInventory,apparatus:r.walking.apparatusInterfaces.map(a=>({id:a.id,geometry:a.necessarySeparateStandGeometry,loadN:'designOnePostN'in a?a.designOnePostN:null,cutouts:'panelCutoutIntersections'in a?a.panelCutoutIntersections?.length:null})),steelKg:r.walking.normalMassUpperKg,walkingFailures:r.walking.memberChecks.filter(p=>!p.necessary),frame:r.fittedFrame}))
 })
 test('actual floor, outlet and inventory perturbations invalidate dependent design evidence',()=>{
  const i=roomRequest(),r=inletPlantTankedRoom(i),low=structuredClone(i)
@@ -75,19 +83,20 @@ test('actual floor, outlet and inventory perturbations invalidate dependent desi
  const mixed=structuredClone(i);mixed.plant.resolvedInput.branch.paths[0].points[0][0]+=1
  assert.throws(()=>inletPlantTankedRoom(mixed),/Mixed or modified/)
  assert.throws(()=>inletPlantTankedRoom({...i,maximumSourceApertureMm:10.4}),/source aperture/)
- const revised=structuredClone(i);revised.choice.walkingRiseAboveHouseFflMm=150
- revised.choice.frame.clearHeightMm=2300
- revised.choice.maximumBulkWaterRelativeWalkingMm=-20
- revised.choice.outfalls.clearWidthMm=450;revised.choice.outfalls.clearHeightMm=135
- revised.choice.outfalls.metalMm=4;revised.choice.outfalls.invertRiseAboveExistingMm=4
- revised.choice.outfalls.receiverClearWidthMm=500;revised.choice.externalRampRunMm=1800
+
+ const revised=structuredClone(i);revised.choice.walkingRiseAboveHouseFflMm=100
+ revised.choice.frame.clearHeightMm=2350
+ revised.choice.outfalls.clearWidthMm=600;revised.choice.outfalls.clearHeightMm=134
+ revised.choice.outfalls.metalMm=5;revised.choice.outfalls.invertRiseAboveExistingMm=5
+ revised.choice.outfalls.receiverClearWidthMm=650;revised.choice.externalRampRunMm=1200
  const b=inletPlantTankedRoom(revised)
- assert.ok(b.containment.reserveL>r.containment.reserveL+100)
+ assert.ok(r.containment.reserveL>b.containment.reserveL+100)
  assert.ok(b.fittedFrame.cargoHeadReserveAfterTwoSettingsMm>=0)
  assert.ok(b.outfalls.hydrostaticPlateNecessary)
  assert.ok(b.walking.necessaryMemberComparisons,JSON.stringify(b.walking.memberChecks.filter(p=>!p.necessary)))
  assert.notEqual(b.source.caseDigest,r.source.caseDigest)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
- if(dir)writeFileSync(join(dir,'Plant-tanked-150mm450mm-comparison.json'),JSON.stringify(b,null,2))
- console.info('PLANT_TANK_COMPLETE_ALTERNATIVE '+JSON.stringify({choice:{rise:150,clearWidth:450,metal:4},levels:b.levels,inventory:b.inventory.fullInstantPressureNetworkDesignReleaseL,containment:b.containment,steelKg:b.walking.normalMassUpperKg,frame:b.fittedFrame}))
+ if(dir)writeFileSync(join(dir,'Plant-tanked-rejected-tight-100mm600mm-comparison.json'),JSON.stringify(b,null,2))
+ console.info('PLANT_TANK_COMPLETE_ALTERNATIVE '+JSON.stringify({choice:{rise:100,clearWidth:600,metal:5},levels:b.levels,inventory:b.inventory.fullInstantPressureNetworkDesignReleaseL,containment:b.containment,steelKg:b.walking.normalMassUpperKg,frame:b.fittedFrame}))
+
 })

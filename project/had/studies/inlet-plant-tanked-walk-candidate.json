@@ -5,7 +5,7 @@
   "basePanRoomChoice": "project/had/studies/inlet-split-plant-room-candidate.json",
   "vesselChoice": "project/had/studies/inlet-store-vessel-candidate.json",
   "selectedForDevelopment": true,
-  "walkingRiseAboveHouseFflMm": 100,
+  "walkingRiseAboveHouseFflMm": 150,
   "maximumBulkWaterRelativeWalkingMm": -20,
   "upstandAboveWalkingMm": 0,
   "bridgeAboveWalkingMm": 0,
@@ -23,18 +23,18 @@
     "primaryDataUrl": "https://www.outokumpu.com/-/media/files/products/supra/outokumpu-supra-range-datasheet.pdf?modified=20251117111951&revision=7a909396-d1f3-4d36-9c1c-99606be41fd2"
   },
   "outfalls": {
-    "clearWidthMm": 600,
-    "clearHeightMm": 134,
-    "metalMm": 5,
+    "clearWidthMm": 450,
+    "clearHeightMm": 135,
+    "metalMm": 4,
     "outletAxesYMm": [
       4260,
       4940
     ],
     "entranceKComparison": 2,
     "manningNComparison": 0.015,
-    "invertRiseAboveExistingMm": 5,
+    "invertRiseAboveExistingMm": 4,
     "maximumPlateDeflectionMm": 5,
-    "receiverClearWidthMm": 650,
+    "receiverClearWidthMm": 500,
     "receiverMetalMm": 3
   },
   "bridge": {
@@ -116,7 +116,7 @@
   },
   "frame": {
     "clearWidthMm": 1100,
-    "clearHeightMm": 2350,
+    "clearHeightMm": 2300,
     "headerDepthMm": 100,
     "sourceInfillPortDiameterMm": 125
   },
@@ -156,9 +156,9 @@
     ],
     "maximumTerminalAddedDevelopedFactorOfWorkTerritory": 2
   },
-  "state": "Current internal design candidate:100mm raised open walk, bulk water20mm below walk; source-based full outer-envelope inventory, actual flooring/service/ramp geometry and fresh force proof mandatory.",
+  "state": "Selected for internal development after actual source comparison:150mm Plant-only raised open walking surface, full retained2300mm cargo opening and450mm all-metal outfalls. Actual tanking/support/service/exterior-access/thermal/transient/force joins remain explicit.",
   "internalAccess": {
-    "mode": "two50mm rises with one intermediate tread; no Plant-floor lip",
+    "mode": "two75mm rises with one intermediate tread; no Plant-floor lip",
     "firstRiseFraction": 0.5,
     "treadPlanMm": [
       10190,
@@ -179,5 +179,28 @@
     2600,
     2100
   ],
-  "externalRampRunMm": 1200
+  "externalRampRunMm": 1800,
+  "apparatusDesign": {
+    "maximumPrimaryFluidDensityKgM3": 1100,
+    "maximumBufferRetainedAncillaryDryKg": 20,
+    "bufferWaterMaximumMethod": "Full actual outer545mm×1975mm cylinder as conservative fluid upper, never300nominal or335catalogue-filled mass as a maximum."
+  },
+  "externalAccess": {
+    "deckElevation": "same as actual Plant walking surface",
+    "legacyDeckElevationIsNotSiteGround": true,
+    "groundReceiver": "actual saved exteriorGrade, not houseFFL",
+    "portableLiftPlatformClearPlanMm": [
+      14730,
+      4050,
+      1100,
+      1100
+    ],
+    "operatorGroundPlanXYMm": [
+      15280,
+      3700
+    ],
+    "minimumRatedCargoKg": 500,
+    "pressureStoreCargoIncludesTransportCarrierRequired": true,
+    "actualLiftRatingGuardDockAndSiteSupportAccepted": false
+  }
 }
