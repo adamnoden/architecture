@@ -535,7 +535,7 @@ def draw(c,result):
     for q in result['columnBarCoordinatesLocalMm']:
         x,y=plan(q);elem('circle',cx=x,cy=y,r=4.77,fill='#243c83')
     for name,normal in [('west',0),('south',1)]:
-        selected=next(p for p in result['columnLinkPaths'] if p['id'].startswith(f'column-link/{normal}/3285.5' if normal==0 else 'column-link/1/3335'))
+        selected=next(p for p in result['columnLinkPaths'] if p['id'].startswith(f'column-link/{normal}/3285.5' if normal==0 else 'column-link/1/3355'))
         path([plan(q) for q in paths_points(selected)],'#b17815',1.7)
     text(35,720,'12H16 column main; 4 continuous H16 band; H10 hoops/crossties.',17)
     text(35,750,'H14/75 nominal floor; explicit local rows and opposed 1000 mm tails.',17)
