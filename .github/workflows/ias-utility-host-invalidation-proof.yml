@@ -1,0 +1,58 @@
+name: IAS utility host invalidation proof
+
+on:
+  push:
+    branches: [work/zerg-utility-host-invalidation-20261126]
+    paths:
+      - 'project/ias/studies/utility-host-revised-route.py'
+      - 'project/ias/studies/utility-host-revised-route.json'
+      - 'project/ias/studies/utility-host-revised-route.svg'
+      - '.github/workflows/ias-utility-host-invalidation-proof.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  owning-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11.14'
+      - name: Replay owning generator and actual post invalidation
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "${RUNNER_TEMP}/utility-host-invalidation"
+          python -B project/ias/studies/utility-host-revised-route.py --check | tee "${RUNNER_TEMP}/utility-host-invalidation/check.json"
+          python - <<'PY' | tee "${RUNNER_TEMP}/utility-host-invalidation/invalidation.json"
+          import json
+          from pathlib import Path
+          p = Path('project/ias/studies/utility-host-revised-route.json')
+          r = json.loads(p.read_text())
+          a = r['geometry']['carrier']['compact carrier post']
+          c = r['postComparison']
+          assert a == [10905, 1215, 300, 20, 20, 550]
+          assert c['section'] == [40, 40, 3] and c['requiredI_mm4'] == 75000
+          assert c['movement'] == 1.6515544041450778
+          assert c['appliesToDrawnPost'] is False
+          assert c['actualDrawnSectionMm'] == [20, 20]
+          assert c['actualDrawnWallMm'] is None
+          assert c['actualDrawnPostMechanicalScreen'] is False
+          assert c['diagnostics'] == ['IAS_HOST_POST_SECTION_MISMATCH']
+          s = p.with_suffix('.svg').read_text()
+          assert 'Revised 40 mm post' not in s
+          assert 'mechanics unqualified' in s and 'Non-applicable 40 x 40 x 3' in s
+          print(json.dumps({'drawnPost': a, 'postComparison': c}, indent=2))
+          PY
+          cp project/ias/studies/utility-host-revised-route.{py,json,svg} "${RUNNER_TEMP}/utility-host-invalidation/"
+          git diff --exit-code -- project/ias/studies/utility-host-revised-route.py project/ias/studies/utility-host-revised-route.json project/ias/studies/utility-host-revised-route.svg
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: ias-utility-host-invalidation-proof
+          path: ${{ runner.temp }}/utility-host-invalidation
+          retention-days: 90
+          if-no-files-found: error

@@ -523,7 +523,18 @@
     ],
     "requiredI_mm4": 75000,
     "movement": 1.6515544041450778,
-    "movementTarget": 3
+    "movementTarget": 3,
+    "appliesToDrawnPost": false,
+    "actualDrawnSectionMm": [
+      20,
+      20
+    ],
+    "actualDrawnWallMm": null,
+    "actualDrawnPostMechanicalScreen": false,
+    "diagnostics": [
+      "IAS_HOST_POST_SECTION_MISMATCH"
+    ],
+    "nonApplicability": "The drawn carrier post is 20 x 20 mm with unspecified wall; the retained 40 x 40 x 3 mm / I75000 comparison does not establish its mechanical capacity."
   },
   "temporarySupportComparison": {
     "mastSection": [
