@@ -452,10 +452,10 @@
       "receiverBoxMm": [
         10805,
         1140,
-        180,
+        212,
         335,
         100,
-        40
+        8
       ],
       "corePlateYMm": [
         1000,
@@ -467,7 +467,8 @@
       "maximumCompleteCapturedKg": 20,
       "toolCoupleNm": 60,
       "maximumMovementMm": 3,
-      "stressCeilingMpa": 160
+      "stressCeilingMpa": 160,
+      "carrierGuideShoulderHeightMm": 900
     }
   }
 }
