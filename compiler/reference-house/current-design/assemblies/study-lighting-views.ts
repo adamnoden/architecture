@@ -474,8 +474,8 @@ export function drawStudyLightingCircuit(r:StudyLightingResult){
  out+=text(450,1760,'No diffuse-light equivalence, material admission or owner appearance acceptance')
  out+=text(450,1800,'Elevation schematic uses different horizontal/vertical scales; not product CAD','small')
  const fc=h.cableOpening.centreXMm,fz=h.cableOpening.centreZMm
- out+=rect(AX(fc-a.fitting.shadeWidthMm/2),AZ(fz+a.fitting.shadeHeightMm/2),a.fitting.shadeWidthMm*.6,a.fitting.shadeHeightMm*.35,'none')
- out+=text(AX(fc-110),AZ(fz+125),'Complete fitting envelope','small')
+ out+=rect(AX(fc-a.fitting.shadeWidthMm/2),AZ(fz+a.fitting.authoredDownwardEnvelopeZFromMountMm[1]!),a.fitting.shadeWidthMm*.6,(a.fitting.authoredDownwardEnvelopeZFromMountMm[1]!-a.fitting.authoredDownwardEnvelopeZFromMountMm[0]!)*.35,'none')
+ out+=text(AX(fc-110),AZ(fz+125),'Authored downward maintenance envelope','small')
  const fp=a.floorPreparation,west=Math.min(...r.commonRoom.bands.map(q=>q[0]!)),north=Math.max(...r.commonRoom.bands.map(q=>q[3]!)),PX=(x:number)=>70+(x-west)*.12,PY=(y:number)=>1880+(north-y)*.075
  out+=text(60,1850,'Actual-room appliance preparation: closed bay/outlet retained','heading')
  for(const band of r.commonRoom.bands)out+=rect(PX(band[0]!),PY(band[3]!),(band[2]!-band[0]!)*.12,(band[3]!-band[1]!)*.075,'#f0ece2')

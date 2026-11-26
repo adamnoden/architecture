@@ -373,7 +373,7 @@ test('whole cases require a paid 75mm draw and a separate rest; the parked modul
   assert.equal(c.renewal.drawingCaseThroughSmallerSurroundOpeningClaimed, false)
   assert.equal(c.renewal.firstNormalDrawMm, 75)
   assert.equal(c.renewal.additionalTemporaryFloorTerritoryM2, .04)
-  assert.deepEqual(c.renewal.secondaryRestPlanMm, [800, 2450.5, 1000, 2650.5])
+  assert.deepEqual(c.renewal.secondaryRestPlanMm, [800, 2400.5, 1000, 2600.5])
   assert.ok(c.renewal.moves.every(move => move.conflictingIds.length === 0))
   const moved = c.renewal.moves.find(move => move.id === 'translate-left-above-main-rest')!
   assert.equal(moved.planMm[3]! - moved.planMm[1]!, 61.5)

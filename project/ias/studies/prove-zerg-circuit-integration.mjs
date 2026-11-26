@@ -65,6 +65,7 @@ function run(name,args,allowStaleBindings=false){
  commands.push(row);save('commands.json',commands)
  if(result.status!==0){
   const expected=allowStaleBindings&&result.status===1&&(result.stderr??'').includes('Stale canonical working-house bindings; explicitly review/refresh after owning regeneration')
+  if(name==='focused-lighting')console.log('FOCUSED_FAILURE_SUMMARY '+JSON.stringify(((result.stdout??'')+(result.stderr??'')).split('\n').filter(line=>/✖|test at|at TestContext|actual:|expected:|tests |pass |fail /.test(line))))
   if(!expected)throw Error(name+' failed: '+JSON.stringify(row))
   return false
  }

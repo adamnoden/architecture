@@ -611,7 +611,7 @@ the same source room. These remain conditional geometry, not loaded human proof.
 The retained-cord comparison genuinely failed six ordinary floor body routes;
 it was not silently accepted. Floor preparation now unplugs the small appliance,
 removes its ordinary mount and both screwed flex clips/spacers, and carries
-fitting/managed flex/plug into a temporary180×300×300 tray on the actual Study
+fitting/managed flex/plug into a temporary180×300×400 rest reservation on the actual Study
 desk. Captive backing lands, fixed carrier, outlet and entire bay stay closed.
 The tray remains10mm inside the current desk at every existing movement stage;
 this consequence is checked against the actual production furniture result.
@@ -621,7 +621,7 @@ volumes remain available as the rejected retained-appliance comparison.
 
 Preparation has a source-checked operator approach,50mm normal draw, clear
 north-field hand turn, east-flank carry and above-table placement. It charges
-the full145×260mm fitting and declared300mm-high combined handling envelope,
+the full145×260mm fitting and declared400mm-high combined handling envelope,
 R300 body,25mm furniture separation, two5mm settings,600mm hand reach and
 a0.25mm continuous-motion sampling bound. The carry uses a1320mm bottom and1600mm standing shoulder; final lowering uses the authored1050mm kneeling shoulder, with full3D grip reach rather than horizontal reach alone. The730mm tabletop is an authored
 comparison consistent with current view convention, not measured furniture.
@@ -638,3 +638,11 @@ No fixing is chased into permanent fabric or supported by decoration.
 Actual anchors, threads, complete clip components and material admission
 remain unqualified. The authored carry has been adjusted by5mm to give a
 larger component/body reserve while preserving the full furniture criterion.
+
+The160mm catalogue dimension is shade height, not an accepted full-articulation
+envelope. The shared source now reserves a generous downward maintenance pose
+from205mm below to45mm above its mount,250mm total, and a400mm-high combined
+carry/desk-rest reservation. Published90°up/60°down movement and the200mm
+illuminated-object separation remain unqualified use duties. Return the shade
+to the bounded downward pose before preparation. This is an authored envelope;
+no productCAD, full-aim clearance or physical packing acceptance is invented.

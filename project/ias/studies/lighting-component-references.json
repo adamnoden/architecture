@@ -87,7 +87,12 @@
       "source": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf",
       "checkedDate": "2026-11-26",
       "finding": "Explicit external cable/plug option; grommet100141 and eyelet101892 mandatory. Exact supplied connector reference/CSA and backplate CAD not published here; no direct fixed2.5mm2 terminal-fit assumption."
-    }
+    },
+    "authoredDownwardEnvelopeZFromMountMm": [
+      -205,
+      45
+    ],
+    "poseEnvelopeAuthority": "Generous authored maintenance pose: published160mm shade plus90mm plate, with all shade below plate top; not productCAD or full90up/60down aiming qualification."
   },
   "projectRequirements": {
     "fixedBoundaryDepthMm": 7.5,
@@ -505,7 +510,7 @@
       "traySizeMm": [
         180,
         300,
-        300
+        400
       ],
       "trayOffsetFromDeskMm": [
         1380,
@@ -513,7 +518,7 @@
       ],
       "tabletopComparisonMm": 730,
       "carriedBottomMm": 1320,
-      "carryAssemblyHeightMm": 300,
+      "carryAssemblyHeightMm": 400,
       "samplingErrorMm": 0.25,
       "standingShoulderMm": 1600,
       "kneelingShoulderMm": 1050

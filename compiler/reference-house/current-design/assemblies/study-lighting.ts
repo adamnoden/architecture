@@ -29,7 +29,7 @@ export function readLightingComponents() {
     socket: { plateWidthMm: number; plateHeightMm: number; recommendedBoxDepthMm: number; bodyDepthMm: number },
     backBox: { widthMm: number; heightMm: number; depthMm: number }, plug: { widthMm: number; heightMm: number; depthMm: number; insertedProjectionMm: number },
     deskLamp: { baseDiameterMm: number; leadLengthMm: number }, floorLamp: { baseDiameterMm: number; leadLengthMm: number },
-    wallLamp: { manufacturer:string;reference:string;leadLengthMm:number; shadeWidthMm: number; shadeHeightMm: number; wallPlateDiameterMm:number; reservedCompleteProjectionMm: number },
+    wallLamp: { manufacturer:string;reference:string;leadLengthMm:number; shadeWidthMm: number; shadeHeightMm: number; wallPlateDiameterMm:number; authoredDownwardEnvelopeZFromMountMm:readonly number[]; reservedCompleteProjectionMm: number },
     wallTaskLamp: { wallPlateDiameterMm: number; maximumReachMm: number; shadeDiameterMm: number; shadeHeightMm: number },
     projectRequirements: { fixedBoundaryDepthMm: number; removableFaceDepthMm: number; localCarrierDepthReserveMm: number; bayWidthMm: number;
       doorStopMm: number;  socketGripNormalMm: number;
@@ -79,6 +79,7 @@ export type LightingBasis = ReturnType<typeof lightingBasis>
 
 /** Pure geometry/role comparison. Photometry, acoustics, product admission and installed capacity stay unqualified. */
 export function deriveStudyLighting(input: unknown, basis: LightingBasis, components: ReturnType<typeof readLightingComponents>) {
+  if(!components.localHomeRunCandidate||!Number.isFinite(components.localHomeRunCandidate.moduleRestFrontExtensionMm))throw new TypeError('IAS_LIGHTING_HOME_RUN_INPUT_INVALID')
   const request = admitStudyLightingCase(input), p = components.projectRequirements, room = basis.room
   const dimensions = [room.generalDepthMm, room.ceilingZMm, ...Object.values(p).filter(value => typeof value !== 'string').flat(), components.backBox.widthMm, components.backBox.heightMm,
     components.backBox.depthMm, components.socket.plateWidthMm, components.socket.plateHeightMm, components.wallTaskLamp.maximumReachMm]
@@ -232,7 +233,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     parkedModule: construction.firstRelease.parked, floorBandsMm: room.bands,
     occupiedPlanMm: [...room.occupied, ['reserved-floor-lamp', [floorBase[0] - floorLampRadius, floorBase[1] - floorLampRadius, floorBase[0] + floorLampRadius, floorBase[1] + floorLampRadius]]],
   }, components.commonDepthCornerCandidate)
-  const circuit=deriveStudyLightingCircuit(basis,construction.localHomeRunComparison,components.circuitDesign,{manufacturer:components.wallLamp.manufacturer,reference:components.wallLamp.reference,leadLengthMm:components.wallLamp.leadLengthMm,shadeWidthMm:components.wallLamp.shadeWidthMm,shadeHeightMm:components.wallLamp.shadeHeightMm,wallPlateDiameterMm:components.wallLamp.wallPlateDiameterMm,projectionMm:components.wallLamp.reservedCompleteProjectionMm,plugSpaceWitnessMm:[components.plug.widthMm,components.plug.heightMm,components.plug.insertedProjectionMm]})
+  const circuit=deriveStudyLightingCircuit(basis,construction.localHomeRunComparison,components.circuitDesign,{manufacturer:components.wallLamp.manufacturer,reference:components.wallLamp.reference,leadLengthMm:components.wallLamp.leadLengthMm,shadeWidthMm:components.wallLamp.shadeWidthMm,shadeHeightMm:components.wallLamp.shadeHeightMm,wallPlateDiameterMm:components.wallLamp.wallPlateDiameterMm,authoredDownwardEnvelopeZFromMountMm:components.wallLamp.authoredDownwardEnvelopeZFromMountMm,projectionMm:components.wallLamp.reservedCompleteProjectionMm,plugSpaceWitnessMm:[components.plug.widthMm,components.plug.heightMm,components.plug.insertedProjectionMm]})
   for(const issue of circuit.issues)fail('IAS_LIGHTING_CIRCUIT_REJECTED',issue)
   fail('IAS_LIGHTING_SUPPLY_INSTALLATION_UNQUALIFIED','Named source-bound socket/manual-lighting ways, cables and terminal nets are specified. Actual CU water exposure, supply/earth, board compatibility, fault energy and installed verification remain unearned.',circuit.feeders.map(r=>r.way))
   fail('IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED', 'Three independent source-to-enclosure containment paths replace the unresolved shared-riser topology as an unselected development direction. Actual box ports, hardware and device connections remain unqualified; the source interfaces have specified design nets, with actual installed connections unearned.', construction.localHomeRunComparison.sourceInterfaceIds)
