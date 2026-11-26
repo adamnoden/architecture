@@ -38,13 +38,27 @@ def prepare(folder):
     document['stages']['distributedFloor']['boundaryCase']['windIndex']=0
     check=copy.deepcopy(document);check['stages']['distributedFloor']['boundaryCase']['windIndex']=original['stages']['distributedFloor']['boundaryCase']['windIndex']
     if check!=original:raise ValueError('Only the admitted current wind index may change for the matched W0 programme')
+    code="import{readFileSync}from'node:fs';import{readEngineeringDocument}from'./compiler/reference-house/current-design/engineering-document.ts';let d=JSON.parse(readFileSync(process.argv[1],'utf8'));console.log(JSON.stringify((await readEngineeringDocument(d.design)).bindings))"
+    refreshed=json.loads(subprocess.check_output(['node','--import','tsx','--input-type=module','-e',code,str(DOCUMENT)],text=True))
+    reviewed=[]
+    for family in ('disciplines','implementations','authoredDefaults'):
+        before=original['bindings'][family];after=refreshed[family]
+        for path in sorted(set(before)|set(after)):
+            if before.get(path)!=after.get(path):reviewed.append({'family':family,'path':path,'before':before.get(path),'after':after.get(path)})
+    expected=[{'family':'implementations','path':'compiler/reference-house/current-design/structural-rear-bearing.ts',
+        'before':None,'after':'b9cdfabc01ddf0f26fa081a9fc7ee02ca4ff9c64'}]
+    if reviewed!=expected:raise ValueError('Unreviewed source binding change in recovery: '+json.dumps(reviewed))
+    document['bindings']=refreshed
+    write(folder/'binding-review.json',{'schema':'str-rear-recovery-binding-review/1','explicitSourceBindingRefresh':reviewed,
+        'sameDesignAndStagesExceptAdmittedWindIndex':True,'canonicalFileChanged':False})
     write(folder/'parent-W0-document.json',document)
     from floor_section_model import load_source
     from current_finite_rc_joint import method_identities,runtime_versions
     write(folder/'execution-start.json',{'schema':'str-rear-bearing-recovery-start/1',
       'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
       'canonicalDocumentSHA256':digest(DOCUMENT),'derivedDocumentSHA256':digest(folder/'parent-W0-document.json'),
-      'allowedParentPerturbation':'stages.distributedFloor.boundaryCase.windIndex to0 only',
+      'allowedParentPerturbation':'sole semantic change: stages.distributedFloor.boundaryCase.windIndex to0; explicit reviewed new-consumer source binding refresh',
+      'reviewedSourceBindingChanges':reviewed,
       'sourceSHA256':load_source(ROOT)['identities'],'finiteMethodSHA256':method_identities(ROOT),
       'runtime':runtime_versions(),'recoveredMethodSHA256':methods(),'candidateAccepted':False,
       'sharedRearStageIntegrated':False,'previousRawW0Retained':False})
