@@ -9,12 +9,14 @@ CAGE_DOC='project/str/continuous-rc-portal-cage.md'
 ACCOUNT='project/ccr/studies/source-coverage.json'
 DOCUMENT='project/ccr/studies/working-house-comparison.json'
 TARGETS=WITNESSES+['compiler/reference-house/current-design-snapshot.test.ts',METHOD,CAGE_RESULT,CAGE_DRAW,CAGE_DOC,ACCOUNT,DOCUMENT]
+IAS_OUTPUTS=["project/ias/studies/adaptable-study-lighting-comparison.svg","project/ias/studies/adaptable-study-lighting-corner.svg","project/ias/studies/adaptable-kitchen-lighting.svg","project/ias/studies/adaptable-study-lighting-routes.svg","project/ias/studies/adaptable-study-lighting-construction.svg","project/ias/studies/adaptable-study-lighting-common-depth.svg","project/ias/studies/adaptable-study-lighting.results.json","project/ias/studies/working-study-lighting-circuit.svg","project/ias/studies/working-study-lighting.results.json","project/ias/studies/crafted-study-eye-level-day.svg","project/ias/studies/crafted-study-eye-level-evening.svg","project/ias/studies/working-study-floor.svg","project/ias/studies/working-study-wall-kit.svg","project/ias/studies/working-study-tile-eye-level.svg"]
+TARGETS+=IAS_OUTPUTS
 PROJECTIONS=['STATUS.md','project/workstream-codes.md','project/control/graph.md','docs/project/dependency-graph.md','docs/project/graph-source.ts']
 out=Path(os.environ['RUNNER_TEMP'],'projection-review');out.mkdir()
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def blob(data):return hashlib.sha1(b'blob '+str(len(data)).encode()+bytes([0])+data).hexdigest()
 def run(args):subprocess.run(args,check=True)
-assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='b1987fb72769f5b6f5f877e801679c3ca9bc53cd'
+assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()=='5fa4d076ad0252808b7011c9851e1d8310acabec'
 assert blob(Path(METHOD).read_bytes())=='3c3cfb643bb8a35e2f8b0e6c9eaa91be1c39b837'
 old={p:subprocess.check_output(['git','show','HEAD:'+p]) for p in TARGETS}
 account_before=json.loads(old[ACCOUNT]);document_before=json.loads(old[DOCUMENT])
@@ -42,6 +44,10 @@ assert Path(CAGE_DOC).read_bytes()==old[CAGE_DOC],'Superseded-cage warning chang
 refresh_pins();refresh_bindings()
 state=None
 for iteration in range(4):
+    run(['node','--import','tsx','project/ias/studies/adaptable-study-lighting.mjs','--write'])
+    refresh_pins();refresh_bindings()
+    run(['node','--import','tsx','project/ias/studies/crafted-study-eye-level.mjs','--write'])
+    refresh_pins();refresh_bindings()
     run(['node','--import','tsx','project/ccr/studies/current-projection-witnesses.ts','--write'])
     refresh_pins();refresh_bindings()
     now=[sha(p) for p in TARGETS]
@@ -50,6 +56,8 @@ for iteration in range(4):
 else:raise ValueError('Owning witness/account/binding fixedpoint not reached')
 run(['node','--import','tsx','project/ccr/studies/current-projection-witnesses.ts','--check'])
 run(['python','-B',METHOD,'--check'])
+run(['node','--import','tsx','project/ias/studies/adaptable-study-lighting.mjs','--check'])
+run(['node','--import','tsx','project/ias/studies/crafted-study-eye-level.mjs','--check'])
 normal=lambda data:re.sub(rb'data-caseDigest="[0-9a-f]{64}"',b'data-caseDigest="CURRENT"',data)
 for p in WITNESSES:assert normal(old[p])==normal(Path(p).read_bytes()),'Unexpected physical witness change: '+p
 for p in TARGETS:
