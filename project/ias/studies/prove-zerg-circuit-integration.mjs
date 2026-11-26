@@ -113,11 +113,12 @@ try{
   account.gitBlobs[path]=blob(bytes)
  }
  writeFileSync(accountPath,JSON.stringify(account,null,2)+'\n')
+ await regenerateLighting('lighting-regenerate')
  const diagnosticKit=await prepareCurrentDesignCompile(d.design).studyRoomKit({schema:'ias-study-room-kit-case/1',units:'mm',...d.stages.studyRoomKit},d.stages.distributedFloor)
  const diagnosticResult=await prepareCurrentDesignCompile(d.design).studyLighting({schema:'ias-study-lighting-case/1',units:'mm',...d.stages.studyLighting},diagnosticKit)
  save('candidate-geometry.json',{status:diagnosticResult.lighting.status,issues:diagnosticResult.lighting.circuit.issues,homeRuns:diagnosticResult.lighting.construction.localHomeRunComparison,corner:diagnosticResult.lighting.corner})
  console.log('CANDIDATE_GEOMETRY '+JSON.stringify({status:diagnosticResult.lighting.status,issues:diagnosticResult.lighting.circuit.issues,local:diagnosticResult.lighting.construction.localHomeRunComparison.issues}))
- await regenerateLighting('lighting-regenerate')
+
  // This producer proves current bindings before writing its five actual views.
  run('room-views-regenerate',['--import','tsx','project/ias/studies/crafted-study-eye-level.mjs','--write'])
  const afterViews=json(accountPath),family=afterViews.families.find(f=>f.id==='ias-study-room-perspective')
