@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:30.008Z",
-  "heartbeatAt": "2026-11-26T08:10:50.942Z",
-  "expiresAt": "2026-11-26T09:40:50.942Z",
+  "heartbeatAt": "2026-11-26T08:47:23.894Z",
+  "expiresAt": "2026-11-26T10:17:23.894Z",
   "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
@@ -36,7 +36,7 @@
   },
   "pr": 1627,
   "checkpoint": {
-    "evidence": "PR1627 head0d20523d recovered: numerical and publication proofs green, full health currently running. Local current two-room saved ground native4/4 passed603.6s at ground branchab2f2aeb plus guarded/UI working changes; actual capture retained locally.",
-    "next": "Merge1627 after exact-head full health and fresh dual preflight; publish current ground/water and coordinated lighting continuation with fresh source witnesses."
+    "evidence": "1627 exact0d20523d full health still running; earlier native/publication proofs pass. Recovery branch work/zerg-engineering-20261126 nowca4575ca preserves integrated room gravity, independent home runs, actual outfalls and new13member receiver code. Actual exploratory13 cuts balance2.56e-13 and all312 heads unchanged0; opposite-end checker/adverse tests pass.",
+    "next": "Finish final saved2room receiver proof and current archive; merge1627 after full health plus fresh dualpreflight; reconcile main and submit combined exact-head native/browser/publication integration."
   }
 }
