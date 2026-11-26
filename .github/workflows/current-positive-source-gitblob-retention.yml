@@ -31,13 +31,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           python -B - <<'PY'
-          import base64,hashlib,io,json,os,re,subprocess,urllib.error,urllib.request,zipfile
+          import base64,hashlib,io,json,os,re,subprocess,urllib.error,urllib.request,zipfile,tarfile
           from pathlib import Path
           folder=Path(os.environ['RUNNER_TEMP'])/'current-positive-gitblob-collector';folder.mkdir(parents=True,exist_ok=True)
           api=os.environ['GITHUB_API_URL'];repo=os.environ['GITHUB_REPOSITORY']
           if repo!='adamnoden/architecture':raise ValueError('Exact repository required')
           headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
-          specs=[{"id":15127092981,"name":"current-positive-distributed96-c38117826cecc86af1339bbaa5e9ba096920acc5","bytes":1708723,"sha256":"e312936a027e4c32f97361404541fcdf88062d36165f0490766e5b523db9b708","run":45838637856,"head":"c38117826cecc86af1339bbaa5e9ba096920acc5","paths":["project/str/studies/distributed-floor-compatibility-proof.json","project/str/studies/distributed-floor-compatibility.svg"],"job":"distributed96"},{"id":15126504403,"name":"current-positive-monolithic96-c38117826cecc86af1339bbaa5e9ba096920acc5","bytes":3132306,"sha256":"c8d6b76e98c640833534caafd9c1013cf712e139dbafded52e337f01b32388d8","run":45838637856,"head":"c38117826cecc86af1339bbaa5e9ba096920acc5","paths":["project/str/studies/monolithic-rc-native96-proof.json","project/str/studies/monolithic-rc-native96-floor.svg","project/str/studies/monolithic-rc-native96-barrier.svg","project/str/studies/monolithic-rc-governing-replay.json","project/str/studies/monolithic-rc-governing-actions.json","project/str/studies/monolithic-rc-translation-replay.json","project/str/studies/monolithic-rc-translation-actions.json"],"job":"monolithic96"},{"id":15127429178,"name":"current-positive-vertical-ten-2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","bytes":2875652,"sha256":"b03452f9a231abe7841cb7a91542af491bd7e6c5db09ecd3998642a42d1dd986","run":45840034483,"head":"2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","paths":["project/str/studies/vertical-rc-floor-proof.json","project/str/studies/vertical-rc-floor.svg"],"job":"vertical-ten"},{"id":15127499953,"name":"current-positive-upper-six-2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","bytes":2105431,"sha256":"cba9f60638d42b88d4669c4d3e339f1ab6b61240ca1595d0333086e84057f64e","run":45840034483,"head":"2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","paths":["project/str/studies/upper-roof-bearing-proof.json","project/str/studies/upper-roof-bearing.svg"],"job":"upper-six"}]
+          specs=[{"id":15127092981,"name":"current-positive-distributed96-c38117826cecc86af1339bbaa5e9ba096920acc5","bytes":1708723,"sha256":"e312936a027e4c32f97361404541fcdf88062d36165f0490766e5b523db9b708","run":45838637856,"head":"c38117826cecc86af1339bbaa5e9ba096920acc5","paths":["project/str/studies/distributed-floor-compatibility-proof.json","project/str/studies/distributed-floor-compatibility.svg"],"job":"distributed96"},{"id":15126504403,"name":"current-positive-monolithic96-c38117826cecc86af1339bbaa5e9ba096920acc5","bytes":3132306,"sha256":"c8d6b76e98c640833534caafd9c1013cf712e139dbafded52e337f01b32388d8","run":45838637856,"head":"c38117826cecc86af1339bbaa5e9ba096920acc5","paths":["project/str/studies/monolithic-rc-native96-proof.json","project/str/studies/monolithic-rc-native96-floor.svg","project/str/studies/monolithic-rc-native96-barrier.svg","project/str/studies/monolithic-rc-governing-replay.json","project/str/studies/monolithic-rc-governing-actions.json","project/str/studies/monolithic-rc-translation-replay.json","project/str/studies/monolithic-rc-translation-actions.json"],"job":"monolithic96"},{"id":15127429178,"name":"current-positive-vertical-ten-2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","bytes":2875652,"sha256":"b03452f9a231abe7841cb7a91542af491bd7e6c5db09ecd3998642a42d1dd986","run":45840034483,"head":"2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","paths":["project/str/studies/vertical-rc-floor-proof.json","project/str/studies/vertical-rc-floor.svg"],"job":"vertical-ten"},{"id":15127499953,"name":"current-positive-upper-six-2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","bytes":2105431,"sha256":"cba9f60638d42b88d4669c4d3e339f1ab6b61240ca1595d0333086e84057f64e","run":45840034483,"head":"2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","paths":["project/str/studies/upper-roof-bearing-proof.json","project/str/studies/upper-roof-bearing.svg"],"job":"upper-six"},{"id":15128845387,"name":"current-positive-masonry-eight-2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","bytes":20180246,"sha256":"a61b42bd596922c94c1d954566fddec067077a5ee20db2cce533d8837634e08f","run":45840034483,"head":"2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","paths":["project/str/studies/masonry-frame-a-proof.json","project/str/studies/masonry-frame-a.svg","project/str/studies/masonry-frame-a-floor.svg","project/str/studies/masonry-frame-a-roof.svg","project/str/studies/masonry-frame-a-cage.svg"],"job":"masonry-eight","captureArchive":{"member":"masonry-eight-actual-full-captures.tar.gz","path":"project/str/studies/captures/current-positive-masonry-full-captures-20261126.tar.gz","bytes":17758955,"sha256":"14a431cbcc849e91f0ef6cb4348addf3c8f811a2fb86c72b2978ad3af7f1d7a3","manifestMember":"masonry-native-capture-manifest.json","manifestPath":"project/str/studies/captures/current-positive-masonry-full-captures-20261126.manifest.json"}}]
           pinned={"project/str/studies/distributed_floor_compatibility.py":"7a8eb302813e8a509a1fac16ee29e7359d2c0bf9","project/str/studies/perforated_floor_condensation.py":"fbdea8993c4c00d863f2105c0a83f6ac0bf78c03","project/str/studies/current_zero_chord_control.py":"abff63ca41c5bfa01082a3443ed0900412e893f4","project/str/studies/current_zero_chord_control_test.py":"d09edced886fe556f4e0768def8a29301fb847f8"}
           sha=lambda data:hashlib.sha256(data).hexdigest()
           blob=lambda data:hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
@@ -101,6 +101,25 @@ jobs:
              if name in all_outputs:raise ValueError('Duplicate output scope')
              all_outputs[name]=data
              artifact_record['outputs'][name]={'bytes':len(data),'sha256':sha(data),'gitBlob':blob(data)}
+            if 'captureArchive' in spec:
+             control=spec['captureArchive'];data=member(control['member']);manifest_bytes=member(control['manifestMember']);capture_manifest=json.loads(manifest_bytes)
+             if len(data)!=control['bytes'] or sha(data)!=control['sha256']:raise ValueError('Exact observed complete native archive changed')
+             if (capture_manifest['schema']!='str-current-positive-masonry-full-captures/1' or capture_manifest['sourceCommit']!=spec['head']
+                 or capture_manifest['completeVerifiedControlCount']!=8 or capture_manifest['candidateAccepted'] is not False
+                 or capture_manifest['proofSHA256']!=after['outputs']['project/str/studies/masonry-frame-a-proof.json']['sha256']):raise ValueError('Actual eight native capture/proof manifest differs')
+             for path,identity in capture_manifest['sourceSHA256'].items():
+              if identities.get(path)!=identity:raise ValueError('Native masonry capture source is not actual frozen58 subset')
+             with tarfile.open(fileobj=io.BytesIO(data),mode='r:gz') as archive:
+              members=archive.getmembers();files=[m for m in members if m.isfile()];names=[m.name for m in files]
+              if len(names)!=len(set(names)) or set(names)!=set(capture_manifest['files'])|{control['manifestMember']}:raise ValueError('Native capture archive member set changed')
+              if any(m.issym() or m.islnk() or m.name.startswith('/') or '..' in m.name.split('/') for m in members):raise ValueError('Unsafe native archive member')
+              if archive.extractfile(control['manifestMember']).read()!=manifest_bytes:raise ValueError('Exact inner archive manifest differs')
+              for name,identity in capture_manifest['files'].items():
+               content=archive.extractfile(name).read()
+               if len(content)!=identity['bytes'] or sha(content)!=identity['sha256']:raise ValueError('Actual complete capture member changed: '+name)
+             for name,content in ((control['path'],data),(control['manifestPath'],manifest_bytes)):
+              if name in all_outputs:raise ValueError('Duplicate capture evidence path')
+              all_outputs[name]=content;artifact_record['outputs'][name]={'bytes':len(content),'sha256':sha(content),'gitBlob':blob(content),'kind':'verified-actual-native-capture-evidence'}
             records.append(artifact_record)
           # All artifacts/paths/source bytes are authenticated BEFORE any object is written.
           manifest={'schema':'str-current-positive-source-gitblob-retention/1','collectorSourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'native58SHA256':captured_sources,'producerArtifacts':records,'outputs':{},'onlyGitBlobObjectsCreated':True,'commitTreeRefAccountCanonicalWrites':False,'candidateAccepted':False}
@@ -110,7 +129,6 @@ jobs:
           if subprocess.check_output(['git','status','--porcelain'],text=True):raise ValueError('Collector mutated its checkout')
           (folder/'gitblob-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
           print('CURRENT_POSITIVE_GITBLOBS '+json.dumps(manifest,separators=(',',':')),flush=True)
-          
           PY
       - uses: actions/upload-artifact@v6
         if: always()
