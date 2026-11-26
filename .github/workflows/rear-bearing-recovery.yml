@@ -68,6 +68,17 @@ jobs:
           "$STR_FINITE_SOLID_PYTHON" -B -m unittest discover -s project/str/studies -p rear_direct_bearing_replay_test.py -v > "$RUNNER_TEMP/rear-bearing-capture/adverse-tests.log" 2>&1
           "$STR_FINITE_SOLID_PYTHON" -B -m unittest discover -s project/str/studies -p current_finite_joint_replay_test.py -v > "$RUNNER_TEMP/rear-bearing-capture/parent-replay-tests.log" 2>&1
           "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/rear_direct_bearing_recovery.py finalize --folder "$RUNNER_TEMP/rear-bearing-capture"
+      - name: Show bounded recovery failure logs
+        if: failure()
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          folder=Path(os.environ['RUNNER_TEMP'])/'rear-bearing-capture'
+          for path in sorted(folder.glob('*.log')):
+              print('RECOVERY_FAILURE_LOG '+path.name,flush=True)
+              print(path.read_text(errors='replace')[-30000:],flush=True)
+          PY
       - uses: actions/upload-artifact@v6
         if: always()
         with:

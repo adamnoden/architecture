@@ -93,6 +93,7 @@ def finalize(folder):
       'freshActualCases':{'seatedW0':True,'rearW0':True},'newRearSigned96Complete':False,
       'candidateAccepted':False,'strengthAccepted':False,'ownerAccepted':False,'sharedRearStageIntegrated':False}
     write(folder/'recovery-summary.json',summary)
+    print('REAR_RECOVERY_PROOF '+json.dumps(proof,allow_nan=False),flush=True)
     print('REAR_RECOVERY_SUMMARY '+json.dumps({'sourceCommit':start['sourceCommit'],'status':summary['status'],
         'wholeGChangeKN':proof['independentMaterialAndLoadDifference']['actualHousePhysicalGChangeKN'],
         'activeBearingContacts':proof['activeBearingContactCount'],'headCount':proof['actualHeadCount']},allow_nan=False),flush=True)
