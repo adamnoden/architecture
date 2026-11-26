@@ -21,7 +21,7 @@ type NorthLightingProjection={
  readonly circuit:{readonly designDigest:string;readonly issues:readonly string[];readonly applianceLead:{
   readonly fitting:{readonly reference:string;readonly wallPlateDiameterMm:number;readonly projectionMm:number;readonly shadeWidthMm:number;readonly shadeHeightMm:number;readonly authoredDownwardEnvelopeZFromMountMm:readonly number[]}
   readonly radiusMm:number;readonly lengthMm:number;readonly diameterRequirementMm:number;readonly pathMm:readonly(readonly number[])[]
-  readonly nominalFixedVolumes:readonly{readonly id:string;readonly xyzxyzMm:readonly number[]}[]
+  readonly nominalFixedVolumes:readonly{readonly id:string;readonly xyzxyzMm:readonly[number,number,number,number,number,number]}[]
  }}
 }
 
