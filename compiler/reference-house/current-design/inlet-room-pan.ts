@@ -1,3 +1,4 @@
+import {intersectPlan,validPlanRectangle,type PlanRectangle} from './inlet-orthogonal-plan.js'
 export const inletStaticGravityMps2 = 9.81
 type Point = readonly number[]
 type Wrench = { Fx: number; Fy: number; Fz: number; Mx: number; My: number; Mz: number }
@@ -35,7 +36,7 @@ function faceWaterLoad(face:{id:string;cornersMm:readonly Point[];normal:Point},
  * no point sits below either actual outfall invert. Gravity descent and gross
  * below-floor water are geometry only, not a measured hydraulic/jet rating.
  */
-export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: readonly number[]; inletYmm: number;
+export function inletRoomPan(input: { roomPlanMm: readonly number[];planExclusionsMm?:readonly PlanRectangle[]; outletXmm: readonly number[]; inletYmm: number;
   invertMm: number; slopeRatio: number; floorMm: number; floorUndersideMm: number; distributionBottomMm: number;
   datumMm: number; roomId?: 'utility' | 'plant'; settingMm: number; metalMm: number; insulationMm: number;
   chuteWidthMm:number; chuteHeightMm:number; chuteSlopeRatio:number; waterStageComparisonsMm: Readonly<Record<string,number>> }) {
@@ -51,13 +52,19 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
     || axes[0]-input.chuteWidthMm/2<=r[0] || axes[1]+input.chuteWidthMm/2>=r[0]+r[2]
     || input.settingMm < 0 || input.metalMm <= 0 || input.insulationMm < 0
     || Object.entries(input.waterStageComparisonsMm).some(([id,z])=>!id||!Number.isFinite(z))) throw new Error('Unsupported actual floor-pan surface')
-  const half=input.chuteWidthMm/2,
-    xs = [...new Set([r[0], ...axes.flatMap(a=>[a-half,a,a+half]), (axes[0]+axes[1])/2,r[0]+r[2]])].sort((a,b)=>a-b), ys = [r[1], sy, r[1] + r[3]],
+  const half=input.chuteWidthMm/2,outer=[r[0],r[1],r[0]+r[2],r[1]+r[3]] as const,rawExclusions=input.planExclusionsMm??[]
+  if(!Array.isArray(rawExclusions)||rawExclusions.some(e=>!validPlanRectangle(e)))throw Error('Actual corner pan exclusions required')
+  const excluded=rawExclusions.flatMap(e=>{const c=intersectPlan(outer,e);return c?[c]:[]})
+  if(excluded.some(e=>e[0]<axes[1]+half))throw Error('This Utility corner join cannot cut its existing two outlet/chute corridors')
+  const
+    xs = [...new Set([r[0], ...axes.flatMap(a=>[a-half,a,a+half]), (axes[0]+axes[1])/2,r[0]+r[2],...excluded.flatMap(e=>[e[0],e[2]])])].sort((a,b)=>a-b), ys = [...new Set([r[1],sy,r[1]+r[3],...excluded.flatMap(e=>[e[1],e[3]])])].sort((a,b)=>a-b),
     elevation = (x: number, y: number) => iz + (Math.abs(y - sy) + Math.min(...axes.map(a => Math.abs(x - a)))) / ratio,
     chuteBed=(y:number)=>iz-(sy-y)/input.chuteSlopeRatio,
     cells = [] as { id: string; cornersMm: number[][]; actualAreaM2: number; projectedAreaM2: number; meanSurfaceMm: number; nominalUndisplacedWaterLitres: number | null }[]
   for (let j = 1; j < ys.length; j++) for (let i = 1; i < xs.length; i++) {
-    const channel = j===1&&axes.some(a=>Math.abs((xs[i-1]+xs[i])/2-a)<half),
+    const mx=(xs[i-1]+xs[i])/2,my=(ys[j-1]+ys[j])/2
+    if(excluded.some(e=>mx>e[0]&&mx<e[2]&&my>e[1]&&my<e[3]))continue
+    const channel = my<sy&&axes.some(a=>Math.abs((xs[i-1]+xs[i])/2-a)<half),
       surface=channel?(_x:number,y:number)=>chuteBed(y):elevation,
       points = [[xs[i - 1], ys[j - 1]], [xs[i], ys[j - 1]], [xs[i], ys[j]], [xs[i - 1], ys[j]]].map(([x, y]) => [x, y, surface(x, y)]),
       projected = (xs[i] - xs[i - 1]) * (ys[j] - ys[j - 1]) / 1e6,
@@ -67,7 +74,7 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
   }
   const vertices=cells.flatMap(c=>c.cornersMm.map(pointMm=>({pointMm})))
   const highest = Math.max(...vertices.map(v => v.pointMm[2])), lowest = Math.min(...vertices.map(v => v.pointMm[2])),
-    projectedArea = r[2] * r[3] / 1e6, trueArea = cells.reduce((sum, c) => sum + c.actualAreaM2, 0),
+    projectedArea = excluded.length?cells.reduce((n,c)=>n+c.projectedAreaM2,0):r[2]*r[3]/1e6, trueArea = cells.reduce((sum, c) => sum + c.actualAreaM2, 0),
     waterDomain = highest < input.floorMm && chuteBed(ys[0])+input.chuteHeightMm < input.floorMm,
     nominalWater = waterDomain ? cells.reduce((sum, c) => sum + (c.nominalUndisplacedWaterLitres ?? 0), 0) : null,
     // Worst uniform -setting surface shift. Only valid while the entire pan is
@@ -98,7 +105,17 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
     const a=points[i-1],b=points[i]
     upstandFaces.push({id:`HAD/${roomId}-pan-return/${id}-${i}`,cornersMm:[a,b,[b[0],b[1],input.floorMm],[a[0],a[1],input.floorMm]],normal})
   }}
-  if(waterDomain){
+  if(waterDomain&&excluded.length){
+    const boundary=new Map<string,{a:number[];b:number[];normal:number[];count:number}>()
+    for(const c of cells)for(let k=0;k<4;k++){const a=c.cornersMm[k],b=c.cornersMm[(k+1)%4],key=[a.slice(0,2).join(','),b.slice(0,2).join(',')].sort().join('/'),prior=boundary.get(key);if(prior)prior.count++;else boundary.set(key,{a,b,normal:[[0,-1,0],[1,0,0],[0,1,0],[-1,0,0]][k],count:1})}
+    let index=0
+    for(const {a,b,normal,count} of boundary.values())if(count===1){
+      const channel=a[1]===r[1]&&b[1]===r[1]&&axes.some(x=>Math.abs((a[0]+b[0])/2-x)<half)
+      if(channel){const top=chuteBed(r[1])+input.chuteHeightMm,i=xs.indexOf(Math.max(a[0],b[0]));flowInterfaceFaces.push({id:`HAD/${roomId}-pan/wall-open-port-${i}`,normal,cornersMm:[a,b,[b[0],b[1],top],[a[0],a[1],top]]});side('notched-'+index++,[[a[0],a[1],top],[b[0],b[1],top]],normal)}
+      else side('notched-'+index++,[a,b],normal)
+    }
+  }
+  if(waterDomain&&!excluded.length){
     for(let i=1;i<xs.length;i++) {
       const a=xs[i-1],b=xs[i],channel=axes.some(x=>Math.abs((a+b)/2-x)<half),bottom=channel?chuteBed(ys[0])+input.chuteHeightMm:0,
         az=channel?bottom:elevation(a,ys[0]),bz=channel?bottom:elevation(b,ys[0])
@@ -140,7 +157,7 @@ export function inletRoomPan(input: { roomPlanMm: readonly number[]; outletXmm: 
         actualSourceTransientJetAirPressureAndOverflowDistributionQualified:false,
         interpretation:stage>input.floorMm?'Declared submerged/backwater pressure comparator on finite pan faces; NOT containment, actual maximum flood level or whole-house water mass.':'Finite below-floor hydrostatic face actions; not support reactions or a guaranteed hydraulic stage.'}
     }):[]
-  return { id: `HAD/${roomId}-graded-room-pan`, geometryOnly: true, selected: false, slopeRatio: ratio,
+  return { id: `HAD/${roomId}-graded-room-pan`,...(excluded.length?{planExclusionsMm:excluded,orthogonalBoundaryApplied:true,unnotchedEnvelopeAreaM2:r[2]*r[3]/1e6,removedPlanAreaM2:r[2]*r[3]/1e6-projectedArea}:{}),geometryOnly: true, selected: false, slopeRatio: ratio,
     metalComparison: '2mm copper reference; exact constituents, support, seams, corrosion and loaded renewal unqualified',
     openChutes:{clearWidthMm:input.chuteWidthMm,runYMm:[ys[0],sy],bedSlopeRatio:input.chuteSlopeRatio,bedEndsMm:[chuteBed(ys[0]),iz],
       closure:`Open integrated indoor copper pan/chutes. Closed${input.chuteWidthMm}×${input.chuteHeightMm} wall passage starts at actual inner wall; no indoor roof box intersects the floor pan.`},

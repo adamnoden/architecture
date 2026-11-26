@@ -38,6 +38,16 @@ def body_geometry(value):
         raise ValueError('Explicit source-derived floor stock body required')
     result={k:copy.deepcopy(value[k]) for k in required}
     r=rectangle(result['rcRectangleXYMm']);result['rcRectangleXYMm']=r
+    if value.get('rcRectangleIsEnvelopeOnly') and 'rcPlanRectanglesXYMm' not in value:raise ValueError('RC envelope cannot replace an actual notched plan')
+    if 'rcPlanRectanglesXYMm' in value:
+        plans=value['rcPlanRectanglesXYMm']
+        if not isinstance(plans,list) or not plans:raise ValueError('Actual nonempty notched RC plan required')
+        plans=[rectangle(p) for p in plans]
+        for i,a in enumerate(plans):
+            if a[0]<r[0] or a[1]<r[1] or a[2]>r[2] or a[3]>r[3]:raise ValueError('Notched RC plan outside its declared envelope')
+            if any(min(a[2],b[2])>max(a[0],b[0]) and min(a[3],b[3])>max(a[1],b[1]) for b in plans[:i]):raise ValueError('Duplicate physical notched RC area')
+        if [min(p[0] for p in plans),min(p[1] for p in plans),max(p[2] for p in plans),max(p[3] for p in plans)]!=r:raise ValueError('Notched RC envelope does not bound its actual plan')
+        result['rcPlanRectanglesXYMm']=plans
     if result['rcZMm']!=[-30,170] or result['mineralZMm']!=[-180,-30]:
         raise ValueError('Only explicit530-profile stock on unchanged grid top−180 is supported; no Z translation')
     for key in ['rcUnitWeightKNPerM3','mineralUnitWeightKNPerM3']:
@@ -47,6 +57,8 @@ def body_geometry(value):
     for i,raw in enumerate(contacts):
         a=rectangle(raw)
         if a[0]<r[0]-1e-8 or a[1]<r[1]-1e-8 or a[2]>r[2]+1e-8 or a[3]>r[3]+1e-8:raise ValueError('Mineral contact outside actual RC body')
+        covered=sum(max(0,min(a[2],p[2])-max(a[0],p[0]))*max(0,min(a[3],p[3])-max(a[1],p[1])) for p in result.get('rcPlanRectanglesXYMm',[r]))
+        if abs(covered-(a[2]-a[0])*(a[3]-a[1]))>1e-9*(a[2]-a[0])*(a[3]-a[1]):raise ValueError('Mineral contact crosses an actual RC notch')
         for b in contacts[:i]:
             if min(a[2],b[2])-max(a[0],b[0])>1e-8 and min(a[3],b[3])-max(a[1],b[1])>1e-8:raise ValueError('Duplicate physical mineral contact area')
     return result
@@ -55,7 +67,7 @@ def stock_wrench(body):
     """Independent physical volume/centroid ledger, unfactored kN/kNm about0."""
     r=body['rcRectangleXYMm'];z0,z1=body['rcZMm'];m0,m1=body['mineralZMm']
     rows=[]
-    for identifier,a,depth,density in [('rc',r,z1-z0,body['rcUnitWeightKNPerM3']),*[(f'mineral/{i}',a,m1-m0,body['mineralUnitWeightKNPerM3']) for i,a in enumerate(body['disjointContactRectanglesXYMm'])]]:
+    for identifier,a,depth,density in [(('rc' if 'rcPlanRectanglesXYMm' not in body else f'rc/{i}'),a,z1-z0,body['rcUnitWeightKNPerM3']) for i,a in enumerate(body.get('rcPlanRectanglesXYMm',[r]))]+[(f'mineral/{i}',a,m1-m0,body['mineralUnitWeightKNPerM3']) for i,a in enumerate(body['disjointContactRectanglesXYMm'])]:
         weight=(a[2]-a[0])*(a[3]-a[1])*depth/1e9*density;x=(a[0]+a[2])/2;y=(a[1]+a[3])/2
         rows.append({'id':body['id']+'/'+identifier,'physicalGKN':weight,'globalWrenchKN_KNm':[0,0,-weight,-weight*y/1000,weight*x/1000,0]})
     return rows,[sum(row['globalWrenchKN_KNm'][i] for row in rows) for i in range(6)]
@@ -65,8 +77,8 @@ def distinct_bodies(values):
     bodies=[body_geometry(value) for value in values]
     for i,body in enumerate(bodies):
         for previous in bodies[:i]:
-            a=body['rcRectangleXYMm'];b=previous['rcRectangleXYMm']
-            if body['id']==previous['id'] or (min(a[2],b[2])-max(a[0],b[0])>1e-8 and min(a[3],b[3])-max(a[1],b[1])>1e-8):
+            plans=body.get('rcPlanRectanglesXYMm',[body['rcRectangleXYMm']]);prior=previous.get('rcPlanRectanglesXYMm',[previous['rcRectangleXYMm']])
+            if body['id']==previous['id'] or any(min(a[2],b[2])-max(a[0],b[0])>1e-8 and min(a[3],b[3])-max(a[1],b[1])>1e-8 for a in plans for b in prior):
                 raise ValueError('Duplicate or overlapping physical ground bodies')
     return bodies
 
@@ -182,7 +194,7 @@ def install(model,bodies,choice):
     frame=model['model'];members=grid_member_geometry(model)
     added={};output=[];expected=[0.]*6
     for body in bodies:
-        identifier='STR/HAD/GROUND/'+body['id'];r=body['rcRectangleXYMm'];cells,_=plate_cells([r],[],choice['platePitchMm'])
+        identifier='STR/HAD/GROUND/'+body['id'];r=body['rcRectangleXYMm'];cells,_=plate_cells(body.get('rcPlanRectanglesXYMm',[r]),[],choice['platePitchMm'])
         points={};gauges=[]
         for i,p in enumerate(sorted({p for a,b,c,d in cells for p in [(a,b),(c,b),(c,d),(a,d)]})):
             node=frame.node(identifier+f'/plate-node/{i}',[*p,70.]);points[p]=node

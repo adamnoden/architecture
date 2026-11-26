@@ -1,3 +1,4 @@
+import {subtractPlan,expandPlan,planArea,type PlanRectangle} from './inlet-orthogonal-plan.js'
 type Pair = readonly [number, number]
 type Rectangle = readonly [number, number, number, number]
 type Grid = {
@@ -18,7 +19,7 @@ const intersect = (a: Rectangle, b: Rectangle): Rectangle | null => {
  * No plate, masonry, soil, thermal or waterproof resistance is inferred.
  */
 export function inletRoomPocket(input: {
-  levels: Levels; roomPlanMm: readonly number[]; depthMm: number; isolationGapMm: number; grid: Grid
+  levels: Levels; roomPlanMm: readonly number[];planExclusionsMm?:readonly PlanRectangle[]; depthMm: number; isolationGapMm: number; grid: Grid
   rcDensityKNm3: number; mineralDensityKNm3: number; roomId?: 'utility' | 'plant'
 }) {
   const { levels: g, depthMm, isolationGapMm: gap, grid } = input,roomId=input.roomId??'utility'
@@ -34,6 +35,7 @@ export function inletRoomPocket(input: {
     local = { mineralCourse: shift(g.mineralCourse), dryRC: shift(g.dryRC), glass: shift(g.glass),
       accessibleDistribution: [g.accessibleDistribution[1] - depthMm, g.accessibleDistribution[1]] as Pair,
       finish: g.finish, ffl: g.ffl, coldGridTop: g.coldGridTop }
+  const bodyPlans=subtractPlan(inner,(input.planExclusionsMm??[]).map(r=>expandPlan(r,gap))),bodyArea=bodyPlans.reduce((n,r)=>n+planArea(r),0),notched=bodyArea<area(inner)-1e-8
   if (depthMm === 0) return { state: 'uniform-ground-stack' as const, levels: g, local: null }
   if (drop <= 0) throw new Error('A local service pocket must be deeper than the actual global distribution zone')
   const supports: { id: string; rect: Rectangle; z: Pair }[] = []
@@ -52,8 +54,7 @@ export function inletRoomPocket(input: {
   for (const s of grid.heads) supports.push({ id: s.id, rect: [s.xy[0] - s.capXY[0] / 2, s.xy[1] - s.capXY[1] / 2,
     s.xy[0] + s.capXY[0] / 2, s.xy[1] + s.capXY[1] / 2], z: s.capZ })
   const contact = supports.flatMap(s => {
-    const r = intersect(inner, s.rect)
-    return r && s.z[1] === g.coldGridTop ? [{ id: s.id, rectangleMm: r, coldTopMm: s.z[1] }] : []
+    return s.z[1]===g.coldGridTop?bodyPlans.flatMap(p=>{const r=intersect(p,s.rect);return r?[{id:s.id,rectangleMm:r,coldTopMm:s.z[1]}]:[]}):[]
   })
   const xs = [...new Set(contact.flatMap(s => [s.rectangleMm[0], s.rectangleMm[2]]))].sort((a, b) => a - b),
     ys = [...new Set(contact.flatMap(s => [s.rectangleMm[1], s.rectangleMm[3]]))].sort((a, b) => a - b)
@@ -66,7 +67,7 @@ export function inletRoomPocket(input: {
   const contactM2 = cells.reduce((sum, s) => sum + area(s.rectangleMm), 0) / 1e6,
     sides = { west: contact.some(s => s.rectangleMm[0] === inner[0]), east: contact.some(s => s.rectangleMm[2] === inner[2]),
       south: contact.some(s => s.rectangleMm[1] === inner[1]), north: contact.some(s => s.rectangleMm[3] === inner[3]) },
-    slabVolume = area(inner) / 1e6 * (local.dryRC[1] - local.dryRC[0]) / 1000,
+    slabVolume = bodyArea / 1e6 * (local.dryRC[1] - local.dryRC[0]) / 1000,
     mineralVolume = contactM2 * (local.mineralCourse[1] - local.mineralCourse[0]) / 1000,
     plinth = local.mineralCourse[0] - g.coldGridTop,
     origin = [(inner[0] + inner[2]) / 2, (inner[1] + inner[3]) / 2, g.coldGridTop],
@@ -84,8 +85,8 @@ export function inletRoomPocket(input: {
     action: 'unfactored-gravity-only', transferToReceivers: 'unresolved-plate/contact-distribution' })
   return { state: 'local-room-pocket-reservation' as const, levels: local, local: {
     id: `HAD/local-${roomId}-service-pocket`, selected: false as const, groundDatum: 'Same absolute datum as saved groundSection; no translation of house, roof or retained walls',
-    roomMinMaxMm: room, bodyMinMaxMm: inner, depthMm, loweringMm: drop, isolationGapMm: gap,
-    levelBoxes: Object.entries(local).filter((row): row is [string, Pair] => Array.isArray(row[1])).map(([id, z]) => ({ id, planMinMaxMm: inner, zMm: z })),
+    roomMinMaxMm:room,bodyMinMaxMm:inner,...(notched?{bodyPlanRectanglesXYMm:bodyPlans,bodyMinMaxIsEnvelopeOnly:true,actualBodyPlanAreaMm2:bodyArea,cornerReturnSeparationApplied:true}:{}),depthMm, loweringMm: drop, isolationGapMm: gap,
+    levelBoxes: Object.entries(local).filter((row): row is [string, Pair] => Array.isArray(row[1])).map(([id, z]) => ({id,planMinMaxMm:inner,...(notched?{planRectanglesXYMm:bodyPlans,planMinMaxIsEnvelopeOnly:true}:{}),zMm:z})),
     retainedGlobal: g, wallAndExteriorDpcMm: g.mineralCourse,
     floorStep: { northEdgeYmm: room[3], thresholdOpeningSupport: `Independent flush bridge over${gap}mm perimeter separation; exact metal, fixings, removal and foot loads unqualified`,
       clearanceClaim: 'No RC or mineral bridges the declared perimeter gap. Upstand and gap infill cannot be credited as structural or waterproof support.' },
@@ -93,10 +94,10 @@ export function inletRoomPocket(input: {
       minimumJunctionTemperatureOrPsi: null, requirement: 'Continuous load-compatible insulation across slab edge and lower mineral/cold-grid contact; complete2D/3D thermal and moisture path not established.' },
     lowerPlinthRequiredMm: plinth, coldGridContact: contact, disjointContactCells: cells,
     contactUnionM2: contactM2, supportPresentAtSides: sides,
-    unsupportedCentralSlabAreaM2: area(inner) / 1e6 - contactM2,
-    loadOrigins: [load(`HAD/local-${roomId}-dry-rc-G`, slabVolume * input.rcDensityKNm3, inner, local.dryRC),
+    unsupportedCentralSlabAreaM2: bodyArea / 1e6 - contactM2,
+    loadOrigins: [...(notched?bodyPlans.map((r,k)=>load(`HAD/local-${roomId}-dry-rc/part-${k}-G`,area(r)/1e6*(local.dryRC[1]-local.dryRC[0])/1000*input.rcDensityKNm3,r,local.dryRC)):[load(`HAD/local-${roomId}-dry-rc-G`,slabVolume*input.rcDensityKNm3,inner,local.dryRC)]),
       ...cells.map(c => load(c.id + '/mineral-G', area(c.rectangleMm) / 1e6 * (local.mineralCourse[1] - local.mineralCourse[0]) / 1000 * input.mineralDensityKNm3, c.rectangleMm, local.mineralCourse))],
-    quantityBounds: { dryRcM3: slabVolume, mineralOnContactOnlyM3: mineralVolume, glassM3: area(inner) / 1e6 * (local.glass[1] - local.glass[0]) / 1000,
+    quantityBounds: { dryRcM3: slabVolume, mineralOnContactOnlyM3: mineralVolume, glassM3: bodyArea / 1e6 * (local.glass[1] - local.glass[0]) / 1000,
       slabAndMineralWeightKN: slabVolume * input.rcDensityKNm3 + mineralVolume * input.mineralDensityKNm3,
       glassLinerCoversFramesFixturesAndUnknownPlinthWeightKN: null, floorCoverAndEquipmentTemporaryReactionsKN: null },
     structuralJoin: { originMm: origin, reactionsAtColdGridAnd52Heads: null,
@@ -117,7 +118,7 @@ export function drawInletRoomPocket(p: NonNullable<ReturnType<typeof inletRoomPo
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="950" viewBox="0 0 1280 950"><rect width="1280" height="950" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#29271f">
 ${text(40,42,`Local Utility${p.depthMm} · retained global${p.retainedGlobal.ffl}/${p.retainedGlobal.accessibleDistribution[1]-p.retainedGlobal.accessibleDistribution[0]} · geometry reservation`,26)}
 ${text(40,76,'Same saved ground datum. No wall/roof/frame rise; no structural, thermal or waterproof admission.')}
-${rect(p.roomMinMaxMm, '#e8ddc7')}${rect(p.bodyMinMaxMm, '#e7efeb')}
+${rect(p.roomMinMaxMm,'#e8ddc7')}${(p.bodyPlanRectanglesXYMm??[p.bodyMinMaxMm]).map(r=>rect(r,'#e7efeb')).join('')}
 ${p.disjointContactCells.map(c => rect(c.rectangleMm, '#b1c0b5')).join('')}
 ${text(40,560,`Room${(xx - x).toFixed(1)} ×${(yy - y).toFixed(1)}; perimeter separation${p.isolationGapMm}mm.`)}
 ${text(40,590,`Cold contact union${p.contactUnionM2.toFixed(6)}m²; central slab span${p.unsupportedCentralSlabAreaM2.toFixed(6)}m².`)}

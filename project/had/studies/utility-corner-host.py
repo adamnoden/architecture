@@ -1,0 +1,63 @@
+"""Compiler-consumed Utility host geometry at the actual native SE return.
+Reuse existing IAS members/sweep/body methods; never solve the finite house.
+"""
+from __future__ import annotations
+import copy,hashlib,importlib.util,json,math,sys
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[3]
+
+def calculate(request):
+    sources={}
+    def read(path):
+        raw=(ROOT/path).read_bytes();sources[path]=hashlib.sha256(raw).hexdigest();return json.loads(raw)
+    path=ROOT/'project/ias/studies/utility-host-revised-route.py'
+    spec=importlib.util.spec_from_file_location('actual_utility_host',path);host=importlib.util.module_from_spec(spec);spec.loader.exec_module(host)
+    sources['project/ias/studies/utility-host-revised-route.py']=hashlib.sha256(path.read_bytes()).hexdigest()
+    base=read('project/ias/studies/utility-host-revised-route.json');house=read('project/had/studies/water-replan.json')['model'];actual=read('project/had/studies/current-house-services.json')['utility']
+    native=request['geometry'];lining=request['liningThicknessMm']
+    if native['cornerId']!='SE' or native['caseAccepted'] is not False or not 140<=native['widthMm']<=240 or lining!=27:raise ValueError('Same native SE geometry and bound27mm lining required')
+    core=[[r[0]-lining,r[1]-lining,r[2]+lining,r[3]+lining] for r in native['rectanglesXYMm']];east=min(r[0] for r in core if r[3]>1000)
+    seats=base['floorAndWall']['seatPlan'];shift=5*math.ceil(max(0,max(r[0]+r[2] for r in seats)-east+20)/5)
+    move=lambda b,x=-shift,y=0:host.shifted(b,[x,y,0])
+    geo=base['geometry'];frame={k:move(v) for k,v in geo['frame'].items()};washer=actual['washerReservation'];bar=frame['temporary carry bar']
+    bar_extra=5*math.ceil(max(0,washer[0]+washer[2]+30-bar[0])/5);frame['temporary carry bar']=move(bar,bar_extra)
+    carrier={k:move(v) for k,v in geo['carrier'].items()}
+    inlet=read('project/had/studies/south-inlet-under-sill.json');terminal=next(b for b in inlet['branches'] if b['id']=='utility')['coordinates'][-1]
+    if request['waterTerminalLocalMm']!=terminal or terminal[1]!=1250 or terminal[2]!=1000:raise ValueError('Actual fixed Utility downstream terminal required')
+    water_shift=10800-terminal[0]
+    for key in ('lower pipe arm','middle pipe arm','valve reaction arm'):
+        b=geo['carrier'][key];carrier[key]=[b[0]-water_shift,b[1],b[2],b[3]+water_shift-shift,b[4],b[5]]
+    carrier['water fitting and cap domain']=move(geo['carrier']['water fitting and cap domain'],-water_shift)
+    temporary=copy.deepcopy(geo['temporarySupport']);temporary['upper pipe restraint beam'][0]-=water_shift;temporary['upper pipe restraint beam'][3]+=water_shift
+    receiver=temporary['lower receiving beam'];receiver[0]-=shift;receiver[3]+=shift
+    temporary['wall restraint beam'][3]=east-temporary['wall restraint beam'][0];temporary['retained wall connection domain'][0]=east-15
+    pipes={'retained upper water and cap domain':move(geo['retainedPipes']['retained upper water and cap domain'],-water_shift),'retained accessible waste cap domain':move(geo['retainedPipes']['retained accessible waste cap domain'],-shift,20 if shift else 0)}
+    pads=copy.deepcopy(geo['firstRestPads']);stored=copy.deepcopy(geo['smallPartsReceiverDomain']);states=base['states'];carrier_states=states['carrier'];frame_states=copy.deepcopy(states['frame']);west=200-shift
+    if west<0:raise ValueError('Existing first rest cannot be reached from this compacted host')
+    frame_states[-2][0]=-west;frame_states[-1][0]=-west;parked={k:host.shifted(v,carrier_states[-1]) for k,v in carrier.items()}
+    foreign={k:[v[0],v[1],0,v[2],v[3],3500] for k,v in house['groundFurniture'].items() if k not in ('service-utility-sink','service-utility-valveBay')};foreign['service-utility-washer']=[*washer[:2],0,*washer[2:],3500]
+    for key,box in house['fixedObstacles']['GROUND']:foreign[key]=[*box[:2],0,*box[2:],3500]
+    for key in ('stair','court'):
+        box=house[key];foreign[key]=[*box[:2],0,*box[2:],3500]
+    for index,r in enumerate(core):foreign['actual-SE-lining/'+str(index)]=[r[0],r[1],0,r[2]-r[0],r[3]-r[1],3500]
+    foreign['east wall']=[11570.5,0,0,500,2500,3500];foreign['north wall']=[9300,2453,0,2700,194,3500]
+    other_temp={k:v for k,v in temporary.items() if k!='lower receiving beam'};carrier_foreign=foreign|frame|pipes|pads|stored|other_temp;static=foreign|temporary|pipes|parked|stored
+    carrier_check=host.minimum_sweep(carrier,carrier_states,carrier_foreign);frame_check=host.minimum_sweep(frame,frame_states,static);cap_check=host.minimum_sweep(frame,frame_states,{'low waste cap':pipes['retained accessible waste cap domain']});pad_approach=host.minimum_sweep(frame,frame_states[:-1],pads)
+    pad_check=min((host.box_gap(pad,o),name,key) for name,pad in pads.items() for key,o in static.items());post_sweep=host.sweep(carrier['compact carrier post'],*carrier_states[1:])
+    supported=post_sweep[2]==receiver[2]+receiver[5] and all(receiver[i]<=post_sweep[i] and post_sweep[i]+post_sweep[i+3]<=receiver[i]+receiver[i+3] for i in (0,1))
+    no_receiver_interpenetration=all(not host.overlaps_interior(host.sweep(v,a,b),receiver) for a,b in zip(carrier_states,carrier_states[1:]) for v in carrier.values())
+    grips_shift=-shift+bar_extra;crew_paths=[[[path[0][0]+grips_shift,1725],[path[0][0]+grips_shift,2075],[path[0][0]+grips_shift-west,2075]] for path in states['crew']];crew=host.crew_checks(crew_paths,frame,static|pads)
+    grip_reach=[max(math.dist([x+grips_shift,1725,1050],[grip+grips_shift,1350,780+rise]) for rise in (0,35)) for x,grip in [(10395,10800),(11045,11495)]]
+    carrier_grip=max(math.dist([11045+grips_shift,1725,1000],host.shifted([10915-shift,1225,700],offset)) for offset in carrier_states)
+    seat_plans=[[r[0]-shift,*r[1:]] for r in seats];seat_core_reserve=min(east-(r[0]+r[2])-20 for r in seat_plans);sink=move([*actual['sink'][:2],0,*actual['sink'][2:],900]);south=max(r[3] for r in core if r[2]-r[0]>500)
+    branch=[10050,south+20.5,east-20.5-10050,1400-south-20.5];chase=[branch[0],branch[1],branch[2],700-branch[1]]
+    internal_carrier_gap=host.box_gap(carrier['compact carrier post'],carrier['water fitting and cap domain']);terminal_in_cap=all(pipes['retained upper water and cap domain'][i]<=terminal[i]<=pipes['retained upper water and cap domain'][i]+pipes['retained upper water and cap domain'][i+3] for i in (0,1,2))
+    good=internal_carrier_gap>=25 and terminal_in_cap and min(carrier_check['clearance'],frame_check['clearance'],pad_check[0],cap_check['clearance'])>=25 and pad_approach['clearance']>=5 and min(min(c['stationaryClearance'][0],c['relativeFrameClearance'][0]) for c in crew)>=25 and max(*grip_reach,carrier_grip)<650 and supported and no_receiver_interpenetration and seat_core_reserve>=0
+    return {'schema':'had-utility-corner-host-result/1','sourceSHA256':sources,'nativeCornerGeometry':native,'sinkShiftWestMm':shift,'carryBarAdditionalEastMm':bar_extra,'fixedExistingFirstRestPreserved':True,'westDrawMm':west,
+            'geometry':{'frame':frame,'carrier':carrier,'parkedCarrier':parked,'temporarySupport':temporary,'retainedPipes':pipes,'firstRestPads':pads,'smallPartsReceiverDomain':stored,'retainedObstacles':foreign},'states':{'carrier':carrier_states,'frame':frame_states,'crew':crew_paths},
+            'checks':{'carrier':carrier_check,'frame':frame_check,'wasteCap':cap_check,'padApproach':pad_approach,'pads':pad_check,'carrierContinuouslySupported':supported,'receiverInterpenetrationAbsent':no_receiver_interpenetration,'crew':crew,'maxShoulderToFrameGrip':grip_reach,'maxShoulderToCarrierGrip':carrier_grip,'seatCoreReserveAfterTwoSettingsMm':seat_core_reserve,'internalCarrierBodyGapMm':internal_carrier_gap,'actualUtilityTerminalInRetainedCapDomain':terminal_in_cap},
+            'revisedUtility':{'sink':[*sink[:2],*sink[3:5]],'seatPlan':seat_plans,'rearServiceChase':chase,'acquiredBranchFloor':branch,'actualUtilityTerminalLocalMm':terminal,'waterConnectionAxis':[10800-water_shift,1250,750],'retainedWasteCap':pipes['retained accessible waste cap domain'],'localWasherStopRetired':True,'ordinaryIsolation':'Use the actual independently operable Utility house cut; verify cold source/upper energy isolation before washer or host work. No live-sibling credit.','wholeRoomEnvelopeChanged':False},
+            'necessaryGeometryComparisons':good,'legacyRenewalEvidenceApplicable':False,'physicalHandlingPressureMaterialAndSupportAccepted':False,
+            'retainedLimits':['Actual matched connections/length, caps, captive disconnection and full first-release join require the named assembly.','Actual masses/centres, grips and loaded restraint remain unqualified.','Old750mm washer-stop operation and235mm valveBay/rack are retired; no live-sibling credit.','No prior mechanical, thermal, material or pressure approval is transferred.']}
+
+if __name__=='__main__':json.dump(calculate(json.load(sys.stdin)),sys.stdout,allow_nan=False)

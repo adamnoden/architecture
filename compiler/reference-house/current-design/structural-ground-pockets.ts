@@ -1,3 +1,4 @@
+import type {InletCornerContext} from './inlet-utility-corner.js'
 /** Re-solve known local floor stock from this saved document, never a retained receipt. */
 import {execFileSync} from 'node:child_process'
 import {readFileSync} from 'node:fs'
@@ -21,13 +22,13 @@ export function assertGroundPocketResponseIdentity(output:any,request:any,headId
  const heads=output.native?.heads
  if(!Array.isArray(heads)||heads.length!==headIds.length||new Set(heads.map((h:any)=>h.id)).size!==headIds.length||heads.some((h:any)=>!headIds.includes(h.id)))throw Error('Ground comparison lost the actual ordinary foundation-head catalogue')
 }
-export function runGroundPocketComparison(resolved:CurrentDesignResolution,value:unknown,floor:ReturnType<typeof savedFloorSectionCase>,ordinary:ReturnType<typeof runFloorSectionCase>,inletInput:unknown,ground:ReturnType<typeof runGroundSectionCase>,profile?:ReturnType<typeof runHouseVerticalProfileCase>){
+export function runGroundPocketComparison(resolved:CurrentDesignResolution,value:unknown,floor:ReturnType<typeof savedFloorSectionCase>,ordinary:ReturnType<typeof runFloorSectionCase>,inletInput:unknown,ground:ReturnType<typeof runGroundSectionCase>,profile?:ReturnType<typeof runHouseVerticalProfileCase>,geometryContext?:InletCornerContext){
  const controls=readGroundPocketSettings(value)
  const unavailable=(message:string)=>({status:'unsupported' as const,...limits,controls,diagnostics:[{code:'GROUND_POCKET_UNSUPPORTED',message}],drawings:{} as Record<string,string>})
  try{
   // Recompute and validate the actual inlet case against current discipline
   // bindings. Caller-supplied stock rows or provenance are never an input.
-  const inlet=runInletSourceEnvelopeCase(resolved,inletInput,ground,profile),inventory=inlet.knownGravityInventory,bodies=inventory.structuralFloorBodies
+  const inlet=runInletSourceEnvelopeCase(resolved,inletInput,ground,profile,geometryContext),inventory=inlet.knownGravityInventory,bodies=inventory.structuralFloorBodies
   if(ordinary.source.caseDigest!==sha256SemanticFingerprint(floor)||ordinary.source.planDigest!==inlet.source.planDigest||inlet.source.planDigest!==sha256SemanticFingerprint(resolved.design))throw Error('Saved floor/inlet plan or case identity differs')
   if(ground.native.levelsMm.ffl!==530||!bodies.length||bodies.some(b=>b.requiredUnrepresentedPlinthMm!==0||b.profile.fflMm!==530||b.profile.coldGridTopMm!==-180||b.profile.rigidZTransformApplied||!same(b.rcZMm,[-30,170])||!same(b.mineralZMm,[-180,-30])||!same(b.source,inventory.source)||b.source.groundCaseDigest!==ground.source.caseDigest))throw Error('Only exact530-profile stock on unchanged cold grid−180 with represented mineral course is supported')
   if(Object.keys(floor.comparison.sourceSHA256).length!==58)throw Error('Complete actual58 native source identities required')

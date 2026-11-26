@@ -3,7 +3,7 @@
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+    "bindingDigest": "47235aea2e81f773799760a19b18a39eaf0181f72c545ef5a86ddf1183d4c26c",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -21,12 +21,22 @@
       "project/had/studies/inlet-split-plant-branch-candidate.json": "6afb0bbc4f5e063e16d6ff7b040ae46a129c41f6",
       "project/had/studies/inlet-fixed-station.json": "69e0be05955a9f8fa3494f6a8c5e686dd8bc2e16",
       "project/had/studies/inlet-split-plant-room-candidate.json": "0c1ae72ef1555b4ceca31f61d6fa7b6cf02a8eb8",
-      "project/had/studies/inlet-store-drain-candidate.json": "f84f781f87ee06568ed9636f6dc7e5cdcf6a60c4"
+      "project/had/studies/inlet-store-drain-candidate.json": "f84f781f87ee06568ed9636f6dc7e5cdcf6a60c4",
+      "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+      "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
+      "project/str/studies/floor-portal-monolithic-drag.json": "9a8cf79026419f3b9f05cee4b573b6dd1f3a04e6"
     },
     "methods": {
+      "compiler/reference-house/current-design/inlet-orthogonal-plan.ts": "222fee7fe5982e078184069380bdc9aba113a09a",
+      "compiler/reference-house/current-design/inlet-utility-corner.ts": "852efeb34c278d31cd9b1c5a0fdd19a88bfc2e72",
+      "project/had/studies/utility-corner-host.py": "3d85d2c4f1bf9d173d08ac62dbbe0c944d487f71",
+      "project/str/studies/finite_joint_geometry.py": "23571dec1a7993f0c9f6a978c7517d2090ed10ef",
+      "project/ias/studies/utility-host-revised-route.py": "8cfe71dd8ab59c4375707724f4a718ae0f29daec",
+      "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
+      "project/str/studies/distributed_floor_compatibility.py": "45c0d9e082dec58edf2040064d7a14c50dcbb1d4",
       "compiler/reference-house/current-design/inlet-store-drain.ts": "938289be42dc3cf6b118c253d606d4ed00278767",
       "compiler/reference-house/current-design/inlet-open-closed-outfall.ts": "2561bc047ea2b2a0428b26e732fefe8dd9c9ffaa",
-      "compiler/reference-house/current-design/inlet-known-gravity.ts": "b6ea4620653de87191cd59a7917515c72299a88c",
+      "compiler/reference-house/current-design/inlet-known-gravity.ts": "e083cf71ef678542ed5833087a3fe8f14b588b18",
       "compiler/reference-house/current-design/inlet-store-impulse.ts": "f378afdf23c3e4d673b33c63f3d952e6dac679fe",
       "compiler/reference-house/current-design/house-vertical-profile.ts": "702d5cda1182e25d576e2f4cce754f3d816b0f2d",
       "project/had/studies/house_vertical_profile.py": "1f41e39d3c37728c6aad8a4168ed7e230aad7929",
@@ -40,10 +50,10 @@
       "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
       "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
       "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "d6866cf54c00574aedb29be3959ef99e9dd4f101",
-      "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
-      "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
-      "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "d8777a29feae315dd0c01f0d9587b77e284293cc",
+      "compiler/reference-house/current-design/inlet-room-catchment.ts": "e3d0cb4c582a5f066f347809bbddaa5008fed1f4",
+      "compiler/reference-house/current-design/inlet-room-pocket.ts": "5882c1a003b927dbab15b9123f6aeaa45f64f3f6",
+      "compiler/reference-house/current-design/inlet-room-pan.ts": "78e346b8b458010e78d2d01f8b08ac618802689a",
       "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
       "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
       "compiler/reference-house/current-design/inlet-fixed-receiver.ts": "c8cd4c81c3419fdb3b97f79b3c641d5e307256e3",
@@ -580,6 +590,7 @@
         2173.5,
         2023.5
       ],
+      "utilityCorner": null,
       "bankShelfCarrier": {
         "schema": "had-bank-flat-shelf-carrier/1",
         "state": "unadopted-flat-shelf-development-comparison",
@@ -10424,7 +10435,7 @@
                 "storeDropBendRadiusMm": 75,
                 "storeTerminalBendRadiusMm": 25
               },
-              "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+              "sourceBindingDigest": "47235aea2e81f773799760a19b18a39eaf0181f72c545ef5a86ddf1183d4c26c",
               "resolvedInput": {
                 "choice": {
                   "schema": "had-split-plant-branch/1",
@@ -10562,7 +10573,7 @@
                   "storeDropBendRadiusMm": 75,
                   "storeTerminalBendRadiusMm": 25
                 },
-                "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+                "sourceBindingDigest": "47235aea2e81f773799760a19b18a39eaf0181f72c545ef5a86ddf1183d4c26c",
                 "groundFflMm": 0,
                 "roomPlanMm": [
                   9397,
@@ -27798,7 +27809,7 @@
           "deckGuardIntrusionMm": 50
         }
       },
-      "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+      "sourceBindingDigest": "47235aea2e81f773799760a19b18a39eaf0181f72c545ef5a86ddf1183d4c26c",
       "groundFflMm": 0,
       "selected": false,
       "rawArchVerticalReservation": {
@@ -27825,7 +27836,7 @@
       },
       "branchIdentity": "HAD/plant-independent-east-entry-development",
       "branchPrerequisites": {
-        "sameCurrentSource": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+        "sameCurrentSource": "47235aea2e81f773799760a19b18a39eaf0181f72c545ef5a86ddf1183d4c26c",
         "connections": [
           {
             "id": "source-entry",
@@ -28126,7 +28137,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+          "sourceBindingDigest": "47235aea2e81f773799760a19b18a39eaf0181f72c545ef5a86ddf1183d4c26c",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -28264,7 +28275,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+            "sourceBindingDigest": "47235aea2e81f773799760a19b18a39eaf0181f72c545ef5a86ddf1183d4c26c",
             "groundFflMm": 0,
             "roomPlanMm": [
               9397,
@@ -38336,8 +38347,8 @@
   "knownGravityInventory": {
     "schema": "had-known-gravity-components/1",
     "source": {
-      "inletBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
-      "inletCaseDigest": "a49772f706e1a586dfbc2e2a8e0a0cf1d1d26a9612410a054c8227a916d18cce",
+      "inletBindingDigest": "47235aea2e81f773799760a19b18a39eaf0181f72c545ef5a86ddf1183d4c26c",
+      "inletCaseDigest": "828320989f384c21c832d1a43202a0d0533ec561b3f2d41686ba5bebcb4255a2",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
       "groundCaseDigest": null
     },

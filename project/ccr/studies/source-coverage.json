@@ -595,7 +595,8 @@
         "project/had/inlet-isolation-product-recovery-20261123.md",
         "project/had/inlet-retained-service-route-comparison.md",
         "project/had/split-isolation-station-development.md",
-        "project/had/store-drain-development.md"
+        "project/had/store-drain-development.md",
+        "project/had/utility-corner-development.md"
       ],
       "authorRoots": [
         "compiler/reference-house/current-design/inlet-fixed-entry.ts",
@@ -634,7 +635,14 @@
         "compiler/reference-house/current-design/inlet-store-impulse.ts",
         "compiler/reference-house/current-design/inlet-known-gravity.ts",
         "compiler/reference-house/current-design/inlet-open-closed-outfall.ts",
-        "compiler/reference-house/current-design/inlet-store-drain.ts"
+        "compiler/reference-house/current-design/inlet-store-drain.ts",
+        "compiler/reference-house/current-design/inlet-orthogonal-plan.ts",
+        "compiler/reference-house/current-design/inlet-utility-corner.ts",
+        "project/had/studies/utility-corner-host.py",
+        "project/str/studies/finite_joint_geometry.py",
+        "project/ias/studies/utility-host-revised-route.py",
+        "project/str/studies/joined_successor_kernel.py",
+        "project/str/studies/distributed_floor_compatibility.py"
       ],
       "authoredInputs": [
         "compiler/reference-house/current-design/inlet-electrical-screen.ts",
@@ -645,7 +653,10 @@
         "project/had/studies/inlet-split-plant-station-candidate.json",
         "project/had/studies/inlet-split-plant-branch-candidate.json",
         "project/had/studies/inlet-split-plant-room-candidate.json",
-        "project/had/studies/inlet-store-drain-candidate.json"
+        "project/had/studies/inlet-store-drain-candidate.json",
+        "project/ias/studies/utility-host-revised-route.json",
+        "project/had/studies/water-replan.json",
+        "project/str/studies/floor-portal-monolithic-drag.json"
       ],
       "inputReceipts": [
         "project/had/studies/south-inlet-under-sill.json",
@@ -693,7 +704,9 @@
         "project/ade/browser-editor/engineering.html",
         "compiler/reference-house/current-design-inlet-room-pocket.test.ts",
         "compiler/reference-house/current-design-inlet-open-closed-outfall.test.ts",
-        "compiler/reference-house/current-design-inlet-store-drain.test.ts"
+        "compiler/reference-house/current-design-inlet-store-drain.test.ts",
+        "compiler/reference-house/current-design-inlet-utility-corner.test.ts",
+        "project/str/studies/finite_joint_geometry_test.py"
       ],
       "producerChecks": [
         "node --import tsx --test compiler/reference-house/current-design-inlet-fixed-entry.test.ts compiler/reference-house/current-design-inlet-fixed-pipeline.test.ts",
@@ -720,7 +733,8 @@
         "node --import tsx --test compiler/reference-house/current-design-inlet-incident-stations.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-known-gravity.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-open-closed-outfall.test.ts",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-store-drain.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-store-drain.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-utility-corner.test.ts"
       ]
     },
     {
@@ -3205,10 +3219,10 @@
     "project/str/studies/roof-surface-pressure.svg": "03610ad976377889fb0d27bfaaa107b9cdce2099",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "d6866cf54c00574aedb29be3959ef99e9dd4f101",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "d8777a29feae315dd0c01f0d9587b77e284293cc",
     "project/had/studies/inlet-source-envelope.ts": "04791c290b094f44bd77187d82ba0b309c455707",
     "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
-    "project/had/studies/inlet-source-envelope.results.json": "3eb09cee91f70f670d1f58d27de2450365d4c5cc",
+    "project/had/studies/inlet-source-envelope.results.json": "ee76846577a3f352f5c349f109ece24f3c97ba7b",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
     "compiler/reference-house/current-design/engineering-edit.ts": "c4df1791fa65a6abe6972a76dd6f632f63e0f8ff",
     "project/ade/browser-editor/engineering-api.ts": "e166de04fe6451d153f6e9af94e477a423c0ffcf",
@@ -3239,7 +3253,7 @@
     "project/str/studies/floor-section-cuts-proof.json": "ac2949de02b6afff973b886fc80345647d767a2c",
     "project/str/studies/seated-wet-support-floor.svg": "8d6fa5285ee3e12584fd336a2abbeee32b0feac8",
     "project/str/studies/floor-section-cuts.ts": "432c289742d3a954ef06ef47ecb41f0857bcd976",
-    "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
+    "compiler/reference-house/current-design/inlet-room-catchment.ts": "e3d0cb4c582a5f066f347809bbddaa5008fed1f4",
     "project/had/inlet-whole-room-convergence.md": "5142ba87553d42094e62a908e207f5335f1d8731",
     "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
     "project/str/studies/grid_origin_recovery.py": "c09369bc1acbaaa9438545fb12e0a4e15f1a90b7",
@@ -3252,10 +3266,10 @@
     "project/str/studies/wet-support-cage-comparison-paths.json": "b7956df5103bdf008a73f218f8570cdacb6f7199",
     "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
     "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3",
-    "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
-    "project/had/studies/inlet-local-pocket.results.json": "87137255dbec1eb083a9dd514e52aa733124a64c",
+    "compiler/reference-house/current-design/inlet-room-pocket.ts": "5882c1a003b927dbab15b9123f6aeaa45f64f3f6",
+    "project/had/studies/inlet-local-pocket.results.json": "3fdb18c16f4ce6cf07673e56d8c5bb481af61589",
     "project/had/studies/inlet-local-pocket.svg": "1b055c9299705e175d8fe523102bb991e6dbd913",
-    "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
+    "compiler/reference-house/current-design/inlet-room-pan.ts": "78e346b8b458010e78d2d01f8b08ac618802689a",
     "project/had/studies/inlet-local-pan.svg": "e3da3b38a4eb4532e8f3d3a9ab713a6d20aa2be9",
     "project/str/studies/floor-refinement-execution-limit.json": "abf0adbf9e94371b785cc5cd03096d053612dbfb",
     "project/str/studies/wet-support-cage-comparison-proof.json": "4c72e5e80f758a65d8f3834db60433a07d5925b3",
@@ -3317,7 +3331,7 @@
     "project/had/inlet-bank-carrier-rejection.md": "02e3e0c4004e7a3d636b5e56297131ff959d132d",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
-    "project/had/studies/inlet-bank-carrier.results.json": "865447bf5cab9c298e41c74cc91a1a7d66c4f6f7",
+    "project/had/studies/inlet-bank-carrier.results.json": "fce6b771095600e7e6b25621489669bd4b28c357",
     "project/had/studies/inlet-bank-carrier.svg": "dc84130cc6a7fcae0130e64b6687bb2112546f13",
     "project/str/studies/wet_bearing_refinement.py": "06f8fabdfaf5ed6cc132e7a49248845dbdb08bab",
     "project/str/studies/wet-bearing-refinement-inputs.json": "42dea6fee820d552c4bb35a59258825a54eacb64",
@@ -3490,12 +3504,12 @@
     "project/str/studies/finite-floor-contour-35-execution.json": "d7474fc277cfa911a0039c4e562a497b64c8da59",
     "project/str/studies/finite-floor-contour-captures/contour35.json": "8c46e4acf2b66857d6df6f8cdecea39faf4bef49",
     "compiler/reference-house/current-design-inlet-room-pocket.test.ts": "b685a7d76be8bf6c8ca39cb42e58a092b8f000c2",
-    "compiler/reference-house/current-design/inlet-known-gravity.ts": "b6ea4620653de87191cd59a7917515c72299a88c",
-    "compiler/reference-house/current-design/structural-ground-pockets.ts": "3db5096c451a481fe9dd4edf10d8a6ec3abde6c3",
+    "compiler/reference-house/current-design/inlet-known-gravity.ts": "e083cf71ef678542ed5833087a3fe8f14b588b18",
+    "compiler/reference-house/current-design/structural-ground-pockets.ts": "1da79951487503e33c6563c53054487c6f5d905a",
     "compiler/reference-house/current-design/structural-ground-pocket-settings.ts": "1a2ee5b2065bc30c68a053c0c5f4ca2fcea1810c",
-    "project/str/studies/service_room_ground.py": "3156ac847cecc94f697e50d35cff7b2046d633e6",
+    "project/str/studies/service_room_ground.py": "b4b9fab34877177105b138bc18e2cc6210ff5e27",
     "compiler/reference-house/current-design-ground-pockets.test.ts": "9dbfab46c03cbf478f7e37cc392815d33945bb7c",
-    "project/str/studies/service_room_ground_test.py": "198df7ede9091c82ba5675cd2920875b1de111f6",
+    "project/str/studies/service_room_ground_test.py": "2c86314e909baeeea976109ed347975e96a6fbf5",
     "project/str/studies/service_room_ground_proof.py": "fe3ceeb0ca5e656d2078251ae3b5742df8f994f7",
     "project/str/studies/service-room-ground-observed-two-room-20261126.json": "96dd67095ab00f4d3ee95fd7c4213fbe63023b18",
     "project/str/studies/service-room-ground-observed-two-room-20261126.tar.xz": "9a519d97c636a80a53ed1c6016bd04f5aeeba319",
@@ -3545,6 +3559,13 @@
     "project/str/studies/finite_joint_normal_observer.py": "029e46deb9a7d86f9f1aad1efd57c0271aec60bb",
     "project/str/current-finite-joint-development.md": "2e5ffcc60d94994e52709f7b7f063e1ff6a9ccbb",
     "project/str/studies/current_finite_joint_replay_test.py": "9aab7efda2f4c223e239adef7d19232f0fc77310",
-    "project/str/studies/current_finite_joint_signed_proof.py": "c6a46d1a981976694aa49a9671654646e35ae47c"
+    "project/str/studies/current_finite_joint_signed_proof.py": "c6a46d1a981976694aa49a9671654646e35ae47c",
+    "compiler/reference-house/current-design/inlet-orthogonal-plan.ts": "222fee7fe5982e078184069380bdc9aba113a09a",
+    "compiler/reference-house/current-design/inlet-utility-corner.ts": "852efeb34c278d31cd9b1c5a0fdd19a88bfc2e72",
+    "project/had/studies/utility-corner-host.py": "3d85d2c4f1bf9d173d08ac62dbbe0c944d487f71",
+    "project/ias/studies/utility-host-revised-route.py": "8cfe71dd8ab59c4375707724f4a718ae0f29daec",
+    "compiler/reference-house/current-design-inlet-utility-corner.test.ts": "7f51c9a6cd2f432ecb8638ef9c801de0f38a2693",
+    "project/str/studies/finite_joint_geometry_test.py": "d6d88ba2aa9da876178cad1b528c4c1dcb4c4de5",
+    "project/had/utility-corner-development.md": "bf9a6f1056f6e88fb8df2c74193a37dfd3375886"
   }
 }

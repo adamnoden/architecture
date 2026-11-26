@@ -50,6 +50,19 @@ class GroundPocketControls(unittest.TestCase):
         for bodies in [[],[self.body,self.body],[self.body,{**self.body,'id':'OTHER'}]]:
             with self.assertRaises(ValueError):distinct_bodies(bodies)
 
+    def test_notched_union_owns_stock_mesh_and_contact_without_bounding_box_fallback(self):
+        from vertical_floor_plate import plate_cells
+        body={**self.body,'rcRectangleXYMm':[0,0,1000,1000],'rcPlanRectanglesXYMm':[[0,0,800,1000],[800,200,1000,1000]],'disjointContactRectanglesXYMm':[[0,0,200,1000]]}
+        actual=body_geometry(body);rows,w=stock_wrench(actual)
+        np.testing.assert_allclose(w,[0,0,-5.4,-2.78,2.38,0],atol=1e-12)
+        self.assertEqual(len(rows),3)
+        cells,_=plate_cells(actual['rcPlanRectanglesXYMm'],[],300)
+        self.assertAlmostEqual(sum((r[2]-r[0])*(r[3]-r[1]) for r in cells),960000)
+        self.assertTrue(all(not (r[0]<1000 and r[2]>800 and r[1]<200 and r[3]>0) for r in cells))
+        for edit in [{'disjointContactRectanglesXYMm':[[850,0,900,100]]},{'rcPlanRectanglesXYMm':[[0,0,800,1000],[700,200,1000,1000]]},{'rcPlanRectanglesXYMm':[[0,0,800,1000]]}]:
+            with self.assertRaises(ValueError):body_geometry({**body,**edit})
+        with self.assertRaises(ValueError):body_geometry({**self.body,'rcRectangleIsEnvelopeOnly':True})
+
     def test_open_top_contact_keeps_all_mineral_own_weight_at_actual_grid(self):
         frame=FrameModel();a=frame.node('a',[0,150,-480]);b=frame.node('b',[1000,150,-480])
         law={'elasticModulusMPa':33000,'poissonRatio':.2,'flexuralFactor':1,'shearAreaFactor':5/6,'torsionFactor':1}
