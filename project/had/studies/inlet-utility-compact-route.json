@@ -1,6 +1,6 @@
 {
   "schema": "had-utility-route/2",
-  "id": "HAD/compact-west-wall-Utility-main",
+  "id": "HAD/rear-chase-Utility-main",
   "stem": "vertical-up",
   "upstreamVirtualCornersMm": [
     [
@@ -48,6 +48,11 @@
     [
       10760,
       1250,
+      1500
+    ],
+    [
+      10760,
+      600,
       1500
     ]
   ],
@@ -177,14 +182,14 @@
       ]
     },
     "sinkTeeMm": [
-      10760,
-      1250,
-      1100
+      11190,
+      600,
+      950
     ],
     "washerTeeMm": [
-      10760,
-      1250,
-      750
+      10980,
+      600,
+      950
     ],
     "washer": {
       "fixtureId": "washer-PROPOSED",
@@ -192,47 +197,56 @@
       "minimumWallMm": 0.9,
       "pathToStopMm": [
         [
-          10760,
-          1250,
-          750
+          10980,
+          600,
+          950
         ],
         [
-          10760,
-          1090,
-          750
+          10980,
+          600,
+          730
+        ],
+        [
+          10980,
+          910,
+          730
         ]
       ],
       "stop": {
         "id": "U/local-washer-stop",
         "axisMm": [
-          10760,
+          10980,
           1000,
-          750
+          730
         ],
         "flowAxis": [
           0,
-          -1,
+          1,
           0
         ],
         "faceMm": 180,
         "bareCrossMm": 70,
-        "stemAboveAxisMm": 130,
         "wheelDiameterMm": 70,
         "minimumKvM3h": 2,
         "maximumDryKg": 3,
         "minimumOutletBoreMm": 17,
         "outletThread": "G3/4 male",
         "sourceBareValveFaceMm": 85,
-        "completeModuleIncludes": "both actual BSP-to22mm adapters and17mm-clear G3/4 outlet; no85mm valve-only module claimed"
+        "completeModuleIncludes": "both actual BSP-to22mm adapters and17mm-clear G3/4 outlet; no85mm valve-only module claimed",
+        "stemWestMm": 130
       },
       "ordinaryShoulderMm": [
         10800,
-        1550,
+        1500,
         1050
       ],
       "availableAfterFirstPull": false,
       "minimumTubeODMm": 21.9,
-      "maximumWallMm": 1.3
+      "maximumWallMm": 1.3,
+      "floorOperatorXYMm": [
+        10800,
+        1725
+      ]
     },
     "sink": {
       "fixtureId": "utility-sink-PROPOSED",
@@ -240,33 +254,23 @@
       "minimumWallMm": 0.7,
       "pathToStopMm": [
         [
-          10760,
-          1250,
-          1100
-        ],
-        [
-          10760,
-          650,
-          1100
+          11190,
+          600,
+          950
         ],
         [
           11190,
-          650,
-          1100
-        ],
-        [
-          11190,
-          650,
+          600,
           730
         ],
         [
           11190,
-          1250,
+          1280,
           730
         ],
         [
           11190,
-          1250,
+          1280,
           630
         ]
       ],
@@ -274,7 +278,7 @@
         "id": "U/local-sink-cold-stop",
         "axisMm": [
           11190,
-          1250,
+          1280,
           550
         ],
         "flowAxis": [
@@ -294,22 +298,22 @@
       "pathFromStopToHeadMm": [
         [
           11190,
-          1250,
+          1280,
           470
         ],
         [
           11190,
-          1250,
+          1280,
           350
         ],
         [
           11065,
-          1250,
+          1280,
           350
         ],
         [
           11065,
-          1250,
+          1280,
           850
         ]
       ],
@@ -342,23 +346,23 @@
       "floodRimMm": 900,
       "coldPortMm": [
         11065,
-        1250,
+        1280,
         850
       ],
       "hotPortMm": [
         11245,
-        1250,
+        1280,
         850
       ],
       "pillarHandleMm": [
         [
           11065,
-          1250,
+          1280,
           1000
         ],
         [
           11245,
-          1250,
+          1280,
           1000
         ]
       ],
@@ -385,9 +389,9 @@
         1350
       ],
       "maximumReachMm": 600,
-      "actualTapPressureMaterialAndHeadReleaseAccepted": false
+      "actualTapPressureMaterialAndHeadReleaseAccepted": false,
+      "bowlBottomMm": 700
     },
-    "carrierPostAdditionalEastMm": 10,
     "normalWholeHouseIsolation": [
       "U/internal-cut",
       "P/internal-cut"
@@ -408,67 +412,46 @@
       "sideTeeK": 2,
       "compressionElbowK": 1.5
     },
-    "carrier": {
-      "schema": "had-utility-cold-carrier/1",
-      "postSectionMm": [
-        40,
-        40,
-        5
-      ],
-      "postOffsetFromTerminalXYMm": [
-        55,
-        -100
-      ],
-      "postBottomMm": 300,
-      "postHeightMm": 550,
-      "minimumPostIMm4": 120000,
-      "minimumPostAreaMm2": 600,
-      "frameLegSectionMm": [
-        40,
-        40,
-        5
-      ],
-      "minimumFrameLegIMm4": 120000,
-      "mastSectionMm": [
-        50,
-        50,
-        5
-      ],
-      "minimumMastIMm4": 300000,
-      "mastPlanMm": [
-        11080,
-        1225
-      ],
-      "mastTopMm": 1250,
-      "mastBaseMm": [
-        11000,
-        1175,
-        0,
-        200,
-        150,
-        6
-      ],
-      "upperBeamBottomMm": 1210,
-      "receiverBoxMm": [
-        10805,
-        1140,
-        212,
-        335,
-        100,
-        8
-      ],
-      "corePlateYMm": [
-        1000,
+    "commonPathMm": [
+      [
+        10760,
+        600,
         1100
       ],
-      "normalMountRemovedBeforeCarrierDrop": true,
-      "temporaryCapturedJackStrokeMm": 80,
-      "temporaryCapturedJackRatedN": 1000,
-      "maximumCompleteCapturedKg": 20,
-      "toolCoupleNm": 60,
-      "maximumMovementMm": 3,
-      "stressCeilingMpa": 160,
-      "carrierGuideShoulderHeightMm": 900
+      [
+        10760,
+        600,
+        950
+      ],
+      [
+        10980,
+        600,
+        950
+      ],
+      [
+        11190,
+        600,
+        950
+      ]
+    ],
+    "rearTree": {
+      "schema": "had-utility-rear-cold-tree/1",
+      "selectedForDevelopment": true,
+      "retiredMechanism": "front1000-to750 carrier/post/mast/drop assembly",
+      "maximumCompleteDryAndColdResidualKg": 20,
+      "maximumCaptiveResidualL": 4,
+      "loweringMm": 210,
+      "northFirstMm": 850,
+      "westParkMm": 400,
+      "northParkMm": 1260,
+      "frontLowerRailRemovedBeforeNorthMovement": true,
+      "receiverPositiveSupportAndCaptureRequired": true,
+      "actualInstalledSupportAndHandlingAccepted": false
     }
-  }
+  },
+  "terminalLocalMm": [
+    10760,
+    600,
+    1100
+  ]
 }

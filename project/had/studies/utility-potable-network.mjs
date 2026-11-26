@@ -16,7 +16,7 @@ export function deriveUtilityPotableNetwork(base,choice,plantBranch,plantStation
  edges=[],nodes={}
  const node=(id,xyz=null,kind='port')=>{if(xyz!==null&&!point(xyz))throw Error('Actual finite potable port required');if(nodes[id]&&xyz&&!equal(nodes[id].pointMm,xyz))throw Error('Contradictory potable port '+id);nodes[id]??={id,pointMm:xyz,kind};return id}
  const edge=(id,a,b,path=null,control=null,scope='authored physical route')=>{if(!nodes[a]||!nodes[b]||path&&(!Array.isArray(path)||path.length<2||path.some(p=>!point(p))))throw Error('Actual potable edge/ports required');edges.push({id,from:a,to:b,pathMm:copy(path),control,scope})}
- const axis=s.axisMm,upFace=[axis[0],axis[1]-choice.valveDesign.connectionHalfSpanMm,axis[2]],downFace=[axis[0],axis[1]+choice.valveDesign.connectionHalfSpanMm,axis[2]],source=underSill.branches.find(b=>b.id==='utility').coordinates[2],terminal=underSill.branches.find(b=>b.id==='utility').coordinates.at(-1),
+ const axis=s.axisMm,upFace=[axis[0],axis[1]-choice.valveDesign.connectionHalfSpanMm,axis[2]],downFace=[axis[0],axis[1]+choice.valveDesign.connectionHalfSpanMm,axis[2]],source=underSill.branches.find(b=>b.id==='utility').coordinates[2],terminal=choice.terminalLocalMm??underSill.branches.find(b=>b.id==='utility').coordinates.at(-1),
  tee=d.sinkTeeMm,washerTee=d.washerTeeMm,uf='U/valve-upstream-face',df='U/valve-downstream-face',
  ws=d.washer.stop,ss=d.sink.stop,wStart=d.washer.pathToStopMm.at(-1),wEnd=ws.axisMm.map((v,k)=>v+ws.flowAxis[k]*ws.faceMm/2),
  cStart=d.sink.pathToStopMm.at(-1),cEnd=d.sink.pathFromStopToHeadMm[0]
@@ -26,9 +26,16 @@ export function deriveUtilityPotableNetwork(base,choice,plantBranch,plantStation
  edge('U/Lodge-service','street/cold','U/house-entry',null,'Lodge/U-upstream-cut','Actual source-control boundary required; external route/head/isolation performance not invented.')
  edge('U/source-to-cut','U/house-entry',uf,[source,...choice.upstreamVirtualCornersMm,upFace])
  edge('U/internal-cut',uf,df,[upFace,downFace],'U/internal-cut')
- edge('U/cut-to-sink-tee',df,'U/sink-tee',[downFace,...choice.downstreamVirtualCornersMm,tee])
- edge('U/sink-tee-to-terminal','U/sink-tee','U/terminal',[tee,terminal])
- edge('U/terminal-to-washer-tee','U/terminal','U/washer-tee',[terminal,washerTee])
+ if(d.commonPathMm){
+  if(!equal(d.commonPathMm[0],terminal)||!equal(d.commonPathMm.at(-1),tee)||!equal(d.commonPathMm.at(-2),washerTee)||d.commonPathMm.length!==4||d.commonPathMm.some(p=>!point(p)))throw Error('Current rear header must join actual terminal and both actual user tees')
+  edge('U/cut-to-current-terminal',df,'U/terminal',[downFace,...choice.downstreamVirtualCornersMm,terminal])
+  edge('U/current-rear-header-washer','U/terminal','U/washer-tee',d.commonPathMm.slice(0,-1))
+  edge('U/current-rear-header-sink','U/washer-tee','U/sink-tee',d.commonPathMm.slice(-2))
+ }else{
+  edge('U/cut-to-sink-tee',df,'U/sink-tee',[downFace,...choice.downstreamVirtualCornersMm,tee])
+  edge('U/sink-tee-to-terminal','U/sink-tee','U/terminal',[tee,terminal])
+  edge('U/terminal-to-washer-tee','U/terminal','U/washer-tee',[terminal,washerTee])
+ }
  edge('U/washer-branch','U/washer-tee','U/washer-stop-in',d.washer.pathToStopMm)
  edge('U/local-washer-stop','U/washer-stop-in','washer-PROPOSED/cold',[wStart,wEnd],ws.id)
  edge('U/sink-branch','U/sink-tee','U/sink-stop-in',d.sink.pathToStopMm)
@@ -57,17 +64,30 @@ export function deriveUtilityPotableNetwork(base,choice,plantBranch,plantStation
  isolatedMain=forbidden.every(id=>!afterMainClose.includes(id)),
  coldRetired=!oldTrunkCold&&u.every(f=>f.coldSupply==='direct-utility-inlet'&&!f.waterBranchPlanDuties.includes('cold')),
  separatePillars=d.prefabSinkHead.mixing==='only in open bowl'&&d.prefabSinkHead.spoutOutletsMm.every(p=>p[2]-d.prefabSinkHead.floodRimMm>=100)&&!equal(d.prefabSinkHead.coldPortMm,d.prefabSinkHead.hotPortMm)
- return{schema:'had-occupied-direct-Utility-potable-network/1',state:'authored-source-projected-unprocured-design',controls,nodes:Object.values(nodes),edges,
+ const record={schema:'had-occupied-direct-Utility-potable-network/1',state:'authored-source-projected-unprocured-design',controls,nodes:Object.values(nodes),edges,
  retirement:{oldColdConnectionRetiredInOccupiedSource:coldRetired,removedTrunkColdDuty:!oldTrunkCold,retainedSameTrunkDuties:copy(trunk.duties),directUtilityFixtureIds:ids,retainedPlantColdFixtureIds:p.map(f=>f.id),retainedPlantTrunks:copy(base.trunks.filter(t=>t.id!=='ground-utility')),retainedPlantStoreBranch:copy(plantBranch.storeFixedPathMm)},
  isolation:{normalWholeHouseMAINSRequires:['U/internal-cut','P/internal-cut'],oneUtilityCutIsNotWholeHouseIsolation:true,chargedStoredHotEnergyIsolatedByThatPair:false,mainColdRenewalRequires:['Lodge/U-upstream-cut',ws.id,ss.id],internalUOpenDuringControlledWholeBranchDrain:true,mainNominalTopologyIsolatedFromPossibleSources:isolatedMain,localWasherIsolationKeepsSinkAndPlantMains:!localWasherClosed.includes('washer-PROPOSED/cold')&&localWasherClosed.includes('utility-sink-PROPOSED/cold')&&p.every(f=>localWasherClosed.includes(f.id+'/cold')),wholeHouseMainsBlockedByPair:!normalHouseClosed.includes(df)&&!normalHouseClosed.includes('P/cut-out'),PlantStoredBackfeedCannotReachUtilityDownstreamWithInternalUClosed:!plantToU.includes(df),PlantCouldBackfeedUpstreamCommonServiceWhenPInternalOpen:plantToU.includes(uf),actualValveClosureLeakTestAndZeroPressureVerified:false},
  head:{...copy(d.prefabSinkHead),separatePillarsWithAirGapNecessaryGeometry:separatePillars,chargedHotConnectionToColdInvented:false,actualHotTailToNewHeadQualified:false},
- directRoomGeometry:copy(d),quantities:{sinkColdPipeLengthMm:length(d.sink.pathToStopMm)+length(d.sink.pathFromStopToHeadMm),washerColdPipeLengthMm:length(d.washer.pathToStopMm),localStopModuleFaceAllowanceIncludesAdapters:true},
+ directRoomGeometry:copy(d),quantities:{sinkColdPipeLengthMm:length(d.sink.pathToStopMm)+length(d.sink.pathFromStopToHeadMm),washerColdPipeLengthMm:length(d.washer.pathToStopMm),commonRearHeaderLengthMm:d.commonPathMm?length(d.commonPathMm):0,currentMainTerminalMm:copy(terminal),legacyUnderSillIndoorTailApplicable:!choice.terminalLocalMm,localStopModuleFaceAllowanceIncludesAdapters:true},
  counterpaths:{mainReachedAfterDeclaredClosures:afterMainClose,PlantReachedUWithInternalUClosed:plantToU.filter(id=>id.startsWith('U/')||ids.some(f=>id.startsWith(f)))},
  necessarySourceTopology:coldRetired&&equal(trunk.duties,d.retire.preserveDuties)&&isolatedMain&&separatePillars&&!plantToU.includes(df),actualFullPlantColdRiserAndFixtureJoinsAccepted:false,actualPressureHydraulicsSupportThermalAndAllRenewalsAccepted:false,completeInstallationAccepted:false}
+ return {...record,reviewSvg:drawUtilityPotableNetwork(record)}
 }
 
 export function utilityPotableReachability(record,closed,starts=['U/valve-upstream-face','U/valve-downstream-face']){
  const seen=new Set(starts),off=new Set(closed);let changed=true
  while(changed){changed=false;for(const e of record.edges)if(!e.control||!off.has(e.control)){if(seen.has(e.from)&&!seen.has(e.to)){seen.add(e.to);changed=true}if(seen.has(e.to)&&!seen.has(e.from)){seen.add(e.from);changed=true}}}
  return[...seen].sort()
+}
+
+/** Inspection drawing of the SAME occupied U edge paths, never a second route
+ * authority. Plan and elevation projections do not establish physical fit. */
+export function drawUtilityPotableNetwork(record){
+ const rows=record.edges.filter(e=>e.id.startsWith('U/')&&e.pathMm),points=rows.flatMap(e=>e.pathMm),lo=[0,1,2].map(k=>Math.min(...points.map(p=>p[k]))),hi=[0,1,2].map(k=>Math.max(...points.map(p=>p[k]))),esc=v=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;'),
+  scale=Math.min(480/(hi[0]-lo[0]+100),400/(hi[1]-lo[1]+100)),x=p=>55+(p[0]-lo[0])*scale,y=p=>520-(p[1]-lo[1])*scale,
+  sy=Math.min(480/(hi[1]-lo[1]+100),400/(hi[2]-lo[2]+100)),u=p=>650+(p[1]-lo[1])*sy,z=p=>520-(p[2]-lo[2])*sy,
+  line=(e,a,b)=>'<polyline points="'+e.pathMm.map(p=>a(p).toFixed(3)+','+b(p).toFixed(3)).join(' ')+'" fill="none" stroke="'+(e.control?'#9a442a':'#276d82')+'" stroke-width="'+(e.control?6:3)+'"><title>'+esc(e.id)+'</title></polyline>',
+  active=record.nodes.filter(n=>n.pointMm&&n.id.startsWith('U/')&&!n.id.includes('spout')),
+  labels=active.map(n=>'<circle cx="'+x(n.pointMm).toFixed(3)+'" cy="'+y(n.pointMm).toFixed(3)+'" r="3" fill="#202b31"><title>'+esc(n.id)+' '+n.pointMm.join('/')+'mm</title></circle>').join('')
+ return '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650"><rect width="1200" height="650" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#202b31"><text x="35" y="35" font-size="23">Utility: current rear cold tree</text><text x="35" y="65" font-size="15">Same occupied source graph; authored unprocured design. Geometry, support and installation gates remain explicit.</text><text x="35" y="100" font-size="18">PLAN / north up</text><text x="630" y="100" font-size="18">Y–Z ELEVATION / projection</text>'+rows.map(e=>line(e,x,y)).join('')+labels+rows.map(e=>line(e,u,z)).join('')+'<text x="35" y="575" font-size="15">Mains isolation: operate BOTH U and P internal cuts. This does not isolate charged stores.</text><text x="35" y="605" font-size="15">Independent washer and sink cold stops; separate pillar taps. Historical front carrier is retired.</text></g></svg>'
 }

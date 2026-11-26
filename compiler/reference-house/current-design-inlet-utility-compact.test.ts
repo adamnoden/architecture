@@ -17,7 +17,7 @@ type B=readonly[number,number,number,number,number,number]
 const receipt=read('project/had/studies/inlet-source-envelope.results.json'),old=receipt.joinedDirection.room,rawRoutes=old.indoorRoutes,
  water=read('project/had/studies/water-replan.json').model,services=read('project/had/studies/current-house-services.json'),
  source=read('project/had/studies/south-inlet-under-sill.json'),saved=read('project/ccr/studies/working-house-comparison.json'),
- choice=read('project/had/studies/inlet-utility-compact-route.json') as UtilityRouteChoice,
+ choice=read('project/had/studies/inlet-utility-front-carrier-retired.json') as UtilityRouteChoice,
  stage=saved.stages.distributedFloor,context=readInletCornerContext(stage.cornerWidthsMm.SE,sha256SemanticFingerprint(stage)),
  boundary=utilityCornerBoundary(context,old.wetUtilityPlanMm,water.internalArchControls.actualRadialFinish),
  host=runUtilityCornerHost(context,water.internalArchControls.actualRadialFinish,source.branches.find((v:any)=>v.id==='utility').coordinates.at(-1),(choice.coldDistribution as any)?.carrier,receipt.bound.maximumAbsoluteTotalBar-receipt.settings.atmosphericMinimumBar),
@@ -46,9 +46,11 @@ const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
 if(dir){mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'compact-route-geometry.json'),JSON.stringify({scope:'Fresh source-geometry fixture; not full saved-document compiler, global source audit, support or installation acceptance.',savedDistributedFloor:stage,context,boundary,host,station,cuts,result},null,2))}
 console.info('COMPACT_EXISTING_PURGE_DUTY '+JSON.stringify(old.purge))
 console.info('COMPACT_WEST_WALL_ACTUAL_CHECKS '+JSON.stringify({station,minima:result.geometry.minimumByKind,failures:result.geometry.failures,quantity:result.quantities,hydraulics:result.hydraulics}))
-test('compact west-wall main keeps internal isolation with an actual unobstructed ordinary path before washer pull',()=>{
+test('retired front-carrier prototype has a20mm frame gap below its existing25mm geometry criterion',()=>{
  assert.equal(stage.cornerWidthsMm.SE,200)
- assert.equal(host.necessaryGeometryComparisons,true)
+ assert.equal(host.necessaryGeometryComparisons,false)
+ assert.equal(host.checks.frame.clearance,20)
+ assert.ok(host.checks.frame.clearance<25)
  assert.deepEqual(result.valve.axisMm,[9550,1600,1175])
  assert.equal(result.valve.flowAxis,'north-south')
  assert.equal(result.valve.stem,'vertical-up')

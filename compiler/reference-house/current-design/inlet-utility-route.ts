@@ -9,7 +9,7 @@ import type {inletEntrySideCuts} from './inlet-indoor-cuts.js'
 type P=readonly[number,number,number]
 type B=readonly[number,number,number,number,number,number]
 type CompactValveDesign={referenceModel:'SANT SBM-14 DN20';maximumBareModuleMm:readonly[number,number,number];connectionHalfSpanMm:number;maximumOpenStemAboveAxisMm:number;handwheelDiameterMm:number;maximumDryModuleKg:number;minimumFullOpenKvM3h:number}
-export type UtilityRouteChoice={schema:'had-utility-route/1'|'had-utility-route/2';id:string;stem:'horizontal-west'|'horizontal-north'|'vertical-up';valveDesign?:CompactValveDesign;station?:{axisMm:P;ordinaryShoulderMm:P};coldService?:unknown;coldDistribution?:unknown;ordinaryApproachWaypointsMm?:readonly P[];upstreamVirtualCornersMm:readonly P[];downstreamVirtualCornersMm:readonly P[];
+export type UtilityRouteChoice={schema:'had-utility-route/1'|'had-utility-route/2';id:string;stem:'horizontal-west'|'horizontal-north'|'vertical-up';valveDesign?:CompactValveDesign;station?:{axisMm:P;ordinaryShoulderMm:P};coldService?:unknown;coldDistribution?:unknown;terminalLocalMm?:P;ordinaryApproachWaypointsMm?:readonly P[];upstreamVirtualCornersMm:readonly P[];downstreamVirtualCornersMm:readonly P[];
  formedTurn:{path:'utility/downstream';cornerIndex:number;centrelineRadiusMm:number;maximumAngularStepDeg:number;maximumOuterDiameterAfterFormingMm:number;minimumOuterDiameterAfterFormingMm:number;minimumWallAfterFormingMm:number;maximumWallAfterFormingMm:number}}
 const tuple=(v:unknown,n:number)=>Array.isArray(v)&&v.length===n&&[...v].every(x=>typeof x==='number'&&Number.isFinite(x))
 const length=(a:P,b:P)=>Math.hypot(...a.map((v,k)=>v-b[k]))
@@ -19,10 +19,10 @@ const dot=(a:P,b:P)=>a.reduce((n,v,k)=>n+v*b[k],0)
 const cross=(a:readonly number[],b:readonly number[])=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]
 const gap=(a:B,b:B)=>{const g=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return g.some(v=>v>0)?Math.hypot(...g.map(v=>Math.max(v,0))):Math.max(...g)}
 export function admitUtilityRouteChoice(value:unknown):UtilityRouteChoice{
- const c=value as UtilityRouteChoice,compact=c?.schema==='had-utility-route/2',keys=['schema','id','stem','upstreamVirtualCornersMm','downstreamVirtualCornersMm','formedTurn',...(compact?['valveDesign','ordinaryApproachWaypointsMm',...(Object.hasOwn(c,'station')?['station']:[]),...(Object.hasOwn(c,'coldService')?['coldService']:[]),...(Object.hasOwn(c,'coldDistribution')?['coldDistribution']:[])]:[])]
+ const c=value as UtilityRouteChoice,compact=c?.schema==='had-utility-route/2',keys=['schema','id','stem','upstreamVirtualCornersMm','downstreamVirtualCornersMm','formedTurn',...(compact?['valveDesign','ordinaryApproachWaypointsMm',...(Object.hasOwn(c,'station')?['station']:[]),...(Object.hasOwn(c,'coldService')?['coldService']:[]),...(Object.hasOwn(c,'coldDistribution')?['coldDistribution']:[]),...(Object.hasOwn(c,'terminalLocalMm')?['terminalLocalMm']:[])]:[])]
  if(!c||Object.keys(c).sort().join(',')!==keys.sort().join(',')||!['had-utility-route/1','had-utility-route/2'].includes(c.schema)||typeof c.id!=='string'||!c.id||!(compact?['vertical-up']:['horizontal-west','horizontal-north']).includes(c.stem)
   ||![c.upstreamVirtualCornersMm,c.downstreamVirtualCornersMm].every(p=>Array.isArray(p)&&p.length>=2&&[...p].every(v=>tuple(v,3)))||!c.formedTurn)throw Error('Unsupported complete Utility route choice')
- if(compact){if(c.station&&(Object.keys(c.station).sort().join(',')!=='axisMm,ordinaryShoulderMm'||!tuple(c.station.axisMm,3)||!tuple(c.station.ordinaryShoulderMm,3)))throw Error('Actual complete compact station control required');const d=c.valveDesign
+ if(compact){if(c.terminalLocalMm&&(!tuple(c.terminalLocalMm,3)||c.terminalLocalMm[2]<500||c.terminalLocalMm[2]>2000))throw Error('Finite authored current Utility terminal required');if(c.station&&(Object.keys(c.station).sort().join(',')!=='axisMm,ordinaryShoulderMm'||!tuple(c.station.axisMm,3)||!tuple(c.station.ordinaryShoulderMm,3)))throw Error('Actual complete compact station control required');const d=c.valveDesign
   if(!d||Object.keys(d).sort().join(',')!=='connectionHalfSpanMm,handwheelDiameterMm,maximumBareModuleMm,maximumDryModuleKg,maximumOpenStemAboveAxisMm,minimumFullOpenKvM3h,referenceModel'
    ||d.referenceModel!=='SANT SBM-14 DN20'||!tuple(d.maximumBareModuleMm,3)||d.maximumBareModuleMm.some(v=>v<=0)
    ||![d.connectionHalfSpanMm,d.maximumOpenStemAboveAxisMm,d.handwheelDiameterMm,d.maximumDryModuleKg,d.minimumFullOpenKvM3h].every(Number.isFinite)
@@ -80,7 +80,7 @@ function compactUtilityValve(d:CompactValveDesign,cuts:ReturnType<typeof inletEn
 }
 
 export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoutesInput;cuts:ReturnType<typeof inletEntrySideCuts>;retained:InletRetainedRouteServices}){
- const c=admitUtilityRouteChoice(i.choice),s=i.input,cuts=i.cuts,facts=inletCabinetProductFacts,source=s.utilitySourcePathMm[2],terminal=s.utilitySourcePathMm[6],
+ const c=admitUtilityRouteChoice(i.choice),s=i.input,cuts=i.cuts,facts=inletCabinetProductFacts,source=s.utilitySourcePathMm[2],terminal=c.terminalLocalMm??s.utilitySourcePathMm[6],
   sourceValve=cuts.valves.find(v=>v.branch==='utility'),
   compact=c.schema==='had-utility-route/2',
   valve=sourceValve?(compact?compactUtilityValve(c.valveDesign!,cuts):orientedUtilityValve(sourceValve,c.stem,cuts)):undefined
@@ -229,7 +229,7 @@ export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoute
   hydraulics:{minimumValveKvRequiredByExistingBudget:s.networkAllowancesBar[0]>straightLossBar+cornerLossBar+riseBar?s.utilityLmin*.06/Math.sqrt(s.networkAllowancesBar[0]-straightLossBar-cornerLossBar-riseBar):null,
    valveKvInterpretation:compact?'Authored minimum procurement requirement; no manufacturer coefficient, tested performance or complete pressure/material qualification is represented.':'Existing BSA6T published Kv comparison; actual complete installed connection performance unqualified.',minimumAuthoredBoreMm:hydraulicBoreMm,velocityMps:velocity,straightLossBar,cornerLossBar,valveLossBar,riseBar,allowanceReserveBar,
    formedBendLossCoefficientQualified:false,actualMinimumHydraulicBoreAfterFormingQualified:false,wholeInstalledNetworkQualified:false},
-  topology:{sameActualSourceSplice:true,sameActualValveFacesAndTerminal:true,sharedHeader:false,permanentBypass:false,oldCoLocatedPlantBankRetired:true,separatePlantBranchUnchanged:true},
+  topology:{sameActualSourceSplice:true,sameActualValveFaces:true,sameLegacyTerminal:c.terminalLocalMm===undefined,currentTerminalLocalMm:terminal,legacyTerminalLocalMm:s.utilitySourcePathMm[6],legacyIndoorTailApplicable:c.terminalLocalMm===undefined,sharedHeader:false,permanentBypass:false,oldCoLocatedPlantBankRetired:true,separatePlantBranchUnchanged:true},
   procurement:{compactValveDesignConditions:compact?c.valveDesign:null,actualCompactManufacturerKvAndMassKnown:false,formedSweepIsAuthoredFactoryRequirement:true,cataloguePartSelected:false,wallAndOvalityMeasuredAfterForming:false,pressureAndMaterialQualification:false},
   renewal:{ordinaryUsePhase:compact?'Washer and service head home; isolate before first pull. Occupied first rest is not an ordinary access claim.':'Doorway control includes occupied washer first-rest approach.',existingBankAndFlangeReleaseMethodPreserved:!compact,allNewRouteAndSupportRenewalQualified:false},
   support:{referenceGravityAndPressureExported:true,actualIndependentGuidesAndAnchorsDesigned:false,thermalFlexibilityAndNativeReceiverTransferAccepted:false},

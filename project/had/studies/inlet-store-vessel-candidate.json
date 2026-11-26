@@ -1,0 +1,109 @@
+{
+  "schema": "had-store-vessel/1",
+  "id": "HAD/plant-domestic-store-vessel",
+  "revision": 1,
+  "units": "mm-L-kg-bar-C",
+  "datum": "local-occupied-groundFFL",
+  "nominalUsableLitres": 300,
+  "maximumBodyAndPortsLitres": 330,
+  "maximumWettedPortsAndAccessoriesLitres": 3.6975,
+  "inner": {
+    "diameterMm": 650,
+    "straightHeightMm": 850,
+    "domeDepthMm": 100,
+    "lowestWettedZMm": 520
+  },
+  "minimumInsulationMm": 25,
+  "settingEachMm": 10,
+  "connections": {
+    "cold": {
+      "wetPointLocalMm": [
+        10040,
+        4100,
+        620
+      ],
+      "maximumFactoryBoreMm": 28
+    },
+    "drain": {
+      "frontOffsetYMm": 30,
+      "externalAxisZMm": 150,
+      "maximumFactoryBoreMm": 28,
+      "maximumPickupLipMm": 2,
+      "retainedBossLengthMm": 10,
+      "maximumOtherRetainedCavityLitres": 1.5
+    },
+    "tAndP": {
+      "sensePointLocalMm": [
+        9980,
+        4480,
+        1490
+      ],
+      "maximumProbeRadiusMm": 5,
+      "maximumProbeLengthMm": 280,
+      "maximumWetNeckBoreMm": 28
+    },
+    "immersion": {
+      "axisZMm": 1100,
+      "maximumElementRadiusMm": 14,
+      "maximumToolRadiusMm": 75,
+      "minimumTipWallReserveMm": 20
+    },
+    "hot": {
+      "wetPointLocalMm": [
+        9800,
+        4250,
+        1500
+      ],
+      "externalPortLocalMm": [
+        9800,
+        4250,
+        1730
+      ],
+      "maximumFactoryBoreMm": 28,
+      "maximumTubeInsideMm": 20,
+      "routeToUpperTreeLocalMm": [
+        [
+          9800,
+          4250,
+          1730
+        ],
+        [
+          9800,
+          4250,
+          2945
+        ],
+        [
+          9800,
+          5000,
+          2945
+        ]
+      ]
+    }
+  },
+  "operating": {
+    "normalDhwTemperatureC": 60,
+    "normalColdTemperatureC": 10,
+    "maximumColdMaintenanceTemperatureC": 40,
+    "pressureBoundaryMaximumGaugeBar": 9.2,
+    "maximumFaultTemperatureC": null
+  },
+  "expansion": {
+    "id": "HAD/plant-domestic-expansion",
+    "totalInternalCapacityLitres": 20,
+    "maximumDrainableWaterLitres": 20,
+    "gasWaterSeparation": "factory-all-metal-separator-design-requirement",
+    "prechargeAbsoluteBar": 3.5,
+    "prechargeTemperatureC": 10,
+    "normalRegulatorGaugeBar": 2.5,
+    "normalPressureCeilingGaugeBar": 6,
+    "maximumHeatedExternalInventoryLitres": 40,
+    "maximumGasTemperatureC": 60,
+    "coldDensityUpperKgM3": 1000,
+    "hotDensityLowerKgM3": 982
+  },
+  "handling": {
+    "maximumCompleteDryCargoKg": 250,
+    "maximumCargoResidualKg": 2,
+    "cargoDynamicFactor": 1.5
+  }
+}
