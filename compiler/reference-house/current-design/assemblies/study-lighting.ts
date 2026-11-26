@@ -191,7 +191,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     independentSupport: 'Manufacturer bracket → removable positive-screw metal carrier/temporary support → fixed side rails → declared hard lands → permanent structure. Decoration, air plane and mineral board carry no luminaire or electrical enclosure.',
     electricalBoundary: 'Independent enclosed short riser, box and accessible corner; low run stops before retained door end piece. Separate data territory. Complete circuit/feed, protection, cable size, bend radius, earthing, thermal and penetration design remains an installation duty; no water/PV shared route or exposed custom live busbar.',
     release: ['Ordinary portable loads unplug before furniture movement.', 'Fixed light: identify circuit, isolate and prove dead; socket switching alone does not isolate it.',
-      'Support module by temporary stand/tether, undo front screws, disconnect only inside manufacturer enclosure after isolation.',
+      'Support module by temporary stand/tether, unplug the complete factory lead from the accessible lighting-only outlet, then undo front screws. Never disconnect inside the fitting for ordinary cassette renewal.',
       'Withdraw complete fitting/carrier normal to wall, park in clear first rest; adjacent wall panels and door reveal remain fixed.',
       'Decoration uses stopped joints around fixed electrical islands. Removing it leaves services independently enclosed/supported.',
       'Repair/refit retention, earthing, strain relief and closures, verify electrical safety and manual operation before reinstating.'],

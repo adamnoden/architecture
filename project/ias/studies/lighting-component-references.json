@@ -69,25 +69,22 @@
     "materialAdmission": "NOT_ADMITTED: painted metal, insulation, wiring, foot switch, supplied lamp and full constituents remain unresolved."
   },
   "wallLamp": {
-    "manufacturer": "Astro",
-    "reference": "Backplate 3 1367003 with Ios 250 shade 5028001",
-    "url": "https://www.astrolighting.com/products/1367003-backplate-3",
-    "shadeUrl": "https://www.astrolighting.com/products/5028001-ios-250-shade",
-    "instructions": "https://assets.astrolighting.com/pdfs/original/82244-instructions-backplate3-issue2.pdf",
-    "shadeWidthMm": 144,
-    "shadeHeightMm": 250,
-    "reservedCompleteProjectionMm": 180,
-    "projectionAuthority": "Project requirement envelope, not a measured manufacturer assembled dimension; confirm complete shade/bracket/clearance before fabrication.",
-    "sourceType": "Replaceable E27, Class I earthed, wired-in, IP20; no separate driver required; dimming depends on lamp.",
-    "materialAdmission": "NOT_ADMITTED: fabric shade, backing/binders, coating, socket, cable insulation, terminals and supplied lamp need complete constituent admission.",
-    "instructionsCheckedDate": "2026-11-22",
-    "mountingSequenceAuthority": "Astro82244Issue2: fixture body releases from retained bracket at two side screws; terminal access and earth require isolation. No bracket hole pitch or complete installed mass is supplied by this witness.",
-    "datasheet": "https://assets.astrolighting.com/pdfs/original/5346-7170-backplate3-datasheet-issue1.pdf",
-    "datasheetAuthority": "Manufacturer current product link serves legacy7170sheet22May2013: geometry witness only, not current complete assembly identity or installed mass.",
+    "manufacturer": "Anglepoise",
+    "reference": "Type75 Mini Wall Light with Cable, UK; colour unselected",
+    "url": "https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/",
+    "shadeWidthMm": 130,
+    "shadeHeightMm": 150,
+    "reservedCompleteProjectionMm": 230,
+    "wallPlateDiameterMm": 75,
+    "leadLengthMm": 2500,
+    "maximumLampW": 10,
+    "projectionAuthority": "Manufacturer published maximum reach230mm, not a claim that an arbitrary supplied plug fits a closed cavity.",
+    "sourceType": "Factory complete plug-in E27 fitting with inline switch; no conversion of a wired-in product and no alteration of certified internals.",
+    "materialAdmission": "NOT_ADMITTED: paint, cable, plug, fuse, lampholder, switch, supplied lamp and all constituents remain unresolved.",
     "terminalGeometryEvidence": {
-      "source": "https://assets.astrolighting.com/pdfs/original/82244-instructions-backplate3-issue2.pdf",
-      "checkedDate": "2026-11-24",
-      "finding": "Factory enclosed termination and earthing remain required; the installation instructions do not supply a dimensioned terminal/bracket model for this new case. No invented terminal coordinate or mechanical connection is admitted."
+      "source": "https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/",
+      "checkedDate": "2026-11-26",
+      "finding": "Complete plug-in family replaces direct fixed2.5mm2 termination into unknown factory lamp terminals. Actual UK plug/fuse/lead geometry and independent support/parking remain unqualified."
     }
   },
   "projectRequirements": {
@@ -181,12 +178,14 @@
     "upperBendClipFraction": 0.5,
     "additionalCornerDepthMm": 20,
     "accessoryExtensionMm": 16,
-    "upperBoxBacksetMm": 14,
+    "upperBoxBacksetMm": 0,
     "upperPortRearInsetMm": 20,
     "mainRestSouthShiftMm": 60,
     "caseRestSizeMm": 120,
     "fixedIslandHeightMm": 120,
-    "sourceRiseMm": 220
+    "sourceRiseMm": 220,
+    "upperAccessoryExtensionMm": 16,
+    "upperCentreOffsetZMm": -300
   },
   "localHomeRunAuthority": "Unselected conventional95mm station; sourcebox and two radial nets specified by shared circuit method.375mm tube origins clear source gland transitions; field boundary remains150mm. Supplied entries, device/earth CAD, physical installation and material admission remain unearned.",
   "localHomeRunSupportReference": {
@@ -336,13 +335,13 @@
       {
         "id": "MI-ends",
         "url": "https://www.nvent.com/sites/default/files/acquiadam_assets/2021-01/PYROTENAX-IM-CDE0923-MiFireSurvivalCable-EN.pdf",
-        "finding": "Size20RGM11mm thread/~21mm projection;27.7mm locknut corners;14.8\u00d716.7mm sealpot. RPSL earthtail, PVC sleeves/closures and compound remain unadmitted.",
+        "finding": "Size20RGM11mm thread/~21mm projection;27.7mm locknut corners;14.8×16.7mm sealpot. RPSL earthtail, PVC sleeves/closures and compound remain unadmitted.",
         "retrieval": "Manufacturer-authored2018/2020manual retained in owning MATresult; current revision/assembly unqualified."
       },
       {
         "id": "sourcebox",
         "url": "https://barton-engineering.co.uk/bs-adaptable-box/",
-        "finding": "Plain galvanised steel225\u00d7100\u00d775 box and M5\u00d78 lid listed. New entry pattern is designed setout, not a fictitious stock knockout.",
+        "finding": "Plain galvanised steel225×100×75 box and M5×8 lid listed. New entry pattern is designed setout, not a fictitious stock knockout.",
         "retrieval": "Official page opened26Nov2026."
       },
       {
@@ -354,7 +353,7 @@
       {
         "id": "B6",
         "url": "https://hager.com/uk/products/h/adb906r-rcbo-1m-1p-n-6ka-b-6a-30ma-a",
-        "finding": "B6,30mA TypeA,6kA;1..16mm2 rigid terminals;85\u00d717.7\u00d770mm. No board/installed acceptance.",
+        "finding": "B6,30mA TypeA,6kA;1..16mm2 rigid terminals;85×17.7×70mm. No board/installed acceptance.",
         "retrieval": "Official product opened26Nov2026."
       },
       {
@@ -366,7 +365,7 @@
       {
         "id": "terminal",
         "url": "https://www.wago.com/gb/products/electrical-interconnections/splicing-connectors-221",
-        "finding": "221series solid/stranded0.2..4mm2, up to32A/450V.25\u00d725\u00d720 is an authored holder/tool reservation, not productCAD or constituent admission.",
+        "finding": "221series solid/stranded0.2..4mm2, up to32A/450V.25×25×20 is an authored holder/tool reservation, not productCAD or constituent admission.",
         "retrieval": "Official page opened26Nov2026."
       },
       {
@@ -410,12 +409,18 @@
         "url": "https://forbesandlomax.com/uk/wp-content/uploads/sites/2/2020/02/13amp-Sockets-1.pdf",
         "finding": "Current April2026 sheet: single13A switched or unswitched body23mm,47mm recommended box;L/N/E3x2.5mm2,3x4mm2,2x6mm2stranded. Model conservatively accepts rigidmax4; actual terminal position/tool fit remains unqualified.",
         "retrieval": "Official current sheet opened26Nov2026 from manufacturer sockets supporting documents."
+      },
+      {
+        "id": "plugged-wall-cassette",
+        "url": "https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/",
+        "finding": "Current complete Type75Mini plug-in family:130mm shade,150mm shade height,230mm maximum reach and75mm wall plate. Fixed lighting MI ends at conventional single13A outlet on B6; no direct2.5mm2 lamp-terminal adapter. Actual supplied plug/fuse and complete mechanical/lead renewal remain unqualified.",
+        "retrieval": "Official current manufacturer product/category opened26Nov2026; earlier official support index lists2.5m factory lead. No actual supplied plug/fuse identity inferred."
       }
     ],
     "deviceTerminalLimitsMm2": {
       "socket": 4,
       "switch": 6,
-      "lamp": null
+      "lamp": 4
     }
   }
 }

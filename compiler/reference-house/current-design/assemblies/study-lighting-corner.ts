@@ -4,7 +4,7 @@ export interface LocalHomeRunChoices {
   readonly sourceRiseMm:number;readonly bayWidthMm: number; readonly stationOffsetXMm: number; readonly tubeWallMm: number; readonly routeGapMm: number
   readonly lowerPortRearInsetMm: number; readonly maximumClipSpanMm: number; readonly clipEndInsetMm: number
   readonly carrierCentrePlateOffsetXMm: number; readonly minimumResidualMm: number; readonly upperBendClipFraction: number
-  readonly additionalCornerDepthMm:number; readonly accessoryExtensionMm:number; readonly upperBoxBacksetMm:number; readonly upperPortRearInsetMm:number; readonly mainRestSouthShiftMm:number; readonly caseRestSizeMm:number;readonly fixedIslandHeightMm:number
+  readonly additionalCornerDepthMm:number; readonly accessoryExtensionMm:number; readonly upperAccessoryExtensionMm:number;readonly upperCentreOffsetZMm:number;readonly upperBoxBacksetMm:number; readonly upperPortRearInsetMm:number; readonly mainRestSouthShiftMm:number; readonly caseRestSizeMm:number;readonly fixedIslandHeightMm:number
 }
 export interface LightingCornerDetailInput {
   readonly homeRuns: LocalHomeRunChoices
@@ -153,8 +153,8 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
         demandKg: input.moduleMassLimitKg, capacityAndFloorSupportAccepted: false },
       stages: [
         'Keep floor closed. Identify and isolate/prove dead both affected fixed-light and socket circuits; ordinary switch OFF is insufficient.',
-        'Latch an independent temporary tether/support before loosening either factory side screw. Follow the Astro body/bracket sequence; do not pull on the supply.',
-        'Support and release the fitting body to access factory-enclosed terminals, disconnect there after proof dead; retain the factory earth and strain-relief arrangements. Actual tail/work space requires product trial.',
+        'Support the complete fitting/carrier before releasing its manufacturer mounting screws; never pull on its factory lead.',
+        'Unplug the complete fitting from its accessible fixed lighting-only outlet after safe isolation; release and retain its factory lead separately. Do not open factory-enclosed terminals or replace its supplied plug. Actual grip/lead parking remains unqualified.',
         'The independent fixed socket/switch islands remain enclosed when decoration alone is removed. An opened luminaire repair enclosure stays locked dead until fully reinstated.',
         'Support the complete module, release four front positive carrier screws, draw normal by the declared stroke, translate to the reserved rest, then lower into the positively retained upright cradle.',
         'Release the separate central decorative infill at its four front screws with support before normal draw; adjacent panels, skirt, door reveal, rails and electrical islands remain fixed.',
@@ -171,9 +171,9 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
  */
 function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   const h = input.homeRuns, c = input.construction
-  const keys = ['sourceRiseMm','bayWidthMm', 'stationOffsetXMm', 'tubeWallMm', 'routeGapMm', 'lowerPortRearInsetMm', 'maximumClipSpanMm', 'clipEndInsetMm', 'carrierCentrePlateOffsetXMm', 'minimumResidualMm', 'upperBendClipFraction', 'additionalCornerDepthMm', 'accessoryExtensionMm', 'upperBoxBacksetMm', 'upperPortRearInsetMm', 'mainRestSouthShiftMm', 'caseRestSizeMm', 'fixedIslandHeightMm']
+  const keys = ['sourceRiseMm','bayWidthMm', 'stationOffsetXMm', 'tubeWallMm', 'routeGapMm', 'lowerPortRearInsetMm', 'maximumClipSpanMm', 'clipEndInsetMm', 'carrierCentrePlateOffsetXMm', 'minimumResidualMm', 'upperBendClipFraction', 'additionalCornerDepthMm', 'accessoryExtensionMm', 'upperBoxBacksetMm', 'upperAccessoryExtensionMm', 'upperCentreOffsetZMm', 'upperPortRearInsetMm', 'mainRestSouthShiftMm', 'caseRestSizeMm', 'fixedIslandHeightMm']
   if (!h || Object.keys(h).length !== keys.length || keys.some(k => !Object.hasOwn(h, k))
-    || !Object.entries(h).every(([key,n]) => Number.isFinite(n) && ((['stationOffsetXMm','carrierCentrePlateOffsetXMm'].includes(key)||(['sourceRiseMm','upperBendClipFraction','additionalCornerDepthMm','accessoryExtensionMm','upperBoxBacksetMm','mainRestSouthShiftMm'].includes(key)&&n>=0)) || n > 0))
+    || !Object.entries(h).every(([key,n]) => Number.isFinite(n) && ((['stationOffsetXMm','carrierCentrePlateOffsetXMm','upperCentreOffsetZMm'].includes(key)||(['sourceRiseMm','upperBendClipFraction','additionalCornerDepthMm','accessoryExtensionMm','upperAccessoryExtensionMm','upperBoxBacksetMm','mainRestSouthShiftMm'].includes(key)&&n>=0)) || n > 0))
     || h.tubeWallMm * 2 >= c.containmentOutsideDiameterMm || h.upperBendClipFraction < 0 || h.upperBendClipFraction >= 1) throw new TypeError('IAS_LIGHTING_HOME_RUN_INPUT_INVALID')
   if(!Array.isArray(input.floorBandsMm)||!input.floorBandsMm.length||input.floorBandsMm.some(b=>b.length!==4||!b.every(Number.isFinite))) throw new TypeError('IAS_LIGHTING_ROOM_FLOOR_REFERENCE_INVALID')
   const floorGeometryValid=!input.floorBandsMm.some((b,i)=>b[2]!<=b[0]!||b[3]!<=b[1]!||input.floorBandsMm.slice(i+1).some(other=>overlap(b,other)))
@@ -198,7 +198,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   ]
   const cableOpening={centreXMm:cx,centreZMm:input.moduleCentreZMm,diameterMm:c.containmentOutsideDiameterMm,
     minimumPlateEdgeReserveMm:Math.min(cx-tubeR-centrePlate[0],centrePlate[2]-cx-tubeR,input.moduleCentreZMm-tubeR-centrePlate[1],centrePlate[3]-input.moduleCentreZMm-tubeR)-input.jointMm}
-  const z = [input.socketCentreZMm, 1100, input.moduleCentreZMm]
+  const z = [input.socketCentreZMm, 1100, input.moduleCentreZMm+h.upperCentreOffsetZMm]
   const boxes = z.map((centre, i) => {
     const front = totalDepthMm-h.accessoryExtensionMm-(i===2?h.upperBoxBacksetMm:0)
     const rear = front - input.boxSizeMm[2]
@@ -206,13 +206,13 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
     return { id: `IAS/STUDY/local-home-runs/enclosure/${i}`, xMm: [cx - input.boxSizeMm[0] / 2, cx + input.boxSizeMm[0] / 2],
       zMm: [centre - input.boxSizeMm[1] / 2, centre + input.boxSizeMm[1] / 2], depthMm: [rear, front],
       fixedIslandXZMm:[cx-c.fixedIslandWidthMm/2,centre-h.fixedIslandHeightMm/2,cx+c.fixedIslandWidthMm/2,centre+h.fixedIslandHeightMm/2],
-      extensionDepthMm:i===2?0:h.accessoryExtensionMm,closedCoverDepthMm:i===2?[front,front+c.steelThicknessMm]:null,
-      entryAxisCoreDepthRequirementMm: axis, actualEntryCoordinatesQualified: false, ordinaryAccessoryFaceRecessMm: i === 2 ? null : 0 }
+      extensionDepthMm:i===2?h.upperAccessoryExtensionMm:h.accessoryExtensionMm,closedCoverDepthMm:i===2&&h.upperAccessoryExtensionMm===0?[front,front+c.steelThicknessMm]:null,
+      entryAxisCoreDepthRequirementMm: axis, actualEntryCoordinatesQualified: false, ordinaryAccessoryFaceRecessMm: i === 2 && h.upperAccessoryExtensionMm===0 ? null : 0 }
   })
   const routeIssues: string[] = []
   if(!floorGeometryValid)routeIssues.push('home-run-room-floor-geometry-invalid')
   if(input.boxSizeMm[0]!==support.boxExtension.baseWidthMm||input.boxSizeMm[1]!==support.boxExtension.baseHeightMm||input.boxSizeMm[2]!==support.boxExtension.baseDepthMm)routeIssues.push('home-run-manufactured-base-envelope-unsupported')
-  if(h.accessoryExtensionMm!==0&&h.accessoryExtensionMm!==support.boxExtension.extensionDepthMm)routeIssues.push('home-run-manufactured-extension-depth-unsupported')
+  if([h.accessoryExtensionMm,h.upperAccessoryExtensionMm].some(n=>n!==0&&n!==support.boxExtension.extensionDepthMm))routeIssues.push('home-run-manufactured-extension-depth-unsupported')
   const routes = boxes.map((box, i) => {
     const radius = c.bendCentrelineRadiusMm + i * pitch, tangentX = box.xMm[0]! - c.entryCollarAxialLengthMm
     const riserX = tangentX - radius, bendStartZ = z[i]! - radius, d = box.entryAxisCoreDepthRequirementMm
@@ -343,7 +343,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   if(!inFloor(firstRestPlanMm)||!inFloor(caseRestPlanMm))routeIssues.push('home-run-rest-outside-supported-room-floor')
   const caseRenewal=boxes.map((box,i)=>{
     const outerWidth=Math.max(input.boxSizeMm[0]!,input.plateSizeMm[0]!),outerHeight=Math.max(input.boxSizeMm[1]!,input.plateSizeMm[1]!)
-    const front=i===2?box.closedCoverDepthMm![1]!:totalDepthMm
+    const front=box.closedCoverDepthMm?.[1]??totalDepthMm
     const drawMm=totalDepthMm-box.depthMm[0]!+caseDrawClearanceMm
     const withdrawnPlanMm=[cx-outerWidth/2,coreY-front-drawMm,cx+outerWidth/2,coreY-box.depthMm[0]!-drawMm]
     const body=[withdrawnPlanMm[0]!,withdrawnPlanMm[1]!,c.cradleBottomZMm,outerWidth,front-box.depthMm[0]!,outerHeight]
@@ -365,7 +365,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
     // otherwise a coarse overall prism invents a collision with the own tube.
     const parts=[{id:'base',width:input.boxSizeMm[0]!,height:input.boxSizeMm[1]!,rear:box.depthMm[0]!,front:box.depthMm[1]!},
       ...(box.extensionDepthMm?[{id:'extension',width:input.boxSizeMm[0]!,height:input.boxSizeMm[1]!,rear:box.depthMm[1]!,front:totalDepthMm}]:[]),
-      {id:i===2?'closed-cover':'device-shadow',width:outerWidth,height:outerHeight,rear:i===2?box.closedCoverDepthMm![0]!:totalDepthMm-input.accessoryBodyDepthMm,front}]
+      {id:box.closedCoverDepthMm?'closed-cover':'device-shadow',width:outerWidth,height:outerHeight,rear:box.closedCoverDepthMm?.[0]??(totalDepthMm-input.accessoryBodyDepthMm),front}]
     const finalShift=c.cradleBottomZMm-initialLowZ
     const sweeps=parts.flatMap(part=>{
       const low=z[i]!-part.height/2, high=z[i]!+part.height/2, y=coreY-part.front-drawMm

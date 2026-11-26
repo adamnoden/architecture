@@ -542,3 +542,33 @@ The shared output compares specified external2.5mm² copper/PVC tails at k115:
 1.5mm² comparison was29,756A²s. This single-point comparison does not qualify the
 actualHager RCBO over the full fault range, unknown factory leads, earth tails,
 or actual supplied sleeve temperatures; their gates stay false.
+
+
+## Ordinary consumed-cable and plugged-fitting development —26November2026
+
+Spent MI is consumable: after isolation, lockout and proof dead, support retained
+circuits and cut the retired cable into supported scrap sections. Install each
+new continuous length progressively through accessible planned sleeves before
+forming and supporting its bends. This adds no installed splice. Actual new-coil
+working access remains to earn; local intact-body screens never proved intact
+whole-house extraction. Reusable boxes, rails and covers retain separate checks.
+
+Prefer the complete factory-plugged Anglepoise Type75 Mini wall-light family over
+an invented direct2.5mm² ceramic luminaire. The current manufacturer publishes a
+130mm shade,150mm shade height,75mm wall plate and230mm maximum projection:
+https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/
+The existing180mm envelope is retained only as a comparison; the additional50mm
+must propagate through actual carrier draw and parking. Diffuse illumination,
+glare, appearance and owner acceptance are not inherited from the former Astro.
+
+A plug hidden behind the carrier fails: upper box front65mm to carrier82.5mm
+leaves17.5mm before settings, less than even the20mm project plug witness. Instead
+place an accessible lighting-only outlet at1500mm, below the1800mm carrier. Reuse
+the existing47mm box and16mm stock extension with its independent fixed island;
+the factory plug and lead remain room-side. B6 lighting and B16 general sockets
+remain separate. The fixed2.5mm² conductors terminate at the conventional socket,
+not unknown lamp terminals. No field plug, fuse, tail or certified fitting is
+altered. Actual supplied UK plug/fuse, lead parking/withdrawal, outlet entry/tool
+fit and complete support still require proof. Plastic cable/plug, paint, switch,
+lampholder and all constituents remain unadmitted. This source checkpoint is WIP
+until fresh shared-producer/geometry/136renewal tests and drawings are earned.

@@ -444,7 +444,7 @@ export function drawStudyLightingCircuit(r:StudyLightingResult){
  out+=line([45,610],[1550,610],'#b5ad9f')+text(50,650,'Named ways and terminal duties','heading')
  out+=rect(55,680,410,150,'#e3dccd')+text(70,710,'DB-UTILITY · separate L3 ways','heading')+text(70,750,'B16 socket · Type A / 30 mA / switched N')+text(70,780,'B6 manual light · Type A / 30 mA / switched N')+text(70,810,'Separate downstream neutrals; common PE bar')
  out+=rect(525,680,420,150,'#e3dccd')+text(540,710,'Fixed sourcebox','heading')+text(540,750,'Socket L,N · Lighting L,N,switched live')+text(540,780,'5 continuous MI lengths · 10 matched ends')+text(540,810,'Local renewal avoids a captive 16 m cable')
- out+=rect(1005,680,520,150,'#e3dccd')+text(1020,710,'Socket / mechanical switch / Class I lamp','heading')+text(1020,750,'L,N,E · COM,L1,E · L,N,E')+text(1020,780,'No dimmer or automation dependency')+text(1020,810,'Physical port / terminal CAD remains unqualified')
+ out+=rect(1005,680,520,150,'#e3dccd')+text(1020,710,'B16 socket / switch / B6 lighting outlet','heading')+text(1020,750,'L,N,E · COM,L1,E · factory plug-in lamp')+text(1020,780,'No dimmer or automation dependency')+text(1020,810,'Physical port / terminal CAD remains unqualified')
  out+=line([465,760],[525,760],'#855a37',2)+line([945,760],[1005,760],'#2d7180',2)
  out+=text(60,870,'Design netlist connectivity does not establish manufactured connections or electrical acceptance.')
  out+=line([45,900],[1550,900],'#b5ad9f')+text(50,940,'A stock enclosure above the removable skirt','heading')
@@ -455,7 +455,7 @@ export function drawStudyLightingCircuit(r:StudyLightingResult){
  out+=text(600,1035,`Skirt release reserve ${n(c.sourceBox.skirtReserveMm)} mm · feeder pair ${n(c.pairReserveMm)} mm after settings`)
  c.calculations.forEach((q,i)=>{out+=text(600,1085+i*65,`${i?'Lighting':'Socket'} · ${n(q.lengthM)} m complete allowance · drop ${n(q.dropV)} V / ${n(q.limitV)} V`);out+=text(600,1110+i*65,`TN upstream Ze + joints budget ≤ ${n(q.maximumZePlusJointsOhm)} Ω; actual supply unmeasured`,'small')})
  if(c.closedSourceFloorRenewal)out+=text(600,1220,`Closed bay + sourcebox: ${c.closedSourceFloorRenewal.ordinaryHandling?.witnessCount??0} / ${c.closedSourceFloorRenewal.ordinaryHandling?.partCount??0} floor trajectories · ${c.closedSourceFloorRenewal.status==='computed-geometry-witnesses'?'nominal geometry only':'REJECTED'}`)
- out+=text(60,1310,'Open fronts; isolate both ways; retain support; release each sealed end locally. Never pull rigid MI through multiple enclosed bends.')
+ out+=text(60,1310,'Isolate/prove dead; support retained circuits. Cut spent MI for scrap; progressively feed/form each new continuous length. No installed splice.')
  out+=text(60,1345,'CU water exposure, fault energy, supplied revision, port/tool/physical proof, materials and owner acceptance remain open.')
  return page(1600,1380,'Actual saved Study electrical source design',out)
 }
