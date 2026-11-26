@@ -54,6 +54,8 @@ jobs:
           python - <<'PY'
           import base64,os
           from pathlib import Path
+          for p in sorted(Path(os.environ['CLEVIS_SCREEN_DIR']).glob('*comparison.json')):
+              print('JSON_SOURCE '+p.name+' '+p.read_bytes().hex())
           for p in sorted(Path(os.environ['CLEVIS_SCREEN_DIR']).glob('*.png')):
               print('RENDER_PNG '+p.name+' '+base64.b64encode(p.read_bytes()).decode())
           PY

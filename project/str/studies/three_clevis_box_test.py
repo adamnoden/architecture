@@ -64,6 +64,8 @@ class BoxControls(unittest.TestCase):
         self.assertEqual(p['roomwardPlinthProjectionBeyondActual140WallMm'],60)
         self.assertEqual(p['maximumActualRingCollisionMm'],45)
         self.assertTrue(p['existingCourt650Garden750UpstandsRetained'])
+        self.assertEqual(p['minimumActualFirstOuterWindowSillAboveFFLMm'],750)
+        self.assertTrue(p['actualFirstOuterOpeningsAreAllWindows'])
         self.assertFalse(p['otherThreeCornerJointsClosed'])
     def test_no_false_extra_pin_support_or_duplicate_steel(self):
         for field in ('independentOverlappingPlatesCredited','bearingTubeOrOuterFaceFalseExtraPinSupportCredited'):
@@ -71,6 +73,10 @@ class BoxControls(unittest.TestCase):
             with self.assertRaises(ValueError):b.admit(c)
         c=copy.deepcopy(self.c);c['evidence']['houseAccepted']=True
         with self.assertRaises(ValueError):b.admit(c)
+    def test_nonfinite_anchor_coordinates_do_not_become_placing_evidence(self):
+        c=copy.deepcopy(self.c);c['box']['anchorAlongOffsetsMm'][0]=float('nan')
+        with self.assertRaises(ValueError):b.admit(c)
+
     def test_no_nonfinite_or_open_box(self):
         c=copy.deepcopy(self.c);c['box']['innerBearingFaceMm']=float('nan')
         with self.assertRaises(ValueError):b.admit(c)

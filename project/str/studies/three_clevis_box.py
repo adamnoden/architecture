@@ -34,6 +34,7 @@ def admit(c):
         if type(v) in (int,float) and not flat.finite_positive(v):raise ValueError('Positive finite box geometry')
     if not b['rootSteelUnionIsOneFabricatedCross'] or b['independentOverlappingPlatesCredited'] or b['bearingTubeOrOuterFaceFalseExtraPinSupportCredited']:
         raise ValueError('A genuine shared cross-root and inner-face-only pin support are required')
+    if any(type(x) not in (int,float) or not math.isfinite(x) for x in b['anchorAlongOffsetsMm']):raise ValueError('Finite actual anchor coordinates required')
     if len(b['anchorAlongOffsetsMm'])!=9 or abs(sum(b['anchorAlongOffsetsMm']))>1e-12:raise ValueError('Actual centred nine-bar group required')
 
 def mat_geometry(b,fc):
@@ -66,6 +67,8 @@ def monolithic(c,base,h):
         'roomwardPlinthProjectionBeyondActual140WallMm':m['perimeterWidthMm']-140,
         'upstandDoesNotLowerOrdinaryGroundSoffit':True,'existing110GlassOutsideFaceUnchangedForOrdinaryBeam':True,
         'existingCourt650Garden750UpstandsRetained':True,
+        'minimumActualFirstOuterWindowSillAboveFFLMm':min(x['sill'] for x in h['archOpeningRegister']['FIRST'] if x['wall'].startswith('outer-')),
+        'actualFirstOuterOpeningsAreAllWindows':all(x['kind']=='window' for x in h['archOpeningRegister']['FIRST'] if x['wall'].startswith('outer-')),
         'upperOuterMasonryStartMustMoveToOrdinaryBeamTopMm':top,
         'groundOuterArchRingTopWitnessesMm':ringtops,
         'sameDepthDownstandBottomMm':down,'maximumActualRingCollisionMm':max(z-down for _,z in ringtops),
