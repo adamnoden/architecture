@@ -4,6 +4,7 @@
  * and global current-source audit are not promoted by this adapter. */
 import {readFileSync} from 'node:fs'
 import {sha256SemanticFingerprint} from '../../core/identity.js'
+import {inletRoomPocket} from './inlet-room-pocket.js'
 import {inletEntrySideCuts} from './inlet-indoor-cuts.js'
 import {inletUtilityRoute,type UtilityRouteChoice} from './inlet-utility-route.js'
 import {inletUtilityColdService} from './inlet-utility-service.js'
@@ -13,6 +14,31 @@ import type {IndoorRoutesInput} from './inlet-indoor-routes.js'
 import type {UtilityRearTreeContext} from './inlet-utility-rear-tree.js'
 type P=readonly[number,number,number]
 type B=readonly[number,number,number,number,number,number]
+/** Exact same raised-floor recipe and local pocket as the current water
+ * geometry. This carries geometry only; it does not adopt its ground/native
+ * force case or remove the raised-house profile integration gate. */
+export function deriveUtilityCandidateFloorPocket(i:{
+ choice:unknown;roomPlanMm:readonly number[];planExclusionsMm:NonNullable<Parameters<typeof inletRoomPocket>[0]['planExclusionsMm']>;
+ grid:Parameters<typeof inletRoomPocket>[0]['grid'];sourceGroundLayers:unknown;defaults:any;mineralSource:any
+}){
+ const c=i.choice as {schema:string;groundCaseId:string;depthMm:number;isolationGapMm:number},
+  layers=i.sourceGroundLayers as number[],d=i.defaults,m=i.mineralSource?.bondedMineralBase,
+  recipe=d?.cases?.find((r:any)=>r.caseId===c?.groundCaseId),common=d?.commonSettings,
+  positive=(a:unknown):a is number[]=>Array.isArray(a)&&a.length>0&&a.every(n=>Number.isFinite(n)&&n>0)
+ if(c?.schema!=='had-utility-floor-pocket-choice/1'||c.groundCaseId!==d?.recommendedCaseId||!recipe||!Number.isFinite(recipe.courseBottomMm)
+  ||!positive(layers)||layers.length!==4||!positive(m?.beds)||!positive(m?.courses)||!Number.isFinite(common?.serviceZoneMm)||common.serviceZoneMm<=0
+  ||![c.depthMm,c.isolationGapMm,common.rcDensityKNm3,common.mineralDensityBudgetKNm3].every(Number.isFinite))
+  throw Error('Actual source-derived Utility candidate floor recipe required')
+ const bottom=recipe.courseBottomMm,courseHeight=[...m.beds,...m.courses].reduce((a:number,b:number)=>a+b,0),
+  dryBottom=bottom+courseHeight,dryTop=dryBottom+layers[3],glassTop=dryTop+layers[2],finishBottom=glassTop+common.serviceZoneMm,ffl=finishBottom+layers[0],
+  levels={mineralCourse:[bottom,dryBottom]as const,dryRC:[dryBottom,dryTop]as const,glass:[dryTop,glassTop]as const,accessibleDistribution:[glassTop,finishBottom]as const,finish:[finishBottom,ffl]as const,ffl,coldGridTop:i.grid.girders['court-S']?.z[1]}
+ if(ffl!==530)throw Error('Utility occupied FFL530 no longer matches the source-derived floor; re-coordinate the actual room and services')
+ const pocket=inletRoomPocket({levels,roomPlanMm:i.roomPlanMm,planExclusionsMm:i.planExclusionsMm,depthMm:c.depthMm,isolationGapMm:c.isolationGapMm,grid:i.grid,rcDensityKNm3:common.rcDensityKNm3,mineralDensityKNm3:common.mineralDensityBudgetKNm3,roomId:'utility'})
+ if(!pocket.local)throw Error('A real source-bound local Utility RC pocket is required')
+ return{schema:'had-utility-candidate-floor-pocket-context/1' as const,bindingDigest:sha256SemanticFingerprint(i),pocket,
+  occupiedFflAbsoluteMm:ffl,datum:'Absolute raised-floor candidate datum; subtract this same FFL only for occupied-local geometry.',
+  currentSavedDocumentAdmitted:false as const,nativeFloorOrForceApprovalTransferred:false as const,actualRaisedHouseProfileAndReceiverCapacityAccepted:false as const}
+}
 export function readUtilityCurrentGeometrySource(){
  const sourceObjectDigests:Record<string,string>={}
  const read=(p:string)=>{const v=JSON.parse(readFileSync(new URL('../../../'+p,import.meta.url),'utf8'));sourceObjectDigests[p]=sha256SemanticFingerprint(v);return v}
@@ -47,6 +73,11 @@ const receipt=read('project/had/studies/inlet-source-envelope.results.json'),old
 
 const service=inletUtilityColdService({route:result,choice:choice.coldService,roomMm:old.wetUtilityPlanMm,washerReservationMm:services.utility.washerReservation,washerBodyMm:services.utility.washer,washerHeightMm:read('project/ias/studies/utility-first-release.json').native.height,maximumGaugeBar:input.maximumGaugeBar,input,retained:rawRoutes.retainedServiceComparison.services,host})
 
+ const candidateFloorPocket=deriveUtilityCandidateFloorPocket({
+  choice:(choice as unknown as{candidateFloorPocket:unknown}).candidateFloorPocket,roomPlanMm:old.wetUtilityPlanMm,planExclusionsMm:boundary.actualPanExclusionsXYMm,
+  grid:read('project/str/studies/current-house-grid.json'),sourceGroundLayers:water.northNormalRoute.floorJoin.layers,
+  defaults:read('project/str/studies/dry-side-ground-section.json'),mineralSource:read('project/mat/studies/conventional-ground-junction.json')
+ })
  const prefabHead=(choice.coldDistribution as {prefabSinkHead:{topSolidPlansMm:readonly(readonly[number,number,number,number])[];topZMm:readonly[number,number]}}).prefabSinkHead
  const actualHot=utilityRetainedHotGeometry(read('project/had/studies/incoming-water.json').utility.vertices.hot),
   bindingDigest=sha256SemanticFingerprint({sourceObjectDigests,nativeContext:context,boundary}),
@@ -64,5 +95,5 @@ const service=inletUtilityColdService({route:result,choice:choice.coldService,ro
    evidence:{lodgeUAndMainZero:false,sourceDrainVerified:false,washerClosedHoseOnPositiveRest:false,headHotH0AndColdZeroHeadRemoved:false,lowPocketCapturedAndCapped:false,matchedUnionReleaseVerified:false,frontRailRemoved:false,carryBarTimingVerified:false,independentLoadedCaptureAndParkRestVerified:false},
    support:{normalWheelCoupleNm:10,coldMaintenanceToolCoupleNm:60,handlingDynamicFactor:1.5,declaredSlideTravelMm:null,actualReactionLawImplemented:false}
   }
- return{scope:'Shared current Utility source-geometry proof adapter; no saved-document or native force admission.',currentSavedDocumentAdmitted:false,physicalInstallationAdmitted:false,sourceObjectDigests,bindingDigest,choice,water,services,rawSource:source,nativeContext:context,boundary,host,station,cuts,input,route:result,service,retained:rawRoutes.retainedServiceComparison.services,actualHot,rearTreeContext,retiredHistoricalEnvelopeIds:rawRoutes.retainedServiceComparison.services.boxes.filter((o:{id:string})=>o.id.startsWith('complete620mm-head-sweep/')).map((o:{id:string})=>o.id),groundFflMm:530,verticalContract:'Local occupied FFL coordinates; no3170-minus530 inferred ceiling.'}
+ return{scope:'Shared current Utility source-geometry proof adapter; no saved-document or native force admission.',currentSavedDocumentAdmitted:false,physicalInstallationAdmitted:false,sourceObjectDigests,bindingDigest,choice,water,services,rawSource:source,nativeContext:context,boundary,host,station,cuts,input,route:result,service,retained:rawRoutes.retainedServiceComparison.services,actualHot,rearTreeContext,candidateFloorPocket,retiredHistoricalEnvelopeIds:rawRoutes.retainedServiceComparison.services.boxes.filter((o:{id:string})=>o.id.startsWith('complete620mm-head-sweep/')).map((o:{id:string})=>o.id),groundFflMm:530,verticalContract:'Local occupied FFL coordinates; no3170-minus530 inferred ceiling.'}
 }

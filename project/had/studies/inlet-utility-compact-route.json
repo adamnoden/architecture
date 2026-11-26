@@ -1340,5 +1340,11 @@
     10870,
     600,
     950
-  ]
+  ],
+  "candidateFloorPocket": {
+    "schema": "had-utility-floor-pocket-choice/1",
+    "groundCaseId": "raised-530-local-solum",
+    "depthMm": 245,
+    "isolationGapMm": 50
+  }
 }
