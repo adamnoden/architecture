@@ -2,177 +2,134 @@ import assert from 'node:assert/strict'
 import {createHash} from 'node:crypto'
 import {readFileSync,writeFileSync,mkdirSync,copyFileSync} from 'node:fs'
 import {join,dirname} from 'node:path'
-import {spawnSync,execFileSync} from 'node:child_process'
-import {stableJsonStringify} from '../../../compiler/core/identity.js'
-import {readEngineeringDocument} from '../../../compiler/reference-house/current-design/engineering-document.js'
-import {prepareCurrentDesignCompile} from '../../../compiler/reference-house/current-design/compile.js'
-import {auditSourceCoverage} from '../../ccr/studies/source-coverage.js'
+import {execFileSync} from 'node:child_process'
 
-// Owner-directed, fixed-command proof. It cannot publish refs, accept materials
-// or edit design/stage inputs. Remove this recovery driver after integration.
-const directory=process.env.IAS_RECOVERY_PROOF_DIR
-assert.ok(directory,'IAS_RECOVERY_PROOF_DIR is required')
-mkdirSync(directory,{recursive:true})
+// Fixed artifact and endpoints only: this job creates Git blobs, never refs or commits.
+const repository='adamnoden/architecture'
+const sourceHead='22b7bb2e2b37e7bfdca2429cae0a99a6cef84f71'
+const runId=45825263728,artifactId=15119877731
+const zipSHA='eb51210564cb720d31782566f4f88cf328676bc93320aff425ddb0a31ec5b778'
+const patchSHA='a63ff6f00e30eb6b8554027873bf9addf3205ebe637f8e8e257a2421999d4d52'
+const root=join(process.env.RUNNER_TEMP,'study-lighting-preservation')
+mkdirSync(root,{recursive:true})
+const directory=join(root,'verified-artifact')
+const token=process.env.GITHUB_TOKEN
+assert.ok(token)
+const sha256=data=>createHash('sha256').update(data).digest('hex')
+const gitblob=data=>createHash('sha1').update('blob '+data.length+'\0').update(data).digest('hex')
+const json=path=>JSON.parse(readFileSync(path,'utf8'))
+const headers={Authorization:'Bearer '+token,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+async function get(path){
+ const response=await fetch('https://api.github.com/repos/'+repository+'/'+path,{headers})
+ assert.ok(response.ok,'Artifact read failed '+response.status)
+ return response
+}
+const observedRun=await(await get('actions/runs/'+runId)).json()
+assert.equal(observedRun.head_sha,sourceHead)
+assert.equal(observedRun.conclusion,'success')
+const observedArtifact=await(await get('actions/artifacts/'+artifactId)).json()
+assert.equal(observedArtifact.workflow_run.id,runId)
+assert.equal(observedArtifact.workflow_run.head_sha,sourceHead)
+assert.equal(observedArtifact.digest,'sha256:'+zipSHA)
+assert.equal(observedArtifact.expired,false)
+const archive=Buffer.from(await(await get('actions/artifacts/'+artifactId+'/zip')).arrayBuffer())
+assert.equal(sha256(archive),zipSHA)
+const archivePath=join(root,'verified.zip')
+writeFileSync(archivePath,archive)
+execFileSync('python3',['-B','-c',[
+'import sys,zipfile,pathlib',
+'with zipfile.ZipFile(sys.argv[1]) as z:',
+' for item in z.infolist():',
+'  p=pathlib.PurePosixPath(item.filename)',
+'  assert not p.is_absolute() and ".." not in p.parts',
+'  assert ((item.external_attr >> 16) & 0o170000) != 0o120000',
+' z.extractall(sys.argv[2])',
+].join('\n'),archivePath,directory])
+const outcome=json(join(directory,'outcome.json'))
+assert.equal(outcome.success,true)
+assert.equal(outcome.error,null)
+assert.equal(outcome.sourceCommit,sourceHead)
+assert.equal(outcome.noRefPublication,true)
+assert.equal(outcome.generatedPatchSHA256,patchSHA)
+assert.equal(sha256(readFileSync(join(directory,'generated.patch'))),patchSHA)
+const proof=json(join(directory,'actual-case-summary.json'))
+assert.equal(proof.sourceCommit,sourceHead)
+assert.equal(proof.witnessCount,136)
+assert.equal(proof.minimumBoardFixedClearanceMm,10)
+assert.equal(proof.unchangedFloorAndFurniture,true)
+assert.equal(proof.physicalAcceptance,false)
+assert.equal(proof.ownerAcceptance,false)
+const audit=json(join(directory,'source-audit.json'));assert.deepEqual(audit.findings,[])
+const commands=json(join(directory,'commands.json'))
+for(const name of ['lighting-strict','room-views-strict','types','focused29','room-views-regenerate']){
+ assert.ok(commands.some(c=>c.name===name&&c.status===0),'Missing exact successful command '+name)
+}
+const focused=readFileSync(join(directory,'focused29.log'),'utf8')
+for(const [name,count]of [['tests',29],['pass',29],['fail',0],['skipped',0],['cancelled',0]]){
+ assert.ok(new RegExp('\\b'+name+'\\s+'+count+'\\b').test(focused),'Wrong test count '+name)
+}
 const documentPath='project/ccr/studies/working-house-comparison.json'
 const accountPath='project/ccr/studies/source-coverage.json'
-const manifestPath='project/ias/studies/lighting-circuit-recovery-20261126.json'
-const manifest=JSON.parse(readFileSync(manifestPath,'utf8'))
-const digest=bytes=>createHash('sha256').update(bytes).digest('hex')
-const blob=bytes=>createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex')
-const json=path=>JSON.parse(readFileSync(path,'utf8'))
-const save=(name,value)=>writeFileSync(join(directory,name),JSON.stringify(value,null,2)+'\n')
-const controls=d=>({design:d.design,stages:d.stages})
-const frozen=stableJsonStringify(controls(json(documentPath)))
-const baseline=json('project/ias/studies/working-study-lighting.results.json').lighting
-const commands=[]
-const lightingOutputs=[
+const paths=[accountPath,documentPath,...[
 'adaptable-study-lighting-comparison.svg','adaptable-study-lighting-corner.svg','adaptable-kitchen-lighting.svg',
 'adaptable-study-lighting-routes.svg','adaptable-study-lighting-construction.svg','adaptable-study-lighting-common-depth.svg',
 'adaptable-study-lighting.results.json','working-study-lighting-circuit.svg','working-study-lighting.results.json',
-].map(name=>'project/ias/studies/'+name)
-const roomOutputs=[
 'crafted-study-eye-level-day.svg','crafted-study-eye-level-evening.svg','working-study-floor.svg',
 'working-study-wall-kit.svg','working-study-tile-eye-level.svg',
-].map(name=>'project/ias/studies/'+name)
-const sourcePaths=[
-'compiler/reference-house/current-design/assemblies/study-structural-renewal.ts',
-'compiler/reference-house/current-design/assemblies/study-room-kit.ts',
-'project/ias/studies/study-structural-renewal.py','project/ias/studies/study-floor-handling.py',
-'compiler/reference-house/current-design/assemblies/study-lighting.ts',
-'compiler/reference-house/current-design/assemblies/study-lighting-corner.ts',
-'compiler/reference-house/current-design-study-lighting.test.ts',
-'compiler/reference-house/current-design/assemblies/study-furniture-motion.ts',
-'project/ias/studies/adaptable-study-lighting.mjs',
-'compiler/reference-house/current-design/assemblies/study-lighting-views.ts',
-'compiler/reference-house/current-design-study-lighting-circuit.test.ts',
-'compiler/reference-house/current-design/assemblies/study-lighting-circuit.ts',
-'project/ias/studies/lighting-component-references.json',
-'compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts',
-documentPath,'project/ias/adaptable-room-lighting-result.md',
-]
-const methodRoots=[
-'compiler/reference-house/current-design/assemblies/study-structural-renewal.ts',
-'compiler/reference-house/current-design/assemblies/study-room-kit.ts',
-'project/ias/studies/study-structural-renewal.py','project/ias/studies/study-floor-handling.py',
-'compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts',
-'compiler/reference-house/current-design/assemblies/study-furniture-motion.ts',
-'project/ias/studies/study-furniture-motion.py',
-]
-function run(name,args,allowStaleBindings=false){
- const result=spawnSync(process.execPath,args,{encoding:'utf8',maxBuffer:64*1024*1024,timeout:12*60*1000})
- writeFileSync(join(directory,name+'.log'),(result.stdout??'')+(result.stderr??''))
- const row={name,args,status:result.status,signal:result.signal,error:result.error?.message??null}
- commands.push(row);save('commands.json',commands)
- if(result.status!==0){
-  const expected=allowStaleBindings&&result.status===1&&(result.stderr??'').includes('Stale canonical working-house bindings; explicitly review/refresh after owning regeneration')
-  if(!expected)throw Error(name+' failed: '+JSON.stringify(row))
-  return false
- }
- return true
+].map(name=>'project/ias/studies/'+name)]
+const allowed=new Set(paths)
+const manifest=json('project/ias/studies/lighting-circuit-recovery-20261126.json')
+const testedSource=json(join(directory,'source-head.json'))
+assert.equal(testedSource.commit,sourceHead)
+assert.deepEqual(testedSource.sourceFiles,manifest.files)
+for(const row of manifest.files){
+ const data=execFileSync('git',['show',sourceHead+':'+row.path],{maxBuffer:16*1024*1024})
+ assert.equal(sha256(data),row.sha256)
+ assert.equal(gitblob(data),row.gitBlob)
 }
-async function refreshBindings(name){
- const d=json(documentPath)
- assert.equal(stableJsonStringify(controls(d)),frozen,'Design/stage source changed')
- const observed=await readEngineeringDocument(d.design)
- save(name+'.json',{before:d.bindings,after:observed.bindings,controlsSHA256:digest(frozen)})
- writeFileSync(documentPath,JSON.stringify({...d,bindings:observed.bindings},null,2)+'\n')
- assert.equal(stableJsonStringify(controls(json(documentPath))),frozen)
+const generated=json(join(directory,'generated-files.json'))
+assert.equal(new Set(generated.map(r=>r.path)).size,generated.length)
+for(const row of generated){
+ assert.ok(allowed.has(row.path),'Unexpected artifact path '+row.path)
+ const data=readFileSync(join(directory,'generated',row.path))
+ assert.equal(sha256(data),row.sha256)
+ assert.equal(gitblob(data),row.gitBlob)
 }
-async function regenerateLighting(name){
- if(!run(name,['--import','tsx','project/ias/studies/adaptable-study-lighting.mjs','--write'],true)){
-  await refreshBindings(name+'-explicit-bindings')
-  run(name+'-fixedpoint',['--import','tsx','project/ias/studies/adaptable-study-lighting.mjs','--write'])
+const current=json(documentPath),actual=json(join(directory,'generated',documentPath))
+assert.deepEqual(actual.design,current.design)
+assert.deepEqual(actual.stages,current.stages)
+assert.equal(sha256(JSON.stringify(actual.stages.studyRoomKit.ordinaryHandling,null,2)+'\n'),
+ '40f66fcf4c8257a3a31cca51110f951b06e89894e3b8fecd6e9460e3c57bb435')
+const map=[]
+for(const path of paths){
+ const data=readFileSync(join(directory,'generated',path)),sha=gitblob(data)
+ if(!generated.some(row=>row.path===path)){
+  assert.equal(sha,execFileSync('git',['rev-parse',sourceHead+':'+path],{encoding:'utf8'}).trim(),'Unreported generated change '+path)
  }
+ const response=await fetch('https://api.github.com/repos/'+repository+'/git/blobs',{
+  method:'POST',headers:{...headers,'Content-Type':'application/json'},
+  body:JSON.stringify({content:data.toString('base64'),encoding:'base64'}),
+ })
+ assert.ok(response.ok,'Git blob preservation failed '+path+':'+response.status)
+ const result=await response.json()
+ assert.equal(result.sha,sha,'Git blob identity mismatch '+path)
+ const row={path,sha,sha256:sha256(data),size:data.length};map.push(row)
+ console.log('PRESERVED_LIGHTING_FILE '+JSON.stringify(row))
 }
-let success=false,error=null
-try{
- assert.equal(manifest.status,'WIP_SOURCE_RECOVERY_NOT_VERIFIED')
- assert.deepEqual([...manifest.files.map(f=>f.path)].sort(),[...sourcePaths].sort())
- for(const file of manifest.files){
-  const bytes=readFileSync(file.path)
-  assert.equal(digest(bytes),file.sha256,'Recovered author bytes differ: '+file.path)
-  assert.equal(blob(bytes),file.gitBlob,'Recovered author blob differs: '+file.path)
- }
- const d=json(documentPath),plan=d.stages.studyRoomKit.ordinaryHandling
- assert.equal(digest(JSON.stringify(plan,null,2)+'\n'),'40f66fcf4c8257a3a31cca51110f951b06e89894e3b8fecd6e9460e3c57bb435')
- assert.equal(plan.protocols.length,136)
- assert.equal(plan.minimumBoardFixedClearanceMm,10)
- assert.equal(plan.maximumTravelMm,1450)
- assert.equal(d.stages.distributedFloor.cornerWidthsMm.SW,200)
- save('source-head.json',{commit:process.env.GITHUB_SHA,tree:execFileSync('git',['rev-parse','HEAD^{tree}'],{encoding:'utf8'}).trim(),
-  manifest:blob(readFileSync(manifestPath)),controlsSHA256:digest(frozen),sourceFiles:manifest.files,installedAcceptance:false})
- // Authenticate only exact recovered authoring; never rehash a stale receipt.
- const account=json(accountPath)
- for(const familyId of ['ias-study-lighting','ias-study-room-perspective']){
-  const family=account.families.find(f=>f.id===familyId);assert.ok(family)
-  for(const path of methodRoots)if(!family.authorRoots.includes(path))family.authorRoots.push(path)
- }
- for(const path of sourcePaths.filter(path=>path!==documentPath).concat(methodRoots)){
-  const bytes=readFileSync(path)
-  assert.equal(blob(bytes),execFileSync('git',['rev-parse','HEAD:'+path],{encoding:'utf8'}).trim(),'Non-committed author: '+path)
-  account.gitBlobs[path]=blob(bytes)
- }
- writeFileSync(accountPath,JSON.stringify(account,null,2)+'\n')
- await regenerateLighting('lighting-regenerate')
- // This producer proves current bindings before writing its five actual views.
- run('room-views-regenerate',['--import','tsx','project/ias/studies/crafted-study-eye-level.mjs','--write'])
- const afterViews=json(accountPath),family=afterViews.families.find(f=>f.id==='ias-study-room-perspective')
- for(const path of roomOutputs){
-  assert.ok(family.receipts.includes(path),'Room output is outside owning receipts: '+path)
-  afterViews.gitBlobs[path]=blob(readFileSync(path))
- }
- writeFileSync(accountPath,JSON.stringify(afterViews,null,2)+'\n')
- await refreshBindings('room-views-explicit-bindings')
- await regenerateLighting('lighting-after-room')
- run('lighting-strict',['--import','tsx','project/ias/studies/adaptable-study-lighting.mjs','--check'])
- run('room-views-strict',['--import','tsx','project/ias/studies/crafted-study-eye-level.mjs','--check'])
- run('types',['node_modules/typescript/bin/tsc','--noEmit'])
- run('focused29',['--import','tsx','--test','compiler/reference-house/current-design-study-lighting.test.ts',
-  'compiler/reference-house/current-design-study-lighting-circuit.test.ts','compiler/reference-house/current-design-lighting-producer.test.ts'])
- const document=json(documentPath),compiler=prepareCurrentDesignCompile(document.design)
- const kit=await compiler.studyRoomKit({schema:'ias-study-room-kit-case/1',units:'mm',...document.stages.studyRoomKit},document.stages.distributedFloor)
- const result=await compiler.studyLighting({schema:'ias-study-lighting-case/1',units:'mm',...document.stages.studyLighting},kit)
- const lighting=result.lighting,replay=lighting.circuit.closedSourceFloorRenewal
- assert.equal(replay.status,'computed-geometry-witnesses')
- assert.equal(replay.ordinaryHandling.witnessCount,136)
- assert.equal(replay.ordinaryHandling.partCount,136)
- assert.equal(replay.ordinaryHandling.minimumBoardFixedClearanceMm,10)
- assert.ok(replay.ordinaryHandling.parts.every(p=>p.boardFixedPlanClearanceMm>=10-1e-7))
- assert.deepEqual(replay.preparation.conflictingPhaseIds,[])
- assert.deepEqual(replay.furniture.conflictingPhaseIds,[])
- assert.equal(replay.physicalAcceptance,false)
- assert.equal(replay.ownerAcceptance,false)
- assert.deepEqual(lighting.commonRoom.floorFaces,baseline.commonRoom.floorFaces)
- assert.deepEqual(lighting.commonRoom.occupied,baseline.commonRoom.occupied)
- assert.deepEqual(lighting.commonRoom.bands,baseline.commonRoom.bands)
- assert.notEqual(lighting.caseDigest,baseline.caseDigest)
- assert.notEqual(lighting.circuit.designDigest,baseline.circuit.designDigest)
- assert.deepEqual(lighting.circuit.cableStock.references,['Pyrotenax2L2.5'])
- assert.deepEqual(lighting.circuit.issues,[])
- for(const [name,accepted]of Object.entries(lighting.circuit.qualifications))assert.equal(accepted,name==='designNetsSpecified')
- save('closed136-actual.json',replay)
- save('actual-case-summary.json',{sourceCommit:process.env.GITHUB_SHA,caseDigest:lighting.caseDigest,
-  circuitDigest:lighting.circuit.designDigest,contextDigest:replay.contextDigest,requestDigest:replay.requestDigest,
-  witnessCount:136,minimumBoardFixedClearanceMm:Math.min(...replay.ordinaryHandling.parts.map(p=>p.boardFixedPlanClearanceMm)),
-  physicalAcceptance:false,ownerAcceptance:false,unchangedFloorAndFurniture:true,wholeFeederInstallationFinished:false})
- const audit=auditSourceCoverage();save('source-audit.json',audit);assert.deepEqual(audit.findings,[])
- assert.equal(stableJsonStringify(controls(json(documentPath))),frozen)
- for(const file of manifest.files.filter(f=>f.path!==documentPath))assert.equal(digest(readFileSync(file.path)),file.sha256)
- const changed=execFileSync('git',['diff','--name-only'],{encoding:'utf8'}).trim().split('\n').filter(Boolean)
- const allowed=new Set([accountPath,documentPath,...lightingOutputs,...roomOutputs])
- assert.ok(changed.every(path=>allowed.has(path)),'Unexpected tracked mutation: '+changed)
- save('generated-files.json',changed.map(path=>({path,sha256:digest(readFileSync(path)),gitBlob:blob(readFileSync(path))})))
- success=true
-}catch(caught){error=caught?.stack??String(caught);writeFileSync(join(directory,'failure.log'),error+'\n')}
-finally{
- const patch=execFileSync('git',['diff','--binary'],{maxBuffer:64*1024*1024})
- writeFileSync(join(directory,'generated.patch'),patch)
- for(const path of [accountPath,documentPath,...lightingOutputs,...roomOutputs]){
-  const target=join(directory,'generated',path);mkdirSync(dirname(target),{recursive:true});copyFileSync(path,target)
- }
- save('outcome.json',{sourceCommit:process.env.GITHUB_SHA,success,error,generatedPatchSHA256:digest(patch),
-  noRefPublication:true,noInstallationMaterialPhysicalOrOwnerAcceptance:true,requiresIntegrationReview:true})
- console.log(JSON.stringify({success,error,sourceCommit:process.env.GITHUB_SHA,artifactDirectory:directory,
-  generatedPatchSHA256:digest(patch),noRefPublication:true}))
-}
-if(!success)process.exitCode=1
+execFileSync('git',['read-tree',sourceHead])
+const temporary=['.github/workflows/study-lighting-circuit-recovery.yml',
+'project/ias/studies/prove-lighting-circuit-recovery.mjs',
+'project/ias/studies/lighting-circuit-recovery-20261126.json']
+// Remove only index entries; preserve this runner's working files.
+execFileSync('git',['update-index','--force-remove','--',...temporary])
+for(const path of paths){mkdirSync(dirname(path),{recursive:true});copyFileSync(join(directory,'generated',path),path)}
+execFileSync('git',['add','--',...paths])
+for(const row of map)assert.equal(execFileSync('git',['rev-parse',':'+row.path],{encoding:'utf8'}).trim(),row.sha)
+const tree=execFileSync('git',['write-tree'],{encoding:'utf8'}).trim()
+const result={schema:'ias-lighting-generated-preservation/1',sourceBase:'9c3ed110c35fa9d1605104616fdc27a530a6b43e',
+ sourceHead,proofRunId:runId,artifactId,artifactZipSHA256:zipSHA,generatedPatchSHA256:patchSHA,targetTree:tree,
+ source:manifest.files.filter(f=>f.path!==documentPath),generated:map,excludedTemporaryPaths:temporary,
+ gitBlobsOnly:true,noCommitOrRefPublication:true,requiresRootThreeWayIntegrationAndExactCI:true,
+ physicalAcceptance:false,ownerAcceptance:false}
+writeFileSync(join(root,'preservation-map.json'),JSON.stringify(result,null,2)+'\n')
+console.log('PRESERVED_LIGHTING_TARGET '+JSON.stringify({sourceHead,targetTree:tree,generatedCount:map.length,excludedTemporaryPaths:temporary}))
