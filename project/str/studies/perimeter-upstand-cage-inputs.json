@@ -19,7 +19,7 @@
     "columnAlongStationsMm": [
       85,
       215,
-      580,
+      590,
       930
     ],
     "columnBarNominalMm": 16,
@@ -50,7 +50,7 @@
       405,
       465,
       535,
-      625,
+      630,
       690,
       765,
       840,
@@ -104,7 +104,7 @@
     "columnNominalMm": 10,
     "columnOutsideMm": 11,
     "columnMandrelMm": 40,
-    "columnHookTailMm": 75,
+    "columnHookTailMm": 100,
     "columnClosureOffsetMm": 14,
     "beamNominalMm": 8,
     "beamOutsideMm": 9,
@@ -114,7 +114,7 @@
     "beamOrdinaryPitchMm": 100,
     "maxColumnFamilyPitchMm": 180,
     "closuresAndAllStirrupIntersectionsQualified": false,
-    "columnHookMinimumTailMm": 50,
+    "columnHookMinimumTailMm": 100,
     "columnLongBarSpacingComparatorMm": 350,
     "hookShapeToleranceMm": 1,
     "matchedJointContactPlanesZMm": {
@@ -197,7 +197,8 @@
       1425,
       1500,
       1575
-    ]
+    ],
+    "beamCageSideReserveMm": 5
   },
   "materials": {
     "reinforcementComparisonMPa": 400,

@@ -65,7 +65,7 @@ class CageControls(unittest.TestCase):
             for a,b in zip(link['primitives'],link['primitives'][1:]):
                 self.assertLess(math.dist(p.sample_primitive(a)[-1],p.sample_primitive(b)[0]),1e-7,link['id'])
         self.assertLessEqual(self.r['maximumColumnLinkFamilyPitchMm'],180)
-        self.assertGreaterEqual(self.c['links']['columnHookTailMm'],50)
+        self.assertGreaterEqual(self.c['links']['columnHookTailMm'],100)
         self.assertLessEqual(self.r['maximumOrdinaryBeamStirrupPitchMm'],self.c['links']['beamOrdinaryPitchMm'])
     def test_parameter_box_certifier_keeps_real_adverse_witnesses(self):
         a=p.line([0,0,0],[10,0,0]);b=p.line([0,3,0],[10,3,0])
@@ -75,7 +75,7 @@ class CageControls(unittest.TestCase):
         self.assertLess(bad['adverseSurfaceClearMm'],0)
         self.assertTrue(all(abs(v)<=2 for v in bad['relativeShiftMm']))
     def test_full_node_has_no_unclassified_bar_collisions(self):
-        for key in ('beamFloorThreeDimensionalBoxAudit','linksAgainstBeamThreeDimensionalAudit','linksAgainstFloorThreeDimensionalAudit','ordinaryBeamLinksAgainstFloorAudit','allLinksAgainstEachOtherAudit','ordinaryFloorAgainstBeamAudit','allFloorProfilesAgainstEachOtherAudit'):
+        for key in ('beamFloorThreeDimensionalBoxAudit','linksAgainstBeamThreeDimensionalAudit','linksAgainstFloorThreeDimensionalAudit','ordinaryBeamLinksAgainstFloorAudit','allLinksAgainstEachOtherAudit','ordinaryFloorAgainstBeamAudit','allFloorProfilesAgainstEachOtherAudit','sameBarLinkSelfIntersectionAudit'):
             self.assertTrue(self.r[key]['allCertified'],str((key,self.r[key]['failures'][:2])))
     def test_tied_contacts_still_reject_cylinder_intrusion(self):
         r=self.r['intendedLinkMainContacts']
@@ -161,6 +161,14 @@ class CageControls(unittest.TestCase):
         bad=p.corner_floor_surface_cover_audit(c,p.ordinary_floor_paths(c),ordinary=True)
         self.assertFalse(bad['allCertified'])
         self.assertTrue(any(x['state']=='insufficient-cover' for x in bad['failures']))
+    def test_old_narrow_stirrup_really_intersects_its_own_tail(self):
+        c=copy.deepcopy(self.c);c['links']['beamCageSideReserveMm']=0
+        bad=p.link_self_audit(c,p.ordinary_beam_links(c))
+        self.assertFalse(bad['allCertified'])
+        self.assertTrue(any(x['state']=='collision' for x in bad['failures']))
+    def test_short_column_hook_fabrication_comparison_rejects(self):
+        c=copy.deepcopy(self.c);c['links']['columnHookTailMm']=75
+        with self.assertRaisesRegex(ValueError,'fabrication'):p.assess(c,self.base)
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')

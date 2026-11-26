@@ -255,12 +255,12 @@ def remap_axes(path,mapping):
 def ordinary_beam_links(c):
     g,l=c['geometry'],c['links'];d=l['beamOutsideMm'];r=(l['beamMandrelMm']+d)/2
     combined=(d+g['beamBarOutsideMm'])/2;outward=r-(r-combined)/math.sqrt(2)
-    normals=g['beamBarNormalMm'];zs=g['beamBarZMm']
+    normals=g['beamBarNormalMm'];zs=g['beamBarZMm'];reserve=l['beamCageSideReserveMm']
     planes=l['ordinaryBeamStirrupPlanesMm']
     out=[]
     for axis in (0,1):
         for along in planes:
-            profile=closed_profile(normals[0]-outward,normals[1]+outward,zs[0]-outward,zs[1]+outward,
+            profile=closed_profile(normals[0]-outward-reserve,normals[1]+outward+reserve,zs[0]-outward,zs[1]+outward,
                 r,l['beamHookTailMm'],along,l['beamClosureOffsetMm'],d,l['beamNominalMm'],f'beam-link/{axis}/{along:g}')
             out.append(remap_axes(profile,[axis,2,1-axis]))
     return out
@@ -403,6 +403,23 @@ def floor_floor_audit(c,paths):
                         if len(fail)>=12:return {'allCertified':False,'failures':fail,'primitivePairs':pairs,'lockedMatContactCertificates':locked,'truncated':True}
     return {'allCertified':not fail,'failures':fail,'primitivePairs':pairs,'lockedMatContactCertificates':locked,'truncated':False}
 
+
+def link_self_audit(c,paths):
+    """Same-bar nonadjacent portions retain actual forming deviation bounds.
+    Adjacent primitives are continuous pieces of the same swept cylinder.
+    Unresolved or intersecting nonadjacent portions cannot pass.
+    """
+    tol=2*c['links']['hookShapeToleranceMm'];fail=[];tested=0
+    for path in paths:
+        for i,a in enumerate(path['primitives']):
+            for b in path['primitives'][i+2:]:
+                if separated_boxes(primitive_bounds(a,0,1),primitive_bounds(b,0,1),tol,path['outsideMm']):continue
+                tested+=1;ans=certify_primitive_pair(a,b,path['outsideMm'],tol,budget=4000)
+                if ans['state']!='clear':
+                    fail.append({'id':path['id'],'firstPrimitive':i,**ans})
+                    if len(fail)>=12:return {'allCertified':False,'failures':fail,'testedPrimitivePairs':tested,'truncated':True}
+    return {'allCertified':not fail,'failures':fail,'testedPrimitivePairs':tested,'truncated':False}
+
 def material_bounds(c):
     g,m=c['geometry'],c['materials'];d=g['floorBarNominalMm'];f=m['reinforcementComparisonMPa']
     ab=(g['floorPitchMm']-2*g['independentBarSettingMm'])/2
@@ -457,6 +474,7 @@ def material_bounds(c):
         '360GeometryIsAnUnselectedComparison':True}
 def assess(c,base,full_geometry=False):
     g=c['geometry'];col=column_points(c);beam=beam_paths(c);floors=corner_floor_paths(c)
+    if c['links']['columnHookTailMm']<c['links']['columnHookMinimumTailMm']:raise ValueError('Declared ordinary135 hook fabrication comparison requires100mm straight')
     if not g['independentBarAllowanceIncludesShapeError'] or c['links']['hookShapeToleranceMm']>g['independentBarSettingMm']:raise ValueError('Forming deviations must fit within the declared total independent bar allowance')
     if c['materials']['maximumAggregateMm']+5>g['parallelMinimumClearMm']:raise ValueError('Declared aggregate exceeds inherited21mm minimum-clear comparison')
     contact=c['links']['matchedJointContactPlanesZMm']
@@ -504,6 +522,7 @@ def assess(c,base,full_geometry=False):
         'ordinaryBeamLinksAgainstFloorAudit':audit_path_groups(beam_links,floors+ordinary,tol) if full_geometry else {'executed':False},
         'allLinksAgainstEachOtherAudit':audit_unique_paths(links+beam_links,tol) if full_geometry else {'executed':False},
         'intendedLinkMainContacts':intended_link_main_contact_audit(c,col,links,beam_links) if full_geometry else {'executed':False},
+        'sameBarLinkSelfIntersectionAudit':link_self_audit(c,links+beam_links) if full_geometry else {'executed':False},
         'allFloorProfilesAgainstEachOtherAudit':floor_floor_audit(c,floors+ordinary) if full_geometry else {'executed':False},
         'ordinaryFloorConcreteUnionCoverAudit':corner_floor_surface_cover_audit(c,ordinary,ordinary=True),
         'cornerFloorConcreteUnionCoverAudit':corner_floor_surface_cover_audit(c,floors),
