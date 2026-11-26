@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:30.008Z",
-  "heartbeatAt": "2026-11-26T07:53:24.023Z",
-  "expiresAt": "2026-11-26T08:38:24.023Z",
+  "heartbeatAt": "2026-11-26T08:10:50.942Z",
+  "expiresAt": "2026-11-26T09:40:50.942Z",
   "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
@@ -36,7 +36,7 @@
   },
   "pr": 1627,
   "checkpoint": {
-    "evidence": "PR1627 exact head0d20523d numerical proofs passed; hosted validation stopped at released predecessor leases.",
-    "next": "Rebind both current lease declarations, rerun exact-head health and publication preflight; merge only on success."
+    "evidence": "PR1627 head0d20523d recovered: numerical and publication proofs green, full health currently running. Local current two-room saved ground native4/4 passed603.6s at ground branchab2f2aeb plus guarded/UI working changes; actual capture retained locally.",
+    "next": "Merge1627 after exact-head full health and fresh dual preflight; publish current ground/water and coordinated lighting continuation with fresh source witnesses."
   }
 }
