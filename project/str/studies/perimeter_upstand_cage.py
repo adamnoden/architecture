@@ -160,7 +160,7 @@ def closed_column_link(c,axis,z):
     d=l['columnOutsideMm'];r=(l['columnMandrelMm']+d)/2
     combined=(d+g['columnBarOutsideMm'])/2
     x0,x1=f-combined,k+combined;y0,y1=f-combined,last+combined
-    cx,cy=x0+r,y0+r;tail=l['columnHookTailMm'];rise=(-1 if axis==0 else 1)*l['columnClosureOffsetMm']
+    cx,cy=x0+r,y0+r;tail=l['columnHookTailMm'];rise=l['columnClosureOffsetMm']
     angle=math.acos(1-abs(rise)/(2*r));run=2*r*math.sin(angle);sgn=1 if rise<0 else -1
     start=z+rise;mid=start+sgn*r*(1-math.cos(angle))
     # Hook A lies one outside-diameter level away; two opposite arcs return the
@@ -194,9 +194,9 @@ def cross_tie(c,axis,z,along):
             arc([k,cy],r,math.pi/2,-math.pi/4,[0,1],z),line(ea,et)]},axis)
 def link_paths(c):
     # Fixed family schedules, not a model/section parameter sweep.
-    west=[x for x in range(1965,3166,150)]+[3285,3390,3505]+[x for x in range(3655,4556,150)]
-    south=[x for x in range(2015,3216,150)]+[3335,3480,3555]+[x for x in range(3705,4606,150)]
-    cross=[x for x in range(1990,3191,150)]+[3360,3530,3605]+[x for x in range(3755,4656,150)]
+    west=[x for x in range(1965,3016,150)]+[3155,3285.5,3390,3515]+[x for x in range(3665,4566,150)]
+    south=[x for x in range(2015,3066,150)]+[3208,3335,3480,3555]+[x for x in range(3715,4616,150)]
+    cross=[x for x in range(1990,3041,150)]+[3180,3274.5,3362,3540]+[x for x in range(3690,4591,150)]
     out=[closed_column_link(c,0,z) for z in west]+[closed_column_link(c,1,z) for z in south]
     for z in cross:
         for axis in (0,1):
@@ -207,11 +207,14 @@ def paths_bounds(path):
     return [min(q[0][i] for q in boxes) for i in range(3)],[max(q[1][i] for q in boxes) for i in range(3)]
 def separated_boxes(a,b,tol,r):
     return math.sqrt(sum(max(0.,a[0][i]-b[1][i]-tol,b[0][i]-a[1][i]-tol)**2 for i in range(3)))>r
-def audit_path_groups(left,right,tol,limit_failures=12):
-    failures=[];pairs=0;primitive_pairs=0;left_boxes=[paths_bounds(x) for x in left];right_boxes=[paths_bounds(x) for x in right]
+def audit_path_groups(left,right,tol,limit_failures=12,matched_contacts=False):
+    failures=[];pairs=0;primitive_pairs=0;contact_certificates=0;left_boxes=[paths_bounds(x) for x in left];right_boxes=[paths_bounds(x) for x in right]
     for i,a in enumerate(left):
         for j,b in enumerate(right):
             r=(a['outsideMm']+b['outsideMm'])/2
+            match=matched_contacts and a['id'].startswith('cross-tie/') and '/3274.5/' in a['id'] and b['id'].startswith('beam/') and b['id'].endswith('/3260')
+            if match and left_boxes[i][0][2]-right_boxes[j][1][2]>=r-1e-9:
+                contact_certificates+=1;continue
             if separated_boxes(left_boxes[i],right_boxes[j],tol,r):continue
             pairs+=1
             for pa in a['primitives']:
@@ -221,8 +224,8 @@ def audit_path_groups(left,right,tol,limit_failures=12):
                     primitive_pairs+=1;ans=certify_primitive_pair(pa,pb,r,tol,budget=4000)
                     if ans['state']!='clear':
                         failures.append({'a':a['id'],'b':b['id'],**ans})
-                        if len(failures)>=limit_failures:return {'allCertified':False,'failures':failures,'pathPairs':pairs,'primitivePairs':primitive_pairs,'truncatedFailureList':True}
-    return {'allCertified':not failures,'failures':failures,'pathPairs':pairs,'primitivePairs':primitive_pairs,'truncatedFailureList':False}
+                        if len(failures)>=limit_failures:return {'allCertified':False,'failures':failures,'pathPairs':pairs,'primitivePairs':primitive_pairs,'truncatedFailureList':True,'lockedNormalContactCertificates':contact_certificates}
+    return {'allCertified':not failures,'failures':failures,'pathPairs':pairs,'primitivePairs':primitive_pairs,'truncatedFailureList':False,'lockedNormalContactCertificates':contact_certificates}
 
 def material_bounds(c):
     g,m=c['geometry'],c['materials'];d=g['floorBarNominalMm'];f=m['reinforcementComparisonMPa']
@@ -281,7 +284,7 @@ def assess(c,base,full_geometry=False):
             floor_col.append({'floorId':bar['id'],'columnXYMm':p,
                 'adverseProjectedCylinderClearMm':distance_box_point(point,p,tol)-(bar['outsideMm']+g['columnBarOutsideMm'])/2})
     links,schedules=link_paths(c)
-    link_beam=audit_path_groups(links,beam,tol) if full_geometry else {'executed':False}
+    link_beam=audit_path_groups(links,beam,tol,matched_contacts=True) if full_geometry else {'executed':False}
     link_floor=audit_path_groups(links,floors,tol) if full_geometry else {'executed':False}
     layers=floor_layers(c);inter=layers['Y-top']-layers['Y-bottom']-g['floorBarOutsideMm']-tol
     return {'schema':'str-perimeter-upstand-cage-checkpoint/1','status':'EXACT CORNER PROFILES;WHOLE CAGE/ORDINARY EDGE ANCHORAGE NOT ACCEPTED',

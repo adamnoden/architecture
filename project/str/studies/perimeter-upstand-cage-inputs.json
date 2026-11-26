@@ -28,7 +28,7 @@
     "beamBarOutsideMm": 18,
     "beamBarNormalMm": [
       100,
-      200
+      198
     ],
     "beamBarZMm": [
       3260,
@@ -36,7 +36,7 @@
     ],
     "beamPlanRadiiMm": [
       89,
-      184
+      190
     ],
     "floorBarNominalMm": 14,
     "floorBarOutsideMm": 16,
@@ -88,7 +88,13 @@
     "closuresAndAllStirrupIntersectionsQualified": false,
     "columnHookMinimumTailMm": 50,
     "columnLongBarSpacingComparatorMm": 350,
-    "hookShapeToleranceMm": 1
+    "hookShapeToleranceMm": 1,
+    "matchedJointContactPlanesZMm": {
+      "beamBottom": 3260,
+      "crossTie": 3274.5,
+      "westHoop": 3285.5
+    },
+    "matchedContactsRequireLockedNormalSeparation": true
   },
   "materials": {
     "reinforcementComparisonMPa": 400,
