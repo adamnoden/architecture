@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:30.008Z",
-  "heartbeatAt": "2026-11-26T12:41:37.000Z",
-  "expiresAt": "2026-11-26T13:26:37.000Z",
+  "heartbeatAt": "2026-11-26T13:00:46.000Z",
+  "expiresAt": "2026-11-26T13:45:46.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
@@ -36,8 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "PR1629@867e8042 durable; actual96 signed cases PASS run45814303861. Merged1627/1628. A4/B5 changed pages inspected; fullhealth/browser running45814303876. Rear-bearing W0 observed; raw local result unretained after outage, exact source recovery underway.",
-    "next": "Recover source to protected branches; on capable executor verify exact-head CI and fresh three-lease merge-check before1629 merge. Repeat rear W0 capture before wind/strength comparison.",
-    "blocker": "Executor explicitly unavailable again; canonical local publication preflight cannot run. No whole-house, convergence, strength or arch adoption."
+    "evidence": "1629@867e native96cases PASS; browser140failsformer136plan. Rootfix bacac04d hosted45824421174 passes types/sourceaudit/unchanged200;144CLIactive. Rearsource401ab9d protected; hostedW0 active. Node5f95c526192checks replayed.",
+    "next": "Finishactual144proof; publish testedfix/blobs to1629 andrequire exactfullCI+threeleasepreflight. Complete rearW0/signedcomparison andordinarynode topology.",
+    "blocker": "Localexecutorunavailable.1629unmergedafterrealbrowserfailure; strength/convergence/other3jointsremainopen."
   }
 }
