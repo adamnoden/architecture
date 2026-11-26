@@ -34,8 +34,8 @@ def admit_development_source(packet):
         or a.get('helperSHA256')!=sha(METHOD) or packet.get('currentSavedEngineeringDocumentAdmitted') is not False
         or packet.get('documentIdentity') is not None or a.get('usedAsAssemblyForces') is not False):
         raise ValueError('Exact counterfactual parent authority required; ordinary compiler admission is not inferred')
-    if signed.digest(packet['nativeCase'])!=a['nativeInputSHA256'] or signed.digest(packet['settings'])!=a['finiteSettingsSHA256'] or signed.digest(packet['rearChoices'])!=a['rearChoicesSHA256']:
-        raise ValueError('Authenticated development seed choices or native case changed')
+    for label,value,key in (('native-case',packet['nativeCase'],'nativeInputSHA256'),('settings',packet['settings'],'finiteSettingsSHA256'),('rear-choices',packet['rearChoices'],'rearChoicesSHA256')):
+        if signed.digest(value)!=a[key]:raise ValueError('Authenticated development seed changed: '+label)
     if packet['documentSnapshotSHA256']!=a['savedDocumentSHA256'] or packet['controllingChoicesSHA256']!=a['controllingChoicesSHA256']:
         raise ValueError('Authenticated saved source document changed')
     if (floor(packet['nativeCase'])['boundaryCase']['windIndex']!=31 or floor(packet['nativeCase'])['edgeBand']['axialRigidityKN']!=0.
@@ -74,8 +74,8 @@ def prepare(args):
     source,methods,runtime=signed.actual_sources()
     if parent['sourceSHA256']!=source['identities'] or parent['methodSHA256']!=methods or parent['runtime']!=runtime:
         raise ValueError('Actual native58/finite6/runtime differs from the authenticated W31 parent')
-    expected=source_rebind(old_case,old_case['sourceSHA256'],source['identities']);floor(expected)['edgeBand']['axialRigidityKN']=0.
-    if parent['nativeCase']!=expected or result['authoredNativeCase']!=expected or parent['settings']!=old_comp['request']['settings']:
+    expected=source_rebind(old_case,old_case['sourceSHA256'],source['identities']);floor(expected)['edgeBand']['axialRigidityKN']=0
+    if parent['nativeCase']!=expected or signed.digest(parent['nativeCase'])!=signed.digest(expected) or result['authoredNativeCase']!=expected or parent['settings']!=old_comp['request']['settings']:
         raise ValueError('Native input must derive from the actual shared full-CLI case by source transition and sole EA0 edit')
     target=copy.deepcopy(original_document);target['bindings']=document['bindings']
     target['stages']['distributedFloor']['edgeBand']['axialRigidityKN']=0.
@@ -97,7 +97,7 @@ def prepare(args):
     packet['developmentAuthority']={'schema':'str-rear-signed-development-authority/1','actualW31WorkflowRun':45841589967,'actualW31ArtifactId':15129761196,
         'actualW31SourceCommit':'86508d62dcafa9b8ccc68725ab57b93f457e67c1','actualW31ArchiveSHA256':ARCHIVE_SHA,
         'originalFullCLIArchiveSHA256':ORIGINAL_SHA,'nativeSourceTransition':parent['sourceReview'],'helperSHA256':sha(METHOD),
-        'nativeInputSHA256':signed.digest(expected),'finiteSettingsSHA256':signed.digest(parent['settings']),'rearChoicesSHA256':signed.digest(parent['choices']),
+        'nativeInputSHA256':signed.digest(parent['nativeCase']),'finiteSettingsSHA256':signed.digest(parent['settings']),'rearChoicesSHA256':signed.digest(parent['choices']),
         'savedDocumentSHA256':packet['documentSnapshotSHA256'],'controllingChoicesSHA256':packet['controllingChoicesSHA256'],
         'authenticatedPhysicalParentPacketSHA256':signed.digest(parent),'usedAsAssemblyForces':False,'ordinaryCompilerAdoption':False}
     signed.admit_packet(packet);check=signed.check_rear_result(packet,31,result,checkpoint)
