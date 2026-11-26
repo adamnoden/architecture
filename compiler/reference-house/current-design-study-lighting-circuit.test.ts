@@ -165,3 +165,24 @@ test('short prepared flex uses the manufacturer-supported interface and rejects 
  assert.ok(run(far).circuit.issues.includes('appliance-plug-reach-rejected'))
  assert.deepEqual(run(far).commonRoom,r.commonRoom)
 })
+
+
+test('ordinary floor preparation removes the appliance explicitly and retains the complete paid bay',()=>{
+ const r=run(),p=r.circuit.applianceLead.floorPreparation
+ assert.equal(p.status,'CONDITIONAL_GEOMETRY_WITNESS')
+ assert.ok(p.fullComponentBodyReserveMm>=5)
+ assert.ok(p.fullComponentFixedReserveMm>=5)
+ assert.ok(p.fullComponentFurnitureReserveMm>=25)
+ assert.ok(p.maximumGripReachMm<=600)
+ assert.ok(p.unplugReach3DMm<=600)
+ assert.equal(p.tabletopMeasured,false)
+ assert.equal(p.physicalAcceptance,false)
+ assert.ok(r.circuit.appliancePreparedForFloor?.allDeskStagesContained)
+ const collision=structuredClone(components)
+ collision.circuitDesign.appliancePreparation.carryOffsetMm=350
+ assert.ok(run(collision).circuit.issues.includes('appliance-preparation-complete-carry-rejected'))
+ const badRest=structuredClone(components)
+ badRest.circuitDesign.appliancePreparation.trayOffsetFromDeskMm=[1500,390]
+ assert.ok(run(badRest).circuit.issues.includes('appliance-preparation-desk-rest-rejected'))
+ assert.deepEqual(run(collision).commonRoom,r.commonRoom)
+})

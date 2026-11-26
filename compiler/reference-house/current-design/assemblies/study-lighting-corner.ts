@@ -404,7 +404,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   return { schema:'ias-local-home-runs/2', selection:'unselected-development-direction', choices:h,
     status:routeIssues.length?'GEOMETRY_REJECTED':'DECLARED_EXTERNAL_CONTAINMENT_CONTINUOUS', bayPlanMm, firstRestPlanMm, finishBottomZMm:input.bottomZMm-input.jointMm,finishTopZMm:input.topZMm,
     totalDepthMm,conduitInsideDiameterMm:c.containmentOutsideDiameterMm-2*h.tubeWallMm,frontYMm:frontY,independentRouteSettingMm:input.jointMm, pairSettingMm:2*input.jointMm,
-    moduleHandlingXZMm,carrierXZMm:carrierXZ, carrierDepthMm:carrierDepth,carrierStripsXZMm,cableOpening,carrierStock,saddle,caseRestPlanMm,caseRenewal,enclosureCarrierChecks, parkedModulePlanMm, fieldReservesMm, moduleSweepPlanMm, occupiedConflicts, boxes,
+    handToolReference:{reference:'Wera355PZ05009315001',...support.driver},normalDrawMm:input.normalDrawMm,moduleHandlingXZMm,carrierXZMm:carrierXZ, carrierDepthMm:carrierDepth,carrierStripsXZMm,cableOpening,carrierStock,saddle,caseRestPlanMm,caseRenewal,enclosureCarrierChecks, parkedModulePlanMm, fieldReservesMm, moduleSweepPlanMm, occupiedConflicts, boxes,
     routes:routes.map(({segments:_checkedSegments,pathMm:_checkedPoints,...route})=>({...route,straight:{startMm:route.sourcePointMm,endMm:route.bend.startMm}})),
     separations, obstacleChecks, issues:routeIssues, sourceInterfaceIds:routes.map(r=>r.sourceInterfaceId),
     residualGeometryWarnings:routes.flatMap(r=>Object.entries(r.reservesMm).filter(([k,v])=>['left','rear','collarFront','tubeFront','portRear','portFront'].includes(k)&&v<h.minimumResidualMm).map(([boundary,reserveMm])=>({routeId:r.id,boundary,reserveMm,status:'UNQUALIFIED_COMPONENT_OR_LINING_INTERFACE'}))),

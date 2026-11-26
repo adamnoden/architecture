@@ -29,7 +29,7 @@ export function readLightingComponents() {
     socket: { plateWidthMm: number; plateHeightMm: number; recommendedBoxDepthMm: number; bodyDepthMm: number },
     backBox: { widthMm: number; heightMm: number; depthMm: number }, plug: { widthMm: number; heightMm: number; depthMm: number; insertedProjectionMm: number },
     deskLamp: { baseDiameterMm: number; leadLengthMm: number }, floorLamp: { baseDiameterMm: number; leadLengthMm: number },
-    wallLamp: { manufacturer:string;reference:string;leadLengthMm:number; shadeWidthMm: number; shadeHeightMm: number; reservedCompleteProjectionMm: number },
+    wallLamp: { manufacturer:string;reference:string;leadLengthMm:number; shadeWidthMm: number; shadeHeightMm: number; wallPlateDiameterMm:number; reservedCompleteProjectionMm: number },
     wallTaskLamp: { wallPlateDiameterMm: number; maximumReachMm: number; shadeDiameterMm: number; shadeHeightMm: number },
     projectRequirements: { fixedBoundaryDepthMm: number; removableFaceDepthMm: number; localCarrierDepthReserveMm: number; bayWidthMm: number;
       doorStopMm: number;  socketGripNormalMm: number;
@@ -232,7 +232,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     parkedModule: construction.firstRelease.parked, floorBandsMm: room.bands,
     occupiedPlanMm: [...room.occupied, ['reserved-floor-lamp', [floorBase[0] - floorLampRadius, floorBase[1] - floorLampRadius, floorBase[0] + floorLampRadius, floorBase[1] + floorLampRadius]]],
   }, components.commonDepthCornerCandidate)
-  const circuit=deriveStudyLightingCircuit(basis,construction.localHomeRunComparison,components.circuitDesign,{manufacturer:components.wallLamp.manufacturer,reference:components.wallLamp.reference,leadLengthMm:components.wallLamp.leadLengthMm,shadeWidthMm:components.wallLamp.shadeWidthMm,shadeHeightMm:components.wallLamp.shadeHeightMm,projectionMm:components.wallLamp.reservedCompleteProjectionMm,plugSpaceWitnessMm:[components.plug.widthMm,components.plug.heightMm,components.plug.insertedProjectionMm]})
+  const circuit=deriveStudyLightingCircuit(basis,construction.localHomeRunComparison,components.circuitDesign,{manufacturer:components.wallLamp.manufacturer,reference:components.wallLamp.reference,leadLengthMm:components.wallLamp.leadLengthMm,shadeWidthMm:components.wallLamp.shadeWidthMm,shadeHeightMm:components.wallLamp.shadeHeightMm,wallPlateDiameterMm:components.wallLamp.wallPlateDiameterMm,projectionMm:components.wallLamp.reservedCompleteProjectionMm,plugSpaceWitnessMm:[components.plug.widthMm,components.plug.heightMm,components.plug.insertedProjectionMm]})
   for(const issue of circuit.issues)fail('IAS_LIGHTING_CIRCUIT_REJECTED',issue)
   fail('IAS_LIGHTING_SUPPLY_INSTALLATION_UNQUALIFIED','Named source-bound socket/manual-lighting ways, cables and terminal nets are specified. Actual CU water exposure, supply/earth, board compatibility, fault energy and installed verification remain unearned.',circuit.feeders.map(r=>r.way))
   fail('IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED', 'Three independent source-to-enclosure containment paths replace the unresolved shared-riser topology as an unselected development direction. Actual box ports, hardware and device connections remain unqualified; the source interfaces have specified design nets, with actual installed connections unearned.', construction.localHomeRunComparison.sourceInterfaceIds)
@@ -261,15 +261,27 @@ export function compileStudyLighting(resolved: CurrentDesignResolution, input: u
   const [x,y,z,w,d,h]=lighting.circuit.sourceBox.boxMm
   const bay=lighting.construction.localHomeRunComparison
   const closedSourceFloorRenewal=compileStudyStructuralRenewal(context,room.floor.parts,room.floor.emitterPlinth,plan,room.floor.installedInlet,{
-    volumes:[...lighting.circuit.applianceLead.nominalFixedVolumes,{id:lighting.circuit.sourceBox.id,xyzxyzMm:[x!,y!,z!,x!+w!,y!+d!,z!+h!]},{id:'IAS/STUDY/closed-local-bay',xyzxyzMm:[bay.bayPlanMm[0]!,bay.frontYMm,bay.finishBottomZMm,bay.bayPlanMm[2]!,bay.bayPlanMm[3]!,bay.finishTopZMm]}],
+    volumes:[...lighting.circuit.applianceLead.floorPreparation.retainedGuideFixings,{id:lighting.circuit.sourceBox.id,xyzxyzMm:[x!,y!,z!,x!+w!,y!+d!,z!+h!]},{id:'IAS/STUDY/closed-local-bay',xyzxyzMm:[bay.bayPlanMm[0]!,bay.frontYMm,bay.finishBottomZMm,bay.bayPlanMm[2]!,bay.bayPlanMm[3]!,bay.finishTopZMm]}],
     panelTransfer:studyPanelTransferProfile(room.floor.wearingFaceMm+room.floor.beddingMm),
   })
-  const closedClear=closedSourceFloorRenewal.status==='computed-geometry-witnesses'
+  const floorPreparation=lighting.circuit.applianceLead.floorPreparation
+  const readBox=(value:unknown)=>Array.isArray(value)&&value.length===4&&value.every(n=>typeof n==='number'&&Number.isFinite(n))&&value[0]<value[2]&&value[1]<value[3]?value as readonly number[]:undefined
+  const preparedDesk='preparation'in closedSourceFloorRenewal?readBox(closedSourceFloorRenewal.preparation.preparedDeskXYXYMm):undefined
+  const candidate='furniture'in closedSourceFloorRenewal?closedSourceFloorRenewal.furniture.candidate:undefined
+  const parkedDesk=candidate&&typeof candidate==='object'?readBox((candidate as Readonly<Record<string,unknown>>).deskParkXYXYMm):undefined
+  const deskStages=[{stage:'occupied',box:preparedDesk},{stage:'chair-parked',box:preparedDesk},{stage:'desk-and-chair-parked',box:parkedDesk}].map(value=>{
+    const box=value.box
+    const tray=box&&floorPreparation.trayXYXYMm.map((n,i)=>n+box[i%2]!-floorPreparation.deskXYXYMm[i%2]!)
+    return{...value,trayXYXYMm:tray,contained:Boolean(box&&tray&&tray[0]!>=box[0]!+10&&tray[1]!>=box[1]!+10&&tray[2]!<=box[2]!-10&&tray[3]!<=box[3]!-10)}
+  })
+  const appliancePreparedForFloor={...floorPreparation,deskStages,allDeskStagesContained:deskStages.every(value=>value.contained),
+    source:'Same actual closed-volume furniture/preparation result; carried tray remains within its controlling desk footprint.'}
+  const closedClear=appliancePreparedForFloor.allDeskStagesContained&&closedSourceFloorRenewal.status==='computed-geometry-witnesses'&&lighting.circuit.applianceLead.floorPreparation.status==='CONDITIONAL_GEOMETRY_WITNESS'
   return{...lighting,status:closedClear?lighting.status:'GEOMETRY_REJECTED' as const,
     diagnostics:[...lighting.diagnostics,...(closedClear?[]:[{code:'IAS_LIGHTING_CLOSED_ROOM_RENEWAL_REJECTED',
       message:'Actual retained local bay/sourcebox conflicts with current floor or furniture renewal.',objectIds:[lighting.circuit.sourceBox.id]}])],
-    circuit:{...lighting.circuit,closedSourceFloorRenewal,remaining:lighting.circuit.remaining.filter(row=>!row.startsWith('Complete sourcebox closed pose')).concat(closedClear?[]:['Actual retained sourcebox/bay conflicts with current floor or furniture renewal.']),status:closedClear?lighting.circuit.status:'DESIGN_REJECTED' as const,
+    circuit:{...lighting.circuit,appliancePreparedForFloor,closedSourceFloorRenewal,remaining:lighting.circuit.remaining.filter(row=>!row.startsWith('Complete sourcebox closed pose')).concat(closedClear?[]:['Actual retained sourcebox/bay conflicts with current floor or furniture renewal.']),status:closedClear?lighting.circuit.status:'DESIGN_REJECTED' as const,
       issues:[...lighting.circuit.issues,...(closedClear?[]:['closed-source-floor-renewal-rejected'])]}}
 
 }
-export type StudyLightingResult = ReturnType<typeof deriveStudyLighting> & {readonly circuit:ReturnType<typeof deriveStudyLighting>['circuit'] & {readonly closedSourceFloorRenewal?:ReturnType<typeof compileStudyStructuralRenewal>}}
+export type StudyLightingResult = ReturnType<typeof deriveStudyLighting> & {readonly circuit:ReturnType<typeof deriveStudyLighting>['circuit'] & {readonly appliancePreparedForFloor?:ReturnType<typeof deriveStudyLighting>['circuit']['applianceLead']['floorPreparation'] & {readonly allDeskStagesContained:boolean;readonly deskStages:readonly {readonly stage:string;readonly box?:readonly number[];readonly trayXYXYMm?:readonly number[];readonly contained:boolean}[];readonly source:string};readonly closedSourceFloorRenewal?:ReturnType<typeof compileStudyStructuralRenewal>}}

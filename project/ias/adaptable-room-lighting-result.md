@@ -607,3 +607,26 @@ The larger260mm fitting gets a350mm-deep temporary rest, extending its front50mm
 The current actual chair/emitter require a northwest service stance rather than
 standing centrally in the chair field; body, reach and fixed-fitting checks use
 the same source room. These remain conditional geometry, not loaded human proof.
+
+The retained-cord comparison genuinely failed six ordinary floor body routes;
+it was not silently accepted. Floor preparation now unplugs the small appliance,
+removes its ordinary mount and both screwed flex clips/spacers, and carries
+fitting/managed flex/plug into a temporary180×300×300 tray on the actual Study
+desk. Captive backing lands, fixed carrier, outlet and entire bay stay closed.
+The tray remains10mm inside the current desk at every existing movement stage;
+this consequence is checked against the actual production furniture result.
+No floor protocol,136 physical floor pieces, furniture footprint, clearances
+or1450mm travel domain changes. The actual installed fitting/cord/plug/guide
+volumes remain available as the rejected retained-appliance comparison.
+
+Preparation has a source-checked operator approach,50mm normal draw, clear
+north-field hand turn, east-flank carry and above-table placement. It charges
+the full145×260mm fitting and declared300mm-high combined handling envelope,
+R300 body,25mm furniture separation, two5mm settings,600mm hand reach and
+a0.25mm continuous-motion sampling bound. The carry uses a1320mm bottom and1600mm standing shoulder; final lowering uses the authored1050mm kneeling shoulder, with full3D grip reach rather than horizontal reach alone. The730mm tabletop is an authored
+comparison consistent with current view convention, not measured furniture.
+The isolated loose flex helix usesR50/rise25 and its full425mm length; no
+energised coil is proposed. Supplied grommet/plug packing, mount/clip tool work,
+loaded handling/tabletop/desk movement and physical qualification remain open.
+The current eye-level room impressions omit this new family; they confer no
+appearance or photometric acceptance.

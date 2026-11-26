@@ -461,7 +461,7 @@
         30
       ],
       "guideBodyEnvelopeMm": [
-        20,
+        30,
         20,
         20
       ],
@@ -477,6 +477,46 @@
         70,
         52
       ]
+    },
+    "appliancePreparation": {
+      "operatorPathXYMm": [
+        [
+          1500,
+          2645
+        ],
+        [
+          1550,
+          2645
+        ],
+        [
+          1900,
+          2630
+        ],
+        [
+          2235,
+          2630
+        ],
+        [
+          2235,
+          1645
+        ]
+      ],
+      "carryOffsetMm": 390,
+      "traySizeMm": [
+        180,
+        300,
+        300
+      ],
+      "trayOffsetFromDeskMm": [
+        1380,
+        390
+      ],
+      "tabletopComparisonMm": 730,
+      "carriedBottomMm": 1320,
+      "carryAssemblyHeightMm": 300,
+      "samplingErrorMm": 0.25,
+      "standingShoulderMm": 1600,
+      "kneelingShoulderMm": 1050
     }
   }
 }
