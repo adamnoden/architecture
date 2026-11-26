@@ -125,6 +125,9 @@ jobs:
           PYTHON
           node --import tsx --test compiler/reference-house/current-design-lower-masonry.test.ts
 
+      - name: Verify fitted-room incident coordinates and unchanged storage duties
+        run: node --import tsx --test --test-name-pattern="one saved fitted-width edit" compiler/reference-house/current-design-inlet-room-edit.test.ts
+
       - name: Cache verified publication fonts
         uses: actions/cache@v6
         with:
