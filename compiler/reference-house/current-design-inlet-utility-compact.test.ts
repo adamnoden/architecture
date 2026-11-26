@@ -150,7 +150,7 @@ if(dir)writeFileSync(join(dir,'compact-cold-service.json'),JSON.stringify({coldS
 test('real controlled drain, receiver, high vent and terminal face release derive from the same compact source inputs',()=>{
  assert.equal(coldService.necessarySpecifiedGeometry,true,JSON.stringify(coldService.failures))
  assert.equal(servicePurge.necessaryKnownPurgeGeometry,true,JSON.stringify(servicePurge.minimumByKind))
- assert.ok(coldService.inventory.isolatedBranchConservativeCeilingL<12)
+ assert.ok(coldService.inventory.isolatedBranchConservativeCeilingL<coldService.inventory.usableReceiverMinimumL)
  assert.equal(coldService.drain.waterBelowTeeRetained,true)
  assert.equal(coldService.drain.wholeInletFullyEmptyClaimed,false)
  assert.equal(coldService.actualDownstreamNetworkIsolationAndBlankingQualified,false)

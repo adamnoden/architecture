@@ -112,14 +112,14 @@
     "drainControlNorthMm": 130,
     "drainOrificeMm": 2,
     "binOuterMm": [
-      10190,
+      10150,
       450,
       0,
-      220,
+      300,
       220,
       350
     ],
-    "minimumVerifiedUsableBinL": 12,
+    "minimumVerifiedUsableBinL": 20,
     "minimumUnionFaceReleaseMm": 10,
     "terminalUnionFaceBelowTubeEndMm": 30,
     "upstreamCouponZMm": [
@@ -146,5 +146,267 @@
       754.5,
       800
     ]
+  },
+  "coldDistribution": {
+    "schema": "had-utility-direct-cold/1",
+    "retire": {
+      "trunkId": "ground-utility",
+      "duty": "cold",
+      "sourcePointMm": [
+        10350,
+        3200,
+        2945
+      ],
+      "preserveDuties": [
+        "heat",
+        "hot"
+      ],
+      "plantConsumerIds": [
+        "guest-WC",
+        "guest-basin",
+        "kitchen-sink",
+        "principal-WC",
+        "principal-basin",
+        "principal-shower",
+        "family-WC",
+        "family-basin",
+        "family-bath",
+        "rear-WC",
+        "rear-basin",
+        "rear-shower"
+      ]
+    },
+    "sinkTeeMm": [
+      10760,
+      1250,
+      1100
+    ],
+    "washerTeeMm": [
+      10760,
+      1250,
+      750
+    ],
+    "washer": {
+      "fixtureId": "washer-PROPOSED",
+      "tubeODMm": 22.1,
+      "minimumWallMm": 0.9,
+      "pathToStopMm": [
+        [
+          10760,
+          1250,
+          750
+        ],
+        [
+          10760,
+          1090,
+          750
+        ]
+      ],
+      "stop": {
+        "id": "U/local-washer-stop",
+        "axisMm": [
+          10760,
+          1000,
+          750
+        ],
+        "flowAxis": [
+          0,
+          -1,
+          0
+        ],
+        "faceMm": 180,
+        "bareCrossMm": 70,
+        "stemAboveAxisMm": 130,
+        "wheelDiameterMm": 70,
+        "minimumKvM3h": 2,
+        "maximumDryKg": 3,
+        "minimumOutletBoreMm": 17,
+        "outletThread": "G3/4 male",
+        "sourceBareValveFaceMm": 85,
+        "completeModuleIncludes": "both actual BSP-to22mm adapters and17mm-clear G3/4 outlet; no85mm valve-only module claimed"
+      },
+      "ordinaryShoulderMm": [
+        10800,
+        1550,
+        1050
+      ],
+      "availableAfterFirstPull": false,
+      "minimumTubeODMm": 21.9,
+      "maximumWallMm": 1.3
+    },
+    "sink": {
+      "fixtureId": "utility-sink-PROPOSED",
+      "tubeODMm": 15.1,
+      "minimumWallMm": 0.7,
+      "pathToStopMm": [
+        [
+          10760,
+          1250,
+          1100
+        ],
+        [
+          10760,
+          650,
+          1100
+        ],
+        [
+          11190,
+          650,
+          1100
+        ],
+        [
+          11190,
+          650,
+          730
+        ],
+        [
+          11190,
+          1250,
+          730
+        ],
+        [
+          11190,
+          1250,
+          630
+        ]
+      ],
+      "stop": {
+        "id": "U/local-sink-cold-stop",
+        "axisMm": [
+          11190,
+          1250,
+          550
+        ],
+        "flowAxis": [
+          0,
+          0,
+          -1
+        ],
+        "faceMm": 160,
+        "bareCrossMm": 60,
+        "stemNorthMm": 112,
+        "wheelDiameterMm": 60,
+        "minimumKvM3h": 1.2,
+        "maximumDryKg": 2,
+        "sourceBareValveFaceMm": 75,
+        "completeModuleIncludes": "both actual BSP-to-copper adapters and counterholding lands; no75mm valve-only fit claimed"
+      },
+      "pathFromStopToHeadMm": [
+        [
+          11190,
+          1250,
+          470
+        ],
+        [
+          11190,
+          1250,
+          350
+        ],
+        [
+          11065,
+          1250,
+          350
+        ],
+        [
+          11065,
+          1250,
+          850
+        ]
+      ],
+      "ordinaryShoulderMm": [
+        11190,
+        1550,
+        950
+      ],
+      "minimumTubeODMm": 14.9,
+      "maximumWallMm": 1
+    },
+    "prefabSinkHead": {
+      "sourceOfGeometry": "authored new head interface, not a purchased Franke or tap approval",
+      "topPlanMm": [
+        10855,
+        740,
+        600,
+        600
+      ],
+      "topZMm": [
+        870,
+        900
+      ],
+      "bowlPlanMm": [
+        10935,
+        790,
+        440,
+        400
+      ],
+      "floodRimMm": 900,
+      "coldPortMm": [
+        11065,
+        1250,
+        850
+      ],
+      "hotPortMm": [
+        11245,
+        1250,
+        850
+      ],
+      "pillarHandleMm": [
+        [
+          11065,
+          1250,
+          1000
+        ],
+        [
+          11245,
+          1250,
+          1000
+        ]
+      ],
+      "spoutOutletsMm": [
+        [
+          11065,
+          1100,
+          1040
+        ],
+        [
+          11245,
+          1100,
+          1040
+        ]
+      ],
+      "mixing": "only in open bowl",
+      "floorOperatorXYMm": [
+        11025,
+        1725
+      ],
+      "shoulderMm": [
+        11155,
+        1550,
+        1350
+      ],
+      "maximumReachMm": 600,
+      "actualTapPressureMaterialAndHeadReleaseAccepted": false
+    },
+    "carrierPostAdditionalEastMm": 10,
+    "normalWholeHouseIsolation": [
+      "U/internal-cut",
+      "P/internal-cut"
+    ],
+    "mainColdRenewalIsolation": [
+      "Lodge/U-upstream-cut",
+      "U/local-washer-stop",
+      "U/local-sink-cold-stop"
+    ],
+    "mainCutDuringControlledDrawdown": "U/internal-cut deliberately open ONLY after Lodge/U closed and real pressure-zero verification",
+    "upperPlantAndHotBackfeedExcludedByActualColdEdgeRetirementAndIndependentPillars": false,
+    "designFlowsLmin": {
+      "sink": 6,
+      "washer": 12
+    },
+    "minorLossDesignConditions": {
+      "runTeeK": 0.6,
+      "sideTeeK": 2,
+      "compressionElbowK": 1.5
+    }
   }
 }

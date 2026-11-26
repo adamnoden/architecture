@@ -1,5 +1,6 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {deriveUtilityPotableNetwork} from './utility-potable-network.mjs';
 import {fitHousehold} from './fitted-house-services.mjs';
 import {serviceApertures} from './service-apertures.mjs';
 import {servicePlate,storePlate} from './occupied-service-plate.mjs';
@@ -51,6 +52,9 @@ export function deriveCurrentHouse(){
   const householdWater=read('ias/studies/household-water');
   house.fixtureJoin=fitHousehold(house.model,householdWater,read('ias/studies/fitted-wc-schedule'),
     read('ias/studies/utility-first-release'),read('ias/studies/utility-host-revised-route'));
+  const utilityCold=read('had/studies/inlet-utility-compact-route'),plantCold=read('had/studies/inlet-split-plant-branch-candidate'),plantCut=read('had/studies/inlet-split-plant-station-candidate'),underSill=read('had/studies/south-inlet-under-sill');
+  house.model.architecturalServices.potableNetwork=deriveUtilityPotableNetwork(base,utilityCold,plantCold,plantCut,underSill);
+  house.model.servicesInterface.potableNetwork=house.model.architecturalServices.potableNetwork;
   const structure=read('str/studies/reconciled-house-interface');
   const corner=read('str/studies/current-house-arch-movement');
   house.structuralServiceReview=serviceApertures(house.model,structure,corner);
@@ -67,7 +71,7 @@ export function deriveCurrentHouse(){
 export function serviceSchedule(house){
   const {model:m}=house, s=m.architecturalServices;
   return {proposal:house.id,structurallyAdopted:false,qualifiedPhysical:false,sources:house.inputs,court:house.courtReceiver.id,
-    wholeHeat:s.heat, domestic:s.hotWater, plant:s.plant,
+    wholeHeat:s.heat, domestic:s.hotWater, potableNetwork:s.potableNetwork, plant:s.plant,
     heatBodies:s.emitters.map(e=>({id:e.id,room:e.room,plan:e.completePlanWithValvesAndBrackets})),
     localElectric:s.roomElectric,air:s.cooker,
     wetRoomFans:s.fanAccess.map(f=>({id:f.id,plan:f.podPlan,selectedMode:f.modes})),

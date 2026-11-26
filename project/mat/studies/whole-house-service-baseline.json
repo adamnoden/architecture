@@ -9531,7 +9531,6 @@
       ],
       "duties": [
         "heat",
-        "cold",
         "hot"
       ],
       "axisZ": 2945,
@@ -10113,7 +10112,11 @@
       "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
       "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
       "terminalDeadLegLitresAt13mmID": 0.41744305083656075,
-      "idealFlushSecondsAt6Lmin": 4.1744305083656075
+      "idealFlushSecondsAt6Lmin": 4.1744305083656075,
+      "waterBranchPlanDuties": ["hot"],
+      "coldSupply": "direct-utility-inlet",
+      "coldBranchControl": "project/had/studies/inlet-utility-compact-route.json#/coldDistribution/sink",
+      "legacyColdBranch": "Retired from this former shared waterBranchPlan; remaining hot duty retained. Direct cold paths and actual local stops derive from coldBranchControl."
     },
     {
       "id": "washer-PROPOSED",
@@ -10150,7 +10153,11 @@
         300
       ],
       "endpointStatus": "Design service/valve axis with200mm local work field, NOT actual apparatus inlet. Local final tube/connector must join the selected fixture without inaccessible fabric.",
-      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall."
+      "surfaceDrop": "Exposed metallic/supported tube or demountable service chase; no structural chase cut. Maximum100mm local projection is an explicit room/shower loss, not hidden in the wall.",
+      "waterBranchPlanDuties": [],
+      "coldSupply": "direct-utility-inlet",
+      "coldBranchControl": "project/had/studies/inlet-utility-compact-route.json#/coldDistribution/washer",
+      "legacyColdBranch": "Retired from this former shared waterBranchPlan; remaining hot duty retained. Direct cold paths and actual local stops derive from coldBranchControl."
     },
     {
       "id": "kitchen-sink",
