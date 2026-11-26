@@ -1,3 +1,5 @@
+/** Authored lower density for the same source-cold 0–40C discharge bound. */
+export const inletColdSourceMinimumDensityKgM3=990
 type Point=readonly number[]
 const finitePoint=(p:Point)=>Array.isArray(p)&&p.length===3&&[...p].every(Number.isFinite)
 const close=(a:number,b:number)=>Math.abs(a-b)<=1e-7*Math.max(1,Math.abs(a),Math.abs(b))

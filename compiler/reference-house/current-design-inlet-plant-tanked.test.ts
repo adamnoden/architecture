@@ -64,7 +64,7 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
  assert.equal(r.inventory.vesselMaximumDesignL,330)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
  if(dir)writeFileSync(join(dir,'Plant-tanked-current-source-comparison.json'),JSON.stringify(r,null,2))
- console.info('PLANT_TANK_COMPLETE_STATIC '+JSON.stringify({levels:r.levels,sourceProfiles:r.outfalls.profiles.map(p=>({id:p.id,pool:p.initialSourcePoolMm,freeDrop:p.freeDropReserveMm,necessary:p.necessaryFreeSourceProfile,refinements:p.refinements.map(r=>r.state)})),inventory:r.inventory.fullInstantPressureNetworkDesignReleaseL,containment:r.containment,steelKg:r.walking.normalMassUpperKg,walkingFailures:r.walking.memberChecks.filter(p=>!p.necessary),frame:r.fittedFrame}))
+ console.info('PLANT_TANK_COMPLETE_STATIC '+JSON.stringify({levels:r.levels,sourceProfiles:r.outfalls.profiles.map(p=>({id:p.id,pool:p.initialSourcePoolMm,freeDrop:p.freeDropReserveMm,necessary:p.necessaryFreeSourceProfile,refinements:p.refinements.map(r=>r.state)})),inventory:r.inventory.fullInstantPressureNetworkDesignReleaseL,containment:r.containment,hotNetwork:r.inventory.normalHotAndReturnNetworkDesignUpperL,steelKg:r.walking.normalMassUpperKg,walkingFailures:r.walking.memberChecks.filter(p=>!p.necessary),frame:r.fittedFrame}))
 })
 test('actual floor, outlet and inventory perturbations invalidate dependent design evidence',()=>{
  const i=roomRequest(),r=inletPlantTankedRoom(i),low=structuredClone(i)

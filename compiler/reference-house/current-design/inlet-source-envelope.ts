@@ -1,6 +1,6 @@
 import {replayInletCornerContext,utilityCornerBoundary,runUtilityCornerHost,type InletCornerContext} from './inlet-utility-corner.js'
 import {admitStoreDrainChoice,storeDrainCargoDemand,inletStoreDrain,drawInletStoreDrain} from './inlet-store-drain.js'
-import {inletOpenClosedOutfall} from './inlet-open-closed-outfall.js'
+import {inletOpenClosedOutfall,inletColdSourceMinimumDensityKgM3} from './inlet-open-closed-outfall.js'
 import {inletKnownGravityInventory} from './inlet-known-gravity.js'
 import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
@@ -61,9 +61,9 @@ const round = (n: number) => {
   if (!Number.isFinite(n)) throw new RangeError('Non-finite inlet source or hydraulic result')
   return Number(n.toFixed(6)) || 0
 }
-const flow = (diameterMm: number, pressureBar: number, coefficient = 1, density = 990) =>
+const flow = (diameterMm: number, pressureBar: number, coefficient = 1, density = inletColdSourceMinimumDensityKgM3) =>
   coefficient * Math.PI * (diameterMm / 1000) ** 2 / 4 * Math.sqrt(2 * pressureBar * 1e5 / density) * 60000
-const diameter = (qLmin: number, pressureBar: number, coefficient = 1, density = 990) =>
+const diameter = (qLmin: number, pressureBar: number, coefficient = 1, density = inletColdSourceMinimumDensityKgM3) =>
   1000 * Math.sqrt(4 * qLmin / 60000 / (Math.PI * coefficient * Math.sqrt(2 * pressureBar * 1e5 / density)))
 
 function binding(resolved: CurrentDesignResolution) {
@@ -274,7 +274,7 @@ export function runInletSourceEnvelopeCase(resolved: CurrentDesignResolution, in
     bound: { method: 'Incompressible energy comparison Q<=A sqrt(2 p_total_absolute/rho), Cd<=1, local pressure>=0absolute; recovery/cavitation qualification remains required.',
       maximumAbsoluteTotalBar: absoluteMaximumBar, minimumThroatAbsoluteBarForUpperBound: 0,
       pressureRecoveryAndCavitationQualified: false,
-      minimumDensityKgM3: 990, maximumDensityKgM3ForDeliveryLoss: 1000, declaredWaterDomainC: [0, 40], densityDomainQualification: 'authored-water-comparison-bound',
+      minimumDensityKgM3: inletColdSourceMinimumDensityKgM3, maximumDensityKgM3ForDeliveryLoss: 1000, declaredWaterDomainC: [0, 40], densityDomainQualification: 'authored-water-comparison-bound',
       maximumPressureIncludesStaticDynamicElevationAndTransientHead: true, installedSourceMaximumProved: false,
       pressureRecoveryFractionIsAuthoredComparisonNotProductEvidence: true,
       maximumCombinedLmin, branchMaximumsLmin: Object.fromEntries(branches.map(branch => [branch.id, branch.maximumLimitedEachLmin])),
