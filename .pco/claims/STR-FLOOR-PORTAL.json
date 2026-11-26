@@ -9,8 +9,8 @@
     "label": "convergence-20261125"
   },
   "claimedAt": "2026-11-25T22:18:56.729Z",
-  "heartbeatAt": "2026-11-26T01:25:16.000Z",
-  "expiresAt": "2026-11-26T02:10:16.000Z",
+  "heartbeatAt": "2026-11-26T02:00:33.000Z",
+  "expiresAt": "2026-11-26T02:45:33.000Z",
   "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
@@ -36,8 +36,8 @@
   },
   "pr": 1627,
   "checkpoint": {
-    "evidence": "1626 merged83f8cb65;1627 dcfc8d63 CI pending. Ground/a5f2a477 and water900776 remote. Exact validation/interruption handoff00477948 project/str/convergence-recovery-20261126.md; actual saved2room test passed485s.",
-    "next": "Finish1627 CI and canonical dual runner preflight; merge expected head if earned, then gateway handoff. Recover ground00477948 and water900776 on next executor.",
-    "blocker": "Executor explicitly unavailable; final guarded capture/witness, water4th test and uniform250 completion unknown. No house/slab/joint acceptance."
+    "evidence": "1626 merged83f8cb65.1627 dcfc health found1obsolete coordinate assertion; corrected head0d20523d newCIpending. Grounda5f2a477/raw900776 safe; recovery note ongroundbranch records exact tests and outage.",
+    "next": "Recover freshleases/main; verify0d20523d CI andfresh dualpreflight beforemerge. Reconcile ground andwater checkpoints; regenerate lastlocaloutputs.",
+    "blocker": "Executor explicitly unavailable. Guardedcapture/witness, water4th test anduniform250 completionunknown. No secondmerge or house/slabadoption."
   }
 }
