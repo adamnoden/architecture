@@ -1,0 +1,14 @@
+{
+  "path": "project/str/studies/fixed-normal-experiment-inputs.json",
+  "bytes": 117545,
+  "sha256": "7f0d04fd4552abca8aabb1d72deae6ff6a75fbc7e04dbda507f26d41878f51e3",
+  "gitBlob": "4907aed74b10370612601e0f25c0861e168a0992",
+  "actual500FullSHA256": "621d8bb2f5636d4cc9b6279fb8c976048226ebd5d12aa73a2a285891ea288702",
+  "allAuthoredPhysicalInputsAndCriteriaUnchanged": true,
+  "onlySourceIdentitiesAndActual500ReferenceRecomputed": true,
+  "candidateAccepted": false,
+  "sourceRun": 45854145340,
+  "sourceCommit": "f6209eeb4e5391a2231721df9bebb6c311913243",
+  "producerWorkflow": ".github/workflows/current-positive-fixed-normal-input.yml",
+  "method": "actual complete500 capture → existing recoverFloorSectionCuts; no old force arrays or authored physics changed"
+}

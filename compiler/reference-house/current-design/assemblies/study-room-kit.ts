@@ -1,3 +1,5 @@
+import { admitStudyOakComposition, compileStudyOakComposition, type StudyOakComposition } from './study-oak-composition.js'
+import { compileStudyStructuralRenewal, studyPanelTransferProfile } from './study-structural-renewal.js'
 import { sha256SemanticFingerprint } from '../../../core/identity.js'
 import { createPlanPaperProjection } from '../../../publication-drawing/projection.js'
 import type { DrawingPrimitiveV2, DrawingSceneV2 } from '../../../publication-drawing-v2/model.js'
@@ -10,9 +12,11 @@ import { compileResolvedStudyAssembly } from './study-floor.js'
 import { compileStudyGroundSupport } from './study-ground-support.js'
 import { compileResolvedStudyLinings, layStudySouthPanelStock } from './study-linings.js'
 import { compileStudyWallTransition } from './study-wall-transition.js'
-import { admitStudyOrdinaryHandlingPlan, type StudyOrdinaryHandlingPlan } from './study-ordinary-handling.js'
+import { admitStudyOrdinaryHandlingPlan, studyOrdinaryPlanAppliesToParts, type StudyOrdinaryHandlingPlan } from './study-ordinary-handling.js'
 import { compileStudyInstalledInlet } from './study-installed-inlet.js'
 import { compileStudyRoomAssembly } from './study-room-assembly.js'
+import { deriveStudyStructuralContext, type NativeSWGeometry, type StudyStructuralContext } from './study-structural-context.js'
+import { clipStudyStructuralFloor, type StructuralPart } from './study-structural-floor.js'
 
 type FloorAssembly = ReturnType<typeof compileResolvedStudyAssembly>
 type Box = readonly [number, number, number, number]
@@ -27,6 +31,7 @@ type Case = {
   readonly units: 'mm'
   readonly pitchMm: number
   readonly wearingFace: 'oak' | 'stone-steel'
+  readonly oakComposition?: StudyOakComposition
   readonly finishDepthMm?: 15 | 20
   readonly groundDeckLevelLossMm?: number
   readonly firstRestBoardSizeMm?: Pair
@@ -55,7 +60,7 @@ function record(input: unknown): input is Record<string, unknown> {
 }
 
 function caseInput(input: unknown): Case {
-  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'ordinaryHandling', 'frameFootClearanceMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'].includes(key))
+  if (!record(input) || Object.keys(input).some(key => !['schema', 'units', 'pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'ordinaryHandling', 'frameFootClearanceMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening', 'oakComposition'].includes(key))
     || input.schema !== 'ias-study-room-kit-case/1' || input.units !== 'mm'
     || typeof input.pitchMm !== 'number' || !Number.isFinite(input.pitchMm)
     || (input.finishDepthMm !== undefined && input.finishDepthMm !== 15 && input.finishDepthMm !== 20)
@@ -80,6 +85,7 @@ function caseInput(input: unknown): Case {
     ...(input.finishDepthMm === undefined ? {} : { finishDepthMm: input.finishDepthMm }),
     ...(input.groundDeckLevelLossMm === undefined ? {} : { groundDeckLevelLossMm: input.groundDeckLevelLossMm }),
     ...(size === undefined ? {} : { firstRestBoardSizeMm: [size[0], size[1]] as const }),
+    ...(input.oakComposition === undefined ? {} : { oakComposition: admitStudyOakComposition(input.oakComposition) }),
     ...(input.ordinaryHandling === undefined ? {} : { ordinaryHandling: admitStudyOrdinaryHandlingPlan(input.ordinaryHandling) }),
     ...(input.frameFootClearanceMm === undefined ? {} : { frameFootClearanceMm: input.frameFootClearanceMm }),
     ...(input.floorBorderMinimumMm === undefined ? {} : { floorBorderMinimumMm: input.floorBorderMinimumMm }),
@@ -136,7 +142,7 @@ function gripGeometry([x0, y0, x1, y1]: Box) {
   return { centres, endMarginMm: (Math.max(x1 - x0, y1 - y0) - keyCentresMm) / 2 }
 }
 
-function partSetout(assembly: FloorAssembly, minimumBorderMm: number) {
+function partSetout(assembly: FloorAssembly, minimumBorderMm: number, structuralBorderDevelopment?: StudyStructuralContext) {
   const { grid, source, section, schedule } = assembly
   const inset = section.jointMm / 2
   const massPerSquareMm = schedule.completeTileWearFaceMassKg / (schedule.clearTileSideMm ** 2)
@@ -166,7 +172,7 @@ function partSetout(assembly: FloorAssembly, minimumBorderMm: number) {
   const emitter = grid.occupied.find(([id]) => id === emitterId)?.[1]
   if (!emitter) return withheld('MISSING_BOUND_STUDY_EMITTER')
   const [west, emitterSouth, emitterEast, emitterNorth] = emitter
-  const setbacks = { south: 4, east: 5, north: 5 }
+  const setbacks = { south: structuralBorderDevelopment ? emitterSouth - structuralBorderDevelopment.finishedToeXYMm[1] : 4, east: 5, north: 5 }
   const south = emitterSouth - setbacks.south
   const east = emitterEast + setbacks.east
   const north = emitterNorth + setbacks.north
@@ -206,7 +212,7 @@ function partSetout(assembly: FloorAssembly, minimumBorderMm: number) {
     retained.splice(retained.indexOf(next), 1)
   }
   const parts = [...retained, ...additions]
-  if (parts.some(part => part.grip === null || intersects(part.box, emitter))) {
+  if (parts.some(part => intersects(part.box, emitter)) || (!structuralBorderDevelopment && parts.some(part => part.grip === null))) {
     return withheld('TRIAL_EMITTER_OR_GRIP_RESERVE_FAILED')
   }
   return {
@@ -219,7 +225,7 @@ function partSetout(assembly: FloorAssembly, minimumBorderMm: number) {
   }
 }
 
-function notchFrameFeet(layout: ReturnType<typeof partSetout>, frameFootprints: readonly Box[], clearanceMm: number | undefined) {
+function notchFrameFeet(layout: Omit<ReturnType<typeof partSetout>, 'parts'> & { readonly parts: readonly StructuralPart<ReturnType<typeof partSetout>['parts'][number]>[] }, frameFootprints: readonly Box[], clearanceMm: number | undefined) {
   const subtract = (box: Box, reserve: Box): Box[] => {
     const [x0, y0, x1, y1] = box
     const left = Math.max(x0, reserve[0]), right = Math.min(x1, reserve[2])
@@ -229,21 +235,22 @@ function notchFrameFeet(layout: ReturnType<typeof partSetout>, frameFootprints: 
     return pieces.filter(piece => piece[0] < piece[2] && piece[1] < piece[3])
   }
   return { ...layout, parts: layout.parts.map(part => {
-    if (clearanceMm === undefined) return { ...part, facePieces: [part.face], frameNotches: [] as Box[], stockAreaMm2: area(part.box) }
+    const initialFaces = part.structuralFacePieces ?? [part.face], initialStock = part.structuralStockPieces ?? [part.box]
+    if (clearanceMm === undefined) return { ...part, facePieces: initialFaces, frameNotches: [] as Box[], stockAreaMm2: initialStock.reduce((sum, box) => sum + area(box), 0) }
     const frameNotches = frameFootprints.map(([x, y, width, depth]): Box => [x - clearanceMm, y - clearanceMm, x + width + clearanceMm, y + depth + clearanceMm])
       .filter(footprint => intersects(part.box, footprint))
       .map(([x0, y0, x1, y1]): Box => [x0, y0, Math.max(x1, part.box[2]), y1])
-    const facePieces = frameNotches.reduce<Box[]>((pieces, footprint) => pieces.flatMap(piece => subtract(piece, footprint)), [part.face])
-    const stockPieces = frameNotches.reduce<Box[]>((pieces, footprint) => pieces.flatMap(piece => subtract(piece, footprint)), [part.box])
+    const facePieces = frameNotches.reduce<Box[]>((pieces, footprint) => pieces.flatMap(piece => subtract(piece, footprint)), [...initialFaces])
+    const stockPieces = frameNotches.reduce<Box[]>((pieces, footprint) => pieces.flatMap(piece => subtract(piece, footprint)), [...initialStock])
     if (part.grip?.centres.some(([x, y]) => !facePieces.some(box => x >= box[0] && x <= box[2] && y >= box[1] && y <= box[3]))) {
       throw new RangeError('STUDY_FRAME_NOTCH_INTERSECTS_PICKUP_KEY')
     }
     return { ...part, facePieces, frameNotches, stockAreaMm2: stockPieces.reduce((sum, piece) => sum + area(piece), 0),
-      wearFaceKg: part.wearFaceKg * facePieces.reduce((sum, piece) => sum + area(piece), 0) / area(part.face) }
+      wearFaceKg: part.wearFaceKg * facePieces.reduce((sum, piece) => sum + area(piece), 0) / initialFaces.reduce((sum, piece) => sum + area(piece), 0) }
   }) }
 }
 
-function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partSetout>, access: BcrFurnitureAccess) {
+function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof notchFrameFeet>, access: BcrFurnitureAccess) {
   const { parts, emitterPlinth } = layout
   if (emitterPlinth.state === 'withheld') return { state: 'withheld', code: emitterPlinth.code } as const
   const occupied = new Map(assembly.grid.occupied)
@@ -336,7 +343,7 @@ function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof partS
     },
     emitterEdgeRelease: { pickupId: pickup.id, firstRestId: rest.id, workerSweep, panelSweep,
       firstRestBoard, padCentres, padWidthMm, reachMm, edgeReleaseClear,
-      restBoardTopMm: 12, pickupLiftMm: 12 + 6 + assembly.section.finishDepthMm, worstRestPadN, restPadDemandMPa: worstRestPadN / padWidthMm ** 2 },
+      ...studyPanelTransferProfile(assembly.section.finishDepthMm), worstRestPadN, restPadDemandMPa: worstRestPadN / padWidthMm ** 2 },
     held: ['loaded grip and breakaway', 'loaded full-access furniture motion', 'qualified continuous deck and bedding',
       'ferrule pull-out and repeated fits', 'seating, acoustic, slip, movement and material performance'],
   } as const
@@ -689,24 +696,40 @@ function releaseScreen(assembly: FloorAssembly, parts: ReturnType<typeof partSet
   } as const
 }
 
-function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
+function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown, structuralGeometry?: NativeSWGeometry) {
   const request = caseInput(input)
-  const assembly = compileResolvedStudyAssembly(resolved, { pitchMm: request.pitchMm, wearingFace: request.wearingFace, finishDepthMm: request.finishDepthMm })
+  const nativeAssembly = compileResolvedStudyAssembly(resolved, { pitchMm: request.pitchMm, wearingFace: request.wearingFace, finishDepthMm: request.finishDepthMm })
+  const { opening, wall, grille, grilleKeepOut, nativeWindow } = openingSetout(resolved, request)
+  const structuralContext = structuralGeometry ? deriveStudyStructuralContext(nativeAssembly.grid.bands, nativeAssembly.grid.occupied, wall.referenceDepthMm, structuralGeometry) : undefined
+  // Keep the existing world-coordinate fabrication field. A geometric band
+  // decomposition is not permission to retile otherwise unchanged floor faces.
+  const assembly = structuralContext ? { ...nativeAssembly,
+    source: { ...nativeAssembly.source, structuralConsequenceDigest: structuralContext.digest },
+    grid: { ...nativeAssembly.grid, occupied: structuralContext.occupied } } : nativeAssembly
   const { house } = readBoundOccupiedServices(resolved)
-  const floorLayout = notchFrameFeet(partSetout(assembly, request.floorBorderMinimumMm ?? 60),
+  const sourceLayout = partSetout(assembly, request.floorBorderMinimumMm ?? 60, structuralContext)
+  const cutLayout = structuralContext ? clipStudyStructuralFloor<ReturnType<typeof partSetout>['parts'][number], ReturnType<typeof partSetout>['emitterPlinth']>(sourceLayout, structuralContext, assembly.section.jointMm) : sourceLayout
+  const floorLayout = notchFrameFeet(cutLayout,
     house.model.studyDoorOperation.checkedFramePieces, request.frameFootClearanceMm)
   const { parts, emitterPlinth } = floorLayout
-  const { opening, wall, grille, grilleKeepOut, nativeWindow } = openingSetout(resolved, request)
+  const ordinaryPlanApplicable = request.ordinaryHandling === undefined || studyOrdinaryPlanAppliesToParts(request.ordinaryHandling, parts.map(part => part.id))
   const installedInlet = compileStudyInstalledInlet(grille.actualRetainedInlet, request.installedServices ?? 'retained-plan-projection', request.floorWorkerTopMm ?? 900, assembly.grid.bands[0][1])
   const coordinatedGrilleKeepOut = installedInlet.state === 'wall-hung-candidate'
     ? { ...grilleKeepOut, box: [Math.min(grilleKeepOut.box[0], installedInlet.wallReserveXZMm[0]),
       Math.min(grilleKeepOut.box[1], installedInlet.wallReserveXZMm[1]), Math.max(grilleKeepOut.box[2], installedInlet.wallReserveXZMm[2]),
       Math.max(grilleKeepOut.box[3], installedInlet.wallReserveXZMm[3])] as Box } : grilleKeepOut
-  const coordinatedWall = installedInlet.state === 'wall-hung-candidate' ? { ...wall,
+  const inletCoordinatedWall = installedInlet.state === 'wall-hung-candidate' ? { ...wall,
     southField: layStudySouthPanelStock(wall.southField.startXMm, wall.southField.startXMm + wall.southField.widthMm,
       wall.southField.pitchMm, wall.southField.windows, [coordinatedGrilleKeepOut.box]) } : wall
-  const release = releaseScreen(assembly, parts)
-  const handling = handlingScreen(assembly, floorLayout, nativeWindow.furnitureAccess)
+  const coordinatedWall = structuralContext ? { ...inletCoordinatedWall,
+    southField: layStudySouthPanelStock(structuralContext.finishedToeXYMm[0], wall.southField.startXMm + wall.southField.widthMm,
+      wall.southField.pitchMm, inletCoordinatedWall.southField.windows, [coordinatedGrilleKeepOut.box]) } : inletCoordinatedWall
+  if (structuralContext && (opening.box[0] < structuralContext.finishedToeXYMm[0]
+    || coordinatedWall.boundRoomOpenings.some(window => window.wall === 'outer-west' && window.centre - window.width / 2 < structuralContext.finishedToeXYMm[1]))) {
+    throw new RangeError('STUDY_STRUCTURAL_OPENING_INTERSECTS_PILASTER')
+  }
+  const release = structuralContext ? { state: 'withheld' as const, code: 'STRUCTURAL_STUDY_RENEWAL_REQUIRES_REPLAY' } : releaseScreen(assembly, parts)
+  const handling = structuralContext ? { state: 'withheld' as const, code: 'STRUCTURAL_STUDY_RENEWAL_REQUIRES_REPLAY' } : handlingScreen(assembly, floorLayout, nativeWindow.furnitureAccess)
   const movement = nativeWindow.furnitureAccess
   const { bodyRadiusMm, bodyToPanelMm, bodySettingMm, maximumReachMm, gripZ, shoulderZ } = directRelease
   const firstRest = emitterPlinth.state === 'withheld' || handling.state === 'withheld' ? undefined : {
@@ -724,14 +747,21 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
     liftMm: handling.emitterEdgeRelease.pickupLiftMm,
     restBoardTopMm: handling.emitterEdgeRelease.restBoardTopMm, finishDepthMm: assembly.section.finishDepthMm,
     ...(installedInlet.state === 'wall-hung-candidate' ? { installedServices: installedInlet } : {}),
-    ...(request.ordinaryHandling ? { ordinaryHandling: request.ordinaryHandling } : {}),
+    ...(request.ordinaryHandling && ordinaryPlanApplicable ? { ordinaryHandling: request.ordinaryHandling } : {}),
     ...(request.firstRestBoardSizeMm ? { includeAlternateReceivers: true, maximumExtendedTransferMm: 2 * assembly.grid.pitchMm } : {}),
   }
   const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
     movement.receipt.sha256, movement.turnReceiptSha256, handling.parking.parkedDesk, handling.parking.parkedChair, firstRest,
   )
   const board = compareFirstRestBoard(parts, handling, furnitureMotion?.firstRest, request.firstRestBoardSizeMm, assembly.grid.bands)
-  const ordinaryHandling = request.ordinaryHandling ? furnitureMotion?.firstRest?.ordinaryHandling ?? {
+  const structuralRenewal = structuralContext && request.ordinaryHandling
+    ? compileStudyStructuralRenewal(structuralContext,parts,emitterPlinth,request.ordinaryHandling,installedInlet) : null
+  // Preserve the authored plan in kit.request; never submit a former part family
+  // to the current handling solver or promote its witnesses after a width edit.
+  const ordinaryHandling = request.ordinaryHandling ? !ordinaryPlanApplicable ? {
+    schema: 'ias-study-ordinary-handling-result/1' as const, state: 'source-withheld' as const, physicalAcceptance: false as const,
+    partCount: parts.length, witnessCount: 0, parts: [], diagnostics: [{ code: 'IAS_ORDINARY_RENEWAL_REQUIRES_CURRENT_PART_PLAN', objectIds: parts.map(part => part.id) }],
+  } : structuralRenewal?.ordinaryHandling ?? furnitureMotion?.firstRest?.ordinaryHandling ?? {
     schema: 'ias-study-ordinary-handling-result/1' as const, state: 'source-withheld' as const, physicalAcceptance: false as const,
     partCount: parts.length, witnessCount: 0, parts: [], diagnostics: [{ code: 'IAS_ORDINARY_SOURCE_FLOOR_FAMILY_WITHHELD', objectIds: [assembly.source.roomId] }],
   } : null
@@ -741,9 +771,10 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
   const kit = {
     schema: 'ias-study-room-kit/1', state: 'candidate', units: 'mm', request,
     source: assembly.source, caseDigest: sha256SemanticFingerprint({ request, source: assembly.source, opening }),
-    bands: assembly.grid.bands, occupied: assembly.grid.occupied,
+    bands: structuralContext?.bands ?? assembly.grid.bands, occupied: assembly.grid.occupied,
+    ...(structuralContext ? { structuralConsequence: structuralContext } : {}),
     floor: {
-      parts, emitterPlinth, installedInlet, ordinaryHandling, frameFootprints: house.model.studyDoorOperation.checkedFramePieces, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
+      parts, emitterPlinth, installedInlet, ordinaryHandling, ...(request.oakComposition && request.wearingFace === 'oak' ? { oakComposition:compileStudyOakComposition(request.oakComposition,parts,structuralContext?.bands??assembly.grid.bands,assembly.grid.origin,assembly.grid.pitchMm) } : {}), ...(structuralContext ? { structuralRenewal } : {}), ...(structuralContext && 'structuralFloor' in cutLayout ? { structuralFloor: { ...cutLayout.structuralFloor, ordinaryRenewalRevalidated:structuralRenewal?.status === 'computed-geometry-witnesses' } } : {}), frameFootprints: house.model.studyDoorOperation.checkedFramePieces, jointMm: assembly.section.jointMm, wearingFaceMm: assembly.section.wearFaceMm, beddingMm: assembly.section.beddingTerritoryMm,
       depthUnassignedWithinFinishMm: assembly.section.finishSupportDepthUnresolvedMm, handling, furnitureMotion,
       firstRestBoard: board.retained,
       ...(request.firstRestBoardSizeMm === undefined ? {} : { firstRestBoardTrial: board.trial }),
@@ -759,14 +790,14 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
 
 export type StudyRoomKit = ReturnType<typeof deriveStudyRoomKit>['kit']
 
-export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: unknown) {
-  const { kit, nativeWindow } = deriveStudyRoomKit(resolved, input)
+export function compileStudyRoomKit(resolved: CurrentDesignResolution, input: unknown, structuralGeometry?: NativeSWGeometry) {
+  const { kit, nativeWindow } = deriveStudyRoomKit(resolved, input, structuralGeometry)
   const wallTransition = compileStudyWallTransition(kit, nativeWindow)
   return { kit, wallTransition, roomAssembly: compileStudyRoomAssembly(kit, wallTransition) }
 }
 
 export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitter-edge' | 'furniture-access' | 'furniture-motion' = 'layout'): DrawingSceneV2 {
-  const [x, y] = kit.bands[0]
+  const x = Math.min(...kit.bands.map(band => band[0])), y = Math.min(...kit.bands.map(band => band[1]))
   const width = Math.max(...kit.bands.map(band => band[2])) - x
   const height = Math.max(...kit.bands.map(band => band[3])) - y
   const scaleDenominator = 25
@@ -799,7 +830,7 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitte
   }) ?? []
   return {
     viewId: motion ? 'ias-study-room-kit-furniture-motion' : bcrParking ? 'ias-study-room-kit-furniture-access' : useParking ? 'ias-study-room-kit-emitter-edge' : 'ias-study-room-kit-plan',
-    sourceId: kit.source.occupiedHouse, scaleDenominator,
+    sourceId: kit.structuralConsequence ? `working-house/Study/${kit.structuralConsequence.digest}` : kit.source.occupiedHouse, scaleDenominator,
     title: motion ? 'Study staged furniture motion' : bcrParking ? 'Study floor access with the BCR furniture route' : useParking ? 'Study emitter-edge renewal and chair parking' : 'Study room-kit layout',
     description: motion ? 'Original and parked furniture, straight centreline movements and the whole turning reservation.'
       : bcrParking ? 'Dashed original furniture, parked furniture outlines and floor parts that remain covered in both stages.'
@@ -807,6 +838,14 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitte
       : 'Candidate finish field, fabricated borders, rough openings and shown furniture.',
     widthMm: projection.length(width) + 24, heightMm: projection.length(height) + 34,
     primitives: [
+      ...(kit.structuralConsequence ? kit.structuralConsequence.source.native.rectanglesXYMm.map((box, index) => ({
+        kind: 'rect' as const, id: `STR/SW/concrete/${index}`, ...rect(box), stroke: 'primary' as const, fill: 'context' as const,
+        metadata: { role: 'Unselected native SW concrete body', controllingInput: kit.structuralConsequence!.source.controlPath },
+      })) : []),
+      ...(kit.structuralConsequence ? kit.structuralConsequence.finishReservations.map((box, index) => ({
+        kind: 'rect' as const, id: `STR/SW/finish-reservation/${index}`, ...rect(box), stroke: 'secondary' as const, fill: 'none' as const,
+        metadata: { role: 'Source-bound pilaster finish reservation' },
+      })) : []),
       ...kit.floor.parts.flatMap(part => part.facePieces.map((face, index) => ({
         kind: 'rect' as const, id: index ? part.id + '/shape/' + index : part.id, ...rect(face), stroke: 'secondary' as const,
         fill: blockedPartIds.has(part.id) ? 'context' as const : 'none' as const, dash: part.role === 'border' ? 'datum' as const : 'none' as const,
@@ -818,7 +857,7 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitte
       }]),
       ...kit.occupied.map(([id, box]) => ({
         kind: 'rect' as const, id: `occupied:${id}`, ...rect(useParking && id === 'study-chair' ? handling.parking.parkedChair : box),
-        stroke: 'profile' as const, fill: showFurniture && id !== 'service-emitter-study-W' ? 'none' as const : 'context' as const,
+        stroke: 'profile' as const, fill: (showFurniture || kit.structuralConsequence) && id !== 'service-emitter-study-W' ? 'none' as const : 'context' as const,
         ...(showFurniture && id !== 'service-emitter-study-W' ? { dash: 'provisional' as const } : {}),
       })),
       ...(parked ? [
@@ -844,6 +883,12 @@ export function drawStudyRoomKitPlan(kit: StudyRoomKit, view: 'layout' | 'emitte
         { kind: 'rect' as const, id: 'emitter-edge-worker-sweep', stroke: 'secondary' as const,
           dash: 'provisional' as const, fill: 'none' as const, ...rect(handling.emitterEdgeRelease.workerSweep) },
       ]),
+      ...(kit.structuralConsequence ? [
+        { kind: 'text' as const, id: 'working-room-title', x: 12, y: 8, role: 'label' as const,
+          value: `SW${kit.structuralConsequence.source.native.widthMm} · actual working Study consequence` },
+        { kind: 'text' as const, id: 'working-room-key', x: 12, y: projection.length(height) + 29, role: 'note' as const,
+          value: 'Outlines: daily furniture. Grey: SW core, emitter and fixed border. Renewal uses explicit prepared states.' },
+      ] : []),
       { kind: 'text', id: 'pitch', x: 12, y: projection.length(height) + 24, role: 'note',
         value: motion ? 'Dashed: starting positions and turning reservation · solid: translation and parking'
           : bcrParking ? `${blockedPartIds.size} parts covered in both BCR stages · ${bcrParking.deskShiftMm} mm desk shift`
@@ -860,7 +905,7 @@ export function drawStudyOrdinaryHandling(kit: StudyRoomKit, partId: string): Dr
   const part = kit.floor.parts.find(part => part.id === partId)
   if (!selected || selected.state !== 'joined-geometry-witness' || !part || !selected.boardXYXYMm
     || !selected.workerPathXYMm || !selected.panelPathWaypointDeltasMm) throw new RangeError('STUDY_ORDINARY_HANDLING_VIEW_HAS_NO_WITNESS')
-  const [x, y] = kit.bands[0]
+  const x = Math.min(...kit.bands.map(band=>band[0])), y = Math.min(...kit.bands.map(band=>band[1]))
   const width = Math.max(...kit.bands.map(band => band[2])) - x
   const height = Math.max(...kit.bands.map(band => band[3])) - y
   const projection = createPlanPaperProjection({ scaleDenominator: 25, modelBounds: { x, y, width, height }, paperOrigin: { x: 12, y: 14 } })

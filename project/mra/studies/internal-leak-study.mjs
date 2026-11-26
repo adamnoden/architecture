@@ -6,6 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {scheduleText} from '../../had/studies/current-house.mjs';
 import {deriveBoundOccupiedServiceHouse,readNativeOccupiedServiceBinding} from '../../had/studies/current-house-service-outputs.mjs';
 import {inletEnvelopeWitness} from '../../had/studies/selected-water-duties.mjs';
+import {verifyUtilityHostQualificationWithdrawal} from '../../had/studies/utility-host-boundary.mjs';
 
 const root=new URL('../../../',import.meta.url);
 const read=path=>JSON.parse(readFileSync(new URL(path,root)));
@@ -86,7 +87,19 @@ export function verifyPreFixBoundary(house){
     exteriorPortsSHA256:digest(house.model.exteriorPortGeometry),
     weatherFacesSHA256:digest(house.selectedServiceInterfaces.weatherFaces),
     selectedInterfacesSHA256:digest(house.selectedServiceInterfaces),houseExceptDeclaredChangesSHA256:digest(copy)};
-  assert.equal(observed.scheduleBlob,sourceRefresh.scheduleBlob,'Refreshed joined service schedule identity changed');
+  const qualificationWithdrawal=verifyUtilityHostQualificationWithdrawal(read('project/ias/studies/utility-host-revised-route.json'));
+  assert.equal(gitBlob(qualificationWithdrawal.sourcePath),qualificationWithdrawal.afterBlob,'Corrected IAS host bytes changed');
+  assert.equal(observed.scheduleBlob,qualificationWithdrawal.afterScheduleBlob,'Qualification-corrected joined schedule identity changed');
+  assert.equal(copy.inputs[qualificationWithdrawal.sourcePath],qualificationWithdrawal.afterBlob,'Expected corrected host input identity');
+  assert.equal(schedule.sources[qualificationWithdrawal.sourcePath],qualificationWithdrawal.afterBlob,'Expected corrected schedule host input identity');
+  // This restores one EXACT identity only after the complete host semantic
+  // delta, including both false applicability/qualification flags, is proved.
+  copy.inputs[qualificationWithdrawal.sourcePath]=qualificationWithdrawal.beforeBlob;
+  schedule.sources[qualificationWithdrawal.sourcePath]=qualificationWithdrawal.beforeBlob;
+  const qualificationRestoredObserved={...observed,scheduleBlob:gitBlobBytes(Buffer.from(JSON.stringify(schedule,null,2)+'\n')),
+    houseExceptDeclaredChangesSHA256:digest(copy)};
+  assert.equal(qualificationRestoredObserved.scheduleBlob,sourceRefresh.scheduleBlob,'Refreshed joined service schedule identity changed');
+  assert.equal(qualificationWithdrawal.beforeScheduleBlob,sourceRefresh.scheduleBlob,'Pre-withdrawal schedule anchor changed');
   assert.equal(sourceRefresh.baselineScheduleBlob,roofJoin.scheduleBlob,'Original joined schedule anchor changed');
   for(const [path,{before,after}] of Object.entries(sourceRefresh.houseInputs)){
     assert.equal(copy.inputs[path],after,'Expected joined house input identity during source refresh: '+path);
@@ -120,13 +133,14 @@ export function verifyPreFixBoundary(house){
     'Current-source boundary changed; reassess the bounded MRA result: '+key);
   assert.equal(joinedObserved.houseExceptDeclaredChangesSHA256,roofJoin.houseExceptDeclaredChangesSHA256,
     'Joined pre-water-correction house boundary changed');
-  assert.equal(observed.houseExceptDeclaredChangesSHA256,sourceRefresh.houseExceptDeclaredChangesSHA256,
+  assert.equal(qualificationRestoredObserved.houseExceptDeclaredChangesSHA256,sourceRefresh.houseExceptDeclaredChangesSHA256,
     'Current-source boundary changed; reassess the bounded MRA result: houseExceptDeclaredChangesSHA256');
-  return {preFix,sourceIdentityReconciliation:roofJoin,sourceRefresh,observed,joinedObserved,normalizedObserved,unchanged:true,
+  return {preFix,sourceIdentityReconciliation:roofJoin,sourceRefresh,qualificationWithdrawal,observed,qualificationRestoredObserved,joinedObserved,normalizedObserved,unchanged:true,
     declaredChanges:['Both foul-kitchen duties: superseded downstream reservation corrected; upstream branch stays with IAS.',
       'Both incoming-water duties: rejected status, current witness and adoption duty added; path geometry retained.',
-      'model.currentAdoptionBlockers: explicit incoming-water duty replaces the empty list.'],
-    scope:'The independently replayed 0b producer and current regenerated producer differ only at the four named house-input identities and two named receiver-input identities. That exact refresh first returns the original joined schedule and unaffected-house hashes; the preserved f794 bridge then returns the original a060 observation. Current, joined and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no blanket provenance normalization or other geometry exclusion is applied. No whole-house structural or moisture acceptance is claimed.'};
+      'model.currentAdoptionBlockers: explicit incoming-water duty replaces the empty list.',
+      'IAS host post: explicitly withdraw applicability/mechanical qualification of the retained40x40x3comparison for the actual20x20wall-unspecified post; preserve every other complete host field.'],
+    scope:'The later IAS source adds the exact guarded post non-applicability correction, with false applicability and actual mechanical qualification. Its complete other host semantics are unchanged; the compact schedule changes only that named source identity. Restoring this proved correction first returns the preserved e649 schedule and complete unaffected-house hashes. The independently replayed 0b and e649 producers then differ only at the four named house-input identities and two named receiver-input identities. That exact refresh first returns the original joined schedule and unaffected-house hashes; the preserved f794 bridge then returns the original a060 observation. Current, joined and normalized schedules and complete unaffected models are separately guarded. Only the two declared water duties and their blocker are excluded from physical comparison; no blanket provenance normalization or other geometry exclusion is applied. No whole-house structural or moisture acceptance is claimed.'};
 }
 export function retainedVolume({initialL=0,flowLmin,seconds,residualL=0,safeDrainLmin=0}) {
   for (const value of [initialL,flowLmin,seconds,residualL,safeDrainLmin])
@@ -183,6 +197,7 @@ export function deriveInternalLeakStudy() {
   const sources=Object.fromEntries([
     'project/had/studies/current-house.mjs','project/had/studies/current-house-service-outputs.mjs',
     'project/had/studies/selected-water-duties.mjs',
+    'project/had/studies/utility-host-boundary.mjs',
     'project/had/studies/inhabited-service-compose.mjs','project/had/studies/fitted-house-services.mjs',
     'project/had/studies/selected-service-interfaces.mjs','project/had/inhabited-services-selection.md',
     'project/ias/ias-03-household-water.md','project/ias/ias-03-guest-rear-wc-takeoffs.md',

@@ -76,12 +76,12 @@ interface FurnitureMotion {
     readonly ordinaryHandling?: {
       readonly schema: 'ias-study-ordinary-handling-result/1'; readonly units: 'mm';
       readonly state: 'joined-geometry-witnesses' | 'partial-geometry-witnesses'; readonly physicalAcceptance: false;
-      readonly partCount: number; readonly witnessCount: number;
+      readonly partCount: number; readonly witnessCount: number;readonly minimumBoardFixedClearanceMm?: number;
       readonly parts: readonly { readonly partId: string; readonly state: string; readonly diagnostic?: string;
         readonly stage?: string; readonly boardId?: string; readonly trimReleases?: readonly string[]; readonly boardXYXYMm?: PlanBox;
         readonly panelPathWaypointDeltasMm?: readonly Point[]; readonly workerPathXYMm?: readonly Point[];
         readonly padBearingPartIds?: readonly string[]; readonly maximumKeyReachMm?: number;
-        readonly bodyToPanelMm?: number; readonly boardPickupClearanceMm?: number; readonly bodyToBoardClearanceMm?: number;
+        readonly bodyToPanelMm?: number; readonly boardPickupClearanceMm?: number;readonly boardFixedPlanClearanceMm?: number;readonly fixedBodyClearanceMm?: number; readonly bodyToBoardClearanceMm?: number;
         readonly staging?: { readonly state: string; readonly arrivalPathXYMm?: readonly Point[]; readonly secondHandlerWithdrawalXYMm?: readonly Point[];
           readonly placement?: { readonly maximumReachMm: number; readonly carriedXYXYMm?: PlanBox }; readonly holdReserveMm?: number } }[]
     }

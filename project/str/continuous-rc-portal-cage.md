@@ -1,6 +1,8 @@
 # Continuous RC portal: actual H12 cage and cap comparison
 
-**Recommendation:** develop the one 290 mm normal-core / 200 mm upstand candidate with this NEW H12 spine. The source-bound member checks are necessary comparisons, not fabrication release. The historical rocking-plane result below is rejected against unenhanced 17 MPa compression. Continuous RC removes that mechanical gap but needs the actual metal waterstop/bar interfaces; it is not itself a capillary break.
+**Historical member/cage comparison.** The development recommendation below was superseded by the [closed-joint fabrication rejection](continuous-rc-closed-links.md). Do not resume this cage from its passing member checks. The [floor–portal reconciliation](floor-portal-reconciliation.md) owns the current development route and remaining joined-house proof.
+
+The preceding recommendation was to develop the 290 mm normal-core / 200 mm upstand candidate with this H12 spine. Its source-bound member checks did not establish fabrication release. The historical rocking-plane result below is rejected against unenhanced 17 MPa compression. Continuous RC removes that mechanical gap but needs the actual metal waterstop/bar interfaces; it is not itself a capillary break.
 
 The [native helper](studies/continuous_rc_cage.py), [actual action receipts](studies/continuous-rc-cage-actions.json), [recomputed proof](studies/continuous-rc-cage-proof.json), [drawing](studies/continuous-rc-cage.svg) and tests are new isolated files. Every native source tuple was checked against its recorded immutable producer commit before receipt creation. Historical pre-exposure-audit actions remain explicitly historical. Only source-loaded cases actually shown below are claimed; no 96-state structural sweep or full-house proof is invented.
 

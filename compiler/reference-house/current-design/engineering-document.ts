@@ -1,3 +1,4 @@
+import {admitStoreDrainChoice} from './inlet-store-drain.js'
 import {readGroundPocketSettings} from './structural-ground-pocket-settings.js'
 import {runGroundPocketComparison} from './structural-ground-pockets.js'
 import { createHash } from 'node:crypto'
@@ -40,6 +41,7 @@ const additionalImplementationFiles = [
   'project/oas/studies/study-dry-seam.mjs',
   'project/ias/studies/study-furniture-motion.py',
   'project/ias/studies/study-floor-handling.py',
+  'project/ias/studies/study-structural-renewal.py',
   'project/bcr/studies/bay-interface-study.py',
   'project/ias/studies/workable-floor-tiles.mjs',
   'project/ias/studies/workable-lining-dimensions.mjs',
@@ -52,6 +54,13 @@ const additionalImplementationFiles = [
   'project/str/studies/vertical_floor_plate.py',
   'project/str/studies/vertical_floor_numerics.py',
   'project/str/studies/service_room_ground.py',
+  'project/str/studies/current_finite_rc_joint.py',
+  'project/str/studies/finite_joint_geometry.py',
+  'project/str/studies/finite_joint_membrane_trace.py',
+  'project/str/studies/finite_joint_normal_observer.py',
+  'project/str/studies/finite_floor_contour.py',
+  'project/str/studies/finite_rc_joint_solid.py',
+  'project/str/studies/finite_joint_contact_trace.py',
   'project/str/studies/vertical_floor_views.py',
   'project/str/studies/vertical-floor-requirements.txt',
   'project/str/studies/distributed_floor_compatibility.py',
@@ -86,7 +95,7 @@ const insertFields = ['eastEdgeMm', 'headZMm', 'plantPressureAxisXMm', 'plantVen
 const faultFields = ['branches'] as const
 const assemblyFields = ['plantSouthLegLevelMm', 'splitRoof', 'supportRails'] as const
 const removalFields = ['branch', 'drawMm', 'roofAccess', 'washer', 'utilityTaperRemoved', 'preparation'] as const
-const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'ordinaryHandling', 'frameFootClearanceMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening'] as const
+const studyFields = ['pitchMm', 'wearingFace', 'finishDepthMm', 'groundDeckLevelLossMm', 'firstRestBoardSizeMm', 'ordinaryHandling', 'frameFootClearanceMm', 'floorBorderMinimumMm', 'installedServices', 'floorWorkerTopMm', 'floorPosture', 'wallPanelWidthMm', 'wallFace', 'wallReleaseMm', 'opening', 'oakComposition'] as const
 
 function object(value: unknown): value is Record<string, unknown> {
   return value !== null && typeof value === 'object' && Object.getPrototypeOf(value) === Object.prototype
@@ -219,7 +228,7 @@ function admitStages(value: unknown): EngineeringStages {
     ...(Object.hasOwn(value, 'inletSillInsert') ? { inletSillInsert: settings(value.inletSillInsert, insertFields, 'inlet sill insert') } : {}),
     ...(Object.hasOwn(value, 'inletFault') ? { inletFault: settings(value.inletFault, faultFields, 'inlet fault') } : {}),
     ...(Object.hasOwn(value, 'fixedInlet') ? { fixedInlet: settings(value.fixedInlet, Object.keys(readFixedInletSettings()), 'fixed inlet') } : {}),
-    ...(Object.hasOwn(value, 'inletSourceEnvelope') ? { inletSourceEnvelope: (()=>{const stage=settings(value.inletSourceEnvelope,[...inletSourceEnvelopeFields,'splitPlantRoom'],'inlet source envelope');return{...stage,...(Object.hasOwn(stage,'splitPlantRoom')?{splitPlantRoom:admitSplitPlantRoomChoice(stage.splitPlantRoom)}:{})}})() } : {}),
+    ...(Object.hasOwn(value, 'inletSourceEnvelope') ? { inletSourceEnvelope: (()=>{const stage=settings(value.inletSourceEnvelope,[...inletSourceEnvelopeFields,'splitPlantRoom','storeDrain'],'inlet source envelope');return{...stage,...(Object.hasOwn(stage,'storeDrain')?{storeDrain:admitStoreDrainChoice(stage.storeDrain)}:{}),...(Object.hasOwn(stage,'splitPlantRoom')?{splitPlantRoom:admitSplitPlantRoomChoice(stage.splitPlantRoom)}:{})}})() } : {}),
     ...(Object.hasOwn(value, 'inletCabinet') ? { inletCabinet: settings(value.inletCabinet, inletCabinetStageFields, 'inlet cabinet') } : {}),
     ...(Object.hasOwn(value, 'inletRemovals') ? { inletRemovals: branchSettings(value.inletRemovals, removalFields, 'inlet removal') } : {}),
     ...(Object.hasOwn(value, 'inletCovers') ? { inletCovers: branchSettings(value.inletCovers, inletFields, 'inlet cover') } : {}),
@@ -230,7 +239,7 @@ function admitStages(value: unknown): EngineeringStages {
   return stages
 }
 
-export async function compileEngineeringDocument(input: unknown) {
+function prepareEngineeringDocument(input: unknown) {
   if (!exactKeys(input, ['schema', 'design', 'bindings', 'stages']) || input.schema !== 'current-engineering-document/1') {
     throw new TypeError('Expected a versioned current engineering document with design, source bindings and stages')
   }
@@ -254,6 +263,16 @@ export async function compileEngineeringDocument(input: unknown) {
     planDigest: compile.source.planDigest,
     sourceBindingsDigest: sha256SemanticFingerprint(observedBindings),
   }
+  return { resolved, compile, observedBindings, stages, documentIdentity }
+}
+
+/** Same admission and identity as the heavy compiler, without running analysis. */
+export function readEngineeringDocumentIdentity(input: unknown) {
+  return prepareEngineeringDocument(input).documentIdentity
+}
+
+export async function compileEngineeringDocument(input: unknown) {
+  const { resolved, compile, observedBindings, stages, documentIdentity } = prepareEngineeringDocument(input)
   const engineering: {
     structuralSuccessor?: Awaited<ReturnType<typeof compile.structuralSuccessorCase>>
     distributedFloor?: Awaited<ReturnType<typeof compile.distributedFloorCase>>
@@ -549,9 +568,9 @@ export async function compileEngineeringDocument(input: unknown) {
   }
   if (stages.inletSourceEnvelope) {
     const request = await compile.readInletSourceEnvelopeCase()
-    const {splitPlantRoom,...sourceSettings}=stages.inletSourceEnvelope,{splitPlantRoom:_boundCurrentPlantRoom,...baseCase}=request.sourceEnvelope
+    const {splitPlantRoom,storeDrain,...sourceSettings}=stages.inletSourceEnvelope,{splitPlantRoom:_boundCurrentPlantRoom,storeDrain:_boundCurrentStoreDrain,...baseCase}=request.sourceEnvelope
     savedInlet={ ...baseCase,
-      ...(splitPlantRoom?{splitPlantRoom:admitSplitPlantRoomChoice(splitPlantRoom)}:{}),settings: { ...request.sourceEnvelope.settings, ...sourceSettings } }
+      ...(splitPlantRoom?{splitPlantRoom:admitSplitPlantRoomChoice(splitPlantRoom)}:{}),...(storeDrain?{storeDrain:admitStoreDrainChoice(storeDrain)}:{}),settings: { ...request.sourceEnvelope.settings, ...sourceSettings } }
     engineering.inletSourceEnvelope = await compile.inletSourceEnvelopeCase(savedInlet, engineering.groundSection, engineering.houseVerticalProfile)
     recordResult('inletSourceEnvelope', stages.inletSourceEnvelope, engineering.inletSourceEnvelope, [...(engineering.groundSection?['groundSection']:[]),...(engineering.houseVerticalProfile?['houseVerticalProfile']:[])])
     const reason = 'The source-envelope comparison authors boundary restrictions and a whole internal service-hub replacement. Neither the retained occupied network nor earlier inlet/cabinet outputs include that source or room; their former fault and operating claims are withheld.'
@@ -574,8 +593,14 @@ export async function compileEngineeringDocument(input: unknown) {
     coordinationDiagnostics.push(...engineering.groundPocketLoads.diagnostics.map(row=>({...row,state:'uncoordinated-comparisons' as const,stages:['groundPocketLoads','floorSection','inletSourceEnvelope']})))
   }
   if (stages.studyRoomKit) {
-    engineering.studyRoomKit = await compile.studyRoomKit({ schema: 'ias-study-room-kit-case/1', units: 'mm', ...stages.studyRoomKit })
-    recordResult('studyRoomKit', stages.studyRoomKit, engineering.studyRoomKit)
+    engineering.studyRoomKit = await compile.studyRoomKit({ schema: 'ias-study-room-kit-case/1', units: 'mm', ...stages.studyRoomKit }, stages.distributedFloor)
+    recordResult('studyRoomKit', stages.studyRoomKit, engineering.studyRoomKit, stages.distributedFloor ? ['stages.distributedFloor'] : [])
+    const renewal = engineering.studyRoomKit.kit.floor.ordinaryHandling
+    if (renewal && 'diagnostics' in renewal && renewal.diagnostics.some(issue => issue.code === 'IAS_ORDINARY_RENEWAL_REQUIRES_CURRENT_PART_PLAN')) {
+      coordinationDiagnostics.push({ code: 'STUDY_RENEWAL_PLAN_INAPPLICABLE', state: 'uncoordinated-comparisons',
+        stages: ['distributedFloor', 'studyRoomKit'],
+        message: 'The saved handling plan does not name the current floor part family. All former renewal witnesses are withheld; author and replay a current plan before claiming renewal.' })
+    }
   }
   if (stages.studyLighting) {
     engineering.studyLighting = await compile.studyLighting({ schema: 'ias-study-lighting-case/1', units: 'mm', ...stages.studyLighting }, engineering.studyRoomKit!)
@@ -601,6 +626,7 @@ export async function compileEngineeringDocument(input: unknown) {
       stages: ['floorSection'], message: 'STR/wet-wall-support: '+engineering.floorSection.wetBeamCutRecovery.scope })
     if (engineering.floorSection.wetGridCutRecovery) coordinationDiagnostics.push({ code: 'WET_GRID_COMPLETE_ENVELOPE_UNAVAILABLE', state: 'uncoordinated-comparisons',
       stages: ['floorSection'], message: 'STR/wet-wall-support/grid: '+engineering.floorSection.wetGridCutRecovery.scope })
+    if (engineering.floorSection.finiteJointComparison) coordinationDiagnostics.push(...engineering.floorSection.finiteJointComparison.diagnostics.map(row=>({...row,state:'uncoordinated-comparisons' as const,stages:['floorSection']})))
     if (engineering.floorSection.lowerMasonryComparison) coordinationDiagnostics.push(...engineering.floorSection.lowerMasonryComparison.diagnostics.map(row=>({...row,state:'uncoordinated-comparisons' as const,stages:['floorSection']})))
     if (engineering.floorSection.cageComparison) coordinationDiagnostics.push(...engineering.floorSection.cageComparison.diagnostics.map(row => ({
       ...row, stages: ['floorSection'],

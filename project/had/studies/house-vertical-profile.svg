@@ -13,7 +13,7 @@
 <rect x="165" y="953.65" width="320" height="5.85" fill="#e9ebdb" stroke="#536b70"/>
 <rect x="165" y="952.3" width="320" height="1.3499999999999999" fill="#8b7f6e" stroke="#536b70"/>
 <rect x="165" y="649.0" width="320" height="18.0" fill="#a4b7b4" stroke="#536b70"/>
-<path d="M355,1016.2 L355,681.4000000000001" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M355,968.5 L355,681.4000000000001" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
 <rect x="335" y="649.0" width="130" height="31.5" fill="#d8b6a1" stroke="#536b70"/>
 <path d="M335,680.5 L505,680.5" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
 <text x="510" y="696.5" font-size="14">Wet beam soffit 3550 · unadopted</text>
@@ -38,13 +38,13 @@
 <path d="M155,174.22056139228334 L455,174.22056139228334" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
 <text x="460" y="171.22056139228334" font-size="13">MAT-weather-cap-apex 9175.3</text>
 <text x="55" y="1050" font-size="16">First height above authored grade 4130; storey interval3450.</text>
-<text x="55" y="1078" font-size="16">Cap-to-first-soffit core height3880; no source3350 reuse.</text>
+<text x="55" y="1078" font-size="16">Dry base350 to first soffit: member height3350; forces unproved.</text>
 <text x="55" y="1106" font-size="15">Front 1:20: rise680, sloping run13600, reservation17200.</text>
 <text x="55" y="1134" font-size="14">Wet plinth[-180, 0]; mineral[0, 150]; RC[150, 350]; glass[350, 450].</text>
-<text x="55" y="1162" font-size="14">Service[450, 515]; finish[515, 530]; waterstop CONCEPT[130, 150].</text>
+<text x="55" y="1162" font-size="14">Service[450, 515]; finish[515, 530]; full mineral separation[0, 150].</text>
 <text x="55" y="1190" font-size="15">North arch spring2780; crown3380.</text>
 <text x="55" y="1218" font-size="15">Exposed grade-to-FFL envelope680; no walking-plane occlusion credit.</text>
-<text x="55" y="1246" font-size="14">Wet soffit3550; local clear3020; post top3540; extension530.</text>
+<text x="55" y="1246" font-size="14">Wet soffit3550; local clear3020; post top3540; extension0.</text>
 <text x="55" y="1480" font-size="19">Ground detail · source900-wide spine girder /140 core</text>
 <rect x="70.0" y="1963.0" width="450.0" height="157.5" fill="#8eaaa6" stroke="#536b70"/>
 <rect x="70.0" y="1900.0" width="450.0" height="62.99999999999999" fill="#8eaaa6" stroke="#536b70"/>
@@ -64,8 +64,8 @@
 <text x="560" y="1905.0" font-size="13">Mineralbase /wetplinthtop 0</text>
 <path d="M520.0,1963.0 L555,1963.0" fill="none" stroke="#49636a" stroke-width="2"/>
 <text x="560" y="1968.0" font-size="13">Retained coldgridtop -180</text>
-<path d="M70.0,1851.0 L520.0,1851.0" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
-<text x="55" y="2140" font-size="13">Dashed red: new top20 waterstop concept. No hidden continuous bars or accepted air/water joint.</text>
+<path d="M70.0,1873.75 L520.0,1873.75" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="55" y="2140" font-size="13">Dashed red: full mineral course below dry slab. No column/bar bypass or accepted bearing/lateral/uplift joint.</text>
 <text x="930" y="115" font-size="21">Ground FFL715 · service zone250</text>
 <path d="M930,1013.5 L1690,1013.5" fill="none" stroke="#8d704b" stroke-width="2"/>
 <text x="1360" y="1035.5" font-size="14">Authored grade-150; actual site unknown</text>
@@ -77,7 +77,7 @@
 <rect x="1040" y="937.0" width="320" height="22.5" fill="#e9ebdb" stroke="#536b70"/>
 <rect x="1040" y="935.65" width="320" height="1.3499999999999999" fill="#8b7f6e" stroke="#536b70"/>
 <rect x="1040" y="632.35" width="320" height="18.0" fill="#a4b7b4" stroke="#536b70"/>
-<path d="M1230,1016.2 L1230,664.75" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M1230,968.5 L1230,664.75" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
 <rect x="1210" y="632.35" width="130" height="31.5" fill="#d8b6a1" stroke="#536b70"/>
 <path d="M1210,663.85 L1380,663.85" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
 <text x="1385" y="679.85" font-size="14">Wet beam soffit 3735 · unadopted</text>
@@ -102,13 +102,13 @@
 <path d="M1030,157.57056139228337 L1330,157.57056139228337" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
 <text x="1335" y="154.57056139228337" font-size="13">MAT-weather-cap-apex 9360.3</text>
 <text x="930" y="1050" font-size="16">First height above authored grade 4315; storey interval3450.</text>
-<text x="930" y="1078" font-size="16">Cap-to-first-soffit core height4065; no source3350 reuse.</text>
+<text x="930" y="1078" font-size="16">Dry base350 to first soffit: member height3535; forces unproved.</text>
 <text x="930" y="1106" font-size="15">Front 1:20: rise865, sloping run17300, reservation20900.</text>
 <text x="930" y="1134" font-size="14">Wet plinth[-180, 0]; mineral[0, 150]; RC[150, 350]; glass[350, 450].</text>
-<text x="930" y="1162" font-size="14">Service[450, 700]; finish[700, 715]; waterstop CONCEPT[130, 150].</text>
+<text x="930" y="1162" font-size="14">Service[450, 700]; finish[700, 715]; full mineral separation[0, 150].</text>
 <text x="930" y="1190" font-size="15">North arch spring2965; crown3565.</text>
 <text x="930" y="1218" font-size="15">Exposed grade-to-FFL envelope865; no walking-plane occlusion credit.</text>
-<text x="930" y="1246" font-size="14">Wet soffit3735; local clear3020; post top3725; extension715.</text>
+<text x="930" y="1246" font-size="14">Wet soffit3735; local clear3020; post top3725; extension185.</text>
 <text x="930" y="1480" font-size="19">Ground detail · source900-wide spine girder /140 core</text>
 <rect x="945.0" y="1963.0" width="450.0" height="157.5" fill="#8eaaa6" stroke="#536b70"/>
 <rect x="945.0" y="1900.0" width="450.0" height="62.99999999999999" fill="#8eaaa6" stroke="#536b70"/>
@@ -128,8 +128,8 @@
 <text x="1435" y="1905.0" font-size="13">Mineralbase /wetplinthtop 0</text>
 <path d="M1395.0,1963.0 L1430,1963.0" fill="none" stroke="#49636a" stroke-width="2"/>
 <text x="1435" y="1968.0" font-size="13">Retained coldgridtop -180</text>
-<path d="M945.0,1851.0 L1395.0,1851.0" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
-<text x="930" y="2140" font-size="13">Dashed red: new top20 waterstop concept. No hidden continuous bars or accepted air/water joint.</text>
+<path d="M945.0,1873.75 L1395.0,1873.75" fill="none" stroke="#a6624f" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="930" y="2140" font-size="13">Dashed red: full mineral course below dry slab. No column/bar bypass or accepted bearing/lateral/uplift joint.</text>
 <text x="45" y="1278" font-size="19">Roof lines are separate arithmetic assembly references. Weather roof shape and complete house height are withheld.</text>
 <text x="45" y="1314" font-size="18">Ground floor/wall closure, outside wet leaf, DPC/air/gas/thermal returns and new receiving load path remain unresolved.</text>
 <text x="45" y="1350" font-size="18">Source firstFFL3450 = RC3370 +80. Occupied interval3450; wet overlay is unadopted.</text>

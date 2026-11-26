@@ -69,26 +69,30 @@
     "materialAdmission": "NOT_ADMITTED: painted metal, insulation, wiring, foot switch, supplied lamp and full constituents remain unresolved."
   },
   "wallLamp": {
-    "manufacturer": "Astro",
-    "reference": "Backplate 3 1367003 with Ios 250 shade 5028001",
-    "url": "https://www.astrolighting.com/products/1367003-backplate-3",
-    "shadeUrl": "https://www.astrolighting.com/products/5028001-ios-250-shade",
-    "instructions": "https://assets.astrolighting.com/pdfs/original/82244-instructions-backplate3-issue2.pdf",
-    "shadeWidthMm": 144,
-    "shadeHeightMm": 250,
-    "reservedCompleteProjectionMm": 180,
-    "projectionAuthority": "Project requirement envelope, not a measured manufacturer assembled dimension; confirm complete shade/bracket/clearance before fabrication.",
-    "sourceType": "Replaceable E27, Class I earthed, wired-in, IP20; no separate driver required; dimming depends on lamp.",
-    "materialAdmission": "NOT_ADMITTED: fabric shade, backing/binders, coating, socket, cable insulation, terminals and supplied lamp need complete constituent admission.",
-    "instructionsCheckedDate": "2026-11-22",
-    "mountingSequenceAuthority": "Astro82244Issue2: fixture body releases from retained bracket at two side screws; terminal access and earth require isolation. No bracket hole pitch or complete installed mass is supplied by this witness.",
-    "datasheet": "https://assets.astrolighting.com/pdfs/original/5346-7170-backplate3-datasheet-issue1.pdf",
-    "datasheetAuthority": "Manufacturer current product link serves legacy7170sheet22May2013: geometry witness only, not current complete assembly identity or installed mass.",
+    "manufacturer": "Anglepoise",
+    "reference": "Type80W1, manufacturer-supported external cable/plug configuration; colour unselected",
+    "url": "https://www.anglepoise.com/product/type-80-wall-light-matte-black/",
+    "instructions": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf",
+    "shadeWidthMm": 145,
+    "shadeHeightMm": 160,
+    "reservedCompleteProjectionMm": 260,
+    "wallPlateDiameterMm": 90,
+    "leadLengthMm": 425,
+    "leadLengthAuthority": "Authored external flex length, not factory stock length. Workshop preparation follows manufacturer optional cable/plug configuration.",
+    "sourceType": "ClassII, integrated shade switch, max10W LED E27. Manufacturer V5 explicitly permits external cable/plug using grommet100141 and strain relief101892 at provided Wago connectors.",
+    "externalPlugConfigurationSupported": true,
+    "materialAdmission": "NOT_ADMITTED: paint, flex, plug, fuse, lampholder, switch, supplied lamp and all constituents remain unresolved.",
+    "projectionAuthority": "Current official product maximum260mm reach; actual aiming and illuminated-object minimum200mm still require coordinated use.",
     "terminalGeometryEvidence": {
-      "source": "https://assets.astrolighting.com/pdfs/original/82244-instructions-backplate3-issue2.pdf",
-      "checkedDate": "2026-11-24",
-      "finding": "Factory enclosed termination and earthing remain required; the installation instructions do not supply a dimensioned terminal/bracket model for this new case. No invented terminal coordinate or mechanical connection is admitted."
-    }
+      "source": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf",
+      "checkedDate": "2026-11-26",
+      "finding": "Explicit external cable/plug option; grommet100141 and eyelet101892 mandatory. Exact supplied connector reference/CSA and backplate CAD not published here; no direct fixed2.5mm2 terminal-fit assumption."
+    },
+    "authoredDownwardEnvelopeZFromMountMm": [
+      -205,
+      45
+    ],
+    "poseEnvelopeAuthority": "Generous authored maintenance pose: published160mm shade plus90mm plate, with all shade below plate top; not productCAD or full90up/60down aiming qualification."
   },
   "projectRequirements": {
     "fixedBoundaryDepthMm": 7.5,
@@ -171,11 +175,353 @@
   "localHomeRunCandidate": {
     "bayWidthMm": 410,
     "tubeWallMm": 1,
-    "routeGapMm": 11,
+    "routeGapMm": 21,
     "lowerPortRearInsetMm": 20,
     "maximumClipSpanMm": 300,
     "clipEndInsetMm": 50,
-    "stationOffsetXMm": 12
+    "stationOffsetXMm": 49,
+    "carrierCentrePlateOffsetXMm": 0,
+    "minimumResidualMm": 5,
+    "upperBendClipFraction": 0.5,
+    "additionalCornerDepthMm": 20,
+    "accessoryExtensionMm": 16,
+    "upperBoxBacksetMm": 0,
+    "upperPortRearInsetMm": 20,
+    "mainRestSouthShiftMm": 60,
+    "caseRestSizeMm": 120,
+    "fixedIslandHeightMm": 120,
+    "sourceRiseMm": 220,
+    "upperAccessoryExtensionMm": 16,
+    "upperCentreOffsetZMm": -300,
+    "moduleRestFrontExtensionMm": 50,
+    "moduleHandlingSideAllowanceMm": 10,
+    "moduleHandlingBelowAllowanceMm": 75
   },
-  "localHomeRunAuthority": "Unselected conventional separate home-run comparison. Current manufacturer box envelope is reused, but each lower side port is an authored requirement20mm from the rear; actual HGS06 knockout coordinates, matched collars, internal devices, conductors and source feed remain unqualified. Three independent skirt-top interfaces do not select circuit topology. Tube wall, clip spacing and gross collar stock are project comparison requirements, not product ratings."
+  "localHomeRunAuthority": "Unselected conventional95mm station; sourcebox and two radial nets specified by shared circuit method.375mm tube origins clear source gland transitions; field boundary remains150mm. Supplied entries, device/earth CAD, physical installation and material admission remain unearned.",
+  "localHomeRunSupportReference": {
+    "schema": "ias-lighting-support-reference/1",
+    "checkedDate": "2026-11-26",
+    "saddle": {
+      "manufacturer": "D-Line",
+      "reference": "SAFE-DCOND20 galvanised dimensional witness",
+      "url": "https://d-line-it.com/conduit-saddles/",
+      "lengthMm": 86.19,
+      "widthMm": 20,
+      "formedHeightMm": 23,
+      "standOffMm": 3,
+      "qualification": "Manufacturer exterior dimensions and stand-off only. Actual use on the R152 bend, complete constituents/mass, anchor/support and tab/tool/human renewal remain unqualified; no fire rating is inherited."
+    },
+    "driver": {
+      "manufacturer": "Wera",
+      "reference": "355 PZ2x100,05009315001",
+      "url": "https://hybris-media.wera.de/download/pdfgenerator-datasheets/en/05009315001.pdf",
+      "page": 1,
+      "documentDate": "2026-11-11",
+      "lengthMm": 205,
+      "maximumDiameterMm": 37,
+      "bladeLengthMm": 100,
+      "bladeDiameterMm": 6,
+      "qualification": "Conservative full tool cylinder; screw drive and actual engagement/hand force remain installation requirements. No live work is permitted."
+    },
+    "boxExtension": {
+      "manufacturer": "Barton Engineering",
+      "base": "BCC14RE47mm1gang",
+      "extension": "BCEXT1G1616mm1gang",
+      "url": "https://barton-engineering.co.uk/bs-switch-and-socket-box/",
+      "checkedDate": "2026-11-26",
+      "baseWidthMm": 72,
+      "baseHeightMm": 72,
+      "baseDepthMm": 47,
+      "extensionDepthMm": 16,
+      "material": "Pre-coated galvanised steel catalogue description; complete constituents and installed qualification unadmitted.",
+      "qualification": "Nominal envelopes only; actual side-entry coordinates, mating hardware, complete supplied mass, device/earth connections and complete assembly protection remain unqualified."
+    }
+  },
+  "circuitDesign": {
+    "schema": "ias-study-circuit-design/1",
+    "phase": "L3",
+    "nominalVoltageV": 230,
+    "cmin": 0.95,
+    "bendRadiusMm": 50,
+    "pitchMm": 40,
+    "highLevelMm": 2925,
+    "corridorYMm": 3475,
+    "spineYMm": 2350,
+    "wcXMm": 9100,
+    "studyXMm": 1000,
+    "riserXMm": 1220,
+    "boxSizeMm": [
+      225,
+      100,
+      75
+    ],
+    "boxRearMm": 8,
+    "boxBottomMm": 175,
+    "toolDiameterMm": 49,
+    "tailOrderAllowanceMm": 150,
+    "clearanceMm": 5,
+    "settingMm": 5,
+    "combinedRatingFactor": 0.6,
+    "maximumFillFraction": 0.4,
+    "socket": {
+      "way": "DB-UTILITY/L3/STUDY-SOCKETS",
+      "article": "HagerADB916R",
+      "ratedA": 16,
+      "cable": "Pyrotenax2L2.5",
+      "dropFraction": 0.05
+    },
+    "lighting": {
+      "way": "DB-UTILITY/L3/STUDY-LIGHTING",
+      "article": "HagerADB906R",
+      "ratedA": 6,
+      "cable": "Pyrotenax2L2.5",
+      "dropFraction": 0.03
+    },
+    "cables": {
+      "Pyrotenax2L2.5": {
+        "diameterMm": 6.6,
+        "areaMm2": 2.5,
+        "exposedRatingA": 30,
+        "mVPerAM": 17,
+        "r1OhmKm": 7.41,
+        "r2OhmKm": 2.53,
+        "sheathMm2": 8.2,
+        "kgKm": 187
+      },
+      "Pyrotenax2L1.5": {
+        "diameterMm": 5.7,
+        "areaMm2": 1.5,
+        "exposedRatingA": 22.5,
+        "mVPerAM": 28,
+        "r1OhmKm": 12.1,
+        "r2OhmKm": 3.35,
+        "sheathMm2": 6.3,
+        "kgKm": 136
+      }
+    },
+    "gland": {
+      "threadMm": 20,
+      "projectionMm": 21,
+      "potMm": 16.7,
+      "potDiameterMm": 14.8,
+      "locknutCornersMm": 27.7
+    },
+    "terminal": {
+      "reference": "Wago221-413, separately retained labelled cells; holder/tool CAD unqualified",
+      "maximumMm2": 4,
+      "ratedA": 32,
+      "ratedV": 450,
+      "reservationMm": [
+        25,
+        25,
+        20
+      ]
+    },
+    "evidence": [
+      {
+        "id": "bare-MI",
+        "url": "https://www.chemelex.com/en-gb/pyrotenax/products/bare-fire-survival-mi-wiring-cable",
+        "finding": "Current copper/MgO light-duty500V family. No fire-survival or installed circuit claim.",
+        "retrieval": "Official page opened26Nov2026."
+      },
+      {
+        "id": "MI-sizing",
+        "url": "https://www.nvent.com/sites/default/files/acquiadam/assets/PYROTENAX-SB-H80127-MICC-EN.pdf",
+        "finding": "Manufacturer2018table: bare2L1.5 diameter5.7mm/22.5A/28mV/A/m/136kg/km;2L2.5 diameter6.6mm/30A/17mV/A/m/187kg/km. Exposed-touch70C/30C basis.",
+        "retrieval": "Official indexed manufacturer text recovered; directPDF40426Nov2026. Current supplied revision unqualified."
+      },
+      {
+        "id": "MI-resistance",
+        "url": "https://www.nvent.com/sites/default/files/acquiadam/assets/Pyrotenax-DS-CDE0935-PyroMIInfoSheet-EN.pdf",
+        "finding": "Table8:2L1.5R1/R2=12.1/3.35ohm/km,sheath6.3mm2;2L2.5=7.41/2.53ohm/km,sheath8.2mm2.1.21factor at70C.",
+        "retrieval": "Official indexed table recovered; directPDF40426Nov2026; supplied revision unresolved."
+      },
+      {
+        "id": "MI-bend",
+        "url": "https://www.nvent.com/sites/default/files/acquiadam/assets/Pyrotenax-IM-CDE0937-MI-EN.pdf",
+        "finding": "Ordinary6diameter bend conservatively measured at cable inside surface. Independent support, matched sealed ends; no repeated flex or multibend pull-through.",
+        "retrieval": "Official indexed text and prior MATmanufacturer inspection; directPDF404atcheck."
+      },
+      {
+        "id": "MI-ends",
+        "url": "https://www.nvent.com/sites/default/files/acquiadam_assets/2021-01/PYROTENAX-IM-CDE0923-MiFireSurvivalCable-EN.pdf",
+        "finding": "Size20RGM11mm thread/~21mm projection;27.7mm locknut corners;14.8×16.7mm sealpot. RPSL earthtail, PVC sleeves/closures and compound remain unadmitted.",
+        "retrieval": "Manufacturer-authored2018/2020manual retained in owning MATresult; current revision/assembly unqualified."
+      },
+      {
+        "id": "sourcebox",
+        "url": "https://barton-engineering.co.uk/bs-adaptable-box/",
+        "finding": "Plain galvanised steel225×100×75 box and M5×8 lid listed. New entry pattern is designed setout, not a fictitious stock knockout.",
+        "retrieval": "Official page opened26Nov2026."
+      },
+      {
+        "id": "B16",
+        "url": "https://hager.com/uk/products/h/adb916r-rcbo-1m-1p-n-6ka-b-16a-30ma-a",
+        "finding": "B16,30mA TypeA,6kA switched-neutral reference. Board compatibility/energy/supply actuals remain open.",
+        "retrieval": "Official product opened26Nov2026."
+      },
+      {
+        "id": "B6",
+        "url": "https://hager.com/uk/products/h/adb906r-rcbo-1m-1p-n-6ka-b-6a-30ma-a",
+        "finding": "B6,30mA TypeA,6kA;1..16mm2 rigid terminals;85×17.7×70mm. No board/installed acceptance.",
+        "retrieval": "Official product opened26Nov2026."
+      },
+      {
+        "id": "RCBO-IOM",
+        "url": "https://assets.hager.com/step-content/P/HA_76743820/Document/std.lang.all/ID1_DD_RCBO_6LE007687A.pdf",
+        "finding": "Switched-neutral device; no shared downstream neutral. Locking accessoryMZN175 and actual testing instructions retained. DIN fit alone is insufficient.",
+        "retrieval": "Official2025PDF opened and inspected26Nov2026."
+      },
+      {
+        "id": "terminal",
+        "url": "https://www.wago.com/gb/products/electrical-interconnections/splicing-connectors-221",
+        "finding": "221series solid/stranded0.2..4mm2, up to32A/450V.25×25×20 is an authored holder/tool reservation, not productCAD or constituent admission.",
+        "retrieval": "Official page opened26Nov2026."
+      },
+      {
+        "id": "switch",
+        "url": "https://forbesandlomax.com/uk/wp-content/uploads/sites/2/2024/08/The-Rocker-Switch.pdf",
+        "finding": "20A1gang2way used1way;86mm plate,47mm recommended box; published terminal capacities3x2.5mm2 and1x6mm2. Actual COM/L1setout and hidden materials remain unqualified.",
+        "retrieval": "Official2024PDF opened26Nov2026."
+      },
+      {
+        "id": "TN-loop",
+        "url": "https://electrical.theiet.org/wiring-matters/years/2024/100-may-2024/why-are-the-values-of-maximum-earth-fault-loop-impedance-different/",
+        "finding": "0.95minimum-voltage/hot design method; do not silently multiply hot design by0.8field-test factor. Exact Ia and actual upstream Ze PLUS joints remain conditions.",
+        "retrieval": "Official IETarticle opened26Nov2026."
+      },
+      {
+        "id": "fault-energy",
+        "url": "https://electrical.theiet.org/wiring-matters/years/2026/111-october-2026/the-adiabatic-equation-in-regulation-54313-of-bs-76712018plusa42026/",
+        "finding": "Actual fault range and device letthrough must join applicable conductor/sheath/termination withstand. Icn/class3 alone is not an adiabatic pass.",
+        "retrieval": "Official current IETarticle opened26Nov2026."
+      },
+      {
+        "id": "counterhold",
+        "url": "https://www.bahco.com/sea_en/22-mm-x-24-mm-double-open-end-wrench-with-chrome-finish-240-mm-6m-22-24.html",
+        "finding": "6M-22-24 fits22AFgland/24AFlocknut;240mm length,49mm maximum head,7.4mm thickness. Full head used for source rear AND side checks. Handle/counterhold/human motion remains unqualified.",
+        "retrieval": "Official manufacturer table opened26Nov2026."
+      },
+      {
+        "id": "lamp-current-instructions",
+        "url": "https://assets.astrolighting.com/pdfs/original/82244-instructions-backplate3-issue2.pdf",
+        "finding": "Current official Backplate3issue2 instructions linked from1367003 page; ClassI wired fixture. Exact terminal CSA and factory tail withstand remain unconfirmed; no2.5mm2 fit claim.",
+        "retrieval": "Official product and current instructions link opened26Nov2026; PDF has no extractable text and direct download403."
+      },
+      {
+        "id": "generic-class3-comparison",
+        "url": "https://library.e.abb.com/public/e8cda48862fb424898627405b0276986/B_ELSB_Catalogue-Technical_2024_1st_Edition.pdf",
+        "finding": "Manufacturer summary: class3 B<=16A at6kA permits35000A2s. This single generic point does not qualify actual HagerRCBO energy across the fault range.",
+        "retrieval": "Official manufacturer indexed table opened26Nov2026."
+      },
+      {
+        "id": "socket-terminals",
+        "url": "https://forbesandlomax.com/uk/wp-content/uploads/sites/2/2020/02/13amp-Sockets-1.pdf",
+        "finding": "Current April2026 sheet: single13A switched or unswitched body23mm,47mm recommended box;L/N/E3x2.5mm2,3x4mm2,2x6mm2stranded. Model conservatively accepts rigidmax4; actual terminal position/tool fit remains unqualified.",
+        "retrieval": "Official current sheet opened26Nov2026 from manufacturer sockets supporting documents."
+      },
+      {
+        "id": "plugged-wall-cassette",
+        "url": "https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/",
+        "finding": "Current complete Type75Mini plug-in family:130mm shade,150mm shade height,230mm maximum reach and75mm wall plate. Fixed lighting MI ends at conventional single13A outlet on B6; no direct2.5mm2 lamp-terminal adapter. Actual supplied plug/fuse and complete mechanical/lead renewal remain unqualified.",
+        "retrieval": "Official current manufacturer product/category opened26Nov2026; earlier official support index lists2.5m factory lead. No actual supplied plug/fuse identity inferred."
+      },
+      {
+        "id": "plugged-UK-technical",
+        "url": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-75-mini/4-technical-datasheets/1-uk/type-75-mini-wall-light-with-cable-technical-data-uk.pdf",
+        "finding": "Official UKV1: ClassII, BS1363 UK plug,2500mm cable, inline switch250..300mm from fitting, max10WLED.0.55kg is PACKAGED weight. Plug/switch/guide envelopes are generous project limits, not measured supplied dimensions; no permission to shorten or replace factoryplug inferred.",
+        "retrieval": "Official manufacturer-hosted UKtechnicalPDF opened26Nov2026; current product geometry crosschecked."
+      },
+      {
+        "id": "Type80W1-approved-configuration",
+        "url": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf",
+        "finding": "OfficialW1V5 §§7–8 explicitly permit external cable/plug wiring at provided Wago connectors, with grommet100141 and strain-relief101892. Integrated shade switch removes inline switch. Author425mm external2core0.75mm2 flex +100mm cutback/order allowance and conventional3A fused plug; actual complete fit/material/physical qualification remain open.",
+        "retrieval": "Official manufacturer PDF and currentW1 product opened26Nov2026;260reach/145shade/160height/90plate. No Type75 shortening permission is inferred."
+      },
+      {
+        "id": "three-amp-rewirable-plug",
+        "url": "https://www.electrical2go.co.uk/mwdownloads/download/link/id/30680",
+        "finding": "Manufacturer-createdSN1382 sheet22May2025:3A fused screw-cord-grip BS1363-1 plug,50x52x42mm/20mm projection, polypropylene. Use generous60x70x30mm installed envelope. This is a selected conventional external assembly, not a material exception.",
+        "retrieval": "Manufacturer-authored dated datasheet hosted by distributor; current MLA manufacturer catalogue independently listsSN1382 with3A fuse."
+      },
+      {
+        "id": "selected-appliance-flex",
+        "url": "https://latrivenetacavi.nexans.com/en/products/residential-and-commercial/residential-commercial-Eca-class/H03VV-F38484/",
+        "finding": "Nexans018065107 H03VV-F2x0.75: maxOD6.3mm,6A at30C,26ohm/km, recommended6diameter bend. Use50mm centreline, inside46.85mm against37.8mm, including both installed and parked425mm flex. Cut100mm extra for workshop preparation; no continuous-flex or supplied grommet fit claim.",
+        "retrieval": "Official manufacturer catalogue opened26Nov2026; assembly/material/physical acceptance remains unearned."
+      }
+    ],
+    "deviceTerminalLimitsMm2": {
+      "socket": 4,
+      "switch": 6,
+      "lamp": 4
+    },
+    "applianceLead": {
+      "bendRadiusMm": 50,
+      "standOffMm": 25,
+      "diameterRequirementMm": 6.3,
+      "plugEnvelopeMm": [
+        60,
+        70,
+        30
+      ],
+      "guideBodyEnvelopeMm": [
+        50,
+        20,
+        20
+      ],
+      "plugDrawMm": 60,
+      "operatorRadiusMm": 300,
+      "operatorStandBackMm": 292.5,
+      "reachLimitMm": 600,
+      "flexAreaMm2": 0.75,
+      "cutbackAllowanceMm": 100,
+      "operatorLeftOfBayMm": 140,
+      "unpluggedPlugEnvelopeMm": [
+        60,
+        70,
+        52
+      ]
+    },
+    "appliancePreparation": {
+      "operatorPathXYMm": [
+        [
+          1500,
+          2645
+        ],
+        [
+          1550,
+          2645
+        ],
+        [
+          1900,
+          2635
+        ],
+        [
+          2230,
+          2635
+        ],
+        [
+          2230,
+          1645
+        ]
+      ],
+      "carryOffsetMm": 395,
+      "traySizeMm": [
+        180,
+        300,
+        400
+      ],
+      "trayOffsetFromDeskMm": [
+        1380,
+        390
+      ],
+      "tabletopComparisonMm": 730,
+      "carriedBottomMm": 1320,
+      "carryAssemblyHeightMm": 400,
+      "samplingErrorMm": 0.25,
+      "standingShoulderMm": 1600,
+      "kneelingShoulderMm": 1050
+    }
+  }
 }

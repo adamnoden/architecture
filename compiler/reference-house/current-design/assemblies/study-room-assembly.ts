@@ -5,7 +5,7 @@ import type { compileStudyWallTransition } from './study-wall-transition.js'
 type Box = readonly [number, number, number, number]
 type Edge = { readonly id: string; readonly axis: 'x' | 'y'; readonly fixedMm: number; readonly fromMm: number; readonly toMm: number; readonly normal: -1 | 1; readonly sourceWallId: string }
 type Transition = ReturnType<typeof compileStudyWallTransition>
-type Basis = Pick<StudyRoomKit, 'bands' | 'wall' | 'opening' | 'door' | 'grilleKeepOut' | 'request' | 'source' | 'floor' | 'occupied'>
+type Basis = Pick<StudyRoomKit, 'bands' | 'wall' | 'opening' | 'door' | 'grilleKeepOut' | 'request' | 'source' | 'floor' | 'occupied' | 'structuralConsequence'>
 
 const design = {
   cornerStopMm: 50, jointMm: 3, bottomMm: 150, topMm: 2970,
@@ -56,7 +56,10 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
     : design.timberRowsMm.slice(1).reduce<number[]>((result, end) => [...result, ...divisions(result.at(-1)!, end, design.tileRowMaximumMm).slice(1)], [design.bottomMm])
   const surfaceKgPerM2 = face === 'oak' ? design.maximumMovingDepthMm * design.oakKgPerM3 / 1000
     : (6 * design.porcelainKgPerM3 + 3 * design.steelKgPerM3 + 1.5 * design.beddingKgPerM3) / 1000
-  const roomEdges = edges(kit.bands)
+  const structuralContext = kit.structuralConsequence
+  if (structuralContext && (JSON.stringify(structuralContext.bands) !== JSON.stringify(kit.bands)
+    || JSON.stringify(structuralContext.occupied) !== JSON.stringify(kit.occupied))) throw new Error('STUDY_STRUCTURAL_ROOM_CONTEXT_MISMATCH')
+  const roomEdges = structuralContext?.walls ?? edges(kit.bands)
   const boundWindows = kit.wall.boundRoomOpenings
   if (boundWindows.length !== 3 || !boundWindows.some(window => 'GROUND/' + window.id === kit.opening.id)
     || !boundWindows.some(window => window.wall === 'outer-west')) throw new TypeError('MISSING_BOUND_STUDY_ROOM_ASSEMBLY_OPENING')
@@ -66,6 +69,8 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
   const emitter = kit.occupied.find(([id]) => id === 'service-emitter-study-W')
   if (!emitter) throw new TypeError('MISSING_BOUND_STUDY_ROOM_ASSEMBLY_EMITTER')
   const reserves = (edge: Edge) => [
+    ...(edge.id === 'sw-west-toe' || edge.id === 'sw-south-toe' ? [{ id: `${kit.source.roomId}/structural-return/${edge.id}`,
+      role: 'retained-structural-pilaster-return' as const, box: [edge.fromMm, 0, edge.toMm, transition.field.ceilingZMm] as Box }] : []),
     ...(edge.id === 'west' ? [{ id: emitter[0], role: 'retained-emitter-background' as const,
       box: [emitter[1][1] - 25, 0, emitter[1][3] + 25, transition.field.ceilingZMm] as Box }] : []),
     ...windows.filter(window => window.wall === 'outer-' + edge.id).map(window => ({ ...window, role: 'retained-mineral-window-surround' as const,
@@ -83,7 +88,7 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
     const columns = architecturalDatums.slice(1).reduce<number[]>((result, end) => [
       ...result, ...divisions(result.at(-1)!, end, widthMm).slice(1),
     ], [fieldStart])
-    const pieces = columns.slice(1).flatMap((right, column) => rows.slice(1).flatMap((top, row) => {
+    const pieces = (fieldEnd > fieldStart ? columns.slice(1) : []).flatMap((right, column) => rows.slice(1).flatMap((top, row) => {
       const zone: Box = [columns[column], rows[row], right, top]
       const boxes = kept.reduce<readonly Box[]>((parts, reserve) => parts.flatMap(part => subtract(part, reserve.box)), [zone])
       return boxes.map((box, cut) => {
@@ -103,7 +108,7 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
           evidence: kit.opening.relation === 'native' || edge.id !== 'south' ? 'candidate-unqualified' as const : 'opening-details-stale' as const }
       })
     }))
-    const trimRanges = edge.id === 'north-door' ? [[edge.fromMm, kit.door.rough[0]], [kit.door.rough[1], edge.toMm]]
+    const trimRanges = edge.id === 'sw-west-toe' || edge.id === 'sw-south-toe' ? [] : edge.id === 'north-door' ? [[edge.fromMm, kit.door.rough[0]], [kit.door.rough[1], edge.toMm]]
       : edge.id === 'west' ? [[edge.fromMm, emitter[1][1] - 25], [emitter[1][3] + 25, edge.toMm]] : [[edge.fromMm, edge.toMm]]
     const protectedEnds = edge.id === 'north-door' ? transition.field.retainedSkirtingEndPiecesXMm ?? [] : []
     const trims = trimRanges.flatMap(([from, to], range) => {
@@ -171,7 +176,8 @@ export function compileStudyRoomAssembly(kit: Basis, transition: Transition) {
       screwedEdgeFaces: pieces.filter(piece => piece.family === 'roomward-screwed-edge-piece').length,
       floorLevelTrimCount: walls.reduce((sum, wall) => sum + wall.trims.length, 0),
       completeFaceMassKg: pieces.reduce((sum, piece) => sum + piece.movingKg, 0), maximumFaceMassKg: Math.max(...pieces.map(piece => piece.movingKg)),
-      fixedProtectiveReturns: windows.map(window => window.id).concat(kit.door.id),
+      fixedProtectiveReturns: windows.map(window => window.id).concat(kit.door.id,
+        walls.flatMap(wall => wall.reserves.filter(reserve => reserve.role === 'retained-structural-pilaster-return').map(reserve => reserve.id))),
     },
     layersMm: { fixedAirPlane: .5, fixedSetting: .5, fixedMineralMaximum: 6.5, rail: 6.35, fitting: 2,
       movingFace: face === 'oak' ? { oakComplete: 10.5 } : { porcelain: 6, steelTray: 3, mineralBedding: 1.5 },
@@ -199,6 +205,9 @@ export function drawStudyRoomAssembly(result: ReturnType<typeof compileStudyRoom
   if (result.state === 'geometry-rejected') return null
   const escape = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;')
   const colour = result.face === 'oak' ? '#ad8661' : '#c5c0b3'
+  const extraHeight = Math.max(0, Math.ceil(result.walls.length / 4) - 2) * 420
+  const fullHeight = 1320 + extraHeight
+  const wallCountLabel = result.walls.length === 8 ? 'Eight' : String(result.walls.length)
   const scale = .085
   const elevations = result.walls.map((wall, index) => {
     const x = 40 + (index % 4) * 430, y = 200 + Math.floor(index / 4) * 420
@@ -214,5 +223,5 @@ export function drawStudyRoomAssembly(result: ReturnType<typeof compileStudyRoom
       + wall.trims.map(trim => rect([trim.intervalMm[0], 0, trim.intervalMm[1], trim.heightMm], '#80694f')).join('')
       + `<text x="${x}" y="${y + 290}" class="small">${wall.pieces.length} moving faces · ${wall.trims.length} local skirts</text></g>`
   }).join('')
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1320" viewBox="0 0 1800 1320" role="img" aria-labelledby="title desc"><title id="title">The whole Study: ${result.face === 'oak' ? 'timber' : 'tiled'} wall kit</title><desc id="desc">Eight source-bound wall elevations, with retained protected openings and local release pockets. Candidate local release geometry only; installed load and occupied handling remain unqualified.</desc><metadata>${result.source.inputDigest}</metadata><style>text{font-family:Arial;fill:#302d27}.title{font:36px Georgia}.name{font:21px Georgia}.small{font-size:16px}.body{font-size:20px}</style><rect width="1800" height="1320" fill="#f7f2e7"/><text x="40" y="60" class="title">The whole Study · ${result.face === 'oak' ? 'hung timber faces' : 'independently tiled trays'}</text><text x="40" y="100" class="body">${result.schedule.movingFaceCount} moving wall faces · ${result.schedule.floorLevelTrimCount} separate skirts · maximum face ${result.schedule.maximumFaceMassKg.toFixed(2)} kg</text><text x="40" y="135" class="body">Open the local moulding, lift ${result.releaseMm} mm, draw ${result.design.roomwardDrawMm} mm. Adjacent faces stay installed.</text>${elevations}<path d="M40 1050H1760" stroke="#9e9686"/><text x="40" y="1090" class="name">A separate release pocket at every row</text><text x="40" y="1125" class="body">20 mm local pocket − 5 mm setting − ${result.releaseMm} mm lift = ${result.releaseReserveMm} mm reserve.</text><text x="40" y="1160" class="body">Local positive stops prevent lift. Narrow cut faces draw forward on accessible screws.</text><text x="40" y="1195" class="body">Corners and protected returns stay fixed. Services and the cornice have independent positive support.</text><text x="40" y="1245" class="small">Reference proposal · wall anchors, sealed backing, occupied handling and complete moving assemblies remain unqualified.</text><text x="40" y="1275" class="small">${result.face === 'oak' ? 'Dry Study timber variant.' : 'Dry Study tiled variant.'} Wet-room performance, whole-floor access and owner acceptance remain separate.</text></svg>\n`
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="${fullHeight}" viewBox="0 0 1800 ${fullHeight}" role="img" aria-labelledby="title desc"><title id="title">The whole Study: ${result.face === 'oak' ? 'timber' : 'tiled'} wall kit</title><desc id="desc">${wallCountLabel} source-bound wall elevations, with retained protected openings and local release pockets. Candidate local release geometry only; installed load and occupied handling remain unqualified.</desc><metadata>${result.source.inputDigest}</metadata><style>text{font-family:Arial;fill:#302d27}.title{font:36px Georgia}.name{font:21px Georgia}.small{font-size:16px}.body{font-size:20px}</style><rect width="1800" height="${fullHeight}" fill="#f7f2e7"/><text x="40" y="60" class="title">The whole Study · ${result.face === 'oak' ? 'hung timber faces' : 'independently tiled trays'}</text><text x="40" y="100" class="body">${result.schedule.movingFaceCount} moving wall faces · ${result.schedule.floorLevelTrimCount} separate skirts · maximum face ${result.schedule.maximumFaceMassKg.toFixed(2)} kg</text><text x="40" y="135" class="body">Open the local moulding, lift ${result.releaseMm} mm, draw ${result.design.roomwardDrawMm} mm. Adjacent faces stay installed.</text>${elevations}<path d="M40 ${1050 + extraHeight}H1760" stroke="#9e9686"/><text x="40" y="${1090 + extraHeight}" class="name">A separate release pocket at every row</text><text x="40" y="${1125 + extraHeight}" class="body">20 mm local pocket − 5 mm setting − ${result.releaseMm} mm lift = ${result.releaseReserveMm} mm reserve.</text><text x="40" y="${1160 + extraHeight}" class="body">Local positive stops prevent lift. Narrow cut faces draw forward on accessible screws.</text><text x="40" y="${1195 + extraHeight}" class="body">Corners and protected returns stay fixed. Services and the cornice have independent positive support.</text><text x="40" y="${1245 + extraHeight}" class="small">Reference proposal · wall anchors, sealed backing, occupied handling and complete moving assemblies remain unqualified.</text><text x="40" y="${1275 + extraHeight}" class="small">${result.face === 'oak' ? 'Dry Study timber variant.' : 'Dry Study tiled variant.'} Wet-room performance, whole-floor access and owner acceptance remain separate.</text></svg>\n`
 }

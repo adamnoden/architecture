@@ -52,12 +52,13 @@ export async function runEditorEngineeringRequest(input: unknown) {
   const fanReserves = floor?.wetPostHeadFan?.posts.flatMap((post: any) =>
     typeof post.necessaryPlacementDomain?.minimumReserveMm === 'number' ? [post.necessaryPlacementDomain.minimumReserveMm] : []) ?? []
   const lighting = bundle.engineering.studyLighting
+  const finite=floor?.finiteJointComparison
   const inlet=bundle.engineering.inletSourceEnvelope, bank=inlet?.joinedDirection.room.bankReceiver
   const ground=bundle.engineering.groundPocketLoads
   return { ticket, documentIdentity: bundle.documentIdentity, manifest: bundle.manifest,
     coordinationDiagnostics: bundle.coordinationDiagnostics, evidence: bundle.evidence,
     floorEvidence: floor ? { headCount:floor.native.heads.length, contactComputed:floor.wetBearingContact?.status==='computed-comparison',
-      lowerMasonryStatus:floor.lowerMasonryComparison?.status??null,lowerMasonryDiagnostics:floor.lowerMasonryComparison?.diagnostics??[],contourStatus:floor.contourComponent?.status??null,contourDiagnostics:floor.contourComponent?.diagnostics??[],slabSolidCompatibility:floor.slabSolidCompatibility, nominalHeadFanPlacementReserveMm:fanReserves.length?Math.min(...fanReserves):null, nominalHeadFanStatus:floor.wetPostHeadFan?.status??null, jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
+      finiteJointStatus:floor.finiteJointComparison?.status??null,finiteJointDiagnostics:floor.finiteJointComparison?.diagnostics??[],lowerMasonryStatus:floor.lowerMasonryComparison?.status??null,lowerMasonryDiagnostics:floor.lowerMasonryComparison?.diagnostics??[],contourStatus:floor.contourComponent?.status??null,contourDiagnostics:floor.contourComponent?.diagnostics??[],slabSolidCompatibility:floor.slabSolidCompatibility, nominalHeadFanPlacementReserveMm:fanReserves.length?Math.min(...fanReserves):null, nominalHeadFanStatus:floor.wetPostHeadFan?.status??null, jointStatus:floor.fourLJointDemands.status, jointDiagnostics:floor.fourLJointDemands.diagnostics, finiteJointCapacityAvailable:false as const } : null,
     wetBeamEnd: wetBeamEndReview(floor?.wetBeamEndDevelopment),
     groundPocketLoads:ground?{status:ground.status,controls:ground.controls,diagnostics:ground.diagnostics,
       headCount:ground.status==='computed-unselected-candidate'?ground.native.heads.length:null,
@@ -65,8 +66,15 @@ export async function runEditorEngineeringRequest(input: unknown) {
       receiverCutsAvailable:ground.status==='computed-unselected-candidate'&&ground.comparison.receiverCutRecovery?.physicalElementCutsAvailable===true,
       receiverMemberCount:ground.status==='computed-unselected-candidate'&&ground.comparison.receiverCutRecovery?.physicalElementCutsAvailable===true?ground.comparison.receiverCutRecovery.memberIds.length:null,
       candidateAccepted:false as const,completeInstalledInventory:false as const}:null,
-    studyLighting: lighting ? { svg: lighting.commonDepthCornerSvg, comparison: lighting.lighting.commonDepthCornerComparison } : null,
+    currentFiniteJoint:finite?{status:finite.status,controls:finite.controls,diagnostics:finite.diagnostics,
+      headCount:finite.status==='computed-unselected-comparison'?finite.result.native.nativeVertical.native.heads.length:null,
+      floorSvg:finite.status==='computed-unselected-comparison'?finite.result.native.drawings['floor-section-floor.svg'] as string:null,
+      candidateAccepted:false as const,resistanceAccepted:false as const}:null,
+    studyLighting: lighting ? { svg: lighting.commonDepthCornerSvg, comparison: lighting.lighting.commonDepthCornerComparison,
+      homeRunSvg:lighting.constructionSvg,homeRuns:lighting.lighting.construction.localHomeRunComparison } : null,
+    studyRoom: bundle.engineering.studyRoomKit?.eyeLevel ?? null,
     plantRoom: inlet?.splitPlantRoom ?? null,
+    storeDrain: inlet?.storeDrain ?? null,
     inletBank: inlet&&bank?{settings:inlet.settings,receiver:bank,carrier:inlet.joinedDirection.room.bankShelfCarrier,route:inlet.joinedDirection.room.indoorRoutes,sourceOnlyBound:inlet.bound}:null,
     roof: { ...roof, svg: renderDrawingSceneV2Svg(roof.drawing) },
     wetCage: cage ? { settings: cage.settings, geometry: cage.geometry, quantities: cage.quantities,

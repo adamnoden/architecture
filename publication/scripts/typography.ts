@@ -16,6 +16,15 @@ export type ProductionTypographyContext = {
   currentAssets: CurrentPublicationAssets
 }
 
+/** Camera plates contain geometry only; their page captions carry typography. */
+export function isTextFreePublicationSvg(svg: string): boolean {
+  if (!svg.includes('data-publication-text="none"')) return false
+  if (/<(?:[\w-]+:)?(?:text|tspan|textPath|foreignObject|image|use|style)\b/i.test(svg)) {
+    throw new Error('Declared text-free publication SVG contains text or indirect content')
+  }
+  return true
+}
+
 type Build = Record<string, unknown> & {
   mode: string
   titlePage: string
@@ -293,7 +302,7 @@ export async function applyProductionTypography(context: ProductionTypographyCon
     for (const view of placement.views) controlledAssets.add(resolveAsset(entry.source, view.image))
   }
 
-  const svgEvidence: Record<string, { canonicalSha256: string; transformedSha256: string; familyDeclarations: number; tabularNotes: boolean }> = {}
+  const svgEvidence: Record<string, { canonicalSha256: string; transformedSha256: string; familyDeclarations: number; tabularNotes: boolean; textFree?: boolean }> = {}
   for (const sourcePath of [...controlledAssets].sort()) {
     const generated = context.currentAssets.assets.find(asset => asset.path === sourcePath)
     if (sourcePath.startsWith('publication/current/') && !generated) throw new Error(`Missing compiled current plate: ${sourcePath}`)
@@ -301,6 +310,11 @@ export async function applyProductionTypography(context: ProductionTypographyCon
     const preparedPath = resolve(workSourceRoot, sourcePath)
     const prepared = await readFile(preparedPath, 'utf8')
     if (prepared !== canonical) throw new Error(`Controlled SVG copy diverged before production typography rebinding: ${sourcePath}`)
+    if (generated && isTextFreePublicationSvg(canonical)) {
+      svgEvidence[sourcePath] = { canonicalSha256: sha256(canonical), transformedSha256: sha256(prepared),
+        familyDeclarations: 0, tabularNotes: false, textFree: true }
+      continue
+    }
     const legacyFamilies = ['font-family:Arial, Helvetica, sans-serif', 'font-family:Arial,Helvetica,sans-serif'] as const
     const matching = legacyFamilies.filter((family) => canonical.includes(family))
     if (matching.length !== 1) throw new Error(`${sourcePath} expected one legacy Arial family syntax; found ${matching.length}.`)

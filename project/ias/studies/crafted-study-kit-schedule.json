@@ -13,7 +13,7 @@
       "currentPlanBasis": "RH-LAYOUT-REVISION-02",
       "occupiedHouse": "HAD-SERVICES-02",
       "roomId": "GROUND/G-STUDY",
-      "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+      "bindingDigest": "8a0cf41e059ebec1c7869ee94cdd7436c6163bb4a732a808153f9e026ef0481b",
       "floor": {
         "path": "project/ias/studies/workable-study-floor.json",
         "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -24,7 +24,7 @@
       },
       "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
     },
-    "caseDigest": "f08f0073fc6ec7d59ef4d3e59c0bb5564dc19efac62fc95ddfbcdc80233909f3",
+    "caseDigest": "ffee9a3464b785708437570c7dead5cad1b3614e6c5942787d896df28c1d0360",
     "bands": [
       [
         429.5,
@@ -6863,7 +6863,7 @@
           "retainedBcrCase": {
             "receipt": {
               "path": "project/bcr/studies/bay-interface-study.json",
-              "sha256": "88fad8763552800fa802f0d23246974873c2b71cfe4e1ec179a144b1a89bfb96"
+              "sha256": "fde3c06971b965d0ffd0f4fac918c08b77549ebd0cc6d6554eeb9fc59aa54572"
             },
             "deskShiftMm": 700,
             "parkedDesk": [
@@ -6947,6 +6947,11 @@
           "edgeReleaseClear": true,
           "restBoardTopMm": 12,
           "pickupLiftMm": 38,
+          "finishDepthMm": 20,
+          "panelTransferTopMm": 58,
+          "settingMm": 5,
+          "horizontalOnly": true,
+          "physicalAcceptance": false,
           "worstRestPadN": 117.72,
           "restPadDemandMPa": 0.188352
         },
@@ -12022,7 +12027,7 @@
         "schema": "ias-study-furniture-native-result/1",
         "state": "geometry-screen-only",
         "basis": {
-          "bayReceiptSha256": "88fad8763552800fa802f0d23246974873c2b71cfe4e1ec179a144b1a89bfb96",
+          "bayReceiptSha256": "fde3c06971b965d0ffd0f4fac918c08b77549ebd0cc6d6554eeb9fc59aa54572",
           "bayInputs": {
             "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
             "project/mat/studies/study-coupled-window.json": "00184ad7c13d39b38a1ac95a82fa462a8d13eea7",
@@ -12048,7 +12053,7 @@
             "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
             "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
             "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
-            "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+            "project/ias/studies/utility-host-revised-route.json": "6573da78a943647c900ae876d6b0701dbe2ca0cb",
             "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69",
             "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
             "project/str/studies/house-corner-rewind.json": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640"
@@ -12615,7 +12620,7 @@
         "source": {
           "project/ias/studies/study-furniture-motion.py": "0f60aff751188848324d2b99d72a01d0e2acf4837fef876e66321df40ca4d59b",
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c",
-          "project/ias/studies/study-floor-handling.py": "96a3236d7429627b5f14b5c61d63eeb6745d1c3b45deb67459706a9765ae966d"
+          "project/ias/studies/study-floor-handling.py": "4672ae114b1eff5a2317a7f805ed3eb3b3811ccedbee4b547226bcfb6cad7b18"
         }
       },
       "firstRestBoard": {
@@ -13943,12 +13948,12 @@
         "planBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+        "bindingDigest": "8a0cf41e059ebec1c7869ee94cdd7436c6163bb4a732a808153f9e026ef0481b",
         "identities": {
           "project/ias/studies/workable-study-floor.json": "4cc89e12782021fa6de7752d3313d3487b22f872",
           "project/ias/studies/workable-study-release.json": "6b890c098e2e025b0db29bb2568a5fc256b64b8d",
           "project/ias/studies/workable-room-assemblies.json": "6be5770a7caf3155a34a4cfd5236c4908aa46b15",
-          "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+          "project/had/studies/current-house-services.json": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
           "project/ias/studies/workable-lining-dimensions.mjs": "c028959c486242d72f95eeac9dc9e8854191cb6d"
         }
       },
@@ -13975,7 +13980,7 @@
         "state": "native-comparison-only",
         "receipt": {
           "path": "project/oas/studies/study-subframe.json",
-          "sha256": "c7b0de561a7f481e5aa5891bbd0d07315f51bd672c70d5d200e6dffac7d97908",
+          "sha256": "0974b15da1a6c08113af565890f12de51781837044a3fc7632e18f1e2da33421",
           "method": "project/oas/studies/study-dry-seam.mjs",
           "methodSha256": "353dcc5b867a7a4e720268a85b534ed3ee84e08c2c330dbbe09795385a8c8d3c"
         }
@@ -14564,7 +14569,7 @@
         300
       ]
     },
-    "caseDigest": "ae5f0f034a31d22221be231fef2f1d4ceec44b68cb6c168b913d5ef5028861b9",
+    "caseDigest": "efe5db2e1974f3acb932d2b08b742dbbaec05e8bf4244f03bbc1a9479d9e7f42",
     "state": "placement-comparison-only",
     "physicalAcceptance": false,
     "comparedWitnessCount": 119,
@@ -17704,7 +17709,7 @@
         "wearingFace": "oak",
         "finishDepthMm": 15
       },
-      "caseDigest": "28e36d45181a8c507ad36c0f2e05702e240ba70666cbdfc9d1e1a08f567874b1",
+      "caseDigest": "bfcd077fd32c20cb56fbf2b7619854bdb3c779e5ad659be18fb16f64bc6cd1e0",
       "wearingFaceMm": 13,
       "groundSupport": {
         "state": "geometry-comparison",
@@ -17769,7 +17774,7 @@
         "wearingFace": "stone-steel",
         "finishDepthMm": 15
       },
-      "caseDigest": "ec2c63ff3b0e6096501ad834f097f70dd646908c570cf9a73d21887b52551446",
+      "caseDigest": "45b3d46d125de19dcace580f9157080d7159d21dca5a15851f2d559fb18f225d",
       "wearingFaceMm": 13,
       "groundSupport": {
         "state": "geometry-comparison",
@@ -17832,7 +17837,7 @@
       "currentPlanBasis": "RH-LAYOUT-REVISION-02",
       "occupiedHouse": "HAD-SERVICES-02",
       "roomId": "GROUND/G-STUDY",
-      "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+      "bindingDigest": "8a0cf41e059ebec1c7869ee94cdd7436c6163bb4a732a808153f9e026ef0481b",
       "floor": {
         "path": "project/ias/studies/workable-study-floor.json",
         "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -17849,7 +17854,7 @@
       "pitchMm": 300,
       "wearingFace": "stone-steel"
     },
-    "caseDigest": "44684e92c8b630d0b07dbdb0c41072dc777399f149df0f83a8feb6339f4889b0",
+    "caseDigest": "ad6ceda6ce926d1ac23e6f7fbc0a323a75d4adad34f9c8faaec2fb39b73ed0d0",
     "handling": {
       "state": "geometry-and-demand-screen",
       "keyedFace": {
@@ -17889,7 +17894,7 @@
         "retainedBcrCase": {
           "receipt": {
             "path": "project/bcr/studies/bay-interface-study.json",
-            "sha256": "88fad8763552800fa802f0d23246974873c2b71cfe4e1ec179a144b1a89bfb96"
+            "sha256": "fde3c06971b965d0ffd0f4fac918c08b77549ebd0cc6d6554eeb9fc59aa54572"
           },
           "deskShiftMm": 700,
           "parkedDesk": [
@@ -17973,6 +17978,11 @@
         "edgeReleaseClear": true,
         "restBoardTopMm": 12,
         "pickupLiftMm": 38,
+        "finishDepthMm": 20,
+        "panelTransferTopMm": 58,
+        "settingMm": 5,
+        "horizontalOnly": true,
+        "physicalAcceptance": false,
         "worstRestPadN": 117.72,
         "restPadDemandMPa": 0.188352
       },

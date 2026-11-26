@@ -24,10 +24,24 @@ class WetBearingRefinementProofTest(unittest.TestCase):
         for name in ('wet25-16-to-32', 'wet25-32-to-64', 'wet27-32-to-64', 'zeroG-32-to-64'):
             self.assertTrue(results[name]['numericalRefinementPassing'])
         self.assertEqual(results['zeroG-32-to-64']['maximum52HeadComponentDifferenceKN_KNm'], 0)
-        self.assertEqual(proof['derived']['restoredEight']['maximumHeadComponentDifferenceKN_KNm'], 0)
+        restored = proof['derived']['restoredEight']
+        self.assertEqual(restored['maximumPermittedDifferenceKN_KNm'], 1e-6)
+        self.assertLessEqual(restored['maximumHeadComponentDifferenceKN_KNm'],
+                             restored['maximumPermittedDifferenceKN_KNm'])
         self.assertEqual(proof['nonlinearSolvesExecutedByThisProducer'], 0)
         self.assertFalse(proof['physicalContactAccepted'])
         self.assertFalse(proof['wholeHouseAccepted'])
+
+    def test_above_limit_restored_head_force_still_rejects(self):
+        proof = copy.deepcopy(self.proof)
+        row = proof['controls'][-1]
+        native = unpack_native(row['exactCroppedNativeInput'])
+        # An independently executed identical operator need not be bit-identical.
+        # Keep the owning physical replay criterion and reject a real excess.
+        native['nativeVertical']['native']['heads'][0]['reactionKN_KNm'][2] += 2e-6
+        row['exactCroppedNativeInput'] = pack_native(native)
+        with self.assertRaisesRegex(ValueError, 'unchanged1e-6'):
+            derive(proof['controls'], proof['restoredEightReference'], proof['authored']['criteria'])
 
     def test_lossless_cropped_input_round_trip_and_corruption_rejection(self):
         crop = self.proof['controls'][0]['exactCroppedNativeInput']

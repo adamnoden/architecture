@@ -2,19 +2,19 @@
   "schema": "had-copper-cabinet-comparison/1",
   "status": "unselected-whole-arrangement-comparison",
   "source": {
-    "caseDigest": "1ed52d422d080eea2de4ee66d211af2a83a736bfbee341302726b0de17b94494",
+    "caseDigest": "1835f66c10cf981f0b4198aea164180b18b446977b4a257307e2adc1735d6b2a",
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "cbe54768647541a8309d41793a2716c95f73b8ab77077764bb50ef2ea58a2f49",
+    "bindingDigest": "324062f1cd88f541d45ae16f9b474501886dc5eccb5e3b50363583832fec8120",
     "inputs": {
-      "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
-      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
-      "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
+      "project/had/studies/south-inlet-under-sill.json": "42d8c81826b036a68e8a03aa6e3e1e7f33a1deb9",
+      "project/had/studies/current-house-services.json": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
+      "project/had/studies/south-inlet-wet-box.json": "0fd78b5fd807351913fdb1333f6ecb4d667025e2",
       "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2",
       "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
       "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
       "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69",
-      "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
-      "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f"
+      "project/had/studies/south-inlet-relief.json": "ac660745da4eb1272c26b1a7de9bf17f42383eb8",
+      "project/had/studies/south-utility-inlet.json": "4577b705131feaf2e895bb981238a85e835e2a5d"
     },
     "methods": {
       "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4",

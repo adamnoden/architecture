@@ -149,7 +149,8 @@ test('saved document and public CLI carry branch and room edits through the exis
  assert.deepEqual((await compileEngineeringDocument(doc)).engineering.inletSourceEnvelope,a)
  assert.equal(a.splitPlantRoom.choiceOwnership,'complete-authored-request');assert.equal(c.splitPlantRoom.choiceOwnership,'complete-authored-request')
  const {splitPlantRoom,...changedSettings}=changedDoc.stages.inletSourceEnvelope
- const standalone=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--inlet-source-envelope','-'],{input:JSON.stringify({...request,sourceEnvelope:{...request.sourceEnvelope,splitPlantRoom,settings:changedSettings}}),encoding:'utf8',maxBuffer:4*1024*1024}))
+ const {storeDrain:_defaultStoreDrain,...sameExplicitStageScope}=request.sourceEnvelope
+ const standalone=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--inlet-source-envelope','-'],{input:JSON.stringify({...request,sourceEnvelope:{...sameExplicitStageScope,splitPlantRoom,settings:changedSettings}}),encoding:'utf8',maxBuffer:4*1024*1024}))
  assert.deepEqual(standalone,c)
  const {splitPlantRoom:_authoredChoice,...boundCase}=request.sourceEnvelope
  const boundDefault=runInletSourceEnvelopeCase(resolved,boundCase)

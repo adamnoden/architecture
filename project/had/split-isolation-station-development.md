@@ -188,3 +188,10 @@ The current row consumes the existing `indoorCutProductEvidence.bellows` record.
 ### Inventory force unit correction —26 November2026
 
 The nominal shield/frame stock187.050835779kg now exports **1.834968699kN downward** at the declared9.81m/s², agreeing with the frame's independent1834.968699N gravity ledger. Its former `forceKN` field incorrectly contained the N number, a1000-fold unit error. The source frame's N actions, stock geometry, masses, source-pressure forces and all actual origins are unchanged. Every mass-based Utility inventory row is checked against kg×9.81/1000; pan/closed-body kN rows are not divided again. Local RC/mineral loads already use kN/m³ and retain25.00609925kN; native steel78.5kN/m³ is a separate declared convention, not a mass conversion or permission to rewrite the HAD8000kg/m³/9.81m/s² reference. Complete installed mass, frame centroid, actual reactions and foundation admission remain unknown.
+
+
+## Dedicated lowest-point draining and actual cold cargo —26 November2026
+
+The [factory-drain development](store-drain-development.md) now owns the concrete cold pre-removal method. Keep the SE380mm cold port and520mm separating face intact while a separately capped, closed factory bottom drain receives its supported temporary continuation. Its declared full residual includes the vessel bottom, the entire factory passage and retained boss, with a2kg cargo design ceiling. This is not an actual measured empty vessel or a charged unattended failure bound.
+
+The same optional saved choice derives a250kg complete dry payload plus2kg residual and applies1.5×the entire mass to one wheel:3708.18N. The older3442.929N W9/fixture/cart case remains a labelled coarse control, not cylinder evidence. The current owning Plant choice is now31mm bridge/138mm clear channels; earlier29/140 results above are reference history. Actual pan/outfall geometry, all11piece masses and removal checks, threshold resistance and the saved ground profile regenerate through the same compiler. Higher payload inputs must invalidate the previous bridge result. No complete installed arrangement or physical/owner acceptance follows.

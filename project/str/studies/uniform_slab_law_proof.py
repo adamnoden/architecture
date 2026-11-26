@@ -36,7 +36,7 @@ def read_controls(value=None):
         or c['changedNativeCaseId']!='UNIFORM8250-RC200-WET120-SOUTH40-q32'
         or c['control']!={'nativeFamily':'wet-aligned-concrete27','bearingQuadratureOrder':32,
             'padWidthMm':120,'padCentreOffsetsYMm':[40,0],'nativeCaseId':'WET120-SOUTH40-q32',
-            'fullNativeSHA256':'306be075d19a59db2155b0b4ebdc34124ae6b09558cb1e891a779d0da2910777'}
+            'fullNativeSHA256':'ed5439632702f32a3b96edaa5c0b097c3affde49ebe7dac149b785b4912de097'}
         or c['uniformSlabLaw']!={'elasticModulusMPa':8250,'poissonRatio':.2,'shearModulusMPa':3437.5,
             'flexuralFactor':1,'transverseShearCorrectionFactor':5/6}):
         raise ValueError('explicit supported unselected uniform8250 RC200 controls required')

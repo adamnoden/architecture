@@ -35,8 +35,8 @@ test('saved inlet model emits separate current component references, finite rece
  assert.equal(valve.forceKN[2],-.05886);assert.ok(valve.intrinsicMomentKNmm.every(v=>Math.abs(v)<1e-9))
  assert.ok(Math.abs(branch.rows.reduce((s,r)=>s-r.forceKN[2],0)-.3947797202554922)<1e-9)
  const threshold=ledger.groups.find(g=>g.id==='HAD/plant/threshold-piece-reference')!
- assert.ok(Math.abs(threshold.rows.reduce((s,r)=>s+r.massKg!,0)-145.34278)<1e-8,'Actual joint gaps are removed from cut sheet reference; gross slab not added again')
- assert.equal(threshold.rows[0].applicationXYZMm[2],515.5)
+ assert.ok(Math.abs(threshold.rows.reduce((s,r)=>s+r.massKg!,0)-155.36642)<1e-8,'Actual joint gaps are removed from cut sheet reference; gross slab not added again')
+ assert.equal(threshold.rows[0].applicationXYZMm[2],514.5)
  const floor=ledger.groups.find(g=>g.id==='HAD/utility/local-floor-force-density')!
  assert.ok(Math.abs(floor.rows.reduce((s,r)=>s-r.forceKN[2],0)-25.00609925)<1e-8);assert.ok(floor.rows.every(r=>r.massKg===null&&r.gravityMps2===null))
  const body=ledger.structuralFloorBodies.find(b=>b.id==='HAD/local-utility-service-pocket')!

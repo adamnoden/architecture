@@ -4,30 +4,30 @@
     {
       "fromPitchMm": 140,
       "toPitchMm": 70,
-      "maximumRelativeEnergySensitivity": 0.12055659397611662,
-      "minimumRelativeEnergyChange": 1.6562688229804223e-06,
-      "maximumRelativeEnergyChange": 0.12055659397611662
+      "maximumRelativeEnergySensitivity": 0.12055659397617324,
+      "minimumRelativeEnergyChange": 1.6562688234245115e-06,
+      "maximumRelativeEnergyChange": 0.12055659397617324
     },
     {
       "fromPitchMm": 70,
       "toPitchMm": 50,
-      "maximumRelativeEnergySensitivity": 0.13800096408544804,
+      "maximumRelativeEnergySensitivity": 0.1380009640854487,
       "minimumRelativeEnergyChange": 0.00021871424072306134,
-      "maximumRelativeEnergyChange": 0.13800096408544804
+      "maximumRelativeEnergyChange": 0.1380009640854487
     },
     {
       "fromPitchMm": 50,
       "toPitchMm": 35.0,
-      "maximumRelativeEnergySensitivity": 0.09777518208056124,
-      "minimumRelativeEnergyChange": 2.438242666147339e-05,
-      "maximumRelativeEnergyChange": 0.09777518208056124
+      "maximumRelativeEnergySensitivity": 0.09777518208056168,
+      "minimumRelativeEnergyChange": 2.438242666058521e-05,
+      "maximumRelativeEnergyChange": 0.09777518208056168
     }
   ],
   "captureSHA256": {
-    "contour140.json": "c8ccb0a0986a8e17a68ec737b671504796c11fc330ccfff1b36c5a666b6b7c86",
-    "contour70.json": "c0ebab8ed14574e79e61304283fa9a54aed513ca46d2f8d14cc618fa43e1e223",
-    "contour50.json": "4501c0df2e24c124e548eebefa11ea8c86e067d3ac2bedd0bd2cb88d669ad5ec",
-    "contour35.json": "59b6589bc3d910c5da22b98447c9bef4a9ad22c39be07eee2e22665aafb70987"
+    "contour140.json": "fec30bdc63b62e57c839a8767234b5f2090389980de119d1d99a865a4b06abdc",
+    "contour70.json": "49734674e5cd5bf2174158535eddc99483ef269044aeb18585c3c48d74818e56",
+    "contour50.json": "8d1ae6b7ab070539764bbe6f9dc7e18abc46ff2ff2c38302dad9a72ea0da78a4",
+    "contour35.json": "61b20d8869bd93074004c3372f59eba009313130907c26583778a232d03d8c0e"
   },
   "processingMethodSHA256": "8d12feed4f7abead2679098c2bfe7a58d4670823e7d9b8ab85234c31279b0125",
   "fixedAuthoredContourLayersAndDepthGlobalPitchSensitivityOnly": true,

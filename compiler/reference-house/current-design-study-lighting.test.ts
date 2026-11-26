@@ -18,7 +18,7 @@ const run = (change = {}) => deriveStudyLighting({ ...choices, ...change }, basi
 test('four actual furnished-room comparisons and central kitchen share source geometry without invented performance', () => {
   const result = run()
   assert.equal(result.status, 'DEVELOPMENT_COMPARISON')
-  assert.deepEqual(result.diagnostics.map(row => row.code), ['IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED'])
+  assert.deepEqual(result.diagnostics.map(row => row.code), ['IAS_LIGHTING_SUPPLY_INSTALLATION_UNQUALIFIED', 'IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED'])
   assert.deepEqual(result.arrangements.map(row => row.id), ['portable', 'lamps-with-wall', 'wall-led', 'ceiling-with-lamps'])
   assert.equal(new Set(result.arrangements.map(row => row.commonGeometryDigest)).size, 1)
   assert.deepEqual(result.commonRoom.occupied, kit.kit.occupied)
@@ -155,7 +155,7 @@ test('actual carrier geometry, core lever arm and complete first rest use the sa
   assert.equal(junction.requiredDecorativeJointMm, basis.room.settingMm)
   assert.equal(d.coreFaceYMm, result.corner.bayPlanMm[1] + 75)
   assert.equal(d.loadDemand.weightN, 29.43)
-  assert.ok(Math.abs(d.loadDemand.coreMomentNm - 7.50465) < 1e-10)
+  assert.ok(Math.abs(d.loadDemand.coreMomentNm - 9.85905) < 1e-10)
   assert.ok(d.loadDemand.coreMomentNm > d.loadDemand.faceMomentNm)
   assert.ok(d.carrier.carrierStockMassKgUpperComparison > 0)
   assert.ok(d.carrier.remainingAuthoredMassBudgetKg > 0)
@@ -373,7 +373,7 @@ test('whole cases require a paid 75mm draw and a separate rest; the parked modul
   assert.equal(c.renewal.drawingCaseThroughSmallerSurroundOpeningClaimed, false)
   assert.equal(c.renewal.firstNormalDrawMm, 75)
   assert.equal(c.renewal.additionalTemporaryFloorTerritoryM2, .04)
-  assert.deepEqual(c.renewal.secondaryRestPlanMm, [800, 2450.5, 1000, 2650.5])
+  assert.deepEqual(c.renewal.secondaryRestPlanMm, [800, 2400.5, 1000, 2600.5])
   assert.ok(c.renewal.moves.every(move => move.conflictingIds.length === 0))
   const moved = c.renewal.moves.find(move => move.id === 'translate-left-above-main-rest')!
   assert.equal(moved.planMm[3]! - moved.planMm[1]!, 61.5)
@@ -435,11 +435,11 @@ test('conventional independent home runs have finite continuous routes, bounded 
   assert.equal(h.status,'DECLARED_EXTERNAL_CONTAINMENT_CONTINUOUS')
   assert.deepEqual(h.issues,[])
   assert.equal(h.selection,'unselected-development-direction')
-  assert.deepEqual(h.routes.map(route=>route.bend.radiusMm),[70,101,132])
-  assert.deepEqual(h.boxes.map(box=>box.entryAxisCoreDepthRequirementMm),[48,48,37])
+  assert.deepEqual(h.routes.map(route=>route.bend.radiusMm),[70,111,152])
+  assert.deepEqual(h.boxes.map(box=>box.entryAxisCoreDepthRequirementMm),[52,52,52])
   assert.equal(h.architecturalConsequence.additionalBayWidthMm,100)
-  assert.equal(h.architecturalConsequence.carrierShiftXMm,-38)
-  assert.equal(h.architecturalConsequence.addedConservativeFloorTerritoryM2,.0048)
+  assert.equal(h.architecturalConsequence.carrierShiftXMm,-1)
+  assert.equal(h.architecturalConsequence.addedConservativeFloorTerritoryM2,.013000000000000001)
   assert.equal(h.architecturalConsequence.accessoryRecessMm,0)
   assert.equal(h.independentRouteSettingMm,5)
   assert.equal(h.pairSettingMm,10)
@@ -447,8 +447,8 @@ test('conventional independent home runs have finite continuous routes, bounded 
   assert.equal(r.localHomeRunWallDisposition.length,2)
   assert.ok(r.localHomeRunWallDisposition.flatMap(row=>row.remainingDecorativeFacesMm).every(box=>Math.min(box[2]!-box[0]!,box[3]!-box[1]!)>=50))
   assert.ok(r.localHomeRunWallDisposition.every(row=>row.remainingDecorativeFacesMm.every(box=>box[2]!>box[0]!&&box[3]!>box[1]!)))
-  assert.ok(h.separations.every(row=>row.reserveMm>.99))
-  assert.ok(h.obstacleChecks.every(row=>row.reserveMm>=.49))
+  assert.ok(h.separations.every(row=>row.reserveMm>10.99))
+  assert.ok(h.obstacleChecks.every(row=>row.reserveMm>=19.49))
   assert.ok(Object.values(h.fieldReservesMm).every(value=>value>=0))
   for(const route of h.routes){
     assert.deepEqual(route.straight.startMm,route.sourcePointMm)
@@ -463,8 +463,8 @@ test('conventional independent home runs have finite continuous routes, bounded 
     const spans=route.clips.slice(1).map((clip,i)=>clip.pointMm[2]!-route.clips[i]!.pointMm[2]!)
     assert.ok(spans.every(span=>span<=h.choices.maximumClipSpanMm))
   }
-  assert.equal(h.stock.clipCount,12)
-  const exactTubeLength=3*(Math.PI/2)*101+(600-70-155)+(1100-101-155)+(1800-132-155)
+  assert.equal(h.stock.clipCount,10)
+  const exactTubeLength=3*(Math.PI/2)*111+(600-70-375)+(1100-111-375)+(1500-152-375)
   assert.ok(Math.abs(h.stock.tubeLengthMm-exactTubeLength)<1e-9)
   const independentTubeMass=Math.PI*(10*10-9*9)*exactTubeLength*7850/1e9
   const independentCollarMass=Math.PI*15*15*90*7850/1e9
@@ -503,4 +503,93 @@ test('actual home-run inputs recompute stock and recut the north wall while coll
   assert.throws(()=>deriveStudyLighting(choices,basis,invalid),/HOME_RUN_INPUT_INVALID/)
   const absentPort=structuredClone(components);absentPort.localHomeRunCandidate={...absentPort.localHomeRunCandidate,lowerPortRearInsetMm:16}
   assert.equal(deriveStudyLighting(choices,basis,absentPort).construction.localHomeRunComparison.status,'GEOMETRY_REJECTED')
+})
+
+
+test('ordinary deeper boxes and fixed extension frames clear the complete lining and closed carrier, not just open steel',()=>{
+  const r=run(),h=r.construction.localHomeRunComparison
+  assert.equal(h.schema,'ias-local-home-runs/2')
+  assert.equal(h.totalDepthMm,95)
+  assert.deepEqual(h.boxes.map(b=>b.depthMm),[[32,79],[32,79],[32,79]])
+  assert.deepEqual(h.boxes.map(b=>b.extensionDepthMm),[16,16,16])
+  assert.equal(h.carrierStock.wrenchAboutCoreCentreNAndNm[4],0)
+  assert.ok(h.routes.every(route=>route.reservesMm.tubeFront>=12.5))
+  assert.ok(h.enclosureCarrierChecks.every(row=>row.reserveMm>=5.5))
+  assert.ok(h.residualGeometryWarnings.every(w=>w.boundary==='portRear'))
+  assert.ok(h.caseRenewal.every(c=>Object.values(c.restReservesMm).every(v=>v>=5)))
+  assert.deepEqual(h.caseRenewal.map(c=>c.normalDrawMm),[83,83,83])
+  assert.ok(h.caseRenewal.every(c=>c.sweptBodyChecks.every(v=>v.reserveMm>=5)&&c.pipeChecks.every(v=>v.reserveMm>=5)))
+  for(const c of h.caseRenewal){
+    assert.ok(c.pipeChecks.some(row=>row.phase==='normal-draw'&&row.routeId===h.routes.find(r=>r.enclosureId===c.id)!.id))
+    assert.ok(c.pipeChecks.filter(row=>row.ownCollarExcluded).every(row=>row.phase==='normal-draw'))
+    assert.equal(c.parts.find(p=>p.id==='base')!.width,72)
+  }
+  assert.equal(h.caseRestPlanMm[2]!-h.caseRestPlanMm[0]!,120)
+  assert.equal(h.caseRestPlanMm[1]!-h.firstRestPlanMm[3]!,17)
+  assert.ok(Math.abs(h.stock.extensionStockKgComparison-3*(72**2-68**2)*16*7850/1e9)<1e-12)
+  assert.equal(h.stock.separateKnownSaddleReceiverStockKg,20*20*39*7850/1e9)
+  const length=3*Math.PI/2*111+(600-70-375)+(1100-111-375)+(1500-152-375)
+  const tubeAndCollars=(Math.PI*(10**2-9**2)*length+Math.PI*15**2*90)*7850/1e9
+  assert.ok(Math.abs(h.stock.tubeCollarReceiverAndExtensionStockKgComparison-tubeAndCollars-20*20*39*7850/1e9-3*(72**2-68**2)*16*7850/1e9)<1e-12)
+  const old=structuredClone(components);old.localHomeRunCandidate={...old.localHomeRunCandidate,additionalCornerDepthMm:0,accessoryExtensionMm:0,upperBoxBacksetMm:0,upperPortRearInsetMm:23.5}
+  const rejected=deriveStudyLighting(choices,basis,old).construction.localHomeRunComparison
+  assert.equal(rejected.status,'GEOMETRY_REJECTED')
+  assert.ok(rejected.issues.some(i=>/carrier|collarFront|tubeFront/.test(i)))
+  assert.ok(rejected.routes.some(route=>route.reservesMm.tubeFront<0))
+  const invalidFloor=structuredClone(basis);invalidFloor.room.bands=invalidFloor.room.bands.map(b=>[b[0]!,Math.max(b[1]!,2500),b[2]!,b[3]!])
+  assert.ok(deriveStudyLighting(choices,invalidFloor,components).construction.localHomeRunComparison.issues.includes('home-run-room-floor-geometry-invalid'))
+  const tightMouth=structuredClone(components);tightMouth.localHomeRunCandidate={...tightMouth.localHomeRunCandidate,fixedIslandHeightMm:110}
+  assert.ok(deriveStudyLighting(choices,basis,tightMouth).construction.localHomeRunComparison.issues.some(i=>i.includes('renewal-space')))
+  const scaled=structuredClone(components);scaled.localHomeRunCandidate={...scaled.localHomeRunCandidate,accessoryExtensionMm:15}
+  assert.ok(deriveStudyLighting(choices,basis,scaled).construction.localHomeRunComparison.issues.includes('home-run-manufactured-extension-depth-unsupported'))
+})
+
+test('the ordinary upper saddle includes the actual receiver, tool phase, stock and unchanged300mm support span',()=>{
+  const h=run().construction.localHomeRunComparison,s=h.saddle!
+  assert.ok(s)
+  assert.equal(s.supportPath.masonryToSaddleDepthMm[0],0)
+  assert.equal(s.supportPath.masonryToSaddleDepthMm[1],39)
+  assert.equal(s.supportPath.penetrationSealQualified,false)
+  assert.equal(s.sourceQualifiedForBend,false)
+  assert.equal(s.tool.maximumDiameterMm,37)
+  assert.equal(s.tool.tipMm[1]!-s.tool.endMm[1]!,205)
+  assert.ok(s.bodyChecks.every(c=>c.reserveMm>=5)&&s.toolChecks.every(c=>c.reserveMm>=5))
+  assert.ok(s.toolChecks.some(c=>c.obstacleId==='parked-complete-module'))
+  assert.equal(h.choices.maximumClipSpanMm,300)
+  assert.ok(h.routes.every(r=>r.finalSpansMm.every(span=>span<=300)))
+  assert.ok(Math.abs(h.routes[2]!.finalSpansMm[0]!-169.38052083641213)<1e-10)
+  const missing=structuredClone(components);missing.localHomeRunCandidate={...missing.localHomeRunCandidate,upperBendClipFraction:0}
+  assert.ok(deriveStudyLighting(choices,basis,missing).construction.localHomeRunComparison.issues.includes('home-run-2-finalUnsupportedArc-rejected'))
+  const noRest=structuredClone(components);noRest.localHomeRunCandidate={...noRest.localHomeRunCandidate,mainRestSouthShiftMm:0}
+  assert.ok(deriveStudyLighting(choices,basis,noRest).construction.localHomeRunComparison.issues.some(s=>s.includes('renewal-space')))
+  const wideTool=structuredClone(components);wideTool.localHomeRunSupportReference={...wideTool.localHomeRunSupportReference,driver:{...wideTool.localHomeRunSupportReference.driver,maximumDiameterMm:250}}
+  assert.ok(deriveStudyLighting(choices,basis,wideTool).construction.localHomeRunComparison.issues.includes('home-run-bend-saddle-tool-rejected'))
+})
+
+
+test('a real corner notch moves only stations at the affected wall and exposes the old desk clash',()=>{
+  const original=run(),notched=structuredClone(basis)
+  notched.room.bands=[[1262.5,429.5,4703,489.5],[489.5,489.5,4703,1103],[489.5,1103,3303,1262.5],[429.5,1262.5,3303,2553],[429.5,2553,2720.5,3150.5]]
+  const changed=deriveStudyLighting(choices,notched,components)
+  assert.equal(changed.corner.westDeskSocketMm[0]-original.corner.westDeskSocketMm[0],60)
+  assert.deepEqual(changed.leads.floor.pathMm,original.leads.floor.pathMm)
+  assert.ok(changed.diagnostics.some(d=>d.code==='IAS_LIGHTING_STATION_ACCESS_REJECTED'))
+  assert.equal(changed.arrangements.find(a=>a.id==='wall-led')!.sources.find(s=>s.id==='wall-task')!.positionMm[1]!-original.arrangements.find(a=>a.id==='wall-led')!.sources.find(s=>s.id==='wall-task')!.positionMm[1]!,60)
+  const supported=structuredClone(notched)
+  supported.room.occupied=supported.room.occupied.map(([id,b])=>id==='study-desk'?[id,[680,b[1],2280,b[3]]]:id==='service-emitter-study-W'?[id,[b[0],1325,b[2],2475]]:[id,b])
+  const moved=deriveStudyLighting(choices,supported,components)
+  assert.ok(!moved.diagnostics.some(d=>d.code==='IAS_LIGHTING_STATION_ACCESS_REJECTED'))
+  assert.deepEqual(moved.leads.floor.pathMm,original.leads.floor.pathMm)
+  assert.deepEqual(moved.kitchen,original.kitchen)
+})
+
+
+test('larger fitting gets an honestly larger rest while the former300mm rest rejects',()=>{
+ const r=run(),h=r.construction.localHomeRunComparison
+ assert.equal(h.firstRestPlanMm[3]!-h.firstRestPlanMm[1]!,350)
+ assert.ok(h.fieldReservesMm.restFront>=30)
+ const old=structuredClone(components);old.localHomeRunCandidate={...old.localHomeRunCandidate,moduleRestFrontExtensionMm:0}
+ assert.ok(deriveStudyLighting(choices,basis,old).construction.localHomeRunComparison.issues.includes('home-run-field-restFront-rejected'))
+ const ordinary=structuredClone(components);ordinary.localHomeRunSupportReference={...ordinary.localHomeRunSupportReference,driver:{...ordinary.localHomeRunSupportReference.driver,maximumDiameterMm:100}}
+ assert.ok(deriveStudyLighting(choices,basis,ordinary).construction.localHomeRunComparison.saddle!.toolChecks.every(p=>p.reserveMm>=5))
 })

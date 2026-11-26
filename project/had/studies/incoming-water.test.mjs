@@ -98,6 +98,8 @@ test('development cannot silently adopt a route or release the existing house bl
   const house=deriveCurrentHouse();
   assert.equal(study.adoption.adopted,false);
   assert.equal(study.status,'REWIND_NOT_ADOPTED');
+  assert.equal(study.actualUtilityPostMechanicalScreen,false);
+  assert.equal(study.hostQualification.appliesToDrawnPost,false);
   for(const s of[house.model.architecturalServices,house.model.servicesInterface])
     assert.equal(s.otherServiceDuties.find(x=>x.id==='incoming-water').status,'REJECTED_RETAINED_ROUTE');
   assert(house.model.currentAdoptionBlockers.some(x=>x.includes('Incoming-water REWIND')));
@@ -191,6 +193,10 @@ test('controlled drains have reachable valves and distinguish sealed low pockets
 test('unselected utility frame first rest closes Y1125 rack failure with finite Y1110/285 sweeps',()=>{
   const c=utilityFirstRestPreflight();
   assert.equal(c.status,'BOUNDED UTILITY FIRST-REST COMPARATOR; NOT SOURCE ADOPTION');
+  assert.equal(c.actualDrawnPostMechanicalScreen,false);
+  assert.equal(c.actualFirstRestSupportAccepted,false);
+  assert.equal(c.hostQualification.appliesToDrawnPost,false);
+  assert.equal(c.inputs.IASHostBlob,'6573da78a943647c900ae876d6b0701dbe2ca0cb');
   assert.equal(c.inputs.frameTravelNorthMM,285);
   assert.equal(c.routes.coldSink[3][1],1110);
   assert(c.frameStaticMinimum.gapMM>=25);

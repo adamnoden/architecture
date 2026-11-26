@@ -9,7 +9,7 @@ const rect = (x: number, y: number, w: number, h: number, fill: string, stroke =
 const page = (w: number, h: number, title: string, body: string) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc"><title id="title">${esc(title)}</title><desc id="desc">Source-derived geometric review. Luminaire symbols show placement and intended use, not measured light distribution or accepted materials.</desc><style>.title{font:32px Georgia;fill:#342d25}.heading{font:23px Georgia;fill:#342d25}.note{font:16px Arial;fill:#48443b}.small{font:13px Arial;fill:#514c42}.dimension{font:15px monospace;fill:#285f69}</style><rect width="${w}" height="${h}" fill="#f2eee3"/>${body}</svg>\n`
 
 function furnishedView(result: StudyLightingResult, arrangement: StudyLightingResult['arrangements'][number]) {
-  const room = result.commonRoom, [x0, y0] = room.bands[0]
+  const room=result.commonRoom,x0=Math.min(...room.bands.map(b=>b[0]!)),y0=Math.min(...room.bands.map(b=>b[1]!))
   const p = (x: number, y: number, z = 0) => [110 + (x - x0) * .12 + (y - y0) * .058, 420 + (x - x0) * .026 - (y - y0) * .055 - z * .102]
   const floor = (box: readonly number[], fill: string) => polygon([p(box[0], box[1]), p(box[2], box[1]), p(box[2], box[3]), p(box[0], box[3])], fill)
   const face = (wall: typeof room.walls[number], box: readonly number[], fill: string) => {
@@ -146,7 +146,7 @@ export function drawKitchenLightingCheck(result: StudyLightingResult) {
 }
 
 export function drawStudyLightingRoutes(result: StudyLightingResult) {
-  const room = result.commonRoom, origin = room.bands[0], scale = .205
+  const room=result.commonRoom,origin=[Math.min(...room.bands.map(b=>b[0]!)),Math.min(...room.bands.map(b=>b[1]!))],scale=.205
   const p = (x: number, y: number) => [100 + (x - origin[0]) * scale, 790 - (y - origin[1]) * scale]
   const box = (r: readonly number[], fill: string) => polygon([p(r[0], r[1]), p(r[2], r[1]), p(r[2], r[3]), p(r[0], r[3])], fill)
   let body = text(35, 48, 'Sockets, flex and useful access territory', 'title')
@@ -188,7 +188,7 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
   const d = result.construction, c = result.corner
   const carrier = d.carrier, [x0] = carrier.xMm, top = carrier.zMm[1]
   const p = (x: number, z: number) => [110 + x - x0, 190 + top - z]
-  let body = text(35, 48, 'The service corner · actual carrier and first release', 'title')
+  let body = text(35,48,`Earlier ${c.totalLiningDepthMm} mm corner · carrier and first release`,'title')
     + text(35, 80, 'Dead-mock-up geometry · fixed islands stay independent · anchors, circuit, materials and physical trial unqualified')
     + text(70, 135, 'Positive front carrier', 'heading')
   for (const strip of carrier.stripsXZMm) {
@@ -261,32 +261,61 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
   for (const box of h.boxes) body+=hbox([box.xMm[0]!,box.zMm[0]!,box.xMm[1]!,box.zMm[1]!],'#a9b8b4')
   const cx=(h.boxes[0]!.xMm[0]!+h.boxes[0]!.xMm[1]!)/2
   for (const z of [c.socketCentreMm[2]!,c.switchCentreMm[2]!]) body+=hbox([cx-43,z-43,cx+43,z+43],'#ede2cc')
-  body += hbox(h.carrierXZMm,'none')
+  body += h.carrierStripsXZMm.map(r=>hbox(r,'#899c9c')).join('')
+    + `<circle cx="${n(hp(h.cableOpening.centreXMm,h.cableOpening.centreZMm)[0])}" cy="${n(hp(h.cableOpening.centreXMm,h.cableOpening.centreZMm)[1])}" r="${h.cableOpening.diameterMm*.25}" fill="#f2eee3" stroke="#315d64"/>`
     + line(hp(c.doorRoughXMm[0]!,c.bayBottomZMm),hp(c.doorRoughXMm[0]!,2100),'#8e7860',4)
     + hbox([c.retainedSkirtingEndXMm[0]!,0,c.retainedSkirtingEndXMm[1]!,result.commonRoom.skirtingTopMm],'#8c6d4d')
     + text(345,1335,`${h.choices.bayWidthMm} mm local bay · ${h.architecturalConsequence.additionalBayWidthMm} mm wider to the left`)
     + text(345,1370,`Door/reveal datum fixed; complete carrier and accessories shift ${Math.abs(h.architecturalConsequence.carrierShiftXMm)} mm left`)
-    + text(345,1405,`Local depth stays ${c.totalLiningDepthMm} mm; added floor territory ${h.architecturalConsequence.addedConservativeFloorTerritoryM2.toFixed(5)} m²`)
+    + text(345,1405,`Candidate depth ${h.totalDepthMm} mm vs earlier ${c.totalLiningDepthMm} mm; added floor territory ${h.architecturalConsequence.addedConservativeFloorTerritoryM2.toFixed(5)} m²`)
     + text(345,1465,'The innermost tube ends at the socket; the next ends at the switch')
     + text(345,1500,'The outer tube rises to the light after the lower tubes have ended')
     + text(345,1535,'No tube crosses a continuing lower run; all three retain independent support')
     + text(345,1595,`Bend radii ${h.routes.map(r=>r.bend.radiusMm).join(' / ')} mm; minimum pair reserve ${Math.min(...h.separations.map(r=>r.reserveMm)).toFixed(3)} mm after ${h.pairSettingMm} mm pair setting`)
-    + text(345,1630,`${h.issues.length ? 'Geometry rejected' : 'Routes clear within the declared geometry'}; current house supply remains unbound`)
+    + text(345,1630,`${h.issues.length ? 'Geometry rejected' : 'Routes clear within the declared geometry'}; actual terminal and fault qualification remain open`)
     + text(345,1690,`Tube ${h.stock.tubeLengthMm.toFixed(1)} mm + gross collars ${h.stock.collarLengthMm} mm; ${h.stock.clipCount} authored clip positions`)
     + text(345,1725,`Known containment steel ${h.stock.totalKnownContainmentStockKg.toFixed(3)} kg; not complete installed mass`)
-    + text(345,1760,'Existing case/carrier stock is separate; never compare this subtotal with a whole assembly')
+    + text(345,1760,`New fixed saddle receiver ${h.stock.separateKnownSaddleReceiverStockKg.toFixed(5)} kg; actual saddle mass/strength unqualified`)
     + text(345,1820,`${result.localHomeRunWallDisposition.length} actual north-wall pieces intersect the wider replacement bay`)
-    + text(345,1855,'Recompose their stopped decorative field; retain independent enclosure and carrier support')
-    + text(345,1915,'At the skirt top: three explicit unconnected source interfaces, not selected circuits')
+    + text(345,1855,`Symmetric carrier retained; ordinary ${h.choices.accessoryExtensionMm} mm steel frames keep the lower controls flush`)
+    + text(345,1915,`Tube sources Z${h.routes[0]!.sourcePointMm[2]} mm; source-bound circuit shown in working-house sheet`)
     + text(345,1950,'Ports are authored requirements within current reference box envelopes')
-    + text(345,1985,'Actual HGS06 knockouts and matched hardware remain unqualified')
-    + text(345,2045,'Threaded connections do not prove ordinary renewal; union/tool/support trials remain open')
-    + text(345,2080,'No new current feeder, cable rating, device terminal or earth connection is invented')
-    + text(345,2140,'Curved clearance uses bounded finite chords; diameter and interpolation error are charged')
-    + text(345,2175,'Carrier, hard-land reservations, other boxes, furniture and first rest are checked')
-    + text(345,2235,'The old 310 mm bay and smaller tube gaps are adverse cases, not silent defaults')
-    + text(35,2410,'Geometric design comparison only. Complete hardware, materials, protection, installed mass, physical trial and owner appearance remain unearned.','small')
-  return page(1510, 2460, 'Study lighting carrier and conventional home-run comparison', body)
+    + text(345,1985,'Actual Barton side ports and matched hardware remain unqualified')
+    + text(345,2045,`Tube/actual steel reserve ${Math.min(...h.obstacleChecks.map(r=>r.reserveMm)).toFixed(3)} mm after both settings`)
+    + text(345,2080,`Ordinary upper-bend saddle splits its span to ${h.routes[2]!.finalSpansMm.map(v=>v.toFixed(1)).join(' / ')} mm`)
+    + text(345,2140,`Closed junction/carrier reserve ${Math.min(...h.enclosureCarrierChecks.map(r=>r.reserveMm)).toFixed(1)} mm; actual full-face clearance is charged`)
+    + text(345,2175,'Actual steel strips, full saddle/receiver, hand tool, boxes, furniture and first rest are checked')
+    + text(345,2235,'The old shallow full face, narrow spacing or absent bend saddle fail the retained screens')
+    + text(345,2270,'The old75 mm full-face arrangement fails; actual box ports/connections remain unqualified')
+
+  if(h.saddle){
+    const sb=h.saddle.bodyBox
+    body+=hbox([sb[0]!,sb[2]!,sb[0]!+sb[3]!,sb[2]!+sb[5]!],'#b59568')
+      + text(345,2325,`Wera205 ×37 mm tool witness; base-first after cover/tube release`,'small')
+      + text(345,2355,`D-Line86.19 ×20 ×23 mm saddle witness; bend/anchor/loaded handling unqualified`,'small')
+  }
+  const depth=(v:number)=>90+v*3
+  body+=text(35,2460,'Complete depth and ordinary enclosure renewal','title')
+    +text(35,2495,'Enlarged depth budget; fixed cases/closures are independent of decoration and the removable fitting carrier')
+    +rect(depth(0),2520,c.boundaryDepthMm*3,110,'#a6a69c')
+    +rect(depth(h.boxes[2]!.depthMm[0]!),2540,(h.boxes[2]!.depthMm[1]!-h.boxes[2]!.depthMm[0]!)*3,72,'#b3c2c1')
+    +rect(depth(h.boxes[2]!.closedCoverDepthMm?.[0]??h.boxes[2]!.depthMm[1]!),2540,((h.boxes[2]!.closedCoverDepthMm?.[1]??h.totalDepthMm)-(h.boxes[2]!.closedCoverDepthMm?.[0]??h.boxes[2]!.depthMm[1]!))*3,72,'#8fa7a1')
+    +rect(depth(h.carrierDepthMm[0]!),2520,(h.carrierDepthMm[1]!-h.carrierDepthMm[0]!)*3,110,'#8c9c9b')
+    +rect(depth(h.totalDepthMm-c.decorativeFaceMm),2520,c.decorativeFaceMm*3,110,'#b58d65')
+    +text(445,2545,`OutletZ ${h.boxes[2]!.zMm.join('..')} mm, below carrier: depths shown at separate heights`)
+    +text(445,2580,`Retained carrier d ${h.carrierDepthMm.join('..')} mm; timber face ends at ${h.totalDepthMm} mm`)
+    +text(445,2615,`${h.boxes.filter(b=>b.extensionDepthMm>0).length} ordinary extension frames (lower${h.choices.accessoryExtensionMm} mm): ${h.stock.extensionStockKgComparison.toFixed(6)} kg at authored2 mm wall stock`)
+    +text(445,2650,'Actual supplied gauges/lugs/weights, mating entries, device/earth/union and protection remain unqualified')
+  const rp=(x:number,y:number)=>[90+(x-h.bayPlanMm[0]!)*.6,2890-(y-h.firstRestPlanMm[1]!)*.5]
+  const rr=(b:readonly number[],colour:string)=>polygon([rp(b[0]!,b[1]!),rp(b[2]!,b[1]!),rp(b[2]!,b[3]!),rp(b[0]!,b[3]!)],colour)
+  body+=rr(h.firstRestPlanMm,'#b8c5b1')+rr(h.caseRestPlanMm,'#9ebdc4')
+    +text(445,2730,`Park fitting/module first; its support territory moves ${h.choices.mainRestSouthShiftMm} mm south`)
+    +text(445,2765,`Then place separate ${h.choices.caseRestSizeMm} ×${h.choices.caseRestSizeMm} mm case rest; ${h.caseRenewal[0]!.restReservesMm.moduleCradle} mm after both settings`)
+    +text(445,2800,`Complete closed-case draws: ${h.caseRenewal.map(r=>r.normalDrawMm).join(' / ')} mm; lower in the cleared plane`)
+    +text(445,2835,'Whole cases, remaining closed fronts/pipes, protected lands, furniture and both support footprints are charged')
+    +text(445,2870,'Own collar release, actual loaded handling and complete cradle capacity remain unqualified')
+    +text(35,2960,'Geometric design comparison only. Hardware, materials, protection, installed mass, physical trial and owner appearance remain unearned.','small')
+  return page(1510, 3010, 'Study lighting carrier and conventional home-run comparison', body)
 }
 
 export function drawCommonDepthCornerComparison(result: StudyLightingResult) {
@@ -391,4 +420,72 @@ export function drawCommonDepthCornerComparison(result: StudyLightingResult) {
     + text(60, 1980, 'The electrical face stays closed; actual grip force and supplied lead need trial')
     + text(60, 2020, 'Terminals/earth, feeder, unions, complete installed mass and capacity remain unqualified')
   return page(1650, 2110, 'Common-depth service enclosure comparison and renewal', body)
+}
+
+export function drawStudyLightingCircuit(r:StudyLightingResult){
+ const c=r.circuit,h=r.construction.localHomeRunComparison,P=(p:readonly number[])=>[60+p[0]!*.09,535-p[1]!*.09]
+ let out=text(45,50,'Study lighting supply','title')+text(45,85,`${r.commonRoom.bands.length} actual saved floor bands · ${h.totalDepthMm} mm local station · two independent radials · design development`)
+ out+='<defs><clipPath id="study-circuit-plan"><rect x="45" y="115" width="1095" height="420"/></clipPath></defs><g clip-path="url(#study-circuit-plan)">'
+ for(const b of r.commonRoom.bands)out+=polygon([P(b),P([b[2]!,b[1]!]),P([b[2]!,b[3]!]),P([b[0]!,b[3]!])],'#dac8aa')
+ for(const wall of c.sourceBinding.wallPlan){
+  const axis=wall.a[0]===wall.b[0]?1:0,normal=1-axis,lo=Math.min(wall.a[axis]!,wall.b[axis]!),hi=Math.max(wall.a[axis]!,wall.b[axis]!)
+  let spans=[[lo,hi]]
+  for(const hole of wall.holes??[])spans=spans.flatMap(([a,z])=>hole[1]!<=a!||hole[0]!>=z!?[[a!,z!]]:[[a!,Math.min(z!,hole[0]!)],[Math.max(a!,hole[1]!),z!]].filter(v=>v[1]!>v[0]!))
+  for(const [a,z]of spans){const q=[...wall.a],p=[...wall.a];q[axis]=a!;p[axis]=z!;q[normal]=wall.a[normal]!;p[normal]=wall.a[normal]!;out+=line(P(q),P(p),'#9c978c',Math.max(1,wall.t*.09))}
+ }
+ out+='</g>'
+ const cu=c.sourceBinding.consumerStationXYWHMm,cuP=P([cu[0]!+cu[2]!/2,cu[1]!+cu[3]!/2]),studyP=P([c.sourceBox.boxMm[0]!,c.sourceBox.boxMm[1]!])
+ out+=text(cuP[0]!-65,cuP[1]!+50,'Utility CU','small')+text(studyP[0]!-60,studyP[1]!-22,'Study source','small')
+ c.feeders.forEach((f,i)=>{out+=`<polyline points="${f.pathMm.map(p=>P(p).map(n).join(',')).join(' ')}" fill="none" stroke="${i?'#2d7180':'#855a37'}" stroke-width="3"/>`;for(const w of f.wallCrossings){const p=P(w.centreMm);out+=`<circle cx="${n(p[0]!)}" cy="${n(p[1]!)}" r="6" fill="#f2eee3" stroke="#a34b3e" stroke-width="2"/>`}
+  out+=text(1190,170+i*100,`${f.ratedA} A · ${f.article}`,'heading')+text(1190,200+i*100,f.cable.reference)+text(1190,225+i*100,`${n(f.lengthMm/1000)} m source route`)
+ })
+ out+=text(1190,400,'Six planned sleeves','heading')+text(1190,430,'Beside arch rings; no chase.')+text(1190,460,'Masonry / seals unqualified.')
+ out+=text(60,575,'Current ground plan crop: Utility CU → covered dry routes → Study sourcebox. Circles: new bounded wall crossings.')
+ out+=line([45,610],[1550,610],'#b5ad9f')+text(50,650,'Named ways and terminal duties','heading')
+ out+=rect(55,680,410,150,'#e3dccd')+text(70,710,'DB-UTILITY · separate L3 ways','heading')+text(70,750,'B16 socket · Type A / 30 mA / switched N')+text(70,780,'B6 manual light · Type A / 30 mA / switched N')+text(70,810,'Separate downstream neutrals; common PE bar')
+ out+=rect(525,680,420,150,'#e3dccd')+text(540,710,'Fixed sourcebox','heading')+text(540,750,'Socket L,N · Lighting L,N,switched live')+text(540,780,'5 continuous MI lengths · 10 matched ends')+text(540,810,'Local renewal avoids a captive 16 m cable')
+ out+=rect(1005,680,520,150,'#e3dccd')+text(1020,710,'B16 socket / switch / B6 lighting outlet','heading')+text(1020,750,'L,N,E · COM,L1,E · factory plug-in lamp')+text(1020,780,'No dimmer or automation dependency')+text(1020,810,'Physical port / terminal CAD remains unqualified')
+ out+=line([465,760],[525,760],'#855a37',2)+line([945,760],[1005,760],'#2d7180',2)
+ out+=text(60,870,'Design netlist connectivity does not establish manufactured connections or electrical acceptance.')
+ out+=line([45,900],[1550,900],'#b5ad9f')+text(50,940,'A stock enclosure above the removable skirt','heading')
+ const b=c.sourceBox.boxMm,S=1.3,X=(x:number)=>60+(x-b[0]!)*S,Z=(z:number)=>1260-(z-b[2]!)*S,top=b[2]!+b[5]!
+ out+=rect(X(b[0]!),Z(top),b[3]!*S,b[5]!*S,'#b1b3aa')+text(75,Z(top)+40,`${b[3]} × ${b[5]} × ${b[4]} mm`,'heading')+text(75,Z(top)+70,'Independent back and closed lid')
+ for(const p of c.homeRuns)out+=`<polyline points="${p.transition.pathMm.map(q=>[X(q[0]!),Z(q[2]!)].map(n).join(',')).join(' ')}" fill="none" stroke="#2d7180" stroke-width="3"/>`
+ out+=text(600,1000,`Box +${b[2]}..${top} mm · tube origins +${h.routes[0]!.sourcePointMm[2]} mm · finish field +${h.finishBottomZMm} mm`)
+ out+=text(600,1035,`Skirt release reserve ${n(c.sourceBox.skirtReserveMm)} mm · feeder pair ${n(c.pairReserveMm)} mm after settings`)
+ c.calculations.forEach((q,i)=>{out+=text(600,1085+i*65,`${i?'Lighting':'Socket'} · ${n(q.lengthM)} m complete allowance · drop ${n(q.dropV)} V / ${n(q.limitV)} V`);out+=text(600,1110+i*65,`TN upstream Ze + joints budget ≤ ${n(q.maximumZePlusJointsOhm)} Ω; actual supply unmeasured`,'small')})
+ if(c.closedSourceFloorRenewal)out+=text(600,1220,`Closed bay + sourcebox: ${c.closedSourceFloorRenewal.ordinaryHandling?.witnessCount??0} / ${c.closedSourceFloorRenewal.ordinaryHandling?.partCount??0} floor trajectories · ${c.closedSourceFloorRenewal.status==='computed-geometry-witnesses'?'nominal geometry only':'REJECTED'}`)
+ out+=text(60,1310,'Isolate/prove dead; support retained circuits. Cut spent MI for scrap; progressively feed/form each new continuous length. No installed splice.')
+ out+=text(60,1345,'CU water exposure, fault energy, supplied revision, port/tool/physical proof, materials and owner acceptance remain open.')
+ const a=c.applianceLead,AX=(x:number)=>80+(x-h.bayPlanMm[0]!)*.6,AZ=(z:number)=>1450+(2100-z)*.35
+ out+=text(60,1410,'Short-flex fitting — explicit removal before floor renewal','heading')
+ out+=rect(AX(h.bayPlanMm[0]!),AZ(2100),(h.bayPlanMm[2]!-h.bayPlanMm[0]!)*.6,(2100-h.finishBottomZMm)*.35,'#e9dec9')
+ out+=`<polyline points="${a.pathMm.map(p=>[AX(p[0]!),AZ(p[2]!)].map(n).join(',')).join(' ')}" fill="none" stroke="#343a38" stroke-width="3"/>`
+ const outlet=h.boxes[2]!,ox=(outlet.xMm[0]!+outlet.xMm[1]!)/2,oz=(outlet.zMm[0]!+outlet.zMm[1]!)/2
+ out+=rect(AX(ox-43),AZ(oz+43),86*.6,86*.35,'#ab996d')
+ for(const vol of a.nominalFixedVolumes.filter(v=>v.id.includes('switch')||v.id.includes('plug'))){const b=vol.xyzxyzMm;out+=rect(AX(b[0]!),AZ(b[5]!),(b[3]!-b[0]!)*.6,(b[5]!-b[2]!)*.35,'#a6aaa1')}
+ out+=text(450,1480,`Type80W1: ${a.fitting.shadeWidthMm}mm shade /${a.fitting.shadeHeightMm}mm height /${a.fitting.projectionMm}mm reach`)
+ out+=text(450,1520,'ClassII fitting; fixed MI/metalwork/outlet retain their own protective earth')
+ out+=text(450,1560,'B6 lighting-only outlet at1500mm; B16 general socket stays separate')
+ out+=text(450,1600,`${n(a.lengthMm)}mm short flex; ordinary3A plug; no hidden coil`)
+ out+=text(450,1640,'Manufacturer-supported grommet/strain relief; integrated shade switch')
+ out+=text(450,1680,'Before floor work: unplug, remove fitting and clips, park tray on desk')
+ out+=text(450,1720,'Factory fit, supplied revision, guide loads and physical renewal remain unqualified')
+ out+=text(450,1760,'No diffuse-light equivalence, material admission or owner appearance acceptance')
+ out+=text(450,1800,'Elevation schematic uses different horizontal/vertical scales; not product CAD','small')
+ const fc=h.cableOpening.centreXMm,fz=h.cableOpening.centreZMm
+ out+=rect(AX(fc-a.fitting.shadeWidthMm/2),AZ(fz+a.fitting.authoredDownwardEnvelopeZFromMountMm[1]!),a.fitting.shadeWidthMm*.6,(a.fitting.authoredDownwardEnvelopeZFromMountMm[1]!-a.fitting.authoredDownwardEnvelopeZFromMountMm[0]!)*.35,'none')
+ out+=text(AX(fc-110),AZ(fz+125),'Authored downward maintenance envelope','small')
+ const fp=a.floorPreparation,west=Math.min(...r.commonRoom.bands.map(q=>q[0]!)),north=Math.max(...r.commonRoom.bands.map(q=>q[3]!)),PX=(x:number)=>70+(x-west)*.12,PY=(y:number)=>1880+(north-y)*.075
+ out+=text(60,1850,'Actual-room appliance preparation: closed bay/outlet retained','heading')
+ for(const band of r.commonRoom.bands)out+=rect(PX(band[0]!),PY(band[3]!),(band[2]!-band[0]!)*.12,(band[3]!-band[1]!)*.075,'#f0ece2')
+ for(const[id,b]of r.commonRoom.occupied){out+=rect(PX(b[0]!),PY(b[3]!),(b[2]!-b[0]!)*.12,(b[3]!-b[1]!)*.075,id==='study-desk'?'#bfa87c':'#c8ccc2')}
+ out+=`<polyline points="${fp.operatorPathXYMm.map(p=>[PX(p[0]!),PY(p[1]!)].map(n).join(',')).join(' ')}" fill="none" stroke="#6d5043" stroke-width="3"/>`
+ const tr=fp.trayXYXYMm;out+=rect(PX(tr[0]!),PY(tr[3]!),(tr[2]!-tr[0]!)*.12,(tr[3]!-tr[1]!)*.075,'#8c916e')
+ out+=text(650,1900,`Full appliance/body reserve ${n(fp.fullComponentBodyReserveMm)}mm after settings/bound`)
+ out+=text(650,1940,`Standing/kneeling grip reach ${n(fp.maximumGripReachMm)}mm of600mm`)
+ out+=text(650,1980,'Tray remains inside source desk through actual furniture stages')
+ out+=text(650,2020,'Loaded handling, packing, tabletop and supplied fit unqualified')
+ out+=text(650,2060,'No new room appearance or photometric acceptance')
+ return page(1600,2160,'Actual saved Study electrical source design',out)
 }

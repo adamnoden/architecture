@@ -342,3 +342,313 @@ both independent5mm settings as well; the default retains approximately0.5mm
 minimum obstacle reserve. Actual fitting/support envelopes and fabrication
 remain unqualified. The input perturbation tests preserve that rejected large
 offset and the port-margin failure alongside unchanged room/kitchen controls.
+
+
+## Conventional full-face successor — 26 November 2026
+
+Prefer the worked **410mm-wide,95mm-deep** corner for further development over
+accepting the earlier near-zero residual clearances. It retains the existing
+panel joint, flush ordinary controls, symmetric independently supported carrier
+and complete10.5mm decorative face. The carrier/accessory column moves17mm left
+of the original310mm comparison. The local20mm depth increase adds0.00820m²;
+combined with the100mm width increase the added territory is0.01300m². No whole
+room or house geometry is silently selected.
+
+Three independent70/111/152mm-radius home runs retain the same unconnected
+source interfaces. Their pair reserve is10.993mm after both5mm settings. The
+ordinary lower47mm steel bases use conventional16mm extension frames to reach
+the flush accessory faces; the upper junction sits14mm behind those bases with
+its own closed cover. The actual upper body/cover lies at18..65/65..67mm; the
+carrier is82.5..84.5mm and the finished face at95mm. Lower tube/face reserve is
+12.5mm after both settings; the upper closed cover/carrier retains5.5mm.
+The75mm full-face countercase fails and is rejected. Actual manufacturer ports,
+matched connections and internal device/earth paths remain unqualified; nominal
+envelopes are not actual electrical connectivity.
+
+The manufacturer[Barton box/extension catalogue](https://barton-engineering.co.uk/bs-switch-and-socket-box/)
+provides the conventional72×72×47mm base and16mm extension direction. It supplies
+no dimensioned side-port coordinates. The current source records that exact
+boundary. No product material or protective performance is inherited by the
+assembled project detail.
+
+One ordinary midpoint saddle divides the former318.761mm unsupported upper end
+into169.381/149.381mm spans, retaining the300mm criterion. The checked envelope
+uses the[D-Line saddle dimensions](https://d-line-it.com/conduit-saddles/) and
+an actual[Wera205×37mm hand-tool witness](https://hybris-media.wera.de/download/pdfgenerator-datasheets/en/05009315001.pdf).
+A continuous20mm-square steel hard land reaches masonry core0 through its own
+sealed-plane crossing. The base is fixed before tube placement, or after safe
+isolation/support/release; no driver-through-tube operation is invented.
+Actual curved-conduit suitability, anchor/seal, tab operation, hand force,
+complete mass and loaded handling remain unqualified.
+
+The fitting/module is parked first, with its reserved support territory60mm
+farther south. Each complete closed case then draws83/83/97mm and lowers at its
+clear withdrawal plane into a separate120mm-square support territory. Other
+closed fronts, retained pipes, protected lands, actual furniture, room floor
+bands and both support footprints are checked. The rests retain7mm separation
+after both settings, and every declared case/rest/mouth reserve is at least5mm.
+Actual own-collar release, complete delivered device projections, loaded grip
+and cradle capacity remain unqualified, so this is not an installed renewal pass.
+
+The source-derived tube/gross-collar subtotal is2.010564kg, the separate hard
+land0.078500kg and two extension-frame stock comparisons0.140672kg:2.229736kg
+at the stated respective scope. The extension comparison uses an authored2mm
+steel wall; supplied gauge/lugs/weights remain unknown. Existing boxes, carrier,
+clips, covers, wiring and other hardware are not silently included. The original
+symmetric carrier returns with no artificial gravity asymmetry; no load is
+admitted to the current structural model.
+
+The shared saved-stage compiler, ordinary producer and construction drawing
+consume this same complete corner. Countercases retain failed narrow spacing,
+missing midpoint support, the old shallow full face, inadequate rest/mouth,
+scaled manufactured extension and invalid/missing source dimensions. The
+completed crafted-room concept and owner appearance gate remain unchanged.
+
+
+Internal challenge corrected a phase/proof omission before integration: a case
+normal draw must retain its own straight tube and bend. Only its actual mating
+collar can be excluded after the separately unqualified release operation. The
+compiler now checks the real72mm base/extension separately from the86mm plate
+and referenced23mm socket-device shadow, rather than extruding the full plate
+width through the entire box depth. The own retained-tube reserves are at least
+9.992mm after both settings. Actual switch/junction device shadows remain
+project requirements pending component binding. No tube, fixture or protective
+boundary disappears from the proof to make removal pass.
+
+
+The station layout now queries the actual floor boundary at each station's own
+coordinate. A local south-west structural notch therefore moves the affected
+west desk socket and south task-light plane, while the north floor lamp remains
+on its unchanged wall. The old desk position exposes the actual socket/hand
+clash; the modest revised desk/emitter positions restore that declared access.
+Missing station boundaries reject explicitly. The source-bound room overlay
+must supply the actual floor/furniture revision; the lighting method introduces
+no independent pilaster-width or furniture authority. The furnished/route views
+use whole-room bounds rather than assuming the first floor rectangle owns every
+wall, so added notch bands do not silently crop the room.
+
+
+Validation:24 focused lighting/strict-producer tests pass, including saved
+engineering-document CLI/API agreement, invalid/stale-source rejection, actual
+stepped own-tube renewal and the corner-notch/desk sensitivity. TypeScript and
+the ordinary strict producer/source audit pass. The construction sheet was
+raster-inspected. The full baseline receipt retains every geometric check;
+perturbation receipts retain all issues and governing minimum witnesses, with
+full detail reproducible from the same recorded compiler inputs. Full combined
+head health, new actual-room integration and publication preflight remain the
+integrating worker's responsibility; no installed or owner acceptance is claimed.
+
+## Source-bound electrical development
+
+The actual saved200mm Study corner now carries an explicit conventional circuit
+specification: named separate L3 B16 socket and B6 manual-lighting ways, bare
+2L2.5/2L1.5 MI, five uninterrupted lengths and ten matched ends. The accessible
+sourcebox has socket L/N and lighting L/N/switched-live cells, separate downstream
+neutrals, and a protective bar/RPSL tails for retained metalwork. The source-to-box
+route derives from the actual Utility consumer station and current walls/arches.
+Six planned side-spandrel sleeves are bounded straight crossings, with no
+longitudinal chase or borrowed closing doorway/fanlight. Actual masonry,
+fire/air/acoustic seals, full wet/heat/PV sections, supports and constituents
+remain unqualified; the CU's catastrophic water exposure remains unresolved.
+
+A stock225×100×75 sourcebox sits at175..275mm above the removable150mm skirt.
+The fixed steel back/perimeter seal replaces only its board patch, independently
+of trim. This is an explicit225×100 opening within the410mm service bay. Station
+axes move16mm east and tube origins rise to375mm; the decorative field remains
+at150mm. Real opposed MI bends bridge the source entries. Complete containment,
+retained-case/carrier withdrawal, sourcebox sweep/rest and actual floor cradle
+checks are recomputed. The closed sourcebox is now joined to every floor-renewal trajectory through the
+existing production validator, together with the actual retained95mm bay. Its
+steel bodyY3094.5..3169.5 is already12mm behind the local finishY3082.5; the
+previous general27mm room proof usedY3150.5 and omitted that local face. These
+are actual solid volumes, not clearance or tool envelopes. Initial full-bay
+replay rejected nine floor protocols (127/136). The same saved case now changes
+ordinary board poses and routes, not the136 floor pieces or furniture. Its full
+production replay passes136/136 with every stationary board setting at least
+10mm; furniture return takes an ordinary25mm east step, clearing the retained
+bay at32.5mm against the unchanged25mm requirement. One genuine dogleg is
+1432.99mm: the finite authored comparison travel domain is1450mm. Both1200 and
+1300 remain adverse controls that reject this task. Moving the small border
+board1mm north reduces its setting to9mm and rejects only that task; the other
+135 witnesses remain identical. The enclosure is not relocated into fictitious
+spare depth and no electrical closure is opened for ordinary floor renewal.
+The low floor phase retainsR300+5mm,335mm body-to-panel and600mm reach; furniture
+and preparation retain25mm. These are distinct nominal comparison criteria.
+
+Workers, furniture, carried boards and board placement retain complete fixed
+plan projections. Only horizontal low floor-face transfers can pass beneath a
+raised solid: the shared12mm rest,6mm pickup gap and actual15mm finish give a
+conservative48mm complete transfer top, plus5mm setting. No crouched person or
+carried board inherits that exemption. Full136 replay needs no new arch or
+structural solve: nativeSW200 context,136 parts and furniture remain identical;
+this is an added fixture/motion collision check, not load capacity or a wall
+crossing approval. Loaded grip, postures, forces and physical repeatability
+remain unqualified.
+
+Reject a low25..125mm box because it creates an untested floor obstruction.
+Reject the eight-ended unbroken socket pass-through because it captures a closed
+stock sourcebox on the whole board-to-socket length. Two extra conventional
+terminations buy local enclosure renewal. Their seals, PVC tails/closures,
+compound, Wago housing and all other constituents remain charged and unadmitted.
+A metal exterior grants no exception and no certified internals are altered.
+
+The [actual circuit sheet](studies/working-study-lighting-circuit.svg) and
+[canonical receipt](studies/working-study-lighting.results.json) consume the
+saved `working-house-comparison.json` design/stages through the shared compiler.
+The old reference arrangement remains a comparison. The receipt fingerprints
+controlling design/stage inputs, methods and non-self source identities. It
+never embeds its own receipt-dependent family digest or a full-document SHA
+containing that digest. The producer still strictly checks the complete current
+saved bindings after owning regeneration; an explicit binding refresh is required.
+
+Cable bends, fill, conditional rating/drop, hot cable-loop impedance and phase
+budget are computed. The TN remainder is **upstream Ze plus unmodelled joints**,
+not a measured Ze. The0.6 combined thermal/group/installation factor is an authored
+minimum condition. Actual supply/earth/PFC, exact protective-device Ia/energy,
+conductor/sheath/termination withstand, supplied ports, terminal/holder/tool CAD,
+matched board, full physical renewal and owner acceptance remain open. Class3 or
+6kA Icn alone cannot qualify the1.5mm2 lighting circuit's fault thermal duty.
+Current primary Hager/Barton/Wago/IET evidence is recorded; older official MI
+sizing tables are recoverable as indexed manufacturer text while direct PDF
+endpoints404, so current supplied-revision reconciliation remains unearned.
+
+The netlist reaches socket L/N/E, the ordinary rocker COM/L1/E and ClassI lamp
+L/N/E. Functional connectivity is not manufactured terminal fit or installed
+acceptance. Desk/side/south task, other lighting arrangements and remaining
+whole-house circuits remain separately identifiable unwired duties.
+
+The source counterhold uses the actual22/24mm Bahco tool with a49mm head, not a22mm-only spanner. Its full head is charged at both the rear and side; remaining reserves are checked after setting. Complete handle/hand and simultaneous counterhold remain physical qualification duties.
+
+Source-port pitch is derived from the actual counterhold head, neighbouring nut and both setting allowances (54mm in this case). Ordinary opposed MI bends transition to the41mm conduit pitch;375mm tube origins preserve straight release room. Neighbouring hardware stays in the head-clearance check.
+
+
+The bounded circuit now uses one bare2L2.5 MI stock for both independent radials,
+with50mm feeder/source bend radii. It replaces the earlier mixed1.5/2.5 stock:
+actual6.6mm cable, fill13.44%, minimum inside bend46.7mm against39.6mm,
+source post-bend straight10.735mm, and retained-body/renewal reserve10.183mm.
+Lighting voltage drop is1.845V at the full6A circuit allowance; the five physical
+lengths including cutback allowances contain about6.335kg of known cable,
+approximately0.92kg more than mixed stock. This is neither complete assembly mass
+nor a fire rating. MatchedRGM/RPSL2L2.5/20 entries remain supplied-revision duties.
+
+The switch's official2024 sheet accepts3×2.5mm²; the currentApril2026 socket
+sheet confirms3×2.5mm² and3×4mm² in L/N/E. The lamp's terminal CSA remains
+unknown, not inferred from its plate or body envelope. An
+adverse1.5mm² lamp-terminal limit rejects the2.5mm² combination. Current Astro
+Backplate3issue2 instructions are identified, but do not yet earn actual terminal
+fit or factory-lead thermal evidence. No certified product internals are altered.
+The shared output compares specified external2.5mm² copper/PVC tails at k115:
+82,656A²s withstand versus the generic class3B≤16A/6kA point35,000A²s. The old
+1.5mm² comparison was29,756A²s. This single-point comparison does not qualify the
+actualHager RCBO over the full fault range, unknown factory leads, earth tails,
+or actual supplied sleeve temperatures; their gates stay false.
+
+
+## Short-flex cassette and consumed-cable renewal —26November2026
+
+Spent MI is consumable. After isolation, lockout and proof dead, support retained
+circuits and cut the retired cable into supported scrap sections. Progressively
+feed each new continuous length through accessible planned sleeves before
+forming and supporting its bends. No installed splice is added. New-coil feed
+and form access remains a concrete unfinished installation duty. Reusable boxes,
+rails and covers retain separate checks; local intact-body screens never proved
+intact whole-house cable extraction.
+
+Choose the Anglepoise Type80W1 manufacturer-supported external cable/plug
+configuration. Its V5 instructions explicitly provide the optional grommet100141
+and mandatory strain-relief101892, with external cable to the supplied Wago
+connectors. Prepare a425mm external two-core0.75mm² flex and ordinary SN1382
+3A fused BS1363-1 plug in the workshop; reserve100mm initial cutback/end allowance,
+not a hidden coil inside either enclosure. Ordinary cassette replacement unplugs
+this prepared assembly without opening fitting terminals or disturbing fixed MI.
+Fixed metalwork and outlet retain protective earth; the ClassII fitting receives
+L/N only. Its integrated shade switch removes the inline switch and its location
+problem. B6 lighting and B16 general sockets remain separate.
+
+The published145mm shade,160mm height,90mm wall plate and260mm maximum reach
+propagate through actual carrier/draw/parking geometry. A generous60×70×30mm
+installed plug envelope, short flex bow and two open guides enter the same saved
+Study136renewal validator. The depth charges the manufacturer's20mm installed projection plus10mm allowance.
+Plug withdrawal and an actual source-derived standing
+field retain R300,600mm reach and25mm furniture clearance; these do not change
+the distinct5mm low-floor criteria. Supplied plug/flex fit, grommet/connector and
+strain-relief detail, guide/anchor loads, loaded handling and illuminated-object
+minimum200mm remain unqualified. No photometric, material, physical or owner
+acceptance is inferred. Existing eye-level room sheets omit lighting; the actual
+circuit sheet shows this conditional interface and earns no room beauty verdict.
+
+Reject the concealed plug behind the old carrier: box front65mm to carrier82.5mm
+leaves17.5mm before settings, less than the former20mm plug witness. Put the fixed
+lighting-only outlet at1500mm, below the1800mm carrier, reusing the actual47mm box
+and16mm stock extension/profile. Reject preserving Type75Mini's stock2.5m lead
+as a large visible U solely because it can be drawn. No permission to shorten
+that different product was established. Direct fixed2.5mm² termination in an
+unspecified supplied connector remains unproved; a generic Wago name does not
+supply the exact reference, conductor capacity or backplate/gland working space.
+The supported short-flex option avoids that adapter assumption and is the one
+active development direction. Colour/appearance remain unaccepted.
+
+Primary sources: [Type80W1 V5 instructions](https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-80/5-instruction-booklets/1-uk-eu/type-80-w1-wall-light-instructions-uk-eu.pdf),
+[current manufacturer product](https://www.anglepoise.com/product/type-80-wall-light-matte-black/),
+and [manufacturer-created SN1382 sheet,22May2025](https://www.electrical2go.co.uk/mwdownloads/download/link/id/30680).
+This source checkpoint remains WIP until fresh shared producer/type/geometry/
+renewal tests, regenerated drawings and integration checks are earned.
+
+
+The selected Nexans018065107 flex has max6.3mm diameter and recommends6diameter
+bends. Both live and parked routes use50mm centreline radius: inside46.85mm
+against37.8mm. The four-bend external route needs at least414.16mm, hence425mm
+prepared length and525mm initial cut/order allowance. The frame remains260×450;
+a separate handling envelope adds10mm each side and75mm below for the loose
+short flex and full unplugged52mm-depth plug envelope (manufacturer42mm plus
+10mm allowance). Frame support remains100mm above floor; the declared handling
+envelope starts25mm above it. No metal frame or false floor depth is added.
+The larger260mm fitting gets a350mm-deep temporary rest, extending its front50mm.
+The current actual chair/emitter require a northwest service stance rather than
+standing centrally in the chair field; body, reach and fixed-fitting checks use
+the same source room. These remain conditional geometry, not loaded human proof.
+
+The retained-cord comparison genuinely failed six ordinary floor body routes;
+it was not silently accepted. Floor preparation now unplugs the small appliance,
+removes its ordinary mount and both screwed flex clips/spacers, and carries
+fitting/managed flex/plug into a temporary180×300×400 rest reservation on the actual Study
+desk. Captive backing lands, fixed carrier, outlet and entire bay stay closed.
+The tray remains10mm inside the current desk at every existing movement stage;
+this consequence is checked against the actual production furniture result.
+No floor protocol,136 physical floor pieces, furniture footprint, clearances
+or1450mm travel domain changes. The actual installed fitting/cord/plug/guide
+volumes remain available as the rejected retained-appliance comparison.
+
+Preparation has a source-checked operator approach,50mm normal draw, clear
+north-field hand turn, east-flank carry and above-table placement. It charges
+the full145×260mm fitting and declared400mm-high combined handling envelope,
+R300 body,25mm furniture separation, two5mm settings,600mm hand reach and
+a0.25mm continuous-motion sampling bound. The carry uses a1320mm bottom and1600mm standing shoulder; final lowering uses the authored1050mm kneeling shoulder, with full3D grip reach rather than horizontal reach alone. The730mm tabletop is an authored
+comparison consistent with current view convention, not measured furniture.
+The isolated loose flex helix usesR50/rise25 and its full425mm length; no
+energised coil is proposed. Supplied grommet/plug packing, mount/clip tool work,
+loaded handling/tabletop/desk movement and physical qualification remain open.
+The current eye-level room impressions omit this new family; they confer no
+appearance or photometric acceptance.
+
+Two ordinary removable flex clips/spacers use retained30×2mm flat steel tabs
+on the existing carrier rail; their setout, enclosure clearances, actual tool
+envelopes and stock burden are returned by the same circuit calculation.
+No fixing is chased into permanent fabric or supported by decoration.
+Actual anchors, threads, complete clip components and material admission
+remain unqualified. The authored carry has been adjusted by5mm to give a
+larger component/body reserve while preserving the full furniture criterion.
+
+The160mm catalogue dimension is shade height, not an accepted full-articulation
+envelope. The shared source now reserves a generous downward maintenance pose
+from205mm below to45mm above its mount,250mm total, and a400mm-high combined
+carry/desk-rest reservation. Published90°up/60°down movement and the200mm
+illuminated-object separation remain unqualified use duties. Return the shade
+to the bounded downward pose before preparation. This is an authored envelope;
+no productCAD, full-aim clearance or physical packing acceptance is invented.
+
+A failed appliance-preparation input now withholds every dependent floor witness
+at the actual compiler join (zero witnesses and an explicit source diagnostic),
+rather than leaving136 apparently usable nested witnesses behind a rejected
+overall status. The negative carry perturbation exercises that real join and
+leaves all physical floor geometry unchanged.

@@ -43,9 +43,12 @@ jobs:
           - mode: wet-beam-end
             check: wet-beam-end-proof
             artifact: wet-beam-end-browser-review
-    # Keep the original complete proof and the additional end-return proof
-    # independent: each executes actual native solves within its25-minute budget.
-    timeout-minutes: 25
+    # Both modes retain every native and browser assertion. One BLAS thread
+    # avoids oversubscription; the budget includes repeated complete houses.
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v6
       - name: Setup structural numerical runtime
@@ -101,4 +104,4 @@ jobs:
           name: ${{ matrix.artifact }}
           path: ${{ runner.temp }}/ade-browser-review
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 90

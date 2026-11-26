@@ -319,9 +319,10 @@ export function prepareCurrentDesignCompile(input: unknown) {
       const linings = compileResolvedStudyLinings(resolved, options)
       return { source, linings, detail: drawStudyLiningComparison(linings), elevation: drawStudyPanellingElevation(linings) }
     },
-    studyRoomKit: async (input: unknown) => {
+    studyRoomKit: async (input: unknown, distributedFloorChoices?: unknown) => {
       const { compileStudyRoomKitProjection } = await import('./assemblies/study-room-kit-projection.js')
-      return { source, ...compileStudyRoomKitProjection(resolved, input) }
+      const { readStudyStructuralGeometry } = await import('./assemblies/study-structural-context.js')
+      return { source, ...compileStudyRoomKitProjection(resolved, input, readStudyStructuralGeometry(resolved, distributedFloorChoices)) }
     },
     readStudyLightingCase: async () => {
       const { readStudyLightingReferenceCase } = await import('./assemblies/study-lighting.js')

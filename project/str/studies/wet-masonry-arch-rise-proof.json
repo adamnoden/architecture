@@ -18,8 +18,8 @@
     "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
     "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
     "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+    "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
     "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -70,27 +70,27 @@
     "project/str/studies/wet_masonry_arch_comparison.py": "09f8c05f31e552cf203c14777dad386ed9911afbaa70efc462acfb321a13daba",
     "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7"
   },
-  "archiveSHA256": "153e950ea2308b3015ee202b043697c6d0cdc3bb5bab8341f1f575cd25affebb",
+  "archiveSHA256": "08484879d5d11650d6ba01bd59cadfec32f94485d2c2cd0d72133b482c79e42c",
   "actualCaptureProvenance": {
     "rise450-oriented": {
       "bytes": 17801095,
-      "sha256": "e459f21919d0831ea94402dbfd4917f4fa1ba27db23b9599c4081672c6f401a1"
+      "sha256": "b29ecaf5e764c3ae3a8b9e12e81438b0100d02c6ba042cf89f8c21543e88b569"
     },
     "rise450-combined": {
       "bytes": 17861620,
-      "sha256": "fd370769cc0d8ff02a56b8957ea3ec8d760b38a55111f4ee55d44c1d5257ac6f"
+      "sha256": "e56c80c9d3b8a1ab0ebb3a6a1557b3096993cf41a229c739129f502df4d04df4"
     },
     "rise600-oriented": {
       "bytes": 17798708,
-      "sha256": "c85070aa7d50d972feb5a38740eecc164bee40b56acf9eb3fc21b1b290cab45f"
+      "sha256": "471392223e7a8b947cf5540240dc6589a6d434881450c6ab6d2d80e7bb9f7fce"
     },
     "rise600-combined": {
       "bytes": 17865752,
-      "sha256": "1222a0eb5849350400d0572da798d3bb121faaf8272569e8ca36856876929e49"
+      "sha256": "66e650d52e8fe5006ca59e128ae8ce6b93152dcb01e3b445760a8eaef04ee537"
     },
     "rise450-null": {
       "bytes": 17783689,
-      "sha256": "e6b6d291173151dabdb9e68de0321ee9dd8580b9258a46ddf8f0497f93b79584"
+      "sha256": "938700accda88bd1f58f59a6dcd99d5f5872bb9f7b8fc81bafe582fe62affba8"
     }
   },
   "actualNumericalRuntime": {
@@ -117,7 +117,7 @@
       "AVX512DQ": true,
       "AVX512ER": false,
       "AVX512F": true,
-      "AVX512FP16": true,
+      "AVX512FP16": false,
       "AVX512IFMA": true,
       "AVX512PF": false,
       "AVX512VBMI": true,
@@ -131,7 +131,7 @@
       "AVX512_KNL": false,
       "AVX512_KNM": false,
       "AVX512_SKX": true,
-      "AVX512_SPR": true,
+      "AVX512_SPR": false,
       "F16C": true,
       "FMA3": true,
       "FMA4": false,
@@ -173,7 +173,7 @@
       "scipy/superlu": "8bc863fc723ee3bc4d603bf2cdf540fa728ce5df35302686588f0ee926dae261"
     }
   },
-  "released300PredecessorArchiveSHA256": "74ad273728a4d1d0e0c0da5f457c2dda583ee65fda7549866bf27a5e6a336425",
+  "released300PredecessorArchiveSHA256": "f7fe29f0c1cf3717d47ebe67a60d84ed79ef74a4d95932b92509455840f78221",
   "geometryAndRoomCosts": {
     "300": {
       "geometry": {

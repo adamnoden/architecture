@@ -29,15 +29,15 @@ METHODS=[
  'compiler/reference-house/current-design/structural-wet-post-head-fan.ts',
  'compiler/reference-house/current-design/structural-wet-support-cage.ts',
 ]
-EVIDENCE_REF='1aaf2f2961bebd67b3944ddc0c85b13120fd5115'
+EVIDENCE_REF='026b677544246c0c6669f23fad33c3b3b73ada95'
 ARCHIVES={
- 'width120':{'repositoryPath':'project/str/studies/captures/wet-pad-width120-20261123.tar.gz',
-   'sha256':'adfc099abd34c10fa82b06386638f8284988bc6b58692221a31e68c789852ee8',
-   'gitBlob':'1b988d5f1886f63b78f36535b6cff03f623bbe4c','prefix':'ovid-wet-pad-width120-20261123/',
+ 'width120':{'repositoryPath':'project/str/studies/captures/current-positive-wet-pad-width120-20261126.tar.gz',
+   'sha256':'1dc03bceb70008cfad826bf23584d5cf6841f4a46786a2d9b33525c9dae247a4',
+   'gitBlob':'200b608bb53ac6a8ef39846c5758ad82998770c6','prefix':'',
    'manifest':'checkpoint-manifest.json'},
- 'alternatives':{'repositoryPath':'project/str/studies/captures/wet-pad-development-20261123.tar.xz',
-   'sha256':'2ed13dfb0b1d4ceda5e251567521e679cd72e9807641eabb22ec74a10c081691',
-   'gitBlob':'0695409ce8288329580e2ad174a5007af236c367','prefix':'','manifest':'durable-capture-manifest.json'},
+ 'alternatives':{'repositoryPath':'project/str/studies/captures/current-positive-wet-pad-alternatives-20261126.tar.xz',
+   'sha256':'291b811f6eb15ca3fe426adc8c9baa9d4d734d653e2769b00e7803f3a7f54f43',
+   'gitBlob':'8065bc6c3f404e96b55854fdbb845b4f3dac05d1','prefix':'','manifest':'durable-capture-manifest.json'},
 }
 CASES={'width120-q32':('width120',120,32,'width120-q32'),
        'width120-q64':('width120',120,64,'width120-q64'),

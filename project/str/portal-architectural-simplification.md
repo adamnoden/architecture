@@ -1,6 +1,8 @@
 # Portal simplification after cage rejection
 
-**Develop the separate masonry arch below a straight RC frame first.** One explicit inward-enlarged RC alternative was checked and still has arch-bar/link intersections. Neither alternative is a selected structure. The rejected cage record is [continuous-rc-closed-links.md](continuous-rc-closed-links.md).
+**Unselected northern portal topology comparison.** The separate masonry arches below straight RC frames avoid the rejected crossing RC cage, but their full stiffness, contact, restraint and thermal behaviour remain unresolved. The later [finite lower-masonry bed comparison](lower-masonry-bed-development.md) concerns the different interior `WET-ARCH/*` wet-wall support occurrence; its rejection does not reject these northern portals. The [floor–portal reconciliation](floor-portal-reconciliation.md) distinguishes those occurrences and owns the current joined-house development. The witness calculations below do not qualify a complete masonry mechanism.
+
+One explicit inward-enlarged RC alternative was checked here and still has arch-bar/link intersections. Neither alternative is a selected structure. The rejected cage record is [continuous-rc-closed-links.md](continuous-rc-closed-links.md).
 
 This comparison binds the actual HAD portal and four grid caps. The governing architectural controls are the finished 2400 mm aperture, its existing curved profile, and the 775 mm normal envelope. The previous 2960 mm raw structural span is allowed to change. Current native 48-wind forces remain frozen evidence for their original mechanical model; they are not reused as forces for either altered structure. The separately developing 200 mm floor integration likewise requires its own joined calculation.
 
@@ -41,7 +43,7 @@ The trial recomputes H12 arch tangencies and 87 mm bend radii, uses post main ax
 
 The previous proposed cap mats are not an existing schedule and cannot be copied into the new footprint. In particular, the new X4536.5 starter is36.5 mm from a cap-centred X4500 north–south mat axis; actual rib/placement spacing and crossing elevations need a revised mesh layout. Whole-house stiffness, section law, barrier axes and ground support must likewise change explicitly if B is revisited.
 
-## Decision and reproducibility
+## Preceding decision and reproducibility
 
 A is the cleaner next mechanism because it removes the failed curved RC reinforcement crossing. Its cost is the 60 mm local jamb insulation and larger direct-bearing abutment; if the thermal junction cannot earn its requirement inside the finished envelope, revise the architectural opening/wrap explicitly. Do not silently adopt a high tension corbel or relabel B's failed cage as conventional.
 
