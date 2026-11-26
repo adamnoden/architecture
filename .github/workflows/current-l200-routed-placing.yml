@@ -1,0 +1,86 @@
+name: Check one ordinary chord-free L200 placing trial
+on:
+  push:
+    branches: [work/zerg-l200-node-recovery-20261126]
+    paths:
+      - '.github/workflows/current-l200-routed-placing.yml'
+      - 'project/str/studies/current_l200_routed_placing.py'
+      - 'project/str/studies/current_l200_routed_placing_test.py'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: l200-routed-placing-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  geometry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PLACING_EVIDENCE_DIR: /tmp/l200-routed-placing-evidence
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Recover exact successful zero-chord evidence without any solve
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -B - <<'PY'
+          import gzip,hashlib,io,json,os,urllib.error,urllib.request,zipfile
+          from pathlib import Path
+          folder=Path(os.environ['PLACING_EVIDENCE_DIR']);folder.mkdir(parents=True,exist_ok=True)
+          api=os.environ['GITHUB_API_URL'];repo=os.environ['GITHUB_REPOSITORY']
+          url=f'{api}/repos/{repo}/actions/artifacts/15121319810'
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          req=lambda u:urllib.request.Request(u,headers=headers)
+          with urllib.request.urlopen(req(url),timeout=30) as response:meta=json.load(response)
+          if meta['expired'] or meta['workflow_run']['id']!=45831879777 or meta['workflow_run']['head_sha']!='a8decb9845498fdb864121ee57d0caba16b98002':
+              raise ValueError('Exact successful paired source/run required')
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,*args,**kwargs):return None
+          try:
+              with urllib.request.build_opener(NoRedirect()).open(req(url+'/zip'),timeout=30) as response:data=response.read()
+          except urllib.error.HTTPError as response:
+              if response.code!=302:raise
+              location=response.headers['Location']
+              if not location.startswith('https://'):raise ValueError('HTTPS artifact required')
+              with urllib.request.urlopen(location,timeout=60) as body:data=body.read()
+          sha=lambda b:hashlib.sha256(b).hexdigest()
+          if sha(data)!='d08a3c1872120980d1b820cfc30b37a79bf824aa5f2770eb4905fdd666b74e67':
+              raise ValueError('Successful paired artifact bytes changed')
+          identities={}
+          with zipfile.ZipFile(io.BytesIO(data)) as archive:
+              for filename in ('new-inputs.json','zero.json.gz'):
+                  names=[n for n in archive.namelist() if n==filename or n.endswith('/'+filename)]
+                  if len(names)!=1:raise ValueError('Missing or ambiguous authenticated member')
+                  b=archive.read(names[0]);(folder/filename).write_bytes(b)
+                  identities[filename]={'sha256':sha(b),'bytes':len(b)}
+          packet=json.loads((folder/'new-inputs.json').read_bytes())
+          zero=json.loads(gzip.decompress((folder/'zero.json.gz').read_bytes()))
+          if zero['result']['sourceSHA256']!=packet['sourceSHA256'] or zero['result']['authoredNativeCase']!=packet['cases']['zero']:
+              raise ValueError('Actual fresh response/input identity mismatch')
+          for path,expected in {**packet['sourceSHA256'],**packet['methodSHA256']}.items():
+              if sha(Path(path).read_bytes())!=expected:raise ValueError('Physical method differs: '+path)
+          (folder/'placing-input-admission.json').write_text(json.dumps({'artifactId':15121319810,'runId':45831879777,'headSHA':'a8decb9845498fdb864121ee57d0caba16b98002','artifactSHA256':sha(data),'memberIdentities':identities,'nativeSourceCount':len(packet['sourceSHA256']),'directFiniteMethodCount':len(packet['methodSHA256']),'newHouseSolveExecuted':False},indent=2)+'\n')
+          print('PASS exact successful artifact and actual source-bound zero W0 input/response')
+          PY
+      - name: Check analytic collisions and actual one-family placing result
+        run: |
+          python -B project/str/studies/current_l200_routed_placing_test.py > "$PLACING_EVIDENCE_DIR/tests.log" 2>&1
+          cat "$PLACING_EVIDENCE_DIR/tests.log"
+          python -B project/str/studies/current_l200_routed_placing.py \
+            --inputs "$PLACING_EVIDENCE_DIR/new-inputs.json" \
+            --zero "$PLACING_EVIDENCE_DIR/zero.json.gz" \
+            --out "$PLACING_EVIDENCE_DIR/current-l200-routed-placing.json"
+          git diff --exit-code
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-l200-routed-placing
+          path: /tmp/l200-routed-placing-evidence/
+          if-no-files-found: error
+          retention-days: 90
