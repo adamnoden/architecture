@@ -4,7 +4,7 @@ import test from 'node:test'
 import {prepareCurrentDesignCompile} from './current-design/compile.js'
 import {resolveCurrentDesign} from './current-design/resolve.js'
 import {readEngineeringEditDocument} from './current-design/engineering-edit.js'
-import {deriveStudyLighting,lightingBasis,readLightingComponents} from './current-design/assemblies/study-lighting.js'
+import {compileStudyLighting,deriveStudyLighting,lightingBasis,readLightingComponents} from './current-design/assemblies/study-lighting.js'
 import {compileStudyStructuralRenewal,studyPanelTransferProfile} from './current-design/assemblies/study-structural-renewal.js'
 const document=readEngineeringEditDocument(JSON.parse(readFileSync(new URL('../../project/ccr/studies/working-house-comparison.json',import.meta.url),'utf8')))
 assert.ok(document.stages.studyRoomKit&&document.stages.distributedFloor&&document.stages.studyLighting)
@@ -201,4 +201,19 @@ test('retaining the complete plugged appliance keeps genuine floor conflicts vis
  const tooLow=structuredClone(components)
  tooLow.circuitDesign={...tooLow.circuitDesign,appliancePreparation:{...tooLow.circuitDesign.appliancePreparation,carriedBottomMm:900}}
  assert.ok(run(tooLow).circuit.issues.includes('appliance-preparation-desk-rest-rejected'))
+})
+
+
+test('changing appliance preparation invalidates every dependent floor witness in the actual compiler join',()=>{
+ const changed=structuredClone(components)
+ changed.circuitDesign={...changed.circuitDesign,appliancePreparation:{...changed.circuitDesign.appliancePreparation,carryOffsetMm:350}}
+ const rejected=compileStudyLighting(resolveCurrentDesign(document.design),input,kit,changed)
+ assert.equal(rejected.status,'GEOMETRY_REJECTED')
+ assert.notEqual(rejected.caseDigest,run().caseDigest)
+ assert.ok('closedSourceFloorRenewal'in rejected.circuit)
+ assert.equal(rejected.circuit.closedSourceFloorRenewal.status,'source-withheld')
+ assert.equal(rejected.circuit.closedSourceFloorRenewal.ordinaryHandling.witnessCount,0)
+ assert.deepEqual(rejected.circuit.closedSourceFloorRenewal.ordinaryHandling.parts,[])
+ assert.ok(rejected.diagnostics.some(d=>d.code==='IAS_LIGHTING_APPLIANCE_PREPARATION_REJECTED'))
+ assert.deepEqual(rejected.commonRoom.floorFaces,run().commonRoom.floorFaces)
 })

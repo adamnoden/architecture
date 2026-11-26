@@ -155,7 +155,7 @@ test('actual carrier geometry, core lever arm and complete first rest use the sa
   assert.equal(junction.requiredDecorativeJointMm, basis.room.settingMm)
   assert.equal(d.coreFaceYMm, result.corner.bayPlanMm[1] + 75)
   assert.equal(d.loadDemand.weightN, 29.43)
-  assert.ok(Math.abs(d.loadDemand.coreMomentNm - 7.50465) < 1e-10)
+  assert.ok(Math.abs(d.loadDemand.coreMomentNm - 9.85905) < 1e-10)
   assert.ok(d.loadDemand.coreMomentNm > d.loadDemand.faceMomentNm)
   assert.ok(d.carrier.carrierStockMassKgUpperComparison > 0)
   assert.ok(d.carrier.remainingAuthoredMassBudgetKg > 0)

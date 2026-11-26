@@ -255,12 +255,19 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
       craftedKitReopened: false, localInterfacesChanged: true }, diagnostics,
   } as const
 }
-export function compileStudyLighting(resolved: CurrentDesignResolution, input: unknown, kit: Projection) {
-  const lighting=deriveStudyLighting(input, lightingBasis(resolved, kit), readLightingComponents())
+export function compileStudyLighting(resolved: CurrentDesignResolution, input: unknown, kit: Projection, components:ReturnType<typeof readLightingComponents>=readLightingComponents()) {
+  const lighting=deriveStudyLighting(input, lightingBasis(resolved, kit), components)
   const room=kit.kit,context=room.structuralConsequence,plan=room.request.ordinaryHandling
   if(!context||!plan)return lighting
   const [x,y,z,w,d,h]=lighting.circuit.sourceBox.boxMm
   const bay=lighting.construction.localHomeRunComparison
+  if(lighting.circuit.applianceLead.floorPreparation.status!=='CONDITIONAL_GEOMETRY_WITNESS'||lighting.circuit.issues.some(code=>code.startsWith('appliance-'))){
+    const diagnostic={code:'IAS_LIGHTING_APPLIANCE_PREPARATION_REJECTED',message:'All floor-renewal witnesses are withheld until complete appliance preparation clears. Fixed sourcebox, outlet and paid bay remain retained.',objectIds:room.floor.parts.map(p=>p.id)}
+    const closedSourceFloorRenewal={schema:'ias-study-structural-renewal-result/1' as const,contextDigest:context.digest,physicalAcceptance:false as const,status:'source-withheld' as const,
+      ordinaryHandling:{schema:'ias-study-ordinary-handling-result/1' as const,state:'source-withheld' as const,physicalAcceptance:false as const,
+        partCount:room.floor.parts.length,witnessCount:0,parts:[],diagnostics:[diagnostic]}}
+    return{...lighting,status:'GEOMETRY_REJECTED' as const,diagnostics:[...lighting.diagnostics,diagnostic],circuit:{...lighting.circuit,closedSourceFloorRenewal}}
+  }
   const closedSourceFloorRenewal=compileStudyStructuralRenewal(context,room.floor.parts,room.floor.emitterPlinth,plan,room.floor.installedInlet,{
     volumes:[...lighting.circuit.applianceLead.floorPreparation.retainedGuideFixings,{id:lighting.circuit.sourceBox.id,xyzxyzMm:[x!,y!,z!,x!+w!,y!+d!,z!+h!]},{id:'IAS/STUDY/closed-local-bay',xyzxyzMm:[bay.bayPlanMm[0]!,bay.frontYMm,bay.finishBottomZMm,bay.bayPlanMm[2]!,bay.bayPlanMm[3]!,bay.finishTopZMm]}],
     panelTransfer:studyPanelTransferProfile(room.floor.wearingFaceMm+room.floor.beddingMm),

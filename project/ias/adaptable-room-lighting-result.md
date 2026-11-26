@@ -646,3 +646,9 @@ carry/desk-rest reservation. Published90°up/60°down movement and the200mm
 illuminated-object separation remain unqualified use duties. Return the shade
 to the bounded downward pose before preparation. This is an authored envelope;
 no productCAD, full-aim clearance or physical packing acceptance is invented.
+
+A failed appliance-preparation input now withholds every dependent floor witness
+at the actual compiler join (zero witnesses and an explicit source diagnostic),
+rather than leaving136 apparently usable nested witnesses behind a rejected
+overall status. The negative carry perturbation exercises that real join and
+leaves all physical floor geometry unchanged.
