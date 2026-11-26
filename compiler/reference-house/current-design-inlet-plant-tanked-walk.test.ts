@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs'
 import {plantTankedWalkingSurface,type PlantWalkControl} from './current-design/inlet-plant-tanked-walk.js'
 const raw=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-plant-tanked-walk-candidate.json',import.meta.url),'utf8'))
 // Preserve the explicit100mm unchanged fixture when the selected source walk moves.
-const choice={...raw,walkingRiseAboveHouseFflMm:100} as PlantWalkControl
+const choice={...raw,walkingRiseAboveHouseFflMm:100,bridge:{...raw.bridge,railYMm:[4110,4600,5090]}} as PlantWalkControl
 // Source-geometry comparison only. Parent complete-room producer supplies its
 // actual pan/input profile, source-stage and receivers; no native force result
 // or current flooring replacement is inferred from this standalone fixture.
