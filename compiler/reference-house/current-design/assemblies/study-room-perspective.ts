@@ -1,5 +1,4 @@
 import { sha256SemanticFingerprint } from '../../../core/identity.js'
-import type { StudyLightingResult } from './study-lighting.js'
 import type { StudyRoomKit } from './study-room-kit.js'
 import type { compileStudyRoomAssembly } from './study-room-assembly.js'
 import type { compileStudyWallTransition } from './study-wall-transition.js'
@@ -10,7 +9,23 @@ type Point = readonly [number, number, number]
 type Box = readonly [number, number, number, number]
 type Wall = Assembly['walls'][number]
 type Camera = { readonly eyeMm: Point; readonly targetMm: Point; readonly horizontalFieldDegrees: number }
-type NorthLighting = {readonly lighting:StudyLightingResult;readonly camera:Camera}
+/** Read-only presentation contract keeps room drawing independent of compiler return-type inference. */
+type NorthLightingProjection={
+ readonly status:string;readonly caseDigest:string;readonly source:{readonly roomKitCaseDigest:string}
+ readonly commonRoom:{readonly floorFaces:readonly(readonly number[])[];readonly occupied:readonly(readonly[string,readonly number[]])[]}
+ readonly construction:{readonly localHomeRunComparison:{
+  readonly issues:readonly string[];readonly totalDepthMm:number;readonly bayPlanMm:readonly number[];readonly finishBottomZMm:number;readonly finishTopZMm:number;readonly frontYMm:number
+  readonly carrierXZMm:readonly number[];readonly cableOpening:{readonly centreXMm:number;readonly centreZMm:number}
+  readonly boxes:readonly{readonly id:string;readonly xMm:readonly number[];readonly zMm:readonly number[]}[]
+ }}
+ readonly circuit:{readonly designDigest:string;readonly issues:readonly string[];readonly applianceLead:{
+  readonly fitting:{readonly reference:string;readonly wallPlateDiameterMm:number;readonly projectionMm:number;readonly shadeWidthMm:number;readonly shadeHeightMm:number;readonly authoredDownwardEnvelopeZFromMountMm:readonly number[]}
+  readonly radiusMm:number;readonly lengthMm:number;readonly diameterRequirementMm:number;readonly pathMm:readonly(readonly number[])[]
+  readonly nominalFixedVolumes:readonly{readonly id:string;readonly xyzxyzMm:readonly number[]}[]
+ }}
+}
+
+type NorthLighting = {readonly lighting:NorthLightingProjection;readonly camera:Camera}
 type Face = { readonly id: string; readonly points: readonly Point[]; readonly colour: string; readonly line?: string; readonly width?: number; readonly opacity?: number }
 const r = (n: number) => Number(n.toFixed(3))
 const escape = (s: string) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;')
@@ -28,13 +43,13 @@ export function studyPerspectiveCamera(kit: StudyRoomKit): Camera {
 }
 
 /** Same saved room; an authored north-facing eye point, not a surveyed photograph. */
-export function studyNorthLightingCamera(kit:StudyRoomKit,lighting:StudyLightingResult):Camera{
+export function studyNorthLightingCamera(kit:StudyRoomKit,lighting:NorthLightingProjection):Camera{
  const desk=kit.occupied.find(([id])=>id==='study-desk')?.[1]
  if(!desk)throw new Error('STUDY_NORTH_LIGHTING_DESK_UNAVAILABLE')
  const h=lighting.construction.localHomeRunComparison
  return{eyeMm:[desk[2]+220,desk[3]+350,1550],targetMm:[(h.bayPlanMm[0]!+h.bayPlanMm[2]!)/2,h.frontYMm,1550],horizontalFieldDegrees:78}
 }
-function checkNorthLightingSource(kit:StudyRoomKit,lighting:StudyLightingResult){
+function checkNorthLightingSource(kit:StudyRoomKit,lighting:NorthLightingProjection){
  if(lighting.source.roomKitCaseDigest!==kit.caseDigest||sha256SemanticFingerprint(lighting.commonRoom.floorFaces)!==sha256SemanticFingerprint(kit.floor.parts.flatMap(p=>p.facePieces))||sha256SemanticFingerprint(lighting.commonRoom.occupied)!==sha256SemanticFingerprint(kit.occupied))throw new Error('STUDY_NORTH_LIGHTING_MIXED_CASE')
  if(lighting.status==='GEOMETRY_REJECTED'||lighting.circuit.issues.length||lighting.construction.localHomeRunComparison.issues.length)throw new Error('STUDY_NORTH_LIGHTING_REJECTED_INSTALLATION')
  if(!lighting.circuit.applianceLead.fitting.reference.startsWith('Type80W1'))throw new Error('STUDY_NORTH_LIGHTING_FAMILY_UNSUPPORTED')
@@ -63,7 +78,7 @@ const floorRect=([a,b,c,d]:Box,z=0):readonly Point[]=>[[a,b,z],[c,b,z],[c,d,z],[
 const inset=([a,b,c,d]:Box,amount:number):Box=>[a+amount,b+amount,c-amount,d-amount]
 const good=([a,b,c,d]:Box)=>c>a&&d>b
 
-function roomScene(kit:StudyRoomKit,assembly:Assembly,transition:Transition,mode:'fixed'|'removable',tone:'day'|'evening',camera:Camera,lighting?:StudyLightingResult){
+function roomScene(kit:StudyRoomKit,assembly:Assembly,transition:Transition,mode:'fixed'|'removable',tone:'day'|'evening',camera:Camera,lighting?:NorthLightingProjection){
   if(lighting)checkNorthLightingSource(kit,lighting)
   if(kit.source.bindingDigest!==assembly.source.bindingDigest)throw new Error('STUDY_PERSPECTIVE_MIXED_ROOM_SOURCE')
   if(kit.wall.boundRoomOpenings.length!==3||!kit.occupied.some(([id])=>id==='study-desk')||!kit.occupied.some(([id])=>id==='study-chair'))throw new Error('STUDY_PERSPECTIVE_MISSING_BOUND_ROOM')
