@@ -1,0 +1,90 @@
+{
+  "schema": "str-current-l200-routed-placing-observed-receipt/1",
+  "run": {
+    "id": 45836560291,
+    "jobId": 139966864418,
+    "sourceCommit": "3190de40a3b3dc359b31de860f572ce023947a8d",
+    "conclusion": "success",
+    "analyticControlCount": 8,
+    "nativeSolvesExecuted": 0
+  },
+  "artifact": {
+    "id": 15125272439,
+    "sizeBytes": 2048289,
+    "sha256": "a2bf7948b31f2914687b7810d637c4eb208fa8e3bee54c8b430e9254ce8d5ff6",
+    "expiresAt": "2027-02-24T14:11:54Z",
+    "contains": [
+      "new-inputs.json",
+      "zero.json.gz",
+      "placing-input-admission.json",
+      "tests.log",
+      "current-l200-routed-placing.json"
+    ]
+  },
+  "upstreamActualW0": {
+    "runId": 45831879777,
+    "sourceCommit": "a8decb9845498fdb864121ee57d0caba16b98002",
+    "artifactId": 15121319810,
+    "artifactSHA256": "d08a3c1872120980d1b820cfc30b37a79bf824aa5f2770eb4905fdd666b74e67",
+    "nativeSourceCount": 58,
+    "directFiniteMethodCount": 6,
+    "additionalSteelChordEAKN": 0,
+    "concreteBandEAKN": 231000
+  },
+  "methodGitBlobs": {
+    "project/str/studies/current_l200_routed_placing.py": "537ac38754864ca38722ca4bda058ef55ff23417",
+    "project/str/studies/current_l200_routed_placing_test.py": "8479b72007983099fa0f81415c700060d6bd1828",
+    ".github/workflows/current-l200-routed-placing.yml": "4a6ea7dd9830f5c059efe813945a5b9a6ae10b33"
+  },
+  "observed": {
+    "actualFloorReinforcement": {
+      "barDiameterMm": 16,
+      "bondMPa": 2.0999999999999996,
+      "cageSettingToleranceMm": 5,
+      "comparisonDeeperSectionMm": 320,
+      "concreteCompressionMPa": 17,
+      "independentBarToleranceMm": 5,
+      "lapMultiplier": 1.5,
+      "leverArmFactor": 0.9,
+      "mainBarNominalCoverMm": 50,
+      "mandrelMm": 160,
+      "minimumCoverMm": 40,
+      "minimumIndependentClearMm": 21,
+      "pitchMm": 80,
+      "schema": "str-floor-reinforcement-settings/1",
+      "steelYieldMPa": 434.7826086956522,
+      "strengthSteelFraction": 0.92,
+      "use": "unqualified-conventional-section-and-anchorage-comparison"
+    },
+    "originalRejectedH12TopBottomBendCrossing": {
+      "samePlaneCentrelineCrossing": true,
+      "crossingAcrossMm": 120.02325895918129,
+      "crossingZMm": 3270,
+      "crossingPlaneSeparationMm": 0
+    },
+    "specificChecks": {
+      "skewTopBottomArcCylinderClearLowerMm": 9,
+      "coordinatedIntermatHoopClearLowerMm": 1,
+      "independentHoopPlaneClearLowerMm": 2,
+      "mainBarAdverseCoverMm": 49,
+      "linkAdverseCoverMm": 40,
+      "tailWallEndAdverseCoverMm": 47,
+      "fullYieldTailDevelopmentRequiredMm": 828.1573498964805,
+      "bendPlusStraightTailMm": 898.1858196335936,
+      "necessaryFullYieldMandrelMm": 267.8254606640915,
+      "minimumAdverseParallelTailMainClearMm": 12.100766272276374,
+      "parallelTailMainPairsBelowActualMinimumClear": 24,
+      "arcColumnNominalInterpenetrationCount": 0,
+      "arcColumnAdverseInterpenetrationCount": 12,
+      "worstArcColumnPair": {
+        "path": "x/top/3",
+        "mainIndex": 6,
+        "nominalCylinderClearMm": 3.5,
+        "adverseCylinderClearLowerMm": -6.5
+      }
+    },
+    "decision": "REJECT this one coordinated ordinary family: staggered opposite-face bends remove their mutual crossing but actual independent bar-setting boxes permit physical interpenetration with longitudinal column bars. Passing the intermat screen does not make the complete cage buildable.",
+    "candidatePlacingAccepted": false
+  },
+  "scope": "Exact parsed hosted summary plus observed run/artifact identities. Full generated geometry/comparisons remain in the identified artifact; omitted arrays are not reconstructed. No source/current-account adoption or strength admission."
+}
