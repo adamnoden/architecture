@@ -106,7 +106,14 @@ def material_bounds(c):
             'goodBondNoShapeReductionStressCapMPa':length*4*m['goodBondMPa']/d,
             'mandrelBearingStressCapMPa':g['ordinaryFloorMandrelMm']*m['concreteCompressionMPa']/(area(d)*(1/ab+1/(2*d))),
             'completeAnchorageOrForceDemandAccepted':False})
-    return {'floorAreaMm2PerM':area(d)*1000/g['floorPitchMm'],
+    legacy_radius=(g['alternateLegacyOrdinaryMandrelMm']+g['floorBarOutsideMm'])/2
+    legacy_tail=min(end-z-legacy_radius for z in layers.values())
+    return {'legacy160MandrelMinimumStraightTailMm':legacy_tail,
+        'legacy160MandrelFitsChosen5Phi':legacy_tail>=g['ordinaryFloorHookMinTailFactor']*d,
+        'current140MandrelMinimumStraightTailMm':min(x['straightAfterBendMm'] for x in ordinary),
+        'current140FitsChosen5Phi':all(x['standardBendTailFits'] for x in ordinary),
+        'floorStockStrengthSelectedFromActualNewDemands':False,
+        'floorAreaMm2PerM':area(d)*1000/g['floorPitchMm'],
         'legacyH16Per80AreaMm2PerM':area(16)*1000/80,
         'requiredMandrelAt400MPaWorstIndependentPitchMm':dm,
         'cornerMandrelReserveMm':g['cornerFloorMandrelMm']-dm,

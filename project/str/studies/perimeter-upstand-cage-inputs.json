@@ -13,14 +13,14 @@
     ],
     "FIRSTMm": 3450,
     "columnFaceRowsMm": [
-      94,
-      206
+      65,
+      230
     ],
     "columnAlongStationsMm": [
-      94,
-      206,
-      450,
-      690,
+      65,
+      230,
+      412.5,
+      712.5,
       930
     ],
     "columnBarNominalMm": 12,
@@ -28,38 +28,36 @@
     "beamBarNominalMm": 16,
     "beamBarOutsideMm": 18,
     "beamBarNormalMm": [
-      65.05025253169417,
-      234.94974746830584
+      100,
+      200
     ],
     "beamBarZMm": [
-      3270,
+      3245,
       3450
     ],
     "beamPlanRadiiMm": [
-      350,
-      89
+      89,
+      182
     ],
     "floorBarNominalMm": 14,
     "floorBarOutsideMm": 16,
-    "floorPitchMm": 60,
+    "floorPitchMm": 75,
     "floorNominalSurfaceCoverMm": 52,
     "cornerFloorReturnNormalMm": 142,
     "cornerFloorMandrelMm": 280,
     "cornerFloorStraightTailMm": 1000,
     "floorAlongCoordinatesMm": [
       300,
-      360,
-      420,
-      480,
-      540,
+      375,
+      450,
+      525,
       600,
-      660,
-      720,
-      780,
-      840,
+      675,
+      750,
+      825,
       900
     ],
-    "ordinaryFloorMandrelMm": 160,
+    "ordinaryFloorMandrelMm": 140,
     "ordinaryFloorHookMinTailFactor": 5,
     "ordinaryFloorVerticalEndZMm": 3460,
     "commonNodeJigRequired": true,
@@ -67,13 +65,19 @@
     "independentBarSettingMm": 5,
     "parallelMinimumClearMm": 21,
     "minimumConcreteCoverMm": 40,
-    "newInnerMasonrySeatUsed": false
+    "newInnerMasonrySeatUsed": false,
+    "alternateLegacyOrdinaryMandrelMm": 160,
+    "ordinaryFloorReturnNormalMm": {
+      "bottom": 240,
+      "top": 150
+    },
+    "singleMonolithicPourRequiredForGoodBond": true
   },
   "links": {
     "columnNominalMm": 10,
     "columnOutsideMm": 11,
     "columnMandrelMm": 40,
-    "columnHookTailMm": 100,
+    "columnHookTailMm": 75,
     "columnClosureOffsetMm": 14,
     "beamNominalMm": 8,
     "beamOutsideMm": 9,
@@ -82,7 +86,8 @@
     "beamClosureOffsetMm": 12,
     "beamOrdinaryPitchMm": 100,
     "maxColumnFamilyPitchMm": 135,
-    "closuresAndAllStirrupIntersectionsQualified": false
+    "closuresAndAllStirrupIntersectionsQualified": false,
+    "columnHookMinimumTailMm": 50
   },
   "materials": {
     "reinforcementComparisonMPa": 400,

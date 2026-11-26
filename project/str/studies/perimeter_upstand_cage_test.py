@@ -23,7 +23,7 @@ class CageControls(unittest.TestCase):
         self.assertGreater(self.r['beamColumnWitness']['adverseCylinderClearMm'],0)
         self.assertGreater(self.r['floorColumnWitness']['adverseProjectedCylinderClearMm'],0)
     def test_small_outer_ring_bend_is_an_actual_collision(self):
-        c=copy.deepcopy(self.c);c['geometry']['beamPlanRadiiMm'][0]=89
+        c=copy.deepcopy(self.c);c['geometry']['beamPlanRadiiMm'][1]=89
         self.assertLess(p.assess(c,self.base)['beamColumnWitness']['adverseCylinderClearMm'],0)
     def test_finer_uniform_tail_rows_hit_the_column_bends(self):
         c=copy.deepcopy(self.c);c['geometry']['floorBarNominalMm']=12;c['geometry']['floorBarOutsideMm']=14
@@ -39,7 +39,8 @@ class CageControls(unittest.TestCase):
         self.assertGreater(min(x['verticalTailZMm'][0] for x in top),3370)
     def test_field_area_and_actual_parallel_clearances(self):
         b=self.r['materialBounds']
-        self.assertGreater(b['floorAreaMm2PerM'],b['legacyH16Per80AreaMm2PerM'])
+        self.assertLess(b['floorAreaMm2PerM'],b['legacyH16Per80AreaMm2PerM'])
+        self.assertFalse(b['floorStockStrengthSelectedFromActualNewDemands'])
         self.assertGreaterEqual(self.r['parallelFloorBarAdverseClearMm'],21)
         self.assertGreaterEqual(self.r['interMatAdverseParallelClearMm'],21)
     def test_corner_bond_and_bend_are_not_only_drawn(self):
@@ -47,12 +48,15 @@ class CageControls(unittest.TestCase):
         self.assertGreater(b['cornerMandrelReserveMm'],0)
         c=copy.deepcopy(self.c);c['geometry']['cornerFloorMandrelMm']=160
         self.assertLess(p.material_bounds(c)['cornerMandrelReserveMm'],0)
-    def test_350_top_anchor_failure_is_preserved(self):
+    def test_actual_hook_rule_and_old160_failure_are_both_preserved(self):
         b=self.r['materialBounds'];x=next(x for x in b['ordinary350Anchorage'] if x['layer']=='X-top')
-        self.assertEqual(x['straightAfterBendMm'],62)
+        self.assertEqual(x['straightAfterBendMm'],72)
         self.assertEqual(x['minimumStandardBendTailMm'],70)
-        self.assertFalse(x['standardBendTailFits'])
-        self.assertEqual(b['prospective360MinimumStraightTailMm'],72)
+        self.assertTrue(x['standardBendTailFits'])
+        self.assertEqual(b['legacy160MandrelMinimumStraightTailMm'],62)
+        self.assertFalse(b['legacy160MandrelFitsChosen5Phi'])
+        self.assertTrue(b['current140FitsChosen5Phi'])
+        self.assertEqual(b['prospective360MinimumStraightTailMm'],82)
         self.assertTrue(b['360GeometryIsAnUnselectedComparison'])
     def test_no_complete_cage_or_demand_acceptance_injection(self):
         c=copy.deepcopy(self.c);c['scope']['wholeCagePlacingAccepted']=True
