@@ -1,0 +1,36 @@
+name: Retain exact authenticated rear proof input bytes
+on:
+  push:
+    branches: [work/zerg-rear-bearing-recovery-20261126]
+    paths: ['.github/workflows/rear-bearing-proof-input-retention.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  retain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Recover only exact original4010 packet and its archived saved snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/adamnoden/architecture/actions/artifacts/15131108555/zip > "$RUNNER_TEMP/rear-original-input.zip"
+          python - <<'PY'
+          import base64,hashlib,json,os,zipfile
+          from pathlib import Path
+          archive=Path(os.environ['RUNNER_TEMP'])/'rear-original-input.zip'
+          if hashlib.sha256(archive.read_bytes()).hexdigest()!='c4ba2ec37882f15fa032876e5d42f88e6a99a33c05889fa45f3105334e3ca7d2':raise ValueError('Original4010 archive checksum differs')
+          with zipfile.ZipFile(archive) as z:
+              names={Path(n).name:n for n in z.namelist() if not n.endswith('/')}
+              packet=z.read(names['finite-signed-input.json']);p=json.loads(packet)
+              if hashlib.sha256(packet).hexdigest()!='808b298261ac7956958087ab8e5f0b641c0ab8c9b3030f99e603bfa175db9d93':raise ValueError('Original source packet changed')
+              snapshot=z.read(names['rear-development-document.json'])
+              if hashlib.sha256(snapshot).hexdigest()!=p['documentSnapshotSHA256']:raise ValueError('Original saved source snapshot changed')
+              for name,data in (('finite-signed-input.json',packet),('rear-development-document.json',snapshot)):
+                  print('REAR_EXACT_ARCHIVE_FILE '+name+' '+hashlib.sha256(data).hexdigest()+' '+base64.b64encode(data).decode(),flush=True)
+          print('Original bytes only; no new model, ordinary compiler admission, force solve or receipt relabel',flush=True)
+          PY
