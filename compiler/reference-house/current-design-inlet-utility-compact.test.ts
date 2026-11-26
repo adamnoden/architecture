@@ -20,7 +20,7 @@ const receipt=read('project/had/studies/inlet-source-envelope.results.json'),old
  stage=saved.stages.distributedFloor,context=readInletCornerContext(stage.cornerWidthsMm.SE,sha256SemanticFingerprint(stage)),
  boundary=utilityCornerBoundary(context,old.wetUtilityPlanMm,water.internalArchControls.actualRadialFinish),
  host=runUtilityCornerHost(context,water.internalArchControls.actualRadialFinish,source.branches.find((v:any)=>v.id==='utility').coordinates.at(-1)),
- station={bankXMm:9550,bankYMm:1600,utilityAxisZMm:1100,plantAxisZMm:receipt.settings.indoorPlantAxisZMm,
+ station={bankXMm:9550,bankYMm:1600,utilityAxisZMm:1175,plantAxisZMm:receipt.settings.indoorPlantAxisZMm,
   operatorXYZMm:[9950,1720,1450] as P,tailOffsetMm:330},body=station.operatorXYZMm,
  plantWall=water.groundWalls.find((v:any)=>v.id==='plant-intermediate-arch'),
  frameCovers=rawRoutes.checkedObstacles.filter((v:any)=>v.id.includes('shield-connection')).map((v:any)=>v.boxMm as B),
@@ -48,11 +48,11 @@ console.info('COMPACT_WEST_WALL_ACTUAL_CHECKS '+JSON.stringify({station,minima:r
 test('compact west-wall main keeps internal isolation with an actual unobstructed ordinary path before washer pull',()=>{
  assert.equal(stage.cornerWidthsMm.SE,200)
  assert.equal(host.necessaryGeometryComparisons,true)
- assert.deepEqual(result.valve.axisMm,[9550,1600,1100])
+ assert.deepEqual(result.valve.axisMm,[9550,1600,1175])
  assert.equal(result.valve.flowAxis,'north-south')
  assert.equal(result.valve.stem,'vertical-up')
- assert.deepEqual(result.paths[0].virtualPointsMm.at(-1),[9550,1450,1100])
- assert.deepEqual(result.paths[1].virtualPointsMm[0],[9550,1750,1100])
+ assert.deepEqual(result.paths[0].virtualPointsMm.at(-1),[9550,1450,1175])
+ assert.deepEqual(result.paths[1].virtualPointsMm[0],[9550,1750,1175])
  assert.deepEqual(result.paths[1].virtualPointsMm.at(-1),[10760,1250,1000])
  assert.equal(result.geometry.necessaryActualUtilityGeometry,true,JSON.stringify(result.geometry.failures))
  assert.equal(result.ordinaryAccess.washerState,'home-before-first-pull')
@@ -86,8 +86,8 @@ const hostWithMain=JSON.parse(execFileSync('python3',['-B',fileURLToPath(new URL
  up=result.paths.find(p=>p.id==='utility/upstream')!.physicalPolylineMm.slice().reverse() as P[],
  down=result.paths.find(p=>p.id==='utility/downstream')!.physicalPolylineMm as P[],
  pipe={outerDiameterMm:28.1,wallMm:1.38,elasticModulusMpa:117200,poissonRatio:.34,expansionMmMK:.017},
- thermalUp=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,2100],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:receipt.settings.pipeTemperatureChangeK}),
- thermalDown=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1300],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:receipt.settings.pipeTemperatureChangeK})
+ thermalUp=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[10300,1000,965],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:receipt.settings.pipeTemperatureChangeK}),
+ thermalDown=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1350],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:receipt.settings.pipeTemperatureChangeK})
 console.info('COMPACT_IAS_HOST_JOIN '+JSON.stringify(hostWithMain.independentUtilityMainJoin))
 console.info('COMPACT_THERMAL_COMPARISONS '+JSON.stringify({upstream:thermalUp,downstream:thermalDown}))
 if(dir){writeFileSync(join(dir,'compact-host-main-join.json'),JSON.stringify(hostWithMain,null,2));writeFileSync(join(dir,'compact-thermal-comparisons.json'),JSON.stringify({upstream:thermalUp,downstream:thermalDown},null,2))}
@@ -99,16 +99,22 @@ test('same actual permanent compact main and covered pipes preserve existing IAS
  assert.equal(joined.actualConnectionsAndCompleteInstalledHandlingAccepted,false)
 })
 test('explicit horizontal/vertical guides use the same kernel in actual world axes and retain the seized straight challenge',()=>{
- assert.ok(Math.max(...thermalUp.independentSegmentBounds.fixedForceN)<30)
- assert.ok(Math.max(...thermalDown.independentSegmentBounds.fixedForceN)<30)
- assert.ok(Math.max(...thermalUp.independentSegmentBounds.guideForceN)<30)
- assert.ok(Math.max(...thermalDown.independentSegmentBounds.guideForceN)<30)
+ for(const q of [thermalUp,thermalDown]){
+  const u=q.uniform,forces=[u.fixedForceN,u.terminalForceN,u.guideForceN],cross=(a:readonly number[],b:readonly number[])=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],
+   lever=(p:readonly number[])=>p.map((v,k)=>v-q.fixedPointMm[k]),tm=cross(lever(q.terminalPointMm),u.terminalForceN),gm=cross(lever(q.guide!.pointMm),u.guideForceN)
+  assert.ok(forces.every(v=>v.every(Number.isFinite)))
+  for(let k=0;k<3;k++){
+   assert.ok(Math.abs(forces.reduce((n,f)=>n+f[k],0))<1e-5,'World forces close independently of the route stiffness.')
+   assert.ok(Math.abs(u.fixedMomentNmm[k]+u.terminalMomentNmm[k]+tm[k]+gm[k])<1e-3,'Moments about the actual fixed point close with all guide lever arms.')
+  }
+  assert.ok(Math.abs(q.guide!.freeAxisMm.reduce((n,v,k)=>n+v*u.guideForceN[k],0))<1e-7)
+ }
  assert.ok(thermalUp.whollyRestrainedStraightControl.forceN>9000)
  assert.ok(Math.abs(thermalUp.whollyRestrainedStraightControl.stressMPa-79.696)<1e-7)
- const wrongAxis=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,2100],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:40})
+ const wrongAxis=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[10300,1000,965],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:40})
  assert.ok(Math.max(...wrongAxis.independentSegmentBounds.fixedForceN)>9000,'A vertical-guide shortcut on the horizontal pipe must not hide its restrained axial expansion.')
- assert.throws(()=>compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,2101],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:40}),/actual straight route/)
- const zero=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1300],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:0})
+ assert.throws(()=>compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[10300,1000,966],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:40}),/actual straight route/)
+ const zero=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1350],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:0})
  assert.ok(zero.independentSegmentBounds.fixedForceN.every(v=>v===0))
  assert.equal(thermalDown.actualJointGuideNetworkStiffnessAndFrictionQualified,false)
  assert.equal(thermalDown.guideFreeTravelIncludingBendingSolved,false)
@@ -119,9 +125,16 @@ console.info('COMPACT_CURRENT_PURGE_JOIN '+JSON.stringify({minima:purgeJoin.mini
 if(dir)writeFileSync(join(dir,'compact-current-purge-join.json'),JSON.stringify(purgeJoin,null,2))
 test('same actual compact main preserves current standing purge body, articulated arms, leaves and stay task',()=>{
  assert.equal(purgeJoin.necessaryKnownPurgeGeometry,true,JSON.stringify(purgeJoin.minimumByKind))
- const low=structuredClone(choice);low.upstreamVirtualCornersMm=[[10080,600,1100],[9550,600,1100]]
+ const low=structuredClone(choice);low.upstreamVirtualCornersMm=[[10080,600,1175],[9550,600,1175]]
  const rejected=compareInletUtilityPurge(inletUtilityRoute({choice:low,input,cuts,retained:rawRoutes.retainedServiceComparison.services}),old.purge)
  assert.equal(rejected.necessaryKnownPurgeGeometry,false)
  assert.ok(rejected.failures.some(r=>r.kind==='purge-body'&&r.afterTwoSettingsMm< -100))
  assert.equal(purgeJoin.completeInstalledWindowAndPipeAcceptance,false)
+})
+
+test('same real over-washer crossing preserves the35mm vertical handling allowance before pull',()=>{
+ const branch=result.paths.find(p=>p.id==='utility/upstream')!,washer=services.utility.washer,height=read('project/ias/studies/utility-first-release.json').native.height,
+  lift=35,legs=branch.straight.filter(l=>l.a[2]===965&&l.b[2]===965&&Math.min(l.a[0],l.b[0])<washer[0]+washer[2]&&Math.max(l.a[0],l.b[0])>washer[0]&&Math.min(l.a[1],l.b[1])<washer[1]+washer[3]&&Math.max(l.a[1],l.b[1])>washer[1])
+ assert.ok(legs.length>0)
+ assert.ok(Math.min(...legs.map(l=>l.a[2]))-result.geometry.jacketRadiusMm-height-lift-result.geometry.twoIndependentSettingsMm>20)
 })
