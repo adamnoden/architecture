@@ -9,9 +9,9 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T10:55:08.661Z",
-  "expiresAt": "2026-11-26T12:25:08.661Z",
-  "branch": "work/zerg-engineering-20261126",
+  "heartbeatAt": "2026-11-26T11:12:16.914Z",
+  "expiresAt": "2026-11-26T12:42:16.914Z",
+  "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
     "generation": 9,
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "Final95mm actual home-run model and200mm room with136piece full-plinth renewal integrated locally; exact474 browser pass health pending",
-    "next": "Merge1628; integrate canonical136plan and unified200model, compare actual source-owned oak finish and conventional circuit"
+    "evidence": "1628mergedf2ac afterexactchecks;1629d3d11e71 protects95lighting/actual136Study/oak andfullCLI;13focusedchecks/types/build/sourceauditpassed",
+    "next": "Correct text-free plate typography declaration, exact1629hostedPDF/browserchecks thenmerge; conventional connectedcircuit developing separately"
   },
-  "pr": 1628
+  "pr": 1629
 }
