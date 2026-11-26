@@ -32,6 +32,19 @@ def proposed_capture_boundary(current,old):
         if source.get('currentSavedDocumentAdmitted') is not False or source.get('sourceAuditFindings')!=value['sourceAuditFindings']:
             raise ValueError('Proposed native request lost explicit unadmitted boundary or full audit findings')
 
+def captured_proposed_geometry_sources(current,data):
+    sources=current.get('request',{}).get('stockSource',{}).get('actualSource',{}).get('actualSourceSHA256')
+    if not isinstance(sources,dict) or not sources:
+        raise ValueError('Captured proposed geometry source map required')
+    for path,expected in sources.items():
+        if not isinstance(path,str) or not path.startswith(('project/','compiler/')) or '..' in Path(path).parts:
+            raise ValueError('Bounded captured proposed geometry source path required')
+        if sha((ROOT/path).read_bytes())!=expected:
+            raise ValueError('Captured proposed geometry method/input changed: '+path)
+        if sha(data.get('proposed-methods/'+path,b''))!=expected:
+            raise ValueError('Archived captured proposed geometry bytes changed: '+path)
+    return sources
+
 def produce():
     with tarfile.open(ARCHIVE) as archive:data={m.name:archive.extractfile(m).read() for m in archive.getmembers() if m.isfile()}
     proposed='proposed-input-and-result.json' in data
@@ -41,6 +54,7 @@ def produce():
         old_name='proposed-input-and-ground-result.json' if proposed else 'saved-document-and-ground-result.json'
         old=json.load(archive.extractfile(old_name))['groundPocketLoads']
     if proposed:proposed_capture_boundary(current,old)
+    geometry_sources=captured_proposed_geometry_sources(current,data) if proposed else {}
     source=current['method']['sourceSHA256']
     for path,expected in {**current['request']['nativeCase']['sourceSHA256'],**source}.items():
         if sha((ROOT/path).read_bytes())!=expected:raise ValueError('Current native or comparison method changed: '+path)
@@ -78,6 +92,7 @@ def produce():
     if max(changes.values())<1e-5:raise ValueError('Contact perturbation did not recompute local demand')
     return {'schema':'str-current-room-receiver-proof/1','scope':('Exact proposed-input/current-native two-room known-gravity comparison; current saved document not admitted, all audit findings retained; same-source contact edit, no whole raised house or complete installed inventory.' if proposed else 'Exact saved two-room known-gravity comparison and same-source contact edit; no whole raised house or complete installed inventory.'),
         'currentSavedDocumentAdmitted':False if proposed else None,'sourceAuditFindings':current['sourceAuditFindings'] if proposed else [],
+        'capturedProposedGeometrySourceSHA256':geometry_sources,
         'sourceSHA256':source,'nativeSourceSHA256':request['nativeCase']['sourceSHA256'],'captureArchiveSHA256':sha(ARCHIVE.read_bytes()),
         'replayMethodSHA256':{p:sha((ROOT/p).read_bytes()) for p in ['project/str/studies/service_room_ground_receiver_proof.py','project/str/studies/service_room_ground_receiver_replay.py']},
         'priorTwoRoomArchiveSHA256':sha(OLD.read_bytes()),'priorMaximum312HeadComponentDifferenceKN_KNm':maximum,

@@ -1,6 +1,7 @@
 """Proposed captures cannot become saved-house admission by changing metadata."""
-import copy,unittest
-from service_room_ground_receiver_proof import proposed_capture_boundary
+import copy,hashlib,unittest
+from pathlib import Path
+from service_room_ground_receiver_proof import proposed_capture_boundary,captured_proposed_geometry_sources
 
 def capture():
     findings=[{'code':'SOURCE_CONTRADICTION','source':'actual-unit-fixture'}]
@@ -23,5 +24,16 @@ class ProposedCaptureBoundaryTests(unittest.TestCase):
             elif change=='omit':source.pop('sourceAuditFindings')
             else:source['sourceAuditFindings']=[]
             with self.assertRaisesRegex(ValueError,'full audit'):proposed_capture_boundary(*rows)
+
+    def test_captured_geometry_dependency_is_bound_to_actual_and_archived_bytes(self):
+        root=Path(__file__).resolve().parents[3];path='compiler/reference-house/current-design/inlet-room-pocket.ts';data=(root/path).read_bytes()
+        current={'request':{'stockSource':{'actualSource':{'actualSourceSHA256':{path:hashlib.sha256(data).hexdigest()}}}}}
+        archive={'proposed-methods/'+path:data}
+        self.assertEqual(captured_proposed_geometry_sources(current,archive),current['request']['stockSource']['actualSource']['actualSourceSHA256'])
+        with self.assertRaisesRegex(ValueError,'Archived'):
+            captured_proposed_geometry_sources(current,{'proposed-methods/'+path:data+b'changed'})
+        changed=copy.deepcopy(current);changed['request']['stockSource']['actualSource']['actualSourceSHA256'][path]='0'*64
+        with self.assertRaisesRegex(ValueError,'method/input changed'):captured_proposed_geometry_sources(changed,archive)
+        with self.assertRaisesRegex(ValueError,'source map required'):captured_proposed_geometry_sources({},archive)
 
 if __name__=='__main__':unittest.main()
