@@ -65,7 +65,8 @@ function check(proof: any) {
   if (proof.candidateAccepted!==false || proof.completeHouseProof!==false || proof.localCornerJointAccepted!==false) throw new Error('Unearned floor cut acceptance')
 }
 
-if(process.argv[2]==='--check') { check(JSON.parse(readFileSync(proofPath,'utf8')));process.stdout.write('Current source-bound fixed floor cut comparison checked\n') }
+if(process.argv[2]==='--read-cases') { process.stdout.write(JSON.stringify({sourceSHA256:identities,cases:selected})+'\n') }
+else if(process.argv[2]==='--check') { check(JSON.parse(readFileSync(proofPath,'utf8')));process.stdout.write('Current source-bound fixed floor cut comparison checked\n') }
 else if(process.argv[2]==='--write') {
   // Reuse only full source/request/checksum-verified captures; absence reruns the solver.
   python(['project/str/studies/floor_section_proof.py','--write'])
@@ -109,4 +110,4 @@ else if(process.argv[2]==='--write') {
     candidateAccepted:false,completeHouseProof:false,localCornerJointAccepted:false,
     scope:'Actual source-bound physical fixed cuts and independently identified52 heads. Plate and in-plane mesh controls separate numerical changes; no resistance, local joint, continuum convergence or house selection follows from a stability screen.'}
   check(proof);writeFileSync(proofPath,JSON.stringify(proof,null,2)+'\n');process.stdout.write(JSON.stringify({mesh700To500:proof.mesh700To500,mesh500To250:proof.mesh500To250,inPlane500To250:proof.inPlane500To250,vertical500To250AtInPlane250:proof.vertical500To250AtInPlane250})+'\n')
-} else throw new Error('Use --write or --check')
+} else throw new Error('Use --read-cases, --write or --check')
