@@ -1,0 +1,34 @@
+name: Inventory exact zero chord source migration
+on:
+  push:
+    branches: [work/zerg-l200-node-recovery-20261126]
+    paths:
+      - '.github/workflows/current-source-migration-inventory.yml'
+      - 'project/str/studies/current-source-migration-inventory.mjs'
+permissions:
+  contents: read
+concurrency:
+  group: zero-chord-migration-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      MIGRATION_INVENTORY_DIR: /tmp/current-source-migration-evidence
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Inventory all residual findings after two workcopy bindings
+        run: node --experimental-strip-types project/str/studies/current-source-migration-inventory.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: current-source-migration-inventory
+          path: /tmp/current-source-migration-evidence/
+          retention-days: 90
+          if-no-files-found: error
