@@ -18,8 +18,8 @@
     "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
     "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
     "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+    "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
     "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -68,23 +68,23 @@
     "project/str/studies/wet_masonry_arch_comparison.py": "09f8c05f31e552cf203c14777dad386ed9911afbaa70efc462acfb321a13daba",
     "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7"
   },
-  "archiveSHA256": "74ad273728a4d1d0e0c0da5f457c2dda583ee65fda7549866bf27a5e6a336425",
+  "archiveSHA256": "f7fe29f0c1cf3717d47ebe67a60d84ed79ef74a4d95932b92509455840f78221",
   "actualCaptureProvenance": {
     "oriented": {
       "bytes": 17748360,
-      "sha256": "3c3e5d06992ebc0b63be16d015d7d95c84ae051761833a63ed5dc6dd2311ec89"
+      "sha256": "1f3483bd6318d58092b8059562e8bf79821990e6b84c9a34bf47dcd4d20fa22e"
     },
     "soft": {
       "bytes": 17749704,
-      "sha256": "4df0879183e821dd08554b9b5a6a5f2650bb0afd26c8b56d77c5f1495d64cab8"
+      "sha256": "cd85101603b34faa53858818c705e740613e3fac25fc9d2c17e400bdc64da12f"
     },
     "suction": {
       "bytes": 17444826,
-      "sha256": "3c98cf0b6a6803253f58a57d07ebc12a4953ae5a2a09ce8dce62cb73a6250faa"
+      "sha256": "d9694d256831dfa9850a4cb1cfdac97b83f09c99d77b145ed3474d8eabd13e5b"
     },
     "combined": {
       "bytes": 17811259,
-      "sha256": "2c3ea48eae6dab6d3106b898f6b1d9e56f07e6402bf965a9029ea796c44a52e7"
+      "sha256": "8b9da80b72359897358091531f369868c23b25a1077be221fa3073b0504f2fa8"
     }
   },
   "actualNumericalRuntime": {
@@ -111,7 +111,7 @@
       "AVX512DQ": true,
       "AVX512ER": false,
       "AVX512F": true,
-      "AVX512FP16": true,
+      "AVX512FP16": false,
       "AVX512IFMA": true,
       "AVX512PF": false,
       "AVX512VBMI": true,
@@ -125,7 +125,7 @@
       "AVX512_KNL": false,
       "AVX512_KNM": false,
       "AVX512_SKX": true,
-      "AVX512_SPR": true,
+      "AVX512_SPR": false,
       "F16C": true,
       "FMA3": true,
       "FMA4": false,
@@ -167,7 +167,7 @@
       "scipy/superlu": "8bc863fc723ee3bc4d603bf2cdf540fa728ce5df35302686588f0ee926dae261"
     }
   },
-  "elasticPredecessorProofArchiveSHA256": "56f62caa54a0e817c00fea1b00c40e71a3e14047807386b55072df8bdd3e2fe9",
+  "elasticPredecessorProofArchiveSHA256": "d858999b0332d5b643c63ac470d700a1bbd211b8072df54643c93f1ce177b2a8",
   "unchangedElasticToReleasedControls": {
     "oriented": {
       "actualPlateCellsAndHolesIdentical": true,
