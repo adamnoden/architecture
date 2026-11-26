@@ -155,3 +155,11 @@ The current method closes actual LodgeU and both local cold stops, keeps interna
 New actual tests are pending for this adapter; no physical ratings, coupling release qualification or installation acceptance is earned by this migration.
 
 The adapter reports its inventory as MAIN COMPONENTS ONLY and explicitly requires the actual connected rear-tree inventory before whole-U receiver acceptance. A passing20L main-only component screen is not a proof for the complete installed closed-U branch.
+
+### Current source bowl and strip-phase corrections
+
+The original730mm sinkfeed intersects the actual new bowl700..900 overY790..1190. It is rejected. The current source moves the feed below the bowl at600, the complete160mm sinkstop to450, its upstream face to530 and lower return to300. That leaves the full insulated low point above the floor during210mm strip lowering; actual full fittings, pressure loss, operation and withdrawal remain subject to owning tests. No coarsely filled2000mm sink proxy stands in for the real bowl.
+
+Actual temporary carrybar760..800 blocks northward movement of the lowered tree. It is installed only AFTER the tree is parked. The front low rail is separately removed first; the retained frame still requires its own positive stability/support proof. These are ordered removable mechanical interfaces, not silent obstacle deletion.
+
+The prior main-only service adapter75b9ac8 passed actual typecheck and39/39 focused tests in run45858482209/job140042989209. This does not validate the later local bowl replan or full rear-tree sequence.

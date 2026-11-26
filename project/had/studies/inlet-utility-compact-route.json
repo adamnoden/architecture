@@ -266,17 +266,17 @@
         [
           11190,
           600,
-          730
+          600
         ],
         [
           11190,
           1280,
-          730
+          600
         ],
         [
           11190,
           1280,
-          630
+          530
         ]
       ],
       "stop": {
@@ -284,7 +284,7 @@
         "axisMm": [
           11190,
           1280,
-          550
+          450
         ],
         "flowAxis": [
           0,
@@ -304,17 +304,17 @@
         [
           11190,
           1280,
-          470
+          370
         ],
         [
           11190,
           1280,
-          350
+          300
         ],
         [
           11065,
           1280,
-          350
+          300
         ],
         [
           11065,
@@ -325,7 +325,7 @@
       "ordinaryShoulderMm": [
         11190,
         1550,
-        950
+        850
       ],
       "minimumTubeODMm": 14.9,
       "maximumWallMm": 1
@@ -465,7 +465,8 @@
         "wrappedCrossMm": 112,
         "minimumAxialReleaseMm": 10,
         "manufacturerAndPhysicalPressureQualification": false
-      }
+      },
+      "temporaryCarryBarInstalledOnlyAfterTreeParked": true
     }
   },
   "terminalLocalMm": [
