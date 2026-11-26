@@ -9,8 +9,8 @@
     "label": "convergence-20261125"
   },
   "claimedAt": "2026-11-25T22:18:56.729Z",
-  "heartbeatAt": "2026-11-26T00:30:10.350Z",
-  "expiresAt": "2026-11-26T01:15:10.350Z",
+  "heartbeatAt": "2026-11-26T01:00:07.218Z",
+  "expiresAt": "2026-11-26T01:45:07.218Z",
   "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "7cd89535-3193-436a-849e-05555703eb6b",
@@ -36,8 +36,8 @@
   },
   "pr": 1627,
   "checkpoint": {
-    "evidence": "PR1626 merged83f8cb6509df7768e2777ece378f1bca3e2f43fc after7exact-headgreenworkflows andbothfreshpreflights. PR1627 head dcfc8d631bbe1670359bd82db5ca18c30edb6c5d contains actual35completed315.20s,9.77752percent50to35sensitivity, finitebedfailure, currentfaultstations/materialboundaries, andcorrectedgravityunit. Strictaudit0 andcurrentinletproducerreplaypass. Rawwet-suite5c46a9fef5eb193f57eec96fbc0c0ff7414d62dd remainsseparateunselectedcheckpoint.",
-    "next": "Finishactualsaved35CLIprobe andexact-headCIfor1627, mergeafterfreshbothleasepreflights. DevelopadditiveknownRC/mineralgroundpocketloadoperatorwithoutchanging58kernels; actualbaselineoldgroundstockisnotcredited.",
-    "blocker": "No slab/arch/raised-house/wateradmission. Actualglobalcorner, curvedbartransfer, supports/resistance andwholefaultnetworkstillopen."
+    "evidence": "PR1627 dcfc8d631bbe1670359bd82db5ca18c30edb6c5d exact-head six workflows green; final canonical health running. Ground development checkpoint48cad6c61c90247ec68509aad0127a5f56c6d01d remote; subsequent actual additive RC/mineral solve closes60.409024kN unfactored;7controls pass with existing scalar normalization, no native58 edits.",
+    "next": "Merge1627 after all checks and fresh dual preflight; integrate source-bound known ground inventory and refine actual finite plate/contact comparison.",
+    "blocker": "No house/slab adoption; ground installed inventory, material stiffness, new receiver cuts and resistance remain open."
   }
 }
