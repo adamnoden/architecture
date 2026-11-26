@@ -239,7 +239,7 @@ function admitStages(value: unknown): EngineeringStages {
   return stages
 }
 
-export async function compileEngineeringDocument(input: unknown) {
+function prepareEngineeringDocument(input: unknown) {
   if (!exactKeys(input, ['schema', 'design', 'bindings', 'stages']) || input.schema !== 'current-engineering-document/1') {
     throw new TypeError('Expected a versioned current engineering document with design, source bindings and stages')
   }
@@ -263,6 +263,16 @@ export async function compileEngineeringDocument(input: unknown) {
     planDigest: compile.source.planDigest,
     sourceBindingsDigest: sha256SemanticFingerprint(observedBindings),
   }
+  return { resolved, compile, observedBindings, stages, documentIdentity }
+}
+
+/** Same admission and identity as the heavy compiler, without running analysis. */
+export function readEngineeringDocumentIdentity(input: unknown) {
+  return prepareEngineeringDocument(input).documentIdentity
+}
+
+export async function compileEngineeringDocument(input: unknown) {
+  const { resolved, compile, observedBindings, stages, documentIdentity } = prepareEngineeringDocument(input)
   const engineering: {
     structuralSuccessor?: Awaited<ReturnType<typeof compile.structuralSuccessorCase>>
     distributedFloor?: Awaited<ReturnType<typeof compile.distributedFloorCase>>

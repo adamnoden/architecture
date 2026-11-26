@@ -1089,8 +1089,8 @@
   },
   "bindings": {
     "disciplines": {
-      "had-closed-service-floor": "d9b746ffa80fd12334e18f9f526c8ffcf52c9cbc178885e673625f955fb933ff",
-      "had-fixed-inlet-arrangement": "41b57b60950d681adb241e75d13dba392feae8ee7918cc796eb24de84dc7299b",
+      "had-closed-service-floor": "0d33bb1233d2c11de55bb14c803d0e580366a2ae581853dce688312683b9119b",
+      "had-fixed-inlet-arrangement": "4f185c8ad572034a4a6d8518b3f39e45bda07c8d10a1828e42168a5807b854b5",
       "had-house-vertical-profile": "1eb55e43c8ad9b5702271ae5d57410cd924fbcd9941d260411c0113a1ffcc211",
       "had-inlet-indoor-reference": "4ede59099adfb4d2355b0245907e5c4c1305d41003384959d865beca5718ce48",
       "had-inlet-south-development": "75cdd3fc32ed99f2656d84cd43e89a2c28e01e099b298ab0f693e98a6832c48f",
@@ -1099,14 +1099,14 @@
       "had-inlet-south-sill-insert": "6b68bda356e73f15fc0f62d8ed1c4f9909f3f392b814bf2282ec7ccd5e08b062",
       "had-occupied-services": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
       "had-selected-water": "3c8bac4e6cdbae0d451901a086250233e07a1f1138a80b1cd0824d22e92f4576",
-      "ias-study-lighting": "d4619f8a7ecb3ea8f0e548e761935895c21fe57d953d4a7128c7c2a4e7b601d5",
+      "ias-study-lighting": "45bd885ac397b5c92c7bd04dcbbe85c355116dc343cfedb6b346910ffd64c012",
       "ias-study-room-perspective": "b87f4e0b23b1cb493cc2c7ba4bbba223525b2b8bd97190c9c20ec0c94185a7e9",
       "mat-roof-pitch-reference": "d7293f37acfc6b47ed5acec700046fefaa3f17741d96808d0764461e442a6a4a",
       "rwt-conditional-receiving": "3bbebcc6ef4455619710090e8d367452ce5e5af288df785ef3c7efb684bc8666",
       "str-conditional-interface": "ab6f852c68d2e12aea406ea8a5c1e6ea70e85e2eb7ab932a2ab37566d2d352a1",
-      "str-finite-joint-development": "902079db950972171cceaa22f4b789443d53a84e28669c99e113bf00050a6fef",
-      "str-masonry-frame-comparison": "f84cce09d2c34c7378e932045f9bbc33ab16cbaecb72441a65f9d38a3ab5b664",
-      "str-vertical-floor-comparison": "246f08f7bab7d359363a20386511cbd79e71d4c81f45437f1ba0caa91506c90b"
+      "str-finite-joint-development": "3dedbdf232aaf01b285b55dc8ba50667fd96d3a4e8a96e104e6ac138ff1622cc",
+      "str-masonry-frame-comparison": "635aa0acfeee301c8878532aa14f3e59a7713be4e541de129901247c9f8e87e4",
+      "str-vertical-floor-comparison": "0c18d0ef174119ed56d1ea4adfda4c2bdc3b5afd66873effa5eaf0bc2a191ce3"
     },
     "authoredDefaults": {
       "project/ias/studies/crafted-study-handling-plan.json": "0f6a79b10a36e95004e341c65650437b4f34d294",
@@ -1189,7 +1189,7 @@
       "compiler/reference-house/current-design/east-ground-receiving.ts": "b34501a22db72a1757af8b26ba6aaf8c969b3692",
       "compiler/reference-house/current-design/edit.ts": "c8ba3e791229301388dd082191aca0c7a8c76062",
       "compiler/reference-house/current-design/editor-specimen.ts": "38751766fd73c37af1f4ff6366fe0f1268dc9e95",
-      "compiler/reference-house/current-design/engineering-document.ts": "93973e24ce05bd565589eed5bf096f999723821b",
+      "compiler/reference-house/current-design/engineering-document.ts": "4d745d5a2b90b4693bba948bebec64ea362ed7b4",
       "compiler/reference-house/current-design/engineering-edit.ts": "c4df1791fa65a6abe6972a76dd6f632f63e0f8ff",
       "compiler/reference-house/current-design/georgian-source.ts": "a2c9029ac264ec6d1985b01746afb4c4f482948f",
       "compiler/reference-house/current-design/house-vertical-profile.ts": "702d5cda1182e25d576e2f4cce754f3d816b0f2d",

@@ -40,6 +40,9 @@ jobs:
           python -m venv --system-site-packages "$RUNNER_TEMP/finite-runtime"
           "$RUNNER_TEMP/finite-runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
           echo "STR_FINITE_SOLID_PYTHON=$RUNNER_TEMP/finite-runtime/bin/python" >> "$GITHUB_ENV"
+      - name: Reject mismatched saved-document and stale snapshot provenance
+        run: |
+          "$STR_FINITE_SOLID_PYTHON" -B -m unittest discover -s project/str/studies -p current_finite_joint_signed_proof_test.py
       - name: Derive the sole native request through the actual saved compiler
         env:
           OPENBLAS_NUM_THREADS: '1'

@@ -1133,7 +1133,8 @@
         "project/str/studies/finite_floor_contour.py",
         "project/str/studies/current_finite_joint_replay.py",
         "project/str/studies/current_finite_joint_replay_test.py",
-        "project/str/studies/current_finite_joint_signed_proof.py"
+        "project/str/studies/current_finite_joint_signed_proof.py",
+        "project/str/studies/current_finite_joint_signed_proof_test.py"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
@@ -3080,7 +3081,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "93973e24ce05bd565589eed5bf096f999723821b",
+    "compiler/reference-house/current-design/engineering-document.ts": "4d745d5a2b90b4693bba948bebec64ea362ed7b4",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -3356,7 +3357,7 @@
     "compiler/reference-house/current-design/occupied-services.ts": "80f31158e629120a3719a8d3b26774b7f2f07da2",
     "project/str/studies/fixed_normal_experiment.py": "79f6c70e448475c1188f4c493514df75a3c77ee3",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-comparison.json": "17f081768d37138ba58d91b32617d4054be863cf",
-    "project/ccr/convergence-owner-review.md": "8f3126e4cadf1b3815186e0d61d374500f5b81f8",
+    "project/ccr/convergence-owner-review.md": "908d9e86b73aaf7b4fd16fd8f10ae88a23dfa46d",
     "project/str/studies/finite_joint_solid_run.py": "f7759a440296b38f92e3af3f29a9e1586559bc9a",
     "project/str/finite-joint-solid-development.md": "e90118a8ff01fc8ac761835903926b427263205b",
     "project/str/studies/finite_joint_solid.py": "b8451e22dda30b884166f82bbf86330aa9d13503",
@@ -3545,6 +3546,7 @@
     "project/str/studies/finite_joint_normal_observer.py": "029e46deb9a7d86f9f1aad1efd57c0271aec60bb",
     "project/str/current-finite-joint-development.md": "2e5ffcc60d94994e52709f7b7f063e1ff6a9ccbb",
     "project/str/studies/current_finite_joint_replay_test.py": "9aab7efda2f4c223e239adef7d19232f0fc77310",
-    "project/str/studies/current_finite_joint_signed_proof.py": "c6a46d1a981976694aa49a9671654646e35ae47c"
+    "project/str/studies/current_finite_joint_signed_proof.py": "1ad2fc2dbbb3d94a37ec37a282777729b46b0efe",
+    "project/str/studies/current_finite_joint_signed_proof_test.py": "c8b2921ba44c5a30361962ea29143bcb04a5755e"
   }
 }

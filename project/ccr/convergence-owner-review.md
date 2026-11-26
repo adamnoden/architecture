@@ -82,7 +82,7 @@ The [lower masonry alternative](../str/wet-masonry-arch-rise-development.md) now
 
 ## The interior should earn its place on beauty
 
-The [completed IAS proposal](../ias/crafted-room-kit-result.md), integrated through [PR #1584](https://github.com/adamnoden/architecture/pull/1584), puts a fixed furnished room beside hung timber faces and seated oak floor modules. The furniture and occupied-room openings are matched. This is the strongest available appearance comparison, rather than an isolated panel detail.
+The [completed IAS proposal](../ias/crafted-room-kit-result.md), integrated through [PR #1584](https://github.com/adamnoden/architecture/pull/1584), puts a fixed furnished room beside hung timber faces and seated oak floor modules. The furniture and occupied-room openings are matched. This established the earlier furnished appearance benchmark. Its rectangular140mm room remains a historical control; the current200mm structural-room comparison below supplies the actual local pilasters, furniture and finish composition for that unselected case.
 
 ![Same furnished Study: conventional fixed joinery at left, removable timber proposal at right](studies/convergence-owner-review/study-fixed-timber.svg)
 
@@ -103,6 +103,8 @@ The earlier310mm [local-entry corner](../ias/studies/adaptable-study-lighting-co
 ## The same saved structural-room comparison
 
 The unselected [working-house input](studies/working-house-comparison.json) supplies the corner dimensions, floor section, room and lighting choices to the CLI, browser and room producer. Its200mm southwest corner projects60mm farther into the Study than the140mm control, costing0.0996m² locally. The emitter moves75mm north and the daily desk25mm east; the finished local pilasters are drawn rather than hidden in a rectangular room boundary.
+
+![Current saved200mm Study: fixed wainscot and removable timber with the same oak composition](../ias/studies/crafted-study-eye-level-day.svg)
 
 [Eye-level day](../ias/studies/crafted-study-eye-level-day.svg), [evening](../ias/studies/crafted-study-eye-level-evening.svg), [tile comparison](../ias/studies/working-study-tile-eye-level.svg), [actual floor](../ias/studies/working-study-floor.svg) and [twelve wall elevations](../ias/studies/working-study-wall-kit.svg) depict that same input. The floor has136 pieces,99 timber wall faces and30 skirting pieces. A fresh nominal renewal replay covers136/136 floor pieces with the actual plinth included in every furniture phase. It first moves the chair650mm north, the desk20mm west, restores the chair, then parks the desk800mm north. Five ordinary boards provide the supported rests. The smallest0.5mm board reserve remains a physical/tolerance obligation; daily door/window routes, loaded handling and service tails are not requalified by that floor replay.
 
