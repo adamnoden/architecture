@@ -407,6 +407,67 @@
       "runTeeK": 0.6,
       "sideTeeK": 2,
       "compressionElbowK": 1.5
+    },
+    "carrier": {
+      "schema": "had-utility-cold-carrier/1",
+      "postSectionMm": [
+        40,
+        40,
+        5
+      ],
+      "postOffsetFromTerminalXYMm": [
+        55,
+        -100
+      ],
+      "postBottomMm": 300,
+      "postHeightMm": 550,
+      "minimumPostIMm4": 120000,
+      "minimumPostAreaMm2": 600,
+      "frameLegSectionMm": [
+        40,
+        40,
+        5
+      ],
+      "minimumFrameLegIMm4": 120000,
+      "mastSectionMm": [
+        50,
+        50,
+        5
+      ],
+      "minimumMastIMm4": 300000,
+      "mastPlanMm": [
+        11080,
+        1225
+      ],
+      "mastTopMm": 1250,
+      "mastBaseMm": [
+        11000,
+        1175,
+        0,
+        200,
+        150,
+        6
+      ],
+      "upperBeamBottomMm": 1210,
+      "receiverBoxMm": [
+        10805,
+        1140,
+        180,
+        335,
+        100,
+        40
+      ],
+      "corePlateYMm": [
+        1000,
+        1100
+      ],
+      "normalMountRemovedBeforeCarrierDrop": true,
+      "temporaryCapturedJackStrokeMm": 80,
+      "temporaryCapturedJackRatedN": 1000,
+      "maximumCompleteCapturedKg": 20,
+      "toolCoupleNm": 60,
+      "maximumMovementMm": 3,
+      "stressCeilingMpa": 160
     }
   }
 }

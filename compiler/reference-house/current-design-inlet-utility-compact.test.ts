@@ -20,7 +20,7 @@ const receipt=read('project/had/studies/inlet-source-envelope.results.json'),old
  choice=read('project/had/studies/inlet-utility-compact-route.json') as UtilityRouteChoice,
  stage=saved.stages.distributedFloor,context=readInletCornerContext(stage.cornerWidthsMm.SE,sha256SemanticFingerprint(stage)),
  boundary=utilityCornerBoundary(context,old.wetUtilityPlanMm,water.internalArchControls.actualRadialFinish),
- host=runUtilityCornerHost(context,water.internalArchControls.actualRadialFinish,source.branches.find((v:any)=>v.id==='utility').coordinates.at(-1)),
+ host=runUtilityCornerHost(context,water.internalArchControls.actualRadialFinish,source.branches.find((v:any)=>v.id==='utility').coordinates.at(-1),(choice.coldDistribution as any)?.carrier,receipt.bound.maximumAbsoluteTotalBar-receipt.settings.atmosphericMinimumBar),
  station={bankXMm:choice.station!.axisMm[0],bankYMm:choice.station!.axisMm[1],utilityAxisZMm:choice.station!.axisMm[2],plantAxisZMm:receipt.settings.indoorPlantAxisZMm,
   operatorXYZMm:choice.station!.ordinaryShoulderMm,tailOffsetMm:330},body=station.operatorXYZMm,
  plantWall=water.groundWalls.find((v:any)=>v.id==='plant-intermediate-arch'),
@@ -83,7 +83,7 @@ test('unprocured Kv and mass are explicit design conditions; adverse valve duty 
 })
 
 const hostWithMain=JSON.parse(execFileSync('python3',['-B',fileURLToPath(new URL('../../project/had/studies/utility-corner-host.py',import.meta.url))],{
- input:JSON.stringify({geometry:context.geometry,liningThicknessMm:27,waterTerminalLocalMm:[10760,1250,1000],utilityMainEnvelopes:inletUtilityFixedEnvelopes(result)}),encoding:'utf8',maxBuffer:4*1024*1024})),
+ input:JSON.stringify({geometry:context.geometry,liningThicknessMm:27,waterTerminalLocalMm:[10760,1250,1000],carrierChoice:(choice.coldDistribution as any)?.carrier,maximumGaugeBar:input.maximumGaugeBar,utilityMainEnvelopes:inletUtilityFixedEnvelopes(result)}),encoding:'utf8',maxBuffer:4*1024*1024})),
  up=result.paths.find(p=>p.id==='utility/upstream')!.physicalPolylineMm.slice().reverse() as P[],
  down=result.paths.find(p=>p.id==='utility/downstream')!.physicalPolylineMm as P[],
  pipe={outerDiameterMm:28.1,wallMm:1.38,elasticModulusMpa:117200,poissonRatio:.34,expansionMmMK:.017},
@@ -162,4 +162,18 @@ test('smaller receiver or low tee loses its real inventory or complete source-fi
  assert.ok(run(small).failures.some(k=>k.id==='bin-usable-versus-full-component-envelope-inventory'))
  const low=structuredClone(choice.coldService) as any;low.drainTeeZMm=620
  assert.ok(run(low).failures.some(k=>k.id==='tee-above-retained-source-elbow'))
+})
+
+console.info('COMPACT_ACTUAL40_CARRIER '+JSON.stringify({checks:host.checks,engineering:host.actualCarrierEngineering,geometry:host.geometry.carrier,temporary:host.geometry.temporarySupport}))
+test('actual40mm physical carrier and frame specification use their own conservative properties and source pressure',()=>{
+ const q=host.actualCarrierEngineering
+ assert.deepEqual(q.actualCarrierOuterMm,[40,40])
+ assert.equal(q.wallMm,5)
+ assert.deepEqual(host.states.carrier[1],[0,0,-80])
+ assert.equal(host.geometry.carrier['compact carrier post'][3],40)
+ assert.equal(host.geometry.carrier['compact carrier post'][4],40)
+ assert.ok(q.necessaryPreliminaryMemberScreen,JSON.stringify(q))
+ assert.equal(q.original20Geometry40ComparisonTransferred,false)
+ assert.equal(q.actualJointAnchorAndCastReceiverCapacitiesAccepted,false)
+ assert.equal(q.nativeActionsAdopted,false)
 })

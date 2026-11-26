@@ -31,10 +31,48 @@ def calculate(request):
     temporary=copy.deepcopy(geo['temporarySupport']);temporary['upper pipe restraint beam'][0]-=water_shift;temporary['upper pipe restraint beam'][3]+=water_shift
     receiver=temporary['lower receiving beam'];receiver[0]-=shift;receiver[3]+=shift
     temporary['wall restraint beam'][3]=east-temporary['wall restraint beam'][0];temporary['retained wall connection domain'][0]=east-15
+
+    profile=request.get('carrierChoice');carrier_engineering=None
+    if profile is not None:
+        if profile.get('schema')!='had-utility-cold-carrier/1' or profile.get('postSectionMm')!=[40,40,5] or profile.get('frameLegSectionMm')!=[40,40,5] or profile.get('mastSectionMm')!=[50,50,5]:raise ValueError('Actual40mm carrier/frame and50mm mast sections required')
+        if any(not isinstance(profile.get(k),(int,float)) or not math.isfinite(profile[k]) or profile[k]<=0 for k in ('minimumPostIMm4','minimumPostAreaMm2','minimumFrameLegIMm4','minimumMastIMm4','postHeightMm','maximumCompleteCapturedKg','toolCoupleNm','maximumMovementMm','stressCeilingMpa')):raise ValueError('Finite actual member/capture design domain required')
+        post_x=terminal[0]+profile['postOffsetFromTerminalXYMm'][0];post_y=terminal[1]+profile['postOffsetFromTerminalXYMm'][1]
+        carrier['compact carrier post']=[post_x,post_y,profile['postBottomMm'],40,40,profile['postHeightMm']]
+        for key in ('lower pipe arm','middle pipe arm','valve reaction arm'):
+            arm=carrier[key]
+            carrier[key]=[arm[0],post_y+25,arm[2],arm[3],20,20]
+            carrier[key+'/actual NS knee']=[terminal[0]-10,post_y+35,arm[2],20,terminal[1]-post_y-25,20]
+        temporary['lower receiving beam']=profile['receiverBoxMm']
+        temporary['mast base']=profile['mastBaseMm']
+        temporary['mast']=[profile['mastPlanMm'][0],profile['mastPlanMm'][1],6,50,50,profile['mastTopMm']-6]
+        temporary['upper pipe restraint beam']=[terminal[0],1235,profile['upperBeamBottomMm'],profile['mastPlanMm'][0]+25-terminal[0],30,40]
+        # Real RC contact is behind27mm renewable lining; the wall brace uses
+        # a separate diagonal leg into the declared within-core plate territory.
+        core_x=min(r[0] for r in native['rectanglesXYMm'] if r[3]>1000)
+        temporary['wall restraint beam']=[profile['mastPlanMm'][0]+25,1135,profile['upperBeamBottomMm'],core_x-profile['mastPlanMm'][0]-25,130,30]
+        temporary['actual core plate']=[core_x-8,profile['corePlateYMm'][0],profile['upperBeamBottomMm']-25,8,profile['corePlateYMm'][1]-profile['corePlateYMm'][0],100]
+        temporary['wall brace NS return']=[core_x-30,profile['corePlateYMm'][0]+25,profile['upperBeamBottomMm'],30,1135-profile['corePlateYMm'][0],30]
+        del temporary['retained wall connection domain']
+        E=193000.;I=profile['minimumPostIMm4'];If=profile['minimumFrameLegIMm4'];A=profile['minimumPostAreaMm2']
+        pressure=request.get('maximumGaugeBar',9.2);bore=22.1-2*.9
+        H=pressure*1e5*math.pi*(bore/1000)**2/4;V=profile['maximumCompleteCapturedKg']*9.81;M=profile['toolCoupleNm']*1000
+        lp=450.;lf=300.;ecc=175.
+        joint_moment=H*lp+V*ecc+M
+        dp=H*lp**3/(3*E*I)+(V*ecc+M)*lp**2/(2*E*I)
+        df=H*lf**3/(3*E*If)+joint_moment*lf**2/(2*E*If)
+        rotation=H*lf**2/(2*E*If)+joint_moment*lf/(E*If)
+        move_bound=dp+df+rotation*lp
+        stress=max((H*750+V*ecc+M)*20/If+V/A,joint_moment*20/I+V/A)
+        sharp_I=(40**4-30**4)/12;sharp_A=40**2-30**2
+        mass=sharp_A/1e6*profile['postHeightMm']/1000*8000
+        carrier_engineering={'schema':'had-actual40-carrier-preliminary-member/1','profile':profile,'actualCarrierOuterMm':[40,40],'wallMm':5,'actualPostSharpIdealIMm4':sharp_I,'minimumRequiredIMm4':I,'actualPostSharpIdealAreaMm2':sharp_A,'minimumRequiredAreaMm2':A,'postNominalSharpSectionMassKg':mass,'maximumGaugeBar':pressure,'maximumPressureThrustN':H,'capturedGravityN':V,'fullCouplingToolCoupleNm':profile['toolCoupleNm'],'postAndSingleFrameLegSerialMovementBoundMm':move_bound,'maximumCombinedMemberStressMpa':stress,'necessaryPreliminaryMemberScreen':I<=sharp_I and If<=sharp_I and A<=sharp_A and move_bound<=profile['maximumMovementMm'] and stress<=profile['stressCeilingMpa'],'actualJointAnchorAndCastReceiverCapacitiesAccepted':False,'normalGravitySeatAndMountRemovedBeforeDrop':True,'actualCapturedScrewJackRequired':{'strokeMm':profile['temporaryCapturedJackStrokeMm'],'ratedMinimumN':profile['temporaryCapturedJackRatedN'],'initialSupportTopMm':profile['postBottomMm'],'finalSupportTopMm':profile['postBottomMm']-profile['temporaryCapturedJackStrokeMm'],'pressureAndEnergyZeroBeforeLowering':True,'actualProductAndMountingQualified':False},'original20Geometry40ComparisonTransferred':False,'nativeActionsAdopted':False}
+
     pipes={'retained upper water and cap domain':move(geo['retainedPipes']['retained upper water and cap domain'],-water_shift),'retained accessible waste cap domain':move(geo['retainedPipes']['retained accessible waste cap domain'],-shift,20 if shift else 0)}
     pads=copy.deepcopy(geo['firstRestPads']);stored=copy.deepcopy(geo['smallPartsReceiverDomain']);states=base['states'];carrier_states=states['carrier'];frame_states=copy.deepcopy(states['frame']);west=200-shift
     if west<0:raise ValueError('Existing first rest cannot be reached from this compacted host')
-    frame_states[-2][0]=-west;frame_states[-1][0]=-west;parked={k:host.shifted(v,carrier_states[-1]) for k,v in carrier.items()}
+    frame_states[-2][0]=-west;frame_states[-1][0]=-west
+    if profile is not None:carrier_states=[[0,0,0],[0,0,-profile['temporaryCapturedJackStrokeMm']],[265,0,-profile['temporaryCapturedJackStrokeMm']]]
+    parked={k:host.shifted(v,carrier_states[-1]) for k,v in carrier.items()}
     foreign={k:[v[0],v[1],0,v[2],v[3],3500] for k,v in house['groundFurniture'].items() if k not in ('service-utility-sink','service-utility-valveBay')};foreign['service-utility-washer']=[*washer[:2],0,*washer[2:],3500]
     for key,box in house['fixedObstacles']['GROUND']:foreign[key]=[*box[:2],0,*box[2:],3500]
     for key in ('stair','court'):
@@ -48,7 +86,8 @@ def calculate(request):
     no_receiver_interpenetration=all(not host.overlaps_interior(host.sweep(v,a,b),receiver) for a,b in zip(carrier_states,carrier_states[1:]) for v in carrier.values())
     grips_shift=-shift+bar_extra;crew_paths=[[[path[0][0]+grips_shift,1725],[path[0][0]+grips_shift,2075],[path[0][0]+grips_shift-west,2075]] for path in states['crew']];crew=host.crew_checks(crew_paths,frame,static|pads)
     grip_reach=[max(math.dist([x+grips_shift,1725,1050],[grip+grips_shift,1350,780+rise]) for rise in (0,35)) for x,grip in [(10395,10800),(11045,11495)]]
-    carrier_grip=max(math.dist([11045+grips_shift,1725,1000],host.shifted([10915-shift,1225,700],offset)) for offset in carrier_states)
+    carrier_grip_point=[post_x+20,post_y+40,700] if profile is not None else [10915-shift,1225,700]
+    carrier_grip=max(math.dist([11045+grips_shift,1725,1000],host.shifted(carrier_grip_point,offset)) for offset in carrier_states)
     seat_plans=[[r[0]-shift,*r[1:]] for r in seats];seat_core_reserve=min(east-(r[0]+r[2])-20 for r in seat_plans);sink=move([*actual['sink'][:2],0,*actual['sink'][2:],900]);south=max(r[3] for r in core if r[2]-r[0]>500)
     branch=[10050,south+20.5,east-20.5-10050,1400-south-20.5];chase=[branch[0],branch[1],branch[2],700-branch[1]]
     internal_carrier_gap=host.box_gap(carrier['compact carrier post'],carrier['water fitting and cap domain']);terminal_in_cap=all(pipes['retained upper water and cap domain'][i]<=terminal[i]<=pipes['retained upper water and cap domain'][i]+pipes['retained upper water and cap domain'][i+3] for i in (0,1,2))
@@ -70,7 +109,7 @@ def calculate(request):
                       'necessaryKnownNominalGeometry':nominal>=25 and nominal>=20,
                       'basis':'Same existing IAS box/sweep/person methods; full pipe jackets and chord covers supplied by the executed Utility route.25mm is the existing IAS project gap, not a new universal rule.',
                       'actualConnectionsAndCompleteInstalledHandlingAccepted':False}
-    return {'schema':'had-utility-corner-host-result/1','independentUtilityMainJoin':utility_join,'sourceSHA256':sources,'nativeCornerGeometry':native,'sinkShiftWestMm':shift,'carryBarAdditionalEastMm':bar_extra,'fixedExistingFirstRestPreserved':True,'westDrawMm':west,
+    return {'schema':'had-utility-corner-host-result/1','actualCarrierEngineering':carrier_engineering,'independentUtilityMainJoin':utility_join,'sourceSHA256':sources,'nativeCornerGeometry':native,'sinkShiftWestMm':shift,'carryBarAdditionalEastMm':bar_extra,'fixedExistingFirstRestPreserved':True,'westDrawMm':west,
             'geometry':{'frame':frame,'carrier':carrier,'parkedCarrier':parked,'temporarySupport':temporary,'retainedPipes':pipes,'firstRestPads':pads,'smallPartsReceiverDomain':stored,'retainedObstacles':foreign},'states':{'carrier':carrier_states,'frame':frame_states,'crew':crew_paths},
             'checks':{'carrier':carrier_check,'frame':frame_check,'wasteCap':cap_check,'padApproach':pad_approach,'pads':pad_check,'carrierContinuouslySupported':supported,'receiverInterpenetrationAbsent':no_receiver_interpenetration,'crew':crew,'maxShoulderToFrameGrip':grip_reach,'maxShoulderToCarrierGrip':carrier_grip,'seatCoreReserveAfterTwoSettingsMm':seat_core_reserve,'internalCarrierBodyGapMm':internal_carrier_gap,'actualUtilityTerminalInRetainedCapDomain':terminal_in_cap},
             'revisedUtility':{'sink':[*sink[:2],*sink[3:5]],'seatPlan':seat_plans,'rearServiceChase':chase,'acquiredBranchFloor':branch,'actualUtilityTerminalLocalMm':terminal,'waterConnectionAxis':[10800-water_shift,1250,750],'retainedWasteCap':pipes['retained accessible waste cap domain'],'localWasherStopRetired':True,'ordinaryIsolation':'Use the actual independently operable Utility house cut; verify cold source/upper energy isolation before washer or host work. No live-sibling credit.','wholeRoomEnvelopeChanged':False},
