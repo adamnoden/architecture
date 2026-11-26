@@ -54,6 +54,11 @@
       10760,
       600,
       1500
+    ],
+    [
+      10760,
+      600,
+      950
     ]
   ],
   "formedTurn": {
@@ -414,12 +419,7 @@
     },
     "commonPathMm": [
       [
-        10760,
-        600,
-        1100
-      ],
-      [
-        10760,
+        10870,
         600,
         950
       ],
@@ -446,12 +446,31 @@
       "northParkMm": 1260,
       "frontLowerRailRemovedBeforeNorthMovement": true,
       "receiverPositiveSupportAndCaptureRequired": true,
-      "actualInstalledSupportAndHandlingAccepted": false
+      "actualInstalledSupportAndHandlingAccepted": false,
+      "sourceJoint": {
+        "id": "U/rear-tree-horizontal-union",
+        "fixedFaceLocalMm": [
+          10870,
+          600,
+          950
+        ],
+        "flowAxis": [
+          1,
+          0,
+          0
+        ],
+        "bareFaceLengthMm": 60,
+        "bareCrossMm": 60,
+        "captiveCapProjectionMm": 25,
+        "wrappedCrossMm": 112,
+        "minimumAxialReleaseMm": 10,
+        "manufacturerAndPhysicalPressureQualification": false
+      }
     }
   },
   "terminalLocalMm": [
-    10760,
+    10870,
     600,
-    1100
+    950
   ]
 }

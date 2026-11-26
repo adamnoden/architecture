@@ -47,7 +47,7 @@ const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR,purge=compareInletUtilityPurge
 if(dir){mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'rear-main-current-geometry.json'),JSON.stringify({scope:'Current rear main geometry only; old front carrier is retired and no whole-host or support pass is inherited.',context,result,purge},null,2))}
 console.info('REAR_MAIN_CURRENT '+JSON.stringify({terminal:result.paths[1].virtualPointsMm.at(-1),quantity:result.quantities,hydraulics:result.hydraulics,minima:result.geometry.minimumByKind,failures:result.geometry.failures,purgeMinima:purge.minimumByKind,purgeFailures:purge.failures.slice(0,8)}))
 test('selected rear main replaces old front terminal and derives all tubes/fittings from its own controlling input',()=>{
- assert.deepEqual(result.paths[1].virtualPointsMm.at(-1),[10760,600,1100])
+ assert.deepEqual(result.paths[1].virtualPointsMm.at(-1),[10870,600,950])
  assert.equal(result.topology.sameLegacyTerminal,false)
  assert.equal(result.topology.legacyIndoorTailApplicable,false)
  assert.deepEqual(result.topology.legacyTerminalLocalMm,[10760,1250,1000])
@@ -58,10 +58,11 @@ test('selected rear main replaces old front terminal and derives all tubes/fitti
  assert.equal(result.completeInstallationAccepted,false)
 })
 test('rear terminal perturbation changes actual stock, pressure head and old evidence applicability',()=>{
- const altered=structuredClone(choice);altered.terminalLocalMm=[10760,600,1200]
+ const altered=structuredClone(choice);altered.terminalLocalMm=[10970,600,950]
  const q=inletUtilityRoute({choice:altered,input,cuts,retained:rawRoutes.retainedServiceComparison.services})
- assert.equal(q.quantities.centrelineLengthMm,result.quantities.centrelineLengthMm-100)
- assert.notEqual(q.hydraulics.riseBar,result.hydraulics.riseBar)
+ assert.equal(q.quantities.centrelineLengthMm,result.quantities.centrelineLengthMm+100)
+ assert.equal(q.hydraulics.riseBar,result.hydraulics.riseBar)
+ assert.notEqual(q.hydraulics.straightLossBar,result.hydraulics.straightLossBar)
  assert.deepEqual(q.paths[1].virtualPointsMm.at(-1),altered.terminalLocalMm)
  const low=structuredClone(choice);low.upstreamVirtualCornersMm=[[10080,600,1175],[9550,600,1175]]
  assert.equal(compareInletUtilityPurge(inletUtilityRoute({choice:low,input,cuts,retained:rawRoutes.retainedServiceComparison.services}),old.purge).necessaryKnownPurgeGeometry,false)

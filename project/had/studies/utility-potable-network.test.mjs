@@ -10,7 +10,7 @@ const read=p=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'
  inlet=read('had/studies/south-inlet-under-sill.json'),
  calculate=(b=base,c=choice)=>deriveUtilityPotableNetwork(b,c,plant,station,inlet),network=calculate(),
  dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
-if(dir){mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'actual-U-potable-topology.json'),JSON.stringify(network,null,2))}
+if(dir){mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'actual-U-potable-topology.json'),JSON.stringify(network,null,2));writeFileSync(join(dir,'actual-U-current-plan-elevation.svg'),network.reviewSvg)}
 console.info('ACTUAL_U_POTABLE_TOPOLOGY '+JSON.stringify({retirement:network.retirement.oldColdConnectionRetiredInOccupiedSource,retainedPlantIds:network.retirement.retainedPlantColdFixtureIds,isolation:network.isolation,counterpaths:network.counterpaths,necessary:network.necessarySourceTopology}))
 test('actual MAT cold edge is removed; hot/heat and all12 Plant fixtures/store remain; actual occupied compositor consumes the same graph',()=>{
  assert.deepEqual(base.trunks.find(t=>t.id==='ground-utility').duties,['heat','hot'])
@@ -57,4 +57,18 @@ test('restored old cold edge/fixture route and a pressure mixer produce explicit
  const mixed=calculate(base,mixer)
  assert.equal(mixed.necessarySourceTopology,false)
  assert.ok(mixed.counterpaths.PlantReachedUWithInternalUClosed.includes('U/valve-downstream-face'))
+})
+
+test('occupied source uses one current rear horizontal joint and common header; old indoor terminal is not silently reinstated',()=>{
+ assert.deepEqual(network.quantities.currentMainTerminalMm,[10870,600,950])
+ assert.equal(network.quantities.legacyUnderSillIndoorTailApplicable,false)
+ assert.deepEqual(network.nodes.find(n=>n.id==='U/terminal').pointMm,choice.terminalLocalMm)
+ const main=network.edges.find(e=>e.id==='U/cut-to-current-terminal'),washer=network.edges.find(e=>e.id==='U/current-rear-header-washer'),sink=network.edges.find(e=>e.id==='U/current-rear-header-sink')
+ assert.deepEqual(main.pathMm.at(-1),choice.terminalLocalMm)
+ assert.deepEqual(washer.pathMm,choice.coldDistribution.commonPathMm.slice(0,-1))
+ assert.deepEqual(sink.pathMm,choice.coldDistribution.commonPathMm.slice(-2))
+ assert.equal(network.edges.some(e=>e.id==='U/terminal-to-washer-tee'),false)
+ assert.ok(network.reviewSvg.includes('Same occupied source graph'))
+ const broken=structuredClone(choice);broken.coldDistribution.commonPathMm[0][0]+=10
+ assert.throws(()=>calculate(base,broken),/Current rear header/)
 })

@@ -27,7 +27,7 @@ export function deriveUtilityPotableNetwork(base,choice,plantBranch,plantStation
  edge('U/source-to-cut','U/house-entry',uf,[source,...choice.upstreamVirtualCornersMm,upFace])
  edge('U/internal-cut',uf,df,[upFace,downFace],'U/internal-cut')
  if(d.commonPathMm){
-  if(!equal(d.commonPathMm[0],terminal)||!equal(d.commonPathMm.at(-1),tee)||!equal(d.commonPathMm.at(-2),washerTee)||d.commonPathMm.length!==4||d.commonPathMm.some(p=>!point(p)))throw Error('Current rear header must join actual terminal and both actual user tees')
+  if(!equal(d.commonPathMm[0],terminal)||!equal(d.commonPathMm.at(-1),tee)||!equal(d.commonPathMm.at(-2),washerTee)||![3,4].includes(d.commonPathMm.length)||d.commonPathMm.some(p=>!point(p)))throw Error('Current rear header must join actual terminal and both actual user tees')
   edge('U/cut-to-current-terminal',df,'U/terminal',[downFace,...choice.downstreamVirtualCornersMm,terminal])
   edge('U/current-rear-header-washer','U/terminal','U/washer-tee',d.commonPathMm.slice(0,-1))
   edge('U/current-rear-header-sink','U/washer-tee','U/sink-tee',d.commonPathMm.slice(-2))

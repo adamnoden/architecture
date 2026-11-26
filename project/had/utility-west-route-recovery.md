@@ -137,3 +137,11 @@ The source-specific occupied potable graph projects the same current terminal/he
 The independent300nominal/max330 vessel helper and seven owning tests are added as a candidate source-bound module. It is not yet the active room/drain inventory authority; its real factory ports, thermal pressure conditions and remaining source-pressure/regulator join remain explicit. No catalogue, professional, material, physical or owner acceptance is asserted.
 
 Required downstream reconciliation: current full saved compiler path, service-method terminal migration, complete cold-tree support and normal/strip/park/frame withdrawal, P installation/containment, source accounting/ordinary producers, current drawings/publication, fresh notched ground and pressure/contact actions. MAT source changed earlier; old58-case source identity and old ground receipts are not current proof for this assembly.
+
+### Actual proof298d7daf and horizontal-joint simplification
+
+Hosted run45856903914/job140037557623 passed repository typecheck and37/37 focused tests, including actual seven vessel tests, rear main geometry/purge/thermal and occupied source graph. Artifact15136038125 SHA256bd95b12319d0312a7b4e6f328c023c32592cca16d31f47efec52ab714c30de43 is retained90days. That proof applied to the first rear1100vertical terminal, not this subsequent horizontal joint.
+
+Full union accounting showed that a moving vertical stub at1100 would need about285mm drop to pass the existing upper rail, despite header950 needing less. The current source therefore extends the fixed rear main to950, turns east and ends at an ordinary horizontal union10870/600/950. The moving tree starts there. The complete112mm wrapped union now sets its1006mm top; lowering210 places it at796, leaving14mm below the actual830mm upper-rail underside after two independent10mm settings. This arithmetic is a design condition until the complete injected phase-geometry test passes; it does not admit a fabricated support, clamp or pressure product.
+
+The source/header/occupied graph and source-derived SVG now use this same horizontal face; no after-the-fact cut is inserted into a previously generated tree. The late release of the closed local stops is not a licence to open a charged appliance or hot network: actual boundary/source-zero and retained downstream support remain explicit obligations.
