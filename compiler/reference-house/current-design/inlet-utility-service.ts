@@ -50,7 +50,7 @@ export function admitUtilityColdService(value:unknown):UtilityColdServiceChoice{
 }
 export function inletUtilityColdService(i:{route:ReturnType<typeof inletUtilityRoute>;choice:unknown;roomMm:readonly[number,number,number,number];washerReservationMm:readonly[number,number,number,number];washerBodyMm:readonly[number,number,number,number];washerHeightMm:number;maximumGaugeBar:number;input:IndoorRoutesInput;retained:InletRetainedRouteServices;host:any}){
  const c=admitUtilityColdService(i.choice),r=i.route,up=r.paths.find(p=>p.id==='utility/upstream')!,down=r.paths.find(p=>p.id==='utility/downstream')!,source=up.virtualPointsMm[0],terminal=down.virtualPointsMm.at(-1)!,
- axis=r.valve.axisMm as P,setting=r.geometry.twoIndependentSettingsMm,bareNutR=39/(2*Math.cos(Math.PI/6)),jacket=26,teeZ=c.drainTeeZMm,tee:P=[source[0],source[1],teeZ],
+ axis:P=[r.valve.axisMm[0],r.valve.axisMm[1],r.valve.axisMm[2]],setting=r.geometry.twoIndependentSettingsMm,bareNutR=39/(2*Math.cos(Math.PI/6)),jacket=26,teeZ=c.drainTeeZMm,tee:P=[source[0],source[1],teeZ],
  tip:P=[c.drainEndXMm,source[1],c.drainTipZMm],wheel:P=[c.drainValveXMm,source[1]+c.drainControlNorthMm,teeZ],
  vent=down.virtualPointsMm[2] as P,faceZ=terminal[2]-c.terminalUnionFaceBelowTubeEndMm,
  checks:{id:string;reserveMm:number}[]=[],add=(id:string,n:number)=>checks.push({id,reserveMm:n})
