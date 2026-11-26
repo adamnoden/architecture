@@ -1344,7 +1344,8 @@
         "compiler/reference-house/current-design-study-structural-consequence.test.ts",
         "compiler/reference-house/current-design/assemblies/study-structural-renewal.ts",
         "project/ias/studies/study-structural-renewal.py",
-        "compiler/reference-house/current-design/assemblies/study-oak-composition.ts"
+        "compiler/reference-house/current-design/assemblies/study-oak-composition.ts",
+        "compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts"
       ],
       "authoredInputs": [],
       "inputReceipts": [
@@ -1367,11 +1368,13 @@
         "project/ade/browser-editor/engineering-editor.ts",
         "project/ade/browser-editor/engineering.html",
         "project/ade/browser-editor/engineering_browser_test.py",
-        "compiler/reference-house/current-design-study-oak-composition.test.ts"
+        "compiler/reference-house/current-design-study-oak-composition.test.ts",
+        "compiler/reference-house/current-design-study-plan-applicability.test.ts"
       ],
       "producerChecks": [
         "node --import tsx project/ias/studies/crafted-study-eye-level.mjs --check",
-        "node --import tsx --test compiler/reference-house/current-design-study-room-perspective.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-study-room-perspective.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-study-plan-applicability.test.ts"
       ]
     }
   ],
@@ -3518,7 +3521,7 @@
     "project/ias/studies/crafted-study-eye-level-day.svg": "e98d229253458a7785859dea1b44b8267d4d9fa9",
     "project/ias/studies/crafted-study-eye-level-evening.svg": "75b367f76e096e7a5b83a32388c46c672bc7fc8d",
     "project/ias/studies/crafted-study-eye-level.mjs": "e7d78b8d5a75b25ba388d1a3c7b98f83306f94d8",
-    "compiler/reference-house/current-design/assemblies/study-room-kit.ts": "0d3110ce66f6a719d24585d595cfd2eec6ea47f2",
+    "compiler/reference-house/current-design/assemblies/study-room-kit.ts": "45206da1232387e126107136dfc75757cf88ec28",
     "compiler/reference-house/current-design/assemblies/study-room-assembly.ts": "0effdc2011f17e1c2a2c9c245514f5d815faa7ff",
     "compiler/reference-house/current-design/assemblies/study-structural-context.ts": "fcadc653e3c92e5d9efe3f4a74e0591be4233c15",
     "compiler/reference-house/current-design/assemblies/study-structural-floor.ts": "0ebc2bba135e80a48afbcdf621876426f1f949cb",
@@ -3547,6 +3550,8 @@
     "project/str/current-finite-joint-development.md": "2e5ffcc60d94994e52709f7b7f063e1ff6a9ccbb",
     "project/str/studies/current_finite_joint_replay_test.py": "9aab7efda2f4c223e239adef7d19232f0fc77310",
     "project/str/studies/current_finite_joint_signed_proof.py": "1ad2fc2dbbb3d94a37ec37a282777729b46b0efe",
-    "project/str/studies/current_finite_joint_signed_proof_test.py": "c8b2921ba44c5a30361962ea29143bcb04a5755e"
+    "project/str/studies/current_finite_joint_signed_proof_test.py": "c8b2921ba44c5a30361962ea29143bcb04a5755e",
+    "compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts": "e975263aee7a047da1862d5147b606c29103953e",
+    "compiler/reference-house/current-design-study-plan-applicability.test.ts": "dbb8baa4bc9242b7fb0e4383bea65c545b7b0ffc"
   }
 }

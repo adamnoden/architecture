@@ -30,3 +30,13 @@ export function admitStudyOrdinaryHandlingPlan(value: unknown): StudyOrdinaryHan
   return { schema: value.schema, boards, pickupClearanceMm: value.pickupClearanceMm,
     maximumTravelMm: value.maximumTravelMm, protocols: value.protocols as Record<string, unknown>[] }
 }
+
+/** A well-formed plan can remain authored while its former part family is withheld. */
+export function studyOrdinaryPlanAppliesToParts(plan: StudyOrdinaryHandlingPlan, partIds: readonly string[]): boolean {
+  const ids = plan.protocols.map(protocol => protocol.partId)
+  if (ids.some(id => typeof id !== 'string' || id.length === 0) || new Set(ids).size !== ids.length) {
+    throw new TypeError('INVALID_STUDY_ORDINARY_PART_IDENTITY')
+  }
+  if (new Set(partIds).size !== partIds.length) throw new TypeError('DUPLICATE_STUDY_CURRENT_PART_IDENTITY')
+  return ids.length === partIds.length && partIds.every(id => ids.includes(id))
+}

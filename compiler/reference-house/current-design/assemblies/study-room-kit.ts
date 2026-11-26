@@ -12,7 +12,7 @@ import { compileResolvedStudyAssembly } from './study-floor.js'
 import { compileStudyGroundSupport } from './study-ground-support.js'
 import { compileResolvedStudyLinings, layStudySouthPanelStock } from './study-linings.js'
 import { compileStudyWallTransition } from './study-wall-transition.js'
-import { admitStudyOrdinaryHandlingPlan, type StudyOrdinaryHandlingPlan } from './study-ordinary-handling.js'
+import { admitStudyOrdinaryHandlingPlan, studyOrdinaryPlanAppliesToParts, type StudyOrdinaryHandlingPlan } from './study-ordinary-handling.js'
 import { compileStudyInstalledInlet } from './study-installed-inlet.js'
 import { compileStudyRoomAssembly } from './study-room-assembly.js'
 import { deriveStudyStructuralContext, type NativeSWGeometry, type StudyStructuralContext } from './study-structural-context.js'
@@ -712,6 +712,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown, s
   const floorLayout = notchFrameFeet(cutLayout,
     house.model.studyDoorOperation.checkedFramePieces, request.frameFootClearanceMm)
   const { parts, emitterPlinth } = floorLayout
+  const ordinaryPlanApplicable = request.ordinaryHandling === undefined || studyOrdinaryPlanAppliesToParts(request.ordinaryHandling, parts.map(part => part.id))
   const installedInlet = compileStudyInstalledInlet(grille.actualRetainedInlet, request.installedServices ?? 'retained-plan-projection', request.floorWorkerTopMm ?? 900, assembly.grid.bands[0][1])
   const coordinatedGrilleKeepOut = installedInlet.state === 'wall-hung-candidate'
     ? { ...grilleKeepOut, box: [Math.min(grilleKeepOut.box[0], installedInlet.wallReserveXZMm[0]),
@@ -746,7 +747,7 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown, s
     liftMm: handling.emitterEdgeRelease.pickupLiftMm,
     restBoardTopMm: handling.emitterEdgeRelease.restBoardTopMm, finishDepthMm: assembly.section.finishDepthMm,
     ...(installedInlet.state === 'wall-hung-candidate' ? { installedServices: installedInlet } : {}),
-    ...(request.ordinaryHandling ? { ordinaryHandling: request.ordinaryHandling } : {}),
+    ...(request.ordinaryHandling && ordinaryPlanApplicable ? { ordinaryHandling: request.ordinaryHandling } : {}),
     ...(request.firstRestBoardSizeMm ? { includeAlternateReceivers: true, maximumExtendedTransferMm: 2 * assembly.grid.pitchMm } : {}),
   }
   const furnitureMotion = handling.state === 'withheld' ? null : compileStudyFurnitureMotion(
@@ -755,7 +756,12 @@ function deriveStudyRoomKit(resolved: CurrentDesignResolution, input: unknown, s
   const board = compareFirstRestBoard(parts, handling, furnitureMotion?.firstRest, request.firstRestBoardSizeMm, assembly.grid.bands)
   const structuralRenewal = structuralContext && request.ordinaryHandling
     ? compileStudyStructuralRenewal(structuralContext,parts,emitterPlinth,request.ordinaryHandling,installedInlet) : null
-  const ordinaryHandling = request.ordinaryHandling ? structuralRenewal?.ordinaryHandling ?? furnitureMotion?.firstRest?.ordinaryHandling ?? {
+  // Preserve the authored plan in kit.request; never submit a former part family
+  // to the current handling solver or promote its witnesses after a width edit.
+  const ordinaryHandling = request.ordinaryHandling ? !ordinaryPlanApplicable ? {
+    schema: 'ias-study-ordinary-handling-result/1' as const, state: 'source-withheld' as const, physicalAcceptance: false as const,
+    partCount: parts.length, witnessCount: 0, parts: [], diagnostics: [{ code: 'IAS_ORDINARY_RENEWAL_REQUIRES_CURRENT_PART_PLAN', objectIds: parts.map(part => part.id) }],
+  } : structuralRenewal?.ordinaryHandling ?? furnitureMotion?.firstRest?.ordinaryHandling ?? {
     schema: 'ias-study-ordinary-handling-result/1' as const, state: 'source-withheld' as const, physicalAcceptance: false as const,
     partCount: parts.length, witnessCount: 0, parts: [], diagnostics: [{ code: 'IAS_ORDINARY_SOURCE_FLOOR_FAMILY_WITHHELD', objectIds: [assembly.source.roomId] }],
   } : null
