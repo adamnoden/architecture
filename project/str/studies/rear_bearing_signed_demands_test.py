@@ -96,6 +96,9 @@ class SimultaneousDemandsControls(unittest.TestCase):
         self.assertAlmostEqual(result[0]['top']['maximumFibrePressureMPa'],2000/28000)
         self.assertEqual(result[0]['top']['compressionCentroidXYMm'],[100.,100.])
         self.assertEqual(result[0]['top']['momentAboutPatchCentreKNm'],[0.,0.,0.])
+        self.assertEqual(result[0]['top']['upwardForceActsOn'],'lintel')
+        self.assertEqual(result[0]['base']['upwardForceActsOn'],'masonry-body')
+        self.assertAlmostEqual(result[0]['base']['compressionKN']-result[0]['top']['compressionKN'],1.1)
         rows[0]['topCompressionKN']=0.;rows[0]['baseCompressionKN']=1.1;rows[0]['topActive']=False
         result=seat_records(rows,7,self.geometry(),self.choices(),rectangles[2:])
         self.assertIsNone(result[0]['top']['compressionCentroidXYMm'])

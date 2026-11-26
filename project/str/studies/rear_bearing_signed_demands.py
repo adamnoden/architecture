@@ -64,11 +64,11 @@ def seat_records(rows,index,geometry,choices,retained):
             mx=math.fsum((r['xyMm'][1]-centre[1])*r[key]/1000 for r in fibres)
             my=-math.fsum((r['xyMm'][0]-centre[0])*r[key]/1000 for r in fibres)
             centroid=None if abs(force)<1e-10 else [math.fsum(r['xyMm'][j]*r[key] for r in fibres)/force for j in (0,1)]
-            return {'upwardOnLintelKN':force,'momentAboutPatchCentreKNm':[mx,my,0.],
+            return {'compressionKN':force,'momentAboutPatchCentreKNm':[mx,my,0.],
                 'compressionCentroidXYMm':centroid,'maximumFibrePressureMPa':max(r[key]*1000/r['areaMm2'] for r in fibres)}
         result.append({'windIndex':index,'seatId':str(side),'kind':'primary-seat' if side<2 else 'retained-cross-wall-seat',
             'rectangleXYMm':rectangle,'areaMm2':area,'activeTopAreaMm2':math.fsum(r['areaMm2'] for r in fibres if r['topActive']),
-            'centroidXYMm':centre,'top':resultant('topCompressionKN'),'base':resultant('baseCompressionKN'),
+            'centroidXYMm':centre,'top':{**resultant('topCompressionKN'),'upwardForceActsOn':'lintel'},'base':{**resultant('baseCompressionKN'),'upwardForceActsOn':'masonry-body'},
             'fullSignedFibreRows':fibres})
     return result
 
@@ -195,7 +195,7 @@ def collect(proof_path,packet_path,captures,out):
     for side in range(4):
         local=[r for r in seats if r['seatId']==str(side)]
         for location in ('top','base'):
-            for key in ('upwardOnLintelKN','maximumFibrePressureMPa'):
+            for key in ('compressionKN','maximumFibrePressureMPa'):
                 row=max(local,key=lambda r:r[location][key])
                 seat_envelope[f'{side}/{location}/{key}']={'value':row[location][key],'fullSimultaneousRecord':row}
     output={'schema':'str-rear-bearing-simultaneous-demands/1','sourceCommit':proof['sourceCommit'],
