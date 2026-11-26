@@ -9,11 +9,12 @@
     "label": "zerg-owner-takeover-20261126"
   },
   "claimedAt": "2026-11-26T20:02:01.717Z",
-  "heartbeatAt": "2026-11-26T20:02:01.717Z",
-  "expiresAt": "2026-11-26T20:47:01.717Z",
+  "heartbeatAt": "2026-11-26T20:08:18.140Z",
+  "expiresAt": "2026-11-26T22:08:18.140Z",
   "checkpoint": {
-    "evidence": "Owner explicitly directed takeover; predecessor PR1629 b198 and protected follow-on branches preserved; full health45861260587 has two precise failures.",
-    "next": "Reproduce and correct stale evidence family and generated room schedule; validate exact source integration."
+    "evidence": "PR1630@1042876 published with complete5fa continuation, two precise full-health repairs, authenticated recovery34; source audit0, opening4/4 and strict room producer pass. Exact CI45888586338 running.",
+    "next": "Inspect exact-head full health/publication/editor, resolve failures without waivers, then fresh three-lease preflight and merge; independently recover ordinary native rootjoin.",
+    "blocker": "Full exact-head CI pending; no strategic closure."
   },
   "branch": "work/zerg-takeover-integration-20261126",
   "predecessor": {
@@ -37,5 +38,6 @@
       "next": "Join strict ordinary native A; prove upstand placing/operator and fresh true zero-wind plus signed cases. Integrate exact root source after required CI.",
       "blocker": "Upstand operator/contact insertion and cage development not proven. Old force cases cannot qualify changed frame; all-four finite joints/strength remain open."
     }
-  }
+  },
+  "pr": 1630
 }
