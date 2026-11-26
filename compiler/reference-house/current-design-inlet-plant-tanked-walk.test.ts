@@ -3,8 +3,9 @@ import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {plantTankedWalkingSurface,type PlantWalkControl} from './current-design/inlet-plant-tanked-walk.js'
 const raw=JSON.parse(readFileSync(new URL('../../project/had/studies/inlet-plant-tanked-walk-candidate.json',import.meta.url),'utf8'))
-// Preserve the explicit100mm unchanged fixture when the selected source walk moves.
-const choice={...raw,walkingRiseAboveHouseFflMm:100,walkingFrame:{...raw.walkingFrame,footPadSideMm:120,footPadThicknessMm:8},grating:{...raw.grating,bearingBarHeightMm:60,rimHeightMm:60,maximumCompletePanelKg:15},bridge:{...raw.bridge,railYMm:[4110,4600,5090]}} as PlantWalkControl
+// Freeze this historical standalone100mm bar/bridge control independently of the selected whole-room platform.
+const {appliancePlatform:_selectedPlatform,...legacy}=raw
+const choice={...legacy,walkingRiseAboveHouseFflMm:100,walkingFrame:{...raw.walkingFrame,minimumBeamIMm4:120000,footPadSideMm:120,footPadThicknessMm:8},grating:{...raw.grating,bearingBarThicknessMm:5,maximumUniformTemperatureExcursionK:40,bearingBarHeightMm:60,rimHeightMm:60,maximumCompletePanelKg:15},bridge:{...raw.bridge,railYMm:[4110,4600,5090]}} as PlantWalkControl
 // Source-geometry comparison only. Parent complete-room producer supplies its
 // actual pan/input profile, source-stage and receivers; no native force result
 // or current flooring replacement is inferred from this standalone fixture.
@@ -147,7 +148,7 @@ test('actual source apparatus touch walking level but block hidden panel lift; s
  assert.throws(()=>run({...input,apparatus:[{...apparatus[0],bodyBottomAbsoluteMm:100}]}),/actual captured/i)
 })
 test('selected walking rise propagates from actual controller independently of the100mm unchanged control',()=>{
- const selected=raw as PlantWalkControl,walk=input.houseFflMm+selected.walkingRiseAboveHouseFflMm
+ const selected=legacy as PlantWalkControl,walk=input.houseFflMm+selected.walkingRiseAboveHouseFflMm
  const r=run({...input,choice:selected,maximumWaterMm:walk-20})
  assert.equal(r.walkingTopMm,walk)
  assert.equal(r.bridgeTopMm,walk+selected.bridgeAboveWalkingMm)

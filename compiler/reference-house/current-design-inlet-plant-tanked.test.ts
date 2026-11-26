@@ -86,7 +86,7 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
 test('actual floor, outlet and inventory perturbations invalidate dependent design evidence',()=>{
  const i=roomRequest(),r=inletPlantTankedRoom(i),low=structuredClone(i)
  low.choice.walkingRiseAboveHouseFflMm=0
- assert.throws(()=>inletPlantTankedRoom(low),/vertical stack|compression post|direct bearing length|actual stack/i,'The actual lower floor cannot contain the same unaltered platform; obsolete evidence must not survive an impossible geometry.')
+ assert.throws(()=>inletPlantTankedRoom(low),/vertical stack|compression post|direct bearing length|actual stack|positive post length/i,'The actual lower floor cannot contain the same unaltered platform; obsolete evidence must not survive an impossible geometry.')
  const mixed=structuredClone(i);mixed.plant.resolvedInput.branch.paths[0].points[0][0]+=1
  assert.throws(()=>inletPlantTankedRoom(mixed),/Mixed or modified/)
  assert.throws(()=>inletPlantTankedRoom({...i,maximumSourceApertureMm:10.4}),/source aperture/)
@@ -209,7 +209,7 @@ test('the selected complete platform carries every actual foot blank and refresh
  assert.equal(stock.everyActualFootprintIncluded,true)
  assert.ok(stock.stockRows.some(p=>p.planLWMM[0]===230&&p.planLWMM[1]===230&&p.fullFactoryBlankUpperKg>20))
  assert.ok(stock.stockRows.every(p=>p.fullFactoryBlankUpperKg<=stock.choice.maximumBlankKg))
- assert.equal(w.appliancePlatform!.choice.loadedPadBlankUpperMm,stock.choice.maximumMeasuredThicknessMm)
+ assert.equal(r.choice.appliancePlatform!.loadedPadBlankUpperMm,stock.choice.maximumMeasuredThicknessMm)
  assert.ok(w.necessaryMemberComparisons,JSON.stringify(w.memberChecks.filter(c=>!c.necessary)))
  assert.ok(bed.necessaryPanFootPressureComparisons)
  assert.equal(bed.actualPeakContactPressureDistributionAccepted,false)
