@@ -9,28 +9,32 @@ permissions:
 jobs:
   retain:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12.16'
-      - name: Recover only exact original4010 packet and its archived saved snapshot
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - uses: actions/download-artifact@v6
+        with:
+          github-token: ${{ github.token }}
+          repository: adamnoden/architecture
+          run-id: '45847171536'
+          name: rear-development-input
+          path: ${{ runner.temp }}/rear-original-input
+      - name: Recover exact original4010 packet and saved snapshot in bounded byte-preserving parts
         run: |
-          gh api repos/adamnoden/architecture/actions/artifacts/15131108555/zip > "$RUNNER_TEMP/rear-original-input.zip"
           python - <<'PY'
-          import base64,hashlib,json,os,zipfile
+          import base64,hashlib,json,os
           from pathlib import Path
-          archive=Path(os.environ['RUNNER_TEMP'])/'rear-original-input.zip'
-          if hashlib.sha256(archive.read_bytes()).hexdigest()!='c4ba2ec37882f15fa032876e5d42f88e6a99a33c05889fa45f3105334e3ca7d2':raise ValueError('Original4010 archive checksum differs')
-          with zipfile.ZipFile(archive) as z:
-              names={Path(n).name:n for n in z.namelist() if not n.endswith('/')}
-              packet=z.read(names['finite-signed-input.json']);p=json.loads(packet)
-              if hashlib.sha256(packet).hexdigest()!='808b298261ac7956958087ab8e5f0b641c0ab8c9b3030f99e603bfa175db9d93':raise ValueError('Original source packet changed')
-              snapshot=z.read(names['rear-development-document.json'])
-              if hashlib.sha256(snapshot).hexdigest()!=p['documentSnapshotSHA256']:raise ValueError('Original saved source snapshot changed')
-              for name,data in (('finite-signed-input.json',packet),('rear-development-document.json',snapshot)):
-                  print('REAR_EXACT_ARCHIVE_FILE '+name+' '+hashlib.sha256(data).hexdigest()+' '+base64.b64encode(data).decode(),flush=True)
-          print('Original bytes only; no new model, ordinary compiler admission, force solve or receipt relabel',flush=True)
+          folder=Path(os.environ['RUNNER_TEMP'])/'rear-original-input'
+          packet=(folder/'finite-signed-input.json').read_bytes();p=json.loads(packet)
+          if hashlib.sha256(packet).hexdigest()!='808b298261ac7956958087ab8e5f0b641c0ab8c9b3030f99e603bfa175db9d93':raise ValueError('Original source packet changed')
+          snapshot=(folder/'rear-development-document.json').read_bytes()
+          if hashlib.sha256(snapshot).hexdigest()!=p['documentSnapshotSHA256']:raise ValueError('Original saved source snapshot changed')
+          for name,data in (('finite-signed-input.json',packet),('rear-development-document.json',snapshot)):
+              encoded=base64.b64encode(data).decode();pieces=[encoded[i:i+24000] for i in range(0,len(encoded),24000)]
+              digest=hashlib.sha256(data).hexdigest()
+              for index,piece in enumerate(pieces):
+                  print('REAR_EXACT_ARCHIVE_PART '+json.dumps({'name':name,'sha256':digest,'part':index,'parts':len(pieces),'base64':piece},separators=(',',':')),flush=True)
+          print('Original archived bytes only; no new model, ordinary compiler admission, force solve or receipt relabel',flush=True)
           PY

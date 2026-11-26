@@ -1,0 +1,1572 @@
+{
+  "schema": "str-rear-simultaneous-demand-consumer-receipt/1",
+  "physicalSourceCommit": "4010bd9b3f86e3a41d65323a12d76bc0ed790038",
+  "consumerCommit": "aa5ec652f93fd0e180a842657efe1a6eeed3896e",
+  "consumerRun": 45855671954,
+  "consumerArtifact": {
+    "id": 15134834667,
+    "zipSHA256": "7d7d873e5a822d7f409fee666126efb05ec6cd9cb85dfff70644cfb07d0dbfad",
+    "expiresAt": "2027-02-24T16:06:51Z"
+  },
+  "controlsPassed": 8,
+  "actualCaseCount": 96,
+  "actualCutCount": 5030,
+  "actualSeatPatchCount": 384,
+  "actualHeadRecordCount": 4992,
+  "review": {
+    "caseCount": 96,
+    "cutCount": 5030,
+    "seatCount": 384,
+    "signedCutReviewIndex": {
+      "axialCompressionKN/maximum": {
+        "componentValue": 5.847975536202284,
+        "fullSimultaneousRecord": {
+          "windIndex": 76,
+          "memberId": "REAR-LINTEL/member/8",
+          "end": 0,
+          "cutSide": null,
+          "fraction": null,
+          "physicalPointMm": [
+            2914.5,
+            10737.5,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            5.847975536202284,
+            -0.2053313812703612,
+            -0.3733328257916508,
+            -0.24227367052265236,
+            1.140800280662454,
+            -0.07797612121677139
+          ],
+          "nativeCut": {
+            "axialCompressionKN": 5.847975536202284,
+            "bendingYKNm": 1.140800280662454,
+            "bendingZKNm": -0.07797612121677139,
+            "breadthMm": 200,
+            "depthMm": 300,
+            "end": 0,
+            "globalPhysicalEndWrenchKN_KNm": [
+              -0.2053313812703612,
+              5.847975536202284,
+              0.3733328257916508,
+              1.140800280662454,
+              -0.24227367052265236,
+              0.07797612121677139
+            ],
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/8",
+            "physicalPointMm": [
+              2914.5,
+              10737.5,
+              3220
+            ],
+            "shearYKN": -0.2053313812703612,
+            "shearZKN": -0.3733328257916508,
+            "torsionKNm": -0.24227367052265236
+          }
+        }
+      },
+      "axialCompressionKN/minimum": {
+        "componentValue": -21.74689256658712,
+        "fullSimultaneousRecord": {
+          "windIndex": 58,
+          "memberId": "REAR-LINTEL/member/5",
+          "end": 0,
+          "cutSide": null,
+          "fraction": null,
+          "physicalPointMm": [
+            2914.5,
+            9923.75,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            -21.74689256658712,
+            0.12260705321341714,
+            -1.157334867261345,
+            0.49434147622203284,
+            -4.6808030756884795,
+            0.03063018230580042
+          ],
+          "nativeCut": {
+            "axialCompressionKN": -21.74689256658712,
+            "bendingYKNm": -4.6808030756884795,
+            "bendingZKNm": 0.03063018230580042,
+            "breadthMm": 200,
+            "depthMm": 300,
+            "end": 0,
+            "globalPhysicalEndWrenchKN_KNm": [
+              0.12260705321341714,
+              -21.74689256658712,
+              1.157334867261345,
+              -4.6808030756884795,
+              0.49434147622203284,
+              -0.03063018230580042
+            ],
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/5",
+            "physicalPointMm": [
+              2914.5,
+              9923.75,
+              3220
+            ],
+            "shearYKN": 0.12260705321341714,
+            "shearZKN": -1.157334867261345,
+            "torsionKNm": 0.49434147622203284
+          }
+        }
+      },
+      "shearYKN/maximum": {
+        "componentValue": 1.1510383977895415,
+        "fullSimultaneousRecord": {
+          "windIndex": 56,
+          "memberId": "REAR-LINTEL/member/7",
+          "end": 0,
+          "cutSide": null,
+          "fraction": null,
+          "physicalPointMm": [
+            2914.5,
+            10466.25,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            -9.17616040674784,
+            1.1510383977895415,
+            1.1504602713237637,
+            0.7411351499612765,
+            -2.1519486146239006,
+            0.15250678305445764
+          ],
+          "nativeCut": {
+            "axialCompressionKN": -9.17616040674784,
+            "bendingYKNm": -2.1519486146239006,
+            "bendingZKNm": 0.15250678305445764,
+            "breadthMm": 200,
+            "depthMm": 300,
+            "end": 0,
+            "globalPhysicalEndWrenchKN_KNm": [
+              1.1510383977895415,
+              -9.17616040674784,
+              -1.1504602713237637,
+              -2.1519486146239006,
+              0.7411351499612765,
+              -0.15250678305445764
+            ],
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/7",
+            "physicalPointMm": [
+              2914.5,
+              10466.25,
+              3220
+            ],
+            "shearYKN": 1.1510383977895415,
+            "shearZKN": 1.1504602713237637,
+            "torsionKNm": 0.7411351499612765
+          }
+        }
+      },
+      "shearYKN/minimum": {
+        "componentValue": -1.8984520579265647,
+        "fullSimultaneousRecord": {
+          "windIndex": 88,
+          "memberId": "REAR-LINTEL/member/2",
+          "end": 0,
+          "cutSide": null,
+          "fraction": null,
+          "physicalPointMm": [
+            2914.5,
+            9397.5,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            -7.894902608953998,
+            -1.8984520579265647,
+            -3.255915328241094,
+            0.10332295023307328,
+            -2.506203238376627,
+            -0.07970614979985663
+          ],
+          "nativeCut": {
+            "axialCompressionKN": -7.894902608953998,
+            "bendingYKNm": -2.506203238376627,
+            "bendingZKNm": -0.07970614979985663,
+            "breadthMm": 200,
+            "depthMm": 300,
+            "end": 0,
+            "globalPhysicalEndWrenchKN_KNm": [
+              -1.8984520579265647,
+              -7.894902608953998,
+              3.255915328241094,
+              -2.506203238376627,
+              0.10332295023307328,
+              0.07970614979985663
+            ],
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/2",
+            "physicalPointMm": [
+              2914.5,
+              9397.5,
+              3220
+            ],
+            "shearYKN": -1.8984520579265647,
+            "shearZKN": -3.255915328241094,
+            "torsionKNm": 0.10332295023307328
+          }
+        }
+      },
+      "shearZKN/maximum": {
+        "componentValue": 5.062117715182017,
+        "fullSimultaneousRecord": {
+          "windIndex": 10,
+          "memberId": "REAR-LINTEL/member/8",
+          "end": null,
+          "cutSide": "left",
+          "fraction": 0.628851024557207,
+          "physicalPointMm": [
+            2914.5,
+            10963.886368840595,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            -11.230404235237074,
+            0.47734096803264414,
+            5.062117715182017,
+            0.17599924224828736,
+            -2.301290800784887,
+            -0.002869366827500187
+          ],
+          "nativeCut": {
+            "axialCompressionKN": -11.230404235237074,
+            "bendingYKNm": -2.301290800784887,
+            "bendingZKNm": -0.002869366827500187,
+            "breadthMm": 200,
+            "cutSide": "left",
+            "depthMm": 300,
+            "end": null,
+            "fraction": 0.628851024557207,
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/8",
+            "physicalPointMm": [
+              2914.5,
+              10963.886368840595,
+              3220
+            ],
+            "shearYKN": 0.47734096803264414,
+            "shearZKN": 5.062117715182017,
+            "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate.",
+            "torsionKNm": 0.17599924224828736
+          }
+        }
+      },
+      "shearZKN/minimum": {
+        "componentValue": -6.67788026230171,
+        "fullSimultaneousRecord": {
+          "windIndex": 58,
+          "memberId": "REAR-LINTEL/member/0",
+          "end": null,
+          "cutSide": "right",
+          "fraction": 0.5279819323671078,
+          "physicalPointMm": [
+            2914.5,
+            9086.113631159405,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            -2.3321416777616832,
+            -1.0024685097180779,
+            -6.67788026230171,
+            0.8052541619180941,
+            -0.48246495836508985,
+            -0.03274963910271859
+          ],
+          "nativeCut": {
+            "axialCompressionKN": -2.3321416777616832,
+            "bendingYKNm": -0.48246495836508985,
+            "bendingZKNm": -0.03274963910271859,
+            "breadthMm": 200,
+            "cutSide": "right",
+            "depthMm": 300,
+            "end": null,
+            "fraction": 0.5279819323671078,
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/0",
+            "physicalPointMm": [
+              2914.5,
+              9086.113631159405,
+              3220
+            ],
+            "shearYKN": -1.0024685097180779,
+            "shearZKN": -6.67788026230171,
+            "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate.",
+            "torsionKNm": 0.8052541619180941
+          }
+        }
+      },
+      "torsionKNm/maximum": {
+        "componentValue": 0.9522669473646286,
+        "fullSimultaneousRecord": {
+          "windIndex": 55,
+          "memberId": "REAR-LINTEL/member/8",
+          "end": null,
+          "cutSide": "right",
+          "fraction": 0.9624947343291246,
+          "physicalPointMm": [
+            2914.5,
+            11083.998104358485,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            -1.4584841074538417,
+            0.2739509754396585,
+            -3.627589761348525,
+            0.9522669473646286,
+            -0.20264235038810616,
+            -0.025028494244685433
+          ],
+          "nativeCut": {
+            "axialCompressionKN": -1.4584841074538417,
+            "bendingYKNm": -0.20264235038810616,
+            "bendingZKNm": -0.025028494244685433,
+            "breadthMm": 200,
+            "cutSide": "right",
+            "depthMm": 300,
+            "end": null,
+            "fraction": 0.9624947343291246,
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/8",
+            "physicalPointMm": [
+              2914.5,
+              11083.998104358485,
+              3220
+            ],
+            "shearYKN": 0.2739509754396585,
+            "shearZKN": -3.627589761348525,
+            "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate.",
+            "torsionKNm": 0.9522669473646286
+          }
+        }
+      },
+      "torsionKNm/minimum": {
+        "componentValue": -1.0663718085323848,
+        "fullSimultaneousRecord": {
+          "windIndex": 31,
+          "memberId": "REAR-LINTEL/member/8",
+          "end": null,
+          "cutSide": "right",
+          "fraction": 0.9624947343291246,
+          "physicalPointMm": [
+            2914.5,
+            11083.998104358485,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            -6.044567322256626,
+            0.3929232825535003,
+            0.6498538702784514,
+            -1.0663718085323848,
+            -1.0996114365966276,
+            -0.10235231550259348
+          ],
+          "nativeCut": {
+            "axialCompressionKN": -6.044567322256626,
+            "bendingYKNm": -1.0996114365966276,
+            "bendingZKNm": -0.10235231550259348,
+            "breadthMm": 200,
+            "cutSide": "right",
+            "depthMm": 300,
+            "end": null,
+            "fraction": 0.9624947343291246,
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/8",
+            "physicalPointMm": [
+              2914.5,
+              11083.998104358485,
+              3220
+            ],
+            "shearYKN": 0.3929232825535003,
+            "shearZKN": 0.6498538702784514,
+            "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate.",
+            "torsionKNm": -1.0663718085323848
+          }
+        }
+      },
+      "bendingYKNm/maximum": {
+        "componentValue": 1.1549884158985833,
+        "fullSimultaneousRecord": {
+          "windIndex": 76,
+          "memberId": "REAR-LINTEL/member/9",
+          "end": 0,
+          "cutSide": null,
+          "fraction": null,
+          "physicalPointMm": [
+            2914.5,
+            11097.5,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            4.608702591227484,
+            -0.05549070176561344,
+            -1.9050758455488321,
+            -0.13454657040920975,
+            1.1549884158985833,
+            -0.07029875487459776
+          ],
+          "nativeCut": {
+            "axialCompressionKN": 4.608702591227484,
+            "bendingYKNm": 1.1549884158985833,
+            "bendingZKNm": -0.07029875487459776,
+            "breadthMm": 200,
+            "depthMm": 300,
+            "end": 0,
+            "globalPhysicalEndWrenchKN_KNm": [
+              -0.05549070176561344,
+              4.608702591227484,
+              1.9050758455488321,
+              1.1549884158985833,
+              -0.13454657040920975,
+              0.07029875487459776
+            ],
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/9",
+            "physicalPointMm": [
+              2914.5,
+              11097.5,
+              3220
+            ],
+            "shearYKN": -0.05549070176561344,
+            "shearZKN": -1.9050758455488321,
+            "torsionKNm": -0.13454657040920975
+          }
+        }
+      },
+      "bendingYKNm/minimum": {
+        "componentValue": -4.752844022013129,
+        "fullSimultaneousRecord": {
+          "windIndex": 10,
+          "memberId": "REAR-LINTEL/member/4",
+          "end": 1,
+          "cutSide": null,
+          "fraction": null,
+          "physicalPointMm": [
+            2914.5,
+            9923.75,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            -20.331032260479333,
+            0.16351453733580712,
+            -1.156283469175292,
+            0.4949039342294317,
+            -4.752844022013129,
+            0.001441251489553906
+          ],
+          "nativeCut": {
+            "axialCompressionKN": -20.331032260479333,
+            "bendingYKNm": 4.752844022013129,
+            "bendingZKNm": -0.001441251489553906,
+            "breadthMm": 200,
+            "depthMm": 300,
+            "end": 1,
+            "globalPhysicalEndWrenchKN_KNm": [
+              -0.16351453733580712,
+              20.331032260479333,
+              -1.156283469175292,
+              4.752844022013129,
+              -0.4949039342294317,
+              0.001441251489553906
+            ],
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/4",
+            "physicalPointMm": [
+              2914.5,
+              9923.75,
+              3220
+            ],
+            "shearYKN": -0.16351453733580712,
+            "shearZKN": 1.156283469175292,
+            "torsionKNm": -0.4949039342294317
+          }
+        }
+      },
+      "bendingZKNm/maximum": {
+        "componentValue": 0.22286912688558652,
+        "fullSimultaneousRecord": {
+          "windIndex": 88,
+          "memberId": "REAR-LINTEL/member/0",
+          "end": 1,
+          "cutSide": null,
+          "fraction": null,
+          "physicalPointMm": [
+            2914.5,
+            9252.5,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            0.9092454800729683,
+            -1.3039942536036202,
+            -2.5195345028240173,
+            0.26516422428074354,
+            -1.7499245574602171,
+            0.22286912688558652
+          ],
+          "nativeCut": {
+            "axialCompressionKN": 0.9092454800729683,
+            "bendingYKNm": 1.7499245574602171,
+            "bendingZKNm": -0.22286912688558652,
+            "breadthMm": 200,
+            "depthMm": 300,
+            "end": 1,
+            "globalPhysicalEndWrenchKN_KNm": [
+              1.3039942536036202,
+              -0.9092454800729683,
+              -2.5195345028240173,
+              1.7499245574602171,
+              -0.26516422428074354,
+              0.22286912688558652
+            ],
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/0",
+            "physicalPointMm": [
+              2914.5,
+              9252.5,
+              3220
+            ],
+            "shearYKN": 1.3039942536036202,
+            "shearZKN": 2.5195345028240173,
+            "torsionKNm": -0.26516422428074354
+          }
+        }
+      },
+      "bendingZKNm/minimum": {
+        "componentValue": -0.24257333603034523,
+        "fullSimultaneousRecord": {
+          "windIndex": 65,
+          "memberId": "REAR-LINTEL/member/0",
+          "end": 0,
+          "cutSide": null,
+          "fraction": null,
+          "physicalPointMm": [
+            2914.5,
+            8900,
+            3220
+          ],
+          "recoveryOrigin": "authenticated-native-cut",
+          "leftResultantKN_KNm": [
+            -0.4400498277027509,
+            -1.1914894766001183,
+            -2.090293133979607,
+            0.7138189137724659,
+            0.08027117458671466,
+            -0.24257333603034523
+          ],
+          "nativeCut": {
+            "axialCompressionKN": -0.4400498277027509,
+            "bendingYKNm": 0.08027117458671466,
+            "bendingZKNm": -0.24257333603034523,
+            "breadthMm": 200,
+            "depthMm": 300,
+            "end": 0,
+            "globalPhysicalEndWrenchKN_KNm": [
+              -1.1914894766001183,
+              -0.4400498277027509,
+              2.090293133979607,
+              0.08027117458671466,
+              0.7138189137724659,
+              0.24257333603034523
+            ],
+            "kind": "seated-wet-beam",
+            "memberId": "REAR-LINTEL/member/0",
+            "physicalPointMm": [
+              2914.5,
+              8900,
+              3220
+            ],
+            "shearYKN": -1.1914894766001183,
+            "shearZKN": -2.090293133979607,
+            "torsionKNm": 0.7138189137724659
+          }
+        }
+      }
+    },
+    "nativeHeadReactionReviewIndex": {
+      "FxKN/maximum": {
+        "componentValue": 329.5086882190374,
+        "fullSimultaneousRecord": {
+          "windIndex": 60,
+          "headId": "P01",
+          "physicalPointMm": [
+            332.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            329.5086882190374,
+            -164.16991676042664,
+            36.97272299987633,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            -329.5086882190374,
+            164.16991676042664,
+            -36.97272299987633,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "FxKN/minimum": {
+        "componentValue": -369.50224947120205,
+        "fullSimultaneousRecord": {
+          "windIndex": 79,
+          "headId": "P04",
+          "physicalPointMm": [
+            11667.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            -369.50224947120205,
+            -226.88766488310876,
+            83.59638064357542,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            369.50224947120205,
+            226.88766488310876,
+            -83.59638064357542,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "FyKN/maximum": {
+        "componentValue": 350.48052181932286,
+        "fullSimultaneousRecord": {
+          "windIndex": 55,
+          "headId": "P04",
+          "physicalPointMm": [
+            11667.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            236.6280451478794,
+            350.48052181932286,
+            42.180618218818026,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            -236.6280451478794,
+            -350.48052181932286,
+            -42.180618218818026,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "FyKN/minimum": {
+        "componentValue": -317.9202072686885,
+        "fullSimultaneousRecord": {
+          "windIndex": 79,
+          "headId": "P07",
+          "physicalPointMm": [
+            332.5,
+            11667.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            -178.12149447529072,
+            -317.9202072686885,
+            76.03805458111084,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            178.12149447529072,
+            317.9202072686885,
+            -76.03805458111084,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "FzKN/maximum": {
+        "componentValue": 350.45670203709847,
+        "fullSimultaneousRecord": {
+          "windIndex": 7,
+          "headId": "P10",
+          "physicalPointMm": [
+            11667.5,
+            11667.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            96.62304383089756,
+            81.91094836309647,
+            350.45670203709847,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            -96.62304383089756,
+            -81.91094836309647,
+            -350.45670203709847,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "FzKN/minimum": {
+        "componentValue": -101.40856852369119,
+        "fullSimultaneousRecord": {
+          "windIndex": 76,
+          "headId": "P04",
+          "physicalPointMm": [
+            11667.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            -167.7148264141582,
+            99.30153531863473,
+            -101.40856852369119,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            167.7148264141582,
+            -99.30153531863473,
+            101.40856852369119,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "MxKNm/maximum": {
+        "componentValue": 0,
+        "fullSimultaneousRecord": {
+          "windIndex": 0,
+          "headId": "P01",
+          "physicalPointMm": [
+            332.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            -36.691047391949155,
+            237.690498767681,
+            0.5740585506939819,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            36.691047391949155,
+            -237.690498767681,
+            -0.5740585506939819,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "MxKNm/minimum": {
+        "componentValue": 0,
+        "fullSimultaneousRecord": {
+          "windIndex": 0,
+          "headId": "P01",
+          "physicalPointMm": [
+            332.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            -36.691047391949155,
+            237.690498767681,
+            0.5740585506939819,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            36.691047391949155,
+            -237.690498767681,
+            -0.5740585506939819,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "MyKNm/maximum": {
+        "componentValue": 0,
+        "fullSimultaneousRecord": {
+          "windIndex": 0,
+          "headId": "P01",
+          "physicalPointMm": [
+            332.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            -36.691047391949155,
+            237.690498767681,
+            0.5740585506939819,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            36.691047391949155,
+            -237.690498767681,
+            -0.5740585506939819,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "MyKNm/minimum": {
+        "componentValue": 0,
+        "fullSimultaneousRecord": {
+          "windIndex": 0,
+          "headId": "P01",
+          "physicalPointMm": [
+            332.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            -36.691047391949155,
+            237.690498767681,
+            0.5740585506939819,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            36.691047391949155,
+            -237.690498767681,
+            -0.5740585506939819,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "MzKNm/maximum": {
+        "componentValue": 0,
+        "fullSimultaneousRecord": {
+          "windIndex": 0,
+          "headId": "P01",
+          "physicalPointMm": [
+            332.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            -36.691047391949155,
+            237.690498767681,
+            0.5740585506939819,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            36.691047391949155,
+            -237.690498767681,
+            -0.5740585506939819,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "MzKNm/minimum": {
+        "componentValue": 0,
+        "fullSimultaneousRecord": {
+          "windIndex": 0,
+          "headId": "P01",
+          "physicalPointMm": [
+            332.5,
+            332.5,
+            -750
+          ],
+          "nativeSupportOnHouseKN_KNm": [
+            -36.691047391949155,
+            237.690498767681,
+            0.5740585506939819,
+            0,
+            0,
+            0
+          ],
+          "equalOppositeHouseOnFoundationKN_KNm": [
+            36.691047391949155,
+            -237.690498767681,
+            -0.5740585506939819,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "seatReviewIndex": {
+      "0/top/compressionKN": {
+        "value": 6.952496894446648,
+        "windIndex": 58,
+        "seatId": "0",
+        "rectangleXYMm": [
+          2844.5,
+          8900,
+          2984.5,
+          9100
+        ],
+        "top": {
+          "compressionKN": 6.952496894446648,
+          "momentAboutPatchCentreKNm": [
+            0.03050567637442183,
+            0.004749120710825866,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.816918686491,
+            9004.387729593778
+          ],
+          "maximumFibrePressureMPa": 0.2834838601967226,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 9.405716894414414,
+          "momentAboutPatchCentreKNm": [
+            0.030505676371643805,
+            0.004749120711663089,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.995081473855,
+            9003.24331220194
+          ],
+          "maximumFibrePressureMPa": 0.3710988601967216,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "0/top/maximumFibrePressureMPa": {
+        "value": 0.2834838601967226,
+        "windIndex": 58,
+        "seatId": "0",
+        "rectangleXYMm": [
+          2844.5,
+          8900,
+          2984.5,
+          9100
+        ],
+        "top": {
+          "compressionKN": 6.952496894446648,
+          "momentAboutPatchCentreKNm": [
+            0.03050567637442183,
+            0.004749120710825866,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.816918686491,
+            9004.387729593778
+          ],
+          "maximumFibrePressureMPa": 0.2834838601967226,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 9.405716894414414,
+          "momentAboutPatchCentreKNm": [
+            0.030505676371643805,
+            0.004749120711663089,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.995081473855,
+            9003.24331220194
+          ],
+          "maximumFibrePressureMPa": 0.3710988601967216,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "0/base/compressionKN": {
+        "value": 9.405716894414414,
+        "windIndex": 58,
+        "seatId": "0",
+        "rectangleXYMm": [
+          2844.5,
+          8900,
+          2984.5,
+          9100
+        ],
+        "top": {
+          "compressionKN": 6.952496894446648,
+          "momentAboutPatchCentreKNm": [
+            0.03050567637442183,
+            0.004749120710825866,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.816918686491,
+            9004.387729593778
+          ],
+          "maximumFibrePressureMPa": 0.2834838601967226,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 9.405716894414414,
+          "momentAboutPatchCentreKNm": [
+            0.030505676371643805,
+            0.004749120711663089,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.995081473855,
+            9003.24331220194
+          ],
+          "maximumFibrePressureMPa": 0.3710988601967216,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "0/base/maximumFibrePressureMPa": {
+        "value": 0.3710988601967216,
+        "windIndex": 58,
+        "seatId": "0",
+        "rectangleXYMm": [
+          2844.5,
+          8900,
+          2984.5,
+          9100
+        ],
+        "top": {
+          "compressionKN": 6.952496894446648,
+          "momentAboutPatchCentreKNm": [
+            0.03050567637442183,
+            0.004749120710825866,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.816918686491,
+            9004.387729593778
+          ],
+          "maximumFibrePressureMPa": 0.2834838601967226,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 9.405716894414414,
+          "momentAboutPatchCentreKNm": [
+            0.030505676371643805,
+            0.004749120711663089,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.995081473855,
+            9003.24331220194
+          ],
+          "maximumFibrePressureMPa": 0.3710988601967216,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "1/top/compressionKN": {
+        "value": 10.253224573121894,
+        "windIndex": 10,
+        "seatId": "1",
+        "rectangleXYMm": [
+          2844.5,
+          10950,
+          2984.5,
+          11150
+        ],
+        "top": {
+          "compressionKN": 10.253224573121894,
+          "momentAboutPatchCentreKNm": [
+            -0.022428199970361606,
+            0.01377586492038085,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.1564358537025,
+            11047.812571078453
+          ],
+          "maximumFibrePressureMPa": 0.40455015044535964,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 12.706444573121566,
+          "momentAboutPatchCentreKNm": [
+            -0.022428199968978917,
+            0.013775864921188319,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.4158363819315,
+            11048.234895698799
+          ],
+          "maximumFibrePressureMPa": 0.49216515044535636,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "1/top/maximumFibrePressureMPa": {
+        "value": 0.40455015044535964,
+        "windIndex": 10,
+        "seatId": "1",
+        "rectangleXYMm": [
+          2844.5,
+          10950,
+          2984.5,
+          11150
+        ],
+        "top": {
+          "compressionKN": 10.253224573121894,
+          "momentAboutPatchCentreKNm": [
+            -0.022428199970361606,
+            0.01377586492038085,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.1564358537025,
+            11047.812571078453
+          ],
+          "maximumFibrePressureMPa": 0.40455015044535964,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 12.706444573121566,
+          "momentAboutPatchCentreKNm": [
+            -0.022428199968978917,
+            0.013775864921188319,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.4158363819315,
+            11048.234895698799
+          ],
+          "maximumFibrePressureMPa": 0.49216515044535636,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "1/base/compressionKN": {
+        "value": 12.706444573121566,
+        "windIndex": 10,
+        "seatId": "1",
+        "rectangleXYMm": [
+          2844.5,
+          10950,
+          2984.5,
+          11150
+        ],
+        "top": {
+          "compressionKN": 10.253224573121894,
+          "momentAboutPatchCentreKNm": [
+            -0.022428199970361606,
+            0.01377586492038085,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.1564358537025,
+            11047.812571078453
+          ],
+          "maximumFibrePressureMPa": 0.40455015044535964,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 12.706444573121566,
+          "momentAboutPatchCentreKNm": [
+            -0.022428199968978917,
+            0.013775864921188319,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.4158363819315,
+            11048.234895698799
+          ],
+          "maximumFibrePressureMPa": 0.49216515044535636,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "1/base/maximumFibrePressureMPa": {
+        "value": 0.49216515044535636,
+        "windIndex": 10,
+        "seatId": "1",
+        "rectangleXYMm": [
+          2844.5,
+          10950,
+          2984.5,
+          11150
+        ],
+        "top": {
+          "compressionKN": 10.253224573121894,
+          "momentAboutPatchCentreKNm": [
+            -0.022428199970361606,
+            0.01377586492038085,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.1564358537025,
+            11047.812571078453
+          ],
+          "maximumFibrePressureMPa": 0.40455015044535964,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 12.706444573121566,
+          "momentAboutPatchCentreKNm": [
+            -0.022428199968978917,
+            0.013775864921188319,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2913.4158363819315,
+            11048.234895698799
+          ],
+          "maximumFibrePressureMPa": 0.49216515044535636,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "2/top/compressionKN": {
+        "value": 0.15308835223437797,
+        "windIndex": 58,
+        "seatId": "2",
+        "rectangleXYMm": [
+          2814.5,
+          8900,
+          2844.5,
+          8922.5
+        ],
+        "top": {
+          "compressionKN": 0.15308835223437797,
+          "momentAboutPatchCentreKNm": [
+            0.000009854847501977597,
+            0.000004475812196794961,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2829.4707632087516,
+            8911.314373594452
+          ],
+          "maximumFibrePressureMPa": 0.23132106059638444,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 0.21222847723437724,
+          "momentAboutPatchCentreKNm": [
+            0.000009854847501977808,
+            0.000004475812196794846,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2829.478910407052,
+            8911.296435085575
+          ],
+          "maximumFibrePressureMPa": 0.31893606059638513,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "2/top/maximumFibrePressureMPa": {
+        "value": 0.23132106059638444,
+        "windIndex": 58,
+        "seatId": "2",
+        "rectangleXYMm": [
+          2814.5,
+          8900,
+          2844.5,
+          8922.5
+        ],
+        "top": {
+          "compressionKN": 0.15308835223437797,
+          "momentAboutPatchCentreKNm": [
+            0.000009854847501977597,
+            0.000004475812196794961,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2829.4707632087516,
+            8911.314373594452
+          ],
+          "maximumFibrePressureMPa": 0.23132106059638444,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 0.21222847723437724,
+          "momentAboutPatchCentreKNm": [
+            0.000009854847501977808,
+            0.000004475812196794846,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2829.478910407052,
+            8911.296435085575
+          ],
+          "maximumFibrePressureMPa": 0.31893606059638513,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "2/base/compressionKN": {
+        "value": 0.21222847723437724,
+        "windIndex": 58,
+        "seatId": "2",
+        "rectangleXYMm": [
+          2814.5,
+          8900,
+          2844.5,
+          8922.5
+        ],
+        "top": {
+          "compressionKN": 0.15308835223437797,
+          "momentAboutPatchCentreKNm": [
+            0.000009854847501977597,
+            0.000004475812196794961,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2829.4707632087516,
+            8911.314373594452
+          ],
+          "maximumFibrePressureMPa": 0.23132106059638444,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 0.21222847723437724,
+          "momentAboutPatchCentreKNm": [
+            0.000009854847501977808,
+            0.000004475812196794846,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2829.478910407052,
+            8911.296435085575
+          ],
+          "maximumFibrePressureMPa": 0.31893606059638513,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "2/base/maximumFibrePressureMPa": {
+        "value": 0.31893606059638513,
+        "windIndex": 58,
+        "seatId": "2",
+        "rectangleXYMm": [
+          2814.5,
+          8900,
+          2844.5,
+          8922.5
+        ],
+        "top": {
+          "compressionKN": 0.15308835223437797,
+          "momentAboutPatchCentreKNm": [
+            0.000009854847501977597,
+            0.000004475812196794961,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2829.4707632087516,
+            8911.314373594452
+          ],
+          "maximumFibrePressureMPa": 0.23132106059638444,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 0.21222847723437724,
+          "momentAboutPatchCentreKNm": [
+            0.000009854847501977808,
+            0.000004475812196794846,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2829.478910407052,
+            8911.296435085575
+          ],
+          "maximumFibrePressureMPa": 0.31893606059638513,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "3/top/compressionKN": {
+        "value": 0.14283899981648565,
+        "windIndex": 58,
+        "seatId": "3",
+        "rectangleXYMm": [
+          2984.5,
+          8900,
+          3014.5,
+          8922.5
+        ],
+        "top": {
+          "compressionKN": 0.14283899981648565,
+          "momentAboutPatchCentreKNm": [
+            0.000009383110703884592,
+            0.000005052702974744576,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2999.4646265867077,
+            8911.315690117655
+          ],
+          "maximumFibrePressureMPa": 0.21600501373789546,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 0.20197912481648486,
+          "momentAboutPatchCentreKNm": [
+            0.000009383110703882437,
+            0.000005052702974744359,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2999.4749840337245,
+            8911.29645584395
+          ],
+          "maximumFibrePressureMPa": 0.30362001373789566,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "3/top/maximumFibrePressureMPa": {
+        "value": 0.21600501373789546,
+        "windIndex": 58,
+        "seatId": "3",
+        "rectangleXYMm": [
+          2984.5,
+          8900,
+          3014.5,
+          8922.5
+        ],
+        "top": {
+          "compressionKN": 0.14283899981648565,
+          "momentAboutPatchCentreKNm": [
+            0.000009383110703884592,
+            0.000005052702974744576,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2999.4646265867077,
+            8911.315690117655
+          ],
+          "maximumFibrePressureMPa": 0.21600501373789546,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 0.20197912481648486,
+          "momentAboutPatchCentreKNm": [
+            0.000009383110703882437,
+            0.000005052702974744359,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2999.4749840337245,
+            8911.29645584395
+          ],
+          "maximumFibrePressureMPa": 0.30362001373789566,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "3/base/compressionKN": {
+        "value": 0.20197912481648486,
+        "windIndex": 58,
+        "seatId": "3",
+        "rectangleXYMm": [
+          2984.5,
+          8900,
+          3014.5,
+          8922.5
+        ],
+        "top": {
+          "compressionKN": 0.14283899981648565,
+          "momentAboutPatchCentreKNm": [
+            0.000009383110703884592,
+            0.000005052702974744576,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2999.4646265867077,
+            8911.315690117655
+          ],
+          "maximumFibrePressureMPa": 0.21600501373789546,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 0.20197912481648486,
+          "momentAboutPatchCentreKNm": [
+            0.000009383110703882437,
+            0.000005052702974744359,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2999.4749840337245,
+            8911.29645584395
+          ],
+          "maximumFibrePressureMPa": 0.30362001373789566,
+          "upwardForceActsOn": "masonry-body"
+        }
+      },
+      "3/base/maximumFibrePressureMPa": {
+        "value": 0.30362001373789566,
+        "windIndex": 58,
+        "seatId": "3",
+        "rectangleXYMm": [
+          2984.5,
+          8900,
+          3014.5,
+          8922.5
+        ],
+        "top": {
+          "compressionKN": 0.14283899981648565,
+          "momentAboutPatchCentreKNm": [
+            0.000009383110703884592,
+            0.000005052702974744576,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2999.4646265867077,
+            8911.315690117655
+          ],
+          "maximumFibrePressureMPa": 0.21600501373789546,
+          "upwardForceActsOn": "lintel"
+        },
+        "base": {
+          "compressionKN": 0.20197912481648486,
+          "momentAboutPatchCentreKNm": [
+            0.000009383110703882437,
+            0.000005052702974744359,
+            0
+          ],
+          "compressionCentroidXYMm": [
+            2999.4749840337245,
+            8911.29645584395
+          ],
+          "maximumFibrePressureMPa": 0.30362001373789566,
+          "upwardForceActsOn": "masonry-body"
+        }
+      }
+    }
+  },
+  "loggedReviewIsOriginalArtifactBytes": false,
+  "currentSavedEngineeringDocumentAdmitted": false,
+  "resistanceAccepted": false,
+  "candidateAccepted": false,
+  "ownerAccepted": false
+}
