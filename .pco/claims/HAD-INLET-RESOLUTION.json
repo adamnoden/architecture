@@ -9,9 +9,9 @@
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-26T00:22:32.221Z",
-  "expiresAt": "2026-11-26T01:07:32.221Z",
-  "branch": "work/convergence-structure-20261125",
+  "heartbeatAt": "2026-11-26T00:30:18.310Z",
+  "expiresAt": "2026-11-26T01:15:18.310Z",
+  "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
     "generation": 63,
@@ -34,10 +34,10 @@
       "blocker": "Executor unavailable. Latest root combined source account and added real-browser frame test were not pushed; native loads, stored release and physical interfaces remain unqualified."
     }
   },
-  "pr": 1626,
+  "pr": 1627,
   "checkpoint": {
-    "evidence": "PR1626 exacthead243593e5 passed7workflow checks and merged83f8cb6509df7768e2777ece378f1bca3e2f43fc at00:17UTC. Separate UNMERGED secondbranch work/convergence-bed-water-20261125@9a434ca4488f6fd0bee90a2052a15a340c25e0bc remains development work. Raw unselected suite recovery work/convergence-wet-service-suite-20261125@5c46a9fef5eb193f57eec96fbc0c0ff7414d62dd saved remotely; later local0d6c62a7 has verified rejected3830/backwater and local239ca80f corrects N/kN with tests+canonicalcheck+strictaudit0, not yet claimed remotely integrated.",
-    "next": "Root applies unit239 source/test delta to current secondbranch with genuine receipts. Develop pure known-gravity normalizer in existing inlet saved path, preserving unknown assembly/receiver/reactions and distinct datums; rebind lease when next actualPR exists.",
-    "blocker": "Actual complete incoming-water assembly, stored-release model and floor/frame/contact/foundation resistance remain unresolved; firstbinding retained by coordination until newPR exists."
+    "evidence": "FirstPR1626 merged83f8cb6509df7768e2777ece378f1bca3e2f43fc. New actualPR1627@dcfc8d631bbe1670359bd82db5ca18c30edb6c5d on work/convergence-bed-water-20261125 includes scoped unit239 source/test/note applied to current arrangement, genuinely regenerated3receipts and strictaudit0 per root; wet suite is NOT included. Remote rawsuite5c46a9fef5eb193f57eec96fbc0c0ff7414d62dd remains separate unmerged history. Own laterLOCAL0d6c62a7 negative3830/backwater and239ca80f unit tests verified; new pure gravity normalizer is private implementation from239,3primitive tests pass, full binding/stage validation pending.",
+    "next": "Validate source-bound pure known-gravity normalizer in existing saved inlet stage with explicit component/event/datum separation, unknown assemblies and receivers. Root validates/publishes1627 exacthead independently.",
+    "blocker": "Actual complete assembly, store/upper release, qualified material, and actual floor/core/grid/foundation receiver resistance remain unearned; no wet-suite acceptance or native nodal loads."
   }
 }
