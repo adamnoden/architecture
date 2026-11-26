@@ -233,7 +233,7 @@
     "phase": "L3",
     "nominalVoltageV": 230,
     "cmin": 0.95,
-    "bendRadiusMm": 45,
+    "bendRadiusMm": 50,
     "pitchMm": 40,
     "highLevelMm": 2925,
     "corridorYMm": 3475,
@@ -265,7 +265,7 @@
       "way": "DB-UTILITY/L3/STUDY-LIGHTING",
       "article": "HagerADB906R",
       "ratedA": 6,
-      "cable": "Pyrotenax2L1.5",
+      "cable": "Pyrotenax2L2.5",
       "dropFraction": 0.03
     },
     "cables": {
@@ -372,7 +372,7 @@
       {
         "id": "switch",
         "url": "https://forbesandlomax.com/uk/wp-content/uploads/sites/2/2024/08/The-Rocker-Switch.pdf",
-        "finding": "20A1gang2way can be used1way,86mm plate,47mm recommended box;1.5mm2 within published capacity. Actual COM/L1setout and hidden materials remain unqualified.",
+        "finding": "20A1gang2way used1way;86mm plate,47mm recommended box; published terminal capacities3x2.5mm2 and1x6mm2. Actual COM/L1setout and hidden materials remain unqualified.",
         "retrieval": "Official2024PDF opened26Nov2026."
       },
       {
@@ -392,7 +392,30 @@
         "url": "https://www.bahco.com/sea_en/22-mm-x-24-mm-double-open-end-wrench-with-chrome-finish-240-mm-6m-22-24.html",
         "finding": "6M-22-24 fits22AFgland/24AFlocknut;240mm length,49mm maximum head,7.4mm thickness. Full head used for source rear AND side checks. Handle/counterhold/human motion remains unqualified.",
         "retrieval": "Official manufacturer table opened26Nov2026."
+      },
+      {
+        "id": "lamp-current-instructions",
+        "url": "https://assets.astrolighting.com/pdfs/original/82244-instructions-backplate3-issue2.pdf",
+        "finding": "Current official Backplate3issue2 instructions linked from1367003 page; ClassI wired fixture. Exact terminal CSA and factory tail withstand remain unconfirmed; no2.5mm2 fit claim.",
+        "retrieval": "Official product and current instructions link opened26Nov2026; PDF has no extractable text and direct download403."
+      },
+      {
+        "id": "generic-class3-comparison",
+        "url": "https://library.e.abb.com/public/e8cda48862fb424898627405b0276986/B_ELSB_Catalogue-Technical_2024_1st_Edition.pdf",
+        "finding": "Manufacturer summary: class3 B<=16A at6kA permits35000A2s. This single generic point does not qualify actual HagerRCBO energy across the fault range.",
+        "retrieval": "Official manufacturer indexed table opened26Nov2026."
+      },
+      {
+        "id": "socket-terminals",
+        "url": "https://forbesandlomax.com/uk/wp-content/uploads/sites/2/2020/02/13amp-Sockets-1.pdf",
+        "finding": "Current April2026 sheet: single13A switched or unswitched body23mm,47mm recommended box;L/N/E3x2.5mm2,3x4mm2,2x6mm2stranded. Model conservatively accepts rigidmax4; actual terminal position/tool fit remains unqualified.",
+        "retrieval": "Official current sheet opened26Nov2026 from manufacturer sockets supporting documents."
       }
-    ]
+    ],
+    "deviceTerminalLimitsMm2": {
+      "socket": 4,
+      "switch": 6,
+      "lamp": null
+    }
   }
 }

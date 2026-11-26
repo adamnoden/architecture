@@ -44,7 +44,7 @@ def _phase_conflicts(phases):
     ) < 25 or phase.get('maximumProspectiveReachMm', 0) > 600]
 
 
-def _standard_furniture(bcr, motion, root, house, fixed, desk, chair, desk_park, chair_park):
+def _standard_furniture(bcr, motion, root, house, fixed, desk, chair, desk_park, chair_park, closed_fixed=False):
     # Same source-bound turn and phase composition as room_motion; all geometric
     # operations below are the existing motion/BCR primitives, unchanged.
     approach, translation, cardinal = (motion[key] for key in ('approach', 'translation', 'cardinal'))
@@ -73,6 +73,12 @@ def _standard_furniture(bcr, motion, root, house, fixed, desk, chair, desk_park,
     turn_stance = cardinal(near_turn,'west',grip_offset)
     between_stances = [[turn_stance[0], cardinal(near_turn,'north',grip_offset)[1]], turn_stance]
     parked_desk_worker = cardinal(desk_park,'north',grip_offset)
+    # With the actual closed local station retained, step east before the northward
+    # return. This is a walked route, not a reduced body or clearance envelope.
+    return_step=clearance if closed_fixed else 0
+    return_path=([parked_desk_worker,[parked_desk_worker[0]+return_step,parked_desk_worker[1]],
+                  [parked_desk_worker[0]+return_step,entry[1]],entry] if return_step else
+                 [parked_desk_worker,[parked_desk_worker[0],entry[1]],entry])
     phases = [
         approach(bcr,'enter-chair-field',[entry,cardinal(chair,'north',grip_offset)],{**chair_seen,'study-chair':chair},body_radius),
         translation(bcr,'shift-chair-east','study-chair',chair,near_turn,
@@ -98,7 +104,7 @@ def _standard_furniture(bcr, motion, root, house, fixed, desk, chair, desk_park,
                  {**chair_seen,'study-chair':chair_park},body_radius),
         translation(bcr,'pull-desk-north','study-desk',desk,desk_park,
                     cardinal(desk,'north',grip_offset),parked_desk_worker,{**fixed,'study-chair':chair_park},body_radius,arm_radius),
-        approach(bcr,'return-to-closed-door',[parked_desk_worker,[parked_desk_worker[0],entry[1]],entry],
+        approach(bcr,'return-to-closed-door',return_path,
                  {**fixed,'study-chair':chair_park,'study-desk':desk_park},body_radius),
     ]
     conflicts = [p['id'] for p in phases if min(
@@ -108,14 +114,14 @@ def _standard_furniture(bcr, motion, root, house, fixed, desk, chair, desk_park,
     ) < clearance or p.get('maximumProspectiveReachMm', 0) > 600]
     return {'schema': 'ias-study-furniture-native-result/1',
             'state': 'geometry-conflict' if conflicts else 'geometry-screen-only',
-            'comparisonClearanceMm': clearance, 'phases': phases, 'conflictingPhaseIds': conflicts,
+            'comparisonClearanceMm': clearance, 'closedFixedReturnEastStepMm':return_step, 'phases': phases, 'conflictingPhaseIds': conflicts,
             'turnReceiptPath': window_path, 'turnReceiptSha256': hashlib.sha256(window_bytes).hexdigest(),
             'reverseUsesSameSweeps': True, 'physicalAcceptance': False}
 
 
 def evaluate_structural_renewal(root, request):
     root = Path(root).resolve()
-    fields = {'schema', 'context', 'parts', 'emitterPlinth', 'ordinaryHandling', 'installedServices'}
+    fields = {'schema', 'context', 'parts', 'emitterPlinth', 'ordinaryHandling', 'installedServices', 'closedFixedVolumes'}
     _require(isinstance(request, dict) and not set(request)-fields
              and request.get('schema') == 'ias-study-structural-renewal-case/1', 'Expected a compiled structural Study renewal case')
     context, parts, plan = (request[key] for key in ('context', 'parts', 'ordinaryHandling'))
@@ -177,6 +183,23 @@ def evaluate_structural_renewal(root, request):
     _require(plinth.get('emitterId') == 'service-emitter-study-W'
              and plinth['box'] == [emitter[0],toe[1],emitter[2]+5,emitter[3]+5], 'Emitter plinth does not meet the actual toe and current emitter')
     fixed['study-emitter-plinth']=fp(plinth['box'])
+    closed=request.get('closedFixedVolumes')
+    closed_volumes={}
+    if closed is not None:
+        _require(set(closed)=={'volumes','panelTransfer'}, 'Unexpected closed-volume interface')
+        profile=closed['panelTransfer']; depth=profile.get('finishDepthMm')
+        _require(type(depth) in (int,float) and math.isfinite(depth) and depth in (15,20)
+                 and profile=={'restBoardTopMm':12,'pickupLiftMm':18+depth,'finishDepthMm':depth,
+                               'panelTransferTopMm':18+2*depth,'settingMm':5,'horizontalOnly':True,'physicalAcceptance':False},
+                 'Closed-volume underpass requires the actual bounded horizontal panel profile')
+        _require(isinstance(closed['volumes'],list) and 0<len(closed['volumes'])<=10, 'Expected bounded complete closed fixed volumes')
+        for item in closed['volumes']:
+            name=item.get('id'); v=item.get('xyzxyzMm')
+            _require(isinstance(name,str) and name not in fixed and name not in closed_volumes
+                     and isinstance(v,list) and len(v)==6 and all(type(n) in (int,float) and math.isfinite(n) for n in v)
+                     and all(v[i]<v[i+3] for i in range(3)), 'Invalid closed fixed volume')
+            closed_volumes[name]=v
+            fixed[name]=[v[0],v[1],v[3]-v[0],v[4]-v[1]]
     desk=house['groundFurniture']['study-desk']; chair=house['groundFurniture']['study-chair']
     daily=copy.deepcopy(house['groundFurniture'])
     prepared=list(desk); prepared[0]-=prep_input['deskWestTranslationMm']
@@ -207,7 +230,7 @@ def evaluate_structural_renewal(root, request):
              and 0 < prep_input['deskNorthParkingTranslationMm'] <= 1200, 'Expected the authored ordinary north desk parking translation')
     desk_park=[prepared[0],prepared[1]+prep_input['deskNorthParkingTranslationMm'],*prepared[2:]]
     chair_park=reference['chairPark']
-    furniture=_standard_furniture(bcr,motion,root,house,fixed,prepared,chair,desk_park,chair_park)
+    furniture=_standard_furniture(bcr,motion,root,house,fixed,prepared,chair,desk_park,chair_park,bool(closed_volumes))
     furniture['candidate']={'deskParkXYXYMm':edges(desk_park),'chairParkXYXYMm':edges(chair_park)}
     installed=request.get('installedServices')
     _require(isinstance(installed,dict) and installed.get('schema') == 'ias-study-installed-inlet-candidate/1'
@@ -227,6 +250,11 @@ def evaluate_structural_renewal(root, request):
     for stage in records:
         stage['obstacles'][west]['withoutWallTrimXYXYMm']=[x0,y0,face[0],toe[1]]
         stage['obstacles'][south]['withoutWallTrimXYXYMm']=[x0,y0,toe[0],face[1]]
+        for name,v in closed_volumes.items():
+            stage['obstacles'][name]['closedXYZXYZMm']=v
+            # Only floor-face horizontal transfers have this explicit low Z bound.
+            # Workers, furniture and carrying/placing boards retain full projection.
+            stage['obstacles'][name]['horizontalPanelUnderpass']=v[2]>=profile['panelTransferTopMm']+profile['settingMm']
     _require(len(parts) == len({part['id'] for part in parts}) and 0 < len(parts) <= 200, 'Expected unique actual compiled floor parts')
     _require(plan.get('schema') == 'ias-study-ordinary-handling-plan/1', 'Expected a versioned ordinary handling plan')
     _require(0 < len(plan['boards']) <= 5 and len({board['id'] for board in plan['boards']}) == len(plan['boards']), 'Expected at most five unique ordinary handling boards')
@@ -250,7 +278,7 @@ def evaluate_structural_renewal(root, request):
                            'restorationUsesReverseSweeps':True,'physicalAcceptance':False},
             'furniture':furniture,'ordinaryHandling':ordinary,
             'installedServicesPhase':{'workerTopMm':top,'lowestCompleteSupportMm':lowest,'physicalAcceptance':False},
-            'boardPlanObstructions':records,
+            'boardPlanObstructions':records,**({'closedFixedVolumes':closed} if closed is not None else {}),
             'sourceSHA256':{**native['sourceSHA256'],**{path:hashlib.sha256((root/path).read_bytes()).hexdigest() for path in method_paths}},
             'held':['Actual furniture gripping, forces and restrained operation',
                     'Actual socket isolation and unplugging before furniture preparation',

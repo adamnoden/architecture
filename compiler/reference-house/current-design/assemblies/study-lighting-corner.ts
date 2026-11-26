@@ -400,7 +400,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   const tubeMassKg = Math.PI * (tubeR**2-(tubeR-h.tubeWallMm)**2)*tubeLengthMm/1e9*c.steelDensityKgM3Comparison
   const collarGrossStockKg = Math.PI * collarR**2 * collarLengthMm/1e9*c.steelDensityKgM3Comparison
   return { schema:'ias-local-home-runs/2', selection:'unselected-development-direction', choices:h,
-    status:routeIssues.length?'GEOMETRY_REJECTED':'DECLARED_EXTERNAL_CONTAINMENT_CONTINUOUS', bayPlanMm, firstRestPlanMm, finishBottomZMm:input.bottomZMm-input.jointMm,
+    status:routeIssues.length?'GEOMETRY_REJECTED':'DECLARED_EXTERNAL_CONTAINMENT_CONTINUOUS', bayPlanMm, firstRestPlanMm, finishBottomZMm:input.bottomZMm-input.jointMm,finishTopZMm:input.topZMm,
     totalDepthMm,conduitInsideDiameterMm:c.containmentOutsideDiameterMm-2*h.tubeWallMm,frontYMm:frontY,independentRouteSettingMm:input.jointMm, pairSettingMm:2*input.jointMm,
     carrierXZMm:carrierXZ, carrierDepthMm:carrierDepth,carrierStripsXZMm,cableOpening,carrierStock,saddle,caseRestPlanMm,caseRenewal,enclosureCarrierChecks, parkedModulePlanMm, fieldReservesMm, moduleSweepPlanMm, occupiedConflicts, boxes,
     routes:routes.map(({segments:_checkedSegments,pathMm:_checkedPoints,...route})=>({...route,straight:{startMm:route.sourcePointMm,endMm:route.bend.startMm}})),

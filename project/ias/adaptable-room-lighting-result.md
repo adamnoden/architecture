@@ -457,8 +457,33 @@ of trim. This is an explicit225×100 opening within the410mm service bay. Statio
 axes move16mm east and tube origins rise to375mm; the decorative field remains
 at150mm. Real opposed MI bends bridge the source entries. Complete containment,
 retained-case/carrier withdrawal, sourcebox sweep/rest and actual floor cradle
-checks are recomputed. The closed sourcebox still needs comparison with every
-136-piece floor-renewal trajectory; its cradle fit alone is not that proof.
+checks are recomputed. The closed sourcebox is now joined to every floor-renewal trajectory through the
+existing production validator, together with the actual retained95mm bay. Its
+steel bodyY3094.5..3169.5 is already12mm behind the local finishY3082.5; the
+previous general27mm room proof usedY3150.5 and omitted that local face. These
+are actual solid volumes, not clearance or tool envelopes. Initial full-bay
+replay rejected nine floor protocols (127/136). The same saved case now changes
+ordinary board poses and routes, not the136 floor pieces or furniture. Its full
+production replay passes136/136 with every stationary board setting at least
+10mm; furniture return takes an ordinary25mm east step, clearing the retained
+bay at32.5mm against the unchanged25mm requirement. One genuine dogleg is
+1432.99mm: the finite authored comparison travel domain is1450mm. Both1200 and
+1300 remain adverse controls that reject this task. Moving the small border
+board1mm north reduces its setting to9mm and rejects only that task; the other
+135 witnesses remain identical. The enclosure is not relocated into fictitious
+spare depth and no electrical closure is opened for ordinary floor renewal.
+The low floor phase retainsR300+5mm,335mm body-to-panel and600mm reach; furniture
+and preparation retain25mm. These are distinct nominal comparison criteria.
+
+Workers, furniture, carried boards and board placement retain complete fixed
+plan projections. Only horizontal low floor-face transfers can pass beneath a
+raised solid: the shared12mm rest,6mm pickup gap and actual15mm finish give a
+conservative48mm complete transfer top, plus5mm setting. No crouched person or
+carried board inherits that exemption. Full136 replay needs no new arch or
+structural solve: nativeSW200 context,136 parts and furniture remain identical;
+this is an added fixture/motion collision check, not load capacity or a wall
+crossing approval. Loaded grip, postures, forces and physical repeatability
+remain unqualified.
 
 Reject a low25..125mm box because it creates an untested floor obstruction.
 Reject the eight-ended unbroken socket pass-through because it captures a closed
@@ -495,3 +520,25 @@ whole-house circuits remain separately identifiable unwired duties.
 The source counterhold uses the actual22/24mm Bahco tool with a49mm head, not a22mm-only spanner. Its full head is charged at both the rear and side; remaining reserves are checked after setting. Complete handle/hand and simultaneous counterhold remain physical qualification duties.
 
 Source-port pitch is derived from the actual counterhold head, neighbouring nut and both setting allowances (54mm in this case). Ordinary opposed MI bends transition to the41mm conduit pitch;375mm tube origins preserve straight release room. Neighbouring hardware stays in the head-clearance check.
+
+
+The bounded circuit now uses one bare2L2.5 MI stock for both independent radials,
+with50mm feeder/source bend radii. It replaces the earlier mixed1.5/2.5 stock:
+actual6.6mm cable, fill13.44%, minimum inside bend46.7mm against39.6mm,
+source post-bend straight10.735mm, and retained-body/renewal reserve10.183mm.
+Lighting voltage drop is1.845V at the full6A circuit allowance; the five physical
+lengths including cutback allowances contain about6.335kg of known cable,
+approximately0.92kg more than mixed stock. This is neither complete assembly mass
+nor a fire rating. MatchedRGM/RPSL2L2.5/20 entries remain supplied-revision duties.
+
+The switch's official2024 sheet accepts3×2.5mm²; the currentApril2026 socket
+sheet confirms3×2.5mm² and3×4mm² in L/N/E. The lamp's terminal CSA remains
+unknown, not inferred from its plate or body envelope. An
+adverse1.5mm² lamp-terminal limit rejects the2.5mm² combination. Current Astro
+Backplate3issue2 instructions are identified, but do not yet earn actual terminal
+fit or factory-lead thermal evidence. No certified product internals are altered.
+The shared output compares specified external2.5mm² copper/PVC tails at k115:
+82,656A²s withstand versus the generic class3B≤16A/6kA point35,000A²s. The old
+1.5mm² comparison was29,756A²s. This single-point comparison does not qualify the
+actualHager RCBO over the full fault range, unknown factory leads, earth tails,
+or actual supplied sleeve temperatures; their gates stay false.

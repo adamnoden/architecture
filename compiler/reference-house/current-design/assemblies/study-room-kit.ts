@@ -1,5 +1,5 @@
 import { admitStudyOakComposition, compileStudyOakComposition, type StudyOakComposition } from './study-oak-composition.js'
-import { compileStudyStructuralRenewal } from './study-structural-renewal.js'
+import { compileStudyStructuralRenewal, studyPanelTransferProfile } from './study-structural-renewal.js'
 import { sha256SemanticFingerprint } from '../../../core/identity.js'
 import { createPlanPaperProjection } from '../../../publication-drawing/projection.js'
 import type { DrawingPrimitiveV2, DrawingSceneV2 } from '../../../publication-drawing-v2/model.js'
@@ -343,7 +343,7 @@ function handlingScreen(assembly: FloorAssembly, layout: ReturnType<typeof notch
     },
     emitterEdgeRelease: { pickupId: pickup.id, firstRestId: rest.id, workerSweep, panelSweep,
       firstRestBoard, padCentres, padWidthMm, reachMm, edgeReleaseClear,
-      restBoardTopMm: 12, pickupLiftMm: 12 + 6 + assembly.section.finishDepthMm, worstRestPadN, restPadDemandMPa: worstRestPadN / padWidthMm ** 2 },
+      ...studyPanelTransferProfile(assembly.section.finishDepthMm), worstRestPadN, restPadDemandMPa: worstRestPadN / padWidthMm ** 2 },
     held: ['loaded grip and breakaway', 'loaded full-access furniture motion', 'qualified continuous deck and bedding',
       'ferrule pull-out and repeated fits', 'seating, acoustic, slip, movement and material performance'],
   } as const

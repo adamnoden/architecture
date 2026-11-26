@@ -1,3 +1,4 @@
+import {compileStudyStructuralRenewal,studyPanelTransferProfile} from './study-structural-renewal.js'
 import {deriveStudyLightingCircuit} from './study-lighting-circuit.js'
 import { deriveCommonDepthCorner, type CommonDepthCornerChoices } from './study-lighting-common-depth.js'
 import { deriveLightingCornerDetail, type LightingCornerDetailInput } from './study-lighting-corner.js'
@@ -254,6 +255,21 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
   } as const
 }
 export function compileStudyLighting(resolved: CurrentDesignResolution, input: unknown, kit: Projection) {
-  return deriveStudyLighting(input, lightingBasis(resolved, kit), readLightingComponents())
+  const lighting=deriveStudyLighting(input, lightingBasis(resolved, kit), readLightingComponents())
+  const room=kit.kit,context=room.structuralConsequence,plan=room.request.ordinaryHandling
+  if(!context||!plan)return lighting
+  const [x,y,z,w,d,h]=lighting.circuit.sourceBox.boxMm
+  const bay=lighting.construction.localHomeRunComparison
+  const closedSourceFloorRenewal=compileStudyStructuralRenewal(context,room.floor.parts,room.floor.emitterPlinth,plan,room.floor.installedInlet,{
+    volumes:[{id:lighting.circuit.sourceBox.id,xyzxyzMm:[x!,y!,z!,x!+w!,y!+d!,z!+h!]},{id:'IAS/STUDY/closed-local-bay',xyzxyzMm:[bay.bayPlanMm[0]!,bay.frontYMm,bay.finishBottomZMm,bay.bayPlanMm[2]!,bay.bayPlanMm[3]!,bay.finishTopZMm]}],
+    panelTransfer:studyPanelTransferProfile(room.floor.wearingFaceMm+room.floor.beddingMm),
+  })
+  const closedClear=closedSourceFloorRenewal.status==='computed-geometry-witnesses'
+  return{...lighting,status:closedClear?lighting.status:'GEOMETRY_REJECTED' as const,
+    diagnostics:[...lighting.diagnostics,...(closedClear?[]:[{code:'IAS_LIGHTING_CLOSED_ROOM_RENEWAL_REJECTED',
+      message:'Actual retained local bay/sourcebox conflicts with current floor or furniture renewal.',objectIds:[lighting.circuit.sourceBox.id]}])],
+    circuit:{...lighting.circuit,closedSourceFloorRenewal,remaining:lighting.circuit.remaining.filter(row=>!row.startsWith('Complete sourcebox closed pose')).concat(closedClear?[]:['Actual retained sourcebox/bay conflicts with current floor or furniture renewal.']),status:closedClear?lighting.circuit.status:'DESIGN_REJECTED' as const,
+      issues:[...lighting.circuit.issues,...(closedClear?[]:['closed-source-floor-renewal-rejected'])]}}
+
 }
-export type StudyLightingResult = ReturnType<typeof deriveStudyLighting>
+export type StudyLightingResult = ReturnType<typeof deriveStudyLighting> & {readonly circuit:ReturnType<typeof deriveStudyLighting>['circuit'] & {readonly closedSourceFloorRenewal?:ReturnType<typeof compileStudyStructuralRenewal>}}

@@ -217,8 +217,12 @@ def check_protocol(protocol, part, all_faces, board_stock, stage_obstacles, occu
     require_geometry(board_pickup_gap>=plan['pickupClearanceMm']-EPSILON,'IAS_ORDINARY_BOARD_PICKUP_CLEARANCE')
     require_geometry(in_bands(board,bands) and not any(intersects(board,obs) for obs in core.values()),
                      'IAS_ORDINARY_BOARD_FIXED_CONFLICT')
+    panel_core={name:box for name,box in core.items() if not stage_obstacles[name].get('horizontalPanelUnderpass',False)}
+    fixed_board_gap=min(box_gap(board,box) for box in core.values())
+    require_geometry(fixed_board_gap>=plan.get('minimumBoardFixedClearanceMm',0)-EPSILON,
+                     'IAS_ORDINARY_BOARD_SETTING_CLEARANCE')
     for box in face_pieces:
-        sweep_box(box,shifts,core.values(),bands,ops)
+        sweep_box(box,shifts,panel_core.values(),bands,ops)
     final_pieces=[translate(box,path[-1]) for box in face_pieces]
     require_geometry(all(covers(board,box) for box in final_pieces),'IAS_ORDINARY_BOARD_PANEL_CONTAINMENT')
     gravity=tuple(sum(midpoint(box)[i]*area(box) for box in final_pieces)/sum(map(area,final_pieces)) for i in (0,1))
@@ -246,7 +250,7 @@ def check_protocol(protocol, part, all_faces, board_stock, stage_obstacles, occu
             'finalPanelPiecesXYXYMm':final_pieces,'panelPathWaypointDeltasMm':path,'workerPathXYMm':bodies,
             'transferTravelMm':travel,'maximumKeyReachMm':key_reach,'bodyToPanelMm':body_panel,
             'bodyToBoardClearanceMm':board_body['minimumClearance'],'fixedBodyClearanceMm':body['minimumClearance'],
-            'boardPickupClearanceMm':board_pickup_gap,'boardFixedPlanClearanceMm':min(box_gap(board,box) for box in core.values()),
+            'boardPickupClearanceMm':board_pickup_gap,'boardFixedPlanClearanceMm':fixed_board_gap,
             'staging':staging}
 
 
@@ -260,8 +264,13 @@ def validate_floor_handling(parts, stages, bands, math_ops, plan, entry, phases)
     protocols=plan['protocols']
     if len({p['partId'] for p in protocols})!=len(protocols) or set(source)!={p['partId'] for p in protocols}:
         raise ValueError('Ordinary handling must name every current removable part once')
-    if any(type(plan[k]) not in (int,float) or not math.isfinite(plan[k]) for k in ('pickupClearanceMm','maximumTravelMm')) or plan['pickupClearanceMm']<5 or not 0<plan['maximumTravelMm']<=1200:
+    # Finite authored comparison travel domain; not a physical two-pitch limit.
+    # Reach, carrying stock, swept bodies and every retained obstruction still govern.
+    if any(type(plan[k]) not in (int,float) or not math.isfinite(plan[k]) for k in ('pickupClearanceMm','maximumTravelMm')) or plan['pickupClearanceMm']<5 or not 0<plan['maximumTravelMm']<=1450:
         raise ValueError('Outside supported ordinary Study handling plan')
+    minimum_board_gap=plan.get('minimumBoardFixedClearanceMm',0)
+    if type(minimum_board_gap) not in (int,float) or not math.isfinite(minimum_board_gap) or not 0<=minimum_board_gap<=50:
+        raise ValueError('Outside supported ordinary board fixed setting margin')
     occupied={name:obj['boxXYXYMm'] for name,obj in stages['occupied'].items()}
     rows=[]
     for protocol in protocols:
@@ -277,4 +286,5 @@ def validate_floor_handling(parts, stages, bands, math_ops, plan, entry, phases)
     witnesses=sum(row['state']=='joined-geometry-witness' for row in rows)
     return {'schema':'ias-study-ordinary-handling-result/1','units':'mm',
             'state':'joined-geometry-witnesses' if witnesses==len(rows) else 'partial-geometry-witnesses',
-            'physicalAcceptance':False,'partCount':len(rows),'witnessCount':witnesses,'parts':rows}
+            'physicalAcceptance':False,'partCount':len(rows),'witnessCount':witnesses,'parts':rows,
+            **({'minimumBoardFixedClearanceMm':minimum_board_gap} if 'minimumBoardFixedClearanceMm' in plan else {})}

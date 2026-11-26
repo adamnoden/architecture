@@ -272,13 +272,13 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
     + text(345,1500,'The outer tube rises to the light after the lower tubes have ended')
     + text(345,1535,'No tube crosses a continuing lower run; all three retain independent support')
     + text(345,1595,`Bend radii ${h.routes.map(r=>r.bend.radiusMm).join(' / ')} mm; minimum pair reserve ${Math.min(...h.separations.map(r=>r.reserveMm)).toFixed(3)} mm after ${h.pairSettingMm} mm pair setting`)
-    + text(345,1630,`${h.issues.length ? 'Geometry rejected' : 'Routes clear within the declared geometry'}; current house supply remains unbound`)
+    + text(345,1630,`${h.issues.length ? 'Geometry rejected' : 'Routes clear within the declared geometry'}; actual terminal and fault qualification remain open`)
     + text(345,1690,`Tube ${h.stock.tubeLengthMm.toFixed(1)} mm + gross collars ${h.stock.collarLengthMm} mm; ${h.stock.clipCount} authored clip positions`)
     + text(345,1725,`Known containment steel ${h.stock.totalKnownContainmentStockKg.toFixed(3)} kg; not complete installed mass`)
     + text(345,1760,`New fixed saddle receiver ${h.stock.separateKnownSaddleReceiverStockKg.toFixed(5)} kg; actual saddle mass/strength unqualified`)
     + text(345,1820,`${result.localHomeRunWallDisposition.length} actual north-wall pieces intersect the wider replacement bay`)
     + text(345,1855,`Symmetric carrier retained; ordinary ${h.choices.accessoryExtensionMm} mm steel frames keep the lower controls flush`)
-    + text(345,1915,'At the skirt top: three explicit unconnected source interfaces, not selected circuits')
+    + text(345,1915,`Tube sources Z${h.routes[0]!.sourcePointMm[2]} mm; source-bound circuit shown in working-house sheet`)
     + text(345,1950,'Ports are authored requirements within current reference box envelopes')
     + text(345,1985,'Actual Barton side ports and matched hardware remain unqualified')
     + text(345,2045,`Tube/actual steel reserve ${Math.min(...h.obstacleChecks.map(r=>r.reserveMm)).toFixed(3)} mm after both settings`)
@@ -425,25 +425,36 @@ export function drawCommonDepthCornerComparison(result: StudyLightingResult) {
 export function drawStudyLightingCircuit(r:StudyLightingResult){
  const c=r.circuit,h=r.construction.localHomeRunComparison,P=(p:readonly number[])=>[60+p[0]!*.09,535-p[1]!*.09]
  let out=text(45,50,'Study lighting supply','title')+text(45,85,`${r.commonRoom.bands.length} actual saved floor bands · ${h.totalDepthMm} mm local station · two independent radials · design development`)
+ out+='<defs><clipPath id="study-circuit-plan"><rect x="45" y="115" width="1095" height="420"/></clipPath></defs><g clip-path="url(#study-circuit-plan)">'
  for(const b of r.commonRoom.bands)out+=polygon([P(b),P([b[2]!,b[1]!]),P([b[2]!,b[3]!]),P([b[0]!,b[3]!])],'#dac8aa')
+ for(const wall of c.sourceBinding.wallPlan){
+  const axis=wall.a[0]===wall.b[0]?1:0,normal=1-axis,lo=Math.min(wall.a[axis]!,wall.b[axis]!),hi=Math.max(wall.a[axis]!,wall.b[axis]!)
+  let spans=[[lo,hi]]
+  for(const hole of wall.holes??[])spans=spans.flatMap(([a,z])=>hole[1]!<=a!||hole[0]!>=z!?[[a!,z!]]:[[a!,Math.min(z!,hole[0]!)],[Math.max(a!,hole[1]!),z!]].filter(v=>v[1]!>v[0]!))
+  for(const [a,z]of spans){const q=[...wall.a],p=[...wall.a];q[axis]=a!;p[axis]=z!;q[normal]=wall.a[normal]!;p[normal]=wall.a[normal]!;out+=line(P(q),P(p),'#9c978c',Math.max(1,wall.t*.09))}
+ }
+ out+='</g>'
+ const cu=c.sourceBinding.consumerStationXYWHMm,cuP=P([cu[0]!+cu[2]!/2,cu[1]!+cu[3]!/2]),studyP=P([c.sourceBox.boxMm[0]!,c.sourceBox.boxMm[1]!])
+ out+=text(cuP[0]!-65,cuP[1]!+50,'Utility CU','small')+text(studyP[0]!-60,studyP[1]!-22,'Study source','small')
  c.feeders.forEach((f,i)=>{out+=`<polyline points="${f.pathMm.map(p=>P(p).map(n).join(',')).join(' ')}" fill="none" stroke="${i?'#2d7180':'#855a37'}" stroke-width="3"/>`;for(const w of f.wallCrossings){const p=P(w.centreMm);out+=`<circle cx="${n(p[0]!)}" cy="${n(p[1]!)}" r="6" fill="#f2eee3" stroke="#a34b3e" stroke-width="2"/>`}
   out+=text(1190,170+i*100,`${f.ratedA} A · ${f.article}`,'heading')+text(1190,200+i*100,f.cable.reference)+text(1190,225+i*100,`${n(f.lengthMm/1000)} m source route`)
  })
  out+=text(1190,400,'Six planned sleeves','heading')+text(1190,430,'Beside arch rings; no chase.')+text(1190,460,'Masonry / seals unqualified.')
- out+=text(60,575,'Utility source station → separate covered dry routes → fixed Study sourcebox. Open circles mark new bounded wall crossings.')
+ out+=text(60,575,'Current ground plan crop: Utility CU → covered dry routes → Study sourcebox. Circles: new bounded wall crossings.')
  out+=line([45,610],[1550,610],'#b5ad9f')+text(50,650,'Named ways and terminal duties','heading')
  out+=rect(55,680,410,150,'#e3dccd')+text(70,710,'DB-UTILITY · separate L3 ways','heading')+text(70,750,'B16 socket · Type A / 30 mA / switched N')+text(70,780,'B6 manual light · Type A / 30 mA / switched N')+text(70,810,'Separate downstream neutrals; common PE bar')
- out+=rect(525,680,420,150,'#e3dccd')+text(540,710,'Fixed sourcebox','heading')+text(540,750,'Socket L,N · Lighting L,N,switched live')+text(540,780,'5 continuous MI lengths · 10 matched ends')+text(540,810,'Local renewal avoids a captive16m cable')
+ out+=rect(525,680,420,150,'#e3dccd')+text(540,710,'Fixed sourcebox','heading')+text(540,750,'Socket L,N · Lighting L,N,switched live')+text(540,780,'5 continuous MI lengths · 10 matched ends')+text(540,810,'Local renewal avoids a captive 16 m cable')
  out+=rect(1005,680,520,150,'#e3dccd')+text(1020,710,'Socket / mechanical switch / Class I lamp','heading')+text(1020,750,'L,N,E · COM,L1,E · L,N,E')+text(1020,780,'No dimmer or automation dependency')+text(1020,810,'Physical port / terminal CAD remains unqualified')
  out+=line([465,760],[525,760],'#855a37',2)+line([945,760],[1005,760],'#2d7180',2)
  out+=text(60,870,'Design netlist connectivity does not establish manufactured connections or electrical acceptance.')
  out+=line([45,900],[1550,900],'#b5ad9f')+text(50,940,'A stock enclosure above the removable skirt','heading')
- const b=c.sourceBox.boxMm,S=1.6,X=(x:number)=>60+(x-b[0]!)*S,Z=(z:number)=>1260-(z-b[2]!)*S,top=b[2]!+b[5]!
+ const b=c.sourceBox.boxMm,S=1.3,X=(x:number)=>60+(x-b[0]!)*S,Z=(z:number)=>1260-(z-b[2]!)*S,top=b[2]!+b[5]!
  out+=rect(X(b[0]!),Z(top),b[3]!*S,b[5]!*S,'#b1b3aa')+text(75,Z(top)+40,`${b[3]} × ${b[5]} × ${b[4]} mm`,'heading')+text(75,Z(top)+70,'Independent back and closed lid')
  for(const p of c.homeRuns)out+=`<polyline points="${p.transition.pathMm.map(q=>[X(q[0]!),Z(q[2]!)].map(n).join(',')).join(' ')}" fill="none" stroke="#2d7180" stroke-width="3"/>`
  out+=text(600,1000,`Box +${b[2]}..${top} mm · tube origins +${h.routes[0]!.sourcePointMm[2]} mm · finish field +${h.finishBottomZMm} mm`)
  out+=text(600,1035,`Skirt release reserve ${n(c.sourceBox.skirtReserveMm)} mm · feeder pair ${n(c.pairReserveMm)} mm after settings`)
  c.calculations.forEach((q,i)=>{out+=text(600,1085+i*65,`${i?'Lighting':'Socket'} · ${n(q.lengthM)} m complete allowance · drop ${n(q.dropV)} V / ${n(q.limitV)} V`);out+=text(600,1110+i*65,`TN upstream Ze + joints budget ≤ ${n(q.maximumZePlusJointsOhm)} Ω; actual supply unmeasured`,'small')})
+ if(c.closedSourceFloorRenewal)out+=text(600,1220,`Closed bay + sourcebox: ${c.closedSourceFloorRenewal.ordinaryHandling?.witnessCount??0} / ${c.closedSourceFloorRenewal.ordinaryHandling?.partCount??0} floor trajectories · ${c.closedSourceFloorRenewal.status==='computed-geometry-witnesses'?'nominal geometry only':'REJECTED'}`)
  out+=text(60,1310,'Open fronts; isolate both ways; retain support; release each sealed end locally. Never pull rigid MI through multiple enclosed bends.')
  out+=text(60,1345,'CU water exposure, fault energy, supplied revision, port/tool/physical proof, materials and owner acceptance remain open.')
  return page(1600,1380,'Actual saved Study electrical source design',out)
