@@ -630,7 +630,8 @@
         "compiler/reference-house/current-design/inlet-split-plant-room-choice.ts",
         "compiler/reference-house/current-design/house-vertical-profile.ts",
         "project/had/studies/house_vertical_profile.py",
-        "compiler/reference-house/current-design/inlet-store-impulse.ts"
+        "compiler/reference-house/current-design/inlet-store-impulse.ts",
+        "compiler/reference-house/current-design/inlet-known-gravity.ts"
       ],
       "authoredInputs": [
         "compiler/reference-house/current-design/inlet-electrical-screen.ts",
@@ -708,7 +709,8 @@
         "node project/had/studies/plant-release-route.mjs --check",
         "node --import tsx --test compiler/reference-house/current-design-inlet-split-branch.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-store-impulse.test.ts",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-incident-stations.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-incident-stations.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-known-gravity.test.ts"
       ]
     },
     {
@@ -946,7 +948,10 @@
         "compiler/reference-house/current-design/structural-lower-masonry.ts",
         "compiler/reference-house/current-design/structural-lower-masonry-settings.ts",
         "project/str/studies/wet_masonry_arch_bed.py",
-        "project/str/studies/wet_masonry_arch_bed_proof.py"
+        "project/str/studies/wet_masonry_arch_bed_proof.py",
+        "compiler/reference-house/current-design/structural-ground-pockets.ts",
+        "compiler/reference-house/current-design/structural-ground-pocket-settings.ts",
+        "project/str/studies/service_room_ground.py"
       ],
       "authoredInputs": [
         "project/str/studies/floor-section-cuts-inputs.json",
@@ -1092,7 +1097,9 @@
         "project/str/studies/wet_masonry_arch_released_test.py",
         "project/str/studies/wet_masonry_arch_rise_test.py",
         "project/str/studies/wet_masonry_arch_bed_test.py",
-        "compiler/reference-house/current-design-lower-masonry.test.ts"
+        "compiler/reference-house/current-design-lower-masonry.test.ts",
+        "compiler/reference-house/current-design-ground-pockets.test.ts",
+        "project/str/studies/service_room_ground_test.py"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
@@ -1135,7 +1142,9 @@
         "python3 -B project/str/studies/wet_masonry_arch_rise_proof.py --check",
         "python3 -B project/str/studies/wet_masonry_arch_bed_test.py",
         "python3 -B project/str/studies/wet_masonry_arch_bed_proof.py --check",
-        "node --import tsx --test compiler/reference-house/current-design-lower-masonry.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-lower-masonry.test.ts",
+        "python3 -B project/str/studies/service_room_ground_test.py",
+        "node --import tsx --test compiler/reference-house/current-design-ground-pockets.test.ts"
       ],
       "historicalInputs": [
         "project/str/studies/seated-pre-nodal-history.json",
@@ -2942,7 +2951,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "4121ccdbe82be4338439d263e946ad3af7960558",
+    "compiler/reference-house/current-design/engineering-document.ts": "c2a0d451655c2e7a2c51db01151637e304494bcb",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -3067,12 +3076,12 @@
     "project/str/studies/roof-surface-pressure.svg": "03610ad976377889fb0d27bfaaa107b9cdce2099",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "3c787f346c4f8e408006e97e8478ad1f9b75cbce",
-    "project/had/studies/inlet-source-envelope.ts": "b0d16578113ee164aa6507a2338db7c6ff1fa701",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "40dff1691bdc8f8ecb778c42aa03339d1ad3a770",
+    "project/had/studies/inlet-source-envelope.ts": "0bf89921c2eef9e19c16c768083f1807421d519b",
     "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
-    "project/had/studies/inlet-source-envelope.results.json": "bcb2da0ce1f414d4d4cc60ae45d0176b93b988c5",
+    "project/had/studies/inlet-source-envelope.results.json": "b2de40a60a808ac49e492e337cf1600a0282899c",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
-    "compiler/reference-house/current-design/engineering-edit.ts": "30b737fae8bd0c40216a9969d115288c0da0d0c8",
+    "compiler/reference-house/current-design/engineering-edit.ts": "904a839f0f201aa081022853b46aa80f445c5c6a",
     "project/ade/browser-editor/engineering-api.ts": "495c3b05b525425051bf5ce8609039d247ba0915",
     "project/ade/browser-editor/engineering-editor.ts": "17641dd85d614b0dc73791ea5141893371818391",
     "compiler/reference-house/current-design/structural-upper-bearing.ts": "6a00ab6cfc80888a76de7959ecbd0d2e52e15ddf",
@@ -3115,7 +3124,7 @@
     "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
     "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3",
     "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
-    "project/had/studies/inlet-local-pocket.results.json": "182c1c7c2d87f0424e281c95be260ebf2139db78",
+    "project/had/studies/inlet-local-pocket.results.json": "3389dbbfc920272fb1d5acb88de7a14889164a98",
     "project/had/studies/inlet-local-pocket.svg": "1b055c9299705e175d8fe523102bb991e6dbd913",
     "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
     "project/had/studies/inlet-local-pan.svg": "e3da3b38a4eb4532e8f3d3a9ab713a6d20aa2be9",
@@ -3179,7 +3188,7 @@
     "project/had/inlet-bank-carrier-rejection.md": "02e3e0c4004e7a3d636b5e56297131ff959d132d",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
-    "project/had/studies/inlet-bank-carrier.results.json": "5a85185b1dff250b19963723296ea6471b9b945c",
+    "project/had/studies/inlet-bank-carrier.results.json": "466b43f00a520dc2c5c765adbfb75e183ccf58fa",
     "project/had/studies/inlet-bank-carrier.svg": "dc84130cc6a7fcae0130e64b6687bb2112546f13",
     "project/str/studies/wet_bearing_refinement.py": "06f8fabdfaf5ed6cc132e7a49248845dbdb08bab",
     "project/str/studies/wet-bearing-refinement-inputs.json": "42dea6fee820d552c4bb35a59258825a54eacb64",
@@ -3351,6 +3360,12 @@
     "compiler/reference-house/current-design-finite-floor-contour.test.ts": "0e1b2480782ff5ef6ac89321d2bc259713ed641a",
     "project/str/studies/finite-floor-contour-35-execution.json": "d7474fc277cfa911a0039c4e562a497b64c8da59",
     "project/str/studies/finite-floor-contour-captures/contour35.json": "8c46e4acf2b66857d6df6f8cdecea39faf4bef49",
-    "compiler/reference-house/current-design-inlet-room-pocket.test.ts": "b685a7d76be8bf6c8ca39cb42e58a092b8f000c2"
+    "compiler/reference-house/current-design-inlet-room-pocket.test.ts": "b685a7d76be8bf6c8ca39cb42e58a092b8f000c2",
+    "compiler/reference-house/current-design/inlet-known-gravity.ts": "41695cf1a9393c76c4a200021e0e706f38111244",
+    "compiler/reference-house/current-design/structural-ground-pockets.ts": "3b3531c3429c85c07c33d9e7f4cff202ee09a7d9",
+    "compiler/reference-house/current-design/structural-ground-pocket-settings.ts": "1a2ee5b2065bc30c68a053c0c5f4ca2fcea1810c",
+    "project/str/studies/service_room_ground.py": "8d473543a435f4735cf99d7591c92a4f7d68fa7a",
+    "compiler/reference-house/current-design-ground-pockets.test.ts": "1c4c963536234614dab66173e4c326d64b425bf5",
+    "project/str/studies/service_room_ground_test.py": "198df7ede9091c82ba5675cd2920875b1de111f6"
   }
 }

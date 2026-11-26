@@ -1,7 +1,7 @@
 import copy,unittest
 from unittest.mock import patch
 import numpy as np
-from service_room_ground import body_geometry,stock_wrench,element_energy,partition_contact,plate_trace,settings
+from service_room_ground import body_geometry,stock_wrench,element_energy,partition_contact,plate_trace,settings,distinct_bodies
 from vertical_floor_plate import mitc4_element
 from joined_successor_kernel import FrameModel,rectangle_section
 from service_room_ground import install
@@ -47,6 +47,8 @@ class GroundPocketControls(unittest.TestCase):
     def test_adverse_geometry_rejects_overlap_empty_contacts_and_hidden_translation(self):
         for edit in [{'rcZMm':[-560,-360]},{'disjointContactRectanglesXYMm':[]},{'disjointContactRectanglesXYMm':[[99,200,300,1200]]},{'disjointContactRectanglesXYMm':[[100,200,300,1200],[100,200,300,1200]]}]:
             with self.assertRaises(ValueError):body_geometry({**self.body,**edit})
+        for bodies in [[],[self.body,self.body],[self.body,{**self.body,'id':'OTHER'}]]:
+            with self.assertRaises(ValueError):distinct_bodies(bodies)
 
     def test_open_top_contact_keeps_all_mineral_own_weight_at_actual_grid(self):
         frame=FrameModel();a=frame.node('a',[0,150,-480]);b=frame.node('b',[1000,150,-480])
@@ -74,5 +76,35 @@ class GroundPocketControls(unittest.TestCase):
         self.assertAlmostEqual(base,.06,places=10)
         self.assertAlmostEqual(sum(raw['supportWrenches'][n][2] for n in [a,b]),.06,places=10)
         self.assertAlmostEqual(-sum(row[2] for row in model['families']['physical-G'].values()),.16,places=10)
+
+    def test_installed_tiny_contact_uses_existing_reversible_scalar_class(self):
+        from vertical_floor_numerics import solve_vertical_frame
+        def specimen(width,scaled):
+            frame=FrameModel();a=frame.node('a',[0,150,-480]);b=frame.node('b',[1000,150,-480])
+            law={'elasticModulusMPa':33000,'poissonRatio':.2,'flexuralFactor':1,'shearAreaFactor':5/6,'torsionFactor':1}
+            frame.member('GRID/control',a,b,rectangle_section(300,600),law)
+            for node in [a,b]:
+                for axis in range(6):frame.fixed[node,axis]=0.
+            member={'GRID/control':{'a':a,'b':b,'physicalStartMm':[0,150,-480],'physicalEndMm':[1000,150,-480],'widthMm':300,'heightMm':600,'topZMm':-180}}
+            model={'model':frame,'families':{'physical-G':{}},'request':{'gridLaw':law},'grid':{'heads':[]}}
+            body={**self.body,'rcRectangleXYMm':[100,50,200,250],'disjointContactRectanglesXYMm':[[100,50,100+width,250]]}
+            choice={'enabled':True,'platePitchMm':500,'contactPitchMm':500,'plateLaw':{k:self.law[k] for k in ['elasticModulusMPa','poissonRatio','flexuralFactor','shearFactor']},'mineralModulusMPa':1000,'jointComplianceMmPerMPa':.1}
+            with patch('service_room_ground.grid_member_geometry',return_value=member):installed=install(model,[body],choice)
+            for node in frame.nodes:
+                if '/plate-node/' in node:
+                    for axis in (2,3,4):frame.fixed[node,axis]=0.
+            for node,row in model['families']['physical-G'].items():frame.load(node,row)
+            if not scaled:frame.internalScalarCoordinateScales={}
+            vertical={'ports':[{}],'portTerms':[[('a',[0,0,1,0,0,0])]],'operator':{'condensedStiffness':[[0.]]}}
+            return solve_vertical_frame(frame,vertical),installed
+        ordinary,_=specimen(100,True);unscaled,_=specimen(100,False)
+        for node,row in ordinary['displacements'].items():np.testing.assert_allclose(row,unscaled['displacements'][node],atol=1e-12,rtol=1e-12)
+        tiny,installed=specimen(1e-10,True)
+        with self.assertRaisesRegex(ValueError,'Singular/unrestrained'):specimen(1e-10,False)
+        for fibre in installed['bodies'][0]['fibres']:
+            self.assertAlmostEqual(tiny['displacements'][fibre['bodyNode']][2],-fibre['serialLaw']['freeTopSelfShorteningMm'],places=12)
+            self.assertFalse(next(s for s in tiny['springs'] if s['id']==fibre['id']+'/top')['active'])
+        expected=stock_wrench(installed['bodies'][0]['geometry'])[0][1]['physicalGKN']
+        self.assertAlmostEqual(sum(tiny['supportWrenches'][n][2] for n in ['a','b']),expected,places=20)
 
 if __name__=='__main__':unittest.main()

@@ -60,6 +60,16 @@ def stock_wrench(body):
         rows.append({'id':body['id']+'/'+identifier,'physicalGKN':weight,'globalWrenchKN_KNm':[0,0,-weight,-weight*y/1000,weight*x/1000,0]})
     return rows,[sum(row['globalWrenchKN_KNm'][i] for row in rows) for i in range(6)]
 
+def distinct_bodies(values):
+    if not isinstance(values,list) or not values:raise ValueError('Explicit nonempty physical ground bodies required')
+    bodies=[body_geometry(value) for value in values]
+    for i,body in enumerate(bodies):
+        for previous in bodies[:i]:
+            a=body['rcRectangleXYMm'];b=previous['rcRectangleXYMm']
+            if body['id']==previous['id'] or (min(a[2],b[2])-max(a[0],b[0])>1e-8 and min(a[3],b[3])-max(a[1],b[1])>1e-8):
+                raise ValueError('Duplicate or overlapping physical ground bodies')
+    return bodies
+
 def element_energy(matrix):
     """Same unit-scaled mapped-energy representation as the existing frame."""
     k=np.asarray(matrix,float);scale=np.array([1,.001,.001]*4)
@@ -104,8 +114,7 @@ def install(model,bodies,choice):
     choice=settings(choice)
     if not choice['enabled']:return {'enabled':False,'removedNativeGKN':0,'bodies':[]}
     if not isinstance(bodies,list) or not 1<=len(bodies)<=3:raise ValueError('Explicit nonempty bounded physical body set required')
-    bodies=[body_geometry(b) for b in bodies]
-    if len({b['id'] for b in bodies})!=len(bodies):raise ValueError('Unique physical stock IDs required')
+    bodies=distinct_bodies(bodies)
     frame=model['model'];members=grid_member_geometry(model);beams=[]
     for row in members.values():
         a,b=row['physicalStartMm'],row['physicalEndMm'];half=row['widthMm']/2
@@ -136,14 +145,23 @@ def install(model,bodies,choice):
                         x=(a+c)/2+xi*(c-a)/2;y=(b+d)/2+eta*(d-b)/2
                         route=grid_vertical_point_terms(model,members,[x,y,-180.])
                         if not route or 'routeKind'in route or route['memberId'] not in members or abs(route['topZMm']+180)>1e-7:raise ValueError('Actual beam-only mineral receiver at−180 required')
-                        name=identifier+f'/mineral/{ci}/{si}/{ii}/{jj}';node=frame.node(name,[x,y,-30.]);upper=[(node,[0,0,1,0,0,0])]
-                        for axis in (0,1,3,4,5):frame.fixed[node,axis]=0.;gauges.append((node,axis))
+                        name=identifier+f'/mineral/{ci}/{si}/{ii}/{jj}'
                         weight=area*150/1e9*body['mineralUnitWeightKNPerM3'];serial=serial_body_law(area,150,choice['mineralModulusMPa'],choice['jointComplianceMmPerMPa'],weight)
+                        # This is the existing lower serial-body scalar class,
+                        # including its five absent-axis gauges and reversible
+                        # kb+kc coordinate scaling. Preserve even tiny exact
+                        # contact cells; neither physical stiffness nor G is
+                        # scaled in the model/independent source ledger.
+                        node=frame.node('LOWER-CORE/body-top/'+name,[x,y,-30.]);upper=[(node,[0,0,1,0,0,0])]
+                        for axis in (0,1,3,4,5):frame.fixed[node,axis]=0.;gauges.append((node,axis))
+                        if not hasattr(frame,'internalScalarCoordinateScales'):frame.internalScalarCoordinateScales={}
+                        coordinate_scale=1/math.sqrt(serial['bodyAxialStiffnessKNPerMm']+serial['topContactStiffnessKNPerMm'])
+                        frame.internalScalarCoordinateScales[node]=coordinate_scale
                         frame.springs.append({'id':name+'/body','terms':combine([upper,route['terms']],[1.,-1.]),'stiffness':serial['bodyAxialStiffnessKNPerMm'],'mode':'bilateral','gap':0.})
                         frame.springs.append({'id':name+'/top','terms':combine([plate_trace(points,cells,x,y),upper],[1.,-1.]),'stiffness':serial['topContactStiffnessKNPerMm'],'mode':'compression','gap':0.})
                         _add(added,node,[0,0,-weight/2,0,0,0])
                         for target,row in route['terms']:_add(added,target,[-weight/2*v for v in row])
-                        fibres.append({'id':name,'bodyNode':node,'xyMm':[x,y],'areaMm2':area,'receiverId':route['memberId'],'receiverTerms':route['terms'],'serialLaw':serial})
+                        fibres.append({'id':name,'bodyNode':node,'xyMm':[x,y],'areaMm2':area,'receiverId':route['memberId'],'receiverTerms':route['terms'],'serialLaw':serial,'reversibleBodyScalarCoordinateScale':coordinate_scale})
         ledger,wrench=stock_wrench(body);expected=[a+b for a,b in zip(expected,wrench)]
         output.append({'id':body['id'],'geometry':body,'plateLaw':law,'elements':elements,'fibres':fibres,'gauges':gauges,'physicalStock':ledger,'unfactoredGlobalWrenchKN_KNm':wrench})
     actual=_family_wrench(model,added);residual=[a-b for a,b in zip(actual,expected)]
@@ -158,7 +176,7 @@ def finish(installed,raw,g_factor):
     for body in result['bodies']:
         gauge=max((abs(raw['supportWrenches'].get(node,[0.]*6)[axis]) for node,axis in body['gauges']),default=0.)
         if gauge>1e-7:raise ValueError('An unused local gauge carries physical reaction')
-        top_total=base_total=0.;open_count=0;pressure=0.
+        top_total=base_total=0.;open_count=0;pressure=0.;top_wrench=np.zeros(6);base_wrench=np.zeros(6);contact_work=0.
         for fibre in body['fibres']:
             top=states[fibre['id']+'/top'];axial=states[fibre['id']+'/body'];weight=fibre['serialLaw']['bodyPhysicalGKN']*g_factor
             compression=-top['forceKN'];base=-axial['forceKN']+weight/2
@@ -166,14 +184,28 @@ def finish(installed,raw,g_factor):
             fibre.update(topState=top,bodyState=axial,topCompressionKN=compression,baseCompressionKN=base,
                 actualPressureMPa=compression*1000/fibre['areaMm2'],topOpeningMm=max(0.,top['relativeMm']))
             top_total+=compression;base_total+=base;open_count+=not top['active'];pressure=max(pressure,fibre['actualPressureMPa'])
+            x,y=fibre['xyMm'];top_wrench+=np.array([0,0,compression,compression*y/1000,-compression*x/1000,0])
+            base_wrench+=np.array([0,0,base,base*y/1000,-base*x/1000,0])
+            plate_w=top['relativeMm']+raw['displacements'][fibre['bodyNode']][2]
+            contact_work+=compression*plate_w
+        plate_energy=rc_work=0.
         for element in body['elements']:
             q=[raw['displacements'][node][axis] for node in element['nodes'] for axis in (2,3,4)]
             element['displacementsMmRad']=q
             element['physicalEnergyKNmm']=float(.5*np.asarray(q) @ np.asarray(element['physicalK']) @ np.asarray(q))
+            plate_energy+=element['physicalEnergyKNmm']
+            rc_work+=float(np.dot(q,np.asarray(element['unitPressureLoadMm2'])*(-body['geometry']['rcUnitWeightKNPerM3']*200/1e9*g_factor)))
         own=-body['unfactoredGlobalWrenchKN_KNm'][2]*g_factor
-        if abs(base_total-own)>1e-5:raise ValueError('Local plate and mineral total sourceG does not reach actual grid')
+        rc_wrench=np.array(body['physicalStock'][0]['globalWrenchKN_KNm'])*g_factor
+        stock_wrench=np.array(body['unfactoredGlobalWrenchKN_KNm'])*g_factor
+        top_residual=top_wrench+rc_wrench;base_residual=base_wrench+stock_wrench
+        work_residual=2*plate_energy-rc_work-contact_work
+        if max(abs(top_residual).max(),abs(base_residual).max(),abs(base_total-own))>1e-5:raise ValueError('Local plate/mineral independent six-wrench sourceG does not reach actual grid')
+        if abs(work_residual)>1e-6*max(1.,abs(2*plate_energy),abs(rc_work),abs(contact_work)):raise ValueError('Plate full rotational energy/consistent G/contact work fails')
         body.update(unusedGaugeMaximumReactionKNOrKNmm=gauge,topCompressionKN=top_total,gridCompressionKN=base_total,
-            openingFibreCount=open_count,peakSampledTopPressureMPa=pressure,sourceGToGridResidualKN=base_total-own)
+            openingFibreCount=open_count,peakSampledTopPressureMPa=pressure,sourceGToGridResidualKN=base_total-own,
+            topGravitySixWrenchResidualKN_KNm=top_residual.tolist(),gridGravitySixWrenchResidualKN_KNm=base_residual.tolist(),
+            plateEnergyKNmm=plate_energy,consistentRCGravityWorkKNmm=rc_work,topContactWorkKNmm=contact_work,plateWorkResidualKNmm=work_residual)
     result.update(physicalGFactorApplied=g_factor,appliedKnownStockGKN=result['addedPhysicalGKN']*g_factor,
         actualReceiverIds=sorted({f['receiverId'] for b in result['bodies'] for f in b['fibres']}),
         contactConverged=False,plateConverged=False,fullInstalledInventoryIncluded=False,siteOrJointResistanceAvailable=False)
@@ -185,7 +217,7 @@ def run(request,root=None):
     root=Path(root or Path(__file__).resolve().parents[3])
     if not isinstance(request,dict) or set(request)!={'schema','caseId','nativeCase','structuralFloorBodies','settings','stockSource'} or request['schema']!='str-service-room-ground-request/1' or not isinstance(request['caseId'],str) or not request['caseId'] or not isinstance(request['stockSource'],dict):
         raise ValueError('Explicit versioned saved native request and supplied current HAD stock source required')
-    choice=settings(request['settings']);bodies=[body_geometry(b) for b in request['structuralFloorBodies']]
+    choice=settings(request['settings']);bodies=distinct_bodies(request['structuralFloorBodies'])
     case=copy.deepcopy(request['nativeCase']);source=native.load_source(root)
     if case.get('sourceSHA256')!=source['identities']:raise ValueError('Current complete native source identity required')
     component=case['bearingCase']['masonryCase']['verticalCase']['monolithicCase']['houseCase']['joinedCase']['floor']['componentCase']
