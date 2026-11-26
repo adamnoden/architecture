@@ -2,7 +2,7 @@
  * Proposed independent water receivers are explicit design geometry, not selected
  * anchors, installed clips or a replacement for current native structural proof. */
 import {sha256SemanticFingerprint} from '../../core/identity.js'
-import {subtractPlan,expandPlan,planArea,type PlanRectangle} from './inlet-orthogonal-plan.js'
+import {intersectPlan,expandPlan,planArea,type PlanRectangle} from './inlet-orthogonal-plan.js'
 import {exactSegmentBoxDistance,finiteBends} from '../../../project/had/studies/incoming-water-geometry.mjs'
 import {segmentDistance} from '../../../project/had/studies/service-interface-geometry.mjs'
 import type {readUtilityCurrentGeometrySource} from './inlet-utility-proof-source.js'
@@ -756,9 +756,17 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   components.push({id,sourcePartIds:group.map(q=>q.id),stockUpperKg:group.reduce((n,q)=>n+q.massUpperKg,0),phases:['side-unit-up-to-release-positive-floor-key','side-unit-captured-north-park']})
   for(const q of group){removedOriginalIds.push(q.id);parked.push({id:'parked/'+q.id,boxMm:shift(q.boxMm,[0,r.portalNorthMm,r.portalLiftMm]),...(q.segmentMm?{segmentMm:q.segmentMm.map(p=>[p[0],p[1]+r.portalNorthMm,p[2]+r.portalLiftMm]) as unknown as readonly[P,P],radiusMm:q.radiusMm}:{})})}
  }
- const receiverParts:{id:string;boxMm:B;role:string}[]=[],receiverChecks:{id:string;reserveMm:number}[]=[],receiverDemands:{id:string;axialUpperN:number;upliftUpperN:number;shearUpperN:number;referenceMomentAtRCNmm:number;referenceSteelExtremeMPa:number;referenceAnchorTensionEachN:number;referenceAnchorMPa:number}[]=[],
+ const receiverParts:{id:string;boxMm:B;role:string}[]=[],receiverChecks:{id:string;reserveMm:number}[]=[],receiverFootprintChecks:{id:string;probePlanMm:PlanRectangle;probeAreaMm2:number;coveredAreaMm2:number;missingAreaMm2:number;contained:boolean;status:'contained'|'outside-actual-RC'}[]=[],receiverDemands:{id:string;axialUpperN:number;upliftUpperN:number;shearUpperN:number;referenceMomentAtRCNmm:number;referenceSteelExtremeMPa:number;referenceAnchorTensionEachN:number;referenceAnchorMPa:number}[]=[],
   put=(id:string,b:B,role:string)=>receiverParts.push({id,boxMm:b,role}),
-  contain=(id:string,b:B)=>receiverChecks.push({id:id+'/same-notched-RC-plan-after-two-settings',reserveMm:subtractPlan(expandPlan([b[0],b[1],b[0]+b[3],b[1]+b[4]],two),rcPlans).reduce((n,q)=>n+planArea(q),0)<=1e-7?0:-1}),
+  contain=(id:string,b:B)=>{
+   // Actual pocket cells are disjoint; intersection areas cover the probe once.
+   // subtractPlan intentionally rejects an empty remainder and is not a containment predicate.
+   if(rcPlans.some((a,k)=>rcPlans.slice(k+1).some(b=>{const c=intersectPlan(a,b);return c!==null&&planArea(c)>1e-7})))throw Error('Disjoint actual RC footprint cells required')
+   const probePlanMm=expandPlan([b[0],b[1],b[0]+b[3],b[1]+b[4]],two),probeAreaMm2=planArea(probePlanMm),
+    coveredAreaMm2=rcPlans.reduce((n,q)=>{const c=intersectPlan(probePlanMm,q);return n+(c?planArea(c):0)},0),
+    missingAreaMm2=Math.max(0,probeAreaMm2-coveredAreaMm2),contained=missingAreaMm2<=1e-7
+   receiverFootprintChecks.push({id:id+'/same-notched-RC-plan-after-two-settings',probePlanMm,probeAreaMm2,coveredAreaMm2,missingAreaMm2,contained,status:contained?'contained':'outside-actual-RC'})
+  },
   S=r.receiverPostCrossMm,t=r.receiverPostWallMm,A=S*S-(S-2*t)**2,I=(S**4-(S-2*t)**4)/12,
   gravity=capture.demand.fullHeadDynamicN+portal.mass.frameCompleteDesignMassUpperKg*9.81*1.5+r.temporaryCaptureToolPayloadKg*9.81*1.5,
   normalF=portal.demandedInterfaces.horizontalActionN,normalH=portal.demandedInterfaces.normalHeightAfterTwoSettingsMm,
@@ -787,7 +795,7 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   return{id:'actual-current-head-mount/'+q.id,reachReserveMm:600-Math.hypot(...p.map((v,k)=>v-s[k]))}
  })
  return{schema:'had-utility-portal-finite-renewal/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,portal:portal.sourceDigest,floor,controls:r}),components,phaseState,finalParkedParts:parked,checks,necessaryFiniteGeometry:checks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7),geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),
-  receiver:{sourceContextDigest:floor.bindingDigest,occupiedFflAbsoluteMm:source.groundFflMm,rcLocalMm:[rcBottom,rcTop],actualRCPlans:rcPlans,parts:receiverParts,checks:receiverChecks,geometryFailures:receiverChecks.filter(q=>q.reserveMm<0),demands:receiverDemands,referenceNecessarySteel:receiverDemands.every(q=>Math.max(q.referenceSteelExtremeMPa,q.referenceAnchorMPa)<=r.receiverReferenceSteelProofMPa/1.5),frictionResistanceCreditedN:0,actualRCBreakoutRebarWeldWaterproofAirAndPointThermalJoinAccepted:false},
+  receiver:{sourceContextDigest:floor.bindingDigest,occupiedFflAbsoluteMm:source.groundFflMm,rcLocalMm:[rcBottom,rcTop],actualRCPlans:rcPlans,parts:receiverParts,checks:receiverChecks,footprintChecks:receiverFootprintChecks,geometryFailures:[...receiverChecks.filter(q=>q.reserveMm<0),...receiverFootprintChecks.filter(q=>!q.contained)],demands:receiverDemands,referenceNecessarySteel:receiverDemands.every(q=>Math.max(q.referenceSteelExtremeMPa,q.referenceAnchorMPa)<=r.receiverReferenceSteelProofMPa/1.5),frictionResistanceCreditedN:0,actualRCBreakoutRebarWeldWaterproofAirAndPointThermalJoinAccepted:false},
   toolChecks,toolFailures:toolChecks.filter(q=>q.reachReserveMm<0),memberIds:fixtureIds,
   positiveCaptureRequirement:{headGravityRemainsOnIndependentFloorFork:true,oneCapturedRearMemberOrSidePortalAtATime:true,allThreeRearMembersPositivelyParkedBeforeSidePortalRelease:true,maximumSidePortalWithClampsKg:r.maximumSidePortalWithTemporaryClampsKg,maximumRearMemberWithClampsKg:r.maximumRearMemberWithTemporaryClampsKg,temporaryPositiveCaptureFixtureGeometryQualified:false},
   temporaryStability:{receiverSteelDemandsIncluded:true,headForkMomentReceiversAndMemberCaptureFixtureStillRequireCompleteGeometry:true,RCAndFloorActualCapacityAccepted:false},
