@@ -9,11 +9,11 @@
     "label": "zerg-owner-takeover-20261126"
   },
   "claimedAt": "2026-11-26T20:02:36.250Z",
-  "heartbeatAt": "2026-11-26T20:02:36.250Z",
-  "expiresAt": "2026-11-26T20:47:36.250Z",
+  "heartbeatAt": "2026-11-26T20:09:04.554Z",
+  "expiresAt": "2026-11-26T22:09:04.554Z",
   "checkpoint": {
-    "evidence": "Owner takeover; preserved1629 and water d616aff6.",
-    "next": "Verify incoming-water integrated evidence and recover full Utility/Plant redesign after current integration."
+    "evidence": "Recovered shared integration PR1630@1042876 and targeted failures; fresh later water0e97 successor found, no adoption.",
+    "next": "Complete exact integration CI; prove complete water source0e97 then rejoin ordinary model and actual native ground loading."
   },
   "branch": "work/zerg-takeover-integration-20261126",
   "predecessor": {
@@ -37,5 +37,6 @@
       "next": "Finish whole Utility positive installation and replaceable-member proof; execute complete Plant stored-water rupture/backfeed/occupied-storage case.",
       "blocker": "No complete U/P installation closure. Keep505mm cap until actual floor replan; minimum pipe bores do not bound maximum stored volume."
     }
-  }
+  },
+  "pr": 1630
 }
