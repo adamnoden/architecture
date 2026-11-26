@@ -6947,6 +6947,11 @@
           "edgeReleaseClear": true,
           "restBoardTopMm": 12,
           "pickupLiftMm": 38,
+          "finishDepthMm": 20,
+          "panelTransferTopMm": 58,
+          "settingMm": 5,
+          "horizontalOnly": true,
+          "physicalAcceptance": false,
           "worstRestPadN": 117.72,
           "restPadDemandMPa": 0.188352
         },
@@ -12615,7 +12620,7 @@
         "source": {
           "project/ias/studies/study-furniture-motion.py": "0f60aff751188848324d2b99d72a01d0e2acf4837fef876e66321df40ca4d59b",
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c",
-          "project/ias/studies/study-floor-handling.py": "96a3236d7429627b5f14b5c61d63eeb6745d1c3b45deb67459706a9765ae966d"
+          "project/ias/studies/study-floor-handling.py": "4672ae114b1eff5a2317a7f805ed3eb3b3811ccedbee4b547226bcfb6cad7b18"
         }
       },
       "firstRestBoard": {
@@ -17973,6 +17978,11 @@
         "edgeReleaseClear": true,
         "restBoardTopMm": 12,
         "pickupLiftMm": 38,
+        "finishDepthMm": 20,
+        "panelTransferTopMm": 58,
+        "settingMm": 5,
+        "horizontalOnly": true,
+        "physicalAcceptance": false,
         "worstRestPadN": 117.72,
         "restPadDemandMPa": 0.188352
       },
