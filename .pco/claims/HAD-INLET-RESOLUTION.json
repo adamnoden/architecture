@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T11:55:47.578Z",
-  "expiresAt": "2026-11-26T13:25:47.578Z",
+  "heartbeatAt": "2026-11-26T12:42:39.000Z",
+  "expiresAt": "2026-11-26T13:27:39.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
@@ -36,7 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "1628mergedf2ac;1629tip867e protects51test verifiedfactorydrain/31bridge. Executorreset recovered; SE355911a restores7geometry+8nativeunion controls, fulljoinpending",
-    "next": "FinishSE200notchedinlet/ground/upstream geometry+renewal; freshgroundcapture beforecurrentforceclaim; verify1629CIandfreshpreflightsbeforemerge"
+    "evidence": "1628 mergedf2acb9e7.1629@867e protects51-test factoryfront drain/31mm bridge. SE200 context/notch/renewal verified checkpoint87d31a69 protected work/zerg-se-context-20261126. Crowded north route rejected; west station WIP being recovered separately.",
+    "next": "Recover weststation source; finish crew/spool access and full thermal/fault/renewal checks, then fresh notched ground/contact125 captures. Require capable-runner exacthead preflight before1629merge.",
+    "blocker": "Executor explicitly unavailable; current historical two force pins remain stale, no complete Utility/hot/electrical installation pass."
   }
 }
