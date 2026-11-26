@@ -94,3 +94,13 @@ test('rear source joint uses its real horizontal faces and drains BEFORE separat
  assert.equal(service.drain.wholeInletFullyEmptyClaimed,false)
  assert.equal(service.completeInstallationAccepted,false)
 })
+
+test('ordinary main-body and independently bolted frame renewal do not require whole cold-tree movement',()=>{
+ assert.equal(service.ordinaryMainBodyRenewalRequiresRearTreeRemoval,false)
+ assert.equal((choice.coldDistribution as any).frameRenewal.wholeAssembledFrameWithdrawalRequired,false)
+ assert.equal((choice.coldDistribution as any).frameRenewal.coldTreeRemovalRequiredForFrameRenewal,false)
+ assert.equal(service.wholeTreeReleaseControl.role,'historical-stress-only-not-current-renewal-acceptance')
+ assert.ok(service.orderedMethod[2].includes('Keep the supported rear source union and local cold tree MADE'))
+ assert.equal(service.wholeTreeReleaseControl.actualFullPhaseAndToolQualification,false)
+ assert.equal((choice.coldDistribution as any).frameRenewal.actualMemberToolAccessStabilityAndLoadProofAccepted,false)
+})

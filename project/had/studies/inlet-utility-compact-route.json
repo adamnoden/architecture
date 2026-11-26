@@ -466,7 +466,19 @@
         "minimumAxialReleaseMm": 10,
         "manufacturerAndPhysicalPressureQualification": false
       },
-      "temporaryCarryBarInstalledOnlyAfterTreeParked": true
+      "temporaryCarryBarInstalledOnlyAfterTreeParked": true,
+      "fullTreeMotionControlRole": "historical stress comparison; not required for ordinary frame or main-body renewal",
+      "routineRenewal": "independent captured spools; water remains independently supported during dry-frame member renewal"
+    },
+    "frameRenewal": {
+      "schema": "had-utility-independent-bolted-members/1",
+      "selectedForDevelopment": true,
+      "headRemovedBeforeFrameWork": true,
+      "wholeAssembledFrameWithdrawalRequired": false,
+      "coldTreeRemovalRequiredForFrameRenewal": false,
+      "waterSupportIndependentOfDryFrameRequired": true,
+      "positiveTemporarySupportBeforeMemberReleaseRequired": true,
+      "actualMemberToolAccessStabilityAndLoadProofAccepted": false
     }
   },
   "terminalLocalMm": [

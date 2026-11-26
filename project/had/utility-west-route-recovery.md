@@ -175,3 +175,11 @@ The actual front upper frame rail beginsY1335. A headconnection at1280 has55mm c
 The hot head port is moved toX11300, matching the real retained vertical hot tail'sX. A conventional formed15mmY-offset spool from the actual595 terminal to850 is a concrete next installation interface; it has NOT been asserted present or pressure/isolation/renewal-qualified. Retained hot network and cold separate-pillar graph remain explicit.
 
 All source/method changes through5cad8e4a are durable. Actual hosted run45859231418 completed successfully for that exact commit, including its declared focused test scope; this later1260/hotport change requires its own replay. The local phase helper and actual hot interface are still pending. A runtime reset did not erase the repository checkpoint or justify inventing missing proofs.
+
+### Selected independent bolted-frame renewal
+
+Root explicitly selected ordinary independently replaceable bolted frame members. Assembled whole-frame withdrawal is no longer binding. The water tree must have its own positive supports while dry members renew after head removal and with temporary stability established. Actual tool access, connection capacities, temporary stability and loads are still to be proved; a source selector does not itself earn them.
+
+The current main-body service method also no longer unmates/lower/parks the rear tree unnecessarily: LodgeU and both local cold stops isolate the finite U section, verified zero precedes vent/drain, the captured main plus adjacent elbows renew through the two20mm coupons and100mm east rest, and both retained ends stay supported. A later rear union blank does not establish pressure isolation.
+
+The prior whole-tree210-lower/north/west/lobby event and its blank-gap arithmetic survive only as labelled historical stress controls, excluded from ordinary current renewal acceptance. The same normal rear union/pipe/fitting geometry remains current. This eliminates an unnecessary coordinated water/host removal event rather than solving it with another carrier or mast.
