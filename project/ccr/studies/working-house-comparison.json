@@ -1099,7 +1099,7 @@
       "had-inlet-south-sill-insert": "6b68bda356e73f15fc0f62d8ed1c4f9909f3f392b814bf2282ec7ccd5e08b062",
       "had-occupied-services": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
       "had-selected-water": "3c8bac4e6cdbae0d451901a086250233e07a1f1138a80b1cd0824d22e92f4576",
-      "ias-study-lighting": "cbc19b9a717ebda06b2b0ba2d05c63648dcb771fa373cb9ef27d87dc3904a380",
+      "ias-study-lighting": "06c483318f2af40f862b6aa254f592b810793e13b7ccda1652605476e79fe649",
       "ias-study-room-perspective": "47404146ddc0e283949695013d876b9fb35a9254432a83d98b3a5b206f4c5f4b",
       "mat-roof-pitch-reference": "d7293f37acfc6b47ed5acec700046fefaa3f17741d96808d0764461e442a6a4a",
       "rwt-conditional-receiving": "3bbebcc6ef4455619710090e8d367452ce5e5af288df785ef3c7efb684bc8666",
@@ -1111,7 +1111,7 @@
     "authoredDefaults": {
       "project/ias/studies/crafted-study-handling-plan.json": "0f6a79b10a36e95004e341c65650437b4f34d294",
       "project/ias/studies/adaptable-study-lighting.json": "63b335e82c72518bb1346c3d70e9ce3bfa02bd9d",
-      "project/ias/studies/lighting-component-references.json": "2fe0e72ec5f755df87a461b4f9a40df338fea89a"
+      "project/ias/studies/lighting-component-references.json": "16bd75c2b82ba928bc0c77af522c8965136a450c"
     },
     "implementations": {
       "compiler/architectural-drawing/aperture-drawing.ts": "319e87b38a259f97dca1338eace2b8e823be81aa",
@@ -1165,11 +1165,11 @@
       "compiler/reference-house/current-design/assemblies/study-ground-support.ts": "2f09beddc104e3aec4ae8fa24540c1c03506d482",
       "compiler/reference-house/current-design/assemblies/study-installed-inlet.ts": "1840c74f7af5b2c63b49019fa6b5f9eb45cb6d52",
       "compiler/reference-house/current-design/assemblies/study-lighting-case.ts": "ab75ad0f9728bf7b54717c53cdfe316340987437",
-      "compiler/reference-house/current-design/assemblies/study-lighting-circuit.ts": "14f85d33277e8e6d14b57696606e432c717278f0",
+      "compiler/reference-house/current-design/assemblies/study-lighting-circuit.ts": "27e73086b825f596f58f32a8914928f78e396140",
       "compiler/reference-house/current-design/assemblies/study-lighting-common-depth.ts": "20ce3c781fd5eb947c92bc9de09c259b7774a940",
-      "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "a736cb640e2a1859d46fb0cf0897cfab485f90c4",
-      "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "4c5dd07be9612c8084da7fb07aa20ceb48bc5b4a",
-      "compiler/reference-house/current-design/assemblies/study-lighting.ts": "61e5232df1cf6f2f5304b1aaf86c9ef2a27be8b0",
+      "compiler/reference-house/current-design/assemblies/study-lighting-corner.ts": "f3b22497c99cdc0059b6be119b4bd5f7a57fd36b",
+      "compiler/reference-house/current-design/assemblies/study-lighting-views.ts": "a38d59a52350d2addda35407200ddf407b1c28bf",
+      "compiler/reference-house/current-design/assemblies/study-lighting.ts": "d44c852a7c5d71f80c47b0e5bfa2e682376b4610",
       "compiler/reference-house/current-design/assemblies/study-linings-views.ts": "e5597cbc4b114f88ad94a1ceecbe573d59e6e4be",
       "compiler/reference-house/current-design/assemblies/study-linings.ts": "1a83ae87f3ecc101f046f1a7c6b7a9bd1a1d0a87",
       "compiler/reference-house/current-design/assemblies/study-oak-composition.ts": "5c56424ca435b892e2f032c62d579c24dcc4fde0",
