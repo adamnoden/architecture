@@ -652,3 +652,14 @@ at the actual compiler join (zero witnesses and an explicit source diagnostic),
 rather than leaving136 apparently usable nested witnesses behind a rejected
 overall status. The negative carry perturbation exercises that real join and
 leaves all physical floor geometry unchanged.
+
+The new north-facing owner sheet is produced from the same saved Study and
+compiled lighting projection:95mm paid bay, actual1500mm lighting socket,
+425mm/R50 visible flex, plug and removable clips, with an upper-bay elevation
+and a matching close construction view. Mixed room/lighting case digests and
+rejected preparation geometry are refused. Existing southwest room impressions
+remain available. Fixture silhouettes and neutral finish are presentation
+trials inside the authored maintenance envelope; no proprietary product CAD,
+full articulation, photometric result or owner acceptance is inferred.
+The protected north door territory is shown as withheld profile, not an
+invented door leaf/head assembly.

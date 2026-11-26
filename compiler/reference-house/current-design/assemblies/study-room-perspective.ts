@@ -1,4 +1,5 @@
 import { sha256SemanticFingerprint } from '../../../core/identity.js'
+import type { StudyLightingResult } from './study-lighting.js'
 import type { StudyRoomKit } from './study-room-kit.js'
 import type { compileStudyRoomAssembly } from './study-room-assembly.js'
 import type { compileStudyWallTransition } from './study-wall-transition.js'
@@ -9,6 +10,7 @@ type Point = readonly [number, number, number]
 type Box = readonly [number, number, number, number]
 type Wall = Assembly['walls'][number]
 type Camera = { readonly eyeMm: Point; readonly targetMm: Point; readonly horizontalFieldDegrees: number }
+type NorthLighting = {readonly lighting:StudyLightingResult;readonly camera:Camera}
 type Face = { readonly id: string; readonly points: readonly Point[]; readonly colour: string; readonly line?: string; readonly width?: number; readonly opacity?: number }
 const r = (n: number) => Number(n.toFixed(3))
 const escape = (s: string) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;')
@@ -23,6 +25,19 @@ export function studyPerspectiveCamera(kit: StudyRoomKit): Camera {
   const [a,b,c]=bands
   if(!a||!b||!c||bands.length!==3)throw new RangeError('STUDY_PERSPECTIVE_UNSUPPORTED_ROOM')
   return { eyeMm:[c[2]-280,c[3]-190,1550], targetMm:[a[0]+(b[2]-a[0])*.43,a[1]+170,1550], horizontalFieldDegrees:78 }
+}
+
+/** Same saved room; an authored north-facing eye point, not a surveyed photograph. */
+export function studyNorthLightingCamera(kit:StudyRoomKit,lighting:StudyLightingResult):Camera{
+ const desk=kit.occupied.find(([id])=>id==='study-desk')?.[1]
+ if(!desk)throw new Error('STUDY_NORTH_LIGHTING_DESK_UNAVAILABLE')
+ const h=lighting.construction.localHomeRunComparison
+ return{eyeMm:[desk[2]+220,desk[3]+350,1550],targetMm:[(h.bayPlanMm[0]!+h.bayPlanMm[2]!)/2,h.frontYMm,1550],horizontalFieldDegrees:78}
+}
+function checkNorthLightingSource(kit:StudyRoomKit,lighting:StudyLightingResult){
+ if(lighting.source.roomKitCaseDigest!==kit.caseDigest||sha256SemanticFingerprint(lighting.commonRoom.floorFaces)!==sha256SemanticFingerprint(kit.floor.parts.flatMap(p=>p.facePieces))||sha256SemanticFingerprint(lighting.commonRoom.occupied)!==sha256SemanticFingerprint(kit.occupied))throw new Error('STUDY_NORTH_LIGHTING_MIXED_CASE')
+ if(lighting.status==='GEOMETRY_REJECTED'||lighting.circuit.issues.length||lighting.construction.localHomeRunComparison.issues.length)throw new Error('STUDY_NORTH_LIGHTING_REJECTED_INSTALLATION')
+ if(!lighting.circuit.applianceLead.fitting.reference.startsWith('Type80W1'))throw new Error('STUDY_NORTH_LIGHTING_FAMILY_UNSUPPORTED')
 }
 
 function projector(camera: Camera,width:number,height:number){
@@ -48,7 +63,8 @@ const floorRect=([a,b,c,d]:Box,z=0):readonly Point[]=>[[a,b,z],[c,b,z],[c,d,z],[
 const inset=([a,b,c,d]:Box,amount:number):Box=>[a+amount,b+amount,c-amount,d-amount]
 const good=([a,b,c,d]:Box)=>c>a&&d>b
 
-function roomScene(kit:StudyRoomKit,assembly:Assembly,transition:Transition,mode:'fixed'|'removable',tone:'day'|'evening',camera:Camera){
+function roomScene(kit:StudyRoomKit,assembly:Assembly,transition:Transition,mode:'fixed'|'removable',tone:'day'|'evening',camera:Camera,lighting?:StudyLightingResult){
+  if(lighting)checkNorthLightingSource(kit,lighting)
   if(kit.source.bindingDigest!==assembly.source.bindingDigest)throw new Error('STUDY_PERSPECTIVE_MIXED_ROOM_SOURCE')
   if(kit.wall.boundRoomOpenings.length!==3||!kit.occupied.some(([id])=>id==='study-desk')||!kit.occupied.some(([id])=>id==='study-chair'))throw new Error('STUDY_PERSPECTIVE_MISSING_BOUND_ROOM')
   const ceiling=transition.field.ceilingZMm,night=tone==='evening',oak=assembly.face==='oak'
@@ -119,7 +135,10 @@ function roomScene(kit:StudyRoomKit,assembly:Assembly,transition:Transition,mode
     }
     for(const reserve of wall.reserves){
       if(reserve.role==='retained-mineral-window-surround'||reserve.role==='retained-emitter-background'||reserve.role==='retained-structural-pilaster-return')rect(reserve.id,reserve.box,palette.cream,palette.cream,0,5)
-      if(reserve.role==='retained-protected-door-strip')rect(reserve.id+'/unqualified-head',reserve.box,night?'#777a6d':'#dddccf',palette.line,.5,5)
+      if(reserve.role==='retained-protected-door-strip'){
+        rect(reserve.id+'/unqualified-head',reserve.box,lighting?'#c7c7bd':night?'#777a6d':'#dddccf',palette.line,.5,5)
+        if(lighting)for(let z=reserve.box[1]+90;z<reserve.box[3];z+=90)rect(reserve.id+'/withheld-profile/'+z,[reserve.box[0]+10,z,reserve.box[2]-10,z+1.5],'#a5aaa0',undefined,0,5.1)
+      }
     }
     for(const trim of wall.trims){
       rect(trim.id,[trim.intervalMm[0]!,0,trim.intervalMm[1]!,trim.heightMm],night?'#414c44':'#adb5a4',palette.line,.4,6)
@@ -167,24 +186,76 @@ function roomScene(kit:StudyRoomKit,assembly:Assembly,transition:Transition,mode
   cuboid('study-chair/back',[seat[0],seat[3]-32,seat[2],seat[3]],454,887,night?'#424c39':'#72816b')
   for(const x of[seat[0]+15,seat[2]-35])for(const y of[seat[1]+15,seat[3]-35])cuboid('study-chair/leg/'+x+'/'+y,[x,y,x+20,y+20],0,430,night?'#333c31':'#59634e')
   cuboid('service-emitter-study-W',emitter,115,710,night?'#93947c':'#cccbb7')
+
+  if(lighting){
+    const h=lighting.construction.localHomeRunComparison,a=lighting.circuit.applianceLead,f=a.fitting,cx=h.cableOpening.centreXMm,cz=h.cableOpening.centreZMm
+    const northRect=(id:string,box:Box,y:number,colour:string,line='#5b625b',width=.6)=>furniture.push({id,points:[[box[0],y,box[1]],[box[2],y,box[1]],[box[2],y,box[3]],[box[0],y,box[3]]],colour,line,width})
+    // Paid95mm development bay and actual existing panel recuts; no invented permanent-fabric chase.
+    northRect('IAS/NORTH/paid-local-bay',[h.bayPlanMm[0]!,h.finishBottomZMm+kit.floor.jointMm/2,h.bayPlanMm[2]!,h.finishTopZMm],h.frontYMm,mode==='removable'?palette.panel:palette.cream)
+    for(const side of[h.bayPlanMm[0]!,h.bayPlanMm[2]!])furniture.push({id:'IAS/NORTH/bay-return/'+side,points:[[side,h.frontYMm,h.finishBottomZMm],[side,h.bayPlanMm[3]!,h.finishBottomZMm],[side,h.bayPlanMm[3]!,h.finishTopZMm],[side,h.frontYMm,h.finishTopZMm]],colour:palette.trim,line:palette.line,width:.5})
+    const [ml,mb,mr,mt]=h.carrierXZMm
+    northRect('IAS/NORTH/independently-retained-module-face',[ml!,mb!,mr!,mt!],h.frontYMm-.5,mode==='removable'?palette.inset:palette.cream)
+    for(const box of h.boxes){const x=(box.xMm[0]!+box.xMm[1]!)/2,z=(box.zMm[0]!+box.zMm[1]!)/2
+      northRect(box.id+'/86mm-plate',[x-43,z-43,x+43,z+43],h.frontYMm-1,'#c4c4b8')
+      if(box!==h.boxes[2])northRect(box.id+'/control-indication',[x-10,z-14,x+10,z+14],h.frontYMm-2,'#797d73')
+    }
+    const circleXZ=(id:string,x:number,y:number,z:number,radius:number,colour:string)=>furniture.push({id,points:Array.from({length:32},(_,i)=>{const q=2*Math.PI*i/32;return[x+radius*Math.cos(q),y,z+radius*Math.sin(q)]as Point}),colour,line:'#464d48',width:.6})
+    circleXZ('IAS/NORTH/Type80W1/90mm-wall-plate',cx,h.frontYMm-2,cz,f.wallPlateDiameterMm/2,'#525957')
+    // The cone is an unlit appearance silhouette within published145x160/260 reach
+    // and the larger authored downward envelope. It is not proprietary product CAD.
+    const shadeY=h.frontYMm-f.projectionMm+f.shadeWidthMm/2,shadeTop=cz+Math.min(f.authoredDownwardEnvelopeZFromMountMm[1]!-5,f.shadeHeightMm/4),shadeBottom=shadeTop-f.shadeHeightMm
+    const small=f.shadeWidthMm*.20,large=f.shadeWidthMm/2
+    for(let i=0;i<32;i++){const q=2*Math.PI*i/32,t=2*Math.PI*(i+1)/32
+      furniture.push({id:'IAS/NORTH/Type80W1/shade-impression/'+i,points:[[cx+small*Math.cos(q),shadeY+small*Math.sin(q),shadeTop],[cx+large*Math.cos(q),shadeY+large*Math.sin(q),shadeBottom],[cx+large*Math.cos(t),shadeY+large*Math.sin(t),shadeBottom],[cx+small*Math.cos(t),shadeY+small*Math.sin(t),shadeTop]],colour:i<16?'#4c5452':'#616966',line:'#424c47',width:.3})
+    }
+    furniture.push({id:'IAS/NORTH/Type80W1/short-stem-impression',points:[[cx-3,h.frontYMm-2,cz-3],[cx+3,h.frontYMm-2,cz+3],[cx+3,shadeY,cz+3],[cx-3,shadeY,cz-3]],colour:'#555d59',line:'#464e48',width:.5})
+    for(const volume of a.nominalFixedVolumes.filter(v=>v.id.includes('guide')||v.id.includes('plug'))){const v=volume.xyzxyzMm
+      cuboid(volume.id,[v[0],v[1],v[3],v[4]],v[2],v[5],volume.id.includes('plug')?'#e1dfd2':'#70776d')
+    }
+    // The real rounded425mm/R50 cable, not a decorative substitute or a hidden coil.
+    for(let i=1;i<a.pathMm.length;i++){const u=a.pathMm[i-1]!,v=a.pathMm[i]!,dx=v[0]!-u[0]!,dz=v[2]!-u[2]!,len=Math.hypot(dx,dz);if(len<1e-8)continue
+      const ox=dz/len*a.diameterRequirementMm/2,oz=-dx/len*a.diameterRequirementMm/2
+      furniture.push({id:'IAS/NORTH/Type80W1/actual-flex/'+i,points:[[u[0]!+ox,u[1]!,u[2]!+oz],[v[0]!+ox,v[1]!,v[2]!+oz],[v[0]!-ox,v[1]!,v[2]!-oz],[u[0]!-ox,u[1]!,u[2]!-oz]],colour:'#414944',line:'#414944',width:.1})
+    }
+  }
+
   const p=projector(camera,1000,1000)
   furniture.sort((a,b)=>b.points.reduce((sum,point)=>sum+p.depth(point),0)/b.points.length-a.points.reduce((sum,point)=>sum+p.depth(point),0)/a.points.length)
   faces.push(...furniture)
   return{faces,palette,ceiling,windowIds:kit.wall.boundRoomOpenings.map(window=>'GROUND/'+window.id),camera,mode,tone,oak}
 }
 
-export function drawStudyRoomPerspective(kit:StudyRoomKit,assembly:Assembly,transition:Transition,tone:'day'|'evening'='day'){
+export function drawStudyRoomPerspective(kit:StudyRoomKit,assembly:Assembly,transition:Transition,tone:'day'|'evening'='day',north?:NorthLighting){
   if(tone!=='day'&&tone!=='evening')throw new TypeError('STUDY_PERSPECTIVE_TONE_UNSUPPORTED')
-  const camera=studyPerspectiveCamera(kit),width=1000,height=1000,project=projector(camera,width,height)
-  const source={roomId:kit.source.roomId,bindingDigest:kit.source.bindingDigest,roomKitCaseDigest:kit.caseDigest,assemblyInputDigest:assembly.source.inputDigest,...(kit.floor.oakComposition?{oakCompositionDigest:kit.floor.oakComposition.digest}:{}),...(kit.structuralConsequence?{structuralConsequenceDigest:kit.structuralConsequence.digest,controllingFloorWidthMm:kit.structuralConsequence.source.native.widthMm}:{})}
-  const scenes=(['fixed','removable']as const).map(mode=>roomScene(kit,assembly,transition,mode,tone,camera))
+  if(north)checkNorthLightingSource(kit,north.lighting)
+  const camera=north?.camera??studyPerspectiveCamera(kit),width=1000,height=1000,project=projector(camera,width,height)
+  const source={roomId:kit.source.roomId,bindingDigest:kit.source.bindingDigest,roomKitCaseDigest:kit.caseDigest,assemblyInputDigest:assembly.source.inputDigest,...(kit.floor.oakComposition?{oakCompositionDigest:kit.floor.oakComposition.digest}:{}),...(kit.structuralConsequence?{structuralConsequenceDigest:kit.structuralConsequence.digest,controllingFloorWidthMm:kit.structuralConsequence.source.native.widthMm}:{}),...(north?{lightingCaseDigest:north.lighting.caseDigest,circuitDesignDigest:north.lighting.circuit.designDigest,view:'north-lighting',fittingGeometryQualified:false}:{})}
+  const scenes=(['fixed','removable']as const).map(mode=>roomScene(kit,assembly,transition,mode,tone,camera,north?.lighting))
   const drawings=scenes.map(scene=>scene.faces.map(face=>{
     const points=project.clip(face.points);if(points.length<3)return''
     return`<polygon data-source-id="${escape(face.id)}" points="${points.map(p=>p.join(',')).join(' ')}" fill="${face.colour}" stroke="${face.line??'none'}" stroke-width="${face.width??0}" opacity="${face.opacity??1}" stroke-linejoin="round"/>`
   }).join(''))
-  const title=kit.structuralConsequence?`The Study · SW${kit.structuralConsequence.source.native.widthMm} ${tone==='day'?'room proposal':'evening colour study'}`:tone==='day'?'The Study · a room made in pieces':'The Study · an evening colour study'
-  const scope=kit.structuralConsequence?'Unselected structural-room proposal':'Current occupied room'
-  const description='Matched eye-level fixed and removable finish impressions from the same current occupied Study. Exact floor faces, wall cassettes, opening geometry and furniture footprints; palettes, glazing bars, moulding impressions and furniture heights are presentation trials. No daylight, electric-light or material performance is simulated.'
-  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="2160" height="1315" viewBox="0 0 2160 1315" role="img" aria-labelledby="title desc"><title id="title">${title}</title><desc id="desc">${description}</desc><metadata>${escape(JSON.stringify({schema:'ias-study-eye-level/1',source,camera,tone,claims:{ownerAcceptance:false,photometricSimulation:false,constructedProfile:false,installedFurnitureDimensions:false,tileWetRoomAcceptance:false,installedAssemblies:false}}))}</metadata><defs><clipPath id="left-view"><rect width="1000" height="1000"/></clipPath><clipPath id="right-view"><rect width="1000" height="1000"/></clipPath></defs><rect width="2160" height="1315" fill="${tone==='day'?'#f2f0e8':'#e7e5db'}"/><g fill="#303c36"><text x="60" y="65" font-family="Georgia,serif" font-size="40">${title}</text><text x="60" y="101" font-family="Arial,sans-serif" font-size="18">${scope} · the same eye point, windows and furniture in both alternatives</text><text x="60" y="150" font-family="Georgia,serif" font-size="25">Fixed wainscot and mineral wall</text><text x="1100" y="150" font-family="Georgia,serif" font-size="25">${assembly.face==='oak'?'Gravity-hung timber faces':'Independent mineral faces'} · seated ${kit.request.wearingFace==='oak'?'oak':'mineral'} floor</text></g><g data-study-view="fixed" data-study-viewport="0 0 ${width} ${height}" transform="translate(60,175)" clip-path="url(#left-view)"><rect width="1000" height="1000" fill="${scenes[0]!.palette.cream}"/>${drawings[0]}</g><g data-study-view="removable" data-study-viewport="0 0 ${width} ${height}" transform="translate(1100,175)" clip-path="url(#right-view)"><rect width="1000" height="1000" fill="${scenes[1]!.palette.cream}"/>${drawings[1]}</g><g fill="#465148" font-family="Arial,sans-serif" font-size="17"><text x="60" y="1215">Bound geometry: ${assembly.walls.length} walls · ${assembly.schedule.movingFaceCount} wall faces · ${kit.floor.parts.length} floor pieces · south window at X${kit.opening.occupiedCentreMm} mm.</text><text x="60" y="1244">Colours, glazing bars and local moulding impressions are appearance trials. Furniture footprints are bound; heights follow the existing view convention.</text><text x="60" y="1273">${tone==='evening'?'Evening palette only: no lamp output, circuit, illuminance or glare result.':'Day palette only: no sun position, measured daylight or exterior site is assumed.'} Owner appearance judgement remains open.</text></g></svg>\n`
+  let northDetails=''
+  if(north){
+    const light=north.lighting,h=light.construction.localHomeRunComparison,a=light.circuit.applianceLead,cx=h.cableOpening.centreXMm,cz=h.cableOpening.centreZMm
+    const closeCamera:Camera={eyeMm:[cx+750,h.frontYMm-700,1700],targetMm:[cx,h.frontYMm,1745],horizontalFieldDegrees:50},closeProject=projector(closeCamera,1000,650)
+    const closeScene=roomScene(kit,assembly,transition,'removable','day',closeCamera,light)
+    const closeDrawing=closeScene.faces.map(face=>{const p=closeProject.clip(face.points);return p.length<3?'':`<polygon data-source-id="detail/${escape(face.id)}" points="${p.map(q=>q.join(',')).join(' ')}" fill="${face.colour}" stroke="${face.line??'none'}" stroke-width="${face.width??0}" opacity="${face.opacity??1}"/>`}).join('')
+    const E=(x:number)=>60+(x-h.bayPlanMm[0]!)*.75,Z=(z:number)=>625-(z-1400)*.75
+    const er=(id:string,b:readonly number[],fill:string,dash=false)=>`<rect data-source-id="elevation/${id}" x="${r(E(b[0]!))}" y="${r(Z(b[3]!))}" width="${r((b[2]!-b[0]!)*.75)}" height="${r((b[3]!-b[1]!)*.75)}" fill="${fill}" stroke="#636f64" stroke-width="1"${dash?' stroke-dasharray="5 4"':''}/>`
+    const et=(x:number,y:number,text:string,size=20)=>`<text x="${x}" y="${y}" font-family="Arial,sans-serif" font-size="${size}" fill="#37463b">${escape(text)}</text>`
+    let elevation=er('bay',[h.bayPlanMm[0]!,1400,h.bayPlanMm[2]!,h.finishTopZMm],'#e0e3d6')+er('hidden-carrier',h.carrierXZMm,'none',true)
+    elevation+=er('downward-envelope',[cx-a.fitting.shadeWidthMm/2,cz+a.fitting.authoredDownwardEnvelopeZFromMountMm[0]!,cx+a.fitting.shadeWidthMm/2,cz+a.fitting.authoredDownwardEnvelopeZFromMountMm[1]!],'none',true)
+    for(const box of h.boxes.filter(q=>q.zMm[1]!>=1400)){const x=(box.xMm[0]!+box.xMm[1]!)/2,z=(box.zMm[0]!+box.zMm[1]!)/2;elevation+=er(box.id+'/plate',[x-43,z-43,x+43,z+43],'#c5c8bd')}
+    for(const volume of a.nominalFixedVolumes.filter(v=>v.id.includes('guide')||v.id.includes('plug'))){const b=volume.xyzxyzMm;elevation+=er(volume.id,[b[0],b[2],b[3],b[5]],volume.id.includes('plug')?'#eeeadd':'#7e887b')}
+    elevation+=`<polyline points="${a.pathMm.map(p=>[r(E(p[0]!)),r(Z(p[2]!))].join(',')).join(' ')}" fill="none" stroke="#394a3e" stroke-width="4"/>`
+    elevation+=et(410,115,`${h.totalDepthMm} mm paid local bay`)+et(410,155,`${a.fitting.projectionMm} mm complete reach reservation`)+et(410,195,`${r(a.lengthMm)} mm visible flex / R${a.radiusMm}`)+et(410,235,'Dashed: retained carrier / maintenance envelope')+et(410,315,'Ordinary preparation',25)+et(410,355,'1. Isolate B6; return shade downward; unplug.')+et(410,395,'2. Support fitting; release mount and both clips.')+et(410,435,'3. Carry to the same source desk rest.')+et(410,475,'4. Socket, bay and carrier stay independently supported.')+et(410,545,'Product CAD, fixings/packing and loaded handling unqualified.',18)
+    northDetails=`<defs><clipPath id="north-junction-detail"><rect width="1000" height="650"/></clipPath></defs><g fill="#37463b" font-family="Georgia,serif" font-size="27"><text x="60" y="1350">Accessible plug, flex and removable fitting</text><text x="1100" y="1350">Same geometry · upper bay elevation</text></g><g transform="translate(60,1380)" clip-path="url(#north-junction-detail)"><rect width="1000" height="650" fill="#eeeee2"/>${closeDrawing}</g><g transform="translate(1100,1380)">${elevation}</g><text x="60" y="2080" font-family="Arial,sans-serif" font-size="18" fill="#465148">Source kit ${escape(kit.caseDigest.slice(0,12))} · lighting ${escape(light.caseDigest.slice(0,12))}. Unlit appearance/assembly proposal; owner acceptance remains open.</text>`
+  }
+
+  const title=north?'The Study north wall · ordinary light and renewable room':kit.structuralConsequence?`The Study · SW${kit.structuralConsequence.source.native.widthMm} ${tone==='day'?'room proposal':'evening colour study'}`:tone==='day'?'The Study · a room made in pieces':'The Study · an evening colour study'
+  const scope=north?`Unselected Type80W1 development · shared saved room · ${north.lighting.construction.localHomeRunComparison.totalDepthMm}mm local station`:kit.structuralConsequence?'Unselected structural-room proposal':'Current occupied room'
+  const description=(north?`Source-bound north-facing view: accessible${(north.lighting.construction.localHomeRunComparison.boxes[2]!.zMm[0]!+north.lighting.construction.localHomeRunComparison.boxes[2]!.zMm[1]!)/2}mm lighting outlet,${r(north.lighting.circuit.applianceLead.lengthMm)}mm/R${north.lighting.circuit.applianceLead.radiusMm} lead and ordinary removable clips. Device silhouettes are impressions inside authored envelopes; protected door profile, product CAD and full articulation remain unqualified. `:'')+'Matched eye-level fixed and removable finish impressions from the same current occupied Study. Exact floor faces, wall cassettes, opening geometry and furniture footprints; palettes, glazing bars, moulding impressions and furniture heights are presentation trials. No daylight, electric-light or material performance is simulated.'
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="2160" height="${north?2125:1315}" viewBox="0 0 2160 ${north?2125:1315}" role="img" aria-labelledby="title desc"><title id="title">${title}</title><desc id="desc">${description}</desc><metadata>${escape(JSON.stringify({schema:'ias-study-eye-level/1',source,camera,tone,claims:{ownerAcceptance:false,photometricSimulation:false,constructedProfile:false,installedFurnitureDimensions:false,tileWetRoomAcceptance:false,installedAssemblies:false,...(north?{fullArticulationQualified:false,fittingCadQualified:false,doorLeafAndHeadProfileQualified:false}:{})}}))}</metadata><defs><clipPath id="left-view"><rect width="1000" height="1000"/></clipPath><clipPath id="right-view"><rect width="1000" height="1000"/></clipPath></defs><rect width="2160" height="${north?2125:1315}" fill="${tone==='day'?'#f2f0e8':'#e7e5db'}"/><g fill="#303c36"><text x="60" y="65" font-family="Georgia,serif" font-size="40">${title}</text><text x="60" y="101" font-family="Arial,sans-serif" font-size="18">${scope} · the same eye point, windows and furniture in both alternatives</text><text x="60" y="150" font-family="Georgia,serif" font-size="25">Fixed wainscot and mineral wall</text><text x="1100" y="150" font-family="Georgia,serif" font-size="25">${assembly.face==='oak'?'Gravity-hung timber faces':'Independent mineral faces'} · seated ${kit.request.wearingFace==='oak'?'oak':'mineral'} floor</text></g><g data-study-view="fixed" data-study-viewport="0 0 ${width} ${height}" transform="translate(60,175)" clip-path="url(#left-view)"><rect width="1000" height="1000" fill="${scenes[0]!.palette.cream}"/>${drawings[0]}</g><g data-study-view="removable" data-study-viewport="0 0 ${width} ${height}" transform="translate(1100,175)" clip-path="url(#right-view)"><rect width="1000" height="1000" fill="${scenes[1]!.palette.cream}"/>${drawings[1]}</g><g fill="#465148" font-family="Arial,sans-serif" font-size="17"><text x="60" y="1215">Bound geometry: ${assembly.walls.length} walls · ${assembly.schedule.movingFaceCount} wall faces · ${kit.floor.parts.length} floor pieces · south window at X${kit.opening.occupiedCentreMm} mm.</text><text x="60" y="1244">${north?`North light:${north.lighting.construction.localHomeRunComparison.totalDepthMm}mm paid bay ·${(north.lighting.construction.localHomeRunComparison.boxes[2]!.zMm[0]!+north.lighting.construction.localHomeRunComparison.boxes[2]!.zMm[1]!)/2}mm outlet ·${r(north.lighting.circuit.applianceLead.lengthMm)}mm visible flex · clips/plug removed before floor renewal.`:'Colours, glazing bars and local moulding impressions are appearance trials. Furniture footprints are bound; heights follow the existing view convention.'}</text><text x="60" y="1273">${north?'Unlit shape/finish impressions only; protected door leaf/head profile withheld. No productCAD, photometry or full-articulation claim.':tone==='evening'?'Evening palette only: no lamp output, circuit, illuminance or glare result.':'Day palette only: no sun position, measured daylight or exterior site is assumed.'} Owner appearance judgement remains open.</text></g>${northDetails}</svg>\n`
   return{schema:'ias-study-eye-level/1' as const,source,camera,tone,sceneDigest:sha256SemanticFingerprint({source,camera,tone,geometry:scenes.map(scene=>scene.faces)}),svg}
 }

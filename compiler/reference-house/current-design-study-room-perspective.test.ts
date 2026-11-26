@@ -1,10 +1,14 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import {readFileSync} from 'node:fs'
+import {readEngineeringEditDocument} from './current-design/engineering-edit.js'
+import {readLightingComponents,compileStudyLighting} from './current-design/assemblies/study-lighting.js'
+import {resolveCurrentDesign} from './current-design/resolve.js'
 import { execFileSync } from 'node:child_process'
 import { prepareCurrentDesignCompile } from './current-design/compile.js'
 import { readGeorgianDesignSnapshot } from './current-design/georgian-source.js'
 import { readStudyRoomKitReferenceCase } from './current-design/assemblies/study-room-kit.js'
-import { drawStudyRoomPerspective } from './current-design/assemblies/study-room-perspective.js'
+import { drawStudyRoomPerspective,studyNorthLightingCamera } from './current-design/assemblies/study-room-perspective.js'
 
 const compiler=prepareCurrentDesignCompile(readGeorgianDesignSnapshot())
 const choices={...readStudyRoomKitReferenceCase(),wearingFace:'oak' as const,finishDepthMm:15 as const,
@@ -58,4 +62,25 @@ test('ordinary source producer retains the same inspected views',()=>{
   execFileSync(process.execPath,['--import','tsx','project/ias/studies/crafted-study-eye-level.mjs','--check'],{
     cwd:new URL('../../',import.meta.url),stdio:'pipe',timeout:30000,
   })
+})
+
+test('north owner view shows the actual plug, clips and fitting and rejects obsolete source cases',async()=>{
+ const doc=readEngineeringEditDocument(JSON.parse(readFileSync(new URL('../../project/ccr/studies/working-house-comparison.json',import.meta.url),'utf8')))
+ assert.ok(doc.stages.studyRoomKit&&doc.stages.distributedFloor&&doc.stages.studyLighting)
+ const current=prepareCurrentDesignCompile(doc.design),room=await current.studyRoomKit({schema:'ias-study-room-kit-case/1',units:'mm',...doc.stages.studyRoomKit},doc.stages.distributedFloor)
+ const lighting=await current.studyLighting({schema:'ias-study-lighting-case/1',units:'mm',...doc.stages.studyLighting},room)
+ const camera=studyNorthLightingCamera(room.kit,lighting.lighting),options={lighting:lighting.lighting,camera}
+ const north=drawStudyRoomPerspective(room.kit,room.roomAssembly,room.wallTransition,'day',options)
+ assert.equal(north.source.lightingCaseDigest,lighting.lighting.caseDigest)
+ assert.ok(camera.targetMm[1]>camera.eyeMm[1])
+ for(const marker of ['Type80W1/90mm-wall-plate','Type80W1/actual-flex/','lighting-outlet-plug-space-witness','lead-guide/0','lead-guide/1','north-junction-detail','upper bay elevation'])assert.ok(north.svg.includes(marker),marker)
+ assert.match(north.svg,/fullArticulationQualified&quot;:false/)
+ assert.match(north.svg,/doorLeafAndHeadProfileQualified&quot;:false/)
+ assert.ok(!north.svg.includes('NaN')&&!north.svg.includes('Infinity'))
+ const old=structuredClone(lighting.lighting);old.source.roomKitCaseDigest='obsolete'
+ assert.throws(()=>drawStudyRoomPerspective(room.kit,room.roomAssembly,room.wallTransition,'day',{...options,lighting:old}),/MIXED_CASE/)
+ const changed=readLightingComponents();changed.circuitDesign={...changed.circuitDesign,appliancePreparation:{...changed.circuitDesign.appliancePreparation,carryOffsetMm:350}}
+ const rejected=compileStudyLighting(resolveCurrentDesign(doc.design),{schema:'ias-study-lighting-case/1',units:'mm',...doc.stages.studyLighting},room,changed)
+ assert.throws(()=>drawStudyRoomPerspective(room.kit,room.roomAssembly,room.wallTransition,'day',{...options,lighting:rejected}),/REJECTED_INSTALLATION/)
+ assert.deepEqual(rejected.commonRoom.floorFaces,lighting.lighting.commonRoom.floorFaces)
 })
