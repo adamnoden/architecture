@@ -4,7 +4,7 @@ import {fileURLToPath} from 'node:url';
 import {deriveCurrentHouse} from './current-house.mjs';
 import {exactSegmentBoxDistance,finiteBends} from './incoming-water-geometry.mjs';
 import {pathSeparation,segmentBodyDistance} from './service-interface-geometry.mjs';
-import {terminalVertices,utilityH0,utilityHeadObstacles,utilityHeadSweeps,utilityTerminalStudy} from './incoming-water-terminal.mjs';
+import {terminalVertices,utilityH0,utilityRetainedHotGeometry,utilityHeadObstacles,utilityHeadSweeps,utilityTerminalStudy} from './incoming-water-terminal.mjs';
 
 const read=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),'utf8'));
 const settingMM=10;
@@ -22,12 +22,9 @@ export function deriveUtilityWideCapture(){
   const host=read('../../ias/studies/utility-host-revised-route.json');
   const frame=Object.fromEntries(Object.entries(host.geometry.frame).map(([id,box])=>[id,[box[0]-10,...box.slice(1)]]));
   const virtualHost={...host,geometry:{...host.geometry,frame}};
-  const x=10840,y=1345;
-  const hotIsolation={...utilityH0,axis:[x,y,1500],wheel:[x,y+95,1500],bodyBox:[x-37,y-37,1417.5,74,147,165]};
+  const retainedHot=utilityRetainedHotGeometry(input.utility.vertices.hot),[x,y]=retainedHot.isolation.axis,
+    hotIsolation=retainedHot.isolation,hotPath=retainedHot.backbone,hotDrainTee=retainedHot.drainTee,hotVertices=retainedHot.terminal;
   const coldPath=input.utility.vertices.cold;
-  const hotPath=input.utility.vertices.hot.map((p,i)=>i<2?p:i===2?[x,p[1],p[2]]:[x,y,p[2]]);
-  const hotDrainTee=[11300,1275,365];
-  const hotVertices=[[x,y,1000],[x,y,950],[10808,1375,750],[10808,1375,381],[10800,1000,375],[11300,1000,369],hotDrainTee,terminalVertices.hotSink.at(-1)];
   const cold=finiteBends(coldPath),hot=finiteBends(hotPath);
   const hotTail=finiteBends(hotVertices,25);
   const coldTails=Object.fromEntries(Object.entries(terminalVertices).filter(([id])=>id!=='hotSink').map(([id,v])=>[id,finiteBends(v,25)]));

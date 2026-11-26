@@ -146,3 +146,15 @@ export function utilityTerminalStudy(model,host,{
       method:'Before first nut release, close U0 and H0, prove stopped/zero-pressure flow and vent locally. Drain one isolated branch at a time through its capped, independently supported local drain into this removable floor receiver. Close the drain before emptying; retain the normal2L witness as a different duty.',
       noCredit:'No unattended burst capture, automatic response, electrical safety certification or draining of the domestic vessel into10L.'}};
 }
+
+/** Owning geometry of the retained H0 and its actual lower branch. Both the
+ * wide-head study and the current occupied installation consume this function;
+ * a historical generated positive receipt is not a current geometry fallback. */
+export function utilityRetainedHotGeometry(sourceHotVertices){
+ if(!Array.isArray(sourceHotVertices)||sourceHotVertices.length!==5||sourceHotVertices.some(p=>!Array.isArray(p)||p.length!==3||p.some(v=>!Number.isFinite(v))))throw Error('Actual five-point source Utility hot backbone required');
+ const x=10840,y=1345,isolation={...utilityH0,axis:[x,y,1500],wheel:[x,y+95,1500],bodyBox:[x-37,y-37,1417.5,74,147,165]},
+  backbone=sourceHotVertices.map((p,i)=>i<2?[...p]:i===2?[x,p[1],p[2]]:[x,y,p[2]]),
+  drainTee=[11300,1275,365],
+  terminal=[[x,y,1000],[x,y,950],[10808,1375,750],[10808,1375,381],[10800,1000,375],[11300,1000,369],drainTee,[...terminalVertices.hotSink.at(-1)]];
+ return {id:'H0',isolation,backbone,terminal,drainTee,datum:'occupied-ground-FFL',sourceGeometryOnly:true,actualPressureIsolationDrainSupportAndRenewalAccepted:false};
+}
