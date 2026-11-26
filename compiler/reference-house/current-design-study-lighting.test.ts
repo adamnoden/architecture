@@ -18,7 +18,7 @@ const run = (change = {}) => deriveStudyLighting({ ...choices, ...change }, basi
 test('four actual furnished-room comparisons and central kitchen share source geometry without invented performance', () => {
   const result = run()
   assert.equal(result.status, 'DEVELOPMENT_COMPARISON')
-  assert.deepEqual(result.diagnostics.map(row => row.code), ['IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED'])
+  assert.deepEqual(result.diagnostics.map(row => row.code), ['IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED'])
   assert.deepEqual(result.arrangements.map(row => row.id), ['portable', 'lamps-with-wall', 'wall-led', 'ceiling-with-lamps'])
   assert.equal(new Set(result.arrangements.map(row => row.commonGeometryDigest)).size, 1)
   assert.deepEqual(result.commonRoom.occupied, kit.kit.occupied)
@@ -427,4 +427,80 @@ test('candidate parameter changes recompute side space, depth and mass requireme
   assert.equal(deeper.commonAxisCoreDepthMm, 47)
   assert.equal(deeper.accessoryFaceRecessMm, 14.5)
   assert.equal(deeper.purpose.enclosures[0]!.bodyDepthMm[0], 23.5)
+})
+
+
+test('conventional independent home runs have finite continuous routes, bounded clearance and source-bound architectural consequences', () => {
+  const r=run(), h=r.construction.localHomeRunComparison
+  assert.equal(h.status,'DECLARED_EXTERNAL_CONTAINMENT_CONTINUOUS')
+  assert.deepEqual(h.issues,[])
+  assert.equal(h.selection,'unselected-development-direction')
+  assert.deepEqual(h.routes.map(route=>route.bend.radiusMm),[70,101,132])
+  assert.deepEqual(h.boxes.map(box=>box.entryAxisCoreDepthRequirementMm),[48,48,37])
+  assert.equal(h.architecturalConsequence.additionalBayWidthMm,100)
+  assert.equal(h.architecturalConsequence.carrierShiftXMm,-38)
+  assert.equal(h.architecturalConsequence.addedConservativeFloorTerritoryM2,.0048)
+  assert.equal(h.architecturalConsequence.accessoryRecessMm,0)
+  assert.equal(h.independentRouteSettingMm,5)
+  assert.equal(h.pairSettingMm,10)
+  assert.equal(h.finishBottomZMm,150)
+  assert.equal(r.localHomeRunWallDisposition.length,2)
+  assert.ok(r.localHomeRunWallDisposition.flatMap(row=>row.remainingDecorativeFacesMm).every(box=>Math.min(box[2]!-box[0]!,box[3]!-box[1]!)>=50))
+  assert.ok(r.localHomeRunWallDisposition.every(row=>row.remainingDecorativeFacesMm.every(box=>box[2]!>box[0]!&&box[3]!>box[1]!)))
+  assert.ok(h.separations.every(row=>row.reserveMm>.99))
+  assert.ok(h.obstacleChecks.every(row=>row.reserveMm>=.49))
+  assert.ok(Object.values(h.fieldReservesMm).every(value=>value>=0))
+  for(const route of h.routes){
+    assert.deepEqual(route.straight.startMm,route.sourcePointMm)
+    assert.deepEqual(route.straight.endMm,route.bend.startMm)
+    assert.deepEqual(route.bend.endMm,route.collar.a)
+    assert.equal(route.collar.b[0]!-route.collar.a[0]!,30)
+    assert.equal(route.collar.b[2],h.boxes.find(b=>b.id===route.enclosureId)!.zMm.reduce((a,b)=>a+b,0)/2)
+    assert.ok(route.bend.chordSagittaBoundMm>0&&route.bend.chordSagittaBoundMm<.01)
+    assert.equal(route.actualHouseSupplyConnected,false)
+    assert.ok(Object.values(route.reservesMm).every(value=>value>=0))
+    assert.ok(route.clips.every(clip=>clip.independentlyFixed&&!clip.supportResistanceQualified))
+    const spans=route.clips.slice(1).map((clip,i)=>clip.pointMm[2]!-route.clips[i]!.pointMm[2]!)
+    assert.ok(spans.every(span=>span<=h.choices.maximumClipSpanMm))
+  }
+  assert.equal(h.stock.clipCount,12)
+  const exactTubeLength=3*(Math.PI/2)*101+(600-70-155)+(1100-101-155)+(1800-132-155)
+  assert.ok(Math.abs(h.stock.tubeLengthMm-exactTubeLength)<1e-9)
+  const independentTubeMass=Math.PI*(10*10-9*9)*exactTubeLength*7850/1e9
+  const independentCollarMass=Math.PI*15*15*90*7850/1e9
+  assert.ok(Math.abs(h.stock.totalKnownContainmentStockKg-independentTubeMass-independentCollarMass)<1e-12)
+  for(const [key,value] of Object.entries(h.evidence)) if(key!=='geometricContinuity') assert.equal(value,false,key)
+  assert.ok(r.diagnostics.some(row=>row.code==='IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED'))
+})
+
+test('actual home-run inputs recompute stock and recut the north wall while collisions and absent references reject', () => {
+  const baseline=run(), b=baseline.construction.localHomeRunComparison
+  const higher=run({socketCentreZMm:650}), changed=higher.construction.localHomeRunComparison
+  assert.equal(changed.routes[0]!.tubeLengthMm-b.routes[0]!.tubeLengthMm,50)
+  assert.deepEqual(changed.routes.slice(1),b.routes.slice(1))
+  assert.ok(changed.stock.totalKnownContainmentStockKg>b.stock.totalKnownContainmentStockKg)
+  assert.deepEqual(higher.commonRoom,baseline.commonRoom)
+  assert.deepEqual(higher.kitchen,baseline.kitchen)
+  const narrow=structuredClone(components);narrow.localHomeRunCandidate={...narrow.localHomeRunCandidate,bayWidthMm:310}
+  const rejected=deriveStudyLighting(choices,basis,narrow)
+  assert.equal(rejected.construction.localHomeRunComparison.status,'GEOMETRY_REJECTED')
+  assert.ok(rejected.diagnostics.some(row=>row.code==='IAS_LIGHTING_HOME_RUN_COMPARISON_REJECTED'))
+  const crowded=structuredClone(components);crowded.localHomeRunCandidate={...crowded.localHomeRunCandidate,routeGapMm:6}
+  assert.ok(deriveStudyLighting(choices,basis,crowded).construction.localHomeRunComparison.separations.some(row=>row.reserveMm<0))
+  const wide=structuredClone(components);wide.localHomeRunCandidate={...wide.localHomeRunCandidate,bayWidthMm:420}
+  const cut=deriveStudyLighting(choices,basis,wide)
+  assert.equal(cut.construction.localHomeRunComparison.status,'DECLARED_EXTERNAL_CONTAINMENT_CONTINUOUS')
+  assert.equal(cut.localHomeRunWallDisposition.length,4)
+  assert.deepEqual(cut.commonRoom,baseline.commonRoom)
+  const escaped=structuredClone(components);escaped.localHomeRunCandidate={...escaped.localHomeRunCandidate,stationOffsetXMm:200}
+  const outside=deriveStudyLighting(choices,basis,escaped).construction.localHomeRunComparison
+  assert.equal(outside.status,'GEOMETRY_REJECTED')
+  assert.ok(outside.fieldReservesMm.carrierRight<0)
+  assert.ok(outside.fieldReservesMm.restRight<0)
+  const missing=structuredClone(components);delete (missing as unknown as {localHomeRunCandidate?:unknown}).localHomeRunCandidate
+  assert.throws(()=>deriveStudyLighting(choices,basis,missing),/HOME_RUN_INPUT_INVALID/)
+  const invalid=structuredClone(components);invalid.localHomeRunCandidate={...invalid.localHomeRunCandidate,tubeWallMm:11}
+  assert.throws(()=>deriveStudyLighting(choices,basis,invalid),/HOME_RUN_INPUT_INVALID/)
+  const absentPort=structuredClone(components);absentPort.localHomeRunCandidate={...absentPort.localHomeRunCandidate,lowerPortRearInsetMm:16}
+  assert.equal(deriveStudyLighting(choices,basis,absentPort).construction.localHomeRunComparison.status,'GEOMETRY_REJECTED')
 })

@@ -21,7 +21,7 @@ const unjoinedProfileControl={schema:'had-unjoined-plant-profile-control/1',inpu
 const local = { schema: 'had-local-room-pocket-receipt/1', source: localResult.source, authoredSettings: localResult.settings,
   ground: { source: ground.source, method: ground.method, authoredCase: ground.authoredCase },
   houseVerticalProfile:{source:profile.source,method:profile.method,authoredCase:profile.authoredCase,geometryOnly:true,selectedHouseAdmitted:false},unjoinedProfileControl,
-  sourceOnlyEvent: localResult.bound, branches: localResult.branches, roomCatchment: localResult.roomCatchment, indoorCuts:localResult.joinedDirection.room.indoorCuts, indoorRoutes:localResult.joinedDirection.room.indoorRoutes, bankReceiver:localResult.joinedDirection.room.bankReceiver, bankShelfCarrier:localResult.joinedDirection.room.bankShelfCarrier, splitPlantRoom:localResult.splitPlantRoom,
+  sourceOnlyEvent: localResult.bound, branches: localResult.branches, roomCatchment: localResult.roomCatchment, indoorCuts:localResult.joinedDirection.room.indoorCuts, indoorRoutes:localResult.joinedDirection.room.indoorRoutes, bankReceiver:localResult.joinedDirection.room.bankReceiver, bankShelfCarrier:localResult.joinedDirection.room.bankShelfCarrier, splitPlantRoom:localResult.splitPlantRoom,knownGravityInventory:localResult.knownGravityInventory,
   houseAdopted: false, physicalInstallationAdmitted: false }
 for (const [name, content] of [['inlet-source-envelope.results.json', JSON.stringify(result, null, 2) + '\n'],
   ['inlet-source-envelope.svg', reviewSvg + '\n'],

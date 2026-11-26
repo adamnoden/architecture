@@ -19,6 +19,45 @@ def lighting_svg(page):
     return page.locator('#current-lighting').evaluate("img => decodeURIComponent(img.src.split(',')[1])")
 
 
+def check_ground_pockets(page, args):
+    """Real saved choices and CLI; deferred controls never masquerade as a solve."""
+    from playwright.sync_api import expect
+    source=json.loads(Path(args.ground_pocket_document).read_text())
+    source['stages']['groundPocketLoads']['execution']='deferred'
+    with page.expect_file_chooser() as chooser:
+        page.get_by_role('button',name='Import JSON').click()
+    chooser.value.set_files({'name':'ground-support.json','mimeType':'application/json','buffer':json.dumps(source).encode()})
+    ready(page,0,360000)
+    expect(page.locator('#ground-pocket-controls')).to_be_visible()
+    expect(page.locator('#ground-pocket-result')).to_contain_text('analysis prepared for this saved revision')
+    original_roof=roof_svg(page)
+    page.locator('#ground-contact-pitch').fill('125')
+    page.get_by_role('button',name='Compare floor support').click()
+    ready(page,1,360000)
+    with page.expect_download() as download:
+        page.get_by_role('button',name='Export JSON').click()
+    changed=json.loads(Path(download.value.path()).read_text())
+    expected=json.loads(json.dumps(source))
+    expected['stages']['groundPocketLoads']['settings']['contactPitchMm']=125
+    assert changed==expected
+    assert roof_svg(page)==original_roof
+    compiled=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(changed),text=True,capture_output=True,check=True,timeout=600).stdout)
+    result=compiled['engineering']['groundPocketLoads']
+    assert result['status']=='analysis-pending'
+    assert result['request']['settings']['contactPitchMm']==125
+    assert len(result['request']['structuralFloorBodies'])==2
+    assert all('lobby' not in body['id'] for body in result['request']['structuralFloorBodies'])
+    assert not result['candidateAccepted'] and not result['completeInstalledInventory']
+    page.get_by_role('button',name='Undo',exact=True).click()
+    ready(page,2,360000)
+    expect(page.locator('#ground-contact-pitch')).to_have_value('250')
+    with page.expect_download() as download:
+        page.get_by_role('button',name='Export JSON').click()
+    assert json.loads(Path(download.value.path()).read_text())==source
+    if args.screenshot:page.screenshot(path=args.screenshot,full_page=True)
+    print('PASS saved ground support import/contact edit/export/CLI/undo; real native solve is a separate proof',flush=True)
+
+
 def current_wet_stages(request=None):
     """Project authored choices from the actual current request, not a second model."""
     studies=Path('project/str/studies')
@@ -113,6 +152,7 @@ def main():
     parser.add_argument('--chromium')
     parser.add_argument('--screenshot')
     parser.add_argument('--wet-beam-end-only',action='store_true',help='Run only the actual end-return extension after the initial roof control')
+    parser.add_argument('--ground-pocket-document',help='Run ground-control browser proof on this actual saved engineering document')
     args = parser.parse_args()
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(executable_path=args.chromium)
@@ -121,6 +161,11 @@ def main():
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(args.url)
         ready(page, 0)
+        if args.ground_pocket_document:
+            check_ground_pockets(page,args)
+            assert not errors,errors
+            browser.close()
+            return
         if args.wet_beam_end_only:
             with page.expect_download() as download:
                 page.get_by_role('button',name='Export JSON').click()

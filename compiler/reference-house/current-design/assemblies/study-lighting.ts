@@ -23,7 +23,7 @@ export function readLightingComponents() {
   const data = JSON.parse(read(studyLightingComponentsPath).toString('utf8'))
   if (data.schema !== 'ias-lighting-component-references/1') throw new TypeError('Unsupported lighting component reference schema')
   return data as {
-    cornerConstruction: LightingCornerDetailInput['construction'], commonDepthCornerCandidate: CommonDepthCornerChoices,
+    cornerConstruction: LightingCornerDetailInput['construction'], localHomeRunCandidate: LightingCornerDetailInput['homeRuns'], commonDepthCornerCandidate: CommonDepthCornerChoices,
     socket: { plateWidthMm: number; plateHeightMm: number; recommendedBoxDepthMm: number; bodyDepthMm: number },
     backBox: { widthMm: number; heightMm: number; depthMm: number }, plug: { widthMm: number; heightMm: number; depthMm: number; insertedProjectionMm: number },
     deskLamp: { baseDiameterMm: number; leadLengthMm: number }, floorLamp: { baseDiameterMm: number; leadLengthMm: number },
@@ -185,7 +185,19 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     moduleCentreZMm: W.positionMm[2], moduleSizeMm: corner.module.sizeMm, completeProjectionMm: corner.module.completeProjectionMm,
     moduleMassLimitKg: corner.module.authoredMassLimitKg, socketCentreZMm: request.socketCentreZMm, firstRestPlanMm: parking,
     normalDrawMm: p.panelRoomwardDrawMm, occupied: room.occupied, ceilingZMm: room.ceilingZMm,
-    construction: components.cornerConstruction, boxSizeMm: corner.backBoxSizeMm, plateSizeMm: corner.plateSizeMm })
+    homeRuns: components.localHomeRunCandidate, construction: components.cornerConstruction, boxSizeMm: corner.backBoxSizeMm, plateSizeMm: corner.plateSizeMm })
+  const localHomeRuns = construction.localHomeRunComparison
+  const localHomeRunWallDisposition = room.walls.find(wall => wall.id === 'north-door')!.pieces
+    .filter(piece => intersects(piece.box, [localHomeRuns.bayPlanMm[0]!, localHomeRuns.finishBottomZMm, localHomeRuns.bayPlanMm[2]!, 2100]))
+    .map(piece => {
+      const [a,z,b,top]=piece.box, cutLeft=Math.max(a,localHomeRuns.bayPlanMm[0]!), cutRight=Math.min(b,localHomeRuns.bayPlanMm[2]!)
+      const cutBottom=Math.max(z,localHomeRuns.finishBottomZMm), cutTop=Math.min(top,2100)
+      return { id:piece.id, sourceBoxMm:piece.box, replacedByCandidateBay:true,
+        remainingDecorativeFacesMm:[[a,z,cutLeft,top],[cutRight,z,b,top],[cutLeft,z,cutRight,cutBottom],[cutLeft,cutTop,cutRight,top]]
+          .filter(box=>box[2]!>box[0]!&&box[3]!>box[1]!),
+        newLocalRetainersQualified:false }
+    })
+  if (localHomeRuns.bayPlanMm[0]! < west || localHomeRuns.bayPlanMm[2]! > room.bands.at(-1)![2]) fail('IAS_LIGHTING_HOME_RUN_ROOM_BOUNDARY_REJECTED', 'Widened home-run bay leaves the source-bound room wall.')
   const floorLampRadius = components.floorLamp.baseDiameterMm / 2
   const commonDepthCornerComparison = deriveCommonDepthCorner({ bayPlanMm: bay, coreFaceYMm: construction.coreFaceYMm,
     totalDepthMm: request.serviceTotalDepthMm, fixedBoundaryDepthMm: p.fixedBoundaryDepthMm, settingMm: room.settingMm, fixedRails: construction.fixedRails,
@@ -204,11 +216,12 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     occupiedPlanMm: [...room.occupied, ['reserved-floor-lamp', [floorBase[0] - floorLampRadius, floorBase[1] - floorLampRadius, floorBase[0] + floorLampRadius, floorBase[1] + floorLampRadius]]],
   }, components.commonDepthCornerCandidate)
   fail('IAS_LIGHTING_SUPPLY_INTERFACE_UNBOUND', 'Current occupied source has no bound Study feeder, protection or cable specification. The identified room interface remains unconnected; do not infer an installed circuit.', ['IAS/STUDY/room-supply-interface'])
-  fail('IAS_LIGHTING_RISER_TRANSITION_UNRESOLVED', 'The three local entry branches have different depth axes. Their local bends and collars do not establish a connected common riser, junctions or depth transitions.', construction.containment.localEntryBranches.map(branch => branch.id))
+  fail('IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED', 'Three independent source-to-enclosure containment paths replace the unresolved shared-riser topology as an unselected development direction. Actual box ports, hardware and device connections remain unqualified; the three skirt-top source interfaces have no bound house feed.', construction.localHomeRunComparison.sourceInterfaceIds)
+  for (const issue of construction.localHomeRunComparison.issues) fail('IAS_LIGHTING_HOME_RUN_COMPARISON_REJECTED', issue)
   for (const issue of construction.issues) fail('IAS_LIGHTING_CONSTRUCTION_REJECTED', issue)
   return {
     schema: studyLightingMethod, status: diagnostics.some(d => /REJECTED|MISSING/.test(d.code)) ? 'GEOMETRY_REJECTED' : 'DEVELOPMENT_COMPARISON', request, source: basis.source,
-    caseDigest: sha256SemanticFingerprint({ request, basis, components }), commonRoom: room, arrangements, selectedArrangement: selected.id, corner, serviceStations, fixedInterfaces, construction, commonDepthCornerComparison,
+    caseDigest: sha256SemanticFingerprint({ request, basis, components }), localHomeRunWallDisposition, commonRoom: room, arrangements, selectedArrangement: selected.id, corner, serviceStations, fixedInterfaces, construction, commonDepthCornerComparison,
     leads: { desk: { pathMm: deskLead, routedMm: length(deskLead), suppliedMm: components.deskLamp.leadLengthMm }, floor: { pathMm: floorLead, routedMm: length(floorLead), suppliedMm: components.floorLamp.leadLengthMm },
       side: { pathMm: sideLead, routedMm: length(sideLead), suppliedMm: components.deskLamp.leadLengthMm }, authoredSlackMm: 200 },
     controls: { automationConnected: request.automationConnected, automationRequired: false, ordinaryArrivalWorking: !!selected.roles[0].liveSourceIds.length,
