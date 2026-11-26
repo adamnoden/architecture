@@ -231,6 +231,8 @@ def calculate():
     horizontal = old_target['loads']['valveHorizontalReaction_N']
     vertical = old_target['loads']['valveVerticalReactionWithinAggregate_N']
     moment = vertical * 175
+    # Historical 40 x 40 x 3 comparison ONLY; the drawn carrier remains 20 x 20.
+    # No section wall or mechanical capacity is established for that actual post.
     post_inertia = 75000
     post_displacement = horizontal * 750**3 / (3 * modulus * post_inertia) + moment * 750**2 / (2 * modulus * post_inertia)
     assert old_post['horizontalDeflection_mm'] > 3 > post_displacement
@@ -266,7 +268,11 @@ def calculate():
                    'frame': frame_check, 'wasteCap': cap_clearance, 'raised40mmControl': raised_control,
                    'crew': crew, 'pads': pad_check, 'padApproach': pad_approach,
                    'maxShoulderToFrameGrip': grip_reach, 'maxShoulderToCarrierGrip': carrier_grip_reach},
-        'postComparison': {'section': [40, 40, 3], 'requiredI_mm4': post_inertia, 'movement': post_displacement, 'movementTarget': 3},
+        'postComparison': {'section': [40, 40, 3], 'requiredI_mm4': post_inertia, 'movement': post_displacement, 'movementTarget': 3,
+                           'appliesToDrawnPost': False, 'actualDrawnSectionMm': carrier['compact carrier post'][3:5],
+                           'actualDrawnWallMm': None, 'actualDrawnPostMechanicalScreen': False,
+                           'diagnostics': ['IAS_HOST_POST_SECTION_MISMATCH'],
+                           'nonApplicability': 'The drawn carrier post is 20 x 20 mm with unspecified wall; the retained 40 x 40 x 3 mm / I75000 comparison does not establish its mechanical capacity.'},
         'temporarySupportComparison': {'mastSection': [50, 50, 3], 'requiredI_mm4': mast_inertia,
                                        'upperReactionTarget_N': 100, 'lowerReactionTarget_N': 100, 'horizontalReactionTarget_N': 50,
                                        'movement': mast_movement, 'cornerStressBeforeAxial_MPa': mast_corner_stress,
@@ -304,7 +310,7 @@ def render(record):
 
     geo = record['geometry']
     label(15, 18, 'IAS / Utility host retirement comparison', 5.4)
-    label(15, 29, 'Revised section and supported route to first rest. Fitted services, floor/wall and physical handling remain open.')
+    label(15, 29, 'Geometric route to first rest. Drawn 20 x 20 carrier post mechanics remain unqualified.')
     label(15, 48, 'PLAN / frame positions and retained receiver', 4)
     for box in geo['retainedPlanContext'].values():
         outline(box, 20, 208, .085, '#934e56')
@@ -330,7 +336,7 @@ def render(record):
     label(226, 224, 'The carrier lowers 50 mm and moves 265 mm east onto the receiver.')
     label(226, 233, 'The frame lifts 35 mm, traverses, then lowers 5 mm to its pads.')
     label(15, 254, f"Declared minima: carrier {record['checks']['carrier']['clearance']:.1f} mm, moving frame {record['checks']['frame']['clearance']:.1f} mm.")
-    label(15, 264, f"Original post {record['originalControl']['postMovement']:.3f} mm. Revised 40 mm post {record['postComparison']['movement']:.3f} mm in the same comparison.")
+    label(15, 264, f"Drawn 20 x 20 post: mechanics unqualified. Non-applicable 40 x 40 x 3 comparison: {record['postComparison']['movement']:.3f} mm.")
     label(15, 274, 'The 40 mm lift leaves only 20 mm at the receiving beam. The 35 mm lift retains 25 mm.')
     label(15, 284, 'Four local gravity seats preserve the floor datum. The separate proposed wall restraint carries uplift.')
     return '\n'.join(pieces + ['</svg>']) + '\n'
