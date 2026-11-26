@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T16:34:45.000Z",
-  "expiresAt": "2026-11-26T17:19:45.000Z",
+  "heartbeatAt": "2026-11-26T17:04:05.000Z",
+  "expiresAt": "2026-11-26T17:49:05.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
@@ -36,8 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "9ea8f4cd protects real rear cold tree, union and sink/front clearances. Main38 tests PASS45857804035. Plant catastrophic storage and complete local-user removal still being joined.",
-    "next": "Finish actual full tree/renewal and joined Plant rupture storage, then regenerate new source-bound installation and gravity evidence.",
-    "blocker": "No complete Utility/Plant installation closure or store pressure/temperature contract. Existing40kg host qualification invalidated; no capacity credit."
+    "evidence": "d616aff6 protects actual collision/type repairs. Full U normal case exposes and repairs washer/bowl/H0 clash; child owns U member/hot proof. Parent now authors Plant330L+actual connected inventory/grated containment.",
+    "next": "Finish whole Utility positive installation and replaceable-member proof; execute complete Plant stored-water rupture/backfeed/occupied-storage case.",
+    "blocker": "No complete U/P installation closure. Keep505mm cap until actual floor replan; minimum pipe bores do not bound maximum stored volume."
   }
 }
