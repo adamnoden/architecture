@@ -1,0 +1,33 @@
+name: Perimeter upstand source checkpoint
+on:
+  push:
+    branches: [work/zerg-perimeter-upstand-20261126]
+permissions:
+  contents: read
+jobs:
+  exact-geometry-and-work:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Strict geometry, actual union, solid torsion and six-action work controls
+        run: python3 -B -m unittest discover -s project/str/studies -p perimeter_upstand_test.py -v
+      - name: Preserve source identity and explicit unproved scope
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          paths=['project/str/studies/perimeter_upstand.py','project/str/studies/perimeter_upstand_test.py','compiler/reference-house/current-design/structural-perimeter-upstand-settings.ts']
+          proof={'sourceCommit':os.environ['GITHUB_SHA'],'methodSHA256':{p:hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in paths},'geometryAndWorkControlsPassed':True,'nativeSolvePerformed':False,'candidateAccepted':False,'resistanceAccepted':False}
+          Path('perimeter-upstand-source-proof.json').write_text(json.dumps(proof,indent=2)+'\n')
+          print(json.dumps(proof))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: perimeter-upstand-source-checkpoint
+          path: perimeter-upstand-source-proof.json
+          retention-days: 90
