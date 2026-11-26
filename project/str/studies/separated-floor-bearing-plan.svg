@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1130" viewBox="0 0 1500 1130" role="img"><title>Actual all-four-corner separated bearing comparison</title>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto-start-reverse"><path d="M0 0 L6 3 L0 6" fill="#23714e"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,sans-serif;fill:#252b30}.title{font-size:27px;font-weight:700}.sub{font-size:18px;font-weight:700}.note{font-size:15px}.small{font-size:12px}.red{fill:#a1262f}.blue{fill:#315c86}.gold{fill:#896a20}</style>
+<text x="45.000" y="40.000" class="title" >Separate floor bearing from continuous RC lateral walls</text>
+<text x="45.000" y="69.000" class="sub red" >UNCALCULATED OWNER COMPARISON · same saved house coordinates · source 5ab92bc0</text>
+<text x="65.000" y="101.000" class="sub" >GROUND — new inner masonry seats; current furniture shown</text>
+<rect x="65.000" y="118.000" width="528.000" height="528.000" fill="#fafaf7" stroke="#424d55" />
+<rect x="64.230" y="132.630" width="30.800" height="498.740" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="558.570" y="132.630" width="39.600" height="498.740" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="79.630" y="615.970" width="498.740" height="30.800" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="79.630" y="117.230" width="183.370" height="30.800" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="395.000" y="117.230" width="183.370" height="30.800" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="249.800" y="132.630" width="26.400" height="159.170" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="381.800" y="132.630" width="26.400" height="159.170" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="225.600" y="291.800" width="26.400" height="180.400" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="401.600" y="291.800" width="26.400" height="180.400" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="238.800" y="459.000" width="180.400" height="26.400" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="238.800" y="278.600" width="24.200" height="26.400" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="454.400" y="281.240" width="39.600" height="350.130" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="181.270" y="252.222" width="26.400" height="210.166" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="79.630" y="442.170" width="159.170" height="26.400" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="79.630" y="243.290" width="114.840" height="26.400" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="179.510" y="132.630" width="26.400" height="123.860" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="263.000" y="529.400" width="26.400" height="101.970" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="201.400" y="529.400" width="26.400" height="63.800" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="188.970" y="516.200" width="87.230" height="26.400" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="368.600" y="529.400" width="26.400" height="101.970" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="381.800" y="516.200" width="92.400" height="26.400" fill="none" stroke="#b5bec5" stroke-dasharray="3 3" opacity=".48"/>
+<rect x="252.000" y="305.000" width="154.000" height="154.000" fill="#fff" stroke="#87929c" />
+<text x="299.000" y="382.000" class="small" >COURT</text>
+<rect x="273.120" y="593.200" width="6.160" height="52.800" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="273.120" y="529.400" width="6.160" height="63.800" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="211.520" y="529.400" width="6.160" height="63.800" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="214.600" y="590.120" width="61.600" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="188.970" y="526.320" width="87.230" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="185.890" y="503.110" width="6.160" height="26.290" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="65.000" y="500.030" width="123.970" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="378.720" y="529.400" width="6.160" height="116.600" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="381.800" y="526.320" width="92.400" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="471.120" y="281.240" width="6.160" height="364.760" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="474.200" y="530.720" width="118.800" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="474.200" y="480.120" width="118.800" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="474.200" y="384.310" width="118.800" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="65.000" y="253.410" width="192.610" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="397.310" y="276.510" width="195.690" height="9.460" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="254.530" y="118.000" width="6.160" height="187.000" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="397.310" y="118.000" width="6.160" height="187.000" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="190.158" y="252.222" width="4.400" height="210.166" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="188.970" y="456.800" width="44.132" height="4.400" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="417.550" y="456.800" width="59.730" height="4.400" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="478.468" y="294.330" width="114.532" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="471.120" y="316.000" width="6.160" height="52.800" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="254.530" y="283.990" width="148.940" height="12.760" fill="#dce6ef" stroke="#315c86" />
+<rect x="254.530" y="283.990" width="9.350" height="12.760" fill="#fff" stroke="#a1262f" stroke-width="2"/>
+<rect x="394.120" y="283.990" width="9.350" height="12.760" fill="#fff" stroke="#a1262f" stroke-width="2"/>
+<rect x="254.530" y="126.250" width="148.940" height="12.760" fill="#dce6ef" stroke="#315c86" />
+<rect x="254.530" y="126.250" width="9.350" height="12.760" fill="#fff" stroke="#a1262f" stroke-width="2"/>
+<rect x="394.120" y="126.250" width="9.350" height="12.760" fill="#fff" stroke="#a1262f" stroke-width="2"/>
+<rect x="76.550" y="590.450" width="8.800" height="44.000" fill="#7398b9" stroke="#315c86" />
+<rect x="85.350" y="625.650" width="35.200" height="8.800" fill="#7398b9" stroke="#315c86" />
+<rect x="85.790" y="590.010" width="6.160" height="35.200" fill="#e5c773" stroke="#896a20" />
+<rect x="91.950" y="619.050" width="29.040" height="6.160" fill="#e5c773" stroke="#896a20" />
+<rect x="76.550" y="588.822" width="16.588" height="45.628" fill="none" stroke="#896a20" stroke-dasharray="3 2"/>
+<rect x="93.138" y="617.862" width="29.040" height="16.588" fill="none" stroke="#896a20" stroke-dasharray="3 2"/>
+<text x="86.630" y="624.370" class="small blue" >SW</text>
+<rect x="572.650" y="590.450" width="8.800" height="44.000" fill="#7398b9" stroke="#315c86" />
+<rect x="537.450" y="625.650" width="35.200" height="8.800" fill="#7398b9" stroke="#315c86" />
+<rect x="566.050" y="590.010" width="6.160" height="35.200" fill="#e5c773" stroke="#896a20" />
+<rect x="537.010" y="619.050" width="29.040" height="6.160" fill="#e5c773" stroke="#896a20" />
+<rect x="564.862" y="588.822" width="16.588" height="45.628" fill="none" stroke="#896a20" stroke-dasharray="3 2"/>
+<rect x="535.822" y="617.862" width="29.040" height="16.588" fill="none" stroke="#896a20" stroke-dasharray="3 2"/>
+<text x="585.370" y="624.370" class="small blue" >SE</text>
+<rect x="76.550" y="129.550" width="8.800" height="44.000" fill="#7398b9" stroke="#315c86" />
+<rect x="85.350" y="129.550" width="35.200" height="8.800" fill="#7398b9" stroke="#315c86" />
+<rect x="85.790" y="138.790" width="6.160" height="35.200" fill="#e5c773" stroke="#896a20" />
+<rect x="91.950" y="138.790" width="29.040" height="6.160" fill="#e5c773" stroke="#896a20" />
+<rect x="76.550" y="129.550" width="16.588" height="45.628" fill="none" stroke="#896a20" stroke-dasharray="3 2"/>
+<rect x="93.138" y="129.550" width="29.040" height="16.588" fill="none" stroke="#896a20" stroke-dasharray="3 2"/>
+<text x="86.630" y="125.630" class="small blue" >NW</text>
+<rect x="572.650" y="129.550" width="8.800" height="44.000" fill="#7398b9" stroke="#315c86" />
+<rect x="537.450" y="129.550" width="35.200" height="8.800" fill="#7398b9" stroke="#315c86" />
+<rect x="566.050" y="138.790" width="6.160" height="35.200" fill="#e5c773" stroke="#896a20" />
+<rect x="537.010" y="138.790" width="29.040" height="6.160" fill="#e5c773" stroke="#896a20" />
+<rect x="564.862" y="129.550" width="16.588" height="45.628" fill="none" stroke="#896a20" stroke-dasharray="3 2"/>
+<rect x="535.822" y="129.550" width="29.040" height="16.588" fill="none" stroke="#896a20" stroke-dasharray="3 2"/>
+<text x="585.370" y="125.630" class="small blue" >NE</text>
+<rect x="94.920" y="588.800" width="70.400" height="30.800" fill="#f4dddf" stroke="#b14850" />
+<text x="130.120" y="604.200" class="small red" >1</text>
+<rect x="104.600" y="544.800" width="44.000" height="39.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="220.650" y="560.750" width="49.500" height="26.400" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="447.800" y="591.000" width="17.600" height="28.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="392.800" y="602.000" width="17.600" height="17.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="483.440" y="443.600" width="30.800" height="30.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="478.600" y="408.400" width="24.200" height="30.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="83.898" y="137.800" width="13.200" height="33.000" fill="#f4dddf" stroke="#b14850" />
+<text x="90.498" y="154.300" class="small red" >2</text>
+<rect x="100.200" y="166.400" width="37.400" height="83.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="100.200" y="152.100" width="13.200" height="13.200" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="167.850" y="181.800" width="83.600" height="33.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="236.600" y="217.000" width="13.200" height="13.200" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="439.000" y="192.800" width="35.200" height="52.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="417.000" y="221.400" width="22.000" height="22.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="417.000" y="195.000" width="22.000" height="22.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="474.200" y="221.400" width="22.000" height="22.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="474.200" y="195.000" width="22.000" height="22.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="447.800" y="136.898" width="39.600" height="26.400" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="538.000" y="136.898" width="26.400" height="26.400" fill="#f4dddf" stroke="#b14850" />
+<text x="551.200" y="150.098" class="small red" >3</text>
+<rect x="545.502" y="220.300" width="28.600" height="28.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="567.700" y="143.872" width="6.380" height="9.856" fill="#f4dddf" stroke="#b14850" />
+<text x="570.890" y="148.800" class="small red" >4</text>
+<rect x="83.898" y="537.100" width="8.800" height="50.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="83.898" y="173.000" width="8.800" height="41.800" fill="#f4dddf" stroke="#b14850" />
+<text x="88.298" y="193.900" class="small red" >5</text>
+<rect x="201.510" y="136.898" width="41.800" height="8.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="565.302" y="159.800" width="8.800" height="59.400" fill="#f4dddf" stroke="#b14850" />
+<text x="569.702" y="189.500" class="small red" >6</text>
+<rect x="565.302" y="539.168" width="8.800" height="28.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="548.120" y="470.132" width="24.200" height="8.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="219.000" y="516.310" width="24.200" height="8.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="461.132" y="538.200" width="8.800" height="24.200" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="511.600" y="398.500" width="26.400" height="26.400" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="544.402" y="391.658" width="28.600" height="13.200" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="507.200" y="584.400" width="28.600" height="30.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="546.800" y="584.400" width="26.400" height="30.800" fill="#f4dddf" stroke="#b14850" />
+<text x="560.000" y="599.800" class="small red" >7</text>
+<rect x="507.200" y="615.200" width="66.000" height="11.000" fill="#f4dddf" stroke="#b14850" />
+<text x="540.200" y="620.700" class="small red" >8</text>
+<rect x="535.800" y="584.400" width="11.000" height="30.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="478.468" y="540.400" width="13.200" height="28.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="478.600" y="616.102" width="22.000" height="11.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="489.600" y="136.898" width="44.000" height="8.800" fill="#eef0f1" stroke="#b8bfc5" />
+<line x1="68.350" y1="605.850" x2="102.350" y2="605.850" stroke="#23714e" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="105.150" y1="642.650" x2="105.150" y2="608.650" stroke="#23714e" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="68.350" y1="158.150" x2="102.350" y2="158.150" stroke="#23714e" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="94.630" y="593.370" class="small" >A: X + Y</text>
+<text x="94.630" y="172.630" class="small" >B: X only</text>
+<text x="463.370" y="593.370" class="small" >in-plane free</text>
+<text x="463.370" y="172.630" class="small" >in-plane free</text>
+<text x="65.000" y="682.000" class="small" >12,000mm source envelope · solid outlines are actual source wall/furniture context</text>
+<text x="805.000" y="101.000" class="sub" >FIRST — continuous 200 mm RC; no new 140 mm wall above slab</text>
+<rect x="805.000" y="118.000" width="528.000" height="528.000" fill="#fafaf7" stroke="#424d55" />
+<rect x="992.000" y="305.000" width="154.000" height="154.000" fill="#fff" stroke="#87929c" />
+<text x="1039.000" y="382.000" class="small" >COURT</text>
+<rect x="1013.120" y="529.400" width="6.160" height="116.600" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="928.970" y="526.320" width="87.230" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="925.890" y="503.110" width="6.160" height="26.290" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="805.000" y="500.030" width="123.970" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="1118.720" y="529.400" width="6.160" height="116.600" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="1121.800" y="526.320" width="92.400" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="1211.120" y="360.000" width="6.160" height="169.400" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="1214.200" y="480.120" width="118.800" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="1214.200" y="356.920" width="118.800" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="932.710" y="253.410" width="64.900" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="994.530" y="256.490" width="6.160" height="36.960" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="1137.310" y="276.510" width="76.890" height="9.460" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="1137.310" y="118.000" width="6.160" height="168.630" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="929.630" y="118.000" width="6.160" height="138.490" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="1211.120" y="281.240" width="6.160" height="78.760" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="1214.200" y="276.510" width="118.800" height="9.460" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="805.000" y="253.410" width="127.710" height="6.160" fill="#dfe2e3" stroke="#a0a8ae" />
+<rect x="994.530" y="283.990" width="148.940" height="12.760" fill="#dce6ef" stroke="#315c86" />
+<rect x="994.530" y="283.990" width="9.350" height="12.760" fill="#fff" stroke="#a1262f" stroke-width="2"/>
+<rect x="1134.120" y="283.990" width="9.350" height="12.760" fill="#fff" stroke="#a1262f" stroke-width="2"/>
+<rect x="994.530" y="126.250" width="148.940" height="12.760" fill="#dce6ef" stroke="#315c86" />
+<rect x="994.530" y="126.250" width="9.350" height="12.760" fill="#fff" stroke="#a1262f" stroke-width="2"/>
+<rect x="1134.120" y="126.250" width="9.350" height="12.760" fill="#fff" stroke="#a1262f" stroke-width="2"/>
+<rect x="816.550" y="590.450" width="8.800" height="44.000" fill="#7398b9" stroke="#315c86" />
+<rect x="825.350" y="625.650" width="35.200" height="8.800" fill="#7398b9" stroke="#315c86" />
+<text x="826.630" y="624.370" class="small blue" >SW</text>
+<rect x="1312.650" y="590.450" width="8.800" height="44.000" fill="#7398b9" stroke="#315c86" />
+<rect x="1277.450" y="625.650" width="35.200" height="8.800" fill="#7398b9" stroke="#315c86" />
+<text x="1325.370" y="624.370" class="small blue" >SE</text>
+<rect x="816.550" y="129.550" width="8.800" height="44.000" fill="#7398b9" stroke="#315c86" />
+<rect x="825.350" y="129.550" width="35.200" height="8.800" fill="#7398b9" stroke="#315c86" />
+<text x="826.630" y="125.630" class="small blue" >NW</text>
+<rect x="1312.650" y="129.550" width="8.800" height="44.000" fill="#7398b9" stroke="#315c86" />
+<rect x="1277.450" y="129.550" width="35.200" height="8.800" fill="#7398b9" stroke="#315c86" />
+<text x="1325.370" y="125.630" class="small blue" >NE</text>
+<rect x="853.400" y="508.698" width="41.800" height="90.420" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="982.892" y="559.430" width="29.040" height="39.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1242.470" y="488.788" width="41.800" height="90.420" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1126.068" y="533.910" width="29.040" height="66.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1042.842" y="173.000" width="88.000" height="66.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1130.842" y="173.000" width="3.960" height="66.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="938.848" y="185.760" width="66.000" height="29.040" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1220.822" y="173.000" width="88.000" height="70.400" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1308.822" y="173.000" width="3.960" height="70.400" fill="#f4dddf" stroke="#b14850" />
+<rect x="1145.978" y="170.800" width="29.040" height="66.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="884.310" y="208.090" width="44.000" height="44.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="837.098" y="146.380" width="24.640" height="15.620" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="849.000" y="242.410" width="17.600" height="9.680" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="823.898" y="137.800" width="13.200" height="33.000" fill="#f4dddf" stroke="#b14850" />
+<rect x="823.898" y="170.800" width="6.600" height="37.950" fill="#f4dddf" stroke="#b14850" />
+<rect x="1218.600" y="316.000" width="39.600" height="39.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1287.790" y="295.210" width="15.620" height="24.640" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1218.600" y="291.800" width="14.960" height="19.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1221.240" y="448.000" width="74.800" height="30.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1279.210" y="377.380" width="24.640" height="15.620" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1299.010" y="397.400" width="14.960" height="19.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1218.468" y="407.300" width="26.400" height="33.000" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1304.070" y="288.280" width="7.920" height="7.920" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1302.090" y="364.400" width="11.880" height="11.660" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="955.700" y="618.302" width="41.800" height="8.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1140.500" y="618.302" width="41.800" height="8.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="941.510" y="136.898" width="46.200" height="8.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1228.500" y="136.898" width="50.600" height="8.800" fill="#f4dddf" stroke="#b14850" />
+<rect x="897.400" y="137.030" width="28.600" height="8.800" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1305.170" y="418.300" width="8.800" height="28.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1305.170" y="319.300" width="8.800" height="28.600" fill="#eef0f1" stroke="#b8bfc5" />
+<rect x="1164.920" y="428.200" width="8.800" height="24.200" fill="#eef0f1" stroke="#b8bfc5" />
+<text x="805.000" y="682.000" class="small" >12,000mm source envelope · solid outlines are actual source wall/furniture context</text>
+<rect x="48.000" y="710.000" width="1400.000" height="1.000" fill="#c0c7cc" stroke="#c0c7cc" />
+<text x="50.000" y="746.000" class="sub" >Space and interfaces that the new topology costs</text>
+<text x="50.000" y="775.000" class="note" >Blue: continuous RC200   Gold: separate 140 mm masonry bearing   Dashed: actual ground grid / new finished reserve</text>
+<text x="50.000" y="802.000" class="note" >Ground finished face489.5 → 639.5mm: +150mm projection; +0.8868m² ground area lost.</text>
+<text x="50.000" y="829.000" class="note" >New lower-body envelopeG +54.7792kN at20kN/m³; floor/gap/bed replacement ledger still required.</text>
+<text x="50.000" y="859.000" class="note red" >Red numbered items need an actual room/service replan; * already conflicts with the source RC200 reserve.</text>
+<text x="50.000" y="889.000" class="note red" >1. study-desk</text>
+<text x="760.000" y="889.000" class="note red" >2. rear-stack *</text>
+<text x="50.000" y="914.000" class="note red" >3. north-cooking-station *</text>
+<text x="760.000" y="914.000" class="note red" >4. service-kitchen-feed-column *</text>
+<text x="50.000" y="939.000" class="note red" >5. service-emitter-living-W *</text>
+<text x="760.000" y="939.000" class="note red" >6. service-emitter-kitchen-E *</text>
+<text x="50.000" y="964.000" class="note red" >7. service-utility-sink *</text>
+<text x="760.000" y="964.000" class="note red" >8. service-utility-rearServiceChase *</text>
+<text x="50.000" y="1030.000" class="note red" >FIRST: unchanged upper RC footprint is not a room pass. Existing upper furniture/service conflicts remain visible.</text>
+<text x="50.000" y="1057.000" class="note red" >Four red northern pier-top seats also release the floor beams; gravity support stays. Arch/pier stability remains OPEN.</text>
+<text x="50.000" y="1084.000" class="sub red" >Four corner separations + four northern seats + three H interfaces: new mechanics and room/service replans remain OPEN.</text>
+</svg>

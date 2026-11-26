@@ -1,0 +1,166 @@
+{
+  "schema": "str-separated-floor-bearing-observed/1",
+  "run": {
+    "id": 45845397462,
+    "jobId": 139997613653,
+    "sourceHead": "6f357fd6aa242f5fe105c6b15f9c7dae58522e3d",
+    "conclusion": "success",
+    "controlsPassed": 9,
+    "houseSolves": 0,
+    "svgXmlValidated": true,
+    "bothChromiumRendersInspected": true
+  },
+  "artifact": {
+    "id": 15130861918,
+    "bytes": 339873,
+    "sha256": "bb1de2c3cec2341e6d56f965390f1ac5118bdf6cee639e4d473390989354256f",
+    "expires": "2027-02-24T15:04:37Z"
+  },
+  "observedSummary": {
+    "sourceCommit": "5ab92bc0cf8e88a0f5ea700ba065c2552348c4f3",
+    "newGroundFinishedFaceSWMm": 639.5,
+    "newFinishedToeSWMm": 1299.5,
+    "addedGroundFinishedAreaLossM2": 0.8868,
+    "newLowerBodyEnvelopeComparisonGKN": 54.7792,
+    "allNewCornerGravityFootprintsOnActualGroundGirders": true,
+    "northPortalFloorBeamInterfaces": [
+      {
+        "wallId": "court-north",
+        "upstandRectangleXYMm": [
+          4307.5,
+          7937.5,
+          7692.5,
+          8227.5
+        ],
+        "upstandZMm": [
+          3170,
+          3820
+        ],
+        "prospectiveCompressionBeds": [
+          {
+            "id": "court-north/west/prospective-sliding-bed",
+            "headId": "P28",
+            "rectangleXYMm": [
+              4307.5,
+              7937.5,
+              4520,
+              8227.5
+            ],
+            "contactPlaneZMm": 3170,
+            "bedThicknessAndMaterialSelected": false,
+            "postTopCropForBedThicknessRequired": true
+          },
+          {
+            "id": "court-north/east/prospective-sliding-bed",
+            "headId": "P30",
+            "rectangleXYMm": [
+              7480,
+              7937.5,
+              7692.5,
+              8227.5
+            ],
+            "contactPlaneZMm": 3170,
+            "bedThicknessAndMaterialSelected": false,
+            "postTopCropForBedThicknessRequired": true
+          }
+        ],
+        "beamIntegralWithFloorRetained": true,
+        "postStabilityAndArchThrustAfterReleaseQualified": false
+      },
+      {
+        "wallId": "outer-north",
+        "upstandRectangleXYMm": [
+          4307.5,
+          11522.5,
+          7692.5,
+          11812.5
+        ],
+        "upstandZMm": [
+          3170,
+          3920
+        ],
+        "prospectiveCompressionBeds": [
+          {
+            "id": "outer-north/west/prospective-sliding-bed",
+            "headId": "P25",
+            "rectangleXYMm": [
+              4307.5,
+              11522.5,
+              4520,
+              11812.5
+            ],
+            "contactPlaneZMm": 3170,
+            "bedThicknessAndMaterialSelected": false,
+            "postTopCropForBedThicknessRequired": true
+          },
+          {
+            "id": "outer-north/east/prospective-sliding-bed",
+            "headId": "P26",
+            "rectangleXYMm": [
+              7480,
+              11522.5,
+              7692.5,
+              11812.5
+            ],
+            "contactPlaneZMm": 3170,
+            "bedThicknessAndMaterialSelected": false,
+            "postTopCropForBedThicknessRequired": true
+          }
+        ],
+        "beamIntegralWithFloorRetained": true,
+        "postStabilityAndArchThrustAfterReleaseQualified": false
+      }
+    ],
+    "horizontalConstraintPointsXYMm": [
+      [
+        462.5,
+        912.5
+      ],
+      [
+        912.5,
+        462.5
+      ],
+      [
+        462.5,
+        11087.5
+      ]
+    ],
+    "maximumAbsoluteThreeConstraintForceKN": [
+      94.581,
+      94.581,
+      94.58099999999997
+    ],
+    "maximumThreeConstraintFloorPressureEquilibriumResidualKN_KNm": 2.2737367544323206e-13,
+    "maximumUnclosedOutOfPlanePressureMomentKNm": 9.45810000000003,
+    "thermalIllustration": {
+      "assumedUniformStrain": 0.00030000000000000003,
+      "fixedExpansionOriginXYMm": [
+        462.5,
+        462.5
+      ],
+      "threeConstraintResidualMm": [
+        0,
+        0,
+        0
+      ],
+      "NEFreeMovementXYMm": [
+        3.3225000000000002,
+        3.3225000000000002
+      ],
+      "temperatureAndExpansionAreSelectedForIllustrationOnly": true
+    },
+    "svgSHA256": {
+      "separated-floor-bearing-plan.svg": "bd4b39d27b9368432c3d307a5dc41055832b0dd10f49523af6912a008601c5ba",
+      "separated-floor-bearing-section.svg": "8e0cbb1a6ae54375d850e507cc30760410730211c0ae1f21601b87cc5a3921db"
+    },
+    "fullHouseReactionsCalculated": false,
+    "allFourFiniteJointsResolved": false
+  },
+  "sourceMethodGitBlobs": {
+    "project/str/studies/separated_floor_bearing.py": "28ff41eadf2759fb21ba3d2ef5156763c529948c",
+    "project/str/studies/separated_floor_bearing_test.py": "9460b8bbc535ca88d1c986e3431ff0a2bf2a1026",
+    "project/str/studies/separated-floor-bearing-inputs.json": "acf7648ddc1b1cb6d966d30baf6c997c3de9a18a",
+    ".github/workflows/separated-floor-bearing-geometry.yml": "c142c846f36ae64f714e0d8c2f1738f777f28cec"
+  },
+  "scope": "Parsed actual hosted output and exact rendered SVG identities. The96 entries are native pressure-only necessary three-constraint statics, not96 new houses or a complete actual floor-pressure/roof programme. No mechanical producer/current account changed; four corner and four northern release interfaces, three H connections, strength and owner acceptance remain unresolved."
+}
