@@ -247,7 +247,7 @@
       },
       "ordinaryShoulderMm": [
         10680,
-        1530,
+        1500,
         1150
       ],
       "availableAfterFirstPull": false,
@@ -255,7 +255,11 @@
       "maximumWallMm": 1.3,
       "floorOperatorXYMm": [
         10700,
-        1800
+        1795
+      ],
+      "gripSectorDegrees": [
+        -90,
+        -60
       ]
     },
     "sink": {
@@ -420,7 +424,24 @@
         1280,
         60,
         60
-      ]
+      ],
+      "maximumOutletBoreMm": [
+        15.1,
+        15.1
+      ],
+      "independentPressureComponents": [
+        {
+          "id": "U/head-cold-pillar",
+          "inlet": "coldPortMm",
+          "outletIndex": 0
+        },
+        {
+          "id": "P/head-hot-pillar",
+          "inlet": "hotPortMm",
+          "outletIndex": 1
+        }
+      ],
+      "airGapDesignScreen": "net lip-to900floodrim after two10 settings >= two actual bounded outlet bores; separate pillars have no mixer bridge"
     },
     "normalWholeHouseIsolation": [
       "U/internal-cut",
@@ -507,7 +528,7 @@
       "headCapturedBeforeAnyRailReleaseRequired": true,
       "headCapture": {
         "schema": "had-utility-floor-head-capture/1",
-        "method": "temporary-floor-seated-low-fork-trolley",
+        "method": "static-floor-seated-head-capture",
         "postsXYMm": [
           [
             10965,
@@ -531,28 +552,28 @@
         "soleCrossMm": 50,
         "soleThicknessMm": 6,
         "headTrackYMm": [
-          900,
-          1100
+          860,
+          1120
         ],
         "liftingEyesMm": [
           [
-            10945,
-            900,
+            10965,
+            860,
             700
           ],
           [
             11200,
-            900,
+            860,
             700
           ],
           [
-            10945,
-            1100,
+            10965,
+            1120,
             700
           ],
           [
             11200,
-            1100,
+            1120,
             700
           ]
         ],
@@ -763,23 +784,22 @@
           "actualToolProductQualified": false,
           "sourceHighControlMm": 1500
         },
-        "capturePointMeaning": "factory reinforced under-bowl bearing/capture ribs; not lifting eyes",
+        "capturePointMeaning": "four positive factory under-bowl ribs on two fixed EW crossbearers carried by one NS fork; not lifting eyes",
         "fullDryFrameKnockedDownWhileHeadCapturedBeforeWestMovement": true,
         "rejectedGantryIsHistoricalControlOnly": true,
         "fork": {
           "axisXMm": [
-            10945,
-            11190
+            11160
           ],
           "rearTipYMm": 800,
           "rootYMm": 1450,
-          "bottomMm": 665,
+          "bottomMm": 670,
           "widthMm": 30,
           "depthMm": 30,
-          "rootPadHeightMm": 5,
+          "rootPadHeightMm": 0,
           "minimumIMM4": 45000,
           "minimumAreaMM2": 400,
-          "strokeMm": 380,
+          "strokeMm": 400,
           "liftColumnTopMm": 1100,
           "baseTopMm": 80,
           "maximumCapturedWetHeadKg": 20,
@@ -811,11 +831,15 @@
             750
           ],
           "maximumControllableRollingForceN": 30,
-          "actualCasterAndPhysicalHandlingQualified": false
+          "actualCasterAndPhysicalHandlingQualified": false,
+          "role": "historical WEST-motion comparison only"
         },
         "minimumCapturedDryHeadKg": 10,
         "minimumFactorySheetMm": 2,
-        "minimumFactoryHeadStockDensityKgM3": 7700
+        "minimumFactoryHeadStockDensityKgM3": 7700,
+        "wholeHeadWestParkRequiredForOrdinaryRenewal": false,
+        "wholeHeadSouthShiftRequiredForOrdinaryRenewal": false,
+        "wholeMotionComparisonRole": "historical stress control only; ordinary frame/hotspool work keeps head captured above original plan"
       },
       "memberJointDesign": {
         "schema": "had-utility-bolted-member-end/1",
@@ -853,9 +877,12 @@
         },
         "actualReceiverWeldBoltMaterialAndLocalHSSProofAccepted": false,
         "memberEndGapMm": 25,
-        "seatTravelsWithCapturedRail": true
+        "seatTravelsWithCapturedRail": true,
+        "captiveNutsAccessibleFromNorth": true,
+        "maximumSocketRadiusMm": 10,
+        "minimumSocketExtensionMm": 100
       },
-      "headRemovedBeforeOtherFrameWork": true,
+      "headRemovedBeforeOtherFrameWork": false,
       "firstRailReleaseAfterPositiveHeadCapture": "IAS/frame/EW rail at y750 / z850",
       "temporaryBracing": {
         "schema": "had-utility-temporary-pinned-braces/1",
@@ -887,34 +914,12 @@
             ]
           },
           {
-            "id": "rear/descending",
-            "endsMm": [
-              [
-                11445,
-                750,
-                150
-              ],
-              [
-                10895,
-                750,
-                780
-              ]
-            ],
-            "mateFrameIds": [
-              "IAS/frame/leg 1",
-              "IAS/frame/leg 3",
-              "IAS/frame/EW rail at y750 / z135",
-              "IAS/frame/NS rail at x10975 / z135",
-              "IAS/frame/NS rail at x11525 / z135"
-            ]
-          },
-          {
             "id": "left/ascending",
             "endsMm": [
               [
                 10895,
                 750,
-                150
+                500
               ],
               [
                 10895,
@@ -936,7 +941,7 @@
               [
                 11445,
                 750,
-                150
+                500
               ],
               [
                 11445,
@@ -961,7 +966,9 @@
         "pinDiameterMm": 8,
         "positiveFloorLocatingAndHoldDownRequired": true,
         "actualPinSleeveHSSWallAndFloorResistanceAccepted": false
-      }
+      },
+      "headCapturedAboveFrameBeforeOtherMemberReleaseRequired": true,
+      "onlyOneDryMemberReleasedAtATime": true
     },
     "hotService": {
       "schema": "had-utility-hot-head/1",
@@ -1018,6 +1025,224 @@
       "minimumRequiredGaugeRatingBar": 9.2,
       "normalWaterDesignTemperatureC": 60,
       "headCapturedBeforeFrontRailReleaseRequired": true
+    },
+    "wasteService": {
+      "schema": "had-utility-visible-metal-waste/1",
+      "headOutletMm": [
+        11240,
+        990,
+        700
+      ],
+      "bowlOutletHoleMm": 110,
+      "topAccessFixingRadiusMm": 70,
+      "headFlangeMm": [
+        170,
+        10
+      ],
+      "fixedNeckMm": [
+        80,
+        50
+      ],
+      "neckVirtualMm": [
+        [
+          11240,
+          990,
+          640
+        ],
+        [
+          11240,
+          990,
+          520
+        ],
+        [
+          11200,
+          1100,
+          480
+        ],
+        [
+          11200,
+          1100,
+          330
+        ]
+      ],
+      "neckRadiusMm": 60,
+      "potBoxMm": [
+        11150,
+        1050,
+        300,
+        100,
+        100,
+        220
+      ],
+      "minimumWaterSealMm": 50,
+      "outfallVirtualMm": [
+        [
+          11200,
+          1100,
+          480
+        ],
+        [
+          10730,
+          1100,
+          450
+        ],
+        [
+          10730,
+          1295,
+          430
+        ],
+        [
+          10730,
+          1295,
+          300
+        ],
+        [
+          10795,
+          1295,
+          225
+        ],
+        [
+          10795,
+          1295,
+          125
+        ]
+      ],
+      "outfallRadiusMm": 60,
+      "maximumTubeODMm": 42.1,
+      "minimumTubeODMm": 41.9,
+      "minimumWallMm": 1.02,
+      "minimumClearBoreAfterFormingMm": 37,
+      "serviceCut": {
+        "id": "Utility/waste-backfeed-cut",
+        "pathIndex": 0,
+        "axisXMm": 10950,
+        "completeFaceMm": 200,
+        "bareCrossMm": 100,
+        "controlNorthYMm": 1420,
+        "maximumDryStemDiameterMm": 20,
+        "minimumPressureDifferentialPa": 200000
+      },
+      "captiveHeadBlind": {
+        "id": "Utility/head-waste-captive-blind",
+        "maximumODMm": 60,
+        "bottomMm": 695,
+        "heightMm": 10,
+        "installedAfterCutClosedAndFiniteDrainBeforeHeadRelease": true
+      },
+      "drainPathMm": [
+        [
+          11250,
+          1100,
+          320
+        ],
+        [
+          11300,
+          1100,
+          300
+        ],
+        [
+          11300,
+          1400,
+          260
+        ],
+        [
+          11300,
+          1400,
+          180
+        ]
+      ],
+      "drainValve": {
+        "axisMm": [
+          11300,
+          1400,
+          260
+        ],
+        "faceMm": 60,
+        "bareCrossMm": 40,
+        "controlMm": [
+          11300,
+          1400,
+          720
+        ],
+        "maximumDryStemDiameterMm": 20,
+        "maximumOrificeMm": 2,
+        "removableDryExtension": {
+          "id": "Utility/waste-drain-dry-extension",
+          "fixedStubTopMm": 320,
+          "releaseUpMm": 120,
+          "northToRestMm": 150,
+          "restBottomMm": [
+            11300,
+            1550,
+            440
+          ],
+          "maximumDryKg": 1.5,
+          "actualKeeperAndPhysicalHandlingQualified": false
+        }
+      },
+      "receiverOuterMm": [
+        11040,
+        1200,
+        0,
+        360,
+        340,
+        90
+      ],
+      "maximumReceiverWallMm": 2,
+      "minimumVerifiedUsableL": 10,
+      "maximumPartialBatchL": 5,
+      "maximumBowlResidualBeforeWasteCutL": 0.2,
+      "maximumCapturedHeadResidualL": 2,
+      "tool": {
+        "headShoulderMm": [
+          11155,
+          1700,
+          1350
+        ],
+        "headGripYMm": 1230,
+        "headGripZMm": 1125,
+        "maximumShaftRadiusMm": 10,
+        "minimumWorkingLengthMm": 550,
+        "minimumUniversalAngleDegrees": 35,
+        "cutShoulderMm": [
+          11155,
+          1700,
+          750
+        ],
+        "drainShoulderMm": [
+          11155,
+          1700,
+          1100
+        ],
+        "bodyFloorXYMm": [
+          11025,
+          1900
+        ],
+        "maximumReachMm": 600
+      },
+      "normalDesignWaterC": 60,
+      "maintenanceMaximumC": 40,
+      "designFaultWaterC": 99,
+      "actualFactoryTrapSealStrainerBlankTubeToolsMaterialAndRetainedCapMatchQualified": false,
+      "bowlWallMm": 2,
+      "headFixingCount": 3,
+      "headFixingDiameterMm": 6,
+      "maximumHeadFixingTorqueNm": 6,
+      "designNote": "220mm pot encloses480mm outlet; dip330 gives150mm geometric seal. Source dimensions are design requirements, not purchased part approval.",
+      "independentSupport": {
+        "wallBeamXMm": 11220,
+        "wallBeamAxisZMm": 250,
+        "wallBeamEndYMm": 1260,
+        "beamSectionMm": 50,
+        "minimumIMM4": 190000,
+        "minimumAreaMm2": 500,
+        "potSeatMm": [
+          11220,
+          1100,
+          300
+        ],
+        "actualWallReceiverAndClampResistanceQualified": false
+      }
     }
   },
   "terminalLocalMm": [

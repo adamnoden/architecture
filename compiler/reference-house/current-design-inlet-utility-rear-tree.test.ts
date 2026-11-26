@@ -117,7 +117,7 @@ test('real H0 body rejects prior operator feet and accepts the current bounded s
  const rejected=run(prior).geometry.failures
  assert.ok(rejected.some(q=>q.phase==='operation'&&q.id==='washer/body/actual-hot-H0-body'&&q.reserveMm<0))
  assert.ok(rejected.some(q=>q.phase==='operation'&&q.id==='sink/body/actual-hot-H0-body'&&q.reserveMm<0))
- assert.deepEqual(choice.coldDistribution.washer.floorOperatorXYMm,[10700,1800])
+ assert.deepEqual(choice.coldDistribution.washer.floorOperatorXYMm,[10700,1795])
  assert.deepEqual(choice.coldDistribution.prefabSinkHead.floorOperatorXYMm,[11025,1775])
  assert.equal(run().geometry.normalNecessary,true)
 })
@@ -125,7 +125,7 @@ test('new normal west washer/up spindle avoids the actual bowl and H0 arm; previ
  const r=run(),d=choice.coldDistribution
  assert.deepEqual(d.washer.stop.axisMm,[10800,1000,730])
  assert.equal(d.washer.stop.stemAboveAxisMm,130);assert.equal(d.washer.stop.stemWestMm,undefined)
- near(r.operation.tasks.find(v=>v.id==='washer')!.maximumGripReachMm,589.0358493534471)
+ near(r.operation.tasks.find(v=>v.id==='washer')!.maximumGripReachMm,584.2302628245134)
  const old=structuredClone(choice)
  old.coldDistribution.washer.pathToStopMm=[[10980,600,950],[10980,600,730],[10980,910,730]]
  old.coldDistribution.washer.stop.axisMm=[10980,1000,730];delete old.coldDistribution.washer.stop.stemAboveAxisMm;old.coldDistribution.washer.stop.stemWestMm=130
@@ -159,7 +159,7 @@ test('formed hot spool has finite localH0 inventory and a separately bounded sha
  assert.equal(wet.hot.actualToolReactionAndHeadPickupAccepted,false)
  assert.ok(wet.hot.renewalGeometry.frontUpperRailStillPresentControl.some(q=>q.reserveMm<0))
  assert.equal(wet.hot.renewalGeometry.headFullRemovalToolAndTemporaryStabilityProofAccepted,false)
- assert.equal(wet.hot.renewalGeometry.necessaryConditionalSpoolSweeps,wet.hot.capturePhase.computedHeadAtIndependentRest,JSON.stringify(wet.hot.renewalGeometry.failures))
+ assert.equal(wet.hot.renewalGeometry.necessaryConditionalSpoolSweeps,wet.hot.capturePhase.computedHeadClearForSpool,JSON.stringify(wet.hot.renewalGeometry.failures))
  const shallow=structuredClone(choice);shallow.coldDistribution.hotService.receiverUsableMinimumL=5
  assert.equal(inletUtilityWetAssembly({source:current,choice:shallow}).hot.geometry.necessarySpecifiedGeometry,false)
 })
@@ -249,7 +249,7 @@ test('current hot rail guard consumes computed capture rows and digest; a naked 
  assert.equal(historical.capturePhase.historicalFullHeadRemovedControl,true)
  assert.equal(wet.hot.capturePhase.historicalFullHeadRemovedControl,false)
  assert.equal(wet.hot.capturePhase.computedHeadAtIndependentRest,false)
- assert.ok(wet.hot.renewalGeometry.failures.some(q=>q.id==='hot/source-bound-complete-head-rest-required'))
+ assert.equal(wet.ordinaryCapture.controls.wholeHeadWestParkRequiredForOrdinaryRenewal,false)
  assert.equal(wet.hot.capturePhase.sourceDigest,phase.sourceDigest)
  const blocked=structuredClone(current)
  blocked.rearTreeContext.obstacles=[...blocked.rearTreeContext.obstacles,{id:'explicit-blocked-capture-foot',boxMm:[10940,815,0,50,50,200],presence:'always'}]
@@ -313,16 +313,16 @@ test('high1550 main and actual vent share one source; old1500 is an explicit nar
  assert.ok(current.service.inventory.isolatedBranchConservativeCeilingL>priorService.inventory.isolatedBranchConservativeCeilingL)
  assert.notDeepEqual(current.route.paths,priorRoute.paths)
 })
-test('complete32mm moving union half invalidates old35mm head lift before10mm hot spool release',()=>{
+test('explicit spool-side32mm half and head-side counterpart preserve the narrow35mm control',()=>{
  near(wet.hot.headFirstRelease.headFirstUpMm,65)
- near(wet.hot.geometry.checks.find(q=>q.id==='hot/upper-face-clearance-after-head-lift-and-spool-up')!.reserveMm,3)
+ near(wet.hot.geometry.checks.find(q=>q.id==='hot/upper-face-clearance-after-head-lift-and-spool-up')!.reserveMm,35)
  const old=structuredClone(choice);old.coldDistribution.hotService.headInitialLiftMm=35
- assert.ok(inletUtilityWetAssembly({source:current,choice:old}).hot.geometry.failures.some(q=>q.id==='hot/upper-face-clearance-after-head-lift-and-spool-up'&&q.reserveMm===-27))
+ near(inletUtilityWetAssembly({source:current,choice:old}).hot.geometry.checks.find(q=>q.id==='hot/upper-face-clearance-after-head-lift-and-spool-up')!.reserveMm,5)
 })
 
 test('finite pinned braces and real trolley foot/worker sources never supply invented floor resistance',()=>{
  const r=wet.ordinaryCapture
- assert.equal(r.temporaryBracing.source.members.length,4)
+ assert.equal(r.temporaryBracing.source.members.length,3)
  assert.ok(r.temporaryBracing.demands.every(q=>q.eulerPinnedN>q.axialComparisonN))
  assert.equal(r.temporaryBracing.actualPinSleeveHSSWallAndFloorResistanceQualified,false)
  assert.deepEqual(r.controls.postsXYMm,[[10965,840],[10965,1450],[11260,840],[11260,1450]])
@@ -337,3 +337,28 @@ test('finite pinned braces and real trolley foot/worker sources never supply inv
  assert.match(picture,/qualification incomplete/)
 })
 if(proofDir)writeFileSync(join(proofDir,'current-utility-component-renewal.svg'),utilityOrdinaryHeadPlanSvg(wet.ordinaryCapture))
+
+test('static head work owns visible waste isolation, finite inventory, actual cap join and top-access tools',()=>{
+ const a=wet.ordinaryCapture,w=a.waste
+ assert.equal(a.controls.method,'static-floor-seated-head-capture')
+ assert.equal(a.controls.wholeHeadWestParkRequiredForOrdinaryRenewal,false)
+ assert.deepEqual(a.controls.fork!.axisXMm,[11160])
+ assert.ok(a.rejectedWholeHeadMotion.failures.length>0)
+ assert.deepEqual(w.actualCapAxisMm,[10795,1295,125])
+ assert.ok(w.parts.some(q=>q.id==='waste/complete-backfeed-cut'))
+ assert.ok(w.inventory.allExternalBareBoxesAndPipeOuterCylindersUpperL<w.inventory.receiverVerifiedMinimumL)
+ assert.ok(w.inventory.receiverInnerGrossCeilingL>w.inventory.receiverVerifiedMinimumL)
+ assert.ok(w.tools.some(q=>q.minimumAngleDegrees>25))
+ assert.equal(w.actualBackfeedValveSealToolsStrainerSupportAndCapPhysicalMatchQualified,false)
+ assert.equal(a.ordinaryRenewalAccepted,false)
+})
+test('actual1040 spout lips and900 rim meet the two-bore screen; false50nom/30net control fails',()=>{
+ assert.deepEqual(wet.ordinaryCapture.airGap.netLipToFloodRimMm,[120,120])
+ assert.deepEqual(wet.ordinaryCapture.airGap.requiredTwoOutletBoresMm,[30.2,30.2])
+ assert.equal(wet.ordinaryCapture.airGap.sinkReservoirBackfeedGeometricallyExcluded,true)
+ const low=structuredClone(choice);for(const p of low.coldDistribution.prefabSinkHead.spoutOutletsMm)p[2]=950
+ const rejected=inletUtilityWetAssembly({source:current,choice:low})
+ assert.ok(rejected.ordinaryCapture.airGap.checks.some(q=>q.reserveMm<0))
+ assert.equal(rejected.ordinaryCapture.airGap.sinkReservoirBackfeedGeometricallyExcluded,false)
+ assert.equal(rejected.normal.necessaryKnownGeometry,false)
+})
