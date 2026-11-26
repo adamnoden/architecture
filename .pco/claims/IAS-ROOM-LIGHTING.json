@@ -1,43 +1,41 @@
 {
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
-  "generation": 10,
+  "generation": 11,
   "state": "claimed",
-  "leaseId": "74f27cd9-d815-4b94-9763-a6859d119c15",
+  "leaseId": "02cf4f76-dbdc-478c-a8c0-6cc06cde16d9",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-lighting-local-riser-20261126"
+    "label": "zerg-owner-takeover-20261126"
   },
-  "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T17:04:06.000Z",
-  "expiresAt": "2026-11-26T17:49:06.000Z",
-  "branch": "work/zerg-loaded-joint-room-20261126",
+  "claimedAt": "2026-11-26T20:03:12.723Z",
+  "heartbeatAt": "2026-11-26T20:03:12.723Z",
+  "expiresAt": "2026-11-26T20:48:12.723Z",
+  "checkpoint": {
+    "evidence": "Owner takeover; preserved b198,5fa4d076 and2de64746 current room/circuit evidence.",
+    "next": "Repair owning room schedule regeneration and validate shared room-lighting integration."
+  },
+  "branch": "work/zerg-takeover-integration-20261126",
   "predecessor": {
-    "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
-    "generation": 9,
-    "branch": "work/convergence-lighting-20261125",
-    "pr": 1625,
+    "leaseId": "74f27cd9-d815-4b94-9763-a6859d119c15",
+    "generation": 10,
+    "branch": "work/zerg-loaded-joint-room-20261126",
+    "pr": 1629,
     "checkpoint": {
-      "evidence": "PR1625@5526b838 preserves corrected complete-case gravity centroid, actual grip/rest geometry and PartIV limits. Prior263page WorkingEdition/10page Primer digitally reviewed; current publicationCI passed.",
-      "next": "Finish exact-head CI and canonical preflight, then merge1625 if earned. Circuit, protection/material qualification and owner appearance/print approval remain open.",
-      "blocker": "Execution environment unavailable; local review files and current process state cannot be inspected. Published PR/checkpoints remain recovery authority."
+      "evidence": "5fa4d076 clean tested source:35focused+7coordination/types/audit0, actual136 renewal and invalidation pass. Northview separate2de64746 proof pending. Root combined fullhealth45861260587 running.",
+      "next": "Join exact north source when earned; strict producers then required complete PR CI/publication on final head. Inspect actual derived north image.",
+      "blocker": "No product/articulation/photometric/material/physical or owner appearance approval. Full repository health and fresh canonical preflight still mandatory."
     }
   },
   "recoverySource": {
-    "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
-    "generation": 9,
-    "branch": "work/convergence-lighting-20261125",
-    "pr": 1625,
+    "leaseId": "74f27cd9-d815-4b94-9763-a6859d119c15",
+    "generation": 10,
+    "branch": "work/zerg-loaded-joint-room-20261126",
+    "pr": 1629,
     "checkpoint": {
-      "evidence": "PR1625@5526b838 preserves corrected complete-case gravity centroid, actual grip/rest geometry and PartIV limits. Prior263page WorkingEdition/10page Primer digitally reviewed; current publicationCI passed.",
-      "next": "Finish exact-head CI and canonical preflight, then merge1625 if earned. Circuit, protection/material qualification and owner appearance/print approval remain open.",
-      "blocker": "Execution environment unavailable; local review files and current process state cannot be inspected. Published PR/checkpoints remain recovery authority."
+      "evidence": "5fa4d076 clean tested source:35focused+7coordination/types/audit0, actual136 renewal and invalidation pass. Northview separate2de64746 proof pending. Root combined fullhealth45861260587 running.",
+      "next": "Join exact north source when earned; strict producers then required complete PR CI/publication on final head. Inspect actual derived north image.",
+      "blocker": "No product/articulation/photometric/material/physical or owner appearance approval. Full repository health and fresh canonical preflight still mandatory."
     }
-  },
-  "checkpoint": {
-    "evidence": "5fa4d076 clean tested source:35focused+7coordination/types/audit0, actual136 renewal and invalidation pass. Northview separate2de64746 proof pending. Root combined fullhealth45861260587 running.",
-    "next": "Join exact north source when earned; strict producers then required complete PR CI/publication on final head. Inspect actual derived north image.",
-    "blocker": "No product/articulation/photometric/material/physical or owner appearance approval. Full repository health and fresh canonical preflight still mandatory."
-  },
-  "pr": 1629
+  }
 }
