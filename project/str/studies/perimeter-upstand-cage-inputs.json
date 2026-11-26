@@ -19,12 +19,11 @@
     "columnAlongStationsMm": [
       65,
       230,
-      412.5,
-      712.5,
+      580,
       930
     ],
-    "columnBarNominalMm": 12,
-    "columnBarOutsideMm": 14,
+    "columnBarNominalMm": 16,
+    "columnBarOutsideMm": 18,
     "beamBarNominalMm": 16,
     "beamBarOutsideMm": 18,
     "beamBarNormalMm": [
@@ -32,12 +31,12 @@
       200
     ],
     "beamBarZMm": [
-      3245,
+      3260,
       3450
     ],
     "beamPlanRadiiMm": [
       89,
-      182
+      184
     ],
     "floorBarNominalMm": 14,
     "floorBarOutsideMm": 16,
@@ -47,15 +46,15 @@
     "cornerFloorMandrelMm": 280,
     "cornerFloorStraightTailMm": 1000,
     "floorAlongCoordinatesMm": [
-      300,
-      375,
-      450,
-      525,
-      600,
-      675,
-      750,
-      825,
-      900
+      315,
+      390,
+      465,
+      535,
+      625,
+      690,
+      765,
+      840,
+      899
     ],
     "ordinaryFloorMandrelMm": 140,
     "ordinaryFloorHookMinTailFactor": 5,
@@ -85,9 +84,11 @@
     "beamHookTailMm": 80,
     "beamClosureOffsetMm": 12,
     "beamOrdinaryPitchMm": 100,
-    "maxColumnFamilyPitchMm": 135,
+    "maxColumnFamilyPitchMm": 180,
     "closuresAndAllStirrupIntersectionsQualified": false,
-    "columnHookMinimumTailMm": 50
+    "columnHookMinimumTailMm": 50,
+    "columnLongBarSpacingComparatorMm": 350,
+    "hookShapeToleranceMm": 1
   },
   "materials": {
     "reinforcementComparisonMPa": 400,

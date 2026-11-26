@@ -5,7 +5,7 @@ class CageControls(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.c=json.loads(p.INPUT.read_bytes());s,raw=p.source.load()
-        cls.base,*_=p.source.derive(s,raw);cls.r=p.assess(cls.c,cls.base)
+        cls.base,*_=p.source.derive(s,raw);cls.r=p.assess(cls.c,cls.base,full_geometry=True)
     def test_actual_levels_and_four_source_mirrors(self):
         self.assertEqual(self.r['geometry']['slabZMm'],[3170,3370])
         self.assertEqual(self.r['sourceCornerMirrors'][0]['outerFaceXYMm'],[262.5,262.5])
@@ -18,7 +18,7 @@ class CageControls(unittest.TestCase):
         self.assertAlmostEqual(p.arc_box_distance([0,0],10,0,math.pi/2,[10,0],2),0)
         self.assertAlmostEqual(p.arc_box_distance([0,0],10,0,math.pi/2,[-5,0],0),math.sqrt(125))
     def test_main_bar_routes_clear_real_column_holes(self):
-        self.assertEqual(self.r['columnBarsNominalCount'],16)
+        self.assertEqual(self.r['columnBarsNominalCount'],12)
         self.assertTrue(self.r['cornerMainBarHoleChecksPass'])
         self.assertGreater(self.r['beamColumnWitness']['adverseCylinderClearMm'],0)
         self.assertGreater(self.r['floorColumnWitness']['adverseProjectedCylinderClearMm'],0)
@@ -58,6 +58,24 @@ class CageControls(unittest.TestCase):
         self.assertTrue(b['current140FitsChosen5Phi'])
         self.assertEqual(b['prospective360MinimumStraightTailMm'],82)
         self.assertTrue(b['360GeometryIsAnUnselectedComparison'])
+    def test_connected_closed_links_and_standard_hooks(self):
+        links,levels=p.link_paths(self.c)
+        self.assertGreater(len(links),30)
+        for link in links:
+            for a,b in zip(link['primitives'],link['primitives'][1:]):
+                self.assertLess(math.dist(p.sample_primitive(a)[-1],p.sample_primitive(b)[0]),1e-7,link['id'])
+        self.assertLessEqual(self.r['maximumColumnLinkFamilyPitchMm'],180)
+        self.assertGreaterEqual(self.c['links']['columnHookTailMm'],50)
+    def test_parameter_box_certifier_keeps_real_adverse_witnesses(self):
+        a=p.line([0,0,0],[10,0,0]);b=p.line([0,3,0],[10,3,0])
+        self.assertEqual(p.certify_primitive_pair(a,b,2,0)['state'],'clear')
+        bad=p.certify_primitive_pair(a,b,2,2)
+        self.assertEqual(bad['state'],'collision')
+        self.assertLess(bad['adverseSurfaceClearMm'],0)
+        self.assertTrue(all(abs(v)<=2 for v in bad['relativeShiftMm']))
+    def test_full_node_has_no_unclassified_bar_collisions(self):
+        for key in ('beamFloorThreeDimensionalBoxAudit','linksAgainstBeamThreeDimensionalAudit','linksAgainstFloorThreeDimensionalAudit'):
+            self.assertTrue(self.r[key]['allCertified'],str((key,self.r[key]['failures'][:2])))
     def test_no_complete_cage_or_demand_acceptance_injection(self):
         c=copy.deepcopy(self.c);c['scope']['wholeCagePlacingAccepted']=True
         with self.assertRaises(ValueError):p.assess(c,self.base)
