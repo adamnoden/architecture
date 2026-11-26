@@ -47,6 +47,7 @@ const receipt=read('project/had/studies/inlet-source-envelope.results.json'),old
 
 const service=inletUtilityColdService({route:result,choice:choice.coldService,roomMm:old.wetUtilityPlanMm,washerReservationMm:services.utility.washerReservation,washerBodyMm:services.utility.washer,washerHeightMm:read('project/ias/studies/utility-first-release.json').native.height,maximumGaugeBar:input.maximumGaugeBar,input,retained:rawRoutes.retainedServiceComparison.services,host})
 
+ const prefabHead=(choice.coldDistribution as {prefabSinkHead:{topSolidPlansMm:readonly(readonly[number,number,number,number])[];topZMm:readonly[number,number]}}).prefabSinkHead
  const actualHot=utilityRetainedHotGeometry(read('project/had/studies/incoming-water.json').utility.vertices.hot),
   bindingDigest=sha256SemanticFingerprint({sourceObjectDigests,nativeContext:context,boundary}),
   frame=Object.entries(host.geometry.frame).map(([id,v])=>({id:'IAS/frame/'+id,boxMm:v as B,presence:(id==='temporary carry bar'?'carry-bar-after-park':id==='EW rail at y1350 / z135'?'front-lower-rail':'always') as 'always'|'carry-bar-after-park'|'front-lower-rail'})),
@@ -54,7 +55,7 @@ const service=inletUtilityColdService({route:result,choice:choice.coldService,ro
   rearTreeContext:UtilityRearTreeContext={
    bindingDigest,maximumGaugeBar:input.maximumGaugeBar,settingEachMm:10,jacketRadialMm:26,floorMm:0,ceilingMm:input.ceilingMm,
    mainOnlyInventoryUpperLitres:service.inventory.isolatedBranchConservativeCeilingL,
-   obstacles:[...frame,...input.obstacles.filter(o=>!excluded(o.id)).map(o=>({...o,presence:'always' as const})),
+   obstacles:[...frame,...prefabHead.topSolidPlansMm.map((p,k)=>({id:'current-prefab-board/'+k,boxMm:[p[0],p[1],prefabHead.topZMm[0],p[2],p[3],prefabHead.topZMm[1]-prefabHead.topZMm[0]] as B,presence:'head-before-strip' as const})),...input.obstacles.filter(o=>!excluded(o.id)).map(o=>({...o,presence:'always' as const})),
     ...rawRoutes.retainedServiceComparison.services.boxes.filter((o:{id:string})=>!excluded(o.id)&&!o.id.startsWith('complete620mm-head-sweep/')).map((o:{id:string;boxMm:B})=>({...o,presence:'always' as const})),
     {id:'source-washer-home',boxMm:[services.utility.washer[0],services.utility.washer[1],0,services.utility.washer[2],services.utility.washer[3],read('project/ias/studies/utility-first-release.json').native.height],presence:'always'}],
    retainedPaths:[...rawRoutes.retainedServiceComparison.services.paths.filter((p:{id:string})=>!p.id.toLowerCase().includes('hot')),

@@ -4,7 +4,9 @@ import {mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {readUtilityCurrentGeometrySource} from './current-design/inlet-utility-proof-source.js'
 import {deriveUtilityHotHead} from '../../project/had/studies/utility-hot-head.mjs'
-import {inletUtilityMemberRenewal} from './current-design/inlet-utility-member-renewal.js'
+import {inletUtilityMemberRenewal,inletUtilityRejectedGantryControl,utilityOrdinaryHeadPlanSvg} from './current-design/inlet-utility-member-renewal.js'
+import {inletUtilityRoute} from './current-design/inlet-utility-route.js'
+import {inletUtilityColdService} from './current-design/inlet-utility-service.js'
 import {inletUtilityWetAssembly} from './current-design/inlet-utility-wet-assembly.js'
 import {inletUtilityRearTree,admitUtilityRearTreeChoice,type UtilityRearTreeContext} from './current-design/inlet-utility-rear-tree.js'
 const current=readUtilityCurrentGeometrySource(),choice=JSON.parse(JSON.stringify(current.choice)),context=current.rearTreeContext
@@ -221,9 +223,9 @@ test('one source owns four floor-seated head captures, sixteen bolted ends and f
  assert.equal(a.interfaces.length,16)
  assert.ok(a.interfaces.every(q=>q.boltsPerInterface===2&&q.seatTravelsWithCapturedRail))
  assert.deepEqual([...new Set(a.interfaces.map(q=>Math.max(q.proposedMemberCutBoxMm[3],q.proposedMemberCutBoxMm[4])))].sort(),[460,510])
- assert.equal(a.controls.firstLiftMm,35);assert.equal(a.controls.southClearanceMm,60)
- assert.equal(a.controls.liftMm,360);assert.equal(a.controls.westTransferMm,800)
- assert.equal(a.controls.restTopMm,1060)
+ assert.equal(a.controls.firstLiftMm,65);assert.equal(a.controls.southClearanceMm,0)
+ assert.equal(a.controls.liftMm,380);assert.equal(a.controls.westTransferMm,800)
+ assert.equal(a.controls.restTopMm,1080)
  assert.equal(a.sourceDigest,member.ordinaryCapture.sourceDigest)
  assert.equal(a.sourceBoundCapturePhase.sourceDigest,a.sourceDigest)
  assert.ok(a.sourceBoundCapturePhase.captureGeometryChecks.length>0)
@@ -250,7 +252,7 @@ test('current hot rail guard consumes computed capture rows and digest; a naked 
  assert.ok(wet.hot.renewalGeometry.failures.some(q=>q.id==='hot/source-bound-complete-head-rest-required'))
  assert.equal(wet.hot.capturePhase.sourceDigest,phase.sourceDigest)
  const blocked=structuredClone(current)
- blocked.rearTreeContext.obstacles=[...blocked.rearTreeContext.obstacles,{id:'explicit-blocked-capture-foot',boxMm:[9920,680,0,60,60,200],presence:'always'}]
+ blocked.rearTreeContext.obstacles=[...blocked.rearTreeContext.obstacles,{id:'explicit-blocked-capture-foot',boxMm:[10940,815,0,50,50,200],presence:'always'}]
  const rejected=inletUtilityWetAssembly({source:blocked})
  assert.equal(rejected.hot.capturePhase.computedNecessaryGravityCapture,false)
  assert.ok(rejected.ordinaryCapture.geometryFailures.some(q=>q.id.includes('explicit-blocked-capture-foot')))
@@ -271,3 +273,67 @@ test('lower820mm factory head unions clear actual board; full75mm S tails retain
  const short=structuredClone(choice);short.coldDistribution.hotService.virtualSpoolMm[2][2]=775
  assert.ok(inletUtilityWetAssembly({source:current,choice:short}).hot.geometry.failures.some(q=>q.id==='hot/head-straight-after-last-bend'&&q.reserveMm< -12))
 })
+
+test('actual head board consists of two factory solids and exposes the rejected600mm solid-board control',()=>{
+ const h=choice.coldDistribution.prefabSinkHead
+ assert.deepEqual(h.topSolidPlansMm,[[10915,740,540,600],[10855,740,60,540]])
+ assert.equal(context.obstacles.filter(q=>q.id.startsWith('current-prefab-board/')).length,2)
+ const prior=structuredClone(choice);prior.coldDistribution.prefabSinkHead.topSolidPlansMm=[h.topPlanMm]
+ const rejected=inletUtilityWetAssembly({source:current,choice:prior})
+ assert.equal(rejected.normal.necessaryKnownGeometry,false)
+ assert.ok(rejected.normal.headFailures.some(q=>q.id.includes('head/board/')&&q.id.includes('retained-H0-hot-terminal')))
+ assert.equal(wet.normal.necessaryKnownGeometry,true,JSON.stringify(wet.normal))
+})
+test('current low fork380 stroke and completed member knockdown replace the actual failed overhead gantry',()=>{
+ const r=wet.ordinaryCapture,old=inletUtilityRejectedGantryControl({source:current,wet})
+ assert.equal(r.mode,'fork');assert.equal(old.mode,'gantry')
+ assert.ok(old.geometryFailures.some(q=>q.id.includes('active-main')))
+ assert.equal(r.controls.fork!.minimumIMM4,45000)
+ assert.ok(r.forkReference.deflectionMm>3&&r.forkReference.deflectionMm<3.2)
+ assert.ok(r.movingFrameBlockedControl.some(q=>q.reserveMm<0))
+ assert.equal(r.controls.fullDryFrameKnockedDownWhileHeadCapturedBeforeWestMovement,true)
+ assert.equal(r.exactMemberWebsToolSocketsSpannerArcsAndExtractionQualified,false)
+ assert.equal(r.demand.frictionHorizontalResistanceCreditedN,0)
+ assert.equal(r.demand.unbalancedHorizontalDemandWithoutPositiveFloorReceiverN,200)
+ assert.equal(r.ordinaryRenewalAccepted,false)
+})
+test('high1550 main and actual vent share one source; old1500 is an explicit narrow quantity control',()=>{
+ assert.equal(Math.max(...current.route.paths[1].virtualPointsMm.map(p=>p[2])),1550)
+ assert.ok(current.service.normalPermanentEnvelopes.some(q=>q.id==='utility/service/high-vent-control'&&q.boxMm[2]>=1566))
+ near(current.service.drain.pipeHighPointGravityHeadMm,1130)
+ near(current.service.drain.maximumCountedWetVentEnvelopeTopMm,1682)
+ near(current.service.drain.maximumVentedGravityHeadMm,1262)
+ const old=structuredClone(choice)
+ for(const p of old.downstreamVirtualCornersMm)if(p[2]===1550)p[2]=1500
+ const priorRoute=inletUtilityRoute({choice:old,input:current.input,cuts:current.cuts,retained:current.retained})
+ const priorService=inletUtilityColdService({route:priorRoute,choice:old.coldService,roomMm:current.input.roomPlanMm,washerReservationMm:current.services.utility.washerReservation,washerBodyMm:current.services.utility.washer,washerHeightMm:context.obstacles.find(q=>q.id==='source-washer-home')!.boxMm[5],maximumGaugeBar:current.input.maximumGaugeBar,input:current.input,retained:current.retained,host:current.host})
+ near(priorService.drain.pipeHighPointGravityHeadMm,1080)
+ near(priorService.drain.maximumVentedGravityHeadMm,1212)
+ assert.ok(current.route.quantities.referenceWaterKg>priorRoute.quantities.referenceWaterKg)
+ assert.ok(current.service.inventory.isolatedBranchConservativeCeilingL>priorService.inventory.isolatedBranchConservativeCeilingL)
+ assert.notDeepEqual(current.route.paths,priorRoute.paths)
+})
+test('complete32mm moving union half invalidates old35mm head lift before10mm hot spool release',()=>{
+ near(wet.hot.headFirstRelease.headFirstUpMm,65)
+ near(wet.hot.geometry.checks.find(q=>q.id==='hot/upper-face-clearance-after-head-lift-and-spool-up')!.reserveMm,3)
+ const old=structuredClone(choice);old.coldDistribution.hotService.headInitialLiftMm=35
+ assert.ok(inletUtilityWetAssembly({source:current,choice:old}).hot.geometry.failures.some(q=>q.id==='hot/upper-face-clearance-after-head-lift-and-spool-up'&&q.reserveMm===-27))
+})
+
+test('finite pinned braces and real trolley foot/worker sources never supply invented floor resistance',()=>{
+ const r=wet.ordinaryCapture
+ assert.equal(r.temporaryBracing.source.members.length,4)
+ assert.ok(r.temporaryBracing.demands.every(q=>q.eulerPinnedN>q.axialComparisonN))
+ assert.equal(r.temporaryBracing.actualPinSleeveHSSWallAndFloorResistanceQualified,false)
+ assert.deepEqual(r.controls.postsXYMm,[[10965,840],[10965,1450],[11260,840],[11260,1450]])
+ assert.equal(r.controls.rollingOperator!.maximumBodyHeightMm,800)
+ assert.equal(r.controls.rollingOperator!.bodyRadiusMm,300)
+ assert.ok(r.rollingOperator.checks.some(q=>q.phase==='rolling-body'))
+ assert.ok(r.rollingOperator.checks.some(q=>q.phase==='rolling-arm'))
+ assert.equal(r.rollingOperator.actualHumanForceAndCasterRollingQualified,false)
+ assert.equal(r.demand.actualFloorContactReactionsMaterialBucklingAndStabilityAccepted,false)
+ const picture=utilityOrdinaryHeadPlanSvg(r)
+ assert.match(picture,/data-part="head\/board\/0"/);assert.match(picture,/data-part="head\/board\/1"/)
+ assert.match(picture,/qualification incomplete/)
+})
+if(proofDir)writeFileSync(join(proofDir,'current-utility-component-renewal.svg'),utilityOrdinaryHeadPlanSvg(wet.ordinaryCapture))

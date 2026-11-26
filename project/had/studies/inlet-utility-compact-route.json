@@ -38,22 +38,22 @@
     [
       9550,
       1900,
-      1500
+      1550
     ],
     [
       9550,
       1250,
-      1500
+      1550
     ],
     [
       10760,
       1250,
-      1500
+      1550
     ],
     [
       10760,
       600,
-      1500
+      1550
     ],
     [
       10760,
@@ -336,7 +336,7 @@
       "maximumWallMm": 1
     },
     "prefabSinkHead": {
-      "sourceOfGeometry": "authored new head interface, not a purchased Franke or tap approval",
+      "sourceOfGeometry": "authored new factory head with one60x60NW service corner, complete820 unions and bounded body/tools; not purchased Franke/tap approval",
       "topPlanMm": [
         10855,
         740,
@@ -367,12 +367,12 @@
       "pillarHandleMm": [
         [
           11025,
-          1260,
+          1250,
           1000
         ],
         [
           11300,
-          1260,
+          1250,
           1000
         ]
       ],
@@ -400,7 +400,27 @@
       ],
       "maximumReachMm": 600,
       "actualTapPressureMaterialAndHeadReleaseAccepted": false,
-      "bowlBottomMm": 700
+      "bowlBottomMm": 700,
+      "topSolidPlansMm": [
+        [
+          10915,
+          740,
+          540,
+          600
+        ],
+        [
+          10855,
+          740,
+          60,
+          540
+        ]
+      ],
+      "serviceCornerRemovedPlanMm": [
+        10855,
+        1280,
+        60,
+        60
+      ]
     },
     "normalWholeHouseIsolation": [
       "U/internal-cut",
@@ -487,75 +507,75 @@
       "headCapturedBeforeAnyRailReleaseRequired": true,
       "headCapture": {
         "schema": "had-utility-floor-head-capture/1",
-        "method": "temporary-floor-seated-four-leg-gantry",
+        "method": "temporary-floor-seated-low-fork-trolley",
         "postsXYMm": [
           [
-            9950,
-            710
+            10965,
+            840
           ],
           [
-            9950,
-            1510
+            10965,
+            1450
           ],
           [
-            11515,
-            710
+            11260,
+            840
           ],
           [
-            11515,
-            1510
+            11260,
+            1450
           ]
         ],
-        "topAxisZMm": 1530,
-        "memberCrossMm": 50,
+        "topAxisZMm": 1100,
+        "memberCrossMm": 40,
         "soleCrossMm": 50,
         "soleThicknessMm": 6,
         "headTrackYMm": [
-          760,
+          900,
           1100
         ],
         "liftingEyesMm": [
           [
-            10910,
-            760,
-            930
+            10945,
+            900,
+            700
           ],
           [
-            11395,
-            760,
-            930
+            11200,
+            900,
+            700
           ],
           [
-            10910,
+            10945,
             1100,
-            930
+            700
           ],
           [
-            11395,
+            11200,
             1100,
-            930
+            700
           ]
         ],
         "maximumCapturedWetHeadKg": 20,
         "headCGPlanDesignMm": [
           11115,
           980,
-          75,
+          60,
           80
         ],
         "maximumPillarAndSpoutCrossMm": 40,
         "maximumHandleCrossMm": 60,
         "maximumHeadZMm": 1060,
-        "liftMm": 360,
+        "liftMm": 380,
         "westTransferMm": 800,
-        "minimumHoistClosedHeightMm": 180,
+        "minimumHoistClosedHeightMm": 0,
         "restPlanMm": [
           10055,
           680,
           600,
           600
         ],
-        "restTopMm": 1060,
+        "restTopMm": 1080,
         "restTopDepthMm": 20,
         "restPostsXYMm": [
           [
@@ -577,7 +597,7 @@
         ],
         "restPostCrossMm": 20,
         "maximumSectionAreaMm2": 600,
-        "minimumSectionAreaMm2": 500,
+        "minimumSectionAreaMm2": 400,
         "minimumSectionIMm4": 190000,
         "maximumSteelDensityKgM3": 8000,
         "minimumSteelDensityKgM3": 7700,
@@ -594,9 +614,9 @@
         "frictionResistanceCredited": false,
         "actualProductsFloorHorizontalReactionAndPhysicalHandlingAccepted": false,
         "maximumSpoutCrossMm": 20,
-        "firstLiftMm": 35,
-        "southClearanceMm": 60,
-        "rearUpperRailReleasedOnlyAfterPositiveCaptureAndFirstLift": true,
+        "firstLiftMm": 65,
+        "southClearanceMm": 0,
+        "rearUpperRailReleasedOnlyAfterPositiveCaptureAndFirstLift": false,
         "jointJacketsStrippedLengthMm": 100,
         "restInstalledOnlyAfterRearRailParkRequired": true,
         "headCaptureBeforeFrontUpperRailReleaseRequired": true,
@@ -612,7 +632,190 @@
           135,
           6
         ],
-        "actualToolProductQualified": false
+        "actualToolProductQualified": false,
+        "rejectedOverheadGantry": {
+          "schema": "had-utility-floor-head-capture/1",
+          "method": "rejected-overhead-gantry",
+          "postsXYMm": [
+            [
+              9950,
+              710
+            ],
+            [
+              9950,
+              1510
+            ],
+            [
+              11515,
+              710
+            ],
+            [
+              11515,
+              1510
+            ]
+          ],
+          "topAxisZMm": 1530,
+          "memberCrossMm": 50,
+          "soleCrossMm": 50,
+          "soleThicknessMm": 6,
+          "headTrackYMm": [
+            760,
+            1100
+          ],
+          "liftingEyesMm": [
+            [
+              10910,
+              760,
+              930
+            ],
+            [
+              11395,
+              760,
+              930
+            ],
+            [
+              10910,
+              1100,
+              930
+            ],
+            [
+              11395,
+              1100,
+              930
+            ]
+          ],
+          "maximumCapturedWetHeadKg": 20,
+          "headCGPlanDesignMm": [
+            11115,
+            980,
+            75,
+            80
+          ],
+          "maximumPillarAndSpoutCrossMm": 40,
+          "maximumHandleCrossMm": 60,
+          "maximumHeadZMm": 1060,
+          "liftMm": 360,
+          "westTransferMm": 800,
+          "minimumHoistClosedHeightMm": 180,
+          "restPlanMm": [
+            10055,
+            680,
+            600,
+            600
+          ],
+          "restTopMm": 1060,
+          "restTopDepthMm": 20,
+          "restPostsXYMm": [
+            [
+              10075,
+              700
+            ],
+            [
+              10635,
+              700
+            ],
+            [
+              10075,
+              1400
+            ],
+            [
+              10635,
+              1400
+            ]
+          ],
+          "restPostCrossMm": 20,
+          "maximumSectionAreaMm2": 600,
+          "minimumSectionAreaMm2": 500,
+          "minimumSectionIMm4": 190000,
+          "maximumSteelDensityKgM3": 8000,
+          "minimumSteelDensityKgM3": 7700,
+          "normalWorkingFloorXYMm": [
+            11025,
+            1900
+          ],
+          "normalWorkingShoulderMm": [
+            11140,
+            1700,
+            1150
+          ],
+          "externalHorizontalComparisonN": 200,
+          "frictionResistanceCredited": false,
+          "actualProductsFloorHorizontalReactionAndPhysicalHandlingAccepted": false,
+          "maximumSpoutCrossMm": 20,
+          "firstLiftMm": 35,
+          "southClearanceMm": 60,
+          "rearUpperRailReleasedOnlyAfterPositiveCaptureAndFirstLift": true,
+          "jointJacketsStrippedLengthMm": 100,
+          "restInstalledOnlyAfterRearRailParkRequired": true,
+          "headCaptureBeforeFrontUpperRailReleaseRequired": true,
+          "frontUpperRailReleasedBeforeUnionToolAccess": true,
+          "unionToolFlatOffsetMm": 16,
+          "unionWrenchHeadMm": [
+            55,
+            65,
+            6
+          ],
+          "unionWrenchHandleMm": [
+            16,
+            135,
+            6
+          ],
+          "actualToolProductQualified": false,
+          "sourceHighControlMm": 1500
+        },
+        "capturePointMeaning": "factory reinforced under-bowl bearing/capture ribs; not lifting eyes",
+        "fullDryFrameKnockedDownWhileHeadCapturedBeforeWestMovement": true,
+        "rejectedGantryIsHistoricalControlOnly": true,
+        "fork": {
+          "axisXMm": [
+            10945,
+            11190
+          ],
+          "rearTipYMm": 800,
+          "rootYMm": 1450,
+          "bottomMm": 665,
+          "widthMm": 30,
+          "depthMm": 30,
+          "rootPadHeightMm": 5,
+          "minimumIMM4": 45000,
+          "minimumAreaMM2": 400,
+          "strokeMm": 380,
+          "liftColumnTopMm": 1100,
+          "baseTopMm": 80,
+          "maximumCapturedWetHeadKg": 20,
+          "gravityDynamicFactor": 1.5,
+          "frontFootYMm": 1450,
+          "baseRearYMm": 840,
+          "maximumReferenceDeflectionMm": 4,
+          "minimumRemainingClearanceAfterDeflectionMm": 0
+        },
+        "rollingOperator": {
+          "floorStartXYMm": [
+            10350,
+            1160
+          ],
+          "floorEndXYMm": [
+            9725,
+            1160
+          ],
+          "maximumBodyHeightMm": 800,
+          "bodyRadiusMm": 300,
+          "shoulderOffsetMm": [
+            200,
+            40,
+            650
+          ],
+          "handleInitialMm": [
+            10905,
+            1250,
+            750
+          ],
+          "maximumControllableRollingForceN": 30,
+          "actualCasterAndPhysicalHandlingQualified": false
+        },
+        "minimumCapturedDryHeadKg": 10,
+        "minimumFactorySheetMm": 2,
+        "minimumFactoryHeadStockDensityKgM3": 7700
       },
       "memberJointDesign": {
         "schema": "had-utility-bolted-member-end/1",
@@ -653,7 +856,112 @@
         "seatTravelsWithCapturedRail": true
       },
       "headRemovedBeforeOtherFrameWork": true,
-      "firstRailReleaseAfterPositiveHeadCapture": "IAS/frame/EW rail at y750 / z850"
+      "firstRailReleaseAfterPositiveHeadCapture": "IAS/frame/EW rail at y750 / z850",
+      "temporaryBracing": {
+        "schema": "had-utility-temporary-pinned-braces/1",
+        "crossMm": 20,
+        "minimumAreaMm2": 130,
+        "minimumIMM4": 7000,
+        "maximumUnbalancedHorizontalComparisonN": 200,
+        "members": [
+          {
+            "id": "rear/ascending",
+            "endsMm": [
+              [
+                10895,
+                750,
+                150
+              ],
+              [
+                11445,
+                750,
+                780
+              ]
+            ],
+            "mateFrameIds": [
+              "IAS/frame/leg 1",
+              "IAS/frame/leg 3",
+              "IAS/frame/EW rail at y750 / z135",
+              "IAS/frame/NS rail at x10975 / z135",
+              "IAS/frame/NS rail at x11525 / z135"
+            ]
+          },
+          {
+            "id": "rear/descending",
+            "endsMm": [
+              [
+                11445,
+                750,
+                150
+              ],
+              [
+                10895,
+                750,
+                780
+              ]
+            ],
+            "mateFrameIds": [
+              "IAS/frame/leg 1",
+              "IAS/frame/leg 3",
+              "IAS/frame/EW rail at y750 / z135",
+              "IAS/frame/NS rail at x10975 / z135",
+              "IAS/frame/NS rail at x11525 / z135"
+            ]
+          },
+          {
+            "id": "left/ascending",
+            "endsMm": [
+              [
+                10895,
+                750,
+                150
+              ],
+              [
+                10895,
+                1350,
+                780
+              ]
+            ],
+            "mateFrameIds": [
+              "IAS/frame/leg 1",
+              "IAS/frame/leg 2",
+              "IAS/frame/NS rail at x10975 / z135",
+              "IAS/frame/EW rail at y750 / z135",
+              "IAS/frame/EW rail at y1350 / z135"
+            ]
+          },
+          {
+            "id": "right/ascending",
+            "endsMm": [
+              [
+                11445,
+                750,
+                150
+              ],
+              [
+                11445,
+                1350,
+                780
+              ]
+            ],
+            "mateFrameIds": [
+              "IAS/frame/leg 3",
+              "IAS/frame/leg 4",
+              "IAS/frame/NS rail at x11525 / z135",
+              "IAS/frame/EW rail at y750 / z135",
+              "IAS/frame/EW rail at y1350 / z135"
+            ]
+          }
+        ],
+        "clevisEnvelopeMm": [
+          24,
+          56,
+          40
+        ],
+        "pinDiameterMm": 8,
+        "positiveFloorLocatingAndHoldDownRequired": true,
+        "actualPinSleeveHSSWallAndFloorResistanceAccepted": false
+      }
     },
     "hotService": {
       "schema": "had-utility-hot-head/1",
@@ -688,7 +996,7 @@
       "sourceUnionHalfLengthMm": 30,
       "headUnionAFMm": 24,
       "headUnionHalfLengthMm": 32,
-      "headInitialLiftMm": 35,
+      "headInitialLiftMm": 65,
       "spoolReleaseUpMm": 10,
       "spoolNorthToRestMm": 150,
       "maximumColdMaintenanceC": 40,

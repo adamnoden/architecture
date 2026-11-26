@@ -23,11 +23,11 @@ export function deriveUtilityHotHead({choice,sourceHotVertices,head,obstacles=[]
   normal=[{id:'U/hot/source-fixed-union',boxMm:expanded(fixedSourceBare,c.jacketRadialMm)},{id:'U/hot/source-moving-union',boxMm:expanded(sourceBare,c.jacketRadialMm)},{id:'U/hot/head-moving-union',boxMm:expanded(headBare,c.jacketRadialMm)}],
   checks=[],add=(id,kind,reserveMm)=>checks.push({id,kind,reserveMm});
  for(let k=1;k<bends.path.length;k++){const a=bends.path[k-1],b=bends.path[k],q=[...a.map((v,j)=>Math.min(v,b[j])-tubeR-bends.hausdorffError),...a.map((v,j)=>Math.abs(v-b[j])+2*(tubeR+bends.hausdorffError))];normal.push({id:'U/hot/formed-spool/'+k,boxMm:q})}
- for(const m of normal)for(const o of obstacles)add(m.id+'/'+o.id,'normal',gap(m.boxMm,o.boxMm)-two);
+ for(const m of normal)for(const o of obstacles)if(!(m.id==='U/hot/head-moving-union'&&o.id.startsWith('current-prefab-board/')))add(m.id+'/'+o.id,'normal',gap(m.boxMm,o.boxMm)-two);
  add('hot/source-straight-before-first-bend','fitting-leg',c.virtualSpoolMm[1][2]-bends.bends[0].tangent-start[2]-c.sourceUnionHalfLengthMm-two);
  add('hot/head-straight-after-last-bend','fitting-leg',end[2]-c.headUnionHalfLengthMm-c.virtualSpoolMm[2][2]-bends.bends[1].tangent-two);
  const headLift=c.headInitialLiftMm,up=c.spoolReleaseUpMm;
- add('hot/upper-face-clearance-after-head-lift-and-spool-up','ordered-release',headLift-up-two);
+ add('hot/upper-face-clearance-after-head-lift-and-spool-up','ordered-release',headLift-c.headUnionHalfLengthMm-up-two);
  add('hot/lower-face-separation-before-north','ordered-release',up-10);
  const sourceBodyOuterL=r.isolation.bodyBox.slice(3).reduce((a,b)=>a*b,1)/1e6,
   h0LowerFace=r.isolation.bodyBox[2],backboneTailMm=h0LowerFace-r.backbone.at(-1)[2],
@@ -48,7 +48,7 @@ export function deriveUtilityHotHead({choice,sourceHotVertices,head,obstacles=[]
  const frontRail=obstacles.find(o=>o.id===c.frontUpperRailId),
   moving=normal.filter(m=>m.id!=='U/hot/source-fixed-union'),
   before=[0,0,up],after=[0,c.spoolNorthToRestMm,up],
-  phaseObstacles=obstacles.filter(o=>o.id!==c.frontUpperRailId&&o.id!=='current-prefab-bowl'),
+  phaseObstacles=obstacles.filter(o=>o.id!==c.frontUpperRailId&&o.id!=='current-prefab-bowl'&&!o.id.startsWith('current-prefab-board/')),
   renewalChecks=moving.flatMap(m=>phaseObstacles.map(o=>({id:m.id+'/'+o.id,kind:'spool-north-after-explicit-member-release',reserveMm:gap(union([move(m.boxMm,before),move(m.boxMm,after)]),o.boxMm)-two}))),
   blockedControl=frontRail?moving.map(m=>({id:m.id+'/'+frontRail.id,kind:'upper-rail-still-present-rejected-control',reserveMm:gap(union([move(m.boxMm,before),move(m.boxMm,after)]),frontRail.boxMm)-two})):[];
  const captureChecks=capturePhase?.captureGeometryChecks??[],gravityChecks=capturePhase?.gravityChecks??[],
