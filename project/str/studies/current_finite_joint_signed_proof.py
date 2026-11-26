@@ -5,6 +5,7 @@ only its admitted windIndex, builds a fresh complete house, and independently
 replays the actual result. This is verification, not another authored house.
 """
 import argparse
+from contextlib import nullcontext
 import copy
 import gzip
 import hashlib
@@ -212,6 +213,11 @@ def reference_difference(packet,index,result,folder,proof):
 
 def admit_packet(packet):
     require_document_snapshot(packet)
+    if 'developmentAuthority' in packet:
+        from rear_bearing_signed_development import admit_development_source
+        admit_development_source(packet)
+    elif packet.get('currentSavedEngineeringDocumentAdmitted') is False or packet.get('documentIdentity') is None:
+        raise ValueError('Ordinary packet requires actual shared compiler identity; no counterfactual fallback')
     source,methods,runtime=actual_sources()
     observer='project/str/studies/finite_joint_normal_observer.py'
     replay='project/str/studies/current_finite_joint_replay.py'
@@ -336,10 +342,17 @@ def one(args):
     if 'rearChoices' in packet:
         from rear_direct_bearing import run_rear_direct_bearing
         try:
-            result=run_rear_direct_bearing(make_case(packet,args.index),packet['rearChoices'],packet['settings'],ROOT,checkpoint_path)
+            context=nullcontext({})
+            if 'developmentAuthority' in packet:
+                from rear_bearing_signed_development import retain_native_response
+                context=retain_native_response(packet,args.index,str(args.out)+'.native-pending.json')
+            with context as capture_evidence:
+                result=run_rear_direct_bearing(make_case(packet,args.index),packet['rearChoices'],packet['settings'],ROOT,checkpoint_path)
             write(str(args.out)+'.candidate.json',result)
             checkpoint=read_checkpoint(checkpoint_path)
             if digest_bytes(checkpoint_path.read_bytes())!=result['rawCheckpointSHA256']:raise ValueError('Actual raw rear checkpoint changed')
+            if 'developmentAuthority' in packet and digest(checkpoint['rawResponse'])!=capture_evidence.get('rawSemanticSHA256'):
+                raise ValueError('Native postprocessing changed the retained raw physical response')
         except Exception as error:
             write(str(args.out)+'.failure.json',{'windIndex':args.index,'parentInputSHA256':digest(packet),'checkpointPath':str(checkpoint_path),'error':str(error),'postProcessingComplete':False})
             raise
@@ -352,9 +365,31 @@ def one(args):
            'derivedNativeCaseSHA256':digest(make_case(packet,args.index)),'catalogueRow':packet['catalogue'][args.index],
            'elapsedSeconds':time.monotonic()-started,'result':result,'replay':check,
            'adverseBodyControls':actual_body_adverse_controls(packet,result,args.index,checkpoint) if args.index==0 else []}
+    if 'developmentAuthority' in packet:
+        from rear_bearing_signed_development import verify_native_component
+        early=Path(str(args.out)+'.native-pending.json');component=Path(capture_evidence['componentPath'])
+        compressed=Path(str(checkpoint_path)+'.gz');original_sha=hashlib.sha256()
+        with open(checkpoint_path,'rb') as source,gzip.open(compressed,'wb',compresslevel=6) as target:
+            for block in iter(lambda:source.read(1024*1024),b''):
+                original_sha.update(block);target.write(block)
+        if original_sha.hexdigest()!=result['rawCheckpointSHA256']:raise ValueError('Lossless checkpoint transport changed original bytes')
+        value['nativeCaptureReceipt']={'rawBeforePostprocessingSHA256':digest_bytes(early.read_bytes()),
+            'checkpointEncoding':'gzip-original-json-bytes','checkpointGzipSHA256':digest_bytes(compressed.read_bytes()),
+            'candidateJSONSHA256':digest_bytes(Path(str(args.out)+'.candidate.json').read_bytes()),
+            'earlyMetadataSnapshotRetained':False,
+            'rawSemanticSHA256':capture_evidence['rawSemanticSHA256'],'finalCheckpointSHA256':result['rawCheckpointSHA256'],
+            'membraneCaptureSHA256':digest_bytes(component.read_bytes()),'sameRawPhysicalResponseRetained':True}
+        verify_native_component(packet,args.index,result,checkpoint,component,value['nativeCaptureReceipt'])
     data=encoded(value);path=Path(args.out);path.parent.mkdir(parents=True,exist_ok=True);partial=path.with_name(path.name+'.partial')
     with gzip.open(partial,'wb',compresslevel=6) as stream:stream.write(data)
     partial.replace(path)
+    if 'developmentAuthority' in packet:
+        # The complete raw response now exists in the authenticated final checkpoint;
+        # the membrane K/f/trace capture remains separately retained. Failed cases keep early raw.
+        candidate=Path(str(args.out)+'.candidate.json')
+        if digest_bytes(candidate.read_bytes())!=digest(result):raise ValueError('Candidate response changed before duplicate removal')
+        Path(str(args.out)+'.native-pending.json').unlink()
+        candidate.unlink();checkpoint_path.unlink()
     print(json.dumps({'windIndex':args.index,'elapsedSeconds':value['elapsedSeconds'],'rawSHA256':digest_bytes(data),
                      'activeContacts':finite_house(result)['normalSupportObservation']['activeContactCount']}),flush=True)
 
@@ -397,10 +432,21 @@ def aggregate(args):
         result=capture['result'];checkpoint=None
         if 'rearChoices' in packet:
             checkpoint_paths=list(folder.rglob(f'case-{index:02}.json.gz.checkpoint.json'))
-            if len(checkpoint_paths)!=1:raise ValueError('Exactly one retained actual rear checkpoint per programme required')
-            if digest_bytes(checkpoint_paths[0].read_bytes())!=result['rawCheckpointSHA256']:raise ValueError('Captured actual rear checkpoint identity differs')
-            checkpoint=read_checkpoint(checkpoint_paths[0])
+            compressed_paths=list(folder.rglob(f'case-{index:02}.json.gz.checkpoint.json.gz'))
+            if len(checkpoint_paths)+len(compressed_paths)!=1:raise ValueError('Exactly one retained actual rear checkpoint per programme required')
+            checkpoint_path=(checkpoint_paths+compressed_paths)[0];checkpoint_data=checkpoint_path.read_bytes()
+            if compressed_paths:
+                if 'developmentAuthority' not in packet or capture['nativeCaptureReceipt']['checkpointEncoding']!='gzip-original-json-bytes' or digest_bytes(checkpoint_data)!=capture['nativeCaptureReceipt']['checkpointGzipSHA256']:
+                    raise ValueError('Compressed actual raw checkpoint transport identity differs')
+                checkpoint_data=gzip.decompress(checkpoint_data)
+            if digest_bytes(checkpoint_data)!=result['rawCheckpointSHA256']:raise ValueError('Captured actual original rear checkpoint bytes differ')
+            checkpoint=json.loads(checkpoint_data)
         check=check_result(packet,index,result,checkpoint)
+        if 'developmentAuthority' in packet:
+            from rear_bearing_signed_development import verify_native_component
+            components=list(folder.rglob(f'case-{index:02}.json.gz.native-pending.json.membrane.json.gz'))
+            if len(components)!=1:raise ValueError('Exactly one actual membrane capture per development programme required')
+            verify_native_component(packet,index,result,checkpoint,components[0],capture['nativeCaptureReceipt'])
         rear_result=result if 'rearChoices' in packet else None
         difference=reference_difference(packet,index,result,reference_folder,reference) if reference is not None else None
         result=finite_house(result)
@@ -436,6 +482,8 @@ def aggregate(args):
              'scope':'All96 source wind/court permutations at the saved G/Q and conventional secant law. One finiteSW joint; three rigid corner controls. Thermal/shrinkage, differential movement, other stiffness/material cases, convergence and strength are not qualified.',
              'candidateAccepted':False,'completeHouseProof':False,'resistanceAccepted':False,'ownerAccepted':False}
     if 'rearChoices' in packet:summary.update(rearChoices=packet['rearChoices'],rearMethodSHA256=packet['rearMethodSHA256'],rearReplaySHA256=packet['rearReplaySHA256'],rearBodyCatalogueSHA256=digest(packet['rearBodyCatalogue']))
+    if 'developmentAuthority' in packet:
+        summary.update(currentSavedEngineeringDocumentAdmitted=False,developmentAuthority=packet['developmentAuthority'],scope=summary['scope']+' Explicit source-transition development comparison; ordinary current-source CLI adoption remains withheld.')
     if reference is not None:summary['seatedReference']={'proofSHA256':packet['seatedReference']['proofSHA256'],'caseCount':96,'usedAsNewSolveInput':False}
     write(args.out,summary)
     print('FINITE_SIGNED_ENVELOPE_SUMMARY '+json.dumps(summary,separators=(',',':'),allow_nan=False),flush=True)

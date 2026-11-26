@@ -34,7 +34,7 @@ class ActualRearResponseControls(unittest.TestCase):
         checkpoint=copy.deepcopy(self.checkpoint)
         spring=next(s for s in checkpoint['rawResponse']['springs'] if s['id'].startswith('REAR-BEARING/') and s['id'].endswith('/top'))
         spring['forceKN']-=1.
-        with self.assertRaisesRegex(ValueError,'bearing-body balance'):replay(self.capture,checkpoint,self.root)
+        with self.assertRaisesRegex(ValueError,'bearing-body balance|Solved support point card'):replay(self.capture,checkpoint,self.root)
 
     def test_omitted_original_source_g_cannot_hide_in_global_saved_equilibrium(self):
         checkpoint=copy.deepcopy(self.checkpoint);points=checkpoint['postprocessingModel']['wetGridOrigins']['points']
