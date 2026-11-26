@@ -53,6 +53,13 @@ def source_wind(raw,index,axes):
     exec(compile(ast.Module(body=found,type_ignores=[]),path,'exec'),namespace)
     return namespace['_native_floor_wind']({'windMethodText':raw['project/str/studies/current-house-roof-bracing.py'].decode()},index,axes)
 
+def source_portal_geometry(raw,case,portal,grid):
+    path='project/str/studies/masonry_frame_a.py';tree=ast.parse(raw[path])
+    selected=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='geometry']
+    if len(selected)!=1:raise ValueError('Actual native masonry portal geometry unavailable')
+    namespace={'math':math};exec(compile(ast.Module(body=selected,type_ignores=[]),path,'exec'),namespace)
+    return namespace['geometry'](case,portal,grid)
+
 def three_constraints(wrench,points):
     fx,fy,mz=wrench
     a,b,c=points
@@ -163,6 +170,26 @@ def derive(settings,raw):
             'addedGroundFinishedAreaLossM2':(intersect_area(new,room)-intersect_area(old,room))/1e6,
             'groundCurrentFurnitureConflicts':ground_conflicts,'firstExisting200Conflicts':upper_existing,
             'nearestRawOuterOpenings':opening_edges,'newFirstGravityWallAdded':False,'upper RCLateralWallRemainsAligned':True})
+    native_portal=source_portal_geometry(raw,working['stages']['masonryFrame'],h['insulatedPortal'],grid)
+    post_x=sorted({p[0] for p in native_portal['westPolygonXZMm'] if p[1]==bottom})
+    if len(post_x)!=2:raise ValueError('Actual native portal post top unavailable')
+    normal=working['stages']['masonryFrame']['coreAxialWidthMm']
+    beam_width=working['stages']['masonryFrame']['northUpstandWidthMm'];north=[]
+    for wall,key,head_pair,depth in [('court-north','courtNS',('P28','P30'),working['stages']['masonryFrame']['geometry']['courtUpstandDepthMm']),
+                                    ('outer-north','gardenNS',('P25','P26'),working['stages']['masonryFrame']['geometry']['outerUpstandDepthMm'])]:
+        cy=sum(h['insulatedPortal']['piers'][key])/2
+        beds=[]
+        for side,head in zip(('west','east'),head_pair):
+            lo,hi=post_x if side=='west' else (h['shell']-post_x[1],h['shell']-post_x[0])
+            rectangle=[lo,cy-normal/2,hi,cy+normal/2]
+            cap=next(r for r in grid['heads'] if r['id']==head)
+            footprint=[cap['xy'][0]-cap['capXY'][0]/2,cap['xy'][1]-cap['capXY'][1]/2,cap['xy'][0]+cap['capXY'][0]/2,cap['xy'][1]+cap['capXY'][1]/2]
+            if area(rectangle)-intersect_area([footprint],rectangle)>1e-6:raise ValueError('Actual portal head seat leaves its source cap')
+            beds.append({'id':wall+'/'+side+'/prospective-sliding-bed','headId':head,'rectangleXYMm':rectangle,
+                'contactPlaneZMm':bottom,'bedThicknessAndMaterialSelected':False,'postTopCropForBedThicknessRequired':True})
+        north.append({'wallId':wall,'upstandRectangleXYMm':[post_x[0],cy-beam_width/2,h['shell']-post_x[0],cy+beam_width/2],
+            'upstandZMm':[bottom,bottom+depth],'prospectiveCompressionBeds':beds,'beamIntegralWithFloorRetained':True,
+            'postStabilityAndArchThrustAfterReleaseQualified':False})
     fixed_x=next(r for r in rows if r['corner']=='SW')['originXYMm'][0]+inner
     fixed_y=next(r for r in rows if r['corner']=='SW')['originXYMm'][1]+inner
     along=proposal['interfaceAlongFromOuterCornerMm']
@@ -203,7 +230,7 @@ def derive(settings,raw):
         'newLowerBodyWeightIsNetGChange':False,
         'addedGroundFinishedAreaLossM2':math.fsum(r['addedGroundFinishedAreaLossM2'] for r in rows),
         'allNewCornerGravityFootprintsOnActualGroundGirders':True,'newFirstGravityWallsAdded':False,
-        'corners':rows,'horizontalConstraintPointsXYMm':points,'horizontalConstraintIds':['SW-X','SW-Y','NW-X'],
+        'corners':rows,'northPortalFloorBeamInterfaces':north,'horizontalConstraintPointsXYMm':points,'horizontalConstraintIds':['SW-X','SW-Y','NW-X'],
         'sourceFloorPressureOnlyStatics':winds,
         'maximumAbsoluteThreeConstraintForceKN':[max(abs(w['onFloorKN'][i]) for w in winds) for i in range(3)],
         'maximumUnclosedOutOfPlanePressureMomentKNm':max(abs(w['remainingWrenchForVerticalFloorBearingKN_KNm'][i]) for w in winds for i in (3,4)),
@@ -214,7 +241,7 @@ def derive(settings,raw):
         'fullHouseReactionsCalculated':False,'physicalShearConnectionsQualified':False,'floorBearingOrAnchorageResistanceAccepted':False,
         'allFourFiniteJointsResolved':False,'ownerAccepted':False,
         'sourceFloorWindFunctionUse':'Actual named native AST function, executed without its module imports or any solver; exact recipe admission retained. These are rigid-diaphragm necessary statics only, not floor deformation/global reactions.',
-        'unclosed':['Actual seat/bond/rotation/cracking and direct-bearing floor edge anchorage','Three physical all-metal horizontal connections: gap/reversal, guide/vertical travel, friction or seizure, local RC/steel anchorage and finite rotational stiffness','Actual masonry bearing/slenderness/restraint plus new full-height DPC/material/finish detail','All52-head native load redistribution, all4local finite interfaces, new source-bound signed programme and unchanged/adverse controls','Concrete/floor/gap/material union mass and six-wrench ledger; added body envelopeG is not netG','Source-specific ground/upper furniture, services, reveal/arch, finish and renewal replans; no service embedded or deleted'],
+        'unclosed':['Actual seat/bond/rotation/cracking and direct-bearing floor edge anchorage;4northern beam-pier releases, deep-beam end anchorage and actual lower pier/arch stability','Three physical all-metal horizontal connections: gap/reversal, guide/vertical travel, friction or seizure, local RC/steel anchorage and finite rotational stiffness','Actual masonry bearing/slenderness/restraint plus new full-height DPC/material/finish detail','All52-head native load redistribution, all4corner local interfaces plus4northern beam-pier sliding beds, new source-bound signed programme and unchanged/adverse controls','Concrete/floor/gap/material union mass and six-wrench ledger; added body envelopeG is not netG','Source-specific ground/upper furniture, services, reveal/arch, finish and renewal replans; no service embedded or deleted'],
         'scope':'Geometry and necessary floor-pressure equilibrium only. No cantilever or site capacity is borrowed; complete house support, response, strength, material, physical and owner acceptance remain open.'},h,grid,floors
 
 class Svg:
@@ -254,6 +281,9 @@ def plan_svg(value,h,grid,floors):
             a,b=wall['a'],wall['b'];core=wall['structuralCore']
             r=[min(a[0],b[0]),core[0],max(a[0],b[0]),core[1]] if a[0]!=b[0] else [core[0],min(a[1],b[1]),core[1],max(a[1],b[1])]
             box(r,'#dfe2e3','#a0a8ae')
+        for north in value['northPortalFloorBeamInterfaces']:
+            box(north['upstandRectangleXYMm'],'#dce6ef','#315c86')
+            for bed in north['prospectiveCompressionBeds']:box(bed['rectangleXYMm'],'#fff','#a1262f','stroke-width="2"')
         for c in value['corners']:
             for r in c['rcRectanglesXYMm']:box(r,'#7398b9','#315c86')
             if level=='GROUND':
@@ -285,8 +315,8 @@ def plan_svg(value,h,grid,floors):
         col=i%2;row=i//2
         s.text(50+col*710,889+row*25,f'{number}. {name}'+(' *' if old else ''),'note red')
     s.text(50,1030,'FIRST: unchanged upper RC footprint is not a room pass. Existing upper furniture/service conflicts remain visible.','note red')
-    s.text(50,1057,'No permanent service is chased, buried or silently deleted. Floor finish and all 136-piece renewal witnesses must regenerate.','note')
-    s.text(50,1084,'All four new local interfaces, whole-house redistribution, physical shear details and owner appearance remain OPEN.','sub red')
+    s.text(50,1057,'Four red northern pier-top seats also release the floor beams; gravity support stays. Arch/pier stability remains OPEN.','note red')
+    s.text(50,1084,'Four corner separations + four northern seats + three H interfaces: new mechanics and room/service replans remain OPEN.','sub red')
     return s.finish()
 
 def section_svg(value,h,grid):
@@ -330,6 +360,7 @@ def section_svg(value,h,grid):
     s.text(50,938,'Wind reversal needs captive opposed faces; actual gaps and engagement OPEN.','note red')
     s.text(50,965,f'Uniform thermal origin{value["thermalIllustration"]["fixedExpansionOriginXYMm"]}; four tight keys avoided.','note')
     s.text(50,992,'No plastic/PTFE, resin anchorage or friction resistance is admitted.','note')
+    s.text(50,1019,'Four northern beam/pier beds also release H; their gravity support stays.','note red')
     # Section uses explicit independent scales so long ground-to-floor height and
     # narrow wall/seat can both be read. All dimensions are labelled; NTS.
     ox,oy=800,135;sx,sz=.63,.139
@@ -382,7 +413,7 @@ def main():
     (a.out/'separated-floor-bearing-comparison.json').write_text(json.dumps(value,indent=2,allow_nan=False)+'\n')
     print('SEPARATED_BEARING_SUMMARY '+json.dumps({k:value[k] for k in (
         'sourceCommit','newGroundFinishedFaceSWMm','newFinishedToeSWMm','addedGroundFinishedAreaLossM2','newLowerBodyEnvelopeComparisonGKN',
-        'allNewCornerGravityFootprintsOnActualGroundGirders','horizontalConstraintPointsXYMm','maximumAbsoluteThreeConstraintForceKN',
+        'allNewCornerGravityFootprintsOnActualGroundGirders','northPortalFloorBeamInterfaces','horizontalConstraintPointsXYMm','maximumAbsoluteThreeConstraintForceKN',
         'maximumThreeConstraintFloorPressureEquilibriumResidualKN_KNm','maximumUnclosedOutOfPlanePressureMomentKNm','thermalIllustration','svgSHA256','fullHouseReactionsCalculated','allFourFiniteJointsResolved')}))
     for name,svg in outputs.items():print('SVG_SOURCE '+name+' '+svg.encode().hex())
 if __name__=='__main__':main()

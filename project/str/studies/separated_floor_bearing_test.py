@@ -8,6 +8,8 @@ class SeparatedBearingControls(unittest.TestCase):
     def test_every_actual_new_arm_has_full_actual_ground_bearing(self):
         v=self.value
         self.assertEqual(len(v['corners']),4)
+        self.assertEqual(sum(len(n['prospectiveCompressionBeds']) for n in v['northPortalFloorBeamInterfaces']),4)
+        self.assertEqual([n['upstandZMm'] for n in v['northPortalFloorBeamInterfaces']],[[3170,3820],[3170,3920]])
         self.assertTrue(v['allNewCornerGravityFootprintsOnActualGroundGirders'])
         self.assertEqual([r['completeArmGroundEdgeMarginsMm'] for r in v['corners']],[[70.,70.],[170.,70.],[70.,70.],[170.,70.]])
         self.assertTrue(all(r['missingGroundBearingAreaMm2']==0 for r in v['corners']))
