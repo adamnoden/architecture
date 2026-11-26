@@ -33,7 +33,7 @@ def main(folder):
     def capture(*args,**kwargs):
         captured.update(args=args,kwargs=kwargs)
         write(folder/'exact-membrane-compile-input.json',{'args':args,'kwargs':kwargs})
-        captured['python']=compile_original(*args,**kwargs)
+        captured['python']=json.loads(json.dumps(compile_original(*args,**kwargs),allow_nan=False))
         raise ComponentCaptured()
     try:
         trace.compile_perforated_floor=capture
@@ -45,7 +45,7 @@ def main(folder):
     geometry=['ports','meshTrianglesXYMm','coordinateColumns','bands','omissionsXYMm','unqualifiedLaw']
     for key in geometry+['condensedStiffnessKNPerMm','condensedForceKN']:
         if actual[key]!=python[key]:raise ValueError('Rebuilt operator differs from EXACT captured component: '+key)
-    sparse=compile_original(*captured['args'],**{**captured['kwargs'],'numerical_backend':'scipy-sparse'})
+    sparse=json.loads(json.dumps(compile_original(*captured['args'],**{**captured['kwargs'],'numerical_backend':'scipy-sparse'}),allow_nan=False))
     for key in geometry:
         if sparse[key]!=python[key]:raise ValueError('Backend changed physical geometry/law/maps: '+key)
     model=checkpoint['postprocessingModel'];raw=checkpoint['rawResponse'];mid=3270.
