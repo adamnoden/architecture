@@ -4,7 +4,7 @@ import {readFileSync,mkdirSync,writeFileSync,existsSync} from 'node:fs'
 import {join} from 'node:path'
 import {plantPotableInventory} from './current-design/inlet-plant-potable-inventory.js'
 import {readInletSourceEnvelopeSettings} from './current-design/inlet-source-envelope.js'
-import {inletPlantTankedRoom,drawInletPlantTankedRoom} from './current-design/inlet-plant-tanked.js'
+import {inletPlantTankedRoom,drawInletPlantTankedRoom,plantIncrementalBoxUnionLitres} from './current-design/inlet-plant-tanked.js'
 import {inletSplitPlantRoom} from './current-design/inlet-split-plant-room.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
 const receipt=read('project/had/studies/inlet-local-pocket.results.json'),p=receipt.splitPlantRoom?.comparison,choice=read('project/had/studies/inlet-plant-tanked-walk-candidate.json')
@@ -76,6 +76,11 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
  assert.equal(r.vessel.connections.hot.upperTreeJoinLocalMm[2]+r.vessel.geometry.groundFflMm,2945+530)
  assert.ok(r.containment.necessaryClosedPressureNetworkVolumeScreen,JSON.stringify(r.containment))
  assert.ok(r.containment.reserveL>0)
+ assert.ok(r.containment.retainedSourceEnvelopeDisplacementUpperL>0)
+ assert.equal(r.containment.retainedEnvelopeCase.sourceTerritoriesCountedOnce,true)
+ assert.equal(r.containment.retainedEnvelopeCase.overlapWithWalkingCreditedL,0)
+ assert.equal(r.containment.retainedEnvelopeCase.actualBodiesSupportElectricalProtectionAndRenewalAccepted,false)
+ assert.ok(Math.abs(r.containment.grossIncrementalRoomL-r.containment.totalDisplacementUpperL-r.containment.availableIncrementalRoomLowerL)<1e-7)
  assert.ok(Math.abs(r.containment.availableIncrementalRoomLowerL-r.inventory.fullInstantPressureNetworkDesignReleaseL-r.containment.reserveL)<1e-7)
  assert.equal(r.inventory.vesselMaximumDesignL,330)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
@@ -87,7 +92,7 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
 test('actual floor, outlet and inventory perturbations invalidate dependent design evidence',()=>{
  const i=roomRequest(),r=inletPlantTankedRoom(i),low=structuredClone(i)
  low.choice.walkingRiseAboveHouseFflMm=0
- assert.throws(()=>inletPlantTankedRoom(low),/vertical stack|compression post|direct bearing length|actual stack|positive post length/i,'The actual lower floor cannot contain the same unaltered platform; obsolete evidence must not survive an impossible geometry.')
+ assert.throws(()=>inletPlantTankedRoom(low),/vertical stack|compression post|direct bearing length|actual stack|positive post length|no positive length/i,'The actual lower floor cannot contain the same unaltered platform; obsolete evidence must not survive an impossible geometry.')
  const mixed=structuredClone(i);mixed.plant.resolvedInput.branch.paths[0].points[0][0]+=1
  assert.throws(()=>inletPlantTankedRoom(mixed),/Mixed or modified/)
  assert.throws(()=>inletPlantTankedRoom({...i,maximumSourceApertureMm:10.4}),/source aperture/)
@@ -249,4 +254,17 @@ test('normal source temperature and actual matched platform movement invalidate 
  const invalid=inletPlantTankedRoom(duty)
  assert.equal(invalid.normalMetalTemperature.necessarySourceDutyCoverage,false)
  assert.ok(invalid.diagnostics.includes('PLANT_TANK/normal-metal-temperature-design-range-does-not-cover-source-duty'))
+})
+
+test('retained controls and riser upper envelopes count their true incremental3D union once',()=>{
+ const room=[0,0,2000,1000] as const,a=[0,0,0,1000,1000,1000] as const,b=[500,0,400,1000,1000,1000] as const
+ assert.equal(plantIncrementalBoxUnionLitres([a,b],room,200,700),650)
+ assert.equal(plantIncrementalBoxUnionLitres([[-2000,-1000,0,1000,1000,1000],[-1500,-1000,400,1000,1000,1000]],[-2000,-1000,2000,1000],200,700),650)
+ assert.equal(plantIncrementalBoxUnionLitres([a,a],room,200,700),500)
+ assert.equal(plantIncrementalBoxUnionLitres([a],room,1100,1200),0)
+ assert.throws(()=>plantIncrementalBoxUnionLitres([[0,0,0,NaN,1,1]],room,0,100),/Finite positive/)
+ const i=roomRequest(),r=inletPlantTankedRoom(i),lower=structuredClone(i);lower.choice.maximumBulkWaterRelativeWalkingMm-=10
+ const q=inletPlantTankedRoom(lower)
+ assert.ok(q.containment.retainedSourceEnvelopeDisplacementUpperL<r.containment.retainedSourceEnvelopeDisplacementUpperL)
+ assert.notEqual(q.source.caseDigest,r.source.caseDigest)
 })
