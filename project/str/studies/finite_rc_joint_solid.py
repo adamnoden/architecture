@@ -197,7 +197,7 @@ def _chord_stiffness(mesh, basis, patch, middle, axes, axial_rigidity):
 def build_joint(*, patch_xy_mm, slab_z_mm, l_rectangles_xy_mm,
                 wall_centroid_xy_mm, upper_end_z_mm, contours_mm,
                 normal_points_xy_mm, chord_axis_xy_mm, chord_axial_rigidity_kn,
-                pitch_mm, young_mpa=8250., poisson=.2,
+                band_width_mm, pitch_mm, young_mpa=8250., poisson=.2,
                 slab_density_kn_m3=27., wall_density_kn_m3=25., slab_live_kpa=0.):
     patch = _vector(patch_xy_mm, 4, 'patch')/1000
     slab = _vector(slab_z_mm, 2, 'slab datums')/1000
@@ -210,7 +210,7 @@ def build_joint(*, patch_xy_mm, slab_z_mm, l_rectangles_xy_mm,
         or rectangles.ndim != 2 or rectangles.shape[1] != 4 or not np.isfinite(rectangles).all()
         or np.any(rectangles[:, 2:] <= rectangles[:, :2])
         or not np.isfinite(normal).all() or len({tuple(p) for p in normal}) != len(normal)
-        or not all(np.isfinite(v) and v > 0 for v in (upper_end_z_mm, pitch_mm, young_mpa, slab_density_kn_m3, wall_density_kn_m3))
+        or not all(np.isfinite(v) and v > 0 for v in (upper_end_z_mm, band_width_mm, pitch_mm, young_mpa, slab_density_kn_m3, wall_density_kn_m3))
         or not np.isfinite(chord_axial_rigidity_kn) or chord_axial_rigidity_kn < 0
         or not np.isfinite(slab_live_kpa) or slab_live_kpa < 0
         or not np.isfinite(poisson) or not 0 <= poisson < .5):
@@ -220,9 +220,14 @@ def build_joint(*, patch_xy_mm, slab_z_mm, l_rectangles_xy_mm,
         raise ValueError('Contained actual L and positive upper stub required')
     if any(not (patch[0] < p[0] < patch[2] and patch[1] < p[1] < patch[3]) or _inside_xy(p, rectangles) for p in normal):
         raise ValueError('Normal scalar port must be actual slab soffit outside wall/contour duties')
-    width = rectangles[0, 2]-rectangles[0, 0]
-    if abs(axes[0]-patch[0]-width/2) > 1e-12 or abs(axes[1]-patch[1]-width/2) > 1e-12:
-        raise ValueError('Actual source band/chord axes must bisect wall-normal strip')
+    # The slab edge band and vertical L wall are independent physical bodies.
+    # Widening the wall must not widen its exterior slab-band trace or relocate
+    # the separately retained steel chord.
+    band_width = band_width_mm/1000
+    if band_width > min(patch[2:]-patch[:2]):
+        raise ValueError('Actual source band must lie within both patch dimensions')
+    if abs(axes[0]-patch[0]-band_width/2) > 1e-12 or abs(axes[1]-patch[1]-band_width/2) > 1e-12:
+        raise ValueError('Actual source band/chord axes must bisect the declared slab band')
     boxes = np.array([[*patch[:2], slab[0], *patch[2:], slab[1]],
                       *[[r[0], r[1], slab[1], r[2], r[3], upper] for r in rectangles]])
     x_extra = [*contours['north'], *normal[:, 0], axes[0]]
@@ -233,7 +238,7 @@ def build_joint(*, patch_xy_mm, slab_z_mm, l_rectangles_xy_mm,
     chord, segments = _chord_stiffness(mesh, basis, patch, slab.mean(), axes, chord_axial_rigidity_kn)
     stiffness = concrete+chord
     ports, transform, boundary = _ports_and_transform(mesh, basis, patch, slab, contours, rectangles,
-                                                     centroid, upper, normal, axes, width)
+                                                     centroid, upper, normal, axes, band_width)
     @LinearForm
     def gravity(v, w):
         return -np.where(w.x[2] < slab[1], slab_density_kn_m3, wall_density_kn_m3)*v[2]
@@ -325,20 +330,28 @@ def line_load(engine, *, axis, fixed_coordinate_mm, z_mm, interval_mm, force_den
     return force
 
 
-def recover(engine, port_displacements_si, physical_load):
+def recover(engine, port_displacements_si, physical_load, *, external_port_load=None):
+    """Recover the solid and separately applied work-dual port loads.
+
+    Port loads use kN/kNm against the existing m/radian coordinates. They do
+    not invent solid tractions or change interior equilibrium at prescribed q.
+    """
     q = _vector(port_displacements_si, len(engine['ports']), 'joint port displacement')
     f = _vector(physical_load, engine['basis'].N, 'complete joint physical load')
+    port_load = (np.zeros(len(engine['ports'])) if external_port_load is None else
+                 _vector(external_port_load, len(engine['ports']), 'complete external joint port load'))
     interior = engine['interior']
     if '_interiorFactor' not in engine:
         engine['_interiorFactor'] = splu(engine['fullStiffness'][interior][:, interior], permc_spec='MMD_AT_PLUS_A')
     particular = np.zeros(engine['basis'].N)
     particular[interior] = engine['_interiorFactor'].solve(f[interior])
     u = engine['response']@q+particular
-    reaction = engine['condensedStiffness']@q-condense_load(engine, f)
+    reaction = engine['condensedStiffness']@q-condense_load(engine, f)-port_load
     energy = float(.5*u@(engine['fullStiffness']@u))
-    work = float(q@reaction+u@f)
+    external_work = float(u@f+q@port_load)
+    work = float(q@reaction+external_work)
     error = abs(2*energy-work)/max(1., abs(work))
     if error > 1e-7:raise ValueError('Actual finite joint physical energy/work fails')
     return {'physicalDisplacementsM':u, 'portReactionKN_KNm':reaction,
-            'strainEnergyKNm':energy, 'externalLoadWorkKNm':float(u@f),
+            'strainEnergyKNm':energy, 'externalLoadWorkKNm':external_work,
             'relativeWorkResidual':error, 'candidateAccepted':False, 'resistanceAccepted':False}

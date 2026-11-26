@@ -58,7 +58,7 @@ test('current saved Plant choice recomputes the impulse cap without borrowing ca
  assert.deepEqual(before.engineering.groundSection,after.engineering.groundSection);assert.deepEqual(before.engineering.roofPitch,after.engineering.roofPitch)
  const {inletSplitPlantRoom}=await import('./current-design/inlet-split-plant-room.js'),bounds=pa.storedImpulse.retainedGeometryBounds,
   upperInput=structuredClone(pa.resolvedInput)
- assert.equal(bounds.clearWidthUpperMm,401);assert.equal(bounds.clearHeightUpperMm,141)
+ assert.equal(bounds.clearWidthUpperMm,401);assert.equal(bounds.clearHeightUpperMm,139)
  upperInput.choice.clearWidthMm=bounds.clearWidthUpperMm;upperInput.choice.clearHeightMm=bounds.clearHeightUpperMm
  const upper=inletSplitPlantRoom(upperInput)
  if(upper.state!=='unadopted-threshold-drainage-successor')throw Error('Actual saved Plant ground required')

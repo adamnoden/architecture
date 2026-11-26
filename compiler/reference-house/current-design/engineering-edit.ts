@@ -1,4 +1,5 @@
 import {readCurrentFiniteJointSettings} from './structural-current-finite-joint-settings.js'
+import {admitStoreDrainChoice} from './inlet-store-drain.js'
 import {readLowerMasonrySettings} from './structural-lower-masonry-settings.js'
 import {readGroundPocketSettings} from './structural-ground-pocket-settings.js'
 import {readWetBeamEndDevelopmentControls} from './structural-wet-beam-end-settings.js'
@@ -27,6 +28,8 @@ export interface EngineeringTicket {
   readonly requestId: string
   readonly documentJson: string
 }
+export const editableStoreDrainId='HAD/store-factory-lowpoint-drain'
+export const editableStoreDrainFields=['restrictionMaximumBoreMm','maximumCompleteDryCargoKg','cargoResidualBudgetKg','retainedBlankWidthMm','maximumPickupAboveLowPointMm'] as const
 export const editablePlantRoomId='HAD/plant-wet-floor-threshold-successor'
 export const editablePlantRoomFields=['clearWidthMm','clearHeightMm','receiverHighAdverseMm','bridgeLiftMm','bridgeHardwareBudgetEachKg','fittedFrame.clearWidthMm','fittedFrame.sourceOpeningDiameterMm'] as const
 /** Read the same authored scalar for control availability and its displayed value. */
@@ -41,6 +44,7 @@ export const editableInletBankId='HAD/indoor-isolation-bank'
 export const editableInletBankFields=['indoorBankXMm','indoorUtilityAxisZMm','indoorTailOffsetMm','indoorUtilityReturnXMm','indoorWesternReturnXMm','pipeJacketDensityComparisonKgM3','pipeInsulationDensityComparisonKgM3'] as const
 export const editableRoofId = 'MAT/ring-roof-field'
 export const editableFloorSectionId = 'STR/current-floor-section'
+export const editableDistributedFloorId = 'STR/current-distributed-floor'
 export const editableWetSupportId = 'STR/wet-wall-support'
 export const editableWetCageId = 'STR/wet-wall-support/reinforcement'
 export const editableWetBeamEndId = 'STR/WET-CAGE/beam/rectangular-return-development'
@@ -91,6 +95,12 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       }
       if (operation.pitchDeg === state.document.stages.roofPitch.pitchDeg) return { status: 'applied', state }
       stages = { ...state.document.stages, roofPitch: { pitchDeg: operation.pitchDeg } }
+    } else if(record(operation)&&operation.kind==='set-store-drain-field'){
+      const current=state.document.stages.inletSourceEnvelope
+      if(!exact(operation,['kind','assemblyId','inputId','value'])||operation.assemblyId!==editableStoreDrainId||!record(current)||!record(current.storeDrain)||(typeof operation.inputId!=='string')||!(editableStoreDrainFields as readonly string[]).includes(operation.inputId)||typeof operation.value!=='number'||!Number.isFinite(operation.value)||transaction.units!==(operation.inputId.endsWith('Kg')?'kg':'mm'))throw new TypeError('Unsupported complete saved factory drain edit')
+      const choice=admitStoreDrainChoice({...current.storeDrain,[operation.inputId]:operation.value})
+      if(current.storeDrain[operation.inputId]===operation.value)return{status:'applied',state}
+      stages={...state.document.stages,inletSourceEnvelope:{...current,storeDrain:choice}}
     } else if(record(operation)&&operation.kind==='set-plant-room-field'){
       const current=state.document.stages.inletSourceEnvelope
       if(!exact(operation,['kind','assemblyId','inputId','value'])||operation.assemblyId!==editablePlantRoomId||!record(current)||!record(current.splitPlantRoom)
@@ -124,6 +134,13 @@ export function applyEngineeringEdit(state: EngineeringEditorState, transaction:
       const controls=readGroundPocketSettings(operation.settings)
       if(JSON.stringify(state.document.stages.groundPocketLoads)===JSON.stringify(controls))return{status:'applied',state}
       stages={...state.document.stages,groundPocketLoads:controls}
+    } else if(record(operation)&&operation.kind==='set-southwest-core-width') {
+      const current=state.document.stages.distributedFloor
+      if(transaction.units!=='mm'||!exact(operation,['kind','assemblyId','widthMm'])||operation.assemblyId!==editableDistributedFloorId
+        ||!record(current)||!record(current.cornerWidthsMm)||typeof current.cornerWidthsMm.SW!=='number'
+        ||typeof operation.widthMm!=='number'||!Number.isFinite(operation.widthMm)||operation.widthMm<140||operation.widthMm>240)throw new TypeError('Existing distributed floor and explicit southwest core width140..240mm required')
+      if(current.cornerWidthsMm.SW===operation.widthMm)return{status:'applied',state}
+      stages={...state.document.stages,distributedFloor:{...current,cornerWidthsMm:{...current.cornerWidthsMm,SW:operation.widthMm}}}
     } else if(record(operation)&&operation.kind==='set-floor-finite-joint-comparison') {
       const current=state.document.stages.floorSection
       if(transaction.units!=='mm'||!exact(operation,['kind','assemblyId','settings'])||operation.assemblyId!==editableFloorSectionId

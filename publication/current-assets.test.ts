@@ -12,7 +12,7 @@ import { createReferenceHouseSource } from '../compiler/reference-house/fixture.
 import { applyPublicationPlates, publicationPlatePlacements } from './plates-current.js'
 import { publicationPlatePlacements as historicalPlacements } from './plates.js'
 import { blackOnlyPublicationSvg, buildCurrentPublicationAssets, compilePublicationPlanAssets, compilePublicationArchitectureAssets,
-  currentPublicationAssetPaths, frameFurnishedStudy } from './current-assets.js'
+  currentPublicationAssetPaths, frameFurnishedStudy, frameEyeLevelStudy } from './current-assets.js'
 
 const root = resolve(import.meta.dirname, '..')
 
@@ -124,17 +124,39 @@ test('furnished publication framing preserves the existing Study paths and uses 
   assert.equal(blackOnlyPublicationSvg('<path d="M1,2L3,4" fill="#aabbcc"/>').match(/d="[^"]+"/)![0], 'd="M1,2L3,4"')
 })
 
+test('eye-level framing preserves exact camera geometry, clipping and provenance', () => {
+  const svg = readFileSync(resolve(root, 'project/ias/studies/crafted-study-eye-level-day.svg'), 'utf8')
+  for (const view of ['fixed', 'removable'] as const) {
+    const group = [...svg.matchAll(/<g\b[^>]*data-study-view="([^"]+)"[^>]*>[\s\S]*?<\/g>/g)].find(match => match[1] === view)![0]
+    const rendered = frameEyeLevelStudy(svg, view)
+    const geometry = (value:string) => [...value.matchAll(/\b(?:d|points)="([^"]+)"/g)].map(match=>match[0])
+    assert.deepEqual(geometry(rendered), geometry(group))
+    assert.ok(geometry(rendered).length > 100)
+    assert.ok(rendered.includes(svg.match(/<defs>[\s\S]*?<\/defs>/)![0]))
+    assert.ok(rendered.includes(svg.match(/<metadata>[\s\S]*?<\/metadata>/)![0]))
+    assert.match(rendered, /data-publication-source-sha256="[\da-f]{64}"/)
+    assert.match(rendered, /viewBox="0 0 1000 1000"/)
+    assert.ok(!rendered.match(/<g[^>]*data-study-view[^>]*transform=/))
+    for (const [colour] of rendered.matchAll(/#[\da-f]{6}\b/gi)) {
+      assert.equal(colour.slice(1,3), colour.slice(3,5))
+      assert.equal(colour.slice(3,5), colour.slice(5,7))
+    }
+  }
+  assert.throws(()=>frameEyeLevelStudy(svg.replace('data-study-viewport', 'missing-viewport'), 'fixed'), /camera viewport/)
+  assert.throws(()=>frameEyeLevelStudy(svg.replace('data-study-view="removable"', 'data-study-view="fixed"'), 'fixed'), /composition/)
+})
+
 test('clean-source asset generation checks the native room producer and never substitutes missing artwork', () => {
   const generated = buildCurrentPublicationAssets(root)
   assert.deepEqual(generated.assets.map(asset => asset.path), [...currentPublicationAssetPaths])
   assert.ok(generated.assets.every(asset => /^[\da-f]{64}$/.test(asset.sha256)))
   assert.match(generated.architecturalDrawingMethod.sha256, /^[\da-f]{64}$/)
   assert.equal(generated.architecturalDrawingMethod.sourceId, layoutFamilySource.id)
-  assert.ok(generated.producerChecks[0].inputArtwork['project/ias/studies/crafted-study-comparison.svg'])
+  assert.ok(generated.producerChecks[0].inputArtwork['project/ias/studies/crafted-study-eye-level-day.svg'])
   const temporary = mkdtempSync(resolve(tmpdir(), 'current-book-missing-producer-'))
   try {
     symlinkSync(resolve(root, 'node_modules'), resolve(temporary, 'node_modules'))
-    const path = resolve(temporary, 'project/ias/studies/crafted-study-views.mjs')
+    const path = resolve(temporary, 'project/ias/studies/crafted-study-eye-level.mjs')
     mkdirSync(dirname(path), { recursive: true })
     writeFileSync(path, '')
     assert.throws(() => buildCurrentPublicationAssets(temporary), /ENOENT/)

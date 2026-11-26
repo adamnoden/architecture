@@ -14,7 +14,7 @@ test('whole Plant successor replaces failed infills while retaining the full car
  assert.equal(x.rejectedInfillOnly.rejected,true);assert.equal(x.rejectedInfillOnly.maximumClearWidthMm,86)
  assert.ok(x.rejectedInfillOnly.requiredClearWidthAtSameHeightMm!>170)
  assert.equal(x.thresholdRoute.retained1000mmCargoWidth,1000);assert.equal(x.masonryOpeningChanged,false)
- assert.deepEqual(x.thresholdRoute.outerPackageMm,[444,184]);assert.ok(x.thresholdRoute.laneChecks.every(v=>v.insideCargoReserveMm===13))
+ assert.deepEqual(x.thresholdRoute.outerPackageMm,[444,182]);assert.ok(x.thresholdRoute.laneChecks.every(v=>v.insideCargoReserveMm===13))
  assert.equal(x.drainageGeometry.necessarySourceOnlyDrainGeometry,true);close(x.drainageGeometry.bottomAfterSettingMm,.41)
  assert.ok(x.pocket.local?.supportPresentAtSides.west&&x.pocket.local.supportPresentAtSides.east&&x.pocket.local.supportPresentAtSides.south&&x.pocket.local.supportPresentAtSides.north)
  close(x.pocket.local!.quantityBounds.slabAndMineralWeightKN,23.62497175)
@@ -25,7 +25,7 @@ test('whole Plant successor replaces failed infills while retaining the full car
 })
 test('the complete source is charged to each surviving outlet; high/submerged and both-blocked states reject without storage or manual credit',()=>{
  const x=inletSplitPlantRoom(input);if(x.state!=='unadopted-threshold-drainage-successor')throw Error('Missing source-bound ground')
- close(x.sourceOnlyLmin,234.680939);assert.ok(x.thresholdRoute.hydraulic.openEntryHeadReserveMm>16)
+ close(x.sourceOnlyLmin,234.680939);assert.ok(x.thresholdRoute.hydraulic.openEntryHeadReserveMm>14)
  assert.ok(x.receiverCases.ordinary.freeDropReserveMm>335);assert.ok(x.receiverCases.highSubmerged.freeDropReserveMm< -264)
  assert.equal(x.receiverCases.highSubmerged.submergedTerminal,true);assert.match(x.receiverCases.bothBlocked,/reject/)
  assert.equal(x.manualResponseCredited,false);assert.equal(x.pan.assuredAvailableStorageLitres,null)
@@ -50,7 +50,7 @@ test('all pan and closed-channel pressure loads rotate into actual house coordin
  const sum=Object.fromEntries(keys.map(k=>[k,pan.waterLoadOrigins.reduce((n:number,v:any)=>n+v.wrenchKN_KNm[k],0)]))
  for(const k of keys)close(hydro.summedSurfaceWrenchKN_KNm[k],sum[k])
  for(const [j,o]of x.outfalls.entries()){
-  close(o.fullWaterInventoryControl.massKg,79.492);close(o.bodyStockGravity.massKg,27.67593472)
+  close(o.fullWaterInventoryControl.massKg,78.3564);close(o.bodyStockGravity.massKg,27.57418496)
   assert.ok(o.clearCornersMm.every((p:number[])=>p[0]>=11570.5&&p[0]<=12990))
   const h=o.hydrostaticCases.find((c:any)=>c.id==='both-blocked-to-flush-floor'),inside=h.openInterfaceLoads.find((v:any)=>v.id.includes('inside-open-cut')),
    halves=hydro.openPortInterfaceLoads.filter((v:any)=>j===0?/port-2\/water$|port-3\/water$/.test(v.id):/port-6\/water$|port-7\/water$/.test(v.id))
@@ -85,14 +85,14 @@ test('editable geometry and unsupported references propagate without substitutin
 })
 
 test('actual floor body, retained wall DPC and independent bridge settings replace an artificial uniform outer-wall base',()=>{
- const reference=structuredClone(input);reference.choice.clearHeightMm=150
+ const reference=structuredClone(input);reference.choice.clearHeightMm=150;reference.choice.bridgeThicknessMm=29
  const before=inletSplitPlantRoom(reference);if(before.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
  const actual=before.drainageGeometry.actualFloorBody,wall=before.drainageGeometry.retainedWall
  close(actual.eastEdgeHouseXMm,11520.5);close(actual.flowFaceMm,313.8);close(actual.bottomReserveMm,1.8);assert.equal(actual.twoIndependentSettingsMm,20)
  close(wall.outsidePackageBottomMm,280.41);close(wall.retainedDpcTopMm,150);close(wall.reserveMm,110.41)
  close(before.bridge.lowerToPackageAfterTwoIndependentSettingsMm,-9);assert.equal(before.drainageGeometry.knownFloorAndBridgeInterfaceGeometryScreen,false)
  assert.ok(before.diagnostics.includes('SPLIT_PLANT_ROOM/threshold-bridge-comparison-fails'))
- const changed=structuredClone(input);changed.choice.clearHeightMm=140
+ const changed=structuredClone(input);changed.choice.clearHeightMm=140;changed.choice.bridgeThicknessMm=29
  const lower=inletSplitPlantRoom(changed);if(lower.state!=='unadopted-threshold-drainage-successor')throw Error('ground')
  close(lower.bridge.lowerToPackageAfterTwoIndependentSettingsMm,1);close(lower.thresholdRoute.hydraulic.openEntryHeadReserveMm,16.705968713187048)
  assert.equal(lower.drainageGeometry.knownFloorAndBridgeInterfaceGeometryScreen,true);assert.equal(lower.drainageGeometry.necessarySourceOnlyDrainGeometry,true)

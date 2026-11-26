@@ -4,9 +4,10 @@ import { drawStudyPanellingElevation } from './study-linings-views.js'
 import { compileStudyRoomKit, drawStudyRoomKitPlan } from './study-room-kit.js'
 import { drawStudyWallTransition } from './study-wall-transition-views.js'
 import { drawStudyRoomPerspective } from './study-room-perspective.js'
+import type { NativeSWGeometry } from './study-structural-context.js'
 
-export function compileStudyRoomKitProjection(resolved: CurrentDesignResolution, input: unknown) {
-  const { kit, wallTransition, roomAssembly } = compileStudyRoomKit(resolved, input)
+export function compileStudyRoomKitProjection(resolved: CurrentDesignResolution, input: unknown, structuralGeometry?: NativeSWGeometry) {
+  const { kit, wallTransition, roomAssembly } = compileStudyRoomKit(resolved, input, structuralGeometry)
   return {
     kit, roomAssembly, roomAssemblySvg: drawStudyRoomAssembly(roomAssembly), wallTransition, wallTransitionSvg: drawStudyWallTransition(wallTransition),
     plan: drawStudyRoomKitPlan(kit),

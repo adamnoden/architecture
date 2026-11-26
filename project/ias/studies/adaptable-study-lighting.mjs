@@ -65,12 +65,28 @@ const kit = await compile.studyRoomKit({ ...readStudyRoomKitReferenceCase(), fin
 const defaults = readStudyLightingReferenceCase();
 const baseline = await compile.studyLighting(defaults, kit);
 const probes = {};
+const minimumWitness = rows => rows?.length ? rows.reduce((a,b) => a.reserveMm < b.reserveMm ? a : b) : null;
+function compactProbeConstruction(construction) {
+  const h = construction.localHomeRunComparison;
+  // The full baseline retains all check rows. Perturbations retain every issue
+  // and their governing witnesses; the same recorded request recompiles full detail.
+  return { ...construction, localHomeRunComparison: { ...h, probeTrace: 'Governing minimum witnesses; full detail is reproducible through the recorded shared compiler inputs.',
+    obstacleChecks: [minimumWitness(h.obstacleChecks)].filter(Boolean),
+    saddle: h.saddle && { ...h.saddle, bodyChecks: [minimumWitness(h.saddle.bodyChecks)], receiverChecks: [minimumWitness(h.saddle.receiverChecks)],
+      toolChecks: [minimumWitness(h.saddle.toolChecks)], otherRouteChecks: [minimumWitness(h.saddle.otherRouteChecks)] },
+    caseRenewal: h.caseRenewal.map(c => ({ id:c.id, completeSizeMm:c.completeSizeMm, normalDrawMm:c.normalDrawMm,
+      withdrawnPlanMm:c.withdrawnPlanMm, restReservesMm:c.restReservesMm, occupying:c.occupying,
+      worstSweptBody:minimumWitness(c.sweptBodyChecks), worstPipe:minimumWitness(c.pipeChecks),
+      ownConnectionRelease:c.ownConnectionRelease, sourceConnectionsQualified:c.sourceConnectionsQualified,
+      completeMassAndRestCapacityQualified:c.completeMassAndRestCapacityQualified })),
+  } };
+}
 for (const [id, change] of Object.entries({ shallow: { serviceTotalDepthMm: 27 }, deeper: { serviceTotalDepthMm: 85 },
   rightHand: { lampHand: 'right' }, removedFloorLamp: { failedSourceId: 'floor-fill' }, lostArrival: { failedSourceId: 'wall-arrival' },
   automationConnected: { automationConnected: true }, darkerFinish: { finishTrial: 'darker-oak' }, missingCarrier: { localWallModule: false } })) {
   const { lighting } = await compile.studyLighting({ ...defaults, ...change }, kit);
   probes[id] = { request: lighting.request, caseDigest: lighting.caseDigest, status: lighting.status, corner: lighting.corner,
-    serviceStations: lighting.serviceStations, construction: lighting.construction, commonDepthCornerComparison: lighting.commonDepthCornerComparison, leads: lighting.leads, controls: lighting.controls, diagnostics: lighting.diagnostics,
+    serviceStations: lighting.serviceStations, construction: compactProbeConstruction(lighting.construction), commonDepthCornerComparison: lighting.commonDepthCornerComparison, leads: lighting.leads, controls: lighting.controls, diagnostics: lighting.diagnostics,
     unchangedRoomGeometry: JSON.stringify(lighting.commonRoom) === JSON.stringify(baseline.lighting.commonRoom),
     unchangedKitchen: JSON.stringify(lighting.kitchen) === JSON.stringify(baseline.lighting.kitchen), evidence: lighting.evidence };
 }

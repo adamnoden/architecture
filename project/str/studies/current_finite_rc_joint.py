@@ -14,13 +14,13 @@ from finite_mapped_frame import combine
 from joined_successor_kernel import cross, l_section
 from named_plate_load import recover_named_loads
 from finite_joint_membrane_trace import compile_point_trace_floor as compile_perforated_floor
-from rc_floor_house_loads import _add
+from rc_floor_house_loads import _add, _family_wrench, _origin_wrench
 from floor_section_successor import _energy_springs, _membrane_maps, _pressure_offset_couples, _replace_vertical_plate_energy
 from vertical_floor_plate import assemble_vertical_plate, condense_vertical_plate
 from vertical_rc_floor import retained_receiver_operator_participation
 
 METHOD='project/str/studies/current_finite_rc_joint.py'
-METHODS=[METHOD,'project/str/studies/finite_rc_joint_solid.py','project/str/studies/finite_joint_contact_trace.py','project/str/studies/finite_joint_membrane_trace.py','project/str/studies/finite-joint-solid-requirements.txt']
+METHODS=[METHOD,'project/str/studies/finite_rc_joint_solid.py','project/str/studies/finite_joint_contact_trace.py','project/str/studies/finite_joint_membrane_trace.py','project/str/studies/finite_floor_contour.py','project/str/studies/finite-joint-solid-requirements.txt']
 
 def method_identities(root):
     return {path:hashlib.sha256((root/path).read_bytes()).hexdigest() for path in METHODS}
@@ -81,7 +81,10 @@ def interpolate(stations,maps,value):
 class Insertion:
     def __init__(self,case,settings):
         self.case=case;self.settings=settings;self.model=None;self.engine=None
-        self.wind_rows=None;self.component_loads={};self.audit={}
+        band=case['bearingCase']['masonryCase']['verticalCase']['monolithicCase']['houseCase']['joinedCase']['floor']['edgeBand']
+        if band['widthMm']!=140.:raise ValueError('Finite SW comparison currently requires the actual140mm source slab band; wall width remains independent')
+        self.band_width=band['widthMm']
+        self.wind_rows=None;self.component_loads={};self.component_port_loads={};self.audit={}
 
     def install_exterior(self,model,source,section):
         """Retain real native contour fields and remove only the replaced domain."""
@@ -100,7 +103,8 @@ class Insertion:
         self.old_plate=old;self.old_floor=old_floor
         self.common_membrane_axes=[sorted(set(old_floor['coordinateColumns'][a]+[v+delta for v in PATCH[2:] for delta in (-70.,0.,70.)])) for a in (0,1)]
         self.contact_fibres=[f for f in data['fibres'] if in_patch(f['xyMm'])]
-        self.audit['removedPlateAreaM2']=expected/1e6
+        self.audit['candidatePatchAreaM2']=expected/1e6
+        self.audit['removedPlateAreaM2']=expected/1e6 if self.settings['enabled'] else 0.
         self.audit['actualNormalContactCount']=len(self.contact_fibres)
         self.audit['actualNormalContactIds']=[f['id'] for f in self.contact_fibres]
         self.exterior_cells=[r for r in cells if r not in inside]
@@ -245,7 +249,7 @@ class Insertion:
         self.audit['solidGeometry']={'patchXYMm':PATCH,'slabZMm':[3170.,3370.],'lowerLRectanglesXYMm':sw['rectangles'],'wallCentroidXYMm':centroid,'upperEndZMm':4370.}
         self.engine=build_joint(patch_xy_mm=PATCH,slab_z_mm=[3170.,3370.],l_rectangles_xy_mm=sw['rectangles'],wall_centroid_xy_mm=centroid,
             upper_end_z_mm=4370.,contours_mm=contours,normal_points_xy_mm=[f['xyMm'] for f in self.contact_fibres],
-            chord_axis_xy_mm=[332.5,332.5],chord_axial_rigidity_kn=self.audit['retainedSteelChordEAKN'],pitch_mm=self.settings['solidPitchMm'],
+            chord_axis_xy_mm=[332.5,332.5],band_width_mm=self.band_width,chord_axial_rigidity_kn=self.audit['retainedSteelChordEAKN'],pitch_mm=self.settings['solidPitchMm'],
             young_mpa=self.settings['youngMPa'],poisson=.2,slab_density_kn_m3=data['request']['plateLaw']['unitWeightKNPerM3'],
             wall_density_kn_m3=self.case['bearingCase']['roofControls']['upperUnitWeightKNPerM3'],slab_live_kpa=1.5*data['request']['freshUniformLiveKPa'])
         self.maps=[]
@@ -310,11 +314,28 @@ class Insertion:
         self.audit['mappedRigidNullRoundoffRelativeCorrection']=correction
         map_force(g,self.maps,self.engine['gravityLoad'],1000.)
         self.component_loads={'gravity':self.engine['physicalLoads']['gravity'].copy(),'live':self.engine['physicalLoads']['live'].copy(),'wind':np.zeros(self.engine['basis'].N),'upper':np.zeros(self.engine['basis'].N)}
+        self.component_port_loads={'wind':np.zeros(len(self.engine['ports']))};tails=[]
         for row in self.inside_wind:
             force_axis=0 if row['forceKN'][0] else 1;along=1-force_axis;lo,hi=row['loadedAlongIntervalMm']
-            vector=line_load(self.engine,axis=along,fixed_coordinate_mm=row['pointXYZMm'][force_axis],z_mm=MID,interval_mm=[lo,hi],force_density_kn_per_mm=[v/(hi-lo) for v in row['forceKN']])
-            self.component_loads['wind']+=vector
-        map_force(model['families']['native-floor-reconciled'],self.maps,condense_load(self.engine,self.component_loads['wind']),1000.)
+            density=[v/(hi-lo) for v in row['forceKN']];physical_lo=max(lo,PATCH[along])
+            if hi>physical_lo:
+                vector=line_load(self.engine,axis=along,fixed_coordinate_mm=row['pointXYZMm'][force_axis],z_mm=MID,interval_mm=[physical_lo,hi],force_density_kn_per_mm=density)
+                self.component_loads['wind']+=vector
+            tail_hi=min(hi,PATCH[along])
+            if tail_hi>lo:
+                force=[v*(tail_hi-lo) for v in density];point=list(row['pointXYZMm']);point[along]=(lo+tail_hi)/2;point[2]=MID
+                moment=cross([(a-b)/1000 for a,b in zip(point,frame.nodes[lower])],force);wrench=[*force,*moment]
+                for index,port in enumerate(self.engine['ports']):
+                    if port['id'].startswith('wall/lower/'):
+                        self.component_port_loads['wind'][index]+=wrench[('u','v','w','rx','ry','rz').index(port['coordinate'])]
+                tails.append({'sourceId':row['id'],'sourceIntervalMm':[lo,tail_hi],'sourcePointXYZMm':point,'forceKN':force,
+                    'actualLowerWallCutXYZMm':frame.nodes[lower],'wrenchAboutPhysicalLowerCutKN_KNm':wrench,
+                    'scope':'Inherited outside-solid source-envelope pressure projected by exact rigid-trace work; no material, distributed solid force or facade installation is invented.'})
+        self.audit['sourceEnvelopeTailProjection']=tails
+        map_force(model['families']['native-floor-reconciled'],self.maps,condense_load(self.engine,self.component_loads['wind'])+self.component_port_loads['wind'],1000.)
+        source_wind_residual=[a-b for a,b in zip(_family_wrench(model,model['families']['native-floor-reconciled']),_origin_wrench(model['housePressure']['reconciledFloorRows']))]
+        if max(map(abs,source_wind_residual))>1e-6:raise ValueError('Finite/exterior/tail source pressure force or first moment is lost/double applied')
+        self.audit['completeSourceFloorWindWrenchResidualKN_KNm']=source_wind_residual
         # An old normal vertex wholly inside the replaced domain can become
         # unused. Gauge only a proven unused scalar, with no physical force.
         used={n for _,a,b,_ in frame.members for n in (a,b)}|{n for s in frame.springs for n,row in s['terms'] if any(row)}|{n for maps in data['portTerms'] for n,row in maps if any(row)}
@@ -392,22 +413,24 @@ def run_current_finite_joint(case,settings,root):
         native.replace_floor_section=replace;native._replace_upper_L_start=upper;native._free_top_load=free;native.fresh_net_floor_live_load=live
         native._interface_result=interfaces;native.solve_vertical_frame=solve
     result={'schema':'str-current-finite-rc-joint/1','authoredNativeCase':case,'executedConventionalCase':trial,'settings':settings,'sourceSHA256':source['identities'],
-            'methodSHA256':methods,'runtime':runtime,'scope':{'topology':'one SW actual finite slab/upper-stub joint; three other L rigid patch controls retained','constitutiveLaw':'isotropic uniform secant RC frame/slab comparison; source normal-contact laws retained independently','boundary':'lower L cross-section3170mm, finite slab3170..3370mm and upper L stub3370..4370mm; frame continuation above4370mm','loads':'same authored native52-head case, existing physical-G factor, fresh1.5Q and signed wind; optional additive service-room-ground stage not included','reinforcement':'not designed; no RC strength, cracking, anchorage or durability acceptance'},'audit':insertion.audit,'native':output,'candidateAccepted':False,'completeHouseProof':False,'resistanceAccepted':False}
+            'methodSHA256':methods,'runtime':runtime,'scope':{'topology':('one SW actual finite slab/upper-stub joint; three other L rigid patch controls retained' if settings['enabled'] else 'matched conventional RC axes-only reference; all four rigid L floor patches retained; no finite SW insertion'),'constitutiveLaw':'isotropic uniform secant RC frame/slab comparison; source normal-contact laws retained independently','boundary':'lower L cross-section3170mm, finite slab3170..3370mm and upper L stub3370..4370mm; frame continuation above4370mm','loads':'same authored native52-head case, existing physical-G factor, fresh1.5Q and signed wind; optional additive service-room-ground stage not included','reinforcement':'not designed; no RC strength, cracking, anchorage or durability acceptance'},'audit':insertion.audit,'native':output,'candidateAccepted':False,'completeHouseProof':False,'resistanceAccepted':False}
     if settings['enabled']:
         g=trial['bearingCase']['masonryCase']['verticalCase']['monolithicCase']['houseCase']['boundary']['physicalGFactor']
         physical=g*(insertion.component_loads['gravity']+insertion.component_loads['upper'])+insertion.component_loads['live']+insertion.component_loads['wind']
         q=[sum(v*captured['raw']['displacements'][n][axis] for n,row in maps for axis,v in enumerate(row)) for maps in insertion.maps]
-        recovered=recover(insertion.engine,q,physical)
+        port_load=sum(insertion.component_port_loads.values(),np.zeros(len(insertion.engine['ports'])))
+        recovered=recover(insertion.engine,q,physical,external_port_load=port_load)
         result['finiteJoint']={k:v.tolist() if isinstance(v,np.ndarray) else v for k,v in recovered.items() if k!='physicalDisplacementsM'}
         joint=result['finiteJoint'];joint['ports']=insertion.engine['ports']
         joint['portDisplacementsM_Rad']=q
         joint['condensedStiffnessKN_KNm']=insertion.engine['condensedStiffness'].tolist()
-        joint['condensedPhysicalLoadKN_KNm']=(insertion.engine['response'].T@physical).tolist()
-        joint['externalWrenchKN_KNm']=(insertion.engine['rigidModes'].T@(insertion.engine['response'].T@physical)).tolist()
+        joint['condensedPhysicalLoadKN_KNm']=(insertion.engine['response'].T@physical+port_load).tolist()
+        joint['externalWrenchKN_KNm']=(insertion.engine['rigidModes'].T@(insertion.engine['response'].T@physical+port_load)).tolist()
         joint['portGlobalRigidModes']=insertion.engine['rigidModes'].tolist()
         factors={'gravity':g,'upper':g,'live':1.,'wind':1.}
-        joint['loadFamilies']={name:{'factor':factors[name],'condensedLoadKN_KNm':(insertion.engine['response'].T@vector*factors[name]).tolist(),
-            'globalWrenchKN_KNm':(insertion.engine['rigidModes'].T@(insertion.engine['response'].T@vector)*factors[name]).tolist()} for name,vector in insertion.component_loads.items()}
+        joint['loadFamilies']={name:{'factor':factors[name],'condensedLoadKN_KNm':((insertion.engine['response'].T@vector+insertion.component_port_loads.get(name,np.zeros(len(q))))*factors[name]).tolist(),
+            'globalWrenchKN_KNm':(insertion.engine['rigidModes'].T@(insertion.engine['response'].T@vector+insertion.component_port_loads.get(name,np.zeros(len(q))))*factors[name]).tolist()} for name,vector in insertion.component_loads.items()}
+        joint['separateGeneralizedSourceTailLoadKN_KNm']=port_load.tolist()
         joint['insideWindRows']=insertion.inside_wind
         cells=output['nativeVertical']['plate']['cellsXYMm'];bounds=[min(r[0] for r in cells),min(r[1] for r in cells),max(r[2] for r in cells),max(r[3] for r in cells)];scale=780/max(bounds[2]-bounds[0],bounds[3]-bounds[1])
         px=lambda x:60+(x-bounds[0])*scale

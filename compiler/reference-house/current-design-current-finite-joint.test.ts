@@ -3,7 +3,7 @@ import test from 'node:test'
 import {readCurrentFiniteJointSettings,currentFiniteJointDefaults} from './current-design/structural-current-finite-joint-settings.js'
 import {runCurrentFiniteJointComparison} from './current-design/structural-current-finite-joint.js'
 import {readGeorgianDesignSnapshot} from './current-design/georgian-source.js'
-import {applyEngineeringEdit,beginEngineeringEdit,engineeringBase,replayEngineeringEdit,saveEngineeringEdit,editableFloorSectionId} from './current-design/engineering-edit.js'
+import {applyEngineeringEdit,beginEngineeringEdit,engineeringBase,replayEngineeringEdit,saveEngineeringEdit,editableFloorSectionId,editableDistributedFloorId} from './current-design/engineering-edit.js'
 const choice={...currentFiniteJointDefaults}
 const source={planDigest:'saved-plan',bindingDigest:'current-methods',caseDigest:'actual-case'}
 test('finite whole-house input preserves exact saved case and rejects injected response/acceptance',()=>{
@@ -29,4 +29,20 @@ test('finite joint edit is atomic, saved, reloadable and independently reversibl
  assert.equal(saveEngineeringEdit(replayEngineeringEdit(changed.state,engineeringBase(changed.state),'undo').state),before)
  const rejected=applyEngineeringEdit(start,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(start),operation:{kind:'set-floor-finite-joint-comparison',assemblyId:editableFloorSectionId,settings:{...choice,accepted:true}}})
  assert.equal(rejected.status,'rejected');assert.equal(saveEngineeringEdit(start),before)
+})
+test('one corner-width edit preserves the other corners and room choices and rejects stale or unsupported writes',()=>{
+ const document={schema:'current-engineering-document/1',design:readGeorgianDesignSnapshot(),bindings:{retained:'unchanged'},stages:{roofPitch:{pitchDeg:25},
+  distributedFloor:{cornerWidthsMm:{SW:140,SE:140,NW:200,NE:200},materialLaw:{retained:true}},studyRoomKit:{wearingFace:'oak'},floorSection:{thicknessMm:200,finiteJointComparison:choice}}}
+ const start=beginEngineeringEdit(document,'shared-width'),before=saveEngineeringEdit(start)
+ const operation={kind:'set-southwest-core-width',assemblyId:editableDistributedFloorId,widthMm:200}
+ const edited=applyEngineeringEdit(start,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(start),operation})
+ assert.equal(edited.status,'applied');if(edited.status!=='applied')return
+ assert.deepEqual(edited.state.document.stages,{...document.stages,distributedFloor:{...document.stages.distributedFloor,cornerWidthsMm:{...document.stages.distributedFloor.cornerWidthsMm,SW:200}}})
+ assert.equal(saveEngineeringEdit(start),before)
+ assert.equal(saveEngineeringEdit(replayEngineeringEdit(edited.state,engineeringBase(edited.state),'undo').state),before)
+ assert.equal(saveEngineeringEdit(beginEngineeringEdit(JSON.parse(saveEngineeringEdit(edited.state)),'width-reload')),saveEngineeringEdit(edited.state))
+ const stale=applyEngineeringEdit(edited.state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(start),operation})
+ assert.equal(stale.status,'rejected');if(stale.status==='rejected')assert.match(stale.message,/stale|revision|base/i)
+ for(const value of [139,241,Number.NaN,Number.POSITIVE_INFINITY])assert.equal(applyEngineeringEdit(start,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(start),operation:{...operation,widthMm:value}}).status,'rejected')
+ assert.equal(saveEngineeringEdit(start),before)
 })

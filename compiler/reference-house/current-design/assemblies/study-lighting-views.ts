@@ -9,7 +9,7 @@ const rect = (x: number, y: number, w: number, h: number, fill: string, stroke =
 const page = (w: number, h: number, title: string, body: string) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc"><title id="title">${esc(title)}</title><desc id="desc">Source-derived geometric review. Luminaire symbols show placement and intended use, not measured light distribution or accepted materials.</desc><style>.title{font:32px Georgia;fill:#342d25}.heading{font:23px Georgia;fill:#342d25}.note{font:16px Arial;fill:#48443b}.small{font:13px Arial;fill:#514c42}.dimension{font:15px monospace;fill:#285f69}</style><rect width="${w}" height="${h}" fill="#f2eee3"/>${body}</svg>\n`
 
 function furnishedView(result: StudyLightingResult, arrangement: StudyLightingResult['arrangements'][number]) {
-  const room = result.commonRoom, [x0, y0] = room.bands[0]
+  const room=result.commonRoom,x0=Math.min(...room.bands.map(b=>b[0]!)),y0=Math.min(...room.bands.map(b=>b[1]!))
   const p = (x: number, y: number, z = 0) => [110 + (x - x0) * .12 + (y - y0) * .058, 420 + (x - x0) * .026 - (y - y0) * .055 - z * .102]
   const floor = (box: readonly number[], fill: string) => polygon([p(box[0], box[1]), p(box[2], box[1]), p(box[2], box[3]), p(box[0], box[3])], fill)
   const face = (wall: typeof room.walls[number], box: readonly number[], fill: string) => {
@@ -146,7 +146,7 @@ export function drawKitchenLightingCheck(result: StudyLightingResult) {
 }
 
 export function drawStudyLightingRoutes(result: StudyLightingResult) {
-  const room = result.commonRoom, origin = room.bands[0], scale = .205
+  const room=result.commonRoom,origin=[Math.min(...room.bands.map(b=>b[0]!)),Math.min(...room.bands.map(b=>b[1]!))],scale=.205
   const p = (x: number, y: number) => [100 + (x - origin[0]) * scale, 790 - (y - origin[1]) * scale]
   const box = (r: readonly number[], fill: string) => polygon([p(r[0], r[1]), p(r[2], r[1]), p(r[2], r[3]), p(r[0], r[3])], fill)
   let body = text(35, 48, 'Sockets, flex and useful access territory', 'title')
@@ -188,7 +188,7 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
   const d = result.construction, c = result.corner
   const carrier = d.carrier, [x0] = carrier.xMm, top = carrier.zMm[1]
   const p = (x: number, z: number) => [110 + x - x0, 190 + top - z]
-  let body = text(35, 48, 'The service corner · actual carrier and first release', 'title')
+  let body = text(35,48,`Earlier ${c.totalLiningDepthMm} mm corner · carrier and first release`,'title')
     + text(35, 80, 'Dead-mock-up geometry · fixed islands stay independent · anchors, circuit, materials and physical trial unqualified')
     + text(70, 135, 'Positive front carrier', 'heading')
   for (const strip of carrier.stripsXZMm) {
@@ -261,12 +261,13 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
   for (const box of h.boxes) body+=hbox([box.xMm[0]!,box.zMm[0]!,box.xMm[1]!,box.zMm[1]!],'#a9b8b4')
   const cx=(h.boxes[0]!.xMm[0]!+h.boxes[0]!.xMm[1]!)/2
   for (const z of [c.socketCentreMm[2]!,c.switchCentreMm[2]!]) body+=hbox([cx-43,z-43,cx+43,z+43],'#ede2cc')
-  body += hbox(h.carrierXZMm,'none')
+  body += h.carrierStripsXZMm.map(r=>hbox(r,'#899c9c')).join('')
+    + `<circle cx="${n(hp(h.cableOpening.centreXMm,h.cableOpening.centreZMm)[0])}" cy="${n(hp(h.cableOpening.centreXMm,h.cableOpening.centreZMm)[1])}" r="${h.cableOpening.diameterMm*.25}" fill="#f2eee3" stroke="#315d64"/>`
     + line(hp(c.doorRoughXMm[0]!,c.bayBottomZMm),hp(c.doorRoughXMm[0]!,2100),'#8e7860',4)
     + hbox([c.retainedSkirtingEndXMm[0]!,0,c.retainedSkirtingEndXMm[1]!,result.commonRoom.skirtingTopMm],'#8c6d4d')
     + text(345,1335,`${h.choices.bayWidthMm} mm local bay · ${h.architecturalConsequence.additionalBayWidthMm} mm wider to the left`)
     + text(345,1370,`Door/reveal datum fixed; complete carrier and accessories shift ${Math.abs(h.architecturalConsequence.carrierShiftXMm)} mm left`)
-    + text(345,1405,`Local depth stays ${c.totalLiningDepthMm} mm; added floor territory ${h.architecturalConsequence.addedConservativeFloorTerritoryM2.toFixed(5)} m²`)
+    + text(345,1405,`Candidate depth ${h.totalDepthMm} mm vs earlier ${c.totalLiningDepthMm} mm; added floor territory ${h.architecturalConsequence.addedConservativeFloorTerritoryM2.toFixed(5)} m²`)
     + text(345,1465,'The innermost tube ends at the socket; the next ends at the switch')
     + text(345,1500,'The outer tube rises to the light after the lower tubes have ended')
     + text(345,1535,'No tube crosses a continuing lower run; all three retain independent support')
@@ -274,19 +275,47 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
     + text(345,1630,`${h.issues.length ? 'Geometry rejected' : 'Routes clear within the declared geometry'}; current house supply remains unbound`)
     + text(345,1690,`Tube ${h.stock.tubeLengthMm.toFixed(1)} mm + gross collars ${h.stock.collarLengthMm} mm; ${h.stock.clipCount} authored clip positions`)
     + text(345,1725,`Known containment steel ${h.stock.totalKnownContainmentStockKg.toFixed(3)} kg; not complete installed mass`)
-    + text(345,1760,'Existing case/carrier stock is separate; never compare this subtotal with a whole assembly')
+    + text(345,1760,`New fixed saddle receiver ${h.stock.separateKnownSaddleReceiverStockKg.toFixed(5)} kg; actual saddle mass/strength unqualified`)
     + text(345,1820,`${result.localHomeRunWallDisposition.length} actual north-wall pieces intersect the wider replacement bay`)
-    + text(345,1855,'Recompose their stopped decorative field; retain independent enclosure and carrier support')
+    + text(345,1855,`Symmetric carrier retained; ordinary ${h.choices.accessoryExtensionMm} mm steel frames keep the lower controls flush`)
     + text(345,1915,'At the skirt top: three explicit unconnected source interfaces, not selected circuits')
     + text(345,1950,'Ports are authored requirements within current reference box envelopes')
-    + text(345,1985,'Actual HGS06 knockouts and matched hardware remain unqualified')
-    + text(345,2045,'Threaded connections do not prove ordinary renewal; union/tool/support trials remain open')
-    + text(345,2080,'No new current feeder, cable rating, device terminal or earth connection is invented')
-    + text(345,2140,'Curved clearance uses bounded finite chords; diameter and interpolation error are charged')
-    + text(345,2175,'Carrier, hard-land reservations, other boxes, furniture and first rest are checked')
-    + text(345,2235,'The old 310 mm bay and smaller tube gaps are adverse cases, not silent defaults')
-    + text(35,2410,'Geometric design comparison only. Complete hardware, materials, protection, installed mass, physical trial and owner appearance remain unearned.','small')
-  return page(1510, 2460, 'Study lighting carrier and conventional home-run comparison', body)
+    + text(345,1985,'Actual Barton side ports and matched hardware remain unqualified')
+    + text(345,2045,`Tube/actual steel reserve ${Math.min(...h.obstacleChecks.map(r=>r.reserveMm)).toFixed(3)} mm after both settings`)
+    + text(345,2080,`Ordinary upper-bend saddle splits its span to ${h.routes[2]!.finalSpansMm.map(v=>v.toFixed(1)).join(' / ')} mm`)
+    + text(345,2140,`Closed junction/carrier reserve ${Math.min(...h.enclosureCarrierChecks.map(r=>r.reserveMm)).toFixed(1)} mm; actual full-face clearance is charged`)
+    + text(345,2175,'Actual steel strips, full saddle/receiver, hand tool, boxes, furniture and first rest are checked')
+    + text(345,2235,'The old shallow full face, narrow spacing or absent bend saddle fail the retained screens')
+    + text(345,2270,'The old75 mm full-face arrangement fails; actual box ports/connections remain unqualified')
+
+  if(h.saddle){
+    const sb=h.saddle.bodyBox
+    body+=hbox([sb[0]!,sb[2]!,sb[0]!+sb[3]!,sb[2]!+sb[5]!],'#b59568')
+      + text(345,2325,`Wera205 ×37 mm tool witness; base-first after cover/tube release`,'small')
+      + text(345,2355,`D-Line86.19 ×20 ×23 mm saddle witness; bend/anchor/loaded handling unqualified`,'small')
+  }
+  const depth=(v:number)=>90+v*3
+  body+=text(35,2460,'Complete depth and ordinary enclosure renewal','title')
+    +text(35,2495,'Enlarged depth budget; fixed cases/closures are independent of decoration and the removable fitting carrier')
+    +rect(depth(0),2520,c.boundaryDepthMm*3,110,'#a6a69c')
+    +rect(depth(h.boxes[2]!.depthMm[0]!),2540,(h.boxes[2]!.depthMm[1]!-h.boxes[2]!.depthMm[0]!)*3,72,'#b3c2c1')
+    +rect(depth(h.boxes[2]!.closedCoverDepthMm![0]!),2540,(h.boxes[2]!.closedCoverDepthMm![1]!-h.boxes[2]!.closedCoverDepthMm![0]!)*3,72,'#8fa7a1')
+    +rect(depth(h.carrierDepthMm[0]!),2520,(h.carrierDepthMm[1]!-h.carrierDepthMm[0]!)*3,110,'#8c9c9b')
+    +rect(depth(h.totalDepthMm-c.decorativeFaceMm),2520,c.decorativeFaceMm*3,110,'#b58d65')
+    +text(445,2545,`Upper box d ${h.boxes[2]!.depthMm.join('..')} mm; own cover ${h.boxes[2]!.closedCoverDepthMm!.join('..')}`)
+    +text(445,2580,`Retained carrier d ${h.carrierDepthMm.join('..')} mm; timber face ends at ${h.totalDepthMm} mm`)
+    +text(445,2615,`Two ordinary ${h.choices.accessoryExtensionMm} mm lower frames: ${h.stock.extensionStockKgComparison.toFixed(6)} kg at authored2 mm wall stock`)
+    +text(445,2650,'Actual supplied gauges/lugs/weights, mating entries, device/earth/union and protection remain unqualified')
+  const rp=(x:number,y:number)=>[90+(x-h.bayPlanMm[0]!)*.6,2890-(y-h.firstRestPlanMm[1]!)*.5]
+  const rr=(b:readonly number[],colour:string)=>polygon([rp(b[0]!,b[1]!),rp(b[2]!,b[1]!),rp(b[2]!,b[3]!),rp(b[0]!,b[3]!)],colour)
+  body+=rr(h.firstRestPlanMm,'#b8c5b1')+rr(h.caseRestPlanMm,'#9ebdc4')
+    +text(445,2730,`Park fitting/module first; its support territory moves ${h.choices.mainRestSouthShiftMm} mm south`)
+    +text(445,2765,`Then place separate ${h.choices.caseRestSizeMm} ×${h.choices.caseRestSizeMm} mm case rest; ${h.caseRenewal[0]!.restReservesMm.moduleCradle} mm after both settings`)
+    +text(445,2800,`Complete closed-case draws: ${h.caseRenewal.map(r=>r.normalDrawMm).join(' / ')} mm; lower in the cleared plane`)
+    +text(445,2835,'Whole cases, remaining closed fronts/pipes, protected lands, furniture and both support footprints are charged')
+    +text(445,2870,'Own collar release, actual loaded handling and complete cradle capacity remain unqualified')
+    +text(35,2960,'Geometric design comparison only. Hardware, materials, protection, installed mass, physical trial and owner appearance remain unearned.','small')
+  return page(1510, 3010, 'Study lighting carrier and conventional home-run comparison', body)
 }
 
 export function drawCommonDepthCornerComparison(result: StudyLightingResult) {

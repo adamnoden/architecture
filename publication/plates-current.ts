@@ -46,8 +46,8 @@ const placements: readonly PlatePlacement[] = [
     anchor: '## Quiet walls and selective infrastructure',
     pageClass: 'PLATE_PAIR',
     views: [
-      { title: 'Study — fixed comparison', image: '../../publication/current/study-fixed.svg', alt: 'Furnished Study with fixed joinery and strip floor', scale: 'NTS', caption: 'Fixed joinery and strip flooring in the occupied Study geometry. The furniture and openings are shared with the removable-finish proposal opposite. The occupied-room opening set-out still needs reconciliation with the nominal house plans; this is an appearance comparison, not an accepted detail.' },
-      { title: 'Study — timber proposal', image: '../../publication/current/study-timber.svg', alt: 'Furnished Study with hung timber and seated oak finish modules', scale: 'NTS', caption: 'Gravity-hung timber wall faces and seated oak floor modules in the same occupied Study. Protective boundaries and service support remain independent. Owner aesthetic approval and installed performance remain open.' }
+      { title: 'Study — fixed comparison', image: '../../publication/current/study-fixed.svg', alt: 'Eye-level Study with fixed wainscot and mineral wall in the saved structural-room comparison', scale: 'NTS', caption: 'Fixed wainscot and the shared oak grain and border composition in the saved Study case. Its actual corner projections, windows and furniture are the same as the removable proposal opposite. This unselected room revision is not adopted by the nominal whole-house plans; local mouldings, glazing bars and furniture heights remain appearance impressions.' },
+      { title: 'Study — timber proposal', image: '../../publication/current/study-timber.svg', alt: 'Eye-level Study with actual local corner projections, hung timber and seated oak pieces', scale: 'NTS', caption: 'Gravity-hung timber faces and actual seated oak pieces in the same saved structural-room case. The local pilasters, moved furniture and recomposed finish follow its controlling corner width. Protective boundaries and service support remain independent. Owner aesthetic approval and installed performance remain open.' }
     ]
   },
   {
@@ -55,7 +55,7 @@ const placements: readonly PlatePlacement[] = [
     anchor: 'Task visibility, glare, arrival in darkness and replacement still require a matched physical trial.',
     pageClass: 'PLATE_SINGLE',
     views: [
-      { title: 'Study — tiled comparison', image: '../../publication/current/study-tile.svg', alt: 'Furnished Study with framed tile fields', scale: 'NTS', caption: 'A worked tile-faced comparison on the same occupied room geometry. Its heavier wall finish and more fragmented set-out are reasons to prefer the timber Study proposal. Dry joints and separate removal do not establish wet-room performance or owner acceptance.' }
+      { title: 'Study — tiled comparison', image: '../../publication/current/study-tile.svg', alt: 'Eye-level tile-faced Study from the same saved structural-room geometry', scale: 'NTS', caption: 'A dry tile-faced appearance comparison from the same saved room and corner-width inputs. Its heavier wall finish and more fragmented set-out are reasons to prefer the timber direction. Dry joints and separate removal do not establish wet-room performance, installed handling or owner acceptance.' }
     ]
   }
 ]

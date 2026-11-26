@@ -30,7 +30,7 @@ test('complete saved Plant choice drives the same CLI/browser/compiler, regenera
  assert.deepEqual(a.roomCatchment,b.roomCatchment);assert.deepEqual(a.joinedDirection,b.joinedDirection);assert.deepEqual(a.bound,b.bound)
  assert.deepEqual(before.engineering.groundSection,after.engineering.groundSection);assert.deepEqual(before.engineering.roofPitch,after.engineering.roofPitch)
  assert.deepEqual(cli.engineering.inletSourceEnvelope.splitPlantRoom,JSON.parse(JSON.stringify(b.splitPlantRoom)))
- assert.deepEqual(browser.documentIdentity,after.documentIdentity);assert.equal(currentEngineeringReply(changed.state,baseTicket,{ticket:baseTicket}),undefined);assert.ok(currentEngineeringReply(changed.state,ticket,browser))
+ assert.deepEqual(browser.storeDrain,JSON.parse(JSON.stringify(b.storeDrain)));assert.deepEqual(cli.engineering.inletSourceEnvelope.storeDrain,JSON.parse(JSON.stringify(b.storeDrain)));assert.deepEqual(browser.documentIdentity,after.documentIdentity);assert.equal(currentEngineeringReply(changed.state,baseTicket,{ticket:baseTicket}),undefined);assert.ok(currentEngineeringReply(changed.state,ticket,browser))
  assert.notDeepEqual(before.documentIdentity,after.documentIdentity)
  const undo=replayEngineeringEdit(changed.state,engineeringBase(changed.state),'undo');assert.equal(undo.status,'applied');if(undo.status==='applied')assert.equal(saveEngineeringEdit(undo.state),saveEngineeringEdit(state))
  const adverse=edit(state,'clearWidthMm',100);assert.equal(adverse.status,'applied');if(adverse.status==='applied'){
@@ -77,7 +77,7 @@ test('the same saved ground joins the existing vertical-profile arch; an absent 
 
 test('one saved fitted-width edit coordinates actual inlet and station while preserving minimum cargo, Utility, source and stored duties',async()=>{
  const resolved=readCurrentDesignResolution(),request=readInletSourceEnvelopeCase(resolved),ground=readGroundSectionCase(resolved),start=await readEngineeringDocument(readGeorgianDesignSnapshot()),
-  doc={...start,stages:{roofPitch:start.stages.roofPitch,groundSection:{caseId:ground.ground.caseId,settings:ground.ground.settings},houseVerticalProfile:{},inletSourceEnvelope:{...readLocalUtilityPocketSettings(),splitPlantRoom:request.sourceEnvelope.splitPlantRoom}}},
+  doc={...start,stages:{roofPitch:start.stages.roofPitch,groundSection:{caseId:ground.ground.caseId,settings:ground.ground.settings},houseVerticalProfile:{},inletSourceEnvelope:{...readLocalUtilityPocketSettings(),splitPlantRoom:request.sourceEnvelope.splitPlantRoom,storeDrain:request.sourceEnvelope.storeDrain}}},
   state=beginEngineeringEdit(doc,'fitted-frame'),before=await compileEngineeringDocument(JSON.parse(saveEngineeringEdit(state))),editResult=edit(state,'fittedFrame.clearWidthMm',1000)
  assert.equal(editResult.status,'applied');if(editResult.status!=='applied')return
  const after=await compileEngineeringDocument(JSON.parse(saveEngineeringEdit(editResult.state))),a=before.engineering.inletSourceEnvelope!,b=after.engineering.inletSourceEnvelope!,pa=a.splitPlantRoom.comparison!,pb=b.splitPlantRoom.comparison!,

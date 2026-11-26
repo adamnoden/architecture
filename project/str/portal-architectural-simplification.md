@@ -1,6 +1,6 @@
 # Portal simplification after cage rejection
 
-**Historical topology comparison.** Its preference for the separate masonry arch below a straight RC frame is no longer the next development instruction. The later [finite lower-masonry bed comparison](lower-masonry-bed-development.md) rejected its tested lower-arch arrangement; the [floor–portal reconciliation](floor-portal-reconciliation.md) owns the active seated-RC route. Those later tests do not validate this earlier, differently dimensioned masonry proposal or reject every masonry arch. Reopening it requires a changed, complete and consistently loaded mechanism rather than another refinement of the failed bed.
+**Unselected northern portal topology comparison.** The separate masonry arches below straight RC frames avoid the rejected crossing RC cage, but their full stiffness, contact, restraint and thermal behaviour remain unresolved. The later [finite lower-masonry bed comparison](lower-masonry-bed-development.md) concerns the different interior `WET-ARCH/*` wet-wall support occurrence; its rejection does not reject these northern portals. The [floor–portal reconciliation](floor-portal-reconciliation.md) distinguishes those occurrences and owns the current joined-house development. The witness calculations below do not qualify a complete masonry mechanism.
 
 One explicit inward-enlarged RC alternative was checked here and still has arch-bar/link intersections. Neither alternative is a selected structure. The rejected cage record is [continuous-rc-closed-links.md](continuous-rc-closed-links.md).
 

@@ -63,7 +63,8 @@ def replay(result):
     if max(map(abs,result['native']['nativeVertical']['native']['equilibriumResidualKN_KNm']))>1e-6:raise ValueError('Actual house six-wrench balance fails')
     actual=set(result['audit']['actualNormalContactIds']);bearings=[b for b in result['native']['nativeVertical']['bearings'] if b['id'] in actual]
     if len(bearings)!=len(actual):raise ValueError('Actual contact catalogue incomplete')
-    return {'portCount':n,'constitutiveResidualKN_KNm':constitutive,'independentJointWrenchResidualKN_KNm':balance.tolist(),
+    local_cuts={level:[float(r[next(i for i,p in enumerate(ports) if p['id']=='wall/'+level+'/'+coordinate)]) for coordinate in ('u','v','w','rx','ry','rz')] for level in ('lower','upper')}
+    return {'wallCutActionsAboutActualCutKN_KNm':local_cuts,'portCount':n,'constitutiveResidualKN_KNm':constitutive,'independentJointWrenchResidualKN_KNm':balance.tolist(),
             'outsideOnSolidPortGroupsKN_KNm':{k:v.tolist() for k,v in groups.items()},'externalWrenchKN_KNm':external.tolist(),
             'jointWorkResidualKNm':work,'actualNormalCount':len(actual),'activeActualNormalCount':sum(b['active'] for b in bearings)}
 

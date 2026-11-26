@@ -342,3 +342,98 @@ both independent5mm settings as well; the default retains approximately0.5mm
 minimum obstacle reserve. Actual fitting/support envelopes and fabrication
 remain unqualified. The input perturbation tests preserve that rejected large
 offset and the port-margin failure alongside unchanged room/kitchen controls.
+
+
+## Conventional full-face successor — 26 November 2026
+
+Prefer the worked **410mm-wide,95mm-deep** corner for further development over
+accepting the earlier near-zero residual clearances. It retains the existing
+panel joint, flush ordinary controls, symmetric independently supported carrier
+and complete10.5mm decorative face. The carrier/accessory column moves17mm left
+of the original310mm comparison. The local20mm depth increase adds0.00820m²;
+combined with the100mm width increase the added territory is0.01300m². No whole
+room or house geometry is silently selected.
+
+Three independent70/111/152mm-radius home runs retain the same unconnected
+source interfaces. Their pair reserve is10.993mm after both5mm settings. The
+ordinary lower47mm steel bases use conventional16mm extension frames to reach
+the flush accessory faces; the upper junction sits14mm behind those bases with
+its own closed cover. The actual upper body/cover lies at18..65/65..67mm; the
+carrier is82.5..84.5mm and the finished face at95mm. Lower tube/face reserve is
+12.5mm after both settings; the upper closed cover/carrier retains5.5mm.
+The75mm full-face countercase fails and is rejected. Actual manufacturer ports,
+matched connections and internal device/earth paths remain unqualified; nominal
+envelopes are not actual electrical connectivity.
+
+The manufacturer[Barton box/extension catalogue](https://barton-engineering.co.uk/bs-switch-and-socket-box/)
+provides the conventional72×72×47mm base and16mm extension direction. It supplies
+no dimensioned side-port coordinates. The current source records that exact
+boundary. No product material or protective performance is inherited by the
+assembled project detail.
+
+One ordinary midpoint saddle divides the former318.761mm unsupported upper end
+into169.381/149.381mm spans, retaining the300mm criterion. The checked envelope
+uses the[D-Line saddle dimensions](https://d-line-it.com/conduit-saddles/) and
+an actual[Wera205×37mm hand-tool witness](https://hybris-media.wera.de/download/pdfgenerator-datasheets/en/05009315001.pdf).
+A continuous20mm-square steel hard land reaches masonry core0 through its own
+sealed-plane crossing. The base is fixed before tube placement, or after safe
+isolation/support/release; no driver-through-tube operation is invented.
+Actual curved-conduit suitability, anchor/seal, tab operation, hand force,
+complete mass and loaded handling remain unqualified.
+
+The fitting/module is parked first, with its reserved support territory60mm
+farther south. Each complete closed case then draws83/83/97mm and lowers at its
+clear withdrawal plane into a separate120mm-square support territory. Other
+closed fronts, retained pipes, protected lands, actual furniture, room floor
+bands and both support footprints are checked. The rests retain7mm separation
+after both settings, and every declared case/rest/mouth reserve is at least5mm.
+Actual own-collar release, complete delivered device projections, loaded grip
+and cradle capacity remain unqualified, so this is not an installed renewal pass.
+
+The source-derived tube/gross-collar subtotal is2.010564kg, the separate hard
+land0.078500kg and two extension-frame stock comparisons0.140672kg:2.229736kg
+at the stated respective scope. The extension comparison uses an authored2mm
+steel wall; supplied gauge/lugs/weights remain unknown. Existing boxes, carrier,
+clips, covers, wiring and other hardware are not silently included. The original
+symmetric carrier returns with no artificial gravity asymmetry; no load is
+admitted to the current structural model.
+
+The shared saved-stage compiler, ordinary producer and construction drawing
+consume this same complete corner. Countercases retain failed narrow spacing,
+missing midpoint support, the old shallow full face, inadequate rest/mouth,
+scaled manufactured extension and invalid/missing source dimensions. The
+completed crafted-room concept and owner appearance gate remain unchanged.
+
+
+Internal challenge corrected a phase/proof omission before integration: a case
+normal draw must retain its own straight tube and bend. Only its actual mating
+collar can be excluded after the separately unqualified release operation. The
+compiler now checks the real72mm base/extension separately from the86mm plate
+and referenced23mm socket-device shadow, rather than extruding the full plate
+width through the entire box depth. The own retained-tube reserves are at least
+9.992mm after both settings. Actual switch/junction device shadows remain
+project requirements pending component binding. No tube, fixture or protective
+boundary disappears from the proof to make removal pass.
+
+
+The station layout now queries the actual floor boundary at each station's own
+coordinate. A local south-west structural notch therefore moves the affected
+west desk socket and south task-light plane, while the north floor lamp remains
+on its unchanged wall. The old desk position exposes the actual socket/hand
+clash; the modest revised desk/emitter positions restore that declared access.
+Missing station boundaries reject explicitly. The source-bound room overlay
+must supply the actual floor/furniture revision; the lighting method introduces
+no independent pilaster-width or furniture authority. The furnished/route views
+use whole-room bounds rather than assuming the first floor rectangle owns every
+wall, so added notch bands do not silently crop the room.
+
+
+Validation:24 focused lighting/strict-producer tests pass, including saved
+engineering-document CLI/API agreement, invalid/stale-source rejection, actual
+stepped own-tube renewal and the corner-notch/desk sensitivity. TypeScript and
+the ordinary strict producer/source audit pass. The construction sheet was
+raster-inspected. The full baseline receipt retains every geometric check;
+perturbation receipts retain all issues and governing minimum witnesses, with
+full detail reproducible from the same recorded compiler inputs. Full combined
+head health, new actual-room integration and publication preflight remain the
+integrating worker's responsibility; no installed or owner acceptance is claimed.

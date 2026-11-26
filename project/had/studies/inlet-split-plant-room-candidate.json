@@ -8,7 +8,7 @@
     4855
   ],
   "clearWidthMm": 400,
-  "clearHeightMm": 140,
+  "clearHeightMm": 138,
   "insideRunMm": 260,
   "outsideRunMm": 900,
   "invertAboveDistributionMm": 48,
@@ -20,7 +20,7 @@
   "receiverWidthMm": 400,
   "receiverCrestAboveGradeMm": 0,
   "receiverHighAdverseMm": 600,
-  "bridgeThicknessMm": 29,
+  "bridgeThicknessMm": 31,
   "centralRailWidthMm": 25,
   "bridgePlateCargoInsetsYMm": [
     -22.5,

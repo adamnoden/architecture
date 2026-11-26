@@ -166,6 +166,53 @@ jobs:
           PY
           "$RUNNER_TEMP/ground-support-browser/bin/python" project/ade/browser-editor/engineering_browser_test.py http://127.0.0.1:4189/engineering.html --ground-pocket-document "$RUNNER_TEMP/ground-support-document.json" --screenshot "$RUNNER_TEMP/ground-support-editor.png"
 
+      - name: Prove saved finite joint and its actual structural room editor
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          node --import tsx scripts/compile-current-design.ts --bundle project/ccr/studies/working-house-comparison.json > "$RUNNER_TEMP/working-house-bundle.json"
+          python - <<'PYTHON'
+          import json, os
+          from pathlib import Path
+          source=json.loads(Path('project/ccr/studies/working-house-comparison.json').read_text())
+          bundle=json.loads(Path(os.environ['RUNNER_TEMP'],'working-house-bundle.json').read_text())
+          result=bundle['engineering']['floorSection']['finiteJointComparison']
+          assert source['stages']['distributedFloor']['cornerWidthsMm']==dict.fromkeys(['NW','NE','SW','SE'],200)
+          assert result['status']=='computed-unselected-comparison', result['diagnostics']
+          assert result['controls']==source['stages']['floorSection']['finiteJointComparison']
+          assert not result['candidateAccepted'] and not result['resistanceAccepted'] and not result['completeHouseProof']
+          assert len(result['result']['native']['nativeVertical']['native']['heads'])==52
+          assert len(bundle['engineering']['studyRoomKit']['kit']['floor']['parts'])==136
+          print('PASS actual saved uniform200 house, finite SW solve and136-piece dependent Study')
+          PYTHON
+          node node_modules/vite/bin/vite.js preview --config project/ade/browser-editor/vite.config.ts --outDir "$RUNNER_TEMP/ground-support-editor" --host 127.0.0.1 --port 4190 --strictPort > "$RUNNER_TEMP/finite-joint-server.log" 2>&1 &
+          FINITE_JOINT_PREVIEW_PID=$!
+          trap 'kill "$FINITE_JOINT_PREVIEW_PID" 2>/dev/null || true' EXIT
+          python - <<'PYTHON'
+          import time, urllib.request
+          for attempt in range(60):
+              try:
+                  urllib.request.urlopen('http://127.0.0.1:4190/engineering.html',timeout=2)
+                  break
+              except OSError:
+                  if attempt==59: raise
+                  time.sleep(1)
+          PYTHON
+          "$RUNNER_TEMP/ground-support-browser/bin/python" project/ade/browser-editor/engineering_browser_test.py http://127.0.0.1:4190/engineering.html --finite-joint-document project/ccr/studies/working-house-comparison.json --screenshot "$RUNNER_TEMP/finite-joint-editor.png"
+
+      - name: Retain actual finite house and room proof
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: finite-house-room-saved-proof
+          path: |
+            ${{ runner.temp }}/working-house-bundle.json
+            ${{ runner.temp }}/finite-joint-editor.png
+            ${{ runner.temp }}/finite-joint-server.log
+          if-no-files-found: error
+          retention-days: 7
+
       - name: Retain actual saved ground and browser proof
         if: always()
         uses: actions/upload-artifact@v6

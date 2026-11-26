@@ -61,6 +61,62 @@ def check_ground_pockets(page, args):
     print('PASS saved ground support import/contact edit/export/CLI/undo; real native solve is a separate proof',flush=True)
 
 
+def check_finite_joint(page, args):
+    """Actual saved width/room/finite choices, CLI and undo; no mocked reply."""
+    from playwright.sync_api import expect
+    source=json.loads(Path(args.finite_joint_document).read_text())
+    source['stages']['floorSection']['finiteJointComparison']['execution']='deferred'
+    assert source['stages']['distributedFloor']['cornerWidthsMm']['SW']==200
+    with page.expect_file_chooser() as chooser:
+        page.get_by_role('button',name='Import JSON').click()
+    chooser.value.set_files({'name':'finite-house.json','mimeType':'application/json','buffer':json.dumps(source).encode()})
+    expect(page.locator('#stage-scope')).to_contain_text('floorSection',timeout=360000)
+    ready(page,0,360000)
+    expect(page.locator('#finite-joint-controls')).to_be_visible()
+    expect(page.locator('#southwest-core-width')).to_have_value('200')
+    expect(page.locator('#finite-joint-result')).to_contain_text('analysis prepared for this saved revision')
+    day=lambda:page.locator('#current-study-day').evaluate("img=>decodeURIComponent(img.src.split(',')[1])")
+    initial_day=day()
+    assert 'SW200' in initial_day
+    roof=roof_svg(page)
+    page.locator('#southwest-core-width').fill('140')
+    page.get_by_role('button',name='Compare corner width',exact=True).click()
+    ready(page,1,360000)
+    assert day()!=initial_day and '144 floor pieces' in day()
+    assert roof_svg(page)==roof
+    original_modulus=source['stages']['floorSection']['finiteJointComparison']['youngMPa']
+    changed_modulus=16500 if original_modulus!=16500 else 8250
+    page.locator('#finite-joint-young').select_option(str(changed_modulus))
+    page.get_by_role('button',name='Compare southwest joint',exact=True).click()
+    ready(page,2,360000)
+    with page.expect_download() as download:
+        page.get_by_role('button',name='Export JSON').click()
+    changed=json.loads(Path(download.value.path()).read_text())
+    expected=json.loads(json.dumps(source))
+    expected['stages']['distributedFloor']['cornerWidthsMm']['SW']=140
+    expected['stages']['floorSection']['finiteJointComparison']['youngMPa']=changed_modulus
+    assert changed==expected
+    compiled=json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(changed),text=True,capture_output=True,check=True,timeout=900).stdout)
+    finite=compiled['engineering']['floorSection']['finiteJointComparison']
+    assert finite['status']=='analysis-pending' and finite['controls']['youngMPa']==changed_modulus
+    assert finite['candidateAccepted'] is False and finite['resistanceAccepted'] is False
+    room=compiled['engineering']['studyRoomKit']
+    assert len(room['kit']['floor']['parts'])==144
+    assert len(compiled['engineering']['floorSection']['native']['heads'])==52
+    page.get_by_role('button',name='Undo',exact=True).click()
+    ready(page,3,360000)
+    expect(page.locator('#finite-joint-young')).to_have_value(str(original_modulus))
+    page.get_by_role('button',name='Undo',exact=True).click()
+    ready(page,4,360000)
+    expect(page.locator('#southwest-core-width')).to_have_value('200')
+    assert day()==initial_day and roof_svg(page)==roof
+    with page.expect_download() as download:
+        page.get_by_role('button',name='Export JSON').click()
+    assert json.loads(Path(download.value.path()).read_text())==source
+    if args.screenshot:page.screenshot(path=args.screenshot,full_page=True)
+    print('PASS shared200/140 structural-room edit, finite modulus request, exported actual CLI and exact undo; loaded finite compute is a separate proof',flush=True)
+
+
 def current_wet_stages(request=None):
     """Project authored choices from the actual current request, not a second model."""
     studies=Path('project/str/studies')
@@ -156,6 +212,7 @@ def main():
     parser.add_argument('--screenshot')
     parser.add_argument('--wet-beam-end-only',action='store_true',help='Run only the actual end-return extension after the initial roof control')
     parser.add_argument('--ground-pocket-document',help='Run ground-control browser proof on this actual saved engineering document')
+    parser.add_argument('--finite-joint-document',help='Run shared structural/Study width and finite joint controls on this actual saved document')
     args = parser.parse_args()
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(executable_path=args.chromium)
@@ -164,6 +221,11 @@ def main():
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(args.url)
         ready(page, 0)
+        if args.finite_joint_document:
+            check_finite_joint(page,args)
+            assert not errors,errors
+            browser.close()
+            return
         if args.ground_pocket_document:
             check_ground_pockets(page,args)
             assert not errors,errors

@@ -1,7 +1,8 @@
 import {readWetBeamEndDevelopmentControls} from '../../../compiler/reference-house/current-design/structural-wet-beam-end-settings.js'
 import {readGroundPocketSettings} from '../../../compiler/reference-house/current-design/structural-ground-pocket-settings.js'
-import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableWetBeamEndId, editableInletBankId, editableInletBankFields, editablePlantRoomId, editablePlantRoomFields, plantRoomEditableNumber, editableStudyLightingId, engineeringBase,
-  engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, type EngineeringEditorState, type EngineeringTicket,
+import {readCurrentFiniteJointSettings,currentFiniteJointDefaults} from '../../../compiler/reference-house/current-design/structural-current-finite-joint-settings.js'
+import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableWetBeamEndId, editableInletBankId, editableInletBankFields, editablePlantRoomId, editablePlantRoomFields, editableStoreDrainId, editableStoreDrainFields, plantRoomEditableNumber, editableStudyLightingId, engineeringBase,
+  engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, editableFloorSectionId, editableDistributedFloorId, type EngineeringEditorState, type EngineeringTicket,
 } from '../../../compiler/reference-house/current-design/engineering-edit.js'
 import type { EngineeringReply } from './engineering-api.js'
 import './editor.css'
@@ -10,11 +11,14 @@ const button = (id: string) => element<HTMLButtonElement>(id)
 const pitch = element<HTMLInputElement>('pitch')
 const inletField=element<HTMLSelectElement>('inlet-field'),inletValue=element<HTMLInputElement>('inlet-value')
 const plantField=element<HTMLSelectElement>('plant-room-field'),plantValue=element<HTMLInputElement>('plant-room-value')
+const drainField=element<HTMLSelectElement>('store-drain-field'),drainValue=element<HTMLInputElement>('store-drain-value')
 const cageTop = element<HTMLInputElement>('cage-top-level')
 const endMandrel = element<HTMLInputElement>('beam-end-mandrel')
 const padWidth=element<HTMLInputElement>('wet-pad-width')
 const lightingDepth = element<HTMLInputElement>('lighting-depth')
 const groundPlatePitch=element<HTMLInputElement>('ground-plate-pitch'),groundContactPitch=element<HTMLInputElement>('ground-contact-pitch'),groundExecution=element<HTMLSelectElement>('ground-execution')
+const finiteEnabled=element<HTMLInputElement>('finite-joint-enabled'),finiteYoung=element<HTMLSelectElement>('finite-joint-young'),finitePitch=element<HTMLSelectElement>('finite-joint-pitch'),finiteExecution=element<HTMLSelectElement>('finite-joint-execution')
+const southwestWidth=element<HTMLInputElement>('southwest-core-width')
 const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
 const storageKey = 'ovid-current-engineering-document/1'
 let state: EngineeringEditorState
@@ -34,6 +38,15 @@ function controls() {
   pitch.disabled = false
   pitch.value = String(state.document.stages.roofPitch.pitchDeg)
   const floor = state.document.stages.floorSection
+  const distributed=state.document.stages.distributedFloor
+  const widths=record(distributed)&&record(distributed.cornerWidthsMm)?distributed.cornerWidthsMm:undefined
+  element('southwest-width-controls').hidden=typeof widths?.SW!=='number'
+  southwestWidth.value=typeof widths?.SW==='number'?String(widths.SW):''
+  element('finite-joint-controls').hidden=!record(floor)
+  if(record(floor)){
+    const value=readCurrentFiniteJointSettings(floor.finiteJointComparison??currentFiniteJointDefaults)
+    finiteEnabled.checked=value.enabled;finiteYoung.value=String(value.youngMPa);finitePitch.value=String(value.solidPitchMm);finiteExecution.value=value.execution
+  }
   const ground=state.document.stages.groundPocketLoads
   element('ground-pocket-controls').hidden=!record(ground)
   if(record(ground)){const choice=readGroundPocketSettings(ground);groundPlatePitch.value=String(choice.settings.platePitchMm);groundContactPitch.value=String(choice.settings.contactPitchMm);groundExecution.value=choice.execution}
@@ -63,6 +76,8 @@ function controls() {
   element('plant-room-controls').hidden = !hasPlant
   plantField.disabled = !hasPlant; plantValue.disabled = !hasPlant
   if (hasPlant) { plantValue.value=String(plantRoomEditableNumber(plant,plantField.value)); element('plant-room-unit').textContent=plantField.value.endsWith('Kg')?'kg':'mm' }
+  const drain=record(inlet)&&record(inlet.storeDrain)?inlet.storeDrain:undefined,hasDrain=!!drain&&editableStoreDrainFields.every(k=>typeof drain[k]==='number')
+  element('store-drain-controls').hidden=!hasDrain;drainField.disabled=!hasDrain;drainValue.disabled=!hasDrain;if(hasDrain)drainValue.value=String(drain[drainField.value])
   const lighting = state.document.stages.studyLighting
   const hasLighting = record(lighting) && typeof lighting.serviceTotalDepthMm === 'number'
   element('lighting-controls').hidden = !hasLighting
@@ -73,6 +88,14 @@ function controls() {
   element('stage-scope').textContent = `Saved stages: ${Object.keys(state.document.stages).join(', ')}. All are retained and compiled.`
 }
 function draw() {
+  const finite=current?.currentFiniteJoint
+  element('finite-joint-result').textContent=finite
+    ?`${finite.status==='analysis-pending'?'Finite joint analysis prepared for this saved revision.':finite.status==='computed-unselected-comparison'?`${finite.controls.enabled?'Finite southwest joint':'Matched conventional RC reference'} computed in the ${finite.headCount}-head house.`:'Finite joint comparison unsupported for this saved revision.'} ${finite.diagnostics.map(d=>d.message).join(' ')}`:''
+  element('finite-joint-caption').textContent=finite?.controls.enabled?'Computed southwest joint and actual house response · unselected':'Matched conventional RC reference · unselected'
+  element('finite-joint-views').hidden=!finite?.floorSvg
+  const finiteImage=element<HTMLImageElement>('current-finite-joint')
+  if(finite?.floorSvg)finiteImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(finite.floorSvg)
+  else finiteImage.removeAttribute('src')
   const ground=current?.groundPocketLoads
   element('ground-pocket-result').textContent=ground?.status==='computed-unselected-candidate'
     ?`Utility and Plant floor gravity: ${ground.addedPhysicalGKN.toFixed(6)} kN through ${ground.headCount} foundation heads. ${ground.receiverCutsAvailable?`Physical beam cuts recovered in ${ground.receiverMemberCount} members.`:"Physical beam cuts unavailable."} Unselected comparison; complete installed loads and receiver resistance remain unresolved.`
@@ -88,6 +111,12 @@ function draw() {
     else lightingImage.removeAttribute('src')
   }
   const lighting = current?.studyLighting?.comparison
+  const homeRuns=current?.studyLighting?.homeRuns
+  element('lighting-home-run-views').hidden=!homeRuns
+  element('lighting-home-run-result').textContent=homeRuns?`Unselected conventional station: ${homeRuns.choices.bayWidthMm} mm bay, ${homeRuns.totalDepthMm} mm total local depth. Declared geometry ${homeRuns.status==='GEOMETRY_REJECTED'?'REJECTED':'within the stated checks'}. Actual supply, terminals, materials and physical performance remain unqualified.`:''
+  const homeRunImage=element<HTMLImageElement>('current-lighting-home-runs')
+  if(current?.studyLighting?.homeRunSvg)homeRunImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(current.studyLighting.homeRunSvg)
+  else homeRunImage.removeAttribute('src')
   element('study-eye-level-views').hidden = !current?.studyRoom
   for (const tone of ['day', 'evening'] as const) {
     const image = element<HTMLImageElement>(`current-study-${tone}`), view = current?.studyRoom?.[tone]
@@ -136,6 +165,10 @@ function draw() {
     if(branch)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(branch.reviewSvg)
     else image.removeAttribute('src')
   }
+  const drain=current?.storeDrain?.state==='cold-maintenance-drawdown-comparison'?current.storeDrain.comparison:null
+  element('store-drain-views').hidden=!drain
+  element('store-drain-result').textContent=drain?`Factory low-point drain comparison: cold upper ${drain.coldEnergy.maximumLmin.toFixed(3)} L/min; cargo ceiling ${drain.cargoDemand.completeColdCargoDesignCeilingKg} kg; applied one-wheel comparison ${drain.cargoApplication.appliedWheelN.toFixed(2)} N. Residual requirement ${drain.finiteInventory.maximumCargoResidualWaterKg.toFixed(3)} / ${drain.choice.cargoResidualBudgetKg} kg. Pressure, thermal seams, materials, supports and physical qualification remain open.`:''
+  for(const[name,result]of[['current',current],['comparison',comparison]]as const){const image=element<HTMLImageElement>(`${name}-store-drain`),d=result?.storeDrain?.state==='cold-maintenance-drawdown-comparison'?result.storeDrain.comparison:null;image.hidden=!d;if(d)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(d.reviewSvg);else image.removeAttribute('src')}
   const cage = current?.wetCage
   element('cage-result').textContent = cage
     ? `Graded raise ${cage.settings.postTopLevelRaiseMm} mm. Cage geometry: ${cage.geometry.independentPathFailureCount} path-pair, ${cage.geometry.internalClosureFailureCount} closure and ${cage.geometry.coverFailureCount} cover failures. Explicit steel ${cage.quantities.actualSteelMassUpperKg.toFixed(3)} kg. Native case ${cage.nativeCaseId}. Comparison only; post-head resistance and installed acceptance remain unqualified.`
@@ -200,6 +233,15 @@ function changed(result: ReturnType<typeof applyEngineeringEdit>) {
   controls()
   void refresh()
 }
+element('finite-joint-edit').addEventListener('submit',event=>{
+  event.preventDefault()
+  changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),
+    operation:{kind:'set-floor-finite-joint-comparison',assemblyId:editableFloorSectionId,settings:{enabled:finiteEnabled.checked,youngMPa:Number(finiteYoung.value),solidPitchMm:Number(finitePitch.value),execution:finiteExecution.value}}}))
+})
+element('southwest-width-edit').addEventListener('submit',event=>{
+  event.preventDefault()
+  changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),operation:{kind:'set-southwest-core-width',assemblyId:editableDistributedFloorId,widthMm:southwestWidth.valueAsNumber}}))
+})
 element('ground-pocket-edit').addEventListener('submit',event=>{
  event.preventDefault()
  const choice=readGroundPocketSettings(state.document.stages.groundPocketLoads)
@@ -283,3 +325,6 @@ void fetch('/api/engineering/document').then(async response => {
   if (!response.ok) throw new Error('The local engineering compiler is unavailable')
   state = beginEngineeringEdit(await response.json(), id()); controls(); await refresh()
 }).catch(error => { element('analysis').textContent = 'Engineering document unavailable.'; element('diagnostic').textContent = String(error) })
+
+drainField.addEventListener('change',()=>controls())
+button('apply-store-drain').addEventListener('click',()=>changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:drainField.value.endsWith('Kg')?'kg':'mm',base:engineeringBase(state),operation:{kind:'set-store-drain-field',assemblyId:editableStoreDrainId,inputId:drainField.value,value:drainValue.valueAsNumber}})))

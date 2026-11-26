@@ -14,7 +14,7 @@ class SolidJointControls(unittest.TestCase):
                     wall_centroid_xy_mm=[110,110], upper_end_z_mm=500,
                     contours_mm={'east':[0,50,100,300,500,700], 'north':[0,50,100,300,600]},
                     normal_points_xy_mm=[[450,450],[550,600]], chord_axis_xy_mm=[50,50],
-                    chord_axial_rigidity_kn=180955., pitch_mm=200., slab_live_kpa=3.)
+                    chord_axial_rigidity_kn=180955., band_width_mm=100., pitch_mm=200., slab_live_kpa=3.)
 
     @classmethod
     def setUpClass(cls):
@@ -96,11 +96,66 @@ class SolidJointControls(unittest.TestCase):
         self.assertGreater(np.max(abs(e['condensedStiffness']-no_chord['condensedStiffness'])),1.)
         self.assertLess(no_chord['relativeRigidModeResidual'],1e-10)
 
+    def test_external_port_wrench_changes_reaction_and_work_but_not_fixed_q_solid(self):
+        e = self.engine
+        q = np.sin(np.arange(len(e['ports'])))*.00001
+        physical = 1.35*e['physicalLoads']['gravity']+e['physicalLoads']['live']
+        before = recover(e,q,physical)
+        port_load = np.zeros(len(e['ports']))
+        force = np.array([1.5,-2.,3.]);moment = np.array([.1,-.2,.3])
+        for i,port in enumerate(e['ports']):
+            if port['id'].startswith('wall/lower/'):
+                port_load[i] = np.r_[force,moment][('u','v','w','rx','ry','rz').index(port['coordinate'])]
+        expected_wrench = np.r_[force,moment+np.cross([.11,.11,.2],force)]
+        np.testing.assert_allclose(e['rigidModes'].T@port_load,expected_wrench,atol=1e-12)
+        after = recover(e,q,physical,external_port_load=port_load)
+        np.testing.assert_array_equal(after['physicalDisplacementsM'],before['physicalDisplacementsM'])
+        self.assertEqual(after['strainEnergyKNm'],before['strainEnergyKNm'])
+        np.testing.assert_allclose(after['portReactionKN_KNm'],before['portReactionKN_KNm']-port_load,atol=1e-12)
+        self.assertAlmostEqual(after['externalLoadWorkKNm'],before['externalLoadWorkKNm']+q@port_load,places=12)
+        np.testing.assert_allclose(e['rigidModes'].T@after['portReactionKN_KNm']+
+            e['rigidModes'].T@condense_load(e,physical)+expected_wrench,np.zeros(6),atol=1e-9)
+        self.assertLess(after['relativeWorkResidual'],1e-10)
+        for invalid in (port_load[:-1],np.full(len(port_load),float('nan')),
+                        np.full(len(port_load),float('inf'))):
+            with self.assertRaises(ValueError):recover(e,q,physical,external_port_load=invalid)
+
+    def test_wider_actual_wall_preserves_source_band_chord_and_exact_material_load(self):
+        e = self.engine
+        widened = build_joint(**{**self.settings(),
+            'l_rectangles_xy_mm':[[0,0,150,300],[150,0,300,150]],
+            'wall_centroid_xy_mm':[125,125]})
+        self.assertEqual([p for p in e['ports'] if p['kind']!='wall'],
+                         [p for p in widened['ports'] if p['kind']!='wall'])
+        self.assertEqual(e['slabVolumeM3'],widened['slabVolumeM3'])
+        self.assertAlmostEqual(widened['wallVolumeM3'],.0135,places=12)
+        self.assertAlmostEqual(widened['volumeM3']-e['volumeM3'],.0035,places=12)
+        np.testing.assert_allclose(widened['rigidModes'].T@widened['gravityLoad'],
+            [0,0,-(.042*27+.0135*25),-(.042*27*.35+.0135*25*.125),
+             .042*27*.3+.0135*25*.125,0],atol=1e-11)
+        np.testing.assert_allclose(widened['rigidModes'].T@widened['liveLoad'],
+                                  e['rigidModes'].T@e['liveLoad'],atol=1e-11)
+        self.assertLess(widened['physicalTraceResidual'],1e-12)
+        self.assertLess(widened['relativeRigidModeResidual'],1e-10)
+        values = np.linalg.eigvalsh(widened['condensedStiffness'])
+        self.assertEqual(np.count_nonzero(values > values[-1]*1e-9),len(widened['ports'])-6)
+        self.assertGreater(np.max(abs(widened['condensedStiffness']-e['condensedStiffness'])),1.)
+        q = np.sin(np.arange(len(widened['ports'])))*.00001
+        result = recover(widened,q,1.35*widened['physicalLoads']['gravity']+widened['physicalLoads']['live'])
+        self.assertGreater(result['strainEnergyKNm'],0.)
+        self.assertLess(result['relativeWorkResidual'],1e-10)
+
     def test_duplicate_contact_and_missing_native_band_edge_reject(self):
         for edit in [
             {'normal_points_xy_mm':[[450,450],[450,450]]},
             {'normal_points_xy_mm':[[50,50]]},
             {'contours_mm':{'east':[0,50,300,500,700],'north':[0,50,100,300,600]}},
+            {'band_width_mm':0.},
+            {'band_width_mm':-100.},
+            {'band_width_mm':float('nan')},
+            {'band_width_mm':float('inf')},
+            {'band_width_mm':701.},
+            {'band_width_mm':150.},
         ]:
             with self.assertRaises(ValueError):build_joint(**{**self.settings(),**edit})
 

@@ -74,26 +74,41 @@ export function frameFurnishedStudy(svg: string, view: 'fixed' | 'timber' | 'til
   return blackOnlyPublicationSvg(`<svg xmlns="http://www.w3.org/2000/svg" width="138mm" height="${138 * height / width}mm" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc" data-publication-source-sha256="${digest(svg)}" data-scale="NTS"><title id="title">${title}</title><desc id="desc">Conditional furnished room comparison. Geometry and furniture are unchanged from the current Study generator; black-only paint and page framing are publication choices. Owner acceptance remains open.</desc>${style}<rect width="${width}" height="${height}" fill="#ffffff"/>${content}</svg>\n`)
 }
 
+/** Frame the actual producer's camera viewport; never redraw a second room. */
+export function frameEyeLevelStudy(svg:string,view:'fixed'|'removable'){
+  const groups=[...svg.matchAll(/<g\b[^>]*\bdata-study-view="([^"]+)"[^>]*>[\s\S]*?<\/g>/g)]
+  const defs=svg.match(/<defs>[\s\S]*?<\/defs>/g),metadata=svg.match(/<metadata>[\s\S]*?<\/metadata>/g)
+  if(groups.length!==2||new Set(groups.map(g=>g[1])).size!==2||!defs||defs.length!==1||!metadata||metadata.length!==1)throw new Error('Eye-level Study producer changed its controlled publication composition')
+  const group=groups.find(g=>g[1]===view)?.[0]
+  const viewport=group?.match(/\bdata-study-viewport="([^"]+)"/)?.[1]
+  const values=viewport?.trim().split(/\s+/).map(Number)
+  const placement=group?.slice(0,group.indexOf('>')+1).match(/\btransform="([^"]+)"/)?.[1]
+  if(!group||!values||values.length!==4||values.some(v=>!Number.isFinite(v))||values[2]<=0||values[3]<=0||!placement||!/^translate\([-\d.,\s]+\)$/.test(placement))throw new Error('Eye-level Study lacks an explicit translated camera viewport')
+  const content=group.replace(/\s+transform="[^"]*"/,'')
+  const title=view==='fixed'?'Unselected Study: fixed wainscot':'Unselected Study: removable finish'
+  return blackOnlyPublicationSvg(`<svg xmlns="http://www.w3.org/2000/svg" width="138mm" height="${138*values[3]/values[2]}mm" viewBox="${viewport}" role="img" aria-labelledby="title desc" data-publication-source-sha256="${digest(svg)}" data-scale="NTS"><title id="title">${title}</title><desc id="desc">Exact source-controlled eye-level viewport from the shared working-house comparison. Neutral ink and page framing are publication choices. Local mouldings, glazing bars and furniture heights remain appearance impressions; no installed, photometric or owner acceptance.</desc>${metadata[0]}${defs[0]}${content}</svg>\n`)
+}
+
 export function buildCurrentPublicationAssets(repoRoot: string, input: unknown = readGeorgianDesignSnapshot()) {
   const plans = compilePublicationPlanAssets(input)
   const architecture = compilePublicationArchitectureAssets(input)
-  const producer = 'project/ias/studies/crafted-study-views.mjs'
+  const producer = 'project/ias/studies/crafted-study-eye-level.mjs'
   execFileSync(process.execPath, ['--import', 'tsx', producer, '--check'], { cwd: repoRoot, stdio: ['ignore', 'pipe', 'pipe'] })
-  const comparisonPath = 'project/ias/studies/crafted-study-comparison.svg'
-  const tilePath = 'project/ias/studies/crafted-study-tile.svg'
+  const comparisonPath = 'project/ias/studies/crafted-study-eye-level-day.svg'
+  const tilePath = 'project/ias/studies/working-study-tile-eye-level.svg'
   const comparison = readFileSync(resolve(repoRoot, comparisonPath), 'utf8')
   const tile = readFileSync(resolve(repoRoot, tilePath), 'utf8')
   const assets = [...plans.assets, ...architecture.assets,
-    { path: currentPublicationAssetPaths[4], svg: frameFurnishedStudy(comparison, 'fixed') },
-    { path: currentPublicationAssetPaths[5], svg: frameFurnishedStudy(comparison, 'timber') },
-    { path: currentPublicationAssetPaths[6], svg: frameFurnishedStudy(tile, 'tile') },
+    { path: currentPublicationAssetPaths[4], svg: frameEyeLevelStudy(comparison, 'fixed') },
+    { path: currentPublicationAssetPaths[5], svg: frameEyeLevelStudy(comparison, 'removable') },
+    { path: currentPublicationAssetPaths[6], svg: frameEyeLevelStudy(tile, 'removable') },
   ]
   return {
     schema: 'current-publication-assets/1' as const, source: plans.source,
     nominalPlanMethod: plans.method,
     architecturalDrawingMethod: { ...architecture.method,
       sha256: digest(readFileSync(resolve(repoRoot, architecture.method.path), 'utf8')) },
-    scope: 'Two current nominal plans, a nominal front elevation and principal section, and three conditional owner-review room comparisons. The occupied Study opening set-out is not adopted into the nominal plans. Floor, foundation and roof assemblies remain provisional; these architectural views do not adopt structural candidates or raised-ground engineering datums. No technical, physical or owner acceptance.',
+    scope: 'Two current nominal plans, a nominal front elevation and principal section, and three unselected Study finish comparisons from the shared saved working-house case. The room depicts its actual local corner projections and furniture; the nominal whole-house drawings have not adopted that structural or occupied-room revision. Floor, foundation and roof assemblies remain provisional. No technical, physical or owner acceptance.',
     producerChecks: [{ path: producer, sha256: digest(readFileSync(resolve(repoRoot, producer), 'utf8')),
       inputArtwork: { [comparisonPath]: digest(comparison), [tilePath]: digest(tile) } }],
     assets: assets.map(asset => ({ ...asset, sha256: digest(asset.svg) })),

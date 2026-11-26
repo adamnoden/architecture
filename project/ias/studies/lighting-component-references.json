@@ -171,11 +171,60 @@
   "localHomeRunCandidate": {
     "bayWidthMm": 410,
     "tubeWallMm": 1,
-    "routeGapMm": 11,
+    "routeGapMm": 21,
     "lowerPortRearInsetMm": 20,
     "maximumClipSpanMm": 300,
     "clipEndInsetMm": 50,
-    "stationOffsetXMm": 12
+    "stationOffsetXMm": 33,
+    "carrierCentrePlateOffsetXMm": 0,
+    "minimumResidualMm": 5,
+    "upperBendClipFraction": 0.5,
+    "additionalCornerDepthMm": 20,
+    "accessoryExtensionMm": 16,
+    "upperBoxBacksetMm": 14,
+    "upperPortRearInsetMm": 20,
+    "mainRestSouthShiftMm": 60,
+    "caseRestSizeMm": 120,
+    "fixedIslandHeightMm": 120
   },
-  "localHomeRunAuthority": "Unselected conventional separate home-run comparison. Current manufacturer box envelope is reused, but each lower side port is an authored requirement20mm from the rear; actual HGS06 knockout coordinates, matched collars, internal devices, conductors and source feed remain unqualified. Three independent skirt-top interfaces do not select circuit topology. Tube wall, clip spacing and gross collar stock are project comparison requirements, not product ratings."
+  "localHomeRunAuthority": "Unselected conventional separate home runs with full95mm local station, nominalBarton47mm steel bases and16mm extension frames. Authored20mm port rear insets have no qualified manufacturer hole coordinates. Exact mating hardware, internal device/earth paths and house supply remain unqualified; three source interfaces do not select circuit topology. Complete86x86x23mm socket device shadow is referenced; switch/junction hardware shadows remain authored requirements, not inherited product qualification.",
+  "localHomeRunSupportReference": {
+    "schema": "ias-lighting-support-reference/1",
+    "checkedDate": "2026-11-26",
+    "saddle": {
+      "manufacturer": "D-Line",
+      "reference": "SAFE-DCOND20 galvanised dimensional witness",
+      "url": "https://d-line-it.com/conduit-saddles/",
+      "lengthMm": 86.19,
+      "widthMm": 20,
+      "formedHeightMm": 23,
+      "standOffMm": 3,
+      "qualification": "Manufacturer exterior dimensions and stand-off only. Actual use on the R152 bend, complete constituents/mass, anchor/support and tab/tool/human renewal remain unqualified; no fire rating is inherited."
+    },
+    "driver": {
+      "manufacturer": "Wera",
+      "reference": "355 PZ2x100,05009315001",
+      "url": "https://hybris-media.wera.de/download/pdfgenerator-datasheets/en/05009315001.pdf",
+      "page": 1,
+      "documentDate": "2026-11-11",
+      "lengthMm": 205,
+      "maximumDiameterMm": 37,
+      "bladeLengthMm": 100,
+      "bladeDiameterMm": 6,
+      "qualification": "Conservative full tool cylinder; screw drive and actual engagement/hand force remain installation requirements. No live work is permitted."
+    },
+    "boxExtension": {
+      "manufacturer": "Barton Engineering",
+      "base": "BCC14RE47mm1gang",
+      "extension": "BCEXT1G1616mm1gang",
+      "url": "https://barton-engineering.co.uk/bs-switch-and-socket-box/",
+      "checkedDate": "2026-11-26",
+      "baseWidthMm": 72,
+      "baseHeightMm": 72,
+      "baseDepthMm": 47,
+      "extensionDepthMm": 16,
+      "material": "Pre-coated galvanised steel catalogue description; complete constituents and installed qualification unadmitted.",
+      "qualification": "Nominal envelopes only; actual side-entry coordinates, mating hardware, complete supplied mass, device/earth connections and complete assembly protection remain unqualified."
+    }
+  }
 }

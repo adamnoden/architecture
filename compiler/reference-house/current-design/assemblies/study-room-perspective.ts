@@ -19,8 +19,9 @@ const unit = (a: Point): Point => { const length=Math.hypot(...a); if(length<1e-
 
 /** Pinhole drawing only: no illuminance, product material or installed room claim. */
 export function studyPerspectiveCamera(kit: StudyRoomKit): Camera {
-  const [a,b,c]=kit.bands
-  if(!a||!b||!c||kit.bands.length!==3)throw new RangeError('STUDY_PERSPECTIVE_UNSUPPORTED_ROOM')
+  const bands=kit.structuralConsequence?.source.baseBands??kit.bands
+  const [a,b,c]=bands
+  if(!a||!b||!c||bands.length!==3)throw new RangeError('STUDY_PERSPECTIVE_UNSUPPORTED_ROOM')
   return { eyeMm:[c[2]-280,c[3]-190,1550], targetMm:[a[0]+(b[2]-a[0])*.43,a[1]+170,1550], horizontalFieldDegrees:78 }
 }
 
@@ -53,13 +54,33 @@ function roomScene(kit:StudyRoomKit,assembly:Assembly,transition:Transition,mode
   const ceiling=transition.field.ceilingZMm,night=tone==='evening',oak=assembly.face==='oak'
   const palette=night?{wall:'#535b58',panel:'#59635c',inset:'#636e64',trim:'#788174',cream:'#d0c9b8',floor:['#775d40','#826a4a','#8e7351','#6e5a42'],line:'#323b37',glass:'#354c58'}
     :{wall:'#b9bdb0',panel:'#bec4b5',inset:'#cbd0c1',trim:'#d9dace',cream:'#ebe9de',floor:['#9b7952','#a58359','#b18e62','#96754f'],line:'#777f72',glass:'#c4d3d4'}
+  if(!oak){palette.panel=night?'#696d65':'#c1c6bf';palette.inset=night?'#757c70':'#d4d6c9';palette.trim=night?'#8b917e':'#e0dfd1'}
+  if(kit.request.wearingFace!=='oak')palette.floor=night?['#777b71','#606d6d','#8b8e81','#737b74']:['#c4c2b7','#aebabb','#d6d3c5','#b9c2ba']
   const faces:Face[]=[]
   const add=(id:string,points:readonly Point[],colour:string,line=palette.line,width=.55,opacity=1)=>faces.push({id,points,colour,line,width,opacity})
-  // The removable floor keeps every actual wear-face polygon. The fixed control uses the same room boundary with its own continuous strip-floor impression.
-  if(mode==='fixed')for(const [band,box]of kit.bands.entries())add(`fixed-floor/${band}`,floorRect(box),palette.floor[1]!,palette.floor[1]!,0)
-  else for(const part of kit.floor.parts)for(const [i,face]of part.facePieces.entries())add(`${part.id}/face/${i}`,floorRect(face),palette.floor[(part.band+i+Math.round(part.box[0]/300))%4]!,night?'#504c3d':'#79684e',.45)
-  if(mode==='fixed')for(const [band,box]of kit.bands.entries())for(let x=box[0]+104;x<box[2];x+=104)add(`fixed-strip/${band}/${x}`,floorRect([x,box[1],x+1,box[3]],.1),night?'#605342':'#846c4d',undefined,0)
-  for(const part of kit.floor.parts)for(const [i,face]of part.facePieces.entries()){
+  const composition=kit.floor.oakComposition
+  const appearanceColour=(colour:string)=>tone==='day'?colour:'#'+[1,3,5].map(i=>Math.round(parseInt(colour.slice(i,i+2),16)*.72).toString(16).padStart(2,'0')).join('')
+  if(composition){
+    const fieldColour=appearanceColour(composition.input.fieldColour),jointColour=appearanceColour(composition.input.grainColour)
+    // Both alternatives share the authored finish composition. Only the
+    // removable floor retains the actual3mm inter-component release joints.
+    for(const[band,box]of kit.bands.entries())add(`oak-composition/base/${band}`,floorRect(box),mode==='fixed'?fieldColour:jointColour,undefined,0)
+    for(const component of composition.components)for(const zone of component.zones){
+      add(zone.id,floorRect(zone.box,.1),appearanceColour(zone.colour),undefined,0)
+      const[a,b,c,d]=zone.box,spacing=composition.input.grainSpacingMm
+      const from=zone.grainAxis==='x'?b:a,to=zone.grainAxis==='x'?d:c
+      for(let station=Math.ceil((from+3)/spacing)*spacing;station<to-3;station+=spacing){
+        const line:Box=zone.grainAxis==='x'?[a+3,station,c-3,station+.65]:[station,b+3,station+.65,d-3]
+        if(good(line))add(`${zone.id}/grain/${station}`,floorRect(line,.2),jointColour,undefined,0,composition.input.grainOpacity)
+      }
+    }
+  }
+  // The retained uncomposed reference remains available without changing its
+  // geometry or inventing a finish choice for an existing saved document.
+  if(!composition&&mode==='fixed')for(const [band,box]of kit.bands.entries())add(`fixed-floor/${band}`,floorRect(box),palette.floor[1]!,palette.floor[1]!,0)
+  else if(!composition)for(const part of kit.floor.parts)for(const [i,face]of part.facePieces.entries())add(`${part.id}/face/${i}`,floorRect(face),palette.floor[(part.band+i+Math.round(part.box[0]/300))%4]!,night?'#504c3d':'#79684e',.45)
+  if(!composition&&mode==='fixed')for(const [band,box]of kit.bands.entries())for(let x=box[0]+(kit.request.wearingFace==='oak'?104:600);x<box[2];x+=(kit.request.wearingFace==='oak'?104:600))add(`fixed-strip/${band}/${x}`,floorRect([x,box[1],x+1,box[3]],.1),night?'#605342':'#846c4d',undefined,0)
+  if(!composition&&kit.request.wearingFace==='oak')for(const part of kit.floor.parts)for(const [i,face]of part.facePieces.entries()){
     const [a,b,c,d]=face
     for(let j=1;j<4;j++){
       const x=a+(c-a)*j/4
@@ -97,7 +118,7 @@ function roomScene(kit:StudyRoomKit,assembly:Assembly,transition:Transition,mode
       if(part.family==='gravity-hung-cassette')rect(part.localStopId,[part.box[0]+1.5,part.box[3]-assembly.design.releasePocketMm,part.box[2]-1.5,part.box[3]],palette.trim,palette.line,.35,4)
     }
     for(const reserve of wall.reserves){
-      if(reserve.role==='retained-mineral-window-surround'||reserve.role==='retained-emitter-background')rect(reserve.id,reserve.box,palette.cream,palette.cream,0,5)
+      if(reserve.role==='retained-mineral-window-surround'||reserve.role==='retained-emitter-background'||reserve.role==='retained-structural-pilaster-return')rect(reserve.id,reserve.box,palette.cream,palette.cream,0,5)
       if(reserve.role==='retained-protected-door-strip')rect(reserve.id+'/unqualified-head',reserve.box,night?'#777a6d':'#dddccf',palette.line,.5,5)
     }
     for(const trim of wall.trims){
@@ -155,14 +176,15 @@ function roomScene(kit:StudyRoomKit,assembly:Assembly,transition:Transition,mode
 export function drawStudyRoomPerspective(kit:StudyRoomKit,assembly:Assembly,transition:Transition,tone:'day'|'evening'='day'){
   if(tone!=='day'&&tone!=='evening')throw new TypeError('STUDY_PERSPECTIVE_TONE_UNSUPPORTED')
   const camera=studyPerspectiveCamera(kit),width=1000,height=1000,project=projector(camera,width,height)
-  const source={roomId:kit.source.roomId,bindingDigest:kit.source.bindingDigest,roomKitCaseDigest:kit.caseDigest,assemblyInputDigest:assembly.source.inputDigest}
+  const source={roomId:kit.source.roomId,bindingDigest:kit.source.bindingDigest,roomKitCaseDigest:kit.caseDigest,assemblyInputDigest:assembly.source.inputDigest,...(kit.floor.oakComposition?{oakCompositionDigest:kit.floor.oakComposition.digest}:{}),...(kit.structuralConsequence?{structuralConsequenceDigest:kit.structuralConsequence.digest,controllingFloorWidthMm:kit.structuralConsequence.source.native.widthMm}:{})}
   const scenes=(['fixed','removable']as const).map(mode=>roomScene(kit,assembly,transition,mode,tone,camera))
   const drawings=scenes.map(scene=>scene.faces.map(face=>{
     const points=project.clip(face.points);if(points.length<3)return''
     return`<polygon data-source-id="${escape(face.id)}" points="${points.map(p=>p.join(',')).join(' ')}" fill="${face.colour}" stroke="${face.line??'none'}" stroke-width="${face.width??0}" opacity="${face.opacity??1}" stroke-linejoin="round"/>`
   }).join(''))
-  const title=tone==='day'?'The Study · a room made in pieces':'The Study · an evening colour study'
+  const title=kit.structuralConsequence?`The Study · SW${kit.structuralConsequence.source.native.widthMm} ${tone==='day'?'room proposal':'evening colour study'}`:tone==='day'?'The Study · a room made in pieces':'The Study · an evening colour study'
+  const scope=kit.structuralConsequence?'Unselected structural-room proposal':'Current occupied room'
   const description='Matched eye-level fixed and removable finish impressions from the same current occupied Study. Exact floor faces, wall cassettes, opening geometry and furniture footprints; palettes, glazing bars, moulding impressions and furniture heights are presentation trials. No daylight, electric-light or material performance is simulated.'
-  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="2160" height="1315" viewBox="0 0 2160 1315" role="img" aria-labelledby="title desc"><title id="title">${title}</title><desc id="desc">${description}</desc><metadata>${escape(JSON.stringify({schema:'ias-study-eye-level/1',source,camera,tone,claims:{ownerAcceptance:false,photometricSimulation:false,constructedProfile:false,installedFurnitureDimensions:false}}))}</metadata><defs><clipPath id="left-view"><rect width="1000" height="1000"/></clipPath><clipPath id="right-view"><rect width="1000" height="1000"/></clipPath></defs><rect width="2160" height="1315" fill="${tone==='day'?'#f2f0e8':'#e7e5db'}"/><g fill="#303c36"><text x="60" y="65" font-family="Georgia,serif" font-size="40">${title}</text><text x="60" y="101" font-family="Arial,sans-serif" font-size="18">Current occupied room · the same eye point, windows and furniture in both alternatives</text><text x="60" y="150" font-family="Georgia,serif" font-size="25">Fixed wainscot and mineral wall</text><text x="1100" y="150" font-family="Georgia,serif" font-size="25">${assembly.face==='oak'?'Gravity-hung timber faces':'Independent mineral faces'} · seated ${kit.request.wearingFace==='oak'?'oak':'mineral'} floor</text></g><g transform="translate(60,175)" clip-path="url(#left-view)"><rect width="1000" height="1000" fill="${scenes[0]!.palette.cream}"/>${drawings[0]}</g><g transform="translate(1100,175)" clip-path="url(#right-view)"><rect width="1000" height="1000" fill="${scenes[1]!.palette.cream}"/>${drawings[1]}</g><g fill="#465148" font-family="Arial,sans-serif" font-size="17"><text x="60" y="1215">Bound geometry: ${assembly.walls.length} walls · ${assembly.schedule.movingFaceCount} wall faces · ${kit.floor.parts.length} floor pieces · south window at X${kit.opening.occupiedCentreMm} mm.</text><text x="60" y="1244">Colours, glazing bars and local moulding impressions are appearance trials. Furniture footprints are bound; heights follow the existing view convention.</text><text x="60" y="1273">${tone==='evening'?'Evening palette only: no lamp output, circuit, illuminance or glare result.':'Day palette only: no sun position, measured daylight or exterior site is assumed.'} Owner appearance judgement remains open.</text></g></svg>\n`
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="2160" height="1315" viewBox="0 0 2160 1315" role="img" aria-labelledby="title desc"><title id="title">${title}</title><desc id="desc">${description}</desc><metadata>${escape(JSON.stringify({schema:'ias-study-eye-level/1',source,camera,tone,claims:{ownerAcceptance:false,photometricSimulation:false,constructedProfile:false,installedFurnitureDimensions:false,tileWetRoomAcceptance:false,installedAssemblies:false}}))}</metadata><defs><clipPath id="left-view"><rect width="1000" height="1000"/></clipPath><clipPath id="right-view"><rect width="1000" height="1000"/></clipPath></defs><rect width="2160" height="1315" fill="${tone==='day'?'#f2f0e8':'#e7e5db'}"/><g fill="#303c36"><text x="60" y="65" font-family="Georgia,serif" font-size="40">${title}</text><text x="60" y="101" font-family="Arial,sans-serif" font-size="18">${scope} · the same eye point, windows and furniture in both alternatives</text><text x="60" y="150" font-family="Georgia,serif" font-size="25">Fixed wainscot and mineral wall</text><text x="1100" y="150" font-family="Georgia,serif" font-size="25">${assembly.face==='oak'?'Gravity-hung timber faces':'Independent mineral faces'} · seated ${kit.request.wearingFace==='oak'?'oak':'mineral'} floor</text></g><g data-study-view="fixed" data-study-viewport="0 0 ${width} ${height}" transform="translate(60,175)" clip-path="url(#left-view)"><rect width="1000" height="1000" fill="${scenes[0]!.palette.cream}"/>${drawings[0]}</g><g data-study-view="removable" data-study-viewport="0 0 ${width} ${height}" transform="translate(1100,175)" clip-path="url(#right-view)"><rect width="1000" height="1000" fill="${scenes[1]!.palette.cream}"/>${drawings[1]}</g><g fill="#465148" font-family="Arial,sans-serif" font-size="17"><text x="60" y="1215">Bound geometry: ${assembly.walls.length} walls · ${assembly.schedule.movingFaceCount} wall faces · ${kit.floor.parts.length} floor pieces · south window at X${kit.opening.occupiedCentreMm} mm.</text><text x="60" y="1244">Colours, glazing bars and local moulding impressions are appearance trials. Furniture footprints are bound; heights follow the existing view convention.</text><text x="60" y="1273">${tone==='evening'?'Evening palette only: no lamp output, circuit, illuminance or glare result.':'Day palette only: no sun position, measured daylight or exterior site is assumed.'} Owner appearance judgement remains open.</text></g></svg>\n`
   return{schema:'ias-study-eye-level/1' as const,source,camera,tone,sceneDigest:sha256SemanticFingerprint({source,camera,tone,geometry:scenes.map(scene=>scene.faces)}),svg}
 }
