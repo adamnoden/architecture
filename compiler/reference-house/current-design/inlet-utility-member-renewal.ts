@@ -563,13 +563,16 @@ export function inletUtilityHeadWaste(i:{source:Source;wet:Wet}){
   pressureCuts,dryRodRelease:{checks:dryRodChecks,failures:dryRodChecks.filter(q=>q.reserveMm<0),positiveCaptureAndKeeperRequired:true,actualPhysicalHandlingQualified:false},normalDesignWaterC:w.normalDesignWaterC,maximumColdMaintenanceC:w.maintenanceMaximumC,designFaultWaterC:w.designFaultWaterC,actualBackfeedValveSealToolsStrainerSupportAndCapPhysicalMatchQualified:false}
 }
 
-type PortalDesign={schema:string;sideAxisFromBoardEdgeMm:number;beamRearFromBoardMm:number;beamFrontFromBoardMm:number;rearLegFromBoardMm:number;frontLegFromBoardMm:number;sideRibCrossMm:readonly[number,number];sideRibWallMm:number;sideRibRearFromBoardMm:number;sideRibFrontFromBoardMm:number;framePostCrossMm:readonly[number,number];framePostWallMm:number;frameBeamCrossMm:readonly[number,number];frameBeamWallMm:number;lowerRearCrossMm:readonly[number,number];lowerRearWallMm:number;lowerRearAxisZMm:number;braceCrossMm:number;braceWallMm:number;rearBraceAxisYOffsetsMm:readonly number[];rearBraceLowZMm:number;rearBraceHighZMm:number;sideBraceAxisXOffsetsMm:readonly number[];sideBraceLowZMm:number;sideBraceHighZMm:number;solePlanMm:readonly[number,number];soleThicknessMm:number;headClipPlateMm:readonly[number,number,number];headClipAxisZMm:number;headClipRearFromBoardMm:number;headClipFrontFromBoardMm:number;headMountBoltDiameterMm:number;headMountBoltMaximumLengthMm:number;minimumHeadSheetMm:number;maximumHeadSheetMm:number;maximumHeadDryAccessoriesKg:number;maximumEachHeadPressureAssemblyKg:number;underBowlPadMm:readonly[number,number,number];maximumFrameJointAndWeldMassKg:number;minimumSteelDensityKgM3:number;maximumSteelDensityKgM3:number;matchedOneHeadFabricationBoundMm:number;maximumCapturedWetHeadKg:number;normalFrontEdgePointComparisonN:number;normalHorizontalComparisonN:number;normalForceHeightMm:number;frontUpperAndLowerTiesIncluded:false;actualDeliveredMaterialWeldAndJointProofAccepted:false;actualFloorBearingAndBallastSupportAccepted:false}
+type PortalHeadFastening={schema:string;method:string;frontBoltRowsFromBoardMm:readonly[number,number];boltDiameterMm:number;boltLengthMm:number;boltTensileAreaMm2:number;boltHeadAFMm:number;boltHeadDiameterMm:number;boltHeadHeightMm:number;boltHeadBottomMm:number;minimumThreadEngagementMm:number;frameThreadBlockMm:readonly[number,number,number];frameThreadBlockBottomMm:number;headLoadBossMm:readonly[number,number,number];headLoadBossBottomMm:number;headLoadPedestalMm:readonly[number,number,number];headLoadPedestalBottomMm:number;deckAccessDiameterMm:number;deckPlugDiameterMm:number;deckPlugThicknessMm:number;rearDowelDiameterMm:number;rearDowelBottomMm:number;rearDowelTopMm:number;rearDowelCollarDiameterMm:number;rearDowelCollarClearBoreMm:number;rearDowelCollarBottomMm:number;rearDowelCollarTopMm:number;frontLipThicknessMm:number;frontLipDepthMm:number;frontLipBottomMm:number;leftCornerBandDepthMm:number;referenceSteelProofMPa:number;toolSocketMaximumDiameterMm:number;toolExtensionMm:number;toolTorqueNm:number;actualDeliveredFastenerThreadWeldSheetAndLoadTransferQualified:false}
+type PortalDesign={maximumHeadFactoryWeldMassKg:number;headRelease:PortalHeadFastening;schema:string;sideAxisFromBoardEdgeMm:number;beamRearFromBoardMm:number;beamFrontFromBoardMm:number;rearLegFromBoardMm:number;frontLegFromBoardMm:number;sideRibCrossMm:readonly[number,number];sideRibWallMm:number;sideRibRearFromBoardMm:number;sideRibFrontFromBoardMm:number;framePostCrossMm:readonly[number,number];framePostWallMm:number;frameBeamCrossMm:readonly[number,number];frameBeamWallMm:number;lowerRearCrossMm:readonly[number,number];lowerRearWallMm:number;lowerRearAxisZMm:number;braceCrossMm:number;braceWallMm:number;rearBraceAxisYOffsetsMm:readonly number[];rearBraceLowZMm:number;rearBraceHighZMm:number;sideBraceAxisXOffsetsMm:readonly number[];sideBraceLowZMm:number;sideBraceHighZMm:number;solePlanMm:readonly[number,number];soleThicknessMm:number;headClipPlateMm:readonly[number,number,number];headClipAxisZMm:number;headClipRearFromBoardMm:number;headClipFrontFromBoardMm:number;headMountBoltDiameterMm:number;headMountBoltMaximumLengthMm:number;minimumHeadSheetMm:number;maximumHeadSheetMm:number;maximumHeadDryAccessoriesKg:number;maximumEachHeadPressureAssemblyKg:number;underBowlPadMm:readonly[number,number,number];maximumFrameJointAndWeldMassKg:number;minimumSteelDensityKgM3:number;maximumSteelDensityKgM3:number;matchedOneHeadFabricationBoundMm:number;maximumCapturedWetHeadKg:number;normalFrontEdgePointComparisonN:number;normalHorizontalComparisonN:number;normalForceHeightMm:number;frontUpperAndLowerTiesIncluded:false;actualDeliveredMaterialWeldAndJointProofAccepted:false;actualFloorBearingAndBallastSupportAccepted:false}
 /** Complete alternate normal support. This observer does not yet replace the
  * legacy cage adapter or admit finite portal capture/extraction/floor loads. */
-export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;braceObstacleRepresentation?:'exact-members'|'filled-bay-control'}){
+export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;braceObstacleRepresentation?:'exact-members'|'filled-bay-control';headMountRepresentation?:'front-top-bolts'|'legacy-cross-clips-control'}){
  const {source,wet,capture}=i,d=wet.choice.coldDistribution,h=d.prefabSinkHead,
   p=(d as unknown as{frameRenewal:{portalDesign:PortalDesign}}).frameRenewal.portalDesign,two=2*source.rearTreeContext.settingEachMm
  if(p?.schema!=='had-utility-two-side-portals/1'||!Number.isFinite(p.maximumEachHeadPressureAssemblyKg)||p.maximumEachHeadPressureAssemblyKg<=0||p.maximumEachHeadPressureAssemblyKg*2>p.maximumHeadDryAccessoriesKg||p.frontUpperAndLowerTiesIncluded!==false||two!==20||p.maximumHeadSheetMm<p.minimumHeadSheetMm||p.normalForceHeightMm<capture.controls.maximumHeadZMm)throw Error('Actual complete portal source and full occupied head action height required')
+ const mountMode=i.headMountRepresentation??'front-top-bolts',f=p.headRelease
+ if(f?.schema!=='had-utility-front-head-fastening/1'||f.actualDeliveredFastenerThreadWeldSheetAndLoadTransferQualified!==false||p.normalForceHeightMm<f.boltHeadBottomMm+f.boltHeadHeightMm+f.toolExtensionMm)throw Error('Source-bound head fastening requirements required')
  const top=(h as unknown as{topPlanMm:readonly[number,number,number,number];topZMm:readonly[number,number];topSolidPlansMm:readonly(readonly[number,number,number,number])[]}),
   plan=top.topPlanMm,xs=[plan[0]+p.sideAxisFromBoardEdgeMm,plan[0]+plan[2]-p.sideAxisFromBoardEdgeMm],
   yr=plan[1]+p.rearLegFromBoardMm,yf=plan[1]+plan[3]-p.frontLegFromBoardMm,beamA=plan[1]+p.beamRearFromBoardMm,beamB=plan[1]+plan[3]-p.beamFrontFromBoardMm,
@@ -588,15 +591,38 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
    put('portal/'+side+'/sole/'+end,box(x-p.solePlanMm[0]/2,y-p.solePlanMm[1]/2,0,...p.solePlanMm,p.soleThicknessMm),'frame',p.solePlanMm[0]*p.solePlanMm[1]*p.soleThicknessMm)
   }
   put('portal/'+side+'/side-upper',box(x-p.frameBeamCrossMm[0]/2,beamA,beamBottom,p.frameBeamCrossMm[0],beamB-beamA,p.frameBeamCrossMm[1]),'frame',area(...p.frameBeamCrossMm,p.frameBeamWallMm)*(beamB-beamA))
-  put('head/factory-side-rib/'+side,box(x-p.sideRibCrossMm[0]/2,ribA,ribBottom,p.sideRibCrossMm[0],ribB-ribA,p.sideRibCrossMm[1]),'factory-head',area(...p.sideRibCrossMm,p.sideRibWallMm)*(ribB-ribA))
+  put('head/factory-side-rib/'+side,box(x-p.sideRibCrossMm[0]/2,ribA,ribBottom,p.sideRibCrossMm[0],ribB-ribA,p.sideRibCrossMm[1]),'factory-head',area(...p.sideRibCrossMm,p.sideRibWallMm)*(ribB-ribA)-(mountMode==='front-top-bolts'?(2*Math.PI*(f.boltDiameterMm+1)**2/4+Math.PI*f.rearDowelCollarClearBoreMm**2/4)*2*p.sideRibWallMm:0))
   for(const[k,off]of p.sideBraceAxisXOffsetsMm.entries())bar('portal/'+side+'/side-brace/'+k,[x+off,yr,k===0?p.sideBraceLowZMm:p.sideBraceHighZMm],[x+off,yf,k===0?p.sideBraceHighZMm:p.sideBraceLowZMm],p.braceCrossMm,p.braceWallMm,'frame')
-  for(const[k,y]of[plan[1]+p.headClipRearFromBoardMm,plan[1]+plan[3]-p.headClipFrontFromBoardMm].entries()){
+  if(mountMode==='legacy-cross-clips-control')for(const[k,y]of[plan[1]+p.headClipRearFromBoardMm,plan[1]+plan[3]-p.headClipFrontFromBoardMm].entries()){
    for(const sign of[-1,1]){
     const bx=x+(sign<0?-p.sideRibCrossMm[0]/2-p.headClipPlateMm[0]:p.sideRibCrossMm[0]/2)
     put('head/clip/'+side+'/'+k+'/'+sign,box(bx,y-p.headClipPlateMm[1]/2,p.headClipAxisZMm-p.headClipPlateMm[2]/2,...p.headClipPlateMm),'factory-head',p.headClipPlateMm.reduce((n,v)=>n*v,1))
    }
    for(const off of[-15,15])put('head/mount-bolt/'+side+'/'+k+'/'+off,box(x-p.headMountBoltMaximumLengthMm/2,y+off-p.headMountBoltDiameterMm/2,p.headClipAxisZMm-p.headMountBoltDiameterMm/2,p.headMountBoltMaximumLengthMm,p.headMountBoltDiameterMm,p.headMountBoltDiameterMm),'factory-head',Math.PI*p.headMountBoltDiameterMm**2/4*p.headMountBoltMaximumLengthMm+2*13*13*6)
   }
+  if(mountMode==='front-top-bolts'){
+   const yd=plan[1]+p.headClipRearFromBoardMm
+   put('portal/'+side+'/rear-locating-dowel',box(x-f.rearDowelDiameterMm/2,yd-f.rearDowelDiameterMm/2,f.rearDowelBottomMm,f.rearDowelDiameterMm,f.rearDowelDiameterMm,f.rearDowelTopMm-f.rearDowelBottomMm),'frame',Math.PI*f.rearDowelDiameterMm**2/4*(f.rearDowelTopMm-f.rearDowelBottomMm))
+   put('head/rear-locating-collar/'+side,box(x-f.rearDowelCollarDiameterMm/2,yd-f.rearDowelCollarDiameterMm/2,f.rearDowelCollarBottomMm,f.rearDowelCollarDiameterMm,f.rearDowelCollarDiameterMm,f.rearDowelCollarTopMm-f.rearDowelCollarBottomMm),'factory-head',Math.PI*(f.rearDowelCollarDiameterMm**2-f.rearDowelCollarClearBoreMm**2)/4*(p.sideRibCrossMm[1]-2*p.sideRibWallMm))
+   for(const[k,off]of f.frontBoltRowsFromBoardMm.entries()){
+    const y=plan[1]+off,D=f.boltDiameterMm
+    put('portal/'+side+'/head-thread-block/'+k,box(x-f.frameThreadBlockMm[0]/2,y-f.frameThreadBlockMm[1]/2,f.frameThreadBlockBottomMm,...f.frameThreadBlockMm),'frame',f.frameThreadBlockMm.reduce((n,v)=>n*v,1))
+    put('head/load-boss/'+side+'/'+k,box(x-f.headLoadBossMm[0]/2,y-f.headLoadBossMm[1]/2,f.headLoadBossBottomMm,...f.headLoadBossMm),'factory-head',f.headLoadBossMm[0]*f.headLoadBossMm[1]*(f.headLoadBossMm[2]-2*p.sideRibWallMm)-Math.PI*(f.boltDiameterMm+1)**2/4*(f.headLoadBossMm[2]-2*p.sideRibWallMm))
+    put('head/load-pedestal/'+side+'/'+k,box(x-f.headLoadPedestalMm[0]/2,y-f.headLoadPedestalMm[1]/2,f.headLoadPedestalBottomMm,...f.headLoadPedestalMm),'factory-head',f.headLoadPedestalMm.reduce((n,v)=>n*v,1)-Math.PI*(f.boltDiameterMm+1)**2/4*f.headLoadPedestalMm[2])
+    put('head/mount-bolt/'+side+'/'+k,box(x-D/2,y-D/2,f.boltHeadBottomMm-f.boltLengthMm,D,D,f.boltLengthMm),'factory-head',Math.PI*D**2/4*f.boltLengthMm)
+    put('head/mount-bolt-head/'+side+'/'+k,box(x-f.boltHeadDiameterMm/2,y-f.boltHeadDiameterMm/2,f.boltHeadBottomMm,f.boltHeadDiameterMm,f.boltHeadDiameterMm,f.boltHeadHeightMm),'factory-head',Math.PI*f.boltHeadDiameterMm**2/4*f.boltHeadHeightMm)
+    put('head/deck-access-plug/'+side+'/'+k,box(x-f.deckPlugDiameterMm/2,y-f.deckPlugDiameterMm/2,top.topZMm[1],f.deckPlugDiameterMm,f.deckPlugDiameterMm,f.deckPlugThicknessMm),'factory-head',Math.PI*f.deckPlugDiameterMm**2/4*f.deckPlugThicknessMm)
+   }
+  }
+ }
+ if(mountMode==='front-top-bolts'){
+  const cut=(h as unknown as{serviceCornerRemovedPlanMm:readonly[number,number,number,number]}).serviceCornerRemovedPlanMm,
+   x0=cut[0]+cut[2],front=plan[1]+plan[3],lipLength=plan[0]+plan[2]-x0,
+   bandWidth=xs[0]+p.sideRibCrossMm[0]/2-x0,bandLength=front-ribB
+  if(bandWidth<=0||bandLength<=0)throw Error('Actual open service-corner band required')
+  put('head/front-load-lip',box(x0,front-f.frontLipThicknessMm,f.frontLipBottomMm,lipLength,f.frontLipThicknessMm,f.frontLipDepthMm),'factory-head',lipLength*f.frontLipThicknessMm*f.frontLipDepthMm)
+  put('head/left-corner-load-band',box(x0,ribB,top.topZMm[0]-f.leftCornerBandDepthMm,bandWidth,bandLength,f.leftCornerBandDepthMm),'factory-head',bandWidth*bandLength*f.leftCornerBandDepthMm)
+  put('head/right-front-rib-extension',box(xs[1]-p.sideRibCrossMm[0]/2,ribB,ribBottom,p.sideRibCrossMm[0],bandLength,p.sideRibCrossMm[1]),'factory-head',area(...p.sideRibCrossMm,p.sideRibWallMm)*bandLength)
  }
  put('portal/rear/lower-tie',box(xs[0],yr-p.lowerRearCrossMm[0]/2,p.lowerRearAxisZMm-p.lowerRearCrossMm[1]/2,xs[1]-xs[0],...p.lowerRearCrossMm),'frame',area(...p.lowerRearCrossMm,p.lowerRearWallMm)*(xs[1]-xs[0]))
  for(const[k,off]of p.rearBraceAxisYOffsetsMm.entries())bar('portal/rear/diagonal/'+k,[xs[0],yr+off,k===0?p.rearBraceLowZMm:p.rearBraceHighZMm],[xs[1],yr+off,k===0?p.rearBraceHighZMm:p.rearBraceLowZMm],p.braceCrossMm,p.braceWallMm,'frame')
@@ -644,7 +670,7 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
     water=pressureParts.map(q=>({maximumKg:q.boxMm[3]*q.boxMm[4]*q.boxMm[5]/1e6,lo:q.boxMm.slice(0,2),hi:[q.boxMm[0]+q.boxMm[3],q.boxMm[1]+q.boxMm[4]]})),
     w=(d as unknown as{wasteService:WasteControls}).wasteService
    water.push({maximumKg:w.maximumBowlResidualBeforeWasteCutL,lo:h.bowlPlanMm.slice(0,2),hi:[h.bowlPlanMm[0]+h.bowlPlanMm[2],h.bowlPlanMm[1]+h.bowlPlanMm[3]]})
-   const variables=[...accessories,...water],bounds:{axis:number;side:'lo'|'hi';centroidMm:number}[]=[]
+   const variables=[...accessories,...water,...(mountMode==='front-top-bolts'?[{maximumKg:p.maximumHeadFactoryWeldMassKg,lo:plan.slice(0,2),hi:[plan[0]+plan[2],plan[1]+plan[3]]}]:[])],bounds:{axis:number;side:'lo'|'hi';centroidMm:number}[]=[]
    for(const axis of[0,1])for(const side of['lo','hi'] as const){
     let best=side==='lo'?Infinity:-Infinity
     for(const density of[p.minimumSteelDensityKgM3,p.maximumSteelDensityKgM3])for(const ts of[p.minimumHeadSheetMm,p.maximumHeadSheetMm])for(const tb of[p.minimumHeadSheetMm,p.maximumHeadSheetMm]){
@@ -660,7 +686,7 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
     bounds.push({axis,side,centroidMm:best})
    }
    const rect=capture.controls.headCGPlanDesignMm,boxBounds=[bounds[0].centroidMm,bounds[2].centroidMm,bounds[1].centroidMm,bounds[3].centroidMm]
-   return{bounds,capturedHeadOuterWaterCeilingL:water.reduce((s,q)=>s+q.maximumKg,0),
+   return{bounds,maximumFactoryHeadWeldInventoryKg:mountMode==='front-top-bolts'?p.maximumHeadFactoryWeldMassKg:0,capturedHeadOuterWaterCeilingL:water.reduce((s,q)=>s+q.maximumKg,0),
     pressureBodiesWaterCeilingByPillarL:[0,1].map(k=>pressureParts.filter(q=>new RegExp('head/(pillar|handle|spout)/'+k+'$').test(q.id)).reduce((s,q)=>s+q.boxMm[3]*q.boxMm[4]*q.boxMm[5]/1e6,0)),
     pressureBodyComponentIds:(h as unknown as{independentPressureComponents:readonly{id:string}[]}).independentPressureComponents.map(q=>q.id),
     pressureDevicePartsByPillar:[0,1].map(k=>{
@@ -674,14 +700,81 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
     declaredPlanMm:rect,withinDeclaredSourceBox:boxBounds[0]>=rect[0]&&boxBounds[1]>=rect[1]&&boxBounds[2]<=rect[0]+rect[2]&&boxBounds[3]<=rect[1]+rect[3],
     method:'exact extrema of independent bounded first moments; actual factory product mass/material/CG unqualified',factoryHeadMeasuredAndQualified:false}
   })(),
-  headSteelKg=(sheetArea+bowlSheetArea)*p.maximumHeadSheetMm*rho/1e9+parts.filter(q=>q.group==='factory-head').reduce((s,q)=>s+q.massUpperKg,0),
+  headSteelKg=(sheetArea+bowlSheetArea)*p.maximumHeadSheetMm*rho/1e9+parts.filter(q=>q.group==='factory-head').reduce((s,q)=>s+q.massUpperKg,0)+(mountMode==='front-top-bolts'?p.maximumHeadFactoryWeldMassKg:0),
   headWetCeilingKg=headSteelKg+p.maximumHeadDryAccessoriesKg+(d as unknown as{wasteService:WasteControls}).wasteService.maximumCapturedHeadResidualL,
   mass={cgStockBounds,headSheetAndBowlAreaMm2:sheetArea+bowlSheetArea,headSteelUpperKg:headSteelKg,completeHeadWetUpperKg:headWetCeilingKg,declaredCapturedHeadKg:p.maximumCapturedWetHeadKg,captureMassReserveKg:p.maximumCapturedWetHeadKg-headWetCeilingKg,frameSteelUpperKg:parts.filter(q=>q.group==='frame').reduce((s,q)=>s+q.massUpperKg,0),frameJointAndWeldDesignCeilingKg:p.maximumFrameJointAndWeldMassKg,frameCompleteDesignMassUpperKg:parts.filter(q=>q.group==='frame').reduce((s,q)=>s+q.massUpperKg,0)+p.maximumFrameJointAndWeldMassKg,actualFrameJointEnvelopesAndWeldsQualified:false},
   oldFrame=Object.entries(source.host.geometry.frame).filter(([id,b])=>id.includes(' rail ')&&(b as B)[2]+(b as B)[5]===top.topZMm[0]).map(([id,b])=>{
    const a=b as B,patches=top.topSolidPlansMm.map(r=>({width:Math.max(0,Math.min(a[0]+a[3],r[0]+r[2])-Math.max(a[0],r[0])),depth:Math.max(0,Math.min(a[1]+a[4],r[1]+r[3])-Math.max(a[1],r[1]))}))
    return{id,actualBoxMm:a,nominalBearingAreaMm2:patches.reduce((s,q)=>s+q.width*q.depth,0),minimumNarrowBearingNominalMm:Math.max(...patches.filter(q=>q.width*q.depth>0).map(q=>Math.min(q.width,q.depth))),factorySheetLoadTransferAndRestraintProved:false}
   })
- return{schema:'had-utility-two-side-portal-observer/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,choice:wet.choice,portal:p,braceObstacleRepresentation}),braceObstacleRepresentation,parts,checks,geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),candidateColdNormal:candidateCold.geometry.normalNecessary,candidateColdFailures:candidateCold.geometry.failures.filter(q=>['normal','operation','nonmate-metal','fitting-legs'].includes(q.phase)),
+
+ const headRelease=(()=>{
+  const rows=f.frontBoltRowsFromBoardMm.map(y=>plan[1]+y),span=Math.abs(rows[1]-rows[0]),front=plan[1]+plan[3]+two,
+   sideSpan=xs[1]-xs[0],outerX=plan[0]+plan[2]+two,
+   fullFrontPointN=p.normalFrontEdgePointComparisonN,fullSideFrontPointN=fullFrontPointN*(1+Math.max(0,outerX-xs[1])/sideSpan),
+   H=p.normalForceHeightMm+two,rotationMomentNmm=p.normalHorizontalComparisonN*Math.max(0,H-top.topZMm[0]),
+   gravitySideFraction=Math.max(...reactionCases.map(q=>Math.max(q.u,1-q.u))),
+   gravitySideUpperN=W*gravitySideFraction,
+   sideMomentNmm=fullSideFrontPointN*(front-Math.min(...rows))+rotationMomentNmm+gravitySideUpperN*(ribB-ribA)/4,
+   grossI=(p.sideRibCrossMm[0]*p.sideRibCrossMm[1]**3-(p.sideRibCrossMm[0]-2*p.sideRibWallMm)*(p.sideRibCrossMm[1]-2*p.sideRibWallMm)**3)/12,
+   clearanceHole=f.boltDiameterMm+1,removedFlangeI=2*(clearanceHole*p.sideRibWallMm**3/12+clearanceHole*p.sideRibWallMm*(p.sideRibCrossMm[1]/2-p.sideRibWallMm/2)**2),
+   netI=grossI-removedFlangeI,netZ=netI/(p.sideRibCrossMm[1]/2),
+   boltTensionUpperN=fullSideFrontPointN*(front-Math.min(...rows))/span+rotationMomentNmm/span+gravitySideUpperN,
+   cut=(h as unknown as{serviceCornerRemovedPlanMm:readonly[number,number,number,number]}).serviceCornerRemovedPlanMm,
+   bandWidth=xs[0]+p.sideRibCrossMm[0]/2-(cut[0]+cut[2]),bandLength=plan[1]+plan[3]-ribB,
+   lipSpan=xs[1]-(cut[0]+cut[2])+two,lipI=f.frontLipThicknessMm*f.frontLipDepthMm**3/12,
+   lipStressMPa=fullFrontPointN*lipSpan/4/(lipI/(f.frontLipDepthMm/2)),
+   bandI=bandWidth*f.leftCornerBandDepthMm**3/12,bandStressMPa=fullSideFrontPointN*(bandLength+two)/(bandI/(f.leftCornerBandDepthMm/2)),
+   allowableMPa=f.referenceSteelProofMPa/1.5,
+   reference={frontPointActionN:fullFrontPointN,fullOneSideFrontReactionUpperN:fullSideFrontPointN,unilateralGravitySideFraction:gravitySideFraction,gravitySideUpperN,sideMomentNmm,sideRibGrossIMM4:grossI,verticalClearanceHoleMm:clearanceHole,sideRibNetIMM4:netI,sideRibNetStressMPa:sideMomentNmm/netZ,boltTensionUpperEachN:boltTensionUpperN,boltTensionStressMPa:boltTensionUpperN/f.boltTensileAreaMm2,boltShearUpperEachN:p.normalHorizontalComparisonN,boltShearStressMPa:p.normalHorizontalComparisonN/(Math.PI*f.boltDiameterMm**2/4),frontLipStressMPa:lipStressMPa,leftCornerBandStressMPa:bandStressMPa,allowableMPa,referenceNecessary:netI>0&&Math.max(sideMomentNmm/netZ,boltTensionUpperN/f.boltTensileAreaMm2,lipStressMPa,bandStressMPa)<=allowableMPa,rearDowelUpliftResistanceCreditedN:0,actualThreadBossWeldSheetLocalBucklingAndMaterialQualified:false},
+   toolChecks:{id:string;kind:string;reserveMm:number}[]=[],putCheck=(id:string,kind:string,reserveMm:number)=>toolChecks.push({id,kind,reserveMm}),
+   shoulder=capture.controls.normalWorkingShoulderMm,body=capture.controls.normalWorkingFloorXYMm,
+   fixedTools=[...foreign,...capture.hardware.filter(q=>q.id.startsWith('capture/')&&!q.afterFrameKnockdown).map(q=>({id:q.id,boxMm:q.boxMm})),...parts.map(q=>({id:q.id,boxMm:q.boxMm}))],
+   toolTasks:{id:string;gripMm:P;shaftMm:readonly[P,P];accessHoleMm:readonly[number,number,number]}[]=[]
+  if(mountMode==='front-top-bolts')for(const[side,x]of xs.entries())for(const[k,y]of rows.entries()){
+   const id='head/top-tool/'+side+'/'+k,a:P=[x,y,f.boltHeadBottomMm+f.boltHeadHeightMm],b:P=[x,y,a[2]+f.toolExtensionMm],
+    targetIds=['head/mount-bolt/'+side+'/'+k,'head/mount-bolt-head/'+side+'/'+k,'head/deck-access-plug/'+side+'/'+k],
+    R=f.toolSocketMaximumDiameterMm/2
+   toolTasks.push({id,gripMm:b,shaftMm:[a,b],accessHoleMm:[x,y,f.deckAccessDiameterMm]})
+   putCheck(id+'/reach','reach',600-Math.hypot(...b.map((v,j)=>v-shoulder[j])))
+   putCheck(id+'/matched-deck-aperture','matched-factory-hole',f.deckAccessDiameterMm/2-R-p.matchedOneHeadFabricationBoundMm)
+   putCheck(id+'/thread','engagement',Math.min(f.frameThreadBlockBottomMm+f.frameThreadBlockMm[2],f.boltHeadBottomMm)-Math.max(f.frameThreadBlockBottomMm,f.boltHeadBottomMm-f.boltLengthMm)-f.minimumThreadEngagementMm)
+   for(const o of fixedTools){
+    if(!targetIds.includes(o.id))putCheck(id+'/socket/'+o.id,'socket',exactSegmentBoxDistance(a,b,o.boxMm as B)-R-(o.id.startsWith('head/')?p.matchedOneHeadFabricationBoundMm:two))
+    putCheck(id+'/arm/'+o.id,'arm',exactSegmentBoxDistance(shoulder,b,o.boxMm as B)-40-two)
+   }
+   for(const o of capture.headParts){
+    // Socket centre passes only its authored circular deck aperture; arm receives no exemption.
+    if(!o.id.startsWith('head/board/'))putCheck(id+'/socket/'+o.id,'socket',exactSegmentBoxDistance(a,b,o.boxMm)-R-p.matchedOneHeadFabricationBoundMm)
+    putCheck(id+'/arm/'+o.id,'arm',exactSegmentBoxDistance(shoulder,b,o.boxMm)-40-two)
+   }
+   for(const o of source.rearTreeContext.retainedPaths)for(let j=1;j<o.pointsMm.length;j++){
+    putCheck(id+'/socket/'+o.id+'/'+j,'socket',segmentDistance(a,b,o.pointsMm[j-1],o.pointsMm[j])-R-o.radiusWithSupportsMm-two)
+    putCheck(id+'/arm/'+o.id+'/'+j,'arm',segmentDistance(shoulder,b,o.pointsMm[j-1],o.pointsMm[j])-40-o.radiusWithSupportsMm-two)
+   }
+   for(const path of source.route.paths){
+    for(const q of path.straight){
+     putCheck(id+'/socket/'+path.id+'/'+q.index,'socket',segmentDistance(a,b,q.a,q.b)-R-source.route.geometry.jacketRadiusMm-two)
+     putCheck(id+'/arm/'+path.id+'/'+q.index,'arm',segmentDistance(shoulder,b,q.a,q.b)-40-source.route.geometry.jacketRadiusMm-two)
+    }
+    for(const q of path.corners)if(q.kind==='boxed-compression-elbow'){
+     putCheck(id+'/socket/'+q.id,'socket',exactSegmentBoxDistance(a,b,q.boxMm)-R-two)
+     putCheck(id+'/arm/'+q.id,'arm',exactSegmentBoxDistance(shoulder,b,q.boxMm)-40-two)
+    }else if(q.arcMm)for(let j=1;j<q.arcMm.length;j++){
+     putCheck(id+'/socket/'+q.id+'/'+j,'socket',segmentDistance(a,b,q.arcMm[j-1],q.arcMm[j])-R-source.route.geometry.jacketRadiusMm-q.arcCoverMm-two)
+     putCheck(id+'/arm/'+q.id+'/'+j,'arm',segmentDistance(shoulder,b,q.arcMm[j-1],q.arcMm[j])-40-source.route.geometry.jacketRadiusMm-q.arcCoverMm-two)
+    }
+   }
+  }
+  for(const o of fixedTools){
+   if(o.boxMm[2]>=2000||o.boxMm[2]+o.boxMm[5]<=0)continue
+   const dx=Math.max(o.boxMm[0]-body[0],body[0]-o.boxMm[0]-o.boxMm[3],0),dy=Math.max(o.boxMm[1]-body[1],body[1]-o.boxMm[1]-o.boxMm[4],0)
+   putCheck('head/top-tool/body/'+o.id,'body',Math.hypot(dx,dy)-300-two)
+  }
+  const oldCrossBoltReaches=parts.filter(q=>mountMode==='legacy-cross-clips-control'&&q.id.startsWith('head/mount-bolt/')).map(q=>({id:q.id,reachReserveMm:600-Math.hypot(q.boxMm[0]+q.boxMm[3]/2-shoulder[0],q.boxMm[1]+q.boxMm[4]/2-shoulder[1],q.boxMm[2]+q.boxMm[5]/2-shoulder[2])}))
+  return{method:mountMode,reference,toolTasks,toolChecks,toolFailures:toolChecks.filter(q=>q.reserveMm< -1e-7),necessaryTools:mountMode==='front-top-bolts'&&toolTasks.length===4&&toolChecks.every(q=>q.reserveMm>=-1e-7),oldCrossBoltReaches,rearDowelClearanceAfterFirstLiftMm:capture.controls.firstLiftMm-(f.rearDowelTopMm-ribBottom)-two,sequence:['pressure/waste isolated and bounded; positive head fork bearing established','remove four metal plugs and four front top-driven bolts from north','pressure/waste unions released under actual capture guard','head first65UP releases plain rear locating dowels; then static380UP'],fullyRemovedHeadOrRearOperatorRequired:false,actualPhysicalFastenerSheetWeldAndSupportQualified:false}
+ })()
+ return{schema:'had-utility-two-side-portal-observer/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,choice:wet.choice,portal:p,braceObstacleRepresentation,mountMode}),braceObstacleRepresentation,headMountRepresentation:mountMode,headRelease,parts,checks,geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),candidateColdNormal:candidateCold.geometry.normalNecessary,candidateColdFailures:candidateCold.geometry.failures.filter(q=>['normal','operation','nonmate-metal','fitting-legs'].includes(q.phase)),
   normalBearing:{factoryBoardToSideRibsToNSBeamsToFourLegsToFloor:true,bearingChecks,reactionChecks,unilateralReactionCases,unilateralCornerReactionBoundsN,conditionalBilinearReactionCases:reactionCases,reactionAssumption:'Bilinear values are a conditional stiffness comparator; the unilateral t interval bounds equilibrium without equal-stiffness credit.',actualIndividualLegReactionsQualified:false,dynamicHeadN:W,minimumHorizontalOverlapMm:Math.min(p.sideRibCrossMm[0],p.frameBeamCrossMm[0])-two,minimumLongitudinalOverlapMm:Math.min(ribB,beamB)-Math.max(ribA,beamA)-two,necessary:bearingChecks.every(q=>q.reserveMm>=0)&&reactionChecks.every(q=>q.reserveN>=-1e-7),actualFactoryHeadSheetBowlWeldAndMatchedBoltsQualified:false},
   mass,legacyCage:{role:'explicit stock and bearing control only; not normal support acceptance',upperRails:oldFrame},
   demandedInterfaces:{normalFrontEdgePointN:p.normalFrontEdgePointComparisonN,frontEdgeRearPairUpliftBeforeDeadWeightN:p.normalFrontEdgePointComparisonN*(plan[1]+plan[3]-yf)/(yf-yr),horizontalActionN:p.normalHorizontalComparisonN,actualForceHeightMm:p.normalForceHeightMm,normalHeightAfterTwoSettingsMm:p.normalForceHeightMm+two,requiredFloorMomentNmm:p.normalHorizontalComparisonN*(p.normalForceHeightMm+two),capturedHeadHeightAfterTwoSettingsMm:capture.controls.maximumHeadZMm+capture.controls.liftMm+two,capturedHeadHorizontalMomentNmm:p.normalHorizontalComparisonN*(capture.controls.maximumHeadZMm+capture.controls.liftMm+two),frictionCreditedN:0},
@@ -790,15 +883,12 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
    M=normalF*(normalH-rcTop)+N*offset,anchor=M/50/2+U/4
   receiverDemands.push({id,axialUpperN:N,upliftUpperN:U,shearUpperN:normalF,referenceMomentAtRCNmm:M,referenceSteelExtremeMPa:M*S/2/I+N/A,referenceAnchorTensionEachN:anchor,referenceAnchorMPa:anchor/84.3})
  }
- const fixtureIds=components.map(q=>q.id),toolChecks=portal.parts.filter(q=>q.id.startsWith('head/mount-bolt/')).map(q=>{
-  const p:P=[q.boxMm[0]+q.boxMm[3]/2,q.boxMm[1]+q.boxMm[4]/2,q.boxMm[2]+q.boxMm[5]/2],s=capture.controls.normalWorkingShoulderMm
-  return{id:'actual-current-head-mount/'+q.id,reachReserveMm:600-Math.hypot(...p.map((v,k)=>v-s[k]))}
- })
+ const fixtureIds=components.map(q=>q.id),toolChecks=portal.headRelease.toolChecks
  return{schema:'had-utility-portal-finite-renewal/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,portal:portal.sourceDigest,floor,controls:r}),components,phaseState,finalParkedParts:parked,checks,necessaryFiniteGeometry:checks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7),geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),
   receiver:{sourceContextDigest:floor.bindingDigest,occupiedFflAbsoluteMm:source.groundFflMm,rcLocalMm:[rcBottom,rcTop],actualRCPlans:rcPlans,parts:receiverParts,checks:receiverChecks,footprintChecks:receiverFootprintChecks,geometryFailures:[...receiverChecks.filter(q=>q.reserveMm<0),...receiverFootprintChecks.filter(q=>!q.contained)],demands:receiverDemands,referenceNecessarySteel:receiverDemands.every(q=>Math.max(q.referenceSteelExtremeMPa,q.referenceAnchorMPa)<=r.receiverReferenceSteelProofMPa/1.5),frictionResistanceCreditedN:0,actualRCBreakoutRebarWeldWaterproofAirAndPointThermalJoinAccepted:false},
-  toolChecks,toolFailures:toolChecks.filter(q=>q.reachReserveMm<0),memberIds:fixtureIds,
+  toolChecks,toolFailures:toolChecks.filter(q=>q.reserveMm< -1e-7),memberIds:fixtureIds,
   positiveCaptureRequirement:{headGravityRemainsOnIndependentFloorFork:true,oneCapturedRearMemberOrSidePortalAtATime:true,allThreeRearMembersPositivelyParkedBeforeSidePortalRelease:true,maximumSidePortalWithClampsKg:r.maximumSidePortalWithTemporaryClampsKg,maximumRearMemberWithClampsKg:r.maximumRearMemberWithTemporaryClampsKg,temporaryPositiveCaptureFixtureGeometryQualified:false},
   temporaryStability:{receiverSteelDemandsIncluded:true,headForkMomentReceiversAndMemberCaptureFixtureStillRequireCompleteGeometry:true,RCAndFloorActualCapacityAccepted:false},
-  specificOpenGates:['head-mount-release-tools: rear cross-clips need a source replacement or actual access proof','removable frame foot key, threaded cups and wrench geometry','head-fork positive moment receiver/clamp and capture-tool geometry','RC reinforcement/breakout, thermal point bridge and actual waterproof/air seal'],
+  specificOpenGates:['front top-driven bolt net-section/thread/weld/material and actual tool product qualification','removable frame foot key, threaded cups and wrench geometry','head-fork positive moment receiver/clamp and capture-tool geometry','RC reinforcement/breakout, thermal point bridge and actual waterproof/air seal'],
   ordinaryRenewalAccepted:false,currentSavedDocumentAdmitted:false}
 }

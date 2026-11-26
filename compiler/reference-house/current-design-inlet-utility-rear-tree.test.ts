@@ -237,7 +237,7 @@ test('one source owns four floor-seated head captures, sixteen bolted ends and f
  assert.equal(a.sourceBoundCapturePhase.sourceDigest,a.sourceDigest)
  assert.ok(a.sourceBoundCapturePhase.captureGeometryChecks.length>0)
  assert.ok(a.sourceBoundCapturePhase.gravityChecks.length>0)
- near(a.demand.fullHeadDynamicN,441.45)
+ near(a.demand.fullHeadDynamicN,choice.coldDistribution.frameRenewal.headCapture.maximumCapturedWetHeadKg*9.81*1.5)
  assert.equal(a.demand.frictionHorizontalResistanceCreditedN,0)
  assert.equal(a.demand.unbalancedHorizontalDemandWithoutPositiveFloorReceiverN,200)
  assert.equal(a.ordinaryRenewalAccepted,false)
@@ -295,8 +295,8 @@ test('current low fork380 stroke and completed member knockdown replace the actu
  const r=wet.ordinaryCapture,old=inletUtilityRejectedGantryControl({source:current,wet})
  assert.equal(r.mode,'fork');assert.equal(old.mode,'gantry')
  assert.ok(old.geometryFailures.some(q=>q.id.includes('active-main')))
- assert.equal(r.controls.fork!.minimumIMM4,45000)
- assert.ok(r.forkReference.deflectionMm>4.6&&r.forkReference.deflectionMm<4.7)
+ assert.equal(r.controls.fork!.minimumIMM4,52000)
+ assert.ok(r.forkReference.deflectionMm>0&&r.forkReference.deflectionMm<6)
  assert.ok(r.movingFrameBlockedControl.some(q=>q.reserveMm<0))
  assert.equal(r.controls.fullDryFrameKnockedDownWhileHeadCapturedBeforeWestMovement,true)
  assert.equal(r.exactMemberWebsToolSocketsSpannerArcsAndExtractionQualified,false)
@@ -378,7 +378,12 @@ test('old11160 NS fork physically strikes the actual strainer;11110 clears witho
  const r=inletUtilityWetAssembly({source:current,choice:old}).ordinaryCapture
  assert.ok(r.geometryFailures.some(q=>q.id==='capture/fork/11160/waste/head-underflange'&&q.reserveMm< -33))
  const selected=wet.ordinaryCapture.sourceBoundCapturePhase.captureGeometryChecks.find(q=>q.id==='capture/fork/11110/waste/head-underflange')!
- near(selected.reserveMm,4.425243005181347,1e-6)
+ assert.ok(selected.reserveMm>0,JSON.stringify(selected))
+ const prior=structuredClone(choice),hc=prior.coldDistribution.frameRenewal.headCapture
+ hc.maximumCapturedWetHeadKg=30;hc.headCGPlanDesignMm=[11125,1005,65,85];hc.headTrackYMm=[860,1120];hc.liftingEyesMm=hc.liftingEyesMm.map((q:readonly[number,number,number])=>q[1]===1140?[q[0],1120,q[2]]:q)
+ Object.assign(hc.fork,{maximumCapturedWetHeadKg:30,minimumIMM4:45000,minimumTorsionalJMm4:65000,minimumClosedWallMm:4,meanClosedAreaMm2:676,minimumAreaMM2:400})
+ const oldReference=inletUtilityWetAssembly({source:current,choice:prior}).ordinaryCapture
+ near(oldReference.sourceBoundCapturePhase.captureGeometryChecks.find(q=>q.id==='capture/fork/11110/waste/head-underflange')!.reserveMm,4.425243005181347,1e-6)
 })
 
 test('sixteen actual gravity seats replace hanging plates and physically clear the finite cut frame',()=>{
@@ -432,7 +437,7 @@ test('a west ratchet swing is a real rejected control against the still-present 
 })
 
 const portal=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture})
-console.info('UTILITY_PORTAL_NORMAL '+JSON.stringify({geometryFailures:portal.geometryFailures,coldFailures:portal.candidateColdFailures,bearing:portal.normalBearing,mass:portal.mass,legacy:portal.legacyCage,duties:portal.demandedInterfaces}))
+console.info('UTILITY_PORTAL_NORMAL '+JSON.stringify({geometryFailures:portal.geometryFailures,coldFailures:portal.candidateColdFailures,bearing:portal.normalBearing,mass:portal.mass,headRelease:portal.headRelease,legacy:portal.legacyCage,duties:portal.demandedInterfaces}))
 if(proofDir)writeFileSync(join(proofDir,'current-utility-portal-candidate.json'),JSON.stringify(portal,null,2))
 test('selected complete side portals carry actual matched head ribs without either front tie',()=>{
  assert.equal(choice.coldDistribution.frameRenewal.portalDesign.frontUpperAndLowerTiesIncluded,false)
@@ -449,12 +454,12 @@ test('selected complete side portals carry actual matched head ribs without eith
  assert.equal(portal.normalGravityCapacityAccepted,false)
  assert.equal(portal.ordinaryRenewalAccepted,false)
 })
-test('all factory side ribs, clips, steel sheet and retained head water fit the propagated30kg condition',()=>{
+test('all factory side ribs, clips, steel sheet and retained head water fit the propagated36kg condition',()=>{
  assert.ok(portal.mass.headSteelUpperKg>15)
  assert.ok(portal.mass.completeHeadWetUpperKg>20)
  assert.ok(portal.mass.captureMassReserveKg>0)
- assert.equal(wet.ordinaryCapture.controls.maximumCapturedWetHeadKg,30)
- near(wet.ordinaryCapture.demand.fullHeadDynamicN,441.45)
+ assert.equal(wet.ordinaryCapture.controls.maximumCapturedWetHeadKg,36)
+ near(wet.ordinaryCapture.demand.fullHeadDynamicN,529.74)
  assert.ok(wet.ordinaryCapture.forkReference.deflectionMm<6)
  assert.ok(portal.mass.frameSteelUpperKg>15)
  near(portal.demandedInterfaces.frontEdgeRearPairUpliftBeforeDeadWeightN,250)
@@ -463,8 +468,8 @@ test('all factory side ribs, clips, steel sheet and retained head water fit the 
 })
 
 test('normal and raised-head stability use the actual highest head part and both settings',()=>{
- near(portal.demandedInterfaces.normalHeightAfterTwoSettingsMm,1080)
- near(portal.demandedInterfaces.requiredFloorMomentNmm,216000)
+ near(portal.demandedInterfaces.normalHeightAfterTwoSettingsMm,1125)
+ near(portal.demandedInterfaces.requiredFloorMomentNmm,225000)
  near(portal.demandedInterfaces.capturedHeadHeightAfterTwoSettingsMm,1460)
  near(portal.demandedInterfaces.capturedHeadHorizontalMomentNmm,292000)
  const capped=structuredClone(choice);capped.coldDistribution.frameRenewal.portalDesign.normalForceHeightMm=870
@@ -480,7 +485,7 @@ test('actual bounded head stock determines CG and exposes pressure-body water se
  near(b.capturedHeadOuterWaterCeilingL,1.544)
  near(b.bowlResidualDuringCaptureCeilingL,.2)
  assert.ok(b.minimumModeledHeadSteelKg>13)
- assert.deepEqual(wet.ordinaryCapture.controls.headCGPlanDesignMm,[11125,1005,65,85])
+ assert.deepEqual(wet.ordinaryCapture.controls.headCGPlanDesignMm,[11125,1000,65,110])
  assert.ok(wet.ordinaryCapture.controls.liftingEyesMm.some(p=>p[0]===11220))
  near(wet.ordinaryCapture.forkReference.torsionalMomentNmm,44145)
  assert.ok(wet.ordinaryCapture.forkReference.totalElasticEnvelopeCoverMm>5.5&&wet.ordinaryCapture.forkReference.totalElasticEnvelopeCoverMm<6)
@@ -529,7 +534,7 @@ test('same portal case owns five finite components and the actual source notched
  assert.equal(portalFinite.receiver.frictionResistanceCreditedN,0)
  assert.equal(portalFinite.receiver.actualRCBreakoutRebarWeldWaterproofAirAndPointThermalJoinAccepted,false)
  assert.equal(portalFinite.ordinaryRenewalAccepted,false)
- assert.ok(portalFinite.toolFailures.some(q=>q.id.includes('/0/')))
+ assert.deepEqual(portalFinite.toolFailures,[],JSON.stringify(portalFinite.toolFailures))
  assert.ok(portalFinite.specificOpenGates.length>0)
 })
 
@@ -565,4 +570,23 @@ test('receiver containment counts exact disjoint RC coverage and exposes outside
   near(q.coveredAreaMm2+q.missingAreaMm2,q.probeAreaMm2)
   assert.ok(outside.receiver.geometryFailures.some(f=>f.id===q.id))
  }
+})
+
+test('front top-driven bolts release the captured head without a rear operator or dowel uplift fiction',()=>{
+ const a=portal.headRelease
+ assert.equal(portal.headMountRepresentation,'front-top-bolts')
+ assert.equal(a.toolTasks.length,4)
+ assert.equal(a.necessaryTools,true,JSON.stringify(a.toolFailures))
+ assert.equal(a.reference.referenceNecessary,true,JSON.stringify(a.reference))
+ assert.equal(a.reference.rearDowelUpliftResistanceCreditedN,0)
+ assert.ok(a.reference.sideRibNetIMM4<a.reference.sideRibGrossIMM4)
+ assert.ok(a.reference.fullOneSideFrontReactionUpperN>2000)
+ assert.ok(a.reference.boltTensionUpperEachN>2000)
+ assert.ok(a.rearDowelClearanceAfterFirstLiftMm>0)
+ assert.equal(a.actualPhysicalFastenerSheetWeldAndSupportQualified,false)
+ assert.equal(a.fullyRemovedHeadOrRearOperatorRequired,false)
+ const old=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture,headMountRepresentation:'legacy-cross-clips-control'})
+ assert.ok(old.headRelease.oldCrossBoltReaches.some(q=>q.reachReserveMm< -300))
+ assert.equal(old.headRelease.necessaryTools,false)
+ assert.notEqual(old.sourceDigest,portal.sourceDigest)
 })

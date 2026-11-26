@@ -340,7 +340,7 @@
       "maximumWallMm": 1
     },
     "prefabSinkHead": {
-      "sourceOfGeometry": "authored factory head with side stiffeners, one60x60NW corner, complete820 unions and30kg captured ceiling; pressure/material/weld/product proof false",
+      "sourceOfGeometry": "authored factory head with net-section side stiffeners, front load lip, rear locating dowels/front top-driven M10 bolts, one60x60NW corner, complete820 unions and36kg captured ceiling; pressure/material/weld/product proof false",
       "topPlanMm": [
         10855,
         740,
@@ -553,7 +553,7 @@
         "soleThicknessMm": 6,
         "headTrackYMm": [
           860,
-          1120
+          1140
         ],
         "liftingEyesMm": [
           [
@@ -568,21 +568,21 @@
           ],
           [
             10965,
-            1120,
+            1140,
             700
           ],
           [
             11220,
-            1120,
+            1140,
             700
           ]
         ],
-        "maximumCapturedWetHeadKg": 30,
+        "maximumCapturedWetHeadKg": 36,
         "headCGPlanDesignMm": [
           11125,
-          1005,
+          1000,
           65,
-          85
+          110
         ],
         "maximumPillarAndSpoutCrossMm": 40,
         "maximumHandleCrossMm": 60,
@@ -628,7 +628,7 @@
         ],
         "normalWorkingShoulderMm": [
           11140,
-          1700,
+          1690,
           1150
         ],
         "externalHorizontalComparisonN": 200,
@@ -797,12 +797,12 @@
           "widthMm": 30,
           "depthMm": 30,
           "rootPadHeightMm": 0,
-          "minimumIMM4": 45000,
-          "minimumAreaMM2": 400,
+          "minimumIMM4": 52000,
+          "minimumAreaMM2": 500,
           "strokeMm": 400,
           "liftColumnTopMm": 1100,
           "baseTopMm": 80,
-          "maximumCapturedWetHeadKg": 30,
+          "maximumCapturedWetHeadKg": 36,
           "gravityDynamicFactor": 1.5,
           "frontFootYMm": 1450,
           "baseRearYMm": 840,
@@ -812,9 +812,9 @@
             10955,
             11240
           ],
-          "minimumTorsionalJMm4": 65000,
-          "minimumClosedWallMm": 4,
-          "meanClosedAreaMm2": 676,
+          "minimumTorsionalJMm4": 75000,
+          "minimumClosedWallMm": 5,
+          "meanClosedAreaMm2": 625,
           "poissonRatio": 0.3
         },
         "rollingOperator": {
@@ -988,12 +988,12 @@
         "rearLegFromBoardMm": 60,
         "frontLegFromBoardMm": 60,
         "sideRibCrossMm": [
-          30,
+          72,
           20
         ],
-        "sideRibWallMm": 3,
+        "sideRibWallMm": 6,
         "sideRibRearFromBoardMm": 20,
-        "sideRibFrontFromBoardMm": 80,
+        "sideRibFrontFromBoardMm": 60,
         "framePostCrossMm": [
           40,
           40
@@ -1041,10 +1041,10 @@
         "minimumSteelDensityKgM3": 7700,
         "maximumSteelDensityKgM3": 8000,
         "matchedOneHeadFabricationBoundMm": 0.5,
-        "maximumCapturedWetHeadKg": 30,
+        "maximumCapturedWetHeadKg": 36,
         "normalFrontEdgePointComparisonN": 2000,
         "normalHorizontalComparisonN": 200,
-        "normalForceHeightMm": 1060,
+        "normalForceHeightMm": 1105,
         "frontUpperAndLowerTiesIncluded": false,
         "actualDeliveredMaterialWeldAndJointProofAccepted": false,
         "actualFloorBearingAndBallastSupportAccepted": false,
@@ -1105,7 +1105,64 @@
           "maximumRearMemberWithTemporaryClampsKg": 2,
           "steelDensityUpperKgM3": 8000,
           "actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified": false
-        }
+        },
+        "headRelease": {
+          "schema": "had-utility-front-head-fastening/1",
+          "method": "rear-locating-dowels-front-top-driven-bolts",
+          "frontBoltRowsFromBoardMm": [
+            440,
+            520
+          ],
+          "boltDiameterMm": 10,
+          "boltLengthMm": 70,
+          "boltTensileAreaMm2": 58,
+          "boltHeadAFMm": 17,
+          "boltHeadDiameterMm": 20,
+          "boltHeadHeightMm": 7,
+          "boltHeadBottomMm": 884,
+          "minimumThreadEngagementMm": 20,
+          "frameThreadBlockMm": [
+            30,
+            30,
+            30
+          ],
+          "frameThreadBlockBottomMm": 814,
+          "headLoadBossMm": [
+            30,
+            30,
+            20
+          ],
+          "headLoadBossBottomMm": 850,
+          "headLoadPedestalMm": [
+            30,
+            30,
+            14
+          ],
+          "headLoadPedestalBottomMm": 870,
+          "deckAccessDiameterMm": 28,
+          "deckPlugDiameterMm": 34,
+          "deckPlugThicknessMm": 5,
+          "rearDowelDiameterMm": 12,
+          "rearDowelBottomMm": 838,
+          "rearDowelTopMm": 866,
+          "rearDowelCollarDiameterMm": 20,
+          "rearDowelCollarBottomMm": 850,
+          "rearDowelCollarTopMm": 870,
+          "frontLipThicknessMm": 6,
+          "frontLipDepthMm": 50,
+          "frontLipBottomMm": 870,
+          "leftCornerBandDepthMm": 35,
+          "referenceSteelProofMPa": 200,
+          "toolSocketMaximumDiameterMm": 24,
+          "toolExtensionMm": 214,
+          "toolTorqueNm": 25,
+          "actualDeliveredFastenerThreadWeldSheetAndLoadTransferQualified": false,
+          "rearDowelCollarClearBoreMm": 14,
+          "deckPlugToolDrive": "captive-metal-plug-internal-hex-6mm",
+          "deckPlugMaximumTorqueNm": 5
+        },
+        "maximumHeadFactoryWeldMassKg": 0.15,
+        "normalForceHeightMeaning": "maximum authored head or top-drive-tool metal/hand height before capture lift; include both10mm settings in actions"
       }
     },
     "hotService": {
