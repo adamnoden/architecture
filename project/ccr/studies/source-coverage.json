@@ -632,7 +632,8 @@
         "project/had/studies/house_vertical_profile.py",
         "compiler/reference-house/current-design/inlet-store-impulse.ts",
         "compiler/reference-house/current-design/inlet-wet-service-suite.ts",
-        "compiler/reference-house/current-design/inlet-known-gravity.ts"
+        "compiler/reference-house/current-design/inlet-known-gravity.ts",
+        "compiler/reference-house/current-design/inlet-open-closed-outfall.ts"
       ],
       "authoredInputs": [
         "compiler/reference-house/current-design/inlet-electrical-screen.ts",
@@ -713,7 +714,8 @@
         "node --import tsx --test compiler/reference-house/current-design-inlet-store-impulse.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-incident-stations.test.ts",
         "node --import tsx --test compiler/reference-house/current-design-inlet-wet-service-suite.test.ts",
-        "node --import tsx --test compiler/reference-house/current-design-inlet-known-gravity.test.ts"
+        "node --import tsx --test compiler/reference-house/current-design-inlet-known-gravity.test.ts",
+        "node --import tsx --test compiler/reference-house/current-design-inlet-open-closed-outfall.test.ts"
       ]
     },
     {
@@ -2817,10 +2819,10 @@
     "project/str/studies/roof-surface-pressure.svg": "03610ad976377889fb0d27bfaaa107b9cdce2099",
     "project/str/studies/roof_surface_pressure_proof.py": "c6de2ceb21f113e4672d870f3512754318b99c23",
     "project/str/studies/straight_frame_cage_proof.py": "04a03d0ec19f885e611cd1549d9d0a5fc2c4eeb1",
-    "compiler/reference-house/current-design/inlet-source-envelope.ts": "abfdb06b39bba407dbceabc847e79d16ee8c2242",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "1f52927205cb9f7cec11b4e6fdf905c14f2d9dcd",
     "project/had/studies/inlet-source-envelope.ts": "7d48cc86d275423daf65656fade4d1ced65372a8",
     "project/had/inlet-source-and-room-decision.md": "60c2f3c38881c4b00b5cc2e3cdf43c3e82bce6a8",
-    "project/had/studies/inlet-source-envelope.results.json": "6ca9482518cd936c8adf2c4d047f5b27ffe01478",
+    "project/had/studies/inlet-source-envelope.results.json": "96985e326bace1f00e02af355c168cfa2e675306",
     "project/had/studies/inlet-source-envelope.svg": "3fdd623d686501381fc3fa4953e46fe2a9c5774a",
     "compiler/reference-house/current-design/engineering-edit.ts": "e4aaa83eb2a7e6141e7a127bf46ecbc8ac7d71b9",
     "project/ade/browser-editor/engineering-api.ts": "9a2946dae261ce02050df74f7de4143d57d93964",
@@ -2865,7 +2867,7 @@
     "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
     "project/had/studies/inlet-frame-support.svg": "7ee3aa332351720f5256bb38bd3e22c274a623e3",
     "compiler/reference-house/current-design/inlet-room-pocket.ts": "07e2f6238620cd2508d8335b525d735950a5c90b",
-    "project/had/studies/inlet-local-pocket.results.json": "e1fa226b48603c194ccdf560a65d27c52b6a6868",
+    "project/had/studies/inlet-local-pocket.results.json": "c036eb1f75b9345faaef8f28af3f27ddb690d39a",
     "project/had/studies/inlet-local-pocket.svg": "1b055c9299705e175d8fe523102bb991e6dbd913",
     "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
     "project/had/studies/inlet-local-pan.svg": "e3da3b38a4eb4532e8f3d3a9ab713a6d20aa2be9",
@@ -2929,7 +2931,7 @@
     "project/had/inlet-bank-carrier-rejection.md": "02e3e0c4004e7a3d636b5e56297131ff959d132d",
     "compiler/reference-house/current-design/inlet-bank-carrier.ts": "c249e5b5070bec51e223c749e48ee5b4c1fc0ed0",
     "project/had/studies/inlet-bank-shelf-candidate.json": "6e5633018dd4d3565ad8b8fe09c8448778265979",
-    "project/had/studies/inlet-bank-carrier.results.json": "9b330c14490fbc73f82817502dc51e206f44c383",
+    "project/had/studies/inlet-bank-carrier.results.json": "878e1e58b97dcc00e34a12c4a90e945572e1989a",
     "project/had/studies/inlet-bank-carrier.svg": "dc84130cc6a7fcae0130e64b6687bb2112546f13",
     "project/str/studies/wet_bearing_refinement.py": "06f8fabdfaf5ed6cc132e7a49248845dbdb08bab",
     "project/str/studies/wet-bearing-refinement-inputs.json": "42dea6fee820d552c4bb35a59258825a54eacb64",
@@ -2992,7 +2994,7 @@
     "project/had/inlet-retained-service-route-comparison.md": "8249a23406763f52afa82776f95089e298367f7c",
     "project/had/studies/inlet-split-plant-station-candidate.json": "c2db4f10bd5c8db24523aec26c8ad6bc0d599521",
     "project/had/studies/inlet-split-plant-station.svg": "bee70b5c62401e14b44de2add9c069c262a3944f",
-    "project/had/split-isolation-station-development.md": "b62d293cad0b1a1bca736c97bb992c60d3392bcb",
+    "project/had/split-isolation-station-development.md": "7e90ed14df29d9cb0887170676c6d050233a2c18",
     "project/ccr/studies/roof-pitch-27deg-field-section.svg": "dcdb5009c1542acc8faac4e3a3f6d3d5dbe6f731",
     "project/str/finite-floor-contour-development.md": "ae4b1426ad210849e9b76e194dea7bef2e879da7",
     "project/str/studies/finite_floor_contour.py": "4f0b2ff95c6264f229407e6f7d01dd635811eee9",
@@ -3046,9 +3048,10 @@
     "project/str/studies/uniform-slab-law-proof.json": "e9779204c2a1081554f0c492976717f4a0cb948a",
     "project/str/studies/uniform_slab_end_consequence_test.py": "ceedfe4575b3ceb336088413b61b6917dde6eb8b",
     "compiler/reference-house/current-design/inlet-store-impulse.ts": "f378afdf23c3e4d673b33c63f3d952e6dac679fe",
-    "compiler/reference-house/current-design/inlet-wet-service-suite.ts": "7d33dc9d9c5c4a90bbfa7134e5f91cdecc4f70ed",
+    "compiler/reference-house/current-design/inlet-wet-service-suite.ts": "44847a7c788b2647f4d63729b7e484db00ea60c9",
     "project/had/studies/inlet-wet-service-suite-candidate.json": "e3fc5666ab83260b202dd452f068722c4bf73cb4",
     "project/had/studies/inlet-wet-service-suite.svg": "e29b88ebe416ac3f07974091a63586bfa2240f63",
-    "compiler/reference-house/current-design/inlet-known-gravity.ts": "41695cf1a9393c76c4a200021e0e706f38111244"
+    "compiler/reference-house/current-design/inlet-known-gravity.ts": "41695cf1a9393c76c4a200021e0e706f38111244",
+    "compiler/reference-house/current-design/inlet-open-closed-outfall.ts": "56588d40bed0a211f89938f32187b6d29d9b2a3b"
   }
 }
