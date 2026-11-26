@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 64,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
   "holder": {
     "kind": "chatgpt",
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-26T02:00:21.000Z",
-  "expiresAt": "2026-11-26T02:45:21.000Z",
+  "heartbeatAt": "2026-11-26T02:02:17.000Z",
+  "expiresAt": "2026-11-26T02:02:17.000Z",
   "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
@@ -39,5 +39,7 @@
     "evidence": "1626 merged83f8cb65.1627 now0d20523d test-only5incident-XY contract fix, CI unverified; dcfc failed obsolete equality. Raw90077632 actual-route partialchecks/e473 normalizer preserved.",
     "next": "On executor recovery validate0d20523d exacthead, canonical preflight/merge; complete90077632 saved/replay checks. Redesign deck without cantilevers.",
     "blocker": "Executor unavailable; no newhead green/merge claim. Walking support remains rejected; actual stored release, materials, anchors and site unqualified."
-  }
+  },
+  "releasedAt": "2026-11-26T02:02:17.000Z",
+  "releaseReason": "handoff"
 }
