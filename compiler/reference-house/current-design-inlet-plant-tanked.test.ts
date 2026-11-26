@@ -44,7 +44,7 @@ test('complete source-design potable inventory uses external tubes/full fitting 
  assert.throws(()=>plantPotableInventory(mat,tooLarge),/exceeds source work territory/)
 })
 
-const roomRequest=()=>({choice,plant:p,vesselChoice:read('project/had/studies/inlet-store-vessel-candidate.json'),mat:read('project/mat/studies/whole-house-service-baseline.json'),maximumSourceApertureMm:10.5,services:read('project/had/studies/current-house-services.json'),servicesGitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',sourceSettings:readInletSourceEnvelopeSettings()})
+const roomRequest=()=>({choice,plant:p,vesselChoice:read('project/had/studies/inlet-store-vessel-candidate.json'),mat:read('project/mat/studies/whole-house-service-baseline.json'),maximumSourceApertureMm:10.5,services:read('project/had/studies/current-house-services.json'),servicesGitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',sourceSettings:read('project/had/studies/inlet-plant-tanked-supply-candidate.json').settings})
 test('one actual Plant pan feeds room, outfalls, occupied steel and complete communicating pressure-network volume',()=>{
  const r=inletPlantTankedRoom(roomRequest())
  assert.equal(r.levels.houseFflMm,530)
@@ -72,7 +72,7 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
  assert.equal(r.inventory.vesselMaximumDesignL,330)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
  if(dir){writeFileSync(join(dir,'Plant-tanked-current-source-comparison.json'),JSON.stringify(r,null,2));writeFileSync(join(dir,'Plant-tanked-owner-plan-section.svg'),drawInletPlantTankedRoom(r))}
- const svg=drawInletPlantTankedRoom(r),savedDrawing=new URL('../../project/had/studies/plant-tanked-walk-development.svg',import.meta.url);if(existsSync(savedDrawing))assert.equal(readFileSync(savedDrawing,'utf8'),svg,'Ordinary source drawing is stale; regenerate from the same computed case.');assert.ok(svg.includes(r.source.caseDigest));assert.ok(svg.includes('No thermal/nonreturn seal'));console.info('PLANT_OWNER_REVIEW_SVG '+JSON.stringify(svg))
+ const svg=drawInletPlantTankedRoom(r),savedDrawing=new URL('../../project/had/studies/plant-tanked-walk-development.svg',import.meta.url);assert.ok(svg.includes(r.source.caseDigest));assert.ok(svg.includes('No thermal/nonreturn seal'));console.info('PLANT_OWNER_REVIEW_SVG '+JSON.stringify(svg));if(existsSync(savedDrawing))assert.equal(readFileSync(savedDrawing,'utf8'),svg,'Ordinary source drawing is stale; regenerate from the same computed case.')
  console.info('PLANT_TANK_COMPLETE_STATIC '+JSON.stringify({levels:r.levels,sourceProfiles:r.outfalls.profiles.map(p=>({id:p.id,pool:p.initialSourcePoolMm,freeDrop:p.freeDropReserveMm,necessary:p.necessaryFreeSourceProfile,refinements:p.refinements.map(r=>r.state)})),inventory:r.inventory.fullInstantPressureNetworkDesignReleaseL,containment:r.containment,hotNetwork:r.inventory.normalHotAndReturnNetworkDesignUpperL,normalHeated:r.normalHeatedInventory,apparatus:r.walking.apparatusInterfaces.map(a=>({id:a.id,geometry:a.necessarySeparateStandGeometry,loadN:'designOnePostN'in a?a.designOnePostN:null,cutouts:'panelCutoutIntersections'in a?a.panelCutoutIntersections?.length:null})),steelKg:r.walking.normalMassUpperKg,walkingFailures:r.walking.memberChecks.filter(p=>!p.necessary),frame:r.fittedFrame}))
 })
 test('actual floor, outlet and inventory perturbations invalidate dependent design evidence',()=>{
@@ -100,4 +100,19 @@ test('actual floor, outlet and inventory perturbations invalidate dependent desi
  if(dir)writeFileSync(join(dir,'Plant-tanked-rejected-tight-100mm600mm-comparison.json'),JSON.stringify(b,null,2))
  console.info('PLANT_TANK_COMPLETE_ALTERNATIVE '+JSON.stringify({choice:{rise:100,clearWidth:600,metal:5},levels:b.levels,inventory:b.inventory.fullInstantPressureNetworkDesignReleaseL,containment:b.containment,steelKg:b.walking.normalMassUpperKg,frame:b.fittedFrame}))
 
+})
+
+test('the same active P source aperture drives delivery and fault; an insufficient real duct roof rejects its free profile',()=>{
+ const active=roomRequest(),r=inletPlantTankedRoom(active),old=structuredClone(active)
+ old.sourceSettings.plantApertureNominalMm=10.4
+ const historical=inletPlantTankedRoom(old)
+ assert.ok(r.source.sourceMaximumDischargeLmin>260)
+ assert.ok(r.source.sourceMaximumDischargeLmin>historical.source.sourceMaximumDischargeLmin)
+ assert.ok(r.levels.sourcePoolMm>historical.levels.sourcePoolMm)
+ assert.ok(r.containment.reserveL<historical.containment.reserveL)
+ assert.notEqual(r.source.caseDigest,historical.source.caseDigest)
+ const lowRoof=structuredClone(active);lowRoof.choice.outfalls.clearHeightMm=75
+ const failed=inletPlantTankedRoom(lowRoof)
+ assert.equal(failed.containment.necessaryClosedPressureNetworkVolumeScreen,false)
+ assert.ok(failed.outfalls.profiles.some(p=>p.minimumSteadyClosedRoofAirReserveMm!==null&&p.minimumSteadyClosedRoofAirReserveMm<0))
 })
