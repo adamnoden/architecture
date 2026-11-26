@@ -167,3 +167,11 @@ The prior main-only service adapter75b9ac8 passed actual typecheck and39/39 focu
 ### Retained hot-tail clearance
 
 The retained hot terminal atX11300 would leave only0.45mm after both10mm setting allowances against the first450mm-high sinkstop layout. The current source moves the cold stop/feed20mm west to11170 and its cold pillar10mm west to11055. The115mm lower return still has its real32mm fitting takeoffs. This avoids preserving a needlessly small ambient margin; actual thermal/support/contact comparison remains required.
+
+### Complete head fitting and front rail
+
+The actual front upper frame rail beginsY1335. A headconnection at1280 has55mm centreline separation; the full15mm compression nut's39.856mm jacketed covering radius plus20mm setting allowance yields a4.856mm clash. Plain-tube radius was inadequate. The current source moves the full sink front line and both headports/handles to1260; spouts remain1100. It leaves15.144mm rail and10.144mm bowl comparison reserves before actual thermal/support movements.
+
+The hot head port is moved toX11300, matching the real retained vertical hot tail'sX. A conventional formed15mmY-offset spool from the actual595 terminal to850 is a concrete next installation interface; it has NOT been asserted present or pressure/isolation/renewal-qualified. Retained hot network and cold separate-pillar graph remain explicit.
+
+All source/method changes through5cad8e4a are durable. Actual hosted run45859231418 completed successfully for that exact commit, including its declared focused test scope; this later1260/hotport change requires its own replay. The local phase helper and actual hot interface are still pending. A runtime reset did not erase the repository checkpoint or justify inventing missing proofs.
