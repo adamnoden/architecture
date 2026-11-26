@@ -420,7 +420,7 @@ def draw(c,result):
     def elem(tag,**kw):return ET.SubElement(root,'{'+ns+'}'+tag,{k.replace('_','-'):str(v) for k,v in kw.items()})
     def text(x,y,value,size=18):elem('text',x=x,y=y,font_family='Arial',font_size=size,fill='#202a35').text=value
     def path(points,colour,width=2):
-        elem('polyline',points=' '.join(f'{x:.3f},{y:.3f}' for x,y in points),fill='none',stroke=colour,stroke_width=width)
+        return elem('polyline',points=' '.join(f'{x:.3f},{y:.3f}' for x,y in points),fill='none',stroke=colour,stroke_width=width)
     elem('rect',x=0,y=0,width=1500,height=1140,fill='white')
     text(35,35,'UNSELECTED — 300 × 350 perimeter band / inward L300 corner',25)
     text(35,66,'Actual floor 3170–3370; FIRST 3450; upstand top 3520. New whole-house resistance UNCALCULATED.',17)
@@ -452,19 +452,21 @@ def draw(c,result):
         for n in c['geometry']['beamBarNormalMm']:
             for z in c['geometry']['beamBarZMm']:
                 x,y=project([n,0,z]);elem('circle',cx=x,cy=y,r=7.2,fill='#a3362a')
+        clip_id='ordinary-window' if ordinary else 'corner-window'
+        clip=elem('clipPath',id=clip_id);ET.SubElement(clip,'{'+ns+'}rect',{'x':str(xbase),'y':str(ybase+35),'width':'515','height':str(370 if ordinary else 435)})
         selected=result['ordinaryFloorPaths'] if ordinary else result['cornerFloorPaths']
         for layer in ('bottom','top'):
             bar=next(b for b in selected if '/0/'+layer+'/' in b['id'])
-            path([project(q) for q in paths_points(bar)],'#287a47',3)
+            path([project(q) for q in paths_points(bar)],'#287a47',3).set('clip-path','url(#'+clip_id+')')
         if not ordinary:
-            text(xbase,ybase+490,'Corner tails extend 1000 mm into actual lower/upper L300.',15)
+            text(xbase,ybase+490,'Tails continue beyond clipped view: 1000 mm into lower/upper L300.',15)
         else:
             text(xbase,ybase+390,'Ordinary 140 mm mandrel: minimum 72 mm straight after bend.',15)
             text(xbase,ybase+414,'Finite bond/bearing capacities are bounds, not full-demand proof.',15)
     section('Corner section · opposed vertical returns',725,105,False)
     section('Ordinary perimeter section · hooks within 350 depth',725,655,True)
     text(35,1080,'SOURCE-OWNED COMPARISON · no native solve · no transferred old96 loads · no physical/product/owner/house acceptance',17)
-    return ET.tostring(root,encoding='unicode')+'\\n'
+    return ET.tostring(root,encoding='unicode')+'\n'
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,required=True);p=ap.parse_args()

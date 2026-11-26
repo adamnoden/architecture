@@ -33,6 +33,15 @@ jobs:
           fi
           cat /tmp/perimeter-upstand-cage/tests.log
           git diff --exit-code
+      - name: Render exact source-owned SVG
+        if: always()
+        run: |
+          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars --screenshot=/tmp/perimeter-upstand-cage/perimeter-upstand-cage.png --window-size=1500,1140 file:///tmp/perimeter-upstand-cage/perimeter-upstand-cage.svg
+          python - <<'PY'
+          import base64,pathlib
+          p=pathlib.Path('/tmp/perimeter-upstand-cage/perimeter-upstand-cage.png')
+          print('RENDER_PNG perimeter-upstand-cage.png '+base64.b64encode(p.read_bytes()).decode())
+          PY
       - uses: actions/upload-artifact@v6
         if: always()
         with:
