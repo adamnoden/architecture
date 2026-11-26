@@ -9,8 +9,8 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T13:23:48.000Z",
-  "expiresAt": "2026-11-26T14:08:48.000Z",
+  "heartbeatAt": "2026-11-26T13:55:20.000Z",
+  "expiresAt": "2026-11-26T14:40:20.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "1629@5ab92bc0 fixedactualpart-planinvalidation, fiveviewsunchanged; fullCIactive. Lightingb5/22b sourceandfull29/type/audit/136min10PASS45825263728 artifact15119877731.",
-    "next": "Preservetestedgeneratedblobs+targettree; integratecircuit/closedroomwithrootcurrentchangesandrerunowningchecks. Completeinternalprotection/servicebandduties; noowner/physicalacceptance.",
-    "blocker": "Executorunavailable; generatedtreecurrentlyartifact-only, preservationjobactive. Electrical/materialqualificationopen."
+    "evidence": "Tested3aa6treeand16generatedblobsprotected03f81d67; roottrue3way44bf/e1bae151 combinedproofactive (29+7/current140). Source/proofroot5abcurrentPRheldfullCI. Sacrificialcableretirementadoptedinternalcriterion.",
+    "next": "Finishcombinedproducer/binding/136min10/140invalidationproof; integratewhenearned. Resolveactualnative-soffitsupports, ordinaryceramicholder/direct2.5interface, thermal/boardqualification.",
+    "blocker": "Localexecutorunavailable; fullfeed/support/actualmaterial/physical/owneracceptanceopen. Newgeometrymustusesamenativeholes, noduplicateslabmap."
   },
   "pr": 1629
 }
