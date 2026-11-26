@@ -566,9 +566,10 @@ L/N only. Its integrated shade switch removes the inline switch and its location
 problem. B6 lighting and B16 general sockets remain separate.
 
 The published145mm shade,160mm height,90mm wall plate and260mm maximum reach
-propagate through actual carrier/draw/parking geometry. A generous60×70×60mm
+propagate through actual carrier/draw/parking geometry. A generous60×70×30mm
 installed plug envelope, short flex bow and two open guides enter the same saved
-Study136renewal validator. Plug withdrawal and an actual source-derived standing
+Study136renewal validator. The depth charges the manufacturer's20mm installed projection plus10mm allowance.
+Plug withdrawal and an actual source-derived standing
 field retain R300,600mm reach and25mm furniture clearance; these do not change
 the distinct5mm low-floor criteria. Supplied plug/flex fit, grommet/connector and
 strain-relief detail, guide/anchor loads, loaded handling and illuminated-object

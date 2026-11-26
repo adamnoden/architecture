@@ -4,7 +4,7 @@ export interface LocalHomeRunChoices {
   readonly sourceRiseMm:number;readonly bayWidthMm: number; readonly stationOffsetXMm: number; readonly tubeWallMm: number; readonly routeGapMm: number
   readonly lowerPortRearInsetMm: number; readonly maximumClipSpanMm: number; readonly clipEndInsetMm: number
   readonly carrierCentrePlateOffsetXMm: number; readonly minimumResidualMm: number; readonly upperBendClipFraction: number
-  readonly additionalCornerDepthMm:number; readonly accessoryExtensionMm:number; readonly upperAccessoryExtensionMm:number;readonly upperCentreOffsetZMm:number;readonly upperBoxBacksetMm:number; readonly upperPortRearInsetMm:number; readonly mainRestSouthShiftMm:number; readonly caseRestSizeMm:number;readonly fixedIslandHeightMm:number
+  readonly additionalCornerDepthMm:number; readonly accessoryExtensionMm:number; readonly upperAccessoryExtensionMm:number;readonly upperCentreOffsetZMm:number;readonly upperBoxBacksetMm:number; readonly upperPortRearInsetMm:number; readonly moduleRestFrontExtensionMm:number;readonly mainRestSouthShiftMm:number; readonly caseRestSizeMm:number;readonly fixedIslandHeightMm:number
 }
 export interface LightingCornerDetailInput {
   readonly homeRuns: LocalHomeRunChoices
@@ -75,13 +75,13 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
   const steelDensityKgM3Comparison = c.steelDensityKgM3Comparison
   const carrierStockMassKgUpperComparison = stockAreaMm2Upper * steelThickness / 1e9 * steelDensityKgM3Comparison
   if (c.fixedIslandWidthMm < input.boxSizeMm[0] + 2 * c.entryCollarAxialLengthMm + 2 * input.jointMm || c.fixedIslandHeightMm < input.boxSizeMm[1] || c.entryCollarOutsideDiameterMm > input.boxSizeMm[2]) issues.push('box-entry-collar-outside-fixed-island')
-  const fixedBoxes = [input.socketCentreZMm, 1100, input.moduleCentreZMm].map(z => [cx - input.boxSizeMm[0] / 2, z - input.boxSizeMm[1] / 2, cx + input.boxSizeMm[0] / 2, z + input.boxSizeMm[1] / 2])
+  const fixedBoxes = [input.socketCentreZMm, 1100, input.moduleCentreZMm+input.homeRuns.upperCentreOffsetZMm].map(z => [cx - input.boxSizeMm[0] / 2, z - input.boxSizeMm[1] / 2, cx + input.boxSizeMm[0] / 2, z + input.boxSizeMm[1] / 2])
   for (let i = 0; i < fixedBoxes.length; i++) for (let j = i + 1; j < fixedBoxes.length; j++) if (overlap(fixedBoxes[i], fixedBoxes[j])) issues.push('fixed-electrical-boxes-overlap')
   const infill = { id: 'IAS/STUDY/service-corner/infill/central', xMm: [cx - half, cx + half], zMm: [c.infillBottomZMm, z0 - c.infillModuleGapMm],
     firstDrawMm: input.normalDrawMm, positiveFrontScrewCount: 4,
     boundary: 'Stopped decoration between fixed electrical islands and light carrier. Retained enclosure/rails remain closed and independently supported.' }
   if (infill.zMm[1] <= infill.zMm[0]) issues.push('no-positive-infill-between-switch-and-module')
-  const fixedIslandJoints = [input.socketCentreZMm, 1100, input.moduleCentreZMm].map(z => [cx - c.fixedIslandWidthMm / 2 - input.jointMm, z - c.fixedIslandHeightMm / 2 - input.jointMm, cx + c.fixedIslandWidthMm / 2 + input.jointMm, z + c.fixedIslandHeightMm / 2 + input.jointMm])
+  const fixedIslandJoints = [input.socketCentreZMm, 1100, input.moduleCentreZMm+input.homeRuns.upperCentreOffsetZMm].map(z => [cx - c.fixedIslandWidthMm / 2 - input.jointMm, z - c.fixedIslandHeightMm / 2 - input.jointMm, cx + c.fixedIslandWidthMm / 2 + input.jointMm, z + c.fixedIslandHeightMm / 2 + input.jointMm])
   if (fixedIslandJoints.slice(0, 2).some(box => overlap([infill.xMm[0], infill.zMm[0], infill.xMm[1], infill.zMm[1]], box))) issues.push('fixed-electrical-island-intersects-removable-infill')
   // A quarter-circle ends at a straight collar tangent, never at the box wall.
   // Collars occupy axial length outside that wall; the tube occupies its full OD.
@@ -91,7 +91,7 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
   const riserX = collarTangentX - c.bendCentrelineRadiusMm
   const tubeRadius = c.containmentOutsideDiameterMm / 2
   const collarRadius = c.entryCollarOutsideDiameterMm / 2
-  const localEntryBranches = [input.socketCentreZMm, 1100, input.moduleCentreZMm].map((z, i) => {
+  const localEntryBranches = [input.socketCentreZMm, 1100, input.moduleCentreZMm+input.homeRuns.upperCentreOffsetZMm].map((z, i) => {
     const boxFrontDepth = i === 2 ? carrierDepth[0] - steelThickness : input.totalDepthMm
     const axisDepth = boxFrontDepth - input.boxSizeMm[2] / 2
     const bendStartZ = z - c.bendCentrelineRadiusMm
@@ -130,7 +130,7 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
     attachmentPoints, hardLands, loadDemand: { weightN, faceMomentNm, coreMomentNm, moduleCoupleSpacingMm, normalCoupleN,
       equalFourFixingShearN: weightN / 4, equalTwoUpperFixingTensionN: normalCoupleN / 2,
       oneUpperFixingLostNecessaryTensionN: normalCoupleN, resistanceAccepted: false },
-    fixedEnclosures: [input.socketCentreZMm, 1100, input.moduleCentreZMm].map((z, i) => {
+    fixedEnclosures: [input.socketCentreZMm, 1100, input.moduleCentreZMm+input.homeRuns.upperCentreOffsetZMm].map((z, i) => {
       const boxFrontDepth = i === 2 ? carrierDepth[0] - steelThickness : input.totalDepthMm
       return { id: `IAS/STUDY/service-corner/fixed-island/${i}`,
       bodyXZMm: [cx - input.boxSizeMm[0] / 2, z - input.boxSizeMm[1] / 2, cx + input.boxSizeMm[0] / 2, z + input.boxSizeMm[1] / 2], faceXZMm: [cx - input.plateSizeMm[0] / 2, z - input.plateSizeMm[1] / 2, cx + input.plateSizeMm[0] / 2, z + input.plateSizeMm[1] / 2], bodyDepthMm: [boxFrontDepth - input.boxSizeMm[2], boxFrontDepth],
@@ -140,7 +140,7 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
       clearanceToCarrierDepthMm: i === 2 ? carrierDepth[0] - boxFrontDepth : null,
       independentOfDecoration: true, bodyDepthAuthority: 'Referenced72x72x47mm steel box. Junction box is recessed behind independent fixed cover and carrier; socket/switch islands interrupt decoration locally. Accessory/earth/entries/insulation and product material admission remain required.' } }),
     containment: { outsideDiameterRequirementMm: c.containmentOutsideDiameterMm, localUsableDepthMm: input.totalDepthMm - input.fixedBoundaryMm - input.decorativeFaceMm - steelThickness,
-      riserAxisXMm: riserX, localEntryBranches, branchSideEntryPointsXMmZMm: [input.socketCentreZMm, 1100, input.moduleCentreZMm].map(z => [cx - input.boxSizeMm[0] / 2, z]),
+      riserAxisXMm: riserX, localEntryBranches, branchSideEntryPointsXMmZMm: [input.socketCentreZMm, 1100, input.moduleCentreZMm+input.homeRuns.upperCentreOffsetZMm].map(z => [cx - input.boxSizeMm[0] / 2, z]),
       sideEntryBendCentrelineRadiusRequirementMm: c.bendCentrelineRadiusMm, outerBendTerritoryMm: c.bendCentrelineRadiusMm + c.containmentOutsideDiameterMm / 2,
       entryCollarEnvelopeMm: [c.entryCollarOutsideDiameterMm, c.entryCollarAxialLengthMm],
       sourceInterfaceId: 'IAS/STUDY/room-supply-interface', sourceConnectedToCurrentHouseCircuit: false,
@@ -171,9 +171,9 @@ export function deriveLightingCornerDetail(input: LightingCornerDetailInput) {
  */
 function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   const h = input.homeRuns, c = input.construction
-  const keys = ['sourceRiseMm','bayWidthMm', 'stationOffsetXMm', 'tubeWallMm', 'routeGapMm', 'lowerPortRearInsetMm', 'maximumClipSpanMm', 'clipEndInsetMm', 'carrierCentrePlateOffsetXMm', 'minimumResidualMm', 'upperBendClipFraction', 'additionalCornerDepthMm', 'accessoryExtensionMm', 'upperBoxBacksetMm', 'upperAccessoryExtensionMm', 'upperCentreOffsetZMm', 'upperPortRearInsetMm', 'mainRestSouthShiftMm', 'caseRestSizeMm', 'fixedIslandHeightMm']
+  const keys = ['sourceRiseMm','bayWidthMm', 'stationOffsetXMm', 'tubeWallMm', 'routeGapMm', 'lowerPortRearInsetMm', 'maximumClipSpanMm', 'clipEndInsetMm', 'carrierCentrePlateOffsetXMm', 'minimumResidualMm', 'upperBendClipFraction', 'additionalCornerDepthMm', 'accessoryExtensionMm', 'upperBoxBacksetMm', 'upperAccessoryExtensionMm', 'upperCentreOffsetZMm', 'upperPortRearInsetMm', 'mainRestSouthShiftMm', 'moduleRestFrontExtensionMm', 'caseRestSizeMm', 'fixedIslandHeightMm']
   if (!h || Object.keys(h).length !== keys.length || keys.some(k => !Object.hasOwn(h, k))
-    || !Object.entries(h).every(([key,n]) => Number.isFinite(n) && ((['stationOffsetXMm','carrierCentrePlateOffsetXMm','upperCentreOffsetZMm'].includes(key)||(['sourceRiseMm','upperBendClipFraction','additionalCornerDepthMm','accessoryExtensionMm','upperAccessoryExtensionMm','upperBoxBacksetMm','mainRestSouthShiftMm'].includes(key)&&n>=0)) || n > 0))
+    || !Object.entries(h).every(([key,n]) => Number.isFinite(n) && ((['stationOffsetXMm','carrierCentrePlateOffsetXMm','upperCentreOffsetZMm'].includes(key)||(['sourceRiseMm','upperBendClipFraction','additionalCornerDepthMm','accessoryExtensionMm','upperAccessoryExtensionMm','upperBoxBacksetMm','mainRestSouthShiftMm','moduleRestFrontExtensionMm'].includes(key)&&n>=0)) || n > 0))
     || h.tubeWallMm * 2 >= c.containmentOutsideDiameterMm || h.upperBendClipFraction < 0 || h.upperBendClipFraction >= 1) throw new TypeError('IAS_LIGHTING_HOME_RUN_INPUT_INVALID')
   if(!Array.isArray(input.floorBandsMm)||!input.floorBandsMm.length||input.floorBandsMm.some(b=>b.length!==4||!b.every(Number.isFinite))) throw new TypeError('IAS_LIGHTING_ROOM_FLOOR_REFERENCE_INVALID')
   const floorGeometryValid=!input.floorBandsMm.some((b,i)=>b[2]!<=b[0]!||b[3]!<=b[1]!||input.floorBandsMm.slice(i+1).some(other=>overlap(b,other)))
@@ -278,7 +278,7 @@ function deriveLocalHomeRuns(input: LightingCornerDetailInput) {
   for (const row of obstacleChecks) if (row.reserveMm < h.minimumResidualMm-1e-9) routeIssues.push(`${row.routeId}-intersects-${row.obstacleId}`)
   if(cableOpening.minimumPlateEdgeReserveMm<h.minimumResidualMm-1e-9) routeIssues.push('home-run-carrier-cable-edge-reserve-rejected')
   const bayPlanMm = [left,frontY,right,north]
-  const firstRestPlanMm = [left,input.firstRestPlanMm[1]!-h.mainRestSouthShiftMm,right,input.firstRestPlanMm[3]!-h.mainRestSouthShiftMm]
+  const firstRestPlanMm = [left,input.firstRestPlanMm[1]!-h.mainRestSouthShiftMm-h.moduleRestFrontExtensionMm,right,input.firstRestPlanMm[3]!-h.mainRestSouthShiftMm]
   const parkedBackY=firstRestPlanMm[3]!-c.cradleBackMarginMm
   const parkedModulePlanMm=[carrierXZ[0],parkedBackY-input.completeProjectionMm,carrierXZ[2],parkedBackY]
   const fieldReservesMm={ carrierLeft:carrierXZ[0]-left-input.jointMm, carrierRight:right-carrierXZ[2]-input.jointMm,

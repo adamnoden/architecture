@@ -562,7 +562,7 @@ test('the ordinary upper saddle includes the actual receiver, tool phase, stock 
   assert.ok(deriveStudyLighting(choices,basis,missing).construction.localHomeRunComparison.issues.includes('home-run-2-finalUnsupportedArc-rejected'))
   const noRest=structuredClone(components);noRest.localHomeRunCandidate={...noRest.localHomeRunCandidate,mainRestSouthShiftMm:0}
   assert.ok(deriveStudyLighting(choices,basis,noRest).construction.localHomeRunComparison.issues.some(s=>s.includes('renewal-space')))
-  const wideTool=structuredClone(components);wideTool.localHomeRunSupportReference={...wideTool.localHomeRunSupportReference,driver:{...wideTool.localHomeRunSupportReference.driver,maximumDiameterMm:100}}
+  const wideTool=structuredClone(components);wideTool.localHomeRunSupportReference={...wideTool.localHomeRunSupportReference,driver:{...wideTool.localHomeRunSupportReference.driver,maximumDiameterMm:250}}
   assert.ok(deriveStudyLighting(choices,basis,wideTool).construction.localHomeRunComparison.issues.includes('home-run-bend-saddle-tool-rejected'))
 })
 
@@ -581,4 +581,15 @@ test('a real corner notch moves only stations at the affected wall and exposes t
   assert.ok(!moved.diagnostics.some(d=>d.code==='IAS_LIGHTING_STATION_ACCESS_REJECTED'))
   assert.deepEqual(moved.leads.floor.pathMm,original.leads.floor.pathMm)
   assert.deepEqual(moved.kitchen,original.kitchen)
+})
+
+
+test('larger fitting gets an honestly larger rest while the former300mm rest rejects',()=>{
+ const r=run(),h=r.construction.localHomeRunComparison
+ assert.equal(h.firstRestPlanMm[3]!-h.firstRestPlanMm[1]!,350)
+ assert.ok(h.fieldReservesMm.restFront>=30)
+ const old=structuredClone(components);old.localHomeRunCandidate.moduleRestFrontExtensionMm=0
+ assert.ok(deriveStudyLighting(choices,basis,old).construction.localHomeRunComparison.issues.includes('home-run-field-restFront-rejected'))
+ const ordinary=structuredClone(components);ordinary.localHomeRunSupportReference.driver.maximumDiameterMm=100
+ assert.ok(deriveStudyLighting(choices,basis,ordinary).construction.localHomeRunComparison.saddle!.toolChecks.every(p=>p.reserveMm>=5))
 })

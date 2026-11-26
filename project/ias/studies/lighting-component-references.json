@@ -187,7 +187,8 @@
     "fixedIslandHeightMm": 120,
     "sourceRiseMm": 220,
     "upperAccessoryExtensionMm": 16,
-    "upperCentreOffsetZMm": -300
+    "upperCentreOffsetZMm": -300,
+    "moduleRestFrontExtensionMm": 50
   },
   "localHomeRunAuthority": "Unselected conventional95mm station; sourcebox and two radial nets specified by shared circuit method.375mm tube origins clear source gland transitions; field boundary remains150mm. Supplied entries, device/earth CAD, physical installation and material admission remain unearned.",
   "localHomeRunSupportReference": {
@@ -449,7 +450,7 @@
       "plugEnvelopeMm": [
         60,
         70,
-        60
+        30
       ],
       "guideBodyEnvelopeMm": [
         20,
@@ -458,10 +459,11 @@
       ],
       "plugDrawMm": 60,
       "operatorRadiusMm": 300,
-      "operatorStandBackMm": 600,
+      "operatorStandBackMm": 292.5,
       "reachLimitMm": 600,
       "flexAreaMm2": 0.75,
-      "cutbackAllowanceMm": 100
+      "cutbackAllowanceMm": 100,
+      "operatorLeftOfBayMm": 140
     }
   }
 }

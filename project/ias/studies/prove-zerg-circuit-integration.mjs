@@ -117,7 +117,11 @@ try{
  const diagnosticKit=await prepareCurrentDesignCompile(d.design).studyRoomKit({schema:'ias-study-room-kit-case/1',units:'mm',...d.stages.studyRoomKit},d.stages.distributedFloor)
  const diagnosticResult=await prepareCurrentDesignCompile(d.design).studyLighting({schema:'ias-study-lighting-case/1',units:'mm',...d.stages.studyLighting},diagnosticKit)
  save('candidate-geometry.json',{status:diagnosticResult.lighting.status,issues:diagnosticResult.lighting.circuit.issues,homeRuns:diagnosticResult.lighting.construction.localHomeRunComparison,corner:diagnosticResult.lighting.corner})
- console.log('CANDIDATE_GEOMETRY '+JSON.stringify({status:diagnosticResult.lighting.status,issues:diagnosticResult.lighting.circuit.issues,local:diagnosticResult.lighting.construction.localHomeRunComparison.issues}))
+ const dr=diagnosticResult.lighting,cr=dr.circuit.closedSourceFloorRenewal
+ save('candidate-closed-room.json',cr)
+ console.log('CANDIDATE_GEOMETRY '+JSON.stringify({status:dr.status,issues:dr.circuit.issues,local:dr.construction.localHomeRunComparison.issues,rest:dr.construction.localHomeRunComparison.fieldReservesMm,operation:dr.circuit.applianceLead.operation,witnessCount:cr?.ordinaryHandling?.witnessCount,preparation:cr?.preparation,furniture:cr?.furniture,failedParts:cr?.ordinaryHandling?.parts.filter(p=>p.state!=='joined-geometry-witness').slice(0,6)}))
+ if(dr.circuit.issues.length||dr.construction.localHomeRunComparison.issues.length||cr?.status!=='computed-geometry-witnesses')throw Error('Actual candidate geometry rejected; inspect named witnesses before broader tests')
+
 
  // This producer proves current bindings before writing its five actual views.
  run('room-views-regenerate',['--import','tsx','project/ias/studies/crafted-study-eye-level.mjs','--write'])

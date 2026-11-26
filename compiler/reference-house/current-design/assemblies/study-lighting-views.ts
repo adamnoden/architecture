@@ -302,7 +302,7 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
     +rect(depth(h.boxes[2]!.closedCoverDepthMm?.[0]??h.boxes[2]!.depthMm[1]!),2540,((h.boxes[2]!.closedCoverDepthMm?.[1]??h.totalDepthMm)-(h.boxes[2]!.closedCoverDepthMm?.[0]??h.boxes[2]!.depthMm[1]!))*3,72,'#8fa7a1')
     +rect(depth(h.carrierDepthMm[0]!),2520,(h.carrierDepthMm[1]!-h.carrierDepthMm[0]!)*3,110,'#8c9c9b')
     +rect(depth(h.totalDepthMm-c.decorativeFaceMm),2520,c.decorativeFaceMm*3,110,'#b58d65')
-    +text(445,2545,`Upper box d ${h.boxes[2]!.depthMm.join('..')} mm; own cover ${h.boxes[2]!.closedCoverDepthMm?.join('..')??'flush lighting outlet, separate from carrier'}`)
+    +text(445,2545,`OutletZ ${h.boxes[2]!.zMm.join('..')} mm, below carrier: depths shown at separate heights`)
     +text(445,2580,`Retained carrier d ${h.carrierDepthMm.join('..')} mm; timber face ends at ${h.totalDepthMm} mm`)
     +text(445,2615,`${h.boxes.filter(b=>b.extensionDepthMm>0).length} ordinary extension frames (lower${h.choices.accessoryExtensionMm} mm): ${h.stock.extensionStockKgComparison.toFixed(6)} kg at authored2 mm wall stock`)
     +text(445,2650,'Actual supplied gauges/lugs/weights, mating entries, device/earth/union and protection remain unqualified')
@@ -464,7 +464,7 @@ export function drawStudyLightingCircuit(r:StudyLightingResult){
  const outlet=h.boxes[2]!,ox=(outlet.xMm[0]!+outlet.xMm[1]!)/2,oz=(outlet.zMm[0]!+outlet.zMm[1]!)/2
  out+=rect(AX(ox-43),AZ(oz+43),86*.6,86*.35,'#ab996d')
  for(const vol of a.nominalFixedVolumes.filter(v=>v.id.includes('switch')||v.id.includes('plug'))){const b=vol.xyzxyzMm;out+=rect(AX(b[0]!),AZ(b[5]!),(b[3]!-b[0]!)*.6,(b[5]!-b[2]!)*.35,'#a6aaa1')}
- out+=text(450,1480,'Type80W1:145mm shade /160mm shade height /260mm maximum reach')
+ out+=text(450,1480,`Type80W1: ${a.fitting.shadeWidthMm}mm shade /${a.fitting.shadeHeightMm}mm height /${a.fitting.projectionMm}mm reach`)
  out+=text(450,1520,'ClassII fitting; fixed MI/metalwork/outlet retain their own protective earth')
  out+=text(450,1560,'B6 lighting-only outlet at1500mm; B16 general socket stays separate')
  out+=text(450,1600,`${n(a.lengthMm)}mm short flex; ordinary3A plug; no hidden coil`)
