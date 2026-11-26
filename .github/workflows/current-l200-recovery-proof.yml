@@ -9,6 +9,7 @@ on:
       - 'project/str/studies/current_l200_node_test.py'
       - 'project/str/current-l200-node-development.md'
       - 'project/str/current-l200-node-recovery.md'
+      - 'project/str/current-finite-zero-chord-control.md'
 
 permissions:
   contents: read
@@ -135,6 +136,47 @@ jobs:
               'derivedNativeCaseSHA256':capture['derivedNativeCaseSHA256'],'exactRecoveredFiles':checked,'freshHouseSolvePerformed':False},indent=2)+'\n')
           print('PASS current58 sources,6 finite methods, exact runtime, source W0 and recovered source/report blobs')
           PY
+      - name: Observe exact zero-chord rejection and prove retained RC axial energy
+        run: |
+          "$STR_FINITE_SOLID_PYTHON" -B - <<'PY'
+          import copy,json,os
+          from pathlib import Path
+          import numpy as np
+          from current_l200_node import read_capture
+          from distributed_floor_compatibility import _admit_distributed
+          from floor_section_model import load_source
+          folder=Path(os.environ['L200_EVIDENCE_DIR'])
+          result=read_capture(folder/'case-00.json.gz')
+          request=result['authoredNativeCase']['bearingCase']['masonryCase']['verticalCase']['monolithicCase']['houseCase']['joinedCase']['floor']
+          source=load_source(Path('.'))['bearing']['base']['vertical']['parent']['house']['joined']['floor']
+          _admit_distributed(request,source)
+          zero=copy.deepcopy(request);zero['edgeBand']['axialRigidityKN']=0.
+          try:
+              _admit_distributed(zero,source)
+          except ValueError as error:
+              diagnostic=str(error)
+              if 'explicit conventional band' not in diagnostic:raise
+          else:raise ValueError('Current source unexpectedly admits zero: review the recorded source boundary')
+          rc_ea=8250.*140.*200./1000.
+          if rc_ea!=231000.:raise ValueError('Physical concrete axial energy lost')
+          energy=[]
+          base=np.array([[1.,-1.],[-1.,1.]])
+          for length in (140.,200.,1000.):
+              k=rc_ea/length*base;e=np.linalg.eigvalsh(k);relative=np.array([0.,.1]);rigid=np.ones(2)
+              if max(abs(k@rigid))>1e-9 or e[0]<-1e-9 or abs(e[1]-2*rc_ea/length)>1e-9 or float(.5*relative@k@relative)<=0:
+                  raise ValueError('RC band has lost rigid invariance or positive relative-extension work')
+              old=k+request['edgeBand']['axialRigidityKN']/length*base
+              if np.linalg.eigvalsh(old-k).min()<-1e-9:raise ValueError('Removed extra-chord contribution is not nonnegative')
+              energy.append({'lengthMm':length,'RCConcreteEAKN':rc_ea,'eigenvaluesKNPerMm':e.tolist(),
+                             'relativeExtensionWorkKNmm':float(.5*relative@k@relative)})
+          verdict={'status':'exact-zero-rejected-by-current-owning-admission','zeroChordHouseExecuted':False,
+                   'currentGuard':'project/str/studies/distributed_floor_compatibility.py: axialRigidityKN <= 0',
+                   'diagnostic':diagnostic,'proposedNarrowChange':'Reject negative rather than nonpositive additional axial allowance; preserve all other guards',
+                   'retainedRCConcreteEAKN':rc_ea,'analyticalSegments':energy,
+                   'individualHouseDemandsAreNotOrderedByThisProof':True}
+          (folder/'zero-chord-admission-boundary.json').write_text(json.dumps(verdict,indent=2)+'\n')
+          print('ZERO_CHORD_ADMISSION_BOUNDARY '+json.dumps(verdict,separators=(',',':')))
+          PY
       - name: Replay all192 original physical cuts through recovered consumer
         run: |
           "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/current_l200_node.py \
@@ -186,7 +228,7 @@ jobs:
           ET.parse(folder/'current-l200-node.svg')
           report=Path('project/str/current-l200-node-development.md').read_text()
           if not all(word in report for word in ('128.527','193.111','79.547200','621.118','Twelve tests passed')):raise ValueError('Owning observed report was not retained')
-          for path in ('project/str/current-l200-node-development.md','project/str/current-l200-node-recovery.md'):shutil.copy2(path,folder/Path(path).name)
+          for path in ('project/str/current-l200-node-development.md','project/str/current-l200-node-recovery.md','project/str/current-finite-zero-chord-control.md'):shutil.copy2(path,folder/Path(path).name)
           verdict={'status':'actual-recovered-consumer-and12-tests-pass','recoveryHead':os.environ['GITHUB_SHA'],
                    'originalPhysicalProofHead':r['sourceCommit'],'caseCount':96,'physicalCutCount':192,
                    'newHouseSolvePerformed':False,'generatedSVGXMLValidated':True,'humanVisualInspectionPerformed':False,
