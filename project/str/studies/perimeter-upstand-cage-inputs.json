@@ -198,7 +198,8 @@
       1490,
       1565
     ],
-    "beamCageSideReserveMm": 5
+    "beamCageSideReserveMm": 5,
+    "maximumPlaneTransitionRunFromFirstCornerMm": 150
   },
   "materials": {
     "reinforcementComparisonMPa": 400,

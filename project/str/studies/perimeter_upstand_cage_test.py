@@ -163,9 +163,13 @@ class CageControls(unittest.TestCase):
         self.assertTrue(any(x['state']=='insufficient-cover' for x in bad['failures']))
     def test_old_narrow_stirrup_really_intersects_its_own_tail(self):
         c=copy.deepcopy(self.c);c['links']['beamCageSideReserveMm']=0
-        bad=p.link_self_audit(c,p.ordinary_beam_links(c))
-        self.assertFalse(bad['allCertified'])
-        self.assertTrue(any(x['state']=='collision' for x in bad['failures']))
+        link=p.ordinary_beam_links(c)[0];old_leg=copy.deepcopy(link['primitives'][4])
+        # The old leg stayed in the return's plane; the new clear-leg joggle
+        # deliberately changes that geometry. Retain the actual old pair.
+        along=float(link['id'].split('/')[-1])
+        for q in old_leg['points']:q[1]=along
+        bad=p.certify_primitive_pair(old_leg,link['primitives'][-1],link['outsideMm'],2*c['links']['hookShapeToleranceMm'])
+        self.assertEqual(bad['state'],'collision')
     def test_short_column_hook_fabrication_comparison_rejects(self):
         c=copy.deepcopy(self.c);c['links']['columnHookTailMm']=75
         with self.assertRaisesRegex(ValueError,'fabrication'):p.assess(c,self.base)

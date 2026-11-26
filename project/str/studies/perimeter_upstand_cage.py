@@ -155,13 +155,13 @@ def transformed(path,axis):
             p['points']=[[q[1],q[0],q[2]] for q in p['points']]
         else:p['axes']=[1 if i==0 else 0 if i==1 else i for i in p['axes']]
     return out
-def closed_profile(x0,x1,y0,y1,r,tail,z,rise,diameter,nominal,identifier):
+def closed_profile(x0,x1,y0,y1,r,tail,z,rise,diameter,nominal,identifier,transition_max_run):
     # Keep the two135 returns in their own planes; change plane only on a
     # clear long leg, away from both hook tails. A joggle beside the closure
     # cuts through the other return and is a genuine rejected geometry.
     cx,cy=x0+r,y0+r;angle=math.acos(1-abs(rise)/(2*r));run=2*r*math.sin(angle);sgn=1 if rise<0 else -1
     begin=z+rise;available=y1-y0-2*r
-    start=y0+r+min(150.,(available-run)/2)
+    start=y0+r+min(transition_max_run,(available-run)/2)
     if available<=run:raise ValueError('No clear long leg for actual plane transition')
     first=arc([start,begin+sgn*r],r,-math.pi/2 if sgn>0 else math.pi/2,
         -math.pi/2+angle if sgn>0 else math.pi/2-angle,[1,2],x1)
@@ -185,7 +185,7 @@ def closed_column_link(c,axis,z):
     g,l=c['geometry'],c['links'];f,k=g['columnFaceRowsMm'];last=g['columnAlongStationsMm'][-1]
     d=l['columnOutsideMm'];r=(l['columnMandrelMm']+d)/2;combined=(d+g['columnBarOutsideMm'])/2
     path=closed_profile(f-combined,k+combined,f-combined,last+combined,r,l['columnHookTailMm'],z,
-        l['columnClosureOffsetMm'],d,l['columnNominalMm'],f'column-link/{axis}/{z:g}')
+        l['columnClosureOffsetMm'],d,l['columnNominalMm'],f'column-link/{axis}/{z:g}',l['maximumPlaneTransitionRunFromFirstCornerMm'])
     return transformed(path,axis)
 def cross_tie(c,axis,z,along):
     g,l=c['geometry'],c['links'];f,k=g['columnFaceRowsMm'];d=l['columnOutsideMm']
@@ -268,7 +268,7 @@ def ordinary_beam_links(c):
     for axis in (0,1):
         for along in planes:
             profile=closed_profile(normals[0]-outward-reserve,normals[1]+outward+reserve,zs[0]-outward,zs[1]+outward,
-                r,l['beamHookTailMm'],along,l['beamClosureOffsetMm'],d,l['beamNominalMm'],f'beam-link/{axis}/{along:g}')
+                r,l['beamHookTailMm'],along,l['beamClosureOffsetMm'],d,l['beamNominalMm'],f'beam-link/{axis}/{along:g}',l['maximumPlaneTransitionRunFromFirstCornerMm'])
             out.append(remap_axes(profile,[axis,2,1-axis]))
     return out
 def audit_unique_paths(paths,tol):
