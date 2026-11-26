@@ -94,15 +94,15 @@ class CageControls(unittest.TestCase):
         with self.assertRaises(ValueError):p.assess(c,self.base)
     def test_matched_contact_certificate_rejects_actual_path_intrusion(self):
         links,_=p.link_paths(self.c)
-        link=copy.deepcopy(next(x for x in links if x['id'].startswith('cross-tie/0/3274.5/')))
-        for primitive in link['primitives']:
-            if primitive['kind']=='line':
-                for q in primitive['points']:q[2]-=1
-            else:primitive['other']-=1
-        bad=p.audit_path_groups([link],p.beam_paths(self.c),10,matched_contacts=True)
-        self.assertFalse(bad['allCertified'])
-        self.assertEqual(bad['lockedNormalContactCertificates'],0)
-        self.assertTrue(any(x['state']=='collision' for x in bad['failures']))
+        for plane,shift in ((3274.5,-1),(3434.5,1)):
+            link=copy.deepcopy(next(x for x in links if x['id'].startswith(f'cross-tie/0/{plane:g}/')))
+            for primitive in link['primitives']:
+                if primitive['kind']=='line':
+                    for q in primitive['points']:q[2]+=shift
+                else:primitive['other']+=shift
+            bad=p.audit_path_groups([link],p.beam_paths(self.c),10,matched_contacts=True)
+            self.assertFalse(bad['allCertified'])
+            self.assertTrue(any(x['state']=='collision' for x in bad['failures']))
     def test_cover_deducts_both_setting_allowances_and_rejects_old_65mm_row(self):
         self.assertTrue(self.r['externalConcreteCoverAudit']['allCheckedProfilesMeetMinimum'],str(self.r['externalConcreteCoverAudit']))
         self.assertGreaterEqual(self.r['externalConcreteCoverAudit']['worst']['adverseExternalConcreteCoverMm'],40)

@@ -209,8 +209,8 @@ def audit_path_groups(left,right,tol,limit_failures=12,matched_contacts=False):
     for i,a in enumerate(left):
         for j,b in enumerate(right):
             r=(a['outsideMm']+b['outsideMm'])/2
-            match=matched_contacts and a['id'].startswith('cross-tie/') and '/3274.5/' in a['id'] and b['id'].startswith('beam/') and b['id'].endswith('/3260')
-            if match and left_boxes[i][0][2]-right_boxes[j][1][2]>=r-1e-9:
+            match=matched_contacts and a['id'].startswith('cross-tie/') and b['id'].startswith('beam/') and (('/3274.5/' in a['id'] and b['id'].endswith('/3260')) or ('/3434.5/' in a['id'] and b['id'].endswith('/3449')))
+            if match and max(left_boxes[i][0][2]-right_boxes[j][1][2],right_boxes[j][0][2]-left_boxes[i][1][2])>=r-1e-9:
                 contact_certificates+=1;continue
             if separated_boxes(left_boxes[i],right_boxes[j],tol,r):continue
             pairs+=1
@@ -479,7 +479,7 @@ def assess(c,base,full_geometry=False):
     if c['materials']['maximumAggregateMm']+5>g['parallelMinimumClearMm']:raise ValueError('Declared aggregate exceeds inherited21mm minimum-clear comparison')
     contact=c['links']['matchedJointContactPlanesZMm']
     expected_cross=g['beamBarZMm'][0]+(g['beamBarOutsideMm']+c['links']['columnOutsideMm'])/2
-    if not g['commonNodeJigRequired'] or not c['links']['matchedContactsRequireLockedNormalSeparation'] or contact!={'beamBottom':g['beamBarZMm'][0],'crossTie':expected_cross,'westHoop':expected_cross+c['links']['columnOutsideMm']}:
+    if not g['commonNodeJigRequired'] or not c['links']['matchedContactsRequireLockedNormalSeparation'] or contact!={'beamBottom':g['beamBarZMm'][0],'crossTie':expected_cross,'westHoop':expected_cross+c['links']['columnOutsideMm'],'beamTop':g['beamBarZMm'][1],'crossTieTop':g['beamBarZMm'][1]-(g['beamBarOutsideMm']+c['links']['columnOutsideMm'])/2}:
         raise ValueError('Exact tied-cage normal-separation constraints required; no independent-Z contact waiver')
     if base['slabZMm']!=g['slabZMm'] or base['firstFFLMm']!=g['FIRSTMm']:raise ValueError('Changed actual source levels')
     if g['comparisonCoreMm']!=300 or g['ordinaryBandWidthMm']!=300 or g['ordinaryBandDepthMm']!=350:raise ValueError('This exact unselected300x350 source family only')
