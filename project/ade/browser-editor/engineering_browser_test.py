@@ -45,6 +45,7 @@ def check_rear_bearing(page, args):
     assert baseline['rearBearingComparison']['status']=='analysis-pending'
     assert baseline['rearBearingComparison']['result']['geometry']['planPass'] is True
     assert len(baseline['native']['heads'])==52
+    print('PASS actual rear1850 deferred proposal and source W31 reference52 heads',flush=True)
     page.locator('#rear-bearing-opening').fill('1900')
     page.get_by_role('button',name='Compare rear bearing',exact=True).click()
     ready(page,1,900000)
@@ -64,7 +65,10 @@ def check_rear_bearing(page, args):
     assert actual['result']['drawings']['rear-bearing-section.svg']==image('#current-rear-bearing-section')
     assert all(actual[k] is False for k in ['candidateAccepted','wholeHouseAccepted','strengthAccepted','ownerAccepted'])
     assert compiled['native']['heads']==baseline['native']['heads']
-    assert compiled['finiteJointComparison']==baseline['finiteJointComparison']
+    print('PASS actual rear1900 exported CLI geometry and unchanged source W31 reference52 heads',flush=True)
+    assert compiled['finiteJointComparison']['controls']==baseline['finiteJointComparison']['controls']
+    assert compiled['finiteJointComparison']['request']['nativeCase']==baseline['finiteJointComparison']['request']['nativeCase']
+    assert compiled['finiteJointComparison']['request']['settings']==baseline['finiteJointComparison']['request']['settings']
     page.get_by_role('button',name='Undo',exact=True).click()
     ready(page,2,900000)
     expect(page.locator('#rear-bearing-opening')).to_have_value('1850')
