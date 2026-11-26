@@ -1,5 +1,14 @@
 # Floor and portal reconciliation
 
+
+## Assembled load-path continuation —26 November2026
+
+The [source-bound Utility/Plant ground comparison](service-room-ground-load-development.md) now transfers the actual known room-floor stock through the same52-head grid, with explicit characteristic/factored gravity, opening normal contacts and independent force/moment closure. CLI/API/editor consume its saved source inputs. It does not transform the source-ground-zero house, select a raised foundation or qualify complete installed loads/receiver resistance.
+
+Existing clear masonry gravity bearings and upper roof seats are already represented. The tested lower-masonry replacement remains rejected; adding nominal bearing studies does not resolve the remaining stability/joint path. A nominal floor rotation release retaining the rigid vertical L footprint is also rejected as a false simplification: it retains hidden moment transfer. A truly seated slab would need physical gaps and finite horizontal ties, with their own enclosure and architectural burden; it is not presumed simpler than the conventional monolithic joint.
+
+The next joint comparison must evaluate an actual loaded finite joint in the complete house: correct removed stiffness/weight, exterior plate/membrane and chord transmission, physical wall cut planes, actual loads and all52 heads. The isolated contour presently omits outer band/chord faces and is not directly insertable. Its all-motion sensitivity is not loaded-joint convergence; further isolated refinement must not substitute for that assembled question. Complete physical joint resistance remains open.
+
 ## Current development disposition — 26 November 2026
 
 The [distributed SW slab-contour component](finite-floor-contour-development.md) exposes100 shell coordinates and12 wall-end coordinates on exact source-derived material. It preserves rigid motions, potential and characteristic gravity, and enters the existing saved floor stage through explicit optional controls and current source/request bindings. The current **graded140/70/50/35mm** comparisons retain all106 relative motions and show12.05566%,13.80010% and9.77752% energy sensitivity. The old uniform140/70/35 comparison is labelled history; the new graded35 run completed independently after the preserved interrupted attempt. Neither sequence supplies convergence or an inserted house joint. The native fixed-cut refinement still fails independently. No whole-slab increase is selected.
