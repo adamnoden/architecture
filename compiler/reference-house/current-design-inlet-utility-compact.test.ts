@@ -7,7 +7,7 @@ import {fileURLToPath} from 'node:url'
 import {compareInletRouteThermal} from './current-design/inlet-fixed-thermal.js'
 import {sha256SemanticFingerprint} from '../core/identity.js'
 import {inletEntrySideCuts} from './current-design/inlet-indoor-cuts.js'
-import {inletUtilityRoute,inletUtilityFixedEnvelopes,type UtilityRouteChoice} from './current-design/inlet-utility-route.js'
+import {inletUtilityRoute,inletUtilityFixedEnvelopes,compareInletUtilityPurge,type UtilityRouteChoice} from './current-design/inlet-utility-route.js'
 import {readInletCornerContext,utilityCornerBoundary,runUtilityCornerHost} from './current-design/inlet-utility-corner.js'
 import type {IndoorRoutesInput} from './current-design/inlet-indoor-routes.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
@@ -86,7 +86,7 @@ const hostWithMain=JSON.parse(execFileSync('python3',['-B',fileURLToPath(new URL
  up=result.paths.find(p=>p.id==='utility/upstream')!.physicalPolylineMm.slice().reverse() as P[],
  down=result.paths.find(p=>p.id==='utility/downstream')!.physicalPolylineMm as P[],
  pipe={outerDiameterMm:28.1,wallMm:1.38,elasticModulusMpa:117200,poissonRatio:.34,expansionMmMK:.017},
- thermalUp=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,1100],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:receipt.settings.pipeTemperatureChangeK}),
+ thermalUp=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,2100],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:receipt.settings.pipeTemperatureChangeK}),
  thermalDown=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1300],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:receipt.settings.pipeTemperatureChangeK})
 console.info('COMPACT_IAS_HOST_JOIN '+JSON.stringify(hostWithMain.independentUtilityMainJoin))
 console.info('COMPACT_THERMAL_COMPARISONS '+JSON.stringify({upstream:thermalUp,downstream:thermalDown}))
@@ -105,11 +105,23 @@ test('explicit horizontal/vertical guides use the same kernel in actual world ax
  assert.ok(Math.max(...thermalDown.independentSegmentBounds.guideForceN)<30)
  assert.ok(thermalUp.whollyRestrainedStraightControl.forceN>9000)
  assert.ok(Math.abs(thermalUp.whollyRestrainedStraightControl.stressMPa-79.696)<1e-7)
- const wrongAxis=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,1100],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:40})
+ const wrongAxis=compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,2100],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:40})
  assert.ok(Math.max(...wrongAxis.independentSegmentBounds.fixedForceN)>9000,'A vertical-guide shortcut on the horizontal pipe must not hide its restrained axial expansion.')
- assert.throws(()=>compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,1101],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:40}),/actual straight route/)
+ assert.throws(()=>compareInletRouteThermal({pathMm:up,fixedPointMm:up[0],guide:{pointMm:[9550,1000,2101],freeAxisMm:[0,1,0]},pipe,temperatureExcursionK:40}),/actual straight route/)
  const zero=compareInletRouteThermal({pathMm:down,fixedPointMm:down[0],guide:{pointMm:[9550,1900,1300],freeAxisMm:[0,0,1]},pipe,temperatureExcursionK:0})
  assert.ok(zero.independentSegmentBounds.fixedForceN.every(v=>v===0))
  assert.equal(thermalDown.actualJointGuideNetworkStiffnessAndFrictionQualified,false)
  assert.equal(thermalDown.guideFreeTravelIncludingBendingSolved,false)
+})
+
+const purgeJoin=compareInletUtilityPurge(result,old.purge)
+console.info('COMPACT_CURRENT_PURGE_JOIN '+JSON.stringify({minima:purgeJoin.minimumByKind,failures:purgeJoin.failures.slice(0,8),failureCount:purgeJoin.failures.length}))
+if(dir)writeFileSync(join(dir,'compact-current-purge-join.json'),JSON.stringify(purgeJoin,null,2))
+test('same actual compact main preserves current standing purge body, articulated arms, leaves and stay task',()=>{
+ assert.equal(purgeJoin.necessaryKnownPurgeGeometry,true,JSON.stringify(purgeJoin.minimumByKind))
+ const low=structuredClone(choice);low.upstreamVirtualCornersMm=[[10080,600,1100],[9550,600,1100]]
+ const rejected=compareInletUtilityPurge(inletUtilityRoute({choice:low,input,cuts,retained:rawRoutes.retainedServiceComparison.services}),old.purge)
+ assert.equal(rejected.necessaryKnownPurgeGeometry,false)
+ assert.ok(rejected.failures.some(r=>r.kind==='purge-body'&&r.afterTwoSettingsMm< -100))
+ assert.equal(purgeJoin.completeInstalledWindowAndPipeAcceptance,false)
 })

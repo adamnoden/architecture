@@ -250,3 +250,33 @@ export function inletUtilityFixedEnvelopes(r:ReturnType<typeof inletUtilityRoute
   ])
  ]
 }
+
+/** Current selected purge duty joined to the same installed main. Body is the
+ * finite upright source cylinder, not an AABB or an infinite/capsule end cap.
+ * Existing source leaves/stays are conservative envelopes; no weather/hardware
+ * or complete window acceptance is inferred. */
+export function compareInletUtilityPurge(result:ReturnType<typeof inletUtilityRoute>,purge:{body:readonly[number,number];bodyRadiusMM:number;bodyHeightMM:number;shoulder:P;fixedLowerGlassToLocalZ:number;guardTopMaximumLocalZ:number;fixedCentrePost:{normalMM:readonly[number,number]};leaves:readonly {hand:number;hinge:P;completeWHDepth:readonly[number,number,number];frames:readonly {angle:number;plan:readonly(readonly[number,number])[]}[];gripPath:readonly P[];articulatedArm:{elbow:P;capsuleRadiusMM:number};stay:{pivot:P;openPeg:P;closedPeg:P;completeBarSectionMM:readonly[number,number];completeVerticalEnvelopeMM:number}}[]}){
+ const settings=result.geometry.twoIndependentSettingsMm, members=inletUtilityFixedEnvelopes(result)
+ if(!tuple(purge.body,2)||!tuple(purge.shoulder,3)||purge.bodyRadiusMM!==300||purge.bodyHeightMM!==2000||purge.leaves.length!==2)throw Error('Actual selected Utility purge task required')
+ const rows:{id:string;kind:string;nominalMm:number;afterTwoSettingsMm:number}[]=[],add=(id:string,kind:string,n:number)=>rows.push({id,kind,nominalMm:n,afterTwoSettingsMm:n-settings}),
+ cyl=(b:B)=>{const h=Math.hypot(...[0,1].map(k=>Math.max(b[k]-purge.body[k],purge.body[k]-b[k]-b[k+3],0)))-purge.bodyRadiusMM,v=Math.max(b[2]-purge.bodyHeightMM,-b[2]-b[5]);return h>0||v>0?Math.hypot(Math.max(h,0),Math.max(v,0)):Math.max(h,v)}
+ for(const member of members){
+  add(member.id,'purge-body',cyl(member.boxMm))
+  for(const leaf of purge.leaves){
+   const elbow=leaf.articulatedArm.elbow,arm=leaf.articulatedArm.capsuleRadiusMM,hinge=leaf.hinge,offset=leaf.gripPath[0].map((v,k)=>v-hinge[k]),cover=Math.hypot(offset[0],offset[1])*Math.PI/180/2
+   add(member.id,'purge-upper-arm',exactSegmentBoxDistance(purge.shoulder,elbow,member.boxMm)-arm)
+   for(let deg=0;deg<=35;deg++){
+    const a=leaf.hand*deg*Math.PI/180,grip:P=[hinge[0]+offset[0]*Math.cos(a)-offset[1]*Math.sin(a),hinge[1]+offset[0]*Math.sin(a)+offset[1]*Math.cos(a),leaf.gripPath[0][2]]
+    add(member.id,'purge-forearm',exactSegmentBoxDistance(elbow,grip,member.boxMm)-arm-cover)
+   }
+   const leafCover=Math.hypot(leaf.completeWHDepth[0],leaf.completeWHDepth[2])*17.5*Math.PI/180/2
+   for(const frame of leaf.frames){const xs=frame.plan.map(p=>p[0]),ys=frame.plan.map(p=>p[1]),b:B=[Math.min(...xs),Math.min(...ys),hinge[2],Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys),leaf.completeWHDepth[1]];add(member.id,'purge-moving-leaf',gap(member.boxMm,b)-leafCover)}
+   const points=[leaf.stay.pivot,leaf.stay.openPeg,leaf.stay.closedPeg],lo=[0,1,2].map(k=>Math.min(...points.map(p=>p[k]))-10),hi=[0,1,2].map(k=>Math.max(...points.map(p=>p[k]))+10),stay:B=[lo[0],lo[1],lo[2],hi[0]-lo[0],hi[1]-lo[1],hi[2]-lo[2]]
+   add(member.id,'purge-stay',gap(member.boxMm,stay))
+  }
+  const xs=purge.leaves.map(l=>l.hinge[0]),normal=purge.fixedCentrePost.normalMM,fixed:B=[Math.min(...xs),normal[0],0,Math.max(...xs)-Math.min(...xs),normal[1]-normal[0],Math.max(purge.fixedLowerGlassToLocalZ,purge.guardTopMaximumLocalZ)]
+  add(member.id,'purge-fixed-opening-zone',gap(member.boxMm,fixed))
+ }
+ rows.sort((a,b)=>a.afterTwoSettingsMm-b.afterTwoSettingsMm)
+ return{schema:'had-utility-current-purge-join/1',twoIndependentSettingsMm:settings,minimumByKind:[...new Set(rows.map(r=>r.kind))].map(kind=>rows.find(r=>r.kind===kind)!),failures:rows.filter(r=>r.afterTwoSettingsMm< -1e-6),necessaryKnownPurgeGeometry:rows.every(r=>r.afterTwoSettingsMm>= -1e-6),completeInstalledWindowAndPipeAcceptance:false}
+}
