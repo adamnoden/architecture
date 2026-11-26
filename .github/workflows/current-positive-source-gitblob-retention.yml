@@ -1,0 +1,121 @@
+name: Retain exact observed current-source outputs as Git blobs
+
+on:
+  push:
+    branches: [work/current-positive-source-regeneration-20261126]
+    paths:
+      - '.github/workflows/current-positive-source-gitblob-retention.yml'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: current-positive-source-gitblob-retention-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  exact-gitblob-retention:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Authenticate observed artifacts and create Git blob objects only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -B - <<'PY'
+          import base64,hashlib,io,json,os,re,subprocess,urllib.error,urllib.request,zipfile
+          from pathlib import Path
+          folder=Path(os.environ['RUNNER_TEMP'])/'current-positive-gitblob-collector';folder.mkdir(parents=True,exist_ok=True)
+          api=os.environ['GITHUB_API_URL'];repo=os.environ['GITHUB_REPOSITORY']
+          if repo!='adamnoden/architecture':raise ValueError('Exact repository required')
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          specs=[{"id":15127092981,"name":"current-positive-distributed96-c38117826cecc86af1339bbaa5e9ba096920acc5","bytes":1708723,"sha256":"e312936a027e4c32f97361404541fcdf88062d36165f0490766e5b523db9b708","run":45838637856,"head":"c38117826cecc86af1339bbaa5e9ba096920acc5","paths":["project/str/studies/distributed-floor-compatibility-proof.json","project/str/studies/distributed-floor-compatibility.svg"],"job":"distributed96"},{"id":15126504403,"name":"current-positive-monolithic96-c38117826cecc86af1339bbaa5e9ba096920acc5","bytes":3132306,"sha256":"c8d6b76e98c640833534caafd9c1013cf712e139dbafded52e337f01b32388d8","run":45838637856,"head":"c38117826cecc86af1339bbaa5e9ba096920acc5","paths":["project/str/studies/monolithic-rc-native96-proof.json","project/str/studies/monolithic-rc-native96-floor.svg","project/str/studies/monolithic-rc-native96-barrier.svg","project/str/studies/monolithic-rc-governing-replay.json","project/str/studies/monolithic-rc-governing-actions.json","project/str/studies/monolithic-rc-translation-replay.json","project/str/studies/monolithic-rc-translation-actions.json"],"job":"monolithic96"},{"id":15127429178,"name":"current-positive-vertical-ten-2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","bytes":2875652,"sha256":"b03452f9a231abe7841cb7a91542af491bd7e6c5db09ecd3998642a42d1dd986","run":45840034483,"head":"2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","paths":["project/str/studies/vertical-rc-floor-proof.json","project/str/studies/vertical-rc-floor.svg"],"job":"vertical-ten"},{"id":15127499953,"name":"current-positive-upper-six-2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","bytes":2105431,"sha256":"cba9f60638d42b88d4669c4d3e339f1ab6b61240ca1595d0333086e84057f64e","run":45840034483,"head":"2c9416ecac70b5957f13e6eb8a2be7ac14e8c2de","paths":["project/str/studies/upper-roof-bearing-proof.json","project/str/studies/upper-roof-bearing.svg"],"job":"upper-six"}]
+          pinned={"project/str/studies/distributed_floor_compatibility.py":"7a8eb302813e8a509a1fac16ee29e7359d2c0bf9","project/str/studies/perforated_floor_condensation.py":"fbdea8993c4c00d863f2105c0a83f6ac0bf78c03","project/str/studies/current_zero_chord_control.py":"abff63ca41c5bfa01082a3443ed0900412e893f4","project/str/studies/current_zero_chord_control_test.py":"d09edced886fe556f4e0768def8a29301fb847f8"}
+          sha=lambda data:hashlib.sha256(data).hexdigest()
+          blob=lambda data:hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+          def get(url):
+           with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=60) as response:return json.load(response)
+          def post_blob(data):
+           # This is the sole write endpoint; no ref/tree/commit request is implemented.
+           url=f'{api}/repos/{repo}/git/blobs'
+           body=json.dumps({'content':base64.b64encode(data).decode(),'encoding':'base64'}).encode()
+           request=urllib.request.Request(url,data=body,headers={**headers,'Content-Type':'application/json'},method='POST')
+           with urllib.request.urlopen(request,timeout=120) as response:result=json.load(response)
+           if result.get('sha')!=blob(data):raise ValueError('Git blob response differs from exact observed bytes')
+           return result['sha']
+          for name,expected in pinned.items():
+           if blob(Path(name).read_bytes())!=expected:raise ValueError('Protected production source changed: '+name)
+          if subprocess.check_output(['git','status','--porcelain'],text=True):raise ValueError('Collector checkout must be clean')
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+           def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+          records=[];captured_sources=None;all_outputs={}
+          for spec in specs:
+           run=get(f'{api}/repos/{repo}/actions/runs/{spec["run"]}')
+           if run['head_sha']!=spec['head']:raise ValueError('Exact producer source head differs')
+           jobs=get(f'{api}/repos/{repo}/actions/runs/{spec["run"]}/jobs')['jobs']
+           matched=[job for job in jobs if job['name']==spec['job']]
+           if len(matched)!=1 or matched[0]['status']!='completed' or matched[0]['conclusion']!='success':raise ValueError('Exact independent producer job is not successful')
+           metadata=get(f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}')
+           if (metadata['name']!=spec['name'] or metadata['size_in_bytes']!=spec['bytes'] or metadata['expired']
+               or metadata['workflow_run']['id']!=spec['run'] or metadata['workflow_run']['head_sha']!=spec['head']
+               or metadata.get('digest')!='sha256:'+spec['sha256']):raise ValueError('Observed producer artifact identity changed')
+           url=f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}/zip'
+           opener=urllib.request.build_opener(NoRedirect())
+           try:
+            with opener.open(urllib.request.Request(url,headers=headers),timeout=60) as response:archive=response.read()
+           except urllib.error.HTTPError as response:
+            if response.code not in (301,302,303,307,308):raise
+            location=response.headers['Location']
+            if not location.startswith('https://'):raise ValueError('HTTPS artifact redirect required')
+            with urllib.request.urlopen(location,timeout=120) as body:archive=body.read()
+           if sha(archive)!=spec['sha256'] or len(archive)!=spec['bytes']:raise ValueError('Original artifact ZIP bytes differ')
+           with zipfile.ZipFile(io.BytesIO(archive)) as zipped:
+            names=zipped.namelist()
+            if len(set(names))!=len(names) or any(n.startswith('/') or '..' in n.split('/') or '\\' in n for n in names):raise ValueError('Nonunique or unsafe artifact member path')
+            def member(name):
+             if names.count(name)!=1:raise ValueError('Exact unique artifact member required: '+name)
+             return zipped.read(name)
+            before=json.loads(member('source-before.json'));after=json.loads(member('source-after.json'))
+            if before['sourceCommit']!=spec['head'] or after['sourceCommit']!=spec['head'] or before['exactProductionBlobs']!=pinned:raise ValueError('Protected source manifest differs')
+            identities=before['native58SHA256']
+            if len(identities)!=58 or captured_sources is not None and identities!=captured_sources:raise ValueError('Exact same current58 native source tuple required')
+            for name,identity in identities.items():
+             if not re.fullmatch(r'project/[A-Za-z0-9/_.-]+',name) or '..' in name.split('/') or sha(Path(name).read_bytes())!=identity:raise ValueError('Current native58 source differs: '+name)
+            captured_sources=identities
+            if any(after.get(k) is not True for k in ('native58UnchangedDuringExecution','allOtherTrackedSourcesUnchanged','accountAndCanonicalUnchanged')) or after.get('candidateAccepted') is not False:raise ValueError('Producer source protection failed')
+            if set(after['allowedGeneratedPaths'])!=set(spec['paths']) or set(after['outputs'])!=set(spec['paths']) or set(after['changedTrackedPaths'])-set(spec['paths']):raise ValueError('Generated producer scope changed')
+            for name,identity in before['trackedSHA256'].items():
+             if name not in spec['paths'] and sha(Path(name).read_bytes())!=identity:raise ValueError('Protected producer source/input differs: '+name)
+            artifact_record={k:spec[k] for k in ('id','name','bytes','sha256','run','head','job')};artifact_record['outputs']={}
+            for name in spec['paths']:
+             data=member('generated/'+name);identity=after['outputs'][name]
+             if len(data)!=identity['bytes'] or sha(data)!=identity['sha256']:raise ValueError('Actual generated bytes differ: '+name)
+             if name in all_outputs:raise ValueError('Duplicate output scope')
+             all_outputs[name]=data
+             artifact_record['outputs'][name]={'bytes':len(data),'sha256':sha(data),'gitBlob':blob(data)}
+            records.append(artifact_record)
+          # All artifacts/paths/source bytes are authenticated BEFORE any object is written.
+          manifest={'schema':'str-current-positive-source-gitblob-retention/1','collectorSourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'native58SHA256':captured_sources,'producerArtifacts':records,'outputs':{},'onlyGitBlobObjectsCreated':True,'commitTreeRefAccountCanonicalWrites':False,'candidateAccepted':False}
+          for name,data in all_outputs.items():
+           actual=post_blob(data)
+           manifest['outputs'][name]={'gitBlob':actual,'bytes':len(data),'sha256':sha(data)}
+          if subprocess.check_output(['git','status','--porcelain'],text=True):raise ValueError('Collector mutated its checkout')
+          (folder/'gitblob-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          print('CURRENT_POSITIVE_GITBLOBS '+json.dumps(manifest,separators=(',',':')),flush=True)
+          
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-positive-gitblob-retention-${{ github.sha }}
+          path: ${{ runner.temp }}/current-positive-gitblob-collector/
+          if-no-files-found: error
+          retention-days: 90
