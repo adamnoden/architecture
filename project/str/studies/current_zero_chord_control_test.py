@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 import unittest
 import numpy as np
-from current_zero_chord_control import GUARD,NEW_GUARD,OLD_GUARD,MEMBRANE,OLD_MEMBRANE,NEW_MEMBRANE,current_sources,derive_inputs,digest,floor,read,without_identities
+from current_zero_chord_control import GUARD,NEW_GUARD,OLD_GUARD,MEMBRANE,OLD_MEMBRANE,NEW_MEMBRANE,OLD_SCHUR,NEW_SCHUR,current_sources,derive_inputs,digest,floor,read,without_identities
 from distributed_floor_compatibility import _admit_distributed
 
 class ExactZeroChord(unittest.TestCase):
@@ -32,11 +32,13 @@ class ExactZeroChord(unittest.TestCase):
             case=copy.deepcopy(self.packet['cases']['zero']);floor(case)['edgeBand']['elasticModulusMPa']=value
             with self.subTest(value=value),self.assertRaises(ValueError):_admit_distributed(floor(case),self.owner)
 
-    def test_only_authorised_guard_byte_changed(self):
-        for path,old_guard,new_guard in ((GUARD,OLD_GUARD,NEW_GUARD),(MEMBRANE,OLD_MEMBRANE,NEW_MEMBRANE)):
+    def test_only_authorised_guards_and_index_repair_changed(self):
+        for path,changes in ((GUARD,((OLD_GUARD,NEW_GUARD),)),(MEMBRANE,((OLD_MEMBRANE,NEW_MEMBRANE),(OLD_SCHUR,NEW_SCHUR)))):
             text=Path(path).read_text()
-            self.assertEqual(text.count(new_guard),1);self.assertNotIn(old_guard,text)
-            self.assertEqual(hashlib.sha256(text.replace(new_guard,old_guard).encode()).hexdigest(),self.summary['sourceSHA256'][path])
+            for old_part,new_part in changes:
+                self.assertEqual(text.count(new_part),1);self.assertNotIn(old_part,text)
+                text=text.replace(new_part,old_part)
+            self.assertEqual(hashlib.sha256(text.encode()).hexdigest(),self.summary['sourceSHA256'][path])
 
     def test_inputs_change_only_fresh_identity_and_explicit_extra_chord(self):
         old_digest=digest(self.parent);packet=derive_inputs(self.parent,self.summary)
@@ -91,6 +93,56 @@ class ExactZeroChord(unittest.TestCase):
         for value in (-.1,.5,float('nan')):
             bad=copy.deepcopy(law);bad['poissonRatio']=value
             with self.subTest(poisson=value),self.assertRaises(ValueError):compile_perforated_floor(body,[],loops,ports,bad,250.)
+
+
+    def check_schur_against_dense_sparse_and_backwork(self,k,retained,order,f):
+        from perforated_floor_condensation import _schur,_sparse_operator,_reduced_force
+        matrix={i:{j:float(value) for j,value in enumerate(row)} for i,row in enumerate(k)}
+        before=copy.deepcopy(matrix);scale=[1.]*len(k);loads={i:float(v) for i,v in enumerate(f)}
+        condensed,reduced,steps=_schur(matrix,retained,scale,order,loads)
+        sparse,data=_sparse_operator(matrix,retained,scale)
+        py_force,py_constant=_reduced_force({'backend':'python','steps':steps,'scale':scale},retained,loads)
+        sp_force,sp_constant=_reduced_force({'backend':'scipy-sparse','sparse':data},retained,loads)
+        interior=order;kii=k[np.ix_(interior,interior)];kir=k[np.ix_(interior,retained)]
+        kri=k[np.ix_(retained,interior)];expected=k[np.ix_(retained,retained)]-kri@np.linalg.solve(kii,kir)
+        expected_force=f[retained]-kri@np.linalg.solve(kii,f[interior])
+        for actual in (condensed,sparse):np.testing.assert_allclose(actual,expected,atol=1e-12,rtol=1e-12)
+        for actual in (reduced,py_force,sp_force):np.testing.assert_allclose(actual,expected_force,atol=1e-12,rtol=1e-12)
+        self.assertAlmostEqual(py_constant,sp_constant,delta=1e-12)
+        applied={};remaining=copy.deepcopy(loads)
+        for index,pivot,neighbours in steps:
+            applied[index]=remaining.pop(index,0.)
+            for j,value in neighbours:remaining[j]=remaining.get(j,0.)-value*applied[index]/pivot
+        q=np.array([.3,-.2][:len(retained)]);u={i:float(value) for i,value in zip(retained,q)}
+        for index,pivot,neighbours in reversed(steps):
+            u[index]=(applied[index]-sum(value*u[j] for j,value in neighbours))/pivot
+        full=np.array([u[i] for i in range(len(k))])
+        np.testing.assert_allclose((k@full-f)[interior],np.zeros(len(interior)),atol=1e-12,rtol=0)
+        reaction=np.asarray(condensed)@q-np.asarray(reduced)
+        self.assertAlmostEqual(float(full@k@full),float(q@reaction+full@f),delta=1e-12)
+        self.assertEqual(before,matrix)
+        return np.asarray(condensed),np.asarray(reduced)
+
+    def test_roundoff_reverse_zero_edge_schur_reproducer(self):
+        k=np.array([[2.,1.,0.,0.],[1.,2.,1.,0.],[1e-16,1.,2.,1.],[0.,0.,1.,2.]])
+        self.assertGreater(float(np.linalg.eigvalsh((k+k.T)/2).min()),0.)
+        actual,force=self.check_schur_against_dense_sparse_and_backwork(k,[3],[0,1,2],np.array([1.,2.,3.,4.]))
+        np.testing.assert_allclose(actual,[[1.25]],atol=1e-12,rtol=0)
+        np.testing.assert_allclose(force,[2.5],atol=1e-12,rtol=0)
+
+    def test_strictly_symmetric_positive_schur_control(self):
+        a=np.array([[1.,2.,0.,0.,1.],[0.,1.,2.,0.,0.],[1.,0.,1.,2.,0.],[0.,1.,0.,1.,2.],[2.,0.,0.,1.,1.]])
+        k=a.T@a+np.eye(5)
+        self.check_schur_against_dense_sparse_and_backwork(k,[3,4],[0,1,2],np.arange(1.,6.))
+
+    def test_schur_does_not_skip_negative_singular_or_missing_duties(self):
+        from perforated_floor_condensation import _schur,_sparse_operator,positive_energy_modes
+        for pivot in (-1.,0.):
+            matrix={0:{0:pivot,1:0.},1:{0:0.,1:1.}}
+            with self.subTest(pivot=pivot),self.assertRaises(ValueError):_schur(matrix,[1],[1.,1.],[0])
+            with self.subTest(sparse=pivot),self.assertRaises(ValueError):_sparse_operator(matrix,[1],[1.,1.])
+        with self.assertRaises(ValueError):positive_energy_modes([[-1.]])
+        with self.assertRaises(KeyError):_schur({0:{0:2.,2:1.},1:{1:1.}},[1],[1.,1.,1.],[0])
 
 
 if __name__=='__main__':unittest.main()

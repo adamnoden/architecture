@@ -20,6 +20,13 @@ NEW_GUARD="band['axialRigidityKN'] < 0"
 MEMBRANE='project/str/studies/perforated_floor_condensation.py'
 OLD_MEMBRANE="math.isfinite(value) and value > 0 for key, value in law.items() if key != 'poissonRatio'"
 NEW_MEMBRANE="math.isfinite(value) and (value > 0 or key == 'edgeAxialRigidityKN' and type(value) in (int,float) and value == 0) for key, value in law.items() if key != 'poissonRatio'"
+OLD_SCHUR="""        for a, x in neighbours:
+            work[a].pop(index, None)
+            target = work[a]"""
+NEW_SCHUR="""        for target in work.values():
+            target.pop(index, None)
+        for a, x in neighbours:
+            target = work[a]"""
 SCHEMA='str-zero-extra-chord-W0-input/1'
 
 def encode(x):return json.dumps(x,sort_keys=True,separators=(',',':'),allow_nan=False).encode()
@@ -65,10 +72,13 @@ def derive_inputs(parent,summary):
         raise ValueError('Native inventory, finite methods or original runtime changed')
     changed=[p for p in identities if identities[p]!=summary['sourceSHA256'][p]]
     if set(changed)!={GUARD,MEMBRANE}:raise ValueError('Only the two explicitly authorised admission guards may change')
-    for path,old_guard,new_guard in ((GUARD,OLD_GUARD,NEW_GUARD),(MEMBRANE,OLD_MEMBRANE,NEW_MEMBRANE)):
+    for path,changes in ((GUARD,((OLD_GUARD,NEW_GUARD),)),(MEMBRANE,((OLD_MEMBRANE,NEW_MEMBRANE),(OLD_SCHUR,NEW_SCHUR)))):
         text=Path(path).read_text()
-        if text.count(new_guard)!=1 or old_guard in text or hashlib.sha256(text.replace(new_guard,old_guard).encode()).hexdigest()!=summary['sourceSHA256'][path]:
-            raise ValueError('Owning source change exceeds its exact zero-extra admission edit: '+path)
+        for old_part,new_part in changes:
+            if text.count(new_part)!=1 or old_part in text:raise ValueError('Unowned source edit: '+path)
+            text=text.replace(new_part,old_part)
+        if hashlib.sha256(text.encode()).hexdigest()!=summary['sourceSHA256'][path]:
+            raise ValueError('Owning source change exceeds exact authorised guards/index repair: '+path)
     old=parent['authoredNativeCase'];before=digest(parent)
     positive=bind_new_input(old,summary['sourceSHA256'],identities)
     if without_identities(positive)!=without_identities(old) or floor(positive)['boundaryCase']['windIndex']!=0 or floor(positive)['edgeBand']['axialRigidityKN']<=0:
@@ -85,7 +95,7 @@ def derive_inputs(parent,summary):
             'observerSHA256':summary['observerSHA256'],'runnerSHA256':sha('project/str/studies/current_zero_chord_control.py'),
             'authenticatedParentNativeInputSHA256':digest(old),'historicalReceiptSHA256':before,
             'sourceChanges':[{'path':p,'oldSHA256':summary['sourceSHA256'][p],'newSHA256':identities[p],
-                              'scope':'Only finite exact-zero additional axial-chord admission; numerical kernels unchanged'} for p in (GUARD,MEMBRANE)],
+                              'scope':('Finite exact-zero additional axial-chord admission' if p==GUARD else 'Finite exact-zero extra-chord admission and eliminated-column bookkeeping repair; pivot/fill/force formulas/order/tolerances unchanged')} for p in (GUARD,MEMBRANE)],
             'inputDerivation':'Authenticated nativeCase controls only, freshly bound through current authoritative source identities. Historical response arrays never supply assembly.',
             'currentSavedEngineeringDocumentAdmitted':False,
             'integrationDebt':'Exploratory branch only. Owning source-account/current-model identities and applicable consumers require legitimate migration before adoption.'}

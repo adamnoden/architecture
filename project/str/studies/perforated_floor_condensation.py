@@ -88,8 +88,9 @@ def _schur(matrix, retained, scale, order, load=None):
         applied = force.pop(index, 0.)
         for a,x in neighbours:
             force[a] = force.get(a, 0.)-x*applied/pivot
+        for target in work.values():
+            target.pop(index, None)
         for a, x in neighbours:
-            work[a].pop(index, None)
             target = work[a]
             for b, y in neighbours:
                 target[b] = target.get(b, 0.)-x*y/pivot

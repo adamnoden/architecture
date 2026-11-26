@@ -99,7 +99,7 @@ jobs:
               'W0RawSHA256':sha(raw),'W0GzipSHA256':sha(zipped),'sourceCommit':expected_head,'artifacts':records},indent=2)+'\n')
           print('PASS original96 summary bytes and full actual W0 raw/gzip identities')
           PY
-      - name: Check both zero admissions and positive concrete kernel before house work
+      - name: Check zero admissions, Schur recovery and concrete energy before house work
         run: |
           STR_ZERO_CHORD_PARENT="$ZERO_CHORD_EVIDENCE_DIR/case-00.json.gz" \
           STR_ZERO_CHORD_SUMMARY="$ZERO_CHORD_EVIDENCE_DIR/finite-signed-summary.json" \
