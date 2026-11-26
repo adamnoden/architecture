@@ -7,6 +7,9 @@ on:
       - 'project/str/studies/three_clevis.py'
       - 'project/str/studies/three_clevis_test.py'
       - 'project/str/studies/three-clevis-inputs.json'
+      - 'project/str/studies/three_clevis_box.py'
+      - 'project/str/studies/three_clevis_box_test.py'
+      - 'project/str/studies/three-clevis-box-inputs.json'
 permissions:
   contents: read
 concurrency:
@@ -34,6 +37,8 @@ jobs:
           fi
           cat "$CLEVIS_SCREEN_DIR/tests.log"
           python -B project/str/studies/three_clevis.py --out "$CLEVIS_SCREEN_DIR"
+          python -B project/str/studies/three_clevis_box_test.py
+          python -B project/str/studies/three_clevis_box.py --out "$CLEVIS_SCREEN_DIR"
           git diff --exit-code
       - name: Render the exact physical comparison
         run: |
@@ -43,6 +48,9 @@ jobs:
           google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
             --screenshot="$CLEVIS_SCREEN_DIR/three-clevis-plan.png" --window-size=1500,1080 \
             "file://$CLEVIS_SCREEN_DIR/three-clevis-plan.svg"
+          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars \
+            --screenshot="$CLEVIS_SCREEN_DIR/three-clevis-box-v-monolithic.png" --window-size=1500,1020 \
+            "file://$CLEVIS_SCREEN_DIR/three-clevis-box-v-monolithic.svg"
           python - <<'PY'
           import base64,os
           from pathlib import Path

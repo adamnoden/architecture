@@ -71,6 +71,18 @@ class ClevisControls(unittest.TestCase):
         self.assertLess(r['vonMisesMPa'],300)
         self.assertGreater(t.pin_screen(g,m,self.r['screenNormalForceKN']*1000)['vonMisesMPa'],1000)
 
+    def test_axial_contact_eccentricity_has_real_balanced_reactions(self):
+        g=copy.deepcopy(self.c['geometry']);g['cheekThicknessMm']=40.
+        n,fy=100000.,30000.;r=t.pin_screen(g,self.c['material'],n,0.,fy)
+        left,right=r['normalReactionPairForOneSidedAxialSlipN'];span=r['spanMm'];radius=g['pinDiameterMm']/2
+        self.assertGreater(left,0);self.assertGreater(right,0)
+        self.assertAlmostEqual(left+right,n,places=8)
+        self.assertAlmostEqual((right-left)*span/2,2*radius*fy,places=6)
+        # Centre cut immediately beyond the axial blade traction.
+        recovered=left*span/2+radius*fy+radius*fy
+        self.assertAlmostEqual(r['bendingStressMPa']*r['sectionModulusMm3'],recovered,places=6)
+        self.assertGreater(r['eccentricAxialFrictionBendingNmm'],0)
+
     def test_shoulder_and_matched_axis_are_real_requirements(self):
         g,v=self.c['geometry'],copy.deepcopy(self.c['movement'])
         self.assertTrue(t.movement(g,v)['allSpecifiedTravelGeometricallyPossible'])

@@ -1,0 +1,60 @@
+{
+  "schema": "str-three-clevis-box-inputs/1",
+  "status": "ONE UNSOLVED BOXED COMPARISON",
+  "parentFlatFamilyCommit": "3e033833636c4d9a2065fa49f54d31c59ae167f8",
+  "samePressureMinimumAndMaterials": true,
+  "box": {
+    "heightMm": 190,
+    "outwardWidthMm": 100,
+    "innerBearingFaceMm": 40,
+    "outerFaceMm": 10,
+    "topBottomMm": 10,
+    "frontClosureMm": 10,
+    "innerGapMm": 90,
+    "frontXMm": 562.5,
+    "rootNearXMm": 742.5,
+    "rootThicknessMm": 40,
+    "pinLengthMm": 220,
+    "retainerODMm": 80,
+    "retainerThicknessMm": 20,
+    "outerAccessHoleMm": 90,
+    "pinExtractionMm": 270,
+    "rootDistributionPlateWidthMm": 550,
+    "rootSteelUnionIsOneFabricatedCross": true,
+    "independentOverlappingPlatesCredited": false,
+    "anchorAlongOffsetsMm": [
+      -250,
+      -200,
+      -100,
+      -50,
+      0,
+      50,
+      100,
+      200,
+      250
+    ],
+    "anchorXNominalMm": 16,
+    "anchorXEnvelopeMm": 18,
+    "anchorYNominalMm": 14,
+    "anchorYEnvelopeMm": 16,
+    "anchorStraightMm": 1000,
+    "bearingTubeOrOuterFaceFalseExtraPinSupportCredited": false
+  },
+  "monolithicComparison": {
+    "perimeterWidthMm": 200,
+    "perimeterTotalDepthMm": 350,
+    "beamBottomZMm": 3170,
+    "coreWidthMm": 300,
+    "coreGrowsInwardOnly": true,
+    "wholeFloorThickened": false,
+    "groundDownstandComparisonDepthMm": 350
+  },
+  "evidence": {
+    "completeResistanceAccepted": false,
+    "productAccepted": false,
+    "physicalAccepted": false,
+    "ownerAccepted": false,
+    "houseAccepted": false,
+    "houseSolveExecuted": false
+  }
+}

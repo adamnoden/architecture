@@ -126,12 +126,20 @@ def pin_screen(g,m,n,v=0.,axial=0.):
     d,b=g['pinDiameterMm'],g['pinEndBoreMm'];a=area(d)-area(b)
     z=math.pi*(d**4-b**4)/(32*d)
     span=g['cheekInsideGapMm']+g['cheekThicknessMm']
-    resultant=math.hypot(n,v);moment=resultant*span/4
+    resultant=math.hypot(n,v)
+    # Adverse axial slip: blade traction at -R and one fork traction at +R.
+    # Exact simply-supported beam equilibrium gives maxM=P*L/4+R*|Fy|.
+    # The normal reactions shift by2R*Fy/L; atmu=.6 both remain compressive.
+    eccentric=abs(axial)*d/2
+    moment=resultant*span/4+eccentric
     # Full24mm axial bore at every section is conservative against two36mm end bores.
     bending=moment/z;normal=abs(axial)/a;shear=resultant/(2*a)
     vm=math.sqrt((bending+normal)**2+3*shear**2)
     return {'resultantTransverseN':resultant,'spanMm':span,'annularAreaMm2':a,'sectionModulusMm3':z,
         'bendingStressMPa':bending,'doubleShearMPa':shear,'axialStressMPa':normal,
+        'eccentricAxialFrictionBendingNmm':eccentric,
+        'normalReactionPairForOneSidedAxialSlipN':[n/2-abs(axial)*d/span,n/2+abs(axial)*d/span],
+        'oneSidedAxialSlipHasCompressionOnlyNormalReactions':n/2>=abs(axial)*d/span,
         'vonMisesMPa':vm,'yieldUtilization':vm/m['comparisonYieldMPa']}
 
 def movement(g,v):
@@ -415,7 +423,7 @@ def drawing(c,value):
     s.text(40,72,'UNCALCULATED HOUSE / NO PRODUCT OR PHYSICAL ACCEPTANCE /200mm recessed-plate route REJECTED','sub red')
     s.text(40,101,f'Actual floor3170–3370; FIRST3450. Pressure-only minimum94.581kN; component screen{value["screenNormalForceKN"]:.4f}kN.','note')
     s.text(40,135,'SW WEST SECTION /300mm local-core alternative','sub')
-    ox,oy,scale=65,740,1.1
+    ox,oy,scale=65,740,.85
     def q(x,z):return ox+(x-150)*scale,oy-(z-3000)*scale
     def rect(x,z,w,h,fill):
         X,Y=q(x,z+h);s.rect(X,Y,w*scale,h*scale,fill)
@@ -436,18 +444,18 @@ def drawing(c,value):
     for x in (331.5,393.5):rect(x,3000,14,540,'#a1262f')
     rect(522.5,3438,260,12,'#626b74')
     for z,label in ((3450,'FIRST3450'),(3370,'slab3370'),(3170,'seat3170'),(3130,'local seat recess40')):
-        X,Y=q(170,z);s.line(X,Y,1160,Y,'#aab2b9','stroke-dasharray="4 4"');s.text(1180,Y+4,label,'small')
+        X,Y=q(170,z);s.line(X,Y,980,Y,'#aab2b9','stroke-dasharray="4 4"');s.text(895,Y-5,label,'small')
     s.text(65,175,'Original200 continuity+cage retained inside prospective300 concrete.','note blue')
     s.text(65,199,'50mm added each face;40mm recessed plates retain50mm adverse cover.','note blue')
     s.text(65,223,'Core change, outside110mm glass profile, footing/room/bodyG require actual redesign.','small red')
-    s.text(550,280,'D60 pin /24mm end bores','note blue')
-    s.text(550,304,'40blade;64×104vertical slot','note')
-    s.text(550,328,'2×20cheeks /90inside gap','note')
-    s.text(550,352,'4M30 through-rods /250×250×40plates','note')
-    s.text(550,376,'16H16 local floor anchor bars:1000straight','note')
-    s.text(550,400,'H14/56 transverse mat replaces local H16 field','note')
-    s.text(550,424,'Pocket interrupts gravity seat: no normal force through key','small red')
-    s.text(550,448,'Plate/prying is a local beam-strip model, not3D concrete proof','small red')
+    s.text(1000,280,'D60 pin /24mm end bores','note blue')
+    s.text(1000,304,'40blade;64×104vertical slot','note')
+    s.text(1000,328,'2×20cheeks /90inside gap','note')
+    s.text(1000,352,'4M30 through-rods /250×250×40plates','note')
+    s.text(1000,376,'16H16 local floor anchor bars:1000straight','note')
+    s.text(1000,400,'H14/56 transverse mat replaces local H16 field','note')
+    s.text(1000,424,'Pocket interrupts gravity seat: no normal force through key','small red')
+    s.text(1000,448,'Plate/prying is a local beam-strip model, not3D concrete proof','small red')
     s.text(40,800,'PIN AXIS / along-wall travel and renewal','sub')
     x0,y0,k=70,890,1.3
     def rr(a,b,w,h,fill):s.rect(x0+a*k,y0+b*k,w*k,h*k,fill)
