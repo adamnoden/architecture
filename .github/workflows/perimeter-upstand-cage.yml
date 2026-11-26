@@ -26,7 +26,11 @@ jobs:
       - name: Check source-bound corner profiles and honest ordinary anchorage bounds
         run: |
           mkdir -p /tmp/perimeter-upstand-cage
-          python -B project/str/studies/perimeter_upstand_cage_test.py 2>&1 | tee /tmp/perimeter-upstand-cage/tests.log
+          if ! python -B project/str/studies/perimeter_upstand_cage_test.py > /tmp/perimeter-upstand-cage/tests.log 2>&1; then
+            cat /tmp/perimeter-upstand-cage/tests.log
+            exit 1
+          fi
+          cat /tmp/perimeter-upstand-cage/tests.log
           python -B project/str/studies/perimeter_upstand_cage.py --out /tmp/perimeter-upstand-cage
           git diff --exit-code
       - uses: actions/upload-artifact@v6
