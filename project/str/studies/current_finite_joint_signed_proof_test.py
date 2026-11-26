@@ -1,8 +1,8 @@
-import copy,json,tempfile,unittest
+import copy,json,tempfile,unittest,os
 from pathlib import Path
 from current_finite_joint_signed_proof import current_document_identity,require_document_bundle_identity,require_document_snapshot,digest,digest_bytes
 
-DOCUMENT=Path('project/ccr/studies/working-house-comparison.json')
+DOCUMENT=Path(os.environ.get('STR_CURRENT_FINITE_DOCUMENT','project/ccr/studies/working-house-comparison.json'))
 
 class SavedDocumentProvenance(unittest.TestCase):
     @classmethod

@@ -45,6 +45,8 @@ jobs:
         run: |
           "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/rear_bearing_saved_proof.py prepare --folder "$RUNNER_TEMP/rear-bearing-capture"
       - name: Verify admission and meaningful existing physical controls before native execution
+        env:
+          STR_CURRENT_FINITE_DOCUMENT: ${{ runner.temp }}/rear-bearing-capture/parent-W31-document.json
         run: |
           "$STR_FINITE_SOLID_PYTHON" -B -m py_compile project/str/studies/rear_bearing_saved_proof.py project/str/studies/current_finite_joint_signed_proof.py project/str/studies/current_finite_joint_signed_proof_test.py
           "$STR_FINITE_SOLID_PYTHON" -B -m unittest discover -s project/str/studies -p rear_bearing_plan_test.py -v > "$RUNNER_TEMP/rear-bearing-capture/plan-tests.log" 2>&1
