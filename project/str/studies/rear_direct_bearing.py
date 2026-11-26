@@ -15,7 +15,7 @@ from rear_bearing_plan import admit_choices, geometry
 from joined_successor_kernel import rectangle_section
 from seated_wet_support import (_rectangle_subtract, bearing_quadrature,
     route_free_patch, attachment_station_audit)
-from rc_floor_house_loads import _consistent_line, _add, _family_wrench
+from rc_floor_house_loads import _consistent_line, _consistent_point, _add, _family_wrench
 from vertical_rc_floor import grid_member_geometry, grid_vertical_point_terms, clear_ground_core_rectangles,intersect
 from foundation_solid_weight import disjoint_solid_union
 from lower_core_bodies import (serial_body_law, ground_receiver_footprints,
@@ -116,6 +116,117 @@ def _finish_direct_joints(model,raw,gravity_factor):
         'scope':'Complete captured physical-G and solved normal/body origins on actual coincident-master grid zones. Six-component end maps coalesce at the existing named head; forces are not reapplied. Internal joint stress/cut allocation and cap/pile resistance remain unqualified.'}
 
 
+def lintel_point_trace(model, member_names, point):
+    """Existing ordinary beam point work map at a real integration point."""
+    from rc_floor_house_loads import consistent_member_point_load
+    if len(point)!=3 or any(type(v) not in (int,float) or not math.isfinite(v) for v in point):
+        raise ValueError('Finite actual lintel contact point required')
+    choices=[]
+    for name in member_names:
+        member=model['members'][name];a,b=member['physicalStartMm'],member['physicalEndMm']
+        if a[1]<=point[1]<=b[1]:
+            if not a[1]<b[1] or abs(point[0]-a[0])>member['breadthMm']/2+1e-9:
+                raise ValueError('Contact lies outside its actual positive lintel segment')
+            vector=consistent_member_point_load(model,member,point,[0.,0.,1.])
+            terms=[[member['a'],vector[:6]],[member['b'],vector[6:]]]
+            nodal={}
+            for node,row in terms:_add(nodal,node,row)
+            actual=_family_wrench(model,nodal);expected=[0.,0.,1.,point[1]/1000,-point[0]/1000,0.]
+            if max(abs(a-b) for a,b in zip(actual,expected))>1e-8:
+                raise ValueError('Ordinary lintel point trace lost physical force/first moments')
+            choices.append({'memberId':name,'pointXYZMm':list(point),'upperTerms':terms,
+                'unitEquivalentNodalKN_KNmm':vector,'stationMm':point[1]-a[1],
+                'memberLengthMm':b[1]-a[1],'mapping':'existing-consistent-Timoshenko-point-work-dual',
+                'integrationPointPromotedToStructuralNode':False,'nodal':nodal})
+    if not choices:raise ValueError('Actual lintel point lacks a real containing segment')
+    if len(choices)>2:raise ValueError('Ambiguous actual lintel segment catalogue')
+    if len(choices)==2:
+        keys=set(choices[0]['nodal'])|set(choices[1]['nodal'])
+        if any(max(abs(a-b) for a,b in zip(choices[0]['nodal'].get(n,[0.]*6),choices[1]['nodal'].get(n,[0.]*6)))>1e-8 for n in keys):
+            raise ValueError('Adjacent real segments disagree at their shared physical section')
+    result=choices[0];result.pop('nodal')
+    return result
+
+
+def register_solved_lintel_contacts(model, raw):
+    """Recover internal support point loads; never apply them again globally."""
+    from rc_floor_house_loads import _consistent_point
+    data=model['rearDirectBearing'];family='rear-bearing-solved-top'
+    if 'solvedTopLoadRecovery' in data:raise ValueError('Solved lintel contact recovery applied twice')
+    if model['families'].get(family):raise ValueError('Internal support recovery must not add applied global loads')
+    before=hashlib.sha256(json.dumps([model['model'].loads,model['families'],raw],allow_nan=False).encode()).hexdigest()
+    states={r['id']:r for r in raw['springs']};physical=[];nodal={}
+    if len(states)!=len(raw['springs']):raise ValueError('Duplicate actual spring identity')
+    for row in data['bearingBodies']:
+        spring=states[row['id']+'/top'];force=-spring['forceKN'];point=row['upperPointXYZMm'];name=row['upperMemberId']
+        terms=lintel_point_trace(model,model['seatedWetSupport']['receiver']['memberNames'],point)
+        if terms['memberId']!=name or terms['upperTerms']!=row['upperTerms']:raise ValueError('Actual support point trace changed')
+        vector=_consistent_point(model,{},family,name,model['members'][name],point,[0.,0.,force],apply=False)
+        card=model['memberPointLoads'][family][name][-1];card.update(id=row['id']+'/top-force',sourceSpringId=spring['id'])
+        for node,term in row['upperTerms']:_add(nodal,node,[force*v for v in term])
+        physical.append({'id':card['id'],'sourceSpringId':spring['id'],'memberId':name,'pointXYZMm':list(point),
+            'forceOnBeamKN':[0.,0.,force],'momentKNmm':[0.,0.,0.],'equivalentNodalKN_KNmm':vector,
+            'factor':1.,'appliedToGlobalModel':False})
+    after=hashlib.sha256(json.dumps([model['model'].loads,model['families'],raw],allow_nan=False).encode()).hexdigest()
+    if before!=after:raise ValueError('Point-load recovery changed solved raw response or applied loads')
+    expected=[0.]*6
+    for row in physical:
+        p=row['pointXYZMm'];f=row['forceOnBeamKN'][2]
+        for i,v in enumerate([0.,0.,f,p[1]*f/1000,-p[0]*f/1000,0.]):expected[i]+=v
+    actual=_family_wrench(model,nodal);residual=[a-b for a,b in zip(actual,expected)]
+    if max(map(abs,residual))>1e-7:raise ValueError('Solved contact point-work or physical wrench lost')
+    data['solvedTopLoadRecovery']={'family':family,'physicalRows':physical,'actualContactCount':len(physical),
+        'physicalWrenchKN_KNm':expected,'equivalentNodalWrenchKN_KNm':actual,'wrenchResidualKN_KNm':residual,
+        'rawResponseAndAppliedLoadsUnchanged':True,'appliedToGlobalModel':False,'factor':1.}
+    verify_solved_lintel_contacts(model,raw)
+
+
+def verify_solved_lintel_contacts(model, raw):
+    data=model['rearDirectBearing'];ledger=data['solvedTopLoadRecovery'];family=ledger['family']
+    if family!='rear-bearing-solved-top' or ledger['factor']!=1. or ledger['appliedToGlobalModel'] is not False or ledger['rawResponseAndAppliedLoadsUnchanged'] is not True:
+        raise ValueError('Solved contact recovery must remain passive and factor1')
+    if data['memberRecoveryMultipliers'].get(family)!=1. or model['families'].get(family):
+        raise ValueError('Solved internal support force must neither be reloaded nor refactored')
+    states={r['id']:r for r in raw['springs']};rows=data['bearingBodies'];expected={r['id']+'/top-force':r for r in rows}
+    samples={}
+    for side,rectangle in enumerate([*data['geometry']['bearingRectanglesXYMm'],*data['retainedCrossWallSeatRectanglesXYMm']]):
+        for index,(x,y,area) in enumerate(bearing_quadrature(rectangle,data['choices']['bearingQuadratureOrder'])):
+            samples[f'REAR-BEARING/{side}/{index}']=([x,y],area)
+    if len(rows)!=len(samples) or {r['id'] for r in rows}!=set(samples):raise ValueError('Actual independent physical bearing quadrature catalogue changed')
+    for row in rows:
+        if (row['xyMm'],row['areaMm2'])!=samples[row['id']]:raise ValueError('Physical bearing integration point or area changed')
+    cards=[(name,c) for name,cs in model.get('memberPointLoads',{}).get(family,{}).items() for c in cs]
+    physical=ledger['physicalRows']
+    if len(cards)!=len(expected) or {c['id'] for _,c in cards}!=set(expected) or len({c['id'] for _,c in cards})!=len(cards):
+        raise ValueError('Missing or duplicated actual solved support point origin')
+    if len(physical)!=len(expected) or {r['id'] for r in physical}!=set(expected):
+        raise ValueError('Solved point-load result catalogue differs')
+    by_id={r['id']:r for r in physical};equivalent={}
+    for name,card in cards:
+        row=expected[card['id']];point=row['upperPointXYZMm'];state=states[row['id']+'/top'];force=-state['forceKN']
+        trace=lintel_point_trace(model,model['seatedWetSupport']['receiver']['memberNames'],point)
+        if state['terms']!=[*trace['upperTerms'],[row['bodyTopNodeId'],[0,0,-1,0,0,0]]]:raise ValueError('Actual solved normal spring lost its point-work trace')
+        if row['xyMm']!=point[:2] or name!=row['upperMemberId'] or name!=trace['memberId'] or trace['upperTerms']!=row['upperTerms']:
+            raise ValueError('Actual fibre point or containing beam trace changed')
+        if card['pointXYZMm']!=point or card['forceKN']!=[0.,0.,force] or card['momentKNmm']!=[0.,0.,0.] or card['sourceSpringId']!=state['id']:
+            raise ValueError('Solved support point card changed physical force/position')
+        expected_vector=[force*v for v in trace['unitEquivalentNodalKN_KNmm']]
+        target=equivalent.setdefault(name,[0.]*12)
+        for i,v in enumerate(expected_vector):target[i]+=v
+        saved=by_id[card['id']]
+        if saved['memberId']!=name or saved['pointXYZMm']!=point or saved['forceOnBeamKN']!=card['forceKN'] or saved['sourceSpringId']!=state['id'] or saved['factor']!=1. or saved['appliedToGlobalModel'] is not False or max(abs(a-b) for a,b in zip(saved['equivalentNodalKN_KNmm'],expected_vector))>1e-8:
+            raise ValueError('Saved support point work map differs from actual spring reaction')
+    actual=model.get('memberEquivalentLoads',{}).get(family,{})
+    if set(actual)!=set(equivalent) or any(max(abs(a-b) for a,b in zip(actual[n],equivalent[n]))>1e-8 for n in actual):
+        raise ValueError('Recovered support equivalent nodal loads omitted or doubled')
+    bedding=[c for cs in model.get('memberPointLoads',{}).get('physical-G',{}).values() for c in cs if c.get('id','').endswith('/bedding-top-G')]
+    ids={r['id']+'/bedding-top-G':r for r in rows}
+    if len(bedding)!=len(ids) or {c['id'] for c in bedding}!=set(ids):raise ValueError('Missing or doubled actual bedding top G origins')
+    for card in bedding:
+        row=ids[card['id']]
+        if card['pointXYZMm']!=row['upperPointXYZMm'] or card['forceKN']!=[0.,0.,-row['beddingPhysicalGKN']/2] or card['momentKNmm']!=[0.,0.,0.]:
+            raise ValueError('Actual bedding top G force or physical point changed')
+
 class DirectBearing:
     def __init__(self, choices, plan, masonry_law, density, original_cores=()):
         self.choices=admit_choices(choices);self.plan=plan
@@ -141,14 +252,14 @@ class DirectBearing:
         self.model=model;c=self.choices;p=self.plan;frame=model['model'];loads=model['families']['physical-G']
         old_wrench=_family_wrench(model,loads);x=p['axisXMm'];r=p['lintelRectangleXYMm'];lo,hi=r[1],r[3]
         z=(p['lintelTopZMm']+p['lintelBottomZMm'])/2
-        # Every pad/bearing quadratureY is a real member station. This prevents
-        # within-element spring forces being mistaken for endpoint-only cuts.
+        # Physical bearing quadrature remains independent of beam/CST nodes.
+        # Ordinary work-dual beam point traces carry all real integration points.
         samples=[]
         for side,rectangle in enumerate(self.seats):
             for i,(px,py,area) in enumerate(bearing_quadrature(rectangle,c['bearingQuadratureOrder'])):
                 samples.append({'id':f'REAR-BEARING/{side}/{i}','xyMm':[px,py],
                     'areaMm2':area,'side':side})
-        axes={lo,hi,*[f['xyMm'][1] for f in samples],*required}
+        axes={lo,hi,*required}
         if any(not lo<=a<=hi for a in axes):raise ValueError('Real lintel attachment station leaves its body')
         for a,b in zip(sorted(axes),sorted(axes)[1:]):
             n=max(1,math.ceil((b-a)/c['maxBeamPitchMm']))
@@ -198,20 +309,20 @@ class DirectBearing:
             frame.springs.append({'id':identifier+'/body','terms':[(node,[0,0,1,0,0,0]),
                 *[(n,[-v for v in row]) for n,row in route['terms']]],
                 'stiffness':body['bodyAxialStiffnessKNPerMm'],'mode':'bilateral','gap':0.})
-            station=next(s for s in stations if s['u']==py);beam_node=station['node']
-            beam=frame.nodes[beam_node]
-            upper=[0,0,1,py-beam[1],beam[0]-px,0]
-            frame.springs.append({'id':identifier+'/top','terms':[(beam_node,upper),(node,[0,0,-1,0,0,0])],
+            upper_trace=lintel_point_trace(model,names,[px,py,p['lintelBottomZMm']])
+            upper_terms=upper_trace['upperTerms'];upper_member=upper_trace['memberId']
+            frame.springs.append({'id':identifier+'/top','terms':[*upper_terms,[node,[0,0,-1,0,0,0]]],
                 'stiffness':body['topContactStiffnessKNPerMm'],'mode':'compression','gap':0.})
             weight=body['bodyPhysicalGKN'];joint_weight=area*c['jointThicknessMm']*c['jointUnitWeightKNPerM3']/1e9
             _add(loads,node,[0,0,-(weight+joint_weight)/2,0,0,0])
             for n,row in route['terms']:_add(loads,n,[-weight*v/2 for v in row])
-            _add(loads,beam_node,[-joint_weight*v/2 for v in upper])
+            _consistent_point(model,loads,'physical-G',upper_member,model['members'][upper_member],upper_trace['pointXYZMm'],[0.,0.,-joint_weight/2])
+            model['memberPointLoads']['physical-G'][upper_member][-1]['id']=identifier+'/bedding-top-G'
             origin=identifier+'/base-G'
             record_grid_gravity(model,'rear-bearing/base-G',route['memberId'],sample['xyMm'],-weight/2,route['terms'],origin)
             expected_base.append({'id':origin,'memberId':route['memberId'],'centroidXYMm':sample['xyMm'],'physicalDownKN':weight/2})
-            body_rows.append({**sample,'bodyTopNodeId':node,'beamNodeId':beam_node,'receiverId':route['memberId'],
-                'receiverTerms':copy.deepcopy(route['terms']),'upperTerms':[(beam_node,upper)],'serialLaw':body,
+            body_rows.append({**sample,'bodyTopNodeId':node,'upperMemberId':upper_member,'upperPointXYZMm':upper_trace['pointXYZMm'],'receiverId':route['memberId'],
+                'receiverTerms':copy.deepcopy(route['terms']),'upperTerms':copy.deepcopy(upper_terms),'serialLaw':body,
                 'beddingPhysicalGKN':joint_weight})
             joint_g+=joint_weight;body_g+=weight
         finish_grid_gravity_adapter(model,'rear-bearing/base-G',expected_base)
@@ -240,7 +351,11 @@ class DirectBearing:
         model['rearDirectBearing']={'choices':self.choices,'geometry':p,'bearingBodies':body_rows,
             'retainedCrossWallSeatRectanglesXYMm':self.wings,
             'fullFootprintCoverage':coverage,'lintelPhysicalGKN':lintel_g,'bearingBodyPhysicalGKN':body_g,
-            'beddingPhysicalGKN':joint_g,'sourceAddedWrenchKN_KNm':expected,
+            'beddingPhysicalGKN':joint_g,'pointTraceRepresentation':{'actualIntegrationFibreCount':len(body_rows),'actualBeamStationCount':len(stations),
+                'minimumBeamSegmentLengthMm':min(b['u']-a['u'] for a,b in zip(stations,stations[1:])),
+                'maximumBeamSegmentLengthMm':max(b['u']-a['u'] for a,b in zip(stations,stations[1:])),
+                'maxBeamPitchMm':c['maxBeamPitchMm'],'quadratureCannotAddStructuralNodes':True,
+                'mapping':'existing ordinary consistent Timoshenko point trace; no nearest receiver or added restraint'},'sourceAddedWrenchKN_KNm':expected,
             'sourceOwnGResidualKN_KNm':residual,'newMasonryHorizontalOrTensionStiffness':False,
             'newRCPosts':0,'newFoundations':0,'bearingMomentFixityCredited':False}
         return [receiver]
@@ -259,7 +374,7 @@ class DirectBearing:
 
     def finish(self, raw, g_factor):
         from grid_origin_recovery import _validate_adapter,recover_wet_receiving_grid
-        model=self.model;data=copy.deepcopy(model['rearDirectBearing']);states={r['id']:r for r in raw['springs']}
+        model=self.model;verify_solved_lintel_contacts(model,raw);data=copy.deepcopy(model['rearDirectBearing']);states={r['id']:r for r in raw['springs']}
         ledger=copy.deepcopy(model['wetGridOrigins']);expected=[]
         for row in data['bearingBodies']:
             name=row['id'];body=states[name+'/body'];top=states[name+'/top']
@@ -364,13 +479,17 @@ def run_rear_direct_bearing(native_case, choices, finite_settings, root,checkpoi
         return result
     def continuous_case(model,owner,name,multipliers):
         multipliers['rear-lintel-Q']=1.
+        if model['families'].get('rear-bearing-solved-top'):raise ValueError('Recovery-only support family must contain no global applied loads')
+        model['families'].setdefault('rear-bearing-solved-top',{})
+        multipliers['rear-bearing-solved-top']=1.
+        model['rearDirectBearing']['memberRecoveryMultipliers']=copy.deepcopy(multipliers)
         return continuous(model,owner,name,multipliers)
     def solved(frame,data):
         for origin in adapter.model['wetGridOrigins']['points']+adapter.model['wetGridOrigins']['lines']:
             if not {'id','adapter','memberId','family'}<=set(origin):raise ValueError('Incomplete actual source origin schema before solving')
         verify_direct_joint_origins(adapter.model['rearDirectJointOrigins'],
             base['verticalCase']['monolithicCase']['houseCase']['boundary']['physicalGFactor'])
-        raw=solve(frame,data);captured['raw']=raw;return raw
+        raw=solve(frame,data);register_solved_lintel_contacts(adapter.model,raw);captured['raw']=raw;return raw
     try:
         native._build_base=built;native._free_top_load=free_load;native.fresh_net_floor_live_load=fresh_live;native.solve_vertical_frame=solved
         native.solve_continuous_rc_case=continuous_case
@@ -392,7 +511,7 @@ def run_rear_direct_bearing(native_case, choices, finite_settings, root,checkpoi
             checkpoint_path=Path(stream.name)
     checkpoint_path=Path(checkpoint_path);model=adapter.model
     snapshot={k:model[k] for k in ('request','rearDirectBearing','rearDirectJointOrigins','wetGridOrigins',
-        'lowerCoreBodies','foundationWeight','seatedWetSupport','memberEquivalentLoads')}
+        'lowerCoreBodies','foundationWeight','seatedWetSupport','memberEquivalentLoads','memberPointLoads','memberDistributedLoads','members','families')}
     snapshot['verticalFloor']={'fibres':model['verticalFloor']['fibres']}
     snapshot['frame']={k:getattr(model['model'],k) for k in ('nodes','loads','springs')}
     pending={'schema':'str-rear-direct-bearing-native-checkpoint/1','postProcessingComplete':False,

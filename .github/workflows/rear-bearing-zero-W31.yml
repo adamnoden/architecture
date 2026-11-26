@@ -1,4 +1,4 @@
-name: Diagnose actual zero-extra-EA seated and rear W31
+name: Prove ordinary-point rear bearing in actual zero-EA W31
 on:
   push:
     branches: [work/zerg-rear-bearing-recovery-20261126]
@@ -7,6 +7,11 @@ on:
       - 'project/str/studies/rear_bearing_zero_pair.py'
       - 'project/str/studies/rear_bearing_saved_request.ts'
       - 'project/str/studies/rear_bearing_interface_probe.py'
+      - 'project/str/studies/rear_direct_bearing.py'
+      - 'project/str/studies/rear_direct_bearing_replay.py'
+      - 'project/str/studies/rear_direct_bearing_test.py'
+      - 'project/str/studies/rear_lintel_point_trace_test.py'
+      - 'project/str/studies/rear_bearing_saved_proof.py'
 permissions:
   contents: read
   actions: read
@@ -36,6 +41,7 @@ jobs:
           p=Path(os.environ['RUNNER_TEMP'])/'rear-bearing-zero-W31/retained-W31.zip'
           assert hashlib.sha256(p.read_bytes()).hexdigest()=='6c15eec478a617d16efa52c2f2ceed61737c3205a4cad4c711132615e4516ae5'
           PY
+          gh api repos/adamnoden/architecture/actions/artifacts/15124951816/zip > "$RUNNER_TEMP/rear-bearing-zero-W31/retained-zero-W31.zip"
           git fetch --depth=1 origin a8decb9845498fdb864121ee57d0caba16b98002
       - uses: actions/setup-node@v7
         with:
@@ -53,21 +59,33 @@ jobs:
           python -m venv --system-site-packages "$RUNNER_TEMP/finite-runtime"
           "$RUNNER_TEMP/finite-runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
           echo "STR_FINITE_SOLID_PYTHON=$RUNNER_TEMP/finite-runtime/bin/python" >> "$GITHUB_ENV"
+      - name: Test physical point-work traces and independent dense beam contact and cut oracles
+        run: |
+          "$STR_FINITE_SOLID_PYTHON" -B -m unittest discover -s project/str/studies -p rear_direct_bearing_test.py -v > "$RUNNER_TEMP/rear-bearing-zero-W31/physical-tests.log" 2>&1
+          "$STR_FINITE_SOLID_PYTHON" -B -m unittest discover -s project/str/studies -p rear_lintel_point_trace_test.py -v > "$RUNNER_TEMP/rear-bearing-zero-W31/point-trace-tests.log" 2>&1
       - name: Verify exact shared saved-case equivalence and narrowly derive new native INPUT identities
         run: |
           "$STR_FINITE_SOLID_PYTHON" -B -m py_compile project/str/studies/rear_bearing_zero_pair.py project/str/studies/rear_bearing_interface_probe.py
           "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/rear_bearing_zero_pair.py prepare --folder "$RUNNER_TEMP/rear-bearing-zero-W31" > "$RUNNER_TEMP/rear-bearing-zero-W31/prepare.log" 2>&1
           npm run typecheck > "$RUNNER_TEMP/rear-bearing-zero-W31/typecheck.log" 2>&1
-      - name: Fresh actual zero-extra-EA seated W31 and pre-guard raw checkpoint
+      - name: Authenticate and independently replay exactly matched retained zero-EA seated W31
         id: seated
         continue-on-error: true
         run: |
           "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/rear_bearing_zero_pair.py seated --folder "$RUNNER_TEMP/rear-bearing-zero-W31" > "$RUNNER_TEMP/rear-bearing-zero-W31/seated.log" 2>&1
-      - name: Fresh actual zero-extra-EA rear W31 and pre-guard raw checkpoint
+      - name: Fresh ordinary-point rear W31 and pre-guard raw checkpoint
         id: rear
         continue-on-error: true
         run: |
           "$STR_FINITE_SOLID_PYTHON" -B project/str/studies/rear_bearing_zero_pair.py rear --folder "$RUNNER_TEMP/rear-bearing-zero-W31" > "$RUNNER_TEMP/rear-bearing-zero-W31/rear.log" 2>&1
+      - name: Reject actual omitted and doubled support loads and false cut evidence
+        if: steps.rear.outcome == 'success'
+        env:
+          STR_REAR_BEARING_CAPTURE: ${{ runner.temp }}/rear-bearing-zero-W31/zero-rear-W31-native.json
+          STR_REAR_BEARING_CHECKPOINT: ${{ runner.temp }}/rear-bearing-zero-W31/zero-rear-raw-checkpoint.json
+          STR_REAR_BEARING_CONTROL: ${{ runner.temp }}/rear-bearing-zero-W31/zero-seated-W31-native.json
+        run: |
+          "$STR_FINITE_SOLID_PYTHON" -B -m unittest discover -s project/str/studies -p rear_direct_bearing_replay_test.py -v > "$RUNNER_TEMP/rear-bearing-zero-W31/actual-replay-adverse-tests.log" 2>&1
       - name: Compare independently replayed complete houses
         if: steps.seated.outcome == 'success' && steps.rear.outcome == 'success'
         run: |

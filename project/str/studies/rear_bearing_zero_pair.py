@@ -43,7 +43,7 @@ def without_sources(value):
     return value
 def prepare(folder):
     import rear_bearing_saved_proof as shared
-    extra=[READER,PROBE,METHOD]
+    extra=[READER,PROBE,METHOD,'project/str/studies/rear_lintel_point_trace_test.py']
     shared.OWNED.update({p:None for p in extra});shared.CONSUMERS.extend(extra);shared.prepare(folder)
     archive=folder/'retained-W31.zip'
     if sha(archive)!=ZIP_SHA:raise ValueError('Retained exact full-CLI W31 artifact ZIP identity differs')
@@ -120,6 +120,25 @@ def execute(folder,name):
     from current_finite_rc_joint import method_identities,runtime_versions
     if load_source(Path('.'))['identities']!=packet['sourceSHA256'] or method_identities(Path('.'))!=packet['methodSHA256'] or runtime_versions()!=packet['runtime']:
         raise ValueError('Actual paired sources/runtime changed')
+    if name=='seated':
+        archive=folder/'retained-zero-W31.zip'
+        if sha(archive)!='9be9d30d90849fe4eef97e3799dd81cccb34d6afef6b3896abd7f2adade5083c':raise ValueError('Exact completed zero seated reference archive changed')
+        with zipfile.ZipFile(archive) as z:
+            result=json.loads(z.read('zero-seated-W31-native.json'))
+            historical_input=json.loads(z.read('zero-W31-paired-input.json'))
+            diagnostic=json.loads(z.read('seated-interface-diagnostic.json'))
+        if historical_input['nativeCase']!=packet['nativeCase'] or result['authoredNativeCase']!=packet['nativeCase'] or any(result[k]!=packet[k] for k in ('settings','sourceSHA256','methodSHA256','runtime')):
+            raise ValueError('Seated reference is not exactly the same actual native58/finite6/settings/input case')
+        from current_finite_joint_replay import replay
+        from current_finite_joint_signed_proof import check_observation
+        check=replay(result);check_observation({'observerSHA256':sha('project/str/studies/finite_joint_normal_observer.py')},result)
+        write(folder/'zero-seated-W31-native.json',result);write(folder/'zero-seated-W31-replay.json',check)
+        write(folder/'seated-interface-diagnostic.json',diagnostic)
+        write(folder/'seated-reference-provenance.json',{'runId':45834355568,'artifactId':15124951816,'zipSHA256':sha(archive),
+            'sourceCommit':'31c26061d6ebc3944ec2c69f6c4d4672957ae265','completeActualReferenceUnmodified':True,
+            'sameActualNative58Finite6RuntimeAndNativeCase':True,'usedAsForceIncrement':False,'newSolveClaimed':False})
+        print('REAR_AUTHENTICATED_ZERO_SEATED_REFERENCE '+json.dumps(check,allow_nan=False),flush=True)
+        return
     import floor_section_model as native
     from rear_bearing_interface_probe import diagnose
     from rear_direct_bearing import run_rear_direct_bearing,identities
@@ -129,7 +148,7 @@ def execute(folder,name):
     def checked(model,raw,mid):
         diagnostic=diagnose(model,raw,mid)
         write(folder/(name+'-interface-diagnostic.json'),diagnostic)
-        snapshot={k:model[k] for k in ('request','joinedFloor','housePressure','lowerCoreBodies','foundationWeight','memberEquivalentLoads')}
+        snapshot={k:model[k] for k in ('request','joinedFloor','housePressure','lowerCoreBodies','foundationWeight','memberEquivalentLoads','memberPointLoads','memberDistributedLoads','members','families')}
         for key in ('rearDirectBearing','rearDirectJointOrigins','wetGridOrigins','seatedWetSupport'):
             if key in model:snapshot[key]=model[key]
         snapshot['verticalFloor']={'fibres':model['verticalFloor']['fibres']}
@@ -149,7 +168,11 @@ def execute(folder,name):
             # Retain the complete result before any new replay.
             write(folder/'zero-rear-W31-native.json',result)
             from rear_direct_bearing_replay import replay as rear_replay
-            check=rear_replay(result,read(folder/'zero-rear-raw-checkpoint.json'),Path('.'))
+            checkpoint=read(folder/'zero-rear-raw-checkpoint.json')
+            check=rear_replay(result,checkpoint,Path('.'))
+            from current_finite_joint_signed_proof import check_observation,check_all_rear_bodies,rear_body_catalogue
+            check_observation({'observerSHA256':sha('project/str/studies/finite_joint_normal_observer.py')},result['finiteHouseResult'])
+            check['allOrdinaryTailAndBearingBodyReplay']=check_all_rear_bodies({'rearBodyCatalogue':rear_body_catalogue(checkpoint)},result,checkpoint)
         inner=result['finiteHouseResult'] if name=='rear' else result
         if inner['audit']['retainedSteelChordEAKN']!=0. or inner['audit']['explicitConcreteBandEAKN']!=231000.:raise ValueError('Zero extra steel must preserve actual RC231000kN axial rigidity')
         write(folder/('zero-'+name+'-W31-native.json'),result);write(folder/('zero-'+name+'-W31-replay.json'),check)
@@ -164,7 +187,7 @@ def aggregate(folder):
     from rear_direct_bearing import compare_seated_reference
     control=read(folder/'zero-seated-W31-native.json');rear=read(folder/'zero-rear-W31-native.json')
     summary={'schema':'str-rear-zero-extra-EA-W31-pair/1','input':read(folder/'zero-W31-paired-input.json'),
-        'matchedHouseComparison':compare_seated_reference(rear,control),
+        'matchedHouseComparison':compare_seated_reference(rear,control),'seatedReferenceProvenance':read(folder/'seated-reference-provenance.json'),
         'independentMaterialAndLoadDifference':material_and_load_difference(rear,control,Path('.')),
         'seatedInterface':read(folder/'seated-interface-diagnostic.json'),'rearInterface':read(folder/'rear-interface-diagnostic.json'),
         'currentSavedEngineeringDocumentAdmitted':False,'sourceAccountMigrationRequired':True,

@@ -109,8 +109,16 @@ def replay(capture,checkpoint,root):
     factor=capture['authoredNativeCase']['bearingCase']['masonryCase']['verticalCase']['monolithicCase']['houseCase']['boundary']['physicalGFactor']
     actual=adapter.finish(checkpoint['rawResponse'],factor)
     member=capture['finiteHouseResult']['native']['nativeVertical']['native']
-    actual['lintelMemberCuts']=[r for r in member['memberCuts'] if r['memberId'].startswith('REAR-LINTEL/')]
-    actual['lintelInteriorMemberCuts']=[r for r in member['interiorMemberCuts'] if r['memberId'].startswith('REAR-LINTEL/')]
+    from rc_floor_house_loads import recovered_member_actions,_physical_cut_rows,_interior_member_cuts,member_load_equilibrium
+    multipliers=model['rearDirectBearing']['memberRecoveryMultipliers']
+    recovered=recovered_member_actions(model,checkpoint['rawResponse'],multipliers)
+    lintels={k:v for k,v in model['members'].items() if k.startswith('REAR-LINTEL/')}
+    shadow={**model,'members':lintels}
+    actual['lintelMemberCuts']=_physical_cut_rows(model,recovered,lintels)
+    actual['lintelInteriorMemberCuts']=_interior_member_cuts(shadow,recovered,multipliers)
+    compare_values(actual['lintelMemberCuts'],[r for r in member['memberCuts'] if r['memberId'].startswith('REAR-LINTEL/')],'nativeLintelEnds')
+    compare_values(actual['lintelInteriorMemberCuts'],[r for r in member['interiorMemberCuts'] if r['memberId'].startswith('REAR-LINTEL/')],'nativeLintelInteriorPointJumps')
+    member_load_equilibrium(shadow,recovered,multipliers)
     compare_values(actual,capture['actualReplacement'],'actualReplacement')
     grid_cuts=actual['receivingGridCuts']
     if not grid_cuts['physicalElementCutsAvailable']:raise ValueError('Actual new rear grid cuts remain incomplete')

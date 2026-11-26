@@ -65,13 +65,29 @@ class PhysicalAdapterControls(unittest.TestCase):
         self.assertTrue(all(s['mode']==('compression' if s['id'].endswith('/top') else 'bilateral') for s in frame.springs))
         self.assertTrue(all(s['gap']==0 for s in frame.springs))
 
-    def test_every_bearing_point_is_a_real_lintel_section(self):
-        model,_,_,_=self.built();stations=model['seatedWetSupport']['receiver']['stations']
+    def test_bearing_quadrature_uses_real_beam_point_traces_without_structural_nodes(self):
+        model,_,plan,_=self.built();stations=model['seatedWetSupport']['receiver']['stations']
+        self.assertEqual(len(stations),6)
         for row in model['rearDirectBearing']['bearingBodies']:
-            self.assertIn(row['xyMm'][1],[s['u'] for s in stations])
-            self.assertEqual(model['model'].nodes[row['beamNodeId']][1],row['xyMm'][1])
+            member=model['members'][row['upperMemberId']]
+            self.assertLessEqual(member['physicalEndMm'][1]-member['physicalStartMm'][1],500.)
+            self.assertLessEqual(member['physicalStartMm'][1],row['xyMm'][1])
+            self.assertGreaterEqual(member['physicalEndMm'][1],row['xyMm'][1])
+            self.assertEqual(row['upperPointXYZMm'],[*row['xyMm'],plan['lintelBottomZMm']])
+            self.assertNotIn(row['xyMm'][1],[s['u'] for s in stations])
+            self.assertEqual(len(row['upperTerms']),2)
         with self.assertRaisesRegex(ValueError,'twice'):
             DirectBearing(choices_defaults(),self.model()[2],{'masonryModulusMPa':1000.,'jointNormalComplianceMmPerMPa':.01},20.).build(model)
+
+    def test_contact_quadrature_does_not_refine_beam_or_membrane_ports(self):
+        model,members,plan=self.model()
+        settings={**choices_defaults(),'bearingQuadratureOrder':8}
+        with patch('rear_direct_bearing.grid_member_geometry',return_value=members):
+            DirectBearing(settings,plan,{'masonryModulusMPa':1000.,'jointNormalComplianceMmPerMPa':.01},20.).build(model)
+        self.assertEqual(len(model['rearDirectBearing']['bearingBodies']),128)
+        self.assertEqual(len(model['seatedWetSupport']['receiver']['stations']),6)
+        self.assertEqual(len(model['joinedFloor']['floor']['ports']),6)
+        self.assertTrue(model['rearDirectBearing']['pointTraceRepresentation']['quadratureCannotAddStructuralNodes'])
 
     def test_old_wet_rc_and_overlapping_source_masonry_replaced_once(self):
         _,_,p,adapter=self.built()
