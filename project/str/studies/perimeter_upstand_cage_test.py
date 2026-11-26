@@ -147,6 +147,14 @@ class CageControls(unittest.TestCase):
         before=next(x for x in bounds if x['layer']=='X-top')['mandrelBearingStressCapMPa']
         after=next(x for x in p.material_bounds(c)['ordinary350Anchorage'] if x['layer']=='X-top')['mandrelBearingStressCapMPa']
         self.assertLess(after,before)
+    def test_ordinary_bond_and_standard_tail_follow_actual_authored_end(self):
+        c=copy.deepcopy(self.c);c['geometry']['ordinaryFloorVerticalEndZMm']-=10
+        bound=p.material_bounds(c)
+        self.assertEqual(bound['current140MandrelMinimumStraightTailMm'],62)
+        self.assertFalse(bound['current140FitsChosen5Phi'])
+        before=next(x for x in self.r['materialBounds']['ordinary350Anchorage'] if x['layer']=='X-top')
+        after=next(x for x in bound['ordinary350Anchorage'] if x['layer']=='X-top')
+        self.assertAlmostEqual(after['basicTensionBondLengthInsideBandMm'],before['basicTensionBondLengthInsideBandMm']-10)
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')

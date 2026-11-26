@@ -409,7 +409,7 @@ def material_bounds(c):
         'noCrossBarExemptionBearingStressCapMPa':(2*radius-g['beamBarOutsideMm'])*m['concreteCompressionMPa']/(area(g['beamBarNominalMm'])*(1/beam_ab+1/(2*g['beamBarNominalMm']))),
         'actualNewCombinedForceDemandAccepted':False} for label,radius in zip(('outer','inner'),g['beamPlanRadiiMm'])]
     layers=floor_layers(c);top=g['slabZMm'][0]+g['ordinaryBandDepthMm']
-    end=top-g['floorNominalSurfaceCoverMm']-g['floorBarOutsideMm']/2
+    end=g['ordinaryFloorVerticalEndZMm']
     r=(g['ordinaryFloorMandrelMm']+g['floorBarOutsideMm'])/2
     ordinary=[]
     for name,z in layers.items():
