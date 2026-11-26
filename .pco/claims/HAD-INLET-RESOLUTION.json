@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T13:00:50.000Z",
-  "expiresAt": "2026-11-26T13:45:50.000Z",
+  "heartbeatAt": "2026-11-26T13:23:42.000Z",
+  "expiresAt": "2026-11-26T14:08:42.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
@@ -36,8 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "1628 merged;1629@867e preserves verifieddrain/bridge. TestedSEcheckpoint87d retained. WestWIP3c79d255 protected; firsthosttypepass/11of12puretests,knownnorthassertionfailed; nofullwestpass.",
-    "next": "Finishweststationcrew/spools/headrenewal/thermal/support proof via boundedhostrunner, thenfreshnotchedground125. Fix1629actualbrowserplanfailurebeforefullCI/preflight.",
-    "blocker": "Executorunavailable; northroute rejected, fullwestinstallation and2historicalforcepins unresolved."
+    "evidence": "1629@5ab92bc0 unmerged; verifieddrain/bridge retained. SE87d protected. Westcompactroute45825253523 types/14testsPASS,5.1235m vs13.7895m. Furthercompactwestwallvalve maydeletebank/carriage; completeinstallationnotyetproved.",
+    "next": "Finishcompactwallvalvegeometry/operation/coldstrip/thermal/passivefault/backfeed. RetainexplicitKv/materialconditions; freshnotchedgroundcapturesbeforeforces. Merge1629onlyafterfullCI/preflight.",
+    "blocker": "CatalogueKv/massnotproven; fullUtilityjoin+historicalforcepinsopen. Localexecutorunavailable, boundedhostproofactive."
   }
 }
