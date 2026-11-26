@@ -1,0 +1,68 @@
+name: Authenticate immutable historical three-body ground specimen
+
+on:
+  push:
+    branches: [work/current-ground-history-auth-20261126]
+    paths:
+      - '.github/workflows/current-ground-historical-authentication.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  original-history-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+          cache: pip
+          cache-dependency-path: project/str/studies/*requirements.txt
+      - name: Install existing pinned pure replay runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          mkdir -p "$RUNNER_TEMP/historical-ground-auth"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/project/str/studies" >> "$GITHUB_ENV"
+      - name: Replay exact original specimen and challenge archive, source object and anchor tampering
+        run: |
+          python -B project/str/studies/service_room_ground_history_test.py > "$RUNNER_TEMP/historical-ground-auth/history-controls.log" 2>&1
+          python -B project/str/studies/service_room_ground_proof.py --check > "$RUNNER_TEMP/historical-ground-auth/historical-replay.log" 2>&1
+          python -B project/str/studies/service_room_ground_test.py > "$RUNNER_TEMP/historical-ground-auth/unchanged-pure-ground-controls.log" 2>&1
+          python -B - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          import service_room_ground_proof as replay
+          root=Path('.');source,case=replay.historical_inputs(root)
+          receipt=replay.PROOF.read_bytes();archive=replay.ARCHIVE.read_bytes()
+          assert receipt==replay.frozen_blob(root,replay.PROOF_PATH)
+          assert archive==replay.frozen_blob(root,replay.ARCHIVE_PATH)
+          value={'schema':'str-immutable-three-body-authentication/1','frozenOriginalCommit':replay.FROZEN_REF,'originalNative58SHA256':source['identities'],'originalReceiptSHA256':hashlib.sha256(receipt).hexdigest(),'originalArchiveSHA256':hashlib.sha256(archive).hexdigest(),'originalBytesUnchanged':True,'currentNativeApplicability':False,'currentTwoRoomCredit':False,'newWaterUnionCredit':False,'candidateAccepted':False}
+          (Path(os.environ['RUNNER_TEMP'])/'historical-ground-auth/scope.json').write_text(json.dumps(value,indent=2)+'\n')
+          print('PASS immutable original58/source/method/HAD specimen; no current two-room, native or new-water credit',flush=True)
+          PY
+          git diff --exit-code
+      - name: Show actual replay/control logs
+        if: always()
+        run: |
+          python -B - <<'PY'
+          import os
+          from pathlib import Path
+          for p in sorted((Path(os.environ['RUNNER_TEMP'])/'historical-ground-auth').glob('*.log')):
+           print('HISTORICAL_GROUND_LOG '+p.name,flush=True);print(p.read_text(errors='replace')[-30000:],flush=True)
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: historical-three-body-auth-${{ github.sha }}
+          path: ${{ runner.temp }}/historical-ground-auth/
+          if-no-files-found: error
+          retention-days: 90
