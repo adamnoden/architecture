@@ -102,6 +102,7 @@ export function plantTankedWalkingSurface(i:Input){
  add('Plant/frame-minimum-I-versus-sharp-geometry','mm4',f.minimumBeamIMm4,fBeam.I)
  add('Plant/frame-single-wheel-bending','MPa',beamStress,m.allowableComparisonMPa)
  add('Plant/frame-single-wheel-deflection','mm',beamDelta,2)
+ add('Plant/frame-foot-pad-conditional-contact','MPa',3*(f.maximumSinglePostDesignN/pad**2)*((pad-post[0])/2+two)**2/f.footPadThicknessMm**2,m.allowableComparisonMPa)
  add('Plant/frame-post-axial','MPa',f.maximumSinglePostDesignN/fPost.area,m.allowableComparisonMPa)
  add('Plant/frame-post-pinned-Euler','N',f.maximumSinglePostDesignN,Math.PI**2*m.elasticModulusMPa*fPost.I/postLength**2)
  const bridgeTop=walk+c.bridgeAboveWalkingMm,plateBottom=bridgeTop-b.thicknessMm,railTop=plateBottom,railBottom=railTop-b.railSectionWHtMm[1],crossTop=railBottom,crossBottom=crossTop-b.crossBeamSectionWHtMm[1],
@@ -177,7 +178,7 @@ export function plantTankedWalkingSurface(i:Input){
  const apparatusInterfaces=(i.apparatus??[]).map(a=>{
   const ap=a.homePlanMm
   if(!a.id||!a.source?.path||!/^[0-9a-f]{40}$/.test(a.source.gitBlob)||!a.source.objectPath||!finite([...ap,a.bodyBottomAbsoluteMm,a.bodyHeightMm,a.normalFilledMassUpperKg,a.requiredPanelLiftMm])||Math.min(ap[2],ap[3],a.bodyHeightMm,a.normalFilledMassUpperKg,a.requiredPanelLiftMm)<=0||a.bodyBottomAbsoluteMm<walk||ap[0]<r[0]||ap[1]<r[1]||ap[0]+ap[2]>r[0]+r[2]||ap[1]+ap[3]>r[1]+r[3])throw Error('Actual captured apparatus geometry, mass and absolute datum required')
-  const side=120,padT=8,capT=30,postWHt=[30,30,3] as const,pv=section(postWHt),maxPostN=7000,
+  const side=f.footPadSideMm,padT=f.footPadThicknessMm,capT=30,postWHt=[30,30,3] as const,pv=section(postWHt),maxPostN=f.maximumSinglePostDesignN,
    inset=side/2+two,candidateX=xs.slice(1).map((v,k)=>(v+xs[k])/2).filter(x=>x>=ap[0]+inset&&x<=ap[0]+ap[2]-inset),
    footX=candidateX.length>=2?[candidateX[0],candidateX.at(-1)!]:[],footY=[ap[1]+inset,ap[1]+ap[3]-inset],before=parts.length
   if(footX.length!==2||footY[1]<=footY[0])return{id:a.id,source:a.source,necessarySeparateStandGeometry:false,diagnostics:['PLANT_WALK/apparatus-perimeter-stand-cannot-fit-real-footprint'],actualCompleteSupportAccepted:false}
@@ -228,12 +229,20 @@ export function plantTankedWalkingSurface(i:Input){
   if(!a.necessarySeparateStandGeometry)a.diagnostics.push('PLANT_WALK/apparatus-stand-hits-walking-frame')
  }
  if(compressionSupport){const actualFootKg=Math.max(...parts.filter(p=>p.kind==='bridge-pad').map(p=>p.metalVolumeMm3/1e9*m.densityKgM3));add('Plant/bridge-matched-foot-wheel-and-dead','N',footCombinedN+Math.max(0,actualFootKg-oneBridgeFootKg)*9.81,f.maximumSinglePostDesignN)}
+ const standThermalClearance=compressionSupport?apparatusInterfaces.flatMap(a=>{
+  if(!('standParts'in a)||!a.standParts||!a.homePlanMm)return[]
+  const alpha=m.thermalExpansionPerK??NaN,temperature=g.maximumUniformTemperatureExcursionK??NaN,cover=[r[2]+a.homePlanMm[2],r[3]+a.homePlanMm[3],2*(walk-i.panMinimumMm)].map(v=>v*alpha*temperature),
+   stand=parts.filter(p=>a.standParts!.includes(p.id)),others=parts.filter(p=>!a.standParts!.includes(p.id)&&p.kind!=='grate'&&p.kind!=='hardware'),
+   gap=(a:B,b:B)=>{const d=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return d.some(v=>v>0)?Math.hypot(...d.map(v=>Math.max(0,v))):Math.max(...d)},
+   checks=stand.flatMap(p=>others.map(q=>{const b=p.boxMm.map((v,k)=>k<3?v-cover[k]:v+2*cover[k-3]) as unknown as B;return{part:p.id,existing:q.id,afterSettingsAndSteelThermalMm:gap(b,q.boxMm)-two}}))
+  return[{id:a.id,coefficientPerK:alpha,temperatureExcursionK:temperature,relativeSteelMovementCoverEachAxisMm:cover,minimumAfterSettingsAndSteelThermalMm:Math.min(...checks.map(p=>p.afterSettingsAndSteelThermalMm)),necessaryConditionalSteelThermalSeparation:finite([alpha,temperature,...cover])&&checks.every(p=>p.afterSettingsAndSteelThermalMm>=0),fixedSlidingDatumsPanAndRCResponseAndPressureGuidesAccepted:false,scope:'Bounding steel free expansion from any datum within the room plus independent apparatus-stand footprint; mechanical restraint, RC/F movement and force-driven sway are separate.',failures:checks.filter(p=>p.afterSettingsAndSteelThermalMm<0)}]
+ }):[]
  const bruteMm3=parts.filter(p=>p.kind!=='hardware').reduce((n,p)=>n+clippedVolume(p.boxMm,r,i.initialWaterMm,i.maximumWaterMm),0),metalMm3=parts.reduce((n,p)=>n+p.metalVolumeMm3,0)-totalJointMm3,
   // Extra RHS metal/void is deliberately charged as SOLID for this normal
   // design mass upper. Actual fabrication/section tolerances remain unearned.
   fullEnvelopeMm3=parts.filter(p=>p.kind!=='hardware').reduce((n,p)=>n+(p.kind.includes('RHS')||p.kind==='RHS-beam'||p.kind==='RHS-post'?volume(p.boxMm):p.metalVolumeMm3),0)-totalJointMm3,
   hardwareKg=(panels.length+bridgePieces.length+beamSegments.length)*g.hardwareBudgetEachKg+apparatusInterfaces.reduce((n,a)=>n+('standHardwareBudgetKg'in a?(a.standHardwareBudgetKg??0):0),0),hardwareVolumeUpperL=hardwareKg/m.densityKgM3*1000,waterUpperL=(bruteMm3-wetJointMm3)/1e6+hardwareVolumeUpperL
- return{...(compressionSupport?{compressionSupport}:{}),deadLoadBounds:{panelBarDeadN,frameDeadN,bridgePlateKg,bridgeRailKg,oneCrossKg,railCombinedN,crossCombinedN,footCombinedN,allDeadAtWorstPoint:true,RHSFullOuterBoxMassUpper:true},schema:'had-Plant-tanked-walking-surface/1',sourceDigest:sha256SemanticFingerprint(i),apparatusInterfaces,apparatusFilledMassUpperKg,normalMassExcludesFilledApparatus:true,parts,panels,bridgePieces,beamSegments,locators,walkingTopMm:walk,bridgeTopMm:bridgeTop,
+ return{...(compressionSupport?{compressionSupport,standThermalClearance}:{}),deadLoadBounds:{panelBarDeadN,frameDeadN,bridgePlateKg,bridgeRailKg,oneCrossKg,railCombinedN,crossCombinedN,footCombinedN,allDeadAtWorstPoint:true,RHSFullOuterBoxMassUpper:true},schema:'had-Plant-tanked-walking-surface/1',sourceDigest:sha256SemanticFingerprint(i),apparatusInterfaces,apparatusFilledMassUpperKg,normalMassExcludesFilledApparatus:true,parts,panels,bridgePieces,beamSegments,locators,walkingTopMm:walk,bridgeTopMm:bridgeTop,
   solidsIncrementUpperL:waterUpperL,referenceMetalKg:metalMm3/1e9*m.densityKgM3,normalMassUpperKg:fullEnvelopeMm3/1e9*m.densityKgM3+hardwareKg+(compressionSupport?.normalMassUpperKg??0),
   volumeLedger:{sumFullOuterClippedMm3:bruteMm3,exactCrossBarIntersectionSubtractedMm3:wetJointMm3,joinedBridgeOrHardwareOverlapSubtracted:false,RHSVoidCountedAsSolid:true,closedDuctVoidCreditLitres:0,hardwareBelowWaterIncluded:true,apparatusGrateIntersectionsCountedTwiceConservatively:apparatusInterfaces.some(a=>'panelCutoutIntersections'in a&&!!a.panelCutoutIntersections?.length),hardwareSolidSteelVolumeUpperL:hardwareVolumeUpperL,hardwareRequirement:'Solid steel fasteners/handles only; whole mass budget counted wet. Any enclosed cavity requires a separately authored external volume bound.'},
   geometry:{panelCount:panels.length,panelSizeMm:[px,py],walkingRailSectionKind:solid?'solid':'rhs',wallParameterAppliesToWalkingRail:!solid,actualSolidSegmentFirstRestAndToolProofAccepted:false,postCentreXMm:xs,postCentreYMm:ys,panSupportLevelRangeMm:[i.panMinimumMm,i.panMaximumMm],postBoxesUseLowestPanForConservativeMass:!compressionSupport,actualPerFootPanContactNotInvented:true,...(compressionSupport?{postBoxesUseActualMatchedPanFaces:true,footContactQualificationAccepted:false}:{}),matchedPanelSeat:{relativeErrorMm:relativeSeatError,radialFitMm:radialClearance,thermalMovementMm:thermalMovement,completeFitBudgetMm:fitBudget,minimumBearingMm:minimumSeat,requiredFirstVerticalReleaseMm:requiredFirstLift,oneRoundOneLongitudinalSlotRequired:true,locatorWeldsDoNotCutRHS:true,actualHardwareGeometryToolAndSlotQualificationAccepted:false},bearingSpanWithSettingsMm:bearingSpan,beamSpanWithSettingsMm:beamSpan,bridgeRailBottomMm:railBottom,crossBeamBottomMm:crossBottom},
@@ -296,7 +305,9 @@ export function plantMatchedPanCompression(i:{context:PlantPanCompressionSupport
   }
  }
  const minimumThickness=Math.min(...bedFacets.map(f=>f.thicknessRangeMm[0])),maximumThickness=Math.max(...bedFacets.map(f=>f.thicknessRangeMm[1])),feet=i.parts.filter(p=>['solid-foot-pad','apparatus-stand-pad','bridge-pad'].includes(p.kind)).map(foot=>{
-  const b=foot.boxMm,plan=[b[0],b[1],b[0]+b[3],b[1]+b[4]]as const,hits=cells.flatMap(c=>{const p=clip(plan,c.plan);return p?[{cell:c,plan:p}]:[]}),covered=hits.reduce((n,h)=>n+area(h.plan),0)
+  const b=foot.boxMm
+  if(d.minimumMachinedFootThicknessMm<b[5]-1e-8)throw Error('Matched foot cannot be machined thinner than the same selected complete steel pad')
+  const plan=[b[0],b[1],b[0]+b[3],b[1]+b[4]]as const,hits=cells.flatMap(c=>{const p=clip(plan,c.plan);return p?[{cell:c,plan:p}]:[]}),covered=hits.reduce((n,h)=>n+area(h.plan),0)
   if(Math.abs(covered-area(plan))>1e-5)return{id:foot.id,necessaryMatchedContact:false,outsidePanReceiverRequired:true,actualReceiverAccepted:false}
   const maximum=Math.max(...hits.flatMap(h=>corners(h.plan).map(p=>h.cell.surface(p[0],p[1])))),minimum=Math.min(...hits.flatMap(h=>corners(h.plan).map(p=>h.cell.surface(p[0],p[1])))),top=maximum+d.minimumMachinedFootThicknessMm,
    before=foot.metalVolumeMm3,exactVolume=hits.reduce((n,h)=>n+area(h.plan)*(top-h.cell.surface((h.plan[0]+h.plan[2])/2,(h.plan[1]+h.plan[3])/2)),0),

@@ -74,7 +74,7 @@
     ]
   },
   "grating": {
-    "bearingBarHeightMm": 60,
+    "bearingBarHeightMm": 70,
     "bearingBarThicknessMm": 5,
     "bearingBarPitchMm": 25,
     "crossBarHeightMm": 10,
@@ -83,9 +83,9 @@
     "maximumBearingSpanMm": 300,
     "maximumPanelXMm": 400,
     "maximumPanelYMm": 300,
-    "rimHeightMm": 60,
+    "rimHeightMm": 70,
     "rimThicknessMm": 3,
-    "maximumCompletePanelKg": 15,
+    "maximumCompletePanelKg": 16,
     "hardwareBudgetEachKg": 0.5,
     "panelJointGapMm": 1,
     "maximumRelativeSeatErrorMm": 2,
@@ -108,8 +108,8 @@
       30,
       3
     ],
-    "footPadSideMm": 120,
-    "footPadThicknessMm": 8,
+    "footPadSideMm": 150,
+    "footPadThicknessMm": 25,
     "maximumSinglePostDesignN": 7000,
     "compressionSandwichPanBearingRequired": true,
     "panBendingOrFinishLoadCapacityCredited": false,
@@ -165,7 +165,7 @@
     ],
     "maximumTerminalAddedDevelopedFactorOfWorkTerritory": 2
   },
-  "state": "Selected for internal development after actual source comparison:150mm Plant-only raised open walking surface, full retained2300mm cargo opening and450mm all-metal outfalls. Actual tanking/support/service/exterior-access/thermal/transient/force joins remain explicit.",
+  "state": "Selected for internal development:150mm Plant-only raised open walk,42 robust70mm grating panels with authored16kg complete-piece ceiling,common150mm square machined steel feet (25mm minimum remaining),full-pan RC/unfaced F compression bed,2300mm cargo head and450mm all-metal outfalls. Actual pressure/contact/thermal/transient/site/native acceptance remains unearned.",
   "internalAccess": {
     "mode": "two75mm rises with one intermediate tread; no Plant-floor lip",
     "firstRiseFraction": 0.5,
@@ -260,10 +260,16 @@
     "schema": "had-plant-selected-pan-compression/1",
     "selectedForDevelopment": true,
     "design": {
-      "minimumMachinedFootThicknessMm": 8,
+      "minimumMachinedFootThicknessMm": 25,
       "stockThicknessMm": 180,
       "compressiveWorkingFactor": 3,
       "minimumEffectiveContactFraction": 0.95
+    },
+    "footBlank": {
+      "nominalThicknessMm": 45,
+      "minimumMeasuredThicknessMm": 44,
+      "machiningReserveMm": 2,
+      "maximumBlankKg": 9
     }
   }
 }

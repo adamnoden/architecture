@@ -195,3 +195,38 @@ test('actual selected Plant pan and source walls own the same full RC, tapered F
  assert.notEqual(failed.source.caseDigest,r.source.caseDigest)
  console.info('PLANT_ACTUAL_COMPRESSION '+JSON.stringify({stockKg:r.walking.normalMassUpperKg,bedKg:bed.normalMassUpperKg,range:bed.thicknessRangeMm,tiles:bed.tiles.length,meanContact:bed.feet.filter(f=>'bedCompressiveMeanKPa'in f).map(f=>({id:f.id,kPa:f.bedCompressiveMeanKPa})),rcDelta:bed.rcMineralDeltaWrenchAboutGlobalZeroKN_KNm,core:'plantCompression'in f?f.plantCompression?.sourceCoreChecks:[],containment:r.containment}))
 })
+
+test('complete selected150mm feet and70mm bars keep42 panels under an explicit16kg design ceiling',()=>{
+ const r=inletPlantTankedRoom(roomRequest()),bed=r.walking.compressionSupport!,panelCeiling=r.choice.grating.maximumCompletePanelKg
+ assert.equal(r.walking.panels.length,42);assert.equal(panelCeiling,16)
+ assert.ok(r.floorReplan.steelFootBlank.necessaryGeometricStockAndMachiningComparison)
+ assert.equal(r.floorReplan.steelFootBlank.choice.nominalThicknessMm,45)
+ assert.ok(r.walking.panels.every(p=>p.completeMassDesignUpperKg<=panelCeiling))
+ assert.ok(r.walking.panels.some(p=>p.completeMassDesignUpperKg>15),'Former15kg target is explicitly superseded; no human lifting approval follows from16kg.')
+ assert.ok(r.walking.apparatusInterfaces.every(a=>a.necessarySeparateStandGeometry))
+ assert.ok(r.walking.necessaryMemberComparisons,JSON.stringify(r.walking.memberChecks.filter(c=>!c.necessary)))
+ assert.ok(bed.feet.filter(f=>'bedCompressiveMeanKPa'in f).every(f=>f.bedCompressiveMeanKPa!<350))
+ assert.ok(bed.feet.filter(f=>'footThicknessRangeMm'in f).every(f=>f.footThicknessRangeMm![0]===25))
+ assert.equal(bed.actualPeakContactPressureDistributionAccepted,false)
+ const old=structuredClone(roomRequest());old.choice.walkingFrame.footPadSideMm=120;old.choice.walkingFrame.footPadThicknessMm=8;old.choice.grating.bearingBarHeightMm=60;old.choice.grating.rimHeightMm=60;old.choice.grating.maximumCompletePanelKg=15;old.choice.panCompression.design.minimumMachinedFootThicknessMm=8
+ const p=inletPlantTankedRoom(old)
+ assert.ok(p.walking.compressionSupport!.feet.some(f=>'bedCompressiveMeanKPa'in f&&f.bedCompressiveMeanKPa!>516))
+ assert.ok(p.walking.normalMassUpperKg<r.walking.normalMassUpperKg)
+ const mid=structuredClone(roomRequest());mid.choice.walkingFrame.footPadSideMm=140;mid.choice.grating.bearingBarHeightMm=65;mid.choice.grating.rimHeightMm=65;mid.choice.grating.maximumCompletePanelKg=15
+ const m=inletPlantTankedRoom(mid)
+ assert.ok(m.walking.panels.every(p=>p.completeMassDesignUpperKg<15))
+ assert.ok(m.walking.apparatusInterfaces.every(p=>p.necessarySeparateStandGeometry))
+ console.info('PLANT_COMPLETE_FOOT_SELECTION '+JSON.stringify({panels:r.walking.panels.length,panelMaxKg:Math.max(...r.walking.panels.map(p=>p.completeMassDesignUpperKg)),stockKg:r.walking.normalMassUpperKg,maximumMachinedFootMm:Math.max(...bed.feet.flatMap(f=>'footThicknessRangeMm'in f?f.footThicknessRangeMm!:[])),maxActualFootKg:Math.max(...r.walking.parts.filter(p=>['solid-foot-pad','bridge-pad','apparatus-stand-pad'].includes(p.kind)).map(p=>p.metalVolumeMm3/1e9*r.choice.material.densityKgM3)),maximumMeanKPa:Math.max(...bed.feet.flatMap(f=>'bedCompressiveMeanKPa'in f?[f.bedCompressiveMeanKPa!]:[])),reserve:r.containment.reserveL,mid140:{stockKg:m.walking.normalMassUpperKg,reserve:m.containment.reserveL},old120:{stockKg:p.walking.normalMassUpperKg,reserve:p.containment.reserveL}}))
+})
+
+test('same selected steel excursion propagates through the tight apparatus-stand clearances',()=>{
+ const i=roomRequest(),r=inletPlantTankedRoom(i),hot=structuredClone(i)
+ assert.ok(r.walking.standThermalClearance?.every(p=>p.necessaryConditionalSteelThermalSeparation),JSON.stringify(r.walking.standThermalClearance))
+ assert.ok(r.walking.standThermalClearance!.some(p=>p.minimumAfterSettingsAndSteelThermalMm<1))
+ hot.choice.grating.maximumUniformTemperatureExcursionK=100
+ const failed=inletPlantTankedRoom(hot)
+ assert.ok(failed.walking.standThermalClearance!.some(p=>!p.necessaryConditionalSteelThermalSeparation))
+ assert.ok(failed.diagnostics.includes('PLANT_TANK/conditional-steel-stand-thermal-clearance-fails'))
+ assert.notEqual(failed.source.caseDigest,r.source.caseDigest)
+ console.info('PLANT_ACTUAL_STEEL_THERMAL '+JSON.stringify(r.walking.standThermalClearance))
+})
