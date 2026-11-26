@@ -29,7 +29,6 @@ jobs:
     env:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
-      IAS_RECOVERY_PROOF_DIR: ${{ runner.temp }}/study-lighting-recovery
     steps:
       - uses: actions/checkout@v5
         with:
@@ -52,6 +51,8 @@ jobs:
           "$RUNNER_TEMP/finite-runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
           echo "STR_FINITE_SOLID_PYTHON=$RUNNER_TEMP/finite-runtime/bin/python" >> "$GITHUB_ENV"
       - name: Regenerate and prove the exact recovered source
+        env:
+          IAS_RECOVERY_PROOF_DIR: ${{ runner.temp }}/study-lighting-recovery
         run: node --import tsx project/ias/studies/prove-lighting-circuit-recovery.mjs
       - name: Retain actual outputs, diff and proof logs
         if: always()
