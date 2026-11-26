@@ -11,6 +11,7 @@ import { applyDesignEdit, beginDesignEdit, editBase, loadDesignDraft, saveDesign
 import { createReferenceHouseSource } from '../compiler/reference-house/fixture.js'
 import { applyPublicationPlates, publicationPlatePlacements } from './plates-current.js'
 import { publicationPlatePlacements as historicalPlacements } from './plates.js'
+import { isTextFreePublicationSvg } from './scripts/typography.js'
 import { blackOnlyPublicationSvg, buildCurrentPublicationAssets, compilePublicationPlanAssets, compilePublicationArchitectureAssets,
   currentPublicationAssetPaths, frameFurnishedStudy, frameEyeLevelStudy } from './current-assets.js'
 
@@ -136,6 +137,9 @@ test('eye-level framing preserves exact camera geometry, clipping and provenance
     assert.ok(rendered.includes(svg.match(/<metadata>[\s\S]*?<\/metadata>/)![0]))
     assert.match(rendered, /data-publication-source-sha256="[\da-f]{64}"/)
     assert.match(rendered, /viewBox="0 0 1000 1000"/)
+    assert.ok(isTextFreePublicationSvg(rendered))
+    assert.throws(()=>isTextFreePublicationSvg(rendered.replace('</svg>', '<text>Unbound text</text></svg>')), /text-free/)
+    assert.throws(()=>isTextFreePublicationSvg(rendered.replace('</svg>', '<use href="#hidden-text"/></svg>')), /indirect content/)
     assert.ok(!rendered.match(/<g[^>]*data-study-view[^>]*transform=/))
     for (const [colour] of rendered.matchAll(/#[\da-f]{6}\b/gi)) {
       assert.equal(colour.slice(1,3), colour.slice(3,5))
