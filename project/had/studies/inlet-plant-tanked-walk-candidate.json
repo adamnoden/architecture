@@ -1,0 +1,123 @@
+{
+  "schema": "had-plant-tanked-walk/1",
+  "id": "HAD/Plant-open-metal-walk-and-full-store-containment",
+  "revision": 1,
+  "basePanRoomChoice": "project/had/studies/inlet-split-plant-room-candidate.json",
+  "vesselChoice": "project/had/studies/inlet-store-vessel-candidate.json",
+  "selectedForDevelopment": true,
+  "walkingRiseAboveHouseFflMm": 75,
+  "maximumBulkWaterRelativeWalkingMm": 0,
+  "upstandAboveWalkingMm": 20,
+  "bridgeAboveWalkingMm": 20,
+  "legacyFinishUndersideProtectedMm": 505,
+  "legacyContinuousFinishRetainedInPlant": false,
+  "closedDuctStorageCreditLitres": 0,
+  "material": {
+    "family": "EN1.4404/316L stainless, unprocured complete fabricated assembly",
+    "densityKgM3": 8000,
+    "elasticModulusMPa": 185000,
+    "allowableComparisonMPa": 100,
+    "minimumAfterFabricationProofMPa": 150,
+    "maximumPressureTemperatureQualificationAccepted": false
+  },
+  "outfalls": {
+    "clearWidthMm": 450,
+    "clearHeightMm": 136,
+    "metalMm": 3,
+    "outletAxesYMm": [
+      4335,
+      4865
+    ],
+    "entranceKComparison": 2,
+    "manningNComparison": 0.015
+  },
+  "bridge": {
+    "thicknessMm": 36,
+    "pieceCount": 13,
+    "railYMm": [
+      4110,
+      4600,
+      5090
+    ],
+    "railSectionWHtMm": [
+      60,
+      40,
+      5
+    ],
+    "minimumRailIMm4": 200000,
+    "maximumRailDeflectionMm": 2,
+    "railAboveOutfallPackages": true
+  },
+  "grating": {
+    "bearingBarHeightMm": 60,
+    "bearingBarThicknessMm": 5,
+    "bearingBarPitchMm": 25,
+    "crossBarHeightMm": 10,
+    "crossBarThicknessMm": 5,
+    "crossBarPitchMm": 100,
+    "maximumBearingSpanMm": 300,
+    "maximumPanelXMm": 400,
+    "maximumPanelYMm": 300,
+    "rimHeightMm": 60,
+    "rimThicknessMm": 3,
+    "maximumCompletePanelKg": 15,
+    "hardwareBudgetEachKg": 0.5
+  },
+  "walkingFrame": {
+    "beamSectionWHtMm": [
+      40,
+      40,
+      5
+    ],
+    "minimumBeamIMm4": 120000,
+    "maximumBeamSpanMm": 500,
+    "postSectionWHtMm": [
+      30,
+      30,
+      3
+    ],
+    "footPadSideMm": 120,
+    "footPadThicknessMm": 8,
+    "maximumSinglePostDesignN": 6000,
+    "compressionSandwichPanBearingRequired": true,
+    "panBendingOrFinishLoadCapacityCredited": false,
+    "permanentFabricAnchorsCredited": false
+  },
+  "frame": {
+    "clearWidthMm": 1100,
+    "clearHeightMm": 2350,
+    "headerDepthMm": 100,
+    "sourceInfillPortDiameterMm": 125
+  },
+  "ramp": {
+    "maximumSlopeRatio": 12,
+    "bridgeRiseFromWalkingMm": 20,
+    "minimumInternalRunMm": 240,
+    "minimumExteriorRunMm": 240,
+    "minimumDryLobbyRiseRunMm": 1140
+  },
+  "inventory": {
+    "trunkMaximumBareOuterDiameterMm": 22.1,
+    "terminalAndReturnMaximumBareOuterDiameterMm": 15.1,
+    "allBareOuterTubeVolumesUsedAsWaterUpper": true,
+    "minimumBoresUsedAsMaximum": false,
+    "maximumRiserStraightSpanMm": 3450,
+    "fittingEnvelopeSource": "Conex compression full external bare envelopes; all metal deliberately counted as water",
+    "fitting": {
+      "twentyTwo": {
+        "takeoffMm": 40,
+        "nutAFMm": 32
+      },
+      "fifteen": {
+        "takeoffMm": 32,
+        "nutAFMm": 24
+      },
+      "twentyEight": {
+        "takeoffMm": 42,
+        "nutAFMm": 39
+      }
+    },
+    "actualReservoirAirGapsAndRiserJoinsAccepted": false
+  },
+  "state": "Current internal design candidate: real flooring/services/threshold consequences and fresh force proof still required; no installed, professional or aesthetic acceptance"
+}
