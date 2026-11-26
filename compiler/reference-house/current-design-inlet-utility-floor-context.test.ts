@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import test from 'node:test'
+import {admitUtilityRouteChoice} from './current-design/inlet-utility-route.js'
 import {deriveUtilityCandidateFloorPocket,readUtilityCurrentGeometrySource} from './current-design/inlet-utility-proof-source.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
 const source=readUtilityCurrentGeometrySource()
@@ -48,4 +49,10 @@ test('restoring the old rectangular floor changes stock and identity and cannot 
  assert.ok(rectangle.pocket.local!.quantityBounds.dryRcM3>current.pocket.local!.quantityBounds.dryRcM3)
  assert.notEqual(rectangle.bindingDigest,current.bindingDigest)
  assert.equal(rectangle.nativeFloorOrForceApprovalTransferred,false)
+})
+test('the complete route reader admits only bounded owning floor controls',()=>{
+ const choice=read('project/had/studies/inlet-utility-compact-route.json')
+ assert.deepEqual(admitUtilityRouteChoice(choice).candidateFloorPocket,choice.candidateFloorPocket)
+ assert.throws(()=>admitUtilityRouteChoice({...choice,candidateFloorPocket:{...choice.candidateFloorPocket,unownedOverride:true}}),/complete Utility candidate floor controls/)
+ assert.throws(()=>admitUtilityRouteChoice({...choice,candidateFloorPocket:{...choice.candidateFloorPocket,depthMm:351}}),/complete Utility candidate floor controls/)
 })
