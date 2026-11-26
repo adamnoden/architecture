@@ -29,7 +29,7 @@ jobs:
           from playwright.sync_api import sync_playwright
           path=Path('project/ias/studies/crafted-study-eye-level-day.svg')
           data=path.read_bytes()
-          blob=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\\0'+data).hexdigest()
+          blob=hashlib.sha1(b'blob '+str(len(data)).encode()+bytes([0])+data).hexdigest()
           assert blob=='7fa1d900aad07915cd13f24f07a21b8213cbf17f'
           out=Path(os.environ['RUNNER_TEMP'],'study-review')
           with sync_playwright() as p:
