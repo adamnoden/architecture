@@ -9,11 +9,11 @@
     "label": "zerg-owner-takeover-20261126"
   },
   "claimedAt": "2026-11-26T20:03:12.723Z",
-  "heartbeatAt": "2026-11-26T20:03:12.723Z",
-  "expiresAt": "2026-11-26T20:48:12.723Z",
+  "heartbeatAt": "2026-11-26T20:09:44.564Z",
+  "expiresAt": "2026-11-26T22:09:44.564Z",
   "checkpoint": {
-    "evidence": "Owner takeover; preserved b198,5fa4d076 and2de64746 current room/circuit evidence.",
-    "next": "Repair owning room schedule regeneration and validate shared room-lighting integration."
+    "evidence": "PR1630@1042876 contains full5fa lighting continuation; repaired schedule targeted regression1/1 and source assertions4/4 pass. Exact typography and physical profile CI now green; whole validation pending.",
+    "next": "Verify full exact-head room/browser/publication health; fresh canonical preflight and merge, then coordinate north-view continuation."
   },
   "branch": "work/zerg-takeover-integration-20261126",
   "predecessor": {
@@ -37,5 +37,6 @@
       "next": "Join exact north source when earned; strict producers then required complete PR CI/publication on final head. Inspect actual derived north image.",
       "blocker": "No product/articulation/photometric/material/physical or owner appearance approval. Full repository health and fresh canonical preflight still mandatory."
     }
-  }
+  },
+  "pr": 1630
 }
