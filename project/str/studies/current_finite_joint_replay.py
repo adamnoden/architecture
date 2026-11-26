@@ -60,11 +60,24 @@ def replay(result):
     if work>1e-7:raise ValueError('Saved actual loaded joint work fails')
     heads=result['native']['nativeVertical']['native']['heads']
     if len(heads)!=52 or len({h['id'] for h in heads})!=52:raise ValueError('Actual52-head case required')
-    if max(map(abs,result['native']['nativeVertical']['native']['equilibriumResidualKN_KNm']))>1e-6:raise ValueError('Actual house six-wrench balance fails')
+    vertical=result['native']['nativeVertical'];native=vertical['native']
+    positions=vertical['headPositions'];by_id={p['id']:p for p in positions}
+    if len(positions)!=52 or len(by_id)!=52 or set(by_id)!={h['id'] for h in heads}:raise ValueError('Actual head position catalogue incomplete')
+    head_wrench=np.zeros(6)
+    for head in heads:
+        point=np.asarray(by_id[head['id']]['xyzMm'],dtype=float)/1000
+        reaction=np.asarray(head['reactionKN_KNm'],dtype=float)
+        if point.shape!=(3,) or reaction.shape!=(6,) or not np.isfinite(point).all() or not np.isfinite(reaction).all():raise ValueError('Finite actual head coordinates and reaction required')
+        head_wrench+=wrench(reaction[:3],point)+np.array([0.,0.,0.,*reaction[3:]])
+    applied=np.asarray(native['externalWrenchKN_KNm'],dtype=float)
+    if applied.shape!=(6,) or not np.isfinite(applied).all():raise ValueError('Finite actual applied house wrench required')
+    house_balance=head_wrench+applied
+    saved=np.asarray(native['equilibriumResidualKN_KNm'],dtype=float)
+    if saved.shape!=(6,) or not np.isfinite(saved).all() or max(abs(house_balance))>1e-6 or max(abs(saved-house_balance))>1e-7:raise ValueError('Replayed actual house six-wrench balance fails')
     actual=set(result['audit']['actualNormalContactIds']);bearings=[b for b in result['native']['nativeVertical']['bearings'] if b['id'] in actual]
     if len(bearings)!=len(actual):raise ValueError('Actual contact catalogue incomplete')
     local_cuts={level:[float(r[next(i for i,p in enumerate(ports) if p['id']=='wall/'+level+'/'+coordinate)]) for coordinate in ('u','v','w','rx','ry','rz')] for level in ('lower','upper')}
-    return {'wallCutActionsAboutActualCutKN_KNm':local_cuts,'portCount':n,'constitutiveResidualKN_KNm':constitutive,'independentJointWrenchResidualKN_KNm':balance.tolist(),
+    return {'wallCutActionsAboutActualCutKN_KNm':local_cuts,'portCount':n,'constitutiveResidualKN_KNm':constitutive,'independentJointWrenchResidualKN_KNm':balance.tolist(),'replayedHouseWrenchResidualKN_KNm':house_balance.tolist(),
             'outsideOnSolidPortGroupsKN_KNm':{k:v.tolist() for k,v in groups.items()},'externalWrenchKN_KNm':external.tolist(),
             'jointWorkResidualKNm':work,'actualNormalCount':len(actual),'activeActualNormalCount':sum(b['active'] for b in bearings)}
 

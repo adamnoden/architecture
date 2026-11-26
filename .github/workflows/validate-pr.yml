@@ -184,8 +184,10 @@ jobs:
           assert not result['candidateAccepted'] and not result['resistanceAccepted'] and not result['completeHouseProof']
           assert len(result['result']['native']['nativeVertical']['native']['heads'])==52
           assert len(bundle['engineering']['studyRoomKit']['kit']['floor']['parts'])==136
+          Path(os.environ['RUNNER_TEMP'],'working-house-finite-result.json').write_text(json.dumps(result['result']))
           print('PASS actual saved uniform200 house, finite SW solve and136-piece dependent Study')
           PYTHON
+          STR_CURRENT_FINITE_CAPTURE="$RUNNER_TEMP/working-house-finite-result.json" python -B project/str/studies/current_finite_joint_replay_test.py
           node node_modules/vite/bin/vite.js preview --config project/ade/browser-editor/vite.config.ts --outDir "$RUNNER_TEMP/ground-support-editor" --host 127.0.0.1 --port 4190 --strictPort > "$RUNNER_TEMP/finite-joint-server.log" 2>&1 &
           FINITE_JOINT_PREVIEW_PID=$!
           trap 'kill "$FINITE_JOINT_PREVIEW_PID" 2>/dev/null || true' EXIT

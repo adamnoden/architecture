@@ -12,6 +12,15 @@ class SavedActualControls(unittest.TestCase):
         self.assertGreater(result['portCount'],100)
         self.assertEqual(result['actualNormalCount'],32)
         self.assertLess(max(map(abs,result['independentJointWrenchResidualKN_KNm'])),1e-6)
+    def test_changed_head_reaction_rejects_even_with_untouched_saved_residual(self):
+        x=copy.deepcopy(self.capture);x['native']['nativeVertical']['native']['heads'][0]['reactionKN_KNm'][2]+=100
+        with self.assertRaisesRegex(ValueError,'house six-wrench'):replay(x)
+    def test_changed_head_position_rejects(self):
+        x=copy.deepcopy(self.capture);x['native']['nativeVertical']['headPositions'][0]['xyzMm'][0]+=100
+        with self.assertRaisesRegex(ValueError,'house six-wrench'):replay(x)
+    def test_duplicate_head_position_rejects(self):
+        x=copy.deepcopy(self.capture);positions=x['native']['nativeVertical']['headPositions'];positions[-1]=copy.deepcopy(positions[0])
+        with self.assertRaisesRegex(ValueError,'position catalogue'):replay(x)
     def test_changed_displacement_rejects(self):
         x=copy.deepcopy(self.capture);x['finiteJoint']['portDisplacementsM_Rad'][0]+=.0001
         with self.assertRaisesRegex(ValueError,'displacement'):replay(x)

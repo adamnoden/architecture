@@ -1130,7 +1130,10 @@
         "project/str/studies/service_room_ground_test.py",
         "project/str/studies/service_room_ground_receivers_test.py",
         "project/str/studies/finite_joint_normal_observer.py",
-        "project/str/studies/finite_floor_contour.py"
+        "project/str/studies/finite_floor_contour.py",
+        "project/str/studies/current_finite_joint_replay.py",
+        "project/str/studies/current_finite_joint_replay_test.py",
+        "project/str/studies/current_finite_joint_signed_proof.py"
       ],
       "producerChecks": [
         "node --test project/str/studies/masonry-frame-a.test.mjs",
@@ -3531,7 +3534,7 @@
     "project/str/studies/finite_rc_joint_solid.py": "798c9a143b53fdf9372e3d19873258b4cd80e10f",
     "project/str/studies/finite_joint_contact_trace.py": "a8c32364eb6b67a5eb80e1bea8ab644d99468d58",
     "project/str/studies/finite_joint_membrane_trace.py": "f7765c95ef9a11a65600eb605bdc09dc8bf5bda7",
-    "project/str/studies/current_finite_joint_replay.py": "9d6fd52fdfe47b19a36573b8ad9360a1d021ef60",
+    "project/str/studies/current_finite_joint_replay.py": "02843e134416f0eeee8c8b885d7380f3dac2431b",
     "compiler/reference-house/current-design/inlet-store-drain.ts": "938289be42dc3cf6b118c253d606d4ed00278767",
     "project/had/studies/inlet-store-drain-candidate.json": "f84f781f87ee06568ed9636f6dc7e5cdcf6a60c4",
     "project/had/store-drain-development.md": "fb9bd8962733aa93fd0cfa51b990a958c5245883",
@@ -3540,6 +3543,8 @@
     "compiler/reference-house/current-design/assemblies/study-oak-composition.ts": "5c56424ca435b892e2f032c62d579c24dcc4fde0",
     "compiler/reference-house/current-design-study-oak-composition.test.ts": "642550cd2aaf826239e9bceeea601f5b57d1d1e9",
     "project/str/studies/finite_joint_normal_observer.py": "029e46deb9a7d86f9f1aad1efd57c0271aec60bb",
-    "project/str/current-finite-joint-development.md": "2e5ffcc60d94994e52709f7b7f063e1ff6a9ccbb"
+    "project/str/current-finite-joint-development.md": "2e5ffcc60d94994e52709f7b7f063e1ff6a9ccbb",
+    "project/str/studies/current_finite_joint_replay_test.py": "9aab7efda2f4c223e239adef7d19232f0fc77310",
+    "project/str/studies/current_finite_joint_signed_proof.py": "c6a46d1a981976694aa49a9671654646e35ae47c"
   }
 }
