@@ -90,5 +90,61 @@
     "handwheelDiameterMm": 80,
     "maximumDryModuleKg": 4,
     "minimumFullOpenKvM3h": 2.5
+  },
+  "station": {
+    "axisMm": [
+      9550,
+      1600,
+      1175
+    ],
+    "ordinaryShoulderMm": [
+      9950,
+      1720,
+      1450
+    ]
+  },
+  "coldService": {
+    "schema": "had-utility-cold-service/1",
+    "drainTeeZMm": 740,
+    "drainEndXMm": 10300,
+    "drainValveXMm": 10230,
+    "drainTipZMm": 420,
+    "drainControlNorthMm": 130,
+    "drainOrificeMm": 2,
+    "binOuterMm": [
+      10190,
+      450,
+      0,
+      220,
+      220,
+      350
+    ],
+    "minimumVerifiedUsableBinL": 12,
+    "minimumUnionFaceReleaseMm": 10,
+    "terminalUnionFaceBelowTubeEndMm": 30,
+    "upstreamCouponZMm": [
+      1060,
+      1080
+    ],
+    "downstreamCouponZMm": [
+      1250,
+      1270
+    ],
+    "assemblyEastMovementMm": 100,
+    "cutShoulderMm": [
+      9950,
+      1725,
+      1150
+    ],
+    "carryShoulderMm": [
+      10050,
+      1775,
+      1450
+    ],
+    "drainShoulderMm": [
+      9725,
+      754.5,
+      800
+    ]
   }
 }

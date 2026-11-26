@@ -4,6 +4,7 @@ import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {execFileSync} from 'node:child_process'
 import {fileURLToPath} from 'node:url'
+import {inletUtilityColdService} from './current-design/inlet-utility-service.js'
 import {compareInletRouteThermal} from './current-design/inlet-fixed-thermal.js'
 import {sha256SemanticFingerprint} from '../core/identity.js'
 import {inletEntrySideCuts} from './current-design/inlet-indoor-cuts.js'
@@ -20,8 +21,8 @@ const receipt=read('project/had/studies/inlet-source-envelope.results.json'),old
  stage=saved.stages.distributedFloor,context=readInletCornerContext(stage.cornerWidthsMm.SE,sha256SemanticFingerprint(stage)),
  boundary=utilityCornerBoundary(context,old.wetUtilityPlanMm,water.internalArchControls.actualRadialFinish),
  host=runUtilityCornerHost(context,water.internalArchControls.actualRadialFinish,source.branches.find((v:any)=>v.id==='utility').coordinates.at(-1)),
- station={bankXMm:9550,bankYMm:1600,utilityAxisZMm:1175,plantAxisZMm:receipt.settings.indoorPlantAxisZMm,
-  operatorXYZMm:[9950,1720,1450] as P,tailOffsetMm:330},body=station.operatorXYZMm,
+ station={bankXMm:choice.station!.axisMm[0],bankYMm:choice.station!.axisMm[1],utilityAxisZMm:choice.station!.axisMm[2],plantAxisZMm:receipt.settings.indoorPlantAxisZMm,
+  operatorXYZMm:choice.station!.ordinaryShoulderMm,tailOffsetMm:330},body=station.operatorXYZMm,
  plantWall=water.groundWalls.find((v:any)=>v.id==='plant-intermediate-arch'),
  frameCovers=rawRoutes.checkedObstacles.filter((v:any)=>v.id.includes('shield-connection')).map((v:any)=>v.boxMm as B),
  retainedFurniture=Object.fromEntries(Object.entries(old.retainedFurniture).filter(([id])=>id!=='service-utility-valveBay').map(([id,p])=>[id,id==='service-utility-sink'?host.revisedUtility.sink:id==='service-utility-rearServiceChase'?host.revisedUtility.rearServiceChase:p])),
@@ -140,4 +141,25 @@ test('full same pipe/fitting envelopes preserve source upright washer sweep plus
   checks=inletUtilityFixedEnvelopes(result).map(m=>({id:m.id,nominalMm:gap(m.boxMm,box),afterTwoSettingsMm:gap(m.boxMm,box)-result.geometry.twoIndependentSettingsMm})).sort((a,b)=>a.afterTwoSettingsMm-b.afterTwoSettingsMm)
  console.info('COMPACT_UPRIGHT_WASHER_SWEEP '+JSON.stringify({sourceUprightSweepMm:sweep,sourceHeightMm:source.native.height,authoredExtraHeightMm:authoredExtraHeight,minimum:checks[0],completeHandlingAccepted:false}))
  assert.ok(checks[0].afterTwoSettingsMm>=0,JSON.stringify(checks[0]))
+})
+
+const coldService=inletUtilityColdService({route:result,choice:choice.coldService,roomMm:old.wetUtilityPlanMm,washerReservationMm:services.utility.washerReservation,washerBodyMm:services.utility.washer,washerHeightMm:read('project/ias/studies/utility-first-release.json').native.height,maximumGaugeBar:input.maximumGaugeBar,input,retained:rawRoutes.retainedServiceComparison.services,host}),
+ servicePurge=compareInletUtilityPurge(result,old.purge,coldService.normalPermanentEnvelopes)
+console.info('COMPACT_COLD_SERVICE '+JSON.stringify({checks:coldService.checks,inventory:coldService.inventory,drain:coldService.drain,capture:coldService.capture,purgeMinima:servicePurge.minimumByKind,servicePurgeFailures:servicePurge.failures.slice(0,8)}))
+if(dir)writeFileSync(join(dir,'compact-cold-service.json'),JSON.stringify({coldService,servicePurge},null,2))
+test('real controlled drain, receiver, high vent and terminal face release derive from the same compact source inputs',()=>{
+ assert.equal(coldService.necessarySpecifiedGeometry,true,JSON.stringify(coldService.failures))
+ assert.equal(servicePurge.necessaryKnownPurgeGeometry,true,JSON.stringify(servicePurge.minimumByKind))
+ assert.ok(coldService.inventory.isolatedBranchConservativeCeilingL<12)
+ assert.equal(coldService.drain.waterBelowTeeRetained,true)
+ assert.equal(coldService.drain.wholeInletFullyEmptyClaimed,false)
+ assert.equal(coldService.actualDownstreamNetworkIsolationAndBlankingQualified,false)
+ assert.equal(coldService.completeInstallationAccepted,false)
+})
+test('smaller receiver or low tee loses its real inventory or complete source-fitting fit screen',()=>{
+ const small=structuredClone(choice.coldService) as any;small.minimumVerifiedUsableBinL=8
+ const run=(value:unknown)=>inletUtilityColdService({route:result,choice:value,roomMm:old.wetUtilityPlanMm,washerReservationMm:services.utility.washerReservation,washerBodyMm:services.utility.washer,washerHeightMm:848,maximumGaugeBar:input.maximumGaugeBar,input,retained:rawRoutes.retainedServiceComparison.services,host})
+ assert.ok(run(small).failures.some(k=>k.id==='bin-usable-versus-full-component-envelope-inventory'))
+ const low=structuredClone(choice.coldService) as any;low.drainTeeZMm=620
+ assert.ok(run(low).failures.some(k=>k.id==='tee-above-retained-source-elbow'))
 })

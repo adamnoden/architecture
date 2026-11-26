@@ -9,7 +9,7 @@ import type {inletEntrySideCuts} from './inlet-indoor-cuts.js'
 type P=readonly[number,number,number]
 type B=readonly[number,number,number,number,number,number]
 type CompactValveDesign={referenceModel:'SANT SBM-14 DN20';maximumBareModuleMm:readonly[number,number,number];connectionHalfSpanMm:number;maximumOpenStemAboveAxisMm:number;handwheelDiameterMm:number;maximumDryModuleKg:number;minimumFullOpenKvM3h:number}
-export type UtilityRouteChoice={schema:'had-utility-route/1'|'had-utility-route/2';id:string;stem:'horizontal-west'|'horizontal-north'|'vertical-up';valveDesign?:CompactValveDesign;ordinaryApproachWaypointsMm?:readonly P[];upstreamVirtualCornersMm:readonly P[];downstreamVirtualCornersMm:readonly P[];
+export type UtilityRouteChoice={schema:'had-utility-route/1'|'had-utility-route/2';id:string;stem:'horizontal-west'|'horizontal-north'|'vertical-up';valveDesign?:CompactValveDesign;station?:{axisMm:P;ordinaryShoulderMm:P};coldService?:unknown;ordinaryApproachWaypointsMm?:readonly P[];upstreamVirtualCornersMm:readonly P[];downstreamVirtualCornersMm:readonly P[];
  formedTurn:{path:'utility/downstream';cornerIndex:number;centrelineRadiusMm:number;maximumAngularStepDeg:number;maximumOuterDiameterAfterFormingMm:number;minimumOuterDiameterAfterFormingMm:number;minimumWallAfterFormingMm:number;maximumWallAfterFormingMm:number}}
 const tuple=(v:unknown,n:number)=>Array.isArray(v)&&v.length===n&&[...v].every(x=>typeof x==='number'&&Number.isFinite(x))
 const length=(a:P,b:P)=>Math.hypot(...a.map((v,k)=>v-b[k]))
@@ -19,10 +19,10 @@ const dot=(a:P,b:P)=>a.reduce((n,v,k)=>n+v*b[k],0)
 const cross=(a:readonly number[],b:readonly number[])=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]
 const gap=(a:B,b:B)=>{const g=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return g.some(v=>v>0)?Math.hypot(...g.map(v=>Math.max(v,0))):Math.max(...g)}
 export function admitUtilityRouteChoice(value:unknown):UtilityRouteChoice{
- const c=value as UtilityRouteChoice,compact=c?.schema==='had-utility-route/2',keys=['schema','id','stem','upstreamVirtualCornersMm','downstreamVirtualCornersMm','formedTurn',...(compact?['valveDesign','ordinaryApproachWaypointsMm']:[])]
+ const c=value as UtilityRouteChoice,compact=c?.schema==='had-utility-route/2',keys=['schema','id','stem','upstreamVirtualCornersMm','downstreamVirtualCornersMm','formedTurn',...(compact?['valveDesign','ordinaryApproachWaypointsMm',...(Object.hasOwn(c,'station')?['station']:[]),...(Object.hasOwn(c,'coldService')?['coldService']:[])]:[])]
  if(!c||Object.keys(c).sort().join(',')!==keys.sort().join(',')||!['had-utility-route/1','had-utility-route/2'].includes(c.schema)||typeof c.id!=='string'||!c.id||!(compact?['vertical-up']:['horizontal-west','horizontal-north']).includes(c.stem)
   ||![c.upstreamVirtualCornersMm,c.downstreamVirtualCornersMm].every(p=>Array.isArray(p)&&p.length>=2&&[...p].every(v=>tuple(v,3)))||!c.formedTurn)throw Error('Unsupported complete Utility route choice')
- if(compact){const d=c.valveDesign
+ if(compact){if(c.station&&(Object.keys(c.station).sort().join(',')!=='axisMm,ordinaryShoulderMm'||!tuple(c.station.axisMm,3)||!tuple(c.station.ordinaryShoulderMm,3)))throw Error('Actual complete compact station control required');const d=c.valveDesign
   if(!d||Object.keys(d).sort().join(',')!=='connectionHalfSpanMm,handwheelDiameterMm,maximumBareModuleMm,maximumDryModuleKg,maximumOpenStemAboveAxisMm,minimumFullOpenKvM3h,referenceModel'
    ||d.referenceModel!=='SANT SBM-14 DN20'||!tuple(d.maximumBareModuleMm,3)||d.maximumBareModuleMm.some(v=>v<=0)
    ||![d.connectionHalfSpanMm,d.maximumOpenStemAboveAxisMm,d.handwheelDiameterMm,d.maximumDryModuleKg,d.minimumFullOpenKvM3h].every(Number.isFinite)
@@ -85,6 +85,7 @@ export function inletUtilityRoute(i:{choice:UtilityRouteChoice;input:IndoorRoute
   compact=c.schema==='had-utility-route/2',
   valve=sourceValve?(compact?compactUtilityValve(c.valveDesign!,cuts):orientedUtilityValve(sourceValve,c.stem,cuts)):undefined
  if(!valve||!tuple(source,3)||!tuple(terminal,3)||!tuple(s.roomPlanMm,4)||!Number.isFinite(s.groundFflMm)||s.utilityLmin<=0||s.maximumGaugeBar<=0||s.maximumGaugeBar>12)throw Error('Actual Utility source, valve and datum required')
+ if(c.station&&(JSON.stringify(c.station.axisMm)!==JSON.stringify(valve.axisMm)||JSON.stringify(c.station.ordinaryShoulderMm)!==JSON.stringify(cuts.ordinaryOperator.shoulderMm)))throw Error('Compact station controls must generate the same valve and ordinary task')
  const [x,y,z]=valve.axisMm,flowIndex=compact?1:2,halfSpan=compact?c.valveDesign!.connectionHalfSpanMm:80,
   upstreamFace=valve.axisMm.map((v,k)=>v-(k===flowIndex?halfSpan:0)) as unknown as P,downstreamFace=valve.axisMm.map((v,k)=>v+(k===flowIndex?halfSpan:0)) as unknown as P,
   [west,south,width,depth]=s.roomPlanMm,east=west+width,north=south+depth,
@@ -255,8 +256,8 @@ export function inletUtilityFixedEnvelopes(r:ReturnType<typeof inletUtilityRoute
  * finite upright source cylinder, not an AABB or an infinite/capsule end cap.
  * Existing source leaves/stays are conservative envelopes; no weather/hardware
  * or complete window acceptance is inferred. */
-export function compareInletUtilityPurge(result:ReturnType<typeof inletUtilityRoute>,purge:{body:readonly[number,number];bodyRadiusMM:number;bodyHeightMM:number;shoulder:P;fixedLowerGlassToLocalZ:number;guardTopMaximumLocalZ:number;fixedCentrePost:{normalMM:readonly[number,number]};leaves:readonly {hand:number;hinge:P;completeWHDepth:readonly[number,number,number];frames:readonly {angle:number;plan:readonly(readonly[number,number])[]}[];gripPath:readonly P[];articulatedArm:{elbow:P;capsuleRadiusMM:number};stay:{pivot:P;openPeg:P;closedPeg:P;completeBarSectionMM:readonly[number,number];completeVerticalEnvelopeMM:number}}[]}){
- const settings=result.geometry.twoIndependentSettingsMm, members=inletUtilityFixedEnvelopes(result)
+export function compareInletUtilityPurge(result:ReturnType<typeof inletUtilityRoute>,purge:{body:readonly[number,number];bodyRadiusMM:number;bodyHeightMM:number;shoulder:P;fixedLowerGlassToLocalZ:number;guardTopMaximumLocalZ:number;fixedCentrePost:{normalMM:readonly[number,number]};leaves:readonly {hand:number;hinge:P;completeWHDepth:readonly[number,number,number];frames:readonly {angle:number;plan:readonly(readonly[number,number])[]}[];gripPath:readonly P[];articulatedArm:{elbow:P;capsuleRadiusMM:number};stay:{pivot:P;openPeg:P;closedPeg:P;completeBarSectionMM:readonly[number,number];completeVerticalEnvelopeMM:number}}[]},extra:readonly {id:string;boxMm:B}[]=[]){
+ const settings=result.geometry.twoIndependentSettingsMm, members=[...inletUtilityFixedEnvelopes(result),...extra]
  if(!tuple(purge.body,2)||!tuple(purge.shoulder,3)||purge.bodyRadiusMM!==300||purge.bodyHeightMM!==2000||purge.leaves.length!==2)throw Error('Actual selected Utility purge task required')
  const rows:{id:string;kind:string;nominalMm:number;afterTwoSettingsMm:number}[]=[],add=(id:string,kind:string,n:number)=>rows.push({id,kind,nominalMm:n,afterTwoSettingsMm:n-settings}),
  cyl=(b:B)=>{const h=Math.hypot(...[0,1].map(k=>Math.max(b[k]-purge.body[k],purge.body[k]-b[k]-b[k+3],0)))-purge.bodyRadiusMM,v=Math.max(b[2]-purge.bodyHeightMM,-b[2]-b[5]);return h>0||v>0?Math.hypot(Math.max(h,0),Math.max(v,0)):Math.max(h,v)}
