@@ -2,13 +2,13 @@
   "schema": "had-local-room-pocket-receipt/1",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+    "bindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
     "inputs": {
-      "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
-      "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
-      "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
+      "project/had/studies/south-inlet-under-sill.json": "bb2def187df67e2d9660a607e38f2f1a31d3f7ec",
+      "project/had/studies/south-inlet-wet-box.json": "4f76d728857f170bed4be0b2c5b6308f3f2f88aa",
+      "project/had/studies/south-inlet-relief.json": "a46275c05e24559a9ab1552c124d4b191315e94e",
       "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f",
-      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+      "project/had/studies/current-house-services.json": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
       "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
       "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
       "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53",
@@ -25,7 +25,7 @@
     "methods": {
       "compiler/reference-house/current-design/inlet-store-drain.ts": "938289be42dc3cf6b118c253d606d4ed00278767",
       "compiler/reference-house/current-design/inlet-open-closed-outfall.ts": "2561bc047ea2b2a0428b26e732fefe8dd9c9ffaa",
-      "compiler/reference-house/current-design/inlet-known-gravity.ts": "b6ea4620653de87191cd59a7917515c72299a88c",
+      "compiler/reference-house/current-design/inlet-known-gravity.ts": "e35e1229c3de48f7911ea2252d2eb3a2186b9969",
       "compiler/reference-house/current-design/inlet-store-impulse.ts": "f378afdf23c3e4d673b33c63f3d952e6dac679fe",
       "compiler/reference-house/current-design/house-vertical-profile.ts": "702d5cda1182e25d576e2f4cce754f3d816b0f2d",
       "project/had/studies/house_vertical_profile.py": "1f41e39d3c37728c6aad8a4168ed7e230aad7929",
@@ -39,9 +39,9 @@
       "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
       "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
       "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "d6866cf54c00574aedb29be3959ef99e9dd4f101",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "213f5878a8e44f5d392a0caa196db49e5ce5c264",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
-      "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
+      "compiler/reference-house/current-design/inlet-room-pocket.ts": "4bbbbe977a2d8cc527fff8489a7af2054993f622",
       "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
       "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
       "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
@@ -177,7 +177,7 @@
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
       "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
       "groundResultDigest": "691af69840d9097b6917cd1a9b0043a9dad9d00b5268e45d6fcff2a073beac2e",
-      "caseDigest": "db1c7b5f8c51db204ea15cb7cbb14cd979bc0838c397d64735489fef77d96a48"
+      "caseDigest": "dfc4c126e88073eefb5a6ccc6e271554268ae99be60a453172e8daf27fefe94e"
     },
     "method": {
       "id": "source-derived-house-vertical-profile/1",
@@ -204,7 +204,7 @@
         "project/str/studies/current-house-lateral.json": "a3a4ae8393c14e04e874de02beebf901a4b87227",
         "project/str/studies/current-house-roof-bracing.py": "1fa8729ed65a62767ce12e0da81dae11e288513d",
         "project/mat/studies/ring-roof-family.json": "28afcd1cd63aa4d17cd8dfeb433dba1885b92478",
-        "project/str/studies/floor-section-proof.json": "43d622a67d01d40e976ee605dd2528f5104eac1f",
+        "project/str/studies/floor-section-proof.json": "ff34a52e0b089db21f43048c546d3b3b06ef76b4",
         "project/str/studies/current-house-ground-ties.json": "80c5ede6bcbe0b0bb3a19032feddd8403fbf19b1",
         "project/str/studies/floor-portal-monolithic-drag.json": "9a8cf79026419f3b9f05cee4b573b6dd1f3a04e6",
         "project/str/studies/current-house-floor-stops.json": "eaa3b7ac8fadb9583fb1bf6810495ac3ea4bbbb2",
@@ -216,8 +216,8 @@
         "project/str/studies/current-house-membrane.py": "6d6b5cd9280dcceebd7d1896e11f5e260c9cc793",
         "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
         "project/str/studies/retained_component_geometry.py": "23f1346b8213f2c79e93190b1d8826a6cf35fc45",
-        "project/str/studies/distributed_floor_compatibility.py": "45c0d9e082dec58edf2040064d7a14c50dcbb1d4",
-        "project/str/studies/perforated_floor_condensation.py": "b297a5f9d22a4890b2921ff2460d746f0cb4c4fe",
+        "project/str/studies/distributed_floor_compatibility.py": "7a8eb302813e8a509a1fac16ee29e7359d2c0bf9",
+        "project/str/studies/perforated_floor_condensation.py": "fbdea8993c4c00d863f2105c0a83f6ac0bf78c03",
         "project/str/studies/joined_successor_compatibility.py": "94196ac39dbb1a912b95bbde97b3db53ab29e58e",
         "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
         "project/str/studies/retained_components.py": "20d5ccd66cc0edcc2e785978247f0d80dc7f84e7",
@@ -263,7 +263,7 @@
     "authoredCase": {
       "schema": "house-vertical-profile-case/1",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-      "bindingDigest": "0414a76bfdd7478ccd1720699b3fcb1049528514de47b9b4538873f19a9b8c5b",
+      "bindingDigest": "38a2f9c63886cacb6d46f7d835e61441307cbe7b1c90129d499fa504c6e30216",
       "groundCase": {
         "schema": "str-dry-ground-case/1",
         "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
@@ -305,13 +305,13 @@
     "inputChange": "Omit only the recomputed houseVerticalProfile; same530ground, source settings and complete Plant choice.",
     "source": {
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-      "bindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+      "bindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
       "inputs": {
-        "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
-        "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
-        "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
+        "project/had/studies/south-inlet-under-sill.json": "bb2def187df67e2d9660a607e38f2f1a31d3f7ec",
+        "project/had/studies/south-inlet-wet-box.json": "4f76d728857f170bed4be0b2c5b6308f3f2f88aa",
+        "project/had/studies/south-inlet-relief.json": "a46275c05e24559a9ab1552c124d4b191315e94e",
         "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f",
-        "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
+        "project/had/studies/current-house-services.json": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
         "project/mat/studies/whole-house-service-baseline.json": "049161ebac29b24e0acc7d8085302fca906fe9d2",
         "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
         "project/had/studies/boundary-service-lodge.json": "edccc843f1829bf583e517095442ad9fe481da53",
@@ -328,7 +328,7 @@
       "methods": {
         "compiler/reference-house/current-design/inlet-store-drain.ts": "938289be42dc3cf6b118c253d606d4ed00278767",
         "compiler/reference-house/current-design/inlet-open-closed-outfall.ts": "2561bc047ea2b2a0428b26e732fefe8dd9c9ffaa",
-        "compiler/reference-house/current-design/inlet-known-gravity.ts": "b6ea4620653de87191cd59a7917515c72299a88c",
+        "compiler/reference-house/current-design/inlet-known-gravity.ts": "e35e1229c3de48f7911ea2252d2eb3a2186b9969",
         "compiler/reference-house/current-design/inlet-store-impulse.ts": "f378afdf23c3e4d673b33c63f3d952e6dac679fe",
         "compiler/reference-house/current-design/house-vertical-profile.ts": "702d5cda1182e25d576e2f4cce754f3d816b0f2d",
         "project/had/studies/house_vertical_profile.py": "1f41e39d3c37728c6aad8a4168ed7e230aad7929",
@@ -342,9 +342,9 @@
         "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
         "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
         "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
-        "compiler/reference-house/current-design/inlet-source-envelope.ts": "d6866cf54c00574aedb29be3959ef99e9dd4f101",
+        "compiler/reference-house/current-design/inlet-source-envelope.ts": "213f5878a8e44f5d392a0caa196db49e5ce5c264",
         "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
-        "compiler/reference-house/current-design/inlet-room-pocket.ts": "2997ff42a5295d1fcf69ccb4d54ddde54e1b6335",
+        "compiler/reference-house/current-design/inlet-room-pocket.ts": "4bbbbe977a2d8cc527fff8489a7af2054993f622",
         "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
         "compiler/reference-house/current-design/inlet-electrical-screen.ts": "38f7d1a752f835ec464e2bdd10432d4dbd32ff74",
         "compiler/reference-house/current-design/inlet-screen-frame.ts": "fff2a33daf6c6d3fe05d2e571ffd8db4f5806c51",
@@ -25652,7 +25652,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+          "sourceBindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -25790,7 +25790,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+            "sourceBindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
             "groundFflMm": 530,
             "roomPlanMm": [
               9397,
@@ -36612,7 +36612,7 @@
           "deckGuardIntrusionMm": 50
         }
       },
-      "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+      "sourceBindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
       "groundFflMm": 530,
       "selected": false,
       "rawArchVerticalReservation": {
@@ -36635,7 +36635,7 @@
           "headAbsoluteMm": 3380,
           "occupiedShiftMm": 530,
           "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
-          "profileCaseDigest": "db1c7b5f8c51db204ea15cb7cbb14cd979bc0838c397d64735489fef77d96a48",
+          "profileCaseDigest": "dfc4c126e88073eefb5a6ccc6e271554268ae99be60a453172e8daf27fefe94e",
           "belowSpringReserveMm": 230,
           "belowCrownHeadReserveMm": 530,
           "geometryOnly": true
@@ -36648,7 +36648,7 @@
       },
       "branchIdentity": "HAD/plant-independent-east-entry-development",
       "branchPrerequisites": {
-        "sameCurrentSource": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+        "sameCurrentSource": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
         "connections": [
           {
             "id": "source-entry",
@@ -36949,7 +36949,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+          "sourceBindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -37087,7 +37087,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+            "sourceBindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
             "groundFflMm": 530,
             "roomPlanMm": [
               9397,
@@ -43811,7 +43811,7 @@
             "headAbsoluteMm": 3380,
             "occupiedShiftMm": 530,
             "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
-            "profileCaseDigest": "db1c7b5f8c51db204ea15cb7cbb14cd979bc0838c397d64735489fef77d96a48"
+            "profileCaseDigest": "dfc4c126e88073eefb5a6ccc6e271554268ae99be60a453172e8daf27fefe94e"
           }
         },
         "sourceMaximumAbsoluteBar": 10.1,
@@ -62000,7 +62000,7 @@
         "supportOtherMassBudgetKg": 4
       },
       "source": {
-        "branchBinding": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
+        "branchBinding": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
         "branchId": "HAD/plant-independent-east-entry-development",
         "plantRoomId": "HAD/plant-wet-floor-threshold-successor",
         "groundFflMm": 530,
@@ -139955,8 +139955,8 @@
   "knownGravityInventory": {
     "schema": "had-known-gravity-components/1",
     "source": {
-      "inletBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
-      "inletCaseDigest": "2cc78c29dd2ea24246f01b63d2a818bb469d918e6f233eef90852a64358325ae",
+      "inletBindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
+      "inletCaseDigest": "7b66df3c99a5cb361ab190d45aabca25dfb7db03dda774664743d4b528263d47",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
       "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
     },
@@ -139985,8 +139985,8 @@
         "sourceObjectId": "HAD/local-utility-service-pocket",
         "sourceObjectDigest": "f233772f5af534684fe22d226fe43eb9d206907c6a0cbf086eecdb67f4b52f8c",
         "source": {
-          "inletBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
-          "inletCaseDigest": "2cc78c29dd2ea24246f01b63d2a818bb469d918e6f233eef90852a64358325ae",
+          "inletBindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
+          "inletCaseDigest": "7b66df3c99a5cb361ab190d45aabca25dfb7db03dda774664743d4b528263d47",
           "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
           "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
         },
@@ -140534,8 +140534,8 @@
         "sourceObjectId": "HAD/local-plant-service-pocket",
         "sourceObjectDigest": "328c823f4acbcdde4e148fe49b86f17aea87d3a8fe35d565e23e6521410c7453",
         "source": {
-          "inletBindingDigest": "b1ac2bb4062931bd3bc45442adf98a5c6415e50a8260c13ee3774642be0a49d6",
-          "inletCaseDigest": "2cc78c29dd2ea24246f01b63d2a818bb469d918e6f233eef90852a64358325ae",
+          "inletBindingDigest": "6b2efdbd54b72a5b37d1a6f1be17d22156deb04025772b2258cce3c95bfe80ed",
+          "inletCaseDigest": "7b66df3c99a5cb361ab190d45aabca25dfb7db03dda774664743d4b528263d47",
           "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
           "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
         },

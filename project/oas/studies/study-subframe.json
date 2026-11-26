@@ -15,13 +15,13 @@
     "project/ias/studies/household-water.json": "30c96e79dd3a35c96bb30e355b668c9a710a4060",
     "project/ias/studies/fitted-wc-schedule.json": "5e20c73409b5406a2de9d7ee7e5853e9302189c8",
     "project/ias/studies/utility-first-release.json": "be84a64623c8042a002af108a784b8668acd7542",
-    "project/ias/studies/utility-host-revised-route.json": "69e6b0aa5e1847f09c7ac3da3b98eec9bf1d5c0b",
+    "project/ias/studies/utility-host-revised-route.json": "6573da78a943647c900ae876d6b0701dbe2ca0cb",
     "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69",
     "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
     "project/str/studies/house-corner-rewind.json": "2a3f6ccb0f869c0ab860ba7846bbdbe2613ee640"
   },
   "sourceSha256": {
-    "bay": "88fad8763552800fa802f0d23246974873c2b71cfe4e1ec179a144b1a89bfb96",
+    "bay": "fde3c06971b965d0ffd0f4fac918c08b77549ebd0cc6d6554eeb9fc59aa54572",
     "window": "3ebdd8711d96647bccf9a303fd133de148b0e8120fb46aa7957641cc5511071a",
     "sash": "55681e4e870157e97a6ccfcfb5c8dbfa7f061053ff77f4a2329e7b7fc62eccb5",
     "room": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"

@@ -1,0 +1,95 @@
+{
+  "schema": "str-current-native-ordinary-root-join/1",
+  "scope": "Executed ordinary saved input and full CLI after owning output regeneration; engineering comparison only, no physical or architectural acceptance.",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikitFem": "12.0.2"
+  },
+  "sourceCommit": "b36546e7c4493ac3403851635884e13359585fa7",
+  "workingDiffSHA256": "883697b58cdcc930ec54f1516911434ac4cb716d019e112f590ff5c411423d83",
+  "designUnchanged": true,
+  "stagesUnchanged": true,
+  "ordinaryInputRead": true,
+  "documentIdentity": {
+    "digest": "b05e689e8503b8dc5c5a8d53f1f04e55b4bc1d33224bd8f183ce0cf38cda87da",
+    "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+    "sourceBindingsDigest": "f0f8b73b90e450f75123ae3aec56c7996e590e5cbf6b47f1a3be3d39ffb7edd3"
+  },
+  "ordinaryFullCLI": true,
+  "physicalAcceptance": false,
+  "coordinationDiagnostics": [
+    {
+      "code": "FLOOR_SECTION_NOT_ARCHITECTURALLY_ADOPTED",
+      "state": "uncoordinated-comparisons",
+      "stages": [
+        "floorSection",
+        "selectedWaterEvent",
+        "houseVerticalProfile",
+        "serviceFloor",
+        "studyRoomKit"
+      ],
+      "message": "The authored section replaces plate/membrane stiffness, work maps, actual mass and upper body starts in one roof/floor/52-head solve. Nominal plans and fixed-origin pressures are explicit controls; finish, stairs, services, weather tributaries, joints and reinforcement have not been adopted."
+    },
+    {
+      "code": "SEATED_WET_SUPPORT_NOT_ADOPTED",
+      "state": "uncoordinated-comparisons",
+      "stages": [
+        "floorSection",
+        "occupiedServices",
+        "selectedWaterEvent",
+        "studyRoomKit"
+      ],
+      "message": "The seated wet beam, original RC piers and finite normal pads use this same floor/roof/foundation model. Empty pier-head recesses remain explicit; bearing material, reinforcement/development, local joints, stair/service access and independent finish/thermal/air/weather closure remain unqualified. Bearing tension, friction and beam-column moment fixity are not credited."
+    },
+    {
+      "code": "WET_BEAM_COMPLETE_ENVELOPE_UNAVAILABLE",
+      "state": "uncoordinated-comparisons",
+      "stages": [
+        "floorSection"
+      ],
+      "message": "STR/wet-wall-support: Actual plate/membrane attachment stations are real beam nodes, and executed discrete beam cuts are recovered. The full load envelope, bearing stress spreading and resistance remain unqualified; receiving-grid discrete cuts have their own explicit scope."
+    },
+    {
+      "code": "WET_GRID_COMPLETE_ENVELOPE_UNAVAILABLE",
+      "state": "uncoordinated-comparisons",
+      "stages": [
+        "floorSection"
+      ],
+      "message": "STR/wet-wall-support/grid: Only the two actual wet-post receiving members in this executed discrete case. Full signed demand, local3D joint/cage and foundation/site resistance remain unqualified."
+    },
+    {
+      "code": "FINITE_JOINT_UNSELECTED",
+      "message": "One actual SW finite joint in the full52-head house, with explicit conventional isotropic secant RC laws and separately retained steel chord. Complete signed loading, convergence, reinforcement, material, weather and house adoption remain unqualified.",
+      "state": "uncoordinated-comparisons",
+      "stages": [
+        "floorSection"
+      ]
+    },
+    {
+      "code": "UNQUALIFIED_SERVICE_PENETRATION",
+      "state": "uncoordinated-comparisons",
+      "stages": [
+        "floorSection",
+        "occupiedServices"
+      ],
+      "message": "project/mat/studies/whole-house-service-baseline.json#PV.DCRequiredRoutes/0/1 intersects actual slab material at [[10000,5000,3370],[10000,5000,3170]]. This conflict already exists at RC200. No new hole, qualified envelope or service fit is inferred."
+    },
+    {
+      "code": "STAIR_PLAN_SOURCE_SPLIT",
+      "objectId": "reference-house/return-stair",
+      "state": "uncoordinated-comparisons",
+      "stages": [
+        "plans",
+        "occupiedServices",
+        "selectedWaterEvent"
+      ],
+      "message": "Nominal stair [417.5,3832.5,2400,4335] at compiler/reference-house/georgian/layout-revision.ts differs from the selected HAD/STR-source stair [417.5,4432.5,2400,4335] at project/had/studies/water-replan.json; selected minus nominal XYWH is [0,600,0,0] mm and floor-datum difference is [0,0] mm. These are separate source comparisons, not one coordinated house. No footprint or datum is adopted or transformed."
+    }
+  ],
+  "physicalHeads": 52,
+  "finiteStatus": "computed-unselected-comparison",
+  "native58Authenticated": true,
+  "bundleSHA256": "fdcf8588738464befd4bbd57c583e9216a0f929fd14c1649a42f9dae833a03aa"
+}

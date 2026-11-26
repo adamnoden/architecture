@@ -544,6 +544,18 @@
       "observed": "8784311f60d110ba88a8cd26e6d70862875b4365582ed1f0c2dae1b2c566628d"
     }
   ],
+  "capturedProposedGeometrySourceSHA256": {
+    "project/str/studies/current_two_room_proposed.mjs": "fa8bf48920d69831e4f34b4bdf29636f781d4a4806fc294a6bf38120ee9929bb",
+    "compiler/reference-house/current-design/inlet-room-pocket.ts": "00f167f89c2c77290c0dba1c10fbc3c51521a8c32ee18501fe00cc21189abc5a",
+    "compiler/reference-house/current-design/inlet-known-gravity.ts": "e025808df488e7324429c1bd29614cbabdf4b67ca7d3167e5d40de2bc9840512",
+    "compiler/reference-house/current-design/inlet-source-envelope.ts": "4d17c1d6cc67f9a692a8fcfde288f291737e6e34a6aac8cc0801f794145f03d9",
+    "project/had/studies/inlet-split-plant-room-candidate.json": "3aa2dd79aba4594bca05c31f86fe079fc4850c7430255cc5e2434f76f7f21fa8",
+    "project/str/studies/dry_side_ground_section.py": "1ebd67c260283463ab190aa2b8bf29c514c1fbcdf4e489fb44a1b0f8cc7643c7",
+    "project/str/studies/dry-side-ground-section.json": "54fdbc4ce7dbceb48f1945d1b664cc481070f8bab9ee65c6c8253db1015e139d",
+    "project/ias/studies/utility-host-revised-route.py": "90eafac079f3fc963888e0933e01a6c7929cae9ac40fdd1161d3ce36b6d2d8c3",
+    "project/ias/studies/utility-host-revised-route.json": "c13ce695b2bbf2ca9fea0eb8dd8d954d6431f788824a7f3a713dc72ed1ebe434",
+    "project/ias/studies/utility-host-revised-route.svg": "f30327ab602ffec45d49c07643582c70745f353ff5db5814f057280630f8a2dd"
+  },
   "sourceSHA256": {
     "compiler/reference-house/current-design/structural-ground-pockets.ts": "656230115af3400d8a008f1e79a00e3c37b704aac62e78e24855a61fc82f0f7e",
     "compiler/reference-house/current-design/structural-ground-pocket-settings.ts": "7b4172067b9c9926b7ac010cb5bda8a907d83eea5cb8926b924c0f1bc97e3d2b",
@@ -611,7 +623,7 @@
   },
   "captureArchiveSHA256": "3d5990ef9dc9e0abf46cb35a13accfecfae0a0abb9555a96b0b0636388255e23",
   "replayMethodSHA256": {
-    "project/str/studies/service_room_ground_receiver_proof.py": "8784311f60d110ba88a8cd26e6d70862875b4365582ed1f0c2dae1b2c566628d",
+    "project/str/studies/service_room_ground_receiver_proof.py": "699c52600fd6e8d03938723134dc227b86e27bc8368d729338e831d2e1b48c5a",
     "project/str/studies/service_room_ground_receiver_replay.py": "b476685ebb82791034d2f4d2f30bd88a7b085ae313bc190fba0f91c4ce6ebcaa"
   },
   "priorTwoRoomArchiveSHA256": "689fe5568cde6e92559d44842526b30e7078287fee3b4daab4aa4fe5893bd3cf",
