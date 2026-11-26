@@ -339,7 +339,7 @@ def external_cover_audit(c,columns,links,beam_links):
         'checkedProfileCount':len(items),'floorArcsAtSlabCoreUnionNeedSeparateSurfaceWitness':True}
 
 
-def corner_floor_surface_cover_audit(c,paths):
+def corner_floor_surface_cover_audit(c,paths,ordinary=False):
     """Conservative exact-coordinate bounds against the local concrete UNION.
     Core two300x1000 arms are continuous above/below the real200 slab.
     Orthant complement represents the actual concave slab/core surface;
@@ -348,10 +348,14 @@ def corner_floor_surface_cover_audit(c,paths):
     g=c['geometry'];tol=g['cageSettingMm']+g['independentBarSettingMm'];fail=[];certified=0
     def cover_bound(primitive,a,b,r):
         lo,hi=primitive_bounds(primitive,a,b);lo=[x-tol for x in lo];hi=[x+tol for x in hi]
+        if ordinary:
+            above_inner=math.sqrt(max(0.,300-hi[current_axis])**2+max(0.,3370-hi[2])**2)
+            return min(lo[current_axis],lo[2]-3170,3520-hi[2],above_inner)-r
         above=math.sqrt(max(0.,300-hi[0])**2+max(0.,300-hi[1])**2+max(0.,3370-hi[2])**2)
         below=math.sqrt(max(0.,300-hi[0])**2+max(0.,300-hi[1])**2+max(0.,lo[2]-3170)**2)
         return min(lo[0],lo[1],1000-hi[0],1000-hi[1],above,below)-r
     for path in paths:
+        current_axis=int(path['id'].split('/')[1])
         for primitive in path['primitives']:
             stack=[(0.,1.)];count=0
             while stack:
@@ -370,7 +374,7 @@ def corner_floor_surface_cover_audit(c,paths):
                 break
     return {'allCertified':not fail,'failures':fail,'certifiedParameterIntervals':certified,
         'settingDeductedOnEveryAxisMm':tol,'minimumRequiredMm':g['minimumConcreteCoverMm'],
-        'localCornerSlabAndTwoContinuousCoreArmsOnly':True}
+        'localCornerSlabAndTwoContinuousCoreArmsOnly':not ordinary,'ordinaryBandAndContinuousSlabOnly':ordinary}
 
 
 def floor_floor_audit(c,paths):
@@ -501,6 +505,7 @@ def assess(c,base,full_geometry=False):
         'allLinksAgainstEachOtherAudit':audit_unique_paths(links+beam_links,tol) if full_geometry else {'executed':False},
         'intendedLinkMainContacts':intended_link_main_contact_audit(c,col,links,beam_links) if full_geometry else {'executed':False},
         'allFloorProfilesAgainstEachOtherAudit':floor_floor_audit(c,floors+ordinary) if full_geometry else {'executed':False},
+        'ordinaryFloorConcreteUnionCoverAudit':corner_floor_surface_cover_audit(c,ordinary,ordinary=True),
         'cornerFloorConcreteUnionCoverAudit':corner_floor_surface_cover_audit(c,floors),
         'externalConcreteCoverAudit':external_cover_audit(c,col,links,beam_links),
         'ordinaryFloorAgainstBeamAudit':beam_floor_audit(c,beam,ordinary) if full_geometry else {'executed':False},

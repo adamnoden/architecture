@@ -155,6 +155,12 @@ class CageControls(unittest.TestCase):
         before=next(x for x in self.r['materialBounds']['ordinary350Anchorage'] if x['layer']=='X-top')
         after=next(x for x in bound['ordinary350Anchorage'] if x['layer']=='X-top')
         self.assertAlmostEqual(after['basicTensionBondLengthInsideBandMm'],before['basicTensionBondLengthInsideBandMm']-10)
+    def test_ordinary_returns_have_cover_to_actual_band_and_slab_union(self):
+        self.assertTrue(self.r['ordinaryFloorConcreteUnionCoverAudit']['allCertified'],str(self.r['ordinaryFloorConcreteUnionCoverAudit']))
+        c=copy.deepcopy(self.c);c['geometry']['ordinaryFloorVerticalEndZMm']=3470
+        bad=p.corner_floor_surface_cover_audit(c,p.ordinary_floor_paths(c),ordinary=True)
+        self.assertFalse(bad['allCertified'])
+        self.assertTrue(any(x['state']=='insufficient-cover' for x in bad['failures']))
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')
