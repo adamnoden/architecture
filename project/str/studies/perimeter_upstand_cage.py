@@ -229,8 +229,13 @@ def ordinary_floor_paths(c):
     for axis in (0,1):
         for layer in ('bottom','top'):
             n=g['ordinaryFloorReturnNormalMm'][layer];z=floor_layers(c)[('X' if axis==0 else 'Y')+'-'+layer]
-            for along in g['ordinaryFloorAlongCoordinatesMm']:
+            for along in g['ordinaryFloorAlongCoordinatesMm'][layer]:
                 point=lambda x,h:[x,along,h] if axis==0 else [along,x,h]
+                if layer=='top' and along==g['ordinaryStraightTopRowMm']:
+                    out.append({'id':f'ordinary-floor/{axis}/{layer}/{along:g}','nominalMm':g['floorBarNominalMm'],'outsideMm':g['floorBarOutsideMm'],
+                        'straightBarWithFiniteBondCapacityOnly':True,
+                        'primitives':[line(point(700,z),point(g['ordinaryStraightBarOuterEndMm'],z))]})
+                    continue
                 out.append({'id':f'ordinary-floor/{axis}/{layer}/{along:g}','nominalMm':g['floorBarNominalMm'],'outsideMm':g['floorBarOutsideMm'],
                     'primitives':[line(point(700,z),point(n+r,z)),arc([n+r,z+r],r,1.5*math.pi,math.pi,[axis,2],along),
                         line(point(n,z+r),point(n,g['ordinaryFloorVerticalEndZMm']))]})
@@ -251,7 +256,7 @@ def ordinary_beam_links(c):
     g,l=c['geometry'],c['links'];d=l['beamOutsideMm'];r=(l['beamMandrelMm']+d)/2
     combined=(d+g['beamBarOutsideMm'])/2;outward=r-(r-combined)/math.sqrt(2)
     normals=g['beamBarNormalMm'];zs=g['beamBarZMm']
-    rows=g['ordinaryFloorAlongCoordinatesMm'];planes=[(a+b)/2 for a,b in zip(rows,rows[1:]) if (a+b)/2>1000]
+    planes=l['ordinaryBeamStirrupPlanesMm']
     out=[]
     for axis in (0,1):
         for along in planes:
@@ -367,6 +372,33 @@ def corner_floor_surface_cover_audit(c,paths):
         'settingDeductedOnEveryAxisMm':tol,'minimumRequiredMm':g['minimumConcreteCoverMm'],
         'localCornerSlabAndTwoContinuousCoreArmsOnly':True}
 
+
+def floor_floor_audit(c,paths):
+    """All actual floor profiles, including opposed corner and phased edge returns.
+    Only perpendicular horizontal mat segments have prescribed tied-surface contact.
+    Curves, tails and all other pairs retain the full independent-placement box.
+    """
+    if not c['geometry']['crossedMatsRequireTiedNormalContact']:raise ValueError('Actual tied mat crossing constraints required')
+    tol=2*c['geometry']['independentBarSettingMm'];fail=[];pairs=0;locked=0
+    for i,a in enumerate(paths):
+        for b in paths[i+1:]:
+            r=(a['outsideMm']+b['outsideMm'])/2
+            if separated_boxes(paths_bounds(a),paths_bounds(b),tol,r):continue
+            ia,ib=a['id'].split('/'),b['id'].split('/')
+            mat_cross=ia[1]!=ib[1] and ia[2]==ib[2]
+            for pa in a['primitives']:
+                for pb in b['primitives']:
+                    aa,bb=primitive_bounds(pa,0,1),primitive_bounds(pb,0,1)
+                    if separated_boxes(aa,bb,tol,r):continue
+                    horiz=lambda p:p['kind']=='line' and p['points'][0][2]==p['points'][1][2]
+                    if mat_cross and horiz(pa) and horiz(pb) and abs(pa['points'][0][2]-pb['points'][0][2])>=r-1e-9:
+                        locked+=1;continue
+                    ans=certify_primitive_pair(pa,pb,r,tol,budget=4000);pairs+=1
+                    if ans['state']!='clear':
+                        fail.append({'a':a['id'],'b':b['id'],**ans})
+                        if len(fail)>=12:return {'allCertified':False,'failures':fail,'primitivePairs':pairs,'lockedMatContactCertificates':locked,'truncated':True}
+    return {'allCertified':not fail,'failures':fail,'primitivePairs':pairs,'lockedMatContactCertificates':locked,'truncated':False}
+
 def material_bounds(c):
     g,m=c['geometry'],c['materials'];d=g['floorBarNominalMm'];f=m['reinforcementComparisonMPa']
     ab=(g['floorPitchMm']-2*g['independentBarSettingMm'])/2
@@ -403,6 +435,9 @@ def material_bounds(c):
         'legacyH16Per80AreaMm2PerM':area(16)*1000/80,
         'requiredMandrelAt400MPaWorstIndependentPitchMm':dm,
         'cornerMandrelReserveMm':g['cornerFloorMandrelMm']-dm,
+        'ordinaryStraightTopRowBasicTensionLengthMm':g['ordinaryBandWidthMm']-g['ordinaryStraightBarOuterEndMm'],
+        'ordinaryStraightTopRowPoorBondStressCapMPa':(g['ordinaryBandWidthMm']-g['ordinaryStraightBarOuterEndMm'])*4*m['poorBondMPa']/d,
+        'ordinaryStraightTopRowGoodBondStressCapMPa':(g['ordinaryBandWidthMm']-g['ordinaryStraightBarOuterEndMm'])*4*m['goodBondMPa']/d,
         'cornerPoorBondFull400StraightRequirementMm':d*f/(4*m['poorBondMPa']),
         'cornerStraightTailReserveMm':g['cornerFloorStraightTailMm']-d*f/(4*m['poorBondMPa']),
         'ordinary350Anchorage':ordinary,
@@ -456,6 +491,7 @@ def assess(c,base,full_geometry=False):
         'ordinaryBeamLinksAgainstFloorAudit':audit_path_groups(beam_links,floors+ordinary,tol) if full_geometry else {'executed':False},
         'allLinksAgainstEachOtherAudit':audit_unique_paths(links+beam_links,tol) if full_geometry else {'executed':False},
         'intendedLinkMainContacts':intended_link_main_contact_audit(c,col,links,beam_links) if full_geometry else {'executed':False},
+        'allFloorProfilesAgainstEachOtherAudit':floor_floor_audit(c,floors+ordinary) if full_geometry else {'executed':False},
         'cornerFloorConcreteUnionCoverAudit':corner_floor_surface_cover_audit(c,floors),
         'externalConcreteCoverAudit':external_cover_audit(c,col,links,beam_links),
         'ordinaryFloorAgainstBeamAudit':beam_floor_audit(c,beam,ordinary) if full_geometry else {'executed':False},

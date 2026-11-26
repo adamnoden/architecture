@@ -71,17 +71,33 @@
       "top": 150
     },
     "singleMonolithicPourRequiredForGoodBond": true,
-    "ordinaryFloorAlongCoordinatesMm": [
-      977,
-      1050,
-      1125,
-      1200,
-      1275,
-      1350,
-      1425,
-      1500,
-      1575
-    ]
+    "ordinaryFloorAlongCoordinatesMm": {
+      "bottom": [
+        985,
+        1050,
+        1125,
+        1200,
+        1275,
+        1350,
+        1425,
+        1500,
+        1575
+      ],
+      "top": [
+        955,
+        1013.5,
+        1087.5,
+        1162.5,
+        1237.5,
+        1312.5,
+        1387.5,
+        1462.5,
+        1537.5
+      ]
+    },
+    "ordinaryStraightTopRowMm": 955,
+    "ordinaryStraightBarOuterEndMm": 60,
+    "crossedMatsRequireTiedNormalContact": true
   },
   "links": {
     "columnNominalMm": 10,
@@ -170,7 +186,17 @@
         4440,
         4590
       ]
-    }
+    },
+    "ordinaryBeamStirrupPlanesMm": [
+      1045,
+      1125,
+      1200,
+      1275,
+      1350,
+      1425,
+      1500,
+      1575
+    ]
   },
   "materials": {
     "reinforcementComparisonMPa": 400,

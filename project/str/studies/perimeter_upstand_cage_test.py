@@ -75,7 +75,7 @@ class CageControls(unittest.TestCase):
         self.assertLess(bad['adverseSurfaceClearMm'],0)
         self.assertTrue(all(abs(v)<=2 for v in bad['relativeShiftMm']))
     def test_full_node_has_no_unclassified_bar_collisions(self):
-        for key in ('beamFloorThreeDimensionalBoxAudit','linksAgainstBeamThreeDimensionalAudit','linksAgainstFloorThreeDimensionalAudit','ordinaryBeamLinksAgainstFloorAudit','allLinksAgainstEachOtherAudit','ordinaryFloorAgainstBeamAudit'):
+        for key in ('beamFloorThreeDimensionalBoxAudit','linksAgainstBeamThreeDimensionalAudit','linksAgainstFloorThreeDimensionalAudit','ordinaryBeamLinksAgainstFloorAudit','allLinksAgainstEachOtherAudit','ordinaryFloorAgainstBeamAudit','allFloorProfilesAgainstEachOtherAudit'):
             self.assertTrue(self.r[key]['allCertified'],str((key,self.r[key]['failures'][:2])))
     def test_tied_contacts_still_reject_cylinder_intrusion(self):
         r=self.r['intendedLinkMainContacts']
@@ -120,6 +120,16 @@ class CageControls(unittest.TestCase):
     def test_aggregate_assumption_is_explicit_and_larger_stock_rejects(self):
         c=copy.deepcopy(self.c);c['materials']['maximumAggregateMm']=20
         with self.assertRaisesRegex(ValueError,'aggregate'):p.assess(c,self.base)
+    def test_same_row_ordinary_upturns_really_interpenetrate_top_mat(self):
+        c=copy.deepcopy(self.c)
+        c['geometry']['ordinaryFloorAlongCoordinatesMm']['top']=c['geometry']['ordinaryFloorAlongCoordinatesMm']['bottom']
+        bad=p.floor_floor_audit(c,p.ordinary_floor_paths(c))
+        self.assertFalse(bad['allCertified'])
+        self.assertTrue(any(x['state']=='collision' for x in bad['failures']))
+    def test_actual_tied_mat_crossings_are_explicit(self):
+        self.assertGreater(self.r['allFloorProfilesAgainstEachOtherAudit']['lockedMatContactCertificates'],0)
+        c=copy.deepcopy(self.c);c['geometry']['crossedMatsRequireTiedNormalContact']=False
+        with self.assertRaises(ValueError):p.floor_floor_audit(c,p.corner_floor_paths(c))
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')
