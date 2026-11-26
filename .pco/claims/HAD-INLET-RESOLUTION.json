@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T14:32:21.000Z",
-  "expiresAt": "2026-11-26T15:17:21.000Z",
+  "heartbeatAt": "2026-11-26T14:51:38.000Z",
+  "expiresAt": "2026-11-26T15:36:38.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
@@ -36,8 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "Compactwest bcfd7ed6 PASS45836629161 types+20inclwasher700+35lift/fittings13.483net. Actual topology has U/P independent internalcuts; retire only groundUtility obsolete COLD edge, retain Plant/store/12fixtures/hot/heat.",
-    "next": "Join real washer/sink stops and retire actual coldedge; prove branch-only drain/capture after physical isolation, then fullassembly/ground.",
-    "blocker": "No main/store isolation from a later blank. Complete support, backfeed, wetexposure, crew and material/flow qualification open."
+    "evidence": "1629b198 drain bridge awaitsfullhealth. Compactwest20 geometrychecks green; newservice22 controls/typefixcheckpoint. ActualU/P feeds traced; realoccupiedcoldgraphprojection/localstops and MATgroundUtilitycold-onlyretirementactive.",
+    "next": "Earn actualUfixtureisolation/reachability and cut/drain/capture; preservePlant12/store/hot/heat. Join complete assembly, faults and actualground.",
+    "blocker": "No houseisolation fromlaterblank; U+Pinternalcuts bothrequired. Physicalsupports, renewal, backfeed/material/flowqualification open."
   }
 }
