@@ -110,6 +110,12 @@ class CageControls(unittest.TestCase):
         bad=p.external_cover_audit(c,p.column_points(c),links,p.ordinary_beam_links(c))
         self.assertFalse(bad['allCheckedProfilesMeetMinimum'])
         self.assertAlmostEqual(bad['worst']['adverseExternalConcreteCoverMm'],35)
+    def test_corner_returns_have_cover_to_actual_concrete_union(self):
+        self.assertTrue(self.r['cornerFloorConcreteUnionCoverAudit']['allCertified'],str(self.r['cornerFloorConcreteUnionCoverAudit']))
+        c=copy.deepcopy(self.c);c['geometry']['floorNominalSurfaceCoverMm']=49
+        bad=p.corner_floor_surface_cover_audit(c,p.corner_floor_paths(c))
+        self.assertFalse(bad['allCertified'])
+        self.assertTrue(any(x['state']=='insufficient-cover' for x in bad['failures']))
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')

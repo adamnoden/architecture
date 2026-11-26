@@ -334,6 +334,40 @@ def external_cover_audit(c,columns,links,beam_links):
         'worst':min(items,key=lambda x:x['adverseExternalConcreteCoverMm']),
         'checkedProfileCount':len(items),'floorArcsAtSlabCoreUnionNeedSeparateSurfaceWitness':True}
 
+
+def corner_floor_surface_cover_audit(c,paths):
+    """Conservative exact-coordinate bounds against the local concrete UNION.
+    Core two300x1000 arms are continuous above/below the real200 slab.
+    Orthant complement represents the actual concave slab/core surface;
+    no artificial concrete face is inserted at their internal material seam.
+    """
+    g=c['geometry'];tol=g['cageSettingMm']+g['independentBarSettingMm'];fail=[];certified=0
+    def cover_bound(primitive,a,b,r):
+        lo,hi=primitive_bounds(primitive,a,b);lo=[x-tol for x in lo];hi=[x+tol for x in hi]
+        above=math.sqrt(max(0.,300-hi[0])**2+max(0.,300-hi[1])**2+max(0.,3370-hi[2])**2)
+        below=math.sqrt(max(0.,300-hi[0])**2+max(0.,300-hi[1])**2+max(0.,lo[2]-3170)**2)
+        return min(lo[0],lo[1],1000-hi[0],1000-hi[1],above,below)-r
+    for path in paths:
+        for primitive in path['primitives']:
+            stack=[(0.,1.)];count=0
+            while stack:
+                a,b=stack.pop();count+=1
+                lower=cover_bound(primitive,a,b,path['outsideMm']/2)
+                if lower>=g['minimumConcreteCoverMm']-1e-9:certified+=1;continue
+                for t in (a,(a+b)/2,b):
+                    point=primitive_point(primitive,t);q=line(point,point)
+                    value=cover_bound(q,0.,1.,path['outsideMm']/2)
+                    if value<g['minimumConcreteCoverMm']-1e-8:
+                        fail.append({'id':path['id'],'state':'insufficient-cover','nominalPointMm':point,'adverseCoverMm':value});break
+                else:
+                    if count<4000 and b-a>1e-10:
+                        middle=(a+b)/2;stack.extend(((a,middle),(middle,b)));continue
+                    fail.append({'id':path['id'],'state':'unresolved-cover-bound'})
+                break
+    return {'allCertified':not fail,'failures':fail,'certifiedParameterIntervals':certified,
+        'settingDeductedOnEveryAxisMm':tol,'minimumRequiredMm':g['minimumConcreteCoverMm'],
+        'localCornerSlabAndTwoContinuousCoreArmsOnly':True}
+
 def material_bounds(c):
     g,m=c['geometry'],c['materials'];d=g['floorBarNominalMm'];f=m['reinforcementComparisonMPa']
     ab=(g['floorPitchMm']-2*g['independentBarSettingMm'])/2
@@ -422,6 +456,7 @@ def assess(c,base,full_geometry=False):
         'ordinaryBeamLinksAgainstFloorAudit':audit_path_groups(beam_links,floors+ordinary,tol) if full_geometry else {'executed':False},
         'allLinksAgainstEachOtherAudit':audit_unique_paths(links+beam_links,tol) if full_geometry else {'executed':False},
         'intendedLinkMainContacts':intended_link_main_contact_audit(c,col,links,beam_links) if full_geometry else {'executed':False},
+        'cornerFloorConcreteUnionCoverAudit':corner_floor_surface_cover_audit(c,floors),
         'externalConcreteCoverAudit':external_cover_audit(c,col,links,beam_links),
         'ordinaryFloorAgainstBeamAudit':beam_floor_audit(c,beam,ordinary) if full_geometry else {'executed':False},
         'linksAgainstBeamThreeDimensionalAudit':link_beam,'linksAgainstFloorThreeDimensionalAudit':link_floor,
