@@ -202,5 +202,49 @@
     "minimumRatedCargoKg": 500,
     "pressureStoreCargoIncludesTransportCarrierRequired": true,
     "actualLiftRatingGuardDockAndSiteSupportAccepted": false
+  },
+  "normalAssembly": {
+    "schema": "had-Plant-normal-assembly/1",
+    "installationPath": "plant/upstream",
+    "storeConnectionMode": "direct-straight",
+    "storeHighStraightStubMm": 100,
+    "prvAxisHouseLocalZMm": 1310,
+    "prvCompleteEnvelopeMm": [
+      160,
+      160,
+      250
+    ],
+    "prvCompleteMassUpperKg": 20,
+    "minimumKv": 12,
+    "internalCutMinimumKv": 12,
+    "ordinaryShoulderXYMm": [
+      11000,
+      4350
+    ],
+    "shoulderAboveWalkMm": 1450,
+    "maintenanceStepMm": 0,
+    "stepPlanWHMm": [
+      600,
+      600
+    ],
+    "bodyRadiusMm": 300,
+    "bodyHeightMm": 2000,
+    "armRadiusMm": 40,
+    "toolRadiusMm": 80,
+    "maximumReachMm": 600,
+    "minimumRegulatorAuthorityBar": 0.1,
+    "toolLengthMm": 100,
+    "toolVerticalHalfMm": 60,
+    "toolBodyStandOffMm": 20,
+    "driverRadiusMm": 5,
+    "unionToolLengthMm": 324,
+    "unionHeadDiameterMm": 120,
+    "unionShaftWidthMm": 40,
+    "unionMaximumThicknessMm": 21.5,
+    "unionLandSeparationMm": 50,
+    "unionMaintenanceShoulderAboveWalkMm": 1150,
+    "unionSwingDeg": 25,
+    "unionMinimumEffectiveLeverMm": 250,
+    "unionServiceWindowMm": 75
   }
 }

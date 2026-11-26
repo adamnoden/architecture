@@ -114,5 +114,23 @@ test('the same active P source aperture drives delivery and fault; an insufficie
  const lowRoof=structuredClone(active);lowRoof.choice.outfalls.clearHeightMm=75
  const failed=inletPlantTankedRoom(lowRoof)
  assert.equal(failed.containment.necessaryClosedPressureNetworkVolumeScreen,false)
- assert.ok(failed.outfalls.profiles.some(p=>p.minimumSteadyClosedRoofAirReserveMm!==null&&p.minimumSteadyClosedRoofAirReserveMm<0))
+ assert.ok(failed.outfalls.profiles.some(p=>typeof p.minimumSteadyClosedRoofAirReserveMm==='number'&&p.minimumSteadyClosedRoofAirReserveMm<0))
+})
+
+test('same Plant normal assembly controls inventory, source authority, route and case invalidation',()=>{
+ const i=roomRequest(),r=inletPlantTankedRoom(i),larger=structuredClone(i)
+ assert.equal(r.inventory.feedPathsFromSameNormalAssembly,true)
+ assert.equal(r.normalInstallation.regulator.placedBeforeBothActualColdBranches,true)
+ assert.ok(r.inventory.inlineRegulatorNetAddedOuterWaterUpperL>6)
+ assert.deepEqual(r.inventory.feedRows.map((v:any)=>v.id),r.normalInstallation.branch.paths.map(v=>v.id))
+ larger.choice.normalAssembly.prvCompleteEnvelopeMm=[160,160,300]
+ const b=inletPlantTankedRoom(larger)
+ assert.ok(b.inventory.fullInstantPressureNetworkDesignReleaseL>r.inventory.fullInstantPressureNetworkDesignReleaseL)
+ assert.notEqual(b.source.caseDigest,r.source.caseDigest)
+ const poor=structuredClone(i);poor.choice.normalAssembly.minimumKv=.3
+ const failed=inletPlantTankedRoom(poor)
+ assert.equal(failed.normalInstallation.regulator.necessaryAuthorityComparison,false)
+ assert.equal(failed.normalHeatedInventory.necessaryRegulatorAuthorityComparison,false)
+ assert.notEqual(failed.source.caseDigest,r.source.caseDigest)
+ console.info('PLANT_SAME_ASSEMBLY '+JSON.stringify({inventory:r.inventory.fullInstantPressureNetworkDesignReleaseL,inline:r.inventory.inlineRegulatorNetAddedOuterWaterUpperL,reserve:r.containment.reserveL,normalGeometry:r.normalInstallation.geometryFailures,unions:r.normalInstallation.unionRenewal.tasks.map(p=>({id:p.id,necessary:p.necessaryExternalTwoToolGeometry,failures:p.rows.filter(v=>Math.min(v.minimumRoomMm,v.minimumObjectMm,v.minimumShaftPipeMm,v.minimumHeadOtherPipeMm,v.minimumOwnBodyMm,v.minimumArmMm)<0||v.reachWithSettingsMm>600)}))}))
 })
