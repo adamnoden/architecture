@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:58.053Z",
-  "heartbeatAt": "2026-11-26T16:03:31.000Z",
-  "expiresAt": "2026-11-26T16:48:31.000Z",
+  "heartbeatAt": "2026-11-26T16:34:45.000Z",
+  "expiresAt": "2026-11-26T17:19:45.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "b479f58b-3e14-4e4a-a028-a45b15d2c504",
@@ -36,8 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "U graph26tests green; legacy20/40claim corrected73f08116. Chosen rear-chase U coldtree removes inherited carrier/post/mast if whole sequence passes. P actual3D storage ledgers expose false column/air-screen bounds;500duct trial active.",
-    "next": "Finish one complete rear-coldtree operation/removal sequence and source joins. Qualify real P330+inventory catastrophic wet/pressure/vented outfall system.",
-    "blocker": "No complete normal/support/renewal/Pfault installation pass. Do not invent base friction, downstream isolation or free duct volume."
+    "evidence": "9ea8f4cd protects real rear cold tree, union and sink/front clearances. Main38 tests PASS45857804035. Plant catastrophic storage and complete local-user removal still being joined.",
+    "next": "Finish actual full tree/renewal and joined Plant rupture storage, then regenerate new source-bound installation and gravity evidence.",
+    "blocker": "No complete Utility/Plant installation closure or store pressure/temperature contract. Existing40kg host qualification invalidated; no capacity credit."
   }
 }
