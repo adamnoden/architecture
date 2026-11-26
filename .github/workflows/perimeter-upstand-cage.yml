@@ -36,7 +36,7 @@ jobs:
       - name: Render exact source-owned SVG
         if: always()
         run: |
-          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars --screenshot=/tmp/perimeter-upstand-cage/perimeter-upstand-cage.png --window-size=1500,1140 file:///tmp/perimeter-upstand-cage/perimeter-upstand-cage.svg
+          google-chrome --headless --no-sandbox --disable-gpu --hide-scrollbars --screenshot=/tmp/perimeter-upstand-cage/perimeter-upstand-cage.png --window-size=1500,1240 file:///tmp/perimeter-upstand-cage/perimeter-upstand-cage.svg
           python - <<'PY'
           import base64,pathlib
           p=pathlib.Path('/tmp/perimeter-upstand-cage/perimeter-upstand-cage.png')

@@ -119,7 +119,7 @@ class CageControls(unittest.TestCase):
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')
-        self.assertEqual(root.attrib['viewBox'],'0 0 1500 1140')
+        self.assertEqual(root.attrib['viewBox'],'0 0 1500 1240')
     def test_no_complete_cage_or_demand_acceptance_injection(self):
         c=copy.deepcopy(self.c);c['scope']['wholeCagePlacingAccepted']=True
         with self.assertRaises(ValueError):p.assess(c,self.base)

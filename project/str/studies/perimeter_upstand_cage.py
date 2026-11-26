@@ -474,19 +474,20 @@ def assess(c,base,full_geometry=False):
 def draw(c,result):
     """Source-derived projections; no invented force/resistance depiction."""
     ns='http://www.w3.org/2000/svg';ET.register_namespace('',ns)
-    root=ET.Element('{'+ns+'}svg',{'width':'1500','height':'1140','viewBox':'0 0 1500 1140'})
+    root=ET.Element('{'+ns+'}svg',{'width':'1500','height':'1240','viewBox':'0 0 1500 1240'})
     def elem(tag,**kw):return ET.SubElement(root,'{'+ns+'}'+tag,{k.replace('_','-'):str(v) for k,v in kw.items()})
     def text(x,y,value,size=18):elem('text',x=x,y=y,font_family='Arial',font_size=size,fill='#202a35').text=value
     def path(points,colour,width=2):
         return elem('polyline',points=' '.join(f'{x:.3f},{y:.3f}' for x,y in points),fill='none',stroke=colour,stroke_width=width)
-    elem('rect',x=0,y=0,width=1500,height=1140,fill='white')
+    elem('rect',x=0,y=0,width=1500,height=1240,fill='white')
     text(35,35,'UNSELECTED — 300 × 350 perimeter band / inward L300 corner',25)
     text(35,66,'Actual floor 3170–3370; FIRST 3450; upstand top 3520. New whole-house resistance UNCALCULATED.',17)
     text(35,103,'Corner plan · local inward mm from outside concrete face',20)
     ox,oy,scale=45,150,.53
     def plan(q):return [ox+scale*q[0],oy+scale*q[1]]
     path([plan(p) for p in [[0,0],[1000,0],[1000,300],[300,300],[300,1000],[0,1000],[0,0]]],'#9b9fa2',3)
-    for bar in result['beamPaths']:path([plan(q) for q in paths_points(bar)],'#a3362a',2)
+    clip=elem('clipPath',id='plan-window');ET.SubElement(clip,'{'+ns+'}rect',{'x':'35','y':'140','width':'620','height':'560'})
+    for bar in result['beamPaths']:path([plan(q) for q in paths_points(bar)],'#a3362a',2).set('clip-path','url(#plan-window)')
     for bar in result['cornerFloorPaths']:path([plan(q) for q in paths_points(bar)],'#287a47',1)
     for q in result['columnBarCoordinatesLocalMm']:
         x,y=plan(q);elem('circle',cx=x,cy=y,r=4.77,fill='#243c83')
@@ -503,8 +504,11 @@ def draw(c,result):
         text(xbase,ybase,title,20);x0=xbase;y0=ybase+45;sc=.8;zlow=3050
         project=lambda q:[x0+sc*q[0],y0+sc*(3650-q[2])]
         # Real band and floor; section cut at local inward normal.
-        path([project(q) for q in [[0,0,3170],[300,0,3170],[300,0,3370],[640,0,3370],[640,0,3170],[0,0,3170]]],'#a2a7aa',2)
-        path([project(q) for q in [[0,0,3170],[0,0,3520],[300,0,3520],[300,0,3370]]],'#a2a7aa',2)
+        if ordinary:
+            path([project(q) for q in [[0,0,3170],[300,0,3170],[640,0,3170],[640,0,3370],[300,0,3370],[300,0,3520],[0,0,3520],[0,0,3170]]],'#a2a7aa',2)
+        else:
+            path([project(q) for q in [[0,0,3650],[0,0,3050]]],'#a2a7aa',2)
+            path([project(q) for q in [[300,0,3650],[300,0,3370],[640,0,3370],[640,0,3170],[300,0,3170],[300,0,3050]]],'#a2a7aa',2)
         for z,label in [(3170,'3170 soffit'),(3370,'3370 slab'),(3450,'3450 FIRST'),(3520,'3520 band')]:
             y=project([0,0,z])[1];path([[x0-5,y],[x0+510,y]],'#d4d7d9',.8);text(x0+520,y+5,label,14)
         for n in c['geometry']['beamBarNormalMm']:
@@ -519,11 +523,11 @@ def draw(c,result):
         if not ordinary:
             text(xbase,ybase+490,'Tails continue beyond clipped view: 1000 mm into lower/upper L300.',15)
         else:
-            text(xbase,ybase+390,'Ordinary 140 mm mandrel: minimum 72 mm straight after bend.',15)
-            text(xbase,ybase+414,'Finite bond/bearing capacities are bounds, not full-demand proof.',15)
+            text(xbase,ybase+490,'Ordinary 140 mm mandrel: minimum 72 mm straight after bend.',15)
+            text(xbase,ybase+514,'Finite bond/bearing capacities are bounds, not full-demand proof.',15)
     section('Corner section · opposed vertical returns',725,105,False)
     section('Ordinary perimeter section · hooks within 350 depth',725,655,True)
-    text(35,1080,'SOURCE-OWNED COMPARISON · no native solve · no transferred old96 loads · no physical/product/owner/house acceptance',17)
+    text(35,1210,'SOURCE-OWNED COMPARISON · no native solve · no transferred old96 loads · no physical/product/owner/house acceptance',17)
     return ET.tostring(root,encoding='unicode')+'\n'
 
 def main():
