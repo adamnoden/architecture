@@ -8,7 +8,7 @@ CAGE_DRAW='project/str/studies/continuous-rc-cage.svg'
 CAGE_DOC='project/str/continuous-rc-portal-cage.md'
 ACCOUNT='project/ccr/studies/source-coverage.json'
 DOCUMENT='project/ccr/studies/working-house-comparison.json'
-TARGETS=WITNESSES+[METHOD,CAGE_RESULT,CAGE_DRAW,CAGE_DOC,ACCOUNT,DOCUMENT]
+TARGETS=WITNESSES+['compiler/reference-house/current-design-snapshot.test.ts',METHOD,CAGE_RESULT,CAGE_DRAW,CAGE_DOC,ACCOUNT,DOCUMENT]
 PROJECTIONS=['STATUS.md','project/workstream-codes.md','project/control/graph.md','docs/project/dependency-graph.md','docs/project/graph-source.ts']
 out=Path(os.environ['RUNNER_TEMP'],'projection-review');out.mkdir()
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
