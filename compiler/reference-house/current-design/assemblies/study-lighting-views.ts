@@ -9,7 +9,7 @@ const rect = (x: number, y: number, w: number, h: number, fill: string, stroke =
 const page = (w: number, h: number, title: string, body: string) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc"><title id="title">${esc(title)}</title><desc id="desc">Source-derived geometric review. Luminaire symbols show placement and intended use, not measured light distribution or accepted materials.</desc><style>.title{font:32px Georgia;fill:#342d25}.heading{font:23px Georgia;fill:#342d25}.note{font:16px Arial;fill:#48443b}.small{font:13px Arial;fill:#514c42}.dimension{font:15px monospace;fill:#285f69}</style><rect width="${w}" height="${h}" fill="#f2eee3"/>${body}</svg>\n`
 
 function furnishedView(result: StudyLightingResult, arrangement: StudyLightingResult['arrangements'][number]) {
-  const room=r.commonRoom,x0=Math.min(...room.bands.map(b=>b[0]!)),y0=Math.min(...room.bands.map(b=>b[1]!))
+  const room=result.commonRoom,x0=Math.min(...room.bands.map(b=>b[0]!)),y0=Math.min(...room.bands.map(b=>b[1]!))
   const p = (x: number, y: number, z = 0) => [110 + (x - x0) * .12 + (y - y0) * .058, 420 + (x - x0) * .026 - (y - y0) * .055 - z * .102]
   const floor = (box: readonly number[], fill: string) => polygon([p(box[0], box[1]), p(box[2], box[1]), p(box[2], box[3]), p(box[0], box[3])], fill)
   const face = (wall: typeof room.walls[number], box: readonly number[], fill: string) => {
@@ -84,7 +84,7 @@ export function drawStudyLightingServiceCorner(result: StudyLightingResult) {
     + text(35, 80, 'Local candidate · independent enclosure and support · no acoustic or material acceptance')
     + text(55, 125, 'Door-side elevation', 'heading')
     + ebox(left, c.bayBottomZMm, right, 2100, '#c9b18e')
-    + ebox(c.retainedSkirtingEndXMm[0], 0, c.retainedSkirtingEndXMm[1], r.commonRoom.skirtingTopMm, '#7f6247')
+    + ebox(c.retainedSkirtingEndXMm[0], 0, c.retainedSkirtingEndXMm[1], result.commonRoom.skirtingTopMm, '#7f6247')
     + ebox(c.doorRoughXMm[0], 0, c.doorRoughXMm[0] + 25, 2200, '#9d8e77')
     + text(245, 182, 'Actual door rough X ' + c.doorRoughXMm.join('..') + ' mm')
     + text(245, 211, `${c.jambStopMm} mm stop to bay; reveal stays fixed`)
@@ -117,7 +117,7 @@ export function drawStudyLightingServiceCorner(result: StudyLightingResult) {
     + text(780, 690, `Containment ${c.containmentEnvelopeMm} mm; bend territory ${c.bendReserveMm} mm (authored)`)
     + text(780, 720, 'Class I earthing, insulation, enclosures and thermal functions retained')
   body += text(55, 855, 'Plan · complete fitting draw, hand use and first rest', 'heading')
-  const plan = (box: readonly number[], fill: string) => rect(80 + (box[0] - left) * .6, 920 + (r.commonRoom.bands.at(-1)![3] - box[3]) * .6, (box[2] - box[0]) * .6, (box[3] - box[1]) * .6, fill)
+  const plan = (box: readonly number[], fill: string) => rect(80 + (box[0] - left) * .6, 920 + (result.commonRoom.bands.at(-1)![3] - box[3]) * .6, (box[2] - box[0]) * .6, (box[3] - box[1]) * .6, fill)
   body += plan(c.firstRestPlanMm, '#bbc7b9') + plan(c.completeModuleDrawPlanMm, '#dfc987') + plan(c.handUsePlanMm, '#c5b69e') + plan(c.bayPlanMm, '#8f7860')
     + text(325, 935, `Complete fitting + ${c.normalDrawMm} mm roomward draw (gold)`)
     + text(325, 966, '100 mm hand reserve + 20 mm reference plug (brown)')
@@ -146,7 +146,7 @@ export function drawKitchenLightingCheck(result: StudyLightingResult) {
 }
 
 export function drawStudyLightingRoutes(result: StudyLightingResult) {
-  const room=r.commonRoom,origin=[Math.min(...room.bands.map(b=>b[0]!)),Math.min(...room.bands.map(b=>b[1]!))],scale=.205
+  const room=result.commonRoom,origin=[Math.min(...room.bands.map(b=>b[0]!)),Math.min(...room.bands.map(b=>b[1]!))],scale=.205
   const p = (x: number, y: number) => [100 + (x - origin[0]) * scale, 790 - (y - origin[1]) * scale]
   const box = (r: readonly number[], fill: string) => polygon([p(r[0], r[1]), p(r[2], r[1]), p(r[2], r[3]), p(r[0], r[3])], fill)
   let body = text(35, 48, 'Sockets, flex and useful access territory', 'title')
@@ -264,7 +264,7 @@ export function drawStudyLightingConstruction(result: StudyLightingResult) {
   body += h.carrierStripsXZMm.map(r=>hbox(r,'#899c9c')).join('')
     + `<circle cx="${n(hp(h.cableOpening.centreXMm,h.cableOpening.centreZMm)[0])}" cy="${n(hp(h.cableOpening.centreXMm,h.cableOpening.centreZMm)[1])}" r="${h.cableOpening.diameterMm*.25}" fill="#f2eee3" stroke="#315d64"/>`
     + line(hp(c.doorRoughXMm[0]!,c.bayBottomZMm),hp(c.doorRoughXMm[0]!,2100),'#8e7860',4)
-    + hbox([c.retainedSkirtingEndXMm[0]!,0,c.retainedSkirtingEndXMm[1]!,r.commonRoom.skirtingTopMm],'#8c6d4d')
+    + hbox([c.retainedSkirtingEndXMm[0]!,0,c.retainedSkirtingEndXMm[1]!,result.commonRoom.skirtingTopMm],'#8c6d4d')
     + text(345,1335,`${h.choices.bayWidthMm} mm local bay · ${h.architecturalConsequence.additionalBayWidthMm} mm wider to the left`)
     + text(345,1370,`Door/reveal datum fixed; complete carrier and accessories shift ${Math.abs(h.architecturalConsequence.carrierShiftXMm)} mm left`)
     + text(345,1405,`Candidate depth ${h.totalDepthMm} mm vs earlier ${c.totalLiningDepthMm} mm; added floor territory ${h.architecturalConsequence.addedConservativeFloorTerritoryM2.toFixed(5)} m²`)
@@ -380,7 +380,7 @@ export function drawCommonDepthCornerComparison(result: StudyLightingResult) {
     + text(900, 680, 'The side bypass is beside the device, not inside its occupied depth')
     + text(900, 725, `Local enclosure geometry: ${c.evidence.localGeometryPassing ? 'within declared checks' : 'REJECTED'}`)
     + text(900, 760, `Device terminals connected: ${p.deviceTerminalsConnected}; complete room circuit: ${p.completeRoomCircuit}`)
-  const s = (x: number, y: number) => [80 + (x - r.commonRoom.bands[0]![0]!) * .36, 1350 - (y - c.renewal.secondaryRestPlanMm[1]! + 50) * .36]
+  const s = (x: number, y: number) => [80 + (x - result.commonRoom.bands[0]![0]!) * .36, 1350 - (y - c.renewal.secondaryRestPlanMm[1]! + 50) * .36]
   const plan = (r: readonly number[], fill: string) => polygon([s(r[0]!, r[1]!), s(r[2]!, r[1]!), s(r[2]!, r[3]!), s(r[0]!, r[3]!)], fill)
   body += text(550, 855, 'Pay for complete enclosure withdrawal', 'heading')
     + text(550, 900, `Required normal draw ${c.renewal.requiredWholeEnclosureNormalDrawMm} mm; proposed ${c.renewal.firstNormalDrawMm} mm`)

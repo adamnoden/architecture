@@ -39,7 +39,7 @@ function round(vertices:readonly P[],R:number){
  * desk, occupied room and fixed bay; product, handling and tabletop load proofs stay open. */
 function applianceFloorPreparation(b:LightingBasis,h:H,s:StudyCircuitDesign,fitting:{shadeWidthMm:number;shadeHeightMm:number;projectionMm:number;leadLengthMm:number;wallPlateDiameterMm:number},fixtureX:number,fixtureZ:number,clips:readonly{id:string;pointMm:P}[]){
  const p=s.appliancePreparation
- if(!p)throw TypeError('IAS_APPLIANCE_PREPARATION_INPUT_INVALID')
+ if(!p||s.applianceLead.operatorRadiusMm!==300||s.applianceLead.reachLimitMm!==600||s.clearanceMm<5||s.settingMm<5)throw TypeError('IAS_APPLIANCE_PREPARATION_INPUT_INVALID')
  const R=s.applianceLead.operatorRadiusMm,setting=2*s.settingMm,error=p.samplingErrorMm
  if(!p||p.operatorPathXYMm.length!==5||p.traySizeMm.length!==3||p.trayOffsetFromDeskMm.length!==2||![...p.operatorPathXYMm.flat(),p.carryOffsetMm,...p.traySizeMm,...p.trayOffsetFromDeskMm,p.tabletopComparisonMm,p.standingShoulderMm,p.kneelingShoulderMm,p.carriedBottomMm,p.carryAssemblyHeightMm,error].every(Number.isFinite)||error<=0||error>1)throw TypeError('IAS_APPLIANCE_PREPARATION_INPUT_INVALID')
  const approachStart=[b.room.door.rough[1]!+25,h.frontYMm-282.5],body=p.operatorPathXYMm,desk=b.room.occupied.find(([id])=>id==='study-desk')?.[1]

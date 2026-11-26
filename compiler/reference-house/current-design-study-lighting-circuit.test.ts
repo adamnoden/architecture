@@ -186,3 +186,18 @@ test('ordinary floor preparation removes the appliance explicitly and retains th
  assert.ok(run(badRest).circuit.issues.includes('appliance-preparation-desk-rest-rejected'))
  assert.deepEqual(run(collision).commonRoom,r.commonRoom)
 })
+
+
+test('retaining the complete plugged appliance keeps genuine floor conflicts visible',()=>{
+ const r=run(),room=kit.kit,context=room.structuralConsequence,plan=room.request.ordinaryHandling
+ assert.ok(context&&plan)
+ const bay=r.construction.localHomeRunComparison,[x,y,z,w,d,h]=r.circuit.sourceBox.boxMm
+ const retained=compileStudyStructuralRenewal(context,room.floor.parts,room.floor.emitterPlinth,plan,room.floor.installedInlet,{
+  volumes:[...r.circuit.applianceLead.nominalFixedVolumes,{id:r.circuit.sourceBox.id,xyzxyzMm:[x!,y!,z!,x!+w!,y!+d!,z!+h!]},{id:'IAS/STUDY/closed-local-bay',xyzxyzMm:[bay.bayPlanMm[0]!,bay.frontYMm,bay.finishBottomZMm,bay.bayPlanMm[2]!,bay.bayPlanMm[3]!,bay.finishTopZMm]}],
+  panelTransfer:studyPanelTransferProfile(room.floor.wearingFaceMm+room.floor.beddingMm)})
+ assert.equal(retained.status,'computed-geometry-conflicts')
+ assert.ok(retained.ordinaryHandling!.witnessCount<136)
+ const tooLow=structuredClone(components)
+ tooLow.circuitDesign.appliancePreparation.carriedBottomMm=900
+ assert.ok(run(tooLow).circuit.issues.includes('appliance-preparation-desk-rest-rejected'))
+})
