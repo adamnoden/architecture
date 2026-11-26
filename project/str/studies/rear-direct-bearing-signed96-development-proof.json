@@ -125,7 +125,12 @@
     "minNormalActive": 17636,
     "maxNormalActive": 18988,
     "maxHeadResidualKN_KNm": 6.681921149720438e-8,
-    "maxJointResidualKN_KNm": 4.8414960929221706e-8
+    "maxJointResidualKN_KNm": 4.8414960929221706e-8,
+    "maximumNativeHeadFz": {
+      "id": "P10",
+      "value": 350.45670203709847,
+      "windIndex": 7
+    }
   },
   "proof": {
     "schema": "str-current-finite-signed-proof/1",
@@ -21560,5 +21565,6 @@
   "resistanceAccepted": false,
   "candidateAccepted": false,
   "ownerAccepted": false,
-  "scope": "Actual current-source-transition zero-extra-EA200/1850-opening/200x300lintel/200seats comparison only. Original exact raw/checkpoint/membrane artifacts must be retained before provider expiry. None of these forces is a demand proof for an altered arch, deeper lintel, wider opening or longer seat."
+  "scope": "Actual current-source-transition zero-extra-EA200/1850-opening/200x300lintel/200seats comparison only. Original exact raw/checkpoint/membrane artifacts must be retained before provider expiry. None of these forces is a demand proof for an altered arch, deeper lintel, wider opening or longer seat.",
+  "headActionConvention": "Saved native support-on-house reactions balance applied house loads in current_finite_joint_replay.py. Equal/opposite house-on-foundation actions are the negatives of all six saved reaction components. No resistance is inferred in either sign."
 }

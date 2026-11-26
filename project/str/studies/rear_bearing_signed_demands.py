@@ -129,6 +129,21 @@ def support_face_cuts(checkpoint,index,geometry,choices):
         if not found:raise ValueError('Actual source opening face has no physical lintel section')
     return rows
 
+def native_head_records(result,index):
+    """Keep the saved support-on-house reaction and its equal/opposite action."""
+    vertical=result['finiteHouseResult']['native']['nativeVertical']
+    heads=vertical['native']['heads'];positions=vertical['headPositions']
+    by_id={p['id']:p['xyzMm'] for p in positions}
+    if len(heads)!=52 or len({h['id'] for h in heads})!=52 or len(positions)!=52 or len(by_id)!=52 or set(by_id)!={h['id'] for h in heads}:raise ValueError('Complete52 actual native head vectors and positions required')
+    rows=[]
+    for head in heads:
+        vector=head['reactionKN_KNm'];point=by_id[head['id']]
+        if len(vector)!=6 or len(point)!=3:raise ValueError('Actual full6-action head vector/physicalpoint required')
+        vector=list(map(number,vector));point=list(map(number,point))
+        rows.append({'windIndex':index,'headId':head['id'],'physicalPointMm':point,
+            'nativeSupportOnHouseKN_KNm':vector,'equalOppositeHouseOnFoundationKN_KNm':[-v for v in vector]})
+    return rows
+
 def envelope(records,vector_key,labels):
     if not records:raise ValueError('Actual simultaneous records required')
     output={}
@@ -166,6 +181,7 @@ def collect(proof_path,packet_path,captures,out):
         checkpoint=json.loads(checkpoint_bytes)
         for key in ('authoredNativeCase','choices','finiteSettings','sourceSHA256','methodSHA256'):
             if checkpoint[key]!=result[key]:raise ValueError('Actual support-face source authority differs')
+        current['nativeHeadReactions']=native_head_records(result,index)
         current['supportFaceCuts']=support_face_cuts(checkpoint,index,current['geometry'],current['choices'])
         current['cuts'].extend(current['supportFaceCuts'])
         if index==0:
@@ -174,7 +190,7 @@ def collect(proof_path,packet_path,captures,out):
         if geometry is None:geometry=current['geometry'];choices=current['choices']
         if current['geometry']!=geometry or current['choices']!=choices:raise ValueError('A changed seat/section cannot reuse this demand envelope')
         cases.append(current)
-    cuts=[r for c in cases for r in c['cuts']];seats=[r for c in cases for r in c['seats']]
+    cuts=[r for c in cases for r in c['cuts']];seats=[r for c in cases for r in c['seats']];heads=[r for c in cases for r in c['nativeHeadReactions']]
     seat_envelope={}
     for side in range(4):
         local=[r for r in seats if r['seatId']==str(side)]
@@ -189,13 +205,15 @@ def collect(proof_path,packet_path,captures,out):
         'actionOrder':list(ACTIONS),'localBasis':{'axisGlobal':[0,1,0],'yGlobal':[1,0,0],'zGlobal':[0,0,-1]},
         'caseCount':96,'cutCount':len(cuts),'seatCount':len(seats),'cases':cases,
         'signedCutReviewIndex':envelope(cuts,'leftResultantKN_KNm',ACTIONS),'seatReviewIndex':seat_envelope,
+        'nativeHeadReactionReviewIndex':envelope(heads,'nativeSupportOnHouseKN_KNm',('FxKN','FyKN','FzKN','MxKNm','MyKNm','MzKNm')),
+        'headConvention':'Saved native support-on-house reactions sum with applied house loads to zero; the house-on-foundation action is their negative. No capacity is inferred in either sign.',
         'scope':'Every simultaneous physical section vector retained. Review extrema are indices, never a synthetic combined load. Normal springs transmit no horizontal force/torsion through seats. This is not a resistance or altered-geometry demand proof.',
         'resistanceAccepted':False,'currentSavedEngineeringDocumentAdmitted':proof.get('currentSavedEngineeringDocumentAdmitted',True),
         'candidateAccepted':False,'ownerAccepted':False}
     admit_packet(packet)
     Path(out).parent.mkdir(parents=True,exist_ok=True);Path(out).write_bytes(canonical(output))
     print('REAR_DEMAND_SUMMARY '+json.dumps({'caseCount':96,'cutCount':len(cuts),'seatCount':len(seats),
-        'signedCutReviewIndex':output['signedCutReviewIndex'],'seatReviewIndex':{k:{'value':v['value'],'windIndex':v['fullSimultaneousRecord']['windIndex'],'seatId':v['fullSimultaneousRecord']['seatId'],'rectangleXYMm':v['fullSimultaneousRecord']['rectangleXYMm'],'top':v['fullSimultaneousRecord']['top'],'base':v['fullSimultaneousRecord']['base']} for k,v in seat_envelope.items()}},separators=(',',':'),allow_nan=False),flush=True)
+        'signedCutReviewIndex':output['signedCutReviewIndex'],'nativeHeadReactionReviewIndex':output['nativeHeadReactionReviewIndex'],'seatReviewIndex':{k:{'value':v['value'],'windIndex':v['fullSimultaneousRecord']['windIndex'],'seatId':v['fullSimultaneousRecord']['seatId'],'rectangleXYMm':v['fullSimultaneousRecord']['rectangleXYMm'],'top':v['fullSimultaneousRecord']['top'],'base':v['fullSimultaneousRecord']['base']} for k,v in seat_envelope.items()}},separators=(',',':'),allow_nan=False),flush=True)
     return output
 
 if __name__=='__main__':

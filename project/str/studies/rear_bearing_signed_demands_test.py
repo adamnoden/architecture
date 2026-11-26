@@ -1,7 +1,7 @@
 import copy
 import math
 import unittest
-from rear_bearing_signed_demands import ACTIONS,cut_record,seat_records,case_demands,envelope,support_face_cuts
+from rear_bearing_signed_demands import ACTIONS,cut_record,seat_records,case_demands,envelope,support_face_cuts,native_head_records
 
 class SimultaneousDemandsControls(unittest.TestCase):
     def geometry(self):
@@ -48,6 +48,23 @@ class SimultaneousDemandsControls(unittest.TestCase):
         bad=copy.deepcopy(checkpoint);bad['postprocessingModel']['memberPointLoads']['loaded'][name]=[]
         omitted=support_face_cuts(bad,7,geometry,self.choices())
         self.assertNotEqual(omitted[1]['leftResultantKN_KNm'],rows[1]['leftResultantKN_KNm'])
+
+    def test_full_simultaneous_head_action_reaction_and_positions_are_explicit_and_finite(self):
+        heads=[{'id':f'P{i:02}','reactionKN_KNm':[1.,2.,-3. if i==4 else 10.,4.,5.,6.]} for i in range(52)]
+        positions=[{'id':r['id'],'xyzMm':[100.*i,200.*i,-750.]} for i,r in enumerate(heads)]
+        result={'finiteHouseResult':{'native':{'nativeVertical':{'native':{'heads':heads},'headPositions':positions}}}}
+        rows=native_head_records(result,76);row=rows[4]
+        self.assertEqual(row['physicalPointMm'],[400.,800.,-750.])
+        self.assertEqual(row['nativeSupportOnHouseKN_KNm'],[1.,2.,-3.,4.,5.,6.])
+        self.assertEqual(row['equalOppositeHouseOnFoundationKN_KNm'],[-1.,-2.,3.,-4.,-5.,-6.])
+        review=envelope(rows,'nativeSupportOnHouseKN_KNm',('Fx','Fy','Fz','Mx','My','Mz'))
+        self.assertEqual(review['Fz/minimum']['fullSimultaneousRecord'],row)
+        for mutation in ('duplicate','omitted','nan'):
+            bad=copy.deepcopy(result);v=bad['finiteHouseResult']['native']['nativeVertical']
+            if mutation=='duplicate':v['native']['heads'][-1]=copy.deepcopy(v['native']['heads'][0])
+            elif mutation=='omitted':v['headPositions'].pop()
+            else:v['native']['heads'][4]['reactionKN_KNm'][4]=math.nan
+            with self.subTest(mutation=mutation),self.assertRaises(ValueError):native_head_records(bad,76)
 
     def test_end1_outward_wrench_normalizes_to_same_left_resultant_without_refipping_N(self):
         a=self.cut();b=self.cut(1,2250.)
