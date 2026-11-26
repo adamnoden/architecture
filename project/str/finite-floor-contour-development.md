@@ -140,3 +140,16 @@ coordinates and the real finite wall interpolation, with an ordinary/observed
 full-result passivity control. Even that one-way native-driven component would
 remain a constitutive/domain comparison, not compatible global demand: native
 band/chord replacement and feedback still have to be proved.
+
+
+## Replaying scalar diagnostics on another numerical runner
+
+The contour captures, their complete port matrices, input/method identities,
+mesh-pitch pairs and every nonacceptance flag remain exact checks. Recomputed
+LAPACK eigenvalue extrema use the same1e−12 absolute scalar replay allowance
+already used by the ordering-control checker. The prior text-byte comparison
+failed on the hosted runner even though the current pinned local replay was
+byte-identical. The checker now reports any larger scalar change explicitly;
+changed capture/source hashes, pitch, claims and nonfinite values still reject.
+This is a numerical replay boundary, not a relaxation of the unresolved12.06%
+and13.80% physical mesh sensitivities or an acceptance of either comparison.

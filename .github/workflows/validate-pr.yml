@@ -43,6 +43,7 @@ jobs:
           "$finite_joint_runtime/bin/python" -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_joint_solid_test.py
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_test.py
+          "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_compare_test.py
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_compare.py project/str/studies/finite-floor-contour-captures/contour140.json project/str/studies/finite-floor-contour-captures/contour70.json project/str/studies/finite-floor-contour-captures/contour50.json --out project/str/studies/finite-floor-contour-captures/contour-comparison.json --check
           "$finite_joint_runtime/bin/python" -B project/str/studies/finite_floor_contour_ordering_control.py --root . --retained project/str/studies/finite-floor-contour-captures/contour140.json --out project/str/studies/finite-floor-contour-captures/ordering-control.json --check
           echo "STR_FINITE_SOLID_PYTHON=$finite_joint_runtime/bin/python" >> "$GITHUB_ENV"
@@ -67,10 +68,45 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
 
+      - name: Replay recovered wet-beam and masonry comparisons on current sources
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          python -B project/str/studies/wet_beam_end_development_proof.py --check
+          python -B -m unittest discover -s project/str/studies -p wet_beam_rectangular_return_test.py
+          python -B project/str/studies/uniform_slab_law_test.py
+          python -B project/str/studies/uniform_slab_law_proof.py --check
+          python -B project/str/studies/uniform_slab_end_consequence_test.py
+          python -B project/str/studies/uniform_slab_end_consequence.py --check
+          python -B project/str/studies/uniform_slab_contact_refinement_test.py
+          python -B project/str/studies/uniform_slab_contact_refinement.py --check
+          python -B project/str/studies/uniform_slab_contact_end.py --check
+          python -B project/str/studies/wet_masonry_arch_comparison_test.py
+          python -B project/str/studies/wet_masonry_arch_comparison.py --check
+          python -B project/str/studies/wet_masonry_arch_native_test.py
+          python -B project/str/studies/wet_masonry_arch_native_proof.py --check
+          python -B project/str/studies/wet_masonry_arch_released_test.py
+          python -B project/str/studies/wet_masonry_arch_released_proof.py --check
+          python -B project/str/studies/wet_masonry_arch_rise_test.py
+          python -B project/str/studies/wet_masonry_arch_rise_proof.py --check
+
       - name: Prove actual finite contour adapter with pinned runtime
         run: |
           test -n "$STR_FINITE_SOLID_PYTHON"
           node --import tsx --test compiler/reference-house/current-design-finite-floor-contour.test.ts
+
+      - name: Prove wet-beam end edits on the authenticated native case
+        env:
+          STR_WET_BEAM_END_NATIVE: ${{ runner.temp }}/wet-beam-end-native.json
+        run: |
+          python -B - <<'PY'
+          import os, tarfile
+          from pathlib import Path
+          with tarfile.open('project/str/studies/wet-beam-end-native-captures.tar.xz', 'r:xz') as archive:
+              Path(os.environ['STR_WET_BEAM_END_NATIVE']).write_bytes(archive.extractfile('south40-q64.full.json').read())
+          PY
+          node --import tsx --test compiler/reference-house/current-design-wet-beam-end.test.ts
 
       - name: Cache verified publication fonts
         uses: actions/cache@v6

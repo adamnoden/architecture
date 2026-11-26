@@ -96,3 +96,11 @@ test('canonical saved ground and public ground CLI supply the same sole profile 
   assert.ok(b.diagnostics.some(d => d.code === 'PROFILE_ROOF_ASSEMBLY_UNRESOLVED'))
   assert.equal(b.native.installedAcceptance, false)
 })
+
+
+test('derived receipts do not recursively own the profile case; its own adapter remains an exact current input',()=>{
+ const current=readCurrentDesignResolution(),before=readHouseVerticalProfileCase(current),receiptOnly={...current,disciplineBindings:current.disciplineBindings.map(row=>({...row,identities:{...row.identities,'project/had/studies/inlet-local-pocket.results.json':'0'.repeat(40)}}))}
+ assert.deepEqual(readHouseVerticalProfileCase(receiptOnly),before)
+ const missingWrapper={...current,disciplineBindings:current.disciplineBindings.map(row=>({...row,identities:Object.fromEntries(Object.entries(row.identities).filter(([path])=>path!=='compiler/reference-house/current-design/house-vertical-profile.ts'))}))}
+ assert.throws(()=>readHouseVerticalProfileCase(missingWrapper),/Stale vertical-profile current source binding/)
+})
