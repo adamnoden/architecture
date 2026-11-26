@@ -18,8 +18,10 @@ jobs:
       - name: Keep the fixed proof driver and check out the exact submitted source
         run: |
           cp project/ccr/studies/zerg-current-projection-recovery.py "$RUNNER_TEMP/current-projection-recovery.py"
+          cp project/str/studies/continuous_rc_cage_proof.py "$RUNNER_TEMP/updated-cage-proof.py"
           git fetch --no-tags origin b1987fb72769f5b6f5f877e801679c3ca9bc53cd
           git switch --detach b1987fb72769f5b6f5f877e801679c3ca9bc53cd
+          cp "$RUNNER_TEMP/updated-cage-proof.py" project/str/studies/continuous_rc_cage_proof.py
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
