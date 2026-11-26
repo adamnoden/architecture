@@ -1,7 +1,7 @@
 name: Prove saved rear-bearing house and all96 programmes
 on:
   push:
-    branches: [work/zerg-rear-bearing-recovery-20261126]
+    branches: [work/zerg-rear-bearing-saved-proof-closed]
     paths:
       - '.github/workflows/rear-bearing-saved-proof.yml'
       - 'project/str/studies/rear_*.py'
