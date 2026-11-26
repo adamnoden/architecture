@@ -1,0 +1,277 @@
+name: Recover passed fixed cuts and reconstruct missing named-interface manifests
+on:
+  push:
+    branches: [work/current-positive-cut-recovery-20261126]
+    paths: ['.github/workflows/current-positive-cut-recovery.yml']
+permissions:
+  contents: read
+  actions: read
+env:
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+jobs:
+  recover-original-four-outputs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install existing Node compiler runtime
+        run: npm ci --no-audit --no-fund
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+          cache: pip
+          cache-dependency-path: project/str/studies/*requirements.txt
+      - name: Install existing pinned numerical runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          echo "REGEN_DIR=$RUNNER_TEMP/current-positive-source-evidence" >> "$GITHUB_ENV"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/project/str/studies" >> "$GITHUB_ENV"
+      - name: Protect exact production sources and record actual native58 identities
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);folder.mkdir(parents=True,exist_ok=True)
+          expected={"project/str/studies/distributed_floor_compatibility.py":"7a8eb302813e8a509a1fac16ee29e7359d2c0bf9","project/str/studies/perforated_floor_condensation.py":"fbdea8993c4c00d863f2105c0a83f6ac0bf78c03","project/str/studies/current_zero_chord_control.py":"abff63ca41c5bfa01082a3443ed0900412e893f4","project/str/studies/current_zero_chord_control_test.py":"d09edced886fe556f4e0768def8a29301fb847f8","project/str/studies/wet_pad_fan_recovery_proof.py":"f3d6a3b4646ef6f41ad3f4ab48d2b7be542ba3e4","project/str/studies/uniform_slab_law_proof.py":"746cb407265b7d2e395d94d259bc8d73e423aec8","project/str/studies/uniform-slab-law-inputs.json":"1cc9682b87e12b967290e93e28d95736721bf337","project/str/studies/floor-section-cuts.ts":"f5e058d4cc5ea964ff06cd1713e47f464860fb8b"}
+          def sha(data):return hashlib.sha256(data).hexdigest()
+          for name,digest in expected.items():
+           data=Path(name).read_bytes();actual=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+           if actual!=digest:raise ValueError('Unreviewed source blob: '+name)
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          identities=load_source(Path('.'))['identities']
+          if len(identities)!=58:raise ValueError('Exact current58-source native inventory required')
+          files=subprocess.check_output(['git','ls-files'],text=True).splitlines()
+          snapshot={name:sha(Path(name).read_bytes()) for name in files}
+          (folder/'source-before.json').write_text(json.dumps({'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'exactProductionBlobs':expected,'native58SHA256':identities,'trackedSHA256':snapshot,'currentSavedEngineeringDocumentAdmitted':False},indent=2)+'\n')
+          for name in ["project/str/studies/floor-section-proof.json","project/str/studies/floor-section-250.svg","project/str/studies/seated-wet-support-floor.svg","project/str/studies/floor-section-cuts-proof.json"]:
+           p=Path(name)
+           if p.exists():
+            q=folder/'before'/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(p.read_bytes())
+          print('PASS exact reviewed protected blobs and actual58-source inventory; canonical/account untouched',flush=True)
+          PY
+      - name: Recover exact original passed outputs with existing historical scope
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -B - <<'PY'
+          import hashlib,io,json,os,urllib.error,urllib.request,zipfile
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);repo=os.environ['GITHUB_REPOSITORY'];api=os.environ['GITHUB_API_URL']
+          spec={'id':15134489580,'run':45852117041,'head':'1e9a7ec1d71172f8d0753025b43070f2f934c735','bytes':3049336,'sha256':'25b06233302cfdf4a69579ad0a270488e8d78087d35f00ba7dc5a13895a8f4d4'}
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'}
+          def get(url):
+           with urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=60) as r:return json.load(r)
+          run=get(f'{api}/repos/{repo}/actions/runs/{spec["run"]}');job=get(f'{api}/repos/{repo}/actions/jobs/140020883237')
+          if run['head_sha']!=spec['head'] or run['status']!='completed' or run['conclusion']!='failure' or job['run_id']!=spec['run']:raise ValueError('Exact preserved failed-retention job required')
+          steps={r['name']:r for r in job['steps']}
+          if steps['Regenerate owning fixed cuts and named floor interfaces from actual full captures']['conclusion']!='success' or steps['Protect all source bytes and retain actual outputs']['conclusion']!='failure':raise ValueError('Original owning producers must have passed before the separate retention guard failed')
+          meta=get(f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}')
+          if meta['expired'] or meta['size_in_bytes']!=spec['bytes'] or meta['digest']!='sha256:'+spec['sha256'] or meta['workflow_run']['head_sha']!=spec['head']:raise ValueError('Observed original artifact changed')
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+           def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+          try:
+           with urllib.request.build_opener(NoRedirect()).open(urllib.request.Request(f'{api}/repos/{repo}/actions/artifacts/{spec["id"]}/zip',headers=headers),timeout=60) as r:raw=r.read()
+          except urllib.error.HTTPError as r:
+           if r.code not in (301,302,303,307,308):raise
+           with urllib.request.urlopen(r.headers['Location'],timeout=120) as value:raw=value.read()
+          sha=lambda b:hashlib.sha256(b).hexdigest()
+          if len(raw)!=spec['bytes'] or sha(raw)!=spec['sha256']:raise ValueError('Original ZIP changed')
+          allow=['project/str/studies/floor-section-proof.json','project/str/studies/floor-section-250.svg','project/str/studies/seated-wet-support-floor.svg','project/str/studies/floor-section-cuts-proof.json']
+          records={}
+          with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+           names=archive.namelist()
+           if len(names)!=len(set(names)) or any(n.startswith('/') or '..' in n.split('/') for n in names):raise ValueError('Unsafe original artifact')
+           before=json.loads(archive.read('source-before.json'))
+           for p,h in before['trackedSHA256'].items():
+            if sha(Path(p).read_bytes())!=h:raise ValueError('Original protected producer source changed: '+p)
+           for p in allow:
+            data=archive.read('generated/'+p);Path(p).write_bytes(data);records[p]={'bytes':len(data),'sha256':sha(data)}
+           # Historical killed workers are explicitly source-only. The authoritative
+           # owning check authenticates this unchanged literal record separately.
+           proof=json.loads(Path(allow[-1]).read_bytes());history=proof['historicalExecutionFailures']
+           if history['state']!='historical-source-only' or history['currentExecutionEvidence'] is not False or history['record']!=json.loads(Path('project/str/studies/floor-refinement-execution-limit.json').read_bytes()):raise ValueError('Exact bounded historical record scope changed')
+           for row in proof['controls']:
+            if row['executedRequest']['sourceSHA256']!=before['native58SHA256']:raise ValueError('A current control is stale')
+          (folder/'recovered-cut-outputs.json').write_text(json.dumps({'sourceArtifact':spec,'outputs':records,'originalOwningProducersAndControlsPassed':True,'historicalRecordAuthenticatedSeparately':True,'candidateAccepted':False},indent=2)+'\n')
+          print('ACTUAL_RECOVERED_CUT_OUTPUTS '+json.dumps(records),flush=True)
+          
+          PY
+          python -B project/str/studies/floor_section_proof.py --check
+          node --import tsx project/str/studies/floor-section-cuts.ts --check
+      - name: Protect sources and retain all actual outputs before any optional audit
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,subprocess
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);before=json.loads((folder/'source-before.json').read_text());sha=lambda b:hashlib.sha256(b).hexdigest()
+          allow=[] if os.environ.get('CASE_SHARD') is not None else ['project/str/studies/floor-section-proof.json','project/str/studies/floor-section-250.svg','project/str/studies/seated-wet-support-floor.svg','project/str/studies/floor-section-cuts-proof.json']
+          actual={p:sha(Path(p).read_bytes()) for p in before['trackedSHA256']};changed=[p for p,v in actual.items() if v!=before['trackedSHA256'][p]]
+          if set(changed)-set(allow):raise ValueError('Unexpected protected source change')
+          records={}
+          for p in allow:
+           data=Path(p).read_bytes();q=folder/'generated'/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(data);records[p]={'bytes':len(data),'sha256':sha(data)}
+          (folder/'source-after.json').write_text(json.dumps({'sourceCommit':before['sourceCommit'],'outputs':records,'allowedGeneratedPaths':allow,'changedTrackedPaths':changed,'native58UnchangedDuringExecution':all(sha(Path(p).read_bytes())==h for p,h in before['native58SHA256'].items()),'allOtherTrackedSourcesUnchanged':True,'accountAndCanonicalUnchanged':True,'candidateAccepted':False},indent=2)+'\n')
+          print('ACTUAL_RECOVERY_OUTPUT_IDENTITIES '+json.dumps(records),flush=True)
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-cut-recovery-${{ github.job }}-${{ matrix.shard }}-${{ github.sha }}
+          path: ${{ runner.temp }}/current-positive-source-evidence/
+          if-no-files-found: error
+          retention-days: 90
+  reconstruct-actual-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3]
+    env:
+      CASE_SHARD: ${{ matrix.shard }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Install existing Node compiler runtime
+        run: npm ci --no-audit --no-fund
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+          cache: pip
+          cache-dependency-path: project/str/studies/*requirements.txt
+      - name: Install existing pinned numerical runtime
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          echo "REGEN_DIR=$RUNNER_TEMP/current-positive-source-evidence" >> "$GITHUB_ENV"
+          echo "PYTHONPATH=$GITHUB_WORKSPACE/project/str/studies" >> "$GITHUB_ENV"
+      - name: Protect exact production sources and record actual native58 identities
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,subprocess,sys
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);folder.mkdir(parents=True,exist_ok=True)
+          expected={"project/str/studies/distributed_floor_compatibility.py":"7a8eb302813e8a509a1fac16ee29e7359d2c0bf9","project/str/studies/perforated_floor_condensation.py":"fbdea8993c4c00d863f2105c0a83f6ac0bf78c03","project/str/studies/current_zero_chord_control.py":"abff63ca41c5bfa01082a3443ed0900412e893f4","project/str/studies/current_zero_chord_control_test.py":"d09edced886fe556f4e0768def8a29301fb847f8","project/str/studies/wet_pad_fan_recovery_proof.py":"f3d6a3b4646ef6f41ad3f4ab48d2b7be542ba3e4","project/str/studies/uniform_slab_law_proof.py":"746cb407265b7d2e395d94d259bc8d73e423aec8","project/str/studies/uniform-slab-law-inputs.json":"1cc9682b87e12b967290e93e28d95736721bf337","project/str/studies/floor-section-cuts.ts":"f5e058d4cc5ea964ff06cd1713e47f464860fb8b"}
+          def sha(data):return hashlib.sha256(data).hexdigest()
+          for name,digest in expected.items():
+           data=Path(name).read_bytes();actual=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+           if actual!=digest:raise ValueError('Unreviewed source blob: '+name)
+          sys.path.insert(0,'project/str/studies')
+          from floor_section_model import load_source
+          identities=load_source(Path('.'))['identities']
+          if len(identities)!=58:raise ValueError('Exact current58-source native inventory required')
+          files=subprocess.check_output(['git','ls-files'],text=True).splitlines()
+          snapshot={name:sha(Path(name).read_bytes()) for name in files}
+          (folder/'source-before.json').write_text(json.dumps({'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'exactProductionBlobs':expected,'native58SHA256':identities,'trackedSHA256':snapshot,'currentSavedEngineeringDocumentAdmitted':False},indent=2)+'\n')
+          for name in []:
+           p=Path(name)
+           if p.exists():
+            q=folder/'before'/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(p.read_bytes())
+          print('PASS exact reviewed protected blobs and actual58-source inventory; canonical/account untouched',flush=True)
+          PY
+      - name: Restore actual sixteen complete captures into unchanged source-addressed caches
+        run: |
+          python -B - <<'PY'
+          import hashlib,io,json,os,tarfile,tempfile,zipfile
+          from pathlib import Path
+          from floor_section_model import load_source
+          sha=lambda b:hashlib.sha256(b).hexdigest()
+          source=load_source(Path('.'))['identities']
+          base=Path(tempfile.gettempdir())/'ovid-seated-wet-controls';base.mkdir(parents=True,exist_ok=True)
+          path=Path('project/str/studies/captures/current-positive-floor-full-captures-20261126.tar.gz');raw=path.read_bytes()
+          if len(raw)!=22919280 or sha(raw)!='22f9ab985d0bc528dc6fb8d6092dbb59c8f204d0486d1ccef42c08491e0e0ae0':raise ValueError('Observed exact eleven full captures changed')
+          with tarfile.open(fileobj=io.BytesIO(raw),mode='r:gz') as tar:
+           m=json.load(tar.extractfile('floor-eleven-native-capture-manifest.json'))
+           if m['sourceSHA256']!=source or m['completeVerifiedControlCount']!=11 or m['candidateAccepted'] is not False:raise ValueError('Actual11current captures required')
+           for name,r in m['files'].items():
+            if name.startswith('/') or '..' in name.split('/') or len(name.split('/'))!=3:raise ValueError('Exact existing source/input addressing required')
+            data=tar.extractfile(name).read()
+            if len(data)!=r['bytes'] or sha(data)!=r['sha256']:raise ValueError('Original full capture bytes changed')
+            target=base/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+          # The manifest is deliberately NOT placed in base: the unchanged producer
+          # enumerates only original source/input directories there.
+          mesh=Path(tempfile.gettempdir())/'ovid-floor-mesh';count=0
+          expected={'coarse':('f50e25ae1dd03048e5f8df9cca96ae4853ea42b43ef326d60b03fc82339b87c6',4190458,2),'refined':('87010af73625036d4c6edce2e389c2bdda4d0c39e9a842c0438abe0dd04a31af',3232558,1),'mixed':('3561db369c623381826df6cec77f335691b8d00bafd15c706d6ef20db3b78b4f',5301873,2)}
+          for group,(identity,size,n) in expected.items():
+           raw=Path('project/str/studies/captures/current-positive-mesh-'+group+'-20261126.zip').read_bytes()
+           if len(raw)!=size or sha(raw)!=identity:raise ValueError('Observed complete mesh ZIP changed')
+           with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+            m=json.loads(archive.read('mesh-capture-manifest.json'))
+            if m['sourceSHA256']!=source or m['group']!=group or m['completeVerifiedCaseCount']!=n or m['nativeSolvesExecuted']!=n or m['candidateAccepted'] is not False:raise ValueError('Actual complete current mesh group lost')
+            for row in m['controls'].values():
+             for name,r in row['files'].items():
+              if not name.startswith('mesh/'+m['meshDirectoryId']+'/') or '..' in name.split('/'):raise ValueError('Exact mesh cache path required')
+              data=archive.read(name)
+              if len(data)!=r['bytes'] or sha(data)!=r['sha256']:raise ValueError('Actual full mesh capture bytes changed')
+              target=mesh/name.removeprefix('mesh/');target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+             count+=1
+          if count!=5:raise ValueError('Exactly5 fresh additional captures required')
+          print('PASS restored exact33basefiles +15meshfiles; all16realcontrols, no new native execution',flush=True)
+          
+          PY
+      - name: Reconstruct four actual same-source named manifests through the existing owning API
+        run: |
+          node --import tsx --input-type=module - <<'JS'
+          import assert from 'node:assert/strict'
+          import {createHash} from 'node:crypto'
+          import {execFileSync} from 'node:child_process'
+          import {existsSync,mkdirSync,readFileSync,readdirSync,writeFileSync} from 'node:fs'
+          import {join} from 'node:path'
+          import {sha256SemanticFingerprint as digest} from './compiler/core/identity.ts'
+          import {readFloorCornerInterfaceManifest} from './compiler/reference-house/current-design/structural-floor-interface-adapter.ts'
+          import {recoverNamedFloorCornerInterfaces} from './compiler/reference-house/current-design/structural-floor-interfaces.ts'
+          const sha=b=>createHash('sha256').update(b).digest('hex'),folder=process.env.REGEN_DIR,shard=Number(process.env.CASE_SHARD)
+          const packet=JSON.parse(execFileSync('node',['--import','tsx','project/str/studies/floor-section-cuts.ts','--read-cases'],{encoding:'utf8',maxBuffer:4*1024*1024}))
+          const walk=dir=>readdirSync(dir,{withFileTypes:true}).flatMap(d=>d.isDirectory()?walk(join(dir,d.name)):d.name.endsWith('.full.json')||d.name==='result.full.json'?[join(dir,d.name)]:[])
+          const files=[...walk('/tmp/ovid-seated-wet-controls'),...walk('/tmp/ovid-floor-mesh')],wanted=new Set(packet.cases.filter((_,i)=>i%4===shard).map(([name])=>name)),records=[]
+          const metadataSHA=sha(readFileSync('project/str/studies/floor_interface_manifest.py')),cache=folder+'/interface-manifests';mkdirSync(cache,{recursive:true})
+          for(const file of files){
+           const native=JSON.parse(readFileSync(file,'utf8')),name=native.nativeVertical.native.caseId
+           if(!wanted.has(name))continue
+           const expected=packet.cases.find(([id])=>id===name)[1];assert.deepEqual(native.request,expected);assert.deepEqual(native.sourceSHA256,expected.sourceSHA256)
+           const result=readFloorCornerInterfaceManifest(native),manifest=result.manifest
+           recoverNamedFloorCornerInterfaces(native,manifest)
+           const cacheKey=digest({request:native.request,caseId:name,metadataMethodSHA256:metadataSHA}),bytes=JSON.stringify(manifest),target=cache+'/'+cacheKey+'.json';writeFileSync(target,bytes)
+           records.push({caseId:name,cacheKey,manifestFile:cacheKey+'.json',fullNativeSHA256:sha(readFileSync(file)),manifestBytes:Buffer.byteLength(bytes),manifestSHA256:sha(bytes),metadataMethodSHA256:metadataSHA})
+           console.log('ACTUAL_REBUILT_NAMED_INTERFACE '+JSON.stringify(records.at(-1)))
+          }
+          assert.equal(records.length,wanted.size);assert.equal(records.length,4)
+          writeFileSync(folder+'/interface-shard-manifest.json',JSON.stringify({schema:'str-current-named-interface-recovery-shard/1',sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),nativeSourceSHA256:packet.cases[0][1].sourceSHA256,shard,records,actualMetadataReconstruction:true,nativeForceSolvesExecuted:0,candidateAccepted:false},null,2)+'\n')
+          
+          JS
+      - name: Protect sources and retain all actual outputs before any optional audit
+        run: |
+          python -B - <<'PY'
+          import hashlib,json,os,subprocess
+          from pathlib import Path
+          folder=Path(os.environ['REGEN_DIR']);before=json.loads((folder/'source-before.json').read_text());sha=lambda b:hashlib.sha256(b).hexdigest()
+          allow=[] if os.environ.get('CASE_SHARD') is not None else ['project/str/studies/floor-section-proof.json','project/str/studies/floor-section-250.svg','project/str/studies/seated-wet-support-floor.svg','project/str/studies/floor-section-cuts-proof.json']
+          actual={p:sha(Path(p).read_bytes()) for p in before['trackedSHA256']};changed=[p for p,v in actual.items() if v!=before['trackedSHA256'][p]]
+          if set(changed)-set(allow):raise ValueError('Unexpected protected source change')
+          records={}
+          for p in allow:
+           data=Path(p).read_bytes();q=folder/'generated'/p;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(data);records[p]={'bytes':len(data),'sha256':sha(data)}
+          (folder/'source-after.json').write_text(json.dumps({'sourceCommit':before['sourceCommit'],'outputs':records,'allowedGeneratedPaths':allow,'changedTrackedPaths':changed,'native58UnchangedDuringExecution':all(sha(Path(p).read_bytes())==h for p,h in before['native58SHA256'].items()),'allOtherTrackedSourcesUnchanged':True,'accountAndCanonicalUnchanged':True,'candidateAccepted':False},indent=2)+'\n')
+          print('ACTUAL_RECOVERY_OUTPUT_IDENTITIES '+json.dumps(records),flush=True)
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: current-cut-recovery-${{ github.job }}-${{ matrix.shard }}-${{ github.sha }}
+          path: ${{ runner.temp }}/current-positive-source-evidence/
+          if-no-files-found: error
+          retention-days: 90
