@@ -4,27 +4,31 @@ This is source-bound engineering development, not a selected installed house, a 
 
 ## Concrete selection
 
-Use an open metal walking surface150mm above the saved house530mm floor, making the Plant walking/threshold level680mm. Replace the former continuous515–530mm Plant finish; do not retain its505mm underside as a fictitious protected boundary. Keep a real660mm bulk-water comparison20mm below the new walking surface. Retain the actual2300mm clear cargo head: the source buffer handling profile2265mm leaves15mm after two independent10mm settings.
+Use an open metal walking surface150mm above the saved house530mm floor, making the Plant walking/threshold level680mm. Replace the former continuous515–530mm Plant finish; do not retain its505mm underside as a fictitious protected boundary. Keep a real660mm bulk-water comparison20mm below the new walking surface. The actual fitted opening is1000mm effective clear inside a1300mm outer frame, with150mm technical cassettes and50mm side-site margins within the retained1400mm masonry arch. Retain the actual2300mm clear cargo head: the source buffer handling profile2265mm leaves15mm after two independent10mm settings.
 
-Two450×135mm clear,4mm metal outfalls on Y4260/4940 replace the tight600mm alternative. Bridge rails run above the outfalls rather than through their flow lanes. The source pan, outfall profiles, steel bars, posts, caps, bridge pieces, apparatus footprints and volume ledger are all computed by `inletPlantTankedRoom` and `plantTankedWalkingSurface` from the saved design controls.
+The950mm bridge uses actual side/centre rails atY4155/4600/5045. Two450×135mm clear,4mm metal outfalls on Y4260/4940 replace the tight600mm alternative. Bridge rails run above the outfalls rather than through their flow lanes. The source pan, outfall profiles, steel bars, posts, caps, bridge pieces, apparatus footprints and volume ledger are all computed by `inletPlantTankedRoom` and `plantTankedWalkingSurface` from the saved design controls.
 
-The100mm floor/600mm outfall alternative remains an explicit rejected comparison. Under the active11.1mm maximum source and actual normal assembly it leaves only15.938L (3.65s of zero-outflow source reserve). The150mm arrangement leaves170.204L (38.94s).
+The100mm floor/600mm outfall alternative remains an explicit rejected comparison. Its regulator is actually coordinated at1260mm, preserving both real stem stubs; normal geometry passes. It leaves only16.043L (3.67s of zero-outflow source reserve). The150mm arrangement leaves170.309L (38.96s).
 
 ## Actual hosted evidence
 
-Commit9e45ee4ae0e671676e31f7b103766832d341b184 passed repository TypeScript. Its same-case Plant geometry, normal delivery, paired-spanner environment, full inventory and perturbation controls passed in run45883741232, job140129184867. The complete84-control batch passed80 and failed4: one deliberately stale owner SVG, now regenerated from that exact computed case, and three actual Utility head/operating geometry failures still being corrected. No batch green is claimed. Artifact15148038390 is retained90days; zip SHA256 ac43b9c709495723b4f59897fdd31915f52986c7b05ec029d834c71cee909386. This is pure source/geometry/hydraulic/member evidence, not a native floor/contact calculation.
+Commitff02dfff1003c4c95f9f43fb2c386bb899a4088e passed repository TypeScript and all89 focused Node24 controls in run45886314380, job140137778735. Artifact15149377273 is retained90days; zip SHA256 1e29976e793e27b2d703f38f6bcf18b85df371b0cc19f9f52ad11d93764d13bf. This is pure source/geometry/hydraulic/member evidence, not a native floor/contact calculation. Test success does not override explicit rejected geometry or false physical-qualification fields.
+
+The actual901-pose raised-floor door/body/arm comparison has no geometric diagnostics: minimum arm/leaf5.040mm, body/leaf9.083mm and leaf/pipe13.821mm, all after the existing setting and continuous-motion covers. The complete1300mm rectangular frame has10.392mm horizontal/7.286mm radial corner reserves inside the actual source masonry curve after20mm coordinate settings. The old−20mm below-spring screen is only sufficient and does not reject this curved-arch fit. Actual reveal/thermal/fire/weather/hardware and native house-profile acceptance remain unearned.
+
+Each13.075kg bridge piece lifts from the actual680mm threshold, goes east through the real1000mm opening, turns at[13430,4600] on the actual exterior deck, returns already narrow and lowers to the interior rest. All13 pieces have positive declared frame/fixed-object/pipe reserves; minima4.444mm/108mm/51.753mm. The former interior quarter-turn is an explicit same-current-source collision control. Actual capture equipment, tool/crew tasks, support resistance and reinstatement are not qualified by these box sweeps.
 
 | Quantity | Current computed design bound |
 |---|---:|
 | Active nominal/minimum/maximum Plant aperture |11.0 /10.9 /11.1mm |
 | Maximum source discharge at10.1bar absolute and990kg/m³ |262.268L/min |
 | Source-fed initial pool |448.4mm |
-| Full vessel, expansion, bounded communicating pressure network, actual feed/regulator, risers and hot draw route |640.386L |
+| Full vessel, expansion, bounded communicating pressure network, actual feed/regulator, risers and hot draw route |640.356L |
 | Regulator full outer volume minus replaced tube, included above |6.245L |
-| Incremental actual steel/sealed-envelope displacement upper |102.019L |
-| Net available room increment |810.590L |
-| Static reserve |170.204L |
-| Walking/stand full-solid mass upper, excluding filled apparatus |1414.99952kg |
+| Incremental actual steel/sealed-envelope displacement upper |101.587L |
+| Net available room increment |810.665L |
+| Static reserve |170.309L |
+| Walking/stand full-solid mass upper, excluding filled apparatus |1398.65192kg |
 | Domestic vessel normal filled mass ceiling |580kg |
 | Primary buffer conservative normal mass ceiling |571.80708kg |
 | Normal hot/return/riser/draw-route external inventory upper |142.68675L |
@@ -32,7 +36,7 @@ Commit9e45ee4ae0e671676e31f7b103766832d341b184 passed repository TypeScript. Its
 
 Full bare OUTER tubes and complete fitting/device envelopes are deliberately counted as water. Minimum bores,300L nominal useful capacity and the old170L challenge are not maximum inventory. The330L domestic body/ports ceiling comes from the actual650mm inner diameter,850mm straight height,100mm domes and explicit port budget. The separate20L expansion maximum is not the rejected historical25L vessel.
 
-Retain20L total expansion capacity; author2bar normal regulation and3bar absolute precharge. The same existing ideal separated-gas/density model then gives5.78738bar maximum normal gauge at the150L external ceiling. That requires the actual common regulator to control BOTH the Plant cold tree and the store, before their split. The same normal-assembly result now owns the actual upstream160×160×250mm all-metal regulator requirement,20kg captured mass ceiling, direct collinear store drop, normal pressure loss and real pipe inventory. At the authored Kv12 ceiling its minimum10.9mm source gives0.02288bar authority reserve after the0.1bar control allowance at45L/min. Its two external paired-spanner environment cases pass; actual factory hex lands, complete tool shape, pressure/material performance, support/thermal reactions and physical renewal remain unqualified. A regulator on the store alone does not earn that normal state against cold/hot crossflow.
+Retain20L total expansion capacity; author2bar normal regulation and3bar absolute precharge. The same existing ideal separated-gas/density model then gives5.78738bar maximum normal gauge at the150L external ceiling. That requires the actual common regulator to control BOTH the Plant cold tree and the store, before their split. The same normal-assembly result now owns the actual upstream160×160×250mm all-metal regulator requirement,20kg captured mass ceiling, direct collinear store drop, normal pressure loss and real pipe inventory. At the authored Kv12 minimum requirement its minimum10.9mm source gives0.02288bar authority reserve after the0.1bar control allowance at45L/min. Its two external paired-spanner environment cases pass; actual factory hex lands, complete tool shape, pressure/material performance, support/thermal reactions and physical renewal remain unqualified. A regulator on the store alone does not earn that normal state against cold/hot crossflow.
 
 The primary buffer normal mass uses the actual545mm×1975mm outer cylinder as a conservative fluid upper, authored maximum density1100kg/m³, source45kg dry mass and20kg retained ancillary budget. The300L nominal or335kg catalogue filled comparator is not used as a maximum. This remains a separate hydraulic event from potable rupture; the complete primary loop/release is not silently included in the potable result.
 

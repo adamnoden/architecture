@@ -36,7 +36,8 @@ export function inletUtilityMemberRenewal(i:{source:Source;wet:Wet;tools?:readon
  xs=legs.map(v=>v.boxMm[0]),ys=legs.map(v=>v.boxMm[1]),legWidth=legs[0]?.boxMm[3]
  if(legs.length!==4||rails.length!==8||legWidth!==40)throw Error('Actual four40mm legs and eight existing rails required')
  const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys),
-  members=rails.map(q=>{const b=q.boxMm,axis=b[3]>b[4]?0:1,start=(axis===0?minX:minY)+40,end=axis===0?maxX:maxY,
+  memberEndGap=(d as unknown as{frameRenewal:{memberJointDesign:{memberEndGapMm:number}}}).frameRenewal.memberJointDesign.memberEndGapMm,
+  members=rails.map(q=>{const b=q.boxMm,axis=b[3]>b[4]?0:1,start=(axis===0?minX:minY)+40+memberEndGap,end=(axis===0?maxX:maxY)-memberEndGap,
    replacement:B=axis===0?[start,b[1],b[2],end-start,b[4],b[5]]:[b[0],start,b[2],b[3],end-start,b[5]]
    return{id:q.id,drawnBoxMm:b,boltedCutBoxMm:replacement,cutLengthMm:end-start,drawnCentreToCentreLengthMm:b[axis+3],boltsPerEndRequired:2,actualBoltedJointSelected:false}
   }),
@@ -87,7 +88,7 @@ export function inletUtilityMemberRenewal(i:{source:Source;wet:Wet;tools?:readon
   headerFree=d.commonPathMm.at(-1)![0]-d.commonPathMm[0][0]
  return{schema:'had-utility-independent-member-observer/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,choice:wet.choice,boundary:source.boundary,requirements:r,tools}),
   currentSavedDocumentAdmitted:false,requirements:r,wholeAssembledFrameWithdrawalRequired:false,coldTreeOrSourceUnionOpenedForDryMemberRenewal:false,
-  members,ordinaryCapture:inletUtilityOrdinaryCapture({source,wet}),drawnRailEndsNeedActualBoltedJointRedesign:true,normalIndependentWaterBeamCandidate:{beams,checks,failures:checks.filter(q=>q.reserveMm< -1e-7),demands,
+  members,ordinaryCapture:inletUtilityOrdinaryCapture({source,wet}),drawnRailEndsNeedActualBoltedJointRedesign:false,actualBoltedRailJointResistanceQualified:false,normalIndependentWaterBeamCandidate:{beams,checks,failures:checks.filter(q=>q.reserveMm< -1e-7),demands,
    fullClampForkSlidesAndWallAnchorGeometryIncluded:false,actualWallElevationAndMaterialRead:false,permanentWallSteelExcludedFromMoving20kgTree:true,
    steelSectionDemandWithinAuthoredComparison:demands.every(v=>Math.max(v.normalExtremeFibreMPa,v.coldZeroExtremeFibreMPa)<=r.referenceAllowableMPa)},
   railComparison:{longestClearSpanMm:longestUpper,pointLoadN:r.upperRailComparisonPointLoadN,extremeFibreMPa:railMoment*r.upperRailDepthMm/2/r.upperRailMinimumIMM4,
@@ -112,7 +113,7 @@ type CaptureControls={ schema:string;method:string;wholeHeadWestParkRequiredForO
  restPlanMm:readonly[number,number,number,number];restTopMm:number;restTopDepthMm:number;restPostsXYMm:readonly(readonly[number,number])[];restPostCrossMm:number;
  maximumSectionAreaMm2:number;minimumSectionAreaMm2:number;minimumSectionIMm4:number;maximumSteelDensityKgM3:number;minimumSteelDensityKgM3:number;normalWorkingFloorXYMm:readonly[number,number];normalWorkingShoulderMm:P;externalHorizontalComparisonN:number;frictionResistanceCredited:false;actualProductsFloorHorizontalReactionAndPhysicalHandlingAccepted:false
 }
-type JointControls={schema:string;captiveNutsAccessibleFromNorth:boolean;maximumSocketRadiusMm:number;minimumSocketExtensionMm:number;memberEndGapMm:number;seatTravelsWithCapturedRail:boolean;gravitySeatLengthMm:number;gravitySeatWidthMm:number;gravitySeatThicknessMm:number;receiverWidthMm:number;receiverThicknessMm:number;boltEdgeMm:number;boltDiameterMm:number;boltPitchMm:number;upperBoltZMm:{EW:readonly number[];NS:readonly number[]};lowerBoltZMm:{EW:readonly number[];NS:readonly number[]};northProjectionMm:{EW:number;NS:number};actualReceiverWeldBoltMaterialAndLocalHSSProofAccepted:false}
+type JointControls={schema:string;connectionMethod:string;maximumSocketRadiusMm:number;minimumSocketExtensionMm:number;lowerSocketExtensionMm:number;memberEndGapMm:number;seatTravelsWithCapturedRail:boolean;gravitySeatLengthMm:number;gravitySeatWidthMm:number;gravitySeatThicknessMm:number;boltEdgeMm:number;boltDiameterMm:number;boltPitchMm:number;boltFirstFromCutMm:number;boltHeadAFMm:number;boltHeadHeightMm:number;captiveBossDiameterMm:number;captiveBossHeightMm:number;minimumThreadEngagementMm:number;actualReceiverWeldBoltMaterialAndLocalHSSProofAccepted:false}
 /** Positive vertical capture and finite body/member geometry. Horizontal floor
  * reaction is deliberately a separate unsatisfied action without friction or a
  * real locating receiver. A geometric gravity path cannot approve that action. */
@@ -159,26 +160,40 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
   put('capture/rolling-handle-column',[hand[0]-10,hand[1]-10,60,20,20,hand[2]-60],[],true)
   put('capture/rolling-handle-base',[hand[0],hand[1]-10,30,Math.min(...c.postsXYMm.map(p=>p[0]))-hand[0],20,20],[],true)
  }
- const interfaces=rails.flatMap(q=>{
+ const candidateFrame=frame.map(q=>{
+  if(!q.id.includes(' rail '))return q
+  const b=q.boxMm,EW=b[3]>b[4],axis=EW?0:1
+  return{...q,boxMm:(EW?[b[0]+20+j.memberEndGapMm,b[1],b[2],b[3]-40-2*j.memberEndGapMm,b[4],b[5]]:[b[0],b[1]+20+j.memberEndGapMm,b[2],b[3],b[4]-40-2*j.memberEndGapMm,b[5]]) as B}
+ }),candidateById=new Map(candidateFrame.map(q=>[q.id,q])),
+ interfaces=rails.flatMap(q=>{
   const b=q.boxMm,EW=b[3]>b[4],axis=EW?'EW':'NS',upper=b[2]>500,axisIndex=EW?0:1,
-   ends=[b[axisIndex],b[axisIndex]+b[axisIndex+3]],
-   pair=upper?j.upperBoltZMm[axis]:j.lowerBoltZMm[axis]
+   ends=[b[axisIndex],b[axisIndex]+b[axisIndex+3]]
   return ends.map((a,k)=>{
    const centre:P=EW?[a,b[1]+b[4]/2,b[2]+b[5]/2]:[b[0]+b[3]/2,a,b[2]+b[5]/2],
     leg=legs.reduce((best,v)=>Math.hypot(v.boxMm[0]+20-centre[0],v.boxMm[1]+20-centre[1])<Math.hypot(best.boxMm[0]+20-centre[0],best.boxMm[1]+20-centre[1])?v:best,legs[0]),
-    lx=leg.boxMm[0]+20,ly=leg.boxMm[1]+20,faceY=ly+20+j.northProjectionMm[axis],
-    seat:B=EW?[k===0?leg.boxMm[0]+40:leg.boxMm[0]-j.gravitySeatLengthMm,b[1],b[2]-j.gravitySeatThicknessMm,j.gravitySeatLengthMm,b[4],j.gravitySeatThicknessMm]:
-     [b[0],k===0?leg.boxMm[1]+40:leg.boxMm[1]-j.gravitySeatLengthMm,b[2]-j.gravitySeatThicknessMm,b[3],j.gravitySeatLengthMm,j.gravitySeatThicknessMm],
-    plate:B=[lx-j.receiverWidthMm/2,faceY-j.receiverThicknessMm/2,Math.min(...pair)-j.boltEdgeMm,j.receiverWidthMm,j.receiverThicknessMm,Math.max(...pair)-Math.min(...pair)+2*j.boltEdgeMm],
-    id=q.id+'/end/'+k
-   put(id+'/gravity-seat',seat,[q.id,leg.id]);put(id+'/receiver-plate',plate,[leg.id])
-   const proposedMemberCutBoxMm:B=EW?[b[0]+20+j.memberEndGapMm,b[1],b[2],b[3]-40-2*j.memberEndGapMm,b[4],b[5]]:[b[0],b[1]+20+j.memberEndGapMm,b[2],b[3],b[4]-40-2*j.memberEndGapMm,b[5]]
-   return{id,railId:q.id,legId:leg.id,axis,upper,proposedMemberCutBoxMm,sourceIASFrameStillCentrelineComparator:true,seatMm:seat,receiverPlateMm:plate,boltCentresMm:pair.map(h=>[lx,faceY,h] as P),boltAxisMm:[0,1,0] as P,boltDiameterMm:j.boltDiameterMm,seatTravelsWithCapturedRail:j.seatTravelsWithCapturedRail,requiredMemberEndGapMm:j.memberEndGapMm,
-    boltsPerInterface:2,seatReferenceDemandN:2000,receiverWebAndWeldGeometryComplete:false,actualBoltToolAndJointResistanceAccepted:false}
+    face=leg.boxMm[axisIndex]+(k===0?40:0),sign=k===0?1:-1,
+    seat:B=EW?[k===0?face:face-j.gravitySeatLengthMm,b[1],b[2]-j.gravitySeatThicknessMm,j.gravitySeatLengthMm,b[4],j.gravitySeatThicknessMm]:
+     [b[0],k===0?face:face-j.gravitySeatLengthMm,b[2]-j.gravitySeatThicknessMm,b[3],j.gravitySeatLengthMm,j.gravitySeatThicknessMm],
+    id=q.id+'/end/'+k,proposedMemberCutBoxMm=candidateById.get(q.id)!.boxMm,
+    boltCentresMm=[0,1].map(n=>{
+     const along=face+sign*(j.memberEndGapMm+j.boltFirstFromCutMm+n*j.boltPitchMm)
+     return(EW?[along,b[1]+b[4]/2,seat[2]-j.boltHeadHeightMm]:[b[0]+b[3]/2,along,seat[2]-j.boltHeadHeightMm]) as P
+    }),
+    bossBoxesMm=boltCentresMm.map(p=>[p[0]-j.captiveBossDiameterMm/2,p[1]-j.captiveBossDiameterMm/2,b[2],j.captiveBossDiameterMm,j.captiveBossDiameterMm,j.captiveBossHeightMm] as B)
+   put(id+'/gravity-seat',seat,[q.id,leg.id])
+   for(const[n,p]of boltCentresMm.entries()){
+    put(id+'/upward-bolt-head/'+n,[p[0]-j.boltHeadAFMm/2,p[1]-j.boltHeadAFMm/2,p[2],j.boltHeadAFMm,j.boltHeadAFMm,j.boltHeadHeightMm],[q.id,leg.id])
+    put(id+'/upward-bolt-shank/'+n,[p[0]-j.boltDiameterMm/2,p[1]-j.boltDiameterMm/2,seat[2],j.boltDiameterMm,j.boltDiameterMm,j.gravitySeatThicknessMm+j.minimumThreadEngagementMm],[q.id,leg.id])
+    put(id+'/captive-reinforced-boss/'+n,bossBoxesMm[n],[q.id,leg.id])
+   }
+   return{id,railId:q.id,legId:leg.id,axis,upper,proposedMemberCutBoxMm,sourceIASFrameStillCentrelineComparator:true,seatMm:seat,receiverPlateMm:null,boltCentresMm,bossBoxesMm,boltAxisMm:[0,0,1] as P,boltDiameterMm:j.boltDiameterMm,seatTravelsWithCapturedRail:j.seatTravelsWithCapturedRail,requiredMemberEndGapMm:j.memberEndGapMm,
+    connectionMethod:j.connectionMethod,seatBearingLengthMm:j.gravitySeatLengthMm-j.memberEndGapMm,boltsPerInterface:2,seatReferenceDemandN:2000,receiverWebAndWeldGeometryComplete:false,actualBoltToolAndJointResistanceAccepted:false}
   })
  })
+ const retiredCentrelineSeatChecks=hardware.filter(q=>q.id.includes('/gravity-seat')).flatMap(q=>frame.filter(v=>!q.mates.includes(v.id)).map(v=>({id:q.id+'/'+v.id,reserveMm:gap(q.boxMm,v.boxMm)-two})))
+
  const washer=source.services.utility.washerFirstRest,
-  fixed=[...source.rearTreeContext.obstacles.filter(q=>q.presence!=='carry-bar-after-park'&&q.presence!=='head-before-strip'&&q.id!=='source-washer-home'),
+  fixed=[...source.rearTreeContext.obstacles.filter(q=>q.presence!=='carry-bar-after-park'&&q.presence!=='head-before-strip'&&q.id!=='source-washer-home').map(q=>candidateById.has(q.id)?{...q,boxMm:candidateById.get(q.id)!.boxMm}:q),
    {id:'capture-phase/washer-at-source-first-rest',boxMm:[washer[0],washer[1],0,washer[2],washer[3],source.rearTreeContext.obstacles.find(q=>q.id==='source-washer-home')!.boxMm[5]] as B,presence:'always' as const}],
   cold=wet.cold.geometry.parts.filter(q=>!q.cap).map(q=>({id:'cold/'+q.id,boxMm:q.wrapped})),
   hot=wet.hot.normalPermanentEnvelopes.map(q=>({id:q.id,boxMm:q.boxMm as B})),
@@ -323,18 +338,18 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
 
  const frontRailTools:{id:string;reserveMm:number}[]=[]
  for(const end of interfaces.filter(p=>p.railId==='IAS/frame/EW rail at y1350 / z850'))for(const p of end.boltCentresMm){
-  const grip:P=[p[0],p[1]+j.minimumSocketExtensionMm,p[2]],shoulder:P=[11155,1700,1100],shaftMm:readonly[P,P]=[p,grip]
-  frontRailTools.push({id:end.id+'/socket-reach/'+p[2],reserveMm:600-Math.hypot(...grip.map((v,k)=>v-shoulder[k]))})
+  const grip:P=[p[0],p[1],p[2]-j.minimumSocketExtensionMm],shoulder:P=[11155,1700,1100],shaftMm:readonly[P,P]=[p,grip]
+  frontRailTools.push({id:end.id+'/socket-reach/'+p[0],reserveMm:600-Math.hypot(...grip.map((v,k)=>v-shoulder[k]))})
   for(const q of[...fixed,...cold,...hot])if(![end.railId,end.legId].includes(q.id)){
-   frontRailTools.push({id:end.id+'/arm/'+q.id+'/'+p[2],reserveMm:exactSegmentBoxDistance(shoulder,grip,q.boxMm)-40-two})
-   frontRailTools.push({id:end.id+'/socket/'+q.id+'/'+p[2],reserveMm:exactSegmentBoxDistance(...shaftMm,q.boxMm)-j.maximumSocketRadiusMm-two})
+   frontRailTools.push({id:end.id+'/arm/'+q.id+'/'+p[0],reserveMm:exactSegmentBoxDistance(shoulder,grip,q.boxMm)-40-two})
+   frontRailTools.push({id:end.id+'/socket/'+q.id+'/'+p[0],reserveMm:exactSegmentBoxDistance(...shaftMm,q.boxMm)-j.maximumSocketRadiusMm-two})
   }
   for(const q of source.rearTreeContext.retainedPaths)for(let k=1;k<q.pointsMm.length;k++){
-   frontRailTools.push({id:end.id+'/arm/'+q.id+'/'+p[2]+'/'+k,reserveMm:segmentDistance(shoulder,grip,q.pointsMm[k-1],q.pointsMm[k])-40-q.radiusWithSupportsMm-two})
-   frontRailTools.push({id:end.id+'/socket/'+q.id+'/'+p[2]+'/'+k,reserveMm:segmentDistance(...shaftMm,q.pointsMm[k-1],q.pointsMm[k])-j.maximumSocketRadiusMm-q.radiusWithSupportsMm-two})
+   frontRailTools.push({id:end.id+'/arm/'+q.id+'/'+p[0]+'/'+k,reserveMm:segmentDistance(shoulder,grip,q.pointsMm[k-1],q.pointsMm[k])-40-q.radiusWithSupportsMm-two})
+   frontRailTools.push({id:end.id+'/socket/'+q.id+'/'+p[0]+'/'+k,reserveMm:segmentDistance(...shaftMm,q.pointsMm[k-1],q.pointsMm[k])-j.maximumSocketRadiusMm-q.radiusWithSupportsMm-two})
   }
  }
- frontRailTools.push({id:'front-upper-rail/real-captive-nut-requirement',reserveMm:j.captiveNutsAccessibleFromNorth?0:-1})
+ frontRailTools.push({id:'front-upper-rail/real-upward-captive-boss-requirement',reserveMm:j.connectionMethod==='gravity-seat-upward-M8-into-reinforced-captive-rail-boss'?0:-1})
 
  const outletSource=(d.prefabSinkHead as unknown as{maximumOutletBoreMm:readonly[number,number];mixing:string}),
   airGapChecks=d.prefabSinkHead.spoutOutletsMm.map((p,k)=>({id:'head/independent-outlet-airgap/'+k,phase:'normal-head-airgap',reserveMm:p[2]-d.prefabSinkHead.floodRimMm-two-2*outletSource.maximumOutletBoreMm[k]})),
@@ -370,7 +385,7 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
   geometryFailures=rows.filter(q=>q.phase!=='gravity'&&q.reserveMm< -1e-7),gravityFailures=rows.filter(q=>q.phase==='gravity'&&q.reserveMm< -1e-7)
  return{schema:'had-utility-ordinary-head-capture/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,context:source.rearTreeContext,frame:source.host.geometry.frame,activePaths:source.route.paths,choice:wet.choice,controls:c,joints:j}),
   controls:c,waste,airGap:{checks:airGapChecks,netLipToFloodRimMm:d.prefabSinkHead.spoutOutletsMm.map(p=>p[2]-d.prefabSinkHead.floodRimMm-two),requiredTwoOutletBoresMm:outletSource.maximumOutletBoreMm.map(v=>2*v),independentHeadPressureComponents,sinkReservoirBackfeedGeometricallyExcluded:airGapChecks.every(q=>q.reserveMm>=0),actualProductBoresAndPhysicalBackfeedQualification:false},raisedHeadClearanceChecks,frontUpperRailTools:{checks:frontRailTools,failures:frontRailTools.filter(q=>q.reserveMm<0),actualBoltSleeveWeldAndLoadedRemovalQualified:false},rejectedWholeHeadMotion:{role:'historical stress only; ordinary work keeps head captured on original plan',checks:rejectedWholeHeadMotionChecks,failures:rejectedWholeHeadMotionChecks.filter(q=>q.reserveMm<0)},normalHeadChecks,normalHeadFailures:normalHeadChecks.filter(q=>q.reserveMm< -1e-7),normalCompleteHeadNecessary:normalHeadChecks.every(q=>q.reserveMm>=-1e-7),mode:i.mode,temporaryBracing:{source:braceSource,checks:braceChecks,failures:braceChecks.filter(q=>q.reserveMm<0),demands:braceDemands,actualPinSleeveHSSWallAndFloorResistanceQualified:false},rollingOperator:{checks:rollingChecks,failures:rollingChecks.filter(q=>q.reserveMm<0),actualHumanForceAndCasterRollingQualified:false},movingFrameBlockedControl,forkReference:{maximumOneForkDynamicN:c.maximumCapturedWetHeadKg*9.81*1.5,deflectionMm:forkDeflectionMm,actualSectionAndGuideCapacityQualified:false},earliestTools:{checks:earliestToolChecks,failures:earliestToolChecks.filter(q=>q.reserveMm<0),frontRailRemovedBeforeNorthToolsRequired:true,headToolAperturesOrActualJawFlatDatumsAuthored:true},slings:{checks:slingChecks,active:i.mode==='gantry',minimumEachResultantN:Math.hypot(W,W*c.southClearanceMm/(z-c.liftingEyesMm[0][2]-c.liftMm)),actualHoistGuidesAndSideShiftMechanismQualified:false},phase:'washer-first-rest; LodgeU/H0/localcutsverifiedzero; source740andH0365drained; matchedheadunionjacketsstripped',
-  hardware,interfaces,headParts,checks:rows,geometryFailures,gravityFailures,necessaryGravityGeometry:geometryFailures.length===0&&gravityFailures.length===0,
+  hardware,interfaces,candidateFrame,retiredCentrelineSeatControl:{role:'rejected original centreline-length stock; candidate bolted rails use explicit finite cuts',checks:retiredCentrelineSeatChecks,failures:retiredCentrelineSeatChecks.filter(q=>q.reserveMm<0)},headParts,checks:rows,geometryFailures,gravityFailures,necessaryGravityGeometry:geometryFailures.length===0&&gravityFailures.length===0,
   sequence:i.mode==='fork'?[
    'Close actual LodgeU/H0/local source cuts, cool, verify zero pressure and drain through the source-derived1550 high vent/740 controlled cold drain and365 hot drain. Neither head union nor a later blank establishes isolation.',
    'Park washer at its actual first rest. Seat the low floor trolley; engage four positive factory under-bowl capture ribs and take full head gravity load BEFORE releasing a loaded rail. Independent water supports remain made.',

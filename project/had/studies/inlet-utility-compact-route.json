@@ -843,47 +843,31 @@
       },
       "memberJointDesign": {
         "schema": "had-utility-bolted-member-end/1",
-        "gravitySeatLengthMm": 40,
+        "connectionMethod": "gravity-seat-upward-M8-into-reinforced-captive-rail-boss",
+        "gravitySeatLengthMm": 100,
         "gravitySeatWidthMm": 30,
-        "gravitySeatThicknessMm": 12,
-        "receiverWidthMm": 24,
-        "receiverThicknessMm": 8,
-        "boltEdgeMm": 24,
+        "gravitySeatThicknessMm": 20,
+        "boltEdgeMm": 12,
         "boltDiameterMm": 8,
         "boltPitchMm": 30,
-        "upperBoltZMm": {
-          "EW": [
-            680,
-            710
-          ],
-          "NS": [
-            550,
-            580
-          ]
-        },
-        "lowerBoltZMm": {
-          "EW": [
-            70,
-            100
-          ],
-          "NS": [
-            55,
-            85
-          ]
-        },
-        "northProjectionMm": {
-          "EW": 25,
-          "NS": 65
-        },
+        "boltFirstFromCutMm": 20,
+        "boltHeadAFMm": 13,
+        "boltHeadHeightMm": 6,
+        "captiveBossDiameterMm": 20,
+        "captiveBossHeightMm": 25,
+        "minimumThreadEngagementMm": 18,
         "actualReceiverWeldBoltMaterialAndLocalHSSProofAccepted": false,
         "memberEndGapMm": 25,
-        "seatTravelsWithCapturedRail": true,
-        "captiveNutsAccessibleFromNorth": true,
+        "seatTravelsWithCapturedRail": false,
         "maximumSocketRadiusMm": 10,
-        "minimumSocketExtensionMm": 100
+        "minimumSocketExtensionMm": 100,
+        "lowerSocketExtensionMm": 35,
+        "seatFixedToLegAndRailLiftedClearAfterBoltsRemoved": true,
+        "actualCutFrameReplacesCentrelineRailEnds": true,
+        "sourceIASStockIsHistoricalComparatorOnly": true
       },
       "headRemovedBeforeOtherFrameWork": false,
-      "firstRailReleaseAfterPositiveHeadCapture": "IAS/frame/EW rail at y750 / z850",
+      "firstRailReleaseAfterPositiveHeadCapture": "IAS/frame/EW rail at y1350 / z850",
       "temporaryBracing": {
         "schema": "had-utility-temporary-pinned-braces/1",
         "crossMm": 20,

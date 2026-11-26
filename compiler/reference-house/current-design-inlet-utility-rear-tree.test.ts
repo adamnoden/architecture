@@ -221,7 +221,7 @@ test('one source owns four floor-seated head captures, sixteen bolted ends and f
  const a=wet.ordinaryCapture
  assert.equal(a.hardware.filter(q=>q.id.startsWith('capture/leg/')).length,4)
  assert.equal(a.interfaces.length,16)
- assert.ok(a.interfaces.every(q=>q.boltsPerInterface===2&&q.seatTravelsWithCapturedRail))
+ assert.ok(a.interfaces.every(q=>q.boltsPerInterface===2&&!q.seatTravelsWithCapturedRail))
  assert.deepEqual([...new Set(a.interfaces.map(q=>Math.max(q.proposedMemberCutBoxMm[3],q.proposedMemberCutBoxMm[4])))].sort(),[460,510])
  assert.equal(a.controls.firstLiftMm,65);assert.equal(a.controls.southClearanceMm,0)
  assert.equal(a.controls.liftMm,380);assert.equal(a.controls.westTransferMm,800)
@@ -372,4 +372,24 @@ test('old11160 NS fork physically strikes the actual strainer;11110 clears witho
  assert.ok(r.geometryFailures.some(q=>q.id==='capture/fork/11160/waste/head-underflange'&&q.reserveMm< -33))
  const selected=wet.ordinaryCapture.sourceBoundCapturePhase.captureGeometryChecks.find(q=>q.id==='capture/fork/11110/waste/head-underflange')!
  near(selected.reserveMm,6.898018134715025,1e-6)
+})
+
+test('sixteen actual gravity seats replace hanging plates and physically clear the finite cut frame',()=>{
+ const a=wet.ordinaryCapture,j=choice.coldDistribution.frameRenewal.memberJointDesign
+ assert.equal(j.connectionMethod,'gravity-seat-upward-M8-into-reinforced-captive-rail-boss')
+ assert.equal(a.interfaces.length,16)
+ assert.ok(a.interfaces.every(q=>q.seatBearingLengthMm===75&&q.receiverPlateMm===null))
+ assert.ok(a.interfaces.every(q=>q.boltAxisMm[2]===1&&q.bossBoxesMm.length===2))
+ assert.ok(a.hardware.filter(q=>q.id.includes('/upward-bolt-head/')).length===32)
+ assert.ok(a.hardware.filter(q=>q.id.includes('/captive-reinforced-boss/')).length===32)
+ assert.equal(a.candidateFrame.filter(q=>q.id.includes(' rail ')).length,8)
+ const rows=a.checks.filter(q=>q.phase==='temporary-and-end-hardware'&&!q.id.startsWith('capture/'))
+ assert.ok(rows.length>0)
+ assert.ok(rows.every(q=>q.reserveMm>=0),JSON.stringify(rows.filter(q=>q.reserveMm<0)))
+ assert.ok(a.retiredCentrelineSeatControl.failures.some(q=>q.reserveMm===-15))
+ assert.ok(a.jointReference.full2000NseatRootStressMPa<200/1.5)
+ assert.deepEqual(a.geometryFailures,[])
+ assert.deepEqual(a.frontUpperRailTools.failures,[])
+ assert.equal(a.jointReference.actualWeldHSSLocalWallAndBoltResistanceAccepted,false)
+ assert.equal(a.ordinaryRenewalAccepted,false)
 })
