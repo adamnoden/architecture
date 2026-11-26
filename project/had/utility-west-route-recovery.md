@@ -163,3 +163,7 @@ The original730mm sinkfeed intersects the actual new bowl700..900 overY790..1190
 Actual temporary carrybar760..800 blocks northward movement of the lowered tree. It is installed only AFTER the tree is parked. The front low rail is separately removed first; the retained frame still requires its own positive stability/support proof. These are ordered removable mechanical interfaces, not silent obstacle deletion.
 
 The prior main-only service adapter75b9ac8 passed actual typecheck and39/39 focused tests in run45858482209/job140042989209. This does not validate the later local bowl replan or full rear-tree sequence.
+
+### Retained hot-tail clearance
+
+The retained hot terminal atX11300 would leave only0.45mm after both10mm setting allowances against the first450mm-high sinkstop layout. The current source moves the cold stop/feed20mm west to11170 and its cold pillar10mm west to11055. The115mm lower return still has its real32mm fitting takeoffs. This avoids preserving a needlessly small ambient margin; actual thermal/support/contact comparison remains required.
