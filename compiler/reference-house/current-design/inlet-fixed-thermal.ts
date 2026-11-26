@@ -232,7 +232,7 @@ export function compareInletRouteThermal(i:InletExplicitThermalRoute){
  if(!Array.isArray(i.pathMm)||i.pathMm.length<3||i.pathMm.some(p=>!finite(p))||!finite(i.fixedPointMm)||Math.hypot(...sub(i.pathMm[0],i.fixedPointMm))>1e-8
   ||!pipe||!Object.values(pipe).every(Number.isFinite)||pipe.wallMm<=0||pipe.outerDiameterMm<=2*pipe.wallMm||pipe.elasticModulusMpa<=0||pipe.poissonRatio<0||pipe.poissonRatio>=.5||pipe.expansionMmMK<=0
   ||!Number.isFinite(i.temperatureExcursionK)||i.temperatureExcursionK<0||i.temperatureExcursionK>80)throw Error('Actual explicit thermal route and positive pipe properties required')
- const path=i.pathMm.map(p=>[...p] as Point)
+ const path:Point[]=i.pathMm.map(p=>[p[0],p[1],p[2]])
  if(path.slice(1).some((p,k)=>Math.hypot(...sub(p,path[k]))<1e-8))throw Error('Duplicate thermal route station')
  let Q:readonly Point[]=basis,guideIndex=-1
  if(i.guide){
