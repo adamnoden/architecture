@@ -100,7 +100,47 @@ def common_wet_support_geometry(raw):
             'authoredBulkUnitWeightsKNPerM3':sorted(densities),'nativeSourceIdentityDigest':digest(proof['sourceSHA256'])}
 
 
-def translate_wet_support(source,shift,ground_ffl,cold_grid_top,source_floor,source_ground_ffl):
+def dry_support_transfer(levels,source_base,source_ground_ffl,occupied_shift,source_soffit):
+    """Separate the actual dry receiving plane from the retained cold grid.
+
+    These are geometry reservations, not a mineral/contact constitutive law.
+    An occupied-floor edit need not move the dry slab or the cold grid.
+    """
+    if not isinstance(levels,dict) or not {'coldGridTop','wetRCPlinth','mineralCourse','dryRC','ffl'}<=set(levels):
+        raise ValueError('Complete actual cold/mineral/dry support stack required')
+    if any(type(v) not in (int,float) or not math.isfinite(v)
+           for v in (source_base,source_ground_ffl,occupied_shift,source_soffit,levels['coldGridTop'],levels['ffl'])):
+        raise ValueError('Finite actual source and raised support planes required')
+    keys=('wetRCPlinth','mineralCourse','dryRC')
+    for key in keys:
+        row=levels[key]
+        if (not isinstance(row,list) or len(row)!=2
+                or any(type(v) not in (int,float) or not math.isfinite(v) for v in row)
+                or row[1]<row[0] or (key!='wetRCPlinth' and row[1]==row[0])):
+            raise ValueError('Actual positive continuous cold/mineral/dry support stack required')
+    if (levels['wetRCPlinth'][0]!=levels['coldGridTop']
+            or levels['wetRCPlinth'][1]!=levels['mineralCourse'][0]
+            or levels['mineralCourse'][1]!=levels['dryRC'][0]):
+        raise ValueError('Cold/mineral/dry receiving stack has a gap or bypass')
+    base=levels['dryRC'][1];top=source_soffit+occupied_shift
+    if top<=base or levels['ffl']!=source_ground_ffl+occupied_shift:
+        raise ValueError('Actual dry member and occupied planes required')
+    return {'schema':'house-dry-support-transfer/1',
+        'status':'unselected-geometry-reservation-not-native-insertion',
+        'coldGridTopMm':levels['coldGridTop'],'sourceDryBaseMm':source_base,
+        'dryMemberBaseMm':base,'drySupportTranslationMm':base-source_base,
+        'occupiedTranslationMm':occupied_shift,
+        'relativeLowerMemberHeightChangeMm':occupied_shift-(base-source_base),
+        'verticalStackMm':{key:list(levels[key]) for key in keys},
+        'ordinaryDryMemberIntervalMm':[base,top],
+        'ordinaryDryMemberHeightMm':top-base,
+        'nativeInsertionImplemented':False,'mineralBearingLawQualified':False,
+        'mineralShearOrUpliftResistanceProvided':False,
+        'currentNativeFootprintsQualified':False,'oldForcesReusable':False,
+        'scope':'Dry walls, columns, portal abutments and stair toe restart on the dry slab. No column or bar extends through the full mineral course to the cold grid. Its actual full-width bearing, lateral/uplift path, slab/base anchorage and fresh whole-house response remain to design.'}
+
+
+def translate_wet_support(source,shift,ground_ffl,cold_grid_top,source_floor,source_ground_ffl,dry_base):
     joined=common_wet_support_geometry(source['raw'][WET_SUPPORT_RECEIPT]);geometry=joined['geometry'];beam=geometry['beam']
     if geometry['sourceRCIntervalMm']!=[source_floor['bottom'],source_floor['top']]:
         raise ValueError('Actual wet-support receipt and occupied source floor use different datums')
@@ -108,9 +148,12 @@ def translate_wet_support(source,shift,ground_ffl,cold_grid_top,source_floor,sou
     for post in geometry['posts']:
         if post['physicalBottomZMm']!=cold_grid_top:raise ValueError('Actual wet post base disagrees with the fixed cold-grid source')
         a,b,c,d=post['rectangleXYMm'];area=(c-a)*(d-b);top=post['physicalTopZMm']+shift
-        old_height=post['physicalTopZMm']-post['physicalBottomZMm'];height=top-cold_grid_top
+        old_height=post['physicalTopZMm']-post['physicalBottomZMm'];height=top-dry_base
+        if height<=0:raise ValueError('Raised dry post has no positive physical height')
         extra_volume=area*(height-old_height)/1e9;additional+=extra_volume;source_volume+=area*old_height/1e9
-        posts.append({**post,'fixedBottomMm':cold_grid_top,'translatedTopMm':top,'sourceHeightMm':old_height,
+        posts.append({'id':post['id'],'rectangleXYMm':post['rectangleXYMm'],
+            'sourcePhysicalBottomMm':post['physicalBottomZMm'],'sourcePhysicalTopMm':post['physicalTopZMm'],
+            'dryBottomMm':dry_base,'translatedTopMm':top,'sourceHeightMm':old_height,
             'translatedHeightMm':height,'heightIncreaseMm':height-old_height,'knownSectionMm':[c-a,d-b],
             'additionalGrossConcreteEnvelopeM3':extra_volume})
     beam_volume=beam['beamWidthMm']*beam['beamDepthMm']*(beam['beamNorthEndYMm']-beam['beamSouthEndYMm'])/1e9
@@ -123,13 +166,13 @@ def translate_wet_support(source,shift,ground_ffl,cold_grid_top,source_floor,sou
             'undersideBelowOrdinarySlabMm':source_floor['bottom']-soffit,
             'localGroundStructuralClearHeightMm':soffit+shift-ground_ffl,
             'sourceLocalGroundStructuralClearHeightMm':soffit-source_ground_ffl,'finishedCeilingClearanceQualified':False},
-        'posts':posts,'quantities':{'unadoptedPrismaticExtensionComparison':True,
+        'posts':posts,'quantities':{'unadoptedPrismaticHeightChangeComparison':True,
             'additionalGrossPostConcreteEnvelopeM3':additional,'sourceBeamAndPostGrossEnvelopeM3':beam_volume+source_volume,
             'translatedBeamAndPostGrossEnvelopeM3':beam_volume+source_volume+additional,
             'additionalCharacteristicWeightComparisons':[{'authoredBulkUnitWeightKNPerM3':rho,'additionalGrossWeightKN':rho*additional} for rho in joined['authoredBulkUnitWeightsKNPerM3']],
             'reinforcementAndDeliveredDensityQualified':False,'wholeHouseQuantityReconciliationComplete':False},
         'raisedGeometryAdopted':False,'raisedForcesReplayed':False,
-        'scope':'Actual common beam/post section geometry only. Posts keep the cold-grid base while their heads follow the occupied translation. Prismatic extension and authored-density arithmetic are conditional; no new joint, cage, raised stiffness, mass acceptance or force replay is supplied.'}
+        'scope':'Actual common beam/post section geometry only. Posts restart on the dry slab; heads follow the occupied translation independently. Prismatic height-change and authored-density arithmetic are conditional; no mineral bearing/lateral/uplift law, base anchorage, raised stiffness or force replay is supplied.'}
 
 
 def derive_profile(case,source):
@@ -153,23 +196,28 @@ def derive_profile(case,source):
     if lateral['capillarySplice']['plateZ']!=[-50,-30]:raise ValueError('Unsupported source20mm waterstop reference')
     z=g['ffl']-h['sections']['groundFFL'];grade=g['authoredExteriorGrade']
     floor=h['sections']['firstFloorRC'];first=h['sections']['firstFFL']+z;attic=h['sections']['atticDatum']+z
-    core_height=floor['bottom']+z-g['coldGridTop']
-    wet_profile=translate_wet_support(source,z,g['ffl'],g['coldGridTop'],floor,h['sections']['groundFFL'])
+    dry_support=dry_support_transfer(g,h['sections']['groundFloorRC']['top'],h['sections']['groundFFL'],z,floor['bottom'])
+    core_height=dry_support['ordinaryDryMemberHeightMm']
+    wet_profile=translate_wet_support(source,z,g['ffl'],g['coldGridTop'],floor,h['sections']['groundFFL'],dry_support['dryMemberBaseMm'])
     roof_rows=[{'id':'STR-ring-centre','sourceMm':structural['rr'],'translatedComparisonMm':structural['rr']+z,'role':'Structural ring/pressure datum; not weather eave or attic floor'},
                {'id':'HAD-weather-eave','sourceMm':h['exterior']['eaves'],'translatedComparisonMm':h['exterior']['eaves']+z,'role':'HAD explicitly rewound7100eave; not native structural ring'}]
     weather=next(r for r in roof['families'] if r['family']=='slate and combined Sarket below two-direction airspace')
     roof_rows.extend([{'id':'MAT-required-wall-line','sourceMm':weather['requiredWallLine'],'translatedComparisonMm':weather['requiredWallLine']+z,'role':weather['family']},
                       {'id':'MAT-weather-cap-apex','sourceMm':weather['newWeatherCapApex'],'translatedComparisonMm':weather['newWeatherCapApex']+z,'role':'Separate assembly comparison, not a selected whole-house height'}])
+    storey_ffl={'GROUND':h['sections']['groundFFL'],'FIRST':h['sections']['firstFFL']}
     arches=[]
     for level,rows in h['archOpeningRegister'].items():
+        if level not in storey_ffl:raise ValueError('Unsupported source arch storey')
         for row in rows:
-            datums={key:row[key]+z for key in ('sill','spring','head') if key in row}
-            arches.append({'id':level+'/'+row['id'],'wall':row['wall'],'datumsMm':datums,'role':'Source assembly datum translated arithmetically; ring/support/weather applicability reopened'})
+            datums={key:row[key]+storey_ffl[level]+z for key in ('sill','spring','head') if key in row}
+            arches.append({'id':level+'/'+row['id'],'wall':row['wall'],'sourceDatum':'storey-local','outputDatum':'source-ground',
+                           'sourceStoreyFFLMm':storey_ffl[level],'raisedStoreyFFLMm':storey_ffl[level]+z,
+                           'datumsMm':datums,'role':'Absolute source-ground Z from storey-local opening datums and raised storey FFL; ring/support/weather applicability remains open'})
     portal=h['insulatedPortal']
     exposed_top=min(g['ffl'],floor['bottom']+z)
     exposed=max(0,exposed_top-grade)
     diagnostics=[{'code':'PROFILE_FORCE_REPLAY_REQUIRED','objects':['source52-heads','ground-posts','first-floor','north-portals'],
-                  'message':f'Fixed coldgrid/caps{g["coldGridTop"]:g}; occupied shift{z:g}. Ordinary cap-to-soffit height{core_height:g}, not3350. Rebuild actual member endpoints/sections/mass, floor/portal offsets and six-wrench transfers. No old reaction, stiffness, preload or load budget transfers.'},
+                  'message':f'Coldgrid/caps stay{g["coldGridTop"]:g}; dry members restart at{dry_support["dryMemberBaseMm"]:g}, support shift{dry_support["drySupportTranslationMm"]:g} and occupied shift{z:g}. Ordinary dry member height{core_height:g}. Rebuild actual separated support/contact, anchorage, member endpoints/sections/mass and six-wrench transfers. No old reaction, stiffness, preload or load budget transfers.'},
                  {'code':'PROFILE_ROOF_ASSEMBLY_UNRESOLVED','objects':[r['id'] for r in roof_rows],
                   'message':'Native6600ring, historical6800nominal eave, HAD7100eave and MAT7418.423wall line are distinct assembly datums. Arithmetic translation does not join roof structure, attic, weather skin, pitch, support, access or water receivers; complete weather height is withheld.'},
                  {'code':'PROFILE_PLINTH_ENCLOSURE_UNQUALIFIED','objects':['wetRCPlinth','mineralCourse','lower-wall','court-boundaries','new-waterstop-concept'],
@@ -177,23 +225,25 @@ def derive_profile(case,source):
                  {'code':'PROFILE_WIND_OCCLUSION_UNPROVEN','objects':['exposed-plinth','lower-posts','exterior-grade'],
                   'message':f'WalkingFFL does not occlude piers. Exposed grade-to-FFL envelope{exposed:g}mm under no-occlusion comparison; actual facade/plinth closures, openings, pressure law and member tributaries must define raised wind.'}]
     diagnostics.append({'code':'PROFILE_WET_SUPPORT_REPLAY_REQUIRED','objects':[wet_profile['beam']['id'],*[p['id'] for p in wet_profile['posts']]],
-        'message':f'Common actual wet beam soffit{wet_profile["beam"]["sourceSoffitMm"]:g} translates to{wet_profile["beam"]["translatedSoffitMm"]:g}; local unfinished structural clearance{wet_profile["beam"]["localGroundStructuralClearHeightMm"]:g}. Cold post bases stay fixed, extending both known sections by{z:g}. The extension envelopes and density arithmetic are unadopted; actual cage/joints, mass, stiffness, loads and52-head response must rebuild.'})
+        'message':f'Common actual wet beam soffit{wet_profile["beam"]["sourceSoffitMm"]:g} translates to{wet_profile["beam"]["translatedSoffitMm"]:g}; local unfinished structural clearance{wet_profile["beam"]["localGroundStructuralClearHeightMm"]:g}. Posts restart at dry slab{dry_support["dryMemberBaseMm"]:g}; height changes by{dry_support["relativeLowerMemberHeightChangeMm"]:g}. Actual mineral transfer, base anchorage, cage/joints, mass, stiffness, loads and52-head response must rebuild.'})
     return {'schema':'house-vertical-profile-result/1','sourceIdentities':case['sources'],'groundAuthority':{'caseId':native['caseId'],'caseDigest':digest(case['groundCase']),'resultDigest':digest(native)},
             'status':'unselected-source-derived-vertical-proposal','selectedHouseAdmitted':False,'installedAcceptance':False,'groundLevelsMm':g,'floorAssembly':native['floorAssembly'],'wetSupportProfile':wet_profile,
-            'transforms':{'occupiedTranslationMm':z,'coldGridTranslationMm':0,'wetPlinthReceivingTopIsNotGridTop':True},
+            'drySupportTransfer':dry_support,
+            'transforms':{'occupiedTranslationMm':z,'drySupportTranslationMm':dry_support['drySupportTranslationMm'],'coldGridTranslationMm':0,'wetPlinthReceivingTopIsNotGridTop':True},
             'occupied':{'groundFFLMm':g['ffl'],'firstRCMm':[floor['bottom']+z,floor['top']+z],'firstFFLMm':first,'firstFinishAboveRCMm':first-(floor['top']+z),
                         'storeyIntervalMm':first-g['ffl'],'atticDatumMm':attic,'atticDatumIsNotVerifiedFloor':True,'atticMinusFirstDatumMm':attic-first},
             'walls':{'ordinaryGroundFromColdGridToFirstSoffitMm':[g['coldGridTop'],floor['bottom']+z],'ordinaryGroundStructuralHeightMm':core_height,
                      'dryMasonryAboveDryRCToFirstSoffitMm':[g['dryRC'][1],floor['bottom']+z],
                      'groundCoreHeightIncreaseMm':core_height-(floor['bottom']-structural['base']),
                      'sourcePostSegmentsAroundDPCMm':[[structural['base'],-50],[-30,floor['bottom']]],
-                     'candidatePostSegmentsAroundConceptMm':[[g['coldGridTop'],g['mineralCourse'][1]-20],[g['mineralCourse'][1],floor['bottom']+z]],
-                     'candidateLowerSegmentEnvelopeLengthMm':g['mineralCourse'][1]-20-g['coldGridTop'],
+                     'candidateDryPostIntervalMm':[dry_support['dryMemberBaseMm'],floor['bottom']+z],
+                     'coldGridToFirstSoffitSeparationMm':floor['bottom']+z-g['coldGridTop'],
                      'candidatePostSegmentationIsAdopted':False,
                      'upperOccupiedDatumIntervalMm':[first,attic],'groundWallIds':[r['id'] for r in h['groundWalls']], 'upperWallIds':[r['id'] for r in h['upperWalls']],
-                     'northPortal':{'fixedBaseMm':g['coldGridTop'],'rawSpringMm':portal['rawSpring']+z,'rawCrownMm':portal['rawCrown']+z,'meanSkewbackMm':sum(p[1] for p in portal['midRingHinges'])/len(portal['midRingHinges'])+z,'tieCentreMm':portal['tie']['centre']+z,'finishedCrownMm':portal['finishedCrown']+z,'upperRCFloorSoffitMm':floor['bottom']+z}},
-            'waterstop':{'sourceReferenceIntervalMm':lateral['capillarySplice']['plateZ'],'candidateConceptIntervalMm':[g['mineralCourse'][1]-20,g['mineralCourse'][1]],'candidateConceptIsNativeDPCRelocation':False,
-                         'status':'Unproved top20 mineral-interface concept only; no continuous-bar/anchor/material/water/thermal/air acceptance'},
+                     'northPortal':{'dryBaseMm':dry_support['dryMemberBaseMm'],'rawSpringMm':portal['rawSpring']+z,'rawCrownMm':portal['rawCrown']+z,'meanSkewbackMm':sum(p[1] for p in portal['midRingHinges'])/len(portal['midRingHinges'])+z,'tieCentreMm':portal['tie']['centre']+z,'finishedCrownMm':portal['finishedCrown']+z,'upperRCFloorSoffitMm':floor['bottom']+z}},
+            'waterstop':{'sourceReferenceIntervalMm':lateral['capillarySplice']['plateZ'],'candidateConceptIntervalMm':g['mineralCourse'],'candidateConceptIsNativeDPCRelocation':False,
+                         'oldColumnCutRetained':False,
+                         'status':'Full mineral-course separation below the dry slab; no inherited20mm column joint, through-bar, mineral bearing/shear/uplift, thermal or air/water acceptance'},
             'arches':arches,'roof':{'coherentWeatherProfile':None,'wholeHouseWeatherHeightAboveAuthoredGradeMm':None,'historicalNominalEaveMm':int(h['exterior']['source'].split('from')[1].split(';')[0]),'assemblyDatums':roof_rows,'owner':'Joined ROF/MAT/HAD/STR assembly gate'},
             'heights':{'firstAboveAuthoredGradeMm':first-grade,'atticDatumAboveAuthoredGradeMm':attic-grade,'actualLowestAdjacentGroundMm':None,'regulatoryHeightOrSiteAccepted':False},
             'approaches':native['approaches'],'groundQuantityReceipt':native['quantities'],'spineSection':{'coreWidthMm':next(w for w in h['groundWalls'] if w['id']=='service-spine')['structuralCore'][1]-next(w for w in h['groundWalls'] if w['id']=='service-spine')['structuralCore'][0],'coldGirderWidthMm':json.loads(source['raw']['project/str/studies/current-house-grid.json'])['girders']['spine']['width'],'coldGirderZMm':json.loads(source['raw']['project/str/studies/current-house-grid.json'])['girders']['spine']['z'],'wallBaseAboveDryRCMm':g['dryRC'][1]},'wind':{'appliedRaisedPressure':None,'occlusionAccepted':False,'exposedGradeToFFLEnvelopeMm':exposed,'occlusionEnvelopeMm':[grade,exposed_top]},
@@ -216,7 +266,7 @@ def render_profile(results):
         for key,color in [('wetRCPlinth','#8eaaa6'),('mineralCourse','#d3b77f'),('dryRC','#a4b7b4'),('glass','#e5d79c'),('accessibleDistribution','#e9ebdb'),('finish','#8b7f6e')]:
             lo,hi=g[key];box(x+110,z(hi),320,(hi-lo)*.09,color)
         lo,hi=p['firstRCMm'];box(x+110,z(hi),320,(hi-lo)*.09,'#a4b7b4')
-        line(x+300,z(g['coldGridTop']),x+300,z(wet['posts'][0]['translatedTopMm']),'#a6624f',True)
+        line(x+300,z(wet['posts'][0]['dryBottomMm']),x+300,z(wet['posts'][0]['translatedTopMm']),'#a6624f',True)
         box(x+280,z(wb['translatedTopMm']),130,wb['depthMm']*.09,'#d8b6a1')
         line(x+280,z(wb['translatedSoffitMm']),x+450,z(wb['translatedSoffitMm']),'#a6624f',True)
         text(x+455,z(wb['translatedSoffitMm'])+16,f'Wet beam soffit {wb["translatedSoffitMm"]:g} · unadopted',14)
@@ -228,10 +278,10 @@ def render_profile(results):
             line(x+100,z(row['translatedComparisonMm']),x+400,z(row['translatedComparisonMm']),'#a6624f',True)
             text(x+405,z(row['translatedComparisonMm'])-3,f'{row["id"]} {row["translatedComparisonMm"]:.1f}',13)
         text(x,1050,f'First height above authored grade {r["heights"]["firstAboveAuthoredGradeMm"]:g}; storey interval{p["storeyIntervalMm"]:g}.',16)
-        text(x,1078,f'Cap-to-first-soffit core height{r["walls"]["ordinaryGroundStructuralHeightMm"]:g}; no source3350 reuse.',16)
+        text(x,1078,f'Dry base{g["dryRC"][1]:g} to first soffit: member height{r["walls"]["ordinaryGroundStructuralHeightMm"]:g}; forces unproved.',16)
         a=r['approaches']['front'];text(x,1106,f'Front 1:{a["slopeRatio"]:g}: rise{a["riseMm"]:g}, sloping run{a["slopingRunMm"]:g}, reservation{a["totalStraightReservationMm"]:g}.',15)
         text(x,1134,f'Wet plinth{g["wetRCPlinth"]}; mineral{g["mineralCourse"]}; RC{g["dryRC"]}; glass{g["glass"]}.',14)
-        text(x,1162,f'Service{g["accessibleDistribution"]}; finish{g["finish"]}; waterstop CONCEPT{r["waterstop"]["candidateConceptIntervalMm"]}.',14)
+        text(x,1162,f'Service{g["accessibleDistribution"]}; finish{g["finish"]}; full mineral separation{r["waterstop"]["candidateConceptIntervalMm"]}.',14)
         text(x,1190,f'North arch spring{r["walls"]["northPortal"]["rawSpringMm"]:g}; crown{r["walls"]["northPortal"]["rawCrownMm"]:g}.',15)
         text(x,1218,f'Exposed grade-to-FFL envelope{r["wind"]["exposedGradeToFFLEnvelopeMm"]:g}; no walking-plane occlusion credit.',15)
         text(x,1246,f'Wet soffit{wb["translatedSoffitMm"]:g}; local clear{wb["localGroundStructuralClearHeightMm"]:g}; post top{wet["posts"][0]["translatedTopMm"]:g}; extension{wet["posts"][0]["heightIncreaseMm"]:g}.',14)
@@ -247,7 +297,7 @@ def render_profile(results):
         for value,label in [(g['ffl'],'FFL'),(g['dryRC'][1],'RCtop /wallbase'),(g['mineralCourse'][1],'DryRCbase /mineral top'),(g['mineralCourse'][0],'Mineralbase /wetplinthtop'),(g['coldGridTop'],'Retained coldgridtop')]:
             line(middle+width*.25,inset(value),x+500,inset(value));text(x+505,inset(value)+5,f'{label} {value:g}',13)
         lo,hi=r['waterstop']['candidateConceptIntervalMm'];line(middle-width*.25,inset((lo+hi)/2),middle+width*.25,inset((lo+hi)/2),'#a6624f',True)
-        text(x,2140,'Dashed red: new top20 waterstop concept. No hidden continuous bars or accepted air/water joint.',13)
+        text(x,2140,'Dashed red: full mineral course below dry slab. No column/bar bypass or accepted bearing/lateral/uplift joint.',13)
     text(45,1278,'Roof lines are separate arithmetic assembly references. Weather roof shape and complete house height are withheld.',19)
     text(45,1314,'Ground floor/wall closure, outside wet leaf, DPC/air/gas/thermal returns and new receiving load path remain unresolved.',18)
     first=results[0];source_first=first['occupied']['firstFFLMm']-first['transforms']['occupiedTranslationMm']

@@ -3,14 +3,42 @@
 The historical HAD receipt is an explicit test specimen, never current input.
 Native/source identities, independent stock and all52 head controls stay strict.
 """
-import hashlib,json,math,tarfile
+import hashlib,json,math,re,subprocess,tarfile
 from pathlib import Path
 from service_room_ground import distinct_bodies,stock_wrench
-from floor_section_model import load_source
-from floor_section_proof import cases
 D=Path(__file__).resolve().parent
 ARCHIVE=D/'service-room-ground-comparison-captures.tar.xz'
 PROOF=D/'service-room-ground-comparison.json'
+
+# This is an already immutable historical three-body specimen. Its original
+# source objects are authenticated at the exact green anchor, never substituted
+# into the current saved-house runtime or credited to the live two-room route.
+FROZEN_REF='f2acb9e7d7e07aca7108771ea594f38c4d633178'
+ARCHIVE_PATH='project/str/studies/service-room-ground-comparison-captures.tar.xz'
+PROOF_PATH='project/str/studies/service-room-ground-comparison.json'
+FLOOR_PATH='project/str/studies/floor-section-proof.json'
+
+def frozen_blob(root,path):
+    return subprocess.check_output(['git','-C',str(root),'cat-file','blob',FROZEN_REF+':'+path])
+
+def historical_inputs(root):
+    resolved=subprocess.check_output(['git','-C',str(root),'rev-parse','--verify',FROZEN_REF+'^{commit}'],text=True).strip()
+    if resolved!=FROZEN_REF:raise ValueError('Immutable historical source anchor changed')
+    if ARCHIVE.read_bytes()!=frozen_blob(root,ARCHIVE_PATH):raise ValueError('Immutable historical three-body archive changed')
+    if PROOF.read_bytes()!=frozen_blob(root,PROOF_PATH):raise ValueError('Immutable historical three-body receipt changed')
+    proof=json.loads(frozen_blob(root,FLOOR_PATH))
+    rows=[r for r in proof['controls'] if r['nativeCaseId']=='wet-aligned-quadrature8']
+    if len(rows)!=1:raise ValueError('One original historical wet-q8 authored input required')
+    case=rows[0]['executedRequest'];identities=proof['sourceSHA256']
+    if (len(identities)!=58 or rows[0]['sourceSHA256']!=identities
+            or case['sourceSHA256']!=identities):
+        raise ValueError('Exact original historical native58 tuple required')
+    for path,identity in identities.items():
+        if (not re.fullmatch(r'project/[A-Za-z0-9/_.-]+',path) or '..' in path.split('/')
+                or not isinstance(identity,str) or not re.fullmatch(r'[0-9a-f]{64}',identity)
+                or hashlib.sha256(frozen_blob(root,path)).hexdigest()!=identity):
+            raise ValueError('Historical native source object differs: '+path)
+    return {'identities':identities},case
 
 def digest(data):return hashlib.sha256(data).hexdigest()
 def close(a,b,tolerance=1e-6):
@@ -23,7 +51,7 @@ def receivers(body):
     return rows
 
 def produce():
-    root=D.parents[2];source=load_source(root);current_case=dict(cases(source))['wet-aligned-quadrature8']
+    root=D.parents[2];source,current_case=historical_inputs(root)
     method='project/str/studies/service_room_ground.py'
     with tarfile.open(ARCHIVE) as archive:
         data={m.name:archive.extractfile(m).read() for m in archive.getmembers() if m.isfile()}

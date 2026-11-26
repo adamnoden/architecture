@@ -33,7 +33,7 @@ def read_controls(value=None):
     expected={'schema':'str-uniform-slab-contact-refinement-input/1',
         'id':'STR/FLOOR/RC200/uniform8250-normal-bearing-refinement','units':'mm-kN-kNm-MPa','datum':'source-ground-zero',
         'coarseOrder':32,'fineOrder':64,'coarseNativeCaseId':'UNIFORM8250-RC200-WET120-SOUTH40-q32',
-        'coarseFullNativeSHA256':'4d98c317a2508cf55b910669f70a364f9813d836026168e6aeeb2ca0778220d5',
+        'coarseFullNativeSHA256':'53cec76f8c001c66776b38423e99dccb190b27a25622cacf912539e2bc37afad',
         'fineNativeCaseId':'UNIFORM8250-RC200-WET120-SOUTH40-q64',
         'comparisonScope':'normal-bearing-quadrature-only-fixed-slab-frame-laws-and-mesh',
         'materialQualified':False,'globalStressConverged':False,'floorSelected':False}

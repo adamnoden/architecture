@@ -8,8 +8,15 @@ import { readHouseVerticalProfileCase, runHouseVerticalProfileCase } from './cur
 
 function wetProfile(result: ReturnType<typeof runHouseVerticalProfileCase>) {
   return result.native.wetSupportProfile as { beam: { translatedSoffitMm: number; localGroundStructuralClearHeightMm: number };
-    posts: { fixedBottomMm: number; translatedTopMm: number; heightIncreaseMm: number }[];
+    posts: { dryBottomMm: number; translatedTopMm: number; heightIncreaseMm: number }[];
     geometrySource: { consistentControlIds: string[]; numericalCaseSelected: false }; raisedForcesReplayed: false }
+}
+
+function archProfile(result: ReturnType<typeof runHouseVerticalProfileCase>, id: string) {
+  const rows = result.native.arches as { id: string; datumsMm: { sill: number; spring: number; head: number }; sourceDatum: string; outputDatum: string }[]
+  const row = rows.find(row => row.id === id)
+  assert.ok(row, `Missing actual arch ${id}`)
+  return row
 }
 
 
@@ -21,6 +28,11 @@ test('profile replays the one authored ground case and distinguishes structural 
   const result = runHouseVerticalProfileCase(current, request)
   assert.equal(result.native.occupied.groundFFLMm, 530)
   assert.equal(result.native.occupied.firstFFLMm, 3980)
+  assert.deepEqual(archProfile(result, 'GROUND/south-window-0').datumsMm, { sill: 1280, spring: 3080, head: 3380 })
+  assert.deepEqual(archProfile(result, 'FIRST/south-window-0').datumsMm, { sill: 4730, spring: 6530, head: 6830 })
+  assert.equal(archProfile(result, 'FIRST/south-window-1').datumsMm.sill, 4830)
+  assert.equal(archProfile(result, 'FIRST/south-window-0').sourceDatum, 'storey-local')
+  assert.equal(archProfile(result, 'FIRST/south-window-0').outputDatum, 'source-ground')
   assert.deepEqual(result.native.occupied.firstRCMm, [3700, 3900])
   assert.equal(result.native.occupied.storeyIntervalMm, 3450)
   assert.equal(result.native.roof.coherentWeatherProfile, null)
@@ -28,8 +40,9 @@ test('profile replays the one authored ground case and distinguishes structural 
   const wet = wetProfile(result)
   assert.equal(wet.beam.translatedSoffitMm, 3550)
   assert.equal(wet.beam.localGroundStructuralClearHeightMm, 3020)
-  assert.equal(wet.posts[0]!.fixedBottomMm, -180)
+  assert.equal(wet.posts[0]!.dryBottomMm, 350)
   assert.equal(wet.posts[0]!.translatedTopMm, 3540)
+  assert.equal(wet.posts[0]!.heightIncreaseMm, 0)
   assert.equal(wet.geometrySource.consistentControlIds.length, 7)
   assert.equal(wet.geometrySource.numericalCaseSelected, false)
   assert.equal(wet.raisedForcesReplayed, false)
@@ -46,6 +59,8 @@ test('the sole ground250 to270 edit drives the profile, approaches, identities a
   assert.equal(a.native.occupied.groundFFLMm, 715)
   assert.equal(b.native.occupied.groundFFLMm, 735)
   assert.equal(b.native.occupied.firstFFLMm - a.native.occupied.firstFFLMm, 20)
+  assert.deepEqual(archProfile(a, 'FIRST/south-window-0').datumsMm, { sill: 4915, spring: 6715, head: 7015 })
+  assert.deepEqual(archProfile(b, 'FIRST/south-window-0').datumsMm, { sill: 4935, spring: 6735, head: 7035 })
   assert.equal(b.native.occupied.atticDatumMm - a.native.occupied.atticDatumMm, 20)
   assert.equal(b.native.groundLevelsMm.coldGridTop, -180)
   assert.notEqual(b.source.groundCaseDigest, a.source.groundCaseDigest)

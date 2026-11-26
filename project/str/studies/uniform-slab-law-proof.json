@@ -18,8 +18,8 @@
     "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
     "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
     "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+    "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
     "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -61,147 +61,36 @@
     "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
   },
   "provenance": {
-    "archiveSHA256": "269d4070dc71deae030eafb2423483fe33fee7ae1f20e71eebae7243549c733b",
+    "archiveSHA256": "2ee5871922bb0474436a7c55fcdc7731a81d8494586479c108d368b42e95998e",
     "actualNativeCaptures": {
       "control": {
         "nativeCaseId": "WET120-SOUTH40-q32",
-        "fullSHA256": "306be075d19a59db2155b0b4ebdc34124ae6b09558cb1e891a779d0da2910777",
-        "captureSHA256": "70fba14a1e97c24550e3be2027aa8c9225edfb8ec358fbb43a8ad90db3760c5a"
+        "fullSHA256": "ed5439632702f32a3b96edaa5c0b097c3affde49ebe7dac149b785b4912de097",
+        "captureSHA256": "36b3ec0aa9f1778d4525d5480345b02d52e9996e182ad3c2c625da02c5addf9e"
       },
       "uniform200": {
         "nativeCaseId": "UNIFORM8250-RC200-WET120-SOUTH40-q32",
-        "fullSHA256": "4d98c317a2508cf55b910669f70a364f9813d836026168e6aeeb2ca0778220d5",
-        "captureSHA256": "f12aa7ae602ab0dc1fee3be522ea9818ebe57d8bfc03488c6d7c5b296c3e3e2e"
+        "fullSHA256": "53cec76f8c001c66776b38423e99dccb190b27a25622cacf912539e2bc37afad",
+        "captureSHA256": "14483256f562860dad133424396f49a9b620981c5c68b442d52d2da81286cf26"
       }
     },
     "originalNativeControlProvenance": {
-      "schema": "str-isolated-uniform200-comparison-checkpoint/1",
-      "state": "actual-native-result-captured",
-      "sourceRoot": "/workspace/scratch/d3fac60d336f/architecture",
-      "sourceCommit": "4df8c4282df7bfdda5b7cc2c5a589de830c2959a",
-      "sourceSHA256": {
-        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
-        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
-        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
-        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
-        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
-        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
-        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
-        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
-        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
-        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
-        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
-        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
-        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
-        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
-        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
-        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
-        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
-        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
-        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
-        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
-        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
-        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
-        "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
-        "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
-        "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
-        "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
-        "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
-        "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
-        "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-        "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
-        "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
-        "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
-        "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
-        "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
-        "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
-        "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
-        "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
-        "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
-        "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-        "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
-        "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
-        "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
-        "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
-        "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
-        "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
-        "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
-        "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
-        "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
-        "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
-        "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
-        "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
-        "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
-        "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
-        "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
-        "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
-      },
-      "scriptSHA256": "65e91076b243939ae9ecf579d361cff983df29d14e12e97a72dbe607a8f64d01",
-      "controlArchive": "/workspace/scratch/d3fac60d336f/structure-ui/project/str/studies/wet-beam-end-native-captures.tar.xz",
-      "controlArchiveSHA256": "2dadc1c7221c4eca17b1e026baefe7740445e42bd0fd5abecd772c6239f679ce",
-      "controlFiles": {
-        "south40-q32.full.json": {
-          "bytes": 16335433,
-          "sha256": "306be075d19a59db2155b0b4ebdc34124ae6b09558cb1e891a779d0da2910777"
-        },
-        "south40-q32.request.json": {
-          "bytes": 60761,
-          "sha256": "9db3016d9fdf63c19cf5e5087a2ad559aec77426d7c0d86af668a98d523b69c6"
-        },
-        "south40-q32.capture.json": {
-          "bytes": 1632080,
-          "sha256": "70fba14a1e97c24550e3be2027aa8c9225edfb8ec358fbb43a8ad90db3760c5a"
-        }
-      },
-      "authoredChange": {
-        "plate": {
-          "elasticModulusMPa": [
-            33000,
-            8250
-          ],
-          "flexuralFactor": [
-            0.25,
-            1
-          ],
-          "shearFactor": [
-            0.5,
-            0.8333333333333334
-          ]
-        },
-        "membrane": {
-          "elasticModulusMPa": [
-            1200,
-            8250
-          ],
-          "poissonRatio": [
-            0.15,
-            0.2
-          ],
-          "shearModulusMPa": [
-            440,
-            3437.5
-          ]
-        }
-      },
-      "nativeSolveExecuted": true,
-      "candidateAccepted": false,
-      "materialQualified": false,
-      "scope": "Explicit alternative linear constitutive comparison only; no physical cracked-RC identification or selected stiffness. Same slab200, geometry, wet support120/south40/q32, load origins, other frame materials and source methods.",
-      "elapsedSeconds": 141.86919655300062,
-      "fullResult": {
-        "bytes": 23856647,
-        "sha256": "4d98c317a2508cf55b910669f70a364f9813d836026168e6aeeb2ca0778220d5"
-      }
+      "repository": "adamnoden/architecture",
+      "immutableRef": "026b677544246c0c6669f23fad33c3b3b73ada95",
+      "actualCaptureSourceCommit": "8c1607f3f108fc8da90e7f8a74b0ed87d930006e",
+      "actualCaptureRun": 45843306053,
+      "sourceArchive": "project/str/studies/wet-beam-end-native-captures.tar.xz",
+      "sourceArchiveSHA256": "8523c4b3ee0e279d93a3bf9bfc2bc3eec98566bbf623fcc32540bb3882e0008b",
+      "nativeCaseId": "WET120-SOUTH40-q32",
+      "fullNativeSHA256": "ed5439632702f32a3b96edaa5c0b097c3affde49ebe7dac149b785b4912de097",
+      "fullBytesReusedUnchanged": true
     }
   },
   "exactAuthoredChanges": [
     {
       "path": "/bearingCase/masonryCase/verticalCase/monolithicCase/houseCase/joinedCase/floor/membraneLaw/elasticModulusMPa",
       "control": 1200,
-      "changed": 8250.0
+      "changed": 8250
     },
     {
       "path": "/bearingCase/masonryCase/verticalCase/monolithicCase/houseCase/joinedCase/floor/membraneLaw/poissonRatio",
@@ -216,12 +105,12 @@
     {
       "path": "/bearingCase/masonryCase/verticalCase/plateLaw/elasticModulusMPa",
       "control": 33000,
-      "changed": 8250.0
+      "changed": 8250
     },
     {
       "path": "/bearingCase/masonryCase/verticalCase/plateLaw/flexuralFactor",
       "control": 0.25,
-      "changed": 1.0
+      "changed": 1
     },
     {
       "path": "/bearingCase/masonryCase/verticalCase/plateLaw/shearFactor",
@@ -423,24 +312,24 @@
       "upperClearMasonryPhysicalGKN": 438.47708500000005,
       "upperBearingPadsPhysicalGKN": 0.1413
     },
-    "frameStrainEnergyKNmm": 2906.3807164723225,
-    "frameRecoveredInternalStrainEnergyKNmm": 2906.3807164689088,
-    "frameEnergyRelativeResidual": 1.1745840260212845e-12,
-    "nativeMaximumFreeResidualKNOrKNmm": 8.959323167800903e-07,
+    "frameStrainEnergyKNmm": 2906.380716469348,
+    "frameRecoveredInternalStrainEnergyKNmm": 2906.3807164645264,
+    "frameEnergyRelativeResidual": 1.6590001902113262e-12,
+    "nativeMaximumFreeResidualKNOrKNmm": 6.593763828277588e-07,
     "nativeWrenchResidualKN_KNm": [
-      -6.907526994837099e-09,
-      1.0830376595549751e-09,
-      -4.3655745685100555e-10,
-      -1.2721866369247437e-08,
-      -1.116842031478882e-08,
-      7.291839574463665e-08
+      -7.365969167949515e-09,
+      1.1594067927944707e-09,
+      -2.02817318495363e-10,
+      -1.2684613466262817e-08,
+      -1.7046928405761717e-08,
+      7.679392001591623e-08
     ],
-    "plateStrainEnergyKNmm": 547.5757412363449,
-    "plateExternalLoadWorkKNmm": 1210.8754062817263,
-    "plateWorkRelativeResidual": 2.4208313626910124e-13,
-    "maximumPlateDeflectionMm": 2.924508054758115,
-    "maximumFrameTranslationMm": 15.893407786638315,
-    "rawPointMomentInspectionKNmPerM": 81.67604662356833,
+    "plateStrainEnergyKNmm": 547.5757412353039,
+    "plateExternalLoadWorkKNmm": 1210.8754062819426,
+    "plateWorkRelativeResidual": 5.813317165994273e-15,
+    "maximumPlateDeflectionMm": 2.9245080547544524,
+    "maximumFrameTranslationMm": 15.893407786545566,
+    "rawPointMomentInspectionKNmPerM": 81.67604662348253,
     "necessaryZeroAxialStrip": {
       "schema": "str-necessary-zero-axial-strip-section/1",
       "breadthMm": 1000.0,
@@ -454,9 +343,9 @@
       "steelYields": false,
       "forceResidualN": 6.984919309616089e-10,
       "strainCompatibleCapacityKNmPerM": 86.83330174800258,
-      "rawPointBendingPlusTwistingDemandKNmPerM": 81.67604662356833,
+      "rawPointBendingPlusTwistingDemandKNmPerM": 81.67604662348253,
       "necessaryCapacityComparatorPasses": true,
-      "reserveRatio": 0.06314281037870528,
+      "reserveRatio": 0.06314281037982195,
       "localStressConvergenceProven": false,
       "reinforcementAccepted": false,
       "scope": "Single tension direction, no compression-mat/axial benefit, same source rectangular material law. Raw local point demand is not a converged design strip. No adopted ductility, shear, punching, crack, deflection, development or joint acceptance."
@@ -495,15 +384,15 @@
       26120.309799204755,
       3.8200139485172984
     ],
-    "contactNormalCompressionKN": 45.490291754810485,
+    "contactNormalCompressionKN": 45.49029175494816,
     "activeContactFibreCount": 1461
   },
   "actualNativeResponseDifferences": {
     "heads": {
       "reactionKN_KNm": {
-        "absoluteDifference": 7.449746424773593,
+        "absoluteDifference": 7.449746424493583,
         "control": -302.53929215913047,
-        "changed": -309.98903858390406,
+        "changed": -309.98903858362405,
         "component": 1,
         "identity": {
           "id": "P04"
@@ -512,18 +401,18 @@
     },
     "ports": {
       "displacementMmMrad": {
-        "absoluteDifference": 0.18798531801372764,
+        "absoluteDifference": 0.18798531801674567,
         "control": -6.551312535548685,
-        "changed": -6.739297853562412,
+        "changed": -6.73929785356543,
         "component": 1,
         "identity": {
           "id": "SE"
         }
       },
       "forceOnFloorKN_KNm": {
-        "absoluteDifference": 20.091578276609685,
+        "absoluteDifference": 20.091578276624098,
         "control": 6.353729898130261,
-        "changed": 26.445308174739946,
+        "changed": 26.44530817475436,
         "component": 1,
         "identity": {
           "id": "RC-FLOOR/WET-SUPPORT/beam/9252.5"
@@ -532,9 +421,9 @@
     },
     "memberCuts": {
       "axialCompressionKN": {
-        "absoluteDifference": 54.468451872773585,
+        "absoluteDifference": 54.46845187278814,
         "control": -9.682997342126328,
-        "changed": -64.15144921489991,
+        "changed": -64.15144921491446,
         "component": 0,
         "identity": {
           "memberId": "WET-SUPPORT/beam/7",
@@ -549,9 +438,9 @@
         }
       },
       "shearYKN": {
-        "absoluteDifference": 12.266335995009285,
+        "absoluteDifference": 12.266335995067493,
         "control": 2.3463865811063442,
-        "changed": -9.919949413902941,
+        "changed": -9.919949413961149,
         "component": 0,
         "identity": {
           "memberId": "court-north/upstand/0",
@@ -566,9 +455,9 @@
         }
       },
       "shearZKN": {
-        "absoluteDifference": 5.934195368432258,
+        "absoluteDifference": 5.9341953684429445,
         "control": -13.430939867065893,
-        "changed": -19.36513523549815,
+        "changed": -19.365135235508838,
         "component": 0,
         "identity": {
           "memberId": "WET-SUPPORT/beam/2",
@@ -583,9 +472,9 @@
         }
       },
       "torsionKNm": {
-        "absoluteDifference": 0.716098959894298,
+        "absoluteDifference": 0.7160989598998277,
         "control": -9.776475845129417,
-        "changed": -9.060376885235119,
+        "changed": -9.060376885229589,
         "component": 0,
         "identity": {
           "memberId": "outer-north/upstand/9",
@@ -600,9 +489,9 @@
         }
       },
       "bendingYKNm": {
-        "absoluteDifference": 4.93486810300036,
+        "absoluteDifference": 4.93486810300784,
         "control": 20.32932631484929,
-        "changed": 15.39445821184893,
+        "changed": 15.39445821184145,
         "component": 0,
         "identity": {
           "memberId": "outer-north/upstand/5",
@@ -617,9 +506,9 @@
         }
       },
       "bendingZKNm": {
-        "absoluteDifference": 2.3733131279307416,
+        "absoluteDifference": 2.3733131279363295,
         "control": 0.44729431679612025,
-        "changed": -1.9260188111346215,
+        "changed": -1.9260188111402095,
         "component": 0,
         "identity": {
           "memberId": "court-north/upstand/0",
@@ -636,9 +525,9 @@
     },
     "capCuts": {
       "axialCompressionKN": {
-        "absoluteDifference": 2.2189774861540172,
+        "absoluteDifference": 2.2189774860067075,
         "control": 144.5497626032809,
-        "changed": 142.33078511712688,
+        "changed": 142.3307851172742,
         "component": 0,
         "identity": {
           "memberId": "court-north/east/finite-cap",
@@ -653,9 +542,9 @@
         }
       },
       "shearYKN": {
-        "absoluteDifference": 0.06663658780934156,
+        "absoluteDifference": 0.06663658780712467,
         "control": 8.35090907466909,
-        "changed": 8.284272486859749,
+        "changed": 8.284272486861965,
         "component": 0,
         "identity": {
           "memberId": "outer-north/east/finite-cap",
@@ -670,9 +559,9 @@
         }
       },
       "shearZKN": {
-        "absoluteDifference": 0.2225540496283429,
+        "absoluteDifference": 0.22255404959150837,
         "control": -11.283533693952222,
-        "changed": -11.506087743580565,
+        "changed": -11.50608774354373,
         "component": 0,
         "identity": {
           "memberId": "outer-north/east/finite-cap",
@@ -687,9 +576,9 @@
         }
       },
       "torsionKNm": {
-        "absoluteDifference": 0.01730881890036018,
+        "absoluteDifference": 0.017308818900583,
         "control": 0.29948344578759406,
-        "changed": 0.2821746268872339,
+        "changed": 0.28217462688701106,
         "component": 0,
         "identity": {
           "memberId": "outer-north/east/finite-cap",
@@ -704,9 +593,9 @@
         }
       },
       "bendingYKNm": {
-        "absoluteDifference": 0.5198007166233971,
+        "absoluteDifference": 0.5198007165317939,
         "control": 26.64135396651687,
-        "changed": 27.161154683140268,
+        "changed": 27.161154683048665,
         "component": 0,
         "identity": {
           "memberId": "outer-north/east/finite-cap",
@@ -721,9 +610,9 @@
         }
       },
       "bendingZKNm": {
-        "absoluteDifference": 0.14038254044831433,
+        "absoluteDifference": 0.14038254043889253,
         "control": 17.369272944229394,
-        "changed": 17.22889040378108,
+        "changed": 17.2288904037905,
         "component": 0,
         "identity": {
           "memberId": "outer-north/east/finite-cap",
@@ -740,9 +629,9 @@
     },
     "adjacentGridMemberCuts": {
       "axialCompressionKN": {
-        "absoluteDifference": 1.365141396460615,
+        "absoluteDifference": 1.3651413963777657,
         "control": -42.45061327743667,
-        "changed": -43.81575467389729,
+        "changed": -43.81575467381444,
         "component": 0,
         "identity": {
           "memberId": "GRID/outer-NE/0",
@@ -757,9 +646,9 @@
         }
       },
       "shearYKN": {
-        "absoluteDifference": 0.5358818666336305,
+        "absoluteDifference": 0.5358818666505769,
         "control": 46.09615476611127,
-        "changed": 46.6320366327449,
+        "changed": 46.632036632761846,
         "component": 0,
         "identity": {
           "memberId": "GRID/loggia-E/0",
@@ -774,9 +663,9 @@
         }
       },
       "shearZKN": {
-        "absoluteDifference": 0.18958688764478637,
+        "absoluteDifference": 0.18958688771989074,
         "control": -39.936025051063304,
-        "changed": -39.74643816341852,
+        "changed": -39.74643816334341,
         "component": 0,
         "identity": {
           "memberId": "GRID/loggia-E/0",
@@ -791,9 +680,9 @@
         }
       },
       "torsionKNm": {
-        "absoluteDifference": 0.11332704325558218,
+        "absoluteDifference": 0.11332704324495424,
         "control": 15.185380502388956,
-        "changed": 15.298707545644538,
+        "changed": 15.29870754563391,
         "component": 0,
         "identity": {
           "memberId": "GRID/loggia-E/0",
@@ -808,9 +697,9 @@
         }
       },
       "bendingYKNm": {
-        "absoluteDifference": 0.10006560147620602,
+        "absoluteDifference": 0.10006560147639698,
         "control": 3.1377604205003844,
-        "changed": 3.0376948190241784,
+        "changed": 3.0376948190239874,
         "component": 0,
         "identity": {
           "memberId": "GRID/loggia-W/2",
@@ -825,9 +714,9 @@
         }
       },
       "bendingZKNm": {
-        "absoluteDifference": 0.16082623482189362,
+        "absoluteDifference": 0.16082623478138558,
         "control": 17.150938726656015,
-        "changed": 17.31176496147791,
+        "changed": 17.3117649614374,
         "component": 0,
         "identity": {
           "memberId": "GRID/outer-NW/2",
@@ -848,9 +737,9 @@
       "changedCutCount": 140,
       "commonPhysicalCuts": {
         "axialCompressionKN": {
-          "absoluteDifference": 50.78382873037481,
+          "absoluteDifference": 50.78382873041846,
           "control": -8.377954946598038,
-          "changed": -59.161783676972846,
+          "changed": -59.1617836770165,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/8",
@@ -865,9 +754,9 @@
           }
         },
         "shearYKN": {
-          "absoluteDifference": 12.266335995009285,
+          "absoluteDifference": 12.266335995067493,
           "control": 2.3463865811063442,
-          "changed": -9.919949413902941,
+          "changed": -9.919949413961149,
           "component": 0,
           "identity": {
             "memberId": "court-north/upstand/0",
@@ -882,9 +771,9 @@
           }
         },
         "shearZKN": {
-          "absoluteDifference": 5.93419536843226,
+          "absoluteDifference": 5.934195368442946,
           "control": -12.670833617065892,
-          "changed": -18.60502898549815,
+          "changed": -18.605028985508838,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/2",
@@ -899,9 +788,9 @@
           }
         },
         "torsionKNm": {
-          "absoluteDifference": 0.716098959894298,
+          "absoluteDifference": 0.7160989598998277,
           "control": -9.795783774816917,
-          "changed": -9.079684814922619,
+          "changed": -9.079684814917089,
           "component": 0,
           "identity": {
             "memberId": "outer-north/upstand/9",
@@ -916,9 +805,9 @@
           }
         },
         "bendingYKNm": {
-          "absoluteDifference": 4.8536232658554646,
+          "absoluteDifference": 4.8536232658636305,
           "control": 20.24135005918389,
-          "changed": 15.387726793328426,
+          "changed": 15.38772679332026,
           "component": 0,
           "identity": {
             "memberId": "outer-north/upstand/5",
@@ -933,9 +822,9 @@
           }
         },
         "bendingZKNm": {
-          "absoluteDifference": 2.1126534880367944,
+          "absoluteDifference": 2.1126534880411456,
           "control": 0.39743360194761046,
-          "changed": -1.715219886089184,
+          "changed": -1.715219886093535,
           "component": 0,
           "identity": {
             "memberId": "court-north/upstand/0",
@@ -1083,22 +972,22 @@
           "axialCompressionKN": {
             "memberId": "WET-SUPPORT/beam/7",
             "end": null,
-            "fraction": 0.17738608013782667,
+            "fraction": 0.1773860801418114,
             "cutSide": "right",
             "kind": "seated-wet-beam",
             "physicalPointMm": [
               2902.5,
-              9971.865974237386,
+              9971.865974238466,
               3195.0
             ],
             "breadthMm": 250.0,
             "depthMm": 350.0,
-            "axialCompressionKN": -64.15144921489991,
-            "shearYKN": -0.9893868563729761,
-            "shearZKN": -5.551115123125783e-17,
-            "torsionKNm": -1.1573054671495462,
-            "bendingYKNm": -6.063221010350542,
-            "bendingZKNm": 0.013708109434382536,
+            "axialCompressionKN": -64.15144921491446,
+            "shearYKN": -0.9893868563769702,
+            "shearZKN": 1.3877787807814457e-17,
+            "torsionKNm": -1.157305467143511,
+            "bendingYKNm": -6.06322101035433,
+            "bendingZKNm": 0.013708109435170904,
             "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
           },
           "shearYKN": {
@@ -1114,54 +1003,54 @@
             ],
             "breadthMm": 290.0,
             "depthMm": 650,
-            "axialCompressionKN": -5.490773871249985,
-            "shearYKN": -9.919949413902941,
-            "shearZKN": 39.06996817670212,
-            "torsionKNm": 8.356129573714629,
-            "bendingYKNm": -11.939903333672886,
-            "bendingZKNm": -1.715219886089184,
+            "axialCompressionKN": -5.4907738713664,
+            "shearYKN": -9.919949413961149,
+            "shearZKN": 39.069968176684384,
+            "torsionKNm": 8.35612957370418,
+            "bendingYKNm": -11.939903333636098,
+            "bendingZKNm": -1.715219886093535,
             "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
           },
           "shearZKN": {
             "memberId": "outer-north/upstand/9",
             "end": null,
-            "fraction": 0.7165276717651021,
+            "fraction": 0.7165276717986397,
             "cutSide": "right",
             "kind": "upstand",
             "physicalPointMm": [
-              7556.131065125042,
+              7556.131065128606,
               11667.5,
               3545.0
             ],
             "breadthMm": 290.0,
             "depthMm": 750,
-            "axialCompressionKN": 5.064729827805422,
-            "shearYKN": -1.3183898417423734e-16,
-            "shearZKN": -41.718163268914054,
-            "torsionKNm": -9.116139378454267,
-            "bendingYKNm": -1.0245168211493334,
-            "bendingZKNm": -0.8713318394367529,
+            "axialCompressionKN": 5.06472982786363,
+            "shearYKN": -9.71445146547012e-17,
+            "shearZKN": -41.71816326900192,
+            "torsionKNm": -9.116139378449411,
+            "bendingYKNm": -1.0245168213198963,
+            "bendingZKNm": -0.8713318394378606,
             "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
           },
           "torsionKNm": {
             "memberId": "outer-north/upstand/9",
             "end": null,
-            "fraction": 0.7165276717651021,
+            "fraction": 0.7165276717986397,
             "cutSide": "right",
             "kind": "upstand",
             "physicalPointMm": [
-              7556.131065125042,
+              7556.131065128606,
               11667.5,
               3545.0
             ],
             "breadthMm": 290.0,
             "depthMm": 750,
-            "axialCompressionKN": 5.064729827805422,
-            "shearYKN": -1.3183898417423734e-16,
-            "shearZKN": -41.718163268914054,
-            "torsionKNm": -9.116139378454267,
-            "bendingYKNm": -1.0245168211493334,
-            "bendingZKNm": -0.8713318394367529,
+            "axialCompressionKN": 5.06472982786363,
+            "shearYKN": -9.71445146547012e-17,
+            "shearZKN": -41.71816326900192,
+            "torsionKNm": -9.116139378449411,
+            "bendingYKNm": -1.0245168213198963,
+            "bendingZKNm": -0.8713318394378606,
             "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
           },
           "bendingYKNm": {
@@ -1177,12 +1066,12 @@
             ],
             "breadthMm": 290.0,
             "depthMm": 750,
-            "axialCompressionKN": 30.76763848925475,
-            "shearYKN": -1.3856127930081532,
-            "shearZKN": -10.436681742741378,
-            "torsionKNm": -3.4056751913057908,
-            "bendingYKNm": 15.465738875806487,
-            "bendingZKNm": 0.5516936428611209,
+            "axialCompressionKN": 30.767638489298406,
+            "shearYKN": -1.3856127930099722,
+            "shearZKN": -10.436681742753429,
+            "torsionKNm": -3.4056751913024947,
+            "bendingYKNm": 15.465738875797193,
+            "bendingZKNm": 0.5516936428602613,
             "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
           },
           "bendingZKNm": {
@@ -1199,11 +1088,11 @@
             "breadthMm": 290.0,
             "depthMm": 650,
             "axialCompressionKN": 12.701058586215368,
-            "shearYKN": -7.192415942283333,
-            "shearZKN": 21.673865935432417,
-            "torsionKNm": 4.584711652691798,
-            "bendingYKNm": 4.543528010737398,
-            "bendingZKNm": 1.7173016154802199,
+            "shearYKN": -7.19241594228879,
+            "shearZKN": 21.673865935435487,
+            "torsionKNm": 4.584711652687726,
+            "bendingYKNm": 4.5435280107636045,
+            "bendingZKNm": 1.7173016154797538,
             "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
           }
         }
@@ -1269,12 +1158,12 @@
   ],
   "processingMethodSHA256": {
     "project/str/studies/uniform_slab_law.py": "5c9597f0699e0ebaf6d91ef7288702c64c7e6112131b8317617ee63b2de3db2b",
-    "project/str/studies/uniform_slab_law_proof.py": "48d5e294e47c2b2a3ff3110e4ce8aa41048af475f7b6b9338798e8291049441a",
+    "project/str/studies/uniform_slab_law_proof.py": "f4e987da7693182f387d42563316ee4117f90dce98d14f7b216ebc136b699914",
     "project/str/studies/floor_section_proof.py": "2ad5273957ea953d06d69e3108cffb38f03652cd194d9323121d5383a79cf905",
     "project/str/studies/wet_bearing_refinement_proof.py": "34d667830aa77b218bceca01283674caaf3ada3f3ff64a45dd2fd3e78db0327c",
     "compiler/reference-house/current-design/structural-slab-constitutive.ts": "52897d9d35f4978cc348d6c25e57317194fd98f128590e1a84c2ae133a9ef2a1"
   },
-  "authoredInputSHA256": "e21d4787fc2b87b7e58f3a88a0ee420e1723d3202d34435b8a089a54334fedd2",
+  "authoredInputSHA256": "0fb0b27d08980f094975b879f38d6aa3110985b2ecd87731ff93ec6b7f9b458d",
   "authoredControls": {
     "schema": "str-uniform-slab-law-input/1",
     "id": "STR/FLOOR/RC200/uniform8250-constitutive-comparison",
@@ -1289,7 +1178,7 @@
         0
       ],
       "nativeCaseId": "WET120-SOUTH40-q32",
-      "fullNativeSHA256": "306be075d19a59db2155b0b4ebdc34124ae6b09558cb1e891a779d0da2910777"
+      "fullNativeSHA256": "ed5439632702f32a3b96edaa5c0b097c3affde49ebe7dac149b785b4912de097"
     },
     "uniformSlabLaw": {
       "elasticModulusMPa": 8250,

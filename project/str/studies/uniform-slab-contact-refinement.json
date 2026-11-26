@@ -18,8 +18,8 @@
     "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
     "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
     "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+    "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
     "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -61,17 +61,17 @@
     "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
   },
   "processingMethodSHA256": {
-    "project/str/studies/uniform_slab_contact_refinement.py": "1aaad696e2175ac554b316de03a6574d95b867c66fa62028ac22feafc8ba6973",
+    "project/str/studies/uniform_slab_contact_refinement.py": "e9f9da8ed488ae784863abb56bcebb5a69f65daa6ade6d872099897aa19572dc",
     "project/str/studies/uniform_slab_law.py": "5c9597f0699e0ebaf6d91ef7288702c64c7e6112131b8317617ee63b2de3db2b",
-    "project/str/studies/uniform_slab_law_proof.py": "48d5e294e47c2b2a3ff3110e4ce8aa41048af475f7b6b9338798e8291049441a",
+    "project/str/studies/uniform_slab_law_proof.py": "f4e987da7693182f387d42563316ee4117f90dce98d14f7b216ebc136b699914",
     "project/str/studies/wet_bearing_refinement.py": "14d5a8d5d8d1892e947f59ba1a126e5c17613f0612a6e919216ca2780f09b479",
     "project/str/studies/wet_post_head_duties.py": "cc46128890cf6c970c274fcdfda69341cf9cc23f7e8bf0d26d2ab168f539b10a",
     "project/str/studies/floor_section_proof.py": "2ad5273957ea953d06d69e3108cffb38f03652cd194d9323121d5383a79cf905",
     "project/str/studies/wet_bearing_refinement_proof.py": "34d667830aa77b218bceca01283674caaf3ada3f3ff64a45dd2fd3e78db0327c"
   },
   "authoredInputSHA256": {
-    "project/str/studies/uniform-slab-contact-refinement-inputs.json": "a559526edfe867013d4dc4284e2f8ecb6caf8bc369eddbc4861db055965357b6",
-    "project/str/studies/uniform-slab-law-inputs.json": "e21d4787fc2b87b7e58f3a88a0ee420e1723d3202d34435b8a089a54334fedd2",
+    "project/str/studies/uniform-slab-contact-refinement-inputs.json": "9cd53aa555147154298392b547a3968e53f85b1f8cceb0d5c30359ff12006fd7",
+    "project/str/studies/uniform-slab-law-inputs.json": "0fb0b27d08980f094975b879f38d6aa3110985b2ecd87731ff93ec6b7f9b458d",
     "project/str/studies/wet-bearing-refinement-inputs.json": "652e359ed97da91304326c65bde11ef34c4bdbf8fbac0a4b209ca9bdd45c12d3"
   },
   "authoredControls": {
@@ -82,7 +82,7 @@
     "coarseOrder": 32,
     "fineOrder": 64,
     "coarseNativeCaseId": "UNIFORM8250-RC200-WET120-SOUTH40-q32",
-    "coarseFullNativeSHA256": "4d98c317a2508cf55b910669f70a364f9813d836026168e6aeeb2ca0778220d5",
+    "coarseFullNativeSHA256": "53cec76f8c001c66776b38423e99dccb190b27a25622cacf912539e2bc37afad",
     "fineNativeCaseId": "UNIFORM8250-RC200-WET120-SOUTH40-q64",
     "comparisonScope": "normal-bearing-quadrature-only-fixed-slab-frame-laws-and-mesh",
     "materialQualified": false,
@@ -90,149 +90,38 @@
     "floorSelected": false
   },
   "coarseNativeProvenance": {
-    "archiveSHA256": "269d4070dc71deae030eafb2423483fe33fee7ae1f20e71eebae7243549c733b",
+    "archiveSHA256": "2ee5871922bb0474436a7c55fcdc7731a81d8494586479c108d368b42e95998e",
     "actualNativeCaptures": {
       "control": {
         "nativeCaseId": "WET120-SOUTH40-q32",
-        "fullSHA256": "306be075d19a59db2155b0b4ebdc34124ae6b09558cb1e891a779d0da2910777",
-        "captureSHA256": "70fba14a1e97c24550e3be2027aa8c9225edfb8ec358fbb43a8ad90db3760c5a"
+        "fullSHA256": "ed5439632702f32a3b96edaa5c0b097c3affde49ebe7dac149b785b4912de097",
+        "captureSHA256": "36b3ec0aa9f1778d4525d5480345b02d52e9996e182ad3c2c625da02c5addf9e"
       },
       "uniform200": {
         "nativeCaseId": "UNIFORM8250-RC200-WET120-SOUTH40-q32",
-        "fullSHA256": "4d98c317a2508cf55b910669f70a364f9813d836026168e6aeeb2ca0778220d5",
-        "captureSHA256": "f12aa7ae602ab0dc1fee3be522ea9818ebe57d8bfc03488c6d7c5b296c3e3e2e"
+        "fullSHA256": "53cec76f8c001c66776b38423e99dccb190b27a25622cacf912539e2bc37afad",
+        "captureSHA256": "14483256f562860dad133424396f49a9b620981c5c68b442d52d2da81286cf26"
       }
     },
     "originalNativeControlProvenance": {
-      "schema": "str-isolated-uniform200-comparison-checkpoint/1",
-      "state": "actual-native-result-captured",
-      "sourceRoot": "/workspace/scratch/d3fac60d336f/architecture",
-      "sourceCommit": "4df8c4282df7bfdda5b7cc2c5a589de830c2959a",
-      "sourceSHA256": {
-        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
-        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
-        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
-        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
-        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
-        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
-        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
-        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
-        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
-        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
-        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
-        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
-        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
-        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
-        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
-        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
-        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
-        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
-        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
-        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
-        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
-        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
-        "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
-        "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
-        "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
-        "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
-        "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
-        "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
-        "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-        "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
-        "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
-        "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
-        "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
-        "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
-        "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
-        "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
-        "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
-        "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
-        "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-        "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
-        "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
-        "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
-        "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
-        "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
-        "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
-        "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
-        "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
-        "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
-        "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
-        "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
-        "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
-        "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
-        "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
-        "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
-        "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
-      },
-      "scriptSHA256": "65e91076b243939ae9ecf579d361cff983df29d14e12e97a72dbe607a8f64d01",
-      "controlArchive": "/workspace/scratch/d3fac60d336f/structure-ui/project/str/studies/wet-beam-end-native-captures.tar.xz",
-      "controlArchiveSHA256": "2dadc1c7221c4eca17b1e026baefe7740445e42bd0fd5abecd772c6239f679ce",
-      "controlFiles": {
-        "south40-q32.full.json": {
-          "bytes": 16335433,
-          "sha256": "306be075d19a59db2155b0b4ebdc34124ae6b09558cb1e891a779d0da2910777"
-        },
-        "south40-q32.request.json": {
-          "bytes": 60761,
-          "sha256": "9db3016d9fdf63c19cf5e5087a2ad559aec77426d7c0d86af668a98d523b69c6"
-        },
-        "south40-q32.capture.json": {
-          "bytes": 1632080,
-          "sha256": "70fba14a1e97c24550e3be2027aa8c9225edfb8ec358fbb43a8ad90db3760c5a"
-        }
-      },
-      "authoredChange": {
-        "plate": {
-          "elasticModulusMPa": [
-            33000,
-            8250
-          ],
-          "flexuralFactor": [
-            0.25,
-            1
-          ],
-          "shearFactor": [
-            0.5,
-            0.8333333333333334
-          ]
-        },
-        "membrane": {
-          "elasticModulusMPa": [
-            1200,
-            8250
-          ],
-          "poissonRatio": [
-            0.15,
-            0.2
-          ],
-          "shearModulusMPa": [
-            440,
-            3437.5
-          ]
-        }
-      },
-      "nativeSolveExecuted": true,
-      "candidateAccepted": false,
-      "materialQualified": false,
-      "scope": "Explicit alternative linear constitutive comparison only; no physical cracked-RC identification or selected stiffness. Same slab200, geometry, wet support120/south40/q32, load origins, other frame materials and source methods.",
-      "elapsedSeconds": 141.86919655300062,
-      "fullResult": {
-        "bytes": 23856647,
-        "sha256": "4d98c317a2508cf55b910669f70a364f9813d836026168e6aeeb2ca0778220d5"
-      }
+      "repository": "adamnoden/architecture",
+      "immutableRef": "026b677544246c0c6669f23fad33c3b3b73ada95",
+      "actualCaptureSourceCommit": "8c1607f3f108fc8da90e7f8a74b0ed87d930006e",
+      "actualCaptureRun": 45843306053,
+      "sourceArchive": "project/str/studies/wet-beam-end-native-captures.tar.xz",
+      "sourceArchiveSHA256": "8523c4b3ee0e279d93a3bf9bfc2bc3eec98566bbf623fcc32540bb3882e0008b",
+      "nativeCaseId": "WET120-SOUTH40-q32",
+      "fullNativeSHA256": "ed5439632702f32a3b96edaa5c0b097c3affde49ebe7dac149b785b4912de097",
+      "fullBytesReusedUnchanged": true
     }
   },
   "fineNativeProvenance": {
-    "archiveSHA256": "ed7eef01f96f9e0e16e11cafe66f671dbf3c32334dec54ee12146c6559954aa9",
-    "fullSHA256": "d5799cad37288cba07fdeebb97016018b82d07e28df0c3708328a9edefeee1c9",
-    "captureSHA256": "7424b9842ec92a74e0b2552b2459c9e46c5f700636e3ce6005499ddbad1d5512",
-    "executionStartSHA256": "3e07d33ea2528e41b8591ef8626e2e8dd3c8d758c9a05d8268ba808800d8ce1f",
+    "archiveSHA256": "f84a6b28b3898a08e49da7205501192dddabcb3072a1a59cc6031b6ac31c9898",
+    "fullSHA256": "3353b86eb517f220fff87755298dfec5c270c7ac9c5e4cb58708a7e46a87915b",
+    "captureSHA256": "bb5d14ff75d958dadfec419f62610ebfcbfc8751c9382f17b4b0943ac2fefce0",
+    "executionStartSHA256": "31bcc82357e1dfb5e3a8068182fc11e9cea8d5a6b2e4448a6d21999a1eaf4fdb",
     "executedNumericalRuntime": {
-      "python": "3.12.14",
+      "python": "3.12.16",
       "numpy": "2.3.5",
       "scipy": "1.17.0",
       "dependencyLock": "project/str/studies/vertical-floor-requirements.txt"
@@ -271,8 +160,8 @@
         "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
         "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+        "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
         "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
         "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
         "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -333,8 +222,8 @@
           "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
           "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
           "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-          "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-          "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+          "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -395,8 +284,8 @@
             "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
             "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
             "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-            "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-            "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+            "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+            "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
             "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
             "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
             "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -452,8 +341,8 @@
               "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
               "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
               "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-              "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-              "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+              "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+              "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
               "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
               "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
               "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -505,8 +394,8 @@
                 "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                 "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                 "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                 "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                 "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                 "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -545,8 +434,8 @@
                   "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                   "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                   "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                  "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                  "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                  "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                  "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                   "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                   "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                   "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -580,8 +469,8 @@
                     "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                     "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                     "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                    "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                    "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                     "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -614,8 +503,8 @@
                       "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                       "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                       "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                      "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                      "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                      "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                      "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                       "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                       "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                       "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -647,8 +536,8 @@
                         "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                         "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                        "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                         "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                         "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                         "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -711,8 +600,8 @@
                         "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                         "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                        "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                         "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                         "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                         "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -743,7 +632,7 @@
                       },
                       "membraneLaw": {
                         "mode": "authored-linear-comparison",
-                        "elasticModulusMPa": 8250.0,
+                        "elasticModulusMPa": 8250,
                         "poissonRatio": 0.2,
                         "shearModulusMPa": 3437.5
                       },
@@ -855,10 +744,10 @@
                 "use": "unqualified-continuous-RC-structural-replacement"
               },
               "plateLaw": {
-                "elasticModulusMPa": 8250.0,
+                "elasticModulusMPa": 8250,
                 "poissonRatio": 0.2,
                 "thicknessMm": 200,
-                "flexuralFactor": 1.0,
+                "flexuralFactor": 1,
                 "shearFactor": 0.8333333333333334,
                 "unitWeightKNPerM3": 27.0
               },
@@ -1153,10 +1042,10 @@
             ]
           ],
           "padCentreOffsetsYMm": [
-            40.0,
-            0.0
+            40,
+            0
           ],
-          "padWidthMm": 120.0,
+          "padWidthMm": 120,
           "padLengthMm": 100.0,
           "padThicknessMm": 10.0,
           "combinedRelativePlacementToleranceMm": 10.0,
@@ -1194,43 +1083,43 @@
             8852.5
           ],
           "reconstructedActualGapPlaneMm": [
-            1.5358598059017181,
-            -4.499786258465495e-05,
-            -0.00019938475085851207
+            1.5358598059113224,
+            -4.4997862583940354e-05,
+            -0.000199384750859846
           ],
-          "normalCompressionKN": 44.13304647114776,
-          "exactSamePlaneCompressionKN": 44.13304647114735,
+          "normalCompressionKN": 44.13304647116885,
+          "exactSamePlaneCompressionKN": 44.133046471169365,
           "padRelativeFirstMomentsKNmm": [
-            6.479692212190735,
-            19.938475085857295
+            6.479692212074865,
+            19.93847508598622
           ],
           "exactSamePlanePadRelativeFirstMomentsKNmm": [
-            6.4796922122041,
-            19.93847508582985
+            6.479692212073132,
+            19.938475085946266
           ],
           "postRelativeFirstMomentsKNmm": [
-            6.479692212190735,
-            1785.2603339317677
+            6.479692212074865,
+            1785.2603339327404
           ],
           "exactSamePlanePostRelativeFirstMomentsKNmm": [
-            6.4796922122041,
-            1785.2603339317238
+            6.479692212073132,
+            1785.2603339327209
           ],
-          "minimumRawNormalCompressionKN": 0.000524836729271981,
+          "minimumRawNormalCompressionKN": 0.0005248367292722168,
           "maximumRawTensileResidualKN": 0,
-          "forceErrorKN": 4.050093593832571e-13,
-          "forceErrorLimitKN": 0.044143046471147356,
+          "forceErrorKN": -5.115907697472721e-13,
+          "forceErrorLimitKN": 0.044143046471169366,
           "centreOfPressureFromPadCentreMm": [
-            0.14682177484454587,
-            0.45178107291759684
+            0.14682177484185022,
+            0.4517810729203022
           ],
           "exactSamePlaneCentreFromPadCentreMm": [
-            0.14682177484485004,
-            0.4517810729169791
+            0.14682177484180925,
+            0.4517810729193916
           ],
           "centreOfPressureErrorMm": [
-            -3.0417335317167726e-13,
-            6.177280909014371e-13
+            4.0967229608668276e-14,
+            9.105494136463221e-13
           ],
           "loadedForCentroidComparison": true,
           "forceComparisonPassing": true,
@@ -1260,43 +1149,43 @@
             11512.5
           ],
           "reconstructedActualGapPlaneMm": [
-            -5.691315999959665,
-            -0.0009700946756367116,
-            0.0007399403511500033
+            -5.6913159999800875,
+            -0.0009700946756290794,
+            0.0007399403511496222
           ],
-          "normalCompressionKN": 1.357245283662723,
-          "exactSamePlaneCompressionKN": 1.3572107765024435,
+          "normalCompressionKN": 1.3572452837793108,
+          "exactSamePlaneCompressionKN": 1.3572107766186308,
           "padRelativeFirstMomentsKNmm": [
-            52.13287670455273,
-            -29.658188467254472
+            52.13287670799966,
+            -29.658188468878983
           ],
           "exactSamePlanePadRelativeFirstMomentsKNmm": [
-            52.1332726594901,
-            -29.65713369711375
+            52.13327266293618,
+            -29.657133698725374
           ],
           "postRelativeFirstMomentsKNmm": [
-            52.13287670455273,
-            -29.658188467254472
+            52.13287670799966,
+            -29.658188468878983
           ],
           "exactSamePlanePostRelativeFirstMomentsKNmm": [
-            52.1332726594901,
-            -29.65713369711375
+            52.13327266293618,
+            -29.657133698725374
           ],
           "minimumRawNormalCompressionKN": -0.0,
           "maximumRawTensileResidualKN": 0,
-          "forceErrorKN": 3.4507160279417803e-05,
-          "forceErrorLimitKN": 0.0013672107765024435,
+          "forceErrorKN": 3.450716067998627e-05,
+          "forceErrorLimitKN": 0.0013672107766186307,
           "centreOfPressureFromPadCentreMm": [
-            38.410799677906866,
-            -21.851752829243626
+            38.41079967714701,
+            -21.85175282856347
           ],
           "exactSamePlaneCentreFromPadCentreMm": [
-            38.41206801631688,
-            -21.85153125113014
+            38.412068015567606,
+            -21.851531250446943
           ],
           "centreOfPressureErrorMm": [
-            -0.0012683384100142803,
-            -0.00022157811348577638
+            -0.0012683384205942616,
+            -0.0002215781165268993
           ],
           "loadedForCentroidComparison": true,
           "forceComparisonPassing": true,
@@ -1337,8 +1226,8 @@
         "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
         "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+        "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+        "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
         "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
         "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
         "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1399,8 +1288,8 @@
           "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
           "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
           "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-          "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-          "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+          "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+          "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
           "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
           "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1461,8 +1350,8 @@
             "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
             "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
             "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-            "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-            "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+            "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+            "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
             "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
             "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
             "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1518,8 +1407,8 @@
               "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
               "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
               "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-              "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-              "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+              "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+              "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
               "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
               "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
               "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1571,8 +1460,8 @@
                 "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                 "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                 "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                 "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                 "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                 "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1611,8 +1500,8 @@
                   "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                   "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                   "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                  "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                  "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                  "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                  "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                   "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                   "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                   "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1646,8 +1535,8 @@
                     "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                     "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                     "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                    "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                    "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                     "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1680,8 +1569,8 @@
                       "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                       "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                       "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                      "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                      "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                      "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                      "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                       "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                       "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                       "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1713,8 +1602,8 @@
                         "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                         "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                        "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                         "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                         "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                         "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1777,8 +1666,8 @@
                         "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
                         "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
                         "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-                        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-                        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+                        "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+                        "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
                         "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
                         "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
                         "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -1809,7 +1698,7 @@
                       },
                       "membraneLaw": {
                         "mode": "authored-linear-comparison",
-                        "elasticModulusMPa": 8250.0,
+                        "elasticModulusMPa": 8250,
                         "poissonRatio": 0.2,
                         "shearModulusMPa": 3437.5
                       },
@@ -1921,10 +1810,10 @@
                 "use": "unqualified-continuous-RC-structural-replacement"
               },
               "plateLaw": {
-                "elasticModulusMPa": 8250.0,
+                "elasticModulusMPa": 8250,
                 "poissonRatio": 0.2,
                 "thicknessMm": 200,
-                "flexuralFactor": 1.0,
+                "flexuralFactor": 1,
                 "shearFactor": 0.8333333333333334,
                 "unitWeightKNPerM3": 27.0
               },
@@ -2219,10 +2108,10 @@
             ]
           ],
           "padCentreOffsetsYMm": [
-            40.0,
-            0.0
+            40,
+            0
           ],
-          "padWidthMm": 120.0,
+          "padWidthMm": 120,
           "padLengthMm": 100.0,
           "padThicknessMm": 10.0,
           "combinedRelativePlacementToleranceMm": 10.0,
@@ -2260,43 +2149,43 @@
             8852.5
           ],
           "reconstructedActualGapPlaneMm": [
-            1.535860206923435,
-            -4.499786039430273e-05,
-            -0.00019938479741465553
+            1.535860206923116,
+            -4.4997860393054555e-05,
+            -0.00019938479741503002
           ],
-          "normalCompressionKN": 44.13304726570199,
-          "exactSamePlaneCompressionKN": 44.13304726570234,
+          "normalCompressionKN": 44.133047265707305,
+          "exactSamePlaneCompressionKN": 44.13304726570549,
           "padRelativeFirstMomentsKNmm": [
-            6.479691896754525,
-            19.93847974148012
+            6.479691896605944,
+            19.93847974152796
           ],
           "exactSamePlanePadRelativeFirstMomentsKNmm": [
-            6.479691896791337,
+            6.47969189658761,
             19.938479741394985
           ],
           "postRelativeFirstMomentsKNmm": [
-            6.479691896754525,
-            1785.2603703695595
+            6.479691896605944,
+            1785.2603703698203
           ],
           "exactSamePlanePostRelativeFirstMomentsKNmm": [
-            6.479691896791337,
-            1785.2603703694886
+            6.47969189658761,
+            1785.2603703696147
           ],
-          "minimumRawNormalCompressionKN": 3.387893951021385e-05,
+          "minimumRawNormalCompressionKN": 3.38789395102217e-05,
           "maximumRawTensileResidualKN": 0,
-          "forceErrorKN": -3.481659405224491e-13,
-          "forceErrorLimitKN": 0.04414304726570234,
+          "forceErrorKN": 1.8118839761882555e-12,
+          "forceErrorLimitKN": 0.0441430472657055,
           "centreOfPressureFromPadCentreMm": [
-            0.14682176505383118,
-            0.4517811702745329
+            0.14682176505044686,
+            0.4517811702755625
           ],
           "exactSamePlaneCentreFromPadCentreMm": [
-            0.14682176505466416,
-            0.4517811702726003
+            0.14682176505003747,
+            0.45178117027256803
           ],
           "centreOfPressureErrorMm": [
-            -8.329725798006393e-13,
-            1.9326207301162412e-12
+            4.0939474033052647e-13,
+            2.9944935420189722e-12
           ],
           "loadedForCentroidComparison": true,
           "forceComparisonPassing": true,
@@ -2326,43 +2215,43 @@
             11512.5
           ],
           "reconstructedActualGapPlaneMm": [
-            -5.691318522483857,
-            -0.0009700940731095724,
-            0.0007399403935253914
+            -5.691318522489604,
+            -0.0009700940730942823,
+            0.0007399403935215534
           ],
-          "normalCompressionKN": 1.3572341110788302,
-          "exactSamePlaneCompressionKN": 1.357223655707169,
+          "normalCompressionKN": 1.3572341113211397,
+          "exactSamePlaneCompressionKN": 1.3572236559491107,
           "padRelativeFirstMomentsKNmm": [
-            52.13375204784208,
-            -29.65735652009355
+            52.133752055081196,
+            -29.657356523345666
           ],
           "exactSamePlanePadRelativeFirstMomentsKNmm": [
-            52.13365838852724,
-            -29.657312525641828
+            52.133658395750444,
+            -29.657312528910552
           ],
           "postRelativeFirstMomentsKNmm": [
-            52.13375204784208,
-            -29.65735652009355
+            52.133752055081196,
+            -29.657356523345666
           ],
           "exactSamePlanePostRelativeFirstMomentsKNmm": [
-            52.13365838852724,
-            -29.657312525641828
+            52.133658395750444,
+            -29.657312528910552
           ],
           "minimumRawNormalCompressionKN": -0.0,
           "maximumRawTensileResidualKN": 0,
-          "forceErrorKN": 1.0455371661111101e-05,
-          "forceErrorLimitKN": 0.0013672236557071692,
+          "forceErrorKN": 1.0455372029039012e-05,
+          "forceErrorLimitKN": 0.0013672236559491107,
           "centreOfPressureFromPadCentreMm": [
-            38.41176081730094,
-            -21.851319737697786
+            38.411760815776944,
+            -21.851319736192764
           ],
           "exactSamePlaneCentreFromPadCentreMm": [
-            38.411987714260306,
-            -21.851455654292405
+            38.41198771273495,
+            -21.85145565280551
           ],
           "centreOfPressureErrorMm": [
-            -0.00022689695936861654,
-            0.0001359165946190899
+            -0.00022689695800437448,
+            0.00013591661274503508
           ],
           "loadedForCentroidComparison": true,
           "forceComparisonPassing": true,
@@ -2377,26 +2266,26 @@
     "posts": [
       {
         "id": "WET-SUPPORT/post/0",
-        "normalForceDifferenceKN": 7.945542321863286e-07,
-        "forceDifferenceLimitKN": 0.04414304726570199,
+        "normalForceDifferenceKN": 7.945384510321674e-07,
+        "forceDifferenceLimitKN": 0.04414304726570731,
         "centreOfPressureDifferenceMm": [
-          -9.790714683433066e-09,
-          9.735693606849338e-08
+          -9.791403354775241e-09,
+          9.735526035337116e-08
         ],
         "coupledLocalComparisonPassing": true
       },
       {
         "id": "WET-SUPPORT/post/1",
-        "normalForceDifferenceKN": -1.1172583892715693e-05,
-        "forceDifferenceLimitKN": 0.0013672452836627229,
+        "normalForceDifferenceKN": -1.1172458171060384e-05,
+        "forceDifferenceLimitKN": 0.0013672452837793108,
         "centreOfPressureDifferenceMm": [
-          0.0009611393940716084,
-          0.00043309154584036946
+          0.0009611386299326341,
+          0.0004330923707058787
         ],
         "coupledLocalComparisonPassing": true
       }
     ],
-    "maximum52HeadComponentDifferenceKN_KNm": 1.0836701029859341e-05,
+    "maximum52HeadComponentDifferenceKN_KNm": 1.0836559184213002e-05,
     "numericalRefinementPassing": true,
     "scope": "Tested coupled quadrature refinement at fixed physical laws and floor discretisation; no asymptotic error bound, local concrete/material, corner-stress, resistance or whole-house acceptance.",
     "physicalContactAccepted": false,
@@ -2406,38 +2295,38 @@
     {
       "id": "WET-SUPPORT/post/0",
       "headWrenchKN_KNmm": [
-        2.2370993946196904e-14,
-        -2.248201624865942e-15,
-        -44.14576347114773,
-        -1785.769013931785,
-        6.4796922121761185,
-        2.927080799963733e-11
+        -1.2628786905111156e-14,
+        -2.693678613496786e-14,
+        -44.145763471168806,
+        -1785.7690139327565,
+        6.479692212071718,
+        5.2239101933082566e-11
       ],
       "baseWrenchKN_KNmm": [
-        -2.2370993946196904e-14,
-        2.248201624865942e-15,
-        57.74999697114772,
-        1785.769013931776,
-        -6.479692212247443,
-        -2.927080799963733e-11
+        1.2628786905111156e-14,
+        2.693678613496786e-14,
+        57.74999697116881,
+        1785.7690139326698,
+        -6.479692212031388,
+        -5.2239101933082566e-11
       ],
-      "compressionKN": 44.14576347114773,
-      "bodyGravityKN": 13.604233499999992,
-      "bodyGravityKNPerMm": 0.0042646499999999974,
+      "compressionKN": 44.145763471168806,
+      "bodyGravityKN": 13.604233500000007,
+      "bodyGravityKNPerMm": 0.004264650000000002,
       "transportedBaseWrenchKN_KNmm": [
-        2.2370993946196904e-14,
-        -2.248201624865942e-15,
-        -57.74999697114772,
-        -1785.7690139317776,
-        6.479692212247482,
-        2.927080799963733e-11
+        -1.2628786905111156e-14,
+        -2.693678613496786e-14,
+        -57.74999697116881,
+        -1785.7690139326705,
+        6.479692212031432,
+        5.2239101933082566e-11
       ],
-      "fullCompressionRequiredAxialAtHeadKN": 23.959784877832995,
+      "fullCompressionRequiredAxialAtHeadKN": 23.959784877843536,
       "headResultantFromAxisMm": [
-        0.14677948012862072,
-        40.45165092906156
+        0.14677948012618575,
+        40.45165092906426
       ],
-      "headGrossFullCompressionRatio": 0.5427425644930198,
+      "headGrossFullCompressionRatio": 0.5427425644929995,
       "fullCompressionFirstPossibleDepthMm": 0.0,
       "withinPostHeight": true,
       "status": "loaded-compression",
@@ -2447,39 +2336,39 @@
     {
       "id": "WET-SUPPORT/post/1",
       "headWrenchKN_KNmm": [
-        -1.5991374890944599e-13,
-        -1.4738210651898953e-14,
-        -1.36996228366265,
-        29.65818846723198,
-        52.13287670455267,
-        -1.552535877635819e-11
+        2.706168622523819e-13,
+        -7.93809462606987e-15,
+        -1.369962283779234,
+        29.658188468867536,
+        52.13287670799926,
+        -1.553246420371579e-11
       ],
       "baseWrenchKN_KNmm": [
-        1.5991374890944599e-13,
-        1.4738210651898953e-14,
-        14.97419578366265,
-        -29.658188467278137,
-        -52.1328767040425,
-        1.552535877635819e-11
+        -2.706168622523819e-13,
+        7.93809462606987e-15,
+        14.974195783779233,
+        -29.65818846889198,
+        -52.13287670886265,
+        1.553246420371579e-11
       ],
-      "compressionKN": 1.36996228366265,
+      "compressionKN": 1.369962283779234,
       "bodyGravityKN": 13.6042335,
       "bodyGravityKNPerMm": 0.00426465,
       "transportedBaseWrenchKN_KNmm": [
-        -1.5991374890944599e-13,
-        -1.4738210651898953e-14,
-        -14.97419578366265,
-        29.658188467278997,
-        52.132876704042545,
-        -1.552535877635819e-11
+        2.706168622523819e-13,
+        -7.93809462606987e-15,
+        -14.974195783779233,
+        29.65818846889286,
+        52.132876708862526,
+        -1.553246420371579e-11
       ],
-      "fullCompressionRequiredAxialAtHeadKN": 1.5985088983861035,
+      "fullCompressionRequiredAxialAtHeadKN": 1.5985088984874474,
       "headResultantFromAxisMm": [
-        38.05424231473972,
-        -21.648908748012833
+        38.054242314017124,
+        -21.648908747364377
       ],
-      "headGrossFullCompressionRatio": 1.1668269392880108,
-      "fullCompressionFirstPossibleDepthMm": 53.59094291988003,
+      "headGrossFullCompressionRatio": 1.1668269392626893,
+      "fullCompressionFirstPossibleDepthMm": 53.59094291643012,
       "withinPostHeight": true,
       "status": "loaded-compression",
       "headDRegionAccepted": false,
@@ -2490,38 +2379,38 @@
     {
       "id": "WET-SUPPORT/post/0",
       "headWrenchKN_KNmm": [
-        2.0074220064003612e-14,
-        -1.61259894326804e-14,
-        -44.145764265701246,
-        -1785.7690503695762,
-        6.479691896740476,
-        -2.4988899838263023e-11
+        -3.747002708109903e-15,
+        9.228728892196614e-15,
+        -44.14576426570659,
+        -1785.7690503698332,
+        6.479691896627855,
+        -3.8458125573015423e-13
       ],
       "baseWrenchKN_KNmm": [
-        -2.0074220064003612e-14,
-        1.61259894326804e-14,
-        57.74999776570124,
-        1785.7690503695226,
-        -6.479691896804468,
-        2.4988899838263023e-11
+        3.747002708109903e-15,
+        -9.228728892196614e-15,
+        57.74999776570658,
+        1785.7690503698618,
+        -6.4796918966159325,
+        3.8458125573015423e-13
       ],
-      "compressionKN": 44.145764265701246,
+      "compressionKN": 44.14576426570659,
       "bodyGravityKN": 13.604233499999992,
       "bodyGravityKNPerMm": 0.0042646499999999974,
       "transportedBaseWrenchKN_KNmm": [
-        2.0074220064003612e-14,
-        -1.61259894326804e-14,
-        -57.74999776570124,
-        -1785.7690503695248,
-        6.479691896804513,
-        -2.4988899838263023e-11
+        -3.747002708109903e-15,
+        9.228728892196614e-15,
+        -57.74999776570658,
+        -1785.7690503698625,
+        6.479691896615902,
+        -3.8458125573015423e-13
       ],
-      "fullCompressionRequiredAxialAtHeadKN": 23.959785356390924,
+      "fullCompressionRequiredAxialAtHeadKN": 23.959785356391748,
       "headResultantFromAxisMm": [
-        0.14677947034150293,
-        40.45165102639343
+        0.14677947033893407,
+        40.45165102639435
       ],
-      "headGrossFullCompressionRatio": 0.5427425655649214,
+      "headGrossFullCompressionRatio": 0.5427425655648744,
       "fullCompressionFirstPossibleDepthMm": 0.0,
       "withinPostHeight": true,
       "status": "loaded-compression",
@@ -2531,39 +2420,39 @@
     {
       "id": "WET-SUPPORT/post/1",
       "headWrenchKN_KNmm": [
-        5.578870698741412e-13,
-        -1.5737411374061594e-14,
-        -1.369951111078663,
-        29.657356520076746,
-        52.13375204784137,
-        -1.552535877635819e-11
+        -7.20201676074339e-13,
+        -1.0186296250935811e-14,
+        -1.3699511113211003,
+        29.657356523343992,
+        52.13375205507708,
+        2.984279490192421e-13
       ],
       "baseWrenchKN_KNmm": [
-        -5.578870698741412e-13,
-        1.5737411374061594e-14,
-        14.974184611078662,
-        -29.65735652012711,
-        -52.13375204962085,
-        1.552535877635819e-11
+        7.20201676074339e-13,
+        1.0186296250935811e-14,
+        14.9741846113211,
+        -29.65735652337662,
+        -52.1337520527797,
+        -2.984279490192421e-13
       ],
-      "compressionKN": 1.369951111078663,
+      "compressionKN": 1.3699511113211003,
       "bodyGravityKN": 13.6042335,
       "bodyGravityKNPerMm": 0.00426465,
       "transportedBaseWrenchKN_KNmm": [
-        5.578870698741412e-13,
-        -1.5737411374061594e-14,
-        -14.974184611078662,
-        29.65735652012695,
-        52.13375204962103,
-        -1.552535877635819e-11
+        -7.20201676074339e-13,
+        -1.0186296250935811e-14,
+        -14.9741846113211,
+        29.657356523376485,
+        52.13375205277964,
+        2.984279490192421e-13
       ],
-      "fullCompressionRequiredAxialAtHeadKN": 1.5985180059871058,
+      "fullCompressionRequiredAxialAtHeadKN": 1.5985180061976474,
       "headResultantFromAxisMm": [
-        38.05519162416872,
-        -21.64847802249332
+        38.05519162271591,
+        -21.648478021047175
       ],
-      "headGrossFullCompressionRatio": 1.166843103421753,
-      "fullCompressionFirstPossibleDepthMm": 53.59569833612241,
+      "headGrossFullCompressionRatio": 1.1668431033689448,
+      "fullCompressionFirstPossibleDepthMm": 53.595698328271645,
       "withinPostHeight": true,
       "status": "loaded-compression",
       "headDRegionAccepted": false,
@@ -2572,27 +2461,27 @@
   ],
   "postPhysicalWrenchDifferences": {
     "headWrenchKN_KNmm": {
-      "absoluteDifference": 0.0008753432886976498,
-      "control": 52.13287670455267,
-      "changed": 52.13375204784137,
+      "absoluteDifference": 0.0008753470778231076,
+      "control": 52.13287670799926,
+      "changed": 52.13375205507708,
       "component": 4,
       "identity": {
         "id": "WET-SUPPORT/post/1"
       }
     },
     "baseWrenchKN_KNmm": {
-      "absoluteDifference": 0.0008753455783505615,
-      "control": -52.1328767040425,
-      "changed": -52.13375204962085,
+      "absoluteDifference": 0.0008753439170448019,
+      "control": -52.13287670886265,
+      "changed": -52.1337520527797,
       "component": 4,
       "identity": {
         "id": "WET-SUPPORT/post/1"
       }
     },
     "compressionKN": {
-      "absoluteDifference": 1.1172583986862605e-05,
-      "control": 1.36996228366265,
-      "changed": 1.369951111078663,
+      "absoluteDifference": 1.117245813375689e-05,
+      "control": 1.369962283779234,
+      "changed": 1.3699511113211003,
       "component": 0,
       "identity": {
         "id": "WET-SUPPORT/post/1"
@@ -2601,9 +2490,9 @@
   },
   "all52HeadComponentDifferences": {
     "reactionKN_KNm": {
-      "absoluteDifference": 1.0836701029859341e-05,
-      "control": 44.16052658448452,
-      "changed": 44.16051574778349,
+      "absoluteDifference": 1.0836559184213002e-05,
+      "control": 44.16052658458764,
+      "changed": 44.16051574802846,
       "component": 2,
       "identity": {
         "id": "P24"
@@ -2614,9 +2503,9 @@
     {
       "id": "P01",
       "reactionKN_KNm": [
-        -102.06895218031823,
-        -80.92381965434228,
-        284.3980649514017,
+        -102.06895217930551,
+        -80.92381965471593,
+        284.39806495113044,
         0.0,
         0.0,
         0.0
@@ -2625,9 +2514,9 @@
     {
       "id": "P02",
       "reactionKN_KNm": [
-        93.77426744888942,
-        2.767162278481261,
-        -24.264847746549176,
+        93.7742674482625,
+        2.7671622784753804,
+        -24.26484774619625,
         0.0,
         0.0,
         0.0
@@ -2636,9 +2525,9 @@
     {
       "id": "P03",
       "reactionKN_KNm": [
-        -0.01499021920150545,
-        76.38241940010823,
-        -16.374542229706194,
+        -0.014990219205452071,
+        76.38241940025299,
+        -16.374542229789625,
         0.0,
         0.0,
         0.0
@@ -2647,9 +2536,9 @@
     {
       "id": "P04",
       "reactionKN_KNm": [
-        -470.61964646430863,
-        -309.98903858390406,
-        84.87998530170916,
+        -470.6196464635249,
+        -309.98903858362405,
+        84.87998530201354,
         0.0,
         0.0,
         0.0
@@ -2658,9 +2547,9 @@
     {
       "id": "P05",
       "reactionKN_KNm": [
-        277.60886274220195,
-        2.606336964822428,
-        135.620494266489,
+        277.60886274167405,
+        2.606336964819672,
+        135.62049426626348,
         0.0,
         0.0,
         0.0
@@ -2669,9 +2558,9 @@
     {
       "id": "P06",
       "reactionKN_KNm": [
-        -0.2521947812239702,
-        216.8931374307583,
-        -77.56828021388642,
+        -0.2521947812369518,
+        216.89313743066438,
+        -77.56828021381749,
         0.0,
         0.0,
         0.0
@@ -2680,9 +2569,9 @@
     {
       "id": "P07",
       "reactionKN_KNm": [
-        -244.9601725325732,
-        -433.8581284693428,
-        94.35505565395242,
+        -244.96017253215965,
+        -433.8581284689699,
+        94.35505565382543,
         0.0,
         0.0,
         0.0
@@ -2691,9 +2580,9 @@
     {
       "id": "P08",
       "reactionKN_KNm": [
-        183.45160469573383,
-        6.308985938495871,
-        -64.75191496964013,
+        183.4516046954373,
+        6.308985938501216,
+        -64.75191496951982,
         0.0,
         0.0,
         0.0
@@ -2702,9 +2591,9 @@
     {
       "id": "P09",
       "reactionKN_KNm": [
-        5.721357575985008,
-        259.6304871701987,
-        161.44294902711232,
+        5.721357575991616,
+        259.63048716995587,
+        161.4429490269887,
         0.0,
         0.0,
         0.0
@@ -2713,9 +2602,9 @@
     {
       "id": "P10",
       "reactionKN_KNm": [
-        -153.0217897909301,
-        -198.2677094049372,
-        -63.32460768234474,
+        -153.02178978994354,
+        -198.26770940594167,
+        -63.32460768215105,
         0.0,
         0.0,
         0.0
@@ -2724,9 +2613,9 @@
     {
       "id": "P11",
       "reactionKN_KNm": [
-        131.22078517582142,
-        2.1741335033109266,
-        63.708421064745,
+        131.22078517511542,
+        2.174133503331383,
+        63.70842106446567,
         0.0,
         0.0,
         0.0
@@ -2735,9 +2624,9 @@
     {
       "id": "P12",
       "reactionKN_KNm": [
-        -2.185285515352203,
-        69.09317125065206,
-        150.76552712412555,
+        -2.185285515388562,
+        69.09317125138892,
+        150.76552712453145,
         0.0,
         0.0,
         0.0
@@ -2746,9 +2635,9 @@
     {
       "id": "P13",
       "reactionKN_KNm": [
-        40.882965952104854,
-        37.17260124570263,
-        103.58438729532575,
+        40.8829659520694,
+        37.172601245724884,
+        103.58438729510286,
         0.0,
         0.0,
         0.0
@@ -2757,9 +2646,9 @@
     {
       "id": "P14",
       "reactionKN_KNm": [
-        17.479710311007388,
-        65.16580402985684,
-        38.00281325798904,
+        17.479710311008336,
+        65.16580402983591,
+        38.00281325790043,
         0.0,
         0.0,
         0.0
@@ -2768,9 +2657,9 @@
     {
       "id": "P15",
       "reactionKN_KNm": [
-        -0.5973291793142518,
-        29.327508764114157,
-        74.64354300721351,
+        -0.5973291793139754,
+        29.327508764181616,
+        74.64354300709437,
         0.0,
         0.0,
         0.0
@@ -2779,9 +2668,9 @@
     {
       "id": "P16",
       "reactionKN_KNm": [
-        53.72344300682207,
-        107.17183463445215,
-        152.5391123152546,
+        53.72344300684813,
+        107.17183463435337,
+        152.53911231529167,
         0.0,
         0.0,
         0.0
@@ -2790,9 +2679,9 @@
     {
       "id": "P17",
       "reactionKN_KNm": [
-        -33.974387549875416,
-        84.97314044152697,
-        93.76804313508609,
+        -33.9743875498726,
+        84.97314044155291,
+        93.76804313517779,
         0.0,
         0.0,
         0.0
@@ -2801,9 +2690,9 @@
     {
       "id": "P18",
       "reactionKN_KNm": [
-        -62.56177240625448,
-        3.827999221072325,
-        125.02403385095036,
+        -62.5617724062039,
+        3.827999221224296,
+        125.02403385088155,
         0.0,
         0.0,
         0.0
@@ -2812,9 +2701,9 @@
     {
       "id": "P19",
       "reactionKN_KNm": [
-        -45.55538276831896,
-        187.3932240872159,
-        151.09703825485997,
+        -45.55538276832834,
+        187.3932240872932,
+        151.09703825468952,
         0.0,
         0.0,
         0.0
@@ -2823,9 +2712,9 @@
     {
       "id": "P20",
       "reactionKN_KNm": [
-        30.65524695417865,
-        -0.852605996612197,
-        33.244126851055796,
+        30.655246953912638,
+        -0.8526059966100352,
+        33.24412685104157,
         0.0,
         0.0,
         0.0
@@ -2834,9 +2723,9 @@
     {
       "id": "P21",
       "reactionKN_KNm": [
-        53.42757531087676,
-        4.269786407101947,
-        48.54736146170703,
+        53.42757531067545,
+        4.269786407101499,
+        48.54736146177566,
         0.0,
         0.0,
         0.0
@@ -2845,9 +2734,9 @@
     {
       "id": "P22",
       "reactionKN_KNm": [
-        60.25091451114801,
-        56.732767827878256,
-        107.80369995663224,
+        60.250914511003636,
+        56.73276782789379,
+        107.80369995667093,
         0.0,
         0.0,
         0.0
@@ -2856,9 +2745,9 @@
     {
       "id": "P23",
       "reactionKN_KNm": [
-        120.71216922687739,
-        46.058313365973994,
-        143.52799066259396,
+        120.71216922661041,
+        46.058313365999204,
+        143.5279906625684,
         0.0,
         0.0,
         0.0
@@ -2867,9 +2756,9 @@
     {
       "id": "P24",
       "reactionKN_KNm": [
-        103.89522014358745,
-        -27.99228626116762,
-        44.16052658448452,
+        103.89522014337295,
+        -27.992286261198554,
+        44.16052658458764,
         0.0,
         0.0,
         0.0
@@ -2878,9 +2767,9 @@
     {
       "id": "P25",
       "reactionKN_KNm": [
-        1.5510129847907486,
-        -52.449437640983234,
-        94.69451131445581,
+        1.5510129849070289,
+        -52.44943764098279,
+        94.69451131451945,
         0.0,
         0.0,
         0.0
@@ -2889,9 +2778,9 @@
     {
       "id": "P26",
       "reactionKN_KNm": [
-        -38.498705864659655,
-        -52.58014819886393,
-        158.69925724256473,
+        -38.49870586459165,
+        -52.58014819891459,
+        158.69925724245638,
         0.0,
         0.0,
         0.0
@@ -2900,9 +2789,9 @@
     {
       "id": "P27",
       "reactionKN_KNm": [
-        81.52235871278296,
-        -2.15321264707533,
-        57.33859915729879,
+        81.52235871237082,
+        -2.15321264707546,
+        57.338599157184944,
         0.0,
         0.0,
         0.0
@@ -2911,9 +2800,9 @@
     {
       "id": "P28",
       "reactionKN_KNm": [
-        -5.412502313593036,
-        0.9641375668726688,
-        121.44742329050291,
+        -5.412502313490329,
+        0.9641375668466505,
+        121.4474232906316,
         0.0,
         0.0,
         0.0
@@ -2922,9 +2811,9 @@
     {
       "id": "P29",
       "reactionKN_KNm": [
-        -9.560067955939662,
-        56.07248626374419,
-        84.29297591910884,
+        -9.56006795593208,
+        56.07248626376382,
+        84.29297591909344,
         0.0,
         0.0,
         0.0
@@ -2933,9 +2822,9 @@
     {
       "id": "P30",
       "reactionKN_KNm": [
-        -50.03160185149625,
-        9.667208648027296,
-        255.3811384287003,
+        -50.03160185138832,
+        9.667208648063989,
+        255.3811384287488,
         0.0,
         0.0,
         0.0
@@ -2944,9 +2833,9 @@
     {
       "id": "P31",
       "reactionKN_KNm": [
-        11.784768537154807,
-        51.14973896790911,
-        102.89995253795888,
+        11.784768537163668,
+        51.14973896790616,
+        102.89995253798341,
         0.0,
         0.0,
         0.0
@@ -2955,9 +2844,9 @@
     {
       "id": "P32",
       "reactionKN_KNm": [
-        -1.5214042886366332,
-        -6.169490980147352,
-        54.14088900850803,
+        -1.521404288631829,
+        -6.169490980200761,
+        54.14088900861689,
         0.0,
         0.0,
         0.0
@@ -2966,9 +2855,9 @@
     {
       "id": "P33",
       "reactionKN_KNm": [
-        -0.02711213868026796,
-        14.77638649639988,
-        33.571609124687356,
+        -0.027112138679035946,
+        14.776386496448517,
+        33.57160912463179,
         0.0,
         0.0,
         0.0
@@ -2977,9 +2866,9 @@
     {
       "id": "P34",
       "reactionKN_KNm": [
-        23.91190510584903,
-        -5.4145795889908115,
-        56.086788116930926,
+        23.911905105718528,
+        -5.41457958896785,
+        56.08678811672313,
         0.0,
         0.0,
         0.0
@@ -2988,9 +2877,9 @@
     {
       "id": "P35",
       "reactionKN_KNm": [
-        2.190751776883662,
-        23.273149931627902,
-        70.00638137679029,
+        2.1907517768846576,
+        23.273149931611247,
+        70.0063813767973,
         0.0,
         0.0,
         0.0
@@ -2999,9 +2888,9 @@
     {
       "id": "P36",
       "reactionKN_KNm": [
-        0.602165128235524,
-        3.035046220961771,
-        36.96809736299951,
+        0.6021651282345161,
+        3.0350462209327205,
+        36.96809736297155,
         0.0,
         0.0,
         0.0
@@ -3010,9 +2899,9 @@
     {
       "id": "P37",
       "reactionKN_KNm": [
-        13.728126600403867,
-        -18.415162380454248,
-        -16.010565486058802,
+        13.72812660036416,
+        -18.415162380382917,
+        -16.010565485910583,
         0.0,
         0.0,
         0.0
@@ -3021,9 +2910,9 @@
     {
       "id": "P38",
       "reactionKN_KNm": [
-        -15.075358314417999,
-        -1.0301399035348098,
-        52.583960467782944,
+        -15.075358314468263,
+        -1.030139903536958,
+        52.58396046793575,
         0.0,
         0.0,
         0.0
@@ -3032,9 +2921,9 @@
     {
       "id": "P39",
       "reactionKN_KNm": [
-        4.981375223756496,
-        0.645760773627833,
-        10.982007172713292,
+        4.981375223775196,
+        0.6457607736297453,
+        10.982007172709544,
         0.0,
         0.0,
         0.0
@@ -3043,9 +2932,9 @@
     {
       "id": "P40",
       "reactionKN_KNm": [
-        5.777472477479002,
-        0.09856550322007518,
-        37.899427755666935,
+        5.77747247749551,
+        0.09856550321796753,
+        37.89942775571638,
         0.0,
         0.0,
         0.0
@@ -3054,9 +2943,9 @@
     {
       "id": "P41",
       "reactionKN_KNm": [
-        17.915633229147833,
-        -64.70880825019307,
-        141.87372223439237,
+        17.91563322912742,
+        -64.70880825021892,
+        141.87372223440443,
         0.0,
         0.0,
         0.0
@@ -3065,9 +2954,9 @@
     {
       "id": "P42",
       "reactionKN_KNm": [
-        11.559473147163462,
-        14.325863469767345,
-        114.880642001536,
+        11.55947314717026,
+        14.3258634697564,
+        114.88064200153914,
         0.0,
         0.0,
         0.0
@@ -3076,9 +2965,9 @@
     {
       "id": "P43",
       "reactionKN_KNm": [
-        59.95664465195932,
-        -74.302446914557,
-        137.9787132396379,
+        59.95664465192835,
+        -74.30244691454799,
+        137.97871323958648,
         0.0,
         0.0,
         0.0
@@ -3087,9 +2976,9 @@
     {
       "id": "P44",
       "reactionKN_KNm": [
-        80.25460578601977,
-        101.65554025265577,
-        176.48191575337478,
+        80.25460578592305,
+        101.65554025265534,
+        176.48191575339257,
         0.0,
         0.0,
         0.0
@@ -3098,9 +2987,9 @@
     {
       "id": "P45",
       "reactionKN_KNm": [
-        -30.157808723005935,
-        19.843122191388034,
-        103.5891230793707,
+        -30.157808722984655,
+        19.843122191342943,
+        103.58912307934249,
         0.0,
         0.0,
         0.0
@@ -3109,9 +2998,9 @@
     {
       "id": "P46",
       "reactionKN_KNm": [
-        -0.02489766694641471,
-        -20.594282665358858,
-        72.3898702278807,
+        -0.024897666948196007,
+        -20.594282665306196,
+        72.38987022780977,
         0.0,
         0.0,
         0.0
@@ -3120,9 +3009,9 @@
     {
       "id": "P47",
       "reactionKN_KNm": [
-        -41.88097920796439,
-        36.36406613845111,
-        140.50815994765358,
+        -41.88097920803096,
+        36.36406613846782,
+        140.50815994768666,
         0.0,
         0.0,
         0.0
@@ -3131,9 +3020,9 @@
     {
       "id": "P48",
       "reactionKN_KNm": [
-        -13.37237866282005,
-        2.6588885991053397,
-        66.91763125037168,
+        -13.372378662832329,
+        2.6588885991013154,
+        66.91763125040062,
         0.0,
         0.0,
         0.0
@@ -3142,9 +3031,9 @@
     {
       "id": "P49",
       "reactionKN_KNm": [
-        -2.29426621512103,
-        -7.269152388482663,
-        42.22900729270558,
+        -2.294266215140115,
+        -7.269152388485219,
+        42.2290072927564,
         0.0,
         0.0,
         0.0
@@ -3153,9 +3042,9 @@
     {
       "id": "P50",
       "reactionKN_KNm": [
-        20.822964191776997,
-        15.229894628933186,
-        48.801786215117254,
+        20.822964191769117,
+        15.229894628946138,
+        48.801786215153236,
         0.0,
         0.0,
         0.0
@@ -3164,9 +3053,9 @@
     {
       "id": "P51",
       "reactionKN_KNm": [
-        -23.460800810769403,
-        -4.648647256089094,
-        112.79563418592488,
+        -23.46080081074101,
+        -4.648647256094856,
+        112.79563418596577,
         0.0,
         0.0,
         0.0
@@ -3175,9 +3064,9 @@
     {
       "id": "P52",
       "reactionKN_KNm": [
-        24.512949220170526,
-        -59.97969898571563,
-        92.68793487215133,
+        24.512949220156067,
+        -59.97969898572791,
+        92.68793487215066,
         0.0,
         0.0,
         0.0
@@ -3188,9 +3077,9 @@
     {
       "id": "P01",
       "reactionKN_KNm": [
-        -102.06895179995607,
-        -80.92381920749456,
-        284.3980644445665,
+        -102.06895179941841,
+        -80.92381920624625,
+        284.39806444345123,
         0.0,
         0.0,
         0.0
@@ -3199,9 +3088,9 @@
     {
       "id": "P02",
       "reactionKN_KNm": [
-        93.7742671891854,
-        2.76716227630721,
-        -24.26484760116117,
+        93.77426718877526,
+        2.7671622762750063,
+        -24.26484760093931,
         0.0,
         0.0,
         0.0
@@ -3210,9 +3099,9 @@
     {
       "id": "P03",
       "reactionKN_KNm": [
-        -0.014990228000660188,
-        76.3824191363212,
-        -16.374542080105797,
+        -0.014990227991269478,
+        76.38241913546929,
+        -16.374542079645636,
         0.0,
         0.0,
         0.0
@@ -3221,9 +3110,9 @@
     {
       "id": "P04",
       "reactionKN_KNm": [
-        -470.61964591622285,
-        -309.9890384856926,
-        84.87998565326595,
+        -470.61964591388346,
+        -309.9890384837506,
+        84.87998565332467,
         0.0,
         0.0,
         0.0
@@ -3232,9 +3121,9 @@
     {
       "id": "P05",
       "reactionKN_KNm": [
-        277.6088623979992,
-        2.606336966453008,
-        135.62049411699465,
+        277.6088623965998,
+        2.606336966442232,
+        135.62049411638375,
         0.0,
         0.0,
         0.0
@@ -3243,9 +3132,9 @@
     {
       "id": "P06",
       "reactionKN_KNm": [
-        -0.25219478222769,
-        216.8931375142821,
-        -77.56828023874216,
+        -0.252194782256268,
+        216.89313751309473,
+        -77.56828023806176,
         0.0,
         0.0,
         0.0
@@ -3254,9 +3143,9 @@
     {
       "id": "P07",
       "reactionKN_KNm": [
-        -244.96017025751547,
-        -433.8581296406745,
-        94.35505923490602,
+        -244.96017025519166,
+        -433.8581296377861,
+        94.3550592350574,
         0.0,
         0.0,
         0.0
@@ -3265,9 +3154,9 @@
     {
       "id": "P08",
       "reactionKN_KNm": [
-        183.45160257325952,
-        6.308986020990821,
-        -64.75191423462618,
+        183.45160257164767,
+        6.308986020974647,
+        -64.75191423391055,
         0.0,
         0.0,
         0.0
@@ -3276,9 +3165,9 @@
     {
       "id": "P09",
       "reactionKN_KNm": [
-        5.721357592819283,
-        259.63048757567407,
-        161.4429492444994,
+        5.72135759280329,
+        259.6304875739322,
+        161.4429492435567,
         0.0,
         0.0,
         0.0
@@ -3287,9 +3176,9 @@
     {
       "id": "P10",
       "reactionKN_KNm": [
-        -153.02178694526015,
-        -198.2677115978348,
-        -63.32460727694072,
+        -153.0217869442502,
+        -198.26771159778366,
+        -63.32460727582863,
         0.0,
         0.0,
         0.0
@@ -3298,9 +3187,9 @@
     {
       "id": "P11",
       "reactionKN_KNm": [
-        131.22078314290363,
-        2.174133524287713,
-        63.70842025882779,
+        131.2207831419699,
+        2.174133524301288,
+        63.70842025848272,
         0.0,
         0.0,
         0.0
@@ -3309,9 +3198,9 @@
     {
       "id": "P12",
       "reactionKN_KNm": [
-        -2.185285565297979,
-        69.09317258631137,
-        150.76552803804486,
+        -2.1852855653357093,
+        69.0931725863638,
+        150.7655280379026,
         0.0,
         0.0,
         0.0
@@ -3320,9 +3209,9 @@
     {
       "id": "P13",
       "reactionKN_KNm": [
-        40.88296595756848,
-        37.172601127480476,
-        103.58438735262152,
+        40.882965957625004,
+        37.172601126983146,
+        103.584387352564,
         0.0,
         0.0,
         0.0
@@ -3331,9 +3220,9 @@
     {
       "id": "P14",
       "reactionKN_KNm": [
-        17.47971032547404,
-        65.16580399716638,
-        38.00281327714255,
+        17.47971032547828,
+        65.16580399672925,
+        38.00281327717745,
         0.0,
         0.0,
         0.0
@@ -3342,9 +3231,9 @@
     {
       "id": "P15",
       "reactionKN_KNm": [
-        -0.5973291818528594,
-        29.327508771866107,
-        74.64354299506283,
+        -0.5973291818428318,
+        29.327508771590672,
+        74.64354299495893,
         0.0,
         0.0,
         0.0
@@ -3353,9 +3242,9 @@
     {
       "id": "P16",
       "reactionKN_KNm": [
-        53.72344327768368,
-        107.17183488815009,
-        152.5391122151821,
+        53.72344327769364,
+        107.17183488734474,
+        152.5391122148675,
         0.0,
         0.0,
         0.0
@@ -3364,9 +3253,9 @@
     {
       "id": "P17",
       "reactionKN_KNm": [
-        -33.97438753485625,
-        84.97314055197418,
-        93.7680431407199,
+        -33.97438753485061,
+        84.97314055157952,
+        93.76804314099027,
         0.0,
         0.0,
         0.0
@@ -3375,9 +3264,9 @@
     {
       "id": "P18",
       "reactionKN_KNm": [
-        -62.56177238911401,
-        3.827999482027977,
-        125.02403390634447,
+        -62.56177238904891,
+        3.8279994818788907,
+        125.02403390623144,
         0.0,
         0.0,
         0.0
@@ -3386,9 +3275,9 @@
     {
       "id": "P19",
       "reactionKN_KNm": [
-        -45.55538280062063,
-        187.39322461715489,
-        151.0970383217873,
+        -45.55538280068621,
+        187.39322461676846,
+        151.09703832158425,
         0.0,
         0.0,
         0.0
@@ -3397,9 +3286,9 @@
     {
       "id": "P20",
       "reactionKN_KNm": [
-        30.655246840110422,
-        -0.8526059925346641,
-        33.244126843692136,
+        30.655246839892882,
+        -0.8526059925260829,
+        33.24412684366693,
         0.0,
         0.0,
         0.0
@@ -3408,9 +3297,9 @@
     {
       "id": "P21",
       "reactionKN_KNm": [
-        53.427575218011945,
-        4.2697864076444025,
-        48.5473614772755,
+        53.42757521778401,
+        4.269786407655724,
+        48.547361477291396,
         0.0,
         0.0,
         0.0
@@ -3419,9 +3308,9 @@
     {
       "id": "P22",
       "reactionKN_KNm": [
-        60.250914426839685,
-        56.73276783239438,
-        107.80369995199301,
+        60.25091442654051,
+        56.73276783238658,
+        107.80369995186521,
         0.0,
         0.0,
         0.0
@@ -3430,9 +3319,9 @@
     {
       "id": "P23",
       "reactionKN_KNm": [
-        120.71216906365376,
-        46.05831332071927,
-        143.52799055289742,
+        120.71216906302375,
+        46.05831332072798,
+        143.52799055259422,
         0.0,
         0.0,
         0.0
@@ -3441,9 +3330,9 @@
     {
       "id": "P24",
       "reactionKN_KNm": [
-        103.89522055940978,
-        -27.992281825307064,
-        44.16051574778349,
+        103.89522055841529,
+        -27.992281825296192,
+        44.16051574802846,
         0.0,
         0.0,
         0.0
@@ -3452,9 +3341,9 @@
     {
       "id": "P25",
       "reactionKN_KNm": [
-        1.551013227266834,
-        -52.44943783304543,
-        94.69451801405391,
+        1.5510132274419703,
+        -52.44943783279219,
+        94.69451801431698,
         0.0,
         0.0,
         0.0
@@ -3463,9 +3352,9 @@
     {
       "id": "P26",
       "reactionKN_KNm": [
-        -38.49870588658226,
-        -52.58014821894405,
-        158.69925586862266,
+        -38.498705886299945,
+        -52.58014821877394,
+        158.69925586856584,
         0.0,
         0.0,
         0.0
@@ -3474,9 +3363,9 @@
     {
       "id": "P27",
       "reactionKN_KNm": [
-        81.5223575202532,
-        -2.153212652906756,
-        57.3385989024853,
+        81.52235751962763,
+        -2.1532126529057454,
+        57.33859890233653,
         0.0,
         0.0,
         0.0
@@ -3485,9 +3374,9 @@
     {
       "id": "P28",
       "reactionKN_KNm": [
-        -5.412502160539054,
-        0.9641373674679006,
-        121.44742318407904,
+        -5.412502160338164,
+        0.9641373676418681,
+        121.44742318437662,
         0.0,
         0.0,
         0.0
@@ -3496,9 +3385,9 @@
     {
       "id": "P29",
       "reactionKN_KNm": [
-        -9.560068072181855,
-        56.0724863602923,
-        84.29297702267473,
+        -9.560068072160325,
+        56.07248635988384,
+        84.29297702262092,
         0.0,
         0.0,
         0.0
@@ -3507,9 +3396,9 @@
     {
       "id": "P30",
       "reactionKN_KNm": [
-        -50.031601626851966,
-        9.66720868270279,
-        255.38113802610056,
+        -50.031601626569454,
+        9.667208682924,
+        255.38113802580307,
         0.0,
         0.0,
         0.0
@@ -3518,9 +3407,9 @@
     {
       "id": "P31",
       "reactionKN_KNm": [
-        11.784768534381042,
-        51.14973893316912,
-        102.89995247365387,
+        11.78476853437947,
+        51.149738932764556,
+        102.89995247363927,
         0.0,
         0.0,
         0.0
@@ -3529,9 +3418,9 @@
     {
       "id": "P32",
       "reactionKN_KNm": [
-        -1.5214042857122934,
-        -6.16949100134403,
-        54.14088903339324,
+        -1.5214042857077805,
+        -6.169491001452709,
+        54.14088903354119,
         0.0,
         0.0,
         0.0
@@ -3540,9 +3429,9 @@
     {
       "id": "P33",
       "reactionKN_KNm": [
-        -0.027112157136464976,
-        14.77638634582145,
-        33.571609138573336,
+        -0.027112157147707205,
+        14.776386345795693,
+        33.571609138515726,
         0.0,
         0.0,
         0.0
@@ -3551,9 +3440,9 @@
     {
       "id": "P34",
       "reactionKN_KNm": [
-        23.911904871696805,
-        -5.4145795748115155,
-        56.08678773893308,
+        23.911904871400466,
+        -5.414579574751379,
+        56.08678773849401,
         0.0,
         0.0,
         0.0
@@ -3562,9 +3451,9 @@
     {
       "id": "P35",
       "reactionKN_KNm": [
-        2.190751783901734,
-        23.27314990465794,
-        70.00638136675964,
+        2.1907517838953012,
+        23.273149904594735,
+        70.00638136673852,
         0.0,
         0.0,
         0.0
@@ -3573,9 +3462,9 @@
     {
       "id": "P36",
       "reactionKN_KNm": [
-        0.6021651331648238,
-        3.0350461451648236,
-        36.96809735583722,
+        0.6021651331705513,
+        3.0350461450382937,
+        36.96809735577877,
         0.0,
         0.0,
         0.0
@@ -3584,9 +3473,9 @@
     {
       "id": "P37",
       "reactionKN_KNm": [
-        13.728126516670542,
-        -18.415162235465903,
-        -16.010565187044747,
+        13.728126516615811,
+        -18.415162235366708,
+        -16.01056518679338,
         0.0,
         0.0,
         0.0
@@ -3595,9 +3484,9 @@
     {
       "id": "P38",
       "reactionKN_KNm": [
-        -15.075358267016274,
-        -1.0301399024149736,
-        52.58396044990047,
+        -15.075358267073415,
+        -1.0301399024185511,
+        52.58396045007465,
         0.0,
         0.0,
         0.0
@@ -3606,9 +3495,9 @@
     {
       "id": "P39",
       "reactionKN_KNm": [
-        4.981375229959509,
-        0.6457607746523362,
-        10.982007173442932,
+        4.981375229978958,
+        0.6457607746547906,
+        10.982007173440454,
         0.0,
         0.0,
         0.0
@@ -3617,9 +3506,9 @@
     {
       "id": "P40",
       "reactionKN_KNm": [
-        5.77747248170474,
-        0.0985655013177884,
-        37.89942775580781,
+        5.777472481720709,
+        0.09856550131290565,
+        37.89942775585861,
         0.0,
         0.0,
         0.0
@@ -3628,9 +3517,9 @@
     {
       "id": "P41",
       "reactionKN_KNm": [
-        17.915633201108744,
-        -64.70880820187512,
-        141.87372218621115,
+        17.915633201075337,
+        -64.70880820191778,
+        141.8737221863071,
         0.0,
         0.0,
         0.0
@@ -3639,9 +3528,9 @@
     {
       "id": "P42",
       "reactionKN_KNm": [
-        11.559473139016056,
-        14.325863475465331,
-        114.88064200408222,
+        11.559473139037184,
+        14.325863475412417,
+        114.88064200405769,
         0.0,
         0.0,
         0.0
@@ -3650,9 +3539,9 @@
     {
       "id": "P43",
       "reactionKN_KNm": [
-        59.95664466495383,
-        -74.30244691550021,
-        137.9787132438248,
+        59.95664466491832,
+        -74.3024469154689,
+        137.978713243726,
         0.0,
         0.0,
         0.0
@@ -3661,9 +3550,9 @@
     {
       "id": "P44",
       "reactionKN_KNm": [
-        80.25460559941301,
-        101.65554023820478,
-        176.48191574501965,
+        80.25460559919938,
+        101.65554023817265,
+        176.48191574502482,
         0.0,
         0.0,
         0.0
@@ -3672,9 +3561,9 @@
     {
       "id": "P45",
       "reactionKN_KNm": [
-        -30.157808809924337,
-        19.8431217295562,
-        103.58912308074024,
+        -30.157808809950353,
+        19.843121729465068,
+        103.58912308073579,
         0.0,
         0.0,
         0.0
@@ -3683,9 +3572,9 @@
     {
       "id": "P46",
       "reactionKN_KNm": [
-        -0.024897655853777595,
-        -20.594283706528046,
-        72.38986960300025,
+        -0.024897655857800932,
+        -20.594283706531378,
+        72.38986960289236,
         0.0,
         0.0,
         0.0
@@ -3694,9 +3583,9 @@
     {
       "id": "P47",
       "reactionKN_KNm": [
-        -41.88097943759928,
-        36.3640639239115,
-        140.50816087811444,
+        -41.880979437679784,
+        36.364063923867974,
+        140.50816087812177,
         0.0,
         0.0,
         0.0
@@ -3705,9 +3594,9 @@
     {
       "id": "P48",
       "reactionKN_KNm": [
-        -13.37237866434781,
-        2.658888593079628,
-        66.91763124874605,
+        -13.372378664363932,
+        2.6588885930573434,
+        66.9176312487438,
         0.0,
         0.0,
         0.0
@@ -3716,9 +3605,9 @@
     {
       "id": "P49",
       "reactionKN_KNm": [
-        -2.2942662145107944,
-        -7.2691523816224155,
-        42.229007286686645,
+        -2.2942662145082453,
+        -7.269152381630268,
+        42.22900728672517,
         0.0,
         0.0,
         0.0
@@ -3727,9 +3616,9 @@
     {
       "id": "P50",
       "reactionKN_KNm": [
-        20.82296419672782,
-        15.229894597488995,
-        48.80178624475471,
+        20.82296419671367,
+        15.229894597526249,
+        48.80178624484041,
         0.0,
         0.0,
         0.0
@@ -3738,9 +3627,9 @@
     {
       "id": "P51",
       "reactionKN_KNm": [
-        -23.460800815256015,
-        -4.64864736463006,
-        112.79563421652472,
+        -23.460800815286788,
+        -4.648647364653036,
+        112.79563421666316,
         0.0,
         0.0,
         0.0
@@ -3749,9 +3638,9 @@
     {
       "id": "P52",
       "reactionKN_KNm": [
-        24.51294921642294,
-        -59.979698987882756,
-        92.68793487420069,
+        24.512949216384634,
+        -59.97969898786451,
+        92.68793487421338,
         0.0,
         0.0,
         0.0
@@ -3783,24 +3672,24 @@
       "upperClearMasonryPhysicalGKN": 438.47708500000005,
       "upperBearingPadsPhysicalGKN": 0.1413
     },
-    "frameStrainEnergyKNmm": 2906.3807164723225,
-    "frameRecoveredInternalStrainEnergyKNmm": 2906.3807164689088,
-    "frameEnergyRelativeResidual": 1.1745840260212845e-12,
-    "nativeMaximumFreeResidualKNOrKNmm": 8.959323167800903e-07,
+    "frameStrainEnergyKNmm": 2906.380716469348,
+    "frameRecoveredInternalStrainEnergyKNmm": 2906.3807164645264,
+    "frameEnergyRelativeResidual": 1.6590001902113262e-12,
+    "nativeMaximumFreeResidualKNOrKNmm": 6.593763828277588e-07,
     "nativeWrenchResidualKN_KNm": [
-      -6.907526994837099e-09,
-      1.0830376595549751e-09,
-      -4.3655745685100555e-10,
-      -1.2721866369247437e-08,
-      -1.116842031478882e-08,
-      7.291839574463665e-08
+      -7.365969167949515e-09,
+      1.1594067927944707e-09,
+      -2.02817318495363e-10,
+      -1.2684613466262817e-08,
+      -1.7046928405761717e-08,
+      7.679392001591623e-08
     ],
-    "plateStrainEnergyKNmm": 547.5757412363449,
-    "plateExternalLoadWorkKNmm": 1210.8754062817263,
-    "plateWorkRelativeResidual": 2.4208313626910124e-13,
-    "maximumPlateDeflectionMm": 2.924508054758115,
-    "maximumFrameTranslationMm": 15.893407786638315,
-    "rawPointMomentInspectionKNmPerM": 81.67604662356833,
+    "plateStrainEnergyKNmm": 547.5757412353039,
+    "plateExternalLoadWorkKNmm": 1210.8754062819426,
+    "plateWorkRelativeResidual": 5.813317165994273e-15,
+    "maximumPlateDeflectionMm": 2.9245080547544524,
+    "maximumFrameTranslationMm": 15.893407786545566,
+    "rawPointMomentInspectionKNmPerM": 81.67604662348253,
     "necessaryZeroAxialStrip": {
       "schema": "str-necessary-zero-axial-strip-section/1",
       "breadthMm": 1000.0,
@@ -3814,9 +3703,9 @@
       "steelYields": false,
       "forceResidualN": 6.984919309616089e-10,
       "strainCompatibleCapacityKNmPerM": 86.83330174800258,
-      "rawPointBendingPlusTwistingDemandKNmPerM": 81.67604662356833,
+      "rawPointBendingPlusTwistingDemandKNmPerM": 81.67604662348253,
       "necessaryCapacityComparatorPasses": true,
-      "reserveRatio": 0.06314281037870528,
+      "reserveRatio": 0.06314281037982195,
       "localStressConvergenceProven": false,
       "reinforcementAccepted": false,
       "scope": "Single tension direction, no compression-mat/axial benefit, same source rectangular material law. Raw local point demand is not a converged design strip. No adopted ductility, shear, punching, crack, deflection, development or joint acceptance."
@@ -3855,14 +3744,14 @@
       26120.309799204755,
       3.8200139485172984
     ],
-    "contactNormalCompressionKN": 45.490291754810485,
+    "contactNormalCompressionKN": 45.49029175494816,
     "activeContactFibreCount": 1461
   },
   "fineMonitoredResponse": {
     "mass": {
       "sourceRCAndInfillBeforeSlabKN": 101.6809482729886,
       "newPlatePhysicalSelfGKN": 526.84374375,
-      "joinedPhysicalGKN": 2971.88026334945,
+      "joinedPhysicalGKN": 2971.8802633494493,
       "newPlateAreaM2": 97.56365625,
       "newPlateCentroidXYMm": [
         6332.533610828443,
@@ -3874,33 +3763,33 @@
       "sourceSelfGCondensationResidualKN_KNm": [
         0.0,
         0.0,
-        3.296918293926865e-12,
+        2.9558577807620168e-12,
         2.319211489520967e-11,
-        -2.2737367544323206e-11,
+        -2.4556356947869062e-11,
         0.0
       ],
-      "appliedPhysicalGKN": 4012.038355521758,
+      "appliedPhysicalGKN": 4012.038355521757,
       "upperClearMasonryPhysicalGKN": 438.47708500000005,
       "upperBearingPadsPhysicalGKN": 0.1413
     },
-    "frameStrainEnergyKNmm": 2906.380716469914,
-    "frameRecoveredInternalStrainEnergyKNmm": 2906.3807164664477,
-    "frameEnergyRelativeResidual": 1.1927339856624047e-12,
-    "nativeMaximumFreeResidualKNOrKNmm": 6.407499313354492e-07,
+    "frameStrainEnergyKNmm": 2906.3807164550685,
+    "frameRecoveredInternalStrainEnergyKNmm": 2906.3807164384493,
+    "frameEnergyRelativeResidual": 5.718176077691315e-12,
+    "nativeMaximumFreeResidualKNOrKNmm": 1.6596168279647827e-06,
     "nativeWrenchResidualKN_KNm": [
-      -6.870635615996434e-09,
-      1.0696226127038244e-09,
-      -5.175024853087962e-10,
-      -1.3045966625213622e-08,
-      -1.0695308446884155e-08,
-      7.239732076413929e-08
+      -7.884608521635528e-09,
+      1.1530687515914906e-10,
+      -7.739799912087619e-10,
+      -9.100884199142456e-09,
+      -1.6283243894577028e-08,
+      7.578171789646149e-08
     ],
-    "plateStrainEnergyKNmm": 547.5757489914189,
-    "plateExternalLoadWorkKNmm": 1210.8754149874985,
-    "plateWorkRelativeResidual": 2.811154046879405e-13,
-    "maximumPlateDeflectionMm": 2.924508048468808,
-    "maximumFrameTranslationMm": 15.8934077657097,
-    "rawPointMomentInspectionKNmPerM": 81.6760464254181,
+    "plateStrainEnergyKNmm": 547.5757489851546,
+    "plateExternalLoadWorkKNmm": 1210.8754149879348,
+    "plateWorkRelativeResidual": 6.041697397721165e-14,
+    "maximumPlateDeflectionMm": 2.924508048456904,
+    "maximumFrameTranslationMm": 15.893407765431444,
+    "rawPointMomentInspectionKNmPerM": 81.67604642501115,
     "necessaryZeroAxialStrip": {
       "schema": "str-necessary-zero-axial-strip-section/1",
       "breadthMm": 1000.0,
@@ -3914,9 +3803,9 @@
       "steelYields": false,
       "forceResidualN": 6.984919309616089e-10,
       "strainCompatibleCapacityKNmPerM": 86.83330174800258,
-      "rawPointBendingPlusTwistingDemandKNmPerM": 81.6760464254181,
+      "rawPointBendingPlusTwistingDemandKNmPerM": 81.67604642501115,
       "necessaryCapacityComparatorPasses": true,
-      "reserveRatio": 0.06314281295794366,
+      "reserveRatio": 0.06314281296324054,
       "localStressConvergenceProven": false,
       "reinforcementAccepted": false,
       "scope": "Single tension direction, no compression-mat/axial benefit, same source rectangular material law. Raw local point demand is not a converged design strip. No adopted ductility, shear, punching, crack, deflection, development or joint acceptance."
@@ -3939,23 +3828,23 @@
         8.384404281969182e-13
       ],
       "sourceUpperMaterialResidualKN_KNm": [
-        4.773959005888173e-15,
-        -7.88865500700453e-16,
-        4.388311936054379e-11,
-        9.822542779147625e-11,
-        1.3005774235352874e-10,
-        0.0
+        5.218048215738236e-15,
+        -6.622306869541461e-16,
+        4.524736141320318e-11,
+        9.094947017729282e-11,
+        1.2641976354643703e-10,
+        -1.4551915228366852e-14
       ]
     },
     "externalWrenchKN_KNm": [
       -186.7465424339941,
-      -186.1098734425793,
-      -4306.945574271726,
+      -186.10987344257933,
+      -4306.9455742717255,
       -25360.675275004563,
-      26120.309799204755,
-      3.8200139485172984
+      26120.309799204744,
+      3.820013948517444
     ],
-    "contactNormalCompressionKN": 45.49028137678082,
+    "contactNormalCompressionKN": 45.490281377028445,
     "activeContactFibreCount": 5844
   },
   "unchangedControls": {
@@ -3968,15 +3857,36 @@
     ],
     "slabMeshCellsAndVoidsIdentical": true,
     "fullMassLedgerWithin1eMinus8KN": true,
-    "massRoundoffDifferences": [],
+    "massRoundoffDifferences": [
+      {
+        "path": "/joinedPhysicalGKN",
+        "control": 2971.88026334945,
+        "changed": 2971.8802633494493
+      },
+      {
+        "path": "/sourceSelfGCondensationResidualKN_KNm/2",
+        "control": 3.296918293926865e-12,
+        "changed": 2.9558577807620168e-12
+      },
+      {
+        "path": "/sourceSelfGCondensationResidualKN_KNm/4",
+        "control": -2.2737367544323206e-11,
+        "changed": -2.4556356947869062e-11
+      },
+      {
+        "path": "/appliedPhysicalGKN",
+        "control": 4012.038355521758,
+        "changed": 4012.038355521757
+      }
+    ],
     "externalSourceWrenchWithin1eMinus8KN_KNm": true,
     "externalWrenchRoundoffDifferencesKN_KNm": [
       0.0,
+      -2.842170943040401e-14,
+      9.094947017729282e-13,
       0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0
+      -1.0913936421275139e-11,
+      1.4566126083082054e-13
     ]
   },
   "nativeSolveExecutedByThisReplay": false,

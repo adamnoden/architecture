@@ -26,6 +26,16 @@ test('matched eye-level views use actual occupied room and retain appearance-onl
   assert.notEqual(day.sceneDigest,evening.sceneDigest)
   assert.ok(!day.svg.includes('NaN')&&!day.svg.includes('Infinity'))
   assert.ok(day.svg.includes('&quot;ownerAcceptance&quot;:false'))
+  // The book frames each camera aperture independently. Its actual polygon
+  // geometry must fit that aperture, including the near-camera chair and floor.
+  for(const view of [day,evening]){
+    const faces=[...view.svg.matchAll(/<polygon\b[^>]*\bpoints="([^"]+)"/g)]
+    assert.ok(faces.length>100)
+    for(const face of faces)for(const point of face[1]!.split(' ')){
+      const [x,y]=point.split(',').map(Number)
+      assert.ok(Number.isFinite(x)&&Number.isFinite(y)&&x!>=0&&x!<=1000&&y!>=0&&y!<=1000,point)
+    }
+  }
 })
 
 test('actual opening and panel edits propagate through the same room while floor and other wall controls stay unchanged',async()=>{

@@ -34,7 +34,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+        "bindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -45,25 +45,25 @@
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
       },
-      "roomKitCaseDigest": "b2bf13b424af8dcdc12bf4ea641fb1d56a69a29d7bc329ecd9a540d16a52a937",
-      "wallTransitionDigest": "32761dd3d81a16b8d0118caa1415e8bc27aaec97ab9bd84b1ed367a15ead2aff",
-      "occupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+      "roomKitCaseDigest": "ea91b26dca40fb8e6ca8db4e1695341ee18aef09495d39b5f6df119e70cb3e26",
+      "wallTransitionDigest": "6c11ef7c4ea9de265ce3f79c380ccddcfdfe315dec07e9fe42cfa3bfeb98a275",
+      "occupiedBindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
       "inputsSHA256": {
         "project/ias/studies/adaptable-study-lighting.json": "02fb40391ab20ff76f90aef1074b82fca711f6b46bb8d6dd66a36fb5778f2302",
         "project/ias/studies/lighting-component-references.json": "bd2735566aa0c9155c8ad7613a92920b552212a1b8bd5e90659cd8e31f39b6ae"
       }
     },
-    "caseDigest": "3e259beadd36305084f2fd497098daa8719b3f981672bbd8ece79b19bc55271b",
+    "caseDigest": "867b814c9a2d54c3cfd41da5eccc4e83989872f01262f42a5cb98ed6204502c8",
     "circuit": {
       "schema": "ias-study-circuit/1",
       "status": "SPECIFIED_DEVELOPMENT",
-      "designDigest": "dd5eb5c59b56fa728acc91e416e31d03de8f8576a83089ec0d9be4b406b95024",
+      "designDigest": "ad9c339518166f543fa65135e6b5f20d66318d4358d24827c80568132fe0d4a3",
       "source": {
         "room": {
           "currentPlanBasis": "RH-LAYOUT-REVISION-02",
           "occupiedHouse": "HAD-SERVICES-02",
           "roomId": "GROUND/G-STUDY",
-          "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+          "bindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
           "floor": {
             "path": "project/ias/studies/workable-study-floor.json",
             "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -74,9 +74,9 @@
           },
           "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e"
         },
-        "roomKitCaseDigest": "b2bf13b424af8dcdc12bf4ea641fb1d56a69a29d7bc329ecd9a540d16a52a937",
-        "wallTransitionDigest": "32761dd3d81a16b8d0118caa1415e8bc27aaec97ab9bd84b1ed367a15ead2aff",
-        "occupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+        "roomKitCaseDigest": "ea91b26dca40fb8e6ca8db4e1695341ee18aef09495d39b5f6df119e70cb3e26",
+        "wallTransitionDigest": "6c11ef7c4ea9de265ce3f79c380ccddcfdfe315dec07e9fe42cfa3bfeb98a275",
+        "occupiedBindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
         "inputsSHA256": {
           "project/ias/studies/adaptable-study-lighting.json": "02fb40391ab20ff76f90aef1074b82fca711f6b46bb8d6dd66a36fb5778f2302",
           "project/ias/studies/lighting-component-references.json": "bd2735566aa0c9155c8ad7613a92920b552212a1b8bd5e90659cd8e31f39b6ae"
@@ -17014,7 +17014,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "a5dbc92713a295e4d00ab68025eab36134bb117d59623a773d6bbd77a5597b10",
+      "caseDigest": "52f04cc3c19037af7fe52031b1d4042a72ab774b087e1ab883c7af53396c8290",
       "status": "GEOMETRY_REJECTED",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -20586,7 +20586,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "48e51032e099498f31ec863deb9a80c4e96c4a0ee2dcb68a676ca1d33b428fd4",
+      "caseDigest": "a37dc5413807856a4c994ab66a53f96048a45663f9b40c4960c3932a59014f42",
       "status": "GEOMETRY_REJECTED",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -24136,7 +24136,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "0cc95f1001c2d91f690787cedf6bf5528f424efa32981ee043133c153812cd3f",
+      "caseDigest": "f59a56e2518b25235767b3be9c28798e4cff5acb3acb278797805d56c742b7e8",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -27654,7 +27654,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "67642b94afeee4a785a1974aebc8fbcf53a83a0df46cadce94c398153643173c",
+      "caseDigest": "7210a30902e13e55bfe5915c53f9890b060a1c90eb3952a4ba34e3536784b7cb",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -31179,7 +31179,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "c644223ef774a17fa5eee93858d343c9934a90f087715d46c17c546ad544c40a",
+      "caseDigest": "d1c7c5c72057f52cae6dced75e5307acdc0a4d3d4e2546dda66b7e382733fdaf",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -34711,7 +34711,7 @@
         "automationConnected": true,
         "localWallModule": true
       },
-      "caseDigest": "14128f6382ac358b6d2d24c3cc234d56547fa79bcd5dbeb465c7c19a4186cfb8",
+      "caseDigest": "7b1f596bf53c35b118f1064e14e38e4e9be0db88177ed3bf6cd3614e297652cf",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -38229,7 +38229,7 @@
         "automationConnected": false,
         "localWallModule": true
       },
-      "caseDigest": "c267d64f8de3c38b1806aa5ce80de46f6e366c50a4c070976d54fa97845c0885",
+      "caseDigest": "222bbd140ea78c99120852134a3768e3eb712e539e71b147842de906f98a09e1",
       "status": "DEVELOPMENT_COMPARISON",
       "corner": {
         "id": "IAS/STUDY/service-corner",
@@ -41754,7 +41754,7 @@
         "automationConnected": false,
         "localWallModule": false
       },
-      "caseDigest": "efa3c27de3dd9792f5c696ba77a970d2af4b2bb9308eb0c3513c8c626b657d55",
+      "caseDigest": "98c373ea0e4a76c301225b03c7d4896326083df7a36959a93eaed959366c4a63",
       "status": "GEOMETRY_REJECTED",
       "corner": {
         "id": "IAS/STUDY/service-corner",

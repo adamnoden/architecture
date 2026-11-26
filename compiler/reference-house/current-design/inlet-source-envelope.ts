@@ -1,6 +1,7 @@
 import {admitStoreDrainChoice,storeDrainCargoDemand,inletStoreDrain,drawInletStoreDrain} from './inlet-store-drain.js'
 import {inletOpenClosedOutfall} from './inlet-open-closed-outfall.js'
 import {inletKnownGravityInventory} from './inlet-known-gravity.js'
+import {inletServiceRoomPlans} from './inlet-room-pocket.js'
 import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { sha256SemanticFingerprint } from '../../core/identity.js'
@@ -433,7 +434,7 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
   const baseGap = Math.hypot(rejectedBase.rectangleMm[0] - rejectedBase.body[0], rejectedBase.rectangleMm[1] + rejectedBase.rectangleMm[3] - rejectedBase.body[1]) - 300
   const airSlotAreaEachM2 = .75 * .05, airLps = .6 * airSlotAreaEachM2 / Math.sqrt(2) * Math.sqrt(2 * 2 / 1.2) * 1000,
     addedHeatW = airLps / 1000 * 1.2 * 1005 * 15, roomHeat = b.data[paths[4]].wholeHeat
-  const wetUtilityPlanMm = [west, model.envelope, east-west, north-model.envelope] as const,
+  const serviceRoomPlans=inletServiceRoomPlans(model),wetUtilityPlanMm = serviceRoomPlans.utility,
     retainedFurniture=Object.fromEntries(Object.entries(model.groundFurniture).filter(([id])=>/service-utility-|service-emitter-utility-/.test(id)&&!/electricalStation|PVinverter/.test(id))),
     indoorCuts=inletEntrySideCuts({roomPlanMm:wetUtilityPlanMm,portalXMm:candidateUtilityOpening as [number,number],wallFacesYMm:utilityWall.finishedFaces,
       jambFinishMm:model.internalArchControls.actualRadialFinish,shieldPlaneXMm:dryScreen.barrierPlaneMm.x,
@@ -502,7 +503,7 @@ function joinedServiceDirection(resolved: CurrentDesignResolution, b: ReturnType
     splitInput={reference:indoorCuts,choice:splitChoice,obstacles:splitObstacles,
       cart:{pathMm:splitCylinder.path,radiusMm:splitCylinder.cartRadius},opposedPlateSouthFaceYMm:frame.connections.find(c=>c.wallId===plantWall.id)!.frontPlateMm[1],
       mainboardBoxMm:boardBox as [number,number,number,number,number,number],plantCoreYMm:plantWall.structuralCore,
-      roomPlanMm:[west,plantWall.finishedFaces[1],east-west,model.groundWalls.find((w:any)=>w.id==='plant-north').finishedFaces[0]-plantWall.finishedFaces[1]] as [number,number,number,number],ceilingMm:clearHeight,groundFflMm:indoorCuts.groundStage.fflMm},
+      roomPlanMm:[...serviceRoomPlans.plant] as [number,number,number,number],ceilingMm:clearHeight,groundFflMm:indoorCuts.groundStage.fflMm},
     splitNormal=inletSplitPlantStationComparison(splitInput),
     splitBranchDevelopment=(()=>{
       const choice=frameBranch.choice,

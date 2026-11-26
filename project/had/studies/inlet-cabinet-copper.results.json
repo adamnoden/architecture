@@ -2,18 +2,18 @@
   "schema": "had-copper-cabinet-comparison/1",
   "status": "unselected-whole-arrangement-comparison",
   "source": {
-    "caseDigest": "1ed52d422d080eea2de4ee66d211af2a83a736bfbee341302726b0de17b94494",
+    "caseDigest": "3ffb0ea10f1c2a87224f8317522aa21749bd23adb2d05a8b5a06666adea5c8e4",
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "cbe54768647541a8309d41793a2716c95f73b8ab77077764bb50ef2ea58a2f49",
+    "bindingDigest": "ebfe5dfdfc865126ce1c2026db43d8281eaf33684869e2ef861d737e24b60316",
     "inputs": {
-      "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
-      "project/had/studies/current-house-services.json": "e649805e78244527fe6498b516fa5f23734ac5ea",
-      "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
+      "project/had/studies/south-inlet-under-sill.json": "bb2def187df67e2d9660a607e38f2f1a31d3f7ec",
+      "project/had/studies/current-house-services.json": "a6bd16642da10406f74bbd0d4cabb8224525a60b",
+      "project/had/studies/south-inlet-wet-box.json": "4f76d728857f170bed4be0b2c5b6308f3f2f88aa",
       "project/had/studies/utility-wide-capture.json": "999fe25948911c6325590186db1e94f884d44ae2",
       "project/had/studies/utility-dry-bowl-release.json": "7f1e60c8dbbb93a4a50ed7bb7db13e426ef25603",
       "project/str/studies/floor-portal-interface-review.json": "ad8aac21e936f0199b331c3bd886c8bb41f30ee3",
       "project/str/studies/reconciled-house-interface.json": "4b680b7012bda54d4aff83da8f8718b3b191ea69",
-      "project/had/studies/south-inlet-relief.json": "f6e424b744bb7e8cac26a8676ea7a358cb137d38",
+      "project/had/studies/south-inlet-relief.json": "a46275c05e24559a9ab1552c124d4b191315e94e",
       "project/had/studies/south-utility-inlet.json": "1298b8e175326fa1f91ca753da52a168b858758f"
     },
     "methods": {

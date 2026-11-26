@@ -27,7 +27,15 @@ The raised service floor changes the house, not only the water route. This sourc
 
 Source firstFFL3450 is RC3170…3370 plus80 finishing. It is not a competing3370 occupied datum. The ground controller determines FFL; the profile adds its occupied translation to the source first RC, first FFL, attic datum, room-opening and north-portal datums. The actual north raw spring/crown become2780/3380 for530 and2965/3565 for715. All source arch-opening identities and available sill/spring/head levels appear in the receipt.
 
-The cold grid and all52 caps remain fixed. The180 wet RC plinth reaches the **mineral receiving plane0**; this is not a grid/cap lift. The source waterstop−50…−30 remains labelled as source evidence. The proposed130…150 top20 mineral-interface waterstop is a **new unproved concept**, not an automatic relocation of that detail. Its putative lower-post envelope is310 from cap−180 to130, versus source130 to−50; bars, anchors, constituent/contact, air/gas/water and thermal continuity are not inherited. Ordinary masonry begins above dryRC350; a full cap-to-soffit structural envelope is not a solid adopted masonry/post recipe through the mineral joint.
+### Opening datums: local source, absolute output
+
+The arch register stores sill, spring and head relative to each storey's finished floor. The profile must add that source storey FFL before applying the occupied-plane shift. Adding the shift alone placed first-floor openings3450mm too low. The corrected receipt names both the local source datum and absolute source-ground output datum, and retains each source/raised storey FFL.
+
+At groundFFL530, `GROUND/south-window-0` has absolute sill/spring/head1280/3080/3380mm. Its first-floor counterpart is4730/6530/6830mm, above firstFFL3980; first-floor south-window-1 has sill4830mm. A250→270mm service-zone edit moves the first counterpart4915/6715/7015→4935/6735/7035mm while preserving the3450mm storey interval. These controls correct coordinate interpretation; they do not alter the source opening shapes, ground stack, lower-member comparison or any force/adoption boundary below.
+
+The cold grid and all52 caps remain fixed. The180 wet RC plinth reaches the **mineral receiving plane0**; the full mineral course occupies0…150 and the separate dry RC slab150…350. Dry walls, columns, portal abutments and the stair toe restart on the slab top350. No column or bar is extended through the mineral course. The former20mm column cut at−50…−30 remains source history and is omitted from the proposed dry members; moving that cut to130…150 would not implement the full mineral separation.
+
+The existing ground case now derives two transformations: the dry receiving plane moves−180→350, or530mm; occupied geometry moves0→530 at service65 and0→715 at service250. At service65 those shifts coincide, so a source3350mm lower member remains3350mm between350 and3700. At service250 the dry slab remains350 while the occupied first-floor soffit becomes3885; that member becomes3535mm. A250→270 service edit adds20mm to that height while preserving the dry support plane and cold grid. Treating the entire−180…3700 separation as one3880mm column would instead bridge the intended mineral boundary. Actual full-width mineral bearing, shear/uplift transfer, dry-slab reinforcement/base anchorage and the rebuilt native response remain unresolved; the new profile is geometry, not an installed connection.
 
 The rendered sheet includes both whole-house datum profiles and a source900-wide service-spine girder /140 core ground detail. The occupied upper-wall termination is dashed and unassigned. Plinth/enclosure returns, exterior wet-leaf separation, actual weather/water/air/gas/thermal continuity, stair toe and roof geometry remain explicit roles rather than filled-in lines. No step count or going is authored, so the profile shows the actual source-derived ramp reservations and withholds a steps design. Actual approach layout, site terrain and fire-height interpretation remain unearned.
 
@@ -48,12 +56,11 @@ or a clearance pass for panels, services or handling. The section includes the
 unadopted local beam and a dashed post-datum overlay; it does not depict a new
 accepted joint through the ground layers.
 
-Both actual260×450posts keep their cold-grid base at−180. Their heads translate
-to3540/3725, preserving the actual10mm beam-to-post bearing gap. The known
-prismatic sections therefore gain530/715of height, with conditional gross
-extensions0.124020/0.167310m³ across the two posts. At the independently authored
-25and27kN/m³ native wet-concrete comparisons, those volumes correspond to
-3.100500/3.348540kN for530and4.182750/4.517370kN for715. These are characteristic
+Both actual260×450posts restart at dry slab350. Their heads translate
+to3540/3725, preserving the actual10mm beam-to-post bearing gap. Their heights
+are3190/3375mm, versus source3190mm. Conditional gross post-volume changes
+are therefore0/0.043290m³ across the two posts. At the independently authored
+25and27kN/m³ comparisons, the latter is1.082250/1.168830kN. These are characteristic
 geometric arithmetic, with no selected density, factored force, steel/cage
 quantity, delivered material qualification or raised equilibrium result.
 
@@ -71,7 +78,7 @@ The native structural ring/pressure datum6600, historical nominal eave6800, HAD'
 
 Raising a walking plane does not hide piers from wind. The715 case exposes a865 grade-to-FFL envelope above authored−150, with **no occlusion credit** and no adopted pressure law. Changing authored grade to−250 increases that envelope to965, including exposed cold construction. Actual external faces/openings, plinth closures and their supported tributaries must own the raised pressure application. A floor-level label cannot remove their pressure.
 
-The old source3350 ground structural height becomes3880/4065. The profile exports exact member-envelope and proposed joint-segment coordinates, and explicit `PROFILE_FORCE_REPLAY_REQUIRED` diagnostics; it exports no raised reactions or stiffness. The new `vertical_rc_floor.py` is a baseline0 receiving method, not a raised-house solution. Its actual floor/portal endpoints, boundary rotation offsets, RC masses, joints, retained pressure application and source52 six-wrench paths must rebuild before any715 demand is adopted. No lower-force budget or source capacity is translated.
+The source3350 ground member height becomes3350/3535 in the two dry-base proposals. The separate cold-grid-to-first-soffit distances3880/4065 are not continuous column lengths. The profile exports exact member-envelope and full mineral-course coordinates, and explicit `PROFILE_FORCE_REPLAY_REQUIRED` diagnostics; it exports no raised reactions or stiffness. `vertical_rc_floor.py` remains a baseline0 receiving method. Actual floor/portal endpoints, boundary rotation offsets, RC masses, mineral/contact laws, anchorage, retained pressure application and source52 six-wrench paths must rebuild before raised demands can be adopted. No lower-force budget or source capacity is translated.
 
 The530 and715 ground cases retain the same concrete geometry: the source receipt's separation RC, wet plinth and net new beam sum21.983509475m³, about549.588kN at its authored25kN/m³. This profile claims **zero removal** of that extra RC and no monetary saving. The taller wall/post, facade/enclosure, approach and roof costs are not included in that retained ground-only number.
 

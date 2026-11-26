@@ -10323,7 +10323,7 @@
         "currentPlanBasis": "RH-LAYOUT-REVISION-02",
         "occupiedHouse": "HAD-SERVICES-02",
         "roomId": "GROUND/G-STUDY",
-        "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+        "bindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
         "floor": {
           "path": "project/ias/studies/workable-study-floor.json",
           "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -10333,27 +10333,27 @@
           "sha256": "c902cc720c22b53340b1b70e219d332b1625b211711137d16ec40be6d357067c"
         },
         "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e",
-        "structuralConsequenceDigest": "61f1f8e48ff0c44b83dcb27dee6ddb7290e031ebe25415c20eebf06c57cc2da8"
+        "structuralConsequenceDigest": "b933b2d892cc512b799cb5774c71da4cd2833d1a6cbef9a3deb0ac91c13695b3"
       },
-      "roomKitCaseDigest": "b0cbdc5b02b69a8ec65fab7a6c3ca38735984c4d13f49ce228d2da0e2e08c079",
-      "wallTransitionDigest": "32761dd3d81a16b8d0118caa1415e8bc27aaec97ab9bd84b1ed367a15ead2aff",
-      "occupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+      "roomKitCaseDigest": "201f194b5ca2be2b65e40480dc880553ec79941c17042351f821827b0eb03915",
+      "wallTransitionDigest": "6c11ef7c4ea9de265ce3f79c380ccddcfdfe315dec07e9fe42cfa3bfeb98a275",
+      "occupiedBindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
       "inputsSHA256": {
         "project/ias/studies/adaptable-study-lighting.json": "02fb40391ab20ff76f90aef1074b82fca711f6b46bb8d6dd66a36fb5778f2302",
         "project/ias/studies/lighting-component-references.json": "bd2735566aa0c9155c8ad7613a92920b552212a1b8bd5e90659cd8e31f39b6ae"
       }
     },
-    "caseDigest": "757f9874d83f0e39d3995840ea5160c6f9346e42691d2e4b4afcb2abe88b254e",
+    "caseDigest": "989a1639cecfa81b757910e0bff0d528ec6438cc94f17852b52d9b7e49de857b",
     "circuit": {
       "schema": "ias-study-circuit/1",
       "status": "SPECIFIED_DEVELOPMENT",
-      "designDigest": "b410fae609baf0c363cb09b392f14221f93b2ed7418293205d57afe479228014",
+      "designDigest": "80c493b544a38c9bc3ec5acc27c96d009289ba2cfdef897d068b99a589bf3f76",
       "source": {
         "room": {
           "currentPlanBasis": "RH-LAYOUT-REVISION-02",
           "occupiedHouse": "HAD-SERVICES-02",
           "roomId": "GROUND/G-STUDY",
-          "bindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+          "bindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
           "floor": {
             "path": "project/ias/studies/workable-study-floor.json",
             "sha256": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593"
@@ -10363,11 +10363,11 @@
             "sha256": "c902cc720c22b53340b1b70e219d332b1625b211711137d16ec40be6d357067c"
           },
           "furnishedGeometrySha256": "ff387bfb8119310c7fccbd54848d8982bd2feba8541b297b0583bd8640f1352e",
-          "structuralConsequenceDigest": "61f1f8e48ff0c44b83dcb27dee6ddb7290e031ebe25415c20eebf06c57cc2da8"
+          "structuralConsequenceDigest": "b933b2d892cc512b799cb5774c71da4cd2833d1a6cbef9a3deb0ac91c13695b3"
         },
-        "roomKitCaseDigest": "b0cbdc5b02b69a8ec65fab7a6c3ca38735984c4d13f49ce228d2da0e2e08c079",
-        "wallTransitionDigest": "32761dd3d81a16b8d0118caa1415e8bc27aaec97ab9bd84b1ed367a15ead2aff",
-        "occupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+        "roomKitCaseDigest": "201f194b5ca2be2b65e40480dc880553ec79941c17042351f821827b0eb03915",
+        "wallTransitionDigest": "6c11ef7c4ea9de265ce3f79c380ccddcfdfe315dec07e9fe42cfa3bfeb98a275",
+        "occupiedBindingDigest": "b805748ac8b68e31d21ec2525c3fedea4fd39094b4ad9dd79d255adebd88c113",
         "inputsSHA256": {
           "project/ias/studies/adaptable-study-lighting.json": "02fb40391ab20ff76f90aef1074b82fca711f6b46bb8d6dd66a36fb5778f2302",
           "project/ias/studies/lighting-component-references.json": "bd2735566aa0c9155c8ad7613a92920b552212a1b8bd5e90659cd8e31f39b6ae"
@@ -21171,8 +21171,8 @@
       "closedSourceFloorRenewal": {
         "schema": "ias-study-structural-renewal-result/1",
         "state": "joined-geometry-witnesses",
-        "contextDigest": "61f1f8e48ff0c44b83dcb27dee6ddb7290e031ebe25415c20eebf06c57cc2da8",
-        "requestDigest": "1ec2d9391af5a02bf5bd6e768e89b30297124b28d87ee7c6f6732afb7b2b03dd",
+        "contextDigest": "b933b2d892cc512b799cb5774c71da4cd2833d1a6cbef9a3deb0ac91c13695b3",
+        "requestDigest": "e27e603f5cf05bf7bfea2a03b725a9bde7ee51ba57f2c682e235cf97fadb1b30",
         "dailyOccupied": [
           [
             "study-desk",
@@ -41097,12 +41097,12 @@
           "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
           "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
           "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
-          "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
+          "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
           "project/ias/studies/study-structural-renewal.py": "8d1ba4401464dad6e5f8f8e53399620cf089a99d603c265093982f720ee40980",
           "project/ias/studies/study-furniture-motion.py": "0f60aff751188848324d2b99d72a01d0e2acf4837fef876e66321df40ca4d59b",
           "project/ias/studies/study-floor-handling.py": "4672ae114b1eff5a2317a7f805ed3eb3b3811ccedbee4b547226bcfb6cad7b18",
           "project/bcr/studies/bay-interface-study.py": "7fea8b8b1b8e66a6f52ae8a6124eda84f8759a9c42c3ae31644296679f4e3e7c",
-          "project/bcr/studies/bay-interface-study.json": "88fad8763552800fa802f0d23246974873c2b71cfe4e1ec179a144b1a89bfb96",
+          "project/bcr/studies/bay-interface-study.json": "fde3c06971b965d0ffd0f4fac918c08b77549ebd0cc6d6554eeb9fc59aa54572",
           "project/ias/studies/workable-study-floor.json": "db86483f5d040c819b9d169c98f70e4f267cfca838ed942cd98c766f9d7f4593",
           "project/mat/studies/study-coupled-window.json": "3ebdd8711d96647bccf9a303fd133de148b0e8120fb46aa7957641cc5511071a",
           "project/str/studies/finite_joint_geometry.py": "64d8566cb6f036a71a60e4cd73f598ca8a33a9cf47134214e74e479d7a3e5623"

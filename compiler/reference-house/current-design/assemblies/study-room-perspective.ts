@@ -36,7 +36,20 @@ function projector(camera: Camera,width:number,height:number){
       if(ia)output.push(a)
       if(ia!==ib){const t=(near-a[2])/(b[2]-a[2]);output.push([a[0]+t*(b[0]-a[0]),a[1]+t*(b[1]-a[1]),near])}
     }
-    return output.map(p=>[r(width/2+focal*p[0]/p[2]),r(height/2-focal*p[1]/p[2])])
+    // Trim projected faces to the actual camera aperture as geometry. Keeping
+    // off-camera vertices under an SVG clip-path alone leaves enormous raw
+    // bounds when this same viewport is framed for the book.
+    let projected: (readonly [number,number])[]=output.map(p=>[width/2+focal*p[0]/p[2],height/2-focal*p[1]/p[2]])
+    for(const[axis,limit,sign]of [[0,0,1],[0,width,-1],[1,0,1],[1,height,-1]] as const){
+      const trimmed:(readonly[number,number])[]=[]
+      for(let i=0;i<projected.length;i++){
+        const a=projected[i]!,b=projected[(i+1)%projected.length]!,ia=sign*(a[axis]-limit)>=0,ib=sign*(b[axis]-limit)>=0
+        if(ia)trimmed.push(a)
+        if(ia!==ib){const t=(limit-a[axis])/(b[axis]-a[axis]);trimmed.push(axis===0?[limit,a[1]+t*(b[1]-a[1])]:[a[0]+t*(b[0]-a[0]),limit])}
+      }
+      projected=trimmed
+    }
+    return projected.map(p=>[r(p[0]),r(p[1])])
   }
   return {clip,depth:(p:Point)=>cameraPoint(p)[2]}
 }

@@ -24,10 +24,37 @@ def heads(response):
     if max(map(abs,response['native']['equilibriumResidualKN_KNm']))>1e-5:raise ValueError('Whole coupled equilibrium unavailable')
     return result
 
+def proposed_capture_boundary(current,old):
+    for value in [current,old]:
+        if value.get('currentSavedDocumentAdmitted') is not False or not isinstance(value.get('sourceAuditFindings'),list):
+            raise ValueError('Proposed-input captures cannot impersonate an admitted saved document')
+        source=value.get('request',{}).get('stockSource',{})
+        if source.get('currentSavedDocumentAdmitted') is not False or source.get('sourceAuditFindings')!=value['sourceAuditFindings']:
+            raise ValueError('Proposed native request lost explicit unadmitted boundary or full audit findings')
+
+def captured_proposed_geometry_sources(current,data):
+    sources=current.get('request',{}).get('stockSource',{}).get('actualSource',{}).get('actualSourceSHA256')
+    if not isinstance(sources,dict) or not sources:
+        raise ValueError('Captured proposed geometry source map required')
+    for path,expected in sources.items():
+        if not isinstance(path,str) or not path.startswith(('project/','compiler/')) or '..' in Path(path).parts:
+            raise ValueError('Bounded captured proposed geometry source path required')
+        if sha((ROOT/path).read_bytes())!=expected:
+            raise ValueError('Captured proposed geometry method/input changed: '+path)
+        if sha(data.get('proposed-methods/'+path,b''))!=expected:
+            raise ValueError('Archived captured proposed geometry bytes changed: '+path)
+    return sources
+
 def produce():
     with tarfile.open(ARCHIVE) as archive:data={m.name:archive.extractfile(m).read() for m in archive.getmembers() if m.isfile()}
-    saved=json.loads(data['saved-document-and-result.json']);current=saved['groundPocketLoads'];fine=json.loads(data['contact125.json'])
-    with tarfile.open(OLD) as archive:old=json.load(archive.extractfile('saved-document-and-ground-result.json'))['groundPocketLoads']
+    proposed='proposed-input-and-result.json' in data
+    current_name='proposed-input-and-result.json' if proposed else 'saved-document-and-result.json'
+    saved=json.loads(data[current_name]);current=saved['groundPocketLoads'];fine=json.loads(data['contact125.json'])
+    with tarfile.open(OLD) as archive:
+        old_name='proposed-input-and-ground-result.json' if proposed else 'saved-document-and-ground-result.json'
+        old=json.load(archive.extractfile(old_name))['groundPocketLoads']
+    if proposed:proposed_capture_boundary(current,old)
+    geometry_sources=captured_proposed_geometry_sources(current,data) if proposed else {}
     source=current['method']['sourceSHA256']
     for path,expected in {**current['request']['nativeCase']['sourceSHA256'],**source}.items():
         if sha((ROOT/path).read_bytes())!=expected:raise ValueError('Current native or comparison method changed: '+path)
@@ -54,7 +81,7 @@ def produce():
         if cuts['gravitySourceInventories']['ground-pocket/mineral-base-G']['sourcePieceCount']!=len(fibres):raise ValueError('Actual mineral base-half source-piece inventory lost')
         if abs(body['addedPhysicalGKN']-current['comparison']['addedPhysicalGKN'])>1e-9:raise ValueError('Contact edit changed physical stock gravity')
         report=check(cuts,factor);report['adverseControls']=adversarial(cuts,factor)
-        controls.append({'id':name,'captureSHA256':sha(data['saved-document-and-result.json' if name=='saved-current' else 'contact125.json']),
+        controls.append({'id':name,'captureSHA256':sha(data[current_name if name=='saved-current' else 'contact125.json']),
             'contactCount':len(fibres),'receiverCount':len(cuts['serviceReceiverIds']),'originCount':cuts['originCount'],
             'knownUnfactoredGKN':body['addedPhysicalGKN'],'factoredKnownGridGKN':sum(b['gridCompressionKN'] for b in body['bodies']),
             'memberLoadEquilibriumResidualKN_KNm':cuts['memberLoadEquilibrium']['maximumResidualKN_KNm'],'independentRightEndReplay':report})
@@ -63,7 +90,9 @@ def produce():
     if a.keys()!=b.keys():raise ValueError('Actual physical receiver end catalogue changed')
     changes={field:max(abs(a[k][field]-b[k][field]) for k in a) for field in FIELDS}
     if max(changes.values())<1e-5:raise ValueError('Contact perturbation did not recompute local demand')
-    return {'schema':'str-current-room-receiver-proof/1','scope':'Exact saved two-room known-gravity comparison and same-source contact edit; no whole raised house or complete installed inventory.',
+    return {'schema':'str-current-room-receiver-proof/1','scope':('Exact proposed-input/current-native two-room known-gravity comparison; current saved document not admitted, all audit findings retained; same-source contact edit, no whole raised house or complete installed inventory.' if proposed else 'Exact saved two-room known-gravity comparison and same-source contact edit; no whole raised house or complete installed inventory.'),
+        'currentSavedDocumentAdmitted':False if proposed else None,'sourceAuditFindings':current['sourceAuditFindings'] if proposed else [],
+        'capturedProposedGeometrySourceSHA256':geometry_sources,
         'sourceSHA256':source,'nativeSourceSHA256':request['nativeCase']['sourceSHA256'],'captureArchiveSHA256':sha(ARCHIVE.read_bytes()),
         'replayMethodSHA256':{p:sha((ROOT/p).read_bytes()) for p in ['project/str/studies/service_room_ground_receiver_proof.py','project/str/studies/service_room_ground_receiver_replay.py']},
         'priorTwoRoomArchiveSHA256':sha(OLD.read_bytes()),'priorMaximum312HeadComponentDifferenceKN_KNm':maximum,

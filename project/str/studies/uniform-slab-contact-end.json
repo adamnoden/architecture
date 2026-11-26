@@ -18,8 +18,8 @@
     "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
     "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
     "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-    "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-    "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
+    "project/str/studies/distributed_floor_compatibility.py": "d1c6b5dde95f1d94be6ccf39160312a7b9a0f61c0835b76ffaa964b2d9225c7d",
+    "project/str/studies/perforated_floor_condensation.py": "c7fbb46717c0b54af02d42d5737993bb5b647214e9d10eaf70343771acb296c6",
     "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
     "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
     "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
@@ -62,9 +62,9 @@
   },
   "processingMethodSHA256": {
     "project/str/studies/uniform_slab_contact_end.py": "86b45991b0d702812cd06ccd2e1ff954cf943347455421fb55671a66266153b6",
-    "project/str/studies/uniform_slab_contact_refinement.py": "1aaad696e2175ac554b316de03a6574d95b867c66fa62028ac22feafc8ba6973",
+    "project/str/studies/uniform_slab_contact_refinement.py": "e9f9da8ed488ae784863abb56bcebb5a69f65daa6ade6d872099897aa19572dc",
     "project/str/studies/uniform_slab_law.py": "5c9597f0699e0ebaf6d91ef7288702c64c7e6112131b8317617ee63b2de3db2b",
-    "project/str/studies/uniform_slab_law_proof.py": "48d5e294e47c2b2a3ff3110e4ce8aa41048af475f7b6b9338798e8291049441a",
+    "project/str/studies/uniform_slab_law_proof.py": "f4e987da7693182f387d42563316ee4117f90dce98d14f7b216ebc136b699914",
     "project/str/studies/uniform_slab_end_consequence.py": "6d493fcef144e5f8bfd95d2f94444c7e935f2592491b47ea1f197ff4cc7f3825",
     "project/str/studies/wet_beam_end_development_proof.py": "0a6327be0492a95e82b4c10645fbadcb44d2fbe2a8fcc31d6c21bf5dfdc116fb",
     "project/str/studies/wet_beam_rectangular_return.py": "f3dca0d8d0ac3e255726cfcbd85ecce9e926bf02e36d3d33b85d4e02d589b0e1",
@@ -76,161 +76,50 @@
     "project/str/studies/wet_bearing_refinement_proof.py": "34d667830aa77b218bceca01283674caaf3ada3f3ff64a45dd2fd3e78db0327c"
   },
   "authoredInputSHA256": {
-    "project/str/studies/uniform-slab-contact-refinement-inputs.json": "a559526edfe867013d4dc4284e2f8ecb6caf8bc369eddbc4861db055965357b6",
-    "project/str/studies/uniform-slab-law-inputs.json": "e21d4787fc2b87b7e58f3a88a0ee420e1723d3202d34435b8a089a54334fedd2",
+    "project/str/studies/uniform-slab-contact-refinement-inputs.json": "9cd53aa555147154298392b547a3968e53f85b1f8cceb0d5c30359ff12006fd7",
+    "project/str/studies/uniform-slab-law-inputs.json": "0fb0b27d08980f094975b879f38d6aa3110985b2ecd87731ff93ec6b7f9b458d",
     "project/str/studies/wet-beam-rectangular-return-inputs.json": "3ef88c63f0237852acb572063267ef0d3f37f2eb3989351851cfb533ae706865",
     "project/str/studies/wet-support-cage-comparison-settings.json": "d5c5ca39227e4219032b51954e8ca974251fb6e5754afd0101c0b67440bc7d84"
   },
   "coarseNativeProvenance": {
-    "archiveSHA256": "269d4070dc71deae030eafb2423483fe33fee7ae1f20e71eebae7243549c733b",
+    "archiveSHA256": "2ee5871922bb0474436a7c55fcdc7731a81d8494586479c108d368b42e95998e",
     "actualNativeCaptures": {
       "control": {
         "nativeCaseId": "WET120-SOUTH40-q32",
-        "fullSHA256": "306be075d19a59db2155b0b4ebdc34124ae6b09558cb1e891a779d0da2910777",
-        "captureSHA256": "70fba14a1e97c24550e3be2027aa8c9225edfb8ec358fbb43a8ad90db3760c5a"
+        "fullSHA256": "ed5439632702f32a3b96edaa5c0b097c3affde49ebe7dac149b785b4912de097",
+        "captureSHA256": "36b3ec0aa9f1778d4525d5480345b02d52e9996e182ad3c2c625da02c5addf9e"
       },
       "uniform200": {
         "nativeCaseId": "UNIFORM8250-RC200-WET120-SOUTH40-q32",
-        "fullSHA256": "4d98c317a2508cf55b910669f70a364f9813d836026168e6aeeb2ca0778220d5",
-        "captureSHA256": "f12aa7ae602ab0dc1fee3be522ea9818ebe57d8bfc03488c6d7c5b296c3e3e2e"
+        "fullSHA256": "53cec76f8c001c66776b38423e99dccb190b27a25622cacf912539e2bc37afad",
+        "captureSHA256": "14483256f562860dad133424396f49a9b620981c5c68b442d52d2da81286cf26"
       }
     },
     "originalNativeControlProvenance": {
-      "schema": "str-isolated-uniform200-comparison-checkpoint/1",
-      "state": "actual-native-result-captured",
-      "sourceRoot": "/workspace/scratch/d3fac60d336f/architecture",
-      "sourceCommit": "4df8c4282df7bfdda5b7cc2c5a589de830c2959a",
-      "sourceSHA256": {
-        "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
-        "project/str/studies/current-house-lateral.json": "7ba767e896aaf97952cd36af9c4ff7b330bbda1412d4eb51ae84da7d0e468574",
-        "project/str/studies/current-house-ground-ties.json": "9374b5566bd3c0a034b872618030ee6de71e718fb035771530ecf853a7590bb6",
-        "project/str/studies/floor-portal-monolithic-drag.json": "0730586e7ea3d9b50319e72d3cb67bc2145058f07c6e8ceb4709d71408e70695",
-        "project/str/studies/current-house-floor-stops.json": "c34062f32e3aea595a27366c509a821f5d328cbc9a8499c7857ff0184568a8ad",
-        "project/str/studies/structural-linear.py": "5fd898afef23317d1be84a2136d2e7d3c233a3dadda7ff3995d136e28b5d6f4c",
-        "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
-        "project/str/studies/open-loggia-support.json": "b5f08104c0da327613b84e055420d58f7709c354facd205634bcfd69a05e09b5",
-        "project/str/studies/physical-slab-join.json": "9740fa55322013fd642bf33d09fbedcad447e4dd9c3edd390488bf6e41f2f45c",
-        "project/str/studies/current-house-head-actions.py": "3fa852f74da3f7ecc937abbe2aeaea4618d16dd586d92e1fd18fb22960c4e26f",
-        "project/str/studies/current-house-head-actions.json": "43d040f17f42663cf0afdca2a026fa6fd9605fa7876b149dbcfb02c7b30384b6",
-        "project/str/studies/current-house-floor-closure.py": "a6cd700530c8f14bb35220492c5c1e286b012a33db68f28ee22f733ad4f7e12e",
-        "project/str/studies/current-house-floor-closure.json": "5f57557852c07f43bcf56253a3b50506a730631a8e3019359a9131677bb3bb09",
-        "project/str/studies/current-house-membrane.py": "1602b0dec2cd69fe0b142a64052ff76f57cf5f045ea6d8924efa51c27d3c1a5e",
-        "project/mat/studies/whole-house-service-baseline.json": "ef9b3519e8d07d8539cfc4f2531f63aab3de90178a936d25a503dac4b163911e",
-        "project/str/studies/retained_component_geometry.py": "477e20683671476c41dd0341aaca9109d363d75419a6697ba13381b0a93974e8",
-        "project/str/studies/current-house-roof-bracing.py": "df77f0ce0f45f0d47049b4eb2eeda80fa7dca9306cce94270290778c2d154db1",
-        "project/str/studies/distributed_floor_compatibility.py": "ed52308197e0d384f8f4c7759451bcc7b8e2da65b43119c658a0ddc3be4a3b31",
-        "project/str/studies/perforated_floor_condensation.py": "27f8489d90798b83a2dc87bfacafb907b5efa6db0399f36f6c46a3c949ab1094",
-        "project/str/studies/joined_successor_compatibility.py": "7eac877106625396533a74472ee21b7deef0e2e04dcc4f3822bc9fb98b1bbb8c",
-        "project/str/studies/joined_successor_kernel.py": "3e73ade791c3fe9a034d57a3046b151caac7ee399ae998cac7c028b04ccf8c76",
-        "project/str/studies/retained_components.py": "ede525da63d19679eca1d99e63850d1663ea1f058883fcafe6dbdffeb080b808",
-        "project/str/studies/distributed_floor_views.py": "4fcbe698fa51157d2e8db96fa647094064da9a71f6f287fbf39c9ec4d33b2b41",
-        "project/str/studies/vertical-floor-requirements.txt": "1668a3152e33680d94637b13421c15e68bd97cd8701f7f555c691f5bc5c0b9f3",
-        "project/str/studies/north_portal_receiving.py": "811b0e6a6a51980d1d600e85e92cf45a7a1d33f53c7e99f990cdec499f9df883",
-        "project/str/studies/current-house-spatial-arches.py": "47a1e089aa1f2010ef859cd8af1caba33a2d91110994f97a656f17d86b76f723",
-        "project/str/studies/continuous_rc_portal.py": "b77a22b95bfa2a278b315d6a0b8cbe2c0e5e9f276a973d5d974754d60aa178c7",
-        "project/str/studies/joined_rc_floor.py": "6cd4ad347395bae8852e9f9493958d53ab3f0374ea79083edb9ec09fae926d21",
-        "project/str/studies/joined_rc_floor_views.py": "d4eef4f33877167a295cb9760ff0080f5886677239885b43fe2ec7c909a98bc4",
-        "project/str/studies/rc_floor_house_loads.py": "d87579a72a3666c4c8ba7d1cab930e9324dcad2fd597df9fe81e98699e5c02e6",
-        "project/str/studies/rc_portal_monolithic.py": "1e5451d7ab632859643ae1f53465e04fd2a7665a6ac45cfcc23e2cb652886137",
-        "project/str/studies/vertical_rc_floor.py": "116f79b9651b44145c34fd9e464bd21fe4cfd803f9015926e46da5e93aef264d",
-        "project/str/studies/vertical_floor_plate.py": "4722a55a878d7c180a1febb94df56de1bb03b45fa8c5aa732e71c05a4ad88bcf",
-        "project/str/studies/finite_plate_receiver.py": "0a2623c592070543c86320026b4580979ef11ced3e0273c3af5efedd5e3d2d7c",
-        "project/str/studies/vertical_floor_numerics.py": "6577f796caae74e4671a9e569749fc4161e836b75a48ca8bfbfbd23aab502b5b",
-        "project/str/studies/vertical_floor_views.py": "023760c6f53625f6acc3d82c7565efc2ec0ff195ce8dd636a68f859c7a4eb521",
-        "project/str/studies/current-house-welded-network.json": "57b1428c1da1675e5db0a164bfa9a1b38b43a9bab91e9282287a83855106ce0b",
-        "project/str/studies/current-house-welded-heel.json": "8fcf08da15083f1f28ed1f7696621efa87c8db4e2197bc5274834c6539b6676e",
-        "project/str/studies/roof_stock_gravity.py": "353e4c7924104cc37118e1cb754871e708f59904efdab1c44c5629146fb1d3d6",
-        "project/str/studies/roof_surface_pressure.py": "d8eed3bee99c09a3bb3fd82ea3e3ac14190a78669891fcbea14d406dec698d03",
-        "project/str/studies/roof_floor_compatibility.py": "1a80d693ae4913321e9ac0a421f9a02c916cf83c6be3a7a27f4329bbee08d0bc",
-        "project/str/studies/masonry_frame_a.py": "0efb75ec59c9f007685055d788c534c919eefb4658e812ff11bcf52e8efd7c50",
-        "project/str/studies/foundation_solid_weight.py": "32b56c32e47217d17806a2a6cc3f0c997e52c5dbf70feb7c9c155bdf7077e0f7",
-        "project/str/studies/plate_bending_recovery.py": "543d99ff1580c49a0c03ef113748c5ca940d363aad4a6a8164f5005c96060f0d",
-        "project/str/studies/court_corner_closure.py": "a536c5de05b6058664d3e44268f0404a4b9028f33d18e173af8c0a6bd344573f",
-        "project/str/studies/floor_reinforcement.py": "e904f747686fdf3811f78ab7917ad9d3972c1d464be8960d66de61801d7c4bec",
-        "project/str/studies/continuous_rc_cage.py": "a55fb1a4b945c165504fafa224eef95bb3ac46aa79fb3e831fd5c25ea915077c",
-        "project/str/studies/lower_core_bodies.py": "f8e9eadbd7b9feec8bf491799b9ddec70c07ae183e2be053b6f85c6507e5637e",
-        "project/str/studies/straight_frame_cage.py": "6404893c699b7179b8380afc8dfcb8d25ae6725e20c2897987917de7e83c511e",
-        "project/str/studies/upper_roof_bearing.py": "bd6b5b4e139ea022eece8040cd031c1d52a7126683af26a39eac8bb16e02b3f2",
-        "project/str/studies/named_plate_load.py": "c0b24595548325d80843c39e217990a489d54a0e0c4d83bb7f9181ceb5d8e5d2",
-        "project/str/studies/upper_masonry_inventory.py": "308531fd0e5c2de62dabc09dc31882def9f91082c60b17205b2de14231b82501",
-        "project/str/studies/roof_bearing_trace.py": "af3c943d430cc850470b459602b823d90b6d324b971e4a38503565223d5fb24e",
-        "project/str/studies/floor_section_model.py": "db07a1ddaee3928ab986ace482ba9855f7b29b8e9a14a40499bfb8fd028c3b86",
-        "project/str/studies/floor_section_successor.py": "cbad07f04a4d0f1ba419b85a839ccaf77f12d268266241153e6d35961b8875a3",
-        "project/str/studies/seated_wet_support.py": "9a10ef4285f988345608798626f8a4fe34fd315342b6e849bbfb2c94a7b77eed",
-        "project/str/studies/finite_mapped_frame.py": "04a6a1b45d455c13d6b8728cda12eaa47c7f2252e05dae7ea1c3c6f8fe91731a",
-        "project/str/studies/grid_origin_recovery.py": "c75b239227dcc0be248f54015330e90bc8b193e4de31393652e355c06d95a5bc"
-      },
-      "scriptSHA256": "65e91076b243939ae9ecf579d361cff983df29d14e12e97a72dbe607a8f64d01",
-      "controlArchive": "/workspace/scratch/d3fac60d336f/structure-ui/project/str/studies/wet-beam-end-native-captures.tar.xz",
-      "controlArchiveSHA256": "2dadc1c7221c4eca17b1e026baefe7740445e42bd0fd5abecd772c6239f679ce",
-      "controlFiles": {
-        "south40-q32.full.json": {
-          "bytes": 16335433,
-          "sha256": "306be075d19a59db2155b0b4ebdc34124ae6b09558cb1e891a779d0da2910777"
-        },
-        "south40-q32.request.json": {
-          "bytes": 60761,
-          "sha256": "9db3016d9fdf63c19cf5e5087a2ad559aec77426d7c0d86af668a98d523b69c6"
-        },
-        "south40-q32.capture.json": {
-          "bytes": 1632080,
-          "sha256": "70fba14a1e97c24550e3be2027aa8c9225edfb8ec358fbb43a8ad90db3760c5a"
-        }
-      },
-      "authoredChange": {
-        "plate": {
-          "elasticModulusMPa": [
-            33000,
-            8250
-          ],
-          "flexuralFactor": [
-            0.25,
-            1
-          ],
-          "shearFactor": [
-            0.5,
-            0.8333333333333334
-          ]
-        },
-        "membrane": {
-          "elasticModulusMPa": [
-            1200,
-            8250
-          ],
-          "poissonRatio": [
-            0.15,
-            0.2
-          ],
-          "shearModulusMPa": [
-            440,
-            3437.5
-          ]
-        }
-      },
-      "nativeSolveExecuted": true,
-      "candidateAccepted": false,
-      "materialQualified": false,
-      "scope": "Explicit alternative linear constitutive comparison only; no physical cracked-RC identification or selected stiffness. Same slab200, geometry, wet support120/south40/q32, load origins, other frame materials and source methods.",
-      "elapsedSeconds": 141.86919655300062,
-      "fullResult": {
-        "bytes": 23856647,
-        "sha256": "4d98c317a2508cf55b910669f70a364f9813d836026168e6aeeb2ca0778220d5"
-      }
+      "repository": "adamnoden/architecture",
+      "immutableRef": "026b677544246c0c6669f23fad33c3b3b73ada95",
+      "actualCaptureSourceCommit": "8c1607f3f108fc8da90e7f8a74b0ed87d930006e",
+      "actualCaptureRun": 45843306053,
+      "sourceArchive": "project/str/studies/wet-beam-end-native-captures.tar.xz",
+      "sourceArchiveSHA256": "8523c4b3ee0e279d93a3bf9bfc2bc3eec98566bbf623fcc32540bb3882e0008b",
+      "nativeCaseId": "WET120-SOUTH40-q32",
+      "fullNativeSHA256": "ed5439632702f32a3b96edaa5c0b097c3affde49ebe7dac149b785b4912de097",
+      "fullBytesReusedUnchanged": true
     }
   },
   "fineNativeProvenance": {
-    "archiveSHA256": "ed7eef01f96f9e0e16e11cafe66f671dbf3c32334dec54ee12146c6559954aa9",
-    "fullSHA256": "d5799cad37288cba07fdeebb97016018b82d07e28df0c3708328a9edefeee1c9",
-    "captureSHA256": "7424b9842ec92a74e0b2552b2459c9e46c5f700636e3ce6005499ddbad1d5512",
-    "executionStartSHA256": "3e07d33ea2528e41b8591ef8626e2e8dd3c8d758c9a05d8268ba808800d8ce1f",
+    "archiveSHA256": "f84a6b28b3898a08e49da7205501192dddabcb3072a1a59cc6031b6ac31c9898",
+    "fullSHA256": "3353b86eb517f220fff87755298dfec5c270c7ac9c5e4cb58708a7e46a87915b",
+    "captureSHA256": "bb5d14ff75d958dadfec419f62610ebfcbfc8751c9382f17b4b0943ac2fefce0",
+    "executionStartSHA256": "31bcc82357e1dfb5e3a8068182fc11e9cea8d5a6b2e4448a6d21999a1eaf4fdb",
     "executedNumericalRuntime": {
-      "python": "3.12.14",
+      "python": "3.12.16",
       "numpy": "2.3.5",
       "scipy": "1.17.0",
       "dependencyLock": "project/str/studies/vertical-floor-requirements.txt"
     }
   },
-  "priorCompleteGeometryReceiptSHA256": "6eb75c117f01045557d9ecae789ae871f49e3540e3b8d1db203067b4b617332a",
+  "priorCompleteGeometryReceiptSHA256": "283a74b8c6f4c1b57bcb831315af12f02aac4627f2d998da3bd9a0b67a7a80f4",
   "geometryReuse": {
     "80": {
       "completeGeometryIdentity": "b53af103c65f0784e8de06d848647359fa400f4058c402b852161e2403389011",
@@ -298,19 +187,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 7.023921469168272,
-                "shearYKN": -2.324388925178436,
-                "shearZKN": 3.4261427981765595,
-                "torsionKNm": 0.6871335008358371,
-                "bendingYKNm": 0.871077732213953,
-                "bendingZKNm": -0.08795022304363942,
+                "axialCompressionKN": 7.0239214694011025,
+                "shearYKN": -2.3243889252020047,
+                "shearZKN": 3.4261427981878714,
+                "torsionKNm": 0.6871335008371334,
+                "bendingYKNm": 0.8710777322185078,
+                "bendingZKNm": -0.08795022304570967,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -2.324388925178436,
-                  7.023921469168272,
-                  -3.4261427981765595,
-                  0.871077732213953,
-                  0.6871335008358371,
-                  0.08795022304363942
+                  -2.3243889252020047,
+                  7.0239214694011025,
+                  -3.4261427981878714,
+                  0.8710777322185078,
+                  0.6871335008371334,
+                  0.08795022304570967
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -339,19 +228,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 7.023921469168272,
-                "shearYKN": 2.324388925178436,
-                "shearZKN": -5.199724048176559,
-                "torsionKNm": -0.6871335008358371,
-                "bendingYKNm": -1.1729830718362921,
-                "bendingZKNm": -0.07475700171848644,
+                "axialCompressionKN": 7.0239214694011025,
+                "shearYKN": 2.3243889252020047,
+                "shearZKN": -5.199724048187871,
+                "torsionKNm": -0.6871335008371334,
+                "bendingYKNm": -1.1729830718416545,
+                "bendingZKNm": -0.07475700171844482,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  2.324388925178436,
-                  -7.023921469168272,
-                  5.199724048176559,
-                  -1.1729830718362921,
-                  -0.6871335008358371,
-                  0.07475700171848644
+                  2.3243889252020047,
+                  -7.0239214694011025,
+                  5.199724048187871,
+                  -1.1729830718416545,
+                  -0.6871335008371334,
+                  0.07475700171844482
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -380,19 +269,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 4.193727048579603,
-                "shearYKN": -1.3026714998912468,
-                "shearZKN": 23.75443623564057,
-                "torsionKNm": 0.49683892934920343,
-                "bendingYKNm": 0.22560886516461892,
-                "bendingZKNm": -0.004325440868321038,
+                "axialCompressionKN": 4.193727048754226,
+                "shearYKN": -1.3026714999071665,
+                "shearZKN": 23.75443623565387,
+                "torsionKNm": 0.49683892935149515,
+                "bendingYKNm": 0.22560886516681625,
+                "bendingZKNm": -0.0043254408692992,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -1.3026714998912468,
-                  4.193727048579603,
-                  -23.75443623564057,
-                  0.22560886516461892,
-                  0.49683892934920343,
-                  0.004325440868321038
+                  -1.3026714999071665,
+                  4.193727048754226,
+                  -23.75443623565387,
+                  0.22560886516681625,
+                  0.49683892935149515,
+                  0.0043254408692992
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -421,19 +310,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 4.193727048579603,
-                "shearYKN": 1.3026714998912468,
-                "shearZKN": -24.767911235640568,
-                "torsionKNm": -0.49683892934920343,
-                "bendingYKNm": -1.1960558145902962,
-                "bendingZKNm": -0.04778141912767842,
+                "axialCompressionKN": 4.193727048754226,
+                "shearYKN": 1.3026714999071665,
+                "shearZKN": -24.76791123565387,
+                "torsionKNm": -0.49683892935149515,
+                "bendingYKNm": -1.196055814593003,
+                "bendingZKNm": -0.04778141912722094,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  1.3026714998912468,
-                  -4.193727048579603,
-                  24.767911235640568,
-                  -1.1960558145902962,
-                  -0.49683892934920343,
-                  0.04778141912767842
+                  1.3026714999071665,
+                  -4.193727048754226,
+                  24.76791123565387,
+                  -1.196055814593003,
+                  -0.49683892935149515,
+                  0.04778141912722094
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -462,19 +351,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666720027496922,
-                "shearYKN": -1.3095805851917746,
-                "shearZKN": -19.36513523549815,
-                "torsionKNm": 0.4898410557358615,
-                "bendingYKNm": 2.330527820385275,
-                "bendingZKNm": -0.20399157931610354,
+                "axialCompressionKN": -10.666720027460542,
+                "shearYKN": -1.309580585198586,
+                "shearZKN": -19.365135235508838,
+                "torsionKNm": 0.489841055739539,
+                "bendingYKNm": 2.330527820389273,
+                "bendingZKNm": -0.2039915793179341,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -1.3095805851917746,
-                  -10.666720027496922,
-                  19.36513523549815,
-                  2.330527820385275,
-                  0.4898410557358615,
-                  0.20399157931610354
+                  -1.309580585198586,
+                  -10.666720027460542,
+                  19.365135235508838,
+                  2.330527820389273,
+                  0.489841055739539,
+                  0.2039915793179341
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -503,19 +392,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666720027496922,
-                "shearYKN": 1.3095805851917746,
-                "shearZKN": 13.35077723549815,
-                "torsionKNm": -0.4898410557358615,
-                "bendingYKNm": 3.511732669394026,
-                "bendingZKNm": -0.26745743135283373,
+                "axialCompressionKN": -10.666720027460542,
+                "shearYKN": 1.309580585198586,
+                "shearZKN": 13.350777235508836,
+                "torsionKNm": -0.489841055739539,
+                "bendingYKNm": 3.511732669393895,
+                "bendingZKNm": -0.2674574313536914,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  1.3095805851917746,
-                  10.666720027496922,
-                  -13.35077723549815,
-                  3.511732669394026,
-                  -0.4898410557358615,
-                  0.26745743135283373
+                  1.309580585198586,
+                  10.666720027460542,
+                  -13.350777235508836,
+                  3.511732669393895,
+                  -0.489841055739539,
+                  0.2674574313536914
                 ]
               },
               "actualStraightBarIntersections": [
@@ -615,51 +504,51 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -9.611781221322389
+                    "axialCompressionKN": -9.611781221308695
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -12.286355534850724
+                    "axialCompressionKN": -12.28635553484561
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": 6.952995521102264
+                    "axialCompressionKN": 6.952995521115338
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": 4.278421207573927
+                    "axialCompressionKN": 4.2784212075784245
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 12.286355534850724,
+                "maximumNecessaryTieTensionKN": 12.28635553484561,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
                   4.440892098500626e-16,
-                  5.551115123125783e-17
+                  0.0
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
               },
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 12.286355534850724,
-                  "orthogonalShearShiftPerTensionBarKN": 3.665089455172481,
-                  "thinCellTorsionPerCornerKN": 1.2695920329857842,
-                  "declaredNominalForceComparisonKN": 17.22103702300899,
-                  "requiredStressAtComparisonFractionMPa": 165.50804150847938,
-                  "basicPoorBondLengthMm": 236.44005929782767,
+                  "fourCornerWitnessMaximumTieKN": 12.28635553484561,
+                  "orthogonalShearShiftPerTensionBarKN": 3.6650894551768554,
+                  "thinCellTorsionPerCornerKN": 1.2695920329953154,
+                  "declaredNominalForceComparisonKN": 17.221037023017782,
+                  "requiredStressAtComparisonFractionMPa": 165.50804150856388,
+                  "basicPoorBondLengthMm": 236.44005929794838,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 64.23021055043847,
+                  "bendPressureMandrelComparisonMm": 64.23021055047127,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 64.23021055043847,
+                  "necessaryMandrelComparisonMm": 64.23021055047127,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -667,16 +556,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 12.286355534850724,
-                  "orthogonalShearShiftPerTensionBarKN": 9.162723637931203,
-                  "thinCellTorsionPerCornerKN": 3.1739800824644604,
-                  "declaredNominalForceComparisonKN": 24.62305925524639,
-                  "requiredStressAtComparisonFractionMPa": 236.6474392824339,
-                  "basicPoorBondLengthMm": 338.067770403477,
+                  "fourCornerWitnessMaximumTieKN": 12.28635553484561,
+                  "orthogonalShearShiftPerTensionBarKN": 9.162723637942138,
+                  "thinCellTorsionPerCornerKN": 3.173980082488289,
+                  "declaredNominalForceComparisonKN": 24.623059255276036,
+                  "requiredStressAtComparisonFractionMPa": 236.64743928271884,
+                  "basicPoorBondLengthMm": 338.0677704038841,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 91.83792347971267,
+                  "bendPressureMandrelComparisonMm": 91.83792347982325,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 91.83792347971267,
+                  "necessaryMandrelComparisonMm": 91.83792347982325,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": false,
                   "bendPressureAccepted": false,
@@ -708,19 +597,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -37.11202820223116,
-                "shearYKN": -0.9782900470688212,
-                "shearZKN": -13.275016727252659,
-                "torsionKNm": 0.030790337368505106,
-                "bendingYKNm": -2.625337157922894,
-                "bendingZKNm": 0.06701795129288393,
+                "axialCompressionKN": -37.11202820221661,
+                "shearYKN": -0.9782900470773566,
+                "shearZKN": -13.275016727265562,
+                "torsionKNm": 0.030790337372733914,
+                "bendingYKNm": -2.6253371579219333,
+                "bendingZKNm": 0.06701795129213292,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -0.9782900470688212,
-                  -37.11202820223116,
-                  13.275016727252659,
-                  -2.625337157922894,
-                  0.030790337368505106,
-                  -0.06701795129288393
+                  -0.9782900470773566,
+                  -37.11202820221661,
+                  13.275016727265562,
+                  -2.6253371579219333,
+                  0.030790337372733914,
+                  -0.06701795129213292
                 ]
               },
               "actualStraightBarIntersections": [
@@ -820,51 +709,51 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -3.4212638873927426
+                    "axialCompressionKN": -3.4212638873876156
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -2.7510843744639035
+                    "axialCompressionKN": -2.751084374466286
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -15.804929726651675
+                    "axialCompressionKN": -15.804929726642017
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -15.134750213722835
+                    "axialCompressionKN": -15.134750213720688
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 15.804929726651675,
+                "maximumNecessaryTieTensionKN": 15.804929726642017,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
                   0.0,
-                  1.1102230246251565e-16
+                  0.0
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
               },
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-                  "orthogonalShearShiftPerTensionBarKN": 3.56332669358037,
-                  "thinCellTorsionPerCornerKN": 0.07980377830370716,
-                  "declaredNominalForceComparisonKN": 19.44806019853575,
-                  "requiredStressAtComparisonFractionMPa": 186.91152863198744,
-                  "basicPoorBondLengthMm": 267.01646947426775,
+                  "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+                  "orthogonalShearShiftPerTensionBarKN": 3.5633266935857297,
+                  "thinCellTorsionPerCornerKN": 0.07980377831466758,
+                  "declaredNominalForceComparisonKN": 19.448060198542414,
+                  "requiredStressAtComparisonFractionMPa": 186.91152863205147,
+                  "basicPoorBondLengthMm": 267.0164694743592,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 72.53645640971348,
+                  "bendPressureMandrelComparisonMm": 72.53645640973834,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 72.53645640971348,
+                  "necessaryMandrelComparisonMm": 72.53645640973834,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -872,16 +761,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-                  "orthogonalShearShiftPerTensionBarKN": 8.908316733950926,
-                  "thinCellTorsionPerCornerKN": 0.19950944575926793,
-                  "declaredNominalForceComparisonKN": 24.91275590636187,
-                  "requiredStressAtComparisonFractionMPa": 239.43165752048927,
-                  "basicPoorBondLengthMm": 342.0452250292704,
+                  "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+                  "orthogonalShearShiftPerTensionBarKN": 8.908316733964325,
+                  "thinCellTorsionPerCornerKN": 0.19950944578666893,
+                  "declaredNominalForceComparisonKN": 24.912755906393013,
+                  "requiredStressAtComparisonFractionMPa": 239.4316575207886,
+                  "basicPoorBondLengthMm": 342.04522502969803,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 92.91842036686546,
+                  "bendPressureMandrelComparisonMm": 92.91842036698161,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 92.91842036686546,
+                  "necessaryMandrelComparisonMm": 92.91842036698161,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": false,
                   "bendPressureAccepted": false,
@@ -915,12 +804,12 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666720027496922,
-                "shearYKN": -1.3095805851917746,
-                "shearZKN": -18.60502898549815,
-                "torsionKNm": 0.4898410557358615,
-                "bendingYKNm": 1.7609753570703304,
-                "bendingZKNm": -0.1647041617603503,
+                "axialCompressionKN": -10.666720027460542,
+                "shearYKN": -1.309580585198586,
+                "shearZKN": -18.605028985508838,
+                "torsionKNm": 0.489841055739539,
+                "bendingYKNm": 1.7609753570740079,
+                "bendingZKNm": -0.16470416176197653,
                 "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
               },
               "actualStraightBarIntersections": [
@@ -1011,34 +900,34 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -5.996402964747786
+                    "axialCompressionKN": -5.996402964739234
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -7.643444582351289
+                    "axialCompressionKN": -7.643444582358999
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": 2.310084568602828
+                    "axialCompressionKN": 2.310084568628728
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": 0.6630429509993251
+                    "axialCompressionKN": 0.6630429510089628
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 7.643444582351289,
+                "maximumNecessaryTieTensionKN": 7.643444582358999,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
-                  -2.220446049250313e-16,
+                  0.0,
                   5.551115123125783e-17
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
@@ -1046,16 +935,16 @@
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 7.643444582351289,
-                  "orthogonalShearShiftPerTensionBarKN": 4.9786523926724815,
-                  "thinCellTorsionPerCornerKN": 1.2695920329857842,
-                  "declaredNominalForceComparisonKN": 13.891689008009553,
-                  "requiredStressAtComparisonFractionMPa": 133.51032448792682,
-                  "basicPoorBondLengthMm": 190.7290349827526,
+                  "fourCornerWitnessMaximumTieKN": 7.643444582358999,
+                  "orthogonalShearShiftPerTensionBarKN": 4.978652392676856,
+                  "thinCellTorsionPerCornerKN": 1.2695920329953154,
+                  "declaredNominalForceComparisonKN": 13.891689008031172,
+                  "requiredStressAtComparisonFractionMPa": 133.5103244881346,
+                  "basicPoorBondLengthMm": 190.7290349830494,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 51.81256556695805,
+                  "bendPressureMandrelComparisonMm": 51.81256556703868,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 51.81256556695805,
+                  "necessaryMandrelComparisonMm": 51.81256556703868,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -1063,16 +952,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 7.643444582351289,
-                  "orthogonalShearShiftPerTensionBarKN": 12.446630981681203,
-                  "thinCellTorsionPerCornerKN": 3.1739800824644604,
-                  "declaredNominalForceComparisonKN": 23.264055646496953,
-                  "requiredStressAtComparisonFractionMPa": 223.58631959570704,
-                  "basicPoorBondLengthMm": 319.4090279938672,
+                  "fourCornerWitnessMaximumTieKN": 7.643444582358999,
+                  "orthogonalShearShiftPerTensionBarKN": 12.44663098169214,
+                  "thinCellTorsionPerCornerKN": 3.173980082488289,
+                  "declaredNominalForceComparisonKN": 23.26405564653943,
+                  "requiredStressAtComparisonFractionMPa": 223.5863195961153,
+                  "basicPoorBondLengthMm": 319.40902799445035,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 86.7691760046242,
+                  "bendPressureMandrelComparisonMm": 86.76917600478262,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 86.7691760046242,
+                  "necessaryMandrelComparisonMm": 86.76917600478262,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": false,
                   "bendPressureAccepted": false,
@@ -1103,33 +992,33 @@
             ],
             "breadthMm": 250.0,
             "depthMm": 350.0,
-            "axialCompressionKN": -37.11202820223116,
-            "shearYKN": -0.9782900470688212,
-            "shearZKN": -13.275016727252659,
-            "torsionKNm": 0.030790337368505106,
-            "bendingYKNm": -2.625337157922894,
-            "bendingZKNm": 0.06701795129288393,
+            "axialCompressionKN": -37.11202820221661,
+            "shearYKN": -0.9782900470773566,
+            "shearZKN": -13.275016727265562,
+            "torsionKNm": 0.030790337372733914,
+            "bendingYKNm": -2.6253371579219333,
+            "bendingZKNm": 0.06701795129213292,
             "globalPhysicalEndWrenchKN_KNm": [
-              -0.9782900470688212,
-              -37.11202820223116,
-              13.275016727252659,
-              -2.625337157922894,
-              0.030790337368505106,
-              -0.06701795129288393
+              -0.9782900470773566,
+              -37.11202820221661,
+              13.275016727265562,
+              -2.6253371579219333,
+              0.030790337372733914,
+              -0.06701795129213292
             ]
           },
           "comparison": {
             "cotTheta": 2.5,
-            "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-            "orthogonalShearShiftPerTensionBarKN": 8.908316733950926,
-            "thinCellTorsionPerCornerKN": 0.19950944575926793,
-            "declaredNominalForceComparisonKN": 24.91275590636187,
-            "requiredStressAtComparisonFractionMPa": 239.43165752048927,
-            "basicPoorBondLengthMm": 342.0452250292704,
+            "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+            "orthogonalShearShiftPerTensionBarKN": 8.908316733964325,
+            "thinCellTorsionPerCornerKN": 0.19950944578666893,
+            "declaredNominalForceComparisonKN": 24.912755906393013,
+            "requiredStressAtComparisonFractionMPa": 239.4316575207886,
+            "basicPoorBondLengthMm": 342.04522502969803,
             "conservativeAbMm": 46.0,
-            "bendPressureMandrelComparisonMm": 92.91842036686546,
+            "bendPressureMandrelComparisonMm": 92.91842036698161,
             "barDamageMandrelComparisonMm": 48.0,
-            "necessaryMandrelComparisonMm": 92.91842036686546,
+            "necessaryMandrelComparisonMm": 92.91842036698161,
             "authoredEndMandrelMm": 80,
             "necessaryMandrelScreenPasses": false,
             "bendPressureAccepted": false,
@@ -1204,19 +1093,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 7.023921469168272,
-                "shearYKN": -2.324388925178436,
-                "shearZKN": 3.4261427981765595,
-                "torsionKNm": 0.6871335008358371,
-                "bendingYKNm": 0.871077732213953,
-                "bendingZKNm": -0.08795022304363942,
+                "axialCompressionKN": 7.0239214694011025,
+                "shearYKN": -2.3243889252020047,
+                "shearZKN": 3.4261427981878714,
+                "torsionKNm": 0.6871335008371334,
+                "bendingYKNm": 0.8710777322185078,
+                "bendingZKNm": -0.08795022304570967,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -2.324388925178436,
-                  7.023921469168272,
-                  -3.4261427981765595,
-                  0.871077732213953,
-                  0.6871335008358371,
-                  0.08795022304363942
+                  -2.3243889252020047,
+                  7.0239214694011025,
+                  -3.4261427981878714,
+                  0.8710777322185078,
+                  0.6871335008371334,
+                  0.08795022304570967
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -1245,19 +1134,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 7.023921469168272,
-                "shearYKN": 2.324388925178436,
-                "shearZKN": -5.199724048176559,
-                "torsionKNm": -0.6871335008358371,
-                "bendingYKNm": -1.1729830718362921,
-                "bendingZKNm": -0.07475700171848644,
+                "axialCompressionKN": 7.0239214694011025,
+                "shearYKN": 2.3243889252020047,
+                "shearZKN": -5.199724048187871,
+                "torsionKNm": -0.6871335008371334,
+                "bendingYKNm": -1.1729830718416545,
+                "bendingZKNm": -0.07475700171844482,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  2.324388925178436,
-                  -7.023921469168272,
-                  5.199724048176559,
-                  -1.1729830718362921,
-                  -0.6871335008358371,
-                  0.07475700171848644
+                  2.3243889252020047,
+                  -7.0239214694011025,
+                  5.199724048187871,
+                  -1.1729830718416545,
+                  -0.6871335008371334,
+                  0.07475700171844482
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -1286,19 +1175,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 4.193727048579603,
-                "shearYKN": -1.3026714998912468,
-                "shearZKN": 23.75443623564057,
-                "torsionKNm": 0.49683892934920343,
-                "bendingYKNm": 0.22560886516461892,
-                "bendingZKNm": -0.004325440868321038,
+                "axialCompressionKN": 4.193727048754226,
+                "shearYKN": -1.3026714999071665,
+                "shearZKN": 23.75443623565387,
+                "torsionKNm": 0.49683892935149515,
+                "bendingYKNm": 0.22560886516681625,
+                "bendingZKNm": -0.0043254408692992,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -1.3026714998912468,
-                  4.193727048579603,
-                  -23.75443623564057,
-                  0.22560886516461892,
-                  0.49683892934920343,
-                  0.004325440868321038
+                  -1.3026714999071665,
+                  4.193727048754226,
+                  -23.75443623565387,
+                  0.22560886516681625,
+                  0.49683892935149515,
+                  0.0043254408692992
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -1327,19 +1216,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 4.193727048579603,
-                "shearYKN": 1.3026714998912468,
-                "shearZKN": -24.767911235640568,
-                "torsionKNm": -0.49683892934920343,
-                "bendingYKNm": -1.1960558145902962,
-                "bendingZKNm": -0.04778141912767842,
+                "axialCompressionKN": 4.193727048754226,
+                "shearYKN": 1.3026714999071665,
+                "shearZKN": -24.76791123565387,
+                "torsionKNm": -0.49683892935149515,
+                "bendingYKNm": -1.196055814593003,
+                "bendingZKNm": -0.04778141912722094,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  1.3026714998912468,
-                  -4.193727048579603,
-                  24.767911235640568,
-                  -1.1960558145902962,
-                  -0.49683892934920343,
-                  0.04778141912767842
+                  1.3026714999071665,
+                  -4.193727048754226,
+                  24.76791123565387,
+                  -1.196055814593003,
+                  -0.49683892935149515,
+                  0.04778141912722094
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -1368,19 +1257,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666720027496922,
-                "shearYKN": -1.3095805851917746,
-                "shearZKN": -19.36513523549815,
-                "torsionKNm": 0.4898410557358615,
-                "bendingYKNm": 2.330527820385275,
-                "bendingZKNm": -0.20399157931610354,
+                "axialCompressionKN": -10.666720027460542,
+                "shearYKN": -1.309580585198586,
+                "shearZKN": -19.365135235508838,
+                "torsionKNm": 0.489841055739539,
+                "bendingYKNm": 2.330527820389273,
+                "bendingZKNm": -0.2039915793179341,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -1.3095805851917746,
-                  -10.666720027496922,
-                  19.36513523549815,
-                  2.330527820385275,
-                  0.4898410557358615,
-                  0.20399157931610354
+                  -1.309580585198586,
+                  -10.666720027460542,
+                  19.365135235508838,
+                  2.330527820389273,
+                  0.489841055739539,
+                  0.2039915793179341
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -1409,19 +1298,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666720027496922,
-                "shearYKN": 1.3095805851917746,
-                "shearZKN": 13.35077723549815,
-                "torsionKNm": -0.4898410557358615,
-                "bendingYKNm": 3.511732669394026,
-                "bendingZKNm": -0.26745743135283373,
+                "axialCompressionKN": -10.666720027460542,
+                "shearYKN": 1.309580585198586,
+                "shearZKN": 13.350777235508836,
+                "torsionKNm": -0.489841055739539,
+                "bendingYKNm": 3.511732669393895,
+                "bendingZKNm": -0.2674574313536914,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  1.3095805851917746,
-                  10.666720027496922,
-                  -13.35077723549815,
-                  3.511732669394026,
-                  -0.4898410557358615,
-                  0.26745743135283373
+                  1.309580585198586,
+                  10.666720027460542,
+                  -13.350777235508836,
+                  3.511732669393895,
+                  -0.489841055739539,
+                  0.2674574313536914
                 ]
               },
               "actualStraightBarIntersections": [
@@ -1521,51 +1410,51 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -9.611781221322389
+                    "axialCompressionKN": -9.611781221308695
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -12.286355534850724
+                    "axialCompressionKN": -12.28635553484561
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": 6.952995521102264
+                    "axialCompressionKN": 6.952995521115338
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": 4.278421207573927
+                    "axialCompressionKN": 4.2784212075784245
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 12.286355534850724,
+                "maximumNecessaryTieTensionKN": 12.28635553484561,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
                   4.440892098500626e-16,
-                  5.551115123125783e-17
+                  0.0
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
               },
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 12.286355534850724,
-                  "orthogonalShearShiftPerTensionBarKN": 3.665089455172481,
-                  "thinCellTorsionPerCornerKN": 1.2695920329857842,
-                  "declaredNominalForceComparisonKN": 17.22103702300899,
-                  "requiredStressAtComparisonFractionMPa": 165.50804150847938,
-                  "basicPoorBondLengthMm": 236.44005929782767,
+                  "fourCornerWitnessMaximumTieKN": 12.28635553484561,
+                  "orthogonalShearShiftPerTensionBarKN": 3.6650894551768554,
+                  "thinCellTorsionPerCornerKN": 1.2695920329953154,
+                  "declaredNominalForceComparisonKN": 17.221037023017782,
+                  "requiredStressAtComparisonFractionMPa": 165.50804150856388,
+                  "basicPoorBondLengthMm": 236.44005929794838,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 64.23021055043847,
+                  "bendPressureMandrelComparisonMm": 64.23021055047127,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 64.23021055043847,
+                  "necessaryMandrelComparisonMm": 64.23021055047127,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -1573,16 +1462,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 12.286355534850724,
-                  "orthogonalShearShiftPerTensionBarKN": 9.162723637931203,
-                  "thinCellTorsionPerCornerKN": 3.1739800824644604,
-                  "declaredNominalForceComparisonKN": 24.62305925524639,
-                  "requiredStressAtComparisonFractionMPa": 236.6474392824339,
-                  "basicPoorBondLengthMm": 338.067770403477,
+                  "fourCornerWitnessMaximumTieKN": 12.28635553484561,
+                  "orthogonalShearShiftPerTensionBarKN": 9.162723637942138,
+                  "thinCellTorsionPerCornerKN": 3.173980082488289,
+                  "declaredNominalForceComparisonKN": 24.623059255276036,
+                  "requiredStressAtComparisonFractionMPa": 236.64743928271884,
+                  "basicPoorBondLengthMm": 338.0677704038841,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 91.83792347971267,
+                  "bendPressureMandrelComparisonMm": 91.83792347982325,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 91.83792347971267,
+                  "necessaryMandrelComparisonMm": 91.83792347982325,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -1614,19 +1503,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -37.11202820223116,
-                "shearYKN": -0.9782900470688212,
-                "shearZKN": -13.275016727252659,
-                "torsionKNm": 0.030790337368505106,
-                "bendingYKNm": -2.625337157922894,
-                "bendingZKNm": 0.06701795129288393,
+                "axialCompressionKN": -37.11202820221661,
+                "shearYKN": -0.9782900470773566,
+                "shearZKN": -13.275016727265562,
+                "torsionKNm": 0.030790337372733914,
+                "bendingYKNm": -2.6253371579219333,
+                "bendingZKNm": 0.06701795129213292,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -0.9782900470688212,
-                  -37.11202820223116,
-                  13.275016727252659,
-                  -2.625337157922894,
-                  0.030790337368505106,
-                  -0.06701795129288393
+                  -0.9782900470773566,
+                  -37.11202820221661,
+                  13.275016727265562,
+                  -2.6253371579219333,
+                  0.030790337372733914,
+                  -0.06701795129213292
                 ]
               },
               "actualStraightBarIntersections": [
@@ -1726,51 +1615,51 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -3.4212638873927426
+                    "axialCompressionKN": -3.4212638873876156
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -2.7510843744639035
+                    "axialCompressionKN": -2.751084374466286
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -15.804929726651675
+                    "axialCompressionKN": -15.804929726642017
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -15.134750213722835
+                    "axialCompressionKN": -15.134750213720688
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 15.804929726651675,
+                "maximumNecessaryTieTensionKN": 15.804929726642017,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
                   0.0,
-                  1.1102230246251565e-16
+                  0.0
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
               },
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-                  "orthogonalShearShiftPerTensionBarKN": 3.56332669358037,
-                  "thinCellTorsionPerCornerKN": 0.07980377830370716,
-                  "declaredNominalForceComparisonKN": 19.44806019853575,
-                  "requiredStressAtComparisonFractionMPa": 186.91152863198744,
-                  "basicPoorBondLengthMm": 267.01646947426775,
+                  "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+                  "orthogonalShearShiftPerTensionBarKN": 3.5633266935857297,
+                  "thinCellTorsionPerCornerKN": 0.07980377831466758,
+                  "declaredNominalForceComparisonKN": 19.448060198542414,
+                  "requiredStressAtComparisonFractionMPa": 186.91152863205147,
+                  "basicPoorBondLengthMm": 267.0164694743592,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 72.53645640971348,
+                  "bendPressureMandrelComparisonMm": 72.53645640973834,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 72.53645640971348,
+                  "necessaryMandrelComparisonMm": 72.53645640973834,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -1778,16 +1667,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-                  "orthogonalShearShiftPerTensionBarKN": 8.908316733950926,
-                  "thinCellTorsionPerCornerKN": 0.19950944575926793,
-                  "declaredNominalForceComparisonKN": 24.91275590636187,
-                  "requiredStressAtComparisonFractionMPa": 239.43165752048927,
-                  "basicPoorBondLengthMm": 342.0452250292704,
+                  "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+                  "orthogonalShearShiftPerTensionBarKN": 8.908316733964325,
+                  "thinCellTorsionPerCornerKN": 0.19950944578666893,
+                  "declaredNominalForceComparisonKN": 24.912755906393013,
+                  "requiredStressAtComparisonFractionMPa": 239.4316575207886,
+                  "basicPoorBondLengthMm": 342.04522502969803,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 92.91842036686546,
+                  "bendPressureMandrelComparisonMm": 92.91842036698161,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 92.91842036686546,
+                  "necessaryMandrelComparisonMm": 92.91842036698161,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -1821,12 +1710,12 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666720027496922,
-                "shearYKN": -1.3095805851917746,
-                "shearZKN": -18.60502898549815,
-                "torsionKNm": 0.4898410557358615,
-                "bendingYKNm": 1.7609753570703304,
-                "bendingZKNm": -0.1647041617603503,
+                "axialCompressionKN": -10.666720027460542,
+                "shearYKN": -1.309580585198586,
+                "shearZKN": -18.605028985508838,
+                "torsionKNm": 0.489841055739539,
+                "bendingYKNm": 1.7609753570740079,
+                "bendingZKNm": -0.16470416176197653,
                 "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
               },
               "actualStraightBarIntersections": [
@@ -1917,34 +1806,34 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -5.996402964747786
+                    "axialCompressionKN": -5.996402964739234
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -7.643444582351289
+                    "axialCompressionKN": -7.643444582358999
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": 2.310084568602828
+                    "axialCompressionKN": 2.310084568628728
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": 0.6630429509993251
+                    "axialCompressionKN": 0.6630429510089628
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 7.643444582351289,
+                "maximumNecessaryTieTensionKN": 7.643444582358999,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
-                  -2.220446049250313e-16,
+                  0.0,
                   5.551115123125783e-17
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
@@ -1952,16 +1841,16 @@
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 7.643444582351289,
-                  "orthogonalShearShiftPerTensionBarKN": 4.9786523926724815,
-                  "thinCellTorsionPerCornerKN": 1.2695920329857842,
-                  "declaredNominalForceComparisonKN": 13.891689008009553,
-                  "requiredStressAtComparisonFractionMPa": 133.51032448792682,
-                  "basicPoorBondLengthMm": 190.7290349827526,
+                  "fourCornerWitnessMaximumTieKN": 7.643444582358999,
+                  "orthogonalShearShiftPerTensionBarKN": 4.978652392676856,
+                  "thinCellTorsionPerCornerKN": 1.2695920329953154,
+                  "declaredNominalForceComparisonKN": 13.891689008031172,
+                  "requiredStressAtComparisonFractionMPa": 133.5103244881346,
+                  "basicPoorBondLengthMm": 190.7290349830494,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 51.81256556695805,
+                  "bendPressureMandrelComparisonMm": 51.81256556703868,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 51.81256556695805,
+                  "necessaryMandrelComparisonMm": 51.81256556703868,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -1969,16 +1858,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 7.643444582351289,
-                  "orthogonalShearShiftPerTensionBarKN": 12.446630981681203,
-                  "thinCellTorsionPerCornerKN": 3.1739800824644604,
-                  "declaredNominalForceComparisonKN": 23.264055646496953,
-                  "requiredStressAtComparisonFractionMPa": 223.58631959570704,
-                  "basicPoorBondLengthMm": 319.4090279938672,
+                  "fourCornerWitnessMaximumTieKN": 7.643444582358999,
+                  "orthogonalShearShiftPerTensionBarKN": 12.44663098169214,
+                  "thinCellTorsionPerCornerKN": 3.173980082488289,
+                  "declaredNominalForceComparisonKN": 23.26405564653943,
+                  "requiredStressAtComparisonFractionMPa": 223.5863195961153,
+                  "basicPoorBondLengthMm": 319.40902799445035,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 86.7691760046242,
+                  "bendPressureMandrelComparisonMm": 86.76917600478262,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 86.7691760046242,
+                  "necessaryMandrelComparisonMm": 86.76917600478262,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -2009,33 +1898,33 @@
             ],
             "breadthMm": 250.0,
             "depthMm": 350.0,
-            "axialCompressionKN": -37.11202820223116,
-            "shearYKN": -0.9782900470688212,
-            "shearZKN": -13.275016727252659,
-            "torsionKNm": 0.030790337368505106,
-            "bendingYKNm": -2.625337157922894,
-            "bendingZKNm": 0.06701795129288393,
+            "axialCompressionKN": -37.11202820221661,
+            "shearYKN": -0.9782900470773566,
+            "shearZKN": -13.275016727265562,
+            "torsionKNm": 0.030790337372733914,
+            "bendingYKNm": -2.6253371579219333,
+            "bendingZKNm": 0.06701795129213292,
             "globalPhysicalEndWrenchKN_KNm": [
-              -0.9782900470688212,
-              -37.11202820223116,
-              13.275016727252659,
-              -2.625337157922894,
-              0.030790337368505106,
-              -0.06701795129288393
+              -0.9782900470773566,
+              -37.11202820221661,
+              13.275016727265562,
+              -2.6253371579219333,
+              0.030790337372733914,
+              -0.06701795129213292
             ]
           },
           "comparison": {
             "cotTheta": 2.5,
-            "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-            "orthogonalShearShiftPerTensionBarKN": 8.908316733950926,
-            "thinCellTorsionPerCornerKN": 0.19950944575926793,
-            "declaredNominalForceComparisonKN": 24.91275590636187,
-            "requiredStressAtComparisonFractionMPa": 239.43165752048927,
-            "basicPoorBondLengthMm": 342.0452250292704,
+            "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+            "orthogonalShearShiftPerTensionBarKN": 8.908316733964325,
+            "thinCellTorsionPerCornerKN": 0.19950944578666893,
+            "declaredNominalForceComparisonKN": 24.912755906393013,
+            "requiredStressAtComparisonFractionMPa": 239.4316575207886,
+            "basicPoorBondLengthMm": 342.04522502969803,
             "conservativeAbMm": 46.0,
-            "bendPressureMandrelComparisonMm": 92.91842036686546,
+            "bendPressureMandrelComparisonMm": 92.91842036698161,
             "barDamageMandrelComparisonMm": 48.0,
-            "necessaryMandrelComparisonMm": 92.91842036686546,
+            "necessaryMandrelComparisonMm": 92.91842036698161,
             "authoredEndMandrelMm": 100,
             "necessaryMandrelScreenPasses": true,
             "bendPressureAccepted": false,
@@ -2112,19 +2001,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 7.023923336528242,
-                "shearYKN": -2.3243891188851435,
-                "shearZKN": 3.426143239858337,
-                "torsionKNm": 0.6871335633427648,
-                "bendingYKNm": 0.8710779288471877,
-                "bendingZKNm": -0.08795024571786325,
+                "axialCompressionKN": 7.023923336470034,
+                "shearYKN": -2.3243891188733556,
+                "shearZKN": 3.426143239869933,
+                "torsionKNm": 0.6871335633425797,
+                "bendingYKNm": 0.8710779288480464,
+                "bendingZKNm": -0.08795024571805583,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -2.3243891188851435,
-                  7.023923336528242,
-                  -3.426143239858337,
-                  0.8710779288471877,
-                  0.6871335633427648,
-                  0.08795024571786325
+                  -2.3243891188733556,
+                  7.023923336470034,
+                  -3.426143239869933,
+                  0.8710779288480464,
+                  0.6871335633425797,
+                  0.08795024571805583
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -2153,19 +2042,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 7.023923336528242,
-                "shearYKN": 2.3243891188851435,
-                "shearZKN": -5.199724489858337,
-                "torsionKNm": -0.6871335633427648,
-                "bendingYKNm": -1.172983299387268,
-                "bendingZKNm": -0.07475699260431475,
+                "axialCompressionKN": 7.023923336470034,
+                "shearYKN": 2.3243891188733556,
+                "shearZKN": -5.199724489869933,
+                "torsionKNm": -0.6871335633425797,
+                "bendingYKNm": -1.1729832993889633,
+                "bendingZKNm": -0.07475699260336932,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  2.3243891188851435,
-                  -7.023923336528242,
-                  5.199724489858337,
-                  -1.172983299387268,
-                  -0.6871335633427648,
-                  0.07475699260431475
+                  2.3243891188733556,
+                  -7.023923336470034,
+                  5.199724489869933,
+                  -1.1729832993889633,
+                  -0.6871335633425797,
+                  0.07475699260336932
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -2194,19 +2083,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 4.19372925843345,
-                "shearYKN": -1.3026716539458434,
-                "shearZKN": 23.75443692597905,
-                "torsionKNm": 0.49683899776628754,
-                "bendingYKNm": 0.2256090996685291,
-                "bendingZKNm": -0.004325459409283667,
+                "axialCompressionKN": 4.193729258317035,
+                "shearYKN": -1.3026716539313412,
+                "shearZKN": 23.75443692597638,
+                "torsionKNm": 0.49683899776630414,
+                "bendingYKNm": 0.22560909967899193,
+                "bendingZKNm": -0.0043254594098671075,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -1.3026716539458434,
-                  4.19372925843345,
-                  -23.75443692597905,
-                  0.2256090996685291,
-                  0.49683899776628754,
-                  0.004325459409283667
+                  -1.3026716539313412,
+                  4.193729258317035,
+                  -23.75443692597638,
+                  0.22560909967899193,
+                  0.49683899776630414,
+                  0.0043254594098671075
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -2235,19 +2124,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 4.19372925843345,
-                "shearYKN": 1.3026716539458434,
-                "shearZKN": -24.76791192597905,
-                "torsionKNm": -0.49683899776628754,
-                "bendingYKNm": -1.1960560767076733,
-                "bendingZKNm": -0.047781406748666995,
+                "axialCompressionKN": 4.193729258317035,
+                "shearYKN": 1.3026716539313412,
+                "shearZKN": -24.767911925976378,
+                "torsionKNm": -0.49683899776630414,
+                "bendingYKNm": -1.1960560767180635,
+                "bendingZKNm": -0.047781406747619715,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  1.3026716539458434,
-                  -4.19372925843345,
-                  24.76791192597905,
-                  -1.1960560767076733,
-                  -0.49683899776628754,
-                  0.047781406748666995
+                  1.3026716539313412,
+                  -4.193729258317035,
+                  24.767911925976378,
+                  -1.1960560767180635,
+                  -0.49683899776630414,
+                  0.047781406747619715
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -2276,19 +2165,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666717673448147,
-                "shearYKN": -1.3095806825378826,
-                "shearZKN": -19.365135339726585,
-                "torsionKNm": 0.48984112872229635,
-                "bendingYKNm": 2.3305280763267575,
-                "bendingZKNm": -0.20399160272974973,
+                "axialCompressionKN": -10.66671767335356,
+                "shearYKN": -1.309580682530914,
+                "shearZKN": -19.365135339735566,
+                "torsionKNm": 0.4898411287227483,
+                "bendingYKNm": 2.330528076337686,
+                "bendingZKNm": -0.20399160272924974,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -1.3095806825378826,
-                  -10.666717673448147,
-                  19.365135339726585,
-                  2.3305280763267575,
-                  0.48984112872229635,
-                  0.20399160272974973
+                  -1.309580682530914,
+                  -10.66671767335356,
+                  19.365135339735566,
+                  2.330528076337686,
+                  0.4898411287227483,
+                  0.20399160272924974
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -2317,19 +2206,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666717673448147,
-                "shearYKN": 1.3095806825378826,
-                "shearZKN": 13.350777339726584,
-                "torsionKNm": -0.48984112872229635,
-                "bendingYKNm": 3.5117324509748276,
-                "bendingZKNm": -0.26745744298396085,
+                "axialCompressionKN": -10.66671767335356,
+                "shearYKN": 1.309580682530914,
+                "shearZKN": 13.350777339735565,
+                "torsionKNm": -0.4898411287227483,
+                "bendingYKNm": 3.511732450967108,
+                "bendingZKNm": -0.26745744298213797,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  1.3095806825378826,
-                  10.666717673448147,
-                  -13.350777339726584,
-                  3.5117324509748276,
-                  -0.48984112872229635,
-                  0.26745744298396085
+                  1.309580682530914,
+                  10.66671767335356,
+                  -13.350777339735565,
+                  3.511732450967108,
+                  -0.4898411287227483,
+                  0.26745744298213797
                 ]
               },
               "actualStraightBarIntersections": [
@@ -2429,34 +2318,34 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -9.61178005951494
+                    "axialCompressionKN": -9.6117800594822
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -12.286354489354549
+                    "axialCompressionKN": -12.28635448930358
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": 6.9529956526304755
+                    "axialCompressionKN": 6.9529956526268
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": 4.2784212227908665
+                    "axialCompressionKN": 4.27842122280542
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 12.286354489354549,
+                "maximumNecessaryTieTensionKN": 12.28635448930358,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
-                  8.881784197001252e-16,
+                  0.0,
                   0.0
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
@@ -2464,16 +2353,16 @@
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 12.286354489354549,
-                  "orthogonalShearShiftPerTensionBarKN": 3.6650895055661166,
-                  "thinCellTorsionPerCornerKN": 1.2695922221553015,
-                  "declaredNominalForceComparisonKN": 17.22103621707597,
-                  "requiredStressAtComparisonFractionMPa": 165.50803376281365,
-                  "basicPoorBondLengthMm": 236.44004823259093,
+                  "fourCornerWitnessMaximumTieKN": 12.28635448930358,
+                  "orthogonalShearShiftPerTensionBarKN": 3.6650895055666197,
+                  "thinCellTorsionPerCornerKN": 1.269592222156473,
+                  "declaredNominalForceComparisonKN": 17.221036217026672,
+                  "requiredStressAtComparisonFractionMPa": 165.50803376233986,
+                  "basicPoorBondLengthMm": 236.44004823191406,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 64.23020754450756,
+                  "bendPressureMandrelComparisonMm": 64.23020754432369,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 64.23020754450756,
+                  "necessaryMandrelComparisonMm": 64.23020754432369,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -2481,16 +2370,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 12.286354489354549,
-                  "orthogonalShearShiftPerTensionBarKN": 9.162723763915292,
-                  "thinCellTorsionPerCornerKN": 3.173980555388254,
-                  "declaredNominalForceComparisonKN": 24.623058808658094,
-                  "requiredStressAtComparisonFractionMPa": 236.64743499036055,
-                  "basicPoorBondLengthMm": 338.06776427194364,
+                  "fourCornerWitnessMaximumTieKN": 12.28635448930358,
+                  "orthogonalShearShiftPerTensionBarKN": 9.16272376391655,
+                  "thinCellTorsionPerCornerKN": 3.1739805553911826,
+                  "declaredNominalForceComparisonKN": 24.62305880861131,
+                  "requiredStressAtComparisonFractionMPa": 236.64743498991095,
+                  "basicPoorBondLengthMm": 338.0677642713013,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 91.83792181404873,
+                  "bendPressureMandrelComparisonMm": 91.83792181387426,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 91.83792181404873,
+                  "necessaryMandrelComparisonMm": 91.83792181387426,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": false,
                   "bendPressureAccepted": false,
@@ -2522,19 +2411,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -37.11202566110296,
-                "shearYKN": -0.9782899998699506,
-                "shearZKN": -13.275016793811698,
-                "torsionKNm": 0.030790404947758133,
-                "bendingYKNm": -2.6253369150415917,
-                "bendingZKNm": 0.06701795196241551,
+                "axialCompressionKN": -37.1120256610011,
+                "shearYKN": -0.9782899998531889,
+                "shearZKN": -13.275016793819173,
+                "torsionKNm": 0.0307904049506883,
+                "bendingYKNm": -2.625336915032995,
+                "bendingZKNm": 0.06701795196265062,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -0.9782899998699506,
-                  -37.11202566110296,
-                  13.275016793811698,
-                  -2.6253369150415917,
-                  0.030790404947758133,
-                  -0.06701795196241551
+                  -0.9782899998531889,
+                  -37.1120256610011,
+                  13.275016793819173,
+                  -2.625336915032995,
+                  0.0307904049506883,
+                  -0.06701795196265062
                 ]
               },
               "actualStraightBarIntersections": [
@@ -2634,51 +2523,51 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -3.4212638282916115
+                    "axialCompressionKN": -3.4212638282875965
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -2.751084308667456
+                    "axialCompressionKN": -2.75108430866109
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -15.804928521884026
+                    "axialCompressionKN": -15.804928521839459
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -15.13474900225987
+                    "axialCompressionKN": -15.134749002212954
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 15.804928521884026,
+                "maximumNecessaryTieTensionKN": 15.804928521839459,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
-                  -4.440892098500626e-16,
-                  2.7755575615628914e-17
+                  0.0,
+                  -1.249000902703301e-16
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
               },
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-                  "orthogonalShearShiftPerTensionBarKN": 3.563326698420412,
-                  "thinCellTorsionPerCornerKN": 0.07980395345864821,
-                  "declaredNominalForceComparisonKN": 19.448059173763085,
-                  "requiredStressAtComparisonFractionMPa": 186.91151878309643,
-                  "basicPoorBondLengthMm": 267.0164554044235,
+                  "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+                  "orthogonalShearShiftPerTensionBarKN": 3.5633266984180905,
+                  "thinCellTorsionPerCornerKN": 0.07980395346624274,
+                  "declaredNominalForceComparisonKN": 19.44805917372379,
+                  "requiredStressAtComparisonFractionMPa": 186.9115187827188,
+                  "basicPoorBondLengthMm": 267.016455403884,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 72.5364525875648,
+                  "bendPressureMandrelComparisonMm": 72.53645258741824,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 72.5364525875648,
+                  "necessaryMandrelComparisonMm": 72.53645258741824,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -2686,16 +2575,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-                  "orthogonalShearShiftPerTensionBarKN": 8.90831674605103,
-                  "thinCellTorsionPerCornerKN": 0.19950988364662053,
-                  "declaredNominalForceComparisonKN": 24.912755151581678,
-                  "requiredStressAtComparisonFractionMPa": 239.43165026644348,
-                  "basicPoorBondLengthMm": 342.0452146663478,
+                  "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+                  "orthogonalShearShiftPerTensionBarKN": 8.908316746045227,
+                  "thinCellTorsionPerCornerKN": 0.19950988366560682,
+                  "declaredNominalForceComparisonKN": 24.912755151550293,
+                  "requiredStressAtComparisonFractionMPa": 239.43165026614184,
+                  "basicPoorBondLengthMm": 342.04521466591694,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 92.91841755172196,
+                  "bendPressureMandrelComparisonMm": 92.91841755160489,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 92.91841755172196,
+                  "necessaryMandrelComparisonMm": 92.91841755160489,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": false,
                   "bendPressureAccepted": false,
@@ -2729,12 +2618,12 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666717673448147,
-                "shearYKN": -1.3095806825378826,
-                "shearZKN": -18.605029089726585,
-                "torsionKNm": 0.48984112872229635,
-                "bendingYKNm": 1.76097560988496,
-                "bendingZKNm": -0.16470418225361325,
+                "axialCompressionKN": -10.66671767335356,
+                "shearYKN": -1.309580682530914,
+                "shearZKN": -18.605029089735567,
+                "torsionKNm": 0.4898411287227483,
+                "bendingYKNm": 1.7609756098956189,
+                "bendingZKNm": -0.1647041822533223,
                 "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
               },
               "actualStraightBarIntersections": [
@@ -2825,51 +2714,51 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -5.996402870030197
+                    "axialCompressionKN": -5.996402870033143
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -7.64344469256633
+                    "axialCompressionKN": -7.643444692566367
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": 2.310085855842256
+                    "axialCompressionKN": 2.3100858558895867
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": 0.6630440333061237
+                    "axialCompressionKN": 0.6630440333563634
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 7.64344469256633,
+                "maximumNecessaryTieTensionKN": 7.643444692566367,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
-                  2.220446049250313e-16,
-                  -2.7755575615628914e-17
+                  0.0,
+                  -8.326672684688674e-17
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
               },
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 7.64344469256633,
-                  "orthogonalShearShiftPerTensionBarKN": 4.978652443066117,
-                  "thinCellTorsionPerCornerKN": 1.2695922221553015,
-                  "declaredNominalForceComparisonKN": 13.89168935778775,
-                  "requiredStressAtComparisonFractionMPa": 133.51032784957712,
-                  "basicPoorBondLengthMm": 190.72903978511016,
+                  "fourCornerWitnessMaximumTieKN": 7.643444692566367,
+                  "orthogonalShearShiftPerTensionBarKN": 4.97865244306662,
+                  "thinCellTorsionPerCornerKN": 1.269592222156473,
+                  "declaredNominalForceComparisonKN": 13.89168935778946,
+                  "requiredStressAtComparisonFractionMPa": 133.51032784959355,
+                  "basicPoorBondLengthMm": 190.72903978513364,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 51.81256687154425,
+                  "bendPressureMandrelComparisonMm": 51.81256687155063,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 51.81256687154425,
+                  "necessaryMandrelComparisonMm": 51.81256687155063,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -2877,16 +2766,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 7.64344469256633,
-                  "orthogonalShearShiftPerTensionBarKN": 12.446631107665294,
-                  "thinCellTorsionPerCornerKN": 3.173980555388254,
-                  "declaredNominalForceComparisonKN": 23.26405635561988,
-                  "requiredStressAtComparisonFractionMPa": 223.58632641094974,
-                  "basicPoorBondLengthMm": 319.4090377299282,
+                  "fourCornerWitnessMaximumTieKN": 7.643444692566367,
+                  "orthogonalShearShiftPerTensionBarKN": 12.446631107666551,
+                  "thinCellTorsionPerCornerKN": 3.1739805553911826,
+                  "declaredNominalForceComparisonKN": 23.2640563556241,
+                  "requiredStressAtComparisonFractionMPa": 223.5863264109903,
+                  "basicPoorBondLengthMm": 319.4090377299861,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 86.76917864947738,
+                  "bendPressureMandrelComparisonMm": 86.76917864949313,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 86.76917864947738,
+                  "necessaryMandrelComparisonMm": 86.76917864949313,
                   "authoredEndMandrelMm": 80,
                   "necessaryMandrelScreenPasses": false,
                   "bendPressureAccepted": false,
@@ -2917,33 +2806,33 @@
             ],
             "breadthMm": 250.0,
             "depthMm": 350.0,
-            "axialCompressionKN": -37.11202566110296,
-            "shearYKN": -0.9782899998699506,
-            "shearZKN": -13.275016793811698,
-            "torsionKNm": 0.030790404947758133,
-            "bendingYKNm": -2.6253369150415917,
-            "bendingZKNm": 0.06701795196241551,
+            "axialCompressionKN": -37.1120256610011,
+            "shearYKN": -0.9782899998531889,
+            "shearZKN": -13.275016793819173,
+            "torsionKNm": 0.0307904049506883,
+            "bendingYKNm": -2.625336915032995,
+            "bendingZKNm": 0.06701795196265062,
             "globalPhysicalEndWrenchKN_KNm": [
-              -0.9782899998699506,
-              -37.11202566110296,
-              13.275016793811698,
-              -2.6253369150415917,
-              0.030790404947758133,
-              -0.06701795196241551
+              -0.9782899998531889,
+              -37.1120256610011,
+              13.275016793819173,
+              -2.625336915032995,
+              0.0307904049506883,
+              -0.06701795196265062
             ]
           },
           "comparison": {
             "cotTheta": 2.5,
-            "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-            "orthogonalShearShiftPerTensionBarKN": 8.90831674605103,
-            "thinCellTorsionPerCornerKN": 0.19950988364662053,
-            "declaredNominalForceComparisonKN": 24.912755151581678,
-            "requiredStressAtComparisonFractionMPa": 239.43165026644348,
-            "basicPoorBondLengthMm": 342.0452146663478,
+            "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+            "orthogonalShearShiftPerTensionBarKN": 8.908316746045227,
+            "thinCellTorsionPerCornerKN": 0.19950988366560682,
+            "declaredNominalForceComparisonKN": 24.912755151550293,
+            "requiredStressAtComparisonFractionMPa": 239.43165026614184,
+            "basicPoorBondLengthMm": 342.04521466591694,
             "conservativeAbMm": 46.0,
-            "bendPressureMandrelComparisonMm": 92.91841755172196,
+            "bendPressureMandrelComparisonMm": 92.91841755160489,
             "barDamageMandrelComparisonMm": 48.0,
-            "necessaryMandrelComparisonMm": 92.91841755172196,
+            "necessaryMandrelComparisonMm": 92.91841755160489,
             "authoredEndMandrelMm": 80,
             "necessaryMandrelScreenPasses": false,
             "bendPressureAccepted": false,
@@ -3018,19 +2907,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 7.023923336528242,
-                "shearYKN": -2.3243891188851435,
-                "shearZKN": 3.426143239858337,
-                "torsionKNm": 0.6871335633427648,
-                "bendingYKNm": 0.8710779288471877,
-                "bendingZKNm": -0.08795024571786325,
+                "axialCompressionKN": 7.023923336470034,
+                "shearYKN": -2.3243891188733556,
+                "shearZKN": 3.426143239869933,
+                "torsionKNm": 0.6871335633425797,
+                "bendingYKNm": 0.8710779288480464,
+                "bendingZKNm": -0.08795024571805583,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -2.3243891188851435,
-                  7.023923336528242,
-                  -3.426143239858337,
-                  0.8710779288471877,
-                  0.6871335633427648,
-                  0.08795024571786325
+                  -2.3243891188733556,
+                  7.023923336470034,
+                  -3.426143239869933,
+                  0.8710779288480464,
+                  0.6871335633425797,
+                  0.08795024571805583
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -3059,19 +2948,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 7.023923336528242,
-                "shearYKN": 2.3243891188851435,
-                "shearZKN": -5.199724489858337,
-                "torsionKNm": -0.6871335633427648,
-                "bendingYKNm": -1.172983299387268,
-                "bendingZKNm": -0.07475699260431475,
+                "axialCompressionKN": 7.023923336470034,
+                "shearYKN": 2.3243891188733556,
+                "shearZKN": -5.199724489869933,
+                "torsionKNm": -0.6871335633425797,
+                "bendingYKNm": -1.1729832993889633,
+                "bendingZKNm": -0.07475699260336932,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  2.3243891188851435,
-                  -7.023923336528242,
-                  5.199724489858337,
-                  -1.172983299387268,
-                  -0.6871335633427648,
-                  0.07475699260431475
+                  2.3243891188733556,
+                  -7.023923336470034,
+                  5.199724489869933,
+                  -1.1729832993889633,
+                  -0.6871335633425797,
+                  0.07475699260336932
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -3100,19 +2989,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 4.19372925843345,
-                "shearYKN": -1.3026716539458434,
-                "shearZKN": 23.75443692597905,
-                "torsionKNm": 0.49683899776628754,
-                "bendingYKNm": 0.2256090996685291,
-                "bendingZKNm": -0.004325459409283667,
+                "axialCompressionKN": 4.193729258317035,
+                "shearYKN": -1.3026716539313412,
+                "shearZKN": 23.75443692597638,
+                "torsionKNm": 0.49683899776630414,
+                "bendingYKNm": 0.22560909967899193,
+                "bendingZKNm": -0.0043254594098671075,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -1.3026716539458434,
-                  4.19372925843345,
-                  -23.75443692597905,
-                  0.2256090996685291,
-                  0.49683899776628754,
-                  0.004325459409283667
+                  -1.3026716539313412,
+                  4.193729258317035,
+                  -23.75443692597638,
+                  0.22560909967899193,
+                  0.49683899776630414,
+                  0.0043254594098671075
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -3141,19 +3030,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": 4.19372925843345,
-                "shearYKN": 1.3026716539458434,
-                "shearZKN": -24.76791192597905,
-                "torsionKNm": -0.49683899776628754,
-                "bendingYKNm": -1.1960560767076733,
-                "bendingZKNm": -0.047781406748666995,
+                "axialCompressionKN": 4.193729258317035,
+                "shearYKN": 1.3026716539313412,
+                "shearZKN": -24.767911925976378,
+                "torsionKNm": -0.49683899776630414,
+                "bendingYKNm": -1.1960560767180635,
+                "bendingZKNm": -0.047781406747619715,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  1.3026716539458434,
-                  -4.19372925843345,
-                  24.76791192597905,
-                  -1.1960560767076733,
-                  -0.49683899776628754,
-                  0.047781406748666995
+                  1.3026716539313412,
+                  -4.193729258317035,
+                  24.767911925976378,
+                  -1.1960560767180635,
+                  -0.49683899776630414,
+                  0.047781406747619715
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -3182,19 +3071,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666717673448147,
-                "shearYKN": -1.3095806825378826,
-                "shearZKN": -19.365135339726585,
-                "torsionKNm": 0.48984112872229635,
-                "bendingYKNm": 2.3305280763267575,
-                "bendingZKNm": -0.20399160272974973,
+                "axialCompressionKN": -10.66671767335356,
+                "shearYKN": -1.309580682530914,
+                "shearZKN": -19.365135339735566,
+                "torsionKNm": 0.4898411287227483,
+                "bendingYKNm": 2.330528076337686,
+                "bendingZKNm": -0.20399160272924974,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -1.3095806825378826,
-                  -10.666717673448147,
-                  19.365135339726585,
-                  2.3305280763267575,
-                  0.48984112872229635,
-                  0.20399160272974973
+                  -1.309580682530914,
+                  -10.66671767335356,
+                  19.365135339735566,
+                  2.330528076337686,
+                  0.4898411287227483,
+                  0.20399160272924974
                 ]
               },
               "actualStraightBarIntersections": [],
@@ -3223,19 +3112,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666717673448147,
-                "shearYKN": 1.3095806825378826,
-                "shearZKN": 13.350777339726584,
-                "torsionKNm": -0.48984112872229635,
-                "bendingYKNm": 3.5117324509748276,
-                "bendingZKNm": -0.26745744298396085,
+                "axialCompressionKN": -10.66671767335356,
+                "shearYKN": 1.309580682530914,
+                "shearZKN": 13.350777339735565,
+                "torsionKNm": -0.4898411287227483,
+                "bendingYKNm": 3.511732450967108,
+                "bendingZKNm": -0.26745744298213797,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  1.3095806825378826,
-                  10.666717673448147,
-                  -13.350777339726584,
-                  3.5117324509748276,
-                  -0.48984112872229635,
-                  0.26745744298396085
+                  1.309580682530914,
+                  10.66671767335356,
+                  -13.350777339735565,
+                  3.511732450967108,
+                  -0.4898411287227483,
+                  0.26745744298213797
                 ]
               },
               "actualStraightBarIntersections": [
@@ -3335,34 +3224,34 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -9.61178005951494
+                    "axialCompressionKN": -9.6117800594822
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -12.286354489354549
+                    "axialCompressionKN": -12.28635448930358
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": 6.9529956526304755
+                    "axialCompressionKN": 6.9529956526268
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": 4.2784212227908665
+                    "axialCompressionKN": 4.27842122280542
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 12.286354489354549,
+                "maximumNecessaryTieTensionKN": 12.28635448930358,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
-                  8.881784197001252e-16,
+                  0.0,
                   0.0
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
@@ -3370,16 +3259,16 @@
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 12.286354489354549,
-                  "orthogonalShearShiftPerTensionBarKN": 3.6650895055661166,
-                  "thinCellTorsionPerCornerKN": 1.2695922221553015,
-                  "declaredNominalForceComparisonKN": 17.22103621707597,
-                  "requiredStressAtComparisonFractionMPa": 165.50803376281365,
-                  "basicPoorBondLengthMm": 236.44004823259093,
+                  "fourCornerWitnessMaximumTieKN": 12.28635448930358,
+                  "orthogonalShearShiftPerTensionBarKN": 3.6650895055666197,
+                  "thinCellTorsionPerCornerKN": 1.269592222156473,
+                  "declaredNominalForceComparisonKN": 17.221036217026672,
+                  "requiredStressAtComparisonFractionMPa": 165.50803376233986,
+                  "basicPoorBondLengthMm": 236.44004823191406,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 64.23020754450756,
+                  "bendPressureMandrelComparisonMm": 64.23020754432369,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 64.23020754450756,
+                  "necessaryMandrelComparisonMm": 64.23020754432369,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -3387,16 +3276,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 12.286354489354549,
-                  "orthogonalShearShiftPerTensionBarKN": 9.162723763915292,
-                  "thinCellTorsionPerCornerKN": 3.173980555388254,
-                  "declaredNominalForceComparisonKN": 24.623058808658094,
-                  "requiredStressAtComparisonFractionMPa": 236.64743499036055,
-                  "basicPoorBondLengthMm": 338.06776427194364,
+                  "fourCornerWitnessMaximumTieKN": 12.28635448930358,
+                  "orthogonalShearShiftPerTensionBarKN": 9.16272376391655,
+                  "thinCellTorsionPerCornerKN": 3.1739805553911826,
+                  "declaredNominalForceComparisonKN": 24.62305880861131,
+                  "requiredStressAtComparisonFractionMPa": 236.64743498991095,
+                  "basicPoorBondLengthMm": 338.0677642713013,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 91.83792181404873,
+                  "bendPressureMandrelComparisonMm": 91.83792181387426,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 91.83792181404873,
+                  "necessaryMandrelComparisonMm": 91.83792181387426,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -3428,19 +3317,19 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -37.11202566110296,
-                "shearYKN": -0.9782899998699506,
-                "shearZKN": -13.275016793811698,
-                "torsionKNm": 0.030790404947758133,
-                "bendingYKNm": -2.6253369150415917,
-                "bendingZKNm": 0.06701795196241551,
+                "axialCompressionKN": -37.1120256610011,
+                "shearYKN": -0.9782899998531889,
+                "shearZKN": -13.275016793819173,
+                "torsionKNm": 0.0307904049506883,
+                "bendingYKNm": -2.625336915032995,
+                "bendingZKNm": 0.06701795196265062,
                 "globalPhysicalEndWrenchKN_KNm": [
-                  -0.9782899998699506,
-                  -37.11202566110296,
-                  13.275016793811698,
-                  -2.6253369150415917,
-                  0.030790404947758133,
-                  -0.06701795196241551
+                  -0.9782899998531889,
+                  -37.1120256610011,
+                  13.275016793819173,
+                  -2.625336915032995,
+                  0.0307904049506883,
+                  -0.06701795196265062
                 ]
               },
               "actualStraightBarIntersections": [
@@ -3540,51 +3429,51 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -3.4212638282916115
+                    "axialCompressionKN": -3.4212638282875965
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -2.751084308667456
+                    "axialCompressionKN": -2.75108430866109
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -15.804928521884026
+                    "axialCompressionKN": -15.804928521839459
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -15.13474900225987
+                    "axialCompressionKN": -15.134749002212954
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 15.804928521884026,
+                "maximumNecessaryTieTensionKN": 15.804928521839459,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
-                  -4.440892098500626e-16,
-                  2.7755575615628914e-17
+                  0.0,
+                  -1.249000902703301e-16
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
               },
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-                  "orthogonalShearShiftPerTensionBarKN": 3.563326698420412,
-                  "thinCellTorsionPerCornerKN": 0.07980395345864821,
-                  "declaredNominalForceComparisonKN": 19.448059173763085,
-                  "requiredStressAtComparisonFractionMPa": 186.91151878309643,
-                  "basicPoorBondLengthMm": 267.0164554044235,
+                  "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+                  "orthogonalShearShiftPerTensionBarKN": 3.5633266984180905,
+                  "thinCellTorsionPerCornerKN": 0.07980395346624274,
+                  "declaredNominalForceComparisonKN": 19.44805917372379,
+                  "requiredStressAtComparisonFractionMPa": 186.9115187827188,
+                  "basicPoorBondLengthMm": 267.016455403884,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 72.5364525875648,
+                  "bendPressureMandrelComparisonMm": 72.53645258741824,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 72.5364525875648,
+                  "necessaryMandrelComparisonMm": 72.53645258741824,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -3592,16 +3481,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-                  "orthogonalShearShiftPerTensionBarKN": 8.90831674605103,
-                  "thinCellTorsionPerCornerKN": 0.19950988364662053,
-                  "declaredNominalForceComparisonKN": 24.912755151581678,
-                  "requiredStressAtComparisonFractionMPa": 239.43165026644348,
-                  "basicPoorBondLengthMm": 342.0452146663478,
+                  "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+                  "orthogonalShearShiftPerTensionBarKN": 8.908316746045227,
+                  "thinCellTorsionPerCornerKN": 0.19950988366560682,
+                  "declaredNominalForceComparisonKN": 24.912755151550293,
+                  "requiredStressAtComparisonFractionMPa": 239.43165026614184,
+                  "basicPoorBondLengthMm": 342.04521466591694,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 92.91841755172196,
+                  "bendPressureMandrelComparisonMm": 92.91841755160489,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 92.91841755172196,
+                  "necessaryMandrelComparisonMm": 92.91841755160489,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -3635,12 +3524,12 @@
                 ],
                 "breadthMm": 250.0,
                 "depthMm": 350.0,
-                "axialCompressionKN": -10.666717673448147,
-                "shearYKN": -1.3095806825378826,
-                "shearZKN": -18.605029089726585,
-                "torsionKNm": 0.48984112872229635,
-                "bendingYKNm": 1.76097560988496,
-                "bendingZKNm": -0.16470418225361325,
+                "axialCompressionKN": -10.66671767335356,
+                "shearYKN": -1.309580682530914,
+                "shearZKN": -18.605029089735567,
+                "torsionKNm": 0.4898411287227483,
+                "bendingYKNm": 1.7609756098956189,
+                "bendingZKNm": -0.1647041822533223,
                 "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
               },
               "actualStraightBarIntersections": [
@@ -3731,51 +3620,51 @@
                       -106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": -5.996402870030197
+                    "axialCompressionKN": -5.996402870033143
                   },
                   {
                     "uvMm": [
                       -106.0,
                       50.0
                     ],
-                    "axialCompressionKN": -7.64344469256633
+                    "axialCompressionKN": -7.643444692566367
                   },
                   {
                     "uvMm": [
                       106.0,
                       -50.0
                     ],
-                    "axialCompressionKN": 2.310085855842256
+                    "axialCompressionKN": 2.3100858558895867
                   },
                   {
                     "uvMm": [
                       106.0,
                       50.0
                     ],
-                    "axialCompressionKN": 0.6630440333061237
+                    "axialCompressionKN": 0.6630440333563634
                   }
                 ],
-                "maximumNecessaryTieTensionKN": 7.64344469256633,
+                "maximumNecessaryTieTensionKN": 7.643444692566367,
                 "normalAndTwoMomentResidualKN_KNm": [
                   0.0,
-                  2.220446049250313e-16,
-                  -2.7755575615628914e-17
+                  0.0,
+                  -8.326672684688674e-17
                 ],
                 "scope": "Explicit four-corner axial strut/tie equilibrium witness at declared coordinates; not compatible bar stresses, a joint-panel solution or a concrete-strut resistance proof."
               },
               "comparisons": [
                 {
                   "cotTheta": 1,
-                  "fourCornerWitnessMaximumTieKN": 7.64344469256633,
-                  "orthogonalShearShiftPerTensionBarKN": 4.978652443066117,
-                  "thinCellTorsionPerCornerKN": 1.2695922221553015,
-                  "declaredNominalForceComparisonKN": 13.89168935778775,
-                  "requiredStressAtComparisonFractionMPa": 133.51032784957712,
-                  "basicPoorBondLengthMm": 190.72903978511016,
+                  "fourCornerWitnessMaximumTieKN": 7.643444692566367,
+                  "orthogonalShearShiftPerTensionBarKN": 4.97865244306662,
+                  "thinCellTorsionPerCornerKN": 1.269592222156473,
+                  "declaredNominalForceComparisonKN": 13.89168935778946,
+                  "requiredStressAtComparisonFractionMPa": 133.51032784959355,
+                  "basicPoorBondLengthMm": 190.72903978513364,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 51.81256687154425,
+                  "bendPressureMandrelComparisonMm": 51.81256687155063,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 51.81256687154425,
+                  "necessaryMandrelComparisonMm": 51.81256687155063,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -3783,16 +3672,16 @@
                 },
                 {
                   "cotTheta": 2.5,
-                  "fourCornerWitnessMaximumTieKN": 7.64344469256633,
-                  "orthogonalShearShiftPerTensionBarKN": 12.446631107665294,
-                  "thinCellTorsionPerCornerKN": 3.173980555388254,
-                  "declaredNominalForceComparisonKN": 23.26405635561988,
-                  "requiredStressAtComparisonFractionMPa": 223.58632641094974,
-                  "basicPoorBondLengthMm": 319.4090377299282,
+                  "fourCornerWitnessMaximumTieKN": 7.643444692566367,
+                  "orthogonalShearShiftPerTensionBarKN": 12.446631107666551,
+                  "thinCellTorsionPerCornerKN": 3.1739805553911826,
+                  "declaredNominalForceComparisonKN": 23.2640563556241,
+                  "requiredStressAtComparisonFractionMPa": 223.5863264109903,
+                  "basicPoorBondLengthMm": 319.4090377299861,
                   "conservativeAbMm": 46.0,
-                  "bendPressureMandrelComparisonMm": 86.76917864947738,
+                  "bendPressureMandrelComparisonMm": 86.76917864949313,
                   "barDamageMandrelComparisonMm": 48.0,
-                  "necessaryMandrelComparisonMm": 86.76917864947738,
+                  "necessaryMandrelComparisonMm": 86.76917864949313,
                   "authoredEndMandrelMm": 100,
                   "necessaryMandrelScreenPasses": true,
                   "bendPressureAccepted": false,
@@ -3823,33 +3712,33 @@
             ],
             "breadthMm": 250.0,
             "depthMm": 350.0,
-            "axialCompressionKN": -37.11202566110296,
-            "shearYKN": -0.9782899998699506,
-            "shearZKN": -13.275016793811698,
-            "torsionKNm": 0.030790404947758133,
-            "bendingYKNm": -2.6253369150415917,
-            "bendingZKNm": 0.06701795196241551,
+            "axialCompressionKN": -37.1120256610011,
+            "shearYKN": -0.9782899998531889,
+            "shearZKN": -13.275016793819173,
+            "torsionKNm": 0.0307904049506883,
+            "bendingYKNm": -2.625336915032995,
+            "bendingZKNm": 0.06701795196265062,
             "globalPhysicalEndWrenchKN_KNm": [
-              -0.9782899998699506,
-              -37.11202566110296,
-              13.275016793811698,
-              -2.6253369150415917,
-              0.030790404947758133,
-              -0.06701795196241551
+              -0.9782899998531889,
+              -37.1120256610011,
+              13.275016793819173,
+              -2.625336915032995,
+              0.0307904049506883,
+              -0.06701795196265062
             ]
           },
           "comparison": {
             "cotTheta": 2.5,
-            "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-            "orthogonalShearShiftPerTensionBarKN": 8.90831674605103,
-            "thinCellTorsionPerCornerKN": 0.19950988364662053,
-            "declaredNominalForceComparisonKN": 24.912755151581678,
-            "requiredStressAtComparisonFractionMPa": 239.43165026644348,
-            "basicPoorBondLengthMm": 342.0452146663478,
+            "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+            "orthogonalShearShiftPerTensionBarKN": 8.908316746045227,
+            "thinCellTorsionPerCornerKN": 0.19950988366560682,
+            "declaredNominalForceComparisonKN": 24.912755151550293,
+            "requiredStressAtComparisonFractionMPa": 239.43165026614184,
+            "basicPoorBondLengthMm": 342.04521466591694,
             "conservativeAbMm": 46.0,
-            "bendPressureMandrelComparisonMm": 92.91841755172196,
+            "bendPressureMandrelComparisonMm": 92.91841755160489,
             "barDamageMandrelComparisonMm": 48.0,
-            "necessaryMandrelComparisonMm": 92.91841755172196,
+            "necessaryMandrelComparisonMm": 92.91841755160489,
             "authoredEndMandrelMm": 100,
             "necessaryMandrelScreenPasses": true,
             "bendPressureAccepted": false,
@@ -3997,19 +3886,19 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666720027496922,
-              "shearYKN": 1.3095805851917746,
-              "shearZKN": 13.35077723549815,
-              "torsionKNm": -0.4898410557358615,
-              "bendingYKNm": 3.511732669394026,
-              "bendingZKNm": -0.26745743135283373,
+              "axialCompressionKN": -10.666720027460542,
+              "shearYKN": 1.309580585198586,
+              "shearZKN": 13.350777235508836,
+              "torsionKNm": -0.489841055739539,
+              "bendingYKNm": 3.511732669393895,
+              "bendingZKNm": -0.2674574313536914,
               "globalPhysicalEndWrenchKN_KNm": [
-                1.3095805851917746,
-                10.666720027496922,
-                -13.35077723549815,
-                3.511732669394026,
-                -0.4898410557358615,
-                0.26745743135283373
+                1.309580585198586,
+                10.666720027460542,
+                -13.350777235508836,
+                3.511732669393895,
+                -0.489841055739539,
+                0.2674574313536914
               ]
             },
             "changedSourceCut": {
@@ -4023,33 +3912,33 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666717673448147,
-              "shearYKN": 1.3095806825378826,
-              "shearZKN": 13.350777339726584,
-              "torsionKNm": -0.48984112872229635,
-              "bendingYKNm": 3.5117324509748276,
-              "bendingZKNm": -0.26745744298396085,
+              "axialCompressionKN": -10.66671767335356,
+              "shearYKN": 1.309580682530914,
+              "shearZKN": 13.350777339735565,
+              "torsionKNm": -0.4898411287227483,
+              "bendingYKNm": 3.511732450967108,
+              "bendingZKNm": -0.26745744298213797,
               "globalPhysicalEndWrenchKN_KNm": [
-                1.3095806825378826,
-                10.666717673448147,
-                -13.350777339726584,
-                3.5117324509748276,
-                -0.48984112872229635,
-                0.26745744298396085
+                1.309580682530914,
+                10.66671767335356,
+                -13.350777339735565,
+                3.511732450967108,
+                -0.4898411287227483,
+                0.26745744298213797
               ]
             },
             "control": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 12.286355534850724,
-              "orthogonalShearShiftPerTensionBarKN": 3.665089455172481,
-              "thinCellTorsionPerCornerKN": 1.2695920329857842,
-              "declaredNominalForceComparisonKN": 17.22103702300899,
-              "requiredStressAtComparisonFractionMPa": 165.50804150847938,
-              "basicPoorBondLengthMm": 236.44005929782767,
+              "fourCornerWitnessMaximumTieKN": 12.28635553484561,
+              "orthogonalShearShiftPerTensionBarKN": 3.6650894551768554,
+              "thinCellTorsionPerCornerKN": 1.2695920329953154,
+              "declaredNominalForceComparisonKN": 17.221037023017782,
+              "requiredStressAtComparisonFractionMPa": 165.50804150856388,
+              "basicPoorBondLengthMm": 236.44005929794838,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 64.23021055043847,
+              "bendPressureMandrelComparisonMm": 64.23021055047127,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 64.23021055043847,
+              "necessaryMandrelComparisonMm": 64.23021055047127,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4057,16 +3946,16 @@
             },
             "uniform8250": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 12.286354489354549,
-              "orthogonalShearShiftPerTensionBarKN": 3.6650895055661166,
-              "thinCellTorsionPerCornerKN": 1.2695922221553015,
-              "declaredNominalForceComparisonKN": 17.22103621707597,
-              "requiredStressAtComparisonFractionMPa": 165.50803376281365,
-              "basicPoorBondLengthMm": 236.44004823259093,
+              "fourCornerWitnessMaximumTieKN": 12.28635448930358,
+              "orthogonalShearShiftPerTensionBarKN": 3.6650895055666197,
+              "thinCellTorsionPerCornerKN": 1.269592222156473,
+              "declaredNominalForceComparisonKN": 17.221036217026672,
+              "requiredStressAtComparisonFractionMPa": 165.50803376233986,
+              "basicPoorBondLengthMm": 236.44004823191406,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 64.23020754450756,
+              "bendPressureMandrelComparisonMm": 64.23020754432369,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 64.23020754450756,
+              "necessaryMandrelComparisonMm": 64.23020754432369,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4099,19 +3988,19 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666720027496922,
-              "shearYKN": 1.3095805851917746,
-              "shearZKN": 13.35077723549815,
-              "torsionKNm": -0.4898410557358615,
-              "bendingYKNm": 3.511732669394026,
-              "bendingZKNm": -0.26745743135283373,
+              "axialCompressionKN": -10.666720027460542,
+              "shearYKN": 1.309580585198586,
+              "shearZKN": 13.350777235508836,
+              "torsionKNm": -0.489841055739539,
+              "bendingYKNm": 3.511732669393895,
+              "bendingZKNm": -0.2674574313536914,
               "globalPhysicalEndWrenchKN_KNm": [
-                1.3095805851917746,
-                10.666720027496922,
-                -13.35077723549815,
-                3.511732669394026,
-                -0.4898410557358615,
-                0.26745743135283373
+                1.309580585198586,
+                10.666720027460542,
+                -13.350777235508836,
+                3.511732669393895,
+                -0.489841055739539,
+                0.2674574313536914
               ]
             },
             "changedSourceCut": {
@@ -4125,33 +4014,33 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666717673448147,
-              "shearYKN": 1.3095806825378826,
-              "shearZKN": 13.350777339726584,
-              "torsionKNm": -0.48984112872229635,
-              "bendingYKNm": 3.5117324509748276,
-              "bendingZKNm": -0.26745744298396085,
+              "axialCompressionKN": -10.66671767335356,
+              "shearYKN": 1.309580682530914,
+              "shearZKN": 13.350777339735565,
+              "torsionKNm": -0.4898411287227483,
+              "bendingYKNm": 3.511732450967108,
+              "bendingZKNm": -0.26745744298213797,
               "globalPhysicalEndWrenchKN_KNm": [
-                1.3095806825378826,
-                10.666717673448147,
-                -13.350777339726584,
-                3.5117324509748276,
-                -0.48984112872229635,
-                0.26745744298396085
+                1.309580682530914,
+                10.66671767335356,
+                -13.350777339735565,
+                3.511732450967108,
+                -0.4898411287227483,
+                0.26745744298213797
               ]
             },
             "control": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 12.286355534850724,
-              "orthogonalShearShiftPerTensionBarKN": 9.162723637931203,
-              "thinCellTorsionPerCornerKN": 3.1739800824644604,
-              "declaredNominalForceComparisonKN": 24.62305925524639,
-              "requiredStressAtComparisonFractionMPa": 236.6474392824339,
-              "basicPoorBondLengthMm": 338.067770403477,
+              "fourCornerWitnessMaximumTieKN": 12.28635553484561,
+              "orthogonalShearShiftPerTensionBarKN": 9.162723637942138,
+              "thinCellTorsionPerCornerKN": 3.173980082488289,
+              "declaredNominalForceComparisonKN": 24.623059255276036,
+              "requiredStressAtComparisonFractionMPa": 236.64743928271884,
+              "basicPoorBondLengthMm": 338.0677704038841,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 91.83792347971267,
+              "bendPressureMandrelComparisonMm": 91.83792347982325,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 91.83792347971267,
+              "necessaryMandrelComparisonMm": 91.83792347982325,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": false,
               "bendPressureAccepted": false,
@@ -4159,16 +4048,16 @@
             },
             "uniform8250": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 12.286354489354549,
-              "orthogonalShearShiftPerTensionBarKN": 9.162723763915292,
-              "thinCellTorsionPerCornerKN": 3.173980555388254,
-              "declaredNominalForceComparisonKN": 24.623058808658094,
-              "requiredStressAtComparisonFractionMPa": 236.64743499036055,
-              "basicPoorBondLengthMm": 338.06776427194364,
+              "fourCornerWitnessMaximumTieKN": 12.28635448930358,
+              "orthogonalShearShiftPerTensionBarKN": 9.16272376391655,
+              "thinCellTorsionPerCornerKN": 3.1739805553911826,
+              "declaredNominalForceComparisonKN": 24.62305880861131,
+              "requiredStressAtComparisonFractionMPa": 236.64743498991095,
+              "basicPoorBondLengthMm": 338.0677642713013,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 91.83792181404873,
+              "bendPressureMandrelComparisonMm": 91.83792181387426,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 91.83792181404873,
+              "necessaryMandrelComparisonMm": 91.83792181387426,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": false,
               "bendPressureAccepted": false,
@@ -4201,19 +4090,19 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -37.11202820223116,
-              "shearYKN": -0.9782900470688212,
-              "shearZKN": -13.275016727252659,
-              "torsionKNm": 0.030790337368505106,
-              "bendingYKNm": -2.625337157922894,
-              "bendingZKNm": 0.06701795129288393,
+              "axialCompressionKN": -37.11202820221661,
+              "shearYKN": -0.9782900470773566,
+              "shearZKN": -13.275016727265562,
+              "torsionKNm": 0.030790337372733914,
+              "bendingYKNm": -2.6253371579219333,
+              "bendingZKNm": 0.06701795129213292,
               "globalPhysicalEndWrenchKN_KNm": [
-                -0.9782900470688212,
-                -37.11202820223116,
-                13.275016727252659,
-                -2.625337157922894,
-                0.030790337368505106,
-                -0.06701795129288393
+                -0.9782900470773566,
+                -37.11202820221661,
+                13.275016727265562,
+                -2.6253371579219333,
+                0.030790337372733914,
+                -0.06701795129213292
               ]
             },
             "changedSourceCut": {
@@ -4227,33 +4116,33 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -37.11202566110296,
-              "shearYKN": -0.9782899998699506,
-              "shearZKN": -13.275016793811698,
-              "torsionKNm": 0.030790404947758133,
-              "bendingYKNm": -2.6253369150415917,
-              "bendingZKNm": 0.06701795196241551,
+              "axialCompressionKN": -37.1120256610011,
+              "shearYKN": -0.9782899998531889,
+              "shearZKN": -13.275016793819173,
+              "torsionKNm": 0.0307904049506883,
+              "bendingYKNm": -2.625336915032995,
+              "bendingZKNm": 0.06701795196265062,
               "globalPhysicalEndWrenchKN_KNm": [
-                -0.9782899998699506,
-                -37.11202566110296,
-                13.275016793811698,
-                -2.6253369150415917,
-                0.030790404947758133,
-                -0.06701795196241551
+                -0.9782899998531889,
+                -37.1120256610011,
+                13.275016793819173,
+                -2.625336915032995,
+                0.0307904049506883,
+                -0.06701795196265062
               ]
             },
             "control": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-              "orthogonalShearShiftPerTensionBarKN": 3.56332669358037,
-              "thinCellTorsionPerCornerKN": 0.07980377830370716,
-              "declaredNominalForceComparisonKN": 19.44806019853575,
-              "requiredStressAtComparisonFractionMPa": 186.91152863198744,
-              "basicPoorBondLengthMm": 267.01646947426775,
+              "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+              "orthogonalShearShiftPerTensionBarKN": 3.5633266935857297,
+              "thinCellTorsionPerCornerKN": 0.07980377831466758,
+              "declaredNominalForceComparisonKN": 19.448060198542414,
+              "requiredStressAtComparisonFractionMPa": 186.91152863205147,
+              "basicPoorBondLengthMm": 267.0164694743592,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 72.53645640971348,
+              "bendPressureMandrelComparisonMm": 72.53645640973834,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 72.53645640971348,
+              "necessaryMandrelComparisonMm": 72.53645640973834,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4261,16 +4150,16 @@
             },
             "uniform8250": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-              "orthogonalShearShiftPerTensionBarKN": 3.563326698420412,
-              "thinCellTorsionPerCornerKN": 0.07980395345864821,
-              "declaredNominalForceComparisonKN": 19.448059173763085,
-              "requiredStressAtComparisonFractionMPa": 186.91151878309643,
-              "basicPoorBondLengthMm": 267.0164554044235,
+              "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+              "orthogonalShearShiftPerTensionBarKN": 3.5633266984180905,
+              "thinCellTorsionPerCornerKN": 0.07980395346624274,
+              "declaredNominalForceComparisonKN": 19.44805917372379,
+              "requiredStressAtComparisonFractionMPa": 186.9115187827188,
+              "basicPoorBondLengthMm": 267.016455403884,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 72.5364525875648,
+              "bendPressureMandrelComparisonMm": 72.53645258741824,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 72.5364525875648,
+              "necessaryMandrelComparisonMm": 72.53645258741824,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4303,19 +4192,19 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -37.11202820223116,
-              "shearYKN": -0.9782900470688212,
-              "shearZKN": -13.275016727252659,
-              "torsionKNm": 0.030790337368505106,
-              "bendingYKNm": -2.625337157922894,
-              "bendingZKNm": 0.06701795129288393,
+              "axialCompressionKN": -37.11202820221661,
+              "shearYKN": -0.9782900470773566,
+              "shearZKN": -13.275016727265562,
+              "torsionKNm": 0.030790337372733914,
+              "bendingYKNm": -2.6253371579219333,
+              "bendingZKNm": 0.06701795129213292,
               "globalPhysicalEndWrenchKN_KNm": [
-                -0.9782900470688212,
-                -37.11202820223116,
-                13.275016727252659,
-                -2.625337157922894,
-                0.030790337368505106,
-                -0.06701795129288393
+                -0.9782900470773566,
+                -37.11202820221661,
+                13.275016727265562,
+                -2.6253371579219333,
+                0.030790337372733914,
+                -0.06701795129213292
               ]
             },
             "changedSourceCut": {
@@ -4329,33 +4218,33 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -37.11202566110296,
-              "shearYKN": -0.9782899998699506,
-              "shearZKN": -13.275016793811698,
-              "torsionKNm": 0.030790404947758133,
-              "bendingYKNm": -2.6253369150415917,
-              "bendingZKNm": 0.06701795196241551,
+              "axialCompressionKN": -37.1120256610011,
+              "shearYKN": -0.9782899998531889,
+              "shearZKN": -13.275016793819173,
+              "torsionKNm": 0.0307904049506883,
+              "bendingYKNm": -2.625336915032995,
+              "bendingZKNm": 0.06701795196265062,
               "globalPhysicalEndWrenchKN_KNm": [
-                -0.9782899998699506,
-                -37.11202566110296,
-                13.275016793811698,
-                -2.6253369150415917,
-                0.030790404947758133,
-                -0.06701795196241551
+                -0.9782899998531889,
+                -37.1120256610011,
+                13.275016793819173,
+                -2.625336915032995,
+                0.0307904049506883,
+                -0.06701795196265062
               ]
             },
             "control": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-              "orthogonalShearShiftPerTensionBarKN": 8.908316733950926,
-              "thinCellTorsionPerCornerKN": 0.19950944575926793,
-              "declaredNominalForceComparisonKN": 24.91275590636187,
-              "requiredStressAtComparisonFractionMPa": 239.43165752048927,
-              "basicPoorBondLengthMm": 342.0452250292704,
+              "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+              "orthogonalShearShiftPerTensionBarKN": 8.908316733964325,
+              "thinCellTorsionPerCornerKN": 0.19950944578666893,
+              "declaredNominalForceComparisonKN": 24.912755906393013,
+              "requiredStressAtComparisonFractionMPa": 239.4316575207886,
+              "basicPoorBondLengthMm": 342.04522502969803,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 92.91842036686546,
+              "bendPressureMandrelComparisonMm": 92.91842036698161,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 92.91842036686546,
+              "necessaryMandrelComparisonMm": 92.91842036698161,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": false,
               "bendPressureAccepted": false,
@@ -4363,16 +4252,16 @@
             },
             "uniform8250": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-              "orthogonalShearShiftPerTensionBarKN": 8.90831674605103,
-              "thinCellTorsionPerCornerKN": 0.19950988364662053,
-              "declaredNominalForceComparisonKN": 24.912755151581678,
-              "requiredStressAtComparisonFractionMPa": 239.43165026644348,
-              "basicPoorBondLengthMm": 342.0452146663478,
+              "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+              "orthogonalShearShiftPerTensionBarKN": 8.908316746045227,
+              "thinCellTorsionPerCornerKN": 0.19950988366560682,
+              "declaredNominalForceComparisonKN": 24.912755151550293,
+              "requiredStressAtComparisonFractionMPa": 239.43165026614184,
+              "basicPoorBondLengthMm": 342.04521466591694,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 92.91841755172196,
+              "bendPressureMandrelComparisonMm": 92.91841755160489,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 92.91841755172196,
+              "necessaryMandrelComparisonMm": 92.91841755160489,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": false,
               "bendPressureAccepted": false,
@@ -4407,12 +4296,12 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666720027496922,
-              "shearYKN": -1.3095805851917746,
-              "shearZKN": -18.60502898549815,
-              "torsionKNm": 0.4898410557358615,
-              "bendingYKNm": 1.7609753570703304,
-              "bendingZKNm": -0.1647041617603503,
+              "axialCompressionKN": -10.666720027460542,
+              "shearYKN": -1.309580585198586,
+              "shearZKN": -18.605028985508838,
+              "torsionKNm": 0.489841055739539,
+              "bendingYKNm": 1.7609753570740079,
+              "bendingZKNm": -0.16470416176197653,
               "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
             },
             "changedSourceCut": {
@@ -4428,26 +4317,26 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666717673448147,
-              "shearYKN": -1.3095806825378826,
-              "shearZKN": -18.605029089726585,
-              "torsionKNm": 0.48984112872229635,
-              "bendingYKNm": 1.76097560988496,
-              "bendingZKNm": -0.16470418225361325,
+              "axialCompressionKN": -10.66671767335356,
+              "shearYKN": -1.309580682530914,
+              "shearZKN": -18.605029089735567,
+              "torsionKNm": 0.4898411287227483,
+              "bendingYKNm": 1.7609756098956189,
+              "bendingZKNm": -0.1647041822533223,
               "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
             },
             "control": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 7.643444582351289,
-              "orthogonalShearShiftPerTensionBarKN": 4.9786523926724815,
-              "thinCellTorsionPerCornerKN": 1.2695920329857842,
-              "declaredNominalForceComparisonKN": 13.891689008009553,
-              "requiredStressAtComparisonFractionMPa": 133.51032448792682,
-              "basicPoorBondLengthMm": 190.7290349827526,
+              "fourCornerWitnessMaximumTieKN": 7.643444582358999,
+              "orthogonalShearShiftPerTensionBarKN": 4.978652392676856,
+              "thinCellTorsionPerCornerKN": 1.2695920329953154,
+              "declaredNominalForceComparisonKN": 13.891689008031172,
+              "requiredStressAtComparisonFractionMPa": 133.5103244881346,
+              "basicPoorBondLengthMm": 190.7290349830494,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 51.81256556695805,
+              "bendPressureMandrelComparisonMm": 51.81256556703868,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 51.81256556695805,
+              "necessaryMandrelComparisonMm": 51.81256556703868,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4455,16 +4344,16 @@
             },
             "uniform8250": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 7.64344469256633,
-              "orthogonalShearShiftPerTensionBarKN": 4.978652443066117,
-              "thinCellTorsionPerCornerKN": 1.2695922221553015,
-              "declaredNominalForceComparisonKN": 13.89168935778775,
-              "requiredStressAtComparisonFractionMPa": 133.51032784957712,
-              "basicPoorBondLengthMm": 190.72903978511016,
+              "fourCornerWitnessMaximumTieKN": 7.643444692566367,
+              "orthogonalShearShiftPerTensionBarKN": 4.97865244306662,
+              "thinCellTorsionPerCornerKN": 1.269592222156473,
+              "declaredNominalForceComparisonKN": 13.89168935778946,
+              "requiredStressAtComparisonFractionMPa": 133.51032784959355,
+              "basicPoorBondLengthMm": 190.72903978513364,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 51.81256687154425,
+              "bendPressureMandrelComparisonMm": 51.81256687155063,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 51.81256687154425,
+              "necessaryMandrelComparisonMm": 51.81256687155063,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4499,12 +4388,12 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666720027496922,
-              "shearYKN": -1.3095805851917746,
-              "shearZKN": -18.60502898549815,
-              "torsionKNm": 0.4898410557358615,
-              "bendingYKNm": 1.7609753570703304,
-              "bendingZKNm": -0.1647041617603503,
+              "axialCompressionKN": -10.666720027460542,
+              "shearYKN": -1.309580585198586,
+              "shearZKN": -18.605028985508838,
+              "torsionKNm": 0.489841055739539,
+              "bendingYKNm": 1.7609753570740079,
+              "bendingZKNm": -0.16470416176197653,
               "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
             },
             "changedSourceCut": {
@@ -4520,26 +4409,26 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666717673448147,
-              "shearYKN": -1.3095806825378826,
-              "shearZKN": -18.605029089726585,
-              "torsionKNm": 0.48984112872229635,
-              "bendingYKNm": 1.76097560988496,
-              "bendingZKNm": -0.16470418225361325,
+              "axialCompressionKN": -10.66671767335356,
+              "shearYKN": -1.309580682530914,
+              "shearZKN": -18.605029089735567,
+              "torsionKNm": 0.4898411287227483,
+              "bendingYKNm": 1.7609756098956189,
+              "bendingZKNm": -0.1647041822533223,
               "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
             },
             "control": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 7.643444582351289,
-              "orthogonalShearShiftPerTensionBarKN": 12.446630981681203,
-              "thinCellTorsionPerCornerKN": 3.1739800824644604,
-              "declaredNominalForceComparisonKN": 23.264055646496953,
-              "requiredStressAtComparisonFractionMPa": 223.58631959570704,
-              "basicPoorBondLengthMm": 319.4090279938672,
+              "fourCornerWitnessMaximumTieKN": 7.643444582358999,
+              "orthogonalShearShiftPerTensionBarKN": 12.44663098169214,
+              "thinCellTorsionPerCornerKN": 3.173980082488289,
+              "declaredNominalForceComparisonKN": 23.26405564653943,
+              "requiredStressAtComparisonFractionMPa": 223.5863195961153,
+              "basicPoorBondLengthMm": 319.40902799445035,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 86.7691760046242,
+              "bendPressureMandrelComparisonMm": 86.76917600478262,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 86.7691760046242,
+              "necessaryMandrelComparisonMm": 86.76917600478262,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": false,
               "bendPressureAccepted": false,
@@ -4547,16 +4436,16 @@
             },
             "uniform8250": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 7.64344469256633,
-              "orthogonalShearShiftPerTensionBarKN": 12.446631107665294,
-              "thinCellTorsionPerCornerKN": 3.173980555388254,
-              "declaredNominalForceComparisonKN": 23.26405635561988,
-              "requiredStressAtComparisonFractionMPa": 223.58632641094974,
-              "basicPoorBondLengthMm": 319.4090377299282,
+              "fourCornerWitnessMaximumTieKN": 7.643444692566367,
+              "orthogonalShearShiftPerTensionBarKN": 12.446631107666551,
+              "thinCellTorsionPerCornerKN": 3.1739805553911826,
+              "declaredNominalForceComparisonKN": 23.2640563556241,
+              "requiredStressAtComparisonFractionMPa": 223.5863264109903,
+              "basicPoorBondLengthMm": 319.4090377299861,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 86.76917864947738,
+              "bendPressureMandrelComparisonMm": 86.76917864949313,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 86.76917864947738,
+              "necessaryMandrelComparisonMm": 86.76917864949313,
               "authoredEndMandrelMm": 80,
               "necessaryMandrelScreenPasses": false,
               "bendPressureAccepted": false,
@@ -4572,9 +4461,9 @@
       },
       "allSignedNativeCutComponentDifferences": {
         "axialCompressionKN": {
-          "absoluteDifference": 2.5411281967535615e-06,
-          "control": -37.11202820223116,
-          "changed": -37.11202566110296,
+          "absoluteDifference": 2.5412155082449317e-06,
+          "control": -37.11202820221661,
+          "changed": -37.1120256610011,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/3",
@@ -4589,9 +4478,9 @@
           }
         },
         "shearYKN": {
-          "absoluteDifference": 1.9370670756302388e-07,
-          "control": -2.324388925178436,
-          "changed": -2.3243891188851435,
+          "absoluteDifference": 1.9367135095649246e-07,
+          "control": -2.3243889252020047,
+          "changed": -2.3243891188733556,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/0",
@@ -4606,9 +4495,9 @@
           }
         },
         "shearZKN": {
-          "absoluteDifference": 6.903384814904712e-07,
-          "control": 23.75443623564057,
-          "changed": 23.75443692597905,
+          "absoluteDifference": 6.903225084897713e-07,
+          "control": 23.75443623565387,
+          "changed": 23.75443692597638,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/1",
@@ -4623,9 +4512,9 @@
           }
         },
         "torsionKNm": {
-          "absoluteDifference": 7.298643484032752e-08,
-          "control": 0.4898410557358615,
-          "changed": 0.48984112872229635,
+          "absoluteDifference": 7.298320930937408e-08,
+          "control": 0.489841055739539,
+          "changed": 0.4898411287227483,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/2",
@@ -4640,9 +4529,9 @@
           }
         },
         "bendingYKNm": {
-          "absoluteDifference": 2.621173771366614e-07,
-          "control": -1.1960558145902962,
-          "changed": -1.1960560767076733,
+          "absoluteDifference": 2.621250605461256e-07,
+          "control": -1.196055814593003,
+          "changed": -1.1960560767180635,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/1",
@@ -4657,9 +4546,9 @@
           }
         },
         "bendingZKNm": {
-          "absoluteDifference": 2.3413646188519266e-08,
-          "control": -0.20399157931610354,
-          "changed": -0.20399160272974973,
+          "absoluteDifference": 2.341131563610155e-08,
+          "control": -0.2039915793179341,
+          "changed": -0.20399160272924974,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/2",
@@ -4674,7 +4563,7 @@
           }
         }
       },
-      "governingNominalMandrelDifferenceMm": -2.8151435031986694e-06
+      "governingNominalMandrelDifferenceMm": -2.8153767175354005e-06
     },
     "100": {
       "samePhysicalCutConsequences": {
@@ -4781,19 +4670,19 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666720027496922,
-              "shearYKN": 1.3095805851917746,
-              "shearZKN": 13.35077723549815,
-              "torsionKNm": -0.4898410557358615,
-              "bendingYKNm": 3.511732669394026,
-              "bendingZKNm": -0.26745743135283373,
+              "axialCompressionKN": -10.666720027460542,
+              "shearYKN": 1.309580585198586,
+              "shearZKN": 13.350777235508836,
+              "torsionKNm": -0.489841055739539,
+              "bendingYKNm": 3.511732669393895,
+              "bendingZKNm": -0.2674574313536914,
               "globalPhysicalEndWrenchKN_KNm": [
-                1.3095805851917746,
-                10.666720027496922,
-                -13.35077723549815,
-                3.511732669394026,
-                -0.4898410557358615,
-                0.26745743135283373
+                1.309580585198586,
+                10.666720027460542,
+                -13.350777235508836,
+                3.511732669393895,
+                -0.489841055739539,
+                0.2674574313536914
               ]
             },
             "changedSourceCut": {
@@ -4807,33 +4696,33 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666717673448147,
-              "shearYKN": 1.3095806825378826,
-              "shearZKN": 13.350777339726584,
-              "torsionKNm": -0.48984112872229635,
-              "bendingYKNm": 3.5117324509748276,
-              "bendingZKNm": -0.26745744298396085,
+              "axialCompressionKN": -10.66671767335356,
+              "shearYKN": 1.309580682530914,
+              "shearZKN": 13.350777339735565,
+              "torsionKNm": -0.4898411287227483,
+              "bendingYKNm": 3.511732450967108,
+              "bendingZKNm": -0.26745744298213797,
               "globalPhysicalEndWrenchKN_KNm": [
-                1.3095806825378826,
-                10.666717673448147,
-                -13.350777339726584,
-                3.5117324509748276,
-                -0.48984112872229635,
-                0.26745744298396085
+                1.309580682530914,
+                10.66671767335356,
+                -13.350777339735565,
+                3.511732450967108,
+                -0.4898411287227483,
+                0.26745744298213797
               ]
             },
             "control": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 12.286355534850724,
-              "orthogonalShearShiftPerTensionBarKN": 3.665089455172481,
-              "thinCellTorsionPerCornerKN": 1.2695920329857842,
-              "declaredNominalForceComparisonKN": 17.22103702300899,
-              "requiredStressAtComparisonFractionMPa": 165.50804150847938,
-              "basicPoorBondLengthMm": 236.44005929782767,
+              "fourCornerWitnessMaximumTieKN": 12.28635553484561,
+              "orthogonalShearShiftPerTensionBarKN": 3.6650894551768554,
+              "thinCellTorsionPerCornerKN": 1.2695920329953154,
+              "declaredNominalForceComparisonKN": 17.221037023017782,
+              "requiredStressAtComparisonFractionMPa": 165.50804150856388,
+              "basicPoorBondLengthMm": 236.44005929794838,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 64.23021055043847,
+              "bendPressureMandrelComparisonMm": 64.23021055047127,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 64.23021055043847,
+              "necessaryMandrelComparisonMm": 64.23021055047127,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4841,16 +4730,16 @@
             },
             "uniform8250": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 12.286354489354549,
-              "orthogonalShearShiftPerTensionBarKN": 3.6650895055661166,
-              "thinCellTorsionPerCornerKN": 1.2695922221553015,
-              "declaredNominalForceComparisonKN": 17.22103621707597,
-              "requiredStressAtComparisonFractionMPa": 165.50803376281365,
-              "basicPoorBondLengthMm": 236.44004823259093,
+              "fourCornerWitnessMaximumTieKN": 12.28635448930358,
+              "orthogonalShearShiftPerTensionBarKN": 3.6650895055666197,
+              "thinCellTorsionPerCornerKN": 1.269592222156473,
+              "declaredNominalForceComparisonKN": 17.221036217026672,
+              "requiredStressAtComparisonFractionMPa": 165.50803376233986,
+              "basicPoorBondLengthMm": 236.44004823191406,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 64.23020754450756,
+              "bendPressureMandrelComparisonMm": 64.23020754432369,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 64.23020754450756,
+              "necessaryMandrelComparisonMm": 64.23020754432369,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4883,19 +4772,19 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666720027496922,
-              "shearYKN": 1.3095805851917746,
-              "shearZKN": 13.35077723549815,
-              "torsionKNm": -0.4898410557358615,
-              "bendingYKNm": 3.511732669394026,
-              "bendingZKNm": -0.26745743135283373,
+              "axialCompressionKN": -10.666720027460542,
+              "shearYKN": 1.309580585198586,
+              "shearZKN": 13.350777235508836,
+              "torsionKNm": -0.489841055739539,
+              "bendingYKNm": 3.511732669393895,
+              "bendingZKNm": -0.2674574313536914,
               "globalPhysicalEndWrenchKN_KNm": [
-                1.3095805851917746,
-                10.666720027496922,
-                -13.35077723549815,
-                3.511732669394026,
-                -0.4898410557358615,
-                0.26745743135283373
+                1.309580585198586,
+                10.666720027460542,
+                -13.350777235508836,
+                3.511732669393895,
+                -0.489841055739539,
+                0.2674574313536914
               ]
             },
             "changedSourceCut": {
@@ -4909,33 +4798,33 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666717673448147,
-              "shearYKN": 1.3095806825378826,
-              "shearZKN": 13.350777339726584,
-              "torsionKNm": -0.48984112872229635,
-              "bendingYKNm": 3.5117324509748276,
-              "bendingZKNm": -0.26745744298396085,
+              "axialCompressionKN": -10.66671767335356,
+              "shearYKN": 1.309580682530914,
+              "shearZKN": 13.350777339735565,
+              "torsionKNm": -0.4898411287227483,
+              "bendingYKNm": 3.511732450967108,
+              "bendingZKNm": -0.26745744298213797,
               "globalPhysicalEndWrenchKN_KNm": [
-                1.3095806825378826,
-                10.666717673448147,
-                -13.350777339726584,
-                3.5117324509748276,
-                -0.48984112872229635,
-                0.26745744298396085
+                1.309580682530914,
+                10.66671767335356,
+                -13.350777339735565,
+                3.511732450967108,
+                -0.4898411287227483,
+                0.26745744298213797
               ]
             },
             "control": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 12.286355534850724,
-              "orthogonalShearShiftPerTensionBarKN": 9.162723637931203,
-              "thinCellTorsionPerCornerKN": 3.1739800824644604,
-              "declaredNominalForceComparisonKN": 24.62305925524639,
-              "requiredStressAtComparisonFractionMPa": 236.6474392824339,
-              "basicPoorBondLengthMm": 338.067770403477,
+              "fourCornerWitnessMaximumTieKN": 12.28635553484561,
+              "orthogonalShearShiftPerTensionBarKN": 9.162723637942138,
+              "thinCellTorsionPerCornerKN": 3.173980082488289,
+              "declaredNominalForceComparisonKN": 24.623059255276036,
+              "requiredStressAtComparisonFractionMPa": 236.64743928271884,
+              "basicPoorBondLengthMm": 338.0677704038841,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 91.83792347971267,
+              "bendPressureMandrelComparisonMm": 91.83792347982325,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 91.83792347971267,
+              "necessaryMandrelComparisonMm": 91.83792347982325,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4943,16 +4832,16 @@
             },
             "uniform8250": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 12.286354489354549,
-              "orthogonalShearShiftPerTensionBarKN": 9.162723763915292,
-              "thinCellTorsionPerCornerKN": 3.173980555388254,
-              "declaredNominalForceComparisonKN": 24.623058808658094,
-              "requiredStressAtComparisonFractionMPa": 236.64743499036055,
-              "basicPoorBondLengthMm": 338.06776427194364,
+              "fourCornerWitnessMaximumTieKN": 12.28635448930358,
+              "orthogonalShearShiftPerTensionBarKN": 9.16272376391655,
+              "thinCellTorsionPerCornerKN": 3.1739805553911826,
+              "declaredNominalForceComparisonKN": 24.62305880861131,
+              "requiredStressAtComparisonFractionMPa": 236.64743498991095,
+              "basicPoorBondLengthMm": 338.0677642713013,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 91.83792181404873,
+              "bendPressureMandrelComparisonMm": 91.83792181387426,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 91.83792181404873,
+              "necessaryMandrelComparisonMm": 91.83792181387426,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -4985,19 +4874,19 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -37.11202820223116,
-              "shearYKN": -0.9782900470688212,
-              "shearZKN": -13.275016727252659,
-              "torsionKNm": 0.030790337368505106,
-              "bendingYKNm": -2.625337157922894,
-              "bendingZKNm": 0.06701795129288393,
+              "axialCompressionKN": -37.11202820221661,
+              "shearYKN": -0.9782900470773566,
+              "shearZKN": -13.275016727265562,
+              "torsionKNm": 0.030790337372733914,
+              "bendingYKNm": -2.6253371579219333,
+              "bendingZKNm": 0.06701795129213292,
               "globalPhysicalEndWrenchKN_KNm": [
-                -0.9782900470688212,
-                -37.11202820223116,
-                13.275016727252659,
-                -2.625337157922894,
-                0.030790337368505106,
-                -0.06701795129288393
+                -0.9782900470773566,
+                -37.11202820221661,
+                13.275016727265562,
+                -2.6253371579219333,
+                0.030790337372733914,
+                -0.06701795129213292
               ]
             },
             "changedSourceCut": {
@@ -5011,33 +4900,33 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -37.11202566110296,
-              "shearYKN": -0.9782899998699506,
-              "shearZKN": -13.275016793811698,
-              "torsionKNm": 0.030790404947758133,
-              "bendingYKNm": -2.6253369150415917,
-              "bendingZKNm": 0.06701795196241551,
+              "axialCompressionKN": -37.1120256610011,
+              "shearYKN": -0.9782899998531889,
+              "shearZKN": -13.275016793819173,
+              "torsionKNm": 0.0307904049506883,
+              "bendingYKNm": -2.625336915032995,
+              "bendingZKNm": 0.06701795196265062,
               "globalPhysicalEndWrenchKN_KNm": [
-                -0.9782899998699506,
-                -37.11202566110296,
-                13.275016793811698,
-                -2.6253369150415917,
-                0.030790404947758133,
-                -0.06701795196241551
+                -0.9782899998531889,
+                -37.1120256610011,
+                13.275016793819173,
+                -2.625336915032995,
+                0.0307904049506883,
+                -0.06701795196265062
               ]
             },
             "control": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-              "orthogonalShearShiftPerTensionBarKN": 3.56332669358037,
-              "thinCellTorsionPerCornerKN": 0.07980377830370716,
-              "declaredNominalForceComparisonKN": 19.44806019853575,
-              "requiredStressAtComparisonFractionMPa": 186.91152863198744,
-              "basicPoorBondLengthMm": 267.01646947426775,
+              "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+              "orthogonalShearShiftPerTensionBarKN": 3.5633266935857297,
+              "thinCellTorsionPerCornerKN": 0.07980377831466758,
+              "declaredNominalForceComparisonKN": 19.448060198542414,
+              "requiredStressAtComparisonFractionMPa": 186.91152863205147,
+              "basicPoorBondLengthMm": 267.0164694743592,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 72.53645640971348,
+              "bendPressureMandrelComparisonMm": 72.53645640973834,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 72.53645640971348,
+              "necessaryMandrelComparisonMm": 72.53645640973834,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -5045,16 +4934,16 @@
             },
             "uniform8250": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-              "orthogonalShearShiftPerTensionBarKN": 3.563326698420412,
-              "thinCellTorsionPerCornerKN": 0.07980395345864821,
-              "declaredNominalForceComparisonKN": 19.448059173763085,
-              "requiredStressAtComparisonFractionMPa": 186.91151878309643,
-              "basicPoorBondLengthMm": 267.0164554044235,
+              "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+              "orthogonalShearShiftPerTensionBarKN": 3.5633266984180905,
+              "thinCellTorsionPerCornerKN": 0.07980395346624274,
+              "declaredNominalForceComparisonKN": 19.44805917372379,
+              "requiredStressAtComparisonFractionMPa": 186.9115187827188,
+              "basicPoorBondLengthMm": 267.016455403884,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 72.5364525875648,
+              "bendPressureMandrelComparisonMm": 72.53645258741824,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 72.5364525875648,
+              "necessaryMandrelComparisonMm": 72.53645258741824,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -5087,19 +4976,19 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -37.11202820223116,
-              "shearYKN": -0.9782900470688212,
-              "shearZKN": -13.275016727252659,
-              "torsionKNm": 0.030790337368505106,
-              "bendingYKNm": -2.625337157922894,
-              "bendingZKNm": 0.06701795129288393,
+              "axialCompressionKN": -37.11202820221661,
+              "shearYKN": -0.9782900470773566,
+              "shearZKN": -13.275016727265562,
+              "torsionKNm": 0.030790337372733914,
+              "bendingYKNm": -2.6253371579219333,
+              "bendingZKNm": 0.06701795129213292,
               "globalPhysicalEndWrenchKN_KNm": [
-                -0.9782900470688212,
-                -37.11202820223116,
-                13.275016727252659,
-                -2.625337157922894,
-                0.030790337368505106,
-                -0.06701795129288393
+                -0.9782900470773566,
+                -37.11202820221661,
+                13.275016727265562,
+                -2.6253371579219333,
+                0.030790337372733914,
+                -0.06701795129213292
               ]
             },
             "changedSourceCut": {
@@ -5113,33 +5002,33 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -37.11202566110296,
-              "shearYKN": -0.9782899998699506,
-              "shearZKN": -13.275016793811698,
-              "torsionKNm": 0.030790404947758133,
-              "bendingYKNm": -2.6253369150415917,
-              "bendingZKNm": 0.06701795196241551,
+              "axialCompressionKN": -37.1120256610011,
+              "shearYKN": -0.9782899998531889,
+              "shearZKN": -13.275016793819173,
+              "torsionKNm": 0.0307904049506883,
+              "bendingYKNm": -2.625336915032995,
+              "bendingZKNm": 0.06701795196265062,
               "globalPhysicalEndWrenchKN_KNm": [
-                -0.9782899998699506,
-                -37.11202566110296,
-                13.275016793811698,
-                -2.6253369150415917,
-                0.030790404947758133,
-                -0.06701795196241551
+                -0.9782899998531889,
+                -37.1120256610011,
+                13.275016793819173,
+                -2.625336915032995,
+                0.0307904049506883,
+                -0.06701795196265062
               ]
             },
             "control": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 15.804929726651675,
-              "orthogonalShearShiftPerTensionBarKN": 8.908316733950926,
-              "thinCellTorsionPerCornerKN": 0.19950944575926793,
-              "declaredNominalForceComparisonKN": 24.91275590636187,
-              "requiredStressAtComparisonFractionMPa": 239.43165752048927,
-              "basicPoorBondLengthMm": 342.0452250292704,
+              "fourCornerWitnessMaximumTieKN": 15.804929726642017,
+              "orthogonalShearShiftPerTensionBarKN": 8.908316733964325,
+              "thinCellTorsionPerCornerKN": 0.19950944578666893,
+              "declaredNominalForceComparisonKN": 24.912755906393013,
+              "requiredStressAtComparisonFractionMPa": 239.4316575207886,
+              "basicPoorBondLengthMm": 342.04522502969803,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 92.91842036686546,
+              "bendPressureMandrelComparisonMm": 92.91842036698161,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 92.91842036686546,
+              "necessaryMandrelComparisonMm": 92.91842036698161,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -5147,16 +5036,16 @@
             },
             "uniform8250": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 15.804928521884026,
-              "orthogonalShearShiftPerTensionBarKN": 8.90831674605103,
-              "thinCellTorsionPerCornerKN": 0.19950988364662053,
-              "declaredNominalForceComparisonKN": 24.912755151581678,
-              "requiredStressAtComparisonFractionMPa": 239.43165026644348,
-              "basicPoorBondLengthMm": 342.0452146663478,
+              "fourCornerWitnessMaximumTieKN": 15.804928521839459,
+              "orthogonalShearShiftPerTensionBarKN": 8.908316746045227,
+              "thinCellTorsionPerCornerKN": 0.19950988366560682,
+              "declaredNominalForceComparisonKN": 24.912755151550293,
+              "requiredStressAtComparisonFractionMPa": 239.43165026614184,
+              "basicPoorBondLengthMm": 342.04521466591694,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 92.91841755172196,
+              "bendPressureMandrelComparisonMm": 92.91841755160489,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 92.91841755172196,
+              "necessaryMandrelComparisonMm": 92.91841755160489,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -5191,12 +5080,12 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666720027496922,
-              "shearYKN": -1.3095805851917746,
-              "shearZKN": -18.60502898549815,
-              "torsionKNm": 0.4898410557358615,
-              "bendingYKNm": 1.7609753570703304,
-              "bendingZKNm": -0.1647041617603503,
+              "axialCompressionKN": -10.666720027460542,
+              "shearYKN": -1.309580585198586,
+              "shearZKN": -18.605028985508838,
+              "torsionKNm": 0.489841055739539,
+              "bendingYKNm": 1.7609753570740079,
+              "bendingZKNm": -0.16470416176197653,
               "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
             },
             "changedSourceCut": {
@@ -5212,26 +5101,26 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666717673448147,
-              "shearYKN": -1.3095806825378826,
-              "shearZKN": -18.605029089726585,
-              "torsionKNm": 0.48984112872229635,
-              "bendingYKNm": 1.76097560988496,
-              "bendingZKNm": -0.16470418225361325,
+              "axialCompressionKN": -10.66671767335356,
+              "shearYKN": -1.309580682530914,
+              "shearZKN": -18.605029089735567,
+              "torsionKNm": 0.4898411287227483,
+              "bendingYKNm": 1.7609756098956189,
+              "bendingZKNm": -0.1647041822533223,
               "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
             },
             "control": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 7.643444582351289,
-              "orthogonalShearShiftPerTensionBarKN": 4.9786523926724815,
-              "thinCellTorsionPerCornerKN": 1.2695920329857842,
-              "declaredNominalForceComparisonKN": 13.891689008009553,
-              "requiredStressAtComparisonFractionMPa": 133.51032448792682,
-              "basicPoorBondLengthMm": 190.7290349827526,
+              "fourCornerWitnessMaximumTieKN": 7.643444582358999,
+              "orthogonalShearShiftPerTensionBarKN": 4.978652392676856,
+              "thinCellTorsionPerCornerKN": 1.2695920329953154,
+              "declaredNominalForceComparisonKN": 13.891689008031172,
+              "requiredStressAtComparisonFractionMPa": 133.5103244881346,
+              "basicPoorBondLengthMm": 190.7290349830494,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 51.81256556695805,
+              "bendPressureMandrelComparisonMm": 51.81256556703868,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 51.81256556695805,
+              "necessaryMandrelComparisonMm": 51.81256556703868,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -5239,16 +5128,16 @@
             },
             "uniform8250": {
               "cotTheta": 1,
-              "fourCornerWitnessMaximumTieKN": 7.64344469256633,
-              "orthogonalShearShiftPerTensionBarKN": 4.978652443066117,
-              "thinCellTorsionPerCornerKN": 1.2695922221553015,
-              "declaredNominalForceComparisonKN": 13.89168935778775,
-              "requiredStressAtComparisonFractionMPa": 133.51032784957712,
-              "basicPoorBondLengthMm": 190.72903978511016,
+              "fourCornerWitnessMaximumTieKN": 7.643444692566367,
+              "orthogonalShearShiftPerTensionBarKN": 4.97865244306662,
+              "thinCellTorsionPerCornerKN": 1.269592222156473,
+              "declaredNominalForceComparisonKN": 13.89168935778946,
+              "requiredStressAtComparisonFractionMPa": 133.51032784959355,
+              "basicPoorBondLengthMm": 190.72903978513364,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 51.81256687154425,
+              "bendPressureMandrelComparisonMm": 51.81256687155063,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 51.81256687154425,
+              "necessaryMandrelComparisonMm": 51.81256687155063,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -5283,12 +5172,12 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666720027496922,
-              "shearYKN": -1.3095805851917746,
-              "shearZKN": -18.60502898549815,
-              "torsionKNm": 0.4898410557358615,
-              "bendingYKNm": 1.7609753570703304,
-              "bendingZKNm": -0.1647041617603503,
+              "axialCompressionKN": -10.666720027460542,
+              "shearYKN": -1.309580585198586,
+              "shearZKN": -18.605028985508838,
+              "torsionKNm": 0.489841055739539,
+              "bendingYKNm": 1.7609753570740079,
+              "bendingZKNm": -0.16470416176197653,
               "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
             },
             "changedSourceCut": {
@@ -5304,26 +5193,26 @@
               ],
               "breadthMm": 250.0,
               "depthMm": 350.0,
-              "axialCompressionKN": -10.666717673448147,
-              "shearYKN": -1.3095806825378826,
-              "shearZKN": -18.605029089726585,
-              "torsionKNm": 0.48984112872229635,
-              "bendingYKNm": 1.76097560988496,
-              "bendingZKNm": -0.16470418225361325,
+              "axialCompressionKN": -10.66671767335356,
+              "shearYKN": -1.309580682530914,
+              "shearZKN": -18.605029089735567,
+              "torsionKNm": 0.4898411287227483,
+              "bendingYKNm": 1.7609756098956189,
+              "bendingZKNm": -0.1647041822533223,
               "signConvention": "Left-resultant interiorsection, positivecompression. Bothsides of pointloads, distributedsegmentboundaries and exactcomponentmomentstationarycuts; endpointcuts separate."
             },
             "control": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 7.643444582351289,
-              "orthogonalShearShiftPerTensionBarKN": 12.446630981681203,
-              "thinCellTorsionPerCornerKN": 3.1739800824644604,
-              "declaredNominalForceComparisonKN": 23.264055646496953,
-              "requiredStressAtComparisonFractionMPa": 223.58631959570704,
-              "basicPoorBondLengthMm": 319.4090279938672,
+              "fourCornerWitnessMaximumTieKN": 7.643444582358999,
+              "orthogonalShearShiftPerTensionBarKN": 12.44663098169214,
+              "thinCellTorsionPerCornerKN": 3.173980082488289,
+              "declaredNominalForceComparisonKN": 23.26405564653943,
+              "requiredStressAtComparisonFractionMPa": 223.5863195961153,
+              "basicPoorBondLengthMm": 319.40902799445035,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 86.7691760046242,
+              "bendPressureMandrelComparisonMm": 86.76917600478262,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 86.7691760046242,
+              "necessaryMandrelComparisonMm": 86.76917600478262,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -5331,16 +5220,16 @@
             },
             "uniform8250": {
               "cotTheta": 2.5,
-              "fourCornerWitnessMaximumTieKN": 7.64344469256633,
-              "orthogonalShearShiftPerTensionBarKN": 12.446631107665294,
-              "thinCellTorsionPerCornerKN": 3.173980555388254,
-              "declaredNominalForceComparisonKN": 23.26405635561988,
-              "requiredStressAtComparisonFractionMPa": 223.58632641094974,
-              "basicPoorBondLengthMm": 319.4090377299282,
+              "fourCornerWitnessMaximumTieKN": 7.643444692566367,
+              "orthogonalShearShiftPerTensionBarKN": 12.446631107666551,
+              "thinCellTorsionPerCornerKN": 3.1739805553911826,
+              "declaredNominalForceComparisonKN": 23.2640563556241,
+              "requiredStressAtComparisonFractionMPa": 223.5863264109903,
+              "basicPoorBondLengthMm": 319.4090377299861,
               "conservativeAbMm": 46.0,
-              "bendPressureMandrelComparisonMm": 86.76917864947738,
+              "bendPressureMandrelComparisonMm": 86.76917864949313,
               "barDamageMandrelComparisonMm": 48.0,
-              "necessaryMandrelComparisonMm": 86.76917864947738,
+              "necessaryMandrelComparisonMm": 86.76917864949313,
               "authoredEndMandrelMm": 100,
               "necessaryMandrelScreenPasses": true,
               "bendPressureAccepted": false,
@@ -5356,9 +5245,9 @@
       },
       "allSignedNativeCutComponentDifferences": {
         "axialCompressionKN": {
-          "absoluteDifference": 2.5411281967535615e-06,
-          "control": -37.11202820223116,
-          "changed": -37.11202566110296,
+          "absoluteDifference": 2.5412155082449317e-06,
+          "control": -37.11202820221661,
+          "changed": -37.1120256610011,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/3",
@@ -5373,9 +5262,9 @@
           }
         },
         "shearYKN": {
-          "absoluteDifference": 1.9370670756302388e-07,
-          "control": -2.324388925178436,
-          "changed": -2.3243891188851435,
+          "absoluteDifference": 1.9367135095649246e-07,
+          "control": -2.3243889252020047,
+          "changed": -2.3243891188733556,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/0",
@@ -5390,9 +5279,9 @@
           }
         },
         "shearZKN": {
-          "absoluteDifference": 6.903384814904712e-07,
-          "control": 23.75443623564057,
-          "changed": 23.75443692597905,
+          "absoluteDifference": 6.903225084897713e-07,
+          "control": 23.75443623565387,
+          "changed": 23.75443692597638,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/1",
@@ -5407,9 +5296,9 @@
           }
         },
         "torsionKNm": {
-          "absoluteDifference": 7.298643484032752e-08,
-          "control": 0.4898410557358615,
-          "changed": 0.48984112872229635,
+          "absoluteDifference": 7.298320930937408e-08,
+          "control": 0.489841055739539,
+          "changed": 0.4898411287227483,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/2",
@@ -5424,9 +5313,9 @@
           }
         },
         "bendingYKNm": {
-          "absoluteDifference": 2.621173771366614e-07,
-          "control": -1.1960558145902962,
-          "changed": -1.1960560767076733,
+          "absoluteDifference": 2.621250605461256e-07,
+          "control": -1.196055814593003,
+          "changed": -1.1960560767180635,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/1",
@@ -5441,9 +5330,9 @@
           }
         },
         "bendingZKNm": {
-          "absoluteDifference": 2.3413646188519266e-08,
-          "control": -0.20399157931610354,
-          "changed": -0.20399160272974973,
+          "absoluteDifference": 2.341131563610155e-08,
+          "control": -0.2039915793179341,
+          "changed": -0.20399160272924974,
           "component": 0,
           "identity": {
             "memberId": "WET-SUPPORT/beam/2",
@@ -5458,7 +5347,7 @@
           }
         }
       },
-      "governingNominalMandrelDifferenceMm": -2.8151435031986694e-06
+      "governingNominalMandrelDifferenceMm": -2.8153767175354005e-06
     }
   },
   "drawingSHA256": "e7b7bfbc7a5f591e7050f64d4adefe1739a322dbadfd852d7de267ce5c7d839d",

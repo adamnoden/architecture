@@ -12,6 +12,17 @@ const intersect = (a: Rectangle, b: Rectangle): Rectangle | null => {
   return r[2] > r[0] && r[3] > r[1] ? r : null
 }
 
+/** The same current-source clear plans used by the admitted inlet arrangement.
+ * No saved-document admission, fixture operation or room selection is implied. */
+export function inletServiceRoomPlans(model:{shell:number;envelope:number;groundWalls:readonly {id:string;finishedFaces:readonly number[];holes:readonly unknown[]}[]}){
+ const utility=model.groundWalls.find(w=>w.id==='utility-north'),spine=model.groundWalls.find(w=>w.id==='service-spine'),plant=model.groundWalls.find(w=>w.id==='plant-intermediate-arch'),north=model.groundWalls.find(w=>w.id==='plant-north')
+ if(!utility||!spine||!plant||!north||utility.holes.length!==1||plant.holes.length!==1)throw Error('Unsupported joined Utility/Plant room topology')
+ const west=spine.finishedFaces[1],east=model.shell-model.envelope
+ const plans={utility:[west,model.envelope,east-west,utility.finishedFaces[0]-model.envelope] as const,plant:[west,plant.finishedFaces[1],east-west,north.finishedFaces[0]-plant.finishedFaces[1]] as const}
+ if(Object.values(plans).some(p=>!p.every(Number.isFinite)||p[2]<=0||p[3]<=0))throw Error('Unsupported current service-room clear plans')
+ return plans
+}
+
 /** Local topology below ONE clear room, not a second uniform ground section.
  * Boxes use min/max XY and absolute source ground datum Z. Existing floor and
  * wall DPC remain separate. Contact union is partitioned once, including caps.
