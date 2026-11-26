@@ -169,6 +169,11 @@ class CageControls(unittest.TestCase):
     def test_short_column_hook_fabrication_comparison_rejects(self):
         c=copy.deepcopy(self.c);c['links']['columnHookTailMm']=75
         with self.assertRaisesRegex(ValueError,'fabrication'):p.assess(c,self.base)
+    def test_old_column_closure_crosses_its_own_135_return(self):
+        c=copy.deepcopy(self.c);c['links']['columnClosureOffsetMm']=14
+        bad=p.link_self_audit(c,[p.closed_column_link(c,0,3285.5)])
+        self.assertFalse(bad['allCertified'])
+        self.assertTrue(any(x['state']=='collision' for x in bad['failures']))
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')
