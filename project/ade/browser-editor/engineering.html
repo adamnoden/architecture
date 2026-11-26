@@ -65,6 +65,13 @@
       <button class="primary" type="submit">Compare southwest joint</button></form>
       <p>Uses the same saved floor and corner widths. Both choices use the explicit conventional concrete law; other corner joints remain reference models. Computing takes several minutes and grants no strength or house acceptance.</p></section>
     <p id="finite-joint-result" role="status"></p>
+    <section id="rear-bearing-controls" hidden aria-label="Unselected rear bearing comparison"><h2>Rear masonry bearing</h2>
+      <form id="rear-bearing-edit"><label>Raw opening width (mm)<input id="rear-bearing-opening" type="number" min="1" step="any" required></label>
+      <label>Rear analysis<select id="rear-bearing-execution"><option value="deferred">Prepare saved proposal</option><option value="compute">Compute replacement response</option></select></label>
+      <button class="primary" type="submit">Compare rear bearing</button></form>
+      <p>Edits the existing saved proposal around its unchanged centre. Wall position, bearings, material comparisons and finite-house choices stay in the same controlling document. Computing can take several minutes.</p></section>
+    <p id="rear-bearing-result" role="status"></p>
+
     <p id="lighting-result" role="status"></p><p id="lighting-diagnostics"></p>
     <p id="floor-result" role="status"></p><p id="cage-result" role="status"></p><p id="beam-end-result" role="status"></p>
     <p id="diagnostic" role="alert"></p><p id="evidence"></p>
@@ -83,6 +90,11 @@
       <figure><figcaption>Edited unselected Study comparison</figcaption><img id="current-lighting" alt="Source-derived common-depth Study enclosure and withdrawal comparison"></figure>
       <figure><figcaption>Pinned unselected Study comparison</figcaption><img id="comparison-lighting" alt="Previous common-depth Study comparison"></figure>
     </div></section>
+    <section id="rear-bearing-views" hidden aria-label="Actual unselected rear bearing proposal"><h2>Rear bearing proposal · unselected</h2>
+      <p>Actual saved Living room and bearing geometry. A prepared plan is not a house-response or strength result; structural, physical and owner acceptance remain open.</p>
+      <figure><figcaption>Same-source room and renewal layout</figcaption><img id="current-rear-bearing-plan" alt="Actual saved rear bearing, Living room furniture and renewal comparison"></figure>
+      <figure><figcaption>Same-source longitudinal sections</figcaption><img id="current-rear-bearing-section" alt="Actual saved short lintel, masonry tails and retained native support section comparison"></figure>
+    </section>
     <section id="finite-joint-views" hidden aria-label="Southwest joint house comparison"><figure><figcaption id="finite-joint-caption">Computed southwest joint and actual house response · unselected</figcaption><img id="current-finite-joint" alt="Source-bound southwest joint or matched reference and actual full house comparison"></figure></section>
     <section id="lighting-home-run-views" hidden aria-label="Conventional independent Study lighting routes"><h2>Independent lighting routes</h2><p id="lighting-home-run-result" role="status"></p><figure><figcaption>Actual saved conventional station · unselected</figcaption><img id="current-lighting-home-runs" alt="Three separate conventional lighting routes with actual enclosure, support, lining and removal clearances"></figure></section>
     <section id="study-eye-level-views" hidden aria-label="Current Study architectural finish comparison">

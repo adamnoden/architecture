@@ -1,8 +1,9 @@
+import {readRearBearingSettings} from '../../../compiler/reference-house/current-design/structural-rear-bearing.js'
 import {readWetBeamEndDevelopmentControls} from '../../../compiler/reference-house/current-design/structural-wet-beam-end-settings.js'
 import {readGroundPocketSettings} from '../../../compiler/reference-house/current-design/structural-ground-pocket-settings.js'
 import {readCurrentFiniteJointSettings,currentFiniteJointDefaults} from '../../../compiler/reference-house/current-design/structural-current-finite-joint-settings.js'
 import { applyEngineeringEdit, beginEngineeringEdit, currentEngineeringReply, editableRoofId, editableWetCageId, editableWetSupportId, editableWetBeamEndId, editableInletBankId, editableInletBankFields, editablePlantRoomId, editablePlantRoomFields, editableStoreDrainId, editableStoreDrainFields, plantRoomEditableNumber, editableStudyLightingId, engineeringBase,
-  engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, editableFloorSectionId, editableDistributedFloorId, type EngineeringEditorState, type EngineeringTicket,
+  engineeringTicket, replayEngineeringEdit, saveEngineeringEdit, editableFloorSectionId, editableRearBearingId, editableDistributedFloorId, type EngineeringEditorState, type EngineeringTicket,
 } from '../../../compiler/reference-house/current-design/engineering-edit.js'
 import type { EngineeringReply } from './engineering-api.js'
 import './editor.css'
@@ -19,6 +20,7 @@ const lightingDepth = element<HTMLInputElement>('lighting-depth')
 const groundPlatePitch=element<HTMLInputElement>('ground-plate-pitch'),groundContactPitch=element<HTMLInputElement>('ground-contact-pitch'),groundExecution=element<HTMLSelectElement>('ground-execution')
 const finiteEnabled=element<HTMLInputElement>('finite-joint-enabled'),finiteYoung=element<HTMLSelectElement>('finite-joint-young'),finitePitch=element<HTMLSelectElement>('finite-joint-pitch'),finiteExecution=element<HTMLSelectElement>('finite-joint-execution')
 const southwestWidth=element<HTMLInputElement>('southwest-core-width')
+const rearOpening=element<HTMLInputElement>('rear-bearing-opening'),rearExecution=element<HTMLSelectElement>('rear-bearing-execution')
 const record = (v: unknown): v is Record<string, unknown> => v !== null && typeof v === 'object' && !Array.isArray(v)
 const storageKey = 'ovid-current-engineering-document/1'
 let state: EngineeringEditorState
@@ -47,6 +49,12 @@ function controls() {
     const value=readCurrentFiniteJointSettings(floor.finiteJointComparison??currentFiniteJointDefaults)
     finiteEnabled.checked=value.enabled;finiteYoung.value=String(value.youngMPa);finitePitch.value=String(value.solidPitchMm);finiteExecution.value=value.execution
   }
+  const hasRear=record(floor)&&Object.hasOwn(floor,'rearBearingComparison')
+  let rear:ReturnType<typeof readRearBearingSettings>|undefined
+  if(hasRear){try{rear=readRearBearingSettings(floor.rearBearingComparison)}catch{/* The compiler reports the malformed saved stage; no replacement choices are invented. */}}
+  element('rear-bearing-controls').hidden=!hasRear
+  rearOpening.disabled=!rear;rearExecution.disabled=!rear
+  if(rear){const opening=rear.openingYMm as number[];rearOpening.value=String(opening[1]!-opening[0]!);rearExecution.value=String(rear.execution)}
   const ground=state.document.stages.groundPocketLoads
   element('ground-pocket-controls').hidden=!record(ground)
   if(record(ground)){const choice=readGroundPocketSettings(ground);groundPlatePitch.value=String(choice.settings.platePitchMm);groundContactPitch.value=String(choice.settings.contactPitchMm);groundExecution.value=choice.execution}
@@ -96,6 +104,14 @@ function draw() {
   const finiteImage=element<HTMLImageElement>('current-finite-joint')
   if(finite?.floorSvg)finiteImage.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(finite.floorSvg)
   else finiteImage.removeAttribute('src')
+  const rear=current?.rearBearing,proposal=rear?.proposal
+  element('rear-bearing-result').textContent=rear
+    ?`${rear.status==='analysis-pending'?'Rear bearing proposal prepared; full replacement analysis is pending.':rear.status==='computed-unselected-comparison'?`Rear bearing response computed in the ${rear.nativeHeadCount}-head house; unselected.`:'Rear bearing comparison unsupported for this saved revision.'} ${proposal?`Actual raw opening ${proposal.rawOpeningYMm[1]-proposal.rawOpeningYMm[0]} mm; finished opening ${proposal.finishedClearWidthMm} mm; south cross passage ${proposal.southCrossPassageMm} mm. Layout/renewal geometry ${proposal.planPass?'within its comparison':'unsupported'}.`:''} ${rear.diagnostics.map(d=>d.message).join(' ')} No structural resistance, genuine arch, physical handling or owner acceptance is earned.`:''
+  element('rear-bearing-views').hidden=!proposal
+  for(const[view,svg]of[['plan',proposal?.planSvg],['section',proposal?.sectionSvg]]as const){
+    const image=element<HTMLImageElement>(`current-rear-bearing-${view}`)
+    if(svg)image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);else image.removeAttribute('src')
+  }
   const ground=current?.groundPocketLoads
   element('ground-pocket-result').textContent=ground?.status==='computed-unselected-candidate'
     ?`Utility and Plant floor gravity: ${ground.addedPhysicalGKN.toFixed(6)} kN through ${ground.headCount} foundation heads. ${ground.receiverCutsAvailable?`Physical beam cuts recovered in ${ground.receiverMemberCount} members.`:"Physical beam cuts unavailable."} Unselected comparison; complete installed loads and receiver resistance remain unresolved.`
@@ -233,6 +249,11 @@ function changed(result: ReturnType<typeof applyEngineeringEdit>) {
   controls()
   void refresh()
 }
+element('rear-bearing-edit').addEventListener('submit',event=>{
+  event.preventDefault()
+  changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),
+    operation:{kind:'set-floor-rear-bearing-comparison',assemblyId:editableRearBearingId,openingWidthMm:rearOpening.valueAsNumber,execution:rearExecution.value}}))
+})
 element('finite-joint-edit').addEventListener('submit',event=>{
   event.preventDefault()
   changed(applyEngineeringEdit(state,{schema:'current-engineering-edit/1',units:'mm',base:engineeringBase(state),

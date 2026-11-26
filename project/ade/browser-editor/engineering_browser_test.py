@@ -19,6 +19,63 @@ def lighting_svg(page):
     return page.locator('#current-lighting').evaluate("img => decodeURIComponent(img.src.split(',')[1])")
 
 
+def check_rear_bearing(page, args):
+    """Actual saved W31 parent, derived rear proposal, ordinary CLI and exact undo."""
+    from playwright.sync_api import expect
+    source=json.loads(Path(args.rear_bearing_document).read_text())
+    floor=source['stages']['floorSection']; rear=floor['rearBearingComparison']
+    assert floor['thicknessMm']==200 and floor['wetSupport'] is not None
+    assert floor['finiteJointComparison']['enabled'] is True
+    floor['finiteJointComparison']['execution']='deferred';rear['execution']='deferred'
+    assert rear['openingYMm']==[9100,10950]
+    with page.expect_file_chooser() as chooser:
+        page.get_by_role('button',name='Import JSON').click()
+    chooser.value.set_files({'name':'rear-bearing-house.json','mimeType':'application/json','buffer':json.dumps(source).encode()})
+    expect(page.locator('#rear-bearing-controls')).to_be_visible(timeout=900000)
+    expect(page.locator('#rear-bearing-result')).to_contain_text('Rear bearing proposal prepared; full replacement analysis is pending.',timeout=900000)
+    ready(page,0,900000)
+    expect(page.locator('#rear-bearing-opening')).to_have_value('1850')
+    expect(page.locator('#rear-bearing-execution')).to_have_value('deferred')
+    expect(page.locator('#finite-joint-controls')).to_be_visible()
+    expect(page.locator('#floor-result')).to_contain_text('52 foundation heads')
+    image=lambda id:page.locator(id).evaluate("img=>decodeURIComponent(img.src.split(',')[1])")
+    initial=image('#current-rear-bearing-plan');roof=roof_svg(page)
+    compile_doc=lambda d:json.loads(subprocess.run(['node','--import','tsx','scripts/compile-current-design.ts','--bundle','-'],input=json.dumps(d),text=True,capture_output=True,check=True,timeout=1200).stdout)
+    baseline=compile_doc(source)['engineering']['floorSection']
+    assert baseline['rearBearingComparison']['status']=='analysis-pending'
+    assert baseline['rearBearingComparison']['result']['geometry']['planPass'] is True
+    assert len(baseline['native']['heads'])==52
+    page.locator('#rear-bearing-opening').fill('1900')
+    page.get_by_role('button',name='Compare rear bearing',exact=True).click()
+    ready(page,1,900000)
+    expect(page.locator('#rear-bearing-result')).to_contain_text('Actual raw opening 1900 mm')
+    expect(page.locator('#rear-bearing-result')).to_contain_text('No structural resistance')
+    changed_image=image('#current-rear-bearing-plan')
+    assert changed_image!=initial and roof_svg(page)==roof
+    with page.expect_download() as download:
+        page.get_by_role('button',name='Export JSON').click()
+    changed=json.loads(Path(download.value.path()).read_text())
+    expected=json.loads(json.dumps(source));expected['stages']['floorSection']['rearBearingComparison']['openingYMm']=[9075,10975]
+    assert changed==expected
+    compiled=compile_doc(changed)['engineering']['floorSection'];actual=compiled['rearBearingComparison']
+    assert actual['status']=='analysis-pending' and actual['request']['choices']['openingYMm']==[9075,10975]
+    assert actual['result']['geometry']['rawOpeningYMm']==[9075,10975] and actual['result']['geometry']['planPass'] is True
+    assert actual['result']['drawings']['rear-bearing-plan.svg']==changed_image
+    assert actual['result']['drawings']['rear-bearing-section.svg']==image('#current-rear-bearing-section')
+    assert all(actual[k] is False for k in ['candidateAccepted','wholeHouseAccepted','strengthAccepted','ownerAccepted'])
+    assert compiled['native']['heads']==baseline['native']['heads']
+    assert compiled['finiteJointComparison']==baseline['finiteJointComparison']
+    page.get_by_role('button',name='Undo',exact=True).click()
+    ready(page,2,900000)
+    expect(page.locator('#rear-bearing-opening')).to_have_value('1850')
+    assert image('#current-rear-bearing-plan')==initial and roof_svg(page)==roof
+    with page.expect_download() as download:
+        page.get_by_role('button',name='Export JSON').click()
+    assert json.loads(Path(download.value.path()).read_text())==source
+    if args.screenshot:page.screenshot(path=args.screenshot,full_page=True)
+    print('PASS actual rear1850/1900 proposal, same W31 parent52heads, ordinary CLI and exact undo; rear response/resistance is a separate proof',flush=True)
+
+
 def check_ground_pockets(page, args):
     """Real saved choices and CLI; deferred controls never masquerade as a solve."""
     from playwright.sync_api import expect
@@ -212,6 +269,7 @@ def main():
     parser.add_argument('--screenshot')
     parser.add_argument('--wet-beam-end-only',action='store_true',help='Run only the actual end-return extension after the initial roof control')
     parser.add_argument('--ground-pocket-document',help='Run ground-control browser proof on this actual saved engineering document')
+    parser.add_argument('--rear-bearing-document',help='Run the actual optional rear-bearing opening proposal edit on this saved house')
     parser.add_argument('--finite-joint-document',help='Run shared structural/Study width and finite joint controls on this actual saved document')
     args = parser.parse_args()
     with sync_playwright() as playwright:
@@ -221,6 +279,11 @@ def main():
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(args.url)
         ready(page, 0)
+        if args.rear_bearing_document:
+            check_rear_bearing(page,args)
+            assert not errors,errors
+            browser.close()
+            return
         if args.finite_joint_document:
             check_finite_joint(page,args)
             assert not errors,errors
