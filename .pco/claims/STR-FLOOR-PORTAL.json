@@ -9,8 +9,8 @@
     "label": "zerg-engineering-20261126"
   },
   "claimedAt": "2026-11-26T07:52:30.008Z",
-  "heartbeatAt": "2026-11-26T13:00:46.000Z",
-  "expiresAt": "2026-11-26T13:45:46.000Z",
+  "heartbeatAt": "2026-11-26T13:23:43.000Z",
+  "expiresAt": "2026-11-26T14:08:43.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "2cfdf2e8-5a3c-4fcc-88ab-45992d4ca1c6",
@@ -36,8 +36,8 @@
   },
   "pr": 1629,
   "checkpoint": {
-    "evidence": "1629@867e native96cases PASS; browser140failsformer136plan. Rootfix bacac04d hosted45824421174 passes types/sourceaudit/unchanged200;144CLIactive. Rearsource401ab9d protected; hostedW0 active. Node5f95c526192checks replayed.",
-    "next": "Finishactual144proof; publish testedfix/blobs to1629 andrequire exactfullCI+threeleasepreflight. Complete rearW0/signedcomparison andordinarynode topology.",
-    "blocker": "Localexecutorunavailable.1629unmergedafterrealbrowserfailure; strength/convergence/other3jointsremainopen."
+    "evidence": "1629@5ab92bc0 fixesactual144/136planfailure; sourceproof45825989559 PASS, fullCI/96active. Rear39566665 freshW0/32Python+TS/types and materialledger PASS45824731406. Node192cuts/12tests PASS45824674801.",
+    "next": "Finish1629exactCI+freshpreflight/merge. Wireexistingrearstage/W31/96. TestzeroadditionalsteelEA200case before250; nohistoric sourcehashrewrite.",
+    "blocker": "Localexecutorunavailable; boundedhostrunnersactive. Strategicstrength/convergence/otherthreejointsholdsremain."
   }
 }
