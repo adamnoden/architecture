@@ -9,8 +9,8 @@
     "label": "convergence-had-recovery-20261125"
   },
   "claimedAt": "2026-11-25T22:20:22.000Z",
-  "heartbeatAt": "2026-11-26T00:30:18.310Z",
-  "expiresAt": "2026-11-26T01:15:18.310Z",
+  "heartbeatAt": "2026-11-26T01:05:42.667Z",
+  "expiresAt": "2026-11-26T01:50:42.667Z",
   "branch": "work/convergence-bed-water-20261125",
   "predecessor": {
     "leaseId": "3015e0cf-ea39-4da3-92eb-d2303c135633",
@@ -36,8 +36,8 @@
   },
   "pr": 1627,
   "checkpoint": {
-    "evidence": "FirstPR1626 merged83f8cb6509df7768e2777ece378f1bca3e2f43fc. New actualPR1627@dcfc8d631bbe1670359bd82db5ca18c30edb6c5d on work/convergence-bed-water-20261125 includes scoped unit239 source/test/note applied to current arrangement, genuinely regenerated3receipts and strictaudit0 per root; wet suite is NOT included. Remote rawsuite5c46a9fef5eb193f57eec96fbc0c0ff7414d62dd remains separate unmerged history. Own laterLOCAL0d6c62a7 negative3830/backwater and239ca80f unit tests verified; new pure gravity normalizer is private implementation from239,3primitive tests pass, full binding/stage validation pending.",
-    "next": "Validate source-bound pure known-gravity normalizer in existing saved inlet stage with explicit component/event/datum separation, unknown assemblies and receivers. Root validates/publishes1627 exacthead independently.",
-    "blocker": "Actual complete assembly, store/upper release, qualified material, and actual floor/core/grid/foundation receiver resistance remain unearned; no wet-suite acceptance or native nodal loads."
+    "evidence": "First1626 merged83f8cb. Actual1627 dcfc8d631bbe1670359bd82db5ca18c30edb6c5d is the separate current bed/water branch without wet suite. Verified complete LOCALd8b92e7b known-gravity normalizer and rejected two-rail suite are preserved on separate UNMERGED remote work/convergence-wet-service-suite-20261125@e473bdef40423ef6294ad703472fc0710eade1a8 exacttree092f8685b75aca1a371aa53c16c26b358790b6fa. Four new tests, CLI equivalence, typecheck, strictaudit0 and canonicalproducercheck pass. No native receiver reactions or active assembly inferred.",
+    "next": "Root integrates scoped no-suite normalizer/derived RC-mineral bodies. Develop actual-coordinate open-chute-to-closed-roof steep-flow domain check and defensible walking-floor support/stock comparison; preserve old sufficient-screen negatives and stored/submerged holds.",
+    "blocker": "Actual store/upper release, material/foot/anchor/thermal qualification and complete occupied arrangement remain unresolved. No forward local hydraulic result supplies whole-arrangement acceptance."
   }
 }
