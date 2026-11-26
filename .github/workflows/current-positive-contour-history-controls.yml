@@ -20,8 +20,11 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v6
         with:
-          python-version: '3.12.16'
-      - run: python -m pip install -r project/str/studies/finite-joint-solid-requirements.txt
+          python-version: '3.12.14'
+      - name: Install unchanged pinned native runtime and isolated hashed finite package
+        run: |
+          python -m pip install -r project/str/studies/cage-requirements.txt -r project/str/studies/vertical-floor-requirements.txt
+          python -m pip install --no-deps --require-hashes -r project/str/studies/finite-joint-solid-requirements.txt
       - name: Exact original archive58source method and physical-domain rejection controls
         run: |
           export PYTHONPATH="$GITHUB_WORKSPACE/project/str/studies"
