@@ -192,9 +192,9 @@ def cross_tie(c,axis,z,along):
             arc([k,cy],r,math.pi/2,-math.pi/4,[0,1],z),line(ea,et)]},axis)
 def link_paths(c):
     # Fixed family schedules, not a model/section parameter sweep.
-    west=[x for x in range(1965,3016,150)]+[3155,3285.5,3390,3515]+[x for x in range(3665,4566,150)]
-    south=[x for x in range(2015,3066,150)]+[3208,3335,3480,3555]+[x for x in range(3715,4616,150)]
-    cross=[x for x in range(1990,3041,150)]+[3180,3274.5,3362,3540]+[x for x in range(3690,4591,150)]
+    west=[x for x in range(1965,3016,150)]+[3150,3285.5,3390,3516]+[x for x in range(3665,4566,150)]
+    south=[x for x in range(2015,3066,150)]+[3208,3335,3480,3565]+[x for x in range(3715,4616,150)]
+    cross=[x for x in range(1990,3041,150)]+[3175,3274.5,3362,3540]+[x for x in range(3690,4591,150)]
     out=[closed_column_link(c,0,z) for z in west]+[closed_column_link(c,1,z) for z in south]
     for z in cross:
         for axis in (0,1):
@@ -412,12 +412,68 @@ def assess(c,base,full_geometry=False):
             'Factory rib envelopes/common jig and physical installation/material acceptance unearned',
             'Actual north650/750 overlap and material union belong to the producer; no guessed beam width is used here'],
         'scope':copy.deepcopy(c['scope'])}
+
+def draw(c,result):
+    """Source-derived projections; no invented force/resistance depiction."""
+    ns='http://www.w3.org/2000/svg';ET.register_namespace('',ns)
+    root=ET.Element('{'+ns+'}svg',{'width':'1500','height':'1140','viewBox':'0 0 1500 1140'})
+    def elem(tag,**kw):return ET.SubElement(root,'{'+ns+'}'+tag,{k.replace('_','-'):str(v) for k,v in kw.items()})
+    def text(x,y,value,size=18):elem('text',x=x,y=y,font_family='Arial',font_size=size,fill='#202a35').text=value
+    def path(points,colour,width=2):
+        elem('polyline',points=' '.join(f'{x:.3f},{y:.3f}' for x,y in points),fill='none',stroke=colour,stroke_width=width)
+    elem('rect',x=0,y=0,width=1500,height=1140,fill='white')
+    text(35,35,'UNSELECTED — 300 × 350 perimeter band / inward L300 corner',25)
+    text(35,66,'Actual floor 3170–3370; FIRST 3450; upstand top 3520. New whole-house resistance UNCALCULATED.',17)
+    text(35,103,'Corner plan · local inward mm from outside concrete face',20)
+    ox,oy,scale=45,150,.53
+    def plan(q):return [ox+scale*q[0],oy+scale*q[1]]
+    path([plan(p) for p in [[0,0],[1000,0],[1000,300],[300,300],[300,1000],[0,1000],[0,0]]],'#9b9fa2',3)
+    for bar in result['beamPaths']:path([plan(q) for q in paths_points(bar)],'#a3362a',2)
+    for bar in result['cornerFloorPaths']:path([plan(q) for q in paths_points(bar)],'#287a47',1)
+    for q in result['columnBarCoordinatesLocalMm']:
+        x,y=plan(q);elem('circle',cx=x,cy=y,r=4.77,fill='#243c83')
+    for name,normal in [('west',0),('south',1)]:
+        selected=next(p for p in result['columnLinkPaths'] if p['id'].startswith(f'column-link/{normal}/3285.5' if normal==0 else 'column-link/1/3335'))
+        path([plan(q) for q in paths_points(selected)],'#b17815',1.7)
+    text(35,720,'12H16 column main; 4 continuous H16 band; H10 hoops/crossties.',17)
+    text(35,750,'H14/75 nominal floor; explicit local rows and opposed 1000 mm tails.',17)
+    text(35,780,'160 mm extra inward width beyond 140 mm wall; visible 70 mm plinth.',17)
+    text(35,825,'Steel families: blue column · red ring · green floor · ochre links',16)
+    text(35,860,'Mirrored at all four actual corner heads; local geometry only.',16)
+    text(35,895,'Linked steel contacts require coordinated jig; no cylinder overlap waiver.',16)
+    def section(title,xbase,ybase,ordinary):
+        text(xbase,ybase,title,20);x0=xbase;y0=ybase+45;sc=.8;zlow=3050
+        project=lambda q:[x0+sc*q[0],y0+sc*(3650-q[2])]
+        # Real band and floor; section cut at local inward normal.
+        path([project(q) for q in [[0,0,3170],[300,0,3170],[300,0,3370],[640,0,3370],[640,0,3170],[0,0,3170]]],'#a2a7aa',2)
+        path([project(q) for q in [[0,0,3170],[0,0,3520],[300,0,3520],[300,0,3370]]],'#a2a7aa',2)
+        for z,label in [(3170,'3170 soffit'),(3370,'3370 slab'),(3450,'3450 FIRST'),(3520,'3520 band')]:
+            y=project([0,0,z])[1];path([[x0-5,y],[x0+510,y]],'#d4d7d9',.8);text(x0+520,y+5,label,14)
+        for n in c['geometry']['beamBarNormalMm']:
+            for z in c['geometry']['beamBarZMm']:
+                x,y=project([n,0,z]);elem('circle',cx=x,cy=y,r=7.2,fill='#a3362a')
+        selected=result['ordinaryFloorPaths'] if ordinary else result['cornerFloorPaths']
+        for layer in ('bottom','top'):
+            bar=next(b for b in selected if '/0/'+layer+'/' in b['id'])
+            path([project(q) for q in paths_points(bar)],'#287a47',3)
+        if not ordinary:
+            text(xbase,ybase+490,'Corner tails extend 1000 mm into actual lower/upper L300.',15)
+        else:
+            text(xbase,ybase+390,'Ordinary 140 mm mandrel: minimum 72 mm straight after bend.',15)
+            text(xbase,ybase+414,'Finite bond/bearing capacities are bounds, not full-demand proof.',15)
+    section('Corner section · opposed vertical returns',725,105,False)
+    section('Ordinary perimeter section · hooks within 350 depth',725,655,True)
+    text(35,1080,'SOURCE-OWNED COMPARISON · no native solve · no transferred old96 loads · no physical/product/owner/house acceptance',17)
+    return ET.tostring(root,encoding='unicode')+'\\n'
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,required=True);p=ap.parse_args()
     c=json.loads(INPUT.read_bytes());settings,raw=source.load();base,h,grid,furniture=source.derive(settings,raw)
     result=assess(c,base,full_geometry=True);p.out.mkdir(parents=True,exist_ok=True)
     result['sourceSHA256']={name:source.sha((D/name).read_bytes()) for name in ('perimeter_upstand_cage.py','perimeter-upstand-cage-inputs.json','perimeter_upstand_cage_test.py')}
     data=json.dumps(result,indent=2,allow_nan=False)+'\n';(p.out/'perimeter-upstand-cage-checkpoint.json').write_text(data)
+    svg=draw(c,result);(p.out/'perimeter-upstand-cage.svg').write_text(svg)
+    print('SVG_SOURCE perimeter-upstand-cage.svg '+svg.encode().hex())
     print('UPSTAND_CAGE_SUMMARY '+json.dumps({k:v for k,v in result.items() if k not in ('beamPaths','cornerFloorPaths','columnLinkPaths','ordinaryFloorPaths','ordinaryBeamLinkPaths')}))
     print('CHECKPOINT_SHA256 '+source.sha(data.encode()))
     print('JSON_SOURCE perimeter-upstand-cage-checkpoint.json '+data.encode().hex())

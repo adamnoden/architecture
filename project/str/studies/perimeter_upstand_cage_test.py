@@ -91,6 +91,17 @@ class CageControls(unittest.TestCase):
             with self.assertRaises(ValueError):p.assess(c,self.base)
         c=copy.deepcopy(self.c);c['links']['matchedJointContactPlanesZMm']['crossTie']-=1
         with self.assertRaises(ValueError):p.assess(c,self.base)
+    def test_matched_contact_certificate_rejects_actual_path_intrusion(self):
+        links,_=p.link_paths(self.c)
+        link=copy.deepcopy(next(x for x in links if x['id'].startswith('cross-tie/0/3274.5/')))
+        for primitive in link['primitives']:
+            if primitive['kind']=='line':
+                for q in primitive['points']:q[2]-=1
+            else:primitive['other']-=1
+        bad=p.audit_path_groups([link],p.beam_paths(self.c),10,matched_contacts=True)
+        self.assertFalse(bad['allCertified'])
+        self.assertEqual(bad['lockedNormalContactCertificates'],0)
+        self.assertTrue(any(x['state']=='collision' for x in bad['failures']))
     def test_no_complete_cage_or_demand_acceptance_injection(self):
         c=copy.deepcopy(self.c);c['scope']['wholeCagePlacingAccepted']=True
         with self.assertRaises(ValueError):p.assess(c,self.base)
