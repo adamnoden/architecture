@@ -414,6 +414,8 @@ def material_bounds(c):
     ordinary=[]
     for name,z in layers.items():
         tail=end-z-r
+        layer_rows=g['ordinaryFloorAlongCoordinatesMm']['bottom' if name.endswith('bottom') else 'top']
+        actual_pitch=min(b-a for a,b in zip(layer_rows,layer_rows[1:]));actual_ab=(actual_pitch-2*g['independentBarSettingMm'])/2
         n=g['ordinaryFloorReturnNormalMm']['bottom' if name.endswith('bottom') else 'top']
         horizontal=max(0.,g['ordinaryBandWidthMm']-n-r)
         angle=(2*math.pi-math.acos((g['ordinaryBandWidthMm']-n-r)/r)-math.pi) if n+r>g['ordinaryBandWidthMm'] else math.pi/2
@@ -426,7 +428,8 @@ def material_bounds(c):
             'standardBendTailFits':tail>=g['ordinaryFloorHookMinTailFactor']*d,
             'poorBondNoShapeReductionStressCapMPa':length*4*m['poorBondMPa']/d,
             'goodBondNoShapeReductionStressCapMPa':length*4*m['goodBondMPa']/d,
-            'mandrelBearingStressCapMPa':g['ordinaryFloorMandrelMm']*m['concreteCompressionMPa']/(area(d)*(1/ab+1/(2*d))),
+            'actualMinimumNeighbourPitchMm':actual_pitch,
+            'mandrelBearingStressCapMPa':g['ordinaryFloorMandrelMm']*m['concreteCompressionMPa']/(area(d)*(1/actual_ab+1/(2*d))),
             'completeAnchorageOrForceDemandAccepted':False})
     legacy_radius=(g['alternateLegacyOrdinaryMandrelMm']+g['floorBarOutsideMm'])/2
     legacy_tail=min(end-z-legacy_radius for z in layers.values())
@@ -485,7 +488,7 @@ def assess(c,base,full_geometry=False):
         'geometry':g,'columnBarCoordinatesLocalMm':col,'columnBarsNominalCount':len(col),
         'beamSectionOriginNormalZMm':[g['ordinaryBandWidthMm']/2,g['slabZMm'][0]+g['ordinaryBandDepthMm']/2],
         'L300ConcreteAreaMm2':510000,'L300CentroidLocalXYMm':[355.88235294117646]*2,
-        'floorLayerZMm':layers,'parallelFloorBarAdverseClearMm':min(b-a for a,b in zip(g['floorAlongCoordinatesMm'],g['floorAlongCoordinatesMm'][1:]))-g['floorBarOutsideMm']-tol,
+        'floorLayerZMm':layers,'parallelFloorBarAdverseClearMm':min(b-a for layer in ('bottom','top') for rows in [sorted(set(g['floorAlongCoordinatesMm']+g['ordinaryFloorAlongCoordinatesMm'][layer]))] for a,b in zip(rows,rows[1:]))-g['floorBarOutsideMm']-tol,
         'interMatAdverseParallelClearMm':inter,
         'beamColumnWitness':min(beam_col,key=lambda x:x['adverseCylinderClearMm']),
         'floorColumnWitness':min(floor_col,key=lambda x:x['adverseProjectedCylinderClearMm']),

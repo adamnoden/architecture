@@ -138,6 +138,15 @@ class CageControls(unittest.TestCase):
     def test_shape_error_is_within_total_independent_allowance(self):
         c=copy.deepcopy(self.c);c['links']['hookShapeToleranceMm']=6
         with self.assertRaisesRegex(ValueError,'Forming'):p.assess(c,self.base)
+    def test_actual_ordinary_row_spacing_drives_bend_bearing(self):
+        bounds=self.r['materialBounds']['ordinary350Anchorage']
+        self.assertEqual(next(x for x in bounds if x['layer']=='X-bottom')['actualMinimumNeighbourPitchMm'],65)
+        self.assertEqual(next(x for x in bounds if x['layer']=='X-top')['actualMinimumNeighbourPitchMm'],58.5)
+        self.assertEqual(self.r['parallelFloorBarAdverseClearMm'],30)
+        c=copy.deepcopy(self.c);c['geometry']['ordinaryFloorAlongCoordinatesMm']['top'][1]=1005
+        before=next(x for x in bounds if x['layer']=='X-top')['mandrelBearingStressCapMPa']
+        after=next(x for x in p.material_bounds(c)['ordinary350Anchorage'] if x['layer']=='X-top')['mandrelBearingStressCapMPa']
+        self.assertLess(after,before)
     def test_generated_visual_is_valid_xml_from_same_geometry(self):
         root=p.ET.fromstring(p.draw(self.c,self.r))
         self.assertEqual(root.tag,'{http://www.w3.org/2000/svg}svg')
