@@ -1,0 +1,74 @@
+name: Check one real shorter rear-opening room rearrangement
+on:
+  push:
+    branches: [work/zerg-rear-bearing-recovery-20261126]
+    paths: ['.github/workflows/rear-bearing-replan.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  room:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.16'
+      - name: Authenticate actual4010 native parent and evaluate existing exact room geometry
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/rear-replan"
+          gh api repos/adamnoden/architecture/actions/artifacts/15131108555/zip > "$RUNNER_TEMP/rear-replan/source-input.zip"
+          python - <<'PY'
+          import copy,hashlib,json,os,sys,zipfile
+          from pathlib import Path
+          sys.path.insert(0,'project/str/studies')
+          from rear_bearing_plan import geometry,render_plan,render_section
+          out=Path(os.environ['RUNNER_TEMP'])/'rear-replan';archive=out/'source-input.zip'
+          if hashlib.sha256(archive.read_bytes()).hexdigest()!='c4ba2ec37882f15fa032876e5d42f88e6a99a33c05889fa45f3105334e3ca7d2':raise ValueError('Original4010 input archive differs')
+          with zipfile.ZipFile(archive) as z:
+              names=[n for n in z.namelist() if Path(n).name=='finite-signed-input.json']
+              if len(names)!=1:raise ValueError('Exactly one source packet required')
+              data=z.read(names[0]);packet=json.loads(data)
+          if hashlib.sha256(data).hexdigest()!='808b298261ac7956958087ab8e5f0b641c0ab8c9b3030f99e603bfa175db9d93':raise ValueError('Original4010 packet differs')
+          for path in ('project/had/studies/water-replan.json','project/str/studies/current-house-grid.json'):
+              if hashlib.sha256(Path(path).read_bytes()).hexdigest()!=packet['sourceSHA256'][path]:raise ValueError('Actual geometry source changed')
+          for path in ('project/str/studies/rear_bearing_plan.py','project/ias/studies/selected-family-convergence.json'):
+              if hashlib.sha256(Path(path).read_bytes()).hexdigest()!=packet['rearMethodSHA256'][path]:raise ValueError('Actual room method/IAS source changed')
+          h=json.loads(Path('project/had/studies/water-replan.json').read_text())['model']
+          grid=json.loads(Path('project/str/studies/current-house-grid.json').read_text())
+          renewal=json.loads(Path('project/ias/studies/selected-family-convergence.json').read_text())['rearRenewal']['firstReleaseInterface']
+          rows=[]
+          for label,span,shift in (('current1850',1850,0),('short1500-family-north100',1500,100)):
+              actual=copy.deepcopy(h);actual['groundFurniture']['family-sofa1900x750'][1]+=shift
+              choices=copy.deepcopy(packet['rearChoices'])
+              if span==1500:choices['openingYMm']=[9250.,10750.]
+              result=geometry(actual,grid,choices,renewal,packet['nativeCase'])
+              record={'label':label,'proposedSharedStageDelta':{'openingYMm':choices['openingYMm'],'familySofaOffsetYMm':shift},
+                  'sameSavedStageAdmissionImplemented':shift==0,'plan':result,'nativeForcesComputed':False,
+                  'genuineArchMechanicsOrOwnerAcceptance':False}
+              rows.append(record)
+              (out/(label+'.json')).write_text(json.dumps(record,sort_keys=True,allow_nan=False))
+              (out/(label+'.svg')).write_text(render_plan(result))
+              print('REAR_SHORT_OPENING '+json.dumps({'label':label,'planPass':result['planPass'],
+                  'finishedClearWidthMm':result['finishedClearWidthMm'],'southCrossPassageMm':result['southCrossPassageMm'],
+                  'ordinaryPass':all(v>=0 for v in result['ordinaryFurnitureChecksMm'].values()),
+                  'familyRenewal':result['familySofaRenewalRoute'],'westRenewal':result['westSofaRenewal'],
+                  'sourceGeometryDigest':result['sourceGeometryDigest']},separators=(',',':')),flush=True)
+          (out/'scope.json').write_text(json.dumps({'sourcePhysicalCommit':packet['sourceCommit'],
+              'packetSHA256':hashlib.sha256(data).hexdigest(),'adopted':False,'newForcesReused':False,
+              'scope':'One bounded plan-rearrangement check using existing exact body sweeps. Shifted sofa is explicitly unadmitted pending same saved-stage source propagation; no HAD/canonical fixture changed.'}))
+          PY
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: rear-short-opening-room-check
+          path: |
+            ${{ runner.temp }}/rear-replan/*.json
+            ${{ runner.temp }}/rear-replan/*.svg
+          if-no-files-found: error
+          retention-days: 90
