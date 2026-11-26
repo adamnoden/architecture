@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
+import {readFileSync,mkdirSync,writeFileSync,existsSync} from 'node:fs'
 import {join} from 'node:path'
 import {plantPotableInventory} from './current-design/inlet-plant-potable-inventory.js'
 import {readInletSourceEnvelopeSettings} from './current-design/inlet-source-envelope.js'
@@ -72,7 +72,7 @@ test('one actual Plant pan feeds room, outfalls, occupied steel and complete com
  assert.equal(r.inventory.vesselMaximumDesignL,330)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
  if(dir){writeFileSync(join(dir,'Plant-tanked-current-source-comparison.json'),JSON.stringify(r,null,2));writeFileSync(join(dir,'Plant-tanked-owner-plan-section.svg'),drawInletPlantTankedRoom(r))}
- const svg=drawInletPlantTankedRoom(r);assert.ok(svg.includes(r.source.caseDigest));assert.ok(svg.includes('No thermal/nonreturn seal'));console.info('PLANT_OWNER_REVIEW_SVG '+JSON.stringify(svg))
+ const svg=drawInletPlantTankedRoom(r),savedDrawing=new URL('../../project/had/studies/plant-tanked-walk-development.svg',import.meta.url);if(existsSync(savedDrawing))assert.equal(readFileSync(savedDrawing,'utf8'),svg,'Ordinary source drawing is stale; regenerate from the same computed case.');assert.ok(svg.includes(r.source.caseDigest));assert.ok(svg.includes('No thermal/nonreturn seal'));console.info('PLANT_OWNER_REVIEW_SVG '+JSON.stringify(svg))
  console.info('PLANT_TANK_COMPLETE_STATIC '+JSON.stringify({levels:r.levels,sourceProfiles:r.outfalls.profiles.map(p=>({id:p.id,pool:p.initialSourcePoolMm,freeDrop:p.freeDropReserveMm,necessary:p.necessaryFreeSourceProfile,refinements:p.refinements.map(r=>r.state)})),inventory:r.inventory.fullInstantPressureNetworkDesignReleaseL,containment:r.containment,hotNetwork:r.inventory.normalHotAndReturnNetworkDesignUpperL,normalHeated:r.normalHeatedInventory,apparatus:r.walking.apparatusInterfaces.map(a=>({id:a.id,geometry:a.necessarySeparateStandGeometry,loadN:'designOnePostN'in a?a.designOnePostN:null,cutouts:'panelCutoutIntersections'in a?a.panelCutoutIntersections?.length:null})),steelKg:r.walking.normalMassUpperKg,walkingFailures:r.walking.memberChecks.filter(p=>!p.necessary),frame:r.fittedFrame}))
 })
 test('actual floor, outlet and inventory perturbations invalidate dependent design evidence',()=>{
