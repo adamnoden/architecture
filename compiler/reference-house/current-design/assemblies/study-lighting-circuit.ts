@@ -3,6 +3,7 @@ import type {LightingBasis} from './study-lighting.js'
 import type {deriveLightingCornerDetail} from './study-lighting-corner.js'
 import {segmentBoxDistance,segmentDistance} from '../../../../project/had/studies/service-interface-geometry.mjs'
 type P=readonly number[]
+type Closed6=readonly[number,number,number,number,number,number]
 type H=ReturnType<typeof deriveLightingCornerDetail>['localHomeRunComparison']
 export interface StudyCircuitDesign{
  readonly schema:'ias-study-circuit-design/1';readonly nominalVoltageV:number;readonly cmin:number;readonly phase:'L3'
@@ -12,6 +13,7 @@ export interface StudyCircuitDesign{
  readonly cables:Readonly<Record<string,{diameterMm:number;areaMm2:number;exposedRatingA:number;mVPerAM:number;r1OhmKm:number;r2OhmKm:number;sheathMm2:number;kgKm:number}>>
  readonly gland:{threadMm:number;projectionMm:number;potMm:number;potDiameterMm:number;locknutCornersMm:number}
  readonly deviceTerminalLimitsMm2:Readonly<Record<'socket'|'switch'|'lamp',number|null>>
+ readonly applianceLead:{bendRadiusMm:number;guideRightInsetMm:number;guideSpacingMm:number;standOffMm:number;diameterRequirementMm:number;plugEnvelopeMm:readonly number[];inlineSwitchEnvelopeMm:readonly number[];inlineSwitchDistanceMm:readonly number[];guideBodyEnvelopeMm:readonly number[]}
  readonly terminal:{reference:string;maximumMm2:number;ratedA:number;ratedV:number;reservationMm:P}
  readonly evidence:readonly {id:string;url:string;finding:string;retrieval:string}[]
 }
@@ -31,7 +33,7 @@ function round(vertices:readonly P[],R:number){
  return{verticesMm:vertices,pathMm:path,radiusMm:R,chordErrorMm:R*(1-Math.cos(Math.PI/120)),lengthMm:length(path),issues}
 }
 /** Source-bound circuit specification; physical terminal/installed qualification remains separate. */
-export function deriveStudyLightingCircuit(b:LightingBasis,h:H,s:StudyCircuitDesign){
+export function deriveStudyLightingCircuit(b:LightingBasis,h:H,s:StudyCircuitDesign,fitting:{manufacturer:string;reference:string;leadLengthMm:number;projectionMm:number;plugSpaceWitnessMm:readonly number[]}){
  if(!s||s.schema!=='ias-study-circuit-design/1'||s.phase!=='L3')throw TypeError('IAS_CIRCUIT_UNSUPPORTED_SPECIFICATION')
  const finite=(n:unknown)=>typeof n==='number'&&Number.isFinite(n)
  if(![s.nominalVoltageV,s.cmin,s.bendRadiusMm,s.pitchMm,s.highLevelMm,s.corridorYMm,s.spineYMm,s.wcXMm,s.studyXMm,s.riserXMm,s.boxRearMm,s.boxBottomMm,s.toolDiameterMm,s.tailOrderAllowanceMm,s.clearanceMm,s.settingMm,s.combinedRatingFactor,s.maximumFillFraction,...s.boxSizeMm,...Object.values(s.gland),s.terminal.maximumMm2,s.terminal.ratedA,s.terminal.ratedV,...s.terminal.reservationMm].every(finite)
@@ -120,10 +122,35 @@ export function deriveStudyLightingCircuit(b:LightingBasis,h:H,s:StudyCircuitDes
   return{way:f.way,lengthM:metres,loadA:f.ratedA,conditionalRatingA:f.correctedRatingA,dropV,limitV,lineLengthM,cpcLengthM,hotCableLoopOhm,maximumZsOhm,maximumZePlusJointsOhm,actualZeOhm:null,actualPfcA:null,maximumPfcA:6000,deviceI2tA2s:null,adiabaticQualified:false,externalTailComparison:{specifiedCopperAreaMm2:f.cable.areaMm2,assumedPVC70CK:115,withstandA2s:(115*f.cable.areaMm2)**2,genericClass3B6kAPointA2s:35000,pointMarginA2s:(115*f.cable.areaMm2)**2-35000,actualFactoryTailAreaMm2:null,actualFullFaultRangeQualified:false,scope:'Relative external conductor/tail sizing at one generic6kA point only. Actual conductor/sleeve temperatures, complete fault range, device curve, factory leads and earth-tail assembly remain unqualified.'},
    condition:'TN design bound at70C; upstream Ze AND unmodelled connection/bond resistance must fit the remainder. No actual TN/TT system is declared. Exact B-device Ia, earth/RCD tests and fault thermal withstand remain unqualified.'}
  })
+ const a=s.applianceLead
+ if(!a||!fitting||![...Object.values(a).flat(),fitting.leadLengthMm,fitting.projectionMm,...fitting.plugSpaceWitnessMm].every(n=>Number.isFinite(n)&&n>0)||fitting.plugSpaceWitnessMm.length!==3)throw TypeError('IAS_APPLIANCE_LEAD_SOURCE_INVALID')
+ const outlet=h.boxes[2]!,outletX=(outlet.xMm[0]!+outlet.xMm[1]!)/2,outletZ=(outlet.zMm[0]!+outlet.zMm[1]!)/2
+ const fixtureX=h.cableOpening.centreXMm,fixtureZ=h.cableOpening.centreZMm,cordY=h.frontYMm-a.standOffMm,rightGuide=h.bayPlanMm[2]!-a.guideRightInsetMm,leftGuide=rightGuide-a.guideSpacingMm
+ const leadVertices=(bottom:number)=>[[fixtureX,cordY,fixtureZ],[leftGuide,cordY,fixtureZ],[leftGuide,cordY,bottom],[rightGuide,cordY,bottom],[rightGuide,cordY,outletZ],[outletX,cordY,outletZ]]
+ let low=h.finishBottomZMm+a.bendRadiusMm,high=Math.min(outletZ,fixtureZ)-2*a.bendRadiusMm
+ const lowLength=round(leadVertices(low),a.bendRadiusMm).lengthMm,highLength=round(leadVertices(high),a.bendRadiusMm).lengthMm
+ if(fitting.leadLengthMm>lowLength||fitting.leadLengthMm<highLength)issues.push('appliance-lead-length-outside-visible-U-domain')
+ for(let i=0;i<40;i++){const mid=(low+high)/2;if(round(leadVertices(mid),a.bendRadiusMm).lengthMm>fitting.leadLengthMm)low=mid;else high=mid}
+ const vertices=leadVertices((low+high)/2),lead=round(vertices,a.bendRadiusMm),wireR=a.diameterRequirementMm/2
+ if(lead.issues.length)issues.push(...lead.issues.map(q=>'appliance-lead:'+q))
+ if(leftGuide-wireR<h.bayPlanMm[0]!+s.settingMm||rightGuide+wireR>h.bayPlanMm[2]!-s.settingMm)issues.push('appliance-lead-bay-edge-rejected')
+ const wireVolumes=vertices.slice(1).map((p,i)=>({id:'IAS/STUDY/appliance-lead/'+i,xyzxyzMm:[...p.map((n,j)=>Math.min(n,vertices[i]![j]!)-wireR),...p.map((n,j)=>Math.max(n,vertices[i]![j]!)+wireR)]}))
+ const [pw,ph,pd]=a.plugEnvelopeMm
+ const plugVolume={id:'IAS/STUDY/lighting-outlet-plug-space-witness',xyzxyzMm:[outletX-pw!/2,h.frontYMm-pd!,outletZ-ph!/2,outletX+pw!/2,h.frontYMm,outletZ+ph!/2]}
+ const clips=[vertices[1]!,vertices[4]!].map((p,i)=>({id:'IAS/STUDY/lead-guide/'+i,pointMm:p}))
+ const atDistance=(target:number)=>{let travelled=0;for(let i=1;i<lead.pathMm.length;i++){const A=lead.pathMm[i-1]!,B=lead.pathMm[i]!,span=distance(A,B);if(travelled+span>=target){const t=(target-travelled)/span;return A.map((n,j)=>n+t*(B[j]!-n))}travelled+=span}return lead.pathMm.at(-1)!}
+ const sw=a.inlineSwitchDistanceMm.map(atDistance),[swW,swH,swD]=a.inlineSwitchEnvelopeMm
+ const switchVolume={id:'IAS/STUDY/inline-switch-conditional-envelope',xyzxyzMm:[Math.min(...sw.map(p=>p[0]!))-swW!/2,cordY-swD!/2,Math.min(...sw.map(p=>p[2]!))-swH!/2,Math.max(...sw.map(p=>p[0]!))+swW!/2,cordY+swD!/2,Math.max(...sw.map(p=>p[2]!))+swH!/2]}
+ const guideVolumes=clips.map(g=>({id:g.id,xyzxyzMm:[...g.pointMm.map((n,i)=>n-a.guideBodyEnvelopeMm[i]!/2),...g.pointMm.map((n,i)=>n+a.guideBodyEnvelopeMm[i]!/2)]}))
+ const applianceLead={fitting,planeYMm:cordY,bottomZMm:(low+high)/2,...lead,diameterRequirementMm:a.diameterRequirementMm,
+  guides:clips,nominalFixedVolumes:[...wireVolumes,plugVolume,switchVolume,...guideVolumes].map(v=>{if(v.xyzxyzMm.length!==6||!v.xyzxyzMm.every(Number.isFinite))throw TypeError('IAS_APPLIANCE_VOLUME_INVALID');return{...v,xyzxyzMm:v.xyzxyzMm as unknown as Closed6}}),inlineSwitchDistanceMm:a.inlineSwitchDistanceMm,inlineSwitchEnvelopeMm:a.inlineSwitchEnvelopeMm,plugEnvelopeMm:a.plugEnvelopeMm,plugSpaceAuthority:'Authored60x70mm face/60mm installed projection and40x80x30mm switch envelope cover the published250..300mm switch position range. These are installation acceptance limits, not measured supplied dimensions.',
+  topology:'One visible gravity-led U with independent open guides; no hidden coil or cavity storage. Complete factory lead stays with the fitting during unplugged cassette renewal.',
+  conditionalCompleteEnvelopeComputed:true,completeFactoryAssemblyGeometryQualified:false,factoryInlineSwitchPositionRangeSourceBound:true,factoryInlineSwitchBodyQualified:false,guideCapacityQualified:false,cordReleaseAndLoadedHandlingQualified:false,
+  scope:'Conditional wire and plug-space geometry. Generous authored plug/switch/guide envelopes are included, with the manufacturer250..300mm switch position range. Actual supplied fit, guide loads, slack manipulation and loaded cassette handling remain unqualified. The long visible U is an unaccepted architectural comparison, not an appearance verdict.'}
  const phaseAfterA=e.phaseLoadA.map((n,i)=>n+(i===2?s.socket.ratedA+s.lighting.ratedA:0));if(phaseAfterA.some(n=>n>e.nominalAperPhase))issues.push('phase-budget-rejected')
- return{schema:'ias-study-circuit/1',status:issues.length?'DESIGN_REJECTED':'SPECIFIED_DEVELOPMENT',designDigest:sha256SemanticFingerprint({source:b.source,room:b.room,electrical:e,specification:s,homeRuns:{routes:h.routes,boxes:h.boxes,caseRenewal:h.caseRenewal,carrierDepthMm:h.carrierDepthMm,carrierStripsXZMm:h.carrierStripsXZMm,moduleSweepPlanMm:h.moduleSweepPlanMm,parkedModulePlanMm:h.parkedModulePlanMm}}),source:b.source,
+ return{schema:'ias-study-circuit/1',status:issues.length?'DESIGN_REJECTED':'SPECIFIED_DEVELOPMENT',designDigest:sha256SemanticFingerprint({source:b.source,room:b.room,electrical:e,specification:s,fitting,homeRuns:{routes:h.routes,boxes:h.boxes,caseRenewal:h.caseRenewal,carrierDepthMm:h.carrierDepthMm,carrierStripsXZMm:h.carrierStripsXZMm,moduleSweepPlanMm:h.moduleSweepPlanMm,parkedModulePlanMm:h.parkedModulePlanMm}}),source:b.source,
   sourceBinding:{wallPlan:e.walls,consumerStationXYWHMm:cu,incoming:e.incoming,dryDistribution:e.dryDistribution,phaseBeforeA:e.phaseLoadA,phaseAfterA,nominalAperPhase:e.nominalAperPhase,CUCatastrophicWaterExposureQualified:false},
-  choice:'Two independent protected radials; one-way mechanical switch. No shared downstream neutral, dimmer, automation or exposed custom busbar.',feeders,homeRuns:runs,portPitchMm,neighbourToolChecks,pairReserveMm,retainedChecks,serviceChecks,calculations,physicalMILengths:5,cableEnds:10,cableStock:{references:[...new Set(feeders.map(f=>f.cable.reference))],orderLengthM:calculations.reduce((n,q)=>n+q.lengthM,0),knownCableKg:calculations.reduce((n,q,i)=>n+q.lengthM*feeders[i]!.cable.kgKm/1000,0),glandFamily:`Matched ${s.gland.threadMm}mm RGM/RPSL ends for each listed cable family; supplied assembly unqualified`,completeInstalledMassQualified:false},
+  applianceLead,choice:'Two independent protected radials; one-way mechanical switch. No shared downstream neutral, dimmer, automation or exposed custom busbar.',feeders,homeRuns:runs,portPitchMm,neighbourToolChecks,pairReserveMm,retainedChecks,serviceChecks,calculations,physicalMILengths:5,cableEnds:10,cableStock:{references:[...new Set(feeders.map(f=>f.cable.reference))],orderLengthM:calculations.reduce((n,q)=>n+q.lengthM,0),knownCableKg:calculations.reduce((n,q,i)=>n+q.lengthM*feeders[i]!.cable.kgKm/1000,0),glandFamily:`Matched ${s.gland.threadMm}mm RGM/RPSL ends for each listed cable family; supplied assembly unqualified`,completeInstalledMassQualified:false},
   sourceBox:{id:'IAS/STUDY/fixed-sourcebox',boxMm:box,openingXZMm:[box[0]!,box[2]!,right,top],skirtReserveMm,terminalNets:['S-L','S-N','L-L','L-N','L-SL'],terminal:s.terminal,terminalReservationMm:terminalBox,
    boundary:'Independently supported fixed steel back replaces its bounded board patch; retained lid/perimeter seal stay closed when decoration is removed. No boundary performance is inferred.',
    endReleaseRequiredMm:s.gland.projectionMm+11+s.gland.potMm,topEndReleaseReserveMm:Math.min(...h.routes.map(r=>r.sourcePointMm[2]!))-top-s.gland.projectionMm-11-s.gland.potMm-s.settingMm,

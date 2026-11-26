@@ -79,13 +79,17 @@
     "leadLengthMm": 2500,
     "maximumLampW": 10,
     "projectionAuthority": "Manufacturer published maximum reach230mm, not a claim that an arbitrary supplied plug fits a closed cavity.",
-    "sourceType": "Factory complete plug-in E27 fitting with inline switch; no conversion of a wired-in product and no alteration of certified internals.",
+    "sourceType": "Factory complete UK BS1363 plug-in E27 fitting, ClassII double insulated, IP20; inline switch250..300mm from fitting; no conversion or internal alteration.",
     "materialAdmission": "NOT_ADMITTED: paint, cable, plug, fuse, lampholder, switch, supplied lamp and all constituents remain unresolved.",
     "terminalGeometryEvidence": {
       "source": "https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/",
       "checkedDate": "2026-11-26",
       "finding": "Complete plug-in family replaces direct fixed2.5mm2 termination into unknown factory lamp terminals. Actual UK plug/fuse/lead geometry and independent support/parking remain unqualified."
-    }
+    },
+    "datasheet": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-75-mini/4-technical-datasheets/1-uk/type-75-mini-wall-light-with-cable-technical-data-uk.pdf",
+    "cordAlterationPermitted": false,
+    "packagedWeightKgWitness": 0.55,
+    "installedMassQualified": false
   },
   "projectRequirements": {
     "fixedBoundaryDepthMm": 7.5,
@@ -415,12 +419,44 @@
         "url": "https://www.anglepoise.com/product/type-75-mini-wall-light-with-cable-jet-black/",
         "finding": "Current complete Type75Mini plug-in family:130mm shade,150mm shade height,230mm maximum reach and75mm wall plate. Fixed lighting MI ends at conventional single13A outlet on B6; no direct2.5mm2 lamp-terminal adapter. Actual supplied plug/fuse and complete mechanical/lead renewal remain unqualified.",
         "retrieval": "Official current manufacturer product/category opened26Nov2026; earlier official support index lists2.5m factory lead. No actual supplied plug/fuse identity inferred."
+      },
+      {
+        "id": "plugged-UK-technical",
+        "url": "https://anglepoise.s3.eu-west-1.amazonaws.com/asset-bank/type-75-mini/4-technical-datasheets/1-uk/type-75-mini-wall-light-with-cable-technical-data-uk.pdf",
+        "finding": "Official UKV1: ClassII, BS1363 UK plug,2500mm cable, inline switch250..300mm from fitting, max10WLED.0.55kg is PACKAGED weight. Plug/switch/guide envelopes are generous project limits, not measured supplied dimensions; no permission to shorten or replace factoryplug inferred.",
+        "retrieval": "Official manufacturer-hosted UKtechnicalPDF opened26Nov2026; current product geometry crosschecked."
       }
     ],
     "deviceTerminalLimitsMm2": {
       "socket": 4,
       "switch": 6,
       "lamp": 4
+    },
+    "applianceLead": {
+      "bendRadiusMm": 25,
+      "guideRightInsetMm": 20,
+      "guideSpacingMm": 70,
+      "standOffMm": 25,
+      "diameterRequirementMm": 8,
+      "plugEnvelopeMm": [
+        60,
+        70,
+        60
+      ],
+      "inlineSwitchEnvelopeMm": [
+        40,
+        80,
+        30
+      ],
+      "inlineSwitchDistanceMm": [
+        250,
+        300
+      ],
+      "guideBodyEnvelopeMm": [
+        20,
+        20,
+        20
+      ]
     }
   }
 }

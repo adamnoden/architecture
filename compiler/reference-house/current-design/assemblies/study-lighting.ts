@@ -29,7 +29,7 @@ export function readLightingComponents() {
     socket: { plateWidthMm: number; plateHeightMm: number; recommendedBoxDepthMm: number; bodyDepthMm: number },
     backBox: { widthMm: number; heightMm: number; depthMm: number }, plug: { widthMm: number; heightMm: number; depthMm: number; insertedProjectionMm: number },
     deskLamp: { baseDiameterMm: number; leadLengthMm: number }, floorLamp: { baseDiameterMm: number; leadLengthMm: number },
-    wallLamp: { shadeWidthMm: number; shadeHeightMm: number; reservedCompleteProjectionMm: number },
+    wallLamp: { manufacturer:string;reference:string;leadLengthMm:number; shadeWidthMm: number; shadeHeightMm: number; reservedCompleteProjectionMm: number },
     wallTaskLamp: { wallPlateDiameterMm: number; maximumReachMm: number; shadeDiameterMm: number; shadeHeightMm: number },
     projectRequirements: { fixedBoundaryDepthMm: number; removableFaceDepthMm: number; localCarrierDepthReserveMm: number; bayWidthMm: number;
       doorStopMm: number;  socketGripNormalMm: number;
@@ -116,7 +116,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
   const sideLead: readonly Point[] = [[sideStand[2] - 140, 1900, 750], [sideStand[2] - 30, 1900, 600], sideSocket]
   const light = (id: string, kind: string, positionMm: Point) => ({ id, kind, positionMm, available: request.failedSourceId !== id })
   const D = light('desk-task', 'desk', deskBase), F = light('floor-fill', 'floor', [floorBase[0], floorBase[1], 1500])
-  const T = light('side-task', 'side', [sideStand[0] + 150, 1900, 1050]), W = light('wall-arrival', 'wall', [centre, front, 1800])
+  const T = light('side-task', 'side', [sideStand[0] + 150, 1900, 1050]), W = light('wall-arrival', 'wall', [centre+components.localHomeRunCandidate.stationOffsetXMm, front, 1800])
   const WT = light('wall-task', 'wall-task', [desk[0]+450,boundaryAt('wall-task',desk[0]+450,'x','min')+intrusion,1450])
   const [s0, z0, s1, z1] = room.southModuleXZMm
   const WF = light('wall-fill', 'wall', [(s0+s1)/2,boundaryAt('wall-fill',(s0+s1)/2,'x','min')+intrusion,(z0+z1)/2])
@@ -232,7 +232,7 @@ export function deriveStudyLighting(input: unknown, basis: LightingBasis, compon
     parkedModule: construction.firstRelease.parked, floorBandsMm: room.bands,
     occupiedPlanMm: [...room.occupied, ['reserved-floor-lamp', [floorBase[0] - floorLampRadius, floorBase[1] - floorLampRadius, floorBase[0] + floorLampRadius, floorBase[1] + floorLampRadius]]],
   }, components.commonDepthCornerCandidate)
-  const circuit=deriveStudyLightingCircuit(basis,construction.localHomeRunComparison,components.circuitDesign)
+  const circuit=deriveStudyLightingCircuit(basis,construction.localHomeRunComparison,components.circuitDesign,{manufacturer:components.wallLamp.manufacturer,reference:components.wallLamp.reference,leadLengthMm:components.wallLamp.leadLengthMm,projectionMm:components.wallLamp.reservedCompleteProjectionMm,plugSpaceWitnessMm:[components.plug.widthMm,components.plug.heightMm,components.plug.insertedProjectionMm]})
   for(const issue of circuit.issues)fail('IAS_LIGHTING_CIRCUIT_REJECTED',issue)
   fail('IAS_LIGHTING_SUPPLY_INSTALLATION_UNQUALIFIED','Named source-bound socket/manual-lighting ways, cables and terminal nets are specified. Actual CU water exposure, supply/earth, board compatibility, fault energy and installed verification remain unearned.',circuit.feeders.map(r=>r.way))
   fail('IAS_LIGHTING_HOME_RUN_ENTRIES_UNQUALIFIED', 'Three independent source-to-enclosure containment paths replace the unresolved shared-riser topology as an unselected development direction. Actual box ports, hardware and device connections remain unqualified; the source interfaces have specified design nets, with actual installed connections unearned.', construction.localHomeRunComparison.sourceInterfaceIds)
@@ -261,7 +261,7 @@ export function compileStudyLighting(resolved: CurrentDesignResolution, input: u
   const [x,y,z,w,d,h]=lighting.circuit.sourceBox.boxMm
   const bay=lighting.construction.localHomeRunComparison
   const closedSourceFloorRenewal=compileStudyStructuralRenewal(context,room.floor.parts,room.floor.emitterPlinth,plan,room.floor.installedInlet,{
-    volumes:[{id:lighting.circuit.sourceBox.id,xyzxyzMm:[x!,y!,z!,x!+w!,y!+d!,z!+h!]},{id:'IAS/STUDY/closed-local-bay',xyzxyzMm:[bay.bayPlanMm[0]!,bay.frontYMm,bay.finishBottomZMm,bay.bayPlanMm[2]!,bay.bayPlanMm[3]!,bay.finishTopZMm]}],
+    volumes:[...lighting.circuit.applianceLead.nominalFixedVolumes,{id:lighting.circuit.sourceBox.id,xyzxyzMm:[x!,y!,z!,x!+w!,y!+d!,z!+h!]},{id:'IAS/STUDY/closed-local-bay',xyzxyzMm:[bay.bayPlanMm[0]!,bay.frontYMm,bay.finishBottomZMm,bay.bayPlanMm[2]!,bay.bayPlanMm[3]!,bay.finishTopZMm]}],
     panelTransfer:studyPanelTransferProfile(room.floor.wearingFaceMm+room.floor.beddingMm),
   })
   const closedClear=closedSourceFloorRenewal.status==='computed-geometry-witnesses'

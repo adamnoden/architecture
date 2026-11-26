@@ -144,3 +144,19 @@ test('factory-plugged lamp changes actual projection while preserving separate f
  assert.equal(current.circuit.consumedCableRenewal.retiredCableRecoveryRequired,false)
  assert.equal(current.circuit.consumedCableRenewal.newCoilFeedAndFormAccessQualified,false)
 })
+
+
+test('complete stock lead and bounded switch position join the actual fixed bay without hidden storage',()=>{
+ const r=run(),a=r.circuit.applianceLead
+ assert.ok(Math.abs(a.lengthMm-2500)<.001)
+ assert.ok(a.bottomZMm>150&&a.bottomZMm<1500)
+ assert.deepEqual(a.inlineSwitchDistanceMm,[250,300])
+ assert.ok(a.nominalFixedVolumes.some(v=>v.id.includes('inline-switch')))
+ assert.ok(a.nominalFixedVolumes.some(v=>v.id.includes('plug-space')))
+ assert.equal(a.completeFactoryAssemblyGeometryQualified,false)
+ const short=structuredClone(components);short.wallLamp.leadLengthMm=50
+ assert.ok(run(short).circuit.issues.includes('appliance-lead-length-outside-visible-U-domain'))
+ const bad=structuredClone(components);bad.circuitDesign.applianceLead.guideRightInsetMm=1
+ assert.ok(run(bad).circuit.issues.includes('appliance-lead-bay-edge-rejected'))
+ assert.deepEqual(run(bad).commonRoom,r.commonRoom)
+})

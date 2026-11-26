@@ -436,7 +436,7 @@ test('conventional independent home runs have finite continuous routes, bounded 
   assert.deepEqual(h.issues,[])
   assert.equal(h.selection,'unselected-development-direction')
   assert.deepEqual(h.routes.map(route=>route.bend.radiusMm),[70,111,152])
-  assert.deepEqual(h.boxes.map(box=>box.entryAxisCoreDepthRequirementMm),[52,52,38])
+  assert.deepEqual(h.boxes.map(box=>box.entryAxisCoreDepthRequirementMm),[52,52,52])
   assert.equal(h.architecturalConsequence.additionalBayWidthMm,100)
   assert.equal(h.architecturalConsequence.carrierShiftXMm,-1)
   assert.equal(h.architecturalConsequence.addedConservativeFloorTerritoryM2,.013000000000000001)
@@ -463,8 +463,8 @@ test('conventional independent home runs have finite continuous routes, bounded 
     const spans=route.clips.slice(1).map((clip,i)=>clip.pointMm[2]!-route.clips[i]!.pointMm[2]!)
     assert.ok(spans.every(span=>span<=h.choices.maximumClipSpanMm))
   }
-  assert.equal(h.stock.clipCount,11)
-  const exactTubeLength=3*(Math.PI/2)*111+(600-70-375)+(1100-111-375)+(1800-152-375)
+  assert.equal(h.stock.clipCount,10)
+  const exactTubeLength=3*(Math.PI/2)*111+(600-70-375)+(1100-111-375)+(1500-152-375)
   assert.ok(Math.abs(h.stock.tubeLengthMm-exactTubeLength)<1e-9)
   const independentTubeMass=Math.PI*(10*10-9*9)*exactTubeLength*7850/1e9
   const independentCollarMass=Math.PI*15*15*90*7850/1e9
@@ -510,14 +510,14 @@ test('ordinary deeper boxes and fixed extension frames clear the complete lining
   const r=run(),h=r.construction.localHomeRunComparison
   assert.equal(h.schema,'ias-local-home-runs/2')
   assert.equal(h.totalDepthMm,95)
-  assert.deepEqual(h.boxes.map(b=>b.depthMm),[[32,79],[32,79],[18,65]])
-  assert.deepEqual(h.boxes.map(b=>b.extensionDepthMm),[16,16,0])
+  assert.deepEqual(h.boxes.map(b=>b.depthMm),[[32,79],[32,79],[32,79]])
+  assert.deepEqual(h.boxes.map(b=>b.extensionDepthMm),[16,16,16])
   assert.equal(h.carrierStock.wrenchAboutCoreCentreNAndNm[4],0)
   assert.ok(h.routes.every(route=>route.reservesMm.tubeFront>=12.5))
   assert.ok(h.enclosureCarrierChecks.every(row=>row.reserveMm>=5.5))
   assert.ok(h.residualGeometryWarnings.every(w=>w.boundary==='portRear'))
   assert.ok(h.caseRenewal.every(c=>Object.values(c.restReservesMm).every(v=>v>=5)))
-  assert.deepEqual(h.caseRenewal.map(c=>c.normalDrawMm),[83,83,97])
+  assert.deepEqual(h.caseRenewal.map(c=>c.normalDrawMm),[83,83,83])
   assert.ok(h.caseRenewal.every(c=>c.sweptBodyChecks.every(v=>v.reserveMm>=5)&&c.pipeChecks.every(v=>v.reserveMm>=5)))
   for(const c of h.caseRenewal){
     assert.ok(c.pipeChecks.some(row=>row.phase==='normal-draw'&&row.routeId===h.routes.find(r=>r.enclosureId===c.id)!.id))
@@ -526,9 +526,11 @@ test('ordinary deeper boxes and fixed extension frames clear the complete lining
   }
   assert.equal(h.caseRestPlanMm[2]!-h.caseRestPlanMm[0]!,120)
   assert.equal(h.caseRestPlanMm[1]!-h.firstRestPlanMm[3]!,17)
-  assert.equal(h.stock.extensionStockKgComparison,.14067200000000002)
-  assert.equal(h.stock.separateKnownSaddleReceiverStockKg,.0785)
-  assert.ok(Math.abs(h.stock.tubeCollarReceiverAndExtensionStockKgComparison-(2.2297362030030534-3*220*Math.PI*(10**2-9**2)*7850/1e9))<1e-12)
+  assert.ok(Math.abs(h.stock.extensionStockKgComparison-3*(72**2-68**2)*16*7850/1e9)<1e-12)
+  assert.equal(h.stock.separateKnownSaddleReceiverStockKg,20*20*39*7850/1e9)
+  const length=3*Math.PI/2*111+(600-70-375)+(1100-111-375)+(1500-152-375)
+  const tubeAndCollars=(Math.PI*(10**2-9**2)*length+Math.PI*15**2*90)*7850/1e9
+  assert.ok(Math.abs(h.stock.tubeCollarReceiverAndExtensionStockKgComparison-tubeAndCollars-20*20*39*7850/1e9-3*(72**2-68**2)*16*7850/1e9)<1e-12)
   const old=structuredClone(components);old.localHomeRunCandidate={...old.localHomeRunCandidate,additionalCornerDepthMm:0,accessoryExtensionMm:0,upperBoxBacksetMm:0,upperPortRearInsetMm:23.5}
   const rejected=deriveStudyLighting(choices,basis,old).construction.localHomeRunComparison
   assert.equal(rejected.status,'GEOMETRY_REJECTED')
@@ -546,7 +548,7 @@ test('the ordinary upper saddle includes the actual receiver, tool phase, stock 
   const h=run().construction.localHomeRunComparison,s=h.saddle!
   assert.ok(s)
   assert.equal(s.supportPath.masonryToSaddleDepthMm[0],0)
-  assert.equal(s.supportPath.masonryToSaddleDepthMm[1],25)
+  assert.equal(s.supportPath.masonryToSaddleDepthMm[1],39)
   assert.equal(s.supportPath.penetrationSealQualified,false)
   assert.equal(s.sourceQualifiedForBend,false)
   assert.equal(s.tool.maximumDiameterMm,37)

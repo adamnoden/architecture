@@ -572,3 +572,17 @@ altered. Actual supplied UK plug/fuse, lead parking/withdrawal, outlet entry/too
 fit and complete support still require proof. Plastic cable/plug, paint, switch,
 lampholder and all constituents remain unadmitted. This source checkpoint is WIP
 until fresh shared-producer/geometry/136renewal tests and drawings are earned.
+
+
+The official UKV1 sheet identifies this plugged fitting as ClassII and gives the
+inline switch250..300mm from the fitting;0.55kg is packaged, not installed mass.
+The source now carries the full2500mm lead as one visible U with independent open
+guides. It charges generous authored60×70×60mm plug and40×80×30mm switch envelopes,
+the full published switch-position range, and20mm guide bodies to the shared
+136renewal validator. These are conditional installation limits, not invented
+supplied dimensions. The long visible U remains unselected architecturally;
+ordinary plug-end shortening requires evidence of suitable construction and
+manufacturer permission before it may replace the full-length comparison. No
+permission is inferred from another lamp's repair instructions. Existing room
+eye-level views omit lighting fittings: they do not depict the newfamily or
+its lead/outlet and earn no new lighting appearance claim.
