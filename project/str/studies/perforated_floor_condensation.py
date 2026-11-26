@@ -128,7 +128,7 @@ def positive_energy_modes(matrix):
 def compile_perforated_floor(bodies, omissions, loops, corner_patches, law, max_pitch_mm, pressure_rows=(), boundary_receivers=(), numerical_backend='auto-fine-sparse-v1'):
     if numerical_backend not in _BACKEND_POLICIES:raise ValueError('Explicit supported perforated-floor numerical backend policy required; no fallback')
     backend=('scipy-sparse' if max_pitch_mm<500 else 'python') if numerical_backend=='auto-fine-sparse-v1' else numerical_backend
-    if not law or not all(math.isfinite(value) and value > 0 for key, value in law.items() if key != 'poissonRatio') or not 0 <= law['poissonRatio'] < .5:
+    if not law or not all(math.isfinite(value) and (value > 0 or key == 'edgeAxialRigidityKN' and type(value) in (int,float) and value == 0) for key, value in law.items() if key != 'poissonRatio') or not 0 <= law['poissonRatio'] < .5:
         raise ValueError('An explicit positive finite membrane and edge law is required')
     port_ids={row['id'] for row in corner_patches}
     for receiver in boundary_receivers:

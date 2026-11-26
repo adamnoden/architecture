@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 import unittest
 import numpy as np
-from current_zero_chord_control import GUARD,NEW_GUARD,OLD_GUARD,current_sources,derive_inputs,digest,floor,read,without_identities
+from current_zero_chord_control import GUARD,NEW_GUARD,OLD_GUARD,MEMBRANE,OLD_MEMBRANE,NEW_MEMBRANE,current_sources,derive_inputs,digest,floor,read,without_identities
 from distributed_floor_compatibility import _admit_distributed
 
 class ExactZeroChord(unittest.TestCase):
@@ -33,9 +33,10 @@ class ExactZeroChord(unittest.TestCase):
             with self.subTest(value=value),self.assertRaises(ValueError):_admit_distributed(floor(case),self.owner)
 
     def test_only_authorised_guard_byte_changed(self):
-        text=Path(GUARD).read_text()
-        self.assertEqual(text.count(NEW_GUARD),1);self.assertNotIn(OLD_GUARD,text)
-        self.assertEqual(hashlib.sha256(text.replace(NEW_GUARD,OLD_GUARD).encode()).hexdigest(),self.summary['sourceSHA256'][GUARD])
+        for path,old_guard,new_guard in ((GUARD,OLD_GUARD,NEW_GUARD),(MEMBRANE,OLD_MEMBRANE,NEW_MEMBRANE)):
+            text=Path(path).read_text()
+            self.assertEqual(text.count(new_guard),1);self.assertNotIn(old_guard,text)
+            self.assertEqual(hashlib.sha256(text.replace(new_guard,old_guard).encode()).hexdigest(),self.summary['sourceSHA256'][path])
 
     def test_inputs_change_only_fresh_identity_and_explicit_extra_chord(self):
         old_digest=digest(self.parent);packet=derive_inputs(self.parent,self.summary)
@@ -54,5 +55,42 @@ class ExactZeroChord(unittest.TestCase):
             u=np.array([0.,.1]);self.assertGreater(float(.5*u@k@u),0.)
         young=8250.;poisson=.2
         self.assertGreater(young/(2*(1+poisson)),0.);self.assertGreater(young/(3*(1-2*poisson)),0.)
+
+    def membrane_fixture(self,extra):
+        law={'elasticModulusMPa':8250.,'poissonRatio':.2,'shearModulusMPa':3437.5,'thicknessMm':200.,
+             'edgeElasticModulusMPa':8250.,'edgeFlexuralFactor':1.,'edgeAxialRigidityKN':extra}
+        ports=[{'id':name,'originXYMm':[x,y],'rectangles':[[x-70,y-70,x+70,y+70]],'node':name}
+               for name,x,y in (('SW',70.,70.),('SE',930.,70.),('NE',930.,930.),('NW',70.,930.))]
+        loops=[{'id':name,'axis':axis,'datum':datum,'lo':70.,'hi':930.,'width':140.,'depth':200.}
+               for name,axis,datum in (('south',0,70.),('north',0,930.),('west',1,70.),('east',1,930.))]
+        return [[0.,0.,1000.,1000.]],loops,ports,law
+
+    def test_actual_native_kernel_accepts_zero_with_concrete_relative_energy(self):
+        from perforated_floor_condensation import compile_perforated_floor
+        body,loops,ports,law=self.membrane_fixture(0.)
+        zero=compile_perforated_floor(body,[],loops,ports,law,250.)
+        law=copy.deepcopy(law);law['edgeAxialRigidityKN']=180955.73684677208
+        positive=compile_perforated_floor(body,[],loops,ports,law,250.)
+        kz=np.array(zero['condensedStiffnessKNPerMm']);kp=np.array(positive['condensedStiffnessKNPerMm'])
+        self.assertGreater(zero['membraneAreaM2'],0.);self.assertEqual(zero['unqualifiedLaw']['edgeAxialRigidityKN'],0.)
+        u=np.zeros(12);u[3]=1.;self.assertGreater(float(.5*u@kz@u),0.)
+        self.assertLess(max(zero['rigidModeResidualKN']),1e-3)
+        scale=max(1.,float(abs(kp-kz).max()))
+        self.assertGreaterEqual(float(np.linalg.eigvalsh((kp-kz+kp.T-kz.T)/2).min()),-scale*1e-8)
+
+    def test_native_kernel_zero_exception_cannot_zero_other_laws(self):
+        from perforated_floor_condensation import compile_perforated_floor
+        body,loops,ports,law=self.membrane_fixture(0.)
+        for value in (-1.,float('nan'),float('inf'),False):
+            bad=copy.deepcopy(law);bad['edgeAxialRigidityKN']=value
+            with self.subTest(extra=value),self.assertRaises(ValueError):compile_perforated_floor(body,[],loops,ports,bad,250.)
+        for key in law:
+            if key in ('edgeAxialRigidityKN','poissonRatio'):continue
+            bad=copy.deepcopy(law);bad[key]=0.
+            with self.subTest(law=key),self.assertRaises(ValueError):compile_perforated_floor(body,[],loops,ports,bad,250.)
+        for value in (-.1,.5,float('nan')):
+            bad=copy.deepcopy(law);bad['poissonRatio']=value
+            with self.subTest(poisson=value),self.assertRaises(ValueError):compile_perforated_floor(body,[],loops,ports,bad,250.)
+
 
 if __name__=='__main__':unittest.main()

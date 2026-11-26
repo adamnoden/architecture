@@ -17,6 +17,9 @@ import numpy as np
 GUARD='project/str/studies/distributed_floor_compatibility.py'
 OLD_GUARD="band['axialRigidityKN'] <= 0"
 NEW_GUARD="band['axialRigidityKN'] < 0"
+MEMBRANE='project/str/studies/perforated_floor_condensation.py'
+OLD_MEMBRANE="math.isfinite(value) and value > 0 for key, value in law.items() if key != 'poissonRatio'"
+NEW_MEMBRANE="math.isfinite(value) and (value > 0 or key == 'edgeAxialRigidityKN' and type(value) in (int,float) and value == 0) for key, value in law.items() if key != 'poissonRatio'"
 SCHEMA='str-zero-extra-chord-W0-input/1'
 
 def encode(x):return json.dumps(x,sort_keys=True,separators=(',',':'),allow_nan=False).encode()
@@ -61,10 +64,11 @@ def derive_inputs(parent,summary):
     if set(identities)!=set(summary['sourceSHA256']) or len(identities)!=58 or methods!=summary['methodSHA256'] or runtime!=summary['runtime']:
         raise ValueError('Native inventory, finite methods or original runtime changed')
     changed=[p for p in identities if identities[p]!=summary['sourceSHA256'][p]]
-    if changed!=[GUARD]:raise ValueError('Only the explicitly authorised admission guard may change')
-    text=Path(GUARD).read_text()
-    if text.count(NEW_GUARD)!=1 or OLD_GUARD in text or hashlib.sha256(text.replace(NEW_GUARD,OLD_GUARD).encode()).hexdigest()!=summary['sourceSHA256'][GUARD]:
-        raise ValueError('Owning source change exceeds the sole <=0 to <0 admission edit')
+    if set(changed)!={GUARD,MEMBRANE}:raise ValueError('Only the two explicitly authorised admission guards may change')
+    for path,old_guard,new_guard in ((GUARD,OLD_GUARD,NEW_GUARD),(MEMBRANE,OLD_MEMBRANE,NEW_MEMBRANE)):
+        text=Path(path).read_text()
+        if text.count(new_guard)!=1 or old_guard in text or hashlib.sha256(text.replace(new_guard,old_guard).encode()).hexdigest()!=summary['sourceSHA256'][path]:
+            raise ValueError('Owning source change exceeds its exact zero-extra admission edit: '+path)
     old=parent['authoredNativeCase'];before=digest(parent)
     positive=bind_new_input(old,summary['sourceSHA256'],identities)
     if without_identities(positive)!=without_identities(old) or floor(positive)['boundaryCase']['windIndex']!=0 or floor(positive)['edgeBand']['axialRigidityKN']<=0:
@@ -80,8 +84,8 @@ def derive_inputs(parent,summary):
             'parentSourceSHA256':summary['sourceSHA256'],'parentSummarySemanticSHA256':digest(summary),
             'observerSHA256':summary['observerSHA256'],'runnerSHA256':sha('project/str/studies/current_zero_chord_control.py'),
             'authenticatedParentNativeInputSHA256':digest(old),'historicalReceiptSHA256':before,
-            'sourceChange':{'path':GUARD,'oldSHA256':summary['sourceSHA256'][GUARD],'newSHA256':identities[GUARD],
-                            'scope':'Only nonnegative additional axial-chord admission; physical kernels unchanged'},
+            'sourceChanges':[{'path':p,'oldSHA256':summary['sourceSHA256'][p],'newSHA256':identities[p],
+                              'scope':'Only finite exact-zero additional axial-chord admission; numerical kernels unchanged'} for p in (GUARD,MEMBRANE)],
             'inputDerivation':'Authenticated nativeCase controls only, freshly bound through current authoritative source identities. Historical response arrays never supply assembly.',
             'currentSavedEngineeringDocumentAdmitted':False,
             'integrationDebt':'Exploratory branch only. Owning source-account/current-model identities and applicable consumers require legitimate migration before adoption.'}
@@ -180,7 +184,7 @@ def aggregate(args):
             'maximumHouseWrenchResidualKN_KNm':max(map(abs,value['replay']['replayedHouseWrenchResidualKN_KNm'])),
             'maximumJointWrenchResidualKN_KNm':max(map(abs,value['replay']['independentJointWrenchResidualKN_KNm']))}
     report={'schema':'str-zero-extra-chord-W0-comparison/1','status':'fresh-positive-and-exact-zero-W0-computed-unselected',
-        'sourceSHA256':packet['sourceSHA256'],'methodSHA256':packet['methodSHA256'],'runtime':packet['runtime'],'sourceChange':packet['sourceChange'],
+        'sourceSHA256':packet['sourceSHA256'],'methodSHA256':packet['methodSHA256'],'runtime':packet['runtime'],'sourceChanges':packet['sourceChanges'],
         'inputPacketSHA256':digest(packet),'historicalPositiveControlMaximumHeadDeltaKN_KNm':baseline_delta,
         'actualHeadDeltasZeroMinusPositiveKN_KNm':head_deltas,'maximumHeadDeltaKN_KNm':maximum_delta(heads_p,heads_z),
         'samePhysicalAppliedWrenchResidualKN_KNm':wrench_delta.tolist(),'finiteChordRemovalMinimumRelativeEigenvalue':relative,
