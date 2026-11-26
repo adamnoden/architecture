@@ -130,7 +130,7 @@ test('stale identities, unknown branch/duty and injected results reject; exact d
 test('saved document and public CLI carry branch and room edits through the existing transport then reverse',async()=>{
  const original=await readEngineeringDocument(readGeorgianDesignSnapshot())
  assert.ok(!Object.hasOwn(original.stages,'inletSourceEnvelope'))
- const authoredStage={...request.sourceEnvelope.settings,splitPlantRoom:request.sourceEnvelope.splitPlantRoom}
+ const authoredStage={...request.sourceEnvelope.settings,splitPlantRoom:request.sourceEnvelope.splitPlantRoom,wetServiceSuite:request.sourceEnvelope.wetServiceSuite}
  const doc={...original,stages:{inletSourceEnvelope:authoredStage}}
  const first=await compileEngineeringDocument(JSON.parse(JSON.stringify(doc)))
  const changedDoc={...doc,stages:{inletSourceEnvelope:{...authoredStage,utilityApertureNominalMm:6.7,plantTransferZMm:2220,mainboardBaseZMm:2600}}}
@@ -148,8 +148,8 @@ test('saved document and public CLI carry branch and room edits through the exis
  assert.ok(changed.coordinationDiagnostics.some((r:any)=>r.code==='INLET_SOURCE_AND_ROOM_REPLAN_NOT_COORDINATED'))
  assert.deepEqual((await compileEngineeringDocument(doc)).engineering.inletSourceEnvelope,a)
  assert.equal(a.splitPlantRoom.choiceOwnership,'complete-authored-request');assert.equal(c.splitPlantRoom.choiceOwnership,'complete-authored-request')
- const {splitPlantRoom,...changedSettings}=changedDoc.stages.inletSourceEnvelope
- const standalone=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--inlet-source-envelope','-'],{input:JSON.stringify({...request,sourceEnvelope:{...request.sourceEnvelope,splitPlantRoom,settings:changedSettings}}),encoding:'utf8',maxBuffer:4*1024*1024}))
+ const {splitPlantRoom,wetServiceSuite,...changedSettings}=changedDoc.stages.inletSourceEnvelope
+ const standalone=JSON.parse(execFileSync(process.execPath,['--import','tsx','scripts/compile-current-design.ts','--inlet-source-envelope','-'],{input:JSON.stringify({...request,sourceEnvelope:{...request.sourceEnvelope,splitPlantRoom,wetServiceSuite,settings:changedSettings}}),encoding:'utf8',maxBuffer:4*1024*1024}))
  assert.deepEqual(standalone,c)
  const {splitPlantRoom:_authoredChoice,...boundCase}=request.sourceEnvelope
  const boundDefault=runInletSourceEnvelopeCase(resolved,boundCase)

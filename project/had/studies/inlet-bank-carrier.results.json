@@ -1,7 +1,7 @@
 {
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
+    "bindingDigest": "f9eec17e67878656e85ff93aca707a3b142baf8f0d7aa923b048b46cc6123e48",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -19,10 +19,11 @@
       "project/had/studies/inlet-split-plant-branch-candidate.json": "6afb0bbc4f5e063e16d6ff7b040ae46a129c41f6",
       "project/had/studies/inlet-fixed-station.json": "69e0be05955a9f8fa3494f6a8c5e686dd8bc2e16",
       "project/had/studies/inlet-split-plant-room-candidate.json": "39ee4ca1a81334e42bab110b114ad9c244d6193c",
-      "project/had/studies/inlet-wet-service-suite-candidate.json": "4fef1bb19699f531b74415572ed3464220f3c96d"
+      "project/had/studies/inlet-wet-service-suite-candidate.json": "e3fc5666ab83260b202dd452f068722c4bf73cb4"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-wet-service-suite.ts": "5e3ee54b1bd8216a2b3254e35eaab1fbb5a736d1",
+      "compiler/reference-house/current-design/inlet-known-gravity.ts": "41695cf1a9393c76c4a200021e0e706f38111244",
+      "compiler/reference-house/current-design/inlet-wet-service-suite.ts": "7d33dc9d9c5c4a90bbfa7134e5f91cdecc4f70ed",
       "compiler/reference-house/current-design/inlet-store-impulse.ts": "f378afdf23c3e4d673b33c63f3d952e6dac679fe",
       "compiler/reference-house/current-design/house-vertical-profile.ts": "702d5cda1182e25d576e2f4cce754f3d816b0f2d",
       "project/had/studies/house_vertical_profile.py": "1f41e39d3c37728c6aad8a4168ed7e230aad7929",
@@ -36,7 +37,7 @@
       "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
       "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
       "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "c6ef0c60aff3d8bcddbadad0cb7bcd0e1a8d6f84",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "abfdb06b39bba407dbceabc847e79d16ee8c2242",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
       "compiler/reference-house/current-design/inlet-room-pocket.ts": "07e2f6238620cd2508d8335b525d735950a5c90b",
       "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",

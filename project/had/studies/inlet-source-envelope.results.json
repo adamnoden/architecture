@@ -3,7 +3,7 @@
   "state": "existing-whole-arrangement-rejected",
   "source": {
     "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-    "bindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
+    "bindingDigest": "f9eec17e67878656e85ff93aca707a3b142baf8f0d7aa923b048b46cc6123e48",
     "inputs": {
       "project/had/studies/south-inlet-under-sill.json": "d1a4c4e7068b31260dbdc65d2844d72b51fbf03a",
       "project/had/studies/south-inlet-wet-box.json": "49f733aafab8054073be9546d01c4cc03eca35c7",
@@ -21,10 +21,11 @@
       "project/had/studies/inlet-split-plant-branch-candidate.json": "6afb0bbc4f5e063e16d6ff7b040ae46a129c41f6",
       "project/had/studies/inlet-fixed-station.json": "69e0be05955a9f8fa3494f6a8c5e686dd8bc2e16",
       "project/had/studies/inlet-split-plant-room-candidate.json": "39ee4ca1a81334e42bab110b114ad9c244d6193c",
-      "project/had/studies/inlet-wet-service-suite-candidate.json": "4fef1bb19699f531b74415572ed3464220f3c96d"
+      "project/had/studies/inlet-wet-service-suite-candidate.json": "e3fc5666ab83260b202dd452f068722c4bf73cb4"
     },
     "methods": {
-      "compiler/reference-house/current-design/inlet-wet-service-suite.ts": "5e3ee54b1bd8216a2b3254e35eaab1fbb5a736d1",
+      "compiler/reference-house/current-design/inlet-known-gravity.ts": "41695cf1a9393c76c4a200021e0e706f38111244",
+      "compiler/reference-house/current-design/inlet-wet-service-suite.ts": "7d33dc9d9c5c4a90bbfa7134e5f91cdecc4f70ed",
       "compiler/reference-house/current-design/inlet-store-impulse.ts": "f378afdf23c3e4d673b33c63f3d952e6dac679fe",
       "compiler/reference-house/current-design/house-vertical-profile.ts": "702d5cda1182e25d576e2f4cce754f3d816b0f2d",
       "project/had/studies/house_vertical_profile.py": "1f41e39d3c37728c6aad8a4168ed7e230aad7929",
@@ -38,7 +39,7 @@
       "project/had/studies/service-interface-geometry.mjs": "0d5383132ae49bd1323492ae5eaa7337319c68f2",
       "compiler/reference-house/current-design/inlet-indoor-routes.ts": "7d4327cf37643dabb3b456e30da7763f14f3891a",
       "compiler/reference-house/current-design/inlet-indoor-cuts.ts": "c1e2c31ade8b4d731c8fff6b5cc90645a7948268",
-      "compiler/reference-house/current-design/inlet-source-envelope.ts": "c6ef0c60aff3d8bcddbadad0cb7bcd0e1a8d6f84",
+      "compiler/reference-house/current-design/inlet-source-envelope.ts": "abfdb06b39bba407dbceabc847e79d16ee8c2242",
       "compiler/reference-house/current-design/inlet-room-catchment.ts": "a2b5cd0b166996cb4dc0ede9ed4d6dbfd4e2fb58",
       "compiler/reference-house/current-design/inlet-room-pocket.ts": "07e2f6238620cd2508d8335b525d735950a5c90b",
       "compiler/reference-house/current-design/inlet-room-pan.ts": "2741dc2a938ed0b21b8b0479b4afd29f519e072b",
@@ -10422,7 +10423,7 @@
                 "storeDropBendRadiusMm": 75,
                 "storeTerminalBendRadiusMm": 25
               },
-              "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
+              "sourceBindingDigest": "f9eec17e67878656e85ff93aca707a3b142baf8f0d7aa923b048b46cc6123e48",
               "resolvedInput": {
                 "choice": {
                   "schema": "had-split-plant-branch/1",
@@ -10560,7 +10561,7 @@
                   "storeDropBendRadiusMm": 75,
                   "storeTerminalBendRadiusMm": 25
                 },
-                "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
+                "sourceBindingDigest": "f9eec17e67878656e85ff93aca707a3b142baf8f0d7aa923b048b46cc6123e48",
                 "groundFflMm": 0,
                 "roomPlanMm": [
                   9397,
@@ -27796,7 +27797,7 @@
           "deckGuardIntrusionMm": 50
         }
       },
-      "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
+      "sourceBindingDigest": "f9eec17e67878656e85ff93aca707a3b142baf8f0d7aa923b048b46cc6123e48",
       "groundFflMm": 0,
       "selected": false,
       "rawArchVerticalReservation": {
@@ -27823,7 +27824,7 @@
       },
       "branchIdentity": "HAD/plant-independent-east-entry-development",
       "branchPrerequisites": {
-        "sameCurrentSource": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
+        "sameCurrentSource": "f9eec17e67878656e85ff93aca707a3b142baf8f0d7aa923b048b46cc6123e48",
         "connections": [
           {
             "id": "source-entry",
@@ -28124,7 +28125,7 @@
             "storeDropBendRadiusMm": 75,
             "storeTerminalBendRadiusMm": 25
           },
-          "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
+          "sourceBindingDigest": "f9eec17e67878656e85ff93aca707a3b142baf8f0d7aa923b048b46cc6123e48",
           "resolvedInput": {
             "choice": {
               "schema": "had-split-plant-branch/1",
@@ -28262,7 +28263,7 @@
               "storeDropBendRadiusMm": 75,
               "storeTerminalBendRadiusMm": 25
             },
-            "sourceBindingDigest": "e32ddd7ff536d5fe1ba0ba16876478088d69b521f5552a68707aedb132e977ad",
+            "sourceBindingDigest": "f9eec17e67878656e85ff93aca707a3b142baf8f0d7aa923b048b46cc6123e48",
             "groundFflMm": 0,
             "roomPlanMm": [
               9397,
@@ -38337,6 +38338,891 @@
     "diagnostics": [
       "WET_SUITE/requires-current-joined-room-ground-and-pan-geometries"
     ]
+  },
+  "knownGravityInventory": {
+    "schema": "had-known-gravity-components/1",
+    "source": {
+      "inletBindingDigest": "f9eec17e67878656e85ff93aca707a3b142baf8f0d7aa923b048b46cc6123e48",
+      "inletCaseDigest": "a4e92ffb09f4bdd1441eccae04c4e1c42fdc0f4c417c8f2e84de34c2f1162897",
+      "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+      "groundCaseDigest": null
+    },
+    "selected": false,
+    "datum": {
+      "savedGroundFflMm": null,
+      "coldGridTopMm": null,
+      "nominalFrameFflMm": 0,
+      "rigidWholeInventoryZTransformApplied": false,
+      "gravityOnlyZShiftWrenchInvariant": true,
+      "horizontalOrPressureZShiftCredit": false
+    },
+    "units": {
+      "force": "kN",
+      "intrinsicMoment": "kNmm",
+      "globalMoment": "kNm",
+      "length": "mm",
+      "mass": "kg",
+      "massGravityMps2": 9.81
+    },
+    "comparisonGravityFactorApplied": 1,
+    "nativeDesignCombinationApplied": false,
+    "structuralFloorBodies": [],
+    "groups": [
+      {
+        "id": "HAD/shield-frame-reference",
+        "scope": "Nominal occupiedFFL0 frame; no530 translation or active assembly inferred",
+        "rows": [],
+        "unlocated": [
+          {
+            "id": "HAD/inventory/shield-frame-stock",
+            "massKg": 187.05083577877522,
+            "actualInstalledMassKg": null,
+            "massBasis": "aggregate geometry/reference budget including unlocated hardware",
+            "forceKN": [
+              0,
+              0,
+              -1.834968698989785
+            ],
+            "massCentroidXYZMm": null,
+            "attachmentPointsMm": [
+              [
+                11180,
+                2550,
+                1100
+              ],
+              [
+                11180,
+                2550,
+                2700
+              ],
+              [
+                11180,
+                3700,
+                1100
+              ],
+              [
+                11180,
+                3700,
+                2700
+              ]
+            ],
+            "originDatum": "nominal occupiedFFL0",
+            "receiverReactions": null,
+            "reason": "Total includes4kg hardware budget and returned-cover stock with unresolved centroids. Four core envelopes are nonconcurrent resistance bounds; do not sum as reactions."
+          }
+        ],
+        "receiverGeometry": null,
+        "unknowns": []
+      },
+      {
+        "id": "HAD/mainboard-empty-reference",
+        "scope": "Nominal empty product reference; complete contents, supplier centroid and actual support unknown",
+        "rows": [],
+        "unlocated": [
+          {
+            "id": "HAD/mainboard-empty-reference",
+            "nominalEmptyKg": 26.5,
+            "referenceForceKN": [
+              0,
+              0,
+              -0.25996500000000006
+            ],
+            "proposedEnvelopeMm": [
+              11190.5,
+              2897,
+              900,
+              380,
+              610,
+              605
+            ],
+            "datum": "nominal occupiedFFL0; no implicit530 translation",
+            "actualLoadedMassKg": null,
+            "massCentroidXYZMm": null
+          }
+        ],
+        "receiverGeometry": null,
+        "unknowns": []
+      },
+      {
+        "id": "HAD/plant/door-leaf-budget",
+        "scope": "Unmeasured fitted-door mass allowance, not selected installed stock",
+        "rows": [],
+        "unlocated": [
+          {
+            "id": "HAD/plant/door-leaf-budget",
+            "massBudgetKg": 100,
+            "referenceForceKN": [
+              0,
+              0,
+              -0.981
+            ],
+            "actualInstalledMassKg": null,
+            "massCentroidXYZMm": null,
+            "receiverReactions": null
+          }
+        ],
+        "receiverGeometry": null,
+        "unknowns": []
+      },
+      {
+        "id": "HAD/plant/independent-branch-reference",
+        "scope": "Separate Plant branch only; rejected old bank/transfer stock excluded",
+        "rows": [
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/upstream/segment/0",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 3.3829317933852963,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              11745,
+              3975,
+              1000
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.03318656089310976
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              -5.684341886080802e-14,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.03318656089310976,
+              -0.1319165795501113,
+              0.3897761576895741,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.03318656089310976,
+              0,
+              -5.684341886080802e-14,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/upstream/segment/1",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 1.625564627990337,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              11360,
+              3975,
+              1185
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.01594678900058521
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              -2.842170943040401e-14,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.01594678900058521,
+              -0.0633884862773262,
+              0.18115552304664795,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.01594678900058521,
+              0,
+              -2.842170943040401e-14,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/outlet-stem/segment/0",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 3.2071950768458004,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              11360,
+              3975,
+              1895
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.03146258370385731
+            ],
+            "intrinsicMomentKNmm": [
+              1.4210854715202004e-14,
+              -5.684341886080802e-14,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.03146258370385731,
+              -0.1250637702228328,
+              0.357414950875819,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.03146258370385731,
+              1.4210854715202004e-14,
+              -5.684341886080802e-14,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/store-fixed/segment/0",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 4.997512876591915,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              10791.25,
+              3975,
+              2260
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.04902560131936669
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              -1.1368683772161603e-13,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.04902560131936669,
+              -0.19487676524448258,
+              0.5290475202376157,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.04902560131936669,
+              0,
+              -1.1368683772161603e-13,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/store-fixed/segment/1",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 0.580370506371685,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              10222.5,
+              3908.95,
+              2260
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.00569343466750623
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              0,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.00569343466750623,
+              -0.02225535144354848,
+              0.05820113588858244,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.00569343466750623,
+              0,
+              0,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/tree-fixed/segment/0",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 3.0094912707388675,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              11360,
+              3975,
+              2602.5
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.02952310936594829
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              0,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.02952310936594829,
+              -0.11735435972964446,
+              0.3353825223971726,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.02952310936594829,
+              0,
+              0,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/tree-fixed/segment/1",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 4.503253361324583,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              11360,
+              4487.5,
+              2945
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.04417691547459416
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              0,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.04417691547459416,
+              -0.1982439081922413,
+              0.5018497597913897,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.04417691547459416,
+              0,
+              0,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/tree-fixed/segment/2",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 4.437352092622271,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              10855,
+              5000,
+              2945
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.04353042402862449
+            ],
+            "intrinsicMomentKNmm": [
+              2.842170943040401e-14,
+              0,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.04353042402862449,
+              -0.21765212014312244,
+              0.4725227528307188,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.04353042402862449,
+              2.842170943040401e-14,
+              0,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/store-removable-drop/segment/0",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 0.5240273964337161,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              10196.25,
+              3896.45,
+              2260
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.0051407087590147555
+            ],
+            "intrinsicMomentKNmm": [
+              3.552713678800501e-15,
+              -7.105427357601002e-15,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.0051407087590147555,
+              -0.02003051464406304,
+              0.05241595168410419,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.0051407087590147555,
+              3.552713678800501e-15,
+              -7.105427357601002e-15,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/store-removable-drop/segment/1",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 7.644547169468073,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              10170,
+              3950,
+              1390
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.0749930077324818
+            ],
+            "intrinsicMomentKNmm": [
+              -5.684341886080802e-14,
+              0,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.0749930077324818,
+              -0.29622238054330313,
+              0.7626788886393399,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.0749930077324818,
+              -5.684341886080802e-14,
+              0,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/store-terminal/segment/0",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 0.07070963547454577,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              10170,
+              3950,
+              497.5
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.0006936615240052941
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              0,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.0006936615240052941,
+              -0.0027399630198209116,
+              0.007054537699133841,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.0006936615240052941,
+              0,
+              0,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/store-terminal/segment/1",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 0.15748911842241617,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              10176.536424030743,
+              3964.5734344475277,
+              427.5
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.0015449682517239027
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              1.7763568394002505e-15,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.0015449682517239027,
+              -0.006125140087849426,
+              0.015722425687639395,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.0015449682517239027,
+              0,
+              1.7763568394002505e-15,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant-independent-east-entry-development/plant/store-terminal/segment/2",
+            "event": "branch-normal-reference-G",
+            "basis": "straight copper/water + authored jacket/insulation density reference; formed fitting mass incomplete",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 0.1021361401299005,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              10157.286424030743,
+              3998.9284344475277,
+              380
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.0010019555346743238
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              0,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.0010019555346743238,
+              -0.004006748477661229,
+              0.010177149349829972,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.0010019555346743238,
+              0,
+              0,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          },
+          {
+            "id": "HAD/plant/nominal-valve-reference",
+            "event": "branch-normal-reference-G",
+            "basis": "nominal product6kg at trial valve axis; actual factory centroid unknown",
+            "datum": "explicit absolute source-ground point; source wrench about GLOBAL0",
+            "massKg": 6,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              11360,
+              3975,
+              1450
+            ],
+            "sourceWrenchOriginXYZMm": [
+              0,
+              0,
+              0
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.05886
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              -1.1368683772161603e-13,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.05886,
+              -0.2339685,
+              0.6686496,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.05886,
+              0,
+              -1.1368683772161603e-13,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          }
+        ],
+        "unlocated": [],
+        "receiverGeometry": null,
+        "unknowns": [
+          "Actual fitting, wrapper terminal, guide/anchor, payload and complete installed mass unknown; no valve/support reactions inferred."
+        ]
+      },
+      {
+        "id": "HAD/utility/nominal-valve-reference",
+        "scope": "Utility valve alone; old two-valve bank count is not added",
+        "rows": [
+          {
+            "id": "HAD/entry-indoor-cut/utility",
+            "event": "utility-valve-reference-G",
+            "basis": "nominal product mass at trial axis; actual factory centroid unknown",
+            "datum": "explicit indoor-cut groundStage absolute axis",
+            "massKg": 6,
+            "gravityMps2": 9.81,
+            "applicationXYZMm": [
+              11360,
+              2350,
+              1270
+            ],
+            "sourceWrenchOriginXYZMm": [
+              11360,
+              2350,
+              1270
+            ],
+            "forceKN": [
+              0,
+              0,
+              -0.05886
+            ],
+            "intrinsicMomentKNmm": [
+              0,
+              0,
+              0
+            ],
+            "globalWrenchAtZeroKN_KNm": [
+              0,
+              0,
+              -0.05886,
+              -0.138321,
+              0.6686496000000001,
+              0
+            ],
+            "pointLoadKN_KNmm": [
+              0,
+              0,
+              -0.05886,
+              0,
+              0,
+              0
+            ],
+            "referenceCentre": true,
+            "actualInstalledMassOrCentroidQualified": false,
+            "receiverReactions": null,
+            "eligibleForNativeSTRTransfer": false
+          }
+        ],
+        "unlocated": [],
+        "receiverGeometry": null,
+        "unknowns": [
+          "Complete current Utility pipe assembly/receiver not selected; rejected bank routes are not a current inventory."
+        ]
+      }
+    ],
+    "activeAssemblySelected": false,
+    "combinedInstalledMassKg": null,
+    "actualMaximumRetainedWaterKg": null,
+    "combinedNativeNodalLoads": null,
+    "unrepresentedFamilies": [
+      "Actual complete store/buffer/expansion mass, supports and maximum retained/upper-network water",
+      "Actual pressure/thermal/jet, hot relief and transient load cases",
+      "Actual floor finishes/glass/insulation, gutter/threshold rails, hardware and complete installed electrical mass"
+    ],
+    "diagnostics": [
+      "HAD_GRAVITY/active-assembly-and-complete-installed-inventory-unresolved",
+      "HAD_GRAVITY/local-floor-and-core-receiver-distribution-resistance-unresolved",
+      "HAD_GRAVITY/stock-and-water-event-exclusivity-required",
+      "HAD_GRAVITY/saved-ground-required-for-floor-components"
+    ],
+    "nativeStructuralActionsAdopted": false
   },
   "architectureDecision": {
     "prefer": "internal-wet-utility-and-service-hub-replan",

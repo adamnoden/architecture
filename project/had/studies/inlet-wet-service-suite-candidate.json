@@ -2,7 +2,7 @@
   "schema": "had-wet-service-suite/1",
   "id": "HAD/connected-wet-service-suite",
   "centreXMm": 10537.5,
-  "plantEndYMm": 3900,
+  "plantEndYMm": 3830,
   "utilityEndYMm": 2400,
   "clearWidthMm": 520,
   "slopeRatio": 100,
