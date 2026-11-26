@@ -32,9 +32,11 @@ export function runRearBearingComparison(nativeCase:unknown,value:unknown,finite
  const request={nativeCase,choices,finiteSettings:settings};const requestDigest=sha256SemanticFingerprint(request)
  try{
   const python=process.env.STR_FINITE_SOLID_PYTHON??'python3'
-  const args=['-B','project/str/studies/rear_direct_bearing.py',...(choices.execution==='deferred'?['--plan']:[])]
+  const args=['-B','project/str/studies/rear_direct_bearing.py',...(choices.execution==='deferred'?['--plan']:[]),...(choices.execution==='compute'&&process.env.STR_REAR_BEARING_CHECKPOINT?['--checkpoint',process.env.STR_REAR_BEARING_CHECKPOINT]:[])]
   const result=JSON.parse(execFileSync(python,args,{cwd:fileURLToPath(root),input:JSON.stringify(request),encoding:'utf8',
    timeout:900000,maxBuffer:180*1024*1024,env:{...process.env,OPENBLAS_NUM_THREADS:'1',OMP_NUM_THREADS:'1'}}))
+  if(choices.execution==='deferred'&&result.geometry?.planPass!==true)return{status:'unsupported' as const,...limits,source,request,requestDigest,result,
+   diagnostics:[{code:'REAR_BEARING_PLAN_REJECTED',message:'The actual saved opening and room/service renewal geometry do not pass; no structural execution or acceptance is inferred.'}]}
   if(choices.execution==='deferred')return{status:'analysis-pending' as const,...limits,source,request,requestDigest,result,
    diagnostics:[{code:'REAR_BEARING_PENDING',message:'Same-source Living/reading layout and renewal geometry only; actual52-head replacement awaits explicit compute. Straight RC does not fulfil the genuine masonry arch preference.'}]}
   if(result.schema!=='str-rear-direct-bearing-comparison/1'||sha256SemanticFingerprint(result.authoredNativeCase)!==sha256SemanticFingerprint(nativeCase)||sha256SemanticFingerprint(result.choices)!==sha256SemanticFingerprint(choices)||Object.keys(limits).some(k=>result[k]!==false))throw Error('Rear bearing comparison lost saved controls or nonacceptance boundary')

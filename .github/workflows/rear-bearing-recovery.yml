@@ -3,7 +3,7 @@ name: Rear bearing exact-source recovery
 on:
   push:
     branches:
-      - work/zerg-rear-bearing-recovery-20261126
+      - work/zerg-rear-bearing-recovery-w0-closed
     paths:
       - .github/workflows/rear-bearing-recovery.yml
       - project/str/studies/rear_*.py

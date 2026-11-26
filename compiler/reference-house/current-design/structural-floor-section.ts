@@ -1,3 +1,4 @@
+import {readRearBearingSettings,runRearBearingComparison,rearBearingPaths} from './structural-rear-bearing.js'
 import {readLowerMasonrySettings} from './structural-lower-masonry-settings.js'
 import {readCurrentFiniteJointSettings,runCurrentFiniteJointComparison,currentFiniteJointPaths} from './structural-current-finite-joint.js'
 import {runLowerMasonryComparison,lowerMasonryPaths} from './structural-lower-masonry.js'
@@ -28,7 +29,7 @@ const record = (v: unknown): v is Record<string, unknown> => v !== null && typeo
 const same = (a: unknown, b: unknown) => sha256SemanticFingerprint(a) === sha256SemanticFingerprint(b)
 const finite = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v)
 const six = (v: unknown): v is number[] => Array.isArray(v) && v.length === 6 && v.every(finite)
-export const floorSectionStageFields = ['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison', 'contourComponent', 'beamEndDevelopment', 'lowerMasonryComparison', 'finiteJointComparison'] as const
+export const floorSectionStageFields = ['thicknessMm', 'wetSupport', 'sectionCuts', 'cageComparison', 'contourComponent', 'beamEndDevelopment', 'lowerMasonryComparison', 'finiteJointComparison', 'rearBearingComparison'] as const
 
 /** Inspect declared source centrelines; absent service envelopes never earn fit. */
 export function inspectFloorServiceRoutes(routes: readonly (readonly (readonly number[])[])[], cells: readonly (readonly number[])[], soffit: number, top: number,
@@ -104,7 +105,7 @@ function currentBinding(resolved: CurrentDesignResolution) {
     { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 })) as NativeCase
   if (comparison.schema !== 'str-coupled-floor-section-case/1' || !record(comparison.sourceSHA256)
     || Object.keys(comparison.sourceSHA256).length !== 58) throw new Error('Floor-section source contract changed; integrate explicitly')
-  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, transversePath, 'compiler/reference-house/current-design/structural-slab-constitutive.ts', ...floorInterfaceConsumerPaths, ...wetSupportCageConsumerPaths, ...wetBearingConsumerPaths, ...fourLJointConsumerPaths, ...wetPostHeadFanPaths, ...wetBeamEndDevelopmentPaths, ...lowerMasonryPaths, ...currentFiniteJointPaths].map(path => {
+  const inputs = Object.fromEntries([...Object.keys(comparison.sourceSHA256), adapterPath, cutsPath, transversePath, 'compiler/reference-house/current-design/structural-slab-constitutive.ts', ...floorInterfaceConsumerPaths, ...wetSupportCageConsumerPaths, ...wetBearingConsumerPaths, ...fourLJointConsumerPaths, ...wetPostHeadFanPaths, ...wetBeamEndDevelopmentPaths, ...lowerMasonryPaths, ...currentFiniteJointPaths, ...rearBearingPaths].map(path => {
     const bytes = readFileSync(new URL(path, root))
     const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
     if (owner.identities[path] !== blob || (Object.hasOwn(comparison.sourceSHA256, path)
@@ -133,19 +134,25 @@ export function savedFloorSectionCase(request: ReturnType<typeof readFloorSectio
   if (cageComparison && !record(settings.wetSupport)) throw new Error('An explicit actual wet support is required before selecting its cage comparison')
   const beamEndDevelopment = settings.beamEndDevelopment === undefined ? undefined : readWetBeamEndDevelopmentControls(settings.beamEndDevelopment)
   if (beamEndDevelopment && !cageComparison) throw new Error('An explicit actual wet cage comparison is required before its local end development')
-  return { ...request, cageComparison, ...(settings.finiteJointComparison===undefined?{}:{finiteJointComparison:readCurrentFiniteJointSettings(settings.finiteJointComparison)}), ...(settings.lowerMasonryComparison===undefined?{}:{lowerMasonryComparison:readLowerMasonrySettings(settings.lowerMasonryComparison)}), ...(beamEndDevelopment ? {beamEndDevelopment} : {}), ...(settings.contourComponent===undefined?{}:{contourComponent:readFiniteFloorContourSettings(settings.contourComponent)}), caseId: upper.caseId, sectionCuts: readFloorSectionCuts(settings.sectionCuts ?? []),
+  const finiteSettings=settings.finiteJointComparison===undefined?undefined:readCurrentFiniteJointSettings(settings.finiteJointComparison)
+  const rearSettings=settings.rearBearingComparison===undefined?undefined:readRearBearingSettings(settings.rearBearingComparison)
+  if(rearSettings&&(!finiteSettings?.enabled||settings.thicknessMm!==200||!record(settings.wetSupport)))throw Error('Rear bearing requires the same explicit enabled finite controls, actual seated reference and RC200 floor')
+  return { ...request, cageComparison, ...(finiteSettings===undefined?{}:{finiteJointComparison:finiteSettings}), ...(rearSettings===undefined?{}:{rearBearingComparison:rearSettings}), ...(settings.lowerMasonryComparison===undefined?{}:{lowerMasonryComparison:readLowerMasonrySettings(settings.lowerMasonryComparison)}), ...(beamEndDevelopment ? {beamEndDevelopment} : {}), ...(settings.contourComponent===undefined?{}:{contourComponent:readFiniteFloorContourSettings(settings.contourComponent)}), caseId: upper.caseId, sectionCuts: readFloorSectionCuts(settings.sectionCuts ?? []),
     comparison: { ...request.comparison, bearingCase: upper.comparison, thicknessMm: settings.thicknessMm, wetSupport: settings.wetSupport ?? null } }
 }
 
 export function runFloorSectionCase(resolved: CurrentDesignResolution, input: unknown) {
   const current = currentBinding(resolved)
-  if (!record(input) || !same(Object.keys(input).sort(), ['schema', 'planDigest', 'bindingDigest', 'comparison', 'sectionCuts', 'cageComparison', 'caseId', ...(Object.hasOwn(input,'contourComponent')?['contourComponent']:[]), ...(Object.hasOwn(input,'beamEndDevelopment')?['beamEndDevelopment']:[]), ...(Object.hasOwn(input,'lowerMasonryComparison')?['lowerMasonryComparison']:[]), ...(Object.hasOwn(input,'finiteJointComparison')?['finiteJointComparison']:[])].sort())
+  if (!record(input) || !same(Object.keys(input).sort(), ['schema', 'planDigest', 'bindingDigest', 'comparison', 'sectionCuts', 'cageComparison', 'caseId', ...(Object.hasOwn(input,'contourComponent')?['contourComponent']:[]), ...(Object.hasOwn(input,'beamEndDevelopment')?['beamEndDevelopment']:[]), ...(Object.hasOwn(input,'lowerMasonryComparison')?['lowerMasonryComparison']:[]), ...(Object.hasOwn(input,'finiteJointComparison')?['finiteJointComparison']:[]), ...(Object.hasOwn(input,'rearBearingComparison')?['rearBearingComparison']:[])].sort())
     || input.schema !== 'str-current-floor-section-case/1' || input.planDigest !== current.planDigest || input.bindingDigest !== current.bindingDigest
     || !record(input.comparison) || !same(Object.keys(input.comparison).sort(), Object.keys(current.comparison).sort())
     || !same(input.comparison.sourceSHA256, current.comparison.sourceSHA256) || input.comparison.schema !== current.comparison.schema
     || input.comparison.use !== current.comparison.use || typeof input.caseId !== 'string' || !/^[A-Za-z][A-Za-z0-9._:-]*$/.test(input.caseId)) {
     throw new Error('Stale or malformed floor-section request or binding')
   }
+  const finiteSettings=input.finiteJointComparison===undefined?undefined:readCurrentFiniteJointSettings(input.finiteJointComparison)
+  const rearSettings=input.rearBearingComparison===undefined?undefined:readRearBearingSettings(input.rearBearingComparison)
+  if(rearSettings&&(!finiteSettings?.enabled||input.comparison.thicknessMm!==200||!record(input.comparison.wetSupport)))throw Error('Rear bearing requires the same explicit enabled finite controls, actual seated reference and RC200 floor')
   const endControls = input.beamEndDevelopment === undefined ? undefined : readWetBeamEndDevelopmentControls(input.beamEndDevelopment)
   const contourSettings=input.contourComponent===undefined?undefined:readFiniteFloorContourSettings(input.contourComponent)
   const sectionCuts = readFloorSectionCuts(input.sectionCuts)
@@ -226,7 +233,21 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
   const wetPostHeadFan = wet ? runWetPostHeadFan(output,cageComparison) : null
   const wetBeamEndDevelopment = runWetBeamEndDevelopment(output,cageComparison,endControls)
   const lowerMasonryComparison=runLowerMasonryComparison(input.comparison,input.lowerMasonryComparison,{planDigest:current.planDigest,bindingDigest:current.bindingDigest,caseDigest:sha256SemanticFingerprint(input)},input.caseId)
-  const finiteJointComparison=runCurrentFiniteJointComparison(input.comparison,input.finiteJointComparison,{planDigest:current.planDigest,bindingDigest:current.bindingDigest,caseDigest:sha256SemanticFingerprint(input)},input.caseId)
+  const finiteJointComparison=runCurrentFiniteJointComparison(input.comparison,finiteSettings,{planDigest:current.planDigest,bindingDigest:current.bindingDigest,caseDigest:sha256SemanticFingerprint(input)},input.caseId)
+  const rearBearingComparison=runRearBearingComparison(input.comparison,rearSettings,finiteSettings,{planDigest:current.planDigest,bindingDigest:current.bindingDigest,caseDigest:sha256SemanticFingerprint(input)})
+  let rearServicePenetrations:ReturnType<typeof inspectFloorServiceRoutes>|null=null
+  if(rearBearingComparison?.status==='computed-unselected-comparison'){
+    const actual=rearBearingComparison.result.actualReplacement,g=actual.geometry
+    const solids:{id:string;boxXYZMm:number[]}[]=[]
+    const solid=(id:string,r:number[],lo:number,hi:number)=>solids.push({id,boxXYZMm:[r[0]!,r[1]!,lo,r[2]!,r[3]!,hi]})
+    solid('STR/rear-direct/lintel',g.lintelRectangleXYMm,g.lintelBottomZMm,g.lintelTopZMm)
+    for(const [i,r] of (g.fullHeightTailRectanglesXYMm as number[][]).entries())solid('STR/rear-direct/tail/'+i,r,g.baseZMm,g.floorSoffitZMm)
+    for(const [i,r] of ([...g.bearingRectanglesXYMm,...actual.retainedCrossWallSeatRectanglesXYMm] as number[][]).entries()){
+      solid('STR/rear-direct/bearing-body/'+i,r,g.baseZMm,g.masonryBearingTopZMm)
+      solid('STR/rear-direct/mineral-bedding/'+i,r,g.masonryBearingTopZMm,g.lintelBottomZMm)
+    }
+    rearServicePenetrations=inspectFloorServiceRoutes(services.PV.DCRequiredRoutes,rearBearingComparison.result.finiteHouseResult.native.nativeVertical.plate.cellsXYMm,3170,3370,solids)
+  }
   const plateTransverseShear = recoverFloorTransverseShear(vertical)
   const cornerInterfaces = runFloorCornerInterfaceRecovery(output)
   const servicePenetrations = { ...inspectFloorServiceRoutes(services.PV.DCRequiredRoutes,
@@ -235,7 +256,7 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
   return { status: 'computed-comparison' as const,
     source: { planDigest: current.planDigest, bindingDigest: current.bindingDigest, caseDigest: sha256SemanticFingerprint(input) },
     method: { id: 'str-current-floor-section/1', path: methodPath, inputs: current.inputs },
-    native: vertical.native, vertical, floorSection: section, contourComponent, finiteJointComparison, slabSolidCompatibility: inspectSlabSolidCompatibility(input.comparison), cageComparison, wetPostHeadFan, wetBeamEndDevelopment, lowerMasonryComparison, upperMasonry: output.upperMasonry,
+    native: vertical.native, vertical, floorSection: section, contourComponent, finiteJointComparison, rearBearingComparison, rearServicePenetrations, slabSolidCompatibility: inspectSlabSolidCompatibility(input.comparison), cageComparison, wetPostHeadFan, wetBeamEndDevelopment, lowerMasonryComparison, upperMasonry: output.upperMasonry,
     mass: output.mass, plateBending: output.plateBending, sectionCuts: recoverFloorSectionCuts(output.plateBending as FloorBendingField, sectionCuts),
     plateTransverseShear, transverseSectionCuts:recoverFloorTransverseCuts(plateTransverseShear,sectionCuts), cornerInterfaces, fourLJointDemands: jointExecution.jointDemands, floorReinforcement: output.floorReinforcement,
     roofCoupling: output.roofCoupling, ...(output.seatedWetSupport ? { seatedWetSupport: output.seatedWetSupport, wetBearingContact,
@@ -246,8 +267,8 @@ export function runFloorSectionCase(resolved: CurrentDesignResolution, input: un
           ? 'computed-discrete-element-cuts' as const : 'unsupported-incomplete-origin-closure' as const,
         physicalElementCutsAvailable: (output.seatedWetSupport as Record<string, any>).receivingGridCuts.physicalElementCutsAvailable as boolean,
         completeGridDemandEnvelopeAvailable: false as const,
-        scope: 'Only the two actual wet-post receiving members in this executed discrete case. Full signed demand, local3D joint/cage and foundation/site resistance remain unqualified.' } } : {}), drawings: {...output.drawings,...(wetBeamEndDevelopment?.drawings ?? {})}, floorSvg: output.drawings['floor-section-floor.svg'],
-    servicePenetrations, diagnostics: [...(output.diagnostics as unknown[]), ...(wetBearingContact?.diagnostics ?? []), ...(wetBeamEndDevelopment?.diagnostics ?? []), ...(lowerMasonryComparison?.diagnostics ?? []), ...(finiteJointComparison?.diagnostics ?? []), ...jointExecution.jointDemands.diagnostics], evidence: { state: 'unselected-actual-section-replacement' as const,
+        scope: 'Only the two actual wet-post receiving members in this executed discrete case. Full signed demand, local3D joint/cage and foundation/site resistance remain unqualified.' } } : {}), drawings: {...output.drawings,...(wetBeamEndDevelopment?.drawings ?? {}),...(rearBearingComparison?.status==='unsupported'?{}:rearBearingComparison?.result.drawings??{})}, floorSvg: output.drawings['floor-section-floor.svg'],
+    servicePenetrations, diagnostics: [...(output.diagnostics as unknown[]), ...(wetBearingContact?.diagnostics ?? []), ...(wetBeamEndDevelopment?.diagnostics ?? []), ...(lowerMasonryComparison?.diagnostics ?? []), ...(finiteJointComparison?.diagnostics ?? []), ...(rearBearingComparison?.diagnostics ?? []), ...jointExecution.jointDemands.diagnostics], evidence: { state: 'unselected-actual-section-replacement' as const,
       candidateAccepted: false as const, completeHouseProof: false as const, installedAcceptance: false as const,
       scope: 'Actual plate and membrane reassembly, work maps, upper body starts, self-weight and recovery at the authored thickness. Finish, FFL, stairs, services, aerodynamic tributaries, local stress convergence, reinforcement and joints remain unqualified.' } }
 }
