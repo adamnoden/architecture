@@ -83,6 +83,7 @@ def check_finite_joint(page, args):
     page.get_by_role('button',name='Compare corner width',exact=True).click()
     ready(page,1,360000)
     assert day()!=initial_day and '144 floor pieces' in day()
+    expect(page.locator('#diagnostic')).to_contain_text('All former renewal witnesses are withheld')
     assert roof_svg(page)==roof
     original_modulus=source['stages']['floorSection']['finiteJointComparison']['youngMPa']
     changed_modulus=16500 if original_modulus!=16500 else 8250

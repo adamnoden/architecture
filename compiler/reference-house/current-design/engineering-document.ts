@@ -595,6 +595,12 @@ export async function compileEngineeringDocument(input: unknown) {
   if (stages.studyRoomKit) {
     engineering.studyRoomKit = await compile.studyRoomKit({ schema: 'ias-study-room-kit-case/1', units: 'mm', ...stages.studyRoomKit }, stages.distributedFloor)
     recordResult('studyRoomKit', stages.studyRoomKit, engineering.studyRoomKit, stages.distributedFloor ? ['stages.distributedFloor'] : [])
+    const renewal = engineering.studyRoomKit.kit.floor.ordinaryHandling
+    if (renewal && 'diagnostics' in renewal && renewal.diagnostics.some(issue => issue.code === 'IAS_ORDINARY_RENEWAL_REQUIRES_CURRENT_PART_PLAN')) {
+      coordinationDiagnostics.push({ code: 'STUDY_RENEWAL_PLAN_INAPPLICABLE', state: 'uncoordinated-comparisons',
+        stages: ['distributedFloor', 'studyRoomKit'],
+        message: 'The saved handling plan does not name the current floor part family. All former renewal witnesses are withheld; author and replay a current plan before claiming renewal.' })
+    }
   }
   if (stages.studyLighting) {
     engineering.studyLighting = await compile.studyLighting({ schema: 'ias-study-lighting-case/1', units: 'mm', ...stages.studyLighting }, engineering.studyRoomKit!)

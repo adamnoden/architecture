@@ -39,7 +39,7 @@ jobs:
           import { readEngineeringDocument } from './compiler/reference-house/current-design/engineering-document.ts'
           const accountPath="project/ccr/studies/source-coverage.json",documentPath="project/ccr/studies/working-house-comparison.json"
           const account=JSON.parse(fs.readFileSync(accountPath,'utf8'))
-          const sourcePaths=["compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts","compiler/reference-house/current-design/assemblies/study-room-kit.ts","compiler/reference-house/current-design-study-plan-applicability.test.ts"]
+          const sourcePaths=["compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts","compiler/reference-house/current-design/assemblies/study-room-kit.ts","compiler/reference-house/current-design-study-plan-applicability.test.ts","compiler/reference-house/current-design/engineering-document.ts","project/ade/browser-editor/engineering_browser_test.py"]
           const blob=p=>{const bytes=fs.readFileSync(p);return crypto.createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex')}
           const family=account.families.find(f=>f.id==='ias-study-room-perspective')
           if(!family)throw Error('Missing owning Study family')
@@ -100,6 +100,7 @@ jobs:
           assert o['diagnostics'][0]['code']=='IAS_ORDINARY_RENEWAL_REQUIRES_CURRENT_PART_PLAN'
           assert e['floorSection']['finiteJointComparison']['status']=='analysis-pending'
           assert len(e['floorSection']['native']['heads'])==52
+          assert any(d['code']=='STUDY_RENEWAL_PLAN_INAPPLICABLE' and 'former renewal witnesses are withheld' in d['message'] for d in b['coordinationDiagnostics'])
           print('PASS actual width140:144 current parts,136 authored protocols retained, obsolete renewal witnesses withheld,52 actual heads')
           PY
       - name: Preserve only tested source and legitimately regenerated file blobs
@@ -110,7 +111,7 @@ jobs:
           import fs from 'node:fs'
           import crypto from 'node:crypto'
           import {execFileSync} from 'node:child_process'
-          const paths=["compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts","compiler/reference-house/current-design/assemblies/study-room-kit.ts","compiler/reference-house/current-design-study-plan-applicability.test.ts","project/ccr/studies/source-coverage.json","project/ccr/studies/working-house-comparison.json","project/ias/studies/crafted-study-eye-level-day.svg","project/ias/studies/crafted-study-eye-level-evening.svg","project/ias/studies/working-study-floor.svg","project/ias/studies/working-study-wall-kit.svg","project/ias/studies/working-study-tile-eye-level.svg"]
+          const paths=["compiler/reference-house/current-design/assemblies/study-ordinary-handling.ts","compiler/reference-house/current-design/assemblies/study-room-kit.ts","compiler/reference-house/current-design-study-plan-applicability.test.ts","compiler/reference-house/current-design/engineering-document.ts","project/ade/browser-editor/engineering_browser_test.py","project/ccr/studies/source-coverage.json","project/ccr/studies/working-house-comparison.json","project/ias/studies/crafted-study-eye-level-day.svg","project/ias/studies/crafted-study-eye-level-evening.svg","project/ias/studies/working-study-floor.svg","project/ias/studies/working-study-wall-kit.svg","project/ias/studies/working-study-tile-eye-level.svg"]
           const expected=new Set(paths)
           for(const p of execFileSync('git',['diff','--name-only'],{encoding:'utf8'}).trim().split('\n').filter(Boolean))if(!expected.has(p))throw Error('Unexpected generated mutation:'+p)
           for(const path of paths){
