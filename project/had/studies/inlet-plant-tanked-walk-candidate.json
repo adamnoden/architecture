@@ -18,18 +18,24 @@
     "elasticModulusMPa": 185000,
     "allowableComparisonMPa": 100,
     "minimumAfterFabricationProofMPa": 150,
-    "maximumPressureTemperatureQualificationAccepted": false
+    "maximumPressureTemperatureQualificationAccepted": false,
+    "thermalExpansionPerK": 0.000016,
+    "primaryDataUrl": "https://www.outokumpu.com/-/media/files/products/supra/outokumpu-supra-range-datasheet.pdf?modified=20251117111951&revision=7a909396-d1f3-4d36-9c1c-99606be41fd2"
   },
   "outfalls": {
-    "clearWidthMm": 450,
-    "clearHeightMm": 136,
-    "metalMm": 3,
+    "clearWidthMm": 600,
+    "clearHeightMm": 134,
+    "metalMm": 5,
     "outletAxesYMm": [
-      4335,
-      4865
+      4260,
+      4940
     ],
     "entranceKComparison": 2,
-    "manningNComparison": 0.015
+    "manningNComparison": 0.015,
+    "invertRiseAboveExistingMm": 5,
+    "maximumPlateDeflectionMm": 5,
+    "receiverClearWidthMm": 650,
+    "receiverMetalMm": 3
   },
   "bridge": {
     "thicknessMm": 36,
@@ -42,11 +48,22 @@
     "railSectionWHtMm": [
       60,
       40,
-      5
+      10
     ],
-    "minimumRailIMm4": 200000,
+    "minimumRailIMm4": 270000,
     "maximumRailDeflectionMm": 2,
-    "railAboveOutfallPackages": true
+    "railAboveOutfallPackages": true,
+    "crossBeamSectionWHtMm": [
+      100,
+      60,
+      10
+    ],
+    "crossBeamSupportYMm": [
+      3900,
+      5350
+    ],
+    "insideRailSeatXMm": 11400,
+    "outsideRailSeatXMm": 12130
   },
   "grating": {
     "bearingBarHeightMm": 60,
@@ -61,7 +78,14 @@
     "rimHeightMm": 60,
     "rimThicknessMm": 3,
     "maximumCompletePanelKg": 15,
-    "hardwareBudgetEachKg": 0.5
+    "hardwareBudgetEachKg": 0.5,
+    "panelJointGapMm": 1,
+    "maximumRelativeSeatErrorMm": 2,
+    "locatingPinDiameterMm": 8,
+    "locatingHoleMaximumMm": 10,
+    "locatingEngagementMm": 10,
+    "maximumUniformTemperatureExcursionK": 40,
+    "maximumFactoryLocatingPositionErrorMm": 0.25
   },
   "walkingFrame": {
     "beamSectionWHtMm": [
@@ -78,10 +102,17 @@
     ],
     "footPadSideMm": 120,
     "footPadThicknessMm": 8,
-    "maximumSinglePostDesignN": 6000,
+    "maximumSinglePostDesignN": 7000,
     "compressionSandwichPanBearingRequired": true,
     "panBendingOrFinishLoadCapacityCredited": false,
-    "permanentFabricAnchorsCredited": false
+    "permanentFabricAnchorsCredited": false,
+    "beamSectionKind": "solid",
+    "maximumRemovableBeamSegmentKg": 8.5,
+    "headPlateLWtMm": [
+      80,
+      40,
+      25
+    ]
   },
   "frame": {
     "clearWidthMm": 1100,

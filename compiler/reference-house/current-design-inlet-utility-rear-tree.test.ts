@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 import {mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {readUtilityCurrentGeometrySource} from './current-design/inlet-utility-proof-source.js'
+import {inletUtilityMemberRenewal} from './current-design/inlet-utility-member-renewal.js'
 import {inletUtilityWetAssembly} from './current-design/inlet-utility-wet-assembly.js'
 import {inletUtilityRearTree,admitUtilityRearTreeChoice,type UtilityRearTreeContext} from './current-design/inlet-utility-rear-tree.js'
 const current=readUtilityCurrentGeometrySource(),choice=JSON.parse(JSON.stringify(current.choice)),context=current.rearTreeContext
@@ -106,6 +107,17 @@ test('shared source adapter computes main inventory and joins current cold, actu
  assert.equal(wet.renewal.wholeColdTreeRemovalRequired,false)
  assert.equal(wet.renewal.actualIndependentWaterSupportsAndMemberToolsQualified,false)
 })
+test('real H0 body rejects prior operator feet and accepts the current bounded stance change',()=>{
+ const prior=structuredClone(choice)
+ prior.coldDistribution.washer.floorOperatorXYMm=[10700,1725]
+ prior.coldDistribution.prefabSinkHead.floorOperatorXYMm=[11025,1725]
+ const rejected=run(prior).geometry.failures
+ assert.ok(rejected.some(q=>q.phase==='operation'&&q.id==='washer/body/actual-hot-H0-body'&&q.reserveMm<0))
+ assert.ok(rejected.some(q=>q.phase==='operation'&&q.id==='sink/body/actual-hot-H0-body'&&q.reserveMm<0))
+ assert.deepEqual(choice.coldDistribution.washer.floorOperatorXYMm,[10700,1800])
+ assert.deepEqual(choice.coldDistribution.prefabSinkHead.floorOperatorXYMm,[11025,1775])
+ assert.equal(run().geometry.normalNecessary,true)
+})
 test('new normal west washer/up spindle avoids the actual bowl and H0 arm; previous direct washer route is rejected',()=>{
  const r=run(),d=choice.coldDistribution
  assert.deepEqual(d.washer.stop.axisMm,[10800,1000,730])
@@ -151,3 +163,53 @@ test('formed hot spool has finite localH0 inventory and a separately bounded sha
 const proofDir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
 if(proofDir){mkdirSync(proofDir,{recursive:true});writeFileSync(join(proofDir,'current-utility-wet-assembly.json'),JSON.stringify(wet,null,2))}
 console.info('UTILITY_WET_CURRENT '+JSON.stringify({scope:current.scope,currentSavedDocumentAdmitted:false,normal:wet.normal,coldInventory:wet.cold.inventory,stock:wet.cold.stock,hotInventory:wet.hot.inventory,hotReceiver:wet.hot.receiver,remaining:wet.renewal}))
+
+const member=inletUtilityMemberRenewal({source:current,wet})
+test('ordinary member renewal derives510/560mm cuts from actual40mm leg faces and preserves made water',()=>{
+ assert.deepEqual([...new Set(member.members.map(v=>v.cutLengthMm))].sort(),[510,560])
+ assert.equal(member.members.length,8)
+ assert.equal(member.wholeAssembledFrameWithdrawalRequired,false)
+ assert.equal(member.coldTreeOrSourceUnionOpenedForDryMemberRenewal,false)
+ assert.equal(member.drawnRailEndsNeedActualBoltedJointRedesign,true)
+ assert.equal(member.tools.requiredRailEndInterfaces,16)
+ assert.equal(member.tools.authoredAndProvedRailEndInterfaces,0)
+ assert.equal(member.ordinaryMemberRenewalAccepted,false)
+ assert.equal(member.currentSavedDocumentAdmitted,false)
+ near(member.railComparison.extremeFibreMPa,80)
+ near(member.stability.requiredPositivePairHoldDownN.eastWest,316.3636363636364)
+ near(member.stability.requiredPositivePairHoldDownN.northSouth,290)
+ assert.equal(member.stability.deadweightRestoringCreditN,0)
+})
+test('independent wall receiver comparison retains full pressure and gravity without claiming clips or native wall capacity',()=>{
+ assert.equal(member.normalIndependentWaterBeamCandidate.beams.length,3)
+ for(const beam of member.normalIndependentWaterBeamCandidate.beams)near(beam.rearFaceYMm,489.5)
+ assert.equal(current.input.roomPlanMm[1],429.5)
+ assert.equal(member.normalIndependentWaterBeamCandidate.steelSectionDemandWithinAuthoredComparison,true)
+ for(const demand of member.normalIndependentWaterBeamCandidate.demands){
+  near(demand.gravityUpperN,294.3)
+  assert.ok(demand.pressureEndThrustN>130)
+  assert.equal(demand.actualWallReceiverAnchorsWeldClipAndRotationResistanceQualified,false)
+ }
+ assert.equal(member.normalIndependentWaterBeamCandidate.fullClampForkSlidesAndWallAnchorGeometryIncluded,false)
+ assert.equal(member.normalIndependentWaterBeamCandidate.permanentWallSteelExcludedFromMoving20kgTree,true)
+ assert.equal(member.actualIndependentWaterSupportAccepted,false)
+ assert.equal(member.thermal.frictionCredited,false)
+ assert.equal(member.thermal.actualBranchedTubeReactionLawImplemented,false)
+ assert.equal(member.thermal.seizedGuideAndWhollyRestrainedStraightAdverseCaseRetained,true)
+ assert.ok(member.thermal.freeHeaderXmm<member.thermal.declaredSlideTravelEachWayMm)
+})
+test('actual H0 body falsifies an injected member tool task; empty tool list never qualifies renewal',()=>{
+ const h=current.rearTreeContext.obstacles.find(v=>v.id==='actual-hot-H0-body')!.boxMm
+ const grip:readonly[number,number,number]=[h[0]+h[3]/2,h[1]+h[4]/2,h[2]+h[5]/2]
+ const contradicted=inletUtilityMemberRenewal({source:current,wet,tools:[{
+  id:'explicit-H0-tool-intersection',shoulderMm:[grip[0],grip[1]+250,grip[2]],gripMm:grip,
+  toolSegmentMm:[[grip[0],grip[1]+100,grip[2]],grip],toolRadiusMm:10,intentionalTargetIds:[]
+ }]})
+ assert.ok(contradicted.tools.failures.some(v=>v.id.includes('/actual-hot-H0-body')))
+ assert.notEqual(contradicted.sourceDigest,member.sourceDigest)
+ assert.equal(contradicted.tools.actualSocketCounterholdBodyAndWithdrawalProofAccepted,false)
+ assert.equal(member.head.fullCapturedHeadOrIndividualBowlPillarAndBoardRemovalProved,false)
+ assert.equal(member.stability.actualBraceAnchorAndRemainingMemberProofAccepted,false)
+})
+if(proofDir)writeFileSync(join(proofDir,'current-utility-member-renewal.json'),JSON.stringify(member,null,2))
+console.info('UTILITY_MEMBER_CURRENT '+JSON.stringify(member))

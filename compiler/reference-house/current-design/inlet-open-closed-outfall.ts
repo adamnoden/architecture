@@ -8,9 +8,10 @@ export type OpenClosedOutfallInput={id:string;maximumLmin:number;mouthXYZMm:Poin
  * below always uses its critical reservoir entry, coherent steep bed and
  * independently free exterior receiver. No critical-depth-only roof credit.
  */
-export function supercriticalOutfallProfile(i:{qLmin:number;effectiveWidthMm:number;lengthMm:number;slope:number;inletDepthMm:number;stationsMm:readonly number[];steps:number}){
+export function supercriticalOutfallProfile(i:{qLmin:number;effectiveWidthMm:number;lengthMm:number;slope:number;inletDepthMm:number;stationsMm:readonly number[];steps:number;manningN?:number}){
  if(!Array.isArray(i.stationsMm)||![i.qLmin,i.effectiveWidthMm,i.lengthMm,i.slope,i.inletDepthMm,i.steps,...i.stationsMm].every(Number.isFinite)||Math.min(i.qLmin,i.effectiveWidthMm,i.lengthMm,i.slope,i.inletDepthMm)<=0||!Number.isInteger(i.steps)||i.steps<2||i.steps>4096||i.stationsMm.length>4096||i.stationsMm.some(s=>s<0||s>i.lengthMm))throw Error('Unsupported supercritical outfall profile domain')
- const q=i.qLmin/60000,b=i.effectiveWidthMm/1000,g=9.81,n=.015,yc=Math.cbrt(q*q/(g*b*b)),
+ if(i.manningN!==undefined&&(!Number.isFinite(i.manningN)||i.manningN<.005||i.manningN>.05))throw Error('Unsupported explicit Manning roughness comparison')
+ const q=i.qLmin/60000,b=i.effectiveWidthMm/1000,g=9.81,n=i.manningN??.015,yc=Math.cbrt(q*q/(g*b*b)),
   energy=(y:number)=>y+(q/(b*y))**2/(2*g),sf=(y:number)=>{const a=b*y,r=a/(b+2*y);return n*n*(q/a)**2/r**(4/3)},
   unsupported=(reason:string)=>({state:'unsupported-supercritical-profile' as const,reason,points:[] as {sMm:number;depthMm:number;froude:number}[],criticalDepthMm:yc*1000,normalDepthMm:null as number|null})
  if(i.slope<=sf(yc)*(1+1e-12))return unsupported('bed-not-strictly-steep-relative-to-critical-friction')

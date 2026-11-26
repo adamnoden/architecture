@@ -255,7 +255,7 @@
       "maximumWallMm": 1.3,
       "floorOperatorXYMm": [
         10700,
-        1725
+        1800
       ]
     },
     "sink": {
@@ -391,7 +391,7 @@
       "mixing": "only in open bowl",
       "floorOperatorXYMm": [
         11025,
-        1725
+        1775
       ],
       "shoulderMm": [
         11155,
