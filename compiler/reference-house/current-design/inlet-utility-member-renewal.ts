@@ -564,7 +564,7 @@ export function inletUtilityHeadWaste(i:{source:Source;wet:Wet}){
 type PortalDesign={schema:string;sideAxisFromBoardEdgeMm:number;beamRearFromBoardMm:number;beamFrontFromBoardMm:number;rearLegFromBoardMm:number;frontLegFromBoardMm:number;sideRibCrossMm:readonly[number,number];sideRibWallMm:number;sideRibRearFromBoardMm:number;sideRibFrontFromBoardMm:number;framePostCrossMm:readonly[number,number];framePostWallMm:number;frameBeamCrossMm:readonly[number,number];frameBeamWallMm:number;lowerRearCrossMm:readonly[number,number];lowerRearWallMm:number;lowerRearAxisZMm:number;braceCrossMm:number;braceWallMm:number;rearBraceAxisYOffsetsMm:readonly number[];rearBraceLowZMm:number;rearBraceHighZMm:number;sideBraceAxisXOffsetsMm:readonly number[];sideBraceLowZMm:number;sideBraceHighZMm:number;soleCrossMm:number;soleThicknessMm:number;headClipPlateMm:readonly[number,number,number];headClipAxisZMm:number;headClipRearFromBoardMm:number;headClipFrontFromBoardMm:number;headMountBoltDiameterMm:number;headMountBoltMaximumLengthMm:number;minimumHeadSheetMm:number;maximumHeadSheetMm:number;maximumHeadDryAccessoriesKg:number;maximumEachHeadPressureAssemblyKg:number;underBowlPadMm:readonly[number,number,number];maximumFrameJointAndWeldMassKg:number;minimumSteelDensityKgM3:number;maximumSteelDensityKgM3:number;matchedOneHeadFabricationBoundMm:number;maximumCapturedWetHeadKg:number;normalFrontEdgePointComparisonN:number;normalHorizontalComparisonN:number;normalForceHeightMm:number;frontUpperAndLowerTiesIncluded:false;actualDeliveredMaterialWeldAndJointProofAccepted:false;actualFloorBearingAndBallastSupportAccepted:false}
 /** Complete alternate normal support. This observer does not yet replace the
  * legacy cage adapter or admit finite portal capture/extraction/floor loads. */
-export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>}){
+export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;braceObstacleRepresentation?:'exact-members'|'filled-bay-control'}){
  const {source,wet,capture}=i,d=wet.choice.coldDistribution,h=d.prefabSinkHead,
   p=(d as unknown as{frameRenewal:{portalDesign:PortalDesign}}).frameRenewal.portalDesign,two=2*source.rearTreeContext.settingEachMm
  if(p?.schema!=='had-utility-two-side-portals/1'||!Number.isFinite(p.maximumEachHeadPressureAssemblyKg)||p.maximumEachHeadPressureAssemblyKg<=0||p.maximumEachHeadPressureAssemblyKg*2>p.maximumHeadDryAccessoriesKg||p.frontUpperAndLowerTiesIncluded!==false||two!==20||p.maximumHeadSheetMm<p.minimumHeadSheetMm||p.normalForceHeightMm<capture.controls.maximumHeadZMm)throw Error('Actual complete portal source and full occupied head action height required')
@@ -615,15 +615,20 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
   add(q.id+'/room-west','room',q.boxMm[0]-source.input.roomPlanMm[0]-two)
   add(q.id+'/room-east','room',source.input.roomPlanMm[0]+source.input.roomPlanMm[2]-q.boxMm[0]-q.boxMm[3]-two)
  }
- const added=parts.map(q=>({id:'candidate-'+q.id,boxMm:q.boxMm,presence:'always' as const})),
-  candidateCold=inletUtilityRearTree({choice:wet.choice,context:{...source.rearTreeContext,obstacles:[...source.rearTreeContext.obstacles.filter(q=>!q.id.startsWith('IAS/frame/')),...added]}}),
+ const braceObstacleRepresentation=i.braceObstacleRepresentation??'exact-members',
+  added=parts.filter(q=>!q.segmentMm||braceObstacleRepresentation==='filled-bay-control').map(q=>({id:'candidate-'+q.id,boxMm:q.boxMm,presence:'always' as const})),
+  addedPaths=parts.filter(q=>q.segmentMm&&braceObstacleRepresentation==='exact-members').map(q=>({id:'candidate-'+q.id,pointsMm:q.segmentMm!,radiusWithSupportsMm:q.radiusMm!})),
+  candidateCold=inletUtilityRearTree({choice:wet.choice,context:{...source.rearTreeContext,obstacles:[...source.rearTreeContext.obstacles.filter(q=>!q.id.startsWith('IAS/frame/')),...added],retainedPaths:[...source.rearTreeContext.retainedPaths,...addedPaths]}}),
   cg=capture.controls.headCGPlanDesignMm,W=p.maximumCapturedWetHeadKg*9.81*1.5,
   reactionCases=[cg[0]-two,cg[0]+cg[2]+two].flatMap(x=>[cg[1]-two,cg[1]+cg[3]+two].map(y=>{
    const u=(x-xs[0])/(xs[1]-xs[0]),v=(y-yr)/(yf-yr)
-   return{cgXYMm:[x,y],reactionsN:[W*(1-u)*(1-v),W*u*(1-v),W*(1-u)*v,W*u*v]}
+   return{cgXYMm:[x,y],u,v,reactionsN:[W*(1-u)*(1-v),W*u*(1-v),W*(1-u)*v,W*u*v]}
   })),
   bearingChecks=[{id:'head-rib/side-overlap-after-relative-settings',reserveMm:Math.min(p.sideRibCrossMm[0],p.frameBeamCrossMm[0])-two},{id:'head-rib/end-overlap-after-relative-settings',reserveMm:Math.min(ribB,beamB)-Math.max(ribA,beamA)-two}],
-  reactionChecks=reactionCases.flatMap((q,k)=>q.reactionsN.map((r,j)=>({id:'positive-gravity-reaction/'+k+'/'+j,reserveN:r}))),
+  unilateralReactionCases=reactionCases.flatMap((q,k)=>[Math.max(0,q.u+q.v-1),Math.min(q.u,q.v)].map(t=>({cgVertex:k,t,reactionsN:[W*(1-q.u-q.v+t),W*(q.u-t),W*(q.v-t),W*t]}))),
+  reactionChecks=unilateralReactionCases.flatMap((q,k)=>q.reactionsN.map((r,j)=>({id:'unilateral-equilibrium/'+k+'/'+j,reserveN:r}))),
+  unilateralCornerReactionBoundsN=[0,1,2,3].map(k=>({corner:k,minimumN:Math.min(...unilateralReactionCases.map(q=>q.reactionsN[k])),maximumN:Math.max(...unilateralReactionCases.map(q=>q.reactionsN[k]))})),
+
   sheetArea=top.topSolidPlansMm.reduce((s,b)=>s+b[2]*b[3],0)-h.bowlPlanMm[2]*h.bowlPlanMm[3],
   bowlSheetArea=h.bowlPlanMm[2]*h.bowlPlanMm[3]+2*(h.bowlPlanMm[2]+h.bowlPlanMm[3])*(h.floodRimMm-h.bowlBottomMm),
   cgStockBounds=(()=>{
@@ -656,6 +661,12 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
    return{bounds,capturedHeadOuterWaterCeilingL:water.reduce((s,q)=>s+q.maximumKg,0),
     pressureBodiesWaterCeilingByPillarL:[0,1].map(k=>pressureParts.filter(q=>new RegExp('head/(pillar|handle|spout)/'+k+'$').test(q.id)).reduce((s,q)=>s+q.boxMm[3]*q.boxMm[4]*q.boxMm[5]/1e6,0)),
     pressureBodyComponentIds:(h as unknown as{independentPressureComponents:readonly{id:string}[]}).independentPressureComponents.map(q=>q.id),
+    pressureDevicePartsByPillar:[0,1].map(k=>{
+     const a=pressureParts.filter(q=>new RegExp('head/(pillar|handle|spout)/'+k+'$').test(q.id)),
+      lo=[0,1,2].map(j=>Math.min(...a.map(q=>q.boxMm[j]))),hi=[0,1,2].map(j=>Math.max(...a.map(q=>q.boxMm[j]+q.boxMm[j+3]))),
+      lengths=lo.map((v,j)=>hi[j]-v),sorted=[...lengths].sort((a,b)=>a-b)
+     return{componentId:(h as unknown as{independentPressureComponents:readonly{id:string}[]}).independentPressureComponents[k].id,parts:a.map(q=>({id:q.id,outerBoxMm:q.boxMm,outerBoxVolumeL:q.boxMm[3]*q.boxMm[4]*q.boxMm[5]/1e6})),sumOuterBoxVolumesL:a.reduce((s,q)=>s+q.boxMm[3]*q.boxMm[4]*q.boxMm[5]/1e6,0),axisAlignedEnclosingBoxMm:[...lo,...lengths],fitsAnyOrthogonal80by80by300Box:sorted.every((v,j)=>v<=[80,80,300][j]),arbitraryObliqueDeviceFitProved:false,actualMeasuredPressureVolumeAndFamilyQualified:false,datum:'occupied-ground-FFL-local'}
+    }),
     bowlResidualDuringCaptureCeilingL:w.maximumBowlResidualBeforeWasteCutL,maximumEachPressureAssemblyDryKg:p.maximumEachHeadPressureAssemblyKg,
     minimumModeledHeadSteelKg:(sheetArea+bowlSheetArea)*p.minimumHeadSheetMm*p.minimumSteelDensityKgM3/1e9+fixed.reduce((s,q)=>s+q.massKg*p.minimumSteelDensityKgM3/rho,0),
     declaredPlanMm:rect,withinDeclaredSourceBox:boxBounds[0]>=rect[0]&&boxBounds[1]>=rect[1]&&boxBounds[2]<=rect[0]+rect[2]&&boxBounds[3]<=rect[1]+rect[3],
@@ -668,8 +679,8 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
    const a=b as B,patches=top.topSolidPlansMm.map(r=>({width:Math.max(0,Math.min(a[0]+a[3],r[0]+r[2])-Math.max(a[0],r[0])),depth:Math.max(0,Math.min(a[1]+a[4],r[1]+r[3])-Math.max(a[1],r[1]))}))
    return{id,actualBoxMm:a,nominalBearingAreaMm2:patches.reduce((s,q)=>s+q.width*q.depth,0),minimumNarrowBearingNominalMm:Math.max(...patches.filter(q=>q.width*q.depth>0).map(q=>Math.min(q.width,q.depth))),factorySheetLoadTransferAndRestraintProved:false}
   })
- return{schema:'had-utility-two-side-portal-observer/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,choice:wet.choice,portal:p}),parts,checks,geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),candidateColdNormal:candidateCold.geometry.normalNecessary,candidateColdFailures:candidateCold.geometry.failures.filter(q=>['normal','operation','nonmate-metal','fitting-legs'].includes(q.phase)),
-  normalBearing:{factoryBoardToSideRibsToNSBeamsToFourLegsToFloor:true,bearingChecks,reactionChecks,reactionCases,dynamicHeadN:W,minimumHorizontalOverlapMm:Math.min(p.sideRibCrossMm[0],p.frameBeamCrossMm[0])-two,minimumLongitudinalOverlapMm:Math.min(ribB,beamB)-Math.max(ribA,beamA)-two,necessary:bearingChecks.every(q=>q.reserveMm>=0)&&reactionChecks.every(q=>q.reserveN>=0),actualFactoryHeadSheetBowlWeldAndMatchedBoltsQualified:false},
+ return{schema:'had-utility-two-side-portal-observer/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,choice:wet.choice,portal:p,braceObstacleRepresentation}),braceObstacleRepresentation,parts,checks,geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),candidateColdNormal:candidateCold.geometry.normalNecessary,candidateColdFailures:candidateCold.geometry.failures.filter(q=>['normal','operation','nonmate-metal','fitting-legs'].includes(q.phase)),
+  normalBearing:{factoryBoardToSideRibsToNSBeamsToFourLegsToFloor:true,bearingChecks,reactionChecks,unilateralReactionCases,unilateralCornerReactionBoundsN,conditionalBilinearReactionCases:reactionCases,reactionAssumption:'Bilinear values are a conditional stiffness comparator; the unilateral t interval bounds equilibrium without equal-stiffness credit.',actualIndividualLegReactionsQualified:false,dynamicHeadN:W,minimumHorizontalOverlapMm:Math.min(p.sideRibCrossMm[0],p.frameBeamCrossMm[0])-two,minimumLongitudinalOverlapMm:Math.min(ribB,beamB)-Math.max(ribA,beamA)-two,necessary:bearingChecks.every(q=>q.reserveMm>=0)&&reactionChecks.every(q=>q.reserveN>=-1e-7),actualFactoryHeadSheetBowlWeldAndMatchedBoltsQualified:false},
   mass,legacyCage:{role:'explicit stock and bearing control only; not normal support acceptance',upperRails:oldFrame},
   demandedInterfaces:{normalFrontEdgePointN:p.normalFrontEdgePointComparisonN,frontEdgeRearPairUpliftBeforeDeadWeightN:p.normalFrontEdgePointComparisonN*(plan[1]+plan[3]-yf)/(yf-yr),horizontalActionN:p.normalHorizontalComparisonN,actualForceHeightMm:p.normalForceHeightMm,normalHeightAfterTwoSettingsMm:p.normalForceHeightMm+two,requiredFloorMomentNmm:p.normalHorizontalComparisonN*(p.normalForceHeightMm+two),capturedHeadHeightAfterTwoSettingsMm:capture.controls.maximumHeadZMm+capture.controls.liftMm+two,capturedHeadHorizontalMomentNmm:p.normalHorizontalComparisonN*(capture.controls.maximumHeadZMm+capture.controls.liftMm+two),frictionCreditedN:0},
   actualFloorBallastMemberCaptureToolsAndFiniteRenewalQualified:false,normalGravityCapacityAccepted:false,ordinaryRenewalAccepted:false}

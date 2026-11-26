@@ -444,7 +444,7 @@ test('selected complete side portals carry actual matched head ribs without eith
  assert.equal(portal.candidateColdNormal,true,JSON.stringify(portal.candidateColdFailures))
  assert.equal(portal.normalBearing.necessary,true)
  assert.ok(portal.normalBearing.minimumHorizontalOverlapMm>=10)
- assert.ok(portal.normalBearing.reactionChecks.every(q=>q.reserveN>0))
+ assert.ok(portal.normalBearing.reactionChecks.every(q=>q.reserveN>=-1e-7))
  assert.ok(portal.legacyCage.upperRails.some(q=>q.id.includes('y1350')&&q.minimumNarrowBearingNominalMm===5))
  assert.equal(portal.normalGravityCapacityAccepted,false)
  assert.equal(portal.ordinaryRenewalAccepted,false)
@@ -485,4 +485,33 @@ test('actual bounded head stock determines CG and exposes pressure-body water se
  near(wet.ordinaryCapture.forkReference.torsionalMomentNmm,44145)
  assert.ok(wet.ordinaryCapture.forkReference.totalElasticEnvelopeCoverMm>5.5&&wet.ordinaryCapture.forkReference.totalElasticEnvelopeCoverMm<6)
  assert.ok(wet.ordinaryCapture.sourceBoundCapturePhase.referenceBeamStressMPa>96&&wet.ordinaryCapture.sourceBoundCapturePhase.referenceBeamStressMPa<97)
+})
+
+test('exact steel brace members leave actual cold paths clear; filled-bay boxes remain a rejected calculation control',()=>{
+ assert.equal(portal.braceObstacleRepresentation,'exact-members')
+ assert.equal(portal.candidateColdNormal,true,JSON.stringify(portal.candidateColdFailures))
+ const filled=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture,braceObstacleRepresentation:'filled-bay-control'})
+ assert.ok(filled.candidateColdFailures.some(q=>q.id.includes('rear/diagonal/')&&q.reserveMm< -100))
+ assert.ok(filled.candidateColdFailures.some(q=>q.id.includes('washer/stop-body')&&q.reserveMm<0))
+ assert.notEqual(filled.sourceDigest,portal.sourceDigest)
+})
+test('unilateral corner reactions are bounded by equilibrium without equal-stiffness or strict-positive assumptions',()=>{
+ const a=portal.normalBearing
+ assert.equal(a.unilateralReactionCases.length,8)
+ assert.ok(a.unilateralCornerReactionBoundsN.some(q=>Math.abs(q.minimumN)<1e-7))
+ for(const q of a.unilateralReactionCases){
+  near(q.reactionsN.reduce((s,v)=>s+v,0),a.dynamicHeadN)
+  assert.ok(q.reactionsN.every(v=>v>=-1e-7))
+ }
+ assert.equal(a.actualIndividualLegReactionsQualified,false)
+ assert.equal(a.actualFactoryHeadSheetBowlWeldAndMatchedBoltsQualified,false)
+})
+test('same pressure-device parts expose compound envelopes instead of silently adding or reusing an80mm prism',()=>{
+ for(const q of portal.mass.cgStockBounds.pressureDevicePartsByPillar){
+  assert.equal(q.parts.length,3)
+  near(q.sumOuterBoxVolumesL,.672)
+  assert.deepEqual(q.axisAlignedEnclosingBoxMm.slice(3),[60,190,240])
+  assert.equal(q.fitsAnyOrthogonal80by80by300Box,false)
+  assert.equal(q.arbitraryObliqueDeviceFitProved,false)
+ }
 })
