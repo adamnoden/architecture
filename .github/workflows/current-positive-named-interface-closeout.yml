@@ -65,7 +65,7 @@ jobs:
           python -B - <<'PY'
           import base64,hashlib,io,json,os,re,subprocess,tarfile,urllib.error,urllib.request,zipfile
           from pathlib import Path
-          folder=Path(os.environ['RUNNER_TEMP'])/'current-positive-dependent-gitblobs';folder.mkdir(parents=True,exist_ok=True)
+          folder=Path(os.environ['REGEN_DIR']);folder.mkdir(parents=True,exist_ok=True)
           api=os.environ['GITHUB_API_URL'];repo=os.environ['GITHUB_REPOSITORY']
           if repo!='adamnoden/architecture':raise ValueError('Exact repository required')
           headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
