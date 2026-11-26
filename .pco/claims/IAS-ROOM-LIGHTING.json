@@ -9,8 +9,8 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T08:58:59.697Z",
-  "expiresAt": "2026-11-26T10:28:59.697Z",
+  "heartbeatAt": "2026-11-26T09:55:29.072Z",
+  "expiresAt": "2026-11-26T11:25:29.072Z",
   "branch": "work/zerg-engineering-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
@@ -35,8 +35,8 @@
     }
   },
   "checkpoint": {
-    "evidence": "PR1628 exacthead4165e0a25d210a9232d7d296e6fec37955e8b4c2 treeaa6543210350ba70acb83a93b537d2241ca7f0fd; reconciled main838ae734 ancestry. IAS21focusedtests, strict producer, zero source findings and rendered construction inspection passed; actual ports/feed/material and trial acceptance remain unearned.",
-    "next": "Monitor exact-head IAS/browser/publication CI; final IAS publication preflight only after all checks pass on unchanged source head"
+    "evidence": "DurablePR1628 now at474807d699886fa2d88fcb9df13cdfc93ab1ab28; exact-head publication/typography/wet-beam browser passed, ground/browser/fullhealth pending. Unpublished95mm full-face successor localbranch work/zerg-lighting-robust-corner-20261126 at5e437030:23focusedtests, strict producer, sourceaudit and rendered inspection passed; actual ports/feed/material/loadedhandling remain unqualified. This local branch is not yet a remote recovery record.",
+    "next": "Publish verified95mm checkpoint for recovery; finish actual corner200 room/lighting integration; observe exact-head CI and run fresh publication preflight only after allchecks pass"
   },
   "pr": 1628
 }
