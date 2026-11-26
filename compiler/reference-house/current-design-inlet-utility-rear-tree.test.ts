@@ -4,7 +4,7 @@ import {mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {readUtilityCurrentGeometrySource} from './current-design/inlet-utility-proof-source.js'
 import {deriveUtilityHotHead} from '../../project/had/studies/utility-hot-head.mjs'
-import {inletUtilityMemberRenewal,inletUtilityRejectedGantryControl,utilityOrdinaryHeadPlanSvg,inletUtilityPortalCandidate} from './current-design/inlet-utility-member-renewal.js'
+import {inletUtilityMemberRenewal,inletUtilityRejectedGantryControl,utilityOrdinaryHeadPlanSvg,inletUtilityPortalCandidate,inletUtilityPortalFiniteRenewal} from './current-design/inlet-utility-member-renewal.js'
 import {inletUtilityRoute} from './current-design/inlet-utility-route.js'
 import {inletUtilityColdService} from './current-design/inlet-utility-service.js'
 import {inletUtilityWetAssembly} from './current-design/inlet-utility-wet-assembly.js'
@@ -332,7 +332,7 @@ test('finite pinned braces and real trolley foot/worker sources never supply inv
  assert.equal(r.temporaryBracing.source.members.length,3)
  assert.ok(r.temporaryBracing.demands.every(q=>q.eulerPinnedN>q.axialComparisonN))
  assert.equal(r.temporaryBracing.actualPinSleeveHSSWallAndFloorResistanceQualified,false)
- assert.deepEqual(r.controls.postsXYMm,[[10965,840],[10965,1450],[11260,840],[11260,1450]])
+ assert.deepEqual(r.controls.postsXYMm,[[10975,840],[10975,1450],[11260,840],[11260,1450]])
  assert.equal(r.controls.rollingOperator!.maximumBodyHeightMm,800)
  assert.equal(r.controls.rollingOperator!.bodyRadiusMm,300)
  assert.ok(r.rollingOperator.checks.some(q=>q.phase==='rolling-body'))
@@ -457,7 +457,7 @@ test('all factory side ribs, clips, steel sheet and retained head water fit the 
  near(wet.ordinaryCapture.demand.fullHeadDynamicN,441.45)
  assert.ok(wet.ordinaryCapture.forkReference.deflectionMm<6)
  assert.ok(portal.mass.frameSteelUpperKg>15)
- near(portal.demandedInterfaces.frontEdgeRearPairUpliftBeforeDeadWeightN,454.54545454545456)
+ near(portal.demandedInterfaces.frontEdgeRearPairUpliftBeforeDeadWeightN,250)
  assert.equal(portal.demandedInterfaces.frictionCreditedN,0)
  assert.equal(portal.normalBearing.actualFactoryHeadSheetBowlWeldAndMatchedBoltsQualified,false)
 })
@@ -514,4 +514,21 @@ test('same pressure-device parts expose compound envelopes instead of silently a
   assert.equal(q.fitsAnyOrthogonal80by80by300Box,false)
   assert.equal(q.arbitraryObliqueDeviceFitProved,false)
  }
+})
+
+const portalFinite=inletUtilityPortalFiniteRenewal({source:current,wet,capture:wet.ordinaryCapture,portal})
+console.info('UTILITY_PORTAL_FINITE '+JSON.stringify({components:portalFinite.components,geometryFailures:portalFinite.geometryFailures,receiver:portalFinite.receiver,toolFailures:portalFinite.toolFailures,open:portalFinite.specificOpenGates}))
+if(proofDir)writeFileSync(join(proofDir,'current-utility-portal-finite-renewal.json'),JSON.stringify(portalFinite,null,2))
+test('same portal case owns five finite components and the actual source notched RC receiver datum',()=>{
+ assert.equal(portalFinite.components.length,5)
+ assert.equal(portalFinite.components.filter(q=>q.id.startsWith('portal/side-unit/')).length,2)
+ assert.equal(portalFinite.receiver.sourceContextDigest,current.candidateFloorPocket.bindingDigest)
+ assert.deepEqual(portalFinite.receiver.rcLocalMm,[-560,-360])
+ assert.ok(portalFinite.receiver.parts.some(q=>q.role==='structural-corbel-no-glass-bearing'))
+ assert.ok(portalFinite.receiver.parts.some(q=>q.role==='cast-RC-anchor'))
+ assert.equal(portalFinite.receiver.frictionResistanceCreditedN,0)
+ assert.equal(portalFinite.receiver.actualRCBreakoutRebarWeldWaterproofAirAndPointThermalJoinAccepted,false)
+ assert.equal(portalFinite.ordinaryRenewalAccepted,false)
+ assert.ok(portalFinite.toolFailures.some(q=>q.id.includes('/0/')))
+ assert.ok(portalFinite.specificOpenGates.length>0)
 })

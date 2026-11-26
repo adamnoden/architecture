@@ -2,6 +2,7 @@
  * Proposed independent water receivers are explicit design geometry, not selected
  * anchors, installed clips or a replacement for current native structural proof. */
 import {sha256SemanticFingerprint} from '../../core/identity.js'
+import {subtractPlan,expandPlan,planArea,type PlanRectangle} from './inlet-orthogonal-plan.js'
 import {exactSegmentBoxDistance,finiteBends} from '../../../project/had/studies/incoming-water-geometry.mjs'
 import {segmentDistance} from '../../../project/had/studies/service-interface-geometry.mjs'
 import type {readUtilityCurrentGeometrySource} from './inlet-utility-proof-source.js'
@@ -148,6 +149,7 @@ function inletUtilityHeadCaptureCore(i:{source:Source;wet:Wet;mode:'fork'|'gantr
   hardware.length=0
   for(const [k,p]of c.postsXYMm.entries()){
    put('capture/leg/'+k,[p[0]-c.soleCrossMm/2,p[1]-c.soleCrossMm/2,0,c.soleCrossMm,c.soleCrossMm,6])
+   put('capture/base-stub/'+k,[p[0]-20,p[1]-20,6,40,40,14])
   }
   for(const x of[...new Set(c.postsXYMm.map(p=>p[0]))])put('capture/base-NS/'+x,[x-20,fork.baseRearYMm,20,40,fork.frontFootYMm-fork.baseRearYMm,40])
   for(const y of[fork.baseRearYMm,fork.frontFootYMm])put('capture/base-EW/'+y,[x0,y-20,20,x1-x0,40,40])
@@ -561,7 +563,7 @@ export function inletUtilityHeadWaste(i:{source:Source;wet:Wet}){
   pressureCuts,dryRodRelease:{checks:dryRodChecks,failures:dryRodChecks.filter(q=>q.reserveMm<0),positiveCaptureAndKeeperRequired:true,actualPhysicalHandlingQualified:false},normalDesignWaterC:w.normalDesignWaterC,maximumColdMaintenanceC:w.maintenanceMaximumC,designFaultWaterC:w.designFaultWaterC,actualBackfeedValveSealToolsStrainerSupportAndCapPhysicalMatchQualified:false}
 }
 
-type PortalDesign={schema:string;sideAxisFromBoardEdgeMm:number;beamRearFromBoardMm:number;beamFrontFromBoardMm:number;rearLegFromBoardMm:number;frontLegFromBoardMm:number;sideRibCrossMm:readonly[number,number];sideRibWallMm:number;sideRibRearFromBoardMm:number;sideRibFrontFromBoardMm:number;framePostCrossMm:readonly[number,number];framePostWallMm:number;frameBeamCrossMm:readonly[number,number];frameBeamWallMm:number;lowerRearCrossMm:readonly[number,number];lowerRearWallMm:number;lowerRearAxisZMm:number;braceCrossMm:number;braceWallMm:number;rearBraceAxisYOffsetsMm:readonly number[];rearBraceLowZMm:number;rearBraceHighZMm:number;sideBraceAxisXOffsetsMm:readonly number[];sideBraceLowZMm:number;sideBraceHighZMm:number;soleCrossMm:number;soleThicknessMm:number;headClipPlateMm:readonly[number,number,number];headClipAxisZMm:number;headClipRearFromBoardMm:number;headClipFrontFromBoardMm:number;headMountBoltDiameterMm:number;headMountBoltMaximumLengthMm:number;minimumHeadSheetMm:number;maximumHeadSheetMm:number;maximumHeadDryAccessoriesKg:number;maximumEachHeadPressureAssemblyKg:number;underBowlPadMm:readonly[number,number,number];maximumFrameJointAndWeldMassKg:number;minimumSteelDensityKgM3:number;maximumSteelDensityKgM3:number;matchedOneHeadFabricationBoundMm:number;maximumCapturedWetHeadKg:number;normalFrontEdgePointComparisonN:number;normalHorizontalComparisonN:number;normalForceHeightMm:number;frontUpperAndLowerTiesIncluded:false;actualDeliveredMaterialWeldAndJointProofAccepted:false;actualFloorBearingAndBallastSupportAccepted:false}
+type PortalDesign={schema:string;sideAxisFromBoardEdgeMm:number;beamRearFromBoardMm:number;beamFrontFromBoardMm:number;rearLegFromBoardMm:number;frontLegFromBoardMm:number;sideRibCrossMm:readonly[number,number];sideRibWallMm:number;sideRibRearFromBoardMm:number;sideRibFrontFromBoardMm:number;framePostCrossMm:readonly[number,number];framePostWallMm:number;frameBeamCrossMm:readonly[number,number];frameBeamWallMm:number;lowerRearCrossMm:readonly[number,number];lowerRearWallMm:number;lowerRearAxisZMm:number;braceCrossMm:number;braceWallMm:number;rearBraceAxisYOffsetsMm:readonly number[];rearBraceLowZMm:number;rearBraceHighZMm:number;sideBraceAxisXOffsetsMm:readonly number[];sideBraceLowZMm:number;sideBraceHighZMm:number;solePlanMm:readonly[number,number];soleThicknessMm:number;headClipPlateMm:readonly[number,number,number];headClipAxisZMm:number;headClipRearFromBoardMm:number;headClipFrontFromBoardMm:number;headMountBoltDiameterMm:number;headMountBoltMaximumLengthMm:number;minimumHeadSheetMm:number;maximumHeadSheetMm:number;maximumHeadDryAccessoriesKg:number;maximumEachHeadPressureAssemblyKg:number;underBowlPadMm:readonly[number,number,number];maximumFrameJointAndWeldMassKg:number;minimumSteelDensityKgM3:number;maximumSteelDensityKgM3:number;matchedOneHeadFabricationBoundMm:number;maximumCapturedWetHeadKg:number;normalFrontEdgePointComparisonN:number;normalHorizontalComparisonN:number;normalForceHeightMm:number;frontUpperAndLowerTiesIncluded:false;actualDeliveredMaterialWeldAndJointProofAccepted:false;actualFloorBearingAndBallastSupportAccepted:false}
 /** Complete alternate normal support. This observer does not yet replace the
  * legacy cage adapter or admit finite portal capture/extraction/floor loads. */
 export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;braceObstacleRepresentation?:'exact-members'|'filled-bay-control'}){
@@ -583,7 +585,7 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
  for(const[side,x]of xs.entries()){
   for(const[end,y]of[yr,yf].entries()){
    put('portal/'+side+'/leg/'+end,box(x-p.framePostCrossMm[0]/2,y-p.framePostCrossMm[1]/2,p.soleThicknessMm,...p.framePostCrossMm,beamBottom-p.soleThicknessMm),'frame',area(...p.framePostCrossMm,p.framePostWallMm)*(beamBottom-p.soleThicknessMm))
-   put('portal/'+side+'/sole/'+end,box(x-p.soleCrossMm/2,y-p.soleCrossMm/2,0,p.soleCrossMm,p.soleCrossMm,p.soleThicknessMm),'frame',p.soleCrossMm**2*p.soleThicknessMm)
+   put('portal/'+side+'/sole/'+end,box(x-p.solePlanMm[0]/2,y-p.solePlanMm[1]/2,0,...p.solePlanMm,p.soleThicknessMm),'frame',p.solePlanMm[0]*p.solePlanMm[1]*p.soleThicknessMm)
   }
   put('portal/'+side+'/side-upper',box(x-p.frameBeamCrossMm[0]/2,beamA,beamBottom,p.frameBeamCrossMm[0],beamB-beamA,p.frameBeamCrossMm[1]),'frame',area(...p.frameBeamCrossMm,p.frameBeamWallMm)*(beamB-beamA))
   put('head/factory-side-rib/'+side,box(x-p.sideRibCrossMm[0]/2,ribA,ribBottom,p.sideRibCrossMm[0],ribB-ribA,p.sideRibCrossMm[1]),'factory-head',area(...p.sideRibCrossMm,p.sideRibWallMm)*(ribB-ribA))
@@ -684,4 +686,105 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
   mass,legacyCage:{role:'explicit stock and bearing control only; not normal support acceptance',upperRails:oldFrame},
   demandedInterfaces:{normalFrontEdgePointN:p.normalFrontEdgePointComparisonN,frontEdgeRearPairUpliftBeforeDeadWeightN:p.normalFrontEdgePointComparisonN*(plan[1]+plan[3]-yf)/(yf-yr),horizontalActionN:p.normalHorizontalComparisonN,actualForceHeightMm:p.normalForceHeightMm,normalHeightAfterTwoSettingsMm:p.normalForceHeightMm+two,requiredFloorMomentNmm:p.normalHorizontalComparisonN*(p.normalForceHeightMm+two),capturedHeadHeightAfterTwoSettingsMm:capture.controls.maximumHeadZMm+capture.controls.liftMm+two,capturedHeadHorizontalMomentNmm:p.normalHorizontalComparisonN*(capture.controls.maximumHeadZMm+capture.controls.liftMm+two),frictionCreditedN:0},
   actualFloorBallastMemberCaptureToolsAndFiniteRenewalQualified:false,normalGravityCapacityAccepted:false,ordinaryRenewalAccepted:false}
+}
+
+type PortalFiniteControls={schema:string;portalKeyDepthMm:number;portalLiftMm:number;portalNorthMm:number;rearParkAxisYMm:number;rearRotationCentreXMm:number;rearRotationCentreZMm:number;rearParkLevelsMm:readonly number[];normalReceiverInwardOffsetMm:number;receiverPostCrossMm:number;receiverPostWallMm:number;receiverBasePlanMm:readonly[number,number];receiverTopPlanMm:readonly[number,number];receiverPlateMm:number;receiverAnchorDiameterMm:number;receiverAnchorEmbedMm:number;receiverAnchorHeadDiameterMm:number;receiverAnchorHeadHeightMm:number;minimumRCCoverMm:number;receiverFloorKeyDiameterMm:number;receiverReferenceE_MPa:number;receiverReferenceSteelProofMPa:number;receiverSocketAFMm:number;receiverSocketMaximumODMm:number;receiverBoltMinimumThreadMm:number;receiverBoltTorqueNm:number;temporaryCaptureToolMaximumDryKg:number;temporaryCaptureToolPayloadKg:number;maximumSidePortalWithTemporaryClampsKg:number;maximumRearMemberWithTemporaryClampsKg:number;steelDensityUpperKgM3:number;actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified:false}
+/** Same selected portal case: finite member sweeps and actual source-pocket
+ * receivers. Unmodelled positive holding/tool interfaces remain named gates. */
+export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;portal:ReturnType<typeof inletUtilityPortalCandidate>}){
+ const {source,wet,capture,portal}=i,d=wet.choice.coldDistribution,
+  r=(d as unknown as{frameRenewal:{portalDesign:{finiteRenewal:PortalFiniteControls}}}).frameRenewal.portalDesign.finiteRenewal,
+  floor=(source as unknown as{candidateFloorPocket:{schema:string;bindingDigest:string;occupiedFflAbsoluteMm:number;currentSavedDocumentAdmitted:false;nativeFloorOrForceApprovalTransferred:false;pocket:{levels:{ffl:number};local:{levelBoxes:readonly{id:string;planMinMaxMm:PlanRectangle;planRectanglesXYMm?:readonly PlanRectangle[];zMm:readonly[number,number]}[]}|null}}}).candidateFloorPocket,
+  two=2*source.rearTreeContext.settingEachMm
+ if(r?.schema!=='had-utility-portal-finite-renewal/1'||r.actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified!==false||floor?.schema!=='had-utility-candidate-floor-pocket-context/1'||!floor.pocket.local||floor.occupiedFflAbsoluteMm!==source.groundFflMm||floor.pocket.levels.ffl!==source.groundFflMm||floor.nativeFloorOrForceApprovalTransferred!==false)throw Error('Same source-bound Utility pocket and unadmitted finite renewal controls required')
+ const rc=floor.pocket.local.levelBoxes.find(q=>q.id==='dryRC')
+ if(!rc)throw Error('Actual notched RC level box required')
+ const rcPlans=rc.planRectanglesXYMm??[rc.planMinMaxMm],rcTop=rc.zMm[1]-source.groundFflMm,rcBottom=rc.zMm[0]-source.groundFflMm,
+  shift=(b:B,p:P):B=>[b[0]+p[0],b[1]+p[1],b[2]+p[2],b[3],b[4],b[5]],
+  sweep=(a:B,b:B):B=>[...a.slice(0,3).map((v,k)=>Math.min(v,b[k])),...a.slice(0,3).map((v,k)=>Math.max(v+a[k+3],b[k]+b[k+3])-Math.min(v,b[k]))] as unknown as B,
+  room=source.input.roomPlanMm,parts=portal.parts,foreignBase=source.rearTreeContext.obstacles.filter(q=>!q.id.startsWith('IAS/frame/')&&q.presence!=='head-before-strip'&&q.presence!=='carry-bar-after-park'&&q.id!=='source-washer-home'),
+  rest=source.services.utility.washerFirstRest,washerH=source.rearTreeContext.obstacles.find(q=>q.id==='source-washer-home')!.boxMm[5],
+  pressure=[...wet.cold.geometry.parts.filter(q=>!q.cap).map(q=>({id:'cold/'+q.id,boxMm:q.wrapped})),...wet.hot.normalPermanentEnvelopes,...capture.waste.parts.map(q=>({id:q.id,boxMm:q.boxMm}))],
+  raisedHead=[...capture.headParts,...parts.filter(q=>q.group==='factory-head')].map(q=>({id:'raised/'+q.id,boxMm:shift(q.boxMm,[0,0,capture.controls.liftMm])})),
+  fixture=capture.hardware.filter(q=>q.id.startsWith('capture/')&&!q.afterFrameKnockdown).map(q=>({id:q.id,boxMm:shift(q.boxMm,[0,0,q.id.startsWith('capture/fork/')?capture.controls.liftMm:0])})),
+  fixed=[...foreignBase,{id:'actual-washer-first-rest',boxMm:[rest[0],rest[1],0,rest[2],rest[3],washerH] as B},...pressure,...raisedHead,...fixture],
+  checks:{componentId:string;phase:string;obstacleId:string;reserveMm:number}[]=[],components:{id:string;sourcePartIds:string[];stockUpperKg:number;phases:string[]}[]=[],
+  compare=(id:string,phase:string,b:B,exclude:readonly string[],cover=0)=>{
+   for(const q of fixed)checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:gap(b,q.boxMm as B)-two-cover})
+   for(const q of parts.filter(q=>q.group==='frame'&&!exclude.includes(q.id))){
+    if(q.segmentMm)checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:exactSegmentBoxDistance(...q.segmentMm,b)-q.radiusMm!-two-cover})
+    else checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:gap(b,q.boxMm)-two-cover})
+   }
+   for(const q of source.rearTreeContext.retainedPaths)for(let k=1;k<q.pointsMm.length;k++)checks.push({componentId:id,phase,obstacleId:q.id+'/'+k,reserveMm:exactSegmentBoxDistance(q.pointsMm[k-1],q.pointsMm[k],b)-q.radiusWithSupportsMm-two-cover})
+   for(const path of source.route.paths){
+    for(const q of path.straight)checks.push({componentId:id,phase,obstacleId:path.id+'/'+q.index,reserveMm:exactSegmentBoxDistance(q.a,q.b,b)-source.route.geometry.jacketRadiusMm-two-cover})
+    for(const q of path.corners)if(q.kind==='boxed-compression-elbow')checks.push({componentId:id,phase,obstacleId:q.id,reserveMm:gap(b,q.boxMm)-two-cover})
+    else if(q.arcMm)for(let k=1;k<q.arcMm.length;k++)checks.push({componentId:id,phase,obstacleId:q.id+'/'+k,reserveMm:exactSegmentBoxDistance(q.arcMm[k-1],q.arcMm[k],b)-source.route.geometry.jacketRadiusMm-q.arcCoverMm-two-cover})
+   }
+   checks.push({componentId:id,phase,obstacleId:'room-west',reserveMm:b[0]-room[0]-two-cover},{componentId:id,phase,obstacleId:'room-east',reserveMm:room[0]+room[2]-b[0]-b[3]-two-cover})
+  },
+  rear=parts.filter(q=>q.id.startsWith('portal/rear/')),
+  rearIds=rear.map(q=>q.id)
+ for(const[which,q]of rear.entries()){
+  const b=q.boxMm,c:P=q.segmentMm?[(q.segmentMm[0][0]+q.segmentMm[1][0])/2,(q.segmentMm[0][1]+q.segmentMm[1][1])/2,(q.segmentMm[0][2]+q.segmentMm[1][2])/2]:[b[0]+b[3]/2,b[1]+b[4]/2,b[2]+b[5]/2],
+   end:P=[r.rearRotationCentreXMm,r.rearParkAxisYMm,r.rearRotationCentreZMm],L=q.segmentMm?Math.hypot(...q.segmentMm[1].map((v,k)=>v-q.segmentMm![0][k])):b[3],
+   s=q.segmentMm?2*q.radiusMm!/Math.SQRT2:Math.min(b[4],b[5]),angle=q.segmentMm?Math.atan2(q.segmentMm[1][2]-q.segmentMm[0][2],q.segmentMm[1][0]-q.segmentMm[0][0]):0,
+   prism=(centre:P,a:number):B=>{const dx=Math.abs(L*Math.cos(a))/2+Math.abs(s*Math.sin(a))/2,dz=Math.abs(L*Math.sin(a))/2+Math.abs(s*Math.cos(a))/2;return[centre[0]-dx,centre[1]-s/2,centre[2]-dz,2*dx,s,2*dz]},
+   p0=prism(c,angle),c1:P=[c[0],end[1],c[2]],c2:P=[c[0],end[1],end[2]],phases=['captured-rear-member-to-south-plane','rear-member-up','rear-member-west','rear-member-rotate-flat','rear-member-positive-park']
+  compare(q.id,phases[0],sweep(p0,prism(c1,angle)),[q.id])
+  compare(q.id,phases[1],sweep(prism(c1,angle),prism(c2,angle)),[q.id])
+  compare(q.id,phases[2],sweep(prism(c2,angle),prism(end,angle)),[q.id])
+  for(let n=0;n<64;n++){
+   const a=angle*(1-n/64),z=angle*(1-(n+1)/64),cover=Math.hypot(L/2,s/2)*(1-Math.cos(Math.abs(z-a)/2))
+   compare(q.id,phases[3],sweep(prism(end,a),prism(end,z)),[q.id],cover)
+  }
+  compare(q.id,phases[4],sweep(prism(end,0),prism([end[0],end[1],r.rearParkLevelsMm[which]],0)),[q.id])
+  components.push({id:q.id,sourcePartIds:[q.id],stockUpperKg:q.massUpperKg,phases})
+ }
+ for(const side of[0,1]){
+  const group=parts.filter(q=>q.id.startsWith('portal/'+side+'/')),exclude=[...rearIds,...group.map(q=>q.id)],id='portal/side-unit/'+side
+  for(const q of group){
+   compare(id,'side-unit-up-to-release-positive-floor-key',sweep(q.boxMm,shift(q.boxMm,[0,0,r.portalLiftMm])),exclude)
+   compare(id,'side-unit-captured-north-park',sweep(shift(q.boxMm,[0,0,r.portalLiftMm]),shift(q.boxMm,[0,r.portalNorthMm,r.portalLiftMm])),exclude)
+  }
+  components.push({id,sourcePartIds:group.map(q=>q.id),stockUpperKg:group.reduce((n,q)=>n+q.massUpperKg,0),phases:['side-unit-up-to-release-positive-floor-key','side-unit-captured-north-park']})
+ }
+ const receiverParts:{id:string;boxMm:B;role:string}[]=[],receiverChecks:{id:string;reserveMm:number}[]=[],receiverDemands:{id:string;axialUpperN:number;upliftUpperN:number;shearUpperN:number;referenceMomentAtRCNmm:number;referenceSteelExtremeMPa:number;referenceAnchorTensionEachN:number;referenceAnchorMPa:number}[]=[],
+  rect=(x:number,y:number,w:number,h:number):PlanRectangle=>[x-w/2,y-h/2,x+w/2,y+h/2],
+  put=(id:string,b:B,role:string)=>receiverParts.push({id,boxMm:b,role}),
+  contain=(id:string,b:B)=>receiverChecks.push({id:id+'/same-notched-RC-plan-after-two-settings',reserveMm:subtractPlan(expandPlan([b[0],b[1],b[0]+b[3],b[1]+b[4]],two),rcPlans).reduce((n,q)=>n+planArea(q),0)<=1e-7?0:-1}),
+  S=r.receiverPostCrossMm,t=r.receiverPostWallMm,A=S*S-(S-2*t)**2,I=(S**4-(S-2*t)**4)/12,
+  gravity=capture.demand.fullHeadDynamicN+portal.mass.frameCompleteDesignMassUpperKg*9.81*1.5+r.temporaryCaptureToolPayloadKg*9.81*1.5,
+  normalF=portal.demandedInterfaces.horizontalActionN,normalH=portal.demandedInterfaces.normalHeightAfterTwoSettingsMm,
+  normalLegs=parts.filter(q=>q.id.includes('/leg/'))
+ for(const q of normalLegs){
+  const x=q.boxMm[0]+q.boxMm[3]/2,y=q.boxMm[1]+q.boxMm[4]/2,east=q.id.startsWith('portal/1/'),offset=east?r.normalReceiverInwardOffsetMm:0,
+   cx=x-offset,id='RC-receiver/'+q.id,base:B=[cx-r.receiverBasePlanMm[0]/2,y-r.receiverBasePlanMm[1]/2,rcTop-r.receiverPlateMm,...r.receiverBasePlanMm,r.receiverPlateMm],
+   crown:B=[x-r.receiverTopPlanMm[0]/2,y-r.receiverTopPlanMm[1]/2,-r.receiverPlateMm,...r.receiverTopPlanMm,r.receiverPlateMm],stemTop=offset?-r.receiverPlateMm-S:-r.receiverPlateMm
+  put(id+'/cast-base',base,'cast-RC');contain(id+'/cast-base',base)
+  put(id+'/standoff',[cx-S/2,y-S/2,rcTop,S,S,stemTop-rcTop],'through-renewable-upper-layers')
+  if(offset)put(id+'/inward-corbel',[cx-S/2,y-S/2,stemTop,offset+S,S,S],'structural-corbel-no-glass-bearing')
+  put(id+'/blind-floor-crown',crown,'removable-frame-interface')
+  for(const dx of[-25,25])for(const dy of[-45,45]){
+   const ax=cx+dx,ay=y+dy,D=r.receiverAnchorDiameterMm,HD=r.receiverAnchorHeadDiameterMm,
+    head:B=[ax-HD/2,ay-HD/2,rcTop-r.receiverAnchorEmbedMm-r.receiverAnchorHeadHeightMm,HD,HD,r.receiverAnchorHeadHeightMm]
+   put(id+'/cast-rod/'+dx+'/'+dy,[ax-D/2,ay-D/2,rcTop-r.receiverAnchorEmbedMm,D,D,r.receiverAnchorEmbedMm],'cast-RC-anchor')
+   put(id+'/cast-head/'+dx+'/'+dy,head,'cast-RC-anchor');contain(id+'/cast-head/'+dx+'/'+dy,head)
+   receiverChecks.push({id:id+'/cast-head-cover/'+dx+'/'+dy,reserveMm:head[2]-rcBottom-r.minimumRCCoverMm-two})
+  }
+  const N=gravity+portal.demandedInterfaces.normalFrontEdgePointN,U=portal.demandedInterfaces.frontEdgeRearPairUpliftBeforeDeadWeightN+normalF*normalH/Math.max(1,Math.max(...normalLegs.map(q=>q.boxMm[1]))-Math.min(...normalLegs.map(q=>q.boxMm[1]))),
+   M=normalF*(normalH-rcTop)+N*offset,anchor=M/50/2+U/4
+  receiverDemands.push({id,axialUpperN:N,upliftUpperN:U,shearUpperN:normalF,referenceMomentAtRCNmm:M,referenceSteelExtremeMPa:M*S/2/I+N/A,referenceAnchorTensionEachN:anchor,referenceAnchorMPa:anchor/84.3})
+ }
+ const fixtureIds=components.map(q=>q.id),toolChecks=portal.parts.filter(q=>q.id.startsWith('head/mount-bolt/')).map(q=>{
+  const p:P=[q.boxMm[0]+q.boxMm[3]/2,q.boxMm[1]+q.boxMm[4]/2,q.boxMm[2]+q.boxMm[5]/2],s=capture.controls.normalWorkingShoulderMm
+  return{id:'actual-current-head-mount/'+q.id,reachReserveMm:600-Math.hypot(...p.map((v,k)=>v-s[k]))}
+ })
+ return{schema:'had-utility-portal-finite-renewal/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,portal:portal.sourceDigest,floor,controls:r}),components,checks,necessaryFiniteGeometry:checks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7),geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),
+  receiver:{sourceContextDigest:floor.bindingDigest,occupiedFflAbsoluteMm:source.groundFflMm,rcLocalMm:[rcBottom,rcTop],actualRCPlans:rcPlans,parts:receiverParts,checks:receiverChecks,geometryFailures:receiverChecks.filter(q=>q.reserveMm<0),demands:receiverDemands,referenceNecessarySteel:receiverDemands.every(q=>Math.max(q.referenceSteelExtremeMPa,q.referenceAnchorMPa)<=r.receiverReferenceSteelProofMPa/1.5),frictionResistanceCreditedN:0,actualRCBreakoutRebarWeldWaterproofAirAndPointThermalJoinAccepted:false},
+  toolChecks,toolFailures:toolChecks.filter(q=>q.reachReserveMm<0),memberIds:fixtureIds,
+  positiveCaptureRequirement:{headGravityRemainsOnIndependentFloorFork:true,oneCapturedRearMemberOrSidePortalAtATime:true,allThreeRearMembersPositivelyParkedBeforeSidePortalRelease:true,maximumSidePortalWithClampsKg:r.maximumSidePortalWithTemporaryClampsKg,maximumRearMemberWithClampsKg:r.maximumRearMemberWithTemporaryClampsKg,temporaryPositiveCaptureFixtureGeometryQualified:false},
+  temporaryStability:{receiverSteelDemandsIncluded:true,headForkMomentReceiversAndMemberCaptureFixtureStillRequireCompleteGeometry:true,RCAndFloorActualCapacityAccepted:false},
+  specificOpenGates:['head-mount-release-tools: rear cross-clips need a source replacement or actual access proof','removable frame foot key, threaded cups and wrench geometry','head-fork positive moment receiver/clamp and capture-tool geometry','RC reinforcement/breakout, thermal point bridge and actual waterproof/air seal'],
+  ordinaryRenewalAccepted:false,currentSavedDocumentAdmitted:false}
 }

@@ -531,11 +531,11 @@
         "method": "static-floor-seated-head-capture",
         "postsXYMm": [
           [
-            10965,
+            10975,
             840
           ],
           [
-            10965,
+            10975,
             1450
           ],
           [
@@ -982,11 +982,11 @@
       "portalDesign": {
         "schema": "had-utility-two-side-portals/1",
         "selectedForCompleteDevelopment": true,
-        "sideAxisFromBoardEdgeMm": 35,
+        "sideAxisFromBoardEdgeMm": 37.5,
         "beamRearFromBoardMm": 20,
-        "beamFrontFromBoardMm": 60,
+        "beamFrontFromBoardMm": 40,
         "rearLegFromBoardMm": 60,
-        "frontLegFromBoardMm": 100,
+        "frontLegFromBoardMm": 60,
         "sideRibCrossMm": [
           30,
           20
@@ -1024,8 +1024,7 @@
         ],
         "sideBraceLowZMm": 550,
         "sideBraceHighZMm": 650,
-        "soleCrossMm": 40,
-        "soleThicknessMm": 6,
+        "soleThicknessMm": 10,
         "headClipPlateMm": [
           4,
           60,
@@ -1058,7 +1057,55 @@
           40,
           6
         ],
-        "headCGScope": "derived from bounded steel stock, each<=2kg pressure assembly and actual outer-box residual envelopes; not measured product CG"
+        "headCGScope": "derived from bounded steel stock, each<=2kg pressure assembly and actual outer-box residual envelopes; not measured product CG",
+        "solePlanMm": [
+          60,
+          140
+        ],
+        "finiteRenewal": {
+          "schema": "had-utility-portal-finite-renewal/1",
+          "portalKeyDepthMm": 20,
+          "portalLiftMm": 40,
+          "portalNorthMm": 120,
+          "rearParkAxisYMm": 700,
+          "rearRotationCentreXMm": 10730,
+          "rearRotationCentreZMm": 1100,
+          "rearParkLevelsMm": [
+            1050,
+            1150,
+            1250
+          ],
+          "normalReceiverInwardOffsetMm": 60,
+          "receiverPostCrossMm": 40,
+          "receiverPostWallMm": 5,
+          "receiverBasePlanMm": [
+            90,
+            140
+          ],
+          "receiverTopPlanMm": [
+            90,
+            140
+          ],
+          "receiverPlateMm": 10,
+          "receiverAnchorDiameterMm": 12,
+          "receiverAnchorEmbedMm": 120,
+          "receiverAnchorHeadDiameterMm": 24,
+          "receiverAnchorHeadHeightMm": 8,
+          "minimumRCCoverMm": 40,
+          "receiverFloorKeyDiameterMm": 20,
+          "receiverReferenceE_MPa": 193000,
+          "receiverReferenceSteelProofMPa": 200,
+          "receiverSocketAFMm": 19,
+          "receiverSocketMaximumODMm": 26,
+          "receiverBoltMinimumThreadMm": 20,
+          "receiverBoltTorqueNm": 25,
+          "temporaryCaptureToolMaximumDryKg": 16,
+          "temporaryCaptureToolPayloadKg": 15,
+          "maximumSidePortalWithTemporaryClampsKg": 12,
+          "maximumRearMemberWithTemporaryClampsKg": 2,
+          "steelDensityUpperKgM3": 8000,
+          "actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified": false
+        }
       }
     },
     "hotService": {
