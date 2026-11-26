@@ -1,41 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
-  "generation": 9,
-  "state": "released",
-  "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
+  "generation": 10,
+  "state": "claimed",
+  "leaseId": "74f27cd9-d815-4b94-9763-a6859d119c15",
   "holder": {
     "kind": "chatgpt",
-    "label": "convergence-root-20261125"
+    "label": "zerg-lighting-local-riser-20261126"
   },
-  "claimedAt": "2026-11-25T08:41:06.007Z",
-  "heartbeatAt": "2026-11-25T12:10:32.000Z",
-  "expiresAt": "2026-11-25T12:10:32.000Z",
-  "branch": "work/convergence-lighting-20261125",
+  "claimedAt": "2026-11-26T07:53:16.080Z",
+  "heartbeatAt": "2026-11-26T07:53:16.080Z",
+  "expiresAt": "2026-11-26T08:38:16.080Z",
+  "branch": "work/zerg-lighting-local-riser-20261126",
   "predecessor": {
-    "leaseId": "6ae96d7d-811c-4b13-8256-4493e0ba1c1b",
-    "generation": 8,
-    "branch": "work/convergence-continuation-20261124",
+    "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
+    "generation": 9,
+    "branch": "work/convergence-lighting-20261125",
+    "pr": 1625,
     "checkpoint": {
-      "evidence": "Durable combined continuation f6581ce736be79ddd337eccbe1effc3d77f19963; genuine IAS producer and 18 tests passed; full case and surround gravity/renewal costs preserved.",
-      "next": "Integrate final structural convergence and whole-Plant comparison, source-audit, publish exact combined head and validate PR."
+      "evidence": "PR1625@5526b838 preserves corrected complete-case gravity centroid, actual grip/rest geometry and PartIV limits. Prior263page WorkingEdition/10page Primer digitally reviewed; current publicationCI passed.",
+      "next": "Finish exact-head CI and canonical preflight, then merge1625 if earned. Circuit, protection/material qualification and owner appearance/print approval remain open.",
+      "blocker": "Execution environment unavailable; local review files and current process state cannot be inspected. Published PR/checkpoints remain recovery authority."
     }
   },
   "recoverySource": {
-    "leaseId": "6ae96d7d-811c-4b13-8256-4493e0ba1c1b",
-    "generation": 8,
-    "branch": "work/convergence-continuation-20261124",
+    "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
+    "generation": 9,
+    "branch": "work/convergence-lighting-20261125",
+    "pr": 1625,
     "checkpoint": {
-      "evidence": "Durable combined continuation f6581ce736be79ddd337eccbe1effc3d77f19963; genuine IAS producer and 18 tests passed; full case and surround gravity/renewal costs preserved.",
-      "next": "Integrate final structural convergence and whole-Plant comparison, source-audit, publish exact combined head and validate PR."
+      "evidence": "PR1625@5526b838 preserves corrected complete-case gravity centroid, actual grip/rest geometry and PartIV limits. Prior263page WorkingEdition/10page Primer digitally reviewed; current publicationCI passed.",
+      "next": "Finish exact-head CI and canonical preflight, then merge1625 if earned. Circuit, protection/material qualification and owner appearance/print approval remain open.",
+      "blocker": "Execution environment unavailable; local review files and current process state cannot be inspected. Published PR/checkpoints remain recovery authority."
     }
-  },
-  "checkpoint": {
-    "evidence": "PR1625@5526b838 preserves corrected complete-case gravity centroid, actual grip/rest geometry and PartIV limits. Prior263page WorkingEdition/10page Primer digitally reviewed; current publicationCI passed.",
-    "next": "Finish exact-head CI and canonical preflight, then merge1625 if earned. Circuit, protection/material qualification and owner appearance/print approval remain open.",
-    "blocker": "Execution environment unavailable; local review files and current process state cannot be inspected. Published PR/checkpoints remain recovery authority."
-  },
-  "pr": 1625,
-  "releasedAt": "2026-11-25T12:10:32.000Z",
-  "releaseReason": "handoff"
+  }
 }
