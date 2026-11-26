@@ -11,8 +11,8 @@ const original=room.resolvedInput.branch
 const {reviewSvg:_svg,...saved}=original
 const legacy=()=>inletSplitPlantBranch(structuredClone(original.resolvedInput))
 const services=read('project/had/studies/current-house-services.json'),rad=services.heatBodies.find((r:any)=>r.id==='plant-N')
-const settings=readLocalUtilityPocketSettings()
-const input=()=>({branch:legacy(),floorRiseMm:150,choice:readPlantNormalAssemblyChoice(),sourceMinimumDynamicBar:settings.sourceMinimumDynamicBar,sourceDelivery:{minimumApertureMm:settings.plantApertureNominalMm-settings.apertureToleranceMm,dischargeCoefficient:settings.dischargeCoefficientComparison,densityKgM3:1000},normalPressureReference:{pointHouseLocalMm:[...services.plant.independentSafety.expansion.slice(0,2),services.plant.independentSafety.expansion[2]+150] as readonly[number,number,number],gaugeBar:read('project/had/studies/inlet-store-vessel-candidate.json').expansion.normalRegulatorGaugeBar},radiatorInstalledPlanMm:rad.plan as readonly[number,number,number,number]})
+const settings=read('project/had/studies/inlet-plant-tanked-supply-candidate.json').settings
+const input=()=>({branch:legacy(),floorRiseMm:150,choice:readPlantNormalAssemblyChoice(),sourceMinimumDynamicBar:settings.sourceMinimumDynamicBar,sourceDelivery:{minimumApertureMm:settings.plantApertureNominalMm-settings.apertureToleranceMm,dischargeCoefficient:settings.dischargeCoefficientComparison,densityKgM3:1000},normalPressureReference:{pointHouseLocalMm:[services.plant.independentSafety.expansion[0],services.plant.independentSafety.expansion[1],services.plant.independentSafety.expansion[2]+150] as const,gaugeBar:read('project/had/studies/inlet-store-vessel-candidate.json').expansion.normalRegulatorGaugeBar},radiatorInstalledPlanMm:rad.plan as readonly[number,number,number,number]})
 const clean=(a:unknown)=>JSON.parse(JSON.stringify(a))
 test('optional walking rise preserves exact historical branch/frame output when omitted',()=>{
  const b=legacy()
@@ -31,8 +31,12 @@ test('raised actual store and goods share one floor while entry, isolator and up
  assert.equal(q.storePortTrialMm[2],530)
  assert.deepEqual(q.coldTreeInterfaceMm,i.branch.choice.coldTreeInterfaceMm)
  assert.equal(q.coldTreeInterfaceMm[2],2945)
- assert.ok(q.storeFixedPathMm.every(p=>p[2]===i.branch.choice.outletStemMm.at(-1)![2]))
- assert.equal(q.storeRemovableDropMm[0][2],i.branch.choice.storeRemovableDropMm[0][2]);assert.equal(q.storeRemovableDropMm[1][2],i.branch.choice.storeRemovableDropMm[1][2])
+ assert.equal(q.storeFixedPathMm[0][2],i.branch.choice.outletStemMm.at(-1)![2])
+ assert.equal(q.storeFixedPathMm.at(-1)![2],2160)
+ assert.equal(r.storeConnection.necessaryTangentAlignment,true)
+ assert.equal(r.storeConnection.straightDropNoBends,true)
+ assert.equal(r.branch.paths.find(p=>p.id==='plant/store-removable-drop')!.formedGeometry!.hausdorffError,0)
+ assert.equal(q.storeRemovableDropMm[0][2],2160);assert.equal(q.storeRemovableDropMm[1][2],670)
  assert.equal(q.storeTerminalMm.at(-1)![2],530)
  assert.equal(r.frame.frameBottomAbsoluteMm,680)
  assert.equal(r.frame.frameClearHeadAbsoluteMm,2980)
@@ -56,7 +60,7 @@ test('common inline PRV has real spools, normal pressure comparison and actual o
  assert.equal(r.regulator.minimumKvDesignRequirement,12)
  assert.ok(r.regulator.prvInActualSingleStem)
  assert.equal(r.actualStemParts.length,3)
- assert.equal(r.inlineInventory.completePRVExternalEnvelopeAsWaterUpperL,1.28)
+ assert.equal(r.inlineInventory.completePRVExternalEnvelopeAsWaterUpperL,6.4)
  assert.ok(r.inlineInventory.netAddedWaterInventoryUpperL>1)
  assert.ok(r.pressureDatumAtCuts.find(p=>p.id==='factory-port')!.staticGaugeBar>2)
  assert.ok(r.pressureDatumAtCuts.find(p=>p.id==='tree-interface')!.staticGaugeBar<2)
@@ -66,16 +70,16 @@ test('common inline PRV has real spools, normal pressure comparison and actual o
  assert.equal(r.taskModes[1].shoulder[2],1600)
  assert.ok(r.taskModes[1].toolBoxLocalMm)
  assert.ok(r.taskModes[1].toolRouteChecks.length>0)
- assert.ok(r.regulator.restrictionLossBar>1.3&&r.regulator.restrictionLossBar<1.4)
- assert.equal(r.regulator.necessaryAuthorityComparison,false,'Current10.3mm minimum source cannot hold the static setpoint at the full45L/min duty.')
- assert.ok(r.regulator.fullFlowOutletGaugeBar<r.regulator.regulatedGaugeBar)
+ assert.ok(r.regulator.restrictionLossBar>1&&r.regulator.restrictionLossBar<1.1)
+ assert.equal(r.regulator.necessaryAuthorityComparison,true,'Actual selected10.9mm minimum source must earn the full45L/min authority comparison.')
+ assert.equal(r.regulator.fullFlowOutletGaugeBar,r.regulator.regulatedGaugeBar)
  assert.ok(r.routeHydraulics.every(p=>p.availableBar>0))
  assert.ok(r.supportDemand.seizedStraightThermalCounterexampleN>1000)
  assert.equal(r.actualNormalPressureInstallationAccepted,false)
  assert.equal(r.renewal.actualTwoSpannerCaptureAndUnionsAccepted,false)
  const dir=process.env.HAD_UTILITY_ROUTE_PROOF_DIR
  if(dir){mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'Plant-common-PRV-normal-installation.json'),JSON.stringify(r,null,2))}
- console.info('PLANT_COMMON_PRV_NORMAL '+JSON.stringify({geometryFailures:r.geometryFailures,prv:r.regulator,frame:r.frame,stock:r.stock,support:r.supportDemand,tasks:r.taskModes.map(t=>({id:t.id,reach:t.reachMm,body:t.necessaryBodyAndArmGeometry,floor:t.floorReserveMm,head:t.headReserveMm,bodyObjects:t.objectChecks.filter(p=>p.bodyReserveMm<0||p.armReserveMm<0||(p.stepReserveMm!==null&&p.stepReserveMm<0)),route:t.routeChecks.filter(p=>p.bodyReserveMm<0||p.armReserveMm<0),corners:t.cornerChecks.filter(p=>p.bodyReserveMm<0||p.armReserveMm<0),tool:t.toolRouteChecks.filter(p=>p.reserveMm<0||p.driverReserveMm<0),toolOwnBody:t.toolOwnBodyReserveMm})),route:r.routeHydraulics}))
+ console.info('PLANT_COMMON_PRV_NORMAL '+JSON.stringify({geometryFailures:r.geometryFailures,branchFailures:{room:r.branch.geometry.roomBoundaryChecks.filter(p=>p.reserveMm<0),drop:r.branch.geometry.dropStoreReserveMm,goods:r.branch.geometry.goodsChecks.filter(p=>p.reserveMm<0)},storeConnection:r.storeConnection,prv:r.regulator,frame:r.frame,stock:r.stock,support:r.supportDemand,tasks:r.taskModes.map(t=>({id:t.id,reach:t.reachMm,body:t.necessaryBodyAndArmGeometry,floor:t.floorReserveMm,head:t.headReserveMm,bodyObjects:t.objectChecks.filter(p=>p.bodyReserveMm<0||p.armReserveMm<0||(p.stepReserveMm!==null&&p.stepReserveMm<0)),route:t.routeChecks.filter(p=>p.bodyReserveMm<0||p.armReserveMm<0),corners:t.cornerChecks.filter(p=>p.bodyReserveMm<0||p.armReserveMm<0),tool:t.toolRouteChecks.filter(p=>p.reserveMm<0||p.driverReserveMm<0),toolOwnBody:t.toolOwnBodyReserveMm})),route:r.routeHydraulics}))
 })
 test('source, floor, regulator, pressure and actual operator perturbations invalidate dependent evidence',()=>{
  const i=input(),r=inletPlantNormalAssembly(i),small=structuredClone(i)
@@ -85,7 +89,7 @@ test('source, floor, regulator, pressure and actual operator perturbations inval
  const bad=inletPlantNormalAssembly(wide)
  assert.equal(bad.regulator.prvInActualSingleStem,false)
  assert.equal(bad.necessaryDeclaredGeometry,false)
- const floor=structuredClone(i);floor.floorRiseMm=100;floor.normalPressureReference.pointHouseLocalMm=[...i.normalPressureReference.pointHouseLocalMm.slice(0,2),services.plant.independentSafety.expansion[2]+100] as readonly[number,number,number]
+ const floor=structuredClone(i);floor.floorRiseMm=100;floor.normalPressureReference.pointHouseLocalMm=[i.normalPressureReference.pointHouseLocalMm[0],i.normalPressureReference.pointHouseLocalMm[1],services.plant.independentSafety.expansion[2]+100] as const
  const lower=inletPlantNormalAssembly(floor)
  assert.equal(lower.frame.frameBottomAbsoluteMm,630)
  assert.notEqual(lower.sourceDigest,r.sourceDigest)
@@ -93,9 +97,18 @@ test('source, floor, regulator, pressure and actual operator perturbations inval
  assert.deepEqual(lower.branch.choice.coldTreeInterfaceMm,r.branch.choice.coldTreeInterfaceMm)
  const tooFar=structuredClone(i);tooFar.choice.ordinaryShoulderXYMm=[10500,4700]
  assert.equal(inletPlantNormalAssembly(tooFar).taskModes[1].necessaryBodyAndArmGeometry,false)
- const ignored=structuredClone(i);ignored.sourceDelivery.minimumApertureMm=1000000
+ const retained=structuredClone(i);retained.choice.storeConnectionMode='retained-reference'
+ const inherited=inletPlantNormalAssembly(retained)
+ assert.equal(inherited.storeConnection.necessaryTangentAlignment,false)
+ assert.ok(inherited.geometryFailures.includes('SPLIT_PLANT_BRANCH/full-backbone-drop-cylinder-clearance'))
+ const oldSettings=readLocalUtilityPocketSettings(),oldSource=structuredClone(i)
+ oldSource.sourceDelivery.minimumApertureMm=oldSettings.plantApertureNominalMm-oldSettings.apertureToleranceMm
+ const oldPressure=inletPlantNormalAssembly(oldSource)
+ assert.equal(oldPressure.regulator.necessaryAuthorityComparison,false)
+ assert.ok(oldPressure.regulator.fullFlowOutletGaugeBar<oldPressure.regulator.regulatedGaugeBar)
+ const ignored=structuredClone(oldSource);ignored.sourceDelivery.minimumApertureMm=1000000
  assert.equal(inletPlantNormalAssembly(ignored).regulator.necessaryAuthorityComparison,true,'Omitting the real inlet restriction would falsely pass; retain this regression.')
- const mixed=structuredClone(i);mixed.branch.choice.sourceEntryMm[0]+=1
+ const mixed=structuredClone(i);mixed.branch.choice.sourceEntryMm=[mixed.branch.choice.sourceEntryMm[0]+1,...mixed.branch.choice.sourceEntryMm.slice(1)] as unknown as readonly[number,number,number]
  assert.throws(()=>inletPlantNormalAssembly(mixed),/Actual current Plant branch|Unsupported/)
  const broken=structuredClone(original.resolvedInput);broken.floorRiseMm=150
  assert.throws(()=>inletSplitPlantBranch(broken),/walking-floor datum join/)

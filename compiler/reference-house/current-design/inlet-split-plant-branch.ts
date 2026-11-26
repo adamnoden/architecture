@@ -74,7 +74,7 @@ export function inletSplitPlantBranch(i:SplitPlantBranchInputs){
      origin=s.a.map((v,k)=>(v+s.b[k])/2+(k===2?i.groundFflMm:0)) as unknown as Point,force:Point=[0,0,-(copperKg+waterKg+jacketKg+insulationKg)*9.81]
      return{id:q.id+'/'+p.id+'/segment/'+s.index,referenceCopperKg:copperKg,referenceWaterKg:waterKg,referenceJacketKg:jacketKg,referenceInsulationKg:insulationKg,wrapperReferenceIncluded:p.id!=='plant/store-terminal',actualTerminalWrapperMassKg:null,absoluteOriginMm:origin,referenceGravityWrenchN_Nm:[...force,...cross(origin.map(v=>v/1000) as unknown as Point,force)]}})
    if(!p.removable&&corners.some(c=>Math.abs(c.angleDeg-90)>1e-9))throw Error('Unsupported non90degree fixed Plant fitting')
-   const formedGeometry=p.removable?finiteBends(p.points,p.id==='plant/store-removable-drop'?q.storeDropBendRadiusMm:q.storeTerminalBendRadiusMm):null
+   const formedGeometry=p.removable?(p.points.length===2?{path:p.points,hausdorffError:0,bends:[]}:finiteBends(p.points,p.id==='plant/store-removable-drop'?q.storeDropBendRadiusMm:q.storeTerminalBendRadiusMm)):null
    return{...p,segments:ss,corners,formedGeometry,fittingGeometryKind:p.removable?'explicit-formed-tube-radius':'boxed-factory-elbow-reservation',stock,centrelineLengthMm:ss.reduce((n,s)=>n+s.lengthMm,0),actualFittingGeometryQualified:false}}),
     fixed=rows.filter(r=>!r.removable),
   commonTee=q.outletStemMm.at(-1)!,teePairs=new Set(['plant/outlet-stem|plant/store-fixed','plant/outlet-stem|plant/tree-fixed','plant/store-fixed|plant/tree-fixed']),
