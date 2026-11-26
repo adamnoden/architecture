@@ -66,7 +66,7 @@ test('actual frame and retained hot path falsify full-tree stress motions; no di
  assert.equal(r.strip.capsOnlyAfterCompletedLevelLowering,true)
  assert.equal(r.strip.washerStopAndHoseRetainedOnIndependentRest,true)
  assert.deepEqual(r.strip.offsetsMm.at(-1),[-400,2110,-210])
- const added=structuredClone(context);added.obstacles.push({id:'explicit-contradicting-current-obstacle',boxMm:[10840,560,900,100,100,100],presence:'always'})
+ const added=structuredClone(context);added.obstacles=[...added.obstacles,{id:'explicit-contradicting-current-obstacle',boxMm:[10840,560,900,100,100,100],presence:'always'}]
  assert.ok(run(choice,added).geometry.failures.some(q=>q.phase==='normal'&&q.id.includes('explicit-contradicting-current-obstacle')))
  assert.notEqual(run(choice,added).source.caseDigest,r.source.caseDigest)
 })
