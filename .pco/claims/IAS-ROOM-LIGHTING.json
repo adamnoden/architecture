@@ -9,8 +9,8 @@
     "label": "zerg-lighting-local-riser-20261126"
   },
   "claimedAt": "2026-11-26T07:53:16.080Z",
-  "heartbeatAt": "2026-11-26T14:51:35.000Z",
-  "expiresAt": "2026-11-26T15:36:35.000Z",
+  "heartbeatAt": "2026-11-26T15:27:49.000Z",
+  "expiresAt": "2026-11-26T16:12:49.000Z",
   "branch": "work/zerg-loaded-joint-room-20261126",
   "predecessor": {
     "leaseId": "7b0b11da-6256-483d-97ac-91f3a97c38cb",
@@ -35,9 +35,9 @@
     }
   },
   "checkpoint": {
-    "evidence": "1629b198 integrated exact63cd circuit+136min10 receipts; full96/bothADE/publication green. Current actualdaySVG rendered/reviewed45842086452 artifact15128232530. Owning29+7/types/audit0 PASS45833413952.",
-    "next": "Finish b198 fullhealth/freshpreflight/merge. Next sacrificeconsumedMIrenewal, actualsoffitsupport and conventionaldetachablefitting; avoidnative58churn.",
-    "blocker": "No completeelectrical/material/physical/ownerappearanceacceptance. IASfollowonawaitscriticalpathresources; verifiedsourcefrozen."
+    "evidence": "1629b198 closed circuit/136min10 source verified; native96/ADE/PDF green, witness recovery active. Superior Type80W1 short-flex follow-on c3b58ba9 proof45848224211 running; full260 reach/plug parking modelled.",
+    "next": "Finish current integration health/preflight/merge. Verify Type80 complete short-flex/plug/renewal and136 witnesses; retain rejection of long stock lead.",
+    "blocker": "No new product/material/physical/owner acceptance. Native58 frozen; exact soffit support remains to be joined without duplicate geometry."
   },
   "pr": 1629
 }
