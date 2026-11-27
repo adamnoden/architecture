@@ -12,7 +12,7 @@ The same source choice sets the7700 kg/m³ minimum steel density condition and39
 
 ## Current evidence
 
-Exact pre-selection checkpoint aa1ae0e440e96b1b3b3021b32b2cfb8c93f191fe passed TypeScript and156/156 focused controls in run 45925069310. Its two-end whole-source case reports:
+Exact source and generated-drawing checkpoint `0256cfe95368b78e7d0166fdebe619ab62125b30` passed TypeScript and160/160 focused controls in [run45928174568](https://github.com/adamnoden/architecture/actions/runs/45928174568), job140274359950. This includes all four actual matched leaf/deck controls, the strict generated SVG equality, actual C5 whole-room joins, meaningful input perturbations and frozen adverse controls. The current whole-source case reports:
 
 | Comparison | Computed result |
 |---|---:|
@@ -25,7 +25,7 @@ Exact pre-selection checkpoint aa1ae0e440e96b1b3b3021b32b2cfb8c93f191fe passed T
 | Whole communicating pressure/store release design bound |640.356 L |
 | Static reserve above source-fed initial pool |57.297 L |
 
-These results are comparisons under their stated source/design conditions. They do not establish complete pressure/air transients, weather closure, local peak contact or installed support capacity. C5 source checkpoint c7487856a052c457528372473934b882087d714f passed TypeScript and158/160 controls in run45927069235. All four matched leaf/deck controls passed. The two remaining failures were the stale saved SVG and the historical parked-leaf150 mm assertion; the compiler now gives164 mm from the actual14 mm bottom gap. This follow-up saves the exact generated SVG and derives the parked-leaf expectation from the fitted frame. Its strict exact-head replay remains required; neither earlier run is silently transferred.
+These results are comparisons under their stated source/design conditions. They do not establish complete pressure/air transients, weather closure, local peak contact or installed support capacity. The exact generated plan/section is `plant-tanked-walk-development.svg`, case digest `e42dfb20a0cf9c94431ac2af5b3a3a9bbd73455e9d60c8c995c2418d3e4d2b63`. The old parked-leaf150 mm assertion was replaced by the actual fitted-body datum164 mm. [Artifact15167422656](https://github.com/adamnoden/architecture/actions/runs/45928174568/artifacts/15167422656) retains the full logs/source identities and JSON/SVG outputs for90days; archive SHA256 `0171ff0acaef6e20a2c9570c55e4710cb452a1be13cabf7e920c1a6393294e3a`. This proof is focused pure geometry/source computation. It does not cover current full-house/native force, publication or installed physical performance.
 
 The signed wheel ledger includes the real first-panel overhang and opposite-seat uplift while retaining ONE source wheel. Source-defined minimum plank gravity is credited only in normal installed cases. The severe no-plank comparison remains visible; stripped girder renewal gets no such gravity credit. Locate-only pins are not panel hold-downs.
 
@@ -47,3 +47,10 @@ The plan/section is generated from the same computed case. It includes the solid
 - Reconcile current compiler/CLI/editor/publication source bindings and regenerate genuine native ground/contact/profile evidence. Source0 structural height and HAD530 remain unjoined; neither old receipts nor geometry-only controls establish force approval.
 
 The parallel Utility C-bench has passed normal wet/source geometry,20 expanded notched-RC probes and48 conditional signed receiver cases. Its206 sampled first-release findings remain unresolved; full capture, tools, parking, extraction and combined receiver cases are not accepted. The old seven-brace choreography is superseded only when the complete replacement earns its own evidence.
+
+
+## Recovery and next installation boundary
+
+The coordinating root/STR/room agents hit their account usage limit. The local executor remains unavailable to this connector-only continuation. The owner-authorised named hosted workflow is read-only and deliberately limited to these focused source/geometry tests; it is not a general runner or a substitute for the current whole-house/native/profile/account replay. PR #1630 retains its independent `engineering.html` development-import hold. This packet neither merges that PR nor changes main, canonical node state or historical receipts.
+
+The next Utility comparison is two ordinary welded side portal modules, each retaining the850 mm head bearing and using a matching40×40×3 mm top beam/front leg. The read-only upper captured-mass comparison is23 kg per side, with the70 mm candidate floor plate and weld/clamp budgets included; mechanical handling remains required. It is NOT selected geometry or capacity evidence. The present removable M20 atY1290 would be hidden by the welded leg, so the complete alternative must first design an accessible front-facing removable receiver joint, its real separation/lift path, tools, temporary stability and actual extraction through the occupied door. The +2.5 mm bowl comparison after20 mm settings is a necessary fit screen only. Do not waive the206 current C-bench phase findings or treat this read-only comparison as their correction.
