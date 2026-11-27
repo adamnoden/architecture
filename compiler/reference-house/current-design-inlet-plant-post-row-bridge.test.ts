@@ -11,7 +11,7 @@ const near=(a:number,b:number,t=1e-5)=>assert.ok(Math.abs(a-b)<t,a+' != '+b)
 // The selected geometry is owned by the same input as the whole-room producer.
 // Only the immutable comparison pan below remains an explicit unit fixture.
 const control={...raw.appliancePlatform,loadedPadBlankUpperMm:raw.panCompression.footBlank.maximumMeasuredThicknessMm}
-const bridge={...raw.bridge,topology:'outer-grid-post-row' as const,thicknessMm:40,pieceCount:15,postRow:{innerGirderXMm:11490,outerGirderXMm:12080,plankInnerXMm:11440,plankOuterXMm:12130,sharedPostColumnIndex:6,sharedPostYMm:[4080,4363.5,4647,4930.5,5214],innerGirderEndYMm:[4080,5214]as const,innerSeatPackerMm:30,girderSectionWHtMm:[100,100,8]as const,maximumGirderWallMm:8.5,capThicknessMm:35,capWidthYMm:80,railCorbelLXtMm:[50,30]as const,matchedSeatErrorMm:3,grateToBridgeGapMm:6,perimeterGapMm:35,postSectionWHtMm:[60,60,5]as const,sharedPostDesignCeilingN:9000,maximumMechanicallyCapturedGirderKg:60}}
+const bridge={...raw.bridge,plankThicknessRangeMm:undefined,topology:'outer-grid-post-row' as const,thicknessMm:40,pieceCount:15,postRow:{innerGirderXMm:11490,outerGirderXMm:12080,plankInnerXMm:11440,plankOuterXMm:12130,sharedPostColumnIndex:6,sharedPostYMm:[4080,4363.5,4647,4930.5,5214],innerGirderEndYMm:[4080,5214]as const,innerSeatPackerMm:30,girderSectionWHtMm:[100,100,8]as const,maximumGirderWallMm:8.5,capThicknessMm:35,capWidthYMm:80,railCorbelLXtMm:[50,30]as const,matchedSeatErrorMm:3,grateToBridgeGapMm:6,perimeterGapMm:35,postSectionWHtMm:[60,60,5]as const,sharedPostDesignCeilingN:9000,maximumMechanicallyCapturedGirderKg:60}}
 const choice={...raw,bridge,appliancePlatform:control} as PlantWalkControl
 const source=(objectPath:string)=>({path:'project/had/studies/current-house-services.json',gitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',objectPath})
 const C=services.cylinder,B=services.primaryBuffer,axis=C.centre as [number,number],dryCG=raw.appliancePlatform.storeFactoryDryCGHalfExtentsMm as [number,number],ba=[B.body[0]+B.body[2]/2,B.body[1]+B.body[3]/2]as const,
@@ -101,8 +101,10 @@ test('actual eastern perimeter-rim regression witness is removed as real stock, 
  console.log('PLANT_BRIDGE_RIM_REGRESSION '+JSON.stringify({formerRimId:'Plant/grate/5/1/cut-edge-rim/9/3',formerRimBoxMm:formerRim,plankId:'Plant/bridge-piece/0',plankBoxMm:plank,formerIntersectionMm3:intersection,actualRimId:actual.id,actualRimBoxMm:actual.boxMm,actualIntersection:false}))
 })
 
-const clearEndBridge={...bridge,plankThicknessRangeMm:[39,41]as const,postRow:{...bridge.postRow,supportMode:'two-end-continuous' as const,innerGirderKind:'solid' as const,innerGirderHeightMm:80,directBarAssemblyClearanceMm:2,sharedPostYMm:[3900,5300],innerGirderWallMm:12,maximumInnerGirderWallMm:12.5,corbelWeldLegMm:4,maximumMechanicallyCapturedGirderKg:125,renewal:{northTranslationMm:105,firstLiftMm:140,turnCentreAboveWalkingMm:820}}}
-const clearEndChoice={...choice,material:{...choice.material,minimumDensityKgM3:7700},bridge:clearEndBridge}
+// The selected current system reads the one controlling source object directly.
+// The preceding explicit five-post literal is a scoped historical control.
+const clearEndBridge=raw.bridge
+const clearEndChoice={...raw,appliancePlatform:control} as PlantWalkControl
 const twoEndRun=()=>run({...input,choice:clearEndChoice})
 const emitTwoEnd=(label:string,r:ReturnType<typeof plantTankedWalkingSurface>)=>{
  const b=r.postRowBridge!,summary={sourceDigest:r.sourceDigest,bridge:b,collector:r.bridgeIntegration!.actualCollector,geometry:r.geometry,failedMemberChecks:r.memberChecks.filter(q=>!q.necessary),normalMassUpperKg:r.normalMassUpperKg,solidsIncrementUpperL:r.solidsIncrementUpperL,physicalAcceptance:false}
@@ -111,6 +113,10 @@ const emitTwoEnd=(label:string,r:ReturnType<typeof plantTankedWalkingSurface>)=>
  return summary
 }
 test('two real end posts and one captured girder replace all six obstructing outer supports and collect actual stock G once',()=>{
+ assert.ok(raw.revision>=5,'The source migration must be integrated with its current controller')
+ assert.equal(clearEndBridge.postRow.supportMode,'two-end-continuous')
+ assert.equal(clearEndBridge.postRow.innerGirderKind,'solid')
+ assert.equal(Object.hasOwn(clearEndBridge.postRow,'innerGirderEndYMm'),false,'Physical ends derive from the same support and corbel users; legacy endpoints are not active controls')
  const r=twoEndRun(),b=r.postRowBridge!,summary=emitTwoEnd('PLANT_TWO_END_CLEAR450',r)
  assert.equal(b.supportMode,'two-end-continuous')
  assert.deepEqual(b.actualEndPostYMm,[3900,5300])
@@ -181,7 +187,6 @@ test('two-end evidence is invalidated by real stock, pan settings, captured rene
  assert.ok(noSlide.postRowBridge!.innerGirderRenewal!.obstacleChecks.some(q=>q.obstacle.includes('/shared-cap/')&&q.reserveAfterSettingsAndSamplingMm<0))
  assert.notEqual(shifted.sourceDigest,ordinary.sourceDigest)
  assert.notEqual(overweight.sourceDigest,ordinary.sourceDigest)
- assert.equal(b.stock.innerGirderMinimumWallMm,12);assert.equal(b.stock.innerGirderMaximumWallForGUpperMm,12.5)
  const rhs=run({...input,choice:{...clearEndChoice,bridge:{...clearEndBridge,postRow:{...clearEndBridge.postRow,innerGirderKind:undefined,innerGirderHeightMm:undefined,innerGirderWallMm:12,maximumInnerGirderWallMm:12.5}}}})
  console.info('PLANT_TWO_END_MINIMUM_WALL_CONTROL '+JSON.stringify({rhs12:rhs.postRowBridge!.memberChecks,solid100x80:b.memberChecks,sourceDigests:[rhs.sourceDigest,ordinary.sourceDigest]}))
  assert.ok(!rhs.postRowBridge!.memberChecks.find(q=>q.id.endsWith('/rhs-inner-narrow-grate-face-plus-global-CONDITIONAL-two-mean'))!.necessary)

@@ -2,12 +2,16 @@
 type Pair=readonly[number,number]
 export type PlantFittedFrameChoice={schema:'had-plant-fitted-frame/1';id:string;clearWidthMm:number;clearHeightMm:number;headerDepthMm:number;
  sourceOpeningDiameterMm:number;leafThicknessMm:number;leafMassBudgetKg:number;handleOffsetFromFreeEndMm:number;handleProjectionMm:number;handleHeightMm:number;
+ leafBottomGapMm?:number;leafHeadGapMm?:number;maximumInstalledLeafRelativeErrorMm?:number;
  operatorEndOffsetMm:number;operatorBulgeMm:number;operatorNormalStartMm:number;operatorNormalEndMm:number;operatorShoulderHeightMm:number;
  externalWorkDeckPlanMm:readonly[number,number,number,number];deckGuardIntrusionMm:number}
 export function admitPlantFittedFrameChoice(value:unknown):PlantFittedFrameChoice{
- const keys=['schema','id','clearWidthMm','clearHeightMm','headerDepthMm','sourceOpeningDiameterMm','leafThicknessMm','leafMassBudgetKg','handleOffsetFromFreeEndMm','handleProjectionMm','handleHeightMm','operatorEndOffsetMm','operatorBulgeMm','operatorNormalStartMm','operatorNormalEndMm','operatorShoulderHeightMm','externalWorkDeckPlanMm','deckGuardIntrusionMm'].sort()
+ const optional=['leafBottomGapMm','leafHeadGapMm','maximumInstalledLeafRelativeErrorMm'],present=optional.filter(k=>Object.hasOwn(value??{},k))
+ if(present.length!==0&&present.length!==optional.length)throw Error('Complete paired Plant leaf gaps and installed relative fitting error required')
+ const keys=['schema','id','clearWidthMm','clearHeightMm','headerDepthMm','sourceOpeningDiameterMm','leafThicknessMm','leafMassBudgetKg','handleOffsetFromFreeEndMm','handleProjectionMm','handleHeightMm','operatorEndOffsetMm','operatorBulgeMm','operatorNormalStartMm','operatorNormalEndMm','operatorShoulderHeightMm','externalWorkDeckPlanMm','deckGuardIntrusionMm',...present].sort()
  if(!value||typeof value!=='object'||Array.isArray(value)||Object.getPrototypeOf(value)!==Object.prototype||Object.keys(value).sort().join(',')!==keys.join(','))throw Error('Unsupported complete fitted Plant frame choice')
  const c=value as PlantFittedFrameChoice
+ if(present.length&&(![c.leafBottomGapMm,c.leafHeadGapMm,c.maximumInstalledLeafRelativeErrorMm].every(v=>typeof v==='number'&&Number.isFinite(v))||c.leafBottomGapMm!<0||c.leafHeadGapMm!<0||c.maximumInstalledLeafRelativeErrorMm!<0||c.maximumInstalledLeafRelativeErrorMm!>10||c.leafBottomGapMm!+c.leafHeadGapMm!>=c.clearHeightMm))throw Error('Unsupported paired Plant leaf gaps or relative fitting bound')
  if(c.schema!=='had-plant-fitted-frame/1'||typeof c.id!=='string'||!c.id||!Array.isArray(c.externalWorkDeckPlanMm)||c.externalWorkDeckPlanMm.length!==4||![...c.externalWorkDeckPlanMm].every(Number.isFinite)||c.externalWorkDeckPlanMm.slice(2).some(v=>v<=0)
   ||Object.entries(c).some(([k,v])=>!['schema','id','externalWorkDeckPlanMm'].includes(k)&&!Number.isFinite(v))
   ||c.clearWidthMm<900||c.clearWidthMm>1500||c.clearHeightMm<2000||c.clearHeightMm>2600||c.headerDepthMm<=0||c.sourceOpeningDiameterMm<=0||c.leafThicknessMm<20||c.leafThicknessMm>100||c.leafMassBudgetKg<=0

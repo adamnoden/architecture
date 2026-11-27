@@ -1,118 +1,49 @@
-# Plant tanked walking floor — current internal development
+# Plant tanked floor: selected development system
 
-This is source-bound engineering development, not a selected installed house, a physical trial, a pressure/material approval or owner aesthetic acceptance. Current authoritative main and historical numeric receipts have not been changed by this branch.
+The controlling input is `inlet-plant-tanked-walk-candidate.json`, revision 5. This is an internal development selection. Installation, professional approval, physical validation and owner aesthetic acceptance remain unearned. Main, PR #1630 and historical numerical receipts have not been changed by this source packet.
 
-## Current checkpoint — coherent development, incomplete installation
+## The decision
 
-The source-coupled post-row case at5a3c586e60d00e24e73eaa23863872cdb4b4b01c passes TypeScript and129 of131 focused controls (run45914831284/job140231436563). Its two failures are explicit: the committed drawing is stale, and the Utility rear diagonal crosses the cold sink feed during its former long westward motion. This checkpoint regenerates the SVG directly from that exact computed case and joins the next bounded Utility eleven-component arrangement; the changed head still requires fresh hosted proof. No test pass is presented as whole-installation acceptance.
+Retain the two450×135 mm outfalls and their actual source pressure/aperture controls. Remove all six outer-column supports in the inlet band, including the old3907 row. Two real end posts atY3900/5300 support one solid100×80 mm inner member, with six welded corbels carrying the existing walking rails. The girder's physical south end3867 follows the actual corbel; it is not a second editable endpoint. The northern grid supports remain.
 
-The active floor controller revision4 replaces the three conflicting X bridge rails/two inner supports with fifteen690mm-long40mm planks, two full-seat longitudinal girders and five existing shared posts. Seven actual bridge support posts are60×60×5; the real35mm perimeter and6mm bridge gaps clip the actual grate and rim stock. The old14976mm³ rim/plank clash remains an adverse regression; it is resolved by physically splitting stock, not by ignoring an overlap. The old three-rail geometry and quarter-turn appear only as explicitly inapplicable counterfactuals. Historical36mm/13-piece controls retain their exact source fixtures.
+This removes the post/foot obstruction rather than assigning it an invented hydraulic loss. The old five-post arrangement remains a frozen adverse/control fixture. Widening alone was rejected: a600 mm northern inlet admits adjacent posts and cannot be represented by the shortcut300−60 mm. The12 mm hollow inner member also fails the actual narrow-bar face comparison; the solid member removes that local hollow-face and sealed-end assumption.
 
-The same one appliance-platform controller supplies the real factory/chassis mounts, relocated grid column, grating cut bars, source CG/mass/temperature requirements, foot stock and generated plan/section. Every actual foot shares nominal60/minimum59/maximum61mm stock and the28kg factory-blank design ceiling; the former150mm/9kg shortcut is retired. Factory handling and machining remain unprocured requirements.
+The same source choice sets the7700 kg/m³ minimum steel density condition and39..41 mm measured plank stock around nominal40. The fixed640 mm seat gives finished plank tops679..681 mm. Nominal walking level remains680 and the bulk-water screen660; minimum finished plank freeboard is therefore19 mm. Ordinary member stiffness uses minimum stock; maximum gravity, wet displacement and capture use maximum stock. Actual delivered material/dimensions are not accepted.
 
-The whole-room ledger now debits the controls and riser territories as conservative full opaque boxes at their actual fixed house datum, counting their incremental union once. This adds75.4L above the448.396534mm source pool; no walking-overlap capacity credit is claimed. Actual walking/sealed-envelope solids are139.731321L, net room increment697.120263L and complete pressure-network release640.355565L. Reserve is56.764698L and conservative bulk level646.833011mm below660mm. The12.986269s zero-outflow source grace is not an air, hot-jet, wave or continuing-source transient pass.
+## Current evidence
 
-Actual steel lies in the open inlet approaches: three posts and five clipped foot regions are nominally wet. The authored entry-loss coefficient has not yet been joined to those bodies. The compiler now reports every part/lane overlap and explicitly withholds complete source-pool applicability. The static result remains conditional on the stated source-profile model; it is not a finished unattended catastrophe installation.
+Exact pre-selection checkpoint aa1ae0e440e96b1b3b3021b32b2cfb8c93f191fe passed TypeScript and156/156 focused controls in run 45925069310. Its two-end whole-source case reports:
 
-Signed footing moment demands are retained in the current bridge result. Positive vertical reactions and a conditional mean pressure below the F comparison do not prove95% contact, local peak pressure, no anchorage requirement or global frame stability. Fresh same-source contact/frame/house-profile evidence remains necessary; no old native pin transfers.
-
-## Preferred next floor comparison — not yet the controlling C
-
-The optional RC-over-uniform-F producer moves the load-distributing200mm slab above180mm F, with90mm mineral bearing only on the actual cold-grid contacts and an engineered graded mineral bed below the same pan. There is no assumed full-area soil support: actual contact union is1.70632475m² and unsupported centre2.6048125m². It replaces concentrated steel-to-F interfaces with a spanning slab and load-bearing F contact strips. It is not a lighter solution: the first flat comparison adds roughly152kg before actual retention.
-
-The source now represents20 balanced F tiles and40 real recessed M6/collar/sleeve/button assemblies, with actual stock, voids, contact deductions and a bounded thermal calculation. The20kg value is a kit ceiling after counting actual steel, not a fictional installed mass. Cast/cure the RC on its own steel mould, then attach F from below on factory trestles before initial crane installation. F never supports wet concrete. The roughly2.35t panel is initial structural construction, not the500kg service renewal route. Buried F renewal is structural intervention.
-
-This layer order remains an optional proposal with owning test controls, pending hosted verification until its full C adapter, actual support/cage/contact, thermal edge continuity, lifting and assembly consequences replay. The27mm RC-to-core allowance does not itself accept a40mm vertical F edge. The old F-under-foot method explicitly rejects the new arrangement instead of silently lending it an old pressure receipt.
-
-## Utility ordinary renewal
-
-The four front top-driven bolts now have real flat-ended socket, two-hand ratchet, retained-column and R300 body checks. The standing top-tool pose passes in the exact131-control source case, while the lower pressure-union pose remains distinct. Net-hole ribs, one-side reactions, bolt-group tension and the36kg captured head ceiling are computed; rear locating dowels receive no uplift credit. Material, thread, weld, receiver and physical capture approvals remain false.
-
-The preferred next frame uses eleven independently captured components, including ordinary welded beam/rear-leg L modules and sixteen new interfaces. It replaces whole portal movement and inaccessible rear beam bolts. Actual crew retreat, clamps, parked steel, source pipes and narrow separating gravity mates enter the main failure list. Fresh proof must decide those paths; merely renaming a component does not earn renewal.
-
-Historical checkpoints below retain their scope. Main, canonical workstream state, numeric receipts, professional approval, physical validation and owner aesthetic acceptance are unchanged.
-
-## Intended complete arrangement
-
-Use an open metal walking surface150mm above the saved house530mm floor, making the Plant walking/threshold level680mm. Replace the former continuous515–530mm Plant finish; do not retain its505mm underside as a fictitious protected boundary. Keep a real660mm bulk-water comparison20mm below the new walking surface. The actual fitted opening is1000mm effective clear inside a1300mm outer frame, with150mm technical cassettes and50mm side-site margins within the retained1400mm masonry arch. Retain the actual2300mm clear cargo head: the source buffer handling profile2265mm leaves15mm after two independent10mm settings.
-
-The superseded950mm bridge comparison used side/centre rails atY4155/4600/5045; the revision4 post-row bridge above is the active development geometry. Two450×135mm clear,4mm metal outfalls on Y4260/4940 replace the tight600mm alternative. Bridge rails run above the outfalls rather than through their flow lanes. The source pan, outfall profiles, steel bars, posts, caps, bridge pieces, apparatus footprints and volume ledger are all computed by `inletPlantTankedRoom` and `plantTankedWalkingSurface` from the saved design controls.
-
-The100mm floor/600mm outfall alternative remains an explicit rejected comparison. Its regulator is actually coordinated at1260mm, preserving both real stem stubs; normal geometry passes. It leaves only16.043L (3.67s of zero-outflow source reserve). The earlier ff02 150mm arrangement leaves170.309L (38.96s); subsequent foot/bed/chassis changes must regenerate this figure. The retained150mm-foot checkpoint returns159.267L but fails its complete physical foot-fit controls.
-
-## Earlier hosted control evidence
-
-Commitff02dfff1003c4c95f9f43fb2c386bb899a4088e passed repository TypeScript and all89 focused Node24 controls in run45886314380, job140137778735. Artifact15149377273 is retained90days; zip SHA256 1e29976e793e27b2d703f38f6bcf18b85df371b0cc19f9f52ad11d93764d13bf. This is pure source/geometry/hydraulic/member evidence, not a native floor/contact calculation. Test success does not override explicit rejected geometry or false physical-qualification fields.
-
-The actual901-pose raised-floor door/body/arm comparison has no geometric diagnostics: minimum arm/leaf5.040mm, body/leaf9.083mm and leaf/pipe13.821mm, all after the existing setting and continuous-motion covers. The complete1300mm rectangular frame has10.392mm horizontal/7.286mm radial corner reserves inside the actual source masonry curve after20mm coordinate settings. The old−20mm below-spring screen is only sufficient and does not reject this curved-arch fit. Actual reveal/thermal/fire/weather/hardware and native house-profile acceptance remain unearned.
-
-Each13.075kg bridge piece lifts from the actual680mm threshold, goes east through the real1000mm opening, turns at[13430,4600] on the actual exterior deck, returns already narrow and lowers to the interior rest. All13 pieces have positive declared frame/fixed-object/pipe reserves; minima4.444mm/108mm/51.753mm. The former interior quarter-turn is an explicit same-current-source collision control. Actual capture equipment, tool/crew tasks, support resistance and reinstatement are not qualified by these box sweeps.
-
-| Quantity | Earlier ff02 comparison bound; not the current150-foot case |
+| Comparison | Computed result |
 |---|---:|
-| Active nominal/minimum/maximum Plant aperture |11.0 /10.9 /11.1mm |
-| Maximum source discharge at10.1bar absolute and990kg/m³ |262.268L/min |
-| Source-fed initial pool |448.4mm |
-| Full vessel, expansion, bounded communicating pressure network, actual feed/regulator, risers and hot draw route |640.356L |
-| Regulator full outer volume minus replaced tube, included above |6.245L |
-| Incremental actual steel/sealed-envelope displacement upper |101.587L |
-| Net available room increment |810.665L |
-| Static reserve |170.309L |
-| Walking/stand full-solid mass upper, excluding filled apparatus |1398.65192kg |
-| Domestic vessel normal filled mass ceiling |580kg |
-| Primary buffer conservative normal mass ceiling |571.80708kg |
-| Normal hot/return/riser/draw-route external inventory upper |142.68675L |
-| Authored normal heated external ceiling |150L |
+| Actual inlet approach solids | none in either450 mm approach |
+| Surviving clear half projection |225 mm in both inlets |
+| One end compression upper |8960.166 N |
+| Normal minimum end reaction |611.272 N |
+| Captured welded assembly upper |98.555 kg |
+| Authored mechanical capture ceiling |125 kg |
+| Whole communicating pressure/store release design bound |640.356 L |
+| Static reserve above source-fed initial pool |57.297 L |
 
-Full bare OUTER tubes and complete fitting/device envelopes are deliberately counted as water. Minimum bores,300L nominal useful capacity and the old170L challenge are not maximum inventory. The330L domestic body/ports ceiling comes from the actual650mm inner diameter,850mm straight height,100mm domes and explicit port budget. The separate20L expansion maximum is not the rejected historical25L vessel.
+These results are comparisons under their stated source/design conditions. They do not establish complete pressure/air transients, weather closure, local peak contact or installed support capacity. The revised raw C5, leaf join and regenerated drawing require their own exact-head replay; the pre-selection run is not silently transferred to them.
 
-Retain20L total expansion capacity; author2bar normal regulation and3bar absolute precharge. The same existing ideal separated-gas/density model then gives5.78738bar maximum normal gauge at the150L external ceiling. That requires the actual common regulator to control BOTH the Plant cold tree and the store, before their split. The same normal-assembly result now owns the actual upstream160×160×250mm all-metal regulator requirement,20kg captured mass ceiling, direct collinear store drop, normal pressure loss and real pipe inventory. At the authored Kv12 minimum requirement its minimum10.9mm source gives0.02288bar authority reserve after the0.1bar control allowance at45L/min. Its two external paired-spanner environment cases pass; actual factory hex lands, complete tool shape, pressure/material performance, support/thermal reactions and physical renewal remain unqualified. A regulator on the store alone does not earn that normal state against cold/hot crossflow.
+The signed wheel ledger includes the real first-panel overhang and opposite-seat uplift while retaining ONE source wheel. Source-defined minimum plank gravity is credited only in normal installed cases. The severe no-plank comparison remains visible; stripped girder renewal gets no such gravity credit. Locate-only pins are not panel hold-downs.
 
-The primary buffer normal mass uses the actual545mm×1975mm outer cylinder as a conservative fluid upper, authored maximum density1100kg/m³, source45kg dry mass and20kg retained ancillary budget. The300L nominal or335kg catalogue filled comparator is not used as a maximum. This remains a separate hydraulic event from potable rupture; the complete primary loop/release is not silently included in the potable result.
+## Ordinary coordination
 
-## Real joins still required
+The captured member leaves through the real opened six-panel/six-rail strip, with105 mm north slide and140 mm initial lift, low-pan tip, upright extraction and a reverse turn at the actual external deck centre. Real caps remain obstacles after their exact initial separating faces. Pan, remaining solid stock, inlet pipes, radiator, actual parked leaf, source doorway and external-rest boundaries are checked. Actual capture hardware, anti-roll guides, release tools, temporary remaining-frame stability and external deck/lift support still need concrete installation proof.
 
-- Instantaneous no-discharge static capacity is a necessary closed-pressure-network volume screen. Continuing mains, air evacuation, compressed gas, hot jets/waves, actual failure temperatures and pressure seams remain separate. The roof air screen is not a floor protection level. Zero closed-duct storage or discharge-during-release credit is taken.
-- Actual endpoint air gaps and hose/submerged-reservoir backfeed need source geometry. Potential U/common-service backfeed must pass a real effective Plant source restriction before it can be treated as rate-capped source background. No unlocated restriction or check is silently credited.
-- Current free outfalls have no earned thermal/weather/nonreturn seal. A conventional trap or other passive assembly requires a complete new geometry/pressure/air/cleaning calculation; no guessed trap is adopted.
-- The earlier120mm independent-stand control cleared the walking frame; enlarging the feet exposes real stand-foot clashes. It is superseded for further development by the unified node-mounted platform. Actual equipment-island cut-bar seats, chassis joints and hidden-panel removal remain required. Perimeter feet originally touched the pan edge nominally, so actual independent setting/thermal clearance must also be authored and checked. Fifteen hidden panels require the relevant isolated, cooled, drained and captured apparatus removed before their first12mm lift. The rectangular grid is not proof that all42 panels renew under live apparatus.
-- Fixed piers, CU, service spine, opposite covers and the upper house interfaces keep their house datum. Only actual Plant apparatus move. Vessel ports are recomputed at the680mm Plant floor, with the actual house hot join held at2945+530mm. The normal cold feed, retained store port and direct drop now share that floor. Full T&P/D2, drain, stand, thermal and renewal joins remain to be rebuilt.
-- Exterior grade is−150mm. The680mm deck is830mm above it. The1800mm ramp figure relates only to the150mm increment from the old house-level deck; it is NOT ground access. A real platform lift/dock/guard and site support must be designed and rated, or a complete9900+mm ground ramp placed against actual site obstacles.
-- New normal/fault loads require fresh same-input ground/contact and house-profile evidence. Source-ground0 and house530 frames are still not joined by subtracting530 from a3170mm source soffit. No existing force pin or native approval transfers.
+The measured681 mm deck exposed a real overlap with the former680 mm leaf bottom. Revision5 therefore uses a14 mm bottom gap,5 mm head gap and a3 mm maximum final relative fitting error referenced to the completed deck. The actual2300 mm frame opening and100 mm header remain. The leaf body is694..2975 mm, with minimum deck/head gaps10/2 mm. All unrelated pipe/body/object sweeps retain their20 mm independent setting allowance. There is no invented seal, weather, air, fire or hinge acceptance.
 
-## Executable ownership
+The plan/section is generated from the same computed case. It includes the solid member, two end posts, actual grate stock, retained controls/riser territories and measured plank range. Its strict owning comparison must reproduce the saved SVG.
 
-Controlling inputs: the complete normal/fault source settings in `inlet-plant-tanked-supply-candidate.json`, the normal assembly and floor choice in `inlet-plant-tanked-walk-candidate.json`, `inlet-store-vessel-candidate.json`, actual `current-house-services.json` and `whole-house-service-baseline.json`. The same compiler function generates `plant-tanked-walk-development.svg`; the owning test rejects a stale committed drawing. Floor, source-aperture, source-body, inventory and outfall perturbations are tested and invalidate dependent case identities.
+## Remaining critical work
 
-Current branch integration remains required in the versioned inlet reader/CLI/browser/case bindings, ordinary source producers and publication, followed by fresh native force evidence. No canonical HAD gate or current main acceptance is closed by these leaf comparisons.
+- Finish actual panel retainers, foot N+M/contact and whole-frame stability. A mean-pressure screen is insufficient.
+- Finish the actual pressure/air and continuing-source event, thermal/weather/nonreturn assembly and real outfall receivers. Clear approaches remove an obstruction; they do not qualify the whole hydraulic installation.
+- Complete actual primary/secondary hydraulic racks, expansion, isolated filling, controls/electrical separation, ports and renewal. The650×300 controls territory is not an assembled equipment manifest.
+- Distinguish the300 L nominal/330 L maximum DHW store from the separate primary buffer. The640.356 L pressure-network event is explicitly potable; it is not an upper bound on a heating/HX-breach event.
+- Design the charged-temperature/control boundary from actual direct-store heater/sensor geometry. Normal60 C is not a universal fault limit; maximumFaultTemperature remains null.
+- Reconcile current compiler/CLI/editor/publication source bindings and regenerate genuine native ground/contact/profile evidence. Source0 structural height and HAD530 remain unjoined; neither old receipts nor geometry-only controls establish force approval.
 
-
-### Whole-room optional floor adapter checkpoint
-
-The same optional `panCompression.stack` object now passes from the whole-room controlling case into the actual pocket producer. The distinct RC-over-F result supplies the steel-foot machining stock check and graded-mineral section; it cannot borrow the old point-F pressure result. A focused whole-room perturbation checks floor quantities, bedding mass, source identity, matched steel and the generated section. This adapter and the two observed floor regression fixes await their first hosted verification. The selected revision4 JSON still contains no RC-over-F choice. RC span/cage, net F/contact distribution, edge thermal continuity, lifting and the source0/HAD530 house profile remain unearned. Current numerical receipts and force pins are unchanged.
-
-
-The first whole-room adapter run0362 passed139/141 geometry tests; the two remaining failures were the newly authored unsupported180mm-RC perturbation and the previously observed Utility rotation step. It also identified a TypeScript union-narrowing omission in the adapter. The next bounded patch keeps the original200–300mm RC domain, uses a210mm perturbation, corrects that type guard, and applies the same actual independent-stand steel/thermal observers to both support producers. No current floor selection or physical acceptance changes follow from these test fixes.
-
-
-The c887 hosted runtime run passed140/141 controls, including the complete optional floor and the common independent-stand thermal observers. Its only runtime failure remained the Utility rotation chord limit. Typechecking separately exposed a three-way conditional object-spread inference defect; keeping the two optional result fields in independent spreads fixes the intended schema without casts. The next actual inlet geometry observer evaluates each footprint against every clipped local pan facet plus32mm deposited bed and reports the union of all exposed solid projections in each named half. It also reports the worse arbitrary-half-width projection. Those are necessary geometric controls, not a new pier-loss coefficient, a hydraulic capacity or a change to the inherited blockage requirement. The600mm widening-alone proposal is rejected: lane2 admits adjacent post tips and leaves223.5mm in each named300mm half (147mm under arbitrary half-width placement), before tolerance. A two-end-post and longer simply supported girder arrangement is being assessed to remove the physical obstruction instead.
-
-
-At343675, the exact hosted pure proof passed TypeScript and144/144 tests. The actual local-bed audit found feet6/1,6/3 and6/5 protruding2.30/3.15/3.24mm above the modelled sediment respectively; nominally buried feet6/2 and6/4 have only4mm cover, before installation/sediment qualification. The first450mm inlet's named225mm halves have105/165mm common clear projection; the second has178.5/178.5mm. These are geometric bounds, not hydraulic effective widths.
-
-The preferred development direction removes those obstructions: one continuous inner girder and two real end posts atY3900/5300, retiring all six previous outer-column supports in that band while preserving all rail users. First actual checkpoint2243 passed TypeScript and145/147 tests; both failures concern real renewal-floor/radiator clearances. The first corbel's33mm end overhang and the first walking panel's signed overhang reactions were also identified and remain under correction. Current selected revision4 stays unchanged. No capacity, complete renewal or hydraulic acceptance is earned by the first candidate.
-
-
-The corrected two-end comparison uses the actual signed rail pair from one source wheel, including the first-panel overhang amplification and opposite-seat uplift. It records a real panel-retainer demand rather than treating locate-only pins as hold-downs. The whole-room material proposal adds an explicit7700kg/m³ steel minimum-density design condition for only known minimum restoring stock; no minimum mass is assigned to unknown cap/foot/plank stock. The new beam minimum/maximum wall is12/12.5mm, with physical south end3867 and end posts3900/5300; the low removal path uses140mm first lift,155mm north slide and820mm turn-centre rise above the walk. Real remaining solids, the opened panel strip, pan floor, door and external-rest boundaries remain checked. These source corrections await hosted verification; current revision4 and all installation acceptances are unchanged.
-
-
-Atd3f6, TypeScript passed and145/147 tests passed. The actual two-end source approaches were empty and the640.356L release retained55.075L static reserve. Actual member comparisons passed at8462.22N end upper demand and57.554kg captured stock, but the flat raise/turn crossed real inlet pipes, radiator reservation and parked leaf. The severe no-plank minimum reaction was only18.716N; it is retained as a countercase, not adopted as the normal margin.
-
-The next coordinated source comparison uses one solid100×80 inner member rather than hollow local-face/end-closure assumptions, source39..41mm plank stock and earned normal-only minimum plank gravity. It corrects direct-bar contact and the straddling mesh bar, actual rail-to-corbel dead-G attachment, all later cap obstacles, and the low-tip/upright/external-centre removal path. Actual stock, foot demands and the125kg mechanical-capture condition regenerate together. Current revision4 remains unchanged pending this hosted proof.
-
-The same bounded run now includes the separate Utility C-bench candidate: two front-released C-frames with real rear gravity bearings replace seven braces. Its source contains actual stock and20 expanded notched-RC probes, signed conditional unilateral rear-contact cases, and normal wet/head/source-path checks. Each C-frame derives19.573kg captured mass, requiring20kg rather than the old15kg ceiling. Full positive capture, tools, parks, extraction and combined receiver cases are still unfinished. The legacy35-clash renewal remains history; no new arrangement is yet selected or physically accepted.
-
-
-At18c927, TypeScript passed and151/155 tests passed. The solid system's actual member/source-obstacle/door/rest comparisons all passed:8960.166N maximum end demand,98.555kg captured girder,611.272N normal minimum end reaction, zero inlet obstruction and57.297L static release reserve. Its two failures came from a duplicated blanket680mm floor check on the already-checked deliberately opened pan strip; the narrow guard correction preserves every real pan/strip/remaining-solid check.
-
-The new C-bench's20 actual RC coverage probes and conditional signed load cases passed. Two observed U failures remain under bounded correction: four4/10mm gaps at the connected matched head/leg kit were charged an unrelated20mm setting allowance, and the adverse zero-offset RC test tried to create a zero-length corbel. The source now declares a0.5mm factory matching requirement only for those named normal interfaces, retains physical-interference and old20mm counterexamples, and omits the nonexistent coaxial corbel. The206 finite first-release findings remain visible and unresolved. Passing these tests cannot close ordinary C-frame renewal.
+The parallel Utility C-bench has passed normal wet/source geometry,20 expanded notched-RC probes and48 conditional signed receiver cases. Its206 sampled first-release findings remain unresolved; full capture, tools, parking, extraction and combined receiver cases are not accepted. The old seven-brace choreography is superseded only when the complete replacement earns its own evidence.

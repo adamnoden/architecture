@@ -226,9 +226,9 @@ export function drawInletSplitPlantRoom(r:ReturnType<typeof inletSplitPlantRoom>
 
 /** Exact rectangular leaf/pipe distance at every sampled pose, with continuous
  * Lipschitz coverage. This does not make a classified door or force/thermal pass. */
-export function comparePlantFittedDoor(i:SplitPlantRoomInput){
- const f=i.branch.fittedFrame,c=f.choice,rise=f.resolvedInput.floorRiseMm??0,s=2*i.choice.settingMm,L=f.leafSpanMm,t=c.leafThicknessMm,h=c.clearHeightMm,half=t/2,step=Math.PI/1800,
-  hinge=f.hingeMm,localLeaf=[0,-half,0,L,t,h] as const,
+export function comparePlantFittedDoor(i:SplitPlantRoomInput,finishedDeck?:{planMm:readonly[number,number,number,number];topAbsoluteRangeMm:readonly[number,number]}){
+ const f=i.branch.fittedFrame,c=f.choice,rise=f.resolvedInput.floorRiseMm??0,s=2*i.choice.settingMm,L=f.leafSpanMm,t=c.leafThicknessMm,leafBottom=f.leafBody?.bottomAboveWalkingMm??0,h=f.leafBody?.heightMm??c.clearHeightMm,half=t/2,step=Math.PI/1800,
+  hinge=f.hingeMm,localLeaf=[0,-half,leafBottom,L,t,h] as const,
   toWorld=(u:number,v:number,z:number,a:number):Point=>[hinge[0]+u*Math.sin(a)+v*Math.cos(a),hinge[1]-u*Math.cos(a)+v*Math.sin(a),z+rise],
   toLocal=(p:readonly number[],a:number):Point=>[(p[0]-hinge[0])*Math.sin(a)-(p[1]-hinge[1])*Math.cos(a),(p[0]-hinge[0])*Math.cos(a)+(p[1]-hinge[1])*Math.sin(a),p[2]-rise],
   pairGap=(a:readonly number[],b:readonly number[])=>{const d=[0,1,2].map(k=>Math.max(a[k]-b[k]-b[k+3],b[k]-a[k]-a[k+3]));return d.some(v=>v>0)?Math.hypot(...d.map(v=>Math.max(v,0))):Math.max(...d)},
@@ -245,7 +245,7 @@ export function comparePlantFittedDoor(i:SplitPlantRoomInput){
  for(let k=0;k<=900;k++){
   const a=k*step,deg=k/10,U=L+c.operatorEndOffsetMm+c.operatorBulgeMm*Math.sin(2*a),V=c.operatorNormalStartMm+(c.operatorNormalEndMm-c.operatorNormalStartMm)*k/900,
    shoulder=toWorld(U,V,c.operatorShoulderHeightMm,a),grip=toWorld(L-c.handleOffsetFromFreeEndMm,c.handleProjectionMm,c.handleHeightMm,a),axisA:Point=[shoulder[0],shoulder[1],rise],axisB:Point=[shoulder[0],shoulder[1],2000+rise],
-   leafCorners=[[0,-half],[0,half],[L,-half],[L,half]].map(([u,v])=>toWorld(u,v,0,a)),lo=[0,1].map(j=>Math.min(...leafCorners.map(p=>p[j]))),hi=[0,1].map(j=>Math.max(...leafCorners.map(p=>p[j]))),leafBox=[lo[0],lo[1],rise,hi[0]-lo[0],hi[1]-lo[1],h],
+   leafCorners=[[0,-half],[0,half],[L,-half],[L,half]].map(([u,v])=>toWorld(u,v,0,a)),lo=[0,1].map(j=>Math.min(...leafCorners.map(p=>p[j]))),hi=[0,1].map(j=>Math.max(...leafCorners.map(p=>p[j]))),leafBox=[lo[0],lo[1],rise+leafBottom,hi[0]-lo[0],hi[1]-lo[1],h],
    deck=c.externalWorkDeckPlanMm,bodyR=300,armR=40,
    deckReserve=Math.min(shoulder[0]-deck[0],deck[0]+deck[2]-shoulder[0],shoulder[1]-deck[1],deck[1]+deck[3]-shoulder[1])-bodyR-s-c.deckGuardIntrusionMm-cover.bodyWorldMm,
    bodyLeaf=segmentBoxDistance([U,V,0],[U,V,2000],localLeaf)-bodyR-s-cover.bodyRelativeLeafMm,
@@ -264,11 +264,21 @@ export function comparePlantFittedDoor(i:SplitPlantRoomInput){
   }
   if(k%90===0||k===900)poses.push({angleDeg:deg,shoulderMm:shoulder,gripMm:grip,bodyPlanMm:[shoulder[0],shoulder[1]]})
  }
- const parked= [hinge[0],hinge[1]-half,rise,L,t,h] as const,
+ const parked= [hinge[0],hinge[1]-half,rise+leafBottom,L,t,h] as const,
   goodsChecks=i.branch.goods.map(g=>{const boxes=g.pathMm.slice(1).map((b:readonly number[],k:number)=>{const a=g.pathMm[k];return[Math.min(a[0],b[0])-g.completeRadiusMm,Math.min(a[1],b[1])-g.completeRadiusMm,rise,Math.abs(a[0]-b[0])+2*g.completeRadiusMm,Math.abs(a[1]-b[1])+2*g.completeRadiusMm,g.maximumCompleteHeightMm]});return{id:g.id,parkedLeafReserveMm:Math.min(...boxes.map((b:readonly number[])=>pairGap(parked,b)))-s}}),
-  gravity=(angle:number)=>{const centre=toWorld(L/2,0,h/2,angle),absolute=centre.map((v,k)=>v+(k===2?i.branch.groundFflMm:0)),Fz=-c.leafMassBudgetKg*9.81;return{referenceCentreMm:absolute,forceMomentN_Nm:[0,0,Fz,absolute[1]/1000*Fz,-absolute[0]/1000*Fz,0],hingeGravityMomentReferenceNm:c.leafMassBudgetKg*9.81*L/2000}},
-  diagnostics=[...Object.entries(minima).filter(([,v])=>v<0).map(([k])=>'PLANT_FITTED_DOOR/'+k),...(maxReach+cover.bodyRelativeLeafMm>650?['PLANT_FITTED_DOOR/reach']:[]),...(goodsChecks.some(g=>g.parkedLeafReserveMm<0)?['PLANT_FITTED_DOOR/parked-leaf-goods']:[]),...(f.sourceBoreSideReserveMm<0?['PLANT_FITTED_DOOR/source-infill-port-side-land']:[]),...(f.exactOuterArchGeometry?(f.exactOuterArchGeometry.necessaryExactRectangleFit?[]:['PLANT_FITTED_DOOR/outer-frame-curved-arch-fit']):f.headerToRawSpringReserveMm===null?['PLANT_FITTED_DOOR/raised-arch-profile-not-joined']:f.headerToRawSpringReserveMm<0?['PLANT_FITTED_DOOR/frame-header-raw-arch']:[])]
- return{schema:'had-plant-fitted-door-comparison/1',fittedFrameId:f.id,datum:'Local occupied groundFFL for geometry; leaf budget origins additionally translate by saved groundFFL.',effectiveOpenClearWidthMm:f.effectiveOpenWidthMm,minimumCargoWidthMm:f.minimumCargoMm[0],parkedLeafBoxMm:parked,
+  gravity=(angle:number)=>{const centre=toWorld(L/2,0,leafBottom+h/2,angle),absolute=centre.map((v,k)=>v+(k===2?i.branch.groundFflMm:0)),Fz=-c.leafMassBudgetKg*9.81;return{referenceCentreMm:absolute,forceMomentN_Nm:[0,0,Fz,absolute[1]/1000*Fz,-absolute[0]/1000*Fz,0],hingeGravityMomentReferenceNm:c.leafMassBudgetKg*9.81*L/2000}},
+  leafDeckJoin=finishedDeck?(()=>{
+   const d=finishedDeck,relative=c.maximumInstalledLeafRelativeErrorMm??s
+   if(d.planMm.length!==4||d.topAbsoluteRangeMm.length!==2||![...d.planMm,...d.topAbsoluteRangeMm].every(Number.isFinite)||d.planMm[2]<=0||d.planMm[3]<=0||d.topAbsoluteRangeMm[0]>d.topAbsoluteRangeMm[1])throw Error('Actual positive finished Plant deck and measured top range required')
+   const bottom=i.branch.groundFflMm+rise+leafBottom,top=bottom+h,head=i.branch.groundFflMm+rise+c.clearHeightMm,
+    rawBottomGap=bottom-d.topAbsoluteRangeMm[1],minimumBottomGap=rawBottomGap-relative,minimumHeadGap=head-top-relative,
+    closed=[hinge[0]-half,hinge[1]-L,t,L]as const,
+    closedOverlap=closed[0]<d.planMm[0]+d.planMm[2]&&closed[0]+closed[2]>d.planMm[0]&&closed[1]<d.planMm[1]+d.planMm[3]&&closed[1]+closed[3]>d.planMm[1],
+    headJoinApplicable=c.leafHeadGapMm!==undefined
+   return{finishedDeckPlanMm:d.planMm,finishedDeckTopAbsoluteRangeMm:d.topAbsoluteRangeMm,leafBodyBottomAbsoluteMm:bottom,leafBodyTopAbsoluteMm:top,frameClearHeadAbsoluteMm:head,closedLeafPlanMm:closed,closedLeafPlanOverlapsActualDeck:closedOverlap,nominalMinimumBodyToDeckMm:rawBottomGap,maximumInstalledRelativeFittingErrorMm:relative,minimumBodyToDeckAfterFittingMm:minimumBottomGap,minimumHeadGapAfterFittingMm:minimumHeadGap,physicalClosedLeafDeckBodyOverlapMm:closedOverlap?Math.max(0,-rawBottomGap):0,necessaryMatchedVerticalClearance:minimumBottomGap>=0&&(!headJoinApplicable||minimumHeadGap>=0),scope:'Uniform finished-deck upper bound clears the real leaf body at every swept angle; closed rectangle supplies an exact overlap witness for the zero-gap adverse case. Final installed fitting must verify the declared relative datum.',actualInstalledFittingWeatherAirThermalFireSealAndHardwareAccepted:false}
+  })():null,
+  diagnostics=[...(leafDeckJoin&&!leafDeckJoin.necessaryMatchedVerticalClearance?['PLANT_FITTED_DOOR/actual-finished-deck-leaf-body-clearance']:[]),...(f.leafBody&&f.leafBody.minimumHeadGapAfterRelativeErrorMm<0?['PLANT_FITTED_DOOR/actual-leaf-head-gap']:[]),...Object.entries(minima).filter(([,v])=>v<0).map(([k])=>'PLANT_FITTED_DOOR/'+k),...(maxReach+cover.bodyRelativeLeafMm>650?['PLANT_FITTED_DOOR/reach']:[]),...(goodsChecks.some(g=>g.parkedLeafReserveMm<0)?['PLANT_FITTED_DOOR/parked-leaf-goods']:[]),...(f.sourceBoreSideReserveMm<0?['PLANT_FITTED_DOOR/source-infill-port-side-land']:[]),...(f.exactOuterArchGeometry?(f.exactOuterArchGeometry.necessaryExactRectangleFit?[]:['PLANT_FITTED_DOOR/outer-frame-curved-arch-fit']):f.headerToRawSpringReserveMm===null?['PLANT_FITTED_DOOR/raised-arch-profile-not-joined']:f.headerToRawSpringReserveMm<0?['PLANT_FITTED_DOOR/frame-header-raw-arch']:[])]
+ return{...(leafDeckJoin?{leafDeckJoin}:{}),...(f.leafBody?{leafBody:{...f.leafBody,localBoxMm:localLeaf}}:{}),schema:'had-plant-fitted-door-comparison/1',fittedFrameId:f.id,datum:'Local occupied groundFFL for geometry; leaf budget origins additionally translate by saved groundFFL.',effectiveOpenClearWidthMm:f.effectiveOpenWidthMm,minimumCargoWidthMm:f.minimumCargoMm[0],parkedLeafBoxMm:parked,
   hingeMm:hinge,leafSpanMm:L,leafThicknessMm:t,exactNorthLeafSweptMinimumYMm:f.exactNorthLeafSweptMinimumYMm,sourceOnlyYSeparationAfterTwoSettingsMm:f.exactNorthLeafSweptMinimumYMm-f.sourceAxisYMm-i.branch.resolvedInput.envelope.backboneRadiusMm-s,
   continuous:{stepDeg:.1,executedPoses:901,coverMm:cover,method:'Exact segment-to-rectangular-leaf distances at all poses; speed/Hausdorff bounds cover intervening leaf and body/arm states. No blanket22mmY expansion near the closed tip.'},minima,witness,sampledMaxReachMm:maxReach,maxReachMm:maxReach+cover.bodyRelativeLeafMm,reachLimitMm:650,bodyRadiusMm:300,armRadiusMm:40,twoIndependentSettingsMm:s,poses,goodsChecks,
   requiredClearExternalWorkDeckPlanMm:c.externalWorkDeckPlanMm,requiredExternalDeckFootprintM2:deck[2]*deck[3]/1e6,exteriorPlanObstacles:i.exteriorPlanObstacles,guardIntrusionMm:c.deckGuardIntrusionMm,requiredExteriorDeckAbsoluteZMm:i.branch.groundFflMm+rise,ordinaryDeckSupportGradeAndActualHandoverQualified:false,

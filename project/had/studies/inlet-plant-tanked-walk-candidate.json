@@ -1,7 +1,7 @@
 {
   "schema": "had-plant-tanked-walk/1",
   "id": "HAD/Plant-open-metal-walk-and-full-store-containment",
-  "revision": 4,
+  "revision": 5,
   "basePanRoomChoice": "project/had/studies/inlet-split-plant-room-candidate.json",
   "vesselChoice": "project/had/studies/inlet-store-vessel-candidate.json",
   "selectedForDevelopment": true,
@@ -20,7 +20,8 @@
     "minimumAfterFabricationProofMPa": 150,
     "maximumPressureTemperatureQualificationAccepted": false,
     "thermalExpansionPerK": 0.000016,
-    "primaryDataUrl": "https://www.outokumpu.com/-/media/files/products/supra/outokumpu-supra-range-datasheet.pdf?modified=20251117111951&revision=7a909396-d1f3-4d36-9c1c-99606be41fd2"
+    "primaryDataUrl": "https://www.outokumpu.com/-/media/files/products/supra/outokumpu-supra-range-datasheet.pdf?modified=20251117111951&revision=7a909396-d1f3-4d36-9c1c-99606be41fd2",
+    "minimumDensityKgM3": 7700
   },
   "outfalls": {
     "clearWidthMm": 450,
@@ -80,15 +81,8 @@
       "plankOuterXMm": 12130,
       "sharedPostColumnIndex": 6,
       "sharedPostYMm": [
-        4080,
-        4363.5,
-        4647,
-        4930.5,
-        5214
-      ],
-      "innerGirderEndYMm": [
-        4080,
-        5214
+        3900,
+        5300
       ],
       "innerSeatPackerMm": 30,
       "girderSectionWHtMm": [
@@ -105,15 +99,29 @@
       ],
       "matchedSeatErrorMm": 3,
       "sharedPostDesignCeilingN": 9000,
-      "maximumMechanicallyCapturedGirderKg": 60,
+      "maximumMechanicallyCapturedGirderKg": 125,
       "grateToBridgeGapMm": 6,
       "perimeterGapMm": 35,
       "postSectionWHtMm": [
         60,
         60,
         5
-      ]
-    }
+      ],
+      "supportMode": "two-end-continuous",
+      "innerGirderKind": "solid",
+      "innerGirderHeightMm": 80,
+      "directBarAssemblyClearanceMm": 2,
+      "corbelWeldLegMm": 4,
+      "renewal": {
+        "northTranslationMm": 105,
+        "firstLiftMm": 140,
+        "turnCentreAboveWalkingMm": 820
+      }
+    },
+    "plankThicknessRangeMm": [
+      39,
+      41
+    ]
   },
   "grating": {
     "bearingBarHeightMm": 70,
@@ -169,7 +177,10 @@
     "clearHeightMm": 2300,
     "headerDepthMm": 100,
     "sourceInfillPortDiameterMm": 125,
-    "outerWidthMm": 1300
+    "outerWidthMm": 1300,
+    "leafBottomGapMm": 14,
+    "leafHeadGapMm": 5,
+    "maximumInstalledLeafRelativeErrorMm": 3
   },
   "ramp": {
     "maximumSlopeRatio": 12,
