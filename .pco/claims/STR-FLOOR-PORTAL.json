@@ -9,12 +9,12 @@
     "label": "zerg-owner-takeover-20261126"
   },
   "claimedAt": "2026-11-26T20:02:01.717Z",
-  "heartbeatAt": "2026-11-26T23:59:14.000Z",
-  "expiresAt": "2026-11-27T00:44:14.000Z",
+  "heartbeatAt": "2026-11-27T00:20:05.000Z",
+  "expiresAt": "2026-11-27T01:05:05.000Z",
   "checkpoint": {
-    "evidence": "PR1630/b372 publishes fifteen actual native replays; nineteen-command block and strict source owners pass. Exact publication verified. New bearing-house local recovery checkpoint: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
-    "next": "Observe exact-head CI and fresh canonical runner preflight, merge recovery only when green; restore executor and complete same-source dense/duct/wind system.",
-    "blocker": "Executor explicitly unavailable. New house is unfinished/local; no strategic gate closure."
+    "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
+    "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
+    "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
   },
   "branch": "work/zerg-takeover-integration-20261126",
   "predecessor": {
