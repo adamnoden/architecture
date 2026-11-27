@@ -101,8 +101,8 @@ test('actual eastern perimeter-rim regression witness is removed as real stock, 
  console.log('PLANT_BRIDGE_RIM_REGRESSION '+JSON.stringify({formerRimId:'Plant/grate/5/1/cut-edge-rim/9/3',formerRimBoxMm:formerRim,plankId:'Plant/bridge-piece/0',plankBoxMm:plank,formerIntersectionMm3:intersection,actualRimId:actual.id,actualRimBoxMm:actual.boxMm,actualIntersection:false}))
 })
 
-const clearEndBridge={...bridge,postRow:{...bridge.postRow,supportMode:'two-end-continuous' as const,sharedPostYMm:[3900,5300],innerGirderWallMm:10,maximumInnerGirderWallMm:10.5,corbelWeldLegMm:4,renewal:{northTranslationMm:130,firstLiftMm:200,turnCentreAboveWalkingMm:740}}}
-const clearEndChoice={...choice,bridge:clearEndBridge}
+const clearEndBridge={...bridge,postRow:{...bridge.postRow,supportMode:'two-end-continuous' as const,sharedPostYMm:[3900,5300],innerGirderWallMm:12,maximumInnerGirderWallMm:12.5,corbelWeldLegMm:4,renewal:{northTranslationMm:155,firstLiftMm:140,turnCentreAboveWalkingMm:820}}}
+const clearEndChoice={...choice,material:{...choice.material,minimumDensityKgM3:7700},bridge:clearEndBridge}
 const twoEndRun=()=>run({...input,choice:clearEndChoice})
 const emitTwoEnd=(label:string,r:ReturnType<typeof plantTankedWalkingSurface>)=>{
  const b=r.postRowBridge!,summary={sourceDigest:r.sourceDigest,bridge:b,collector:r.bridgeIntegration!.actualCollector,geometry:r.geometry,failedMemberChecks:r.memberChecks.filter(q=>!q.necessary),normalMassUpperKg:r.normalMassUpperKg,solidsIncrementUpperL:r.solidsIncrementUpperL,physicalAcceptance:false}
@@ -114,7 +114,7 @@ test('two real end posts and one captured girder replace all six obstructing out
  const r=twoEndRun(),b=r.postRowBridge!,summary=emitTwoEnd('PLANT_TWO_END_CLEAR450',r)
  assert.equal(b.supportMode,'two-end-continuous')
  assert.deepEqual(b.actualEndPostYMm,[3900,5300])
- assert.equal(b.girderSegments.length,1);near(b.girderSegments[0].clearLengthMm,1400)
+ assert.equal(b.girderSegments.length,1);near(b.girderSegments[0].clearLengthMm,1433);assert.deepEqual(b.physicalInnerEndYMm,[3867,5300])
  assert.deepEqual(b.sharedGridYMm,[3907,4080,4363.5,4647,4930.5,5214])
  assert.equal(b.retiredGridSupports.length,6)
  for(const q of b.retiredGridSupports)for(const id of[q.postId,q.headId,q.footId])assert.ok(!r.parts.some(p=>p.id===id),id)
@@ -130,6 +130,12 @@ test('two real end posts and one captured girder replace all six obstructing out
  assert.equal(new Set(summary.collector!.actualPhysicalPieceIds).size,summary.collector!.actualPhysicalPieceIds.length)
  near(b.normalReactionBounds.walkingGOnceN,summary.collector!.uniqueCollectedMassUpperKg*9.81)
  assert.equal(b.normalReactionBounds.oneFactoredWheelN,3708.18)
+ assert.ok(b.maximumAbsoluteCorbelWheelN>3708.18)
+ assert.ok(b.signedWheelCases.some(q=>q.loads.some(p=>p.forceN<0)))
+ assert.ok(b.normalEndReactionLower!.rawSignedWheelMinimumReactionN.some(p=>p<0))
+ assert.ok(b.normalEndReactionLower!.normalMinimumFootResultantsN.every(p=>p>=0))
+ assert.equal(b.normalEndReactionLower!.planksUnknownCargoUpperMassOrFrictionCreditedForRestoring,false)
+ assert.equal(b.panelSeatSignedDuties.actualPanelRetainersCorbelTensionAndRailClipsAccepted,false)
  assert.ok(b.normalReactionBounds.twoEndSimplySupportedInnerMember)
  assert.ok(!b.normalReactionBounds.segmentedSimplySupportedInnerSpans)
  assert.ok(b.innerAssemblyUpperKg<60)
@@ -139,6 +145,7 @@ test('two real end posts and one captured girder replace all six obstructing out
  const renewed=b.innerGirderRenewal!
  assert.ok(renewed.removedActualWalkingPartIds.length>6)
  assert.ok(renewed.initialMatingFaces.every(p=>p.necessaryFaceOnlySeparation))
+ assert.ok(renewed.openedStripChecks.every(p=>p.necessary))
  assert.ok(renewed.wholeCapturedAssemblyPartIds.some(id=>id.includes('walk-corbel')))
  assert.equal(renewed.remainingFrameStabilityAccepted,false)
  assert.equal(renewed.actualCaptureCraneAntiRollBoltsToolsAndExternalRestAccepted,false)
@@ -152,7 +159,8 @@ test('same actual whole Plant source replays the two-end beam and leaves both450
  assert.ok(r.necessaryMemberComparisons,JSON.stringify(summary.failedMemberChecks))
  assert.ok(b.necessaryRenewalGeometry,JSON.stringify(b.innerGirderRenewal?.obstacleChecks.filter(q=>q.reserveAfterSettingsAndSamplingMm<0)))
  assert.equal(whole.outfalls.sourceApproach.rows.length,0)
- assert.equal(whole.outfalls.sourceApproach.actualSolidEntryLossBoundJoined,false)
+ assert.equal(whole.outfalls.sourceApproach.actualSolidEntryLossBoundJoined,true)
+ assert.equal(whole.outfalls.sourceApproach.actualSourcePoolForCompleteInstallationAccepted,false)
  assert.equal(whole.installedAcceptance,false)
 })
 test('two-end evidence is invalidated by real stock, pan settings, captured renewal and collected gravity perturbations',()=>{
@@ -161,13 +169,13 @@ test('two-end evidence is invalidated by real stock, pan settings, captured rene
  assert.ok(shifted.memberChecks.some(q=>q.id.includes('/end-0/actual-pan-edge/1')&&!q.necessary))
  const overweight=run({...input,choice:{...clearEndChoice,bridge:{...clearEndBridge,postRow:{...clearEndBridge.postRow,maximumMechanicallyCapturedGirderKg:40}}}})
  assert.ok(overweight.postRowBridge!.memberChecks.some(q=>q.id.endsWith('/inner-whole-welded-assembly-capture')&&!q.necessary))
- const noSlide=run({...input,choice:{...clearEndChoice,bridge:{...clearEndBridge,postRow:{...clearEndBridge.postRow,renewal:{...clearEndBridge.postRow.renewal,northTranslationMm:0}}}},bridgeRenewalContext:{...input.bridgeRenewalContext,obstacles:[...input.bridgeRenewalContext.obstacles,{id:'actual-source-Plant-N-radiator',boxMm:[10980,3797,930,550,200,600]as const}]}})
+ const noSlide=run({...input,choice:{...clearEndChoice,bridge:{...clearEndBridge,postRow:{...clearEndBridge.postRow,renewal:{...clearEndBridge.postRow.renewal,northTranslationMm:0}}}},bridgeRenewalContext:{...input.bridgeRenewalContext,obstacles:[...input.bridgeRenewalContext.obstacles,{id:'actual-source-Plant-N-radiator',boxMm:[10980,3797,780,550,200,600]as const}]}})
  assert.equal(noSlide.postRowBridge!.innerGirderRenewal!.necessaryGeometricSweeps,false)
  assert.ok(noSlide.postRowBridge!.innerGirderRenewal!.obstacleChecks.some(q=>q.obstacle==='actual-source-Plant-N-radiator'&&q.reserveAfterSettingsAndSamplingMm<0))
  assert.notEqual(shifted.sourceDigest,ordinary.sourceDigest)
  assert.notEqual(overweight.sourceDigest,ordinary.sourceDigest)
- assert.equal(b.stock.innerGirderMinimumWallMm,10);assert.equal(b.stock.innerGirderMaximumWallForGUpperMm,10.5)
+ assert.equal(b.stock.innerGirderMinimumWallMm,12);assert.equal(b.stock.innerGirderMaximumWallForGUpperMm,12.5)
  const thin=run({...input,choice:{...clearEndChoice,bridge:{...clearEndBridge,postRow:{...clearEndBridge.postRow,innerGirderWallMm:8,maximumInnerGirderWallMm:8.5}}}})
- console.info('PLANT_TWO_END_MINIMUM_WALL_CONTROL '+JSON.stringify({minimumWall8:thin.postRowBridge!.memberChecks,minimumWall10:b.memberChecks,sourceDigests:[thin.sourceDigest,ordinary.sourceDigest]}))
+ console.info('PLANT_TWO_END_MINIMUM_WALL_CONTROL '+JSON.stringify({minimumWall8:thin.postRowBridge!.memberChecks,minimumWall12:b.memberChecks,sourceDigests:[thin.sourceDigest,ordinary.sourceDigest]}))
  assert.ok(thin.postRowBridge!.memberChecks.find(q=>q.id.endsWith('/corbel-web-local-plus-global-fibre-CONDITIONAL'))!.value>b.memberChecks.find(q=>q.id.endsWith('/corbel-web-local-plus-global-fibre-CONDITIONAL'))!.value)
 })
