@@ -9,12 +9,12 @@
     "label": "zerg-water-source-continuation-20261127"
   },
   "claimedAt": "2026-11-27T00:33:12.247Z",
-  "heartbeatAt": "2026-11-27T00:33:12.247Z",
-  "expiresAt": "2026-11-27T02:33:12.247Z",
+  "heartbeatAt": "2026-11-27T01:53:18.377Z",
+  "expiresAt": "2026-11-27T03:53:18.377Z",
   "checkpoint": {
-    "evidence": "Explicit owner-directed continuation of named HAD packet after root's generation66 handoff. Currentmainf2 unchanged; dependencies/dispatch manuallyverified (not canonicalCLI). Protected water branch fc715cdfcfa2bbcefbc9bd4de72c047edd85b1e4; exact5a3 TypeScript129/131, actualSRC/Rover-F+11L/SVG proof pending.",
-    "next": "Finish bounded source-coupled floor/support/thermal, actual inletpostloss and Utilityrenewal proofs using approvedcontents-read hostedworkflow. Preserve rootPR1630/main/receipts; no merge or acceptanceclaim.",
-    "blocker": "Executor unavailable; current house profile/native/sourceaccount reconciliation and complete P hydraulic/electrical installation remainopen."
+    "evidence": "Protected source aa1ae0e440e96b1b3b3021b32b2cfb8c93f191fe. Last actual18c run passed TypeScript and151/155 pure tests. Solid100x80 two-end member passes actual8960.166N/98.555kg, normal minimum611.272N, zero inlet solids,57.297L static reserve; two guard fixes and two U fixes now awaiting exact hosted replay. Main/1630/receipts unchanged.",
+    "next": "Select and propagate the single tested P clear-inlet choice only after the corrected hosted proof, reconcile historical controls and regenerate its actual owner drawing. Finish actual Utility C-frame capture/first-release/park/extraction and remaining Plant installation; no gate/merge/physical acceptance transfer.",
+    "blocker": "Executor unavailable; approved named contents-read hosted workflow covers pure source/geometry proofs only. Whole current source-account/native ground/profile replay, full receiver/contact and complete P thermal/air/charged/fill/electrical installation remain unearned. RootPR1630 retains its independent dev-import HOLD MERGE."
   },
   "branch": "work/zerg-water-west-recovery-20261126",
   "note": "Owner standingauthorisation explicitly names HAD completion. Fresh normal acquisition afterreleased66; exactfileCAS, no force takeover, no canonicalCLI claim. Rootintegrationbranch/PR preserved in predecessor/recoverysource.",
