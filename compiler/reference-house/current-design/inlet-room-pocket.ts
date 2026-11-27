@@ -161,7 +161,7 @@ export function inletRoomPocket(input:Parameters<typeof deriveRoomPocket>[0]){
   coreChecks=context.sourceCorePlans.map(c=>({id:c.id,rectangleMm:c.rectangleMm,nominalGapMm:planGap(r,c.rectangleMm),afterTwoSettingsMm:planGap(expandPlan(r,context.settingEachMm),expandPlan(c.rectangleMm,context.settingEachMm))})),
   resultant=(rows:typeof actual.local.loadOrigins)=>rows.reduce((sum,row)=>{const f=row.wrenchKN_KNm,o=row.originMm,local=[f.Fx,f.Fy,f.Fz,f.Mx+o[1]/1000*f.Fz-o[2]/1000*f.Fy,f.My+o[2]/1000*f.Fx-o[0]/1000*f.Fz,f.Mz+o[0]/1000*f.Fy-o[1]/1000*f.Fx];return sum.map((v,k)=>v+local[k])},[0,0,0,0,0,0]),
   oldW=resultant(reference.local.loadOrigins),newW=resultant(actual.local.loadOrigins.filter(r=>!r.id.includes('/uniform-under-RC-F/')&&!r.id.includes('/unprocured-soffit-retention/'))),stack=context.stack,
-  bodyPlans=actual.local.bodyPlanRectanglesXYMm??[r],unsupported=bodyPlans.flatMap(p=>subtractPlan(p,actual.local.disjointContactCells.map(c=>c.rectangleMm))),uniformF=actual.local.levelBoxes.find(b=>b.id==='glass'),retention='soffitRetention'in actual.local?actual.local.soffitRetention:null
+  bodyPlans=actual.local.bodyPlanRectanglesXYMm??[r],unsupported=stack?bodyPlans.flatMap(p=>{const cuts=actual.local.disjointContactCells.map(c=>c.rectangleMm),covered=cuts.reduce((n,c)=>{const q=intersect(p,c);return n+(q?area(q):0)},0);if(Math.abs(covered-area(p))<1e-5)return[];return subtractPlan(p,cuts)}):[],uniformF=actual.local.levelBoxes.find(b=>b.id==='glass'),retention='soffitRetention'in actual.local?actual.local.soffitRetention:null
 
  return{...actual,plantCompression:{schema:'had-plant-pan-compression-result/1',resolvedInput:input,caseDigest:sha256SemanticFingerprint(input),sourceCoreChecks:coreChecks,necessaryCoreXYSeparation:coreChecks.every(c=>c.afterTwoSettingsMm>=0),actualSourceProfileZAndCoreInterfaceAccepted:false,
   fullRcPlanMm:r,rcLevelMm:actual.local.levelBoxes.find(b=>b.id==='dryRC')!.zMm,
@@ -186,7 +186,7 @@ export function drawInletRoomPocket(p: NonNullable<ReturnType<typeof inletRoomPo
     const rc=p.levelBoxes.find(b=>b.id==='dryRC')!,mineral=p.levelBoxes.find(b=>b.id==='mineralCourse')!
     return `<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="780" viewBox="0 0 1280 780"><rect width="1280" height="780" fill="#f5f1e6"/><g font-family="Arial,sans-serif" fill="#29271f">
 ${text(40,42,'Plant · full pan-plan compression floor replacement',25)}
-${text(40,78,'rcOverUniformFStack'in p?'Flat RC above uniform soffit F; upper graded mineral bed comes from the same pan.':'Actual local RC/mineral bodies. The uniform upper glass, service layer and continuous finish are retired.')}
+${text(40,78,'rcOverUniformFStack'in p?'Flat RC above uniform soffit F; upper graded mineral bed comes from the same pan.':'Actual local RC/mineral bodies. The uniform glass, service layer and continuous finish are retired.')}
 ${rect(p.roomMinMaxMm,'#dce6df')}${p.disjointContactCells.map(c=>rect(c.rectangleMm,'#c5b08a')).join('')}
 ${p.levelBoxes.map((b,k)=>layer(760,300,b.zMm,colours[k])).join('')}
 ${text(600,190,'Physical mineral '+mineral.zMm.join('..')+'mm; RC '+rc.zMm.join('..')+'mm.')}

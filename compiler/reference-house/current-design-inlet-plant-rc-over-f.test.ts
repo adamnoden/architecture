@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {plantRcOverUniformFPanSupport,plantMatchedPanCompression} from './current-design/inlet-plant-tanked-walk.js'
-import {inletPlantTankedRoom} from './current-design/inlet-plant-tanked.js'
+import {inletPlantTankedRoom,drawInletPlantTankedRoom} from './current-design/inlet-plant-tanked.js'
 import {inletRoomPocket,type PlantRcOverUniformFStack} from './current-design/inlet-room-pocket.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
 const saved=read('project/had/studies/inlet-local-pocket.results.json').splitPlantRoom.comparison,grid=read('project/str/studies/current-house-grid.json'),water=read('project/had/studies/water-replan.json')
@@ -59,6 +59,8 @@ test('layer and real capture perturbations invalidate geometry, G or the support
  const small=inletRoomPocket({...base,roomPlanMm:[9397,3797,180,983.5],plantCompression:{...context,stack:proposedRcOverF}})
  assert.ok('plantCompression'in small)
  const smallCapture=small.plantCompression!.rcOverUniformF!.retention
+ assert.equal(small.plantCompression!.rcOverUniformF!.unsupportedSoffitM2,0)
+ assert.deepEqual(small.plantCompression!.rcOverUniformF!.nonLoadBearingSuspendedSoffitPlans,[],'Full contact legitimately leaves no suspended soffit; the strict floor subtraction domain is not weakened')
  assert.equal(smallCapture.necessaryGeometryAndMemberScreens,false);assert.equal(small.local!.necessaryGeometryScreen,false)
  assert.ok(smallCapture.checks.filter(c=>c.id==='counterpocket-within-own-tile-after-fit'||c.id==='opposed-hook-heel-within-own-half-tile-after-fit').every(c=>!c.necessary))
  assert.throws(()=>inletRoomPocket({...base,planExclusionsMm:[[10000,4000,10100,4100]as const],plantCompression:{...context,stack:proposedRcOverF}}),/one actual unnotched RC plan/)
@@ -100,4 +102,38 @@ test('actual selected pan keeps its steel geometry while a distinct mineral/RC/c
  assert.throws(()=>plantMatchedPanCompression({context,roomPlanMm:current.roomPlanMm,parts:structuredClone(parts),maximumWaterMm:660,footDesignN:7000,steelDensityKgM3:8000}),/Old F-under-foot pressure law/)
  const lifted=inletRoomPocket({...oldInput,plantCompression:{...oldInput.plantCompression!,stack:{...proposedRcOverF,rcMm:260}}})
  assert.throws(()=>plantRcOverUniformFPanSupport({context:{...context,floorCase:lifted},roomPlanMm:current.roomPlanMm,parts:structuredClone(parts),maximumWaterMm:660,footDesignN:7000,steelDensityKgM3:8000}),/positive depth/)
+})
+
+
+test('one optional controlling stack propagates through the actual whole-room floor, walking stock and drawing without transferring F-under-foot evidence',()=>{
+ const choice=read('project/had/studies/inlet-plant-tanked-walk-candidate.json'),request={choice,plant:saved,vesselChoice:read('project/had/studies/inlet-store-vessel-candidate.json'),mat:read('project/mat/studies/whole-house-service-baseline.json'),maximumSourceApertureMm:10.5,services:read('project/had/studies/current-house-services.json'),servicesGitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',waterReplan:water,waterReplanGitBlob:'089f0dac2f2e89272dc2ea85a10c2208f2fd797d',sourceSettings:read('project/had/studies/inlet-plant-tanked-supply-candidate.json').settings}
+ const before=inletPlantTankedRoom(request),optional=structuredClone(request)
+ optional.choice.panCompression.stack=proposedRcOverF
+ const after=inletPlantTankedRoom(optional),support=after.walking.rcOverInsulationSupport!,floor=after.floorReplan.actualPocket
+ assert.ok('plantCompression'in floor&&floor.plantCompression?.rcOverUniformF)
+ assert.deepEqual(floor.plantCompression!.resolvedInput.plantCompression!.stack,proposedRcOverF)
+ assert.notEqual(after.source.caseDigest,before.source.caseDigest)
+ assert.equal(after.walking.compressionSupport,undefined)
+ assert.equal(support.oldFUnderFootPressureResultApplies,false)
+ assert.ok(support.necessarySteelMatching&&support.necessaryMineralMeanScreen)
+ assert.ok(after.floorReplan.steelFootBlank.necessaryGeometricStockAndMachiningComparison)
+ assert.equal(support.actualRCSpanningCageUnilateralFPressureAndColdGridAccepted,false)
+ assert.equal(after.floorReplan.freshSameSourceGravityAndContactAccepted,false)
+ assert.equal(after.source.nativeForceOrPositiveReceiptAcceptanceTransferred,false)
+ assert.equal(after.installedAcceptance,false)
+ assert.ok(after.diagnostics.includes('PLANT_RC_OVER_F/actual-RC-span-cage-and-net-F-contact-distribution-unqualified'))
+ assert.ok(!after.diagnostics.includes('PLANT_TANK/conditional-MEAN-pan-foot-pressure-screen-fails'),'Distinct RC support must not be diagnosed using retired F-under-foot evidence')
+ assert.ok(after.walking.necessaryMemberComparisons,JSON.stringify(after.walking.memberChecks.filter(p=>!p.necessary)))
+ const svg=drawInletPlantTankedRoom(after)
+ assert.match(svg,/Uniform soffit F below spanning RC/)
+ assert.ok(svg.includes(after.source.caseDigest))
+ assert.notEqual(after.floorReplan.actualPocket.local!.quantityBounds.completeStackWeightUpperKN,before.floorReplan.actualPocket.local!.quantityBounds.completeStackWeightUpperKN)
+ assert.equal(after.inventory.fullInstantPressureNetworkDesignReleaseL,before.inventory.fullInstantPressureNetworkDesignReleaseL)
+ assert.equal(after.levels.sourcePoolMm,before.levels.sourcePoolMm)
+ const changed=structuredClone(optional);changed.choice.panCompression.stack.rcMm=180
+ const revised=inletPlantTankedRoom(changed)
+ assert.notEqual(revised.source.caseDigest,after.source.caseDigest)
+ assert.notEqual(revised.walking.rcOverInsulationSupport!.gradedBeddingMassUpperKg,support.gradedBeddingMassUpperKg)
+ assert.equal(revised.installedAcceptance,false)
+ console.log('PLANT_RC_OVER_F_WHOLE_OPTIONAL '+JSON.stringify({source:after.source,floor:floor.local!.quantityBounds,beddingKg:support.gradedBeddingMassUpperKg,steelBlank:after.floorReplan.steelFootBlank,diagnostics:after.diagnostics,accepted:after.installedAcceptance}))
 })

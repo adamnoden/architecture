@@ -22,7 +22,7 @@ The optional RC-over-uniform-F producer moves the load-distributing200mm slab ab
 
 The source now represents20 balanced F tiles and40 real recessed M6/collar/sleeve/button assemblies, with actual stock, voids, contact deductions and a bounded thermal calculation. The20kg value is a kit ceiling after counting actual steel, not a fictional installed mass. Cast/cure the RC on its own steel mould, then attach F from below on factory trestles before initial crane installation. F never supports wet concrete. The roughly2.35t panel is initial structural construction, not the500kg service renewal route. Buried F renewal is structural intervention.
 
-This layer order remains an optional tested proposal until its full C adapter, actual support/cage/contact, thermal edge continuity, lifting and assembly consequences replay. The27mm RC-to-core allowance does not itself accept a40mm vertical F edge. The old F-under-foot method explicitly rejects the new arrangement instead of silently lending it an old pressure receipt.
+This layer order remains an optional proposal with owning test controls, pending hosted verification until its full C adapter, actual support/cage/contact, thermal edge continuity, lifting and assembly consequences replay. The27mm RC-to-core allowance does not itself accept a40mm vertical F edge. The old F-under-foot method explicitly rejects the new arrangement instead of silently lending it an old pressure receipt.
 
 ## Utility ordinary renewal
 
@@ -85,3 +85,8 @@ The primary buffer normal mass uses the actual545mm×1975mm outer cylinder as a 
 Controlling inputs: the complete normal/fault source settings in `inlet-plant-tanked-supply-candidate.json`, the normal assembly and floor choice in `inlet-plant-tanked-walk-candidate.json`, `inlet-store-vessel-candidate.json`, actual `current-house-services.json` and `whole-house-service-baseline.json`. The same compiler function generates `plant-tanked-walk-development.svg`; the owning test rejects a stale committed drawing. Floor, source-aperture, source-body, inventory and outfall perturbations are tested and invalidate dependent case identities.
 
 Current branch integration remains required in the versioned inlet reader/CLI/browser/case bindings, ordinary source producers and publication, followed by fresh native force evidence. No canonical HAD gate or current main acceptance is closed by these leaf comparisons.
+
+
+### Whole-room optional floor adapter checkpoint
+
+The same optional `panCompression.stack` object now passes from the whole-room controlling case into the actual pocket producer. The distinct RC-over-F result supplies the steel-foot machining stock check and graded-mineral section; it cannot borrow the old point-F pressure result. A focused whole-room perturbation checks floor quantities, bedding mass, source identity, matched steel and the generated section. This adapter and the two observed floor regression fixes await their first hosted verification. The selected revision4 JSON still contains no RC-over-F choice. RC span/cage, net F/contact distribution, edge thermal continuity, lifting and the source0/HAD530 house profile remain unearned. Current numerical receipts and force pins are unchanged.
