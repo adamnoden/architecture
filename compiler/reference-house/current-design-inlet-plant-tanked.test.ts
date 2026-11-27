@@ -4,7 +4,7 @@ import {readFileSync,mkdirSync,writeFileSync,existsSync} from 'node:fs'
 import {join} from 'node:path'
 import {plantPotableInventory} from './current-design/inlet-plant-potable-inventory.js'
 import {readInletSourceEnvelopeSettings} from './current-design/inlet-source-envelope.js'
-import {inletPlantTankedRoom,drawInletPlantTankedRoom,plantIncrementalBoxUnionLitres} from './current-design/inlet-plant-tanked.js'
+import {inletPlantTankedRoom,drawInletPlantTankedRoom,plantIncrementalBoxUnionLitres,plantOpenApproachObstructions} from './current-design/inlet-plant-tanked.js'
 import {inletSplitPlantRoom} from './current-design/inlet-split-plant-room.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
 const receipt=read('project/had/studies/inlet-local-pocket.results.json'),p=receipt.splitPlantRoom?.comparison,choice=read('project/had/studies/inlet-plant-tanked-walk-candidate.json')
@@ -271,4 +271,28 @@ test('retained controls and riser upper envelopes count their true incremental3D
  const q=inletPlantTankedRoom(lower)
  assert.ok(q.containment.retainedSourceEnvelopeDisplacementUpperL<r.containment.retainedSourceEnvelopeDisplacementUpperL)
  assert.notEqual(q.source.caseDigest,r.source.caseDigest)
+})
+
+
+test('actual approach projections retain all shared posts and distinguish two named halves from arbitrary half blockage',()=>{
+ const panCells=[{id:'actual-flat',cornersMm:[[0,4640,0],[260,4640,0],[260,5240,0],[0,5240,0]]}]
+ const parts=[{id:'south-tip',kind:'post',boxMm:[100,4617,0,60,60,200]},{id:'middle',kind:'post',boxMm:[100,4900.5,0,60,60,200]},{id:'north-tip',kind:'post',boxMm:[100,5184,0,60,60,200]}]
+ const r=plantOpenApproachObstructions({panCells,parts,planMm:[0,4640,260,600],depositMm:32,initialWaterMm:150})
+ assert.deepEqual(r.halves.map(h=>h.nominalSolidProjectionUnionMm),[76.5,76.5])
+ assert.deepEqual(r.halves.map(h=>h.nominalCommonClearProjectionMm),[223.5,223.5])
+ assert.equal(r.nominalArbitraryHalfWidthCommonClearLowerMm,147)
+ assert.equal(r.projectionIsNotGeneralSectionHydraulicCapacity,true)
+ assert.equal(r.localLossAndPhysicalBlockageDefinitionAccepted,false)
+ const duplicated=plantOpenApproachObstructions({panCells,parts:[...parts,parts[1]],planMm:[0,4640,260,600],depositMm:32,initialWaterMm:150})
+ assert.deepEqual(duplicated.halves,r.halves,'Overlapping stock envelopes must enter the projected UNION once')
+})
+test('deposited-bed burial follows the actual local facet rather than one mouth or global pan height',()=>{
+ const panCells=[{id:'actual-ramp',cornersMm:[[0,4640,0],[260,4640,0],[260,5240,12],[0,5240,12]]}]
+ const r=plantOpenApproachObstructions({panCells,parts:[{id:'low-foot',kind:'foot',boxMm:[100,4640,0,150,150,35]},{id:'high-foot',kind:'foot',boxMm:[100,5090,10,150,150,25]}],planMm:[0,4640,260,600],depositMm:32,initialWaterMm:150})
+ assert.equal(r.rows.find(q=>q.id==='low-foot')!.maximumSolidAboveLocalDepositedBedMm,3)
+ assert.equal(r.rows.find(q=>q.id==='low-foot')!.nominallyBuriedBelowLocalDepositedBed,false)
+ assert.equal(r.rows.find(q=>q.id==='high-foot')!.maximumSolidAboveLocalDepositedBedMm,-6)
+ assert.equal(r.rows.find(q=>q.id==='high-foot')!.nominallyBuriedBelowLocalDepositedBed,true)
+ assert.equal(r.rows[0].verticalFitAndSedimentPhysicalDistributionQualified,false)
+ assert.throws(()=>plantOpenApproachObstructions({panCells:[{id:'diamond',cornersMm:[[0,0,0],[100,50,0],[0,100,0],[-100,50,0]]}],parts:[],planMm:[0,0,50,50],depositMm:32,initialWaterMm:150}),/rectangular/)
 })

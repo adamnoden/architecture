@@ -970,8 +970,11 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
       cy=(a1[1]+b1[1])/2,cz=(a1[2]+b1[2])/2,L=Math.hypot(...b1.map((v,k)=>v-a1[k])),theta=Math.atan2(b1[2]-a1[2],b1[1]-a1[1]),
       ends=(angle:number):readonly[P,P]=>[[a1[0],cy-L/2*Math.cos(angle),cz-L/2*Math.sin(angle)],[a1[0],cy+L/2*Math.cos(angle),cz+L/2*Math.sin(angle)]]
      sampleMove(spec.id,q.id,phases[0],a0,b0,a1,b1,q.radiusMm!,exclude)
-     for(let n=0;n<64;n++){
-      const t0=theta+(Math.PI/2-theta)*n/64,t1=theta+(Math.PI/2-theta)*(n+1)/64,mid=ends((t0+t1)/2),cover=2*(L/2)*Math.sin(Math.abs(t1-t0)/4),
+     // Endpoint angular travel bounds every point of the rigid axis segment.
+     // 2*midpoint cover <= radius*angleStep <= the existing5mm contract.
+     const rotationIntervals=Math.max(1,Math.ceil((L/2)*Math.abs(Math.PI/2-theta)/5))
+     for(let n=0;n<rotationIntervals;n++){
+      const t0=theta+(Math.PI/2-theta)*n/rotationIntervals,t1=theta+(Math.PI/2-theta)*(n+1)/rotationIntervals,mid=ends((t0+t1)/2),cover=2*(L/2)*Math.sin(Math.abs(t1-t0)/4),
        box:B=[...mid[0].map((v,k)=>Math.min(v,mid[1][k])-q.radiusMm!),...mid[0].map((v,k)=>Math.abs(v-mid[1][k])+2*q.radiusMm!)] as unknown as B
       samplingProofs.push({componentId:spec.id,primitiveId:q.id,phase:phases[1],sampleCount:1,chordCoverMm:cover,maximumStepMm:2*cover})
       compare(spec.id,phases[1],box,exclude,cover,{segment:mid,radiusMm:q.radiusMm!,primitiveId:q.id})

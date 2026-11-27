@@ -743,3 +743,12 @@ test('actual crew retreat and positive-clamp interference remain in the main fin
  for(const q of crew)assert.ok(portalFinite.geometryFailures.some(v=>v.obstacleId===q.id&&v.reserveMm===q.reserveMm))
  for(const m of portalFinite.weldedLDesign.members)for(const q of m.clampGeometryFailures)assert.ok(portalFinite.geometryFailures.some(v=>v.componentId===m.componentId&&v.obstacleId===q.id))
 })
+
+test('the former64-step upright rotation violates the5mm bound on the actual brace; adaptive subdivision retains the bound',()=>{
+ const brace=portal.parts.find(q=>q.id==='portal/0/side-brace/0')!,a=brace.segmentMm![0],b=brace.segmentMm![1],
+  L=Math.hypot(...b.map((v,k)=>v-a[k])),theta=Math.atan2(b[2]-a[2],b[1]-a[1]),formerMaximumStep=2*L*Math.sin(Math.abs(Math.PI/2-theta)/(4*64))
+ assert.ok(formerMaximumStep>5)
+ const upright=portalFinite.samplingProofs.filter(q=>q.phase==='independent-brace-rotate-upright')
+ assert.ok(upright.length>0)
+ assert.ok(upright.every(q=>q.maximumStepMm<=5+1e-7),JSON.stringify(upright.filter(q=>q.maximumStepMm>5+1e-7)))
+})
