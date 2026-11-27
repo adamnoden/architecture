@@ -16,7 +16,7 @@ type Wet=ReturnType<typeof inletUtilityWetAssembly>
 type Part={id:string;boxMm:B;volumeUpperMm3:number;massUpperKg:number;centreMm:P;owner:string;kind:string}
 type Check={id:string;phase:string;reserveMm:number}
 type Control={
- schema:string;selectedForCompleteDevelopment:boolean;sourceRole:string;drainReceivers:{schema:string;wasteOuterMm:B;hotOuterMm:B;installedOnlyForControlledFiveLitreBatchesBeforeCaptureTool:boolean;activeLegacyReceiverShapesChanged:false};
+ schema:string;selectedForCompleteDevelopment:boolean;normalCapBeamAndHeadJointFabricationBoundMm:number;sourceRole:string;drainReceivers:{schema:string;wasteOuterMm:B;hotOuterMm:B;installedOnlyForControlledFiveLitreBatchesBeforeCaptureTool:boolean;activeLegacyReceiverShapesChanged:false};
  baseRailCrossMm:readonly[number,number];baseRailWallMm:number;baseRailYBoundsMm:readonly[number,number];baseRailBottomMm:number;
  rearPostSpreadPlateMm:P;frontLegSoleMm:P;rearBearingPlateMm:P;frontBearingPlateMm:P;bearingStandoffMm:P;frontReceiverAxisYMm:number;
  normalAnchorYMm:readonly number[];temporaryToolAnchorYMm:number;normalAnchorDiameterMm:number;normalAnchorHeadDiameterMm:number;normalAnchorHeadHeightMm:number;
@@ -97,7 +97,7 @@ function frameDemand(i:FrameInput){
   actualDeliveredJointFixityQualified:false,actualReactionQualified:false}
 }
 
-export function inletUtilityCBench(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>}){
+export function inletUtilityCBench(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;normalConnectedJointRepresentation?:'source-matched-interfaces'|'independent20-control'}){
  const {source,wet,capture}=i,
   p=(wet.choice.coldDistribution as unknown as{frameRenewal:{portalDesign:PortalControl}}).frameRenewal.portalDesign,
   c=p.cBench,two=2*source.rearTreeContext.settingEachMm,
@@ -115,7 +115,7 @@ export function inletUtilityCBench(i:{source:Source;wet:Wet;capture:ReturnType<t
   box=(x:number,y:number,z:number,a:number,b:number,d:number):B=>[x-a/2,y-b/2,z,a,b,d],
   steel=(id:string,b:B,owner:string)=>put(id,b,owner,b[3]*b[4]*b[5]),
   cylinder=(id:string,x:number,y:number,z:number,D:number,L:number,owner:string)=>put(id,box(x,y,z,D,D,L),owner,Math.PI*D**2/4*L)
- if(c?.schema!=='had-utility-front-access-two-C-benches/1'||c.selectedForCompleteDevelopment!==true||two!==20||c.frictionResistanceCredited!==false||c.legacyReceiversTransferred!==false||c.ordinaryRenewalAccepted!==false||c.allNewReceiverRCWeldThreadThermalWaterproofAndPhysicalHandlingQualified!==false)throw Error('Explicit unqualified source C-bench controls required')
+ if(c?.schema!=='had-utility-front-access-two-C-benches/1'||c.selectedForCompleteDevelopment!==true||two!==20||c.frictionResistanceCredited!==false||c.legacyReceiversTransferred!==false||c.ordinaryRenewalAccepted!==false||c.normalCapBeamAndHeadJointFabricationBoundMm!==0.5||c.allNewReceiverRCWeldThreadThermalWaterproofAndPhysicalHandlingQualified!==false)throw Error('Explicit unqualified source C-bench controls required')
  const floor=source.candidateFloorPocket
  if(!floor.pocket.local)throw Error('Actual local floor pocket required')
  const rc=floor.pocket.local.levelBoxes.find(q=>q.id==='dryRC')
@@ -169,7 +169,7 @@ export function inletUtilityCBench(i:{source:Source;wet:Wet;capture:ReturnType<t
   put(front+'/RC-standoff',box(rcX,c.frontReceiverAxisYMm,postBottom,...c.frontReceiverCrossMm,postTop-postBottom),front,area(...c.frontReceiverCrossMm,c.frontReceiverWallMm)*(postTop-postBottom))
   const left=rcX>x?x+40:rcX-40,right=rcX>x?rcX+40:x-40,
    corbel:B=[left,c.frontReceiverAxisYMm-40,postTop,right-left,80,80]
-  put(front+'/eccentric-corbel',corbel,front,area(80,80,6)*(right-left))
+  if(Math.abs(rcX-x)>1e-7)put(front+'/eccentric-corbel',corbel,front,area(80,80,6)*(right-left))
   const ry=c.frontReceiverRailYBoundsMm
   HSS(front+'/NS-receiver-rail',[x-40,ry[0],postTop,80,ry[1]-ry[0],80],c.frontReceiverWallMm,front)
   steel(front+'/flush-crown',box(x,(ry[0]+ry[1])/2,-10,...c.frontReceiverCrownMm),front)
@@ -241,7 +241,9 @@ export function inletUtilityCBench(i:{source:Source;wet:Wet;capture:ReturnType<t
    // Only the authored M10 through-bore, matching rear-dowel bore and exact
    //850 compression plane are intentional metal interfaces. Other head stock
    // still has its actual geometric gap checked; no whole-group exclusion.
-   const reserve=normalBoltBore?(1/2-matched):normalDowelBore?(p.headRelease.rearDowelCollarClearBoreMm-p.headRelease.rearDowelDiameterMm)/2-matched:
+   const legSameBolt=a.owner.startsWith('front-leg/')&&(a.id.endsWith('/post')||a.id.endsWith('/cap'))&&b.id==='head/mount-bolt/'+side+'/1',
+    connectedAllowance=i.normalConnectedJointRepresentation==='independent20-control'?two:c.normalCapBeamAndHeadJointFabricationBoundMm,
+    reserve=legSameBolt?qGap-connectedAllowance:normalBoltBore?(1/2-matched):normalDowelBore?(p.headRelease.rearDowelCollarClearBoreMm-p.headRelease.rearDowelDiameterMm)/2-matched:
     planeBearing?0:qGap-(upper&&sameSide?matched:two)
    add(a.id+'/'+b.id,'normal-head',reserve)
   }
@@ -363,7 +365,7 @@ export function inletUtilityCBench(i:{source:Source;wet:Wet;capture:ReturnType<t
   thermalTravelMm=c.normalOperatingTemperatureExcursionK*c.steelExpansionPerK*Math.abs(c.frontReceiverAxisYMm-yr)
  return{schema:'had-utility-front-access-C-bench-observer/1',
   sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,floor:floor.bindingDigest,choice:wet.choice,controls:c}),
-  sourceControllingChoice:wet.choice.id,parts,checks,normalFailures,coldFailures,normalNecessary:normalFailures.length===0&&coldFailures.length===0&&binStock.every(q=>q.usableReserveLitres>=0)&&history.normalBearing.necessary,
+  sourceControllingChoice:wet.choice.id,normalConnectedJointRepresentation:i.normalConnectedJointRepresentation??'source-matched-interfaces',normalConnectedJointFabricationBoundMm:c.normalCapBeamAndHeadJointFabricationBoundMm,parts,checks,normalFailures,coldFailures,normalNecessary:normalFailures.length===0&&coldFailures.length===0&&binStock.every(q=>q.usableReserveLitres>=0)&&history.normalBearing.necessary,
   normalBearing:{sameActualFactoryHeadPartsUsed:true,datumMm:850,beamTopMm:850,rearPostCapTopMm:810,frontLegCapTopMm:810,headSteelAndWaterUpperKg:history.mass.completeHeadWetUpperKg,exactExistingMatchedBearingGeometryNecessary:history.normalBearing.necessary,actualCapacityQualified:false},
   RC:{sameSourcePocketDigest:floor.bindingDigest,rcTopLocalMm:rcTop,rcBottomLocalMm:rcBottom,actualPlanRectanglesMm:rcPlans,coverage,coverageFailures:coverage.filter(q=>!q.contained),nativeForceOrFloorApprovalTransferred:false},
   stock:{frameSteelUpperKg,frameJointMassUpperKg,frameMassUpperKg:frameSteelUpperKg+frameJointMassUpperKg,fixedReceiverSteelUpperKg,fixedReceiverWeldMassUpperKg,binStock,captured,

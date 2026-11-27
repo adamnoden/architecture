@@ -4,9 +4,9 @@ import {readUtilityCurrentGeometrySource} from './current-design/inlet-utility-p
 import {inletUtilityWetAssembly} from './current-design/inlet-utility-wet-assembly.js'
 import {inletUtilityCBench,utilityBenchPlanCoverage} from './current-design/inlet-utility-c-bench.js'
 const source=readUtilityCurrentGeometrySource()
-const run=(choice:unknown=source.choice)=>{
+const run=(choice:unknown=source.choice,normalConnectedJointRepresentation?:'source-matched-interfaces'|'independent20-control')=>{
  const wet=inletUtilityWetAssembly({source,choice})
- return inletUtilityCBench({source,wet,capture:wet.ordinaryCapture})
+ return inletUtilityCBench({source,wet,capture:wet.ordinaryCapture,normalConnectedJointRepresentation})
 }
 const current=run(),near=(a:number,b:number,e=1e-7)=>assert.ok(Math.abs(a-b)<=e,String(a)+' != '+String(b))
 test('C-bench is one source candidate; old seven-brace failures and physical gates remain visible',()=>{
@@ -75,6 +75,16 @@ test('normal C geometry and source head bearing use full actual wet obstacles an
  assert.equal(current.normalBearing.datumMm,850)
  assert.equal(current.normalBearing.actualCapacityQualified,false)
 })
+test('connected cap/beam/head bolt uses its explicit kit bound; independent20 and a too-long bolt remain adverse',()=>{
+ const old=run(source.choice,'independent20-control')
+ assert.deepEqual(old.normalFailures.map(q=>q.reserveMm),[-10,-16,-10,-16])
+ assert.ok(old.normalFailures.every(q=>q.id.includes('/head/mount-bolt/')))
+ const bad=structuredClone(source.choice) as any
+ bad.coldDistribution.frameRenewal.portalDesign.headRelease.boltLengthMm+=5
+ const q=run(bad)
+ assert.ok(q.normalFailures.some(v=>v.id.includes('/cap/head/mount-bolt/')&&v.reserveMm<0))
+ assert.equal(q.ordinaryRenewalAccepted,false)
+})
 test('conditional signed receiver wrench uses unilateral rear contact and actual stock gravity',()=>{
  assert.equal(current.loads.signedDemandCases.length,48)
  assert.equal(current.loads.jointGravityIncludedAtBothActualMemberPlanExtrema,true)
@@ -113,7 +123,7 @@ test('finite front leg moves NORTH on explicit bearing faces before lifting; who
  console.log('UTILITY_C_BENCH_FINITE',JSON.stringify({
   firstReleaseNecessary:current.finite.firstReleaseNecessary,
   failureCount:current.finite.failures.length,
-  failures:current.finite.failures.slice(0,100),
+  failures:[...current.finite.failures.reduce((map,q)=>{const key=q.phase+'|'+q.id,old=map.get(key);if(!old||q.reserveMm<old.reserveMm)map.set(key,q);return map},new Map<string,typeof current.finite.failures[number]>()).values()],
   fullExtraction:current.finite.fullCFrameExtractionAndParkProved,
   tools:current.finite.positiveCaptureAndParkToolsProved
  }))

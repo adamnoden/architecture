@@ -247,7 +247,7 @@ export function derivePostRowBridge(i:PostRowBridgeInput){
      }
     }
    }
-   if(!['captured-first-lift-after-six-panel-and-six-rail-removal','north-slide-below-source-radiator'].includes(phase.id)){
+   if(!phase.panClearTip&&!['captured-first-lift-after-six-panel-and-six-rail-removal','north-slide-below-source-radiator','raise-upright-in-open-strip-before-door'].includes(phase.id)){
     let bottom=Infinity
     for(const part of innerAssemblyParts)for(let k=0;k<=samples;k++){const p=poseAt(phase,k/samples);bottom=Math.min(bottom,boxAt(part.boxMm,p)[2])}
     // At the final outside rest only the actual rest top is a mating plane.

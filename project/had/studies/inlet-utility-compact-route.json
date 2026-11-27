@@ -1431,7 +1431,9 @@
             "installedOnlyForControlledFiveLitreBatchesBeforeCaptureTool": true,
             "activeLegacyReceiverShapesChanged": false,
             "actualWatertightStiffnessAndHandlingQualified": false
-          }
+          },
+          "normalCapBeamAndHeadJointFabricationBoundMm": 0.5,
+          "normalJointScope": "The made cap/beam/head-bolt joint is machined and bolted as one kit: actual normal cap plane810 and head-bolt tip814; this bound applies only to those named connected metal interfaces. Foreign pipes/people/room and released members retain both10mm settings."
         }
       }
     },
