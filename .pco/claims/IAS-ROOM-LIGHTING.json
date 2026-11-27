@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "IAS-ROOM-LIGHTING",
   "generation": 11,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "02cf4f76-dbdc-478c-a8c0-6cc06cde16d9",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-owner-takeover-20261126"
   },
   "claimedAt": "2026-11-26T20:03:12.723Z",
-  "heartbeatAt": "2026-11-27T00:20:15.000Z",
-  "expiresAt": "2026-11-27T01:05:15.000Z",
+  "heartbeatAt": "2026-11-27T00:21:09.000Z",
+  "expiresAt": "2026-11-27T00:21:09.000Z",
   "checkpoint": {
     "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
     "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
@@ -39,5 +39,7 @@
       "blocker": "No product/articulation/photometric/material/physical or owner appearance approval. Full repository health and fresh canonical preflight still mandatory."
     }
   },
-  "pr": 1630
+  "pr": 1630,
+  "releasedAt": "2026-11-27T00:21:09.000Z",
+  "releaseReason": "handoff"
 }
