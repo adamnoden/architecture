@@ -1,45 +1,43 @@
 {
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
-  "generation": 66,
-  "state": "released",
-  "leaseId": "5ccd08ee-a447-44b6-a616-6cdf99f1eabe",
+  "generation": 67,
+  "state": "claimed",
+  "leaseId": "218becd1-1cea-46e2-ad07-823d7a16764e",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-owner-takeover-20261126"
+    "label": "zerg-water-source-continuation-20261127"
   },
-  "claimedAt": "2026-11-26T20:02:36.250Z",
-  "heartbeatAt": "2026-11-27T00:21:11.000Z",
-  "expiresAt": "2026-11-27T00:21:11.000Z",
+  "claimedAt": "2026-11-27T00:33:12.247Z",
+  "heartbeatAt": "2026-11-27T00:33:12.247Z",
+  "expiresAt": "2026-11-27T02:33:12.247Z",
   "checkpoint": {
-    "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
-    "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
-    "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
+    "evidence": "Explicit owner-directed continuation of named HAD packet after root's generation66 handoff. Currentmainf2 unchanged; dependencies/dispatch manuallyverified (not canonicalCLI). Protected water branch fc715cdfcfa2bbcefbc9bd4de72c047edd85b1e4; exact5a3 TypeScript129/131, actualSRC/Rover-F+11L/SVG proof pending.",
+    "next": "Finish bounded source-coupled floor/support/thermal, actual inletpostloss and Utilityrenewal proofs using approvedcontents-read hostedworkflow. Preserve rootPR1630/main/receipts; no merge or acceptanceclaim.",
+    "blocker": "Executor unavailable; current house profile/native/sourceaccount reconciliation and complete P hydraulic/electrical installation remainopen."
   },
-  "branch": "work/zerg-takeover-integration-20261126",
+  "branch": "work/zerg-water-west-recovery-20261126",
+  "note": "Owner standingauthorisation explicitly names HAD completion. Fresh normal acquisition afterreleased66; exactfileCAS, no force takeover, no canonicalCLI claim. Rootintegrationbranch/PR preserved in predecessor/recoverysource.",
   "predecessor": {
-    "leaseId": "66ded366-e333-4c85-bfa1-d9882125e59e",
-    "generation": 65,
-    "branch": "work/zerg-loaded-joint-room-20261126",
-    "pr": 1629,
+    "leaseId": "5ccd08ee-a447-44b6-a616-6cdf99f1eabe",
+    "generation": 66,
+    "branch": "work/zerg-takeover-integration-20261126",
+    "pr": 1630,
     "checkpoint": {
-      "evidence": "d616aff6 protects actual collision/type repairs. Full U normal case exposes and repairs washer/bowl/H0 clash; child owns U member/hot proof. Parent now authors Plant330L+actual connected inventory/grated containment.",
-      "next": "Finish whole Utility positive installation and replaceable-member proof; execute complete Plant stored-water rupture/backfeed/occupied-storage case.",
-      "blocker": "No complete U/P installation closure. Keep505mm cap until actual floor replan; minimum pipe bores do not bound maximum stored volume."
+      "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
+      "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
+      "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
     }
   },
   "recoverySource": {
-    "leaseId": "66ded366-e333-4c85-bfa1-d9882125e59e",
-    "generation": 65,
-    "branch": "work/zerg-loaded-joint-room-20261126",
-    "pr": 1629,
+    "leaseId": "5ccd08ee-a447-44b6-a616-6cdf99f1eabe",
+    "generation": 66,
+    "branch": "work/zerg-takeover-integration-20261126",
+    "pr": 1630,
     "checkpoint": {
-      "evidence": "d616aff6 protects actual collision/type repairs. Full U normal case exposes and repairs washer/bowl/H0 clash; child owns U member/hot proof. Parent now authors Plant330L+actual connected inventory/grated containment.",
-      "next": "Finish whole Utility positive installation and replaceable-member proof; execute complete Plant stored-water rupture/backfeed/occupied-storage case.",
-      "blocker": "No complete U/P installation closure. Keep505mm cap until actual floor replan; minimum pipe bores do not bound maximum stored volume."
+      "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
+      "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
+      "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
     }
-  },
-  "pr": 1630,
-  "releasedAt": "2026-11-27T00:21:11.000Z",
-  "releaseReason": "handoff"
+  }
 }
