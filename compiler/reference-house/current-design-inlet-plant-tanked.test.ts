@@ -163,7 +163,7 @@ test('actual Plant frame, door and bridge keep the same raised walking datum and
  assert.deepEqual(f.infills.map(p=>p.widthMm),[150,150])
  assert.equal(f.sourceAxisYMm,4025)
  assert.ok(f.exactOuterArchGeometry?.necessaryExactRectangleFit)
- assert.equal(r.roomCoordination.fittedDoor.parkedLeafBoxMm[2],150)
+ assert.equal(r.roomCoordination.fittedDoor.parkedLeafBoxMm[2],f.leafBody!.bottomHouseLocalMm)
  assert.equal(r.roomCoordination.fittedDoor.hingeMm[2],150)
  assert.ok(r.roomCoordination.fittedDoor.poses.every(p=>p.shoulderMm[2]===f.choice.operatorShoulderHeightMm+150))
  assert.ok(!r.roomCoordination.fittedDoor.diagnostics.includes('PLANT_FITTED_DOOR/frame-header-raw-arch'))

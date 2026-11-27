@@ -25,7 +25,7 @@ Exact pre-selection checkpoint aa1ae0e440e96b1b3b3021b32b2cfb8c93f191fe passed T
 | Whole communicating pressure/store release design bound |640.356 L |
 | Static reserve above source-fed initial pool |57.297 L |
 
-These results are comparisons under their stated source/design conditions. They do not establish complete pressure/air transients, weather closure, local peak contact or installed support capacity. The revised raw C5, leaf join and regenerated drawing require their own exact-head replay; the pre-selection run is not silently transferred to them.
+These results are comparisons under their stated source/design conditions. They do not establish complete pressure/air transients, weather closure, local peak contact or installed support capacity. C5 source checkpoint c7487856a052c457528372473934b882087d714f passed TypeScript and158/160 controls in run45927069235. All four matched leaf/deck controls passed. The two remaining failures were the stale saved SVG and the historical parked-leaf150 mm assertion; the compiler now gives164 mm from the actual14 mm bottom gap. This follow-up saves the exact generated SVG and derives the parked-leaf expectation from the fitted frame. Its strict exact-head replay remains required; neither earlier run is silently transferred.
 
 The signed wheel ledger includes the real first-panel overhang and opposite-seat uplift while retaining ONE source wheel. Source-defined minimum plank gravity is credited only in normal installed cases. The severe no-plank comparison remains visible; stripped girder renewal gets no such gravity credit. Locate-only pins are not panel hold-downs.
 
