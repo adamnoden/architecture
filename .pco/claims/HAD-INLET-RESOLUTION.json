@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 67,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "218becd1-1cea-46e2-ad07-823d7a16764e",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-water-source-continuation-20261127"
   },
   "claimedAt": "2026-11-27T00:33:12.247Z",
-  "heartbeatAt": "2026-11-27T02:30:59.243Z",
-  "expiresAt": "2026-11-27T04:30:59.243Z",
+  "heartbeatAt": "2026-11-27T02:38:53.052Z",
+  "expiresAt": "2026-11-27T02:38:53.052Z",
   "checkpoint": {
-    "evidence": "Protected selected C5 source/drawing0256cfe95368b78e7d0166fdebe619ab62125b30; exact hosted run45928174568/job140274359950 passed TypeScript and160/160 focused controls. Artifact15167422656 retained90days, zipSHA2560171ff0acaef6e20a2c9570c55e4710cb452a1be13cabf7e920c1a6393294e3a. Two-end solid100x80 member removes all actual inlet posts/feet;225mm surviving halves;8960.166N/98.555kg/611.272N normalminimum;57.297L static reserve for640.356L full communicating potable release. GeneratedSVG strict equality and679..681deck/694..2975leafjoin pass.",
-    "next": "Record exact proof in owning Plant development note, retain concrete retainer/whole-frame/contact/thermalweather/primaryrack/chargedcontrols boundaries and Utility C-frame source. Root/STR/room agents usage-limited; full current compiler/account/native ground/profile integration awaits restored executor and coordinating source integration. No main/1630/receipts/canonical edits or gate closure.",
-    "blocker": "Approved contents-read named hosted workflow proves only focused pure source/geometry. Full house/native/profile/current-account replay unavailable in connector-only boundary. RootPR1630 still independently HOLD MERGE for engineering.html node:crypto import. Both-room HAD complete installation remains internally unfinished; no external/general approval substitute."
+    "evidence": "Protected final source0b8ad584d5d0a7107ef148bd305910334799eeb0/treea1839732fd7a6358eb131570907e18aeca229aac on retained work/zerg-water-west-recovery-20261126. Exact final hosted run45929022610/job140277058587 COMPLETED SUCCESS: TypeScript+160/160 focused controls, generatedSVG strict equality and four matchedleaf/deck controls. Artifact15168420302 retained90days, zipSHA2560357d4f74dee04f02afbc932e0d4d80ad5c689fcccb647423f132a1728fd16d0. Owning Plant development note records prior identical-code0256 proof and implementation boundaries. Selected C5 two-end solid100x80 member removes all actual inlet posts/feet:225mm surviving halves,8960.166N/98.555kg/611.272N normalminimum,57.297L static reserve for640.356L communicating potable release.679..681deck/694..2975leafgivesnet10/2. No main/1630/receipts/canonical/gate edits or merge.",
+    "next": "FIRST actual Plant retainers: Plant/grate/5/0 northrail Plant/solid-walk-segment/1/6/bridge-west box[11209.0833,4060,570,230.9167,40,40]. Nominal wheel uplift1607.592N becomes2036.284N under CURRENT20mm sourceposition bound. Unimplemented candidate clipX11327.574/Y4050 vs3907 opposite seat has2463.476N lever demand before fit; author3kN only with actual contact geometry. Slot/floatingwasher/captiveM8/commonsiderailreceiver/tools unproved;9mm roundhole does NOT earn2.5mm alignment. Captive tail implies45mm first panel lift rather than old12mm locator-only lift. Implement actual parts in inlet-plant-tanked-walk.ts, recompute G/end reactions/wet solids BEFORE finalDemandBasis, then source controls. Continue footN+M/contact/globalframe stability, actual capture/antiroll/tool/externalrest, air/continuingmains/thermalweather/nonreturn/realoutfalls. Complete actual primary/secondary racks/expansion/isolatedfill/electrical/ports/renewal and charged heater/sensing; maximumFaultTemperature stays null. Utility C-bench206phase findings remain: read-only weldedside23kg comparison is NOT selected; frontM20Y1290 would be inaccessible and needs real frontjoint/extraction proof. Then current shared compiler/CLI/editor/publication/sourceaccount and genuine current notchedground/contact/sameverticalprofile replay. Preserve old forcepins as scoped history.",
+    "blocker": "Coordination/environment handoff: root/STR/room agents hit account usage limit; local executor unavailable. Approved named contents-read hosted workflow proves focused pure source/geometry only, not heavy current house/native/profile or publication preflight. RootPR1630 independently HOLD MERGE for engineering.html node:crypto devimport. HAD whole installation remains internally unfinished, not an external-evidence-only blocker. Source0 vsHAD530 Z remains unjoined. Cleanup residue deliberately retained: ONE active recoverybranch, branch-scoped proofworkflow and90day artifacts for successor; remove temporary workflow only after complete integration/provenance review. No background execution or unattended lease retained."
   },
   "branch": "work/zerg-water-west-recovery-20261126",
   "note": "Owner standingauthorisation explicitly names HAD completion. Fresh normal acquisition afterreleased66; exactfileCAS, no force takeover, no canonicalCLI claim. Rootintegrationbranch/PR preserved in predecessor/recoverysource.",
@@ -39,5 +39,7 @@
       "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
       "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
     }
-  }
+  },
+  "releasedAt": "2026-11-27T02:38:53.052Z",
+  "releaseReason": "handoff"
 }
