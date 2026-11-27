@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 66,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "5ccd08ee-a447-44b6-a616-6cdf99f1eabe",
   "holder": {
     "kind": "chatgpt",
     "label": "zerg-owner-takeover-20261126"
   },
   "claimedAt": "2026-11-26T20:02:36.250Z",
-  "heartbeatAt": "2026-11-27T00:20:07.000Z",
-  "expiresAt": "2026-11-27T01:05:07.000Z",
+  "heartbeatAt": "2026-11-27T00:21:11.000Z",
+  "expiresAt": "2026-11-27T00:21:11.000Z",
   "checkpoint": {
     "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
     "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
@@ -39,5 +39,7 @@
       "blocker": "No complete U/P installation closure. Keep505mm cap until actual floor replan; minimum pipe bores do not bound maximum stored volume."
     }
   },
-  "pr": 1630
+  "pr": 1630,
+  "releasedAt": "2026-11-27T00:21:11.000Z",
+  "releaseReason": "handoff"
 }
