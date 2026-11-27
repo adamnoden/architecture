@@ -1049,7 +1049,7 @@
         "actualDeliveredMaterialWeldAndJointProofAccepted": false,
         "actualFloorBearingAndBallastSupportAccepted": false,
         "oldIASGeometryRole": "rejected comparator only; no legacy frame acceptance or mass receipt transfers",
-        "ordinaryRenewalArchitecture": "two independently replaceable side portals and three bolted rear members; actual finite paths and temporary positive capture still to be proved",
+        "ordinaryRenewalArchitecture": "two welded NSbeam/rear-leg L subassemblies, separate frontlegs and individually bolted braces;16 new source joint interfaces; actual positive member capture/parks/foot and joint tools still unqualified",
         "maximumFrameJointAndWeldMassKg": 2,
         "maximumEachHeadPressureAssemblyKg": 2,
         "underBowlPadMm": [
@@ -1105,7 +1105,42 @@
           "maximumRearMemberWithTemporaryClampsKg": 2,
           "steelDensityUpperKgM3": 8000,
           "actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified": false,
-          "rearTranslationOrder": "west-before-up"
+          "rearTranslationOrder": "west-before-up",
+          "rearPreRotationWestMm": 50,
+          "rearParkOffsetsYMm": [
+            100,
+            -100,
+            0
+          ],
+          "memberSamplingMaximumStepMm": 2,
+          "sideMemberRenewal": {
+            "schema": "had-utility-independent-side-members/1",
+            "method": "welded-rear-L-with-separate-front-leg",
+            "braceNorthMm": 400,
+            "braceVerticalParkXBySideMm": [
+              [
+                10750,
+                10800
+              ],
+              [
+                11480,
+                11535
+              ]
+            ],
+            "beamLiftMm": 60,
+            "beamNorthMm": 120,
+            "rearLegSouthMm": 120,
+            "frontLegNorthMm": 120,
+            "legLiftMm": 40,
+            "crewRetreatNorthMm": 300,
+            "workerRetreatRequiredBeforeLast180MmBraceNorth": true,
+            "headRemainsOnIndependentCapturedFork": true,
+            "madeWaterRemainsOnIndependentSupports": true,
+            "actualJointCaptureParkAndReceiverHardwareQualified": false,
+            "braceHoldNorthMm": 220,
+            "LLiftMm": 40,
+            "LSouthMm": 80
+          }
         },
         "headRelease": {
           "schema": "had-utility-front-head-fastening/1",
@@ -1184,7 +1219,29 @@
           "operatorPoseScope": "standing top-bolt tools only; low pressure-union posture remains in headCapture controls"
         },
         "maximumHeadFactoryWeldMassKg": 0.15,
-        "normalForceHeightMeaning": "maximum authored head or complete inward ratchet metal/hand height before lift; both10mm settings remain additional"
+        "normalForceHeightMeaning": "maximum authored head or complete inward ratchet metal/hand height before lift; both10mm settings remain additional",
+        "weldedRearL": {
+          "schema": "had-utility-welded-rear-L/1",
+          "postCapPlanMm": [
+            42,
+            50
+          ],
+          "postCapThicknessMm": 6,
+          "filletLegMm": 5,
+          "minimumReferenceWeldThroatMm": 3.5,
+          "captureBeamAxisYMm": [
+            860,
+            1180
+          ],
+          "captureJawEnvelopeMm": [
+            40,
+            14,
+            60
+          ],
+          "maximumEachCaptureClampKg": 0.5,
+          "actualWeldCapLocalWallAndClampQualified": false,
+          "postToCapConnection": "factory full-penetration perimeter weld through actual HSS wall; procedure, local wall and material qualification false"
+        }
       }
     },
     "hotService": {

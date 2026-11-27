@@ -528,9 +528,11 @@ test('same pressure-device parts expose compound envelopes instead of silently a
 const portalFinite=inletUtilityPortalFiniteRenewal({source:current,wet,capture:wet.ordinaryCapture,portal})
 console.info('UTILITY_PORTAL_FINITE '+JSON.stringify({components:portalFinite.components,geometryFailures:portalFinite.geometryFailures,receiver:portalFinite.receiver,toolFailures:portalFinite.toolFailures,open:portalFinite.specificOpenGates}))
 if(proofDir)writeFileSync(join(proofDir,'current-utility-portal-finite-renewal.json'),JSON.stringify(portalFinite,null,2))
-test('same portal case owns five finite components and the actual source notched RC receiver datum',()=>{
- assert.equal(portalFinite.components.length,5)
- assert.equal(portalFinite.components.filter(q=>q.id.startsWith('portal/side-unit/')).length,2)
+test('same portal case owns11 current L/frontleg/brace components and the actual source notched RC receiver datum',()=>{
+ assert.equal(portalFinite.components.length,11)
+ assert.equal(portalFinite.components.filter(q=>q.id.endsWith('/welded-L')).length,2)
+ assert.equal(portalFinite.components.filter(q=>q.id.includes('/leg-assembly/')).length,2)
+ assert.equal(portalFinite.components.filter(q=>q.id.includes('/side-brace/')).length,4)
  assert.equal(portalFinite.receiver.sourceContextDigest,current.candidateFloorPocket.bindingDigest)
  assert.deepEqual(portalFinite.receiver.rcLocalMm,[-560,-360])
  assert.ok(portalFinite.receiver.parts.some(q=>q.role==='structural-corbel-no-glass-bearing'))
@@ -543,9 +545,9 @@ test('same portal case owns five finite components and the actual source notched
 })
 
 test('finite phase ledger replaces detached originals by actual parked steel before the next release',()=>{
- assert.equal(portalFinite.phaseState.length,5)
+ assert.equal(portalFinite.phaseState.length,11)
  assert.deepEqual(portalFinite.phaseState[0].removedOriginalIds,[])
- for(const q of portalFinite.phaseState.filter(q=>q.componentId.startsWith('portal/side-unit/'))){
+ for(const q of portalFinite.phaseState.filter(q=>!q.componentId.startsWith('portal/rear/'))){
   assert.ok(q.removedOriginalIds.includes('portal/rear/lower-tie'))
   assert.equal(q.parkedObstacleIds.filter(id=>id.startsWith('parked/portal/rear/')).length,3)
  }
@@ -645,4 +647,99 @@ test('standing bolt-tool arms clear the retained supporting column; low union po
  const low=inletUtilityPortalCandidate({source:current,wet,capture:wet.ordinaryCapture,headShoulderRepresentation:'old-low-shoulder-control'})
  assert.ok(low.headRelease.toolFailures.some(q=>q.id.includes('capture/lift-column/11110')&&q.reserveMm< -13))
  assert.notEqual(low.sourceDigest,portal.sourceDigest)
+})
+
+test('welded L subassemblies retain normal bearing and expose16 new renewable interfaces',()=>{
+ const a=portalFinite.independentMemberDesign
+ assert.equal(a.representation,'welded-L-members')
+ assert.equal(a.jointInterfaces.length,16)
+ assert.equal(new Set(a.jointInterfaces.map(q=>q.id)).size,16)
+ assert.ok(a.jointInterfaces.every(q=>q.actualEndHardwareGeometryAndToolsQualified===false))
+ assert.deepEqual(a.remainingNormalFramePartIds,[])
+ assert.equal(a.normalGeometryChangedByThisRenewalSplit,false)
+ assert.equal(a.normalHeadAndWaterMustRemainIndependentlySupported,true)
+ assert.equal(a.actualRearJointApproachHandReleaseAndPositiveCaptureToolGeometryImplemented,false)
+ assert.equal(a.actualIndependentPositiveParkReceiversImplemented,false)
+ assert.equal(a.actualWholeRenewalAccepted,false)
+ assert.ok(a.requiredMemberCaptureCapacityKg<a.availableAuthoredMemberToolPayloadKg)
+ assert.ok(a.crewRetreatChecks.some(q=>q.id.startsWith('brace-held-at220/body-retreat/')))
+ assert.ok(a.fixedBaseReference.combinedStressMPa<200/1.5)
+ assert.ok(a.fixedBaseReference.gravityUpperEachN<a.fixedBaseReference.eulerFixedFreeN/3)
+ assert.equal(a.fixedBaseReference.actualReceiverJointAndTemporaryStabilityAccepted,false)
+ const whole=inletUtilityPortalFiniteRenewal({source:current,wet,capture:wet.ordinaryCapture,portal,sideRemovalRepresentation:'whole-unit-control'})
+ assert.equal(whole.components.length,5)
+ assert.ok(whole.geometryFailures.some(q=>q.componentId==='portal/side-unit/0'&&q.obstacleId==='cold/washer/stop-body'))
+ assert.notEqual(whole.sourceDigest,portalFinite.sourceDigest)
+})
+
+test('actual L caps and counted welds carry a source-bound reference; all new handling and local proofs remain unqualified',()=>{
+ const a=portalFinite.weldedLDesign
+ assert.equal(a.members.length,2)
+ near(a.normalHeadBearingPlaneUnchangedMm,850)
+ assert.equal(a.rearPostTopIsActualCapBottom,true)
+ assert.equal(portal.parts.filter(q=>q.id.includes('/post-cap/')).length,4)
+ assert.equal(portal.parts.filter(q=>q.id.includes('/rear-weld/')).length,8)
+ assert.equal(a.weld.effectiveBaseWallLimitedThroatMm,3)
+ assert.ok(a.weld.referenceVonMisesMPa<a.weld.referenceAllowableMPa,JSON.stringify(a.weld))
+ assert.ok(a.weld.capConservativeOneWayStressMPa<a.weld.referenceAllowableMPa)
+ assert.ok(a.weld.postCapWeldReferenceVonMisesMPa<a.weld.referenceAllowableMPa)
+ assert.equal(a.weld.postCapFullPenetrationEffectiveWallMm,3)
+ assert.equal(a.weld.actualWeldFatigueHSSLocalWallCapAndMaterialQualified,false)
+ for(const q of a.members){
+  assert.ok(q.modeledSteelUpperKg>4)
+  assert.ok(q.countedFilletUpperKg>0)
+  assert.ok(q.countedPostCapGrooveWeldUpperKg>0)
+  assert.ok(q.maximumCapturedKg>q.modeledSteelUpperKg)
+  assert.equal(q.withinPayloadRequirement,true,JSON.stringify(q))
+  assert.equal(q.stockCGBounds.length,3)
+  assert.ok(q.stockCGBounds.every(b=>Number.isFinite(b.minimumMm)&&b.maximumMm>=b.minimumMm))
+  assert.ok(q.frontSignedVerticalReactionEnvelopeN[0]<=0)
+  assert.equal(q.requiresClosedPositiveClamps,true)
+  assert.equal(q.gravityFrictionCreditedN,0)
+  assert.ok(q.memberHandlingCoupleUpperNmm>0)
+  assert.deepEqual(q.clampGeometryFailures,[],JSON.stringify(q.clampGeometryFailures))
+  assert.equal(q.actualJawScrewSwingAntiRollMemberLocalWallAndToolGeometryQualified,false)
+ }
+ assert.equal(a.ordinaryRenewalAccepted,false)
+ const prior13=inletUtilityPortalFiniteRenewal({source:current,wet,capture:wet.ordinaryCapture,portal,sideRemovalRepresentation:'independent-members'})
+ assert.equal(prior13.components.length,13)
+ assert.equal(prior13.independentMemberDesign.old13MemberModeRequiresCuttingWeldedLs,true)
+ assert.equal(prior13.ordinaryRenewalAccepted,false)
+})
+test('only the actual joined front seat receives monotone upward contact treatment; penetration remains a failure',()=>{
+ assert.ok(portalFinite.separatingSeatContacts.length>0)
+ for(const q of portalFinite.separatingSeatContacts){
+  assert.ok(q.componentId.endsWith('/welded-L'))
+  assert.ok(q.targetPartId.endsWith('/leg/1')||q.targetPartId.endsWith('/post-cap/1')||q.targetPartId.includes('/post-cap-weld/1/'))
+  assert.ok(q.physicalClearanceMm>=-1e-7)
+  assert.equal(q.settingAllowanceAppliedMm,0)
+ }
+ const invalid={...portal,parts:portal.parts.map(q=>{
+  if(q.id!=='portal/0/post-cap/1')return q
+  const b=[...q.boxMm];b[2]+=1
+  return{...q,boxMm:b as unknown as typeof q.boxMm}
+ })}
+ const bad=inletUtilityPortalFiniteRenewal({source:current,wet,capture:wet.ordinaryCapture,portal:invalid})
+ assert.ok(bad.geometryFailures.some(q=>q.componentId==='portal/0/welded-L'&&q.obstacleId==='portal/0/post-cap/1'&&q.reserveMm< -20))
+ assert.equal(bad.separatingSeatContacts.some(q=>q.componentId==='portal/0/welded-L'),false)
+ assert.notEqual(bad.sourceDigest,portalFinite.sourceDigest)
+ const foreign=portalFinite.checks.filter(q=>q.intentionalSeparatingSeatContact)
+ assert.ok(foreign.every(q=>q.obstacleId.includes('/leg/1')||q.obstacleId.includes('/post-cap/1')||q.obstacleId.includes('/post-cap-weld/1/')))
+})
+
+test('L40UP/S80 includes both positive clamp envelopes and every actual live-service obstacle',()=>{
+ assert.equal(portalFinite.memberCaptureEnvelopes.length,4)
+ assert.ok(portalFinite.components.filter(q=>q.id.endsWith('/welded-L')).every(q=>q.phases.includes('captured-welded-L-south-park')))
+ const service=portalFinite.checks.filter(q=>q.componentId.endsWith('/welded-L')&&(q.obstacleId.startsWith('cold/')||q.obstacleId.startsWith('U/hot/')||q.obstacleId.startsWith('HAD/utility-route/')))
+ assert.ok(service.length>0)
+ assert.ok(service.every(q=>q.reserveMm>=-1e-7),JSON.stringify(service.filter(q=>q.reserveMm< -1e-7)))
+ assert.ok(portalFinite.checks.some(q=>q.movingPrimitiveId?.startsWith('capture-clamp/portal/')))
+ assert.equal(portalFinite.independentMemberDesign.actualWholeRenewalAccepted,false)
+})
+
+test('actual crew retreat and positive-clamp interference remain in the main finite failure ledger',()=>{
+ const crew=portalFinite.independentMemberDesign.crewRetreatFailures
+ assert.equal(portalFinite.geometryFailures.filter(q=>q.componentId==='crew/brace-retreat').length,crew.length)
+ for(const q of crew)assert.ok(portalFinite.geometryFailures.some(v=>v.obstacleId===q.id&&v.reserveMm===q.reserveMm))
+ for(const m of portalFinite.weldedLDesign.members)for(const q of m.clampGeometryFailures)assert.ok(portalFinite.geometryFailures.some(v=>v.componentId===m.componentId&&v.obstacleId===q.id))
 })

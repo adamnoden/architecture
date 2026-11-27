@@ -564,7 +564,8 @@ export function inletUtilityHeadWaste(i:{source:Source;wet:Wet}){
 }
 
 type PortalHeadFastening={operatorBodyFloorXYMm:readonly[number,number];operatorShoulderMm:P;socketLowerFaceAbovePedestalMm:number;minimumSocketHeadEngagementMm:number;ratchetHandleLengthMm:number;ratchetSteadyGripMm:number;ratchetMaximumDiameterMm:number;ratchetWorkingSectorDegrees:readonly[number,number];ratchetSweepIntervals:number;schema:string;method:string;frontBoltRowsFromBoardMm:readonly[number,number];boltDiameterMm:number;boltLengthMm:number;boltTensileAreaMm2:number;boltHeadAFMm:number;boltHeadDiameterMm:number;boltHeadHeightMm:number;boltHeadBottomMm:number;minimumThreadEngagementMm:number;frameThreadBlockMm:readonly[number,number,number];frameThreadBlockBottomMm:number;headLoadBossMm:readonly[number,number,number];headLoadBossBottomMm:number;headLoadPedestalMm:readonly[number,number,number];headLoadPedestalBottomMm:number;deckAccessDiameterMm:number;deckPlugDiameterMm:number;deckPlugThicknessMm:number;rearDowelDiameterMm:number;rearDowelBottomMm:number;rearDowelTopMm:number;rearDowelCollarDiameterMm:number;rearDowelCollarClearBoreMm:number;rearDowelCollarBottomMm:number;rearDowelCollarTopMm:number;frontLipThicknessMm:number;frontLipDepthMm:number;frontLipBottomMm:number;leftCornerBandDepthMm:number;referenceSteelProofMPa:number;toolSocketMaximumDiameterMm:number;toolExtensionMm:number;toolTorqueNm:number;actualDeliveredFastenerThreadWeldSheetAndLoadTransferQualified:false}
-type PortalDesign={maximumHeadFactoryWeldMassKg:number;headRelease:PortalHeadFastening;schema:string;sideAxisFromBoardEdgeMm:number;beamRearFromBoardMm:number;beamFrontFromBoardMm:number;rearLegFromBoardMm:number;frontLegFromBoardMm:number;sideRibCrossMm:readonly[number,number];sideRibWallMm:number;sideRibRearFromBoardMm:number;sideRibFrontFromBoardMm:number;framePostCrossMm:readonly[number,number];framePostWallMm:number;frameBeamCrossMm:readonly[number,number];frameBeamWallMm:number;lowerRearCrossMm:readonly[number,number];lowerRearWallMm:number;lowerRearAxisZMm:number;braceCrossMm:number;braceWallMm:number;rearBraceAxisYOffsetsMm:readonly number[];rearBraceLowZMm:number;rearBraceHighZMm:number;sideBraceAxisXOffsetsMm:readonly number[];sideBraceLowZMm:number;sideBraceHighZMm:number;solePlanMm:readonly[number,number];soleThicknessMm:number;headClipPlateMm:readonly[number,number,number];headClipAxisZMm:number;headClipRearFromBoardMm:number;headClipFrontFromBoardMm:number;headMountBoltDiameterMm:number;headMountBoltMaximumLengthMm:number;minimumHeadSheetMm:number;maximumHeadSheetMm:number;maximumHeadDryAccessoriesKg:number;maximumEachHeadPressureAssemblyKg:number;underBowlPadMm:readonly[number,number,number];maximumFrameJointAndWeldMassKg:number;minimumSteelDensityKgM3:number;maximumSteelDensityKgM3:number;matchedOneHeadFabricationBoundMm:number;maximumCapturedWetHeadKg:number;normalFrontEdgePointComparisonN:number;normalHorizontalComparisonN:number;normalForceHeightMm:number;frontUpperAndLowerTiesIncluded:false;actualDeliveredMaterialWeldAndJointProofAccepted:false;actualFloorBearingAndBallastSupportAccepted:false}
+type PortalWeldedRearL={schema:string;postCapPlanMm:readonly[number,number];postCapThicknessMm:number;filletLegMm:number;minimumReferenceWeldThroatMm:number;captureBeamAxisYMm:readonly[number,number];captureJawEnvelopeMm:readonly[number,number,number];maximumEachCaptureClampKg:number;actualWeldCapLocalWallAndClampQualified:false}
+type PortalDesign={weldedRearL:PortalWeldedRearL;maximumHeadFactoryWeldMassKg:number;headRelease:PortalHeadFastening;schema:string;sideAxisFromBoardEdgeMm:number;beamRearFromBoardMm:number;beamFrontFromBoardMm:number;rearLegFromBoardMm:number;frontLegFromBoardMm:number;sideRibCrossMm:readonly[number,number];sideRibWallMm:number;sideRibRearFromBoardMm:number;sideRibFrontFromBoardMm:number;framePostCrossMm:readonly[number,number];framePostWallMm:number;frameBeamCrossMm:readonly[number,number];frameBeamWallMm:number;lowerRearCrossMm:readonly[number,number];lowerRearWallMm:number;lowerRearAxisZMm:number;braceCrossMm:number;braceWallMm:number;rearBraceAxisYOffsetsMm:readonly number[];rearBraceLowZMm:number;rearBraceHighZMm:number;sideBraceAxisXOffsetsMm:readonly number[];sideBraceLowZMm:number;sideBraceHighZMm:number;solePlanMm:readonly[number,number];soleThicknessMm:number;headClipPlateMm:readonly[number,number,number];headClipAxisZMm:number;headClipRearFromBoardMm:number;headClipFrontFromBoardMm:number;headMountBoltDiameterMm:number;headMountBoltMaximumLengthMm:number;minimumHeadSheetMm:number;maximumHeadSheetMm:number;maximumHeadDryAccessoriesKg:number;maximumEachHeadPressureAssemblyKg:number;underBowlPadMm:readonly[number,number,number];maximumFrameJointAndWeldMassKg:number;minimumSteelDensityKgM3:number;maximumSteelDensityKgM3:number;matchedOneHeadFabricationBoundMm:number;maximumCapturedWetHeadKg:number;normalFrontEdgePointComparisonN:number;normalHorizontalComparisonN:number;normalForceHeightMm:number;frontUpperAndLowerTiesIncluded:false;actualDeliveredMaterialWeldAndJointProofAccepted:false;actualFloorBearingAndBallastSupportAccepted:false}
 /** Complete alternate normal support. This observer does not yet replace the
  * legacy cage adapter or admit finite portal capture/extraction/floor loads. */
 export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;braceObstacleRepresentation?:'exact-members'|'filled-bay-control';headMountRepresentation?:'front-top-bolts'|'legacy-cross-clips-control';headToolRepresentation?:'inward-ratchet'|'bare-axis-arm-control';headSocketRepresentation?:'flat-ended'|'capsule-control';headShoulderRepresentation?:'source-standing'|'old-low-shoulder-control'}){
@@ -573,6 +574,8 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
  if(p?.schema!=='had-utility-two-side-portals/1'||!Number.isFinite(p.maximumEachHeadPressureAssemblyKg)||p.maximumEachHeadPressureAssemblyKg<=0||p.maximumEachHeadPressureAssemblyKg*2>p.maximumHeadDryAccessoriesKg||p.frontUpperAndLowerTiesIncluded!==false||two!==20||p.maximumHeadSheetMm<p.minimumHeadSheetMm||p.normalForceHeightMm<capture.controls.maximumHeadZMm)throw Error('Actual complete portal source and full occupied head action height required')
  const mountMode=i.headMountRepresentation??'front-top-bolts',toolMode=i.headToolRepresentation??'inward-ratchet',socketMode=i.headSocketRepresentation??'flat-ended',shoulderMode=i.headShoulderRepresentation??'source-standing',f=p.headRelease
  if(f?.schema!=='had-utility-front-head-fastening/1'||f.actualDeliveredFastenerThreadWeldSheetAndLoadTransferQualified!==false||p.normalForceHeightMm<f.boltHeadBottomMm+f.boltHeadHeightMm+f.toolExtensionMm+f.ratchetMaximumDiameterMm/2)throw Error('Source-bound head fastening requirements required')
+ const wl=p.weldedRearL
+ if(wl?.schema!=='had-utility-welded-rear-L/1'||wl.actualWeldCapLocalWallAndClampQualified!==false)throw Error('Explicit unqualified welded rear L source required')
  const top=(h as unknown as{topPlanMm:readonly[number,number,number,number];topZMm:readonly[number,number];topSolidPlansMm:readonly(readonly[number,number,number,number])[]}),
   plan=top.topPlanMm,xs=[plan[0]+p.sideAxisFromBoardEdgeMm,plan[0]+plan[2]-p.sideAxisFromBoardEdgeMm],
   yr=plan[1]+p.rearLegFromBoardMm,yf=plan[1]+plan[3]-p.frontLegFromBoardMm,beamA=plan[1]+p.beamRearFromBoardMm,beamB=plan[1]+plan[3]-p.beamFrontFromBoardMm,
@@ -587,10 +590,22 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
   }
  for(const[side,x]of xs.entries()){
   for(const[end,y]of[yr,yf].entries()){
-   put('portal/'+side+'/leg/'+end,box(x-p.framePostCrossMm[0]/2,y-p.framePostCrossMm[1]/2,p.soleThicknessMm,...p.framePostCrossMm,beamBottom-p.soleThicknessMm),'frame',area(...p.framePostCrossMm,p.framePostWallMm)*(beamBottom-p.soleThicknessMm))
+   put('portal/'+side+'/leg/'+end,box(x-p.framePostCrossMm[0]/2,y-p.framePostCrossMm[1]/2,p.soleThicknessMm,...p.framePostCrossMm,beamBottom-wl.postCapThicknessMm-p.soleThicknessMm),'frame',area(...p.framePostCrossMm,p.framePostWallMm)*(beamBottom-wl.postCapThicknessMm-p.soleThicknessMm))
    put('portal/'+side+'/sole/'+end,box(x-p.solePlanMm[0]/2,y-p.solePlanMm[1]/2,0,...p.solePlanMm,p.soleThicknessMm),'frame',p.solePlanMm[0]*p.solePlanMm[1]*p.soleThicknessMm)
+   put('portal/'+side+'/post-cap/'+end,box(x-wl.postCapPlanMm[0]/2,y-wl.postCapPlanMm[1]/2,beamBottom-wl.postCapThicknessMm,...wl.postCapPlanMm,wl.postCapThicknessMm),'frame',wl.postCapPlanMm[0]*wl.postCapPlanMm[1]*wl.postCapThicknessMm)
+   for(const sign of[-1,1]){
+    const tw=p.framePostWallMm,capZ=beamBottom-wl.postCapThicknessMm
+    put('portal/'+side+'/post-cap-weld/'+end+'/NS/'+sign,box(sign<0?x-p.framePostCrossMm[0]/2:x+p.framePostCrossMm[0]/2-tw,y-p.framePostCrossMm[1]/2,capZ-tw,tw,p.framePostCrossMm[1],tw),'frame',tw*tw*p.framePostCrossMm[1])
+    put('portal/'+side+'/post-cap-weld/'+end+'/EW/'+sign,box(x-p.framePostCrossMm[0]/2,sign<0?y-p.framePostCrossMm[1]/2:y+p.framePostCrossMm[1]/2-tw,capZ-tw,p.framePostCrossMm[0],tw,tw),'frame',tw*tw*p.framePostCrossMm[0])
+   }
   }
   put('portal/'+side+'/side-upper',box(x-p.frameBeamCrossMm[0]/2,beamA,beamBottom,p.frameBeamCrossMm[0],beamB-beamA,p.frameBeamCrossMm[1]),'frame',area(...p.frameBeamCrossMm,p.frameBeamWallMm)*(beamB-beamA))
+
+  for(const sign of[-1,1]){
+   const w=wl.filletLegMm,half=p.frameBeamCrossMm[0]/2,halfY=wl.postCapPlanMm[1]/2
+   put('portal/'+side+'/rear-weld/NS/'+sign,box(sign<0?x-half-w:x+half,yr-halfY,beamBottom,w,2*halfY,w),'frame',w*w/2*2*halfY)
+   put('portal/'+side+'/rear-weld/EW/'+sign,box(x-half,sign<0?yr-halfY-w:yr+halfY,beamBottom,2*half,w,w),'frame',w*w/2*2*half)
+  }
   put('head/factory-side-rib/'+side,box(x-p.sideRibCrossMm[0]/2,ribA,ribBottom,p.sideRibCrossMm[0],ribB-ribA,p.sideRibCrossMm[1]),'factory-head',area(...p.sideRibCrossMm,p.sideRibWallMm)*(ribB-ribA)-(mountMode==='front-top-bolts'?(2*Math.PI*(f.boltDiameterMm+1)**2/4+Math.PI*f.rearDowelCollarClearBoreMm**2/4)*2*p.sideRibWallMm:0))
   for(const[k,off]of p.sideBraceAxisXOffsetsMm.entries())bar('portal/'+side+'/side-brace/'+k,[x+off,yr,k===0?p.sideBraceLowZMm:p.sideBraceHighZMm],[x+off,yf,k===0?p.sideBraceHighZMm:p.sideBraceLowZMm],p.braceCrossMm,p.braceWallMm,'frame')
   if(mountMode==='legacy-cross-clips-control')for(const[k,y]of[plan[1]+p.headClipRearFromBoardMm,plan[1]+plan[3]-p.headClipFrontFromBoardMm].entries()){
@@ -796,10 +811,10 @@ export function inletUtilityPortalCandidate(i:{source:Source;wet:Wet;capture:Ret
   actualFloorBallastMemberCaptureToolsAndFiniteRenewalQualified:false,normalGravityCapacityAccepted:false,ordinaryRenewalAccepted:false}
 }
 
-type PortalFiniteControls={rearTranslationOrder:'west-before-up';schema:string;portalKeyDepthMm:number;portalLiftMm:number;portalNorthMm:number;rearParkAxisYMm:number;rearRotationCentreXMm:number;rearRotationCentreZMm:number;rearParkLevelsMm:readonly number[];normalReceiverInwardOffsetMm:number;receiverPostCrossMm:number;receiverPostWallMm:number;receiverBasePlanMm:readonly[number,number];receiverTopPlanMm:readonly[number,number];receiverPlateMm:number;receiverAnchorDiameterMm:number;receiverAnchorEmbedMm:number;receiverAnchorHeadDiameterMm:number;receiverAnchorHeadHeightMm:number;minimumRCCoverMm:number;receiverFloorKeyDiameterMm:number;receiverReferenceE_MPa:number;receiverReferenceSteelProofMPa:number;receiverSocketAFMm:number;receiverSocketMaximumODMm:number;receiverBoltMinimumThreadMm:number;receiverBoltTorqueNm:number;temporaryCaptureToolMaximumDryKg:number;temporaryCaptureToolPayloadKg:number;maximumSidePortalWithTemporaryClampsKg:number;maximumRearMemberWithTemporaryClampsKg:number;steelDensityUpperKgM3:number;actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified:false}
+type PortalFiniteControls={rearPreRotationWestMm:number;rearParkOffsetsYMm:readonly number[];memberSamplingMaximumStepMm:number;sideMemberRenewal:{schema:string;method:string;LLiftMm:number;LSouthMm:number;braceHoldNorthMm:number;braceNorthMm:number;braceVerticalParkXBySideMm:readonly(readonly number[])[];beamLiftMm:number;beamNorthMm:number;rearLegSouthMm:number;frontLegNorthMm:number;legLiftMm:number;crewRetreatNorthMm:number;workerRetreatRequiredBeforeLast180MmBraceNorth:true;headRemainsOnIndependentCapturedFork:true;madeWaterRemainsOnIndependentSupports:true;actualJointCaptureParkAndReceiverHardwareQualified:false};rearTranslationOrder:'west-before-up';schema:string;portalKeyDepthMm:number;portalLiftMm:number;portalNorthMm:number;rearParkAxisYMm:number;rearRotationCentreXMm:number;rearRotationCentreZMm:number;rearParkLevelsMm:readonly number[];normalReceiverInwardOffsetMm:number;receiverPostCrossMm:number;receiverPostWallMm:number;receiverBasePlanMm:readonly[number,number];receiverTopPlanMm:readonly[number,number];receiverPlateMm:number;receiverAnchorDiameterMm:number;receiverAnchorEmbedMm:number;receiverAnchorHeadDiameterMm:number;receiverAnchorHeadHeightMm:number;minimumRCCoverMm:number;receiverFloorKeyDiameterMm:number;receiverReferenceE_MPa:number;receiverReferenceSteelProofMPa:number;receiverSocketAFMm:number;receiverSocketMaximumODMm:number;receiverBoltMinimumThreadMm:number;receiverBoltTorqueNm:number;temporaryCaptureToolMaximumDryKg:number;temporaryCaptureToolPayloadKg:number;maximumSidePortalWithTemporaryClampsKg:number;maximumRearMemberWithTemporaryClampsKg:number;steelDensityUpperKgM3:number;actualDeliveredFixtureJointRCWaterproofAirThermalAndHandlingQualified:false}
 /** Same selected portal case: finite member sweeps and actual source-pocket
  * receivers. Unmodelled positive holding/tool interfaces remain named gates. */
-export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;portal:ReturnType<typeof inletUtilityPortalCandidate>;movingBraceRepresentation?:'exact-sampled-capsules'|'filled-bay-control';rearRouteOrder?:'west-before-up'|'old-up-before-west-control'}){
+export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture:ReturnType<typeof inletUtilityOrdinaryCapture>;portal:ReturnType<typeof inletUtilityPortalCandidate>;movingBraceRepresentation?:'exact-sampled-capsules'|'filled-bay-control';rearRouteOrder?:'west-before-up'|'old-up-before-west-control';sideRemovalRepresentation?:'welded-L-members'|'independent-members'|'whole-unit-control'}){
  const {source,wet,capture,portal}=i,d=wet.choice.coldDistribution,
   r=(d as unknown as{frameRenewal:{portalDesign:{finiteRenewal:PortalFiniteControls}}}).frameRenewal.portalDesign.finiteRenewal,
   floor=(source as unknown as{candidateFloorPocket:{schema:string;bindingDigest:string;occupiedFflAbsoluteMm:number;currentSavedDocumentAdmitted:false;nativeFloorOrForceApprovalTransferred:false;pocket:{levels:{ffl:number};local:{levelBoxes:readonly{id:string;planMinMaxMm:PlanRectangle;planRectanglesXYMm?:readonly PlanRectangle[];zMm:readonly[number,number]}[]}|null}}}).candidateFloorPocket,
@@ -816,17 +831,22 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   raisedHead=[...capture.headParts,...parts.filter(q=>q.group==='factory-head')].map(q=>({id:'raised/'+q.id,boxMm:shift(q.boxMm,[0,0,capture.controls.liftMm])})),
   fixture=capture.hardware.filter(q=>q.id.startsWith('capture/')&&!q.afterFrameKnockdown).map(q=>({id:q.id,boxMm:shift(q.boxMm,[0,0,q.id.startsWith('capture/fork/')?capture.controls.liftMm:0])})),
   fixed=[...foreignBase,{id:'actual-washer-first-rest',boxMm:[rest[0],rest[1],0,rest[2],rest[3],washerH] as B},...pressure,...raisedHead,...fixture],
-  checks:{componentId:string;phase:string;movingPrimitiveId?:string;obstacleId:string;reserveMm:number}[]=[],components:{id:string;sourcePartIds:string[];stockUpperKg:number;phases:string[]}[]=[],
-  removedOriginalIds:string[]=[],parked:{id:string;boxMm:B;segmentMm?:readonly[P,P];radiusMm?:number}[]=[],phaseState:{componentId:string;removedOriginalIds:string[];parkedObstacleIds:string[]}[]=[],
+  checks:{componentId:string;phase:string;movingPrimitiveId?:string;intentionalSeparatingSeatContact?:boolean;settingAllowanceAppliedMm?:number;obstacleId:string;reserveMm:number}[]=[],components:{id:string;sourcePartIds:string[];stockUpperKg:number;phases:string[]}[]=[],
+  memberCaptureEnvelopes:{componentId:string;boxMm:B;role:'closed-positive-clamp-interface'}[]=[],removedOriginalIds:string[]=[],parked:{id:string;boxMm:B;segmentMm?:readonly[P,P];radiusMm?:number}[]=[],phaseState:{componentId:string;removedOriginalIds:string[];parkedObstacleIds:string[]}[]=[],
+  activeSeat={targets:[] as string[],planeZ:0,plan:[0,0,1,1] as PlanRectangle,proved:false,sourcePartId:''},separatingSeatContacts:{componentId:string;sourcePartId:string;targetPartId:string;normalSeatPlaneMm:number;physicalClearanceMm:number;settingAllowanceAppliedMm:0}[]=[],
   checkIndex=new Map<string,number>(),record=(...rows:typeof checks)=>{for(const q of rows){const key=JSON.stringify([q.componentId,q.phase,q.movingPrimitiveId,q.obstacleId]),k=checkIndex.get(key);if(k===undefined){checkIndex.set(key,checks.length);checks.push(q)}else if(q.reserveMm<checks[k].reserveMm)checks[k]=q}},
   compare=(id:string,phase:string,b:B,exclude:readonly string[],cover=0,moving?:{segment:readonly[P,P];radiusMm:number;primitiveId?:string})=>{
    const db=(box:B)=>moving?exactSegmentBoxDistance(...moving.segment,box)-moving.radiusMm:gap(b,box),ds=(segment:readonly[P,P],radius:number)=>moving?segmentDistance(...moving.segment,...segment)-moving.radiusMm-radius:exactSegmentBoxDistance(...segment,b)-radius
-   const push=(...rows:typeof checks)=>record(...rows.map(q=>({...q,movingPrimitiveId:moving?.primitiveId})))
+   const push=(...rows:typeof checks)=>record(...rows.map(q=>({...q,movingPrimitiveId:moving?.primitiveId||activeSeat.sourcePartId||undefined})))
    for(const q of fixed)push({componentId:id,phase,obstacleId:q.id,reserveMm:db(q.boxMm as B)-two-cover})
    for(const q of parked)push({componentId:id,phase,obstacleId:q.id,reserveMm:q.segmentMm?ds(q.segmentMm,q.radiusMm!)-two-cover:db(q.boxMm)-two-cover})
    for(const q of parts.filter(q=>q.group==='frame'&&!exclude.includes(q.id)&&!removedOriginalIds.includes(q.id))){
-    if(q.segmentMm)push({componentId:id,phase,obstacleId:q.id,reserveMm:ds(q.segmentMm,q.radiusMm!)-two-cover})
-    else push({componentId:id,phase,obstacleId:q.id,reserveMm:db(q.boxMm)-two-cover})
+    const distance=q.segmentMm?ds(q.segmentMm,q.radiusMm!):db(q.boxMm),
+     contact=activeSeat.proved&&phase==='captured-welded-L-up'&&activeSeat.targets.includes(q.id)&&b[2]>=activeSeat.planeZ-1e-7&&intersectPlan([b[0],b[1],b[0]+b[3],b[1]+b[4]],activeSeat.plan)!==null&&distance>=-1e-7
+    if(contact){
+     separatingSeatContacts.push({componentId:id,sourcePartId:activeSeat.sourcePartId,targetPartId:q.id,normalSeatPlaneMm:activeSeat.planeZ,physicalClearanceMm:distance,settingAllowanceAppliedMm:0})
+     push({componentId:id,phase,obstacleId:q.id,reserveMm:distance-cover,intentionalSeparatingSeatContact:true,settingAllowanceAppliedMm:0})
+    }else push({componentId:id,phase,obstacleId:q.id,reserveMm:distance-two-cover,settingAllowanceAppliedMm:two})
    }
    for(const q of source.rearTreeContext.retainedPaths)for(let k=1;k<q.pointsMm.length;k++)push({componentId:id,phase,obstacleId:q.id+'/'+k,reserveMm:ds([q.pointsMm[k-1],q.pointsMm[k]],q.radiusWithSupportsMm)-two-cover})
    for(const path of source.route.paths){
@@ -839,7 +859,7 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   representation=i.movingBraceRepresentation??'exact-sampled-capsules',rearRouteOrder=i.rearRouteOrder??r.rearTranslationOrder,
   samplingProofs:{componentId:string;primitiveId:string;phase:string;sampleCount:number;chordCoverMm:number;maximumStepMm:number}[]=[],
   sampleMove=(id:string,primitiveId:string,phase:string,a0:P,b0:P,a1:P,b1:P,radius:number,exclude:readonly string[])=>{
-   const travel=Math.max(Math.hypot(...a1.map((v,k)=>v-a0[k])),Math.hypot(...b1.map((v,k)=>v-b0[k]))),N=Math.max(1,Math.ceil(travel/5)),cover=travel/(2*N)
+   const travel=Math.max(Math.hypot(...a1.map((v,k)=>v-a0[k])),Math.hypot(...b1.map((v,k)=>v-b0[k]))),N=Math.max(1,Math.ceil(travel/r.memberSamplingMaximumStepMm)),cover=travel/(2*N)
    samplingProofs.push({componentId:id,primitiveId,phase,sampleCount:N,chordCoverMm:cover,maximumStepMm:travel/N})
    for(let k=0;k<N;k++){
     const u=(k+.5)/N,a=a0.map((v,j)=>v+(a1[j]-v)*u) as unknown as P,b=b0.map((v,j)=>v+(b1[j]-v)*u) as unknown as P,
@@ -871,16 +891,44 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
     }else compare(q.id,phase,sweep(prism(from,a0),prism(to,a1)),[q.id],a0===a1?0:Math.hypot(L/2,s/2)*(1-Math.cos(Math.abs(a1-a0)/2)))
    }
   void p0
+  const park:P=[end[0],end[1]+r.rearParkOffsetsYMm[which],r.rearParkLevelsMm[which]]
   move(phases[0],c,c1,angle,angle)
-  move(phases[1],c1,c2,angle,angle)
-  move(phases[2],c2,end,angle,angle)
-  if(q.segmentMm&&representation==='exact-sampled-capsules')move(phases[3],end,end,angle,0)
-  else for(let n=0;n<64;n++)move(phases[3],end,end,angle*(1-n/64),angle*(1-(n+1)/64))
-  move(phases[4],end,[end[0],end[1],r.rearParkLevelsMm[which]],0,0)
+  if(q.segmentMm&&rearRouteOrder==='west-before-up'){
+   const pre:P=[c1[0]-r.rearPreRotationWestMm,c1[1],c1[2]],west:P=[end[0],end[1],c1[2]]
+   phases.splice(1,4,'rear-member-short-west-before-flat','rear-member-rotate-flat-in-rear-gap','rear-member-west-flat-at-source-height','rear-member-up-after-west-clearance','rear-member-positive-park')
+   move(phases[1],c1,pre,angle,angle)
+   move(phases[2],pre,pre,angle,0)
+   move(phases[3],pre,west,0,0)
+   move(phases[4],west,end,0,0)
+   move(phases[5],end,park,0,0)
+  }else{
+   move(phases[1],c1,c2,angle,angle)
+   move(phases[2],c2,end,angle,angle)
+   if(q.segmentMm&&representation==='exact-sampled-capsules')move(phases[3],end,end,angle,0)
+   else for(let n=0;n<64;n++)move(phases[3],end,end,angle*(1-n/64),angle*(1-(n+1)/64))
+   move(phases[4],end,park,0,0)
+  }
   components.push({id:q.id,sourcePartIds:[q.id],stockUpperKg:q.massUpperKg,phases})
   removedOriginalIds.push(q.id)
-  parked.push({id:'parked/'+q.id,boxMm:prism([end[0],end[1],r.rearParkLevelsMm[which]],0),...(q.segmentMm&&representation==='exact-sampled-capsules'?{segmentMm:ends([end[0],end[1],r.rearParkLevelsMm[which]],0),radiusMm:q.radiusMm}:{})})
+  parked.push({id:'parked/'+q.id,boxMm:prism(park,0),...(q.segmentMm&&representation==='exact-sampled-capsules'?{segmentMm:ends(park,0),radiusMm:q.radiusMm}:{})})
  }
+
+ const sideRemovalRepresentation=i.sideRemovalRepresentation??(r.sideMemberRenewal.method==='welded-rear-L-with-separate-front-leg'?'welded-L-members':'independent-members'),sideControls=r.sideMemberRenewal,
+  jointInterfaces:{id:string;memberId:string;fixedLegId:string;nodeMm:P;actualEndHardwareGeometryAndToolsQualified:false}[]=[],
+  crewRetreatChecks:{id:string;reserveMm:number}[]=[]
+ if(sideControls.schema!=='had-utility-independent-side-members/1'||sideControls.actualJointCaptureParkAndReceiverHardwareQualified!==false)throw Error('Explicit unqualified individual side-member source required')
+ for(const q of rear)for(const end of[0,1]){
+  const point:P=q.segmentMm?q.segmentMm[end]:[q.boxMm[0]+end*q.boxMm[3],q.boxMm[1]+q.boxMm[4]/2,q.boxMm[2]+q.boxMm[5]/2]
+  jointInterfaces.push({id:q.id+'/end/'+end,memberId:q.id,fixedLegId:'portal/'+end+'/leg/0',nodeMm:point,actualEndHardwareGeometryAndToolsQualified:false})
+ }
+ for(const side of[0,1]){
+  const legs=parts.filter(q=>q.id.startsWith('portal/'+side+'/leg/')).sort((a,b)=>a.boxMm[1]-b.boxMm[1])
+  for(const q of parts.filter(q=>q.id.startsWith('portal/'+side+'/side-brace/')))for(const end of[0,1])jointInterfaces.push({id:q.id+'/end/'+end,memberId:q.id,fixedLegId:legs[end].id,nodeMm:q.segmentMm![end],actualEndHardwareGeometryAndToolsQualified:false})
+  const beam=parts.find(q=>q.id==='portal/'+side+'/side-upper')!
+  for(const[end,leg]of legs.entries())jointInterfaces.push({id:beam.id+'/end/'+end,memberId:beam.id,fixedLegId:leg.id,nodeMm:[leg.boxMm[0]+leg.boxMm[3]/2,leg.boxMm[1]+leg.boxMm[4]/2,beam.boxMm[2]],actualEndHardwareGeometryAndToolsQualified:false})
+ }
+ if(sideRemovalRepresentation==='welded-L-members')for(let k=jointInterfaces.length-1;k>=0;k--)if(jointInterfaces[k].id.includes('/side-upper/end/0'))jointInterfaces.splice(k,1)
+ if(sideRemovalRepresentation==='whole-unit-control'){
  for(const side of[0,1]){
   const group=parts.filter(q=>q.id.startsWith('portal/'+side+'/')),exclude=[...rearIds,...group.map(q=>q.id)],id='portal/side-unit/'+side
   phaseState.push({componentId:id,removedOriginalIds:[...removedOriginalIds],parkedObstacleIds:parked.map(q=>q.id)})
@@ -897,6 +945,127 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   components.push({id,sourcePartIds:group.map(q=>q.id),stockUpperKg:group.reduce((n,q)=>n+q.massUpperKg,0),phases:['side-unit-up-to-release-positive-floor-key','side-unit-captured-north-park']})
   for(const q of group){removedOriginalIds.push(q.id);parked.push({id:'parked/'+q.id,boxMm:shift(q.boxMm,[0,r.portalNorthMm,r.portalLiftMm]),...(q.segmentMm?{segmentMm:q.segmentMm.map(p=>[p[0],p[1]+r.portalNorthMm,p[2]+r.portalLiftMm]) as unknown as readonly[P,P],radiusMm:q.radiusMm}:{})})}
  }
+
+ }else{
+  const sources=parts.filter(q=>q.group==='frame'&&q.id.startsWith('portal/')&&!q.id.startsWith('portal/rear/')),
+   beamParts=(side:number)=>sources.filter(q=>q.id==='portal/'+side+'/side-upper'||q.id.startsWith('portal/'+side+'/head-thread-block/')||q.id==='portal/'+side+'/rear-locating-dowel'||q.id.startsWith('portal/'+side+'/rear-weld/')),
+   legParts=(side:number,k:number)=>sources.filter(q=>q.id==='portal/'+side+'/leg/'+k||q.id==='portal/'+side+'/sole/'+k||q.id==='portal/'+side+'/post-cap/'+k||q.id.startsWith('portal/'+side+'/post-cap-weld/'+k+'/')),
+   specs=[
+    ...[0,1].flatMap(side=>[0,1].map(k=>({id:'portal/'+side+'/side-brace/'+k,kind:'brace' as const,side,index:k,parts:sources.filter(q=>q.id==='portal/'+side+'/side-brace/'+k)}))),
+    ...(sideRemovalRepresentation==='welded-L-members'?[
+     ...[0,1].map(side=>({id:'portal/'+side+'/welded-L',kind:'L' as const,side,index:0,parts:[...beamParts(side),...legParts(side,0)]})),
+     ...[0,1].map(side=>({id:'portal/'+side+'/leg-assembly/1',kind:'leg' as const,side,index:1,parts:legParts(side,1)}))
+    ]:[
+     ...[0,1].map(side=>({id:'portal/'+side+'/NS-beam-assembly',kind:'beam' as const,side,index:0,parts:beamParts(side)})),
+     ...[0,1].flatMap(side=>[0,1].map(k=>({id:'portal/'+side+'/leg-assembly/'+k,kind:'leg' as const,side,index:k,parts:legParts(side,k)})))
+    ])
+   ]
+  for(const spec of specs){
+   const nextParked:typeof parked=[],exclude=spec.parts.map(q=>q.id),phases=spec.kind==='brace'?['independent-brace-north-on-positive-capture','independent-brace-rotate-upright','independent-brace-positive-side-park']:spec.kind==='beam'?['captured-NS-beam-up','captured-NS-beam-north-park']:spec.kind==='L'?['captured-welded-L-up','captured-welded-L-south-park']:['captured-leg-up-to-release-floor-key',spec.index===0?'captured-rear-leg-south-park':'captured-front-leg-north-park']
+   phaseState.push({componentId:spec.id,removedOriginalIds:[...removedOriginalIds],parkedObstacleIds:parked.map(q=>q.id)})
+   for(const q of spec.parts){
+    activeSeat.sourcePartId=q.id
+    if(spec.kind==='brace'){
+     const [a0,b0]=q.segmentMm!,a1:P=[a0[0],a0[1]+sideControls.braceNorthMm,a0[2]],b1:P=[b0[0],b0[1]+sideControls.braceNorthMm,b0[2]],
+      cy=(a1[1]+b1[1])/2,cz=(a1[2]+b1[2])/2,L=Math.hypot(...b1.map((v,k)=>v-a1[k])),theta=Math.atan2(b1[2]-a1[2],b1[1]-a1[1]),
+      ends=(angle:number):readonly[P,P]=>[[a1[0],cy-L/2*Math.cos(angle),cz-L/2*Math.sin(angle)],[a1[0],cy+L/2*Math.cos(angle),cz+L/2*Math.sin(angle)]]
+     sampleMove(spec.id,q.id,phases[0],a0,b0,a1,b1,q.radiusMm!,exclude)
+     for(let n=0;n<64;n++){
+      const t0=theta+(Math.PI/2-theta)*n/64,t1=theta+(Math.PI/2-theta)*(n+1)/64,mid=ends((t0+t1)/2),cover=2*(L/2)*Math.sin(Math.abs(t1-t0)/4),
+       box:B=[...mid[0].map((v,k)=>Math.min(v,mid[1][k])-q.radiusMm!),...mid[0].map((v,k)=>Math.abs(v-mid[1][k])+2*q.radiusMm!)] as unknown as B
+      samplingProofs.push({componentId:spec.id,primitiveId:q.id,phase:phases[1],sampleCount:1,chordCoverMm:cover,maximumStepMm:2*cover})
+      compare(spec.id,phases[1],box,exclude,cover,{segment:mid,radiusMm:q.radiusMm!,primitiveId:q.id})
+     }
+     const up=ends(Math.PI/2),px=sideControls.braceVerticalParkXBySideMm[spec.side][spec.index],pa:P=[px,up[0][1],up[0][2]],pb:P=[px,up[1][1],up[1][2]]
+     sampleMove(spec.id,q.id,phases[2],...up,pa,pb,q.radiusMm!,exclude)
+     const box:B=[px-q.radiusMm!,cy-q.radiusMm!,Math.min(pa[2],pb[2])-q.radiusMm!,2*q.radiusMm!,2*q.radiusMm!,Math.abs(pb[2]-pa[2])+2*q.radiusMm!]
+     nextParked.push({id:'parked/'+q.id,boxMm:box,segmentMm:[pa,pb],radiusMm:q.radiusMm})
+    }else{
+     const up=spec.kind==='beam'?sideControls.beamLiftMm:spec.kind==='L'?sideControls.LLiftMm:sideControls.legLiftMm,north=spec.kind==='beam'?sideControls.beamNorthMm:spec.kind==='L'?-sideControls.LSouthMm:spec.index===0?-sideControls.rearLegSouthMm:sideControls.frontLegNorthMm
+     const beam=spec.parts.find(p=>p.id==='portal/'+spec.side+'/side-upper'),cap=parts.find(p=>p.id==='portal/'+spec.side+'/post-cap/1')
+     activeSeat.proved=spec.kind==='L'&&!!beam&&!!cap&&Math.abs(beam.boxMm[2]-cap.boxMm[2]-cap.boxMm[5])<=1e-7&&intersectPlan([beam.boxMm[0],beam.boxMm[1],beam.boxMm[0]+beam.boxMm[3],beam.boxMm[1]+beam.boxMm[4]],[cap.boxMm[0],cap.boxMm[1],cap.boxMm[0]+cap.boxMm[3],cap.boxMm[1]+cap.boxMm[4]])!==null
+     activeSeat.targets=['portal/'+spec.side+'/leg/1','portal/'+spec.side+'/post-cap/1',...parts.filter(p=>p.id.startsWith('portal/'+spec.side+'/post-cap-weld/1/')).map(p=>p.id)]
+     if(cap){activeSeat.planeZ=cap.boxMm[2]+cap.boxMm[5];activeSeat.plan=[cap.boxMm[0],cap.boxMm[1],cap.boxMm[0]+cap.boxMm[3],cap.boxMm[1]+cap.boxMm[4]]}
+     compare(spec.id,phases[0],sweep(q.boxMm,shift(q.boxMm,[0,0,up])),exclude)
+     activeSeat.proved=false
+     compare(spec.id,phases[1],sweep(shift(q.boxMm,[0,0,up]),shift(q.boxMm,[0,north,up])),exclude)
+     nextParked.push({id:'parked/'+q.id,boxMm:shift(q.boxMm,[0,north,up])})
+    }
+   }
+   activeSeat.proved=false
+   if(spec.kind==='L'){
+    const beam=spec.parts.find(q=>q.id.endsWith('/side-upper'))!,wl=(d as unknown as{frameRenewal:{portalDesign:PortalDesign}}).frameRenewal.portalDesign.weldedRearL,x=beam.boxMm[0]+beam.boxMm[3]/2
+    for(const[k,y]of wl.captureBeamAxisYMm.entries()){
+     const box:B=[x-wl.captureJawEnvelopeMm[0]/2,y-wl.captureJawEnvelopeMm[1]/2,beam.boxMm[2]+(beam.boxMm[5]-wl.captureJawEnvelopeMm[2])/2,...wl.captureJawEnvelopeMm]
+     memberCaptureEnvelopes.push({componentId:spec.id,boxMm:box,role:'closed-positive-clamp-interface'})
+     activeSeat.sourcePartId='capture-clamp/'+spec.id+'/'+k
+     compare(spec.id,'captured-welded-L-clamp-up',sweep(box,shift(box,[0,0,sideControls.LLiftMm])),exclude)
+     compare(spec.id,'captured-welded-L-clamp-south',sweep(shift(box,[0,0,sideControls.LLiftMm]),shift(box,[0,-sideControls.LSouthMm,sideControls.LLiftMm])),exclude)
+    }
+   }
+   activeSeat.sourcePartId=''
+   parked.push(...nextParked)
+   removedOriginalIds.push(...exclude)
+   components.push({id:spec.id,sourcePartIds:exclude,stockUpperKg:spec.parts.reduce((n,q)=>n+q.massUpperKg,0),phases})
+  }
+  const body=capture.controls.normalWorkingFloorXYMm,start:P=[body[0],body[1],0],end:P=[body[0],body[1]+sideControls.crewRetreatNorthMm,0]
+  for(const q of [...fixed,...parts.filter(q=>q.group==='frame').map(q=>({id:q.id,boxMm:q.boxMm}))]){
+   if(q.boxMm[2]>=2000||q.boxMm[2]+q.boxMm[5]<=0)continue
+   const box:B=[q.boxMm[0],q.boxMm[1],0,q.boxMm[3],q.boxMm[4],0]
+   crewRetreatChecks.push({id:'brace-north-phase/body-retreat/'+q.id,reserveMm:exactSegmentBoxDistance(start,end,box)-300-two})
+  }
+
+  for(const q of sources.filter(q=>q.segmentMm&&q.id.includes('/side-brace/'))){
+   const a:P=[q.segmentMm![0][0],q.segmentMm![0][1]+sideControls.braceHoldNorthMm,0],b:P=[q.segmentMm![1][0],q.segmentMm![1][1]+sideControls.braceHoldNorthMm,0]
+   crewRetreatChecks.push({id:'brace-held-at220/body-retreat/'+q.id,reserveMm:segmentDistance(start,end,a,b)-300-q.radiusMm!-two})
+   const side=Number(q.id.split('/')[1]),k=Number(q.id.split('/').at(-1)),px=sideControls.braceVerticalParkXBySideMm[side][k],L=Math.hypot(...q.segmentMm![1].map((v,j)=>v-q.segmentMm![0][j])),minY=Math.min(a[1],b[1])-q.radiusMm!,maxY=(q.segmentMm![0][1]+q.segmentMm![1][1])/2+sideControls.braceNorthMm+L/2+q.radiusMm!,box:B=[Math.min(a[0],px)-q.radiusMm!,minY,0,Math.abs(px-a[0])+2*q.radiusMm!,maxY-minY,0]
+   crewRetreatChecks.push({id:'worker-at-north-rest/remaining-brace-north-rotate-and-park/'+q.id,reserveMm:exactSegmentBoxDistance(end,end,box)-300-two})
+  }
+ }
+ const frameLegs=parts.filter(q=>q.id.includes('/leg/')),post=frameLegs[0].boxMm,
+  pt=(d as unknown as{frameRenewal:{portalDesign:PortalDesign}}).frameRenewal.portalDesign,
+  pw=pt.framePostWallMm,postArea=post[3]*post[4]-(post[3]-2*pw)*(post[4]-2*pw),
+  postI=Math.min((post[3]*post[4]**3-(post[3]-2*pw)*(post[4]-2*pw)**3)/12,(post[4]*post[3]**3-(post[4]-2*pw)*(post[3]-2*pw)**3)/12),
+  legL=Math.max(...frameLegs.map(q=>q.boxMm[5])),fixedBaseGravityUpperN=(portal.mass.frameCompleteDesignMassUpperKg+r.temporaryCaptureToolMaximumDryKg+r.temporaryCaptureToolPayloadKg)*9.81*1.5,
+  fullH=portal.demandedInterfaces.capturedHeadHeightAfterTwoSettingsMm,lateral=portal.demandedInterfaces.horizontalActionN,
+  fixedBaseReference={assumption:'Each remaining leg has an independently moment-resisting qualified floor receiver; head and water loads bypass the renewing frame. Actual RC, foot, beam/brace joint and member-capture qualifications remain false.',gravityUpperEachN:fixedBaseGravityUpperN,horizontalUpperEachN:lateral,actionHeightAfterTwoSettingsMm:fullH,postAreaMm2:postArea,postMinimumIMM4:postI,legFreeLengthMm:legL,combinedStressMPa:fixedBaseGravityUpperN/postArea+lateral*fullH*Math.max(post[3],post[4])/2/postI,eulerFixedFreeN:Math.PI**2*r.receiverReferenceE_MPa*postI/(4*legL**2),elasticTopDeflectionMm:lateral*legL**3/(3*r.receiverReferenceE_MPa*postI)+lateral*Math.max(0,fullH-legL)*legL**2/(2*r.receiverReferenceE_MPa*postI),actualReceiverJointAndTemporaryStabilityAccepted:false},
+  independentMemberDesign={sourceMethod:sideControls.method,representation:sideRemovalRepresentation,old13MemberModeRequiresCuttingWeldedLs:sideRemovalRepresentation==='independent-members',jointInterfaces,remainingNormalFramePartIds:parts.filter(q=>q.group==='frame'&&!removedOriginalIds.includes(q.id)).map(q=>q.id),crewRetreatChecks,crewRetreatFailures:crewRetreatChecks.filter(q=>q.reserveMm< -1e-7),actualRearJointApproachHandReleaseAndPositiveCaptureToolGeometryImplemented:false,actualIndependentPositiveParkReceiversImplemented:false,requiredMemberCaptureCapacityKg:Math.max(...components.map(q=>q.stockUpperKg))+pt.maximumFrameJointAndWeldMassKg+.5,availableAuthoredMemberToolPayloadKg:r.temporaryCaptureToolPayloadKg,fixedBaseReference,normalHeadAndWaterMustRemainIndependentlySupported:true,normalGeometryChangedByThisRenewalSplit:false,actualWholeRenewalAccepted:false}
+
+ const wl=pt.weldedRearL,weldWidth=pt.frameBeamCrossMm[0],weldLength=wl.postCapPlanMm[1],throat=Math.min(wl.minimumReferenceWeldThroatMm,pt.frameBeamWallMm,pt.framePostWallMm),
+  lineLength=2*(weldWidth+weldLength),weldArea=lineLength*throat,weldIx=throat*(2*weldWidth*(weldLength/2)**2+weldLength**3/6),weldIy=throat*(2*weldLength*(weldWidth/2)**2+weldWidth**3/6),
+  axialUpper=pt.normalFrontEdgePointComparisonN+capture.demand.fullHeadDynamicN,Mx=lateral*fullH,My=lateral*fullH+axialUpper*(pt.sideRibCrossMm[0]/2+two),
+  sigma=axialUpper/weldArea+Mx*(weldLength/2)/weldIx+My*(weldWidth/2)/weldIy,
+  postW=pt.framePostCrossMm[0],postD=pt.framePostCrossMm[1],postThroat=pt.framePostWallMm,postWeldArea=2*(postW+postD)*postThroat,
+  postWeldIx=postThroat*(2*postW*(postD/2)**2+postD**3/6),postWeldIy=postThroat*(2*postD*(postW/2)**2+postW**3/6),
+  postWeldNormal=axialUpper/postWeldArea+Mx*(postD/2)/postWeldIx+My*(postW/2)/postWeldIy,
+  postWeldShear=lateral/postWeldArea+pt.headRelease.toolTorqueNm*1000*Math.hypot(postW/2,postD/2)/(postWeldIx+postWeldIy),
+  tau=lateral/weldArea+pt.headRelease.toolTorqueNm*1000*Math.hypot(weldWidth/2,weldLength/2)/(weldIx+weldIy),
+  weldedLDesign=(()=>{
+   const members=components.filter(q=>q.id.endsWith('/welded-L')).map(c=>{
+    const qs=parts.filter(q=>c.sourcePartIds.includes(q.id)),beam=qs.find(q=>q.id.endsWith('/side-upper'))!,lo=[0,1,2].map(k=>Math.min(...qs.map(q=>q.boxMm[k]))),hi=[0,1,2].map(k=>Math.max(...qs.map(q=>q.boxMm[k]+q.boxMm[k+3]))),side=Number(c.id.split('/')[1]),x=parts.find(q=>q.id==='portal/'+side+'/leg/0')!.boxMm[0]+pt.framePostCrossMm[0]/2,
+     clampBoxes=memberCaptureEnvelopes.filter(q=>q.componentId===c.id).map(q=>q.boxMm),
+     variables=[...qs.map(q=>({minimumKg:q.massUpperKg*pt.minimumSteelDensityKgM3/pt.maximumSteelDensityKgM3,maximumKg:q.massUpperKg,lo:q.id.includes('/rear-weld/')?q.boxMm.slice(0,3):[0,1,2].map(k=>q.boxMm[k]+q.boxMm[k+3]/2),hi:q.id.includes('/rear-weld/')?[0,1,2].map(k=>q.boxMm[k]+q.boxMm[k+3]):[0,1,2].map(k=>q.boxMm[k]+q.boxMm[k+3]/2)})),{minimumKg:0,maximumKg:pt.maximumFrameJointAndWeldMassKg,lo,hi},...clampBoxes.map(b=>({minimumKg:0,maximumKg:wl.maximumEachCaptureClampKg,lo:b.slice(0,3),hi:[0,1,2].map(k=>b[k]+b[k+3])}))],
+     bounds=[0,1,2].map(axis=>{
+      const solve=(which:'lo'|'hi')=>{
+       let a=Math.min(...variables.map(v=>v.lo[axis])),b=Math.max(...variables.map(v=>v.hi[axis]))
+       for(let n=0;n<80;n++){const t=(a+b)/2,F=variables.reduce((sum,v)=>{const d=v[which][axis]-t,m=which==='lo'?(d<0?v.maximumKg:v.minimumKg):(d>0?v.maximumKg:v.minimumKg);return sum+m*d},0);if(F>0)a=t;else b=t}
+       return(a+b)/2
+      }
+      return{axis,minimumMm:solve('lo'),maximumMm:solve('hi')}
+     }),
+     maximumCapturedKg=variables.reduce((n,v)=>n+v.maximumKg,0),W=maximumCapturedKg*9.81*1.5,y0=wl.captureBeamAxisYMm[0],y1=wl.captureBeamAxisYMm[1],u0=(bounds[1].minimumMm-two-y0)/(y1-y0),u1=(bounds[1].maximumMm+two-y0)/(y1-y0),
+     frontSignedN=[Math.min(0,W*u0),Math.max(0,W*u1)],rearSignedN=[Math.min(0,W*(1-u1)),Math.max(0,W*(1-u0))],
+     capturedPlane=beam.boxMm[2]+beam.boxMm[5]/2+r.sideMemberRenewal.LLiftMm,
+     momentUpperNmm=lateral*Math.max(Math.abs(lo[2]+r.sideMemberRenewal.LLiftMm-capturedPlane),Math.abs(hi[2]+r.sideMemberRenewal.LLiftMm-capturedPlane))+W*Math.max(Math.abs(bounds[0].minimumMm-two-x),Math.abs(bounds[0].maximumMm+two-x)),
+     clampGeometryChecks=clampBoxes.flatMap((box,k)=>[
+      ...fixed.map(o=>({id:c.id+'/capture-jaw/'+k+'/'+o.id,reserveMm:gap(box,o.boxMm as B)-two})),
+      ...parts.filter(q=>q.group==='frame'&&q.id!=='portal/'+side+'/side-upper'&&!q.id.startsWith('portal/'+side+'/head-thread-block/')).map(q=>({id:c.id+'/capture-jaw/'+k+'/'+q.id,reserveMm:q.segmentMm?exactSegmentBoxDistance(...q.segmentMm,box)-q.radiusMm!-two:gap(box,q.boxMm)-two}))
+     ])
+    return{componentId:c.id,sourcePartIds:c.sourcePartIds,modeledSteelUpperKg:c.stockUpperKg,countedFilletUpperKg:qs.filter(q=>q.id.includes('/rear-weld/')).reduce((n,q)=>n+q.massUpperKg,0),countedPostCapGrooveWeldUpperKg:qs.filter(q=>q.id.includes('/post-cap-weld/')).reduce((n,q)=>n+q.massUpperKg,0),additionalWholeFrameJointMassConservativelyAssignedKg:pt.maximumFrameJointAndWeldMassKg,captureClampMassUpperKg:2*wl.maximumEachCaptureClampKg,maximumCapturedKg,maximumAuthoredMemberToolPayloadKg:r.temporaryCaptureToolPayloadKg,withinPayloadRequirement:maximumCapturedKg<=r.temporaryCaptureToolPayloadKg,stockCGBounds:bounds,CGScope:'bounded authored stock and all2kg extra joint stock within actual L envelope; fabricated/holed/welded member CG requires verification',clampJawBoxesMm:clampBoxes,frontSignedVerticalReactionEnvelopeN:frontSignedN,rearSignedVerticalReactionEnvelopeN:rearSignedN,requiresClosedPositiveClamps:true,gravityFrictionCreditedN:0,memberHandlingCoupleUpperNmm:momentUpperNmm,clampGeometryChecks,clampGeometryFailures:clampGeometryChecks.filter(q=>q.reserveMm< -1e-7),actualJawScrewSwingAntiRollMemberLocalWallAndToolGeometryQualified:false}
+   })
+   const postInner=Math.max(pt.framePostCrossMm[0],pt.framePostCrossMm[1])-2*pt.framePostWallMm,capStress=axialUpper*postInner/4/(wl.postCapPlanMm[0]*wl.postCapThicknessMm**2/6)
+   return{members,weld:{filletLegMm:wl.filletLegMm,nominalWeldThroatRequirementMm:wl.minimumReferenceWeldThroatMm,effectiveBaseWallLimitedThroatMm:throat,weldLineLengthMm:lineLength,weldAreaMm2:weldArea,weldIxMm4:weldIx,weldIyMm4:weldIy,axialUpperN:axialUpper,comparisonMxNmm:Mx,comparisonMyNmm:My,referenceNormalMPa:sigma,referenceShearMPa:tau,referenceVonMisesMPa:Math.hypot(sigma,Math.sqrt(3)*tau),referenceAllowableMPa:r.receiverReferenceSteelProofMPa/1.5,capConservativeOneWayStressMPa:capStress,postCapFullPenetrationEffectiveWallMm:postThroat,postCapWeldReferenceVonMisesMPa:Math.hypot(postWeldNormal,Math.sqrt(3)*postWeldShear),actualWeldFatigueHSSLocalWallCapAndMaterialQualified:false},normalHeadBearingPlaneUnchangedMm:Math.max(...parts.filter(q=>q.id.endsWith('/side-upper')).map(q=>q.boxMm[2]+q.boxMm[5])),rearPostTopIsActualCapBottom:[0,1].every(side=>{const p=parts.find(q=>q.id==='portal/'+side+'/leg/0')!,cap=parts.find(q=>q.id==='portal/'+side+'/post-cap/0')!;return Math.abs(p.boxMm[2]+p.boxMm[5]-cap.boxMm[2])<1e-7}),postToCapRequirement:'actual full-penetration perimeter weld through source post wall; qualification false',ordinaryRenewalAccepted:false}
+  })()
  const receiverParts:{id:string;boxMm:B;role:string}[]=[],receiverChecks:{id:string;reserveMm:number}[]=[],receiverFootprintChecks:{id:string;probePlanMm:PlanRectangle;probeAreaMm2:number;coveredAreaMm2:number;missingAreaMm2:number;contained:boolean;status:'contained'|'outside-actual-RC'}[]=[],receiverDemands:{id:string;axialUpperN:number;upliftUpperN:number;shearUpperN:number;referenceMomentAtRCNmm:number;referenceSteelExtremeMPa:number;referenceAnchorTensionEachN:number;referenceAnchorMPa:number}[]=[],
   put=(id:string,b:B,role:string)=>receiverParts.push({id,boxMm:b,role}),
   contain=(id:string,b:B)=>{
@@ -932,11 +1101,11 @@ export function inletUtilityPortalFiniteRenewal(i:{source:Source;wet:Wet;capture
   receiverDemands.push({id,axialUpperN:N,upliftUpperN:U,shearUpperN:normalF,referenceMomentAtRCNmm:M,referenceSteelExtremeMPa:M*S/2/I+N/A,referenceAnchorTensionEachN:anchor,referenceAnchorMPa:anchor/84.3})
  }
  const fixtureIds=components.map(q=>q.id),toolChecks=portal.headRelease.toolChecks
- return{schema:'had-utility-portal-finite-renewal/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,portal:portal.sourceDigest,floor,controls:r,representation,rearRouteOrder}),movingBraceRepresentation:representation,rearRouteOrder,samplingProofs,components,phaseState,finalParkedParts:parked,checks,necessaryFiniteGeometry:checks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7),geometryFailures:checks.filter(q=>q.reserveMm< -1e-7),
+ return{schema:'had-utility-portal-finite-renewal/1',sourceDigest:sha256SemanticFingerprint({source:source.bindingDigest,portal:portal.sourceDigest,sourceGeometryParts:portal.parts,floor,controls:r,representation,rearRouteOrder,sideRemovalRepresentation}),movingBraceRepresentation:representation,rearRouteOrder,independentMemberDesign,weldedLDesign,separatingSeatContacts,memberCaptureEnvelopes,samplingProofs,components,phaseState,finalParkedParts:parked,checks,necessaryFiniteGeometry:checks.every(q=>Number.isFinite(q.reserveMm)&&q.reserveMm>=-1e-7)&&independentMemberDesign.crewRetreatFailures.length===0&&weldedLDesign.members.every(q=>q.clampGeometryFailures.length===0),geometryFailures:[...checks.filter(q=>q.reserveMm< -1e-7),...independentMemberDesign.crewRetreatFailures.map(q=>({componentId:'crew/brace-retreat',phase:'actual-R300-body-retreat',obstacleId:q.id,reserveMm:q.reserveMm})),...weldedLDesign.members.flatMap(m=>m.clampGeometryFailures.map(q=>({componentId:m.componentId,phase:'actual-L-capture-interface',obstacleId:q.id,reserveMm:q.reserveMm})))],
   receiver:{sourceContextDigest:floor.bindingDigest,occupiedFflAbsoluteMm:source.groundFflMm,rcLocalMm:[rcBottom,rcTop],actualRCPlans:rcPlans,parts:receiverParts,checks:receiverChecks,footprintChecks:receiverFootprintChecks,geometryFailures:[...receiverChecks.filter(q=>q.reserveMm<0),...receiverFootprintChecks.filter(q=>!q.contained)],demands:receiverDemands,referenceNecessarySteel:receiverDemands.every(q=>Math.max(q.referenceSteelExtremeMPa,q.referenceAnchorMPa)<=r.receiverReferenceSteelProofMPa/1.5),frictionResistanceCreditedN:0,actualRCBreakoutRebarWeldWaterproofAirAndPointThermalJoinAccepted:false},
   toolChecks,toolFailures:toolChecks.filter(q=>q.reserveMm< -1e-7),memberIds:fixtureIds,
-  positiveCaptureRequirement:{headGravityRemainsOnIndependentFloorFork:true,oneCapturedRearMemberOrSidePortalAtATime:true,allThreeRearMembersPositivelyParkedBeforeSidePortalRelease:true,maximumSidePortalWithClampsKg:r.maximumSidePortalWithTemporaryClampsKg,maximumRearMemberWithClampsKg:r.maximumRearMemberWithTemporaryClampsKg,temporaryPositiveCaptureFixtureGeometryQualified:false},
+  positiveCaptureRequirement:{headGravityRemainsOnIndependentFloorFork:true,oneCapturedRearMemberOrSidePortalAtATime:sideRemovalRepresentation==='whole-unit-control',oneCapturedSourceMemberAtATime:true,independentPositiveParkRequiredBeforeNextCapture:true,allThreeRearMembersPositivelyParkedBeforeSidePortalRelease:true,maximumSidePortalWithClampsKg:r.maximumSidePortalWithTemporaryClampsKg,maximumRearMemberWithClampsKg:r.maximumRearMemberWithTemporaryClampsKg,temporaryPositiveCaptureFixtureGeometryQualified:false},
   temporaryStability:{receiverSteelDemandsIncluded:true,headForkMomentReceiversAndMemberCaptureFixtureStillRequireCompleteGeometry:true,RCAndFloorActualCapacityAccepted:false},
-  specificOpenGates:['front top-driven bolt net-section/thread/weld/material and actual tool product qualification','removable frame foot key, threaded cups and wrench geometry','head-fork positive moment receiver/clamp and capture-tool geometry','RC reinforcement/breakout, thermal point bridge and actual waterproof/air seal'],
+  specificOpenGates:['front top-driven bolt net-section/thread/weld/material and actual tool product qualification',jointInterfaces.length+' actual brace/beam end joints, their body/reach/tool approaches, removable frame foot key and threaded cups','head-fork positive moment receiver/clamp,'+components.length+' positive member capture/park duties and actual crew retreat path','RC reinforcement/breakout, thermal point bridge and actual waterproof/air seal'],
   ordinaryRenewalAccepted:false,currentSavedDocumentAdmitted:false}
 }
