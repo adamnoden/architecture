@@ -2,6 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
+import {inletPlantTankedRoom} from './current-design/inlet-plant-tanked.js'
 import {derivePostRowGridAxes} from './current-design/inlet-plant-post-row-bridge.js'
 import {plantTankedWalkingSurface,plantGrateRimOutsideExclusions,type PlantWalkControl,type PlantWalkApparatus} from './current-design/inlet-plant-tanked-walk.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../project/had/studies/'+p,import.meta.url),'utf8'))
@@ -98,4 +99,75 @@ test('actual eastern perimeter-rim regression witness is removed as real stock, 
  assert.equal(actual.boxMm[1]+actual.boxMm[4],plank[1]-6)
  assert.ok(!overlap(actual.boxMm,plank))
  console.log('PLANT_BRIDGE_RIM_REGRESSION '+JSON.stringify({formerRimId:'Plant/grate/5/1/cut-edge-rim/9/3',formerRimBoxMm:formerRim,plankId:'Plant/bridge-piece/0',plankBoxMm:plank,formerIntersectionMm3:intersection,actualRimId:actual.id,actualRimBoxMm:actual.boxMm,actualIntersection:false}))
+})
+
+const clearEndBridge={...bridge,postRow:{...bridge.postRow,supportMode:'two-end-continuous' as const,sharedPostYMm:[3900,5300],innerGirderWallMm:10,maximumInnerGirderWallMm:10.5,corbelWeldLegMm:4,renewal:{northTranslationMm:130,firstLiftMm:200,turnCentreAboveWalkingMm:740}}}
+const clearEndChoice={...choice,bridge:clearEndBridge}
+const twoEndRun=()=>run({...input,choice:clearEndChoice})
+const emitTwoEnd=(label:string,r:ReturnType<typeof plantTankedWalkingSurface>)=>{
+ const b=r.postRowBridge!,summary={sourceDigest:r.sourceDigest,bridge:b,collector:r.bridgeIntegration!.actualCollector,geometry:r.geometry,failedMemberChecks:r.memberChecks.filter(q=>!q.necessary),normalMassUpperKg:r.normalMassUpperKg,solidsIncrementUpperL:r.solidsIncrementUpperL,physicalAcceptance:false}
+ console.info(label+' '+JSON.stringify(summary))
+ if(process.env.RUNNER_TEMP){const dir=join(process.env.RUNNER_TEMP,'had-utility-west-proof');mkdirSync(dir,{recursive:true});writeFileSync(join(dir,label.toLowerCase()+'.json'),JSON.stringify(summary,null,2))}
+ return summary
+}
+test('two real end posts and one captured girder replace all six obstructing outer supports and collect actual stock G once',()=>{
+ const r=twoEndRun(),b=r.postRowBridge!,summary=emitTwoEnd('PLANT_TWO_END_CLEAR450',r)
+ assert.equal(b.supportMode,'two-end-continuous')
+ assert.deepEqual(b.actualEndPostYMm,[3900,5300])
+ assert.equal(b.girderSegments.length,1);near(b.girderSegments[0].clearLengthMm,1400)
+ assert.deepEqual(b.sharedGridYMm,[3907,4080,4363.5,4647,4930.5,5214])
+ assert.equal(b.retiredGridSupports.length,6)
+ for(const q of b.retiredGridSupports)for(const id of[q.postId,q.headId,q.footId])assert.ok(!r.parts.some(p=>p.id===id),id)
+ for(const row of [6,7])assert.ok(r.parts.some(p=>p.id==='Plant/post/6/'+row))
+ assert.equal(r.parts.filter(p=>p.kind==='solid-foot-pad').length,52)
+ assert.equal(r.parts.filter(p=>p.kind==='bridge-pad').length,2)
+ assert.equal(r.parts.filter(p=>p.kind==='post-row-solid-corbel'&&p.id.includes('/walk-corbel/')).length,6)
+ assert.equal(b.packers.length,4)
+ assert.equal(r.geometry.cartesianPostGridApplies,false)
+ assert.deepEqual(r.geometry.actualPostYsByColumn![6],[3900,5300,5497.5,5670.5])
+ assert.equal(summary.collector!.sourcePanelIds.length,6)
+ assert.equal(summary.collector!.actualRailIds.length,6)
+ assert.equal(new Set(summary.collector!.actualPhysicalPieceIds).size,summary.collector!.actualPhysicalPieceIds.length)
+ near(b.normalReactionBounds.walkingGOnceN,summary.collector!.uniqueCollectedMassUpperKg*9.81)
+ assert.equal(b.normalReactionBounds.oneFactoredWheelN,3708.18)
+ assert.ok(b.normalReactionBounds.twoEndSimplySupportedInnerMember)
+ assert.ok(!b.normalReactionBounds.segmentedSimplySupportedInnerSpans)
+ assert.ok(b.innerAssemblyUpperKg<60)
+ assert.ok(b.necessaryMemberComparisons,JSON.stringify(b.memberChecks.filter(q=>!q.necessary)))
+ assert.ok(r.necessaryMemberComparisons,JSON.stringify(summary.failedMemberChecks))
+ for(const q of b.sharedPostUpdates){assert.ok(q.createNew);const foot=r.parts.find(p=>p.id===q.footId)!;near(foot.compressionDesignN!,b.oneSharedPostDemandUpperN);assert.ok(foot.compressionMomentBoundsNm);assert.ok(!b.normalFootWrenchBounds.find(f=>f.footId===foot.id)!.actual95PercentFootContactPeakAndNoAnchorAccepted)}
+ const renewed=b.innerGirderRenewal!
+ assert.ok(renewed.removedActualWalkingPartIds.length>6)
+ assert.ok(renewed.initialMatingFaces.every(p=>p.necessaryFaceOnlySeparation))
+ assert.ok(renewed.wholeCapturedAssemblyPartIds.some(id=>id.includes('walk-corbel')))
+ assert.equal(renewed.remainingFrameStabilityAccepted,false)
+ assert.equal(renewed.actualCaptureCraneAntiRollBoltsToolsAndExternalRestAccepted,false)
+ assert.ok(renewed.necessaryGeometricSweeps,JSON.stringify({obstacles:renewed.obstacleChecks.filter(q=>q.reserveAfterSettingsAndSamplingMm<0),floor:renewed.floorChecks.filter(q=>!q.necessary),door:renewed.doorChecks.filter(q=>!q.necessary),rest:renewed.externalRestReserveMm}))
+})
+test('same actual whole Plant source replays the two-end beam and leaves both450 inlet approaches empty',()=>{
+ const whole=inletPlantTankedRoom({choice:clearEndChoice,plant:read('inlet-local-pocket.results.json').splitPlantRoom.comparison,vesselChoice:v,mat:JSON.parse(readFileSync(new URL('../../project/mat/studies/whole-house-service-baseline.json',import.meta.url),'utf8')),maximumSourceApertureMm:10.5,services:read('current-house-services.json'),servicesGitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',waterReplan:read('water-replan.json'),waterReplanGitBlob:'089f0dac2f2e89272dc2ea85a10c2208f2fd797d',sourceSettings:read('inlet-plant-tanked-supply-candidate.json').settings}),
+  r=whole.walking,b=r.postRowBridge!
+ const summary=emitTwoEnd('PLANT_TWO_END_ACTUAL_SOURCE',r)
+ console.info('PLANT_TWO_END_ACTUAL_APPROACH '+JSON.stringify({sourceApproach:whole.outfalls.sourceApproach,releaseL:whole.inventory.fullInstantPressureNetworkDesignReleaseL,static:whole.containment,physicalAcceptance:false}))
+ assert.ok(r.necessaryMemberComparisons,JSON.stringify(summary.failedMemberChecks))
+ assert.ok(b.necessaryRenewalGeometry,JSON.stringify(b.innerGirderRenewal?.obstacleChecks.filter(q=>q.reserveAfterSettingsAndSamplingMm<0)))
+ assert.equal(whole.outfalls.sourceApproach.rows.length,0)
+ assert.equal(whole.outfalls.sourceApproach.actualSolidEntryLossBoundJoined,false)
+ assert.equal(whole.installedAcceptance,false)
+})
+test('two-end evidence is invalidated by real stock, pan settings, captured renewal and collected gravity perturbations',()=>{
+ const ordinary=twoEndRun(),b=ordinary.postRowBridge!,
+  shifted=run({...input,choice:{...clearEndChoice,bridge:{...clearEndBridge,postRow:{...clearEndBridge.postRow,sharedPostYMm:[3895,5305]}}}})
+ assert.ok(shifted.memberChecks.some(q=>q.id.includes('/end-0/actual-pan-edge/1')&&!q.necessary))
+ const overweight=run({...input,choice:{...clearEndChoice,bridge:{...clearEndBridge,postRow:{...clearEndBridge.postRow,maximumMechanicallyCapturedGirderKg:40}}}})
+ assert.ok(overweight.postRowBridge!.memberChecks.some(q=>q.id.endsWith('/inner-whole-welded-assembly-capture')&&!q.necessary))
+ const noSlide=run({...input,choice:{...clearEndChoice,bridge:{...clearEndBridge,postRow:{...clearEndBridge.postRow,renewal:{...clearEndBridge.postRow.renewal,northTranslationMm:0}}}},bridgeRenewalContext:{...input.bridgeRenewalContext,obstacles:[...input.bridgeRenewalContext.obstacles,{id:'actual-source-Plant-N-radiator',boxMm:[10980,3797,930,550,200,600]as const}]}})
+ assert.equal(noSlide.postRowBridge!.innerGirderRenewal!.necessaryGeometricSweeps,false)
+ assert.ok(noSlide.postRowBridge!.innerGirderRenewal!.obstacleChecks.some(q=>q.obstacle==='actual-source-Plant-N-radiator'&&q.reserveAfterSettingsAndSamplingMm<0))
+ assert.notEqual(shifted.sourceDigest,ordinary.sourceDigest)
+ assert.notEqual(overweight.sourceDigest,ordinary.sourceDigest)
+ assert.equal(b.stock.innerGirderMinimumWallMm,10);assert.equal(b.stock.innerGirderMaximumWallForGUpperMm,10.5)
+ const thin=run({...input,choice:{...clearEndChoice,bridge:{...clearEndBridge,postRow:{...clearEndBridge.postRow,innerGirderWallMm:8,maximumInnerGirderWallMm:8.5}}}})
+ console.info('PLANT_TWO_END_MINIMUM_WALL_CONTROL '+JSON.stringify({minimumWall8:thin.postRowBridge!.memberChecks,minimumWall10:b.memberChecks,sourceDigests:[thin.sourceDigest,ordinary.sourceDigest]}))
+ assert.ok(thin.postRowBridge!.memberChecks.find(q=>q.id.endsWith('/corbel-web-local-plus-global-fibre-CONDITIONAL'))!.value>b.memberChecks.find(q=>q.id.endsWith('/corbel-web-local-plus-global-fibre-CONDITIONAL'))!.value)
 })
