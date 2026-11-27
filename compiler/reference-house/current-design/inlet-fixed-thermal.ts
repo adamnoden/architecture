@@ -29,6 +29,9 @@ function solve(matrix:readonly (readonly number[])[],rhs:readonly number[]){
   return out
 }
 
+/** Shared row-equilibrated linear solve; callers own their physical model and support qualification. */
+export {solve as solveExplicitLinearSystem}
+
 type ThermalInput={
   readonly pathMm:readonly Point[]
   readonly fixedPointZMm:number

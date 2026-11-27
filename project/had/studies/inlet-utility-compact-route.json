@@ -1049,7 +1049,7 @@
         "actualDeliveredMaterialWeldAndJointProofAccepted": false,
         "actualFloorBearingAndBallastSupportAccepted": false,
         "oldIASGeometryRole": "rejected comparator only; no legacy frame acceptance or mass receipt transfers",
-        "ordinaryRenewalArchitecture": "two welded NSbeam/rear-leg L subassemblies, separate frontlegs and individually bolted braces;16 new source joint interfaces; actual positive member capture/parks/foot and joint tools still unqualified",
+        "ordinaryRenewalArchitecture": "Two welded C sideframes with compression-only rear bearings and front-only moment receivers; independently captured front legs removed first. Complete component parks/tools and RC/material qualifications remain unproved.",
         "maximumFrameJointAndWeldMassKg": 2,
         "maximumEachHeadPressureAssemblyKg": 2,
         "underBowlPadMm": [
@@ -1241,6 +1241,197 @@
           "maximumEachCaptureClampKg": 0.5,
           "actualWeldCapLocalWallAndClampQualified": false,
           "postToCapConnection": "factory full-penetration perimeter weld through actual HSS wall; procedure, local wall and material qualification false"
+        },
+        "rejectedSevenBraceControl": {
+          "schema": "had-utility-rejected-seven-brace-control/1",
+          "sourceCommit": "fc715cdfcfa2bbcefbc9bd4de72c047edd85b1e4",
+          "actualFiniteGeometryFailureCount": 35,
+          "actualOrdinaryRenewalAccepted": false,
+          "reason": "Actual first-release, front-leg, parked-brace and crew retreat collisions; angular-cover bug corrected separately."
+        },
+        "cBench": {
+          "schema": "had-utility-front-access-two-C-benches/1",
+          "selectedForCompleteDevelopment": true,
+          "sourceRole": "New authored geometry/demand candidate; ordinary renewal and material/RC/tool qualification remain false.",
+          "baseRailCrossMm": [
+            50,
+            80
+          ],
+          "baseRailWallMm": 4,
+          "baseRailYBoundsMm": [
+            730,
+            1450
+          ],
+          "baseRailBottomMm": 30,
+          "rearPostSpreadPlateMm": [
+            50,
+            100,
+            8
+          ],
+          "frontLegSoleMm": [
+            60,
+            140,
+            10
+          ],
+          "rearBearingPlateMm": [
+            80,
+            140,
+            10
+          ],
+          "frontBearingPlateMm": [
+            80,
+            200,
+            10
+          ],
+          "bearingStandoffMm": [
+            50,
+            60,
+            20
+          ],
+          "frontReceiverAxisYMm": 1350,
+          "normalAnchorYMm": [
+            1290,
+            1410
+          ],
+          "temporaryToolAnchorYMm": 1500,
+          "normalAnchorDiameterMm": 20,
+          "normalAnchorHeadDiameterMm": 30,
+          "normalAnchorHeadHeightMm": 20,
+          "normalAnchorCounterboreMm": [
+            32,
+            20
+          ],
+          "normalAnchorThroughBoreMm": 22,
+          "normalAnchorLengthMm": 170,
+          "anchorReinforcementMm": [
+            50,
+            60,
+            80
+          ],
+          "anchorBlindThreadBlockMm": [
+            50,
+            50,
+            50
+          ],
+          "anchorBlindBlockTopMm": -16,
+          "anchorMinimumEngagementMm": 30,
+          "frontReceiverCrossMm": [
+            80,
+            80
+          ],
+          "frontReceiverWallMm": 6,
+          "frontReceiverCrownMm": [
+            80,
+            280,
+            10
+          ],
+          "frontReceiverRailYBoundsMm": [
+            1250,
+            1530
+          ],
+          "frontReceiverRailBottomMm": -90,
+          "frontRCPlateMm": [
+            140,
+            220,
+            16
+          ],
+          "frontRCPlateXOffsetsMm": [
+            40,
+            -90
+          ],
+          "frontRCAnchorDiameterMm": 20,
+          "frontRCAnchorHeadMm": [
+            36,
+            10
+          ],
+          "frontRCAnchorPitchMm": [
+            100,
+            150
+          ],
+          "frontRCAnchorEmbedMm": 120,
+          "rearReceiverCrossMm": [
+            40,
+            40
+          ],
+          "rearReceiverWallMm": 5,
+          "rearRCPlateMm": [
+            90,
+            140,
+            10
+          ],
+          "rearRCPlateXOffsetsMm": [
+            0,
+            -60
+          ],
+          "rearRCAnchorDiameterMm": 12,
+          "rearRCAnchorHeadMm": [
+            24,
+            8
+          ],
+          "rearRCAnchorPitchMm": [
+            60,
+            100
+          ],
+          "rearRCAnchorEmbedMm": 120,
+          "rearGravityContact": "compression-only vertical bearing; zero horizontal restraint/friction and zero tensile reaction",
+          "minimumRCCoverMm": 40,
+          "normalOperatingTemperatureExcursionK": 40,
+          "steelExpansionPerK": 0.000012,
+          "rearGravityBearingRequiredSlideMm": 1,
+          "eachCJointAndWeldMassCeilingKg": 1,
+          "eachFrontLegJointAndWeldMassCeilingKg": 0.25,
+          "eachCaptureClampMassCeilingKg": 0.5,
+          "captureClampCountPerMember": 2,
+          "capturePayloadDesignKg": 20,
+          "memberLoadDynamicFactor": 1.5,
+          "frontLegRelease": {
+            "schema": "had-utility-front-C-leg-release/1",
+            "liftMm": 80,
+            "northMm": 120,
+            "sourceJointPinAxis": "Y",
+            "positivePinsReleasedOnlyAfterIndependentGravityCapture": true,
+            "actualPinLugCaptureParkToolsAndStabilityQualified": false,
+            "order": "NORTH-on-matched-sliding-bearing-faces-then-UP",
+            "actualCapAndSoleSlidingFacesRequired": true
+          },
+          "CRelease": {
+            "schema": "had-utility-C-frame-release/1",
+            "liftMm": 40,
+            "southMm": 50,
+            "bothNormalAnchorsReleasedOnlyAfterIndependentGravityCapture": true,
+            "rearHasNoAboveFloorReleaseFastener": true,
+            "actualWholeComponentExtractionAndPositiveCaptureQualified": false,
+            "normalAnchorBoltsRemovedAndCapturedBeforeLift": true
+          },
+          "allNewReceiverRCWeldThreadThermalWaterproofAndPhysicalHandlingQualified": false,
+          "frictionResistanceCredited": false,
+          "legacyReceiversTransferred": false,
+          "ordinaryRenewalAccepted": false,
+          "anchorBlindBottomMinimumMetalMm": 5,
+          "eachFrontReceiverWeldMassCeilingKg": 1,
+          "eachRearReceiverWeldMassCeilingKg": 0.5,
+          "drainReceivers": {
+            "schema": "had-utility-C-bench-drain-receivers/1",
+            "wasteOuterMm": [
+              10975,
+              1120,
+              0,
+              360,
+              440,
+              70
+            ],
+            "hotOuterMm": [
+              10975,
+              1075,
+              0,
+              360,
+              420,
+              90
+            ],
+            "installedOnlyForControlledFiveLitreBatchesBeforeCaptureTool": true,
+            "activeLegacyReceiverShapesChanged": false,
+            "actualWatertightStiffnessAndHandlingQualified": false
+          }
         }
       }
     },

@@ -10,7 +10,7 @@ export type PlantWalkControl={
  material:{densityKgM3:number;elasticModulusMPa:number;allowableComparisonMPa:number;thermalExpansionPerK?:number;minimumDensityKgM3?:number}
  grating:{bearingBarHeightMm:number;bearingBarThicknessMm:number;bearingBarPitchMm:number;crossBarHeightMm:number;crossBarThicknessMm:number;crossBarPitchMm:number;maximumBearingSpanMm:number;maximumPanelXMm:number;maximumPanelYMm:number;rimHeightMm:number;rimThicknessMm:number;maximumCompletePanelKg:number;hardwareBudgetEachKg:number;panelJointGapMm:number;maximumRelativeSeatErrorMm?:number;locatingPinDiameterMm?:number;locatingHoleMaximumMm?:number;locatingEngagementMm?:number;maximumFactoryLocatingPositionErrorMm?:number;maximumUniformTemperatureExcursionK?:number}
  walkingFrame:{beamSectionKind?:'solid'|'rhs';maximumRemovableBeamSegmentKg?:number;headPlateLWtMm?:Section;beamSectionWHtMm:Section;minimumBeamIMm4:number;maximumBeamSpanMm:number;postSectionWHtMm:Section;footPadSideMm:number;footPadThicknessMm:number;maximumSinglePostDesignN:number}
- bridge:{topology?:'outer-grid-post-row';postRow?:PostRowBridgeControl['postRow'];thicknessMm:number;pieceCount:number;railYMm:readonly number[];railSectionWHtMm:Section;minimumRailIMm4:number;maximumRailDeflectionMm:number;crossBeamSectionWHtMm:Section;crossBeamSupportYMm:readonly[number,number];insideRailSeatXMm:number;outsideRailSeatXMm:number}
+ bridge:{plankThicknessRangeMm?:readonly[number,number];topology?:'outer-grid-post-row';postRow?:PostRowBridgeControl['postRow'];thicknessMm:number;pieceCount:number;railYMm:readonly number[];railSectionWHtMm:Section;minimumRailIMm4:number;maximumRailDeflectionMm:number;crossBeamSectionWHtMm:Section;crossBeamSupportYMm:readonly[number,number];insideRailSeatXMm:number;outsideRailSeatXMm:number}
 }
 export type PlantWalkApparatus={platformSource?:AppliancePlatformSource;id:string;source:{path:string;gitBlob:string;objectPath:string};homePlanMm:P;bodyBottomAbsoluteMm:number;bodyHeightMm:number;normalFilledMassUpperKg:number;requiredPanelLiftMm:number}
 export type PlantPanCompressionSupport={floorCase:ReturnType<typeof inletRoomPocket>;panCells:readonly{id:string;cornersMm:readonly(readonly number[])[]}[];panInternalStepFaces:readonly{id:string;cornersMm:readonly(readonly number[])[];normal:readonly number[]}[];panMetalMm:number;panDensityKgM3:number;design:{minimumMachinedFootThicknessMm:number;stockThicknessMm:number;compressiveWorkingFactor:number;minimumEffectiveContactFraction:number}}
@@ -65,19 +65,32 @@ export function plantTankedWalkingSurface(i:Input){
  let totalJointMm3=0,wetJointMm3=0
  for(let a=0;a<nx;a++)for(let k=0;k<ny;k++){
   const x=r[0]+a*(px+g.panelJointGapMm),y=r[1]+k*(py+g.panelJointGapMm),id='Plant/grate/'+a+'/'+k,local:Part[]=[],rim=g.rimThicknessMm,lx=px-2*rim,ly=py-2*rim,
-   nbar=Math.ceil((lx-g.bearingBarThicknessMm)/g.bearingBarPitchMm)+1,pitch=(lx-g.bearingBarThicknessMm)/(nbar-1),nCross=Math.max(1,Math.ceil(ly/g.crossBarPitchMm)-1),crossPitch=ly/(nCross+1)
+   regularBarCount=Math.ceil((lx-g.bearingBarThicknessMm)/g.bearingBarPitchMm)+1,pitch=(lx-g.bearingBarThicknessMm)/(regularBarCount-1),nCross=Math.max(1,Math.ceil(ly/g.crossBarPitchMm)-1),crossPitch=ly/(nCross+1)
+  let barPositions=Array.from({length:regularBarCount},(_,q)=>x+rim+q*pitch)
+  if(b.postRow?.supportMode==='two-end-continuous'&&a===nx-1&&y<b.postRow.sharedPostYMm.at(-1)!&&y+py>b.postRow.sharedPostYMm[0]-b.postRow.capWidthYMm/2){
+   const factoryGap=b.postRow.directBarAssemblyClearanceMm!
+   if(!Number.isFinite(factoryGap)||factoryGap<2)throw Error('Actual matched direct-grate assembly clearance required')
+   const face=b.postRow.innerGirderXMm-b.postRow.girderSectionWHtMm[0]/2,clear=(g.maximumRelativeSeatErrorMm??two)+b.postRow.matchedSeatErrorMm+factoryGap,
+    unsafe=barPositions.filter(v=>v<face+clear&&v+g.bearingBarThicknessMm>face-clear)
+   if(unsafe.length){
+    barPositions=barPositions.filter(v=>!unsafe.includes(v))
+    for(const v of [face-clear-g.bearingBarThicknessMm,face+clear])if(v>=x+rim&&v+g.bearingBarThicknessMm<=x+px-rim)barPositions.push(v)
+    barPositions.sort((a,b)=>a-b)
+   }
+  }
+  const nbar=barPositions.length,actualClearGap=Math.max(...barPositions.slice(1).map((v,k)=>v-barPositions[k]-g.bearingBarThicknessMm))
   const put=(label:string,box:B)=>{const p=make(id+'/'+label,'grate',box);local.push(p)}
   put('west-rim',[x,y,barBottom,rim,py,g.rimHeightMm]);put('east-rim',[x+px-rim,y,barBottom,rim,py,g.rimHeightMm])
   put('south-rim',[x+rim,y,barBottom,lx,rim,g.rimHeightMm]);put('north-rim',[x+rim,y+py-rim,barBottom,lx,rim,g.rimHeightMm])
-  for(let q=0;q<nbar;q++)put('bearing/'+q,[x+rim+q*pitch,y+rim,barBottom,g.bearingBarThicknessMm,ly,g.bearingBarHeightMm])
+  for(let q=0;q<nbar;q++)put('bearing/'+q,[barPositions[q],y+rim,barBottom,g.bearingBarThicknessMm,ly,g.bearingBarHeightMm])
   for(let q=0;q<nCross;q++)put('cross/'+q,[x+rim,y+rim+(q+1)*crossPitch-g.crossBarThicknessMm/2,top-g.crossBarHeightMm,lx,g.crossBarThicknessMm,g.crossBarHeightMm])
   const overlap=nbar*nCross*g.bearingBarThicknessMm*g.crossBarThicknessMm*g.crossBarHeightMm,
    wetOverlap=nbar*nCross*g.bearingBarThicknessMm*g.crossBarThicknessMm*between(i.initialWaterMm,i.maximumWaterMm,top-g.crossBarHeightMm,g.crossBarHeightMm),
    metal=local.reduce((n,p)=>n+p.metalVolumeMm3,0)-overlap,mass=metal/1e9*m.densityKgM3
   totalJointMm3+=overlap;wetJointMm3+=wetOverlap
-  panels.push({id,planMm:[x,y,px,py],parts:local.map(p=>p.id),completeMassDesignUpperKg:mass+g.hardwareBudgetEachKg,metalMassKg:mass,barCount:nbar,crossBarCount:nCross,clearBarGapMm:pitch-g.bearingBarThicknessMm,crossBarJointOverlapMm3:overlap,waterJointOverlapMm3:wetOverlap})
+  panels.push({id,planMm:[x,y,px,py],parts:local.map(p=>p.id),completeMassDesignUpperKg:mass+g.hardwareBudgetEachKg,metalMassKg:mass,barCount:nbar,crossBarCount:nCross,clearBarGapMm:actualClearGap,crossBarJointOverlapMm3:overlap,waterJointOverlapMm3:wetOverlap})
   add(id+'/complete-mass','kg',mass+g.hardwareBudgetEachKg,g.maximumCompletePanelKg)
-  add(id+'/wheel-cannot-fit-between-bars','mm',pitch-g.bearingBarThicknessMm,25)
+  add(id+'/wheel-cannot-fit-between-bars','mm',actualClearGap,25)
  }
  const pad=f.footPadSideMm,post=f.postSectionWHtMm,beam=f.beamSectionWHtMm,perimeterInset=c.appliancePlatform?.perimeterInsetMm??0,
   xs=[r[0]+pad/2+perimeterInset,...Array.from({length:nx-1},(_,k)=>r[0]+(k+1)*px+(k+.5)*g.panelJointGapMm),r[0]+r[2]-pad/2-perimeterInset],
@@ -244,6 +257,11 @@ export function plantTankedWalkingSurface(i:Input){
  let postRowBridge:ReturnType<typeof derivePostRowBridge>|null=null,postRowInput:PostRowBridgeInput|null=null
  const bridgeIntegration:{railCuts:{sourceId:string;replacementIds:string[];yMm:number}[];eastTailParts:string[];perimeterGapMm:number|null;perimeterChecks:{id:string;gapMm:number;requiredCoverMm:number;necessary:boolean}[];remainingPerimeterTailChecks:{id:string;nominalGapMm:number;requiredSettingAndSteelMm:number;necessary:false}[];actualCollector?:{sourcePanelIds:string[];actualPhysicalPieceIds:string[];actualRailIds:string[];uniqueCollectedMassUpperKg:number;perCorbelDeadUpperN:{yMm:number;deadUpperN:number}[];oneWheelAddedOnlyOnce:boolean}|null}={railCuts:[],eastTailParts:[],perimeterGapMm:null,perimeterChecks:[],remainingPerimeterTailChecks:[]}
 
+ const directBearingPatches=(corbelYs:readonly number[])=>{
+  const frame=b.postRow!,face=frame.innerGirderXMm-frame.girderSectionWHtMm[0]/2,east=face+frame.girderSectionWHtMm[0],cover=relativeSeatError+frame.matchedSeatErrorMm,
+   lo=Math.min(frame.sharedPostYMm[0],corbelYs[0]-frame.capWidthYMm/2),hi=Math.max(frame.sharedPostYMm.at(-1)!,corbelYs.at(-1)!+frame.capWidthYMm/2)
+  return parts.filter(p=>p.id.startsWith('Plant/grate/'+(nx-1)+'/')&&p.id.includes('/bearing/')&&p.boxMm[0]>=face+cover&&p.boxMm[0]+p.boxMm[3]<=east-cover).flatMap(p=>{const length=Math.min(p.boxMm[1]+p.boxMm[4],hi)-Math.max(p.boxMm[1],lo);return length>0?[{sourcePartId:p.id,barWidthMm:p.boxMm[3],nominalContactLengthMm:length,minimumContactLengthMm:Math.max(0,length-2*cover),actualFlatContactAndPeakPressureAccepted:false as const}]:[]})
+ }
  const signedWalkingCases=(corbelYs:readonly number[])=>{
   const firstPanelX=r[0]+(nx-1)*(px+g.panelJointGapMm),nearest=(y:number)=>ys.reduce((a,z)=>Math.abs(z-y)<Math.abs(a-y)?z:a),
    selected=panels.filter(p=>p.planMm[0]>=firstPanelX-1e-6&&[p.planMm[1],p.planMm[1]+p.planMm[3]].some(y=>corbelYs.some(z=>Math.abs(z-y)<=g.panelJointGapMm))),
@@ -257,6 +275,13 @@ export function plantTankedWalkingSurface(i:Input){
     for(const y of [part.boxMm[1]-two,part.boxMm[1]+part.boxMm[4]+two]){
      const L=supports[1]-supports[0]
      result.push({sourcePartId:part.id,wheelAtYMm:y,loads:[{yMm:supports[0],forceN:i.wheelN*(supports[1]-y)/L},{yMm:supports[1],forceN:i.wheelN*(y-supports[0])/L}]})
+     const face=b!.postRow!.innerGirderXMm-b!.postRow!.girderSectionWHtMm[0]/2,east=face+b!.postRow!.girderSectionWHtMm[0],cover=relativeSeatError+b!.postRow!.matchedSeatErrorMm,
+      innerLo=Math.min(b!.postRow!.sharedPostYMm[0],corbelYs[0]-b!.postRow!.capWidthYMm/2),innerHi=Math.max(b!.postRow!.sharedPostYMm.at(-1)!,corbelYs.at(-1)!+b!.postRow!.capWidthYMm/2)
+     if(part.boxMm[0]>=face+cover&&part.boxMm[0]+part.boxMm[3]<=east-cover){
+      const contacts=y<innerLo?[innerLo,Math.min(part.boxMm[1]+part.boxMm[4],innerHi)]:y>innerHi?[innerHi,ys.find(z=>z>innerHi)!]:null
+      if(contacts&&(!finite(contacts)||contacts[1]<=contacts[0]))throw Error('Actual direct-grate contact and following rail required')
+      result.push({sourcePartId:part.id,wheelAtYMm:y,directInnerGirder:true,loads:contacts?[{yMm:contacts[0],forceN:i.wheelN*(contacts[1]-y)/(contacts[1]-contacts[0])},{yMm:contacts[1],forceN:i.wheelN*(y-contacts[0])/(contacts[1]-contacts[0])}]:[{yMm:y,forceN:i.wheelN}]})
+     }
     }
    }
   }
@@ -266,7 +291,7 @@ export function plantTankedWalkingSurface(i:Input){
   if(!b.postRow||!c.appliancePlatform||!i.bridgeRenewalContext)throw Error('Post-row bridge requires its actual current apparatus grid and source-bound renewal context')
   const commonGrid=derivePostRowGridAxes({roomPlanMm:r,maximumPanelXYMm:[g.maximumPanelXMm,g.maximumPanelYMm],jointMm:g.panelJointGapMm,footPadSideMm:pad,perimeterInsetMm:c.appliancePlatform.perimeterInsetMm,columnRelocation:c.appliancePlatform.postColumnRelocation})
   if(JSON.stringify(commonGrid.xMm)!==JSON.stringify(xs)||JSON.stringify(commonGrid.yMm)!==JSON.stringify(ys))throw Error('Bridge and walking floor do not share their actual post grid')
-  postRowInput={bridge:{...b,postRow:b.postRow},grid:commonGrid,walkingTopMm:walk,plateYMm:i.bridgePlateYMm,externalReceiverXMm:b.outsideRailSeatXMm,panMinimumMm:i.panMinimumMm,panMaximumMm:i.panMaximumMm,openedStripPlanMm:[r[0]+(nx-1)*(px+g.panelJointGapMm),r[1],r[2]-(nx-1)*(px+g.panelJointGapMm),Math.max(...panels.filter(p=>p.planMm[0]>=r[0]+(nx-1)*(px+g.panelJointGapMm)-1e-6&&[p.planMm[1],p.planMm[1]+p.planMm[3]].some(y=>commonGrid.yMm.some(z=>z>=b.postRow!.sharedPostYMm[0]&&z<=b.postRow!.sharedPostYMm.at(-1)!&&Math.abs(z-y)<=g.panelJointGapMm))).map(p=>p.planMm[1]+p.planMm[3]))-r[1]],wheelN:i.wheelN,material:m,settingEachMm:s,thermalPerMm:(m.thermalExpansionPerK??0)*(g.maximumUniformTemperatureExcursionK??0),walkingDeadAtOneNodeN:frameDeadN,walkingWheelCases:b.postRow.supportMode==='two-end-continuous'?signedWalkingCases(commonGrid.yMm.filter(y=>y>=b.postRow!.sharedPostYMm[0]&&y<=b.postRow!.sharedPostYMm.at(-1)!)):undefined,sharedFootMaximumStockKg:pad**2*c.appliancePlatform.loadedPadBlankUpperMm/1e9*m.densityKgM3,sharedFootSideMm:pad,sharedFootMinimumMm:f.footPadThicknessMm,postSectionWHtMm:post,sourceRoofMaximumMm:i.outfallRoofMaximumMm,sourceRoofAtExternalBeamMm:i.sourceRoofAtExternalBeamMm??i.outfallRoofMaximumMm,panelJointMm:g.panelJointGapMm,hardwareEachKg:g.hardwareBudgetEachKg,grateMaximumRelativeSeatErrorMm:relativeSeatError,...i.bridgeRenewalContext}
+  postRowInput={bridge:{...b,postRow:b.postRow},grid:commonGrid,walkingTopMm:walk,plateYMm:i.bridgePlateYMm,externalReceiverXMm:b.outsideRailSeatXMm,panMinimumMm:i.panMinimumMm,panMaximumMm:i.panMaximumMm,openedStripPlanMm:[r[0]+(nx-1)*(px+g.panelJointGapMm),r[1],r[2]-(nx-1)*(px+g.panelJointGapMm),Math.max(...panels.filter(p=>p.planMm[0]>=r[0]+(nx-1)*(px+g.panelJointGapMm)-1e-6&&[p.planMm[1],p.planMm[1]+p.planMm[3]].some(y=>commonGrid.yMm.some(z=>z>=b.postRow!.sharedPostYMm[0]&&z<=b.postRow!.sharedPostYMm.at(-1)!&&Math.abs(z-y)<=g.panelJointGapMm))).map(p=>p.planMm[1]+p.planMm[3]))-r[1]],wheelN:i.wheelN,material:m,settingEachMm:s,thermalPerMm:(m.thermalExpansionPerK??0)*(g.maximumUniformTemperatureExcursionK??0),walkingDeadAtOneNodeN:frameDeadN,walkingWheelCases:b.postRow.supportMode==='two-end-continuous'?signedWalkingCases(commonGrid.yMm.filter(y=>y>=b.postRow!.sharedPostYMm[0]&&y<=b.postRow!.sharedPostYMm.at(-1)!)):undefined,sharedFootMaximumStockKg:pad**2*c.appliancePlatform.loadedPadBlankUpperMm/1e9*m.densityKgM3,sharedFootSideMm:pad,sharedFootMinimumMm:f.footPadThicknessMm,postSectionWHtMm:post,directGrateBearingPatches:b.postRow.supportMode==='two-end-continuous'?directBearingPatches(commonGrid.yMm.filter(y=>y>=b.postRow!.sharedPostYMm[0]&&y<=b.postRow!.sharedPostYMm.at(-1)!)):undefined,walkingBarWidthMm:g.bearingBarThicknessMm,sourceRoofMaximumMm:i.outfallRoofMaximumMm,sourceRoofAtExternalBeamMm:i.sourceRoofAtExternalBeamMm??i.outfallRoofMaximumMm,panelJointMm:g.panelJointGapMm,hardwareEachKg:g.hardwareBudgetEachKg,grateMaximumRelativeSeatErrorMm:relativeSeatError,...i.bridgeRenewalContext}
   postRowBridge=derivePostRowBridge(postRowInput)
   for(const p of [...parts])if(p.id.startsWith('Plant/bridge-piece/')||p.id.startsWith('Plant/bridge-X-rail/')||p.id.startsWith('Plant/bridge-cross/')||p.id.startsWith('Plant/bridge-post/'+b.insideRailSeatXMm+'/')||p.id.startsWith('Plant/bridge-foot/'+b.insideRailSeatXMm+'/'))parts.splice(parts.indexOf(p),1)
   for(let k=checks.length-1;k>=0;k--)if(checks[k].id.startsWith('Plant/bridge-')||checks[k].id.startsWith('Plant/external-cross-'))checks.splice(k,1)
@@ -336,20 +361,19 @@ export function plantTankedWalkingSurface(i:Input){
    collectorRails=continuous?beamSegments.filter(p=>p.boxMm[0]>=xs[xs.length-2]-g.panelJointGapMm&&corbelYs.some(y=>Math.abs(y-(p.boxMm[1]+p.boxMm[4]/2))<1e-6)):[],
    uniqueCollectedG=collectorPieces.reduce((n,p)=>n+p.completeMassUpperKg,0)+collectorRails.reduce((n,p)=>n+p.completeMassDesignUpperKg,0),
    collectorDeadCases:NonNullable<PostRowBridgeInput['walkingDeadCases']>=continuous?[
-    ...collectorPieces.map(piece=>{const panel=lastColumnPanels.find(p=>p.id===piece.sourcePanel)!,actual=parts.filter(p=>piece.partIds.includes(p.id)),nearest=(y:number)=>ys.reduce((a,z)=>Math.abs(z-y)<Math.abs(a-y)?z:a);return{sourcePartId:piece.id,maximumN:piece.completeMassUpperKg*9.81,sourceYMm:[Math.min(...actual.map(p=>p.boxMm[1]))-two,Math.max(...actual.map(p=>p.boxMm[1]+p.boxMm[4]))+two]as const,supportYMm:[nearest(panel.planMm[1]),nearest(panel.planMm[1]+panel.planMm[3])]as const}}),
-    ...collectorRails.map(p=>({sourcePartId:p.id,maximumN:p.completeMassDesignUpperKg*9.81,sourceYMm:[p.boxMm[1]-two,p.boxMm[1]+p.boxMm[4]+two]as const}))
+    ...collectorPieces.map(piece=>{const panel=lastColumnPanels.find(p=>p.id===piece.sourcePanel)!,actual=parts.filter(p=>piece.partIds.includes(p.id)),nearest=(y:number)=>ys.reduce((a,z)=>Math.abs(z-y)<Math.abs(a-y)?z:a);return{sourcePartId:piece.id,maximumN:piece.completeMassUpperKg*9.81,sourceYMm:[Math.min(...actual.map(p=>p.boxMm[1]))-two,Math.max(...actual.map(p=>p.boxMm[1]+p.boxMm[4]))+two]as const,supportYMm:[nearest(panel.planMm[1]),nearest(panel.planMm[1]+panel.planMm[3])]as const,directGirderSupport:{innerEndYMm:postRowBridge!.physicalInnerEndYMm,farNorthRailYMm:ys.find(y=>y>postRowBridge!.physicalInnerEndYMm[1])!}}}),
+    ...collectorRails.map(p=>({sourcePartId:p.id,maximumN:p.completeMassDesignUpperKg*9.81,sourceYMm:[p.boxMm[1]-two,p.boxMm[1]+p.boxMm[4]+two]as const,collectedCorbelYMm:p.boxMm[1]+p.boxMm[4]/2}))
    ]:[],
    perCorbel=corbelYs.map(y=>({yMm:y,deadUpperN:9.81*(collectorPieces.filter(p=>{const panel=lastColumnPanels.find(a=>a.id===p.sourcePanel)!;return Math.abs(panel.planMm[1]-y)<=g.panelJointGapMm||Math.abs(panel.planMm[1]+panel.planMm[3]-y)<=g.panelJointGapMm}).reduce((n,p)=>n+p.completeMassUpperKg,0)+collectorRails.filter(p=>Math.abs(p.boxMm[1]+p.boxMm[4]/2-y)<1e-6).reduce((n,p)=>n+p.completeMassDesignUpperKg,0))})),
    removedBeforeGirderRenewal=new Set<string>([
     ...lastColumnPanels.flatMap(p=>parts.filter(q=>q.id===p.id||q.id.startsWith(p.id+'/')).map(q=>q.id)),
     ...collectorRails.map(p=>p.id),
     ...postRowBridge.parts.filter(p=>p.kind==='bridge-plate'||p.kind==='post-row-solid-seat').map(p=>p.id),
-    ...postRowBridge.innerAssemblyPartIds,
-    ...postRowBridge.caps.filter(p=>p.id.includes('/shared-cap/')).map(p=>p.id)
+    ...postRowBridge.innerAssemblyPartIds
    ]),
    retainedWalkingObstacles=continuous?parts.filter(p=>!removedBeforeGirderRenewal.has(p.id)).map(p=>({id:p.id,boxMm:p.boxMm})):undefined
   if(continuous&&(!unifiedDetails||lastColumnPanels.length!==6||collectorRails.length!==6||collectorPieces.length<6))throw Error('Actual six east panel containers, their physical pieces and six last rail stocks are required')
-  postRowBridge=derivePostRowBridge({...postRowInput,walkingDeadAtOneNodeN:continuous?uniqueCollectedG*9.81:finalWalkingDead+tailGravity,...(continuous?{collectedCorbelLoads:perCorbel,walkingWheelCases:signedWalkingCases(corbelYs),walkingDeadCases:collectorDeadCases,retainedWalkingObstacles}:{})})
+  postRowBridge=derivePostRowBridge({...postRowInput,walkingDeadAtOneNodeN:continuous?uniqueCollectedG*9.81:finalWalkingDead+tailGravity,...(continuous?{collectedCorbelLoads:perCorbel,walkingWheelCases:signedWalkingCases(corbelYs),directGrateBearingPatches:directBearingPatches(corbelYs),walkingDeadCases:collectorDeadCases,retainedWalkingObstacles}:{})})
   if(continuous)postRowBridge.innerGirderRenewal!.removedActualWalkingPartIds=[...removedBeforeGirderRenewal].filter(id=>!postRowBridge!.innerAssemblyPartIds.includes(id)&&!id.includes('/shared-cap/'))
   bridgeIntegration.actualCollector=continuous?{sourcePanelIds:[...collectorPanelIds],actualPhysicalPieceIds:collectorPieces.map(p=>p.id),actualRailIds:collectorRails.map(p=>p.id),uniqueCollectedMassUpperKg:uniqueCollectedG,perCorbelDeadUpperN:perCorbel,oneWheelAddedOnlyOnce:true}:null
   for(const q of [...postRowBridge.sharedPostUpdates,...postRowBridge.externalPostUpdates]){const foot=parts.find(p=>p.id===q.footId)!;foot.compressionDesignN=postRowBridge.oneSharedPostDemandUpperN;const moments=postRowBridge.normalFootWrenchBounds.find(w=>w.footId===foot.id)!;foot.compressionMomentBoundsNm={Mx:moments.MxBoundsNm,My:moments.MyBoundsNm}}
