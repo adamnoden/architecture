@@ -9,11 +9,12 @@
     "label": "zerg-owner-takeover-20261126"
   },
   "claimedAt": "2026-11-26T20:03:12.723Z",
-  "heartbeatAt": "2026-11-26T22:50:04.224Z",
-  "expiresAt": "2026-11-27T00:50:04.224Z",
+  "heartbeatAt": "2026-11-27T00:20:15.000Z",
+  "expiresAt": "2026-11-27T01:05:15.000Z",
   "checkpoint": {
-    "evidence": "Actual room aperture fix passes browser bounds; day/evening lighting and kit regenerated from current bindings.",
-    "next": "Publish exact reconciled head; integrate bearing Study furnishing and inspect coordinated views."
+    "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
+    "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
+    "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
   },
   "branch": "work/zerg-takeover-integration-20261126",
   "predecessor": {
