@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
 import {join} from 'node:path'
-import {plantRcOverUniformFPanSupport,plantMatchedPanCompression} from './current-design/inlet-plant-tanked-walk.js'
+import {plantTankedWalkingSurface,type PlantWalkControl,type PlantWalkApparatus,plantRcOverUniformFPanSupport,plantMatchedPanCompression} from './current-design/inlet-plant-tanked-walk.js'
 import {inletPlantTankedRoom,drawInletPlantTankedRoom} from './current-design/inlet-plant-tanked.js'
 import {inletRoomPocket,type PlantRcOverUniformFStack} from './current-design/inlet-room-pocket.js'
 const read=(p:string)=>JSON.parse(readFileSync(new URL('../../'+p,import.meta.url),'utf8'))
@@ -99,6 +99,17 @@ test('actual selected pan keeps its steel geometry while a distinct mineral/RC/c
   completeOld=oldFloor.local!.quantityBounds.slabAndMineralWeightKN+current.walking.compressionSupport!.normalMassUpperKg*9.81/1000
  assert.ok(completeNew>completeOld)
  console.log('PLANT_RC_OVER_F_COMPLETE_COMPARISON '+JSON.stringify({newFloor:q,newUpperMineralKg:result.gradedBeddingMassUpperKg,newUpperBedMm:result.beddingThicknessRangeMm,oldCompleteStackKN:completeOld,newCompleteStackKN:completeNew,deltaKN:completeNew-completeOld,distinctSupport:result,actualAcceptance:false}))
+ const {appliancePlatform:_platform,...separate}=above,{topology:_topology,postRow:_postRow,...legacyBridge}=separate.bridge,
+  standChoice={...separate,bridge:{...legacyBridge,thicknessMm:36,pieceCount:13}} as PlantWalkControl,services=read('project/had/studies/current-house-services.json'),
+  apparatus:PlantWalkApparatus[]=[{id:'Plant/cylinder',source:{path:'project/had/studies/current-house-services.json',gitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',objectPath:'plant.cylinder'},homePlanMm:services.plant.cylinder.body,bodyBottomAbsoluteMm:680,bodyHeightMm:services.plant.cylinder.height,normalFilledMassUpperKg:current.vessel.normalFilled.bodyDryPlusWaterDesignCeilingKg,requiredPanelLiftMm:12},{id:'Plant/buffer',source:{path:'project/had/studies/current-house-services.json',gitBlob:'e649805e78244527fe6498b516fa5f23734ac5ea',objectPath:'plant.primaryBuffer'},homePlanMm:services.plant.primaryBuffer.station,bodyBottomAbsoluteMm:750,bodyHeightMm:services.plant.primaryBuffer.height,normalFilledMassUpperKg:current.bufferNormal.normalMassUpperKg,requiredPanelLiftMm:12}],
+  standInput={choice:standChoice,apparatus,compressionSupport:context,roomPlanMm:current.roomPlanMm as readonly[number,number,number,number],houseFflMm:530,initialWaterMm:current.levels.sourcePoolMm,maximumWaterMm:660,wheelN:3708.18,panMinimumMm:current.levels.panSurfaceMm[0],panMaximumMm:current.levels.panSurfaceMm[1],bridgeInnerXMm:11520.5,bridgeOuterXMm:12130,bridgePlateYMm:[4125,5075]as const,outfallRoofMaximumMm:482,sourceRoofAtExternalBeamMm:482,settingEachMm:10},
+  newStands=plantTankedWalkingSurface(standInput),oldStands=plantTankedWalkingSurface({...standInput,compressionSupport:{...context,floorCase:oldFloor}})
+ assert.equal(newStands.standThermalClearance?.length,2,'Both actual apparatus thermal observers must run on the new support result')
+ assert.equal(oldStands.standThermalClearance?.length,2)
+ assert.deepEqual(newStands.standThermalClearance,oldStands.standThermalClearance,'Same actual pan/steel retains the same physical observer across the stack reordering')
+ assert.ok(newStands.apparatusInterfaces.every(a=>'frameChecks'in a&&Array.isArray(a.frameChecks)&&a.frameChecks.length>0))
+ const adverseThermal=plantTankedWalkingSurface({...standInput,choice:{...standChoice,grating:{...standChoice.grating,maximumUniformTemperatureExcursionK:100}}})
+ assert.ok(adverseThermal.standThermalClearance!.every((a,k)=>a.temperatureExcursionK===100&&a.minimumAfterSettingsAndSteelThermalMm<newStands.standThermalClearance![k].minimumAfterSettingsAndSteelThermalMm))
  assert.throws(()=>plantMatchedPanCompression({context,roomPlanMm:current.roomPlanMm,parts:structuredClone(parts),maximumWaterMm:660,footDesignN:7000,steelDensityKgM3:8000}),/Old F-under-foot pressure law/)
  const lifted=inletRoomPocket({...oldInput,plantCompression:{...oldInput.plantCompression!,stack:{...proposedRcOverF,rcMm:260}}})
  assert.throws(()=>plantRcOverUniformFPanSupport({context:{...context,floorCase:lifted},roomPlanMm:current.roomPlanMm,parts:structuredClone(parts),maximumWaterMm:660,footDesignN:7000,steelDensityKgM3:8000}),/positive depth/)
@@ -130,7 +141,7 @@ test('one optional controlling stack propagates through the actual whole-room fl
  assert.notEqual(after.floorReplan.actualPocket.local!.quantityBounds.completeStackWeightUpperKN,before.floorReplan.actualPocket.local!.quantityBounds.completeStackWeightUpperKN)
  assert.equal(after.inventory.fullInstantPressureNetworkDesignReleaseL,before.inventory.fullInstantPressureNetworkDesignReleaseL)
  assert.equal(after.levels.sourcePoolMm,before.levels.sourcePoolMm)
- const changed=structuredClone(optional);changed.choice.panCompression.stack.rcMm=180
+ const changed=structuredClone(optional);changed.choice.panCompression.stack.rcMm=210
  const revised=inletPlantTankedRoom(changed)
  assert.notEqual(revised.source.caseDigest,after.source.caseDigest)
  assert.notEqual(revised.walking.rcOverInsulationSupport!.gradedBeddingMassUpperKg,support.gradedBeddingMassUpperKg)
