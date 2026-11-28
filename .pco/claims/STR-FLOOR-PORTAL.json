@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 64,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "04f89ad8-7b08-49c0-83ee-eb175d7c43de",
   "holder": {
     "kind": "chatgpt",
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T17:20:16.533Z",
-  "expiresAt": "2026-11-28T18:05:16.533Z",
+  "heartbeatAt": "2026-11-28T17:21:04.787Z",
+  "expiresAt": "2026-11-28T17:21:04.787Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -39,5 +39,7 @@
     "evidence": "PR #1632 merged into main at 3d377435f486d9c7b6e93861f54788d8fbc83a0e from exact tested head 7e4699583014d1efc740975f58c678189c9d599b. All eighteen exact-head workflows passed; the main unit suite had 845 passes, zero failures and five skips. Fresh canonical publication preflight passed at 17:18:45 UTC. Main ancestry and exact tree f05ab18f4edc6859affe978bb0b37f554ae061ea were verified, and the remote task branch was automatically deleted. Issue #1103 now records the ordinary steel/precast comparison, actual stair network, two opening lintels, architectural costs and remaining work.",
     "next": "Develop one complete precast unit and ordinary support layout under the 700 mm floor-zone comparison, then concentrated receivers, connections, diaphragm and ties. Join masonry arches, signed roof/floor/ground response and the occupied house, elevations, services and interiors before adoption. Preserve PR #1630 and historical recovery evidence. STR-FLOOR-PORTAL remains planned.",
     "blocker": "No blocker for integration of this bounded comparison. Structural completion still requires actual panel/support coverage, member and connection resistance, restraint and fire, receiving masonry and arch behaviour, and signed whole-house adoption. The higher house is not yet adopted."
-  }
+  },
+  "releasedAt": "2026-11-28T17:21:04.787Z",
+  "releaseReason": "handoff"
 }
