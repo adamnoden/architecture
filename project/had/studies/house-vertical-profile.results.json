@@ -6,15 +6,15 @@
       "sourceIdentities": {
         "project/had/studies/house_vertical_profile.py": "5630728bf8f6587e5f82ca9b17e0a8098b5401190376041e17932d849f673cab",
         "project/str/studies/dry_side_ground_section.py": "1ebd67c260283463ab190aa2b8bf29c514c1fbcdf4e489fb44a1b0f8cc7643c7",
-        "project/str/studies/dry-side-ground-section.json": "54fdbc4ce7dbceb48f1945d1b664cc481070f8bab9ee65c6c8253db1015e139d",
+        "project/str/studies/dry-side-ground-section.json": "0af014135f5d520f9398929e2a9194d2f279e064bcd49a2278536b3705bad8f8",
         "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
         "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
         "project/str/studies/current-house-occupied-interfaces.json": "8083132336cdbdd1d51f7652e620e75741a4e66b0ac2cedae552c026cbfc3f77",
         "project/str/studies/current-house-bridge.py": "6da4f723a2a28d4e7307f01c55d150d565cbc7575e9c5d6e19cd3b68a5ee98ed",
         "project/mat/studies/conventional-ground-junction.json": "439bfd151f40895b1e8abb1e17ae47ffd2dc02f977160a3c94362cc5f06f2f72",
         "project/mat/envelope-ground-boundary.md": "eb67353c8314449a0c10e12e8f41ca6e0c3bd1997776abcedc3bbf7f2346f0ae",
-        "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
-        "docs/reference-house/structural-brief.md": "63764b34f27ca25425e560a2a12fbf0fcd895ccad0f63b35ea5d8aa72566565e",
+        "project/owner-house-charter.md": "4285320c4eb036e2b7be8e2740c4d316eed34a2f802716c6ddb4670d8a7df83b",
+        "docs/reference-house/structural-brief.md": "b3467b9e4f3325038c797193bb7d08b0be61c16fb2b5f4c67259fd54d854c773",
         "project/str/studies/current-house-grid.py": "16253b545126847df0250bda3d1260c3210434387feea9abf4b5a0758308f635",
         "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
         "project/mat/studies/whole-house-leakage-duty.json": "b2700cfa84010eea0c9d8f118a5e658138c75b180b4368110c1ab5f3c4c0cad8",
@@ -80,8 +80,8 @@
       },
       "groundAuthority": {
         "caseId": "raised-530-local-solum",
-        "caseDigest": "c1b7ca458d263a0b850605b8eb3cfae9c7fbef55b386e2dbdfec9c6d4be612bb",
-        "resultDigest": "c5d69460a3b97278a5bbf6f31db24c614f1c2efef4b443e9d3b7bf27f856392a"
+        "caseDigest": "2e8f6293143e75e8e5ebb6c5d0b67d45fd78c7c06840b4d1a0297d576b7ca9c5",
+        "resultDigest": "87f05161269478ea74ee5449d2f5ac573ed60346a1d11befa07ab78da6d15670"
       },
       "status": "unselected-source-derived-vertical-proposal",
       "selectedHouseAdmitted": false,
@@ -1043,15 +1043,15 @@
       "sourceIdentities": {
         "project/had/studies/house_vertical_profile.py": "5630728bf8f6587e5f82ca9b17e0a8098b5401190376041e17932d849f673cab",
         "project/str/studies/dry_side_ground_section.py": "1ebd67c260283463ab190aa2b8bf29c514c1fbcdf4e489fb44a1b0f8cc7643c7",
-        "project/str/studies/dry-side-ground-section.json": "54fdbc4ce7dbceb48f1945d1b664cc481070f8bab9ee65c6c8253db1015e139d",
+        "project/str/studies/dry-side-ground-section.json": "0af014135f5d520f9398929e2a9194d2f279e064bcd49a2278536b3705bad8f8",
         "project/had/studies/water-replan.json": "735bdb0475c25ff2b83426152b5545d583b8d175fc4549f4c6a0ac6055da54bc",
         "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
         "project/str/studies/current-house-occupied-interfaces.json": "8083132336cdbdd1d51f7652e620e75741a4e66b0ac2cedae552c026cbfc3f77",
         "project/str/studies/current-house-bridge.py": "6da4f723a2a28d4e7307f01c55d150d565cbc7575e9c5d6e19cd3b68a5ee98ed",
         "project/mat/studies/conventional-ground-junction.json": "439bfd151f40895b1e8abb1e17ae47ffd2dc02f977160a3c94362cc5f06f2f72",
         "project/mat/envelope-ground-boundary.md": "eb67353c8314449a0c10e12e8f41ca6e0c3bd1997776abcedc3bbf7f2346f0ae",
-        "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
-        "docs/reference-house/structural-brief.md": "63764b34f27ca25425e560a2a12fbf0fcd895ccad0f63b35ea5d8aa72566565e",
+        "project/owner-house-charter.md": "4285320c4eb036e2b7be8e2740c4d316eed34a2f802716c6ddb4670d8a7df83b",
+        "docs/reference-house/structural-brief.md": "b3467b9e4f3325038c797193bb7d08b0be61c16fb2b5f4c67259fd54d854c773",
         "project/str/studies/current-house-grid.py": "16253b545126847df0250bda3d1260c3210434387feea9abf4b5a0758308f635",
         "project/had/studies/water-replan.mjs": "9ef245c2f354dcd4952e3ffe2d07a24b3d8fff4a73257bca8d9d27627015c078",
         "project/mat/studies/whole-house-leakage-duty.json": "b2700cfa84010eea0c9d8f118a5e658138c75b180b4368110c1ab5f3c4c0cad8",
@@ -1117,8 +1117,8 @@
       },
       "groundAuthority": {
         "caseId": "raised-715-profile",
-        "caseDigest": "6fb17c70efe0940d590c01317b4a1bd88c3bd3df83eb56490b08cbc58797e2dd",
-        "resultDigest": "654a5c78cbe32595bf7bd4f5d4bc530944a53f785b529c09878b47ba666b94bd"
+        "caseDigest": "c343471f99f62fe4f420f906f6a667cdceb364a13ceed6eb2eba8e8ba1f760ad",
+        "resultDigest": "db5adcc6eebc84e1152986c412552e1c4bbeae81a179f35b6d4811a774de357e"
       },
       "status": "unselected-source-derived-vertical-proposal",
       "selectedHouseAdmitted": false,

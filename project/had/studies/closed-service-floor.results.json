@@ -6,14 +6,14 @@
     "project/rwt/studies/selected-receiving-interface.json": "b0c85061120dcf1ef79e0d40606848b2f82802801a58ae197b3950c371130b65",
     "project/str/studies/current-house-grid.json": "c191ab9814463f92962213e1938f441aef3108cfaca8a463be7081477c538294",
     "project/mat/studies/upper-access-renewal.json": "54481965f1ac39b83b8725e2550ab5c0f3e3e5b60df4e23ad55c9f4fc20b2114",
-    "project/owner-house-charter.md": "891ed6b72ff7452826a18bf5f91458746b8594a5c5ac89f75407e9a40b776371",
+    "project/owner-house-charter.md": "4285320c4eb036e2b7be8e2740c4d316eed34a2f802716c6ddb4670d8a7df83b",
     "project/had/studies/closed_service_tool_geometry.py": "3bc2dbbc687c07bf63976808b4099d0fdeecac90e563c0bfc19b806a44fa88ad",
     "project/had/studies/closed-service-gasket-evidence.json": "4206c3b9af4662b5922255e6f56a1d1abc0ea8bbc6c82908c741f870cdce4d73",
     "project/had/studies/closed_service_floor.py": "f5f0121d61ab0172d43ca0b4e2018c2682efa4578cbc23ed3570f29ecd4f391b"
   },
   "groundAuthority": {
     "caseId": "raised715-service-floor-reference",
-    "caseDigest": "f563bc6127b0b09acde760b2bb61435c394158d78f1bc13bc1c1ff493ff271a0",
+    "caseDigest": "dcb729c96ebded751cba55afd64ea5784109f94f1498744fa714f6bee23c8bbb",
     "planDigest": "standalone-native-ground-reference"
   },
   "groundStack": {

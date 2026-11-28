@@ -39,6 +39,10 @@ The owner prefers solid internal masonry, genuine arches at internal and externa
 
 The [STR programme](str/structural-architecture-programme.md) develops a coherent structural proposition with HAD and the existing assembly/evidence owners. It must test both load paths and the quality of the inhabited house. The owner's sense of repose is a valid design motive, not a general physiological or safety claim. This direction does not silently adopt new geometry or turn earlier structural concepts into verified systems.
 
+## Precast and prefabrication direction — 28 November 2026
+
+The owner confirms that steel beams are permitted and prefers precast and prefabricated construction because of the variability of site concrete pours. Give fabricated steel beams and precast floors priority in the coordinated structural comparison, with any retained in-situ work explicitly justified. The [structural brief](../docs/reference-house/structural-brief.md#precast-and-prefabricated-construction--28-november-2026) owns the exact scope, remaining wet-work account and evidence boundaries. This is a construction preference, not acceptance of a particular structural system.
+
 ## Ground water and rising-damp direction — 30 October 2026
 
 The owner requires **dryness by position and geometry**: accommodation and essential services must not depend on active dewatering or inaccessible waterproofing holding back groundwater. Ground-contact foundations may tolerate their assessed wet exposure; the house must not depend on pumping to suppress groundwater around it. This constrains plot selection, building levels and any proposed basement, undercroft, deeper service trench, sunken perimeter margin or courtyard. Raising the house must preserve a coherent accessible principal approach.

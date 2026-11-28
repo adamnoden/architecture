@@ -1,6 +1,6 @@
 # Reference House — structural brief
 
-**Authority:** the owner's direction of 30 October 2026, under the [owner-house charter](https://github.com/adamnoden/architecture/blob/main/project/owner-house-charter.md). This page owns the structural preferences for this house. It does not select assemblies, establish capacities or revise the accepted plan. The [current house basis](current-house-basis.md) owns adopted geometry; the [structural architecture programme](https://github.com/adamnoden/architecture/blob/main/project/str/structural-architecture-programme.md) owns the work needed to test and coordinate this brief.
+**Authority:** the owner's direction of 30 October 2026 and precast/prefabrication clarification of 28 November 2026, under the [owner-house charter](https://github.com/adamnoden/architecture/blob/main/project/owner-house-charter.md). This page owns the structural preferences for this house. It does not select assemblies, establish capacities or revise the accepted plan. The [current house basis](current-house-basis.md) owns adopted geometry; the [structural architecture programme](https://github.com/adamnoden/architecture/blob/main/project/str/structural-architecture-programme.md) owns the work needed to test and coordinate this brief.
 
 ## The desired house
 
@@ -17,6 +17,16 @@ The preference extends indoors. Internal walls should normally have real substan
 5. **Investigate non-timber primary structure first.** The owner's developing preference against structural timber belongs in the floor and roof comparison, alongside the compression preference. It is not a prohibition on timber furniture, joinery or replaceable finishes. Any proposed primary timber solution needs an explicit return to the owner before adoption.
 
 The preferences are strong design directions, not permission to omit ties, reinforcement, diaphragms, anchors or other necessary resistance to tension, movement and lateral action. The scheme must explain where tension remains and why. Replacing timber with steel or reinforced/prestressed concrete does not make a structure tension-free.
+
+## Precast and prefabricated construction — 28 November 2026
+
+The owner confirms that **steel beams are permitted** and prefers **precast and prefabricated construction**, particularly to reduce reliance on the variability of site concrete pours. Prioritise conventional fabricated steel beams and precast concrete floor units in the next coordinated structural comparison, wherever they simplify the complete support arrangement. Retain the solid-masonry, genuine-arch, direct-bearing and aligned-support intentions above.
+
+Compare actual assemblies: manufactured tolerances and their site adjustment, bearings and connections, complete floor depth, heavy-wall support, movement, fire and corrosion protection, lifting access and erection sequence. Factory manufacture is the preferred construction approach; it does not itself prove fit or performance. Keep each arch's actual structural role explicit when steel supports adjacent floors or other loads.
+
+Any proposed in-situ concrete should have a clear purpose and justification within the complete assembly. Account explicitly for bedding, grout, joint closures, any structural topping and foundation pours; a precast label must not conceal extensive site casting. This is a preference for reducing and controlling wet work, not a blanket concrete ban or a promise of wholly dry construction. Ordinary design choices remain within the existing delegated authority.
+
+This direction changes development priority. Earlier reinforced-concrete and masonry comparisons retain their original evidence and limitations; they do not override this later owner preference. The existing STR programme owns the coordinated comparison and its consequences. No member, product, floor system, revised house or engineering acceptance is selected by this brief amendment.
 
 ## What “solid” must mean in the design
 
