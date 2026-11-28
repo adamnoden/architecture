@@ -9,12 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:53:54.494Z",
-  "heartbeatAt": "2026-11-28T10:04:35.976Z",
-  "expiresAt": "2026-11-28T10:49:35.976Z",
+  "heartbeatAt": "2026-11-28T10:17:07.066Z",
+  "expiresAt": "2026-11-28T11:02:07.066Z",
   "checkpoint": {
-    "evidence": "PR1631 at25e23e33 records owner prefab preference;4 actual producer checks, strict source audit0 and21 focused tests pass. All numerical values and SVGs unchanged; prior water-west recovery branch and PR1630 preserved.",
-    "next": "Observe exact-head hosted checks, fresh publication preflight, merge narrow preference amendment and release; no installation or structural acceptance.",
-    "blocker": "Full hosted validation pending; local npm check blocked by sandbox tsx IPC EPERM."
+    "evidence": "PR #1631 at 25e23e33 records the owner prefab preference. All four producer checks, strict source audit, 21 focused tests, publication proof, finite contour proof and beam-end browser proof pass. Numerical values and SVGs are unchanged; prior HAD recovery and PR #1630 are preserved.",
+    "next": "Wait for remaining exact-head checks, run fresh publication preflight, merge the narrow preference amendment and release. Installation resolution remains planned under the recorded recovery work.",
+    "blocker": "Full exact-head repository validation and general browser editor proof are still running; the local full check was blocked by sandbox tsx IPC EPERM."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
