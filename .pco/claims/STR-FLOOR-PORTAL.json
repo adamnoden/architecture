@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T15:13:00.103Z",
-  "expiresAt": "2026-11-28T15:58:00.103Z",
+  "heartbeatAt": "2026-11-28T15:28:12.209Z",
+  "expiresAt": "2026-11-28T16:13:12.209Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "PR #1632 final head 71948539865466652718e9ade9840b96b973d55a: 700 mm ordinary steel/precast development comparison and thirteen critical member screens. Local typecheck, sixteen targeted/source tests, output reproduction and drawing inspection passed. Fifteen of sixteen exact-head hosted workflow groups are green; native ground/editor regression, packet declaration and homepage checks have now passed. Final npm run check is in progress at 15:12 UTC.",
-    "next": "Observe final exact-head repository health; once green run fresh canonical expected-head preflight, merge PR #1632, reconcile issue #1103 and record verified merge before handoff release.",
-    "blocker": "Only full repository-health validation remains for integration. Complete precast panel/support layout, connections, restraint, masonry and signed whole-house adoption remain design duties."
+    "evidence": "PR #1632 remains at final head 71948539865466652718e9ade9840b96b973d55a, tree 03db7952caa31f2b8917380a97a5168eb0dbe5fd. Local targeted validation and rendered drawings passed. Fifteen of sixteen exact-head hosted workflows are green; the remaining validate job has passed all native structural/browser, packet and homepage steps and is running npm run check as of 15:27 UTC. Fresh main remained 076cfef8a48004b3a21c946e4660401bc5fba104 with a clean task checkout.",
+    "next": "Continue observing final repository health. When exact-head CI is green, run fresh canonical preflight, merge expected head, verify main ancestry/tree, update issue #1103 and release a precise handoff.",
+    "blocker": "Final hosted repository-health suite remains in progress, with no reported failure. The complete precast unit/support layout, connections, restraint and whole-house adoption remain outside this completed member-comparison scope."
   }
 }
