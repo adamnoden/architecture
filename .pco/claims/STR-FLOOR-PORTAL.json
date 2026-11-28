@@ -9,12 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:52:38.395Z",
-  "heartbeatAt": "2026-11-28T10:51:16.418Z",
-  "expiresAt": "2026-11-28T11:36:16.418Z",
+  "heartbeatAt": "2026-11-28T11:07:32.862Z",
+  "expiresAt": "2026-11-28T11:52:32.862Z",
   "checkpoint": {
-    "evidence": "PR #1631 now at 64511a0d, tree dff2608d. Corrected the initial hosted stale-witness failure through actual witness and raised-floor producers. All five study checks, projection witness, 34 focused checks, strict source audit and generated outputs pass. Thirteen files contain owner prose, 56 JSON identities and two SVG identity attributes only; numerical and drawing geometry unchanged.",
-    "next": "Complete exact-head hosted run 46136993802 and both proof workflows, then fresh publication preflight, merge and release. A local full suite using the direct TypeScript loader also runs to reveal later issues sooner. Steel and precast structural comparison remains planned.",
-    "blocker": "Current-head hosted checks are running; initial-head full suite failed only at a now-regenerated SVG case identity. No merge until current-head checks pass."
+    "evidence": "PR #1631 head 64511a0d, tree dff2608d, records the prefab preference and regenerated dependent identities. Current-head publication, beam-end browser, finite-contour and beam-end numerical checks pass. Five study producers, projection witness, 34 focused checks, strict source audit and generated outputs pass; the full local suite is progressing without failure.",
+    "next": "Finish exact-head hosted run 46136993802 and browser proof, then fresh publication preflight, merge and release. The steel and precast structural comparison and existing installation recovery remain planned.",
+    "blocker": "Required full current-head validation is still running. No current failure; initial stale witness and raised-floor dependency were corrected by canonical producers."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
