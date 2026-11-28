@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T16:11:22.202Z",
-  "expiresAt": "2026-11-28T16:56:22.202Z",
+  "heartbeatAt": "2026-11-28T16:25:25.158Z",
+  "expiresAt": "2026-11-28T17:10:25.158Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "PR #1632 head 7e4699583014d1efc740975f58c678189c9d599b, tree f05ab18f4edc6859affe978bb0b37f554ae061ea. The two source-inventory omissions are corrected with candidate status retained; all 12 affected tests pass and comparison/drawings reproduce. Sixteen of eighteen exact-head hosted workflows have passed, including ADE browser proof. Main run 46162163414, validate job 141031658588, has passed contour, beam-end and lower-masonry checks and reached the ground/editor regression at 16:10 UTC.",
-    "next": "Observe remaining migrated-plan and full validation workflows. After all exact-head checks pass, perform fresh canonical expected-head preflight, merge PR #1632, verify main ancestry/tree, reconcile issue #1103 and release a precise handoff.",
-    "blocker": "Exact-head CI remains in progress. Complete precast unit/support layout, connections, restraint, receiving masonry and joined whole-house adoption remain the next structural design duties."
+    "evidence": "PR #1632 remains at 7e4699583014d1efc740975f58c678189c9d599b, tree f05ab18f4edc6859affe978bb0b37f554ae061ea. Fresh main at 16:24 UTC remains 076cfef8a48004b3a21c946e4660401bc5fba104; task checkout is clean. Sixteen of eighteen exact-head workflows passed. Main validation 46162163414 is in ground/editor regression; migrated-plan proof 46162163416 is in its own repository-health suite. Both source-inventory corrections pass all 12 affected tests; the comparison JSON and drawings reproduce unchanged.",
+    "next": "Observe both remaining exact-head workflows. Once green, run fresh canonical preflight and expected-head merge; verify main ancestry/tree, update issue #1103, record verified comparison and handoff the still-open structural packet.",
+    "blocker": "Exact-head hosted validation remains in progress. Complete precast unit/support layout, connections, restraint, receiving masonry and joined whole-house adoption remain subsequent design duties."
   }
 }
