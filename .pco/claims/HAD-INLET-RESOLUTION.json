@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "HAD-INLET-RESOLUTION",
   "generation": 68,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "e5507c8c-d310-4c2d-beda-3c7811eee788",
   "holder": {
     "kind": "chatgpt",
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:53:54.494Z",
-  "heartbeatAt": "2026-11-28T12:41:08.342Z",
-  "expiresAt": "2026-11-28T13:26:08.342Z",
+  "heartbeatAt": "2026-11-28T12:41:22.044Z",
+  "expiresAt": "2026-11-28T12:41:22.044Z",
   "checkpoint": {
     "evidence": "PR #1631 merged into main at 076cfef8a48004b3a21c946e4660401bc5fba104 from validated head 64511a0d, tree dff2608d. All three exact-head hosted workflows and both fresh local canonical preflights passed. Main ancestry and exact tree were verified; issue #1103 now records the owner preference. The preference changes prose and dependent identities only, with numerical results, drawing geometry and acceptance states preserved. Remote task branch was automatically deleted.",
     "next": "This bounded owner-preference amendment is complete. Resume HAD installation resolution from the preserved recoverySource, coordinating future floor interfaces with the owner's preferred steel/precast comparison. Actual system selection and installation acceptance remain open.",
@@ -37,5 +37,7 @@
       "blocker": "Coordination/environment handoff: root/STR/room agents hit account usage limit; local executor unavailable. Approved named contents-read hosted workflow proves focused pure source/geometry only, not heavy current house/native/profile or publication preflight. RootPR1630 independently HOLD MERGE for engineering.html node:crypto devimport. HAD whole installation remains internally unfinished, not an external-evidence-only blocker. Source0 vsHAD530 Z remains unjoined. Cleanup residue deliberately retained: ONE active recoverybranch, branch-scoped proofworkflow and90day artifacts for successor; remove temporary workflow only after complete integration/provenance review. No background execution or unattended lease retained."
     }
   },
-  "pr": 1631
+  "pr": 1631,
+  "releasedAt": "2026-11-28T12:41:22.044Z",
+  "releaseReason": "handoff"
 }
