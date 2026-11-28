@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T14:10:13.606Z",
-  "expiresAt": "2026-11-28T14:55:13.606Z",
+  "heartbeatAt": "2026-11-28T14:26:37.254Z",
+  "expiresAt": "2026-11-28T15:11:37.254Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "Published first comparison remains at PR1632 head3424b11b. The next local revision derives and balances the actual precast stair network through split trimmers, a straight post, header and sill; this permits a700mm floor zone instead of750. Eleven beam screens pass; drawings inspected and typecheck passes. Support review identified the bath beam above the widened east window, so a direct-pier label must be replaced before publication.",
-    "next": "Finish the ordinary window lintel and its transferred reactions, publish the verified source-bound revision to PR1632, and complete exact-head CI and merge preflight.",
-    "blocker": "Full floor panel layout, concentrated receiving resistance, connections/stability and joined occupied-house adoption remain open. Existing PR1630 and RC evidence remain preserved."
+    "evidence": "PR1632 now publishes head305a640ec9f661f9a3ad977a95ed43894bec4569, treee339754b7d3674791baa43620ede162351fa99b5. Thirteen ordinary steel beams, actual precast stair gravity and transfer network, two opening lintels, combined rear and eccentric south bearings are computed. Selected700mm floor zone raises first floor350mm. Typecheck,16 targeted/source-coverage tests, output reproduction and repository validation pass; drawings inspected. Correct Work/Lease PR declarations are present.",
+    "next": "Complete exact-head hosted validation and fresh merge preflight, integrate the verified comparison, reconcile issue1103 and release the lease with a concrete next step.",
+    "blocker": "Current-head full CI is running. Complete panel/closure layout, connections/stability, masonry resistance, signed whole-house response and adoption remain explicitly open; no packet or house acceptance claimed."
   }
 }
