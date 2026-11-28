@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T16:56:17.427Z",
-  "expiresAt": "2026-11-28T17:41:17.427Z",
+  "heartbeatAt": "2026-11-28T17:09:23.003Z",
+  "expiresAt": "2026-11-28T17:54:23.003Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "PR #1632 remains at head 7e4699583014d1efc740975f58c678189c9d599b, tree f05ab18f4edc6859affe978bb0b37f554ae061ea. Fresh main at 16:55 UTC remains 076cfef8a48004b3a21c946e4660401bc5fba104; task checkout is clean. Seventeen of eighteen exact-head workflows passed, including migrated-plan proof 46162163416. Its completed log explicitly confirms both corrected source-inventory tests pass with no failing tests. Only main validation 46162163414 remains in repository health.",
-    "next": "Wait for the final exact-head validation result. On green, run fresh canonical publication preflight, merge expected head 7e469958, verify main ancestry/tree and branch deletion, reconcile issue #1103, then record merged handoff and release the lease.",
-    "blocker": "Main hosted repository-health suite remains active. The structural packet remains planned pending complete precast panel/support layout, connections, ties/restraint, masonry and signed whole-house adoption."
+    "evidence": "At 17:09 UTC, PR #1632 is ready and mergeable at head 7e4699583014d1efc740975f58c678189c9d599b, tree f05ab18f4edc6859affe978bb0b37f554ae061ea, with base 076cfef8a48004b3a21c946e4660401bc5fba104. Seventeen of eighteen exact-head workflows passed. Main validation 46162163414 remains in repository health; the migrated-plan workflow has already passed both corrected exact source-inventory tests.",
+    "next": "On final exact-head CI success, run a fresh canonical publication preflight, merge expected head 7e469958, verify main ancestry/tree and task branch deletion, update issue #1103, then save a merged handoff and release the lease.",
+    "blocker": "Only the final hosted repository-health suite remains before integration. The structural packet stays planned pending full precast unit/support layout, connections, receiving masonry, ties/restraints and signed whole-house adoption."
   }
 }
