@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T13:30:14.357Z",
-  "expiresAt": "2026-11-28T14:15:14.357Z",
+  "heartbeatAt": "2026-11-28T14:10:13.606Z",
+  "expiresAt": "2026-11-28T14:55:13.606Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "PR #1632 contains source-bound ordinary steel/precast comparison at head 3424b11b8eb82f07d650e8f87be4d13440f30ca4, tree 94d9ea7a7002a950feac30969cfb7f4fa9977bd5. Typecheck and 16 targeted/source-coverage tests pass; seven beam elastic screens, floor and portal geometry, common rear bearing and rendered drawings are reproducible. Old retained witness changed only data-case identity. No whole-house acceptance claimed.",
-    "next": "Finish exact-head health validation and review; develop the ordinary panel/support layout and concentrated rear bearing through the same source-bound comparison, then merge the verified result.",
-    "blocker": "Full hosted CI pending. Panel and closure coverage, receiving resistance, stability and joined occupied-house adoption are not yet established; prior RC and PR1630 recovery evidence are preserved."
+    "evidence": "Published first comparison remains at PR1632 head3424b11b. The next local revision derives and balances the actual precast stair network through split trimmers, a straight post, header and sill; this permits a700mm floor zone instead of750. Eleven beam screens pass; drawings inspected and typecheck passes. Support review identified the bath beam above the widened east window, so a direct-pier label must be replaced before publication.",
+    "next": "Finish the ordinary window lintel and its transferred reactions, publish the verified source-bound revision to PR1632, and complete exact-head CI and merge preflight.",
+    "blocker": "Full floor panel layout, concentrated receiving resistance, connections/stability and joined occupied-house adoption remain open. Existing PR1630 and RC evidence remain preserved."
   }
 }
