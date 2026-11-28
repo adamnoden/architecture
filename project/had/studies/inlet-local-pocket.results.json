@@ -110,7 +110,7 @@
       "id": "RH-LAYOUT-REVISION-02",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
       "caseId": "raised-530-local-solum",
-      "caseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
+      "caseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e"
     },
     "method": {
       "id": "str-separated-dry-ground/2",
@@ -119,15 +119,15 @@
       "inputs": {
         "compiler/reference-house/current-design/structural-ground.ts": "533a741386a47a69e54a1881d4cdaf314f8ae72a",
         "project/str/studies/dry_side_ground_section.py": "ab7455c6b2a7f3406bed27babed2b6cbd17276e7",
-        "project/str/studies/dry-side-ground-section.json": "5867083e33d0a1388ffb961c3f169d58f7b34987",
+        "project/str/studies/dry-side-ground-section.json": "9f3c33fed8a6fdbd2677bc2b0a22006b92d13d22",
         "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
         "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
         "project/str/studies/current-house-occupied-interfaces.json": "fb9f19324385a50c22761b38333c478075987a08",
         "project/str/studies/current-house-bridge.py": "7562197dc35a2753c9e593a8e38199b148de7207",
         "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
         "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
-        "project/owner-house-charter.md": "285202ef6be2ccd9954de51213d1faa23a158813",
-        "docs/reference-house/structural-brief.md": "ee6ffe9704e1da927ff3a6a1d052da2f0dba7abf",
+        "project/owner-house-charter.md": "f62e5df863f65468913b509e0c16eeecdb88f7ff",
+        "docs/reference-house/structural-brief.md": "f48be3e54b29180323812e965be4f4451aea693e",
         "project/str/studies/current-house-grid.py": "abb96e665bdc4d1b900d73125acb3bde68ca0b0b",
         "project/had/studies/water-replan.mjs": "5525676d6cc2bb167eccd35249afaa6928142011",
         "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
@@ -139,7 +139,7 @@
     "authoredCase": {
       "schema": "str-dry-ground-case/1",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-      "bindingDigest": "aa84d32dc4bfce960a08572af3ddfb94c4ef0ac74522bf4ad970c76ca84b2b15",
+      "bindingDigest": "ff14430a22ee42d6f05103bf0906d046efa36a34d113ea770e0deeb052d417d0",
       "caseId": "raised-530-local-solum",
       "settings": {
         "minimumGradeClearanceMm": 150,
@@ -173,9 +173,9 @@
     "source": {
       "id": "RH-LAYOUT-REVISION-02",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-      "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
-      "groundResultDigest": "691af69840d9097b6917cd1a9b0043a9dad9d00b5268e45d6fcff2a073beac2e",
-      "caseDigest": "db1c7b5f8c51db204ea15cb7cbb14cd979bc0838c397d64735489fef77d96a48"
+      "groundCaseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e",
+      "groundResultDigest": "873fa29a24ea2a89393b99719d4ba86d6632534d6c8ac0f7ad2dea5e00a7168d",
+      "caseDigest": "c30fc5771f0d73b32d380da4c90064c8b08296e2825995f32cf8b845add82b36"
     },
     "method": {
       "id": "source-derived-house-vertical-profile/1",
@@ -184,15 +184,15 @@
       "inputs": {
         "project/had/studies/house_vertical_profile.py": "1f41e39d3c37728c6aad8a4168ed7e230aad7929",
         "project/str/studies/dry_side_ground_section.py": "ab7455c6b2a7f3406bed27babed2b6cbd17276e7",
-        "project/str/studies/dry-side-ground-section.json": "5867083e33d0a1388ffb961c3f169d58f7b34987",
+        "project/str/studies/dry-side-ground-section.json": "9f3c33fed8a6fdbd2677bc2b0a22006b92d13d22",
         "project/had/studies/water-replan.json": "089f0dac2f2e89272dc2ea85a10c2208f2fd797d",
         "project/str/studies/current-house-grid.json": "56aca6f99f5fa60b21d58c89115ac1ee824e3828",
         "project/str/studies/current-house-occupied-interfaces.json": "fb9f19324385a50c22761b38333c478075987a08",
         "project/str/studies/current-house-bridge.py": "7562197dc35a2753c9e593a8e38199b148de7207",
         "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
         "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
-        "project/owner-house-charter.md": "285202ef6be2ccd9954de51213d1faa23a158813",
-        "docs/reference-house/structural-brief.md": "ee6ffe9704e1da927ff3a6a1d052da2f0dba7abf",
+        "project/owner-house-charter.md": "f62e5df863f65468913b509e0c16eeecdb88f7ff",
+        "docs/reference-house/structural-brief.md": "f48be3e54b29180323812e965be4f4451aea693e",
         "project/str/studies/current-house-grid.py": "abb96e665bdc4d1b900d73125acb3bde68ca0b0b",
         "project/had/studies/water-replan.mjs": "5525676d6cc2bb167eccd35249afaa6928142011",
         "project/mat/studies/whole-house-leakage-duty.json": "5b93cdd9ea1ee7d825fa4596a44caf06431afc49",
@@ -261,11 +261,11 @@
     "authoredCase": {
       "schema": "house-vertical-profile-case/1",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-      "bindingDigest": "0414a76bfdd7478ccd1720699b3fcb1049528514de47b9b4538873f19a9b8c5b",
+      "bindingDigest": "cc717f72b22655ea6882416c78d32e0391b423871543c881798fcc2a3e65e206",
       "groundCase": {
         "schema": "str-dry-ground-case/1",
         "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-        "bindingDigest": "aa84d32dc4bfce960a08572af3ddfb94c4ef0ac74522bf4ad970c76ca84b2b15",
+        "bindingDigest": "ff14430a22ee42d6f05103bf0906d046efa36a34d113ea770e0deeb052d417d0",
         "caseId": "raised-530-local-solum",
         "settings": {
           "minimumGradeClearanceMm": 150,
@@ -349,7 +349,7 @@
         "compiler/reference-house/current-design/inlet-cabinet-copper.ts": "34d774e3ccd4ff0bac3dcaef63dfa5cdedff6ca4"
       }
     },
-    "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
+    "groundCaseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e",
     "implicitTranslationCredited": false,
     "rawArchVerticalReservation": {
       "schema": "had-plant-raw-arch-reservation/1",
@@ -636,8 +636,8 @@
     "selected": false,
     "groundAuthority": {
       "caseId": "raised-530-local-solum",
-      "caseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
-      "resultDigest": "c24520b33e1ff12bf22afc33e1584c96f7a6fd93cfe33053f209a5f53289d2e4",
+      "caseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e",
+      "resultDigest": "92724d28a899a99137451ac81289275aee199cd6681ac8606045086c93ddb32a",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e"
     },
     "levelsMm": {
@@ -13092,8 +13092,8 @@
       "selected": false,
       "source": {
         "caseId": "raised-530-local-solum",
-        "caseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
-        "resultDigest": "c24520b33e1ff12bf22afc33e1584c96f7a6fd93cfe33053f209a5f53289d2e4",
+        "caseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e",
+        "resultDigest": "92724d28a899a99137451ac81289275aee199cd6681ac8606045086c93ddb32a",
         "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
         "sourcePlanId": "RH-LAYOUT-REVISION-02"
       },
@@ -36630,8 +36630,8 @@
           "springAbsoluteMm": 3080,
           "headAbsoluteMm": 3380,
           "occupiedShiftMm": 530,
-          "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
-          "profileCaseDigest": "db1c7b5f8c51db204ea15cb7cbb14cd979bc0838c397d64735489fef77d96a48",
+          "groundCaseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e",
+          "profileCaseDigest": "c30fc5771f0d73b32d380da4c90064c8b08296e2825995f32cf8b845add82b36",
           "belowSpringReserveMm": 230,
           "belowCrownHeadReserveMm": 530,
           "geometryOnly": true
@@ -43806,8 +43806,8 @@
             "springAbsoluteMm": 3080,
             "headAbsoluteMm": 3380,
             "occupiedShiftMm": 530,
-            "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e",
-            "profileCaseDigest": "db1c7b5f8c51db204ea15cb7cbb14cd979bc0838c397d64735489fef77d96a48"
+            "groundCaseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e",
+            "profileCaseDigest": "c30fc5771f0d73b32d380da4c90064c8b08296e2825995f32cf8b845add82b36"
           }
         },
         "sourceMaximumAbsoluteBar": 10.1,
@@ -61962,7 +61962,7 @@
       "inletBindingDigest": "263deeb83e8aef372930ff53cb253adc02d95f33292e97d284bfdde86af730ec",
       "inletCaseDigest": "236b36b8b58907c13635900b0e08d78988588e21f2d0db5dde07f8d797948515",
       "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-      "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
+      "groundCaseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e"
     },
     "selected": false,
     "datum": {
@@ -61992,7 +61992,7 @@
           "inletBindingDigest": "263deeb83e8aef372930ff53cb253adc02d95f33292e97d284bfdde86af730ec",
           "inletCaseDigest": "236b36b8b58907c13635900b0e08d78988588e21f2d0db5dde07f8d797948515",
           "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-          "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
+          "groundCaseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e"
         },
         "rcRectangleXYMm": [
           9447,
@@ -62541,7 +62541,7 @@
           "inletBindingDigest": "263deeb83e8aef372930ff53cb253adc02d95f33292e97d284bfdde86af730ec",
           "inletCaseDigest": "236b36b8b58907c13635900b0e08d78988588e21f2d0db5dde07f8d797948515",
           "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
-          "groundCaseDigest": "3927f5d0c1323b3e35e35e42c141fe4066c1f2fdb9481a6439970664f214af3e"
+          "groundCaseDigest": "b9e70cc4479e70aa662bafe082c085eae54cec262cd3e90b2f985f5fa1ebcc1e"
         },
         "rcRectangleXYMm": [
           9447,
