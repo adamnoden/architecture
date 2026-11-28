@@ -9,12 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:53:54.494Z",
-  "heartbeatAt": "2026-11-28T11:07:45.453Z",
-  "expiresAt": "2026-11-28T11:52:45.453Z",
+  "heartbeatAt": "2026-11-28T11:22:29.262Z",
+  "expiresAt": "2026-11-28T12:07:29.262Z",
   "checkpoint": {
-    "evidence": "PR #1631 head 64511a0d, tree dff2608d, records the prefab preference and regenerated dependent identities. Current-head publication, beam-end browser, finite-contour and beam-end numerical checks pass. Five study producers, projection witness, 34 focused checks, strict source audit and generated outputs pass; the full local suite is progressing without failure.",
-    "next": "Finish exact-head hosted run 46136993802 and browser proof, then fresh publication preflight, merge and release. The steel and precast structural comparison and existing installation recovery remain planned.",
-    "blocker": "Required full current-head validation is still running. No current failure; initial stale witness and raised-floor dependency were corrected by canonical producers."
+    "evidence": "PR #1631 head 64511a0d, tree dff2608d, records the prefab preference and dependent identity refreshes. Current-head publication, both browser proofs, finite contour, beam-end and masonry checks pass. The local complete suite via an external direct-loader adapter has passed structural, service-floor and material suites and is running house compiler tests without a failing case.",
+    "next": "Finish exact-head hosted run 46136993802 and the local diagnostic suite, then fresh publication preflight, merge the bounded preference amendment and release. Steel and precast structural comparison and existing installation recovery remain planned.",
+    "blocker": "Required current-head validation is still running the saved ground/editor replay; no current failing check."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
