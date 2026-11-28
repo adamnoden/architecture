@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
   "generation": 63,
-  "state": "claimed",
+  "state": "released",
   "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
   "holder": {
     "kind": "chatgpt",
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:52:38.395Z",
-  "heartbeatAt": "2026-11-28T12:40:38.798Z",
-  "expiresAt": "2026-11-28T13:25:38.798Z",
+  "heartbeatAt": "2026-11-28T12:40:51.221Z",
+  "expiresAt": "2026-11-28T12:40:51.221Z",
   "checkpoint": {
     "evidence": "PR #1631 merged into main at 076cfef8a48004b3a21c946e4660401bc5fba104 from validated head 64511a0d, tree dff2608d. All three exact-head hosted workflows and both fresh local canonical preflights passed. Main ancestry and exact tree were verified; issue #1103 now records the owner preference. The preference changes prose and dependent identities only, with numerical results, drawing geometry and acceptance states preserved. Remote task branch was automatically deleted.",
     "next": "This bounded owner-preference amendment is complete. Develop the conventional fabricated-steel and precast-floor comparison through STR-FLOOR-PORTAL under the updated structural brief. Preserve the prior recovery evidence and PR #1630 with its recorded limitations. The structural programme remains planned.",
@@ -39,5 +39,7 @@
       "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
     }
   },
-  "pr": 1631
+  "pr": 1631,
+  "releasedAt": "2026-11-28T12:40:51.221Z",
+  "releaseReason": "handoff"
 }
