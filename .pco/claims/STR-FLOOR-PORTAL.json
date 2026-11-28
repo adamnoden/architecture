@@ -1,45 +1,37 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 63,
-  "state": "released",
-  "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
+  "generation": 64,
+  "state": "claimed",
+  "leaseId": "04f89ad8-7b08-49c0-83ee-eb175d7c43de",
   "holder": {
     "kind": "chatgpt",
-    "label": "owner-prefab-direction-20261128"
+    "label": "solo-simplicity-20261128"
   },
-  "claimedAt": "2026-11-28T09:52:38.395Z",
-  "heartbeatAt": "2026-11-28T12:40:51.221Z",
-  "expiresAt": "2026-11-28T12:40:51.221Z",
-  "checkpoint": {
-    "evidence": "PR #1631 merged into main at 076cfef8a48004b3a21c946e4660401bc5fba104 from validated head 64511a0d, tree dff2608d. All three exact-head hosted workflows and both fresh local canonical preflights passed. Main ancestry and exact tree were verified; issue #1103 now records the owner preference. The preference changes prose and dependent identities only, with numerical results, drawing geometry and acceptance states preserved. Remote task branch was automatically deleted.",
-    "next": "This bounded owner-preference amendment is complete. Develop the conventional fabricated-steel and precast-floor comparison through STR-FLOOR-PORTAL under the updated structural brief. Preserve the prior recovery evidence and PR #1630 with its recorded limitations. The structural programme remains planned.",
-    "blocker": "No blocker for the merged preference amendment. Actual structural comparison and resolution remain work to execute."
-  },
-  "branch": "work/prefab-owner-direction-20261128",
+  "claimedAt": "2026-11-28T12:49:23.198Z",
+  "heartbeatAt": "2026-11-28T12:49:23.198Z",
+  "expiresAt": "2026-11-28T13:34:23.198Z",
+  "branch": "work/solo-simplify-20261128",
   "predecessor": {
-    "leaseId": "38c2994b-a134-44eb-96d3-4cb9761b5624",
-    "generation": 62,
-    "branch": "work/zerg-takeover-integration-20261126",
-    "pr": 1630,
+    "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
+    "generation": 63,
+    "branch": "work/prefab-owner-direction-20261128",
+    "pr": 1631,
     "checkpoint": {
-      "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
-      "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
-      "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
+      "evidence": "PR #1631 merged into main at 076cfef8a48004b3a21c946e4660401bc5fba104 from validated head 64511a0d, tree dff2608d. All three exact-head hosted workflows and both fresh local canonical preflights passed. Main ancestry and exact tree were verified; issue #1103 now records the owner preference. The preference changes prose and dependent identities only, with numerical results, drawing geometry and acceptance states preserved. Remote task branch was automatically deleted.",
+      "next": "This bounded owner-preference amendment is complete. Develop the conventional fabricated-steel and precast-floor comparison through STR-FLOOR-PORTAL under the updated structural brief. Preserve the prior recovery evidence and PR #1630 with its recorded limitations. The structural programme remains planned.",
+      "blocker": "No blocker for the merged preference amendment. Actual structural comparison and resolution remain work to execute."
     }
   },
   "recoverySource": {
-    "leaseId": "38c2994b-a134-44eb-96d3-4cb9761b5624",
-    "generation": 62,
-    "branch": "work/zerg-takeover-integration-20261126",
-    "pr": 1630,
+    "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
+    "generation": 63,
+    "branch": "work/prefab-owner-direction-20261128",
+    "pr": 1631,
     "checkpoint": {
-      "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
-      "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
-      "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
+      "evidence": "PR #1631 merged into main at 076cfef8a48004b3a21c946e4660401bc5fba104 from validated head 64511a0d, tree dff2608d. All three exact-head hosted workflows and both fresh local canonical preflights passed. Main ancestry and exact tree were verified; issue #1103 now records the owner preference. The preference changes prose and dependent identities only, with numerical results, drawing geometry and acceptance states preserved. Remote task branch was automatically deleted.",
+      "next": "This bounded owner-preference amendment is complete. Develop the conventional fabricated-steel and precast-floor comparison through STR-FLOOR-PORTAL under the updated structural brief. Preserve the prior recovery evidence and PR #1630 with its recorded limitations. The structural programme remains planned.",
+      "blocker": "No blocker for the merged preference amendment. Actual structural comparison and resolution remain work to execute."
     }
-  },
-  "pr": 1631,
-  "releasedAt": "2026-11-28T12:40:51.221Z",
-  "releaseReason": "handoff"
+  }
 }
