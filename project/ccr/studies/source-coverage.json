@@ -3335,7 +3335,7 @@
     "project/str/studies/fixed-normal-experiment.results.json": "d70a4ee929a02d0f46a2563484b41ec98aab8b5f",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json": "a427298f215d2ad68be3885e98777c9c7f8474fa",
     "compiler/reference-house/current-design/structural-slab-constitutive.ts": "3719c065d8ebf6c7f187ad2d843706c09d54986a",
-    "project/str/floor-portal-reconciliation.md": "c808a031bce9c6298f63ce37b2a0058bf49a986a",
+    "project/str/floor-portal-reconciliation.md": "90bc4f3bebc79709ed8fa1affd772db58229297b",
     "project/str/studies/slab-constitutive-compiled-control.json": "ca832a34e53b0474231c5c5258e75a8fd4431948",
     "project/str/studies/slab-constitutive-compiled-control.tar.xz": "742987eb64ef9a608fd841bf43e1c746eeb10210",
     "project/had/studies/inlet-route-candidate.json": "6bd208ae8dbe70564122af3d16d3d86f60dde141",
@@ -3472,12 +3472,12 @@
     "project/str/studies/service_room_ground_receiver_replay.py": "1c04a3c550dd665a4a1a89999252cda7396b5567",
     "project/str/studies/service-room-ground-receiver-proof.json": "705b0cdaa444410f2458f8a5944f03ad4ab97dda",
     "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz": "e05b8f704d694960f63894996e8b9f7d50327b5d",
-    "compiler/reference-house/current-design/steel-precast-kernel.ts": "5b13c7dee282433f0b8475d2c7312ab24d5ab1bc",
-    "compiler/reference-house/current-design/structural-steel-precast.ts": "3587daa8647cde61a99efcabf86c21de197b0ff1",
-    "compiler/reference-house/current-design/steel-precast-view.ts": "ae28093e61135084d373a794db6f66c1eedad3f0",
-    "project/str/studies/steel-precast-inputs.json": "a1db1a6b652d6b8c686aaef7e9ab3a063a786fb9",
-    "project/str/studies/steel-precast-sources.json": "c81926e081a7f0856b4e91bded52ac7da1d69629",
-    "project/str/studies/steel-precast-comparison.ts": "01a5aebb9568ad1fa4db7146f2830e1c0ded1928",
-    "project/str/steel-precast-simplification.md": "8590b20d84b5598b821d208192961f2ffc9160a9"
+    "compiler/reference-house/current-design/steel-precast-kernel.ts": "adaaf7ac1e4df4eb302acc32c5aa2c563d449531",
+    "compiler/reference-house/current-design/structural-steel-precast.ts": "16684594beca2071628c70518067ba1f402dc05a",
+    "compiler/reference-house/current-design/steel-precast-view.ts": "eebf82edddc2d26d1eb32ef7958ecaf2642a9214",
+    "project/str/studies/steel-precast-inputs.json": "901720e1da780827e7e849ca71a9eeca5609bdca",
+    "project/str/studies/steel-precast-sources.json": "a8595206828f704a1138d02c4e24472818c3b88e",
+    "project/str/studies/steel-precast-comparison.ts": "f72a737d1ce91ba6ad76b544c3303031393d649e",
+    "project/str/steel-precast-simplification.md": "54ff8911c46d8657d2b717930cdfa8c1505400a2"
   }
 }

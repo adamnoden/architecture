@@ -12,7 +12,7 @@
       "id": "british-steel-ub",
       "title": "British Steel universal beams, 19 July 2024 datasheet",
       "url": "https://www.britishsteel.co.uk/wp-content/uploads/2026/02/british-steel-universal-beams-datasheet-190724.pdf",
-      "usedFor": "Published 305x165x54 UB dimensions 310.4 x 166.9 mm, 54 kg/m and Ixx 11696 cm4."
+      "usedFor": "Published254x146x43 UB: depth259.6,width147.3mm,mass43kg/m,Ixx6544cm4; and152x89x16 UB: depth152.4,width88.7mm,mass16kg/m,Ixx834cm4. The first checkpoint used305x165x54; its deeper section is no longer required for this split-trimmer comparison. The east arch lintel uses203x102x23 UB: depth203.2,width101.8mm,mass23.1kg/m,Ixx2105cm4."
     },
     {
       "id": "bison-hollowcore",
@@ -43,6 +43,12 @@
       "title": "Approved Document K, England, 2013 edition, section 1 and Table 1.1",
       "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/996860/Approved_Document_K.pdf",
       "usedFor": "Private-stair comparison only: rise 150..220 mm, going 220..300 mm, pitch at most 42 degrees and normal 2R+G 550..700 mm. This does not check landings, headroom, guarding, fire strategy or the complete stair."
+    },
+    {
+      "id": "tata-celsius-section-geometry",
+      "title": "Tata Steel Celsius 420 NH technical guide, sectional properties",
+      "url": "https://www.tatasteeluk.com/sites/default/files/pimcore_doc/tata-steel-uk-celsius-420nh-technical-guide-en.pdf",
+      "usedFor": "150x150x6.3 hot-finished SHS geometry only: mass28.1 kg/m, area35.8 cm2, I1223 cm4. No yield, buckling curve, restraint, connection or fire resistance is adopted from this table."
     }
   ],
   "authoredAssumptions": [
@@ -51,9 +57,14 @@
     "Floor G 3.1 + 2.1 kN/m2, Q 2 kN/m2; heavy masonry is added separately, never hidden in a generic partition allowance.",
     "Gross masonry 22 kN/m3 and plaster 20 kN/m3; openings earn no relief. Default 27 mm each-side finish is a comparison, not the admitted installed finish for every wall.",
     "Roof G 3 and Q 1.5 kN/m2 are retained source action budgets, not actual roof mass, wind, snow or inherited reactions.",
-    "The stair 15 kN permanent plus 5 kN variable midspan point and front/bath tributary widths are authored challenges, not a complete load take-off.",
     "L/360 is an authored beam deflection screen. It does not qualify brittle finishes, vibration or differential precast camber.",
     "The 25 mm side fire envelope, 70 mm soffit reserve, 10 mm bed, 25 mm setting reserve and 80 mm finish depth are spatial allowances, not specified approved assemblies.",
-    "The 300 x 140 mm padstone area only reports demand. Padstone strength, spread, eccentricity, adjacent openings and combined bearing forces are unresolved."
+    "The 300 x 140 mm padstone area only reports demand. Padstone strength, spread, eccentricity, adjacent openings and combined bearing forces are unresolved.",
+    "Stair gravity is freshly derived from actual2925mm bearing span,1094mm flight widths, new pitch,170mm normal waist,25kN/m3 concrete,0.9kN/m2 flight finish and3kN/m2 imposed load. Upper-end thickening is300mm long and weighed separately. These are candidate precast dimensions, not an admitted flight product.",
+    "The200mm landing uses5.5kN/m2 permanent and3kN/m2 variable action across the conservative full beam-axis width. Its two reactions, both flight reactions, header, sill, split trimmer and post are explicitly joined. Guard loads, stair reinforcement, actual bearings and full house gravity/lateral response remain unresolved.",
+    "A150mm square post with25mm side fire allowance fits the old250mm post territory. Euler pinned-length and gross stress are screening quantities only; effective length, imperfections, eccentric connections, base and foundation are unqualified.",
+    "Front/bath floor tributary widths remain authored challenges. The stair header takes half the source west-south field span; the trimmer conservatively uses the widest adjacent gallery tributary. No complete precast panel or floor tributary take-off is claimed.",
+    "The bath transfer crosses the actual east water opening Y6273..7527. Its reaction is transferred through a separate ordinary lintel above the genuine arch to the source reserved side-pier/node axes Y6000/7800. The lintel includes gross upper-core wall, floor1183.75mm and roof1792.5mm tributary challenges. Possible overlap with the separate bath-floor challenge is conservatively retained; no complete floor load allocation is claimed.",
+    "The west upper-stair header is also above an actual window, Y4100..5100. A second203x102x23 ordinary lintel transfers it to side piers atY3900/5300; upper-core wall, floor1305mm and roof1792.5mm tributary challenges are included. The south trimmer pad shifts25mm inward along its wall to retain the full300mm pad footprint, and its eccentric pressure demand is reported. Neither lintel nor pad claims masonry or whole-wall thermal acceptance."
   ]
 }

@@ -12,10 +12,17 @@ const variant = (changes: Partial<typeof request.comparison.settings>) => compil
 const shallow = await variant({ caseId: 'retained-350-floor-zone', firstFflMm: baseline.geometry.referenceFirstFflMm })
 const stackedPortal = await variant({ caseId: 'portal-below-planks', portalPlacement: 'below-planks' })
 const overload = await variant({ caseId: 'adverse-floor-action', imposedLoadKnM2: 50 })
+const directBath = await variant({ caseId: 'bath-direct-wall-rejected', bathReceiver: 'direct-wall' })
 assert.ok(shallow.diagnostics.some(d => d.code === 'FLOOR_ZONE_TOO_SHALLOW'))
 assert.ok(stackedPortal.diagnostics.some(d => d.code === 'PORTAL_THERMAL_ARCH_CLASH'))
 assert.ok(overload.diagnostics.some(d => d.code === 'BEAM_ELASTIC_SCREEN_FAIL'))
-assert.deepEqual(shallow.beams, baseline.beams, 'A floor datum change must not silently alter this fixed-height wall and floor action challenge')
+assert.ok(directBath.diagnostics.some(d => d.code === 'BATH_DIRECT_PIER_UNAVAILABLE'))
+assert.deepEqual(directBath.stair, baseline.stair)
+assert.deepEqual(shallow.beams.filter(b => !b.id.startsWith('stair-')), baseline.beams.filter(b => !b.id.startsWith('stair-')),
+  'A floor datum change preserves independent fixed-height wall and floor challenges')
+assert.ok(baseline.stair.flight.permanentKnM2 > shallow.stair.flight.permanentKnM2, 'The steeper actual precast stair weighs more')
+assert.ok(Math.abs(baseline.stair.network.permanentBalanceResidualKn) < 1e-9)
+assert.ok(Math.abs(baseline.stair.network.variableBalanceResidualKn) < 1e-9)
 assert.deepEqual(stackedPortal.floorCoverage, baseline.floorCoverage)
 assert.ok(Math.abs(baseline.floorCoverage.areaResidualM2) < 1e-9)
 const outcome = (r: typeof baseline) => ({ caseId: r.caseId, section: r.section, vertical: r.vertical, stair: r.stair,
@@ -23,8 +30,9 @@ const outcome = (r: typeof baseline) => ({ caseId: r.caseId, section: r.section,
   diagnostics: r.diagnostics, source: r.source })
 const { drawings, ...record } = baseline
 const outputs = new Map([
-  ['steel-precast-comparison.json', JSON.stringify({ ...record, adverseCases: [outcome(shallow), outcome(stackedPortal), outcome(overload)],
-    controls: { fixedLoadBeamResultsUnchangedByDatum: true, floorCoverageUnchangedByPortalPlacement: true } }, null, 2) + '\n'],
+  ['steel-precast-comparison.json', JSON.stringify({ ...record, adverseCases: [outcome(shallow), outcome(stackedPortal), outcome(overload), outcome(directBath)],
+    controls: { independentNonStairBeamResultsUnchangedByDatum: true, stairMassRecomputedWithPitch: true,
+      actualStairNetworkGravityBalances: true, floorCoverageUnchangedByPortalPlacement: true } }, null, 2) + '\n'],
   ['steel-precast-plan.svg', renderDrawingSceneV2Svg(drawings.plan)],
   ['steel-precast-section.svg', renderDrawingSceneV2Svg(drawings.section)],
 ])

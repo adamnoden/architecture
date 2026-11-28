@@ -1,7 +1,7 @@
 {
   "schema": "str-steel-precast-settings/1",
-  "caseId": "ordinary-steel-precast-750",
-  "firstFflMm": 3850,
+  "caseId": "ordinary-steel-precast-700",
+  "firstFflMm": 3800,
   "groundCeilingMm": 3100,
   "plankDepthMm": 200,
   "plankSelfWeightKnM2": 3.1,
@@ -28,8 +28,6 @@
   "plasterEachMm": 27,
   "roofPermanentChallengeKnM2": 3,
   "roofVariableChallengeKnM2": 1.5,
-  "stairPointPermanentKn": 15,
-  "stairPointVariableKn": 5,
   "entranceFloorTributaryChallengeMm": 2000,
   "bathFloorTributaryChallengeMm": 2000,
   "stairBeamOffsetFromVoidMm": 125,
@@ -37,8 +35,55 @@
   "padstoneWidthMm": 140,
   "minimumArchClearanceMm": 25,
   "sections": {
-    "floor": { "id": "254x254x73 UC", "depthMm": 254.1, "widthMm": 254.6, "massKgM": 73.1, "ixxCm4": 11643 },
-    "edge": { "id": "305x165x54 UB", "depthMm": 310.4, "widthMm": 166.9, "massKgM": 54, "ixxCm4": 11696 },
-    "portal": { "id": "203x203x60 UC", "depthMm": 209.6, "widthMm": 205.8, "massKgM": 60, "ixxCm4": 6162 }
-  }
+    "floor": {
+      "id": "254x254x73 UC",
+      "depthMm": 254.1,
+      "widthMm": 254.6,
+      "massKgM": 73.1,
+      "ixxCm4": 11643
+    },
+    "edge": {
+      "id": "254x146x43 UB",
+      "depthMm": 259.6,
+      "widthMm": 147.3,
+      "massKgM": 43,
+      "ixxCm4": 6544
+    },
+    "portal": {
+      "id": "203x203x60 UC",
+      "depthMm": 209.6,
+      "widthMm": 205.8,
+      "massKgM": 60,
+      "ixxCm4": 6162
+    },
+    "sill": {
+      "id": "152x89x16 UB",
+      "depthMm": 152.4,
+      "widthMm": 88.7,
+      "massKgM": 16,
+      "ixxCm4": 834
+    },
+    "lintel": {
+      "id": "203x102x23 UB",
+      "depthMm": 203.2,
+      "widthMm": 101.8,
+      "massKgM": 23.1,
+      "ixxCm4": 2105
+    }
+  },
+  "stairConstruction": {
+    "waistNormalMm": 170,
+    "landingDepthMm": 200,
+    "concreteWeightKnM3": 25,
+    "flightFinishKnM2": 0.9,
+    "landingFinishKnM2": 0.5,
+    "imposedKnM2": 3,
+    "finishDepthMm": 25,
+    "endBlockLengthMm": 300,
+    "postWidthMm": 150,
+    "postMassKgM": 28.1,
+    "postAreaCm2": 35.8,
+    "postIxxCm4": 1223
+  },
+  "bathReceiver": "pier-lintel"
 }

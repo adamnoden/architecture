@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="255mm" viewBox="0 0 210 255" role="img" aria-labelledby="title desc" data-view-id="STR-STEEL-PRECAST-PLAN" data-source-id="ordinary-steel-precast-750" data-scale-denominator="75">
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" role="img" aria-labelledby="title desc" data-view-id="STR-STEEL-PRECAST-PLAN" data-source-id="ordinary-steel-precast-700" data-scale-denominator="75">
 <title id="title">Ordinary steel and precast: critical members</title>
-<desc id="desc">Selected-source geometry and seven comparison members. Dashed/secondary fields are inherited RC span references, not a precast layout.</desc>
+<desc id="desc">Selected-source geometry, floor and half-landing members. Secondary fields are inherited RC span references, not a precast layout.</desc>
 <style>.line-cut{stroke:#000000;stroke-width:0.5;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-profile{stroke:#000000;stroke-width:0.35;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-primary{stroke:#000000;stroke-width:0.25;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-secondary{stroke:#000000;stroke-width:0.18;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.text-label{font-family:Arial, Helvetica, sans-serif;font-size:2.646px;font-weight:400;fill:#000000}.text-note{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:400;fill:#000000}.text-marker{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:700;fill:#000000}.dash-overhead{stroke-dasharray:3 1.5}.dash-datum{stroke-dasharray:6 1.5 1 1.5}.dash-provisional{stroke-dasharray:1 1}.fill-paper{fill:#ffffff;stroke:none}.fill-ink{fill:#000000;stroke:none}.fill-context{fill:#666666;stroke:none}.fill-faint{fill:#a6a6a6;stroke:none}</style>
 <text x="16" y="12" class="text-label" text-anchor="start" data-entity="title">Steel + precast · critical-member comparison</text>
 <text x="16" y="19" class="text-note" text-anchor="start" data-entity="scope">Source-ground datum · north up · not a complete framing plan</text>
@@ -26,6 +26,7 @@
 <rect x="81.133" y="147.533" width="29.733" height="30.9" class="line-secondary fill-paper" data-entity="entrance-void"/>
 <text x="84" y="104" class="text-note" text-anchor="start" data-entity="court-label">COURT</text>
 <text x="25.333" y="96" class="text-note" text-anchor="start" data-entity="stair-label">STAIR</text>
+<rect x="53.9" y="85.9" width="2.667" height="2.667" class="line-secondary" data-entity="straight-stair-post"/>
 <line x1="74.367" y1="76.233" x2="117.633" y2="76.233" class="line-cut" data-entity="portal-court" data-memberId="portal-court" data-section="203x203x60 UC" data-spanMm="3245"/>
 <rect x="73.167" y="75.033" width="2.4" height="2.4" class="fill-ink" data-entity="portal-court-support-0"/>
 <rect x="116.433" y="75.033" width="2.4" height="2.4" class="fill-ink" data-entity="portal-court-support-1"/>
@@ -38,29 +39,60 @@
 <rect x="53.5" y="64.767" width="2.4" height="2.4" class="fill-ink" data-entity="rear-wet-support-0"/>
 <rect x="53.5" y="27.233" width="2.4" height="2.4" class="fill-ink" data-entity="rear-wet-support-1"/>
 <text x="56.7" y="47.2" class="text-marker" text-anchor="start" data-entity="rear-wet-label">B3</text>
-<line x1="55.233" y1="148.667" x2="55.233" y2="65.967" class="line-cut" data-entity="stair-east" data-memberId="stair-east" data-section="305x165x54 UB" data-spanMm="6202.5"/>
-<rect x="54.033" y="147.467" width="2.4" height="2.4" class="fill-ink" data-entity="stair-east-support-0"/>
-<rect x="54.033" y="64.767" width="2.4" height="2.4" class="fill-ink" data-entity="stair-east-support-1"/>
-<text x="57.233" y="107.317" class="text-marker" text-anchor="start" data-entity="stair-east-label">B4</text>
-<line x1="80" y1="179.567" x2="80" y2="131.767" class="line-cut" data-entity="entrance-west" data-memberId="entrance-west" data-section="305x165x54 UB" data-spanMm="3585"/>
+<line x1="80" y1="179.567" x2="80" y2="131.767" class="line-cut" data-entity="entrance-west" data-memberId="entrance-west" data-section="254x146x43 UB" data-spanMm="3585"/>
 <rect x="78.8" y="178.367" width="2.4" height="2.4" class="fill-ink" data-entity="entrance-west-support-0"/>
 <rect x="78.8" y="130.567" width="2.4" height="2.4" class="fill-ink" data-entity="entrance-west-support-1"/>
-<text x="82" y="155.667" class="text-marker" text-anchor="start" data-entity="entrance-west-label">B5</text>
-<line x1="112" y1="179.567" x2="112" y2="131.767" class="line-cut" data-entity="entrance-east" data-memberId="entrance-east" data-section="305x165x54 UB" data-spanMm="3585"/>
+<text x="82" y="155.667" class="text-marker" text-anchor="start" data-entity="entrance-west-label">B4</text>
+<line x1="112" y1="179.567" x2="112" y2="131.767" class="line-cut" data-entity="entrance-east" data-memberId="entrance-east" data-section="254x146x43 UB" data-spanMm="3585"/>
 <rect x="110.8" y="178.367" width="2.4" height="2.4" class="fill-ink" data-entity="entrance-east-support-0"/>
 <rect x="110.8" y="130.567" width="2.4" height="2.4" class="fill-ink" data-entity="entrance-east-support-1"/>
-<text x="114" y="155.667" class="text-marker" text-anchor="start" data-entity="entrance-east-label">B6</text>
-<line x1="140" y1="97.333" x2="171.567" y2="97.333" class="line-cut" data-entity="bath-north" data-memberId="bath-north" data-section="254x254x73 UC" data-spanMm="2367.5"/>
+<text x="114" y="155.667" class="text-marker" text-anchor="start" data-entity="entrance-east-label">B5</text>
+<line x1="140" y1="97.333" x2="171.488" y2="97.333" class="line-cut" data-entity="bath-north" data-memberId="bath-north" data-section="254x254x73 UC" data-spanMm="2361.6000000000004"/>
 <rect x="138.8" y="96.133" width="2.4" height="2.4" class="fill-ink" data-entity="bath-north-support-0"/>
-<rect x="170.367" y="96.133" width="2.4" height="2.4" class="fill-ink" data-entity="bath-north-support-1"/>
-<text x="153.783" y="95.333" class="text-marker" text-anchor="start" data-entity="bath-north-label">B7</text>
+<rect x="170.288" y="96.133" width="2.4" height="2.4" class="fill-ink" data-entity="bath-north-support-1"/>
+<text x="153.744" y="95.333" class="text-marker" text-anchor="start" data-entity="bath-north-label">B6</text>
+<line x1="55.233" y1="148.667" x2="55.233" y2="87.233" class="line-cut" data-entity="stair-east-south" data-memberId="stair-east-south" data-section="254x146x43 UB" data-spanMm="4607.5"/>
+<rect x="54.033" y="147.467" width="2.4" height="2.4" class="fill-ink" data-entity="stair-east-south-support-0"/>
+<rect x="54.033" y="86.033" width="2.4" height="2.4" class="fill-ink" data-entity="stair-east-south-support-1"/>
+<text x="57.233" y="117.95" class="text-marker" text-anchor="start" data-entity="stair-east-south-label">B7</text>
+<line x1="55.233" y1="87.233" x2="55.233" y2="65.967" class="line-cut" data-entity="stair-east-north" data-memberId="stair-east-north" data-section="254x146x43 UB" data-spanMm="1595"/>
+<rect x="54.033" y="86.033" width="2.4" height="2.4" class="fill-ink" data-entity="stair-east-north-support-0"/>
+<rect x="54.033" y="64.767" width="2.4" height="2.4" class="fill-ink" data-entity="stair-east-north-support-1"/>
+<text x="57.233" y="79.6" class="text-marker" text-anchor="start" data-entity="stair-east-north-label">B8</text>
+<line x1="20.512" y1="126.233" x2="55.233" y2="126.233" class="line-cut" data-entity="stair-upper-header" data-memberId="stair-upper-header" data-section="254x254x73 UC" data-spanMm="2604.1"/>
+<rect x="19.312" y="125.033" width="2.4" height="2.4" class="fill-ink" data-entity="stair-upper-header-support-0"/>
+<rect x="54.033" y="125.033" width="2.4" height="2.4" class="fill-ink" data-entity="stair-upper-header-support-1"/>
+<text x="35.873" y="124.233" class="text-marker" text-anchor="start" data-entity="stair-upper-header-label">B9</text>
+<line x1="20.433" y1="87.233" x2="55.233" y2="87.233" class="line-cut" data-entity="stair-midlanding" data-memberId="stair-midlanding" data-section="254x254x73 UC" data-spanMm="2610"/>
+<rect x="19.233" y="86.033" width="2.4" height="2.4" class="fill-ink" data-entity="stair-midlanding-support-0"/>
+<rect x="54.033" y="86.033" width="2.4" height="2.4" class="fill-ink" data-entity="stair-midlanding-support-1"/>
+<text x="35.833" y="85.233" class="text-marker" text-anchor="start" data-entity="stair-midlanding-label">B10</text>
+<line x1="20.433" y1="101.333" x2="20.433" y2="73.333" class="line-cut" data-entity="stair-west-sill" data-memberId="stair-west-sill" data-section="152x89x16 UB" data-spanMm="2100"/>
+<rect x="19.233" y="100.133" width="2.4" height="2.4" class="fill-ink" data-entity="stair-west-sill-support-0"/>
+<rect x="19.233" y="72.133" width="2.4" height="2.4" class="fill-ink" data-entity="stair-west-sill-support-1"/>
+<text x="22.433" y="90.333" class="text-marker" text-anchor="start" data-entity="stair-west-sill-label">B11</text>
+<line x1="171.488" y1="104" x2="171.488" y2="80" class="line-cut" data-entity="east-arch-lintel" data-memberId="east-arch-lintel" data-section="203x102x23 UB" data-spanMm="1800"/>
+<rect x="170.288" y="102.8" width="2.4" height="2.4" class="fill-ink" data-entity="east-arch-lintel-support-0"/>
+<rect x="170.288" y="78.8" width="2.4" height="2.4" class="fill-ink" data-entity="east-arch-lintel-support-1"/>
+<text x="173.488" y="92" class="text-marker" text-anchor="start" data-entity="east-arch-lintel-label">B12</text>
+<line x1="20.512" y1="132" x2="20.512" y2="113.333" class="line-cut" data-entity="stair-west-upper-lintel" data-memberId="stair-west-upper-lintel" data-section="203x102x23 UB" data-spanMm="1400"/>
+<rect x="19.312" y="130.8" width="2.4" height="2.4" class="fill-ink" data-entity="stair-west-upper-lintel-support-0"/>
+<rect x="19.312" y="112.133" width="2.4" height="2.4" class="fill-ink" data-entity="stair-west-upper-lintel-support-1"/>
+<text x="22.512" y="122.667" class="text-marker" text-anchor="start" data-entity="stair-west-upper-lintel-label">B13</text>
 <text x="16" y="196" class="text-note" text-anchor="start" data-entity="legend">Solid: beam screens. Squares: receiving locations, bearings unqualified.</text>
 <text x="16" y="204" class="text-note" text-anchor="start" data-entity="schedule-0">B1  portal-court · 3.245 m · 203x203x60 UC</text>
-<text x="16" y="209.5" class="text-note" text-anchor="start" data-entity="schedule-1">B2  portal-garden · 3.245 m · 203x203x60 UC</text>
-<text x="16" y="215" class="text-note" text-anchor="start" data-entity="schedule-2">B3  rear-wet · 2.815 m · 254x254x73 UC</text>
-<text x="16" y="220.5" class="text-note" text-anchor="start" data-entity="schedule-3">B4  stair-east · 6.202 m · 305x165x54 UB</text>
-<text x="16" y="226" class="text-note" text-anchor="start" data-entity="schedule-4">B5  entrance-west · 3.585 m · 305x165x54 UB</text>
-<text x="16" y="231.5" class="text-note" text-anchor="start" data-entity="schedule-5">B6  entrance-east · 3.585 m · 305x165x54 UB</text>
-<text x="16" y="237" class="text-note" text-anchor="start" data-entity="schedule-6">B7  bath-north · 2.368 m · 254x254x73 UC</text>
-<text x="16" y="249" class="text-note" text-anchor="start" data-entity="coverage">Panel joints, cuts, wall-head closures and remaining supports are unresolved.</text>
+<text x="16" y="209" class="text-note" text-anchor="start" data-entity="schedule-1">B2  portal-garden · 3.245 m · 203x203x60 UC</text>
+<text x="16" y="214" class="text-note" text-anchor="start" data-entity="schedule-2">B3  rear-wet · 2.815 m · 254x254x73 UC</text>
+<text x="16" y="219" class="text-note" text-anchor="start" data-entity="schedule-3">B4  entrance-west · 3.585 m · 254x146x43 UB</text>
+<text x="16" y="224" class="text-note" text-anchor="start" data-entity="schedule-4">B5  entrance-east · 3.585 m · 254x146x43 UB</text>
+<text x="16" y="229" class="text-note" text-anchor="start" data-entity="schedule-5">B6  bath-north · 2.362 m · 254x254x73 UC</text>
+<text x="16" y="234" class="text-note" text-anchor="start" data-entity="schedule-6">B7  stair-east-south · 4.607 m · 254x146x43 UB</text>
+<text x="16" y="239" class="text-note" text-anchor="start" data-entity="schedule-7">B8  stair-east-north · 1.595 m · 254x146x43 UB</text>
+<text x="16" y="244" class="text-note" text-anchor="start" data-entity="schedule-8">B9  stair-upper-header · 2.604 m · 254x254x73 UC</text>
+<text x="16" y="249" class="text-note" text-anchor="start" data-entity="schedule-9">B10  stair-midlanding · 2.610 m · 254x254x73 UC</text>
+<text x="16" y="254" class="text-note" text-anchor="start" data-entity="schedule-10">B11  stair-west-sill · 2.100 m · 152x89x16 UB</text>
+<text x="16" y="259" class="text-note" text-anchor="start" data-entity="schedule-11">B12  east-arch-lintel · 1.800 m · 203x102x23 UB</text>
+<text x="16" y="264" class="text-note" text-anchor="start" data-entity="schedule-12">B13  stair-west-upper-lintel · 1.400 m · 203x102x23 UB</text>
+<text x="16" y="276" class="text-note" text-anchor="start" data-entity="half-level">B10–11: half-landing level. Stair post continues down to ground support.</text>
+<text x="16" y="289" class="text-note" text-anchor="start" data-entity="coverage">Panel joints, cuts, wall-head closures and remaining supports are unresolved.</text>
 </svg>
