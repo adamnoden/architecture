@@ -1302,6 +1302,39 @@
         "project/str/studies/finite-floor-contour-residency-history.tar.xz",
         "project/str/studies/finite-floor-contour-residency-interruption.json"
       ]
+    },
+    {
+      "id": "str-steel-precast-comparison",
+      "state": "candidate-interface",
+      "authority": "Selected occupied geometry and conventional steel/precast comparison only; no adopted house or structural acceptance",
+      "decisions": [
+        "project/owner-house-charter.md",
+        "project/str/steel-precast-simplification.md"
+      ],
+      "authorRoots": [
+        "compiler/reference-house/current-design/steel-precast-kernel.ts",
+        "compiler/reference-house/current-design/structural-steel-precast.ts",
+        "compiler/reference-house/current-design/steel-precast-view.ts",
+        "project/str/studies/steel-precast-comparison.ts"
+      ],
+      "authoredInputs": [
+        "project/str/studies/steel-precast-inputs.json",
+        "project/str/studies/steel-precast-sources.json",
+        "compiler/reference-house/georgian/layout-revision.ts"
+      ],
+      "inputReceipts": [
+        "project/str/studies/open-loggia-support.json",
+        "project/str/studies/physical-slab-join.json"
+      ],
+      "receipts": [],
+      "consumers": [
+        "compiler/reference-house/current-design/compile.ts",
+        "compiler/reference-house/current-design/engineering-document.ts",
+        "scripts/compile-current-design.ts"
+      ],
+      "producerChecks": [
+        "node --import tsx project/str/studies/steel-precast-comparison.ts --check"
+      ]
     }
   ],
   "receiptEdges": [
@@ -2856,7 +2889,7 @@
     "project/rwt/studies/selected-receiving-interface.json": "847eecc74b95fc189dab3f45e02f54cdb41c6d29",
     "project/rwt/studies/selected-water-event.json": "b5f8b7c6460c8d5838ccd5bc3107c2656081cf35",
     "project/rwt/studies/selected-water-event.mjs": "de40b284d0891a17180401c51581107a3e6b54db",
-    "project/str/structural-architecture-programme.md": "5a289be91e6a847b2a5ff28276060c34308f2bf1",
+    "project/str/structural-architecture-programme.md": "46734092d5156af503eed31cb9adbfbfdf0bd793",
     "project/str/studies/current-house-arch-movement.json": "05db94a987c7bf45b885c6d02f701b31bcf91740",
     "project/str/studies/current-house-floor-closure.json": "402cec2347ab9bf4efd624e269918096a1e70f97",
     "project/str/studies/current-house-floor-closure.py": "98efe8a379a709399a9d89689495a40dfa18d443",
@@ -3010,7 +3043,7 @@
     "project/str/studies/joined_successor_kernel.py": "bbf1e80933260d0182db34d777427b68a361b2f0",
     "compiler/reference-house/current-design/structural-successor.ts": "9ae813ed40695e6e94df43caa0b45e7db54d02c4",
     "compiler/reference-house/current-design/inlet-support.ts": "a2404befdbeda6464bc9f772d25bccd8d78d2479",
-    "compiler/reference-house/current-design/engineering-document.ts": "c2a0d451655c2e7a2c51db01151637e304494bcb",
+    "compiler/reference-house/current-design/engineering-document.ts": "727ce19341b4355bf5d4714816890b61cd588b68",
     "project/had/inlet-assembly-convergence.md": "21719c69b3ec916043e53d7ae0891d5c6ce7aae5",
     "project/str/studies/floor-portal-fixed-wall-head.py": "807159aa9439837489d3e95f9bf359983635c342",
     "project/str/studies/floor-portal-north-transfer.py": "20f79473e3fd3e88351b3fa4d68ac1f1ef476d03",
@@ -3023,7 +3056,7 @@
     "compiler/reference-house/current-design/inlet-fixed-entry.ts": "9ad3f449b36d8770ac1a1bfe167210fbca7581bf",
     "compiler/reference-house/current-design/inlet-fixed-case.ts": "6a6670cf3dab365e41b4bf5e7c4a82ee2a0cd82f",
     "compiler/reference-house/current-design/inlet-fixed-operating.ts": "8d2a9e0132d300e697cff2661f01222a7b661b45",
-    "compiler/reference-house/current-design/compile.ts": "1a435bce7ea283ed0120ae95c06d0c9ab0074586",
+    "compiler/reference-house/current-design/compile.ts": "74978af9cce2b02036cd490f652dd2e825372ecc",
     "project/mat/envelope-ground-boundary.md": "7aae65350ded7bff6e21c4425153af3cdaec41d2",
     "project/owner-house-charter.md": "f62e5df863f65468913b509e0c16eeecdb88f7ff",
     "project/mat/studies/conventional-ground-junction.json": "5d899197848d0f951d8ff4573983aff81d4fd32f",
@@ -3083,7 +3116,7 @@
     "compiler/reference-house/current-design/house-vertical-profile.ts": "702d5cda1182e25d576e2f4cce754f3d816b0f2d",
     "compiler/reference-house/current-design/inlet-fixed-shared-service-frame.ts": "43a0ff67f3a38aa1f050859c893efbb8f5087f32",
     "project/had/fixed-inlet-shared-service-frame-development.md": "6b52562f403e1b2c2c8df405c0471408f0952feb",
-    "scripts/compile-current-design.ts": "d7184725ebb7d3be5b58571b14444ca05e9a3ba4",
+    "scripts/compile-current-design.ts": "565d993c27fa9605a63b784b58b10b579928134c",
     "project/str/studies/vertical_rc_floor.py": "841cf4075fcee0e536a1dac62b5e530f480ec13a",
     "project/str/vertical-rc-floor-gravity-result.md": "0e1e13b47a082c77ebc9d652b54b5b10a36b814d",
     "project/str/studies/vertical-rc-floor-proof.json": "daa24297449594b8be52c662e675815a638bb66a",
@@ -3302,7 +3335,7 @@
     "project/str/studies/fixed-normal-experiment.results.json": "d70a4ee929a02d0f46a2563484b41ec98aab8b5f",
     "project/str/studies/finite-joint-solid-captures/finite-joint-solid-70.json": "a427298f215d2ad68be3885e98777c9c7f8474fa",
     "compiler/reference-house/current-design/structural-slab-constitutive.ts": "3719c065d8ebf6c7f187ad2d843706c09d54986a",
-    "project/str/floor-portal-reconciliation.md": "d3b5cc62e5d1002efe8eba604101f6d8d2b4a2d1",
+    "project/str/floor-portal-reconciliation.md": "90bc4f3bebc79709ed8fa1affd772db58229297b",
     "project/str/studies/slab-constitutive-compiled-control.json": "ca832a34e53b0474231c5c5258e75a8fd4431948",
     "project/str/studies/slab-constitutive-compiled-control.tar.xz": "742987eb64ef9a608fd841bf43e1c746eeb10210",
     "project/had/studies/inlet-route-candidate.json": "6bd208ae8dbe70564122af3d16d3d86f60dde141",
@@ -3438,6 +3471,13 @@
     "project/str/studies/service_room_ground_receiver_proof.py": "b2553e7afffcea19291a853985871d4667d58838",
     "project/str/studies/service_room_ground_receiver_replay.py": "1c04a3c550dd665a4a1a89999252cda7396b5567",
     "project/str/studies/service-room-ground-receiver-proof.json": "705b0cdaa444410f2458f8a5944f03ad4ab97dda",
-    "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz": "e05b8f704d694960f63894996e8b9f7d50327b5d"
+    "project/str/studies/service-room-ground-receiver-captures-20261126.tar.xz": "e05b8f704d694960f63894996e8b9f7d50327b5d",
+    "compiler/reference-house/current-design/steel-precast-kernel.ts": "adaaf7ac1e4df4eb302acc32c5aa2c563d449531",
+    "compiler/reference-house/current-design/structural-steel-precast.ts": "16684594beca2071628c70518067ba1f402dc05a",
+    "compiler/reference-house/current-design/steel-precast-view.ts": "eebf82edddc2d26d1eb32ef7958ecaf2642a9214",
+    "project/str/studies/steel-precast-inputs.json": "901720e1da780827e7e849ca71a9eeca5609bdca",
+    "project/str/studies/steel-precast-sources.json": "a8595206828f704a1138d02c4e24472818c3b88e",
+    "project/str/studies/steel-precast-comparison.ts": "f72a737d1ce91ba6ad76b544c3303031393d649e",
+    "project/str/steel-precast-simplification.md": "54ff8911c46d8657d2b717930cdfa8c1505400a2"
   }
 }

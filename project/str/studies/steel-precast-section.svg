@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210" role="img" aria-labelledby="title desc" data-view-id="STR-STEEL-PRECAST-SECTION" data-source-id="ordinary-steel-precast-700" data-scale-denominator="10">
+<title id="title">Floor depth and independent portal beam</title>
+<desc id="desc">Section envelopes at 1:10. Fire, bedding, camber and setting are authored allowances; no product or thermal acceptance is implied.</desc>
+<style>.line-cut{stroke:#000000;stroke-width:0.5;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-profile{stroke:#000000;stroke-width:0.35;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-primary{stroke:#000000;stroke-width:0.25;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.line-secondary{stroke:#000000;stroke-width:0.18;fill:none;stroke-linecap:butt;stroke-linejoin:miter}.text-label{font-family:Arial, Helvetica, sans-serif;font-size:2.646px;font-weight:400;fill:#000000}.text-note{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:400;fill:#000000}.text-marker{font-family:Arial, Helvetica, sans-serif;font-size:2.293px;font-weight:700;fill:#000000}.dash-overhead{stroke-dasharray:3 1.5}.dash-datum{stroke-dasharray:6 1.5 1 1.5}.dash-provisional{stroke-dasharray:1 1}.fill-paper{fill:#ffffff;stroke:none}.fill-ink{fill:#000000;stroke:none}.fill-context{fill:#666666;stroke:none}.fill-faint{fill:#a6a6a6;stroke:none}</style>
+<text x="16" y="12" class="text-label" text-anchor="start" data-entity="title">Ordinary floor / insulated loggia beam</text>
+<text x="16" y="19" class="text-note" text-anchor="start" data-entity="sub">Comparison envelopes · 1:10 · all levels from the source ground floor</text>
+<text x="16" y="28" class="text-label" text-anchor="start" data-entity="left-title">A · top-bearing floor beam</text>
+<text x="157" y="28" class="text-label" text-anchor="start" data-entity="right-title">B · wall beam beside planks</text>
+<rect x="16" y="49" width="102" height="12.5" class="line-secondary fill-faint" data-entity="ordinary-finish"/>
+<rect x="16" y="61.5" width="102" height="20" class="line-secondary fill-context" data-entity="ordinary-plank"/>
+<rect x="54" y="82.5" width="14.73" height="25.96" class="line-secondary fill-context" data-entity="ordinary-beam"/>
+<line x1="16" y1="119" x2="118" y2="119" class="line-secondary dash-datum" data-entity="ceiling"/>
+<text x="17" y="124" class="text-note" text-anchor="start" data-entity="ceiling-label">Ceiling 3100 · spare 35.4 mm</text>
+<rect x="157" y="49" width="118" height="12.5" class="line-secondary fill-faint" data-entity="portal-finish"/>
+<rect x="205" y="61.5" width="20.58" height="20.96" class="line-secondary fill-context" data-entity="portal-beam"/>
+<rect x="157" y="61.5" width="48" height="20" class="line-secondary fill-context" data-entity="portal-plank-left"/>
+<rect x="225.58" y="61.5" width="49.42" height="20" class="line-secondary fill-context" data-entity="portal-plank-right"/>
+<rect x="157" y="81.5" width="48" height="28" class="line-secondary fill-faint" data-entity="insulation-plank-left"/>
+<rect x="225.58" y="81.5" width="49.42" height="28" class="line-secondary fill-faint" data-entity="insulation-plank-right"/>
+<rect x="205" y="82.46" width="20.58" height="28" class="line-secondary fill-faint" data-entity="insulated-portal"/>
+<line x1="157" y1="122.5" x2="275" y2="122.5" class="line-secondary dash-datum" data-entity="arch-crown"/>
+<text x="158" y="127.5" class="text-note" text-anchor="start" data-entity="arch-crown-label">Arch outer crown 3065</text>
+<text x="16" y="35" class="text-note" text-anchor="start" data-entity="ffl">First FFL 3800 · change +350 mm</text>
+<text x="157" y="35" class="text-note" text-anchor="start" data-entity="clearance">Insulated beam / arch gap 120.4 mm</text>
+<text x="16" y="155" class="text-note" text-anchor="start" data-entity="left-key-1">Plank 200; finish 80; camber reserve 20 mm.</text>
+<text x="16" y="162" class="text-note" text-anchor="start" data-entity="left-key-2">Setting 25; bed 10; soffit allowance 70 mm.</text>
+<text x="16" y="169" class="text-note" text-anchor="start" data-entity="left-key-3">Deepest beam 259.6; total required 664.6 mm.</text>
+<text x="157" y="155" class="text-note" text-anchor="start" data-entity="right-key-1">Portal 203x203x60 UC; beside-planks.</text>
+<text x="157" y="162" class="text-note" text-anchor="start" data-entity="right-key-2">Retained insulation/lining envelope 280 mm.</text>
+<text x="157" y="169" class="text-note" text-anchor="start" data-entity="right-key-3">Independent arch, ties, beam seats and junctions still require design.</text>
+<text x="16" y="185" class="text-note" text-anchor="start" data-entity="stair">Stair: 20 rises of 190.0 mm; going 300; pitch 32.3°.</text>
+<text x="16" y="194" class="text-note" text-anchor="start" data-entity="limitations">This is a selected-source comparison, not an adopted whole-house section, fire detail or precast shop drawing.</text>
+</svg>
