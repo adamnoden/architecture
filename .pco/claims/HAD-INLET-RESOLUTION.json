@@ -9,12 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:53:54.494Z",
-  "heartbeatAt": "2026-11-28T11:22:29.262Z",
-  "expiresAt": "2026-11-28T12:07:29.262Z",
+  "heartbeatAt": "2026-11-28T11:34:03.153Z",
+  "expiresAt": "2026-11-28T12:19:03.153Z",
   "checkpoint": {
-    "evidence": "PR #1631 head 64511a0d, tree dff2608d, records the prefab preference and dependent identity refreshes. Current-head publication, both browser proofs, finite contour, beam-end and masonry checks pass. The local complete suite via an external direct-loader adapter has passed structural, service-floor and material suites and is running house compiler tests without a failing case.",
-    "next": "Finish exact-head hosted run 46136993802 and the local diagnostic suite, then fresh publication preflight, merge the bounded preference amendment and release. Steel and precast structural comparison and existing installation recovery remain planned.",
-    "blocker": "Required current-head validation is still running the saved ground/editor replay; no current failing check."
+    "evidence": "PR #1631 at 64511a0d, tree dff2608d, records prefab preference with numerical and drawing geometry unchanged. All local canonical unit/regression suites, generated outputs and publication manifests passed via the external direct-loader adapter. Local figure rendering then stopped only because Puppeteer Chrome is absent. The current-head hosted publication and both browser proofs pass. Working tree is clean after removing test Python caches.",
+    "next": "Finish standard exact-head hosted run 46136993802, perform fresh publication preflight, merge the bounded preference amendment, reconcile the structural issue and release. Steel and precast design comparison and existing installation recovery remain planned.",
+    "blocker": "Required hosted main validation is still running the saved ground/editor replay. No current-head test failure; local Chrome absence is covered by the passing hosted publication proof."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
