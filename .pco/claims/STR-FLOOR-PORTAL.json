@@ -9,12 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:52:38.395Z",
-  "heartbeatAt": "2026-11-28T11:48:19.123Z",
-  "expiresAt": "2026-11-28T12:33:19.123Z",
+  "heartbeatAt": "2026-11-28T12:02:55.485Z",
+  "expiresAt": "2026-11-28T12:47:55.485Z",
   "checkpoint": {
-    "evidence": "PR #1631 remains at 64511a0d, tree dff2608d, against unchanged main f2acb9e7 and is mergeable. Current-head dedicated engineering, saved-ground, browser and publication proofs pass. All local unit/regression suites, saved outputs and publication manifests also passed via the external direct-loader adapter; only local figure rendering lacked Chrome. Temporary launchers and Python caches have been removed; source tree is clean.",
-    "next": "Await the standard full repository suite in hosted run 46136993802, then fresh publication preflight, merge, reconcile issue #1103 and release. This is an owner preference amendment; the steel/precast design comparison and installation recovery remain planned.",
-    "blocker": "Required current-head repository health suite is still running. No current failing check."
+    "evidence": "PR #1631 remains at 64511a0d, tree dff2608d, against main f2acb9e7 and is mergeable. All current-head dedicated engineering, saved-ground, browser and publication proofs pass. All local unit/regression suites, saved outputs and publication manifests passed; only local figure rendering lacked Chrome. Current source is clean; temporary launchers and Python caches were removed.",
+    "next": "Await the standard full repository suite in hosted run 46136993802. Then run fresh canonical publication preflight for both leases, merge with the expected head, reconcile issue #1103, release both leases and clean only this task branch/mailbox. The structural comparison and installation recovery remain planned.",
+    "blocker": "Current-head repository health suite is still running. No current failing check."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
