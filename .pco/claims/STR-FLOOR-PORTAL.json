@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T14:41:29.408Z",
-  "expiresAt": "2026-11-28T15:26:29.408Z",
+  "heartbeatAt": "2026-11-28T14:57:50.524Z",
+  "expiresAt": "2026-11-28T15:42:50.524Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "PR #1632 final published head 71948539865466652718e9ade9840b96b973d55a: 700 mm steel/precast comparison, thirteen critical beam screens, actual precast stair network; sixteen targeted/source tests pass, drawings inspected, fourteen of sixteen exact-head hosted workflow groups passed at 14:38 UTC.",
-    "next": "Wait for remaining exact-head validation and ADE browser workflows; if green, run fresh canonical merge preflight, merge expected head, reconcile issue #1103 and release for handoff.",
-    "blocker": "Full exact-head hosted validation and ADE browser proof remain in progress; complete precast panelization, connections, restraint and whole-house adoption remain unresolved design duties."
+    "evidence": "PR #1632 final head 71948539865466652718e9ade9840b96b973d55a: 700 mm ordinary steel/precast development comparison with thirteen critical beam screens and actual precast stair network. Sixteen targeted/source tests and local checks pass. Fifteen of sixteen exact-head hosted workflow groups are green, including ADE browser proof, at 14:56 UTC.",
+    "next": "Wait for final full repository validation; when green run fresh canonical expected-head preflight, merge PR #1632, reconcile issue #1103, record verified merge and release for handoff.",
+    "blocker": "Full repository validation is still running the current ground-load/editor regression. Complete precast unit/support layout, connections, restraint and whole-house adoption remain design work."
   }
 }
