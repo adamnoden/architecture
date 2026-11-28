@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T16:25:25.158Z",
-  "expiresAt": "2026-11-28T17:10:25.158Z",
+  "heartbeatAt": "2026-11-28T16:39:08.345Z",
+  "expiresAt": "2026-11-28T17:24:08.345Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "PR #1632 remains at 7e4699583014d1efc740975f58c678189c9d599b, tree f05ab18f4edc6859affe978bb0b37f554ae061ea. Fresh main at 16:24 UTC remains 076cfef8a48004b3a21c946e4660401bc5fba104; task checkout is clean. Sixteen of eighteen exact-head workflows passed. Main validation 46162163414 is in ground/editor regression; migrated-plan proof 46162163416 is in its own repository-health suite. Both source-inventory corrections pass all 12 affected tests; the comparison JSON and drawings reproduce unchanged.",
-    "next": "Observe both remaining exact-head workflows. Once green, run fresh canonical preflight and expected-head merge; verify main ancestry/tree, update issue #1103, record verified comparison and handoff the still-open structural packet.",
-    "blocker": "Exact-head hosted validation remains in progress. Complete precast unit/support layout, connections, restraint, receiving masonry and joined whole-house adoption remain subsequent design duties."
+    "evidence": "PR #1632 head 7e4699583014d1efc740975f58c678189c9d599b, tree f05ab18f4edc6859affe978bb0b37f554ae061ea. Sixteen of eighteen exact-head workflows passed. Main validation 46162163414 has passed native ground/editor, packet and homepage checks and is now in npm run check; migrated-plan proof 46162163416 is also in its repository-health suite. The two inventory corrections passed all 12 affected tests and the steel/precast receipt and drawings reproduce unchanged.",
+    "next": "Finish observing both exact-head suites. On green, run fresh canonical publication preflight, merge expected head, verify main ancestry/tree, reconcile issue #1103, renew with the verified merged handoff and release the lease.",
+    "blocker": "Two full hosted regression suites remain in progress. The merged target is a bounded conventional-system comparison; complete panel/support layout, connections, restraint, masonry and signed whole-house adoption remain open."
   }
 }
