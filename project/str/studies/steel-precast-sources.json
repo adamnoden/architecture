@@ -1,0 +1,59 @@
+{
+  "schema": "str-steel-precast-sources/1",
+  "reviewed": "2026-11-28",
+  "sources": [
+    {
+      "id": "british-steel-uc",
+      "title": "British Steel universal columns, 10 July 2023 datasheet",
+      "url": "https://www.britishsteel.co.uk/wp-content/uploads/2026/02/british-steel-universal-columns-datasheet-100723.pdf",
+      "usedFor": "Published depth, width, mass and major-axis second moment for 203x203x60 and 254x254x73 UC. No member resistance is inferred from designation alone."
+    },
+    {
+      "id": "british-steel-ub",
+      "title": "British Steel universal beams, 19 July 2024 datasheet",
+      "url": "https://www.britishsteel.co.uk/wp-content/uploads/2026/02/british-steel-universal-beams-datasheet-190724.pdf",
+      "usedFor": "Published 305x165x54 UB dimensions 310.4 x 166.9 mm, 54 kg/m and Ixx 11696 cm4."
+    },
+    {
+      "id": "bison-hollowcore",
+      "title": "Forterra Bison precast hollowcore and solid floors",
+      "url": "https://www.forterra.co.uk/bison/precast-hollowcore-solid-floors/",
+      "usedFor": "200 mm hollowcore comparison; 75 mm nominal steel bearing, 100 mm nominal masonry bearing; grouted longitudinal joints. Shared narrow masonry bearings and shelf details need additional designed closure/ties. Product load-span examples exclude additional masonry, concentrated loads and holes: they are not the house design."
+    },
+    {
+      "id": "bison-camber",
+      "title": "Hollowcore camber details, 20 November 2017",
+      "url": "https://forterra.cdn.cloud-infra.co.uk/media/2020/12/24140939/hollowcore_camber_details.pdf",
+      "usedFor": "L/300 guide only. Prestress, age and unit length affect camber; it is not a maximum production or installation tolerance. The 20 mm budget is an authored allowance requiring actual supplier acceptance."
+    },
+    {
+      "id": "mpa-supporting-steelwork",
+      "title": "MPA Precast Supporting Steelwork, August 2024",
+      "url": "https://www.mpaprecast.org/MPAPrecast/media/root/Resources/MPA-Precast-Datasheet-Supporting-Steelwork-6pp-DIGITAL-(1).pdf",
+      "usedFor": "Installation can twist steel under one-sided units before joints cure. Erection restraint, support and prop positions must be designed; nominal floor bearing is not beam stability."
+    },
+    {
+      "id": "steel-precast-guidance",
+      "title": "Precast concrete floors in steel framed buildings, June 2018",
+      "url": "https://www.precastfloors.info/Precast/media/BPMediaLibrary/Publications/Precast-Concrete-Floors-In-Steel-Framed-Buildings.pdf?ext=.pdf",
+      "usedFor": "Separate slab, support, diaphragm/tie, erection and beam design duties. Noncomposite beam and grouted-joint assumptions require their own actual details."
+    },
+    {
+      "id": "ad-k-england",
+      "title": "Approved Document K, England, 2013 edition, section 1 and Table 1.1",
+      "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/996860/Approved_Document_K.pdf",
+      "usedFor": "Private-stair comparison only: rise 150..220 mm, going 220..300 mm, pitch at most 42 degrees and normal 2R+G 550..700 mm. This does not check landings, headroom, guarding, fire strategy or the complete stair."
+    }
+  ],
+  "authoredAssumptions": [
+    "S275 with E 210000 MPa for elastic screening; actual grade, class, restraint and member resistance are unqualified.",
+    "G 1.35 and Q 1.5 are the explicit gravity challenge factors, not a complete project action combination schedule.",
+    "Floor G 3.1 + 2.1 kN/m2, Q 2 kN/m2; heavy masonry is added separately, never hidden in a generic partition allowance.",
+    "Gross masonry 22 kN/m3 and plaster 20 kN/m3; openings earn no relief. Default 27 mm each-side finish is a comparison, not the admitted installed finish for every wall.",
+    "Roof G 3 and Q 1.5 kN/m2 are retained source action budgets, not actual roof mass, wind, snow or inherited reactions.",
+    "The stair 15 kN permanent plus 5 kN variable midspan point and front/bath tributary widths are authored challenges, not a complete load take-off.",
+    "L/360 is an authored beam deflection screen. It does not qualify brittle finishes, vibration or differential precast camber.",
+    "The 25 mm side fire envelope, 70 mm soffit reserve, 10 mm bed, 25 mm setting reserve and 80 mm finish depth are spatial allowances, not specified approved assemblies.",
+    "The 300 x 140 mm padstone area only reports demand. Padstone strength, spread, eccentricity, adjacent openings and combined bearing forces are unresolved."
+  ]
+}

@@ -1,0 +1,1609 @@
+{
+  "schema": "str-steel-precast-result/1",
+  "caseId": "ordinary-steel-precast-750",
+  "settings": {
+    "schema": "str-steel-precast-settings/1",
+    "caseId": "ordinary-steel-precast-750",
+    "firstFflMm": 3850,
+    "groundCeilingMm": 3100,
+    "plankDepthMm": 200,
+    "plankSelfWeightKnM2": 3.1,
+    "finishDepthMm": 80,
+    "finishLoadKnM2": 2.1,
+    "camberReserveMm": 20,
+    "settingReserveMm": 25,
+    "bearingBedMm": 10,
+    "soffitReserveMm": 70,
+    "fireSideMm": 25,
+    "portalPlacement": "beside-planks",
+    "nominalSteelBearingMm": 75,
+    "opposedJointMm": 20,
+    "bearingToleranceEachMm": 25,
+    "steelYieldMpa": 275,
+    "steelEMpa": 210000,
+    "permanentFactor": 1.35,
+    "variableFactor": 1.5,
+    "imposedLoadKnM2": 2,
+    "deflectionRatio": 360,
+    "masonryWeightKnM3": 22,
+    "plasterWeightKnM3": 20,
+    "upperWallHeightMm": 3100,
+    "plasterEachMm": 27,
+    "roofPermanentChallengeKnM2": 3,
+    "roofVariableChallengeKnM2": 1.5,
+    "stairPointPermanentKn": 15,
+    "stairPointVariableKn": 5,
+    "entranceFloorTributaryChallengeMm": 2000,
+    "bathFloorTributaryChallengeMm": 2000,
+    "stairBeamOffsetFromVoidMm": 125,
+    "padstoneLengthMm": 300,
+    "padstoneWidthMm": 140,
+    "minimumArchClearanceMm": 25,
+    "sections": {
+      "floor": {
+        "id": "254x254x73 UC",
+        "depthMm": 254.1,
+        "widthMm": 254.6,
+        "massKgM": 73.1,
+        "ixxCm4": 11643
+      },
+      "edge": {
+        "id": "305x165x54 UB",
+        "depthMm": 310.4,
+        "widthMm": 166.9,
+        "massKgM": 54,
+        "ixxCm4": 11696
+      },
+      "portal": {
+        "id": "203x203x60 UC",
+        "depthMm": 209.6,
+        "widthMm": 205.8,
+        "massKgM": 60,
+        "ixxCm4": 6162
+      }
+    }
+  },
+  "geometry": {
+    "referenceGroundFflMm": 0,
+    "referenceFirstFflMm": 3450,
+    "referenceAtticDatumMm": 6900,
+    "referenceEavesMm": 7100,
+    "referenceRidgeMm": 8090.903773579372,
+    "stair": {
+      "risers": 20,
+      "goingMm": 300,
+      "footprintXYWHMm": [
+        417.5,
+        4432.5,
+        2400,
+        4335
+      ],
+      "finishedFlightWidthBeforeRailMm": 1094
+    },
+    "entranceVoidXYWHMm": [
+      4885,
+      417.5,
+      2230,
+      2317.5
+    ],
+    "archOuterCrownMm": 3065,
+    "loggiaSoffitLayersMm": 280,
+    "floorEnvelopeXYXYMm": [
+      332.5,
+      332.5,
+      11667.5,
+      11667.5
+    ],
+    "courtXYWHMm": [
+      4250,
+      4250,
+      3500,
+      3500
+    ],
+    "floorFields": [
+      {
+        "id": "SW-L",
+        "rectangleXYXYMm": [
+          332.5,
+          332.5,
+          2817.5,
+          3247.5
+        ],
+        "direction": "NS",
+        "spanMm": 2915
+      },
+      {
+        "id": "SW-main",
+        "rectangleXYXYMm": [
+          2817.5,
+          332.5,
+          4800,
+          2650
+        ],
+        "direction": "NS",
+        "spanMm": 2317.5
+      },
+      {
+        "id": "SE-front",
+        "rectangleXYXYMm": [
+          7200,
+          332.5,
+          9300,
+          2650
+        ],
+        "direction": "NS",
+        "spanMm": 2317.5
+      },
+      {
+        "id": "east-strip",
+        "rectangleXYXYMm": [
+          9300,
+          332.5,
+          11667.5,
+          8290
+        ],
+        "direction": "EW",
+        "spanMm": 2367.5
+      },
+      {
+        "id": "south-W-gallery",
+        "rectangleXYXYMm": [
+          2917.5,
+          2650,
+          4800,
+          3917.5
+        ],
+        "direction": "NS",
+        "spanMm": 1267.5
+      },
+      {
+        "id": "south-E-gallery",
+        "rectangleXYXYMm": [
+          7200,
+          2650,
+          9300,
+          3917.5
+        ],
+        "direction": "NS",
+        "spanMm": 1267.5
+      },
+      {
+        "id": "east-gallery",
+        "rectangleXYXYMm": [
+          8082.5,
+          3917.5,
+          9300,
+          8082.5
+        ],
+        "direction": "EW",
+        "spanMm": 1217.5
+      },
+      {
+        "id": "west-south",
+        "rectangleXYXYMm": [
+          332.5,
+          3247.5,
+          2817.5,
+          4332.5
+        ],
+        "direction": "NS",
+        "spanMm": 1085
+      },
+      {
+        "id": "SW-collector-bay",
+        "rectangleXYXYMm": [
+          2917.5,
+          3917.5,
+          3917.5,
+          4332.5
+        ],
+        "direction": "NS",
+        "spanMm": 415
+      },
+      {
+        "id": "west-stair-gallery",
+        "rectangleXYXYMm": [
+          2917.5,
+          4432.5,
+          3917.5,
+          8082.5
+        ],
+        "direction": "EW",
+        "spanMm": 1000
+      },
+      {
+        "id": "west-stair-gallery-N",
+        "rectangleXYXYMm": [
+          2917.5,
+          8082.5,
+          4377.5,
+          8852.5
+        ],
+        "direction": "EW",
+        "spanMm": 1460
+      },
+      {
+        "id": "east-gallery-N",
+        "rectangleXYXYMm": [
+          7622.5,
+          8082.5,
+          9300,
+          8290
+        ],
+        "direction": "EW",
+        "spanMm": 1677.5
+      },
+      {
+        "id": "NW-W",
+        "rectangleXYXYMm": [
+          332.5,
+          8852.5,
+          2902.5,
+          11667.5
+        ],
+        "direction": "EW",
+        "spanMm": 2570
+      },
+      {
+        "id": "NW-E",
+        "rectangleXYXYMm": [
+          2902.5,
+          8852.5,
+          4377.5,
+          11667.5
+        ],
+        "direction": "EW",
+        "spanMm": 1475
+      },
+      {
+        "id": "above-loggia",
+        "rectangleXYXYMm": [
+          4377.5,
+          8082.5,
+          7622.5,
+          11667.5
+        ],
+        "direction": "EW",
+        "spanMm": 3245
+      },
+      {
+        "id": "NE",
+        "rectangleXYXYMm": [
+          7622.5,
+          8290,
+          11667.5,
+          11667.5
+        ],
+        "direction": "NS",
+        "spanMm": 3377.5
+      }
+    ],
+    "grossSourceFloorAreaM2": 100.66019999999999,
+    "bridgeAreaM2": 2.447425,
+    "residualAreaM2": 7.634225,
+    "westGallerySupportXMm": 4377.5,
+    "rearReceivingWall": {
+      "axisYMm": 8852.5,
+      "coreYMm": [
+        8782.5,
+        8922.5
+      ],
+      "extentXMm": [
+        0,
+        4377.5
+      ],
+      "openingsXMm": [
+        [
+          3100,
+          4000
+        ]
+      ]
+    },
+    "beams": [
+      {
+        "floorTributaryMm": 0,
+        "wallCoreMm": 215,
+        "wallLoadedLengthMm": 3245,
+        "roofTributaryMm": 1792.5,
+        "stairPoint": false,
+        "id": "portal-court",
+        "role": "portal",
+        "a": [
+          4377.5,
+          8082.5
+        ],
+        "b": [
+          7622.5,
+          8082.5
+        ],
+        "supports": [
+          "west weather wall / arch-pier junction",
+          "east weather wall / arch-pier junction"
+        ]
+      },
+      {
+        "floorTributaryMm": 0,
+        "wallCoreMm": 215,
+        "wallLoadedLengthMm": 3245,
+        "roofTributaryMm": 1792.5,
+        "stairPoint": false,
+        "id": "portal-garden",
+        "role": "portal",
+        "a": [
+          4377.5,
+          11667.5
+        ],
+        "b": [
+          7622.5,
+          11667.5
+        ],
+        "supports": [
+          "west weather wall / arch-pier junction",
+          "east weather wall / arch-pier junction"
+        ]
+      },
+      {
+        "floorTributaryMm": 2022.5,
+        "wallCoreMm": 140,
+        "wallLoadedLengthMm": 2815,
+        "roofTributaryMm": 0,
+        "stairPoint": false,
+        "id": "rear-wet",
+        "role": "floor",
+        "a": [
+          2902.5,
+          8852.5
+        ],
+        "b": [
+          2902.5,
+          11667.5
+        ],
+        "supports": [
+          "rear-west wall beside stair landing",
+          "outer-north solid pier between windows"
+        ]
+      },
+      {
+        "floorTributaryMm": 0,
+        "wallCoreMm": 0,
+        "wallLoadedLengthMm": 0,
+        "roofTributaryMm": 0,
+        "stairPoint": true,
+        "id": "stair-east",
+        "role": "edge",
+        "a": [
+          2817.5,
+          2650
+        ],
+        "b": [
+          2817.5,
+          8852.5
+        ],
+        "supports": [
+          "study-cloak-north solid wall",
+          "rear-west wall beside rear-wet bearing"
+        ]
+      },
+      {
+        "floorTributaryMm": 0,
+        "wallCoreMm": 140,
+        "wallLoadedLengthMm": 2317.5,
+        "roofTributaryMm": 0,
+        "stairPoint": false,
+        "id": "entrance-west",
+        "role": "edge",
+        "a": [
+          4800,
+          332.5
+        ],
+        "b": [
+          4800,
+          3917.5
+        ],
+        "supports": [
+          "outer-south pier beside entrance",
+          "court-south pier beside door"
+        ]
+      },
+      {
+        "floorTributaryMm": 0,
+        "wallCoreMm": 140,
+        "wallLoadedLengthMm": 2317.5,
+        "roofTributaryMm": 0,
+        "stairPoint": false,
+        "id": "entrance-east",
+        "role": "edge",
+        "a": [
+          7200,
+          332.5
+        ],
+        "b": [
+          7200,
+          3917.5
+        ],
+        "supports": [
+          "outer-south pier beside entrance",
+          "court-south pier beside door"
+        ]
+      },
+      {
+        "floorTributaryMm": 0,
+        "wallCoreMm": 140,
+        "wallLoadedLengthMm": 2367.5,
+        "roofTributaryMm": 0,
+        "stairPoint": false,
+        "id": "bath-north",
+        "role": "floor",
+        "a": [
+          9300,
+          6500
+        ],
+        "b": [
+          11667.5,
+          6500
+        ],
+        "supports": [
+          "service-spine solid wall",
+          "outer-east solid pier between openings"
+        ]
+      }
+    ]
+  },
+  "beams": [
+    {
+      "floorTributaryMm": 0,
+      "wallCoreMm": 215,
+      "wallLoadedLengthMm": 3245,
+      "roofTributaryMm": 1792.5,
+      "stairPoint": false,
+      "id": "portal-court",
+      "role": "portal",
+      "a": [
+        4377.5,
+        8082.5
+      ],
+      "b": [
+        7622.5,
+        8082.5
+      ],
+      "supports": [
+        "west weather wall / arch-pier junction",
+        "east weather wall / arch-pier junction"
+      ],
+      "loads": [
+        {
+          "fromMm": 0,
+          "toMm": 3245,
+          "permanentKnM": 0,
+          "variableKnM": 0,
+          "source": "explicit floor tributary challenge"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 3245,
+          "permanentKnM": 0.5886,
+          "variableKnM": 0,
+          "source": "section self weight"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 3245,
+          "permanentKnM": 18.011,
+          "variableKnM": 0,
+          "source": "gross upper masonry and finishes; no opening relief"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 3245,
+          "permanentKnM": 5.3775,
+          "variableKnM": 2.68875,
+          "source": "authored roof action challenge; not inherited roof reactions"
+        }
+      ],
+      "points": [],
+      "section": {
+        "id": "203x203x60 UC",
+        "depthMm": 209.6,
+        "widthMm": 205.8,
+        "massKgM": 60,
+        "ixxCm4": 6162
+      },
+      "spanMm": 3245,
+      "service": {
+        "reactionsKn": [
+          43.265341625,
+          43.265341625
+        ],
+        "totalKn": 86.53068325,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 35.09900839328125,
+        "maxMomentAtMm": 1622.5000000000005,
+        "maximumDeflectionMm": 2.975171653842141,
+        "maxDeflectionAtMm": 1622.5
+      },
+      "ultimate": {
+        "reactionsKn": [
+          59.062585725,
+          59.06258572500001
+        ],
+        "totalKn": 118.12517145000001,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 47.91452266940625,
+        "maxMomentAtMm": 1622.5,
+        "maximumDeflectionMm": 4.061480257678225,
+        "maxDeflectionAtMm": 1622.5
+      },
+      "elasticStressMpa": 81.49045725014241,
+      "elasticYieldRatio": 0.29632893545506334,
+      "deflectionComparatorMm": 9.01388888888889,
+      "deflectionRatio": 0.3300652682228569,
+      "nominalSupportPressureMpa": [
+        1.4062520410714285,
+        1.4062520410714288
+      ],
+      "screen": "within-elastic-screen"
+    },
+    {
+      "floorTributaryMm": 0,
+      "wallCoreMm": 215,
+      "wallLoadedLengthMm": 3245,
+      "roofTributaryMm": 1792.5,
+      "stairPoint": false,
+      "id": "portal-garden",
+      "role": "portal",
+      "a": [
+        4377.5,
+        11667.5
+      ],
+      "b": [
+        7622.5,
+        11667.5
+      ],
+      "supports": [
+        "west weather wall / arch-pier junction",
+        "east weather wall / arch-pier junction"
+      ],
+      "loads": [
+        {
+          "fromMm": 0,
+          "toMm": 3245,
+          "permanentKnM": 0,
+          "variableKnM": 0,
+          "source": "explicit floor tributary challenge"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 3245,
+          "permanentKnM": 0.5886,
+          "variableKnM": 0,
+          "source": "section self weight"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 3245,
+          "permanentKnM": 18.011,
+          "variableKnM": 0,
+          "source": "gross upper masonry and finishes; no opening relief"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 3245,
+          "permanentKnM": 5.3775,
+          "variableKnM": 2.68875,
+          "source": "authored roof action challenge; not inherited roof reactions"
+        }
+      ],
+      "points": [],
+      "section": {
+        "id": "203x203x60 UC",
+        "depthMm": 209.6,
+        "widthMm": 205.8,
+        "massKgM": 60,
+        "ixxCm4": 6162
+      },
+      "spanMm": 3245,
+      "service": {
+        "reactionsKn": [
+          43.265341625,
+          43.265341625
+        ],
+        "totalKn": 86.53068325,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 35.09900839328125,
+        "maxMomentAtMm": 1622.5000000000005,
+        "maximumDeflectionMm": 2.975171653842141,
+        "maxDeflectionAtMm": 1622.5
+      },
+      "ultimate": {
+        "reactionsKn": [
+          59.062585725,
+          59.06258572500001
+        ],
+        "totalKn": 118.12517145000001,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 47.91452266940625,
+        "maxMomentAtMm": 1622.5,
+        "maximumDeflectionMm": 4.061480257678225,
+        "maxDeflectionAtMm": 1622.5
+      },
+      "elasticStressMpa": 81.49045725014241,
+      "elasticYieldRatio": 0.29632893545506334,
+      "deflectionComparatorMm": 9.01388888888889,
+      "deflectionRatio": 0.3300652682228569,
+      "nominalSupportPressureMpa": [
+        1.4062520410714285,
+        1.4062520410714288
+      ],
+      "screen": "within-elastic-screen"
+    },
+    {
+      "floorTributaryMm": 2022.5,
+      "wallCoreMm": 140,
+      "wallLoadedLengthMm": 2815,
+      "roofTributaryMm": 0,
+      "stairPoint": false,
+      "id": "rear-wet",
+      "role": "floor",
+      "a": [
+        2902.5,
+        8852.5
+      ],
+      "b": [
+        2902.5,
+        11667.5
+      ],
+      "supports": [
+        "rear-west wall beside stair landing",
+        "outer-north solid pier between windows"
+      ],
+      "loads": [
+        {
+          "fromMm": 0,
+          "toMm": 2815,
+          "permanentKnM": 10.517,
+          "variableKnM": 4.045,
+          "source": "explicit floor tributary challenge"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 2815,
+          "permanentKnM": 0.7171109999999999,
+          "variableKnM": 0,
+          "source": "section self weight"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 2815,
+          "permanentKnM": 12.896,
+          "variableKnM": 0,
+          "source": "gross upper masonry and finishes; no opening relief"
+        }
+      ],
+      "points": [],
+      "section": {
+        "id": "254x254x73 UC",
+        "depthMm": 254.1,
+        "widthMm": 254.6,
+        "massKgM": 73.1,
+        "ixxCm4": 11643
+      },
+      "spanMm": 2815,
+      "service": {
+        "reactionsKn": [
+          39.65646873249999,
+          39.6564687325
+        ],
+        "totalKn": 79.31293746499999,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 1.4901161193847656e-14,
+        "maximumMomentKnm": 27.908239870496853,
+        "maxMomentAtMm": 1407.4999999999995,
+        "maximumDeflectionMm": 0.9421798679693603,
+        "maxDeflectionAtMm": 1407.5
+      },
+      "ultimate": {
+        "reactionsKn": [
+          54.39023341387501,
+          54.390233413874995
+        ],
+        "totalKn": 108.78046682775,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 38.27712676501454,
+        "maxMomentAtMm": 1407.5,
+        "maximumDeflectionMm": 1.292232631260733,
+        "maxDeflectionAtMm": 1407.5
+      },
+      "elasticStressMpa": 41.7685214763815,
+      "elasticYieldRatio": 0.15188553264138727,
+      "deflectionComparatorMm": 7.819444444444445,
+      "deflectionRatio": 0.12049191917192528,
+      "nominalSupportPressureMpa": [
+        1.2950055574732144,
+        1.2950055574732142
+      ],
+      "screen": "within-elastic-screen"
+    },
+    {
+      "floorTributaryMm": 717.5,
+      "wallCoreMm": 0,
+      "wallLoadedLengthMm": 0,
+      "roofTributaryMm": 0,
+      "stairPoint": true,
+      "id": "stair-east",
+      "role": "edge",
+      "a": [
+        2942.5,
+        2650
+      ],
+      "b": [
+        2942.5,
+        8852.5
+      ],
+      "supports": [
+        "study-cloak-north solid wall",
+        "rear-west wall beside rear-wet bearing"
+      ],
+      "loads": [
+        {
+          "fromMm": 0,
+          "toMm": 6202.5,
+          "permanentKnM": 3.731,
+          "variableKnM": 1.435,
+          "source": "explicit floor tributary challenge"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 6202.5,
+          "permanentKnM": 0.52974,
+          "variableKnM": 0,
+          "source": "section self weight"
+        }
+      ],
+      "points": [
+        {
+          "atMm": 3101.25,
+          "permanentKn": 15,
+          "variableKn": 5,
+          "source": "authored midspan stair action challenge; stair design not derived"
+        }
+      ],
+      "section": {
+        "id": "305x165x54 UB",
+        "depthMm": 310.4,
+        "widthMm": 166.9,
+        "massKgM": 54,
+        "ixxCm4": 11696
+      },
+      "spanMm": 6202.5,
+      "service": {
+        "reactionsKn": [
+          27.663913674999996,
+          27.663913675000003
+        ],
+        "totalKn": 55.32782735,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 58.402606142296854,
+        "maxMomentAtMm": 3101.25,
+        "maximumDeflectionMm": 8.516811683222686,
+        "maxDeflectionAtMm": 3101.25
+      },
+      "ultimate": {
+        "reactionsKn": [
+          38.38882752375001,
+          38.388827523749995
+        ],
+        "totalKn": 76.7776550475,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": -2.980232238769531e-14,
+        "maximumMomentKnm": 81.04159755401487,
+        "maxMomentAtMm": 3101.25,
+        "maximumDeflectionMm": 11.81837845306095,
+        "maxDeflectionAtMm": 3101.25
+      },
+      "elasticStressMpa": 107.53809798549169,
+      "elasticYieldRatio": 0.3910476290381516,
+      "deflectionComparatorMm": 17.229166666666668,
+      "deflectionRatio": 0.49432522466105067,
+      "nominalSupportPressureMpa": [
+        0.9140197029464289,
+        0.9140197029464285
+      ],
+      "screen": "within-elastic-screen"
+    },
+    {
+      "floorTributaryMm": 2000,
+      "wallCoreMm": 140,
+      "wallLoadedLengthMm": 2317.5,
+      "roofTributaryMm": 0,
+      "stairPoint": false,
+      "id": "entrance-west",
+      "role": "edge",
+      "a": [
+        4800,
+        332.5
+      ],
+      "b": [
+        4800,
+        3917.5
+      ],
+      "supports": [
+        "outer-south pier beside entrance",
+        "court-south pier beside door"
+      ],
+      "loads": [
+        {
+          "fromMm": 0,
+          "toMm": 3585,
+          "permanentKnM": 10.4,
+          "variableKnM": 4,
+          "source": "explicit floor tributary challenge"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 3585,
+          "permanentKnM": 0.52974,
+          "variableKnM": 0,
+          "source": "section self weight"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 2317.5,
+          "permanentKnM": 12.896,
+          "variableKnM": 0,
+          "source": "gross upper masonry and finishes; no opening relief"
+        }
+      ],
+      "points": [],
+      "section": {
+        "id": "305x165x54 UB",
+        "depthMm": 310.4,
+        "widthMm": 166.9,
+        "massKgM": 54,
+        "ixxCm4": 11696
+      },
+      "spanMm": 3585,
+      "service": {
+        "reactionsKn": [
+          46.988078364225935,
+          36.42151953577406
+        ],
+        "totalKn": 83.4095979,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 39.6733295927195,
+        "maxMomentAtMm": 1688.6551216329176,
+        "maximumDeflectionMm": 2.1267489188838975,
+        "maxDeflectionAtMm": 1763.1652225405523
+      },
+      "ultimate": {
+        "reactionsKn": [
+          64.50940579170503,
+          50.24455137329497
+        ],
+        "totalKn": 114.753957165,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 54.519727557999474,
+        "maxMomentAtMm": 1690.2876995655083,
+        "maximumDeflectionMm": 2.9236344482716423,
+        "maxDeflectionAtMm": 1763.6847922107822
+      },
+      "elasticStressMpa": 72.34491892101161,
+      "elasticYieldRatio": 0.26307243244004225,
+      "deflectionComparatorMm": 9.958333333333334,
+      "deflectionRatio": 0.21356474499252526,
+      "nominalSupportPressureMpa": [
+        1.5359382331358342,
+        1.1962988422213088
+      ],
+      "screen": "within-elastic-screen"
+    },
+    {
+      "floorTributaryMm": 2000,
+      "wallCoreMm": 140,
+      "wallLoadedLengthMm": 2317.5,
+      "roofTributaryMm": 0,
+      "stairPoint": false,
+      "id": "entrance-east",
+      "role": "edge",
+      "a": [
+        7200,
+        332.5
+      ],
+      "b": [
+        7200,
+        3917.5
+      ],
+      "supports": [
+        "outer-south pier beside entrance",
+        "court-south pier beside door"
+      ],
+      "loads": [
+        {
+          "fromMm": 0,
+          "toMm": 3585,
+          "permanentKnM": 10.4,
+          "variableKnM": 4,
+          "source": "explicit floor tributary challenge"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 3585,
+          "permanentKnM": 0.52974,
+          "variableKnM": 0,
+          "source": "section self weight"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 2317.5,
+          "permanentKnM": 12.896,
+          "variableKnM": 0,
+          "source": "gross upper masonry and finishes; no opening relief"
+        }
+      ],
+      "points": [],
+      "section": {
+        "id": "305x165x54 UB",
+        "depthMm": 310.4,
+        "widthMm": 166.9,
+        "massKgM": 54,
+        "ixxCm4": 11696
+      },
+      "spanMm": 3585,
+      "service": {
+        "reactionsKn": [
+          46.988078364225935,
+          36.42151953577406
+        ],
+        "totalKn": 83.4095979,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 39.6733295927195,
+        "maxMomentAtMm": 1688.6551216329176,
+        "maximumDeflectionMm": 2.1267489188838975,
+        "maxDeflectionAtMm": 1763.1652225405523
+      },
+      "ultimate": {
+        "reactionsKn": [
+          64.50940579170503,
+          50.24455137329497
+        ],
+        "totalKn": 114.753957165,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 54.519727557999474,
+        "maxMomentAtMm": 1690.2876995655083,
+        "maximumDeflectionMm": 2.9236344482716423,
+        "maxDeflectionAtMm": 1763.6847922107822
+      },
+      "elasticStressMpa": 72.34491892101161,
+      "elasticYieldRatio": 0.26307243244004225,
+      "deflectionComparatorMm": 9.958333333333334,
+      "deflectionRatio": 0.21356474499252526,
+      "nominalSupportPressureMpa": [
+        1.5359382331358342,
+        1.1962988422213088
+      ],
+      "screen": "within-elastic-screen"
+    },
+    {
+      "floorTributaryMm": 2000,
+      "wallCoreMm": 140,
+      "wallLoadedLengthMm": 2367.5,
+      "roofTributaryMm": 0,
+      "stairPoint": false,
+      "id": "bath-north",
+      "role": "floor",
+      "a": [
+        9300,
+        6500
+      ],
+      "b": [
+        11667.5,
+        6500
+      ],
+      "supports": [
+        "service-spine solid wall",
+        "outer-east solid pier between openings"
+      ],
+      "loads": [
+        {
+          "fromMm": 0,
+          "toMm": 2367.5,
+          "permanentKnM": 10.4,
+          "variableKnM": 4,
+          "source": "explicit floor tributary challenge"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 2367.5,
+          "permanentKnM": 0.7171109999999999,
+          "variableKnM": 0,
+          "source": "section self weight"
+        },
+        {
+          "fromMm": 0,
+          "toMm": 2367.5,
+          "permanentKnM": 12.896,
+          "variableKnM": 0,
+          "source": "gross upper masonry and finishes; no opening relief"
+        }
+      ],
+      "points": [],
+      "section": {
+        "id": "254x254x73 UC",
+        "depthMm": 254.1,
+        "widthMm": 254.6,
+        "massKgM": 73.1,
+        "ixxCm4": 11643
+      },
+      "spanMm": 2367.5,
+      "service": {
+        "reactionsKn": [
+          33.16052014625001,
+          33.16052014625001
+        ],
+        "totalKn": 66.32104029250002,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 1.4901161193847656e-14,
+        "maximumMomentKnm": 19.626882861561725,
+        "maxMomentAtMm": 1183.75,
+        "maximumDeflectionMm": 0.46867941655800394,
+        "maxDeflectionAtMm": 1183.7499999999995
+      },
+      "ultimate": {
+        "reactionsKn": [
+          45.476952197437484,
+          45.476952197437505
+        ],
+        "totalKn": 90.953904394875,
+        "equilibriumResidualKn": 0,
+        "momentResidualKnm": 0,
+        "maximumMomentKnm": 26.916671081858308,
+        "maxMomentAtMm": 1183.7499999999995,
+        "maximumDeflectionMm": 0.6427556422133374,
+        "maxDeflectionAtMm": 1183.7499999999995
+      },
+      "elasticStressMpa": 29.371837678863677,
+      "elasticYieldRatio": 0.10680668246859519,
+      "deflectionComparatorMm": 6.576388888888889,
+      "deflectionRatio": 0.07126698625591611,
+      "nominalSupportPressureMpa": [
+        1.0827845761294639,
+        1.0827845761294643
+      ],
+      "screen": "within-elastic-screen"
+    }
+  ],
+  "section": {
+    "availableOrdinaryFloorZoneMm": 750,
+    "requiredOrdinaryFloorZoneMm": 715.4,
+    "ordinaryMarginMm": 34.60000000000002,
+    "plankEndTopMm": 3725,
+    "plankEndBottomMm": 3525,
+    "topBearingSteelTopMm": 3515,
+    "deepestSteelBottomMm": 3204.6,
+    "portalSteelTopMm": 3725,
+    "portalSteelBottomMm": 3515.4,
+    "portalInsulatedSoffitMm": 3235.4,
+    "archClearanceMm": 170.4000000000001,
+    "ordinaryPlankGuideCamberMm": 11.258333333333333,
+    "guideCamberIsNotAnAcceptanceTolerance": true
+  },
+  "vertical": {
+    "deltaMm": 400,
+    "firstFflMm": 3850,
+    "atticDatumMm": 7300,
+    "eavesMm": 7500,
+    "ridgeMm": 8490.903773579372,
+    "groundCeilingMm": 3100,
+    "upperHeightRetained": true
+  },
+  "stair": {
+    "risers": 20,
+    "goingMm": 300,
+    "footprintXYWHMm": [
+      417.5,
+      4432.5,
+      2400,
+      4335
+    ],
+    "finishedFlightWidthBeforeRailMm": 1094,
+    "riseMm": 192.5,
+    "pitchDegrees": 32.68693654101055,
+    "twoRiseGoingMm": 685,
+    "privateStairDimensionScreen": true,
+    "finishedTrimmerClearanceMm": 16.550000000000182,
+    "headroomAndStructureAccepted": false
+  },
+  "bearing": {
+    "requiredOpposedSeatMm": 220,
+    "availableFloorFlangeMm": 254.6,
+    "spareWidthMm": 34.599999999999994,
+    "nominalSupportAreaMm2": 42000,
+    "nominalBearingIsNotVerifiedMinimum": true
+  },
+  "entrance": {
+    "referenceWidthMm": 2230,
+    "revisedEdgesMm": [
+      4908.45,
+      7091.55
+    ],
+    "revisedWidthMm": 2183.1000000000004,
+    "widthLossMm": 46.899999999999636
+  },
+  "rearCommonBearing": {
+    "memberIds": [
+      "rear-wet",
+      "stair-east"
+    ],
+    "combinedUltimateReactionKn": 92.779060937625,
+    "reactionCentreXMm": 2919.050642843673,
+    "padXMm": [
+      2769.050642843673,
+      3069.050642843673
+    ],
+    "steelFootprintXMm": [
+      2775.2,
+      3029.8
+    ],
+    "sourceWallCoreYMm": [
+      8782.5,
+      8922.5
+    ],
+    "nominalPressureMpa": 2.209025260419643,
+    "planFootprintScreen": true,
+    "rawStairEndToWallCoreMm": 15,
+    "receivingCapacityAndStairLandingAccepted": false
+  },
+  "floorCoverage": {
+    "inheritedFieldAreaM2": 90.57854999999998,
+    "bridgeAreaM2": 2.447425,
+    "residualAreaM2": 7.634225,
+    "grossSourceFloorAreaM2": 100.66019999999999,
+    "areaResidualM2": 1.0658141036401503e-14,
+    "precastPanelizationComplete": false
+  },
+  "diagnostics": [
+    {
+      "code": "REAR_COMMON_BEARING_RESISTANCE_REQUIRED",
+      "message": "The wet-wall beam and stair trimmer meet at one receiving wall. Their combined reaction and eccentricity must be designed together; separate nominal pad pressures are not independent capacities."
+    },
+    {
+      "code": "PANEL_LAYOUT_AND_CLOSURES_REQUIRED",
+      "message": "Inherited RC field rectangles are geometric span references, not a precast unit schedule. Bridge, residual strips, wall heads, cuts and actual bearing edges remain explicit design work."
+    },
+    {
+      "code": "CONNECTION_AND_STABILITY_UNQUALIFIED",
+      "message": "Section classification, lateral torsional buckling, erection torsion/restraint, connections, concentrated bearing, diaphragm/ties, fire and installed materials have not been qualified."
+    },
+    {
+      "code": "SOURCE_HOUSE_NOT_ADOPTED",
+      "message": "This changed floor and upper datum do not adopt or regenerate the occupied house, foundation reactions, roof, stair headroom, openings or services."
+    }
+  ],
+  "evidence": {
+    "scope": "geometry, independent simple-beam elastic screens and explicit architectural trade only",
+    "completeLoadPath": false,
+    "structuralAcceptance": false,
+    "ownerAcceptance": false
+  },
+  "source": {
+    "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+    "bindingDigest": "da07b7dfee959b101b37e9b3ef841f3d08fd0f7ead90273a5e5fa91ed2cbebcf",
+    "caseDigest": "f9c8a26180945bebe7c488ec367e7723d484d30910b490319b930f6ca53a9737",
+    "occupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+    "files": {
+      "project/str/studies/steel-precast-inputs.json": "a1db1a6b652d6b8c686aaef7e9ab3a063a786fb9",
+      "project/str/studies/steel-precast-sources.json": "c81926e081a7f0856b4e91bded52ac7da1d69629",
+      "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b",
+      "project/str/studies/physical-slab-join.json": "79b28df58f00fcf6e31a97cd376efe15a6c2566f",
+      "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+      "compiler/reference-house/current-design/steel-precast-kernel.ts": "5b13c7dee282433f0b8475d2c7312ab24d5ab1bc",
+      "compiler/reference-house/current-design/structural-steel-precast.ts": "3587daa8647cde61a99efcabf86c21de197b0ff1",
+      "compiler/reference-house/current-design/steel-precast-view.ts": "ae28093e61135084d373a794db6f66c1eedad3f0"
+    }
+  },
+  "adverseCases": [
+    {
+      "caseId": "retained-350-floor-zone",
+      "section": {
+        "availableOrdinaryFloorZoneMm": 350,
+        "requiredOrdinaryFloorZoneMm": 715.4,
+        "ordinaryMarginMm": -365.4,
+        "plankEndTopMm": 3325,
+        "plankEndBottomMm": 3125,
+        "topBearingSteelTopMm": 3115,
+        "deepestSteelBottomMm": 2804.6,
+        "portalSteelTopMm": 3325,
+        "portalSteelBottomMm": 3115.4,
+        "portalInsulatedSoffitMm": 2835.4,
+        "archClearanceMm": -229.5999999999999,
+        "ordinaryPlankGuideCamberMm": 11.258333333333333,
+        "guideCamberIsNotAnAcceptanceTolerance": true
+      },
+      "vertical": {
+        "deltaMm": 0,
+        "firstFflMm": 3450,
+        "atticDatumMm": 6900,
+        "eavesMm": 7100,
+        "ridgeMm": 8090.903773579372,
+        "groundCeilingMm": 3100,
+        "upperHeightRetained": true
+      },
+      "stair": {
+        "risers": 20,
+        "goingMm": 300,
+        "footprintXYWHMm": [
+          417.5,
+          4432.5,
+          2400,
+          4335
+        ],
+        "finishedFlightWidthBeforeRailMm": 1094,
+        "riseMm": 172.5,
+        "pitchDegrees": 29.89890183861456,
+        "twoRiseGoingMm": 645,
+        "privateStairDimensionScreen": true,
+        "finishedTrimmerClearanceMm": 16.550000000000182,
+        "headroomAndStructureAccepted": false
+      },
+      "beamScreens": [
+        {
+          "id": "portal-court",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.29632893545506334,
+          "deflectionRatio": 0.3300652682228569
+        },
+        {
+          "id": "portal-garden",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.29632893545506334,
+          "deflectionRatio": 0.3300652682228569
+        },
+        {
+          "id": "rear-wet",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.15188553264138727,
+          "deflectionRatio": 0.12049191917192528
+        },
+        {
+          "id": "stair-east",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.3910476290381516,
+          "deflectionRatio": 0.49432522466105067
+        },
+        {
+          "id": "entrance-west",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.26307243244004225,
+          "deflectionRatio": 0.21356474499252526
+        },
+        {
+          "id": "entrance-east",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.26307243244004225,
+          "deflectionRatio": 0.21356474499252526
+        },
+        {
+          "id": "bath-north",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.10680668246859519,
+          "deflectionRatio": 0.07126698625591611
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "FLOOR_ZONE_TOO_SHALLOW",
+          "message": "The ordinary top-bearing beam, precast and explicit allowances do not fit."
+        },
+        {
+          "code": "PORTAL_THERMAL_ARCH_CLASH",
+          "message": "The insulated beam envelope conflicts with the retained arch or its clearance allowance."
+        },
+        {
+          "code": "REAR_COMMON_BEARING_RESISTANCE_REQUIRED",
+          "message": "The wet-wall beam and stair trimmer meet at one receiving wall. Their combined reaction and eccentricity must be designed together; separate nominal pad pressures are not independent capacities."
+        },
+        {
+          "code": "PANEL_LAYOUT_AND_CLOSURES_REQUIRED",
+          "message": "Inherited RC field rectangles are geometric span references, not a precast unit schedule. Bridge, residual strips, wall heads, cuts and actual bearing edges remain explicit design work."
+        },
+        {
+          "code": "CONNECTION_AND_STABILITY_UNQUALIFIED",
+          "message": "Section classification, lateral torsional buckling, erection torsion/restraint, connections, concentrated bearing, diaphragm/ties, fire and installed materials have not been qualified."
+        },
+        {
+          "code": "SOURCE_HOUSE_NOT_ADOPTED",
+          "message": "This changed floor and upper datum do not adopt or regenerate the occupied house, foundation reactions, roof, stair headroom, openings or services."
+        }
+      ],
+      "source": {
+        "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+        "bindingDigest": "da07b7dfee959b101b37e9b3ef841f3d08fd0f7ead90273a5e5fa91ed2cbebcf",
+        "caseDigest": "3561a793b8653df9bbe4df51841c6ae0016ab7822e3a5fd1792262bffb718082",
+        "occupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+        "files": {
+          "project/str/studies/steel-precast-inputs.json": "a1db1a6b652d6b8c686aaef7e9ab3a063a786fb9",
+          "project/str/studies/steel-precast-sources.json": "c81926e081a7f0856b4e91bded52ac7da1d69629",
+          "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b",
+          "project/str/studies/physical-slab-join.json": "79b28df58f00fcf6e31a97cd376efe15a6c2566f",
+          "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+          "compiler/reference-house/current-design/steel-precast-kernel.ts": "5b13c7dee282433f0b8475d2c7312ab24d5ab1bc",
+          "compiler/reference-house/current-design/structural-steel-precast.ts": "3587daa8647cde61a99efcabf86c21de197b0ff1",
+          "compiler/reference-house/current-design/steel-precast-view.ts": "ae28093e61135084d373a794db6f66c1eedad3f0"
+        }
+      }
+    },
+    {
+      "caseId": "portal-below-planks",
+      "section": {
+        "availableOrdinaryFloorZoneMm": 750,
+        "requiredOrdinaryFloorZoneMm": 715.4,
+        "ordinaryMarginMm": 34.60000000000002,
+        "plankEndTopMm": 3725,
+        "plankEndBottomMm": 3525,
+        "topBearingSteelTopMm": 3515,
+        "deepestSteelBottomMm": 3204.6,
+        "portalSteelTopMm": 3515,
+        "portalSteelBottomMm": 3305.4,
+        "portalInsulatedSoffitMm": 3025.4,
+        "archClearanceMm": -39.59999999999991,
+        "ordinaryPlankGuideCamberMm": 11.258333333333333,
+        "guideCamberIsNotAnAcceptanceTolerance": true
+      },
+      "vertical": {
+        "deltaMm": 400,
+        "firstFflMm": 3850,
+        "atticDatumMm": 7300,
+        "eavesMm": 7500,
+        "ridgeMm": 8490.903773579372,
+        "groundCeilingMm": 3100,
+        "upperHeightRetained": true
+      },
+      "stair": {
+        "risers": 20,
+        "goingMm": 300,
+        "footprintXYWHMm": [
+          417.5,
+          4432.5,
+          2400,
+          4335
+        ],
+        "finishedFlightWidthBeforeRailMm": 1094,
+        "riseMm": 192.5,
+        "pitchDegrees": 32.68693654101055,
+        "twoRiseGoingMm": 685,
+        "privateStairDimensionScreen": true,
+        "finishedTrimmerClearanceMm": 16.550000000000182,
+        "headroomAndStructureAccepted": false
+      },
+      "beamScreens": [
+        {
+          "id": "portal-court",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.29632893545506334,
+          "deflectionRatio": 0.3300652682228569
+        },
+        {
+          "id": "portal-garden",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.29632893545506334,
+          "deflectionRatio": 0.3300652682228569
+        },
+        {
+          "id": "rear-wet",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.15188553264138727,
+          "deflectionRatio": 0.12049191917192528
+        },
+        {
+          "id": "stair-east",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.3910476290381516,
+          "deflectionRatio": 0.49432522466105067
+        },
+        {
+          "id": "entrance-west",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.26307243244004225,
+          "deflectionRatio": 0.21356474499252526
+        },
+        {
+          "id": "entrance-east",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.26307243244004225,
+          "deflectionRatio": 0.21356474499252526
+        },
+        {
+          "id": "bath-north",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.10680668246859519,
+          "deflectionRatio": 0.07126698625591611
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "PORTAL_THERMAL_ARCH_CLASH",
+          "message": "The insulated beam envelope conflicts with the retained arch or its clearance allowance."
+        },
+        {
+          "code": "REAR_COMMON_BEARING_RESISTANCE_REQUIRED",
+          "message": "The wet-wall beam and stair trimmer meet at one receiving wall. Their combined reaction and eccentricity must be designed together; separate nominal pad pressures are not independent capacities."
+        },
+        {
+          "code": "PANEL_LAYOUT_AND_CLOSURES_REQUIRED",
+          "message": "Inherited RC field rectangles are geometric span references, not a precast unit schedule. Bridge, residual strips, wall heads, cuts and actual bearing edges remain explicit design work."
+        },
+        {
+          "code": "CONNECTION_AND_STABILITY_UNQUALIFIED",
+          "message": "Section classification, lateral torsional buckling, erection torsion/restraint, connections, concentrated bearing, diaphragm/ties, fire and installed materials have not been qualified."
+        },
+        {
+          "code": "SOURCE_HOUSE_NOT_ADOPTED",
+          "message": "This changed floor and upper datum do not adopt or regenerate the occupied house, foundation reactions, roof, stair headroom, openings or services."
+        }
+      ],
+      "source": {
+        "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+        "bindingDigest": "da07b7dfee959b101b37e9b3ef841f3d08fd0f7ead90273a5e5fa91ed2cbebcf",
+        "caseDigest": "24bc702665a1b05d7b70b9935a9cda11b58837e359b190bf1691e5a5e2d84a58",
+        "occupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+        "files": {
+          "project/str/studies/steel-precast-inputs.json": "a1db1a6b652d6b8c686aaef7e9ab3a063a786fb9",
+          "project/str/studies/steel-precast-sources.json": "c81926e081a7f0856b4e91bded52ac7da1d69629",
+          "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b",
+          "project/str/studies/physical-slab-join.json": "79b28df58f00fcf6e31a97cd376efe15a6c2566f",
+          "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+          "compiler/reference-house/current-design/steel-precast-kernel.ts": "5b13c7dee282433f0b8475d2c7312ab24d5ab1bc",
+          "compiler/reference-house/current-design/structural-steel-precast.ts": "3587daa8647cde61a99efcabf86c21de197b0ff1",
+          "compiler/reference-house/current-design/steel-precast-view.ts": "ae28093e61135084d373a794db6f66c1eedad3f0"
+        }
+      }
+    },
+    {
+      "caseId": "adverse-floor-action",
+      "section": {
+        "availableOrdinaryFloorZoneMm": 750,
+        "requiredOrdinaryFloorZoneMm": 715.4,
+        "ordinaryMarginMm": 34.60000000000002,
+        "plankEndTopMm": 3725,
+        "plankEndBottomMm": 3525,
+        "topBearingSteelTopMm": 3515,
+        "deepestSteelBottomMm": 3204.6,
+        "portalSteelTopMm": 3725,
+        "portalSteelBottomMm": 3515.4,
+        "portalInsulatedSoffitMm": 3235.4,
+        "archClearanceMm": 170.4000000000001,
+        "ordinaryPlankGuideCamberMm": 11.258333333333333,
+        "guideCamberIsNotAnAcceptanceTolerance": true
+      },
+      "vertical": {
+        "deltaMm": 400,
+        "firstFflMm": 3850,
+        "atticDatumMm": 7300,
+        "eavesMm": 7500,
+        "ridgeMm": 8490.903773579372,
+        "groundCeilingMm": 3100,
+        "upperHeightRetained": true
+      },
+      "stair": {
+        "risers": 20,
+        "goingMm": 300,
+        "footprintXYWHMm": [
+          417.5,
+          4432.5,
+          2400,
+          4335
+        ],
+        "finishedFlightWidthBeforeRailMm": 1094,
+        "riseMm": 192.5,
+        "pitchDegrees": 32.68693654101055,
+        "twoRiseGoingMm": 685,
+        "privateStairDimensionScreen": true,
+        "finishedTrimmerClearanceMm": 16.550000000000182,
+        "headroomAndStructureAccepted": false
+      },
+      "beamScreens": [
+        {
+          "id": "portal-court",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.29632893545506334,
+          "deflectionRatio": 0.3300652682228569
+        },
+        {
+          "id": "portal-garden",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.29632893545506334,
+          "deflectionRatio": 0.3300652682228569
+        },
+        {
+          "id": "rear-wet",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.7242397881586514,
+          "deflectionRatio": 0.5356581810975841
+        },
+        {
+          "id": "stair-east",
+          "screen": "fails-elastic-screen",
+          "elasticYieldRatio": 1.5897727984130743,
+          "deflectionRatio": 2.062693641249624
+        },
+        {
+          "id": "entrance-west",
+          "screen": "fails-elastic-screen",
+          "elasticYieldRatio": 1.3785903197705802,
+          "deflectionRatio": 1.0576665604731066
+        },
+        {
+          "id": "entrance-east",
+          "screen": "fails-elastic-screen",
+          "elasticYieldRatio": 1.3785903197705802,
+          "deflectionRatio": 1.0576665604731066
+        },
+        {
+          "id": "bath-north",
+          "screen": "within-elastic-screen",
+          "elasticYieldRatio": 0.5071472113271368,
+          "deflectionRatio": 0.3154965786267154
+        }
+      ],
+      "diagnostics": [
+        {
+          "code": "BEAM_ELASTIC_SCREEN_FAIL",
+          "message": "stair-east"
+        },
+        {
+          "code": "BEAM_ELASTIC_SCREEN_FAIL",
+          "message": "entrance-west"
+        },
+        {
+          "code": "BEAM_ELASTIC_SCREEN_FAIL",
+          "message": "entrance-east"
+        },
+        {
+          "code": "REAR_COMMON_BEARING_RESISTANCE_REQUIRED",
+          "message": "The wet-wall beam and stair trimmer meet at one receiving wall. Their combined reaction and eccentricity must be designed together; separate nominal pad pressures are not independent capacities."
+        },
+        {
+          "code": "PANEL_LAYOUT_AND_CLOSURES_REQUIRED",
+          "message": "Inherited RC field rectangles are geometric span references, not a precast unit schedule. Bridge, residual strips, wall heads, cuts and actual bearing edges remain explicit design work."
+        },
+        {
+          "code": "CONNECTION_AND_STABILITY_UNQUALIFIED",
+          "message": "Section classification, lateral torsional buckling, erection torsion/restraint, connections, concentrated bearing, diaphragm/ties, fire and installed materials have not been qualified."
+        },
+        {
+          "code": "SOURCE_HOUSE_NOT_ADOPTED",
+          "message": "This changed floor and upper datum do not adopt or regenerate the occupied house, foundation reactions, roof, stair headroom, openings or services."
+        }
+      ],
+      "source": {
+        "planDigest": "073ac3949a842baee9f81c2b0118df3a1872429013d800d9318477931c24488e",
+        "bindingDigest": "da07b7dfee959b101b37e9b3ef841f3d08fd0f7ead90273a5e5fa91ed2cbebcf",
+        "caseDigest": "ec01b0cbb35ed5e1238b439965053f79c545786cccbc9fc1a7f90d86f612efa6",
+        "occupiedBindingDigest": "06a32088f84f025058dc0b98dcde08c319ce4dd22d0a3e19f27e9f95066d350a",
+        "files": {
+          "project/str/studies/steel-precast-inputs.json": "a1db1a6b652d6b8c686aaef7e9ab3a063a786fb9",
+          "project/str/studies/steel-precast-sources.json": "c81926e081a7f0856b4e91bded52ac7da1d69629",
+          "project/str/studies/open-loggia-support.json": "20dec4384d09a0d02075fdd34a247e775532763b",
+          "project/str/studies/physical-slab-join.json": "79b28df58f00fcf6e31a97cd376efe15a6c2566f",
+          "compiler/reference-house/georgian/layout-revision.ts": "af955c7da2e2469fd24598f98db6fc942a119ed3",
+          "compiler/reference-house/current-design/steel-precast-kernel.ts": "5b13c7dee282433f0b8475d2c7312ab24d5ab1bc",
+          "compiler/reference-house/current-design/structural-steel-precast.ts": "3587daa8647cde61a99efcabf86c21de197b0ff1",
+          "compiler/reference-house/current-design/steel-precast-view.ts": "ae28093e61135084d373a794db6f66c1eedad3f0"
+        }
+      }
+    }
+  ],
+  "controls": {
+    "fixedLoadBeamResultsUnchangedByDatum": true,
+    "floorCoverageUnchangedByPortalPlacement": true
+  }
+}

@@ -1,5 +1,13 @@
 # Floor and portal reconciliation
 
+## Current preferred development — 28 November 2026
+
+**Develop ordinary steel with precast floor units, allowing a 750 mm intermediate floor zone.** The [source-bound comparison](steel-precast-simplification.md) now locates seven conventional members, recomputes their gravity/elastic screens, prices the 400 mm first-floor rise and 46.9 mm entrance-void reduction, and checks the insulated portal envelope. Parallel portal wall beams sit beside the precast units; stacking them below fails the arch/insulation clearance. The old 350 mm zone fails the ordinary floor stack.
+
+This supersedes further optimisation of the monolithic floor/portal joint as the **first development route**. It does not adopt a whole house, qualify the members or retire their negative evidence. The panel/closure layout, combined rear receiving bearing, actual wall/pier supports, diaphragm/ties, erection restraints and complete signed roof/foundation path remain explicit internal work. The changed elevations, stair headroom and services must join the occupied house before selection. STR-FLOOR-PORTAL stays open; the existing RC and 52-head results remain labelled controls for their original structure.
+
+The dated instructions below explain earlier investigations. Where they call for the next local RC joint repair, the current ordinary steel/precast route above takes precedence.
+
 
 ## Assembled load-path continuation —26 November2026
 

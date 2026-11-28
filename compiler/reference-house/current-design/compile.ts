@@ -64,6 +64,14 @@ export function prepareCurrentDesignCompile(input: unknown) {
   }
   return {
     source,
+    readSteelPrecastCase: async () => {
+      const { readSteelPrecastCase } = await import('./structural-steel-precast.js')
+      return readSteelPrecastCase(resolved)
+    },
+    steelPrecastCase: async (input: unknown) => {
+      const { runSteelPrecastCase } = await import('./structural-steel-precast.js')
+      return runSteelPrecastCase(resolved, input)
+    },
     plans: () => compileResolvedPlans(resolved, source),
     structuralBridge: async (trialAxes?: readonly [number, number]) => {
       const { runStructuralBridge } = await import('./structural.js')

@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { compileCurrentDesignBundle, prepareCurrentDesignCompile } from '../compiler/reference-house/current-design/compile.js'
 import { readGeorgianDesignSnapshot } from '../compiler/reference-house/current-design/georgian-source.js'
-import { compileEngineeringDocument, readEngineeringDocument, readRetainedInletComparisonDocument, readStudyLightingDocument } from '../compiler/reference-house/current-design/engineering-document.js'
+import { compileEngineeringDocument, readEngineeringDocument, readRetainedInletComparisonDocument, readStudyLightingDocument, readSteelPrecastDocument } from '../compiler/reference-house/current-design/engineering-document.js'
 
 type Compile = ReturnType<typeof prepareCurrentDesignCompile>
 type TrialMode = {
@@ -11,6 +11,10 @@ type TrialMode = {
   readonly run: (compile: Compile, value: unknown) => Promise<unknown>
 }
 const trialModes: Readonly<Record<string, TrialMode>> = {
+  '--steel-precast': {
+    schema: 'str-steel-precast-request/1', key: 'comparison', name: 'ordinary steel and precast',
+    run: (compile, value) => compile.steelPrecastCase(value),
+  },
   '--study-room-kit': {
     schema: 'ias-study-room-kit-request/1', key: 'kit', name: 'Study room kit',
     run: (compile, value) => compile.studyRoomKit(value),
@@ -155,6 +159,7 @@ async function runGroundedServiceFloor(input: unknown, readCase: boolean) {
 
 const args = process.argv.slice(2)
 const modes = [
+  '--read-steel-precast', '--read-steel-precast-document',
   '--occupied-services', '--occupied-service-drawings', '--selected-water-event', '--structural-bridge', '--structural-actions',
   '--bundle', '--read-engineering', '--read-study-lighting', '--read-retained-inlet-comparison', '--study-assembly', '--study-linings', '--renewable-openings',
   '--read-service-floor', '--service-floor', '--read-vertical-rc-floor', '--read-masonry-frame', '--read-floor-section', '--read-upper-roof-bearing', '--read-house-vertical-profile',
@@ -184,6 +189,8 @@ try {
       }
       const compile = prepareCurrentDesignCompile(input.design)
       process.stdout.write(JSON.stringify(await compile.renewableOpenings('study' in input ? input.study : undefined)) + '\n')
+    } else if (mode === '--read-steel-precast-document') {
+      process.stdout.write(JSON.stringify(readSteelPrecastDocument(input), null, 2) + '\n')
     } else if (mode === '--read-retained-inlet-comparison') {
       process.stdout.write(JSON.stringify(await readRetainedInletComparisonDocument(input), null, 2) + '\n')
     } else if (mode === '--read-study-lighting') {
@@ -197,7 +204,8 @@ try {
       process.stdout.write(JSON.stringify(bundle) + '\n')
     } else {
       const compile = prepareCurrentDesignCompile(input)
-      if (mode === '--read-distributed-floor') process.stdout.write(JSON.stringify(await compile.readDistributedFloorCase(), null, 2) + '\n')
+      if (mode === '--read-steel-precast') process.stdout.write(JSON.stringify(await compile.readSteelPrecastCase(), null, 2) + '\n')
+      else if (mode === '--read-distributed-floor') process.stdout.write(JSON.stringify(await compile.readDistributedFloorCase(), null, 2) + '\n')
       else if (mode === '--read-joined-rc-floor') process.stdout.write(JSON.stringify(await compile.readJoinedRcFloorCase(), null, 2) + '\n')
       else if (mode === '--read-masonry-frame') process.stdout.write(JSON.stringify(await compile.readMasonryFrameCase(), null, 2) + '\n')
       else if (mode === '--read-floor-section') process.stdout.write(JSON.stringify(await compile.readFloorSectionCase(), null, 2) + '\n')

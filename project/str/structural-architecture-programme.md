@@ -121,9 +121,13 @@ gates. No current structural acceptance is inferred from the old complete marker
 receivers and their gravity/lateral connections form one coherent provisional
 house without the unlocated independent sliding interface?
 
-The first comparison should join the floor and jambs monolithically. Compare it
-with a genuinely separated jamb and a located collector bypass; do not cut a
-nominal receiver pocket through continuous concrete and retain the old model.
+**28 November direction:** the [ordinary steel/precast comparison](steel-precast-simplification.md)
+is now the preferred development route under the owner's prefab and simplicity
+priorities. Allow its priced deeper floor zone; locate ordinary units, beams,
+receiving supports and ties before continuing bespoke joint refinements.
+Its seven beam screens and section fit do not close the assembled-path question.
+Preserve the monolithic and genuinely separated comparisons as controls;
+do not cut a nominal receiver pocket through continuous concrete and retain the old model.
 Keep the owner’s paired openings, occupied rooms and direct support preference
 in view. A bypass must charge its full section, eccentricity, reinforcement,
 movement space and projection into the room. A monolithic join must charge its
@@ -134,7 +138,8 @@ Bind the correction to the current SAP-C1 sources and the adverse roof loading
 comparisons in [the ROF recovery](../rof/roof-water-recovery.md). Establish the
 native model’s real coupled degrees of freedom, stiffness/contact assumptions
 and complete force/moment ledger. Recalculate the affected roof/floor collectors,
-all eight portals and all 52 foundation reactions, with signed gravity, wind,
+all affected portals and the complete receiving foundation system (all 52 heads
+if that topology is retained), with signed gravity, wind,
 uplift and guard cases and the relevant cracked-stiffness and movement bounds.
 Include thermal and shrinkage strains and differential support movement among
 the imposed-deformation inputs; a monolithic join cannot be judged on applied

@@ -18,6 +18,8 @@ import { verticalRcFloorStageFields, savedVerticalRcFloorCase } from './structur
 import { masonryFrameStageFields, savedMasonryFrameCase } from './structural-masonry-frame.js'
 import { floorSectionStageFields, savedFloorSectionCase } from './structural-floor-section.js'
 import { upperRoofBearingStageFields, savedUpperRoofBearingCase } from './structural-upper-bearing.js'
+import { steelPrecastDefaultsPath, readSteelPrecastSettings } from './structural-steel-precast.js'
+import { steelPrecastStageFields } from './steel-precast-kernel.js'
 
 const repository = new URL('../../../', import.meta.url)
 const implementationRoots = [
@@ -59,7 +61,7 @@ const additionalImplementationFiles = [
   'project/str/studies/distributed_floor_views.py',
   'project/mat/studies/ring-roof-pitch-case.py',
 ] as const
-const stageKeys = ['structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection', 'groundPocketLoads', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit', 'studyLighting'] as const
+const stageKeys = ['steelPrecast', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection', 'groundPocketLoads', 'retainedComponents', 'groundSection', 'houseVerticalProfile', 'serviceFloor', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope', 'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit', 'studyLighting'] as const
 const sourceDatumStages = ['occupiedServices', 'selectedWaterEvent', 'structuralSuccessor', 'distributedFloor', 'joinedRcFloor', 'verticalRcFloor', 'masonryFrame', 'upperRoofBearing', 'floorSection', 'groundPocketLoads',
   'retainedComponents', 'roofPitch', 'northCollector', 'rearFoulVent', 'inletSillInsert', 'inletFault', 'fixedInlet', 'inletCabinet', 'inletSourceEnvelope',
   'inletRemovals', 'inletCovers', 'inletAssembly', 'studyRoomKit', 'studyLighting'] as const
@@ -119,7 +121,7 @@ function sourceBindings(resolved: CurrentDesignResolution): SourceBindings {
   const paths = [...implementationRoots.flatMap(implementationFiles), ...additionalImplementationFiles].sort()
   return {
     disciplines: Object.fromEntries(resolved.disciplineBindings.map(binding => [binding.id, binding.digest]).sort(([a], [b]) => a.localeCompare(b))),
-    authoredDefaults: Object.fromEntries(['project/ias/studies/crafted-study-handling-plan.json', studyLightingDefaultsPath, studyLightingComponentsPath].map(path => {
+    authoredDefaults: Object.fromEntries(['project/ias/studies/crafted-study-handling-plan.json', studyLightingDefaultsPath, studyLightingComponentsPath, steelPrecastDefaultsPath].map(path => {
       const bytes = readFileSync(new URL(path, repository))
       return [path, createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')]
     })),
@@ -183,6 +185,13 @@ export async function readStudyLightingDocument(design: unknown) {
   return { ...document, stages: { roofPitch: document.stages.roofPitch, studyRoomKit: document.stages.studyRoomKit, studyLighting: lighting } }
 }
 
+/** One conventional structural comparison, with no implicit execution or adoption of the RC alternatives. */
+export function readSteelPrecastDocument(design: unknown) {
+  const { resolved } = acceptedCompile(design)
+  return { schema: 'current-engineering-document/1' as const, design: resolved.design,
+    bindings: sourceBindings(resolved), stages: { steelPrecast: readSteelPrecastSettings() } }
+}
+
 function branchSettings(value: unknown, fields: readonly string[], name: string) {
   if (!Array.isArray(value) || !value.length) throw new TypeError(`Specify at least one ${name} branch`)
   const seen = new Set<unknown>()
@@ -201,6 +210,7 @@ function admitStages(value: unknown): EngineeringStages {
     throw new TypeError('Specify at least one supported engineering stage')
   }
   const stages: EngineeringStages = {
+    ...(Object.hasOwn(value, 'steelPrecast') ? { steelPrecast: settings(value.steelPrecast, steelPrecastStageFields, 'steel/precast') } : {}),
     ...(Object.hasOwn(value, 'structuralSuccessor') ? { structuralSuccessor: settings(value.structuralSuccessor, successorFields, 'structural successor') } : {}),
     ...(Object.hasOwn(value, 'distributedFloor') ? { distributedFloor: settings(value.distributedFloor, distributedFields, 'distributed floor') } : {}),
     ...(Object.hasOwn(value, 'joinedRcFloor') ? { joinedRcFloor: settings(value.joinedRcFloor, joinedRcFloorStageFields, 'joined RC floor') } : {}),
@@ -255,6 +265,7 @@ export async function compileEngineeringDocument(input: unknown) {
     sourceBindingsDigest: sha256SemanticFingerprint(observedBindings),
   }
   const engineering: {
+    steelPrecast?: Awaited<ReturnType<typeof compile.steelPrecastCase>>
     structuralSuccessor?: Awaited<ReturnType<typeof compile.structuralSuccessorCase>>
     distributedFloor?: Awaited<ReturnType<typeof compile.distributedFloorCase>>
     joinedRcFloor?: Awaited<ReturnType<typeof compile.joinedRcFloorCase>>
@@ -282,7 +293,7 @@ export async function compileEngineeringDocument(input: unknown) {
     studyLighting?: Awaited<ReturnType<typeof compile.studyLighting>>
   } = {}
   const manifest: { stage: string; settingsDigest: string; resultDigest: string; controls: readonly string[]; dependsOn: readonly string[];
-    applicability?: { state: 'withheld-for-stage-change' | 'withheld-for-source-correspondence'; controllingStage: 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'masonryFrame' | 'upperRoofBearing' | 'floorSection' | 'inletCabinet' | 'inletSourceEnvelope' | 'stairCorrespondence';
+    applicability?: { state: 'withheld-for-stage-change' | 'withheld-for-source-correspondence'; controllingStage: 'steelPrecast' | 'roofPitch' | 'groundSection' | 'joinedRcFloor' | 'verticalRcFloor' | 'masonryFrame' | 'upperRoofBearing' | 'floorSection' | 'inletCabinet' | 'inletSourceEnvelope' | 'stairCorrespondence';
       additionalControllingStages?: readonly string[]; reason: string } }[] = []
   const coordinationDiagnostics: { code: string; objectId?: string; state: 'uncoordinated-comparisons'; stages: readonly string[]; message: string }[] = []
   const recordResult = (stage: string, settings: unknown, result: unknown, upstream: readonly string[] = []) => {
@@ -297,6 +308,13 @@ export async function compileEngineeringDocument(input: unknown) {
   recordResult('occupiedServices', {}, base.occupiedServices)
   recordResult('selectedWaterEvent', {}, base.selectedWaterEvent)
   if (base.stairCorrespondence) recordResult('stairCorrespondence', {}, base.stairCorrespondence, ['plans', 'occupiedServices'])
+  if (stages.steelPrecast) {
+    const request = await compile.readSteelPrecastCase()
+    engineering.steelPrecast = await compile.steelPrecastCase({ ...request.comparison, settings: stages.steelPrecast })
+    recordResult('steelPrecast', stages.steelPrecast, engineering.steelPrecast, ['occupiedServices', 'bindings.authoredDefaults'])
+    coordinationDiagnostics.push(...engineering.steelPrecast.diagnostics.map(d => ({ ...d,
+      state: 'uncoordinated-comparisons' as const, stages: ['steelPrecast'] })))
+  }
   if (stages.roofPitch) {
     if (!exactKeys(stages.roofPitch, ['pitchDeg'])) throw new TypeError('The saved roof stage requires its authored pitch')
     const request = await compile.readRoofPitchCase()
@@ -643,6 +661,17 @@ export async function compileEngineeringDocument(input: unknown) {
         ...(previous ? { additionalControllingStages: [...new Set([...(previous.additionalControllingStages ?? []), 'stairCorrespondence'])] } : {}),
         reason: [previous?.reason, ...base.stairCorrespondence.diagnostics.map(issue => issue.message)].filter(Boolean).join(' ') }
     }
+  }
+  if (engineering.steelPrecast) {
+    const reason = 'Steel/precast is a separately computed structural and vertical comparison. Returned source plans, roof, stair, services, RC actions and foundation results have not been recomputed for this scheme.'
+    for (const row of manifest.filter(v => v.stage !== 'steelPrecast')) {
+      const previous = row.applicability
+      row.applicability = { state: 'withheld-for-stage-change', controllingStage: 'steelPrecast',
+        ...(previous ? { additionalControllingStages: [...new Set([previous.controllingStage, ...(previous.additionalControllingStages ?? [])])] } : {}),
+        reason: [previous?.reason, reason].filter(Boolean).join(' ') }
+    }
+    coordinationDiagnostics.push({ code: 'STEEL_PRECAST_NOT_JOINED_TO_SOURCE_HOUSE', state: 'uncoordinated-comparisons',
+      stages: ['steelPrecast', ...manifest.filter(v => v.stage !== 'steelPrecast').map(v => v.stage)], message: reason })
   }
   const completedBindings = sourceBindings(resolveCurrentDesign(resolved.design))
   if (stableJsonStringify(completedBindings) !== stableJsonStringify(observedBindings)) {
