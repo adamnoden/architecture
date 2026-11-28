@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T15:40:08.613Z",
-  "expiresAt": "2026-11-28T16:25:08.613Z",
+  "heartbeatAt": "2026-11-28T15:55:50.127Z",
+  "expiresAt": "2026-11-28T16:40:50.127Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "PR #1632 remains at validated local head 71948539865466652718e9ade9840b96b973d55a, tree 03db7952caa31f2b8917380a97a5168eb0dbe5fd. Fifteen exact-head hosted workflows passed; remaining run 46155131568 is in npm run check after native ground/browser, packet and homepage steps passed. Prior accepted run 46136993802 recorded about 58 minutes for that health suite, so the present duration remains within the observed baseline.",
-    "next": "Wait for exact-head full CI, then fresh canonical preflight and expected-head merge. Verify main ancestry/tree, reconcile issue #1103, record the merged bounded comparison and release for handoff.",
-    "blocker": "Full repository-health suite remains active. Complete precast panel/support layout, connections, restraint, receiving masonry and signed whole-house adoption remain subsequent design duties."
+    "evidence": "PR #1632 final head is now 7e4699583014d1efc740975f58c678189c9d599b, tree f05ab18f4edc6859affe978bb0b37f554ae061ea. Prior head 71948539 failed only two exact source-inventory expectations missing the newly registered steel/precast candidate. Both now explicitly require its candidate-interface status; all 12 tests in those files pass. The comparison JSON and both drawings reproduce unchanged. Thirteen of eighteen new exact-head workflows have passed; main validation run is 46162163414.",
+    "next": "Wait for full CI on head 7e469958, then run fresh canonical expected-head preflight and merge PR #1632. Verify main ancestry/tree, reconcile issue #1103, record verified bounded result and release for handoff.",
+    "blocker": "New exact-head hosted checks are running after the two test-inventory corrections. Complete precast unit/support layout, connections, restraint, receiving masonry and joined whole-house adoption remain design work."
   }
 }
