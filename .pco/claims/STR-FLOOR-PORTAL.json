@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T14:26:37.254Z",
-  "expiresAt": "2026-11-28T15:11:37.254Z",
+  "heartbeatAt": "2026-11-28T14:41:29.408Z",
+  "expiresAt": "2026-11-28T15:26:29.408Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "PR1632 now publishes head305a640ec9f661f9a3ad977a95ed43894bec4569, treee339754b7d3674791baa43620ede162351fa99b5. Thirteen ordinary steel beams, actual precast stair gravity and transfer network, two opening lintels, combined rear and eccentric south bearings are computed. Selected700mm floor zone raises first floor350mm. Typecheck,16 targeted/source-coverage tests, output reproduction and repository validation pass; drawings inspected. Correct Work/Lease PR declarations are present.",
-    "next": "Complete exact-head hosted validation and fresh merge preflight, integrate the verified comparison, reconcile issue1103 and release the lease with a concrete next step.",
-    "blocker": "Current-head full CI is running. Complete panel/closure layout, connections/stability, masonry resistance, signed whole-house response and adoption remain explicitly open; no packet or house acceptance claimed."
+    "evidence": "PR #1632 final published head 71948539865466652718e9ade9840b96b973d55a: 700 mm steel/precast comparison, thirteen critical beam screens, actual precast stair network; sixteen targeted/source tests pass, drawings inspected, fourteen of sixteen exact-head hosted workflow groups passed at 14:38 UTC.",
+    "next": "Wait for remaining exact-head validation and ADE browser workflows; if green, run fresh canonical merge preflight, merge expected head, reconcile issue #1103 and release for handoff.",
+    "blocker": "Full exact-head hosted validation and ADE browser proof remain in progress; complete precast panelization, connections, restraint and whole-house adoption remain unresolved design duties."
   }
 }
