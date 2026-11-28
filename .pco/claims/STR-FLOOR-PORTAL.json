@@ -9,11 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:52:38.395Z",
-  "heartbeatAt": "2026-11-28T09:52:38.395Z",
-  "expiresAt": "2026-11-28T10:37:38.395Z",
+  "heartbeatAt": "2026-11-28T10:03:06.629Z",
+  "expiresAt": "2026-11-28T10:48:06.629Z",
   "checkpoint": {
-    "evidence": "Owner clarification 28 November: steel permitted, precast/prefabricated construction preferred; narrow brief amendment based on main f2acb9e7.",
-    "next": "Refresh only affected source-bound study records, validate and integrate the preference; retain all unselected-system boundaries."
+    "evidence": "PR1631 at25e23e33 records owner prefab preference; all4 producer checks, strict source audit0 and21 focused tests pass. Remote tree7368a2b5 equals reviewed local tree; only identity changes outside prose.",
+    "next": "Observe exact-head hosted checks, fresh publication preflight, merge the narrow preference amendment and release; structural design comparison remains planned.",
+    "blocker": "Local full check stopped on sandbox tsx IPC EPERM; hosted full validation pending."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
@@ -37,5 +38,6 @@
       "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
       "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
     }
-  }
+  },
+  "pr": 1631
 }
