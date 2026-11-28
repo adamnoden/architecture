@@ -9,8 +9,8 @@
     "label": "solo-simplicity-20261128"
   },
   "claimedAt": "2026-11-28T12:49:23.198Z",
-  "heartbeatAt": "2026-11-28T14:57:50.524Z",
-  "expiresAt": "2026-11-28T15:42:50.524Z",
+  "heartbeatAt": "2026-11-28T15:13:00.103Z",
+  "expiresAt": "2026-11-28T15:58:00.103Z",
   "branch": "work/solo-simplify-20261128",
   "predecessor": {
     "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
@@ -36,8 +36,8 @@
   },
   "pr": 1632,
   "checkpoint": {
-    "evidence": "PR #1632 final head 71948539865466652718e9ade9840b96b973d55a: 700 mm ordinary steel/precast development comparison with thirteen critical beam screens and actual precast stair network. Sixteen targeted/source tests and local checks pass. Fifteen of sixteen exact-head hosted workflow groups are green, including ADE browser proof, at 14:56 UTC.",
-    "next": "Wait for final full repository validation; when green run fresh canonical expected-head preflight, merge PR #1632, reconcile issue #1103, record verified merge and release for handoff.",
-    "blocker": "Full repository validation is still running the current ground-load/editor regression. Complete precast unit/support layout, connections, restraint and whole-house adoption remain design work."
+    "evidence": "PR #1632 final head 71948539865466652718e9ade9840b96b973d55a: 700 mm ordinary steel/precast development comparison and thirteen critical member screens. Local typecheck, sixteen targeted/source tests, output reproduction and drawing inspection passed. Fifteen of sixteen exact-head hosted workflow groups are green; native ground/editor regression, packet declaration and homepage checks have now passed. Final npm run check is in progress at 15:12 UTC.",
+    "next": "Observe final exact-head repository health; once green run fresh canonical expected-head preflight, merge PR #1632, reconcile issue #1103 and record verified merge before handoff release.",
+    "blocker": "Only full repository-health validation remains for integration. Complete precast panel/support layout, connections, restraint, masonry and signed whole-house adoption remain design duties."
   }
 }
