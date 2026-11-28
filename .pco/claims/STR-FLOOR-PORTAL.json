@@ -9,12 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:52:38.395Z",
-  "heartbeatAt": "2026-11-28T10:16:32.968Z",
-  "expiresAt": "2026-11-28T11:01:32.968Z",
+  "heartbeatAt": "2026-11-28T10:30:42.613Z",
+  "expiresAt": "2026-11-28T11:15:42.613Z",
   "checkpoint": {
-    "evidence": "PR #1631 at 25e23e33 records the owner prefab preference. All four producer checks, strict source audit, 21 focused tests, publication proof, finite contour proof and beam-end browser proof pass. Reviewed tree 7368a2b5 changes only prose and dependent identities.",
-    "next": "Wait for remaining exact-head checks, run fresh publication preflight, merge the preference amendment and release. The conventional steel and precast structural comparison remains planned.",
-    "blocker": "Full exact-head repository validation and general browser editor proof are still running; the local full check was blocked by sandbox tsx IPC EPERM."
+    "evidence": "PR #1631 at 25e23e33 records the owner prefab preference. All four producer checks, strict source audit, 21 focused tests, both complete browser proof jobs, publication proof, finite contour, beam-end and lower-masonry checks pass. Reviewed tree 7368a2b5 changes only prose and dependent identities.",
+    "next": "Wait for the remaining exact-head repository workflow, run fresh publication preflight, merge the preference amendment and release. The conventional steel and precast structural comparison remains planned.",
+    "blocker": "Required hosted validation is still running the saved two-room ground and editor proof; no failure reported. The local full check was blocked by sandbox tsx IPC EPERM."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
