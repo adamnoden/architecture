@@ -125,7 +125,7 @@ house without the unlocated independent sliding interface?
 is now the preferred development route under the owner's prefab and simplicity
 priorities. Allow its priced deeper floor zone; locate ordinary units, beams,
 receiving supports and ties before continuing bespoke joint refinements.
-Its seven beam screens and section fit do not close the assembled-path question.
+Its member screens and section fit do not close the assembled-path question.
 Preserve the monolithic and genuinely separated comparisons as controls;
 do not cut a nominal receiver pocket through continuous concrete and retain the old model.
 Keep the owner’s paired openings, occupied rooms and direct support preference
