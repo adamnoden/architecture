@@ -9,12 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:53:54.494Z",
-  "heartbeatAt": "2026-11-28T12:33:59.836Z",
-  "expiresAt": "2026-11-28T13:18:59.836Z",
+  "heartbeatAt": "2026-11-28T12:41:08.342Z",
+  "expiresAt": "2026-11-28T13:26:08.342Z",
   "checkpoint": {
-    "evidence": "PR #1631 head 64511a0d, tree dff2608d, has passed all three exact-head hosted workflows, including full repository validation and canonical CI publication preflight (run 46136993802), browser proofs and typography proof. Local source is clean and exactly matches the published tree. The amendment changes owner prose and dependent identities only; numerical results, drawing geometry and acceptance states are unchanged.",
-    "next": "Run fresh local canonical publication preflight for both leases, merge PR #1631 using expected head 64511a0d, reconcile issue #1103, record the merged identity, release both leases and clean this task branch/mailbox. Structural steel/precast comparison and installation recovery remain planned.",
-    "blocker": "No validation blocker for this bounded amendment; final merge and cleanup pending."
+    "evidence": "PR #1631 merged into main at 076cfef8a48004b3a21c946e4660401bc5fba104 from validated head 64511a0d, tree dff2608d. All three exact-head hosted workflows and both fresh local canonical preflights passed. Main ancestry and exact tree were verified; issue #1103 now records the owner preference. The preference changes prose and dependent identities only, with numerical results, drawing geometry and acceptance states preserved. Remote task branch was automatically deleted.",
+    "next": "This bounded owner-preference amendment is complete. Resume HAD installation resolution from the preserved recoverySource, coordinating future floor interfaces with the owner's preferred steel/precast comparison. Actual system selection and installation acceptance remain open.",
+    "blocker": "No blocker for the merged preference amendment. Continue the installation work and limitations recorded in the preserved recovery evidence."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
