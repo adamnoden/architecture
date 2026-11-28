@@ -9,12 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:53:54.494Z",
-  "heartbeatAt": "2026-11-28T12:18:12.561Z",
-  "expiresAt": "2026-11-28T13:03:12.561Z",
+  "heartbeatAt": "2026-11-28T12:33:59.836Z",
+  "expiresAt": "2026-11-28T13:18:59.836Z",
   "checkpoint": {
-    "evidence": "PR #1631 remains at 64511a0d, tree dff2608d, against main f2acb9e7 and is mergeable. All current-head dedicated engineering, saved-ground, browser and publication proofs pass. All local unit/regression suites, saved outputs and publication manifests passed; only local figure rendering lacked Chrome. Current source is clean; temporary launchers and Python caches were removed.",
-    "next": "Await the standard full repository suite in hosted run 46136993802. Then run fresh canonical publication preflight for both leases, merge with the expected head, reconcile issue #1103, release both leases and clean only this task branch/mailbox. The structural comparison and installation recovery remain planned.",
-    "blocker": "Current-head repository health suite is still running. No current failing check."
+    "evidence": "PR #1631 head 64511a0d, tree dff2608d, has passed all three exact-head hosted workflows, including full repository validation and canonical CI publication preflight (run 46136993802), browser proofs and typography proof. Local source is clean and exactly matches the published tree. The amendment changes owner prose and dependent identities only; numerical results, drawing geometry and acceptance states are unchanged.",
+    "next": "Run fresh local canonical publication preflight for both leases, merge PR #1631 using expected head 64511a0d, reconcile issue #1103, record the merged identity, release both leases and clean this task branch/mailbox. Structural steel/precast comparison and installation recovery remain planned.",
+    "blocker": "No validation blocker for this bounded amendment; final merge and cleanup pending."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
