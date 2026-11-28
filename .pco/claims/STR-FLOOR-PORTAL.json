@@ -1,45 +1,41 @@
 {
   "schemaVersion": 1,
   "node": "STR-FLOOR-PORTAL",
-  "generation": 62,
-  "state": "released",
-  "leaseId": "38c2994b-a134-44eb-96d3-4cb9761b5624",
+  "generation": 63,
+  "state": "claimed",
+  "leaseId": "c30ac683-f3fc-486d-9724-304f7ba3a5c0",
   "holder": {
     "kind": "chatgpt",
-    "label": "zerg-owner-takeover-20261126"
+    "label": "owner-prefab-direction-20261128"
   },
-  "claimedAt": "2026-11-26T20:02:01.717Z",
-  "heartbeatAt": "2026-11-27T00:21:06.000Z",
-  "expiresAt": "2026-11-27T00:21:06.000Z",
+  "claimedAt": "2026-11-28T09:52:38.395Z",
+  "heartbeatAt": "2026-11-28T09:52:38.395Z",
+  "expiresAt": "2026-11-28T10:37:38.395Z",
   "checkpoint": {
-    "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
-    "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
-    "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
+    "evidence": "Owner clarification 28 November: steel permitted, precast/prefabricated construction preferred; narrow brief amendment based on main f2acb9e7.",
+    "next": "Refresh only affected source-bound study records, validate and integrate the preference; retain all unselected-system boundaries."
   },
-  "branch": "work/zerg-takeover-integration-20261126",
+  "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
-    "leaseId": "df21e33d-af76-43f6-8485-5b2364b7f7bb",
-    "generation": 61,
-    "branch": "work/zerg-loaded-joint-room-20261126",
-    "pr": 1629,
+    "leaseId": "38c2994b-a134-44eb-96d3-4cb9761b5624",
+    "generation": 62,
+    "branch": "work/zerg-takeover-integration-20261126",
+    "pr": 1630,
     "checkpoint": {
-      "evidence": "A frozenff537093 has67 current outputs. Upstand WIP808709ac selects300x350 conventional bands/300cores, real volume union; no solve yet. Rear EA0 all96 remains genuine development evidence.",
-      "next": "Join strict ordinary native A; prove upstand placing/operator and fresh true zero-wind plus signed cases. Integrate exact root source after required CI.",
-      "blocker": "Upstand operator/contact insertion and cage development not proven. Old force cases cannot qualify changed frame; all-four finite joints/strength remain open."
+      "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
+      "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
+      "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
     }
   },
   "recoverySource": {
-    "leaseId": "df21e33d-af76-43f6-8485-5b2364b7f7bb",
-    "generation": 61,
-    "branch": "work/zerg-loaded-joint-room-20261126",
-    "pr": 1629,
+    "leaseId": "38c2994b-a134-44eb-96d3-4cb9761b5624",
+    "generation": 62,
+    "branch": "work/zerg-takeover-integration-20261126",
+    "pr": 1630,
     "checkpoint": {
-      "evidence": "A frozenff537093 has67 current outputs. Upstand WIP808709ac selects300x350 conventional bands/300cores, real volume union; no solve yet. Rear EA0 all96 remains genuine development evidence.",
-      "next": "Join strict ordinary native A; prove upstand placing/operator and fresh true zero-wind plus signed cases. Integrate exact root source after required CI.",
-      "blocker": "Upstand operator/contact insertion and cage development not proven. Old force cases cannot qualify changed frame; all-four finite joints/strength remain open."
+      "evidence": "PR #1630 at b372d651e963e797dc18c560b9b5752493a70e07 preserves fifteen actual native replays; recovered nineteen-command hosted replay and exact publication attribution/render pass. Root recovery handoff: https://github.com/adamnoden/architecture/pull/1630#issuecomment-7206025364",
+      "next": "Restore executor; publish tested local ae94 pure-choice extraction and four owning inlet regenerations; run fresh exact-head CI/preflight before merge. Nodes remain planned.",
+      "blocker": "HOLD MERGE: introduced engineering.html dev import reaches node:crypto; production pass does not fix it. Executor unavailable prevents narrow fix publication/validation."
     }
-  },
-  "pr": 1630,
-  "releasedAt": "2026-11-27T00:21:06.000Z",
-  "releaseReason": "handoff"
+  }
 }
