@@ -9,12 +9,12 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:52:38.395Z",
-  "heartbeatAt": "2026-11-28T11:33:47.223Z",
-  "expiresAt": "2026-11-28T12:18:47.223Z",
+  "heartbeatAt": "2026-11-28T11:48:19.123Z",
+  "expiresAt": "2026-11-28T12:33:19.123Z",
   "checkpoint": {
-    "evidence": "PR #1631 at 64511a0d, tree dff2608d, records prefab preference with numerical and drawing geometry unchanged. All local canonical unit/regression suites, generated outputs and publication manifests passed via the external direct-loader adapter. Local figure rendering then stopped only because Puppeteer Chrome is absent. The current-head hosted publication and both browser proofs pass. Working tree is clean after removing test Python caches.",
-    "next": "Finish standard exact-head hosted run 46136993802, perform fresh publication preflight, merge the bounded preference amendment, reconcile the structural issue and release. Steel and precast design comparison and existing installation recovery remain planned.",
-    "blocker": "Required hosted main validation is still running the saved ground/editor replay. No current-head test failure; local Chrome absence is covered by the passing hosted publication proof."
+    "evidence": "PR #1631 remains at 64511a0d, tree dff2608d, against unchanged main f2acb9e7 and is mergeable. Current-head dedicated engineering, saved-ground, browser and publication proofs pass. All local unit/regression suites, saved outputs and publication manifests also passed via the external direct-loader adapter; only local figure rendering lacked Chrome. Temporary launchers and Python caches have been removed; source tree is clean.",
+    "next": "Await the standard full repository suite in hosted run 46136993802, then fresh publication preflight, merge, reconcile issue #1103 and release. This is an owner preference amendment; the steel/precast design comparison and installation recovery remain planned.",
+    "blocker": "Required current-head repository health suite is still running. No current failing check."
   },
   "branch": "work/prefab-owner-direction-20261128",
   "predecessor": {
