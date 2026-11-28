@@ -9,8 +9,8 @@
     "label": "owner-prefab-direction-20261128"
   },
   "claimedAt": "2026-11-28T09:53:54.494Z",
-  "heartbeatAt": "2026-11-28T12:03:06.913Z",
-  "expiresAt": "2026-11-28T12:48:06.913Z",
+  "heartbeatAt": "2026-11-28T12:18:12.561Z",
+  "expiresAt": "2026-11-28T13:03:12.561Z",
   "checkpoint": {
     "evidence": "PR #1631 remains at 64511a0d, tree dff2608d, against main f2acb9e7 and is mergeable. All current-head dedicated engineering, saved-ground, browser and publication proofs pass. All local unit/regression suites, saved outputs and publication manifests passed; only local figure rendering lacked Chrome. Current source is clean; temporary launchers and Python caches were removed.",
     "next": "Await the standard full repository suite in hosted run 46136993802. Then run fresh canonical publication preflight for both leases, merge with the expected head, reconcile issue #1103, release both leases and clean only this task branch/mailbox. The structural comparison and installation recovery remain planned.",
